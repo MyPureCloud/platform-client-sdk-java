@@ -40,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;

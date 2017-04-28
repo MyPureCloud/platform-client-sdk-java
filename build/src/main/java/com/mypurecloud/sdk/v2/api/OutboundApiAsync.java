@@ -35,6 +35,8 @@ import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
@@ -86,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignRequest;
@@ -2835,6 +2839,156 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DncListEntityListing> response = (ApiResponse<DncListEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EventLog> getOutboundEventAsync(GetOutboundEventRequest request, final AsyncApiCallback<EventLog> callback) {
+    try {
+      final SettableFuture<EventLog> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EventLog>() {}, new AsyncApiCallback<ApiResponse<EventLog>>() {
+        @Override
+        public void onCompleted(ApiResponse<EventLog> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EventLog>> getOutboundEventAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EventLog>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EventLog>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EventLog>() {}, new AsyncApiCallback<ApiResponse<EventLog>>() {
+        @Override
+        public void onCompleted(ApiResponse<EventLog> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EventLog> response = (ApiResponse<EventLog>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EventLog> response = (ApiResponse<EventLog>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DialerEventEntityListing> getOutboundEventsAsync(GetOutboundEventsRequest request, final AsyncApiCallback<DialerEventEntityListing> callback) {
+    try {
+      final SettableFuture<DialerEventEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialerEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialerEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialerEventEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DialerEventEntityListing>> getOutboundEventsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialerEventEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DialerEventEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DialerEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialerEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialerEventEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

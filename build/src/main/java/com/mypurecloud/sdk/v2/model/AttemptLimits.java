@@ -5,9 +5,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.RecallEntry;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -59,6 +63,7 @@ public class AttemptLimits  implements Serializable {
     }
   }
   private ResetPeriodEnum resetPeriod = null;
+  private Map<String, RecallEntry> recallEntries = new HashMap<String, RecallEntry>();
   private String selfUri = null;
 
   
@@ -188,6 +193,24 @@ public class AttemptLimits  implements Serializable {
   }
 
 
+  /**
+   * Configuration for recall attempts
+   **/
+  public AttemptLimits recallEntries(Map<String, RecallEntry> recallEntries) {
+    this.recallEntries = recallEntries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration for recall attempts")
+  @JsonProperty("recallEntries")
+  public Map<String, RecallEntry> getRecallEntries() {
+    return recallEntries;
+  }
+  public void setRecallEntries(Map<String, RecallEntry> recallEntries) {
+    this.recallEntries = recallEntries;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -213,12 +236,13 @@ public class AttemptLimits  implements Serializable {
         Objects.equals(this.maxAttemptsPerNumber, attemptLimits.maxAttemptsPerNumber) &&
         Objects.equals(this.timeZoneId, attemptLimits.timeZoneId) &&
         Objects.equals(this.resetPeriod, attemptLimits.resetPeriod) &&
+        Objects.equals(this.recallEntries, attemptLimits.recallEntries) &&
         Objects.equals(this.selfUri, attemptLimits.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, selfUri);
   }
 
   @Override
@@ -235,6 +259,7 @@ public class AttemptLimits  implements Serializable {
     sb.append("    maxAttemptsPerNumber: ").append(toIndentedString(maxAttemptsPerNumber)).append("\n");
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    resetPeriod: ").append(toIndentedString(resetPeriod)).append("\n");
+    sb.append("    recallEntries: ").append(toIndentedString(recallEntries)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

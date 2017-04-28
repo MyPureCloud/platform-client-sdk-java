@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.ImportStatus;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.EventLog;
+import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
@@ -83,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignRequest;
@@ -3082,6 +3086,184 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncListEntityListing> response = (ApiResponse<DncListEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param eventId Event Log ID (required)
+   * @return EventLog
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventLog getOutboundEvent(String eventId) throws IOException, ApiException {
+    return  getOutboundEvent(createGetOutboundEventRequest(eventId));
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param eventId Event Log ID (required)
+   * @return EventLog
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventLog> getOutboundEventWithHttpInfo(String eventId) throws IOException {
+    return getOutboundEvent(createGetOutboundEventRequest(eventId).withHttpInfo());
+  }
+
+  private GetOutboundEventRequest createGetOutboundEventRequest(String eventId) {
+    return GetOutboundEventRequest.builder()
+            .withEventId(eventId)
+            .build();
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param request The request object
+   * @return EventLog
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EventLog getOutboundEvent(GetOutboundEventRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EventLog> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EventLog>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Dialer Event
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EventLog> getOutboundEvent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EventLog>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventLog> response = (ApiResponse<EventLog>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EventLog> response = (ApiResponse<EventLog>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param category Category (optional)
+   * @param level Level (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return DialerEventEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialerEventEntityListing getOutboundEvents(Integer pageSize, Integer pageNumber, String filterType, String category, String level, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundEvents(createGetOutboundEventsRequest(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder));
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param category Category (optional)
+   * @param level Level (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return DialerEventEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialerEventEntityListing> getOutboundEventsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String category, String level, String sortBy, String sortOrder) throws IOException {
+    return getOutboundEvents(createGetOutboundEventsRequest(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundEventsRequest createGetOutboundEventsRequest(Integer pageSize, Integer pageNumber, String filterType, String category, String level, String sortBy, String sortOrder) {
+    return GetOutboundEventsRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withFilterType(filterType)
+
+            .withCategory(category)
+
+            .withLevel(level)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+            .build();
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param request The request object
+   * @return DialerEventEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialerEventEntityListing getOutboundEvents(GetOutboundEventsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DialerEventEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialerEventEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query Event Logs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialerEventEntityListing> getOutboundEvents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialerEventEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

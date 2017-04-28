@@ -59,14 +59,16 @@ public class JsonNode  implements Serializable {
     }
   }
   private NodeTypeEnum nodeType = null;
+  private Boolean _float = null;
+  private Boolean object = null;
   private Boolean _boolean = null;
   private Boolean number = null;
-  private Boolean object = null;
-  private Boolean _float = null;
+  private Boolean floatingPointNumber = null;
+  private Boolean valueNode = null;
+  private Boolean containerNode = null;
   private Boolean missingNode = null;
   private Boolean pojo = null;
   private Boolean integralNumber = null;
-  private Boolean floatingPointNumber = null;
   private Boolean _short = null;
   private Boolean _int = null;
   private Boolean _long = null;
@@ -75,8 +77,6 @@ public class JsonNode  implements Serializable {
   private Boolean bigInteger = null;
   private Boolean textual = null;
   private Boolean binary = null;
-  private Boolean valueNode = null;
-  private Boolean containerNode = null;
 
   
   /**
@@ -132,6 +132,40 @@ public class JsonNode  implements Serializable {
 
   /**
    **/
+  public JsonNode _float(Boolean _float) {
+    this._float = _float;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("float")
+  public Boolean getFloat() {
+    return _float;
+  }
+  public void setFloat(Boolean _float) {
+    this._float = _float;
+  }
+
+
+  /**
+   **/
+  public JsonNode object(Boolean object) {
+    this.object = object;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("object")
+  public Boolean getObject() {
+    return object;
+  }
+  public void setObject(Boolean object) {
+    this.object = object;
+  }
+
+
+  /**
+   **/
   public JsonNode _boolean(Boolean _boolean) {
     this._boolean = _boolean;
     return this;
@@ -166,35 +200,52 @@ public class JsonNode  implements Serializable {
 
   /**
    **/
-  public JsonNode object(Boolean object) {
-    this.object = object;
+  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("object")
-  public Boolean getObject() {
-    return object;
+  @JsonProperty("floatingPointNumber")
+  public Boolean getFloatingPointNumber() {
+    return floatingPointNumber;
   }
-  public void setObject(Boolean object) {
-    this.object = object;
+  public void setFloatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
   }
 
 
   /**
    **/
-  public JsonNode _float(Boolean _float) {
-    this._float = _float;
+  public JsonNode valueNode(Boolean valueNode) {
+    this.valueNode = valueNode;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("float")
-  public Boolean getFloat() {
-    return _float;
+  @JsonProperty("valueNode")
+  public Boolean getValueNode() {
+    return valueNode;
   }
-  public void setFloat(Boolean _float) {
-    this._float = _float;
+  public void setValueNode(Boolean valueNode) {
+    this.valueNode = valueNode;
+  }
+
+
+  /**
+   **/
+  public JsonNode containerNode(Boolean containerNode) {
+    this.containerNode = containerNode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("containerNode")
+  public Boolean getContainerNode() {
+    return containerNode;
+  }
+  public void setContainerNode(Boolean containerNode) {
+    this.containerNode = containerNode;
   }
 
 
@@ -246,23 +297,6 @@ public class JsonNode  implements Serializable {
   }
   public void setIntegralNumber(Boolean integralNumber) {
     this.integralNumber = integralNumber;
-  }
-
-
-  /**
-   **/
-  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("floatingPointNumber")
-  public Boolean getFloatingPointNumber() {
-    return floatingPointNumber;
-  }
-  public void setFloatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
   }
 
 
@@ -402,40 +436,6 @@ public class JsonNode  implements Serializable {
   }
 
 
-  /**
-   **/
-  public JsonNode valueNode(Boolean valueNode) {
-    this.valueNode = valueNode;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("valueNode")
-  public Boolean getValueNode() {
-    return valueNode;
-  }
-  public void setValueNode(Boolean valueNode) {
-    this.valueNode = valueNode;
-  }
-
-
-  /**
-   **/
-  public JsonNode containerNode(Boolean containerNode) {
-    this.containerNode = containerNode;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("containerNode")
-  public Boolean getContainerNode() {
-    return containerNode;
-  }
-  public void setContainerNode(Boolean containerNode) {
-    this.containerNode = containerNode;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -448,14 +448,16 @@ public class JsonNode  implements Serializable {
     return Objects.equals(this.array, jsonNode.array) &&
         Objects.equals(this._null, jsonNode._null) &&
         Objects.equals(this.nodeType, jsonNode.nodeType) &&
+        Objects.equals(this._float, jsonNode._float) &&
+        Objects.equals(this.object, jsonNode.object) &&
         Objects.equals(this._boolean, jsonNode._boolean) &&
         Objects.equals(this.number, jsonNode.number) &&
-        Objects.equals(this.object, jsonNode.object) &&
-        Objects.equals(this._float, jsonNode._float) &&
+        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
+        Objects.equals(this.valueNode, jsonNode.valueNode) &&
+        Objects.equals(this.containerNode, jsonNode.containerNode) &&
         Objects.equals(this.missingNode, jsonNode.missingNode) &&
         Objects.equals(this.pojo, jsonNode.pojo) &&
         Objects.equals(this.integralNumber, jsonNode.integralNumber) &&
-        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
         Objects.equals(this._short, jsonNode._short) &&
         Objects.equals(this._int, jsonNode._int) &&
         Objects.equals(this._long, jsonNode._long) &&
@@ -463,14 +465,12 @@ public class JsonNode  implements Serializable {
         Objects.equals(this.bigDecimal, jsonNode.bigDecimal) &&
         Objects.equals(this.bigInteger, jsonNode.bigInteger) &&
         Objects.equals(this.textual, jsonNode.textual) &&
-        Objects.equals(this.binary, jsonNode.binary) &&
-        Objects.equals(this.valueNode, jsonNode.valueNode) &&
-        Objects.equals(this.containerNode, jsonNode.containerNode);
+        Objects.equals(this.binary, jsonNode.binary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(array, _null, nodeType, _boolean, number, object, _float, missingNode, pojo, integralNumber, floatingPointNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary, valueNode, containerNode);
+    return Objects.hash(array, _null, nodeType, _float, object, _boolean, number, floatingPointNumber, valueNode, containerNode, missingNode, pojo, integralNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary);
   }
 
   @Override
@@ -481,14 +481,16 @@ public class JsonNode  implements Serializable {
     sb.append("    array: ").append(toIndentedString(array)).append("\n");
     sb.append("    _null: ").append(toIndentedString(_null)).append("\n");
     sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
+    sb.append("    _float: ").append(toIndentedString(_float)).append("\n");
+    sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    _boolean: ").append(toIndentedString(_boolean)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    object: ").append(toIndentedString(object)).append("\n");
-    sb.append("    _float: ").append(toIndentedString(_float)).append("\n");
+    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
+    sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
+    sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
     sb.append("    missingNode: ").append(toIndentedString(missingNode)).append("\n");
     sb.append("    pojo: ").append(toIndentedString(pojo)).append("\n");
     sb.append("    integralNumber: ").append(toIndentedString(integralNumber)).append("\n");
-    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
     sb.append("    _short: ").append(toIndentedString(_short)).append("\n");
     sb.append("    _int: ").append(toIndentedString(_int)).append("\n");
     sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
@@ -497,8 +499,6 @@ public class JsonNode  implements Serializable {
     sb.append("    bigInteger: ").append(toIndentedString(bigInteger)).append("\n");
     sb.append("    textual: ").append(toIndentedString(textual)).append("\n");
     sb.append("    binary: ").append(toIndentedString(binary)).append("\n");
-    sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
-    sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

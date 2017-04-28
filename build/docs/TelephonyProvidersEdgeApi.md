@@ -3193,7 +3193,7 @@ try {
 
 # **getTelephonyProvidersEdgesPhonebasesettings**
 
-> [PhoneBaseEntityListing](PhoneBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, name)
+> [PhoneBaseEntityListing](PhoneBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name)
 
 Get a list of Phone Base Settings objects
 
@@ -3222,9 +3222,10 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Value by which to sort
 String sortOrder = "ASC"; // String | Sort order
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
 String name = "name_example"; // String | Name
 try {
-    PhoneBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, name);
+    PhoneBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesPhonebasesettings");
@@ -3241,6 +3242,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
 | **name** | **String**| Name | [optional] |
 {: class="table table-striped"}
 

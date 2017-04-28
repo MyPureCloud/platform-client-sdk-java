@@ -4890,13 +4890,14 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Value by which to sort (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param expand Fields to expand in the response, comma-separated (optional)
    * @param name Name (optional)
    * @return PhoneBaseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, name));
+  public PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand, String name) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, expand, name));
   }
 
   /**
@@ -4906,15 +4907,16 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Value by which to sort (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param expand Fields to expand in the response, comma-separated (optional)
    * @param name Name (optional)
    * @return PhoneBaseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException {
-    return getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, name).withHttpInfo());
+  public ApiResponse<PhoneBaseEntityListing> getTelephonyProvidersEdgesPhonebasesettingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand, String name) throws IOException {
+    return getTelephonyProvidersEdgesPhonebasesettings(createGetTelephonyProvidersEdgesPhonebasesettingsRequest(pageSize, pageNumber, sortBy, sortOrder, expand, name).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesPhonebasesettingsRequest createGetTelephonyProvidersEdgesPhonebasesettingsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) {
+  private GetTelephonyProvidersEdgesPhonebasesettingsRequest createGetTelephonyProvidersEdgesPhonebasesettingsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand, String name) {
     return GetTelephonyProvidersEdgesPhonebasesettingsRequest.builder()
             .withPageSize(pageSize)
 
@@ -4923,6 +4925,8 @@ public class TelephonyProvidersEdgeApi {
             .withSortBy(sortBy)
 
             .withSortOrder(sortOrder)
+
+            .withExpand(expand)
 
             .withName(name)
             .build();

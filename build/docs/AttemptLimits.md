@@ -17,6 +17,7 @@ title: AttemptLimits
 | **maxAttemptsPerNumber** | **Integer** |  |  [optional] |
 | **timeZoneId** | **String** | The timezone is necessary to define when \&quot;today\&quot; starts and ends |  [optional] |
 | **resetPeriod** | [**ResetPeriodEnum**](#ResetPeriodEnum) | After how long the number of attempts will be set back to 0 |  [optional] |
+| **recallEntries** | [**Map&lt;String, RecallEntry&gt;**](RecallEntry.html) | Configuration for recall attempts |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

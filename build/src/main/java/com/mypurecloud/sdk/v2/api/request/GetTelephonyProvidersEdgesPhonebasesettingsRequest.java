@@ -140,6 +140,20 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	    return this;
 	}
 
+	private List<String> expand;
+	public List<String> getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(List<String> expand) {
+		this.expand = expand;
+	}
+
+	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withExpand(List<String> expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
 	private String name;
 	public String getName() {
 		return this.name;
@@ -185,6 +199,8 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
         
                 .withQueryParameters("sortOrder", "", sortOrder)
         
+                .withQueryParameters("expand", "multi", expand)
+        
                 .withQueryParameters("name", "", name)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -219,6 +235,10 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 		}
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+		public Builder withExpand(List<String> expand) {
+			request.setExpand(expand);
 			return this;
 		}
 		public Builder withName(String name) {

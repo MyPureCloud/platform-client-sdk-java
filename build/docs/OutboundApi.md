@@ -43,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | Get the URI of a DNC list export. |
 | [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | Get dialer dncList import status. |
 | [**getOutboundDnclists**](OutboundApi.html#getOutboundDnclists) | Query dialer DNC lists |
+| [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
+| [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
 | [**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | Get a Rule Set by ID. |
 | [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | Query a list of Rule Sets. |
 | [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | Get a dialer campaign schedule. |
@@ -2012,6 +2014,120 @@ try {
 ### Return type
 
 [**DncListEntityListing**](DncListEntityListing.html)
+
+<a name="getOutboundEvent"></a>
+
+# **getOutboundEvent**
+
+> [EventLog](EventLog.html) getOutboundEvent(eventId)
+
+Get Dialer Event
+
+
+
+Wraps GET /api/v2/outbound/events/{eventId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String eventId = "eventId_example"; // String | Event Log ID
+try {
+    EventLog result = apiInstance.getOutboundEvent(eventId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundEvent");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **eventId** | **String**| Event Log ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EventLog**](EventLog.html)
+
+<a name="getOutboundEvents"></a>
+
+# **getOutboundEvents**
+
+> [DialerEventEntityListing](DialerEventEntityListing.html) getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)
+
+Query Event Logs
+
+
+
+Wraps GET /api/v2/outbound/events  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String filterType = "Prefix"; // String | Filter type
+String category = "category_example"; // String | Category
+String level = "level_example"; // String | Level
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    DialerEventEntityListing result = apiInstance.getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundEvents");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **filterType** | **String**| Filter type | [optional] [default to Prefix] [enum: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith] |
+| **category** | **String**| Category | [optional] |
+| **level** | **String**| Level | [optional] |
+| **sortBy** | **String**| Sort by | [optional] |
+| **sortOrder** | **String**| Sort order | [optional] [default to a] [enum: ascending, descending] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DialerEventEntityListing**](DialerEventEntityListing.html)
 
 <a name="getOutboundRuleset"></a>
 
