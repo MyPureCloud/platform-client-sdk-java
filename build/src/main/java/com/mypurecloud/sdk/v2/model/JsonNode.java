@@ -63,12 +63,12 @@ public class JsonNode  implements Serializable {
   private Boolean object = null;
   private Boolean _boolean = null;
   private Boolean number = null;
-  private Boolean floatingPointNumber = null;
   private Boolean valueNode = null;
   private Boolean containerNode = null;
   private Boolean missingNode = null;
   private Boolean pojo = null;
   private Boolean integralNumber = null;
+  private Boolean floatingPointNumber = null;
   private Boolean _short = null;
   private Boolean _int = null;
   private Boolean _long = null;
@@ -200,23 +200,6 @@ public class JsonNode  implements Serializable {
 
   /**
    **/
-  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("floatingPointNumber")
-  public Boolean getFloatingPointNumber() {
-    return floatingPointNumber;
-  }
-  public void setFloatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
-  }
-
-
-  /**
-   **/
   public JsonNode valueNode(Boolean valueNode) {
     this.valueNode = valueNode;
     return this;
@@ -297,6 +280,23 @@ public class JsonNode  implements Serializable {
   }
   public void setIntegralNumber(Boolean integralNumber) {
     this.integralNumber = integralNumber;
+  }
+
+
+  /**
+   **/
+  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("floatingPointNumber")
+  public Boolean getFloatingPointNumber() {
+    return floatingPointNumber;
+  }
+  public void setFloatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
   }
 
 
@@ -452,12 +452,12 @@ public class JsonNode  implements Serializable {
         Objects.equals(this.object, jsonNode.object) &&
         Objects.equals(this._boolean, jsonNode._boolean) &&
         Objects.equals(this.number, jsonNode.number) &&
-        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
         Objects.equals(this.valueNode, jsonNode.valueNode) &&
         Objects.equals(this.containerNode, jsonNode.containerNode) &&
         Objects.equals(this.missingNode, jsonNode.missingNode) &&
         Objects.equals(this.pojo, jsonNode.pojo) &&
         Objects.equals(this.integralNumber, jsonNode.integralNumber) &&
+        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
         Objects.equals(this._short, jsonNode._short) &&
         Objects.equals(this._int, jsonNode._int) &&
         Objects.equals(this._long, jsonNode._long) &&
@@ -470,7 +470,7 @@ public class JsonNode  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(array, _null, nodeType, _float, object, _boolean, number, floatingPointNumber, valueNode, containerNode, missingNode, pojo, integralNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary);
+    return Objects.hash(array, _null, nodeType, _float, object, _boolean, number, valueNode, containerNode, missingNode, pojo, integralNumber, floatingPointNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary);
   }
 
   @Override
@@ -485,12 +485,12 @@ public class JsonNode  implements Serializable {
     sb.append("    object: ").append(toIndentedString(object)).append("\n");
     sb.append("    _boolean: ").append(toIndentedString(_boolean)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
-    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
     sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
     sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
     sb.append("    missingNode: ").append(toIndentedString(missingNode)).append("\n");
     sb.append("    pojo: ").append(toIndentedString(pojo)).append("\n");
     sb.append("    integralNumber: ").append(toIndentedString(integralNumber)).append("\n");
+    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
     sb.append("    _short: ").append(toIndentedString(_short)).append("\n");
     sb.append("    _int: ").append(toIndentedString(_int)).append("\n");
     sb.append("    _long: ").append(toIndentedString(_long)).append("\n");

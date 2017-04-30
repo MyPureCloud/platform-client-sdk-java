@@ -244,6 +244,7 @@ public class Edge  implements Serializable {
   }
   private CallDrainingStateEnum callDrainingState = null;
   private Integer conversationCount = null;
+  private String proxy = null;
   private String selfUri = null;
 
   
@@ -871,6 +872,24 @@ public class Edge  implements Serializable {
   }
 
 
+  /**
+   * Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
+   **/
+  public Edge proxy(String proxy) {
+    this.proxy = proxy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.")
+  @JsonProperty("proxy")
+  public String getProxy() {
+    return proxy;
+  }
+  public void setProxy(String proxy) {
+    this.proxy = proxy;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -924,12 +943,13 @@ public class Edge  implements Serializable {
         Objects.equals(this.edgeDeploymentType, edge.edgeDeploymentType) &&
         Objects.equals(this.callDrainingState, edge.callDrainingState) &&
         Objects.equals(this.conversationCount, edge.conversationCount) &&
+        Objects.equals(this.proxy, edge.proxy) &&
         Objects.equals(this.selfUri, edge.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, selfUri);
   }
 
   @Override
@@ -974,6 +994,7 @@ public class Edge  implements Serializable {
     sb.append("    edgeDeploymentType: ").append(toIndentedString(edgeDeploymentType)).append("\n");
     sb.append("    callDrainingState: ").append(toIndentedString(callDrainingState)).append("\n");
     sb.append("    conversationCount: ").append(toIndentedString(conversationCount)).append("\n");
+    sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

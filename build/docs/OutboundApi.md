@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundCampaignrule**](OutboundApi.html#deleteOutboundCampaignrule) | Delete Campaign Rule |
 | [**deleteOutboundContactlist**](OutboundApi.html#deleteOutboundContactlist) | Delete a contact list. |
 | [**deleteOutboundContactlistContact**](OutboundApi.html#deleteOutboundContactlistContact) | Delete a contact. |
+| [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule set. |
 | [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
@@ -484,6 +485,58 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | |
 | **contactId** | **String**| Contact ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundContactlistContacts"></a>
+
+# **deleteOutboundContactlistContacts**
+
+> Void deleteOutboundContactlistContacts(contactListId, contactIds)
+
+Delete contacts from a contact list.
+
+
+
+Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+List<String> contactIds = Arrays.asList("contactIds_example"); // List<String> | ContactIds to delete.
+try {
+    apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistContacts");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | |
+| **contactIds** | [**List&lt;String&gt;**](String.html)| ContactIds to delete. | |
 {: class="table table-striped"}
 
 ### Return type

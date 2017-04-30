@@ -42,10 +42,21 @@ public class ExternalOrganization  implements Serializable {
   private String selfUri = null;
 
   
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public ExternalOrganization id(String id) {
+    this.id = id;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
 
