@@ -24,9 +24,9 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String lastUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -134,23 +134,6 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
 
   /**
    **/
-  public CobrowseConversationEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public CobrowseConversationEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -180,6 +163,23 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public CobrowseConversationEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -215,15 +215,15 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
         Objects.equals(this.total, cobrowseConversationEntityListing.total) &&
         Objects.equals(this.selfUri, cobrowseConversationEntityListing.selfUri) &&
         Objects.equals(this.firstUri, cobrowseConversationEntityListing.firstUri) &&
-        Objects.equals(this.lastUri, cobrowseConversationEntityListing.lastUri) &&
         Objects.equals(this.previousUri, cobrowseConversationEntityListing.previousUri) &&
         Objects.equals(this.nextUri, cobrowseConversationEntityListing.nextUri) &&
+        Objects.equals(this.lastUri, cobrowseConversationEntityListing.lastUri) &&
         Objects.equals(this.pageCount, cobrowseConversationEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, lastUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,9 +237,9 @@ public class CobrowseConversationEntityListing  implements Serializable, PagedRe
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

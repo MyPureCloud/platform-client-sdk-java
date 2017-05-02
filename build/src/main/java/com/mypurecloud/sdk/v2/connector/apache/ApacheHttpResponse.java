@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 class ApacheHttpResponse implements ApiClientConnectorResponse {
@@ -58,7 +59,7 @@ class ApacheHttpResponse implements ApiClientConnectorResponse {
     @Override
     public String readBody() throws IOException {
         HttpEntity entity = response.getEntity();
-        return (entity != null) ? EntityUtils.toString(entity) : null;
+        return (entity != null) ? EntityUtils.toString(entity, StandardCharsets.UTF_8) : null;
     }
 
     @Override
