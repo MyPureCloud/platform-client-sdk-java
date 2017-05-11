@@ -1,7 +1,5 @@
 
-# SDK Changes
-
-* API-2562 use UTF-8 to get response body
+_manual build_
 
 # Major Changes (0 changes)
 

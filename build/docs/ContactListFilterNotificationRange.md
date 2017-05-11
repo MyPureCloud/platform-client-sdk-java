@@ -8,10 +8,10 @@ title: ContactListFilterNotificationRange
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **gt** | **String** |  |  [optional] |
-| **gte** | **String** |  |  [optional] |
-| **lt** | **String** |  |  [optional] |
-| **lte** | **String** |  |  [optional] |
+| **min** | **String** |  |  [optional] |
+| **max** | **String** |  |  [optional] |
+| **minInclusive** | **Boolean** |  |  [optional] |
+| **maxInclusive** | **Boolean** |  |  [optional] |
 | **inSet** | **List&lt;String&gt;** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}

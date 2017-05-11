@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationDialerPreview;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -149,6 +150,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
   private ConversationNotificationDialerPreview dialerPreview = null;
+  private DocumentDataV2NotificationWorkspace voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
@@ -278,6 +280,23 @@ public class ConversationNotificationCallbacks  implements Serializable {
   }
   public void setDialerPreview(ConversationNotificationDialerPreview dialerPreview) {
     this.dialerPreview = dialerPreview;
+  }
+
+
+  /**
+   **/
+  public ConversationNotificationCallbacks voicemail(DocumentDataV2NotificationWorkspace voicemail) {
+    this.voicemail = voicemail;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("voicemail")
+  public DocumentDataV2NotificationWorkspace getVoicemail() {
+    return voicemail;
+  }
+  public void setVoicemail(DocumentDataV2NotificationWorkspace voicemail) {
+    this.voicemail = voicemail;
   }
 
 
@@ -484,6 +503,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
         Objects.equals(this.disconnectType, conversationNotificationCallbacks.disconnectType) &&
         Objects.equals(this.startHoldTime, conversationNotificationCallbacks.startHoldTime) &&
         Objects.equals(this.dialerPreview, conversationNotificationCallbacks.dialerPreview) &&
+        Objects.equals(this.voicemail, conversationNotificationCallbacks.voicemail) &&
         Objects.equals(this.callbackNumbers, conversationNotificationCallbacks.callbackNumbers) &&
         Objects.equals(this.callbackUserName, conversationNotificationCallbacks.callbackUserName) &&
         Objects.equals(this.scriptId, conversationNotificationCallbacks.scriptId) &&
@@ -499,7 +519,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, callbackNumbers, callbackUserName, scriptId, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
   }
 
   @Override
@@ -514,6 +534,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    dialerPreview: ").append(toIndentedString(dialerPreview)).append("\n");
+    sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");

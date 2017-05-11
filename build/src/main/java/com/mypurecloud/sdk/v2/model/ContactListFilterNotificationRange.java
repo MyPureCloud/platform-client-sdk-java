@@ -16,79 +16,79 @@ import java.io.Serializable;
 
 public class ContactListFilterNotificationRange  implements Serializable {
   
-  private String gt = null;
-  private String gte = null;
-  private String lt = null;
-  private String lte = null;
+  private String min = null;
+  private String max = null;
+  private Boolean minInclusive = null;
+  private Boolean maxInclusive = null;
   private List<String> inSet = new ArrayList<String>();
   private Object additionalProperties = null;
 
   
   /**
    **/
-  public ContactListFilterNotificationRange gt(String gt) {
-    this.gt = gt;
+  public ContactListFilterNotificationRange min(String min) {
+    this.min = min;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("gt")
-  public String getGt() {
-    return gt;
+  @JsonProperty("min")
+  public String getMin() {
+    return min;
   }
-  public void setGt(String gt) {
-    this.gt = gt;
+  public void setMin(String min) {
+    this.min = min;
   }
 
 
   /**
    **/
-  public ContactListFilterNotificationRange gte(String gte) {
-    this.gte = gte;
+  public ContactListFilterNotificationRange max(String max) {
+    this.max = max;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("gte")
-  public String getGte() {
-    return gte;
+  @JsonProperty("max")
+  public String getMax() {
+    return max;
   }
-  public void setGte(String gte) {
-    this.gte = gte;
+  public void setMax(String max) {
+    this.max = max;
   }
 
 
   /**
    **/
-  public ContactListFilterNotificationRange lt(String lt) {
-    this.lt = lt;
+  public ContactListFilterNotificationRange minInclusive(Boolean minInclusive) {
+    this.minInclusive = minInclusive;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lt")
-  public String getLt() {
-    return lt;
+  @JsonProperty("minInclusive")
+  public Boolean getMinInclusive() {
+    return minInclusive;
   }
-  public void setLt(String lt) {
-    this.lt = lt;
+  public void setMinInclusive(Boolean minInclusive) {
+    this.minInclusive = minInclusive;
   }
 
 
   /**
    **/
-  public ContactListFilterNotificationRange lte(String lte) {
-    this.lte = lte;
+  public ContactListFilterNotificationRange maxInclusive(Boolean maxInclusive) {
+    this.maxInclusive = maxInclusive;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lte")
-  public String getLte() {
-    return lte;
+  @JsonProperty("maxInclusive")
+  public Boolean getMaxInclusive() {
+    return maxInclusive;
   }
-  public void setLte(String lte) {
-    this.lte = lte;
+  public void setMaxInclusive(Boolean maxInclusive) {
+    this.maxInclusive = maxInclusive;
   }
 
 
@@ -135,17 +135,17 @@ public class ContactListFilterNotificationRange  implements Serializable {
       return false;
     }
     ContactListFilterNotificationRange contactListFilterNotificationRange = (ContactListFilterNotificationRange) o;
-    return Objects.equals(this.gt, contactListFilterNotificationRange.gt) &&
-        Objects.equals(this.gte, contactListFilterNotificationRange.gte) &&
-        Objects.equals(this.lt, contactListFilterNotificationRange.lt) &&
-        Objects.equals(this.lte, contactListFilterNotificationRange.lte) &&
+    return Objects.equals(this.min, contactListFilterNotificationRange.min) &&
+        Objects.equals(this.max, contactListFilterNotificationRange.max) &&
+        Objects.equals(this.minInclusive, contactListFilterNotificationRange.minInclusive) &&
+        Objects.equals(this.maxInclusive, contactListFilterNotificationRange.maxInclusive) &&
         Objects.equals(this.inSet, contactListFilterNotificationRange.inSet) &&
         Objects.equals(this.additionalProperties, contactListFilterNotificationRange.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(gt, gte, lt, lte, inSet, additionalProperties);
+    return Objects.hash(min, max, minInclusive, maxInclusive, inSet, additionalProperties);
   }
 
   @Override
@@ -153,10 +153,10 @@ public class ContactListFilterNotificationRange  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContactListFilterNotificationRange {\n");
     
-    sb.append("    gt: ").append(toIndentedString(gt)).append("\n");
-    sb.append("    gte: ").append(toIndentedString(gte)).append("\n");
-    sb.append("    lt: ").append(toIndentedString(lt)).append("\n");
-    sb.append("    lte: ").append(toIndentedString(lte)).append("\n");
+    sb.append("    min: ").append(toIndentedString(min)).append("\n");
+    sb.append("    max: ").append(toIndentedString(max)).append("\n");
+    sb.append("    minInclusive: ").append(toIndentedString(minInclusive)).append("\n");
+    sb.append("    maxInclusive: ").append(toIndentedString(maxInclusive)).append("\n");
     sb.append("    inSet: ").append(toIndentedString(inSet)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");

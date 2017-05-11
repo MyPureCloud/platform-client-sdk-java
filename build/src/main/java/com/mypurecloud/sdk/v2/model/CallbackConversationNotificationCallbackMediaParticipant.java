@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.CallbackConversationNotificationUriReference
 import com.mypurecloud.sdk.v2.model.ConversationNotificationDialerPreview;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
 import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -177,6 +178,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private CallbackConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private ConversationNotificationDialerPreview outboundPreview = null;
+  private DocumentDataV2NotificationWorkspace voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
@@ -629,6 +631,23 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   /**
    **/
+  public CallbackConversationNotificationCallbackMediaParticipant voicemail(DocumentDataV2NotificationWorkspace voicemail) {
+    this.voicemail = voicemail;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("voicemail")
+  public DocumentDataV2NotificationWorkspace getVoicemail() {
+    return voicemail;
+  }
+  public void setVoicemail(DocumentDataV2NotificationWorkspace voicemail) {
+    this.voicemail = voicemail;
+  }
+
+
+  /**
+   **/
   public CallbackConversationNotificationCallbackMediaParticipant callbackNumbers(List<String> callbackNumbers) {
     this.callbackNumbers = callbackNumbers;
     return this;
@@ -764,6 +783,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
         Objects.equals(this.externalOrganization, callbackConversationNotificationCallbackMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, callbackConversationNotificationCallbackMediaParticipant.wrapup) &&
         Objects.equals(this.outboundPreview, callbackConversationNotificationCallbackMediaParticipant.outboundPreview) &&
+        Objects.equals(this.voicemail, callbackConversationNotificationCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackConversationNotificationCallbackMediaParticipant.callbackNumbers) &&
         Objects.equals(this.callbackUserName, callbackConversationNotificationCallbackMediaParticipant.callbackUserName) &&
         Objects.equals(this.skipEnabled, callbackConversationNotificationCallbackMediaParticipant.skipEnabled) &&
@@ -774,7 +794,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, outboundPreview, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -808,6 +828,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
+    sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");

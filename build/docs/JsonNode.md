@@ -15,20 +15,20 @@ title: JsonNode
 | **object** | **Boolean** |  |  [optional] |
 | **_boolean** | **Boolean** |  |  [optional] |
 | **number** | **Boolean** |  |  [optional] |
-| **valueNode** | **Boolean** |  |  [optional] |
-| **containerNode** | **Boolean** |  |  [optional] |
-| **missingNode** | **Boolean** |  |  [optional] |
-| **pojo** | **Boolean** |  |  [optional] |
-| **integralNumber** | **Boolean** |  |  [optional] |
-| **floatingPointNumber** | **Boolean** |  |  [optional] |
-| **_short** | **Boolean** |  |  [optional] |
-| **_int** | **Boolean** |  |  [optional] |
-| **_long** | **Boolean** |  |  [optional] |
-| **_double** | **Boolean** |  |  [optional] |
 | **bigDecimal** | **Boolean** |  |  [optional] |
+| **_double** | **Boolean** |  |  [optional] |
+| **_short** | **Boolean** |  |  [optional] |
+| **integralNumber** | **Boolean** |  |  [optional] |
+| **_long** | **Boolean** |  |  [optional] |
+| **_int** | **Boolean** |  |  [optional] |
+| **floatingPointNumber** | **Boolean** |  |  [optional] |
 | **bigInteger** | **Boolean** |  |  [optional] |
 | **textual** | **Boolean** |  |  [optional] |
+| **containerNode** | **Boolean** |  |  [optional] |
+| **missingNode** | **Boolean** |  |  [optional] |
+| **valueNode** | **Boolean** |  |  [optional] |
 | **binary** | **Boolean** |  |  [optional] |
+| **pojo** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
 
 
