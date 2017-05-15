@@ -11,7 +11,7 @@ title: CreateEmailRequest
 | **queueId** | **String** | The ID of the queue to use for routing the chat conversation. |  |
 | **provider** | **String** | The name of the provider that is sourcing the web chat. |  |
 | **skillIds** | **List&lt;String&gt;** | The list of skill ID&#39;s to use for routing. |  [optional] |
-| **languageId** | **String** | The ID of the langauge to use for routing. |  [optional] |
+| **languageId** | **String** | The ID of the language to use for routing. |  [optional] |
 | **priority** | **Long** | The priority to assign to the conversation for routing. |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** | The list of attributes to associate with the customer participant. |  [optional] |
 | **toAddress** | **String** | The email address of the recipient of the email. |  [optional] |

@@ -136,6 +136,20 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	private String media;
+	public String getMedia() {
+		return this.media;
+	}
+
+	public void setMedia(String media) {
+		this.media = media;
+	}
+
+	public GetOrphanrecordingsRequest withMedia(String media) {
+	    this.setMedia(media);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -172,6 +186,8 @@ public class GetOrphanrecordingsRequest {
                 .withQueryParameters("previousPage", "", previousPage)
         
                 .withQueryParameters("hasConversation", "", hasConversation)
+        
+                .withQueryParameters("media", "", media)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -217,6 +233,10 @@ public class GetOrphanrecordingsRequest {
 		}
 		public Builder withHasConversation(Boolean hasConversation) {
 			request.setHasConversation(hasConversation);
+			return this;
+		}
+		public Builder withMedia(String media) {
+			request.setMedia(media);
 			return this;
 		}
 

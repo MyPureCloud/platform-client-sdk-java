@@ -66,6 +66,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
   private Boolean held = null;
   private String provider = null;
   private String scriptId = null;
+  private String peerId = null;
 
   /**
    * Gets or Sets disconnectType
@@ -293,6 +294,23 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
 
   /**
    **/
+  public ConversationNotificationSocialExpressions peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationSocialExpressions disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
@@ -395,6 +413,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
         Objects.equals(this.held, conversationNotificationSocialExpressions.held) &&
         Objects.equals(this.provider, conversationNotificationSocialExpressions.provider) &&
         Objects.equals(this.scriptId, conversationNotificationSocialExpressions.scriptId) &&
+        Objects.equals(this.peerId, conversationNotificationSocialExpressions.peerId) &&
         Objects.equals(this.disconnectType, conversationNotificationSocialExpressions.disconnectType) &&
         Objects.equals(this.startHoldTime, conversationNotificationSocialExpressions.startHoldTime) &&
         Objects.equals(this.connectedTime, conversationNotificationSocialExpressions.connectedTime) &&
@@ -404,7 +423,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -422,6 +441,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");

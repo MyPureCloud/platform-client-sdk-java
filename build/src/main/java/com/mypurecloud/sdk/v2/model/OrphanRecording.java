@@ -30,7 +30,8 @@ public class OrphanRecording  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EDGE("EDGE"),
     CHAT("CHAT"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    SCREEN_RECORDING("SCREEN_RECORDING");
 
     private String value;
 
@@ -67,7 +68,8 @@ public class OrphanRecording  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("CALL"),
     CHAT("CHAT"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    SCREEN("SCREEN");
 
     private String value;
 

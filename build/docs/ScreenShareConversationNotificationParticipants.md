@@ -33,6 +33,7 @@ title: ScreenShareConversationNotificationParticipants
 | **externalContact** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
+| **peer** | **String** |  |  [optional] |
 | **context** | **String** |  |  [optional] |
 | **peerCount** | **Integer** |  |  [optional] |
 | **sharing** | **Boolean** |  |  [optional] |

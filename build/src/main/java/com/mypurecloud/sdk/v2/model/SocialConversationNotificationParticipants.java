@@ -174,6 +174,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
   private SocialConversationNotificationUriReference externalContact = null;
   private SocialConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
@@ -607,6 +608,23 @@ public class SocialConversationNotificationParticipants  implements Serializable
 
   /**
    **/
+  public SocialConversationNotificationParticipants peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public SocialConversationNotificationParticipants socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
@@ -707,6 +725,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
         Objects.equals(this.externalContact, socialConversationNotificationParticipants.externalContact) &&
         Objects.equals(this.externalOrganization, socialConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, socialConversationNotificationParticipants.wrapup) &&
+        Objects.equals(this.peer, socialConversationNotificationParticipants.peer) &&
         Objects.equals(this.socialMediaId, socialConversationNotificationParticipants.socialMediaId) &&
         Objects.equals(this.socialMediaHub, socialConversationNotificationParticipants.socialMediaHub) &&
         Objects.equals(this.socialUserName, socialConversationNotificationParticipants.socialUserName) &&
@@ -715,7 +734,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -748,6 +767,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");
     sb.append("    socialUserName: ").append(toIndentedString(socialUserName)).append("\n");

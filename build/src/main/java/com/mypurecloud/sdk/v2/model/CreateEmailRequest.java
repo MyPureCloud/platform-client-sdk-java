@@ -122,14 +122,14 @@ public class CreateEmailRequest  implements Serializable {
 
 
   /**
-   * The ID of the langauge to use for routing.
+   * The ID of the language to use for routing.
    **/
   public CreateEmailRequest languageId(String languageId) {
     this.languageId = languageId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the langauge to use for routing.")
+  @ApiModelProperty(example = "null", value = "The ID of the language to use for routing.")
   @JsonProperty("languageId")
   public String getLanguageId() {
     return languageId;

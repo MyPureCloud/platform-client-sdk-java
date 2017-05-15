@@ -16,14 +16,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | Fetch a note for an external contact |
 | [**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | List notes for an external contact |
 | [**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | Search for external contacts |
-| [**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | Get a schema |
 | [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
 | [**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | Fetch a note for an external organization |
 | [**getExternalcontactsOrganizationNotes**](ExternalContactsApi.html#getExternalcontactsOrganizationNotes) | List notes for an external organization |
 | [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi.html#getExternalcontactsOrganizationRelationships) | Fetch a relationship for an external organization |
 | [**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | Search for external organizations |
-| [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | Get a schema |
 | [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | Lookup contacts and externalOrganizations based on an attribute |
 | [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | Create a note for an external contact |
@@ -33,11 +31,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postExternalcontactsRelationships**](ExternalContactsApi.html#postExternalcontactsRelationships) | Create a relationship |
 | [**putExternalcontactsContact**](ExternalContactsApi.html#putExternalcontactsContact) | Update an external contact |
 | [**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | Update a note for an external contact |
-| [**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | Update a schema |
 | [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate an external contact with a conversation |
 | [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
-| [**putExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#putExternalcontactsOrganizationsSchema) | Update a schema |
 | [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | Update a relationship |
 {: class="table table-striped"}
 
@@ -521,59 +517,6 @@ try {
 
 [**ContactListing**](ContactListing.html)
 
-<a name="getExternalcontactsContactsSchema"></a>
-
-# **getExternalcontactsContactsSchema**
-
-> [DataSchema](DataSchema.html) getExternalcontactsContactsSchema(schemaId, expand)
-
-Get a schema
-
-
-
-Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}  
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-ExternalContactsApi apiInstance = new ExternalContactsApi();
-String schemaId = "schemaId_example"; // String | Schema ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand. Expand 'jsonSchema.definitions' to get a readonly schema for data validation.
-try {
-    DataSchema result = apiInstance.getExternalcontactsContactsSchema(schemaId, expand);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchema");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **schemaId** | **String**| Schema ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. Expand &#39;jsonSchema.definitions&#39; to get a readonly schema for data validation. | [optional] |
-{: class="table table-striped"}
-
-### Return type
-
-[**DataSchema**](DataSchema.html)
-
 <a name="getExternalcontactsOrganization"></a>
 
 # **getExternalcontactsOrganization**
@@ -919,59 +862,6 @@ try {
 ### Return type
 
 [**ExternalOrganizationListing**](ExternalOrganizationListing.html)
-
-<a name="getExternalcontactsOrganizationsSchema"></a>
-
-# **getExternalcontactsOrganizationsSchema**
-
-> [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchema(schemaId, expand)
-
-Get a schema
-
-
-
-Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}  
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-ExternalContactsApi apiInstance = new ExternalContactsApi();
-String schemaId = "schemaId_example"; // String | Schema ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand. Expand 'jsonSchema.definitions' to get a readonly schema for data validation.
-try {
-    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchema(schemaId, expand);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchema");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **schemaId** | **String**| Schema ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. Expand &#39;jsonSchema.definitions&#39; to get a readonly schema for data validation. | [optional] |
-{: class="table table-striped"}
-
-### Return type
-
-[**DataSchema**](DataSchema.html)
 
 <a name="getExternalcontactsRelationship"></a>
 
@@ -1446,59 +1336,6 @@ try {
 
 [**Note**](Note.html)
 
-<a name="putExternalcontactsContactsSchema"></a>
-
-# **putExternalcontactsContactsSchema**
-
-> [DataSchema](DataSchema.html) putExternalcontactsContactsSchema(schemaId, body)
-
-Update a schema
-
-
-
-Wraps PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}  
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-ExternalContactsApi apiInstance = new ExternalContactsApi();
-String schemaId = "schemaId_example"; // String | Schema ID
-DataSchema body = new DataSchema(); // DataSchema | Data Schema
-try {
-    DataSchema result = apiInstance.putExternalcontactsContactsSchema(schemaId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsContactsSchema");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **schemaId** | **String**| Schema ID | |
-| **body** | [**DataSchema**](DataSchema.html)| Data Schema | |
-{: class="table table-striped"}
-
-### Return type
-
-[**DataSchema**](DataSchema.html)
-
 <a name="putExternalcontactsConversation"></a>
 
 # **putExternalcontactsConversation**
@@ -1658,59 +1495,6 @@ try {
 ### Return type
 
 [**Note**](Note.html)
-
-<a name="putExternalcontactsOrganizationsSchema"></a>
-
-# **putExternalcontactsOrganizationsSchema**
-
-> [DataSchema](DataSchema.html) putExternalcontactsOrganizationsSchema(schemaId, body)
-
-Update a schema
-
-
-
-Wraps PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}  
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-ExternalContactsApi apiInstance = new ExternalContactsApi();
-String schemaId = "schemaId_example"; // String | Schema ID
-DataSchema body = new DataSchema(); // DataSchema | Data Schema
-try {
-    DataSchema result = apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsOrganizationsSchema");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **schemaId** | **String**| Schema ID | |
-| **body** | [**DataSchema**](DataSchema.html)| Data Schema | |
-{: class="table table-striped"}
-
-### Return type
-
-[**DataSchema**](DataSchema.html)
 
 <a name="putExternalcontactsRelationship"></a>
 

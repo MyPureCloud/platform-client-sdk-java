@@ -43,6 +43,7 @@ title: EventLog
 | CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; |
 | IMPORT_ERROR | &quot;IMPORT_ERROR&quot; |
 | CALLBACK | &quot;CALLBACK&quot; |
+| CONTACT_LIST_FILTER | &quot;CONTACT_LIST_FILTER&quot; |
 | SCHEDULE | &quot;SCHEDULE&quot; |
 | CALL_RESTRICTION | &quot;CALL_RESTRICTION&quot; |
 | CALL_RULE | &quot;CALL_RULE&quot; |

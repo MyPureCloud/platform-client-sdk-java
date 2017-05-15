@@ -154,6 +154,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
+  private String peerId = null;
   private Boolean skipEnabled = null;
   private String provider = null;
   private Integer timeoutSeconds = null;
@@ -353,6 +354,23 @@ public class ConversationNotificationCallbacks  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationCallbacks peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationCallbacks skipEnabled(Boolean skipEnabled) {
     this.skipEnabled = skipEnabled;
     return this;
@@ -507,6 +525,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
         Objects.equals(this.callbackNumbers, conversationNotificationCallbacks.callbackNumbers) &&
         Objects.equals(this.callbackUserName, conversationNotificationCallbacks.callbackUserName) &&
         Objects.equals(this.scriptId, conversationNotificationCallbacks.scriptId) &&
+        Objects.equals(this.peerId, conversationNotificationCallbacks.peerId) &&
         Objects.equals(this.skipEnabled, conversationNotificationCallbacks.skipEnabled) &&
         Objects.equals(this.provider, conversationNotificationCallbacks.provider) &&
         Objects.equals(this.timeoutSeconds, conversationNotificationCallbacks.timeoutSeconds) &&
@@ -519,7 +538,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
   }
 
   @Override
@@ -538,6 +557,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");

@@ -174,6 +174,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   private VideoConversationNotificationUriReference externalContact = null;
   private VideoConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
@@ -608,6 +609,23 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
 
   /**
    **/
+  public VideoConversationNotificationVideoMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public VideoConversationNotificationVideoMediaParticipant audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -725,6 +743,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
         Objects.equals(this.externalContact, videoConversationNotificationVideoMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, videoConversationNotificationVideoMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, videoConversationNotificationVideoMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, videoConversationNotificationVideoMediaParticipant.peer) &&
         Objects.equals(this.audioMuted, videoConversationNotificationVideoMediaParticipant.audioMuted) &&
         Objects.equals(this.videoMuted, videoConversationNotificationVideoMediaParticipant.videoMuted) &&
         Objects.equals(this.sharingScreen, videoConversationNotificationVideoMediaParticipant.sharingScreen) &&
@@ -734,7 +753,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, audioMuted, videoMuted, sharingScreen, peerCount, context);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, audioMuted, videoMuted, sharingScreen, peerCount, context);
   }
 
   @Override
@@ -767,6 +786,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");

@@ -13,6 +13,7 @@ title: ContactListFilterNotificationPredicates
 | **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
 | **value** | **String** |  |  [optional] |
 | **range** | [**ContactListFilterNotificationRange**](ContactListFilterNotificationRange.html) |  |  [optional] |
+| **inverted** | **Boolean** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

@@ -33,6 +33,7 @@ title: CallbackConversationNotificationParticipants
 | **externalContact** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
+| **peer** | **String** |  |  [optional] |
 | **outboundPreview** | [**ConversationNotificationDialerPreview**](ConversationNotificationDialerPreview.html) |  |  [optional] |
 | **voicemail** | [**DocumentDataV2NotificationWorkspace**](DocumentDataV2NotificationWorkspace.html) |  |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |

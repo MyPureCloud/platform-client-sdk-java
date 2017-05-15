@@ -25,8 +25,8 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -135,23 +135,6 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
 
   /**
    **/
-  public ResponseEntityList previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public ResponseEntityList nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -164,6 +147,23 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public ResponseEntityList previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -216,15 +216,15 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
         Objects.equals(this.total, responseEntityList.total) &&
         Objects.equals(this.firstUri, responseEntityList.firstUri) &&
         Objects.equals(this.selfUri, responseEntityList.selfUri) &&
-        Objects.equals(this.previousUri, responseEntityList.previousUri) &&
         Objects.equals(this.nextUri, responseEntityList.nextUri) &&
+        Objects.equals(this.previousUri, responseEntityList.previousUri) &&
         Objects.equals(this.lastUri, responseEntityList.lastUri) &&
         Objects.equals(this.pageCount, responseEntityList.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,8 +238,8 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

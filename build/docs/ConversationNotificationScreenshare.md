@@ -15,6 +15,7 @@ title: ConversationNotificationScreenshare
 | **sharing** | **Boolean** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
+| **peerId** | **String** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |

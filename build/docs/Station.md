@@ -18,6 +18,8 @@ title: Station
 | **secondaryEdge** | [**UriReference**](UriReference.html) |  |  [optional] |
 | **type** | **String** |  |  [optional] |
 | **lineAppearanceId** | **String** |  |  [optional] |
+| **webRtcMediaDscp** | **Integer** | The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone. |  [optional] |
+| **webRtcPersistentEnabled** | **Boolean** | The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -174,6 +174,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   private ChatConversationNotificationUriReference externalContact = null;
   private ChatConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private String roomId = null;
 
   
@@ -604,6 +605,23 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
 
   /**
    **/
+  public ChatConversationNotificationChatMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public ChatConversationNotificationChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -653,12 +671,13 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
         Objects.equals(this.externalContact, chatConversationNotificationChatMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, chatConversationNotificationChatMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, chatConversationNotificationChatMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, chatConversationNotificationChatMediaParticipant.peer) &&
         Objects.equals(this.roomId, chatConversationNotificationChatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, roomId);
   }
 
   @Override
@@ -691,6 +710,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

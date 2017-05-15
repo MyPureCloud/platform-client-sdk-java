@@ -64,6 +64,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
   private Boolean sharing = null;
   private String provider = null;
   private String scriptId = null;
+  private String peerId = null;
 
   /**
    * Gets or Sets disconnectType
@@ -239,6 +240,23 @@ public class ConversationNotificationScreenshares  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationScreenshares peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationScreenshares disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
@@ -321,6 +339,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
         Objects.equals(this.sharing, conversationNotificationScreenshares.sharing) &&
         Objects.equals(this.provider, conversationNotificationScreenshares.provider) &&
         Objects.equals(this.scriptId, conversationNotificationScreenshares.scriptId) &&
+        Objects.equals(this.peerId, conversationNotificationScreenshares.peerId) &&
         Objects.equals(this.disconnectType, conversationNotificationScreenshares.disconnectType) &&
         Objects.equals(this.connectedTime, conversationNotificationScreenshares.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationNotificationScreenshares.disconnectedTime) &&
@@ -329,7 +348,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, disconnectType, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -344,6 +363,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");

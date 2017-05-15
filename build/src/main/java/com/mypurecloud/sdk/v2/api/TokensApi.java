@@ -11,9 +11,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -99,6 +101,79 @@ public class TokensApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @return TokenInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TokenInfo getTokensMe() throws IOException, ApiException {
+    return  getTokensMe(createGetTokensMeRequest());
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @return TokenInfo
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TokenInfo> getTokensMeWithHttpInfo() throws IOException {
+    return getTokensMe(createGetTokensMeRequest().withHttpInfo());
+  }
+
+  private GetTokensMeRequest createGetTokensMeRequest() {
+    return GetTokensMeRequest.builder()            .build();
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @param request The request object
+   * @return TokenInfo
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TokenInfo getTokensMe(GetTokensMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TokenInfo> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TokenInfo>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TokenInfo> getTokensMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TokenInfo>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TokenInfo> response = (ApiResponse<TokenInfo>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TokenInfo> response = (ApiResponse<TokenInfo>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -33,6 +33,7 @@ title: OrphanRecording
 | EDGE | &quot;EDGE&quot; |
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
+| SCREEN_RECORDING | &quot;SCREEN_RECORDING&quot; |
 
 
 <a name="MediaTypeEnum"></a>
@@ -45,6 +46,7 @@ title: OrphanRecording
 | CALL | &quot;CALL&quot; |
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
+| SCREEN | &quot;SCREEN&quot; |
 
 
 <a name="FileStateEnum"></a>

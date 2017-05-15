@@ -116,6 +116,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
   private String viewerUrl = null;
   private String provider = null;
   private String scriptId = null;
+  private String peerId = null;
   private Date providerEventTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
@@ -311,6 +312,23 @@ public class ConversationNotificationCobrowse  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationCobrowse peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationCobrowse providerEventTime(Date providerEventTime) {
     this.providerEventTime = providerEventTime;
     return this;
@@ -397,6 +415,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
         Objects.equals(this.viewerUrl, conversationNotificationCobrowse.viewerUrl) &&
         Objects.equals(this.provider, conversationNotificationCobrowse.provider) &&
         Objects.equals(this.scriptId, conversationNotificationCobrowse.scriptId) &&
+        Objects.equals(this.peerId, conversationNotificationCobrowse.peerId) &&
         Objects.equals(this.providerEventTime, conversationNotificationCobrowse.providerEventTime) &&
         Objects.equals(this.connectedTime, conversationNotificationCobrowse.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationNotificationCobrowse.disconnectedTime) &&
@@ -405,7 +424,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, providerEventTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, additionalProperties);
   }
 
   @Override
@@ -424,6 +443,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    providerEventTime: ").append(toIndentedString(providerEventTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");

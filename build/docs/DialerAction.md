@@ -40,6 +40,8 @@ title: DialerAction
 | SCHEDULE_CALLBACK | &quot;SCHEDULE_CALLBACK&quot; |
 | CONTACT_UNCALLABLE | &quot;CONTACT_UNCALLABLE&quot; |
 | NUMBER_UNCALLABLE | &quot;NUMBER_UNCALLABLE&quot; |
+| SET_CALLER_ID | &quot;SET_CALLER_ID&quot; |
+| SET_SKILLS | &quot;SET_SKILLS&quot; |
 
 
 <a name="UpdateOptionEnum"></a>

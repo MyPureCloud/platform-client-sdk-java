@@ -175,6 +175,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
   private CobrowseConversationNotificationUriReference externalContact = null;
   private CobrowseConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
@@ -609,6 +610,23 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
 
   /**
    **/
+  public CobrowseConversationNotificationParticipants peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public CobrowseConversationNotificationParticipants cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
@@ -726,6 +744,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
         Objects.equals(this.externalContact, cobrowseConversationNotificationParticipants.externalContact) &&
         Objects.equals(this.externalOrganization, cobrowseConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, cobrowseConversationNotificationParticipants.wrapup) &&
+        Objects.equals(this.peer, cobrowseConversationNotificationParticipants.peer) &&
         Objects.equals(this.cobrowseSessionId, cobrowseConversationNotificationParticipants.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseConversationNotificationParticipants.cobrowseRole) &&
         Objects.equals(this.viewerUrl, cobrowseConversationNotificationParticipants.viewerUrl) &&
@@ -735,7 +754,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -768,6 +787,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");

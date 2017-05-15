@@ -12,6 +12,7 @@ title: ConversationNotificationChat
 | **id** | **String** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
+| **peerId** | **String** |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
 | **held** | **Boolean** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |

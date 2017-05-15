@@ -199,6 +199,7 @@ public class ConversationNotificationCall  implements Serializable {
   private ConversationNotificationAddress other = null;
   private String provider = null;
   private String scriptId = null;
+  private String peerId = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private List<ConversationNotificationDisconnectReasons> disconnectReasons = new ArrayList<ConversationNotificationDisconnectReasons>();
@@ -480,6 +481,23 @@ public class ConversationNotificationCall  implements Serializable {
 
   /**
    **/
+  public ConversationNotificationCall peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
+   **/
   public ConversationNotificationCall connectedTime(Date connectedTime) {
     this.connectedTime = connectedTime;
     return this;
@@ -588,6 +606,7 @@ public class ConversationNotificationCall  implements Serializable {
         Objects.equals(this.other, conversationNotificationCall.other) &&
         Objects.equals(this.provider, conversationNotificationCall.provider) &&
         Objects.equals(this.scriptId, conversationNotificationCall.scriptId) &&
+        Objects.equals(this.peerId, conversationNotificationCall.peerId) &&
         Objects.equals(this.connectedTime, conversationNotificationCall.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationNotificationCall.disconnectedTime) &&
         Objects.equals(this.disconnectReasons, conversationNotificationCall.disconnectReasons) &&
@@ -597,7 +616,7 @@ public class ConversationNotificationCall  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, additionalProperties);
   }
 
   @Override
@@ -621,6 +640,7 @@ public class ConversationNotificationCall  implements Serializable {
     sb.append("    other: ").append(toIndentedString(other)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");

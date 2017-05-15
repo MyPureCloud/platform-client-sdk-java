@@ -14,9 +14,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -101,6 +103,81 @@ public class TokensApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TokenInfo> getTokensMeAsync(GetTokensMeRequest request, final AsyncApiCallback<TokenInfo> callback) {
+    try {
+      final SettableFuture<TokenInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TokenInfo>() {}, new AsyncApiCallback<ApiResponse<TokenInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<TokenInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch information about the current token
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TokenInfo>> getTokensMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TokenInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TokenInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TokenInfo>() {}, new AsyncApiCallback<ApiResponse<TokenInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<TokenInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TokenInfo> response = (ApiResponse<TokenInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TokenInfo> response = (ApiResponse<TokenInfo>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

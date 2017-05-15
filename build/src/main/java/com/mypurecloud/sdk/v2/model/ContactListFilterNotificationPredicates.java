@@ -99,6 +99,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
   private OperatorEnum operator = null;
   private String value = null;
   private ContactListFilterNotificationRange range = null;
+  private Boolean inverted = null;
   private Object additionalProperties = null;
 
   
@@ -189,6 +190,23 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
 
   /**
    **/
+  public ContactListFilterNotificationPredicates inverted(Boolean inverted) {
+    this.inverted = inverted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inverted")
+  public Boolean getInverted() {
+    return inverted;
+  }
+  public void setInverted(Boolean inverted) {
+    this.inverted = inverted;
+  }
+
+
+  /**
+   **/
   public ContactListFilterNotificationPredicates additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -218,12 +236,13 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
         Objects.equals(this.operator, contactListFilterNotificationPredicates.operator) &&
         Objects.equals(this.value, contactListFilterNotificationPredicates.value) &&
         Objects.equals(this.range, contactListFilterNotificationPredicates.range) &&
+        Objects.equals(this.inverted, contactListFilterNotificationPredicates.inverted) &&
         Objects.equals(this.additionalProperties, contactListFilterNotificationPredicates.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(column, columnType, operator, value, range, additionalProperties);
+    return Objects.hash(column, columnType, operator, value, range, inverted, additionalProperties);
   }
 
   @Override
@@ -236,6 +255,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    range: ").append(toIndentedString(range)).append("\n");
+    sb.append("    inverted: ").append(toIndentedString(inverted)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

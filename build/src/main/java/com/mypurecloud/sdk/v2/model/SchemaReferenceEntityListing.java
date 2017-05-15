@@ -24,8 +24,8 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -134,23 +134,6 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
 
   /**
    **/
-  public SchemaReferenceEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public SchemaReferenceEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -163,6 +146,23 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
+  public SchemaReferenceEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -215,15 +215,15 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
         Objects.equals(this.total, schemaReferenceEntityListing.total) &&
         Objects.equals(this.firstUri, schemaReferenceEntityListing.firstUri) &&
         Objects.equals(this.selfUri, schemaReferenceEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, schemaReferenceEntityListing.previousUri) &&
         Objects.equals(this.nextUri, schemaReferenceEntityListing.nextUri) &&
+        Objects.equals(this.previousUri, schemaReferenceEntityListing.previousUri) &&
         Objects.equals(this.lastUri, schemaReferenceEntityListing.lastUri) &&
         Objects.equals(this.pageCount, schemaReferenceEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,8 +237,8 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

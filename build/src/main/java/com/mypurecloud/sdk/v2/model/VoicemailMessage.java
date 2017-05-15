@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.Group;
+import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.VoicemailCopyRecord;
 import io.swagger.annotations.ApiModel;
@@ -35,6 +36,7 @@ public class VoicemailMessage  implements Serializable {
   private String note = null;
   private User user = null;
   private Group group = null;
+  private Queue queue = null;
   private VoicemailCopyRecord copiedFrom = null;
   private List<VoicemailCopyRecord> copiedTo = new ArrayList<VoicemailCopyRecord>();
   private String selfUri = null;
@@ -180,14 +182,14 @@ public class VoicemailMessage  implements Serializable {
 
 
   /**
-   * The user that the voicemail message belongs to or null which means the voicemail message belongs to a group
+   * The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
    **/
   public VoicemailMessage user(User user) {
     this.user = user;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user that the voicemail message belongs to or null which means the voicemail message belongs to a group")
+  @ApiModelProperty(example = "null", value = "The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue")
   @JsonProperty("user")
   public User getUser() {
     return user;
@@ -198,20 +200,38 @@ public class VoicemailMessage  implements Serializable {
 
 
   /**
-   * The group that the voicemail message belongs to or null which means the voicemail message belongs to a user
+   * The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
    **/
   public VoicemailMessage group(Group group) {
     this.group = group;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The group that the voicemail message belongs to or null which means the voicemail message belongs to a user")
+  @ApiModelProperty(example = "null", value = "The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
   }
   public void setGroup(Group group) {
     this.group = group;
+  }
+
+
+  /**
+   * The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
+   **/
+  public VoicemailMessage queue(Queue queue) {
+    this.queue = queue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group")
+  @JsonProperty("queue")
+  public Queue getQueue() {
+    return queue;
+  }
+  public void setQueue(Queue queue) {
+    this.queue = queue;
   }
 
 
@@ -281,6 +301,7 @@ public class VoicemailMessage  implements Serializable {
         Objects.equals(this.note, voicemailMessage.note) &&
         Objects.equals(this.user, voicemailMessage.user) &&
         Objects.equals(this.group, voicemailMessage.group) &&
+        Objects.equals(this.queue, voicemailMessage.queue) &&
         Objects.equals(this.copiedFrom, voicemailMessage.copiedFrom) &&
         Objects.equals(this.copiedTo, voicemailMessage.copiedTo) &&
         Objects.equals(this.selfUri, voicemailMessage.selfUri);
@@ -288,7 +309,7 @@ public class VoicemailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, callerUser, deleted, note, user, group, copiedFrom, copiedTo, selfUri);
+    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, callerUser, deleted, note, user, group, queue, copiedFrom, copiedTo, selfUri);
   }
 
   @Override
@@ -310,6 +331,7 @@ public class VoicemailMessage  implements Serializable {
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    copiedFrom: ").append(toIndentedString(copiedFrom)).append("\n");
     sb.append("    copiedTo: ").append(toIndentedString(copiedTo)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

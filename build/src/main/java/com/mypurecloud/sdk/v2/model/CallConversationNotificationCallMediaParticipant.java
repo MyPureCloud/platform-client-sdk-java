@@ -175,6 +175,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
   private CallConversationNotificationUriReference externalContact = null;
   private CallConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -650,6 +651,23 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
 
   /**
    **/
+  public CallConversationNotificationCallMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public CallConversationNotificationCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -869,6 +887,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
         Objects.equals(this.externalContact, callConversationNotificationCallMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callConversationNotificationCallMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, callConversationNotificationCallMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, callConversationNotificationCallMediaParticipant.peer) &&
         Objects.equals(this.muted, callConversationNotificationCallMediaParticipant.muted) &&
         Objects.equals(this.confined, callConversationNotificationCallMediaParticipant.confined) &&
         Objects.equals(this.recording, callConversationNotificationCallMediaParticipant.recording) &&
@@ -884,7 +903,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -917,6 +936,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

@@ -909,12 +909,13 @@ public class RecordingApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
+   * @param media Filter resulting orphans based on their media type (optional)
    * @return OrphanRecordingListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException, ApiException {
-    return  getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation));
+  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException, ApiException {
+    return  getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media));
   }
 
   /**
@@ -927,14 +928,15 @@ public class RecordingApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
+   * @param media Filter resulting orphans based on their media type (optional)
    * @return OrphanRecordingListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) throws IOException {
-    return getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation).withHttpInfo());
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException {
+    return getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media).withHttpInfo());
   }
 
-  private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation) {
+  private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) {
     return GetOrphanrecordingsRequest.builder()
             .withPageSize(pageSize)
 
@@ -949,6 +951,8 @@ public class RecordingApi {
             .withPreviousPage(previousPage)
 
             .withHasConversation(hasConversation)
+
+            .withMedia(media)
             .build();
   }
 

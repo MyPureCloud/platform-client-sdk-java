@@ -24,6 +24,7 @@ title: ConversationNotificationCalls
 | **other** | [**ConversationNotificationAddress**](ConversationNotificationAddress.html) |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
+| **peerId** | **String** |  |  [optional] |
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectReasons** | [**List&lt;ConversationNotificationDisconnectReasons&gt;**](ConversationNotificationDisconnectReasons.html) |  |  [optional] |

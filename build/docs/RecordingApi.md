@@ -581,7 +581,7 @@ try {
 
 # **getOrphanrecordings**
 
-> [OrphanRecordingListing](OrphanRecordingListing.html) getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation)
+> [OrphanRecordingListing](OrphanRecordingListing.html) getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)
 
 Gets all orphan recordings
 
@@ -613,8 +613,9 @@ List<Object> expand = null; // List<Object> | variable name requested by expand 
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean hasConversation = false; // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
+String media = "media_example"; // String | Filter resulting orphans based on their media type
 try {
-    OrphanRecordingListing result = apiInstance.getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation);
+    OrphanRecordingListing result = apiInstance.getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getOrphanrecordings");
@@ -634,6 +635,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 | **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
+| **media** | **String**| Filter resulting orphans based on their media type | [optional] [enum: Call, Screen] |
 {: class="table table-striped"}
 
 ### Return type

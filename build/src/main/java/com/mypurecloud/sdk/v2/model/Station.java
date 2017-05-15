@@ -60,6 +60,8 @@ public class Station  implements Serializable {
   private UriReference secondaryEdge = null;
   private String type = null;
   private String lineAppearanceId = null;
+  private Integer webRtcMediaDscp = null;
+  private Boolean webRtcPersistentEnabled = null;
   private String selfUri = null;
 
   
@@ -225,6 +227,20 @@ public class Station  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.")
+  @JsonProperty("webRtcMediaDscp")
+  public Integer getWebRtcMediaDscp() {
+    return webRtcMediaDscp;
+  }
+
+
+  @ApiModelProperty(example = "null", value = "The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.")
+  @JsonProperty("webRtcPersistentEnabled")
+  public Boolean getWebRtcPersistentEnabled() {
+    return webRtcPersistentEnabled;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -251,12 +267,14 @@ public class Station  implements Serializable {
         Objects.equals(this.secondaryEdge, station.secondaryEdge) &&
         Objects.equals(this.type, station.type) &&
         Objects.equals(this.lineAppearanceId, station.lineAppearanceId) &&
+        Objects.equals(this.webRtcMediaDscp, station.webRtcMediaDscp) &&
+        Objects.equals(this.webRtcPersistentEnabled, station.webRtcPersistentEnabled) &&
         Objects.equals(this.selfUri, station.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, selfUri);
+    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, webRtcMediaDscp, webRtcPersistentEnabled, selfUri);
   }
 
   @Override
@@ -274,6 +292,8 @@ public class Station  implements Serializable {
     sb.append("    secondaryEdge: ").append(toIndentedString(secondaryEdge)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    lineAppearanceId: ").append(toIndentedString(lineAppearanceId)).append("\n");
+    sb.append("    webRtcMediaDscp: ").append(toIndentedString(webRtcMediaDscp)).append("\n");
+    sb.append("    webRtcPersistentEnabled: ").append(toIndentedString(webRtcPersistentEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

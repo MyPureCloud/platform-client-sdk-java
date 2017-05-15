@@ -174,6 +174,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
   private ScreenShareConversationNotificationUriReference externalContact = null;
   private ScreenShareConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -606,6 +607,23 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
 
   /**
    **/
+  public ScreenShareConversationNotificationParticipants peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public ScreenShareConversationNotificationParticipants context(String context) {
     this.context = context;
     return this;
@@ -689,6 +707,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
         Objects.equals(this.externalContact, screenShareConversationNotificationParticipants.externalContact) &&
         Objects.equals(this.externalOrganization, screenShareConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, screenShareConversationNotificationParticipants.wrapup) &&
+        Objects.equals(this.peer, screenShareConversationNotificationParticipants.peer) &&
         Objects.equals(this.context, screenShareConversationNotificationParticipants.context) &&
         Objects.equals(this.peerCount, screenShareConversationNotificationParticipants.peerCount) &&
         Objects.equals(this.sharing, screenShareConversationNotificationParticipants.sharing);
@@ -696,7 +715,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, context, peerCount, sharing);
   }
 
   @Override
@@ -729,6 +748,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

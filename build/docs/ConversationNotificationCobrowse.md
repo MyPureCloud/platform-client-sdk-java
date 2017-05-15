@@ -19,6 +19,7 @@ title: ConversationNotificationCobrowse
 | **viewerUrl** | **String** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
+| **peerId** | **String** |  |  [optional] |
 | **providerEventTime** | [**Date**](Date.html) |  |  [optional] |
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |

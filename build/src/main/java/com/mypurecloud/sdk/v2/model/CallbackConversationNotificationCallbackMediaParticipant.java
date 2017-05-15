@@ -177,6 +177,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private CallbackConversationNotificationUriReference externalContact = null;
   private CallbackConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
+  private String peer = null;
   private ConversationNotificationDialerPreview outboundPreview = null;
   private DocumentDataV2NotificationWorkspace voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -614,6 +615,23 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   /**
    **/
+  public CallbackConversationNotificationCallbackMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
+   **/
   public CallbackConversationNotificationCallbackMediaParticipant outboundPreview(ConversationNotificationDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -782,6 +800,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
         Objects.equals(this.externalContact, callbackConversationNotificationCallbackMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callbackConversationNotificationCallbackMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, callbackConversationNotificationCallbackMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, callbackConversationNotificationCallbackMediaParticipant.peer) &&
         Objects.equals(this.outboundPreview, callbackConversationNotificationCallbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, callbackConversationNotificationCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackConversationNotificationCallbackMediaParticipant.callbackNumbers) &&
@@ -794,7 +813,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -827,6 +846,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
