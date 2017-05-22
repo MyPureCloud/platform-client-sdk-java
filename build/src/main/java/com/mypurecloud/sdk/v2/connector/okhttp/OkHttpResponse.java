@@ -12,6 +12,8 @@ import java.util.Map;
 
 public class OkHttpResponse implements ApiClientConnectorResponse {
     private final Response response;
+    private String responseBody;
+    private boolean hasReadBody = false;
 
     public OkHttpResponse(Response response) {
         this.response = response;
@@ -52,8 +54,13 @@ public class OkHttpResponse implements ApiClientConnectorResponse {
 
     @Override
     public String readBody() throws IOException {
+        if (hasReadBody)
+            return responseBody;
+
+        hasReadBody = true;
         ResponseBody body = response.body();
-        return (body != null) ? body.string() : null;
+        responseBody = (body != null) ? body.string() : null;
+        return responseBody;
     }
 
     @Override

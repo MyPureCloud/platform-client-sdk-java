@@ -97,7 +97,7 @@ public class NotificationHandler extends Object {
                             NotificationEvent<Object> genericEventData = objectMapper.readValue(message, genericEventType);
 
                             // Look up Listener based on topic name
-                            NotificationListener<?> specificType = typeMap.getOrDefault(genericEventData.getTopicName(), null);
+                            NotificationListener<?> specificType = typeMap.get(genericEventData.getTopicName());
 
                             if (specificType != null) {
                                 // Deserialize to specific type provided by listener

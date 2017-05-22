@@ -391,7 +391,8 @@ public class ApiClient implements AutoCloseable {
             }
         }
         for (Map.Entry<String, String> defaultHeader : defaultHeaderMap.entrySet()) {
-            headers.putIfAbsent(defaultHeader.getKey(), defaultHeader.getValue());
+            if (!headers.containsKey(defaultHeader.getKey()))
+                headers.put(defaultHeader.getKey(), defaultHeader.getValue());
         }
 
         updateParamsForAuth(request.getAuthNames(), queryParams, headers);

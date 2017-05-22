@@ -1,7 +1,7 @@
 
 # SDK Changes
 
-* API-2602 removing content length header check from okhttp connector
+* API-2594 Changes for Java 7
 
 # Major Changes (0 changes)
 

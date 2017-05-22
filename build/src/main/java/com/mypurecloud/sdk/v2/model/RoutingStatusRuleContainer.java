@@ -22,11 +22,11 @@ public class RoutingStatusRuleContainer  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String previousUri = null;
-  private String lastUri = null;
-  private String nextUri = null;
   private String selfUri = null;
   private String firstUri = null;
+  private String lastUri = null;
+  private String previousUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   
@@ -100,57 +100,6 @@ public class RoutingStatusRuleContainer  implements Serializable, PagedResource<
 
   /**
    **/
-  public RoutingStatusRuleContainer previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
-  public RoutingStatusRuleContainer lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
-  public RoutingStatusRuleContainer nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
   public RoutingStatusRuleContainer selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -185,6 +134,57 @@ public class RoutingStatusRuleContainer  implements Serializable, PagedResource<
 
   /**
    **/
+  public RoutingStatusRuleContainer lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
+  public RoutingStatusRuleContainer previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+
+  /**
+   **/
+  public RoutingStatusRuleContainer nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
+  }
+
+
+  /**
+   **/
   public RoutingStatusRuleContainer pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
@@ -213,17 +213,17 @@ public class RoutingStatusRuleContainer  implements Serializable, PagedResource<
         Objects.equals(this.pageSize, routingStatusRuleContainer.pageSize) &&
         Objects.equals(this.pageNumber, routingStatusRuleContainer.pageNumber) &&
         Objects.equals(this.total, routingStatusRuleContainer.total) &&
-        Objects.equals(this.previousUri, routingStatusRuleContainer.previousUri) &&
-        Objects.equals(this.lastUri, routingStatusRuleContainer.lastUri) &&
-        Objects.equals(this.nextUri, routingStatusRuleContainer.nextUri) &&
         Objects.equals(this.selfUri, routingStatusRuleContainer.selfUri) &&
         Objects.equals(this.firstUri, routingStatusRuleContainer.firstUri) &&
+        Objects.equals(this.lastUri, routingStatusRuleContainer.lastUri) &&
+        Objects.equals(this.previousUri, routingStatusRuleContainer.previousUri) &&
+        Objects.equals(this.nextUri, routingStatusRuleContainer.nextUri) &&
         Objects.equals(this.pageCount, routingStatusRuleContainer.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, previousUri, lastUri, nextUri, selfUri, firstUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, lastUri, previousUri, nextUri, pageCount);
   }
 
   @Override
@@ -235,11 +235,11 @@ public class RoutingStatusRuleContainer  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

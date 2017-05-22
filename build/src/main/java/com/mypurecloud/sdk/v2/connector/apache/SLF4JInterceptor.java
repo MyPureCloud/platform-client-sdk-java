@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -289,7 +290,7 @@ public class SLF4JInterceptor implements HttpRequestInterceptor, HttpResponseInt
     private static String formatHeaders(Header[] headers) {
         
         List<Header> sortedHeaders = Arrays.asList(headers);
-        sortedHeaders.sort(new HeaderComparator());
+        Collections.sort(sortedHeaders, new HeaderComparator());
         
         StringBuilder sb = new StringBuilder();
         
