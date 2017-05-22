@@ -1,8 +1,8 @@
 package com.mypurecloud.sdk.v2.extensions.notifications;
 
-
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.api.NotificationsApi;
 import com.mypurecloud.sdk.v2.model.Channel;
@@ -35,6 +35,15 @@ public class NotificationHandler extends Object {
     }
 
     private NotificationHandler(Builder builder) throws IOException, ApiException, WebSocketException {
+        // Construct notifications API
+        if (builder.notificationsApi != null) {
+            this.notificationsApi = builder.notificationsApi;
+        } else if (builder.apiClient != null) {
+            this.notificationsApi = new NotificationsApi(builder.apiClient);
+        } else {
+            this.notificationsApi = new NotificationsApi();
+        }
+
         // Set channel
         if (builder.channel == null) {
             this.channel = notificationsApi.postNotificationsChannels();
@@ -126,6 +135,8 @@ public class NotificationHandler extends Object {
         private WebSocketListener webSocketListener;
         private Channel channel;
         private Boolean connectAsync;
+        private ApiClient apiClient;
+        private NotificationsApi notificationsApi;
 
         public static Builder standard() {
             Builder builder = new Builder();
@@ -133,6 +144,8 @@ public class NotificationHandler extends Object {
             builder.webSocketListener = null;
             builder.channel = null;
             builder.connectAsync = null;
+            builder.apiClient = null;
+            builder.notificationsApi = null;
             return builder;
         }
 
@@ -158,6 +171,16 @@ public class NotificationHandler extends Object {
 
         public Builder withAutoConnect(Boolean connectAsync) {
             this.connectAsync = connectAsync;
+            return this;
+        }
+
+        public Builder withApiClient(ApiClient apiClient) {
+            this.apiClient = apiClient;
+            return this;
+        }
+
+        public Builder withNotificationsApi(NotificationsApi notificationsApi) {
+            this.notificationsApi = notificationsApi;
             return this;
         }
 

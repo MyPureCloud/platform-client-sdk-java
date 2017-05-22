@@ -41,9 +41,9 @@ public class OkHttpResponse implements ApiClientConnectorResponse {
 
     @Override
     public boolean hasBody() {
-        ResponseBody body = response.body();
         try {
-            return (body != null && body.contentLength() > 0L);
+            String bodyString = this.readBody();
+            return (bodyString != null && !bodyString.isEmpty());
         }
         catch (IOException e) {
             return false;
