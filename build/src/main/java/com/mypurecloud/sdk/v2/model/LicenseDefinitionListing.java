@@ -24,9 +24,9 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String lastUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -134,18 +134,18 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
 
   /**
    **/
-  public LicenseDefinitionListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public LicenseDefinitionListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
 
@@ -168,18 +168,18 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
 
   /**
    **/
-  public LicenseDefinitionListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public LicenseDefinitionListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -215,15 +215,15 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
         Objects.equals(this.total, licenseDefinitionListing.total) &&
         Objects.equals(this.selfUri, licenseDefinitionListing.selfUri) &&
         Objects.equals(this.firstUri, licenseDefinitionListing.firstUri) &&
-        Objects.equals(this.lastUri, licenseDefinitionListing.lastUri) &&
-        Objects.equals(this.nextUri, licenseDefinitionListing.nextUri) &&
         Objects.equals(this.previousUri, licenseDefinitionListing.previousUri) &&
+        Objects.equals(this.nextUri, licenseDefinitionListing.nextUri) &&
+        Objects.equals(this.lastUri, licenseDefinitionListing.lastUri) &&
         Objects.equals(this.pageCount, licenseDefinitionListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, lastUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,9 +237,9 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

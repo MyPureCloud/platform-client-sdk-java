@@ -92,7 +92,7 @@ public class ApiClient implements AutoCloseable {
         connector.close();
     }
 
-    private ObjectMapper buildObjectMapper(DateFormat dateFormat) {
+    public ObjectMapper buildObjectMapper(DateFormat dateFormat) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -324,6 +324,16 @@ public class ApiClient implements AutoCloseable {
      */
     public String serialize(Object obj) throws IOException {
         return objectMapper.writeValueAsString(obj);
+    }
+
+    /**
+     * Deserialize the string into the provided type
+     * 
+     * @param obj the string to deserialize
+     * @param type the target type for deserialization
+     */
+    public <T> T deserialize(String obj, Class<T> type) throws IOException {
+        return objectMapper.readValue(obj, type);
     }
 
     /**

@@ -18,8 +18,8 @@ public class PingIdentity  implements Serializable {
   private String name = null;
   private String relyingPartyIdentifier = null;
   private String certificate = null;
-  private String ssoTargetURI = null;
   private String issuerURI = null;
+  private String ssoTargetURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -84,23 +84,6 @@ public class PingIdentity  implements Serializable {
 
   /**
    **/
-  public PingIdentity ssoTargetURI(String ssoTargetURI) {
-    this.ssoTargetURI = ssoTargetURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("ssoTargetURI")
-  public String getSsoTargetURI() {
-    return ssoTargetURI;
-  }
-  public void setSsoTargetURI(String ssoTargetURI) {
-    this.ssoTargetURI = ssoTargetURI;
-  }
-
-
-  /**
-   **/
   public PingIdentity issuerURI(String issuerURI) {
     this.issuerURI = issuerURI;
     return this;
@@ -113,6 +96,23 @@ public class PingIdentity  implements Serializable {
   }
   public void setIssuerURI(String issuerURI) {
     this.issuerURI = issuerURI;
+  }
+
+
+  /**
+   **/
+  public PingIdentity ssoTargetURI(String ssoTargetURI) {
+    this.ssoTargetURI = ssoTargetURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("ssoTargetURI")
+  public String getSsoTargetURI() {
+    return ssoTargetURI;
+  }
+  public void setSsoTargetURI(String ssoTargetURI) {
+    this.ssoTargetURI = ssoTargetURI;
   }
 
 
@@ -153,15 +153,15 @@ public class PingIdentity  implements Serializable {
         Objects.equals(this.name, pingIdentity.name) &&
         Objects.equals(this.relyingPartyIdentifier, pingIdentity.relyingPartyIdentifier) &&
         Objects.equals(this.certificate, pingIdentity.certificate) &&
-        Objects.equals(this.ssoTargetURI, pingIdentity.ssoTargetURI) &&
         Objects.equals(this.issuerURI, pingIdentity.issuerURI) &&
+        Objects.equals(this.ssoTargetURI, pingIdentity.ssoTargetURI) &&
         Objects.equals(this.disabled, pingIdentity.disabled) &&
         Objects.equals(this.selfUri, pingIdentity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, relyingPartyIdentifier, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
+    return Objects.hash(id, name, relyingPartyIdentifier, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
   }
 
   @Override
@@ -173,8 +173,8 @@ public class PingIdentity  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
+    sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
