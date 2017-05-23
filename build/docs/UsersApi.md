@@ -1103,7 +1103,7 @@ try {
 
 # **getUsers**
 
-> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, sortOrder, expand)
+> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, sortOrder, expand, state)
 
 Get the list of available users.
 
@@ -1133,8 +1133,9 @@ Integer pageNumber = 1; // Integer | Page number
 List<String> id = Arrays.asList("id_example"); // List<String> | id
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String state = "active"; // String | Only list users of this state
 try {
-    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, sortOrder, expand);
+    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, sortOrder, expand, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -1152,6 +1153,7 @@ try {
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC] [enum: ascending, descending] |
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **state** | **String**| Only list users of this state | [optional] [default to active] [enum: active, deleted] |
 {: class="table table-striped"}
 
 ### Return type

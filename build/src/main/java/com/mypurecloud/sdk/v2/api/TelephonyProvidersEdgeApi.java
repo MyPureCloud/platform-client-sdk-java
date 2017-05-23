@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.VmPairingInfo;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareUpdateDto;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareVersionDtoEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableLanguageList;
 import com.mypurecloud.sdk.v2.model.CertificateAuthorityEntityListing;
@@ -64,7 +65,6 @@ import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
-import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
@@ -106,6 +106,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinter
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSetuppackageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareupdateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareversionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesAvailablelanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthoritiesRequest;
@@ -2575,6 +2576,107 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param edgeId Edge ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Value by which to sort (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param trunkBaseId Filter by Trunk Base Ids (optional)
+   * @param trunkType Filter by a Trunk type (optional)
+   * @return TrunkEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkEntityListing getTelephonyProvidersEdgeTrunks(String edgeId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String trunkBaseId, String trunkType) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeTrunks(createGetTelephonyProvidersEdgeTrunksRequest(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType));
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param edgeId Edge ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Value by which to sort (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param trunkBaseId Filter by Trunk Base Ids (optional)
+   * @param trunkType Filter by a Trunk type (optional)
+   * @return TrunkEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgeTrunksWithHttpInfo(String edgeId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String trunkBaseId, String trunkType) throws IOException {
+    return getTelephonyProvidersEdgeTrunks(createGetTelephonyProvidersEdgeTrunksRequest(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeTrunksRequest createGetTelephonyProvidersEdgeTrunksRequest(String edgeId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String trunkBaseId, String trunkType) {
+    return GetTelephonyProvidersEdgeTrunksRequest.builder()
+            .withEdgeId(edgeId)
+
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withTrunkBaseId(trunkBaseId)
+
+            .withTrunkType(trunkType)
+            .build();
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param request The request object
+   * @return TrunkEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkEntityListing getTelephonyProvidersEdgeTrunks(GetTelephonyProvidersEdgeTrunksRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkEntityListing> getTelephonyProvidersEdgeTrunks(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

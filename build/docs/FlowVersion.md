@@ -14,7 +14,7 @@ title: FlowVersion
 | **configurationVersion** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **secure** | **Boolean** |  |  [optional] |
-| **createdBy** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **createdBy** | [**User**](User.html) |  |  [optional] |
 | **configurationUri** | **String** |  |  [optional] |
 | **dateCreated** | **Long** |  |  [optional] |
 | **generationId** | **String** |  |  [optional] |

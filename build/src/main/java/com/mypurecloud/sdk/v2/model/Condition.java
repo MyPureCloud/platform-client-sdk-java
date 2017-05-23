@@ -27,7 +27,8 @@ public class Condition  implements Serializable {
     CONTACTATTRIBUTECONDITION("contactAttributeCondition"),
     PHONENUMBERCONDITION("phoneNumberCondition"),
     PHONENUMBERTYPECONDITION("phoneNumberTypeCondition"),
-    CALLANALYSISCONDITION("callAnalysisCondition");
+    CALLANALYSISCONDITION("callAnalysisCondition"),
+    CONTACTPROPERTYCONDITION("contactPropertyCondition");
 
     private String value;
 
@@ -196,14 +197,14 @@ public class Condition  implements Serializable {
 
 
   /**
-   * A value associated with the condition
+   * A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
    **/
   public Condition value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A value associated with the condition")
+  @ApiModelProperty(example = "null", value = "A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
   @JsonProperty("value")
   public String getValue() {
     return value;

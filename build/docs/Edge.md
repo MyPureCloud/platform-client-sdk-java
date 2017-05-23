@@ -19,7 +19,7 @@ title: Edge
 | **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
 | **modifiedByApp** | **String** |  |  [optional] |
 | **createdByApp** | **String** |  |  [optional] |
-| **interfaces** | [**List&lt;EdgeInterface&gt;**](EdgeInterface.html) |  |  [optional] |
+| **interfaces** | [**List&lt;EdgeInterface&gt;**](EdgeInterface.html) | The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead |  [optional] |
 | **make** | **String** |  |  [optional] |
 | **model** | **String** |  |  [optional] |
 | **apiVersion** | **String** |  |  [optional] |

@@ -118,6 +118,20 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	private String state;
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public GetUsersRequest withState(String state) {
+	    this.setState(state);
+	    return this;
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,6 +164,8 @@ public class GetUsersRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
+        
+                .withQueryParameters("state", "", state)
                         .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -187,6 +203,10 @@ public class GetUsersRequest {
 		}
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
+			return this;
+		}
+		public Builder withState(String state) {
+			request.setState(state);
 			return this;
 		}
 

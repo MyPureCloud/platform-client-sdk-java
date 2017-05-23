@@ -171,6 +171,7 @@ public class CobrowseMediaParticipant  implements Serializable {
   private UriReference externalContact = null;
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
+  private String peer = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private List<String> controlling = new ArrayList<String>();
@@ -629,6 +630,24 @@ public class CobrowseMediaParticipant  implements Serializable {
 
 
   /**
+   * The peer communication corresponding to a matching leg for this communication.
+   **/
+  public CobrowseMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
    * The co-browse session ID.
    **/
   public CobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -752,6 +771,7 @@ public class CobrowseMediaParticipant  implements Serializable {
         Objects.equals(this.externalContact, cobrowseMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, cobrowseMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, cobrowseMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, cobrowseMediaParticipant.peer) &&
         Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
@@ -761,7 +781,7 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
   }
 
   @Override
@@ -794,6 +814,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");

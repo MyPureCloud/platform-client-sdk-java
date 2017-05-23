@@ -12,7 +12,7 @@ title: Flow
 | **name** | **String** | The flow name |  |
 | **description** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **lockedUser** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **lockedUser** | [**User**](User.html) |  |  [optional] |
 | **active** | **Boolean** |  |  [optional] |
 | **system** | **Boolean** |  |  [optional] |
 | **deleted** | **Boolean** |  |  [optional] |
@@ -21,7 +21,7 @@ title: Flow
 | **inputSchema** | **Object** | json schema describing the inputs for the flow |  [optional] |
 | **outputSchema** | **Object** | json schema describing the outputs for the flow |  [optional] |
 | **checkedInVersion** | [**FlowVersion**](FlowVersion.html) |  |  [optional] |
-| **publishedBy** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **publishedBy** | [**User**](User.html) |  |  [optional] |
 | **currentOperation** | [**Operation**](Operation.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

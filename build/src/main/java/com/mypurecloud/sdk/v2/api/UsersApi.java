@@ -1701,12 +1701,13 @@ public class UsersApi {
    * @param id id (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand));
+  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
+    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand, state));
   }
 
   /**
@@ -1717,14 +1718,15 @@ public class UsersApi {
    * @param id id (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) throws IOException {
-    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand).withHttpInfo());
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) throws IOException {
+    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand, state).withHttpInfo());
   }
 
-  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand) {
+  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) {
     return GetUsersRequest.builder()
             .withPageSize(pageSize)
 
@@ -1735,6 +1737,8 @@ public class UsersApi {
             .withSortOrder(sortOrder)
 
             .withExpand(expand)
+
+            .withState(state)
             .build();
   }
 

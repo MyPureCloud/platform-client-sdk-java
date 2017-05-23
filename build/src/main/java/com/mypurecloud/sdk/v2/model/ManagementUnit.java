@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -60,6 +61,7 @@ public class ManagementUnit  implements Serializable {
   private StartDayOfWeekEnum startDayOfWeek = null;
   private String timezone = null;
   private Integer version = null;
+  private Date dateModified = null;
   private String selfUri = null;
 
   
@@ -141,6 +143,24 @@ public class ManagementUnit  implements Serializable {
   }
 
 
+  /**
+   * The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ManagementUnit dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -162,12 +182,13 @@ public class ManagementUnit  implements Serializable {
         Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
         Objects.equals(this.timezone, managementUnit.timezone) &&
         Objects.equals(this.version, managementUnit.version) &&
+        Objects.equals(this.dateModified, managementUnit.dateModified) &&
         Objects.equals(this.selfUri, managementUnit.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startDayOfWeek, timezone, version, selfUri);
+    return Objects.hash(id, name, startDayOfWeek, timezone, version, dateModified, selfUri);
   }
 
   @Override
@@ -180,6 +201,7 @@ public class ManagementUnit  implements Serializable {
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

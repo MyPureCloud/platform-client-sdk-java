@@ -33,6 +33,7 @@ title: ChatMediaParticipant
 | **externalContact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
+| **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **roomId** | **String** | The ID of the chat room. |  [optional] |
 {: class="table table-striped"}
 

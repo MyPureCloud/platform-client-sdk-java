@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,6 +22,7 @@ public class EncryptionKey  implements Serializable {
   private Date createDate = null;
   private String keydataSummary = null;
   private User user = null;
+  private LocalEncryptionConfiguration localEncryptionConfiguration = null;
   private String selfUri = null;
 
   
@@ -102,6 +104,24 @@ public class EncryptionKey  implements Serializable {
   }
 
 
+  /**
+   * Local configuration
+   **/
+  public EncryptionKey localEncryptionConfiguration(LocalEncryptionConfiguration localEncryptionConfiguration) {
+    this.localEncryptionConfiguration = localEncryptionConfiguration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Local configuration")
+  @JsonProperty("localEncryptionConfiguration")
+  public LocalEncryptionConfiguration getLocalEncryptionConfiguration() {
+    return localEncryptionConfiguration;
+  }
+  public void setLocalEncryptionConfiguration(LocalEncryptionConfiguration localEncryptionConfiguration) {
+    this.localEncryptionConfiguration = localEncryptionConfiguration;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -123,12 +143,13 @@ public class EncryptionKey  implements Serializable {
         Objects.equals(this.createDate, encryptionKey.createDate) &&
         Objects.equals(this.keydataSummary, encryptionKey.keydataSummary) &&
         Objects.equals(this.user, encryptionKey.user) &&
+        Objects.equals(this.localEncryptionConfiguration, encryptionKey.localEncryptionConfiguration) &&
         Objects.equals(this.selfUri, encryptionKey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createDate, keydataSummary, user, selfUri);
+    return Objects.hash(id, name, createDate, keydataSummary, user, localEncryptionConfiguration, selfUri);
   }
 
   @Override
@@ -141,6 +162,7 @@ public class EncryptionKey  implements Serializable {
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    keydataSummary: ").append(toIndentedString(keydataSummary)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    localEncryptionConfiguration: ").append(toIndentedString(localEncryptionConfiguration)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

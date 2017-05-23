@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
+import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
@@ -125,13 +126,13 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<LocationDefinition>> getLocationsAsync(GetLocationsRequest request, final AsyncApiCallback<List<LocationDefinition>> callback) {
+  public Future<LocationEntityListing> getLocationsAsync(GetLocationsRequest request, final AsyncApiCallback<LocationEntityListing> callback) {
     try {
-      final SettableFuture<List<LocationDefinition>> future = SettableFuture.create();
+      final SettableFuture<LocationEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LocationDefinition>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LocationEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<LocationDefinition>> response) {
+        public void onCompleted(ApiResponse<LocationEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -159,13 +160,13 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<LocationDefinition>>> getLocationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<LocationDefinition>>> callback) {
+  public Future<ApiResponse<LocationEntityListing>> getLocationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocationEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<LocationDefinition>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<LocationEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<LocationDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LocationDefinition>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<LocationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LocationEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<LocationDefinition>> response) {
+        public void onCompleted(ApiResponse<LocationEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -173,7 +174,7 @@ public class LocationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)exception;
+            ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -181,7 +182,7 @@ public class LocationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

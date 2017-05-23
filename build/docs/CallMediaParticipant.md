@@ -33,6 +33,7 @@ title: CallMediaParticipant
 | **externalContact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
+| **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **muted** | **Boolean** | Value is true when the call is muted. |  [optional] |
 | **confined** | **Boolean** | Value is true when the call is confined. |  [optional] |
 | **recording** | **Boolean** | Value is true when the call is being recorded. |  [optional] |

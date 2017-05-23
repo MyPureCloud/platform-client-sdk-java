@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerPreview;
 import com.mypurecloud.sdk.v2.model.Segment;
+import com.mypurecloud.sdk.v2.model.Voicemail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -151,6 +152,7 @@ public class CallbackBasic  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
   private DialerPreview dialerPreview = null;
+  private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
@@ -161,6 +163,7 @@ public class CallbackBasic  implements Serializable {
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
   private String provider = null;
+  private String peerId = null;
 
   
   /**
@@ -304,6 +307,24 @@ public class CallbackBasic  implements Serializable {
   }
   public void setDialerPreview(DialerPreview dialerPreview) {
     this.dialerPreview = dialerPreview;
+  }
+
+
+  /**
+   * The voicemail data to be used when this callback is an ACD voicemail.
+   **/
+  public CallbackBasic voicemail(Voicemail voicemail) {
+    this.voicemail = voicemail;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The voicemail data to be used when this callback is an ACD voicemail.")
+  @JsonProperty("voicemail")
+  public Voicemail getVoicemail() {
+    return voicemail;
+  }
+  public void setVoicemail(Voicemail voicemail) {
+    this.voicemail = voicemail;
   }
 
 
@@ -487,6 +508,24 @@ public class CallbackBasic  implements Serializable {
   }
 
 
+  /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
+   **/
+  public CallbackBasic peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -504,6 +543,7 @@ public class CallbackBasic  implements Serializable {
         Objects.equals(this.disconnectType, callbackBasic.disconnectType) &&
         Objects.equals(this.startHoldTime, callbackBasic.startHoldTime) &&
         Objects.equals(this.dialerPreview, callbackBasic.dialerPreview) &&
+        Objects.equals(this.voicemail, callbackBasic.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackBasic.callbackNumbers) &&
         Objects.equals(this.callbackUserName, callbackBasic.callbackUserName) &&
         Objects.equals(this.scriptId, callbackBasic.scriptId) &&
@@ -513,12 +553,13 @@ public class CallbackBasic  implements Serializable {
         Objects.equals(this.disconnectedTime, callbackBasic.disconnectedTime) &&
         Objects.equals(this.callbackScheduledTime, callbackBasic.callbackScheduledTime) &&
         Objects.equals(this.automatedCallbackConfigId, callbackBasic.automatedCallbackConfigId) &&
-        Objects.equals(this.provider, callbackBasic.provider);
+        Objects.equals(this.provider, callbackBasic.provider) &&
+        Objects.equals(this.peerId, callbackBasic.peerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, callbackNumbers, callbackUserName, scriptId, skipEnabled, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider);
+    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
   }
 
   @Override
@@ -534,6 +575,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    dialerPreview: ").append(toIndentedString(dialerPreview)).append("\n");
+    sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
@@ -544,6 +586,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

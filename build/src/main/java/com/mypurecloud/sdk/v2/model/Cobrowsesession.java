@@ -119,6 +119,7 @@ public class Cobrowsesession  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String peerId = null;
   private List<Segment> segments = new ArrayList<Segment>();
 
   
@@ -339,6 +340,24 @@ public class Cobrowsesession  implements Serializable {
 
 
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
+   **/
+  public Cobrowsesession peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
    * The time line of the participant's call, divided into activity segments.
    **/
   public Cobrowsesession segments(List<Segment> segments) {
@@ -377,12 +396,13 @@ public class Cobrowsesession  implements Serializable {
         Objects.equals(this.connectedTime, cobrowsesession.connectedTime) &&
         Objects.equals(this.disconnectedTime, cobrowsesession.disconnectedTime) &&
         Objects.equals(this.provider, cobrowsesession.provider) &&
+        Objects.equals(this.peerId, cobrowsesession.peerId) &&
         Objects.equals(this.segments, cobrowsesession.segments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, connectedTime, disconnectedTime, provider, segments);
+    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, connectedTime, disconnectedTime, provider, peerId, segments);
   }
 
   @Override
@@ -402,6 +422,7 @@ public class Cobrowsesession  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("}");
     return sb.toString();

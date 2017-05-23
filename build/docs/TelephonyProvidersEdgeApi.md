@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgeSetuppackage**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSetuppackage) | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge. |
 | [**getTelephonyProvidersEdgeSoftwareupdate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSoftwareupdate) | Gets software update status information about any edge. |
 | [**getTelephonyProvidersEdgeSoftwareversions**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSoftwareversions) | Gets all the available software versions for this edge. |
+| [**getTelephonyProvidersEdgeTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeTrunks) | Get the list of available trunks for the given Edge. |
 | [**getTelephonyProvidersEdges**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdges) | Get the list of edges. |
 | [**getTelephonyProvidersEdgesAvailablelanguages**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesAvailablelanguages) | Get the list of available languages. |
 | [**getTelephonyProvidersEdgesCertificateauthorities**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesCertificateauthorities) | Get the list of certificate authorities. |
@@ -1692,6 +1693,69 @@ try {
 ### Return type
 
 [**DomainEdgeSoftwareVersionDtoEntityListing**](DomainEdgeSoftwareVersionDtoEntityListing.html)
+
+<a name="getTelephonyProvidersEdgeTrunks"></a>
+
+# **getTelephonyProvidersEdgeTrunks**
+
+> [TrunkEntityListing](TrunkEntityListing.html) getTelephonyProvidersEdgeTrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)
+
+Get the list of available trunks for the given Edge.
+
+Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/trunks  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String edgeId = "edgeId_example"; // String | Edge ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Value by which to sort
+String sortOrder = "ASC"; // String | Sort order
+String trunkBaseId = "trunkBaseId_example"; // String | Filter by Trunk Base Ids
+String trunkType = "trunkType_example"; // String | Filter by a Trunk type
+try {
+    TrunkEntityListing result = apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeTrunks");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **edgeId** | **String**| Edge ID | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] |
+| **trunkType** | **String**| Filter by a Trunk type | [optional] [enum: EXTERNAL, PHONE, EDGE] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkEntityListing**](TrunkEntityListing.html)
 
 <a name="getTelephonyProvidersEdges"></a>
 

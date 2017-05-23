@@ -429,13 +429,14 @@ public class Edge  implements Serializable {
 
 
   /**
+   * The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
    **/
   public Edge interfaces(List<EdgeInterface> interfaces) {
     this.interfaces = interfaces;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead")
   @JsonProperty("interfaces")
   public List<EdgeInterface> getInterfaces() {
     return interfaces;

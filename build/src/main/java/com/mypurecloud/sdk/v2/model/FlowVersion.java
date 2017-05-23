@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -57,7 +57,7 @@ public class FlowVersion  implements Serializable {
   }
   private TypeEnum type = null;
   private Boolean secure = null;
-  private UriReference createdBy = null;
+  private User createdBy = null;
   private String configurationUri = null;
   private Long dateCreated = null;
   private String generationId = null;
@@ -159,17 +159,17 @@ public class FlowVersion  implements Serializable {
 
   /**
    **/
-  public FlowVersion createdBy(UriReference createdBy) {
+  public FlowVersion createdBy(User createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public User getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(User createdBy) {
     this.createdBy = createdBy;
   }
 

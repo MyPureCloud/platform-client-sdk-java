@@ -20,12 +20,12 @@ import java.io.Serializable;
 public class JsonSchemaDocument  implements Serializable {
   
   private String id = null;
+  private String schema = null;
   private String title = null;
   private String description = null;
   private String type = null;
   private List<String> required = new ArrayList<String>();
   private Map<String, Object> properties = new HashMap<String, Object>();
-  private String schema = null;
 
   
   /**
@@ -42,6 +42,23 @@ public class JsonSchemaDocument  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public JsonSchemaDocument schema(String schema) {
+    this.schema = schema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("$schema")
+  public String getSchema() {
+    return schema;
+  }
+  public void setSchema(String schema) {
+    this.schema = schema;
   }
 
 
@@ -130,23 +147,6 @@ public class JsonSchemaDocument  implements Serializable {
   }
 
 
-  /**
-   **/
-  public JsonSchemaDocument schema(String schema) {
-    this.schema = schema;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("$schema")
-  public String getSchema() {
-    return schema;
-  }
-  public void setSchema(String schema) {
-    this.schema = schema;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -157,17 +157,17 @@ public class JsonSchemaDocument  implements Serializable {
     }
     JsonSchemaDocument jsonSchemaDocument = (JsonSchemaDocument) o;
     return Objects.equals(this.id, jsonSchemaDocument.id) &&
+        Objects.equals(this.schema, jsonSchemaDocument.schema) &&
         Objects.equals(this.title, jsonSchemaDocument.title) &&
         Objects.equals(this.description, jsonSchemaDocument.description) &&
         Objects.equals(this.type, jsonSchemaDocument.type) &&
         Objects.equals(this.required, jsonSchemaDocument.required) &&
-        Objects.equals(this.properties, jsonSchemaDocument.properties) &&
-        Objects.equals(this.schema, jsonSchemaDocument.schema);
+        Objects.equals(this.properties, jsonSchemaDocument.properties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, description, type, required, properties, schema);
+    return Objects.hash(id, schema, title, description, type, required, properties);
   }
 
   @Override
@@ -176,12 +176,12 @@ public class JsonSchemaDocument  implements Serializable {
     sb.append("class JsonSchemaDocument {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
-    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("}");
     return sb.toString();
   }

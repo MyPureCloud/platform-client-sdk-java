@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerPreview;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.Voicemail;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -172,7 +173,9 @@ public class CallbackMediaParticipant  implements Serializable {
   private UriReference externalContact = null;
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
+  private String peer = null;
   private DialerPreview outboundPreview = null;
+  private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
@@ -632,6 +635,24 @@ public class CallbackMediaParticipant  implements Serializable {
 
 
   /**
+   * The peer communication corresponding to a matching leg for this communication.
+   **/
+  public CallbackMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
    * The outbound preview associated with this callback.
    **/
   public CallbackMediaParticipant outboundPreview(DialerPreview outboundPreview) {
@@ -646,6 +667,24 @@ public class CallbackMediaParticipant  implements Serializable {
   }
   public void setOutboundPreview(DialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
+  }
+
+
+  /**
+   * The voicemail associated with this callback.
+   **/
+  public CallbackMediaParticipant voicemail(Voicemail voicemail) {
+    this.voicemail = voicemail;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The voicemail associated with this callback.")
+  @JsonProperty("voicemail")
+  public Voicemail getVoicemail() {
+    return voicemail;
+  }
+  public void setVoicemail(Voicemail voicemail) {
+    this.voicemail = voicemail;
   }
 
 
@@ -791,7 +830,9 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.externalContact, callbackMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callbackMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, callbackMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, callbackMediaParticipant.peer) &&
         Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
+        Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
         Objects.equals(this.callbackUserName, callbackMediaParticipant.callbackUserName) &&
         Objects.equals(this.skipEnabled, callbackMediaParticipant.skipEnabled) &&
@@ -802,7 +843,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, outboundPreview, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -835,7 +876,9 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
+    sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");

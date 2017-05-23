@@ -6,6 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -17,6 +19,7 @@ public class VoicemailMediaInfo  implements Serializable {
   private String id = null;
   private String mediaFileUri = null;
   private String mediaImageUri = null;
+  private List<Float> waveformData = new ArrayList<Float>();
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -60,6 +63,23 @@ public class VoicemailMediaInfo  implements Serializable {
   }
 
 
+  /**
+   **/
+  public VoicemailMediaInfo waveformData(List<Float> waveformData) {
+    this.waveformData = waveformData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("waveformData")
+  public List<Float> getWaveformData() {
+    return waveformData;
+  }
+  public void setWaveformData(List<Float> waveformData) {
+    this.waveformData = waveformData;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -71,12 +91,13 @@ public class VoicemailMediaInfo  implements Serializable {
     VoicemailMediaInfo voicemailMediaInfo = (VoicemailMediaInfo) o;
     return Objects.equals(this.id, voicemailMediaInfo.id) &&
         Objects.equals(this.mediaFileUri, voicemailMediaInfo.mediaFileUri) &&
-        Objects.equals(this.mediaImageUri, voicemailMediaInfo.mediaImageUri);
+        Objects.equals(this.mediaImageUri, voicemailMediaInfo.mediaImageUri) &&
+        Objects.equals(this.waveformData, voicemailMediaInfo.waveformData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mediaFileUri, mediaImageUri);
+    return Objects.hash(id, mediaFileUri, mediaImageUri, waveformData);
   }
 
   @Override
@@ -87,6 +108,7 @@ public class VoicemailMediaInfo  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    mediaFileUri: ").append(toIndentedString(mediaFileUri)).append("\n");
     sb.append("    mediaImageUri: ").append(toIndentedString(mediaImageUri)).append("\n");
+    sb.append("    waveformData: ").append(toIndentedString(waveformData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

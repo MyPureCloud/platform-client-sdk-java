@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.VmPairingInfo;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareUpdateDto;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareVersionDtoEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableLanguageList;
 import com.mypurecloud.sdk.v2.model.CertificateAuthorityEntityListing;
@@ -67,7 +68,6 @@ import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
-import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
@@ -109,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinter
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSetuppackageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareupdateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSoftwareversionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesAvailablelanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificateauthoritiesRequest;
@@ -2458,6 +2459,81 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing> response = (ApiResponse<DomainEdgeSoftwareVersionDtoEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkEntityListing> getTelephonyProvidersEdgeTrunksAsync(GetTelephonyProvidersEdgeTrunksRequest request, final AsyncApiCallback<TrunkEntityListing> callback) {
+    try {
+      final SettableFuture<TrunkEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of available trunks for the given Edge.
+   * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkEntityListing>> getTelephonyProvidersEdgeTrunksAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrunkEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

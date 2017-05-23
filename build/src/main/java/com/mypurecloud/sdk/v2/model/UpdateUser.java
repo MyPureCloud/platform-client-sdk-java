@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -36,6 +37,42 @@ public class UpdateUser  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+
+  /**
+   * The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.
+   */
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("active"),
+    INACTIVE("inactive"),
+    DELETED("deleted");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
   private String selfUri = null;
 
   
@@ -218,14 +255,14 @@ public class UpdateUser  implements Serializable {
 
 
   /**
-   * Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
+   * This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH.
    **/
   public UpdateUser version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.")
+  @ApiModelProperty(example = "null", required = true, value = "This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -289,6 +326,24 @@ public class UpdateUser  implements Serializable {
   }
 
 
+  /**
+   * The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.
+   **/
+  public UpdateUser state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -320,12 +375,13 @@ public class UpdateUser  implements Serializable {
         Objects.equals(this.profileSkills, updateUser.profileSkills) &&
         Objects.equals(this.locations, updateUser.locations) &&
         Objects.equals(this.groups, updateUser.groups) &&
+        Objects.equals(this.state, updateUser.state) &&
         Objects.equals(this.selfUri, updateUser.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, selfUri);
   }
 
   @Override
@@ -348,6 +404,7 @@ public class UpdateUser  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

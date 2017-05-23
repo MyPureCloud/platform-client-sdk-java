@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.Operation;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -61,7 +61,7 @@ public class Flow  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private UriReference lockedUser = null;
+  private User lockedUser = null;
   private Boolean active = null;
   private Boolean system = null;
   private Boolean deleted = null;
@@ -70,7 +70,7 @@ public class Flow  implements Serializable {
   private Object inputSchema = null;
   private Object outputSchema = null;
   private FlowVersion checkedInVersion = null;
-  private UriReference publishedBy = null;
+  private User publishedBy = null;
   private Operation currentOperation = null;
   private String selfUri = null;
 
@@ -136,17 +136,17 @@ public class Flow  implements Serializable {
 
   /**
    **/
-  public Flow lockedUser(UriReference lockedUser) {
+  public Flow lockedUser(User lockedUser) {
     this.lockedUser = lockedUser;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lockedUser")
-  public UriReference getLockedUser() {
+  public User getLockedUser() {
     return lockedUser;
   }
-  public void setLockedUser(UriReference lockedUser) {
+  public void setLockedUser(User lockedUser) {
     this.lockedUser = lockedUser;
   }
 
@@ -291,17 +291,17 @@ public class Flow  implements Serializable {
 
   /**
    **/
-  public Flow publishedBy(UriReference publishedBy) {
+  public Flow publishedBy(User publishedBy) {
     this.publishedBy = publishedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("publishedBy")
-  public UriReference getPublishedBy() {
+  public User getPublishedBy() {
     return publishedBy;
   }
-  public void setPublishedBy(UriReference publishedBy) {
+  public void setPublishedBy(User publishedBy) {
     this.publishedBy = publishedBy;
   }
 

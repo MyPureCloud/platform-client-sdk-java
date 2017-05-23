@@ -68,7 +68,7 @@ try {
 
 # **getLocations**
 
-> [List&lt;LocationDefinition&gt;](LocationDefinition.html) getLocations(pageSize, pageNumber, sortOrder)
+> [LocationEntityListing](LocationEntityListing.html) getLocations(pageSize, pageNumber, sortOrder)
 
 Get a list of all locations.
 
@@ -97,7 +97,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "sortOrder_example"; // String | Sort order
 try {
-    List<LocationDefinition> result = apiInstance.getLocations(pageSize, pageNumber, sortOrder);
+    LocationEntityListing result = apiInstance.getLocations(pageSize, pageNumber, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LocationsApi#getLocations");
@@ -117,7 +117,7 @@ try {
 
 ### Return type
 
-[**List&lt;LocationDefinition&gt;**](LocationDefinition.html)
+[**LocationEntityListing**](LocationEntityListing.html)
 
 <a name="getLocationsSearch"></a>
 

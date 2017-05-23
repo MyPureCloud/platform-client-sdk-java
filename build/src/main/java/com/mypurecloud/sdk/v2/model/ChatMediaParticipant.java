@@ -170,6 +170,7 @@ public class ChatMediaParticipant  implements Serializable {
   private UriReference externalContact = null;
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
+  private String peer = null;
   private String roomId = null;
 
   
@@ -624,6 +625,24 @@ public class ChatMediaParticipant  implements Serializable {
 
 
   /**
+   * The peer communication corresponding to a matching leg for this communication.
+   **/
+  public ChatMediaParticipant peer(String peer) {
+    this.peer = peer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peer")
+  public String getPeer() {
+    return peer;
+  }
+  public void setPeer(String peer) {
+    this.peer = peer;
+  }
+
+
+  /**
    * The ID of the chat room.
    **/
   public ChatMediaParticipant roomId(String roomId) {
@@ -675,12 +694,13 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.externalContact, chatMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, chatMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, chatMediaParticipant.wrapup) &&
+        Objects.equals(this.peer, chatMediaParticipant.peer) &&
         Objects.equals(this.roomId, chatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, roomId);
   }
 
   @Override
@@ -713,6 +733,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

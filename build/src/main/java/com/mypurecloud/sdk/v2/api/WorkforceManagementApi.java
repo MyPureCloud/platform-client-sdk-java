@@ -138,7 +138,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes corresponding to a management unit
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -150,7 +150,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes corresponding to a management unit
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws IOException if the request fails to be processed
    */
@@ -215,7 +215,7 @@ public class WorkforceManagementApi {
   /**
    * Get intraday queues for the given date
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
    * @return WfmIntradayQueueListing
    * @throws ApiException if the request fails on the server
@@ -228,7 +228,7 @@ public class WorkforceManagementApi {
   /**
    * Get intraday queues for the given date
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param date ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 (required)
    * @return WfmIntradayQueueListing
    * @throws IOException if the request fails to be processed
@@ -296,7 +296,7 @@ public class WorkforceManagementApi {
   /**
    * Get a time off request by id
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
@@ -310,7 +310,7 @@ public class WorkforceManagementApi {
   /**
    * Get a time off request by id
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequest
@@ -381,7 +381,7 @@ public class WorkforceManagementApi {
   /**
    * Get a list of time off requests for any user
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -395,7 +395,7 @@ public class WorkforceManagementApi {
   /**
    * Get a list of time off requests for any user
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -466,7 +466,7 @@ public class WorkforceManagementApi {
   /**
    * Get agents in the management unit
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -478,7 +478,7 @@ public class WorkforceManagementApi {
   /**
    * Get agents in the management unit
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -860,7 +860,7 @@ public class WorkforceManagementApi {
   /**
    * Get intraday data for the given date for the requested queueIds
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return IntradayResponse
    * @throws ApiException if the request fails on the server
@@ -873,7 +873,7 @@ public class WorkforceManagementApi {
   /**
    * Get intraday data for the given date for the requested queueIds
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return IntradayResponse
    * @throws IOException if the request fails to be processed
@@ -941,7 +941,7 @@ public class WorkforceManagementApi {
   /**
    * Get user schedules within the given time range
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
@@ -954,7 +954,7 @@ public class WorkforceManagementApi {
   /**
    * Get user schedules within the given time range
    * 
-   * @param muId The muId of the management unit. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed

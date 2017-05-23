@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
+import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
@@ -122,11 +123,11 @@ public class LocationsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional)
-   * @return List<LocationDefinition>
+   * @return LocationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<LocationDefinition> getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+  public LocationEntityListing getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
     return  getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder));
   }
 
@@ -136,10 +137,10 @@ public class LocationsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Sort order (optional)
-   * @return List<LocationDefinition>
+   * @return LocationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<LocationDefinition>> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+  public ApiResponse<LocationEntityListing> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
     return getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
   }
 
@@ -157,13 +158,13 @@ public class LocationsApi {
    * Get a list of all locations.
    * 
    * @param request The request object
-   * @return List<LocationDefinition>
+   * @return LocationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<LocationDefinition> getLocations(GetLocationsRequest request) throws IOException, ApiException {
+  public LocationEntityListing getLocations(GetLocationsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<LocationDefinition>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<LocationDefinition>>() {});
+      ApiResponse<LocationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -179,13 +180,13 @@ public class LocationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<LocationDefinition>> getLocations(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LocationEntityListing> getLocations(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<LocationDefinition>>() {});
+      return pcapiClient.invoke(request, new TypeReference<LocationEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)exception;
+      ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -196,7 +197,7 @@ public class LocationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<LocationDefinition>> response = (ApiResponse<List<LocationDefinition>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

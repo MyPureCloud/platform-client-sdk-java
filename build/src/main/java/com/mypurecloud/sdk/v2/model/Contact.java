@@ -94,6 +94,7 @@ public class Contact  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private String extension = null;
 
   
   /**
@@ -155,6 +156,24 @@ public class Contact  implements Serializable {
   }
 
 
+  /**
+   * Use extension instead of address for setting internal extensions
+   **/
+  public Contact extension(String extension) {
+    this.extension = extension;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Use extension instead of address for setting internal extensions")
+  @JsonProperty("extension")
+  public String getExtension() {
+    return extension;
+  }
+  public void setExtension(String extension) {
+    this.extension = extension;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -167,12 +186,13 @@ public class Contact  implements Serializable {
     return Objects.equals(this.address, contact.address) &&
         Objects.equals(this.display, contact.display) &&
         Objects.equals(this.mediaType, contact.mediaType) &&
-        Objects.equals(this.type, contact.type);
+        Objects.equals(this.type, contact.type) &&
+        Objects.equals(this.extension, contact.extension);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, display, mediaType, type);
+    return Objects.hash(address, display, mediaType, type, extension);
   }
 
   @Override
@@ -184,6 +204,7 @@ public class Contact  implements Serializable {
     sb.append("    display: ").append(toIndentedString(display)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -148,6 +148,7 @@ public class ConversationChat  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String peerId = null;
 
   
   /**
@@ -366,6 +367,24 @@ public class ConversationChat  implements Serializable {
   }
 
 
+  /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
+   **/
+  public ConversationChat peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -386,12 +405,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.startHoldTime, conversationChat.startHoldTime) &&
         Objects.equals(this.connectedTime, conversationChat.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
-        Objects.equals(this.provider, conversationChat.provider);
+        Objects.equals(this.provider, conversationChat.provider) &&
+        Objects.equals(this.peerId, conversationChat.peerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, peerId);
   }
 
   @Override
@@ -411,6 +431,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

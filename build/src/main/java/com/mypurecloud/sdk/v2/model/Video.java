@@ -115,6 +115,7 @@ public class Video  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String peerId = null;
 
   
   /**
@@ -315,6 +316,24 @@ public class Video  implements Serializable {
   }
 
 
+  /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
+   **/
+  public Video peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -334,12 +353,13 @@ public class Video  implements Serializable {
         Objects.equals(this.disconnectType, video.disconnectType) &&
         Objects.equals(this.connectedTime, video.connectedTime) &&
         Objects.equals(this.disconnectedTime, video.disconnectedTime) &&
-        Objects.equals(this.provider, video.provider);
+        Objects.equals(this.provider, video.provider) &&
+        Objects.equals(this.peerId, video.peerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, connectedTime, disconnectedTime, provider);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId);
   }
 
   @Override
@@ -358,6 +378,7 @@ public class Video  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

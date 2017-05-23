@@ -116,6 +116,7 @@ public class Screenshare  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String peerId = null;
   private List<Segment> segments = new ArrayList<Segment>();
 
   
@@ -282,6 +283,24 @@ public class Screenshare  implements Serializable {
 
 
   /**
+   * The id of the peer communication corresponding to a matching leg for this communication.
+   **/
+  public Screenshare peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the peer communication corresponding to a matching leg for this communication.")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+
+  /**
    * The time line of the participant's call, divided into activity segments.
    **/
   public Screenshare segments(List<Segment> segments) {
@@ -317,12 +336,13 @@ public class Screenshare  implements Serializable {
         Objects.equals(this.connectedTime, screenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, screenshare.disconnectedTime) &&
         Objects.equals(this.provider, screenshare.provider) &&
+        Objects.equals(this.peerId, screenshare.peerId) &&
         Objects.equals(this.segments, screenshare.segments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, connectedTime, disconnectedTime, provider, segments);
+    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId, segments);
   }
 
   @Override
@@ -339,6 +359,7 @@ public class Screenshare  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("}");
     return sb.toString();
