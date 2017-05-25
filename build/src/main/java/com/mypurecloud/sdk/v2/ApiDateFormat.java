@@ -53,4 +53,22 @@ public class ApiDateFormat extends DateFormat {
 
         return null;
     }
+
+    @Override
+    public Object clone()
+    {
+        return new ApiDateFormat();
+    }
+    
+    @Override
+    public void setTimeZone(TimeZone zone)
+    {
+        // Set this
+        calendar.setTimeZone(zone);
+        
+        // Set each format
+        for (SimpleDateFormat format : formats) {
+            format.setTimeZone(zone);
+        }
+    }
 }

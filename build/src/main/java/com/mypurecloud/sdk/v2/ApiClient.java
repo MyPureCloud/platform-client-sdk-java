@@ -105,10 +105,7 @@ public class ApiClient implements AutoCloseable {
     }
 
     private DateFormat buildDateFormat() {
-        DateFormat dateFormat = new ApiDateFormat();
-        // Use UTC as the default time zone.
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return dateFormat;
+        return new ApiDateFormat();
     }
 
     private Map<String, Authentication> buildAuthentications(Builder builder) {
