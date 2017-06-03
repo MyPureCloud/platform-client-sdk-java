@@ -117,7 +117,7 @@ try {
 
 # **getStations**
 
-> [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId)
+> [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)
 
 Get the list of available stations.
 
@@ -146,11 +146,12 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String name = "name_example"; // String | Name
+String userSelectable = "userSelectable_example"; // String | True for stations that the user can select otherwise false
 String webRtcUserId = "webRtcUserId_example"; // String | Filter for the webRtc station of the webRtcUserId
 String id = "id_example"; // String | Comma separated list of stationIds
 String lineAppearanceId = "lineAppearanceId_example"; // String | lineAppearanceId
 try {
-    StationEntityListing result = apiInstance.getStations(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId);
+    StationEntityListing result = apiInstance.getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StationsApi#getStations");
@@ -167,6 +168,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 | **name** | **String**| Name | [optional] |
+| **userSelectable** | **String**| True for stations that the user can select otherwise false | [optional] |
 | **webRtcUserId** | **String**| Filter for the webRtc station of the webRtcUserId | [optional] |
 | **id** | **String**| Comma separated list of stationIds | [optional] |
 | **lineAppearanceId** | **String**| lineAppearanceId | [optional] |

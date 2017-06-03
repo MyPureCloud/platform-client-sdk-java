@@ -18,6 +18,7 @@ title: Organization
 | **version** | **Integer** | The current version of the organization. |  |
 | **state** | [**StateEnum**](#StateEnum) | The current state. Examples are active, inactive, deleted. |  [optional] |
 | **defaultSiteId** | **String** |  |  [optional] |
+| **supportURI** | **String** | Email address where support tickets are sent to. |  [optional] |
 | **voicemailEnabled** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **features** | **Map&lt;String, Boolean&gt;** | The state of features available for the organization. |  [optional] |

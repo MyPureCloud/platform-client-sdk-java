@@ -32,6 +32,8 @@ import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
@@ -48,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
@@ -61,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
@@ -84,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
@@ -110,6 +116,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
@@ -125,6 +133,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
@@ -793,6 +802,81 @@ public class OutboundApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteOutboundContactlistContactsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteOutboundContactlistfilterAsync(DeleteOutboundContactlistfilterRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteOutboundContactlistfilterAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2540,6 +2624,156 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListFilter> getOutboundContactlistfilterAsync(GetOutboundContactlistfilterRequest request, final AsyncApiCallback<ContactListFilter> callback) {
+    try {
+      final SettableFuture<ContactListFilter> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListFilter>> getOutboundContactlistfilterAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactListFilter>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListFilter>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListFilterEntityListing> getOutboundContactlistfiltersAsync(GetOutboundContactlistfiltersRequest request, final AsyncApiCallback<ContactListFilterEntityListing> callback) {
+    try {
+      final SettableFuture<ContactListFilterEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListFilterEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilterEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListFilterEntityListing>> getOutboundContactlistfiltersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListFilterEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListFilterEntityListing>() {}, new AsyncApiCallback<ApiResponse<ContactListFilterEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilterEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4502,6 +4736,156 @@ public class OutboundApiAsync {
   }
 
   /**
+   * Create Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListFilter> postOutboundContactlistfiltersAsync(PostOutboundContactlistfiltersRequest request, final AsyncApiCallback<ContactListFilter> callback) {
+    try {
+      final SettableFuture<ContactListFilter> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListFilter>> postOutboundContactlistfiltersAsync(ApiRequest<ContactListFilter> request, final AsyncApiCallback<ApiResponse<ContactListFilter>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListFilter>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FilterPreviewResponse> postOutboundContactlistfiltersPreviewAsync(PostOutboundContactlistfiltersPreviewRequest request, final AsyncApiCallback<FilterPreviewResponse> callback) {
+    try {
+      final SettableFuture<FilterPreviewResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FilterPreviewResponse>() {}, new AsyncApiCallback<ApiResponse<FilterPreviewResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FilterPreviewResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FilterPreviewResponse>> postOutboundContactlistfiltersPreviewAsync(ApiRequest<ContactListFilter> request, final AsyncApiCallback<ApiResponse<FilterPreviewResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FilterPreviewResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FilterPreviewResponse>() {}, new AsyncApiCallback<ApiResponse<FilterPreviewResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FilterPreviewResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FilterPreviewResponse> response = (ApiResponse<FilterPreviewResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FilterPreviewResponse> response = (ApiResponse<FilterPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Create a contact List.
    * 
    * @param request the request object
@@ -5615,6 +5999,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListFilter> putOutboundContactlistfilterAsync(PutOutboundContactlistfilterRequest request, final AsyncApiCallback<ContactListFilter> callback) {
+    try {
+      final SettableFuture<ContactListFilter> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListFilter>> putOutboundContactlistfilterAsync(ApiRequest<ContactListFilter> request, final AsyncApiCallback<ApiResponse<ContactListFilter>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListFilter>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListFilter>() {}, new AsyncApiCallback<ApiResponse<ContactListFilter>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListFilter> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

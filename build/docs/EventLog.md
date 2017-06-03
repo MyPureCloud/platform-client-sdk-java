@@ -47,6 +47,7 @@ title: EventLog
 | SCHEDULE | &quot;SCHEDULE&quot; |
 | CALL_RESTRICTION | &quot;CALL_RESTRICTION&quot; |
 | CALL_RULE | &quot;CALL_RULE&quot; |
+| ORGANIZATION_CONFIGURATION | &quot;ORGANIZATION_CONFIGURATION&quot; |
 {: class="table table-striped"}
 
 

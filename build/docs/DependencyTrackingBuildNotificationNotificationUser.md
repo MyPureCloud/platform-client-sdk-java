@@ -10,6 +10,7 @@ title: DependencyTrackingBuildNotificationNotificationUser
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
 | **name** | **String** |  |  [optional] |
+| **homeOrg** | [**DependencyTrackingBuildNotificationNotificationUserHomeOrg**](DependencyTrackingBuildNotificationNotificationUserHomeOrg.html) |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

@@ -61,10 +61,21 @@ public class ConversationAssociation  implements Serializable {
   private MediaTypeEnum mediaType = null;
 
   
-  @ApiModelProperty(example = "null", value = "External Contact ID; populated from url")
+  /**
+   * External Contact ID
+   **/
+  public ConversationAssociation externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External Contact ID")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
   }
 
 

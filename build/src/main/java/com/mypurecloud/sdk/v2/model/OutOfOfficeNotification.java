@@ -20,7 +20,6 @@ public class OutOfOfficeNotification  implements Serializable {
   private Boolean active = null;
   private Date startDate = null;
   private Date endDate = null;
-  private Date modifiedDate = null;
 
   
   /**
@@ -91,23 +90,6 @@ public class OutOfOfficeNotification  implements Serializable {
   }
 
 
-  /**
-   **/
-  public OutOfOfficeNotification modifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("modifiedDate")
-  public Date getModifiedDate() {
-    return modifiedDate;
-  }
-  public void setModifiedDate(Date modifiedDate) {
-    this.modifiedDate = modifiedDate;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,13 +102,12 @@ public class OutOfOfficeNotification  implements Serializable {
     return Objects.equals(this.user, outOfOfficeNotification.user) &&
         Objects.equals(this.active, outOfOfficeNotification.active) &&
         Objects.equals(this.startDate, outOfOfficeNotification.startDate) &&
-        Objects.equals(this.endDate, outOfOfficeNotification.endDate) &&
-        Objects.equals(this.modifiedDate, outOfOfficeNotification.modifiedDate);
+        Objects.equals(this.endDate, outOfOfficeNotification.endDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, active, startDate, endDate, modifiedDate);
+    return Objects.hash(user, active, startDate, endDate);
   }
 
   @Override
@@ -138,7 +119,6 @@ public class OutOfOfficeNotification  implements Serializable {
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

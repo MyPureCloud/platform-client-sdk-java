@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUserHomeOrg;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,6 +17,7 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
   
   private String id = null;
   private String name = null;
+  private DependencyTrackingBuildNotificationNotificationUserHomeOrg homeOrg = null;
 
   
   /**
@@ -52,6 +54,23 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
   }
 
 
+  /**
+   **/
+  public DependencyTrackingBuildNotificationNotificationUser homeOrg(DependencyTrackingBuildNotificationNotificationUserHomeOrg homeOrg) {
+    this.homeOrg = homeOrg;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("homeOrg")
+  public DependencyTrackingBuildNotificationNotificationUserHomeOrg getHomeOrg() {
+    return homeOrg;
+  }
+  public void setHomeOrg(DependencyTrackingBuildNotificationNotificationUserHomeOrg homeOrg) {
+    this.homeOrg = homeOrg;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -62,12 +81,13 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
     }
     DependencyTrackingBuildNotificationNotificationUser dependencyTrackingBuildNotificationNotificationUser = (DependencyTrackingBuildNotificationNotificationUser) o;
     return Objects.equals(this.id, dependencyTrackingBuildNotificationNotificationUser.id) &&
-        Objects.equals(this.name, dependencyTrackingBuildNotificationNotificationUser.name);
+        Objects.equals(this.name, dependencyTrackingBuildNotificationNotificationUser.name) &&
+        Objects.equals(this.homeOrg, dependencyTrackingBuildNotificationNotificationUser.homeOrg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id, name, homeOrg);
   }
 
   @Override
@@ -77,6 +97,7 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    homeOrg: ").append(toIndentedString(homeOrg)).append("\n");
     sb.append("}");
     return sb.toString();
   }

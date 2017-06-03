@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactListFilterNotificationClauses;
-import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class ContactListFilterNotification  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private DependencyTrackingBuildNotificationNotificationUser contactList = null;
+  private DocumentDataV2NotificationCreatedBy contactList = null;
   private List<String> contactListColumns = new ArrayList<String>();
   private List<ContactListFilterNotificationClauses> clauses = new ArrayList<ContactListFilterNotificationClauses>();
 
@@ -153,17 +153,17 @@ public class ContactListFilterNotification  implements Serializable {
 
   /**
    **/
-  public ContactListFilterNotification contactList(DependencyTrackingBuildNotificationNotificationUser contactList) {
+  public ContactListFilterNotification contactList(DocumentDataV2NotificationCreatedBy contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contactList")
-  public DependencyTrackingBuildNotificationNotificationUser getContactList() {
+  public DocumentDataV2NotificationCreatedBy getContactList() {
     return contactList;
   }
-  public void setContactList(DependencyTrackingBuildNotificationNotificationUser contactList) {
+  public void setContactList(DocumentDataV2NotificationCreatedBy contactList) {
     this.contactList = contactList;
   }
 

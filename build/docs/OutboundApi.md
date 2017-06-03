@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlist**](OutboundApi.html#deleteOutboundContactlist) | Delete a contact list. |
 | [**deleteOutboundContactlistContact**](OutboundApi.html#deleteOutboundContactlistContact) | Delete a contact. |
 | [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | Delete contacts from a contact list. |
+| [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | Delete Contact List Filter |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule set. |
 | [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
@@ -39,6 +40,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
 | [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | Get the URI of a contact list export. |
 | [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | Get dialer contactList import status. |
+| [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | Get Contact list filter |
+| [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | Query Contact list filters |
 | [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
 | [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | Get dialer DNC list |
 | [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | Get the URI of a DNC list export. |
@@ -65,6 +68,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
 | [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | Add contacts to a contact list. |
 | [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
+| [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
+| [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | Create a contact List. |
 | [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | Add phone numbers to a Dialer DNC list. |
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
@@ -80,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundCampaignrule**](OutboundApi.html#putOutboundCampaignrule) | Update Campaign Rule |
 | [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | Update a contact list. |
 | [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
+| [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | Update Contact List Filter |
 | [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a RuleSet. |
 | [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
@@ -537,6 +543,56 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | |
 | **contactIds** | [**List&lt;String&gt;**](String.html)| ContactIds to delete. | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOutboundContactlistfilter"></a>
+
+# **deleteOutboundContactlistfilter**
+
+> Void deleteOutboundContactlistfilter(contactListFilterId)
+
+Delete Contact List Filter
+
+
+
+Wraps DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
+try {
+    apiInstance.deleteOutboundContactlistfilter(contactListFilterId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistfilter");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListFilterId** | **String**| Contact List Filter ID | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1778,6 +1834,120 @@ try {
 ### Return type
 
 [**ImportStatus**](ImportStatus.html)
+
+<a name="getOutboundContactlistfilter"></a>
+
+# **getOutboundContactlistfilter**
+
+> [ContactListFilter](ContactListFilter.html) getOutboundContactlistfilter(contactListFilterId)
+
+Get Contact list filter
+
+
+
+Wraps GET /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
+try {
+    ContactListFilter result = apiInstance.getOutboundContactlistfilter(contactListFilterId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistfilter");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListFilterId** | **String**| Contact List Filter ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
+
+<a name="getOutboundContactlistfilters"></a>
+
+# **getOutboundContactlistfilters**
+
+> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId)
+
+Query Contact list filters
+
+
+
+Wraps GET /api/v2/outbound/contactlistfilters  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+String contactListId = "contactListId_example"; // String | Contact List ID
+try {
+    ContactListFilterEntityListing result = apiInstance.getOutboundContactlistfilters(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistfilters");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **filterType** | **String**| Filter type | [optional] [default to Prefix] [enum: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith] |
+| **name** | **String**| Name | [optional] |
+| **sortBy** | **String**| Sort by | [optional] |
+| **sortOrder** | **String**| Sort order | [optional] [default to a] [enum: ascending, descending] |
+| **contactListId** | **String**| Contact List ID | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
 
 <a name="getOutboundContactlists"></a>
 
@@ -3177,6 +3347,108 @@ try {
 
 [**UriReference**](UriReference.html)
 
+<a name="postOutboundContactlistfilters"></a>
+
+# **postOutboundContactlistfilters**
+
+> [ContactListFilter](ContactListFilter.html) postOutboundContactlistfilters(body)
+
+Create Contact List Filter
+
+
+
+Wraps POST /api/v2/outbound/contactlistfilters  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter
+try {
+    ContactListFilter result = apiInstance.postOutboundContactlistfilters(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistfilters");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
+
+<a name="postOutboundContactlistfiltersPreview"></a>
+
+# **postOutboundContactlistfiltersPreview**
+
+> [FilterPreviewResponse](FilterPreviewResponse.html) postOutboundContactlistfiltersPreview(body)
+
+Get a preview of the output of a contact list filter
+
+
+
+Wraps POST /api/v2/outbound/contactlistfilters/preview  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter
+try {
+    FilterPreviewResponse result = apiInstance.postOutboundContactlistfiltersPreview(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistfiltersPreview");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**FilterPreviewResponse**](FilterPreviewResponse.html)
+
 <a name="postOutboundContactlists"></a>
 
 # **postOutboundContactlists**
@@ -3961,6 +4233,59 @@ try {
 ### Return type
 
 [**DialerContact**](DialerContact.html)
+
+<a name="putOutboundContactlistfilter"></a>
+
+# **putOutboundContactlistfilter**
+
+> [ContactListFilter](ContactListFilter.html) putOutboundContactlistfilter(contactListFilterId, body)
+
+Update Contact List Filter
+
+
+
+Wraps PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
+ContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter
+try {
+    ContactListFilter result = apiInstance.putOutboundContactlistfilter(contactListFilterId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundContactlistfilter");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListFilterId** | **String**| Contact List Filter ID | |
+| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilter**](ContactListFilter.html)
 
 <a name="putOutboundDnclist"></a>
 

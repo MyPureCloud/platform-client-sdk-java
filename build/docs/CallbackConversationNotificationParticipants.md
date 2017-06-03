@@ -22,7 +22,7 @@ title: CallbackConversationNotificationParticipants
 | **held** | **Boolean** |  |  [optional] |
 | **wrapupRequired** | **Boolean** |  |  [optional] |
 | **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
+| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
 | **queue** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**CallbackConversationNotificationErrorInfo**](CallbackConversationNotificationErrorInfo.html) |  |  [optional] |

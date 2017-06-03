@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignRuleNotificationUriReference;
-import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,23 +18,23 @@ import java.io.Serializable;
 
 public class CampaignRuleNotificationCampaignRuleEntities  implements Serializable {
   
-  private List<DependencyTrackingBuildNotificationNotificationUser> campaigns = new ArrayList<DependencyTrackingBuildNotificationNotificationUser>();
+  private List<DocumentDataV2NotificationCreatedBy> campaigns = new ArrayList<DocumentDataV2NotificationCreatedBy>();
   private List<CampaignRuleNotificationUriReference> sequences = new ArrayList<CampaignRuleNotificationUriReference>();
 
   
   /**
    **/
-  public CampaignRuleNotificationCampaignRuleEntities campaigns(List<DependencyTrackingBuildNotificationNotificationUser> campaigns) {
+  public CampaignRuleNotificationCampaignRuleEntities campaigns(List<DocumentDataV2NotificationCreatedBy> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("campaigns")
-  public List<DependencyTrackingBuildNotificationNotificationUser> getCampaigns() {
+  public List<DocumentDataV2NotificationCreatedBy> getCampaigns() {
     return campaigns;
   }
-  public void setCampaigns(List<DependencyTrackingBuildNotificationNotificationUser> campaigns) {
+  public void setCampaigns(List<DocumentDataV2NotificationCreatedBy> campaigns) {
     this.campaigns = campaigns;
   }
 

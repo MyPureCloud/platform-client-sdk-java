@@ -9,7 +9,7 @@ import com.mypurecloud.sdk.v2.model.CallbackConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.CallbackConversationNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationDialerPreview;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -166,7 +166,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DependencyTrackingBuildNotificationNotificationUser user = null;
+  private DocumentDataV2NotificationCreatedBy user = null;
   private CallbackConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private CallbackConversationNotificationErrorInfo errorInfo = null;
@@ -428,17 +428,17 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   /**
    **/
-  public CallbackConversationNotificationCallbackMediaParticipant user(DependencyTrackingBuildNotificationNotificationUser user) {
+  public CallbackConversationNotificationCallbackMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DependencyTrackingBuildNotificationNotificationUser getUser() {
+  public DocumentDataV2NotificationCreatedBy getUser() {
     return user;
   }
-  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
+  public void setUser(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
   }
 

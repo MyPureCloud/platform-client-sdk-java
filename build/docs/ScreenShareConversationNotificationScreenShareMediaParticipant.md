@@ -22,7 +22,7 @@ title: ScreenShareConversationNotificationScreenShareMediaParticipant
 | **held** | **Boolean** |  |  [optional] |
 | **wrapupRequired** | **Boolean** |  |  [optional] |
 | **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
+| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
 | **queue** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**ScreenShareConversationNotificationErrorInfo**](ScreenShareConversationNotificationErrorInfo.html) |  |  [optional] |

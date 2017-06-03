@@ -87,6 +87,7 @@ public class Campaign  implements Serializable {
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
+  private List<UriReference> contactListFilters = new ArrayList<UriReference>();
   private String selfUri = null;
 
   
@@ -560,6 +561,24 @@ public class Campaign  implements Serializable {
   }
 
 
+  /**
+   * Filter defining a subset of contacts from the contact list to be dialed
+   **/
+  public Campaign contactListFilters(List<UriReference> contactListFilters) {
+    this.contactListFilters = contactListFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter defining a subset of contacts from the contact list to be dialed")
+  @JsonProperty("contactListFilters")
+  public List<UriReference> getContactListFilters() {
+    return contactListFilters;
+  }
+  public void setContactListFilters(List<UriReference> contactListFilters) {
+    this.contactListFilters = contactListFilters;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -604,12 +623,13 @@ public class Campaign  implements Serializable {
         Objects.equals(this.noAnswerTimeout, campaign.noAnswerTimeout) &&
         Objects.equals(this.callAnalysisLanguage, campaign.callAnalysisLanguage) &&
         Objects.equals(this.priority, campaign.priority) &&
+        Objects.equals(this.contactListFilters, campaign.contactListFilters) &&
         Objects.equals(this.selfUri, campaign.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, selfUri);
   }
 
   @Override
@@ -645,6 +665,7 @@ public class Campaign  implements Serializable {
     sb.append("    noAnswerTimeout: ").append(toIndentedString(noAnswerTimeout)).append("\n");
     sb.append("    callAnalysisLanguage: ").append(toIndentedString(callAnalysisLanguage)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

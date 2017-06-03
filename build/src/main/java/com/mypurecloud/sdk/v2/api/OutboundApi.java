@@ -29,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
@@ -45,6 +47,7 @@ import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
@@ -58,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
@@ -81,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
@@ -107,6 +113,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
@@ -122,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
@@ -803,6 +812,80 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundContactlistContacts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlistfilter(String contactListFilterId) throws IOException, ApiException {
+     deleteOutboundContactlistfilter(createDeleteOutboundContactlistfilterRequest(contactListFilterId));
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlistfilterWithHttpInfo(String contactListFilterId) throws IOException {
+    return deleteOutboundContactlistfilter(createDeleteOutboundContactlistfilterRequest(contactListFilterId).withHttpInfo());
+  }
+
+  private DeleteOutboundContactlistfilterRequest createDeleteOutboundContactlistfilterRequest(String contactListFilterId) {
+    return DeleteOutboundContactlistfilterRequest.builder()
+            .withContactListFilterId(contactListFilterId)
+            .build();
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlistfilter(DeleteOutboundContactlistfilterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Contact List Filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlistfilter(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2712,6 +2795,184 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter getOutboundContactlistfilter(String contactListFilterId) throws IOException, ApiException {
+    return  getOutboundContactlistfilter(createGetOutboundContactlistfilterRequest(contactListFilterId));
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @return ContactListFilter
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> getOutboundContactlistfilterWithHttpInfo(String contactListFilterId) throws IOException {
+    return getOutboundContactlistfilter(createGetOutboundContactlistfilterRequest(contactListFilterId).withHttpInfo());
+  }
+
+  private GetOutboundContactlistfilterRequest createGetOutboundContactlistfilterRequest(String contactListFilterId) {
+    return GetOutboundContactlistfilterRequest.builder()
+            .withContactListFilterId(contactListFilterId)
+            .build();
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param request The request object
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter getOutboundContactlistfilter(GetOutboundContactlistfilterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListFilter> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListFilter>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Contact list filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> getOutboundContactlistfilter(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListFilter>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @param contactListId Contact List ID (optional)
+   * @return ContactListFilterEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilterEntityListing getOutboundContactlistfilters(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException, ApiException {
+    return  getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId));
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @param contactListId Contact List ID (optional)
+   * @return ContactListFilterEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilterEntityListing> getOutboundContactlistfiltersWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException {
+    return getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId).withHttpInfo());
+  }
+
+  private GetOutboundContactlistfiltersRequest createGetOutboundContactlistfiltersRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) {
+    return GetOutboundContactlistfiltersRequest.builder()
+            .withPageSize(pageSize)
+
+            .withPageNumber(pageNumber)
+
+            .withFilterType(filterType)
+
+            .withName(name)
+
+            .withSortBy(sortBy)
+
+            .withSortOrder(sortOrder)
+
+            .withContactListId(contactListId)
+            .build();
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param request The request object
+   * @return ContactListFilterEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilterEntityListing getOutboundContactlistfilters(GetOutboundContactlistfiltersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListFilterEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListFilterEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query Contact list filters
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilterEntityListing> getOutboundContactlistfilters(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListFilterEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilterEntityListing> response = (ApiResponse<ContactListFilterEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4875,6 +5136,160 @@ public class OutboundApi {
   }
 
   /**
+   * Create Contact List Filter
+   * 
+   * @param body ContactListFilter (required)
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter postOutboundContactlistfilters(ContactListFilter body) throws IOException, ApiException {
+    return  postOutboundContactlistfilters(createPostOutboundContactlistfiltersRequest(body));
+  }
+
+  /**
+   * Create Contact List Filter
+   * 
+   * @param body ContactListFilter (required)
+   * @return ContactListFilter
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> postOutboundContactlistfiltersWithHttpInfo(ContactListFilter body) throws IOException {
+    return postOutboundContactlistfilters(createPostOutboundContactlistfiltersRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistfiltersRequest createPostOutboundContactlistfiltersRequest(ContactListFilter body) {
+    return PostOutboundContactlistfiltersRequest.builder()
+            .withBody(body)
+            .build();
+  }
+
+  /**
+   * Create Contact List Filter
+   * 
+   * @param request The request object
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter postOutboundContactlistfilters(PostOutboundContactlistfiltersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListFilter> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListFilter>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create Contact List Filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> postOutboundContactlistfilters(ApiRequest<ContactListFilter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListFilter>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param body ContactListFilter (required)
+   * @return FilterPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FilterPreviewResponse postOutboundContactlistfiltersPreview(ContactListFilter body) throws IOException, ApiException {
+    return  postOutboundContactlistfiltersPreview(createPostOutboundContactlistfiltersPreviewRequest(body));
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param body ContactListFilter (required)
+   * @return FilterPreviewResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FilterPreviewResponse> postOutboundContactlistfiltersPreviewWithHttpInfo(ContactListFilter body) throws IOException {
+    return postOutboundContactlistfiltersPreview(createPostOutboundContactlistfiltersPreviewRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistfiltersPreviewRequest createPostOutboundContactlistfiltersPreviewRequest(ContactListFilter body) {
+    return PostOutboundContactlistfiltersPreviewRequest.builder()
+            .withBody(body)
+            .build();
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param request The request object
+   * @return FilterPreviewResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FilterPreviewResponse postOutboundContactlistfiltersPreview(PostOutboundContactlistfiltersPreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FilterPreviewResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FilterPreviewResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a preview of the output of a contact list filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FilterPreviewResponse> postOutboundContactlistfiltersPreview(ApiRequest<ContactListFilter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FilterPreviewResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FilterPreviewResponse> response = (ApiResponse<FilterPreviewResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FilterPreviewResponse> response = (ApiResponse<FilterPreviewResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Create a contact List.
    * 
    * @param body ContactList (required)
@@ -6063,6 +6478,87 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DialerContact> response = (ApiResponse<DialerContact>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @param body ContactListFilter (required)
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter putOutboundContactlistfilter(String contactListFilterId, ContactListFilter body) throws IOException, ApiException {
+    return  putOutboundContactlistfilter(createPutOutboundContactlistfilterRequest(contactListFilterId, body));
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param contactListFilterId Contact List Filter ID (required)
+   * @param body ContactListFilter (required)
+   * @return ContactListFilter
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> putOutboundContactlistfilterWithHttpInfo(String contactListFilterId, ContactListFilter body) throws IOException {
+    return putOutboundContactlistfilter(createPutOutboundContactlistfilterRequest(contactListFilterId, body).withHttpInfo());
+  }
+
+  private PutOutboundContactlistfilterRequest createPutOutboundContactlistfilterRequest(String contactListFilterId, ContactListFilter body) {
+    return PutOutboundContactlistfilterRequest.builder()
+            .withContactListFilterId(contactListFilterId)
+
+            .withBody(body)
+            .build();
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param request The request object
+   * @return ContactListFilter
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListFilter putOutboundContactlistfilter(PutOutboundContactlistfilterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListFilter> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListFilter>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Contact List Filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListFilter> putOutboundContactlistfilter(ApiRequest<ContactListFilter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListFilter>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListFilter> response = (ApiResponse<ContactListFilter>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

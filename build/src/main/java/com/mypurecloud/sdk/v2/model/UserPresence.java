@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.OrganizationPresence;
+import com.mypurecloud.sdk.v2.model.PresenceDefinition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -20,7 +20,7 @@ public class UserPresence  implements Serializable {
   private String name = null;
   private String source = null;
   private Boolean primary = null;
-  private OrganizationPresence presenceDefinition = null;
+  private PresenceDefinition presenceDefinition = null;
   private String message = null;
   private Date modifiedDate = null;
   private String selfUri = null;
@@ -88,17 +88,17 @@ public class UserPresence  implements Serializable {
 
   /**
    **/
-  public UserPresence presenceDefinition(OrganizationPresence presenceDefinition) {
+  public UserPresence presenceDefinition(PresenceDefinition presenceDefinition) {
     this.presenceDefinition = presenceDefinition;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("presenceDefinition")
-  public OrganizationPresence getPresenceDefinition() {
+  public PresenceDefinition getPresenceDefinition() {
     return presenceDefinition;
   }
-  public void setPresenceDefinition(OrganizationPresence presenceDefinition) {
+  public void setPresenceDefinition(PresenceDefinition presenceDefinition) {
     this.presenceDefinition = presenceDefinition;
   }
 

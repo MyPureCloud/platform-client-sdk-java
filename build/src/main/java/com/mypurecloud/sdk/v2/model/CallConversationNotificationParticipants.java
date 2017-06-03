@@ -9,7 +9,7 @@ import com.mypurecloud.sdk.v2.model.CallConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.CallConversationNotificationFaxStatus;
 import com.mypurecloud.sdk.v2.model.CallConversationNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -164,7 +164,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DependencyTrackingBuildNotificationNotificationUser user = null;
+  private DocumentDataV2NotificationCreatedBy user = null;
   private CallConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private CallConversationNotificationErrorInfo errorInfo = null;
@@ -464,17 +464,17 @@ public class CallConversationNotificationParticipants  implements Serializable {
 
   /**
    **/
-  public CallConversationNotificationParticipants user(DependencyTrackingBuildNotificationNotificationUser user) {
+  public CallConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DependencyTrackingBuildNotificationNotificationUser getUser() {
+  public DocumentDataV2NotificationCreatedBy getUser() {
     return user;
   }
-  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
+  public void setUser(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
   }
 

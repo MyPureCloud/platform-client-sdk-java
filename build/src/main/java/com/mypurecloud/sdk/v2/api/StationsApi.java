@@ -195,6 +195,7 @@ public class StationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
+   * @param userSelectable True for stations that the user can select otherwise false (optional)
    * @param webRtcUserId Filter for the webRtc station of the webRtcUserId (optional)
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
@@ -202,8 +203,8 @@ public class StationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) throws IOException, ApiException {
-    return  getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId));
+  public StationEntityListing getStations(Integer pageSize, Integer pageNumber, String sortBy, String name, String userSelectable, String webRtcUserId, String id, String lineAppearanceId) throws IOException, ApiException {
+    return  getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId));
   }
 
   /**
@@ -213,17 +214,18 @@ public class StationsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
+   * @param userSelectable True for stations that the user can select otherwise false (optional)
    * @param webRtcUserId Filter for the webRtc station of the webRtcUserId (optional)
    * @param id Comma separated list of stationIds (optional)
    * @param lineAppearanceId lineAppearanceId (optional)
    * @return StationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) throws IOException {
-    return getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, webRtcUserId, id, lineAppearanceId).withHttpInfo());
+  public ApiResponse<StationEntityListing> getStationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, String userSelectable, String webRtcUserId, String id, String lineAppearanceId) throws IOException {
+    return getStations(createGetStationsRequest(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId).withHttpInfo());
   }
 
-  private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String webRtcUserId, String id, String lineAppearanceId) {
+  private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String userSelectable, String webRtcUserId, String id, String lineAppearanceId) {
     return GetStationsRequest.builder()
             .withPageSize(pageSize)
 
@@ -232,6 +234,8 @@ public class StationsApi {
             .withSortBy(sortBy)
 
             .withName(name)
+
+            .withUserSelectable(userSelectable)
 
             .withWebRtcUserId(webRtcUserId)
 

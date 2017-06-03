@@ -57,7 +57,9 @@ public class ApiDateFormat extends DateFormat {
     @Override
     public Object clone()
     {
-        return new ApiDateFormat();
+        DateFormat dateFormat = new ApiDateFormat();
+        dateFormat.setTimeZone(this.getTimeZone());
+        return dateFormat;
     }
     
     @Override

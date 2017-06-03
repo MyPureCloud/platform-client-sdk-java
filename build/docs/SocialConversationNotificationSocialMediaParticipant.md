@@ -22,7 +22,7 @@ title: SocialConversationNotificationSocialMediaParticipant
 | **held** | **Boolean** |  |  [optional] |
 | **wrapupRequired** | **Boolean** |  |  [optional] |
 | **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
+| **user** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
 | **queue** | [**SocialConversationNotificationUriReference**](SocialConversationNotificationUriReference.html) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **errorInfo** | [**SocialConversationNotificationErrorInfo**](SocialConversationNotificationErrorInfo.html) |  |  [optional] |

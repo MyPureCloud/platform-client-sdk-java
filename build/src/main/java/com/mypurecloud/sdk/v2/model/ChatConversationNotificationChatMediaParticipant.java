@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ChatConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.ChatConversationNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
-import com.mypurecloud.sdk.v2.model.DependencyTrackingBuildNotificationNotificationUser;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -163,7 +163,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private DependencyTrackingBuildNotificationNotificationUser user = null;
+  private DocumentDataV2NotificationCreatedBy user = null;
   private ChatConversationNotificationUriReference queue = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private ChatConversationNotificationErrorInfo errorInfo = null;
@@ -418,17 +418,17 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
 
   /**
    **/
-  public ChatConversationNotificationChatMediaParticipant user(DependencyTrackingBuildNotificationNotificationUser user) {
+  public ChatConversationNotificationChatMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public DependencyTrackingBuildNotificationNotificationUser getUser() {
+  public DocumentDataV2NotificationCreatedBy getUser() {
     return user;
   }
-  public void setUser(DependencyTrackingBuildNotificationNotificationUser user) {
+  public void setUser(DocumentDataV2NotificationCreatedBy user) {
     this.user = user;
   }
 

@@ -37,6 +37,8 @@ import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.ContactListFilter;
+import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
@@ -53,6 +55,7 @@ import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 

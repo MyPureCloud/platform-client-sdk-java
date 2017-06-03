@@ -79,6 +79,20 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	private String userSelectable;
+	public String getUserSelectable() {
+		return this.userSelectable;
+	}
+
+	public void setUserSelectable(String userSelectable) {
+		this.userSelectable = userSelectable;
+	}
+
+	public GetStationsRequest withUserSelectable(String userSelectable) {
+	    this.setUserSelectable(userSelectable);
+	    return this;
+	}
+
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
 		return this.webRtcUserId;
@@ -152,6 +166,8 @@ public class GetStationsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("userSelectable", "", userSelectable)
+        
                 .withQueryParameters("webRtcUserId", "", webRtcUserId)
         
                 .withQueryParameters("id", "", id)
@@ -190,6 +206,10 @@ public class GetStationsRequest {
 		}
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		public Builder withUserSelectable(String userSelectable) {
+			request.setUserSelectable(userSelectable);
 			return this;
 		}
 		public Builder withWebRtcUserId(String webRtcUserId) {

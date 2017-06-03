@@ -63,6 +63,7 @@ public class Organization  implements Serializable {
   }
   private StateEnum state = null;
   private String defaultSiteId = null;
+  private String supportURI = null;
   private Boolean voicemailEnabled = null;
   private String selfUri = null;
   private Map<String, Boolean> features = new HashMap<String, Boolean>();
@@ -223,6 +224,24 @@ public class Organization  implements Serializable {
 
 
   /**
+   * Email address where support tickets are sent to.
+   **/
+  public Organization supportURI(String supportURI) {
+    this.supportURI = supportURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email address where support tickets are sent to.")
+  @JsonProperty("supportURI")
+  public String getSupportURI() {
+    return supportURI;
+  }
+  public void setSupportURI(String supportURI) {
+    this.supportURI = supportURI;
+  }
+
+
+  /**
    **/
   public Organization voicemailEnabled(Boolean voicemailEnabled) {
     this.voicemailEnabled = voicemailEnabled;
@@ -283,6 +302,7 @@ public class Organization  implements Serializable {
         Objects.equals(this.version, organization.version) &&
         Objects.equals(this.state, organization.state) &&
         Objects.equals(this.defaultSiteId, organization.defaultSiteId) &&
+        Objects.equals(this.supportURI, organization.supportURI) &&
         Objects.equals(this.voicemailEnabled, organization.voicemailEnabled) &&
         Objects.equals(this.selfUri, organization.selfUri) &&
         Objects.equals(this.features, organization.features);
@@ -290,7 +310,7 @@ public class Organization  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, version, state, defaultSiteId, voicemailEnabled, selfUri, features);
+    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, version, state, defaultSiteId, supportURI, voicemailEnabled, selfUri, features);
   }
 
   @Override
@@ -308,6 +328,7 @@ public class Organization  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    defaultSiteId: ").append(toIndentedString(defaultSiteId)).append("\n");
+    sb.append("    supportURI: ").append(toIndentedString(supportURI)).append("\n");
     sb.append("    voicemailEnabled: ").append(toIndentedString(voicemailEnabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
