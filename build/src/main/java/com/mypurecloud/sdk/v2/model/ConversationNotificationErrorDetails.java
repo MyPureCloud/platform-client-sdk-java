@@ -43,7 +43,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails code(String code) {
@@ -60,7 +60,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails message(String message) {
@@ -77,7 +77,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails messageWithParams(String messageWithParams) {
@@ -94,7 +94,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails messageParams(Map<String, String> messageParams) {
@@ -111,7 +111,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails contextId(String contextId) {
@@ -128,7 +128,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails uri(String uri) {
@@ -145,7 +145,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.uri = uri;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationErrorDetails additionalProperties(Object additionalProperties) {
@@ -162,6 +162,7 @@ public class ConversationNotificationErrorDetails  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

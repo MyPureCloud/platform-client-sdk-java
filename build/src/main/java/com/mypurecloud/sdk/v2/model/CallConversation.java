@@ -67,7 +67,7 @@ public class CallConversation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CallConversation name(String name) {
@@ -84,7 +84,7 @@ public class CallConversation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The list of participants involved in the conversation.
    **/
@@ -102,7 +102,7 @@ public class CallConversation  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    * The list of other media channels involved in the conversation.
    **/
@@ -120,7 +120,7 @@ public class CallConversation  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-
+  
   /**
    **/
   public CallConversation recordingState(RecordingStateEnum recordingState) {
@@ -137,13 +137,14 @@ public class CallConversation  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

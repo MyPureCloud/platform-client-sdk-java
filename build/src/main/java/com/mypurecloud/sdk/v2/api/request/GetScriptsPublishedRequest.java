@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsPublishedRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -38,6 +39,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -52,6 +54,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -66,6 +69,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -80,6 +84,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private String feature;
 	public String getFeature() {
 		return this.feature;
@@ -94,6 +99,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -108,6 +114,7 @@ public class GetScriptsPublishedRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -142,7 +149,8 @@ public class GetScriptsPublishedRequest {
                 .withQueryParameters("feature", "", feature)
         
                 .withQueryParameters("flowId", "", flowId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -153,6 +161,7 @@ public class GetScriptsPublishedRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetScriptsPublishedRequest request;
@@ -161,31 +170,39 @@ public class GetScriptsPublishedRequest {
 			request = new GetScriptsPublishedRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withFeature(String feature) {
 			request.setFeature(feature);
 			return this;
 		}
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 
+		
 
 
 		public GetScriptsPublishedRequest build() {

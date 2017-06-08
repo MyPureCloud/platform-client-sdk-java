@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundContactlistsRequest {
+    
 	private Boolean includeImportStatus;
 	public Boolean getIncludeImportStatus() {
 		return this.includeImportStatus;
@@ -74,6 +75,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeSize;
 	public Boolean getIncludeSize() {
 		return this.includeSize;
@@ -88,6 +90,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -102,6 +105,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -116,6 +120,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private String filterType;
 	public String getFilterType() {
 		return this.filterType;
@@ -130,6 +135,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -144,6 +150,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -158,6 +165,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -172,6 +180,7 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -210,7 +219,8 @@ public class GetOutboundContactlistsRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -221,6 +231,7 @@ public class GetOutboundContactlistsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOutboundContactlistsRequest request;
@@ -229,39 +240,49 @@ public class GetOutboundContactlistsRequest {
 			request = new GetOutboundContactlistsRequest();
 		}
 
+		
 		public Builder withIncludeImportStatus(Boolean includeImportStatus) {
 			request.setIncludeImportStatus(includeImportStatus);
 			return this;
 		}
+		
 		public Builder withIncludeSize(Boolean includeSize) {
 			request.setIncludeSize(includeSize);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withFilterType(String filterType) {
 			request.setFilterType(filterType);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 
 
 		public GetOutboundContactlistsRequest build() {

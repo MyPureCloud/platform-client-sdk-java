@@ -348,7 +348,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type | [enum: person, group, org, externalContact] |
+| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact |
 {: class="table table-striped"}
 
 ### Return type
@@ -359,7 +359,7 @@ try {
 
 # **getUser**
 
-> [User](User.html) getUser(userId, expand)
+> [User](User.html) getUser(userId, expand, state)
 
 Get user.
 
@@ -386,8 +386,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String state = "active"; // String | Search for a user with this state
 try {
-    User result = apiInstance.getUser(userId, expand);
+    User result = apiInstance.getUser(userId, expand, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUser");
@@ -401,7 +402,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -454,7 +456,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -558,7 +560,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -617,7 +619,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -937,7 +939,7 @@ try {
 | **userId** | **String**| User ID | |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC] [enum: ascending, descending] |
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -1092,7 +1094,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
 {: class="table table-striped"}
 
 ### Return type
@@ -1151,9 +1153,9 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC] [enum: ascending, descending] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
-| **state** | **String**| Only list users of this state | [optional] [default to active] [enum: active, deleted] |
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
 ### Return type
@@ -1204,7 +1206,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token |
 {: class="table table-striped"}
 
 ### Return type

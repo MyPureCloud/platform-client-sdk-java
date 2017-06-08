@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private String interfaceId;
 	public String getInterfaceId() {
 		return this.interfaceId;
@@ -112,6 +114,7 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,7 +151,8 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withPathParameter("interfaceId", interfaceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -159,10 +163,12 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String interfaceId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, interfaceId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteTelephonyProvidersEdgeLogicalinterfaceRequest request;
@@ -171,20 +177,26 @@ public class DeleteTelephonyProvidersEdgeLogicalinterfaceRequest {
 			request = new DeleteTelephonyProvidersEdgeLogicalinterfaceRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withInterfaceId(String interfaceId) {
 			request.setInterfaceId(interfaceId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String interfaceId) {
 			request.setEdgeId(edgeId);
-			request.setInterfaceId(interfaceId);
+						request.setInterfaceId(interfaceId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteTelephonyProvidersEdgeLogicalinterfaceRequest build() {

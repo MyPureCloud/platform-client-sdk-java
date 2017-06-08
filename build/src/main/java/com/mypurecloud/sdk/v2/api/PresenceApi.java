@@ -44,6 +44,7 @@ public class PresenceApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a Presence Definition
    * 
@@ -68,6 +69,7 @@ public class PresenceApi {
   private DeletePresencedefinitionRequest createDeletePresencedefinitionRequest(String presenceId) {
     return DeletePresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
+    
             .build();
   }
 
@@ -118,6 +120,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Get a Presence Definition
    * 
@@ -146,8 +149,9 @@ public class PresenceApi {
   private GetPresencedefinitionRequest createGetPresencedefinitionRequest(String presenceId, String localeCode) {
     return GetPresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
-
+    
             .withLocaleCode(localeCode)
+    
             .build();
   }
 
@@ -199,6 +203,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Get an Organization&#39;s list of Presence Definitions
    * 
@@ -231,12 +236,13 @@ public class PresenceApi {
   private GetPresencedefinitionsRequest createGetPresencedefinitionsRequest(Integer pageNumber, Integer pageSize, String deleted, String localeCode) {
     return GetPresencedefinitionsRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withDeleted(deleted)
-
+    
             .withLocaleCode(localeCode)
+    
             .build();
   }
 
@@ -288,6 +294,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Get the list of SystemPresences
    * 
@@ -310,7 +317,8 @@ public class PresenceApi {
   }
 
   private GetSystempresencesRequest createGetSystempresencesRequest() {
-    return GetSystempresencesRequest.builder()            .build();
+    return GetSystempresencesRequest.builder()
+            .build();
   }
 
   /**
@@ -361,6 +369,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Get a user&#39;s Presence
    * 
@@ -389,8 +398,9 @@ public class PresenceApi {
   private GetUserPresenceRequest createGetUserPresenceRequest(String userId, String sourceId) {
     return GetUserPresenceRequest.builder()
             .withUserId(userId)
-
+    
             .withSourceId(sourceId)
+    
             .build();
   }
 
@@ -442,6 +452,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Patch a user&#39;s Presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
@@ -472,10 +483,11 @@ public class PresenceApi {
   private PatchUserPresenceRequest createPatchUserPresenceRequest(String userId, String sourceId, UserPresence body) {
     return PatchUserPresenceRequest.builder()
             .withUserId(userId)
-
+    
             .withSourceId(sourceId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -527,6 +539,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Create a Presence Definition
    * 
@@ -553,6 +566,7 @@ public class PresenceApi {
   private PostPresencedefinitionsRequest createPostPresencedefinitionsRequest(OrganizationPresence body) {
     return PostPresencedefinitionsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -604,6 +618,7 @@ public class PresenceApi {
     }
   }
 
+  
   /**
    * Update a Presence Definition
    * 
@@ -632,8 +647,9 @@ public class PresenceApi {
   private PutPresencedefinitionRequest createPutPresencedefinitionRequest(String presenceId, OrganizationPresence body) {
     return PutPresencedefinitionRequest.builder()
             .withPresenceId(presenceId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -685,4 +701,5 @@ public class PresenceApi {
     }
   }
 
+  
 }

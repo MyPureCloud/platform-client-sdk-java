@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 	    return this;
 	}
 
+	
 	private String mediaType;
 	public String getMediaType() {
 		return this.mediaType;
@@ -72,6 +74,7 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,7 +111,8 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withPathParameter("mediaType", mediaType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -119,10 +123,12 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, String mediaType) {
 	    return new Builder()
 	            .withRequiredParams(queueId, mediaType);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingQueueMediatypeEstimatedwaittimeRequest request;
@@ -131,20 +137,26 @@ public class GetRoutingQueueMediatypeEstimatedwaittimeRequest {
 			request = new GetRoutingQueueMediatypeEstimatedwaittimeRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withMediaType(String mediaType) {
 			request.setMediaType(mediaType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, String mediaType) {
 			request.setQueueId(queueId);
-			request.setMediaType(mediaType);
+						request.setMediaType(mediaType);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingQueueMediatypeEstimatedwaittimeRequest build() {

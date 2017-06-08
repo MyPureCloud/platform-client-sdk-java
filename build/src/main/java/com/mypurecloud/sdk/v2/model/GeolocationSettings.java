@@ -27,7 +27,7 @@ public class GeolocationSettings  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public GeolocationSettings name(String name) {
@@ -44,7 +44,7 @@ public class GeolocationSettings  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public GeolocationSettings enabled(Boolean enabled) {
@@ -61,7 +61,7 @@ public class GeolocationSettings  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public GeolocationSettings mapboxKey(String mapboxKey) {
@@ -78,13 +78,14 @@ public class GeolocationSettings  implements Serializable {
     this.mapboxKey = mapboxKey;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

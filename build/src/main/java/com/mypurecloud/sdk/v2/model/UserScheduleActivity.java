@@ -41,7 +41,7 @@ public class UserScheduleActivity  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-
+  
   /**
    * Start time in UTC for this activity, in ISO-8601 format
    **/
@@ -59,7 +59,7 @@ public class UserScheduleActivity  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * Length in minutes for this activity
    **/
@@ -77,7 +77,7 @@ public class UserScheduleActivity  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-
+  
   /**
    * Description for this activity
    **/
@@ -95,7 +95,7 @@ public class UserScheduleActivity  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * Whether this activity is paid
    **/
@@ -113,7 +113,7 @@ public class UserScheduleActivity  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-
+  
   /**
    * Whether this activity spans a DST fallback
    **/
@@ -131,6 +131,7 @@ public class UserScheduleActivity  implements Serializable {
     this.isDstFallback = isDstFallback;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

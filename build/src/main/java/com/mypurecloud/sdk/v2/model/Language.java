@@ -65,7 +65,7 @@ public class Language  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The language name.
    **/
@@ -83,7 +83,7 @@ public class Language  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -101,7 +101,7 @@ public class Language  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Language state(StateEnum state) {
@@ -118,7 +118,7 @@ public class Language  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Language version(String version) {
@@ -135,13 +135,14 @@ public class Language  implements Serializable {
     this.version = version;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

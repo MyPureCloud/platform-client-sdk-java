@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PostExternalcontactsOrganizationNotesRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class PostExternalcontactsOrganizationNotesRequest {
 	    return this;
 	}
 
+	
 	private Note body;
 	public Note getBody() {
 		return this.body;
@@ -59,6 +61,7 @@ public class PostExternalcontactsOrganizationNotesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,6 +93,7 @@ public class PostExternalcontactsOrganizationNotesRequest {
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,10 +105,12 @@ public class PostExternalcontactsOrganizationNotesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId);
 	}
+	
 
 	public static class Builder {
 		private final PostExternalcontactsOrganizationNotesRequest request;
@@ -113,19 +119,25 @@ public class PostExternalcontactsOrganizationNotesRequest {
 			request = new PostExternalcontactsOrganizationNotesRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 		public Builder withBody(Note body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
+			
 			return this;
 		}
+		
 
 
 		public PostExternalcontactsOrganizationNotesRequest build() {

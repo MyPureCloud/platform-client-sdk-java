@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
+    
 	private String trunkType;
 	public String getTrunkType() {
 		return this.trunkType;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,7 +124,8 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/trunkswithrecording")
                 .withQueryParameters("trunkType", "", trunkType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -133,6 +136,7 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesTrunkswithrecordingRequest request;
@@ -141,11 +145,14 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 			request = new GetTelephonyProvidersEdgesTrunkswithrecordingRequest();
 		}
 
+		
 		public Builder withTrunkType(String trunkType) {
 			request.setTrunkType(trunkType);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesTrunkswithrecordingRequest build() {

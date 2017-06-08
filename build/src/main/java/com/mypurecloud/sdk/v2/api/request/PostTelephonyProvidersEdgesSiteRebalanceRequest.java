@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesSiteRebalanceRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesSiteRebalanceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class PostTelephonyProvidersEdgesSiteRebalanceRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/sites/{siteId}/rebalance")
                 .withPathParameter("siteId", siteId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesSiteRebalanceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId) {
 	    return new Builder()
 	            .withRequiredParams(siteId);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesSiteRebalanceRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesSiteRebalanceRequest {
 			request = new PostTelephonyProvidersEdgesSiteRebalanceRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId) {
 			request.setSiteId(siteId);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesSiteRebalanceRequest build() {

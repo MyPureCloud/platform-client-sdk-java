@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PutContentmanagementWorkspaceRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class PutContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private Workspace body;
 	public Workspace getBody() {
 		return this.body;
@@ -78,6 +80,7 @@ public class PutContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,6 +117,7 @@ public class PutContentmanagementWorkspaceRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -125,10 +129,12 @@ public class PutContentmanagementWorkspaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, Workspace body) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutContentmanagementWorkspaceRequest request;
@@ -137,20 +143,26 @@ public class PutContentmanagementWorkspaceRequest {
 			request = new PutContentmanagementWorkspaceRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withBody(Workspace body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, Workspace body) {
 			request.setWorkspaceId(workspaceId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutContentmanagementWorkspaceRequest build() {

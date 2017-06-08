@@ -125,7 +125,7 @@ public class Queue  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Queue name(String name) {
@@ -142,7 +142,7 @@ public class Queue  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Queue description(String description) {
@@ -159,7 +159,7 @@ public class Queue  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Queue version(Integer version) {
@@ -176,7 +176,7 @@ public class Queue  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -194,7 +194,7 @@ public class Queue  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -212,7 +212,7 @@ public class Queue  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Queue modifiedBy(String modifiedBy) {
@@ -229,7 +229,7 @@ public class Queue  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Queue createdBy(String createdBy) {
@@ -246,7 +246,7 @@ public class Queue  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Queue state(StateEnum state) {
@@ -263,7 +263,7 @@ public class Queue  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Queue modifiedByApp(String modifiedByApp) {
@@ -280,7 +280,7 @@ public class Queue  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Queue createdByApp(String createdByApp) {
@@ -297,7 +297,7 @@ public class Queue  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The media settings for the queue.
    **/
@@ -315,7 +315,7 @@ public class Queue  implements Serializable {
     this.mediaSettings = mediaSettings;
   }
 
-
+  
   /**
    * The bulls-eye settings for the queue.
    **/
@@ -333,7 +333,7 @@ public class Queue  implements Serializable {
     this.bullseye = bullseye;
   }
 
-
+  
   /**
    * The ACW settings for the queue.
    **/
@@ -351,7 +351,7 @@ public class Queue  implements Serializable {
     this.acwSettings = acwSettings;
   }
 
-
+  
   /**
    * The skill evaluation method to use when routing conversations.
    **/
@@ -369,7 +369,7 @@ public class Queue  implements Serializable {
     this.skillEvaluationMethod = skillEvaluationMethod;
   }
 
-
+  
   /**
    * The in-queue flow to use for conversations waiting in queue.
    **/
@@ -387,7 +387,7 @@ public class Queue  implements Serializable {
     this.queueFlow = queueFlow;
   }
 
-
+  
   /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
@@ -405,7 +405,7 @@ public class Queue  implements Serializable {
     this.callingPartyName = callingPartyName;
   }
 
-
+  
   /**
    * The phone number to use for caller identification for outbound calls from this queue.
    **/
@@ -423,7 +423,7 @@ public class Queue  implements Serializable {
     this.callingPartyNumber = callingPartyNumber;
   }
 
-
+  
   /**
    * The default script Ids for the communication types.
    **/
@@ -441,7 +441,7 @@ public class Queue  implements Serializable {
     this.defaultScripts = defaultScripts;
   }
 
-
+  
   /**
    **/
   public Queue outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
@@ -458,7 +458,7 @@ public class Queue  implements Serializable {
     this.outboundEmailAddress = outboundEmailAddress;
   }
 
-
+  
   /**
    **/
   public Queue memberCount(Integer memberCount) {
@@ -475,13 +475,14 @@ public class Queue  implements Serializable {
     this.memberCount = memberCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

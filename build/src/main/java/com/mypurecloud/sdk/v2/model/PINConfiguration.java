@@ -34,7 +34,7 @@ public class PINConfiguration  implements Serializable {
     this.minimumLength = minimumLength;
   }
 
-
+  
   /**
    **/
   public PINConfiguration maximumLength(Integer maximumLength) {
@@ -51,6 +51,7 @@ public class PINConfiguration  implements Serializable {
     this.maximumLength = maximumLength;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

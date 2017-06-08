@@ -72,7 +72,7 @@ public class IntradayQueue  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * Queue name
    **/
@@ -90,7 +90,7 @@ public class IntradayQueue  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The media types valid for this queue as defined by the service goal groups in this management unit
    **/
@@ -108,6 +108,7 @@ public class IntradayQueue  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

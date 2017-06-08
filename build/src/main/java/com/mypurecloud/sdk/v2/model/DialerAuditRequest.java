@@ -41,7 +41,7 @@ public class DialerAuditRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-
+  
   /**
    * The fields in which to search for the queryPhrase.
    **/
@@ -59,7 +59,7 @@ public class DialerAuditRequest  implements Serializable {
     this.queryFields = queryFields;
   }
 
-
+  
   /**
    * The fields to facet on.
    **/
@@ -77,7 +77,7 @@ public class DialerAuditRequest  implements Serializable {
     this.facets = facets;
   }
 
-
+  
   /**
    * The fields to filter on.
    **/
@@ -95,6 +95,7 @@ public class DialerAuditRequest  implements Serializable {
     this.filters = filters;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

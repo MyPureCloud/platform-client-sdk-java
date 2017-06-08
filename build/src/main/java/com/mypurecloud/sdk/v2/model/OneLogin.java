@@ -17,8 +17,8 @@ public class OneLogin  implements Serializable {
   private String id = null;
   private String name = null;
   private String certificate = null;
-  private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String issuerURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -29,7 +29,7 @@ public class OneLogin  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public OneLogin name(String name) {
@@ -46,7 +46,7 @@ public class OneLogin  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public OneLogin certificate(String certificate) {
@@ -63,24 +63,7 @@ public class OneLogin  implements Serializable {
     this.certificate = certificate;
   }
 
-
-  /**
-   **/
-  public OneLogin issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-
   /**
    **/
   public OneLogin ssoTargetURI(String ssoTargetURI) {
@@ -97,7 +80,24 @@ public class OneLogin  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
+  
+  /**
+   **/
+  public OneLogin issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+  }
 
+  
   /**
    **/
   public OneLogin disabled(Boolean disabled) {
@@ -114,13 +114,14 @@ public class OneLogin  implements Serializable {
     this.disabled = disabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,15 +135,15 @@ public class OneLogin  implements Serializable {
     return Objects.equals(this.id, oneLogin.id) &&
         Objects.equals(this.name, oneLogin.name) &&
         Objects.equals(this.certificate, oneLogin.certificate) &&
-        Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
         Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
+        Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
         Objects.equals(this.disabled, oneLogin.disabled) &&
         Objects.equals(this.selfUri, oneLogin.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
   }
 
   @Override
@@ -153,8 +154,8 @@ public class OneLogin  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundCampaignruleRequest {
+    
 	private String campaignRuleId;
 	public String getCampaignRuleId() {
 		return this.campaignRuleId;
@@ -74,6 +75,7 @@ public class DeleteOutboundCampaignruleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundCampaignruleRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/campaignrules/{campaignRuleId}")
                 .withPathParameter("campaignRuleId", campaignRuleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundCampaignruleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String campaignRuleId) {
 	    return new Builder()
 	            .withRequiredParams(campaignRuleId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundCampaignruleRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundCampaignruleRequest {
 			request = new DeleteOutboundCampaignruleRequest();
 		}
 
+		
 		public Builder withCampaignRuleId(String campaignRuleId) {
 			request.setCampaignRuleId(campaignRuleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String campaignRuleId) {
 			request.setCampaignRuleId(campaignRuleId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundCampaignruleRequest build() {

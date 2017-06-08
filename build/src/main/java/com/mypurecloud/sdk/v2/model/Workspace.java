@@ -74,7 +74,7 @@ public class Workspace  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The current name of the workspace.
    **/
@@ -92,7 +92,7 @@ public class Workspace  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Workspace type(TypeEnum type) {
@@ -109,7 +109,7 @@ public class Workspace  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Workspace isCurrentUserWorkspace(Boolean isCurrentUserWorkspace) {
@@ -126,7 +126,7 @@ public class Workspace  implements Serializable {
     this.isCurrentUserWorkspace = isCurrentUserWorkspace;
   }
 
-
+  
   /**
    **/
   public Workspace user(UriReference user) {
@@ -143,7 +143,7 @@ public class Workspace  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public Workspace bucket(String bucket) {
@@ -160,7 +160,7 @@ public class Workspace  implements Serializable {
     this.bucket = bucket;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -178,7 +178,7 @@ public class Workspace  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -196,7 +196,7 @@ public class Workspace  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Workspace summary(WorkspaceSummary summary) {
@@ -213,7 +213,7 @@ public class Workspace  implements Serializable {
     this.summary = summary;
   }
 
-
+  
   /**
    **/
   public Workspace acl(List<String> acl) {
@@ -230,7 +230,7 @@ public class Workspace  implements Serializable {
     this.acl = acl;
   }
 
-
+  
   /**
    **/
   public Workspace description(String description) {
@@ -247,13 +247,14 @@ public class Workspace  implements Serializable {
     this.description = description;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

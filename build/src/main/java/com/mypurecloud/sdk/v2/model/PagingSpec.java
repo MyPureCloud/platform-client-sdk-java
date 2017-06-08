@@ -35,7 +35,7 @@ public class PagingSpec  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * How many pages in
    **/
@@ -53,6 +53,7 @@ public class PagingSpec  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

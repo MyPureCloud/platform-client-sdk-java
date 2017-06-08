@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUsersSearchRequest {
+    
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -62,6 +63,7 @@ public class GetUsersSearchRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -76,6 +78,7 @@ public class GetUsersSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,7 +110,8 @@ public class GetUsersSearchRequest {
                 .withQueryParameters("q64", "", q64)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -118,10 +122,12 @@ public class GetUsersSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
+	
 
 	public static class Builder {
 		private final GetUsersSearchRequest request;
@@ -130,19 +136,25 @@ public class GetUsersSearchRequest {
 			request = new GetUsersSearchRequest();
 		}
 
+		
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
+			
 			return this;
 		}
+		
 
 
 		public GetUsersSearchRequest build() {

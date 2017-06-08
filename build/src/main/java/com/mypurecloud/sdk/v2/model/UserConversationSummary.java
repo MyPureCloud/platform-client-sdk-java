@@ -40,7 +40,7 @@ public class UserConversationSummary  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary call(MediaSummary call) {
@@ -57,7 +57,7 @@ public class UserConversationSummary  implements Serializable {
     this.call = call;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary callback(MediaSummary callback) {
@@ -74,7 +74,7 @@ public class UserConversationSummary  implements Serializable {
     this.callback = callback;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary email(MediaSummary email) {
@@ -91,7 +91,7 @@ public class UserConversationSummary  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary chat(MediaSummary chat) {
@@ -108,7 +108,7 @@ public class UserConversationSummary  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary socialExpression(MediaSummary socialExpression) {
@@ -125,7 +125,7 @@ public class UserConversationSummary  implements Serializable {
     this.socialExpression = socialExpression;
   }
 
-
+  
   /**
    **/
   public UserConversationSummary video(MediaSummary video) {
@@ -142,6 +142,7 @@ public class UserConversationSummary  implements Serializable {
     this.video = video;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

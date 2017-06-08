@@ -48,7 +48,7 @@ public class ErrorBody  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public ErrorBody code(String code) {
@@ -65,7 +65,7 @@ public class ErrorBody  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ErrorBody entityId(String entityId) {
@@ -82,7 +82,7 @@ public class ErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public ErrorBody entityName(String entityName) {
@@ -99,7 +99,7 @@ public class ErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public ErrorBody message(String message) {
@@ -116,7 +116,7 @@ public class ErrorBody  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ErrorBody messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class ErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public ErrorBody messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class ErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public ErrorBody contextId(String contextId) {
@@ -167,7 +167,7 @@ public class ErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public ErrorBody details(List<Detail> details) {
@@ -184,7 +184,7 @@ public class ErrorBody  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public ErrorBody errors(List<ErrorBody> errors) {
@@ -201,6 +201,7 @@ public class ErrorBody  implements Serializable {
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

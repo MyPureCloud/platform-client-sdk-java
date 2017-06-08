@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PutAlertingHeartbeatRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class PutAlertingHeartbeatRuleRequest {
 	    return this;
 	}
 
+	
 	private HeartBeatRule body;
 	public HeartBeatRule getBody() {
 		return this.body;
@@ -67,6 +69,7 @@ public class PutAlertingHeartbeatRuleRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,6 +84,7 @@ public class PutAlertingHeartbeatRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,6 +123,7 @@ public class PutAlertingHeartbeatRuleRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -130,10 +135,12 @@ public class PutAlertingHeartbeatRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId, HeartBeatRule body) {
 	    return new Builder()
 	            .withRequiredParams(ruleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAlertingHeartbeatRuleRequest request;
@@ -142,24 +149,31 @@ public class PutAlertingHeartbeatRuleRequest {
 			request = new PutAlertingHeartbeatRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 		public Builder withBody(HeartBeatRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId, HeartBeatRule body) {
 			request.setRuleId(ruleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAlertingHeartbeatRuleRequest build() {

@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityConversationAuditsRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -66,6 +68,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -80,6 +83,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -94,6 +98,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -108,6 +113,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -122,6 +128,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -136,6 +143,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -150,6 +158,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private String entityType;
 	public String getEntityType() {
 		return this.entityType;
@@ -164,6 +173,7 @@ public class GetQualityConversationAuditsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -209,7 +219,8 @@ public class GetQualityConversationAuditsRequest {
                 .withQueryParameters("recordingId", "", recordingId)
         
                 .withQueryParameters("entityType", "", entityType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -220,10 +231,12 @@ public class GetQualityConversationAuditsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
+	
 
 	public static class Builder {
 		private final GetQualityConversationAuditsRequest request;
@@ -232,47 +245,60 @@ public class GetQualityConversationAuditsRequest {
 			request = new GetQualityConversationAuditsRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
+		
 		public Builder withEntityType(String entityType) {
 			request.setEntityType(entityType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
+			
 			return this;
 		}
+		
 
 
 		public GetQualityConversationAuditsRequest build() {

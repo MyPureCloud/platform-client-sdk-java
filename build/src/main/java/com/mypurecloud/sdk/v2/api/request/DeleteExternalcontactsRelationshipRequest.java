@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsRelationshipRequest {
+    
 	private String relationshipId;
 	public String getRelationshipId() {
 		return this.relationshipId;
@@ -45,6 +46,7 @@ public class DeleteExternalcontactsRelationshipRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +76,8 @@ public class DeleteExternalcontactsRelationshipRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/externalcontacts/relationships/{relationshipId}")
                 .withPathParameter("relationshipId", relationshipId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -85,10 +88,12 @@ public class DeleteExternalcontactsRelationshipRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String relationshipId) {
 	    return new Builder()
 	            .withRequiredParams(relationshipId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteExternalcontactsRelationshipRequest request;
@@ -97,15 +102,20 @@ public class DeleteExternalcontactsRelationshipRequest {
 			request = new DeleteExternalcontactsRelationshipRequest();
 		}
 
+		
 		public Builder withRelationshipId(String relationshipId) {
 			request.setRelationshipId(relationshipId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String relationshipId) {
 			request.setRelationshipId(relationshipId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteExternalcontactsRelationshipRequest build() {

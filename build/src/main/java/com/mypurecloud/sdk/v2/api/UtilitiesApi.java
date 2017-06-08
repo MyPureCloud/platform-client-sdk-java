@@ -39,6 +39,7 @@ public class UtilitiesApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get the current system date/time
    * 
@@ -61,7 +62,8 @@ public class UtilitiesApi {
   }
 
   private GetDateRequest createGetDateRequest() {
-    return GetDateRequest.builder()            .build();
+    return GetDateRequest.builder()
+            .build();
   }
 
   /**
@@ -112,6 +114,7 @@ public class UtilitiesApi {
     }
   }
 
+  
   /**
    * Get time zones list
    * 
@@ -140,8 +143,9 @@ public class UtilitiesApi {
   private GetTimezonesRequest createGetTimezonesRequest(Integer pageSize, Integer pageNumber) {
     return GetTimezonesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -193,6 +197,7 @@ public class UtilitiesApi {
     }
   }
 
+  
   /**
    * Returns the information about an X509 PEM encoded certificate or certificate chain.
    * 
@@ -219,6 +224,7 @@ public class UtilitiesApi {
   private PostCertificateDetailsRequest createPostCertificateDetailsRequest(Certificate body) {
     return PostCertificateDetailsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -270,4 +276,5 @@ public class UtilitiesApi {
     }
   }
 
+  
 }

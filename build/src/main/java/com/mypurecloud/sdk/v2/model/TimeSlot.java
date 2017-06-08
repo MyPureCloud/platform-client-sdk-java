@@ -36,7 +36,7 @@ public class TimeSlot  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * stop time in xx:xx:xx.xxx format
    **/
@@ -54,7 +54,7 @@ public class TimeSlot  implements Serializable {
     this.stopTime = stopTime;
   }
 
-
+  
   /**
    * Day for this time slot, Monday = 1 ... Sunday = 7
    **/
@@ -72,6 +72,7 @@ public class TimeSlot  implements Serializable {
     this.day = day;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -88,7 +88,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.participantId = participantId;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant participantName(String participantName) {
@@ -105,7 +105,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.participantName = participantName;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant userId(String userId) {
@@ -122,7 +122,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant purpose(PurposeEnum purpose) {
@@ -139,7 +139,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant externalContactId(String externalContactId) {
@@ -156,7 +156,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant externalOrganizationId(String externalOrganizationId) {
@@ -173,7 +173,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-
+  
   /**
    **/
   public AnalyticsParticipant sessions(List<AnalyticsSession> sessions) {
@@ -190,6 +190,7 @@ public class AnalyticsParticipant  implements Serializable {
     this.sessions = sessions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

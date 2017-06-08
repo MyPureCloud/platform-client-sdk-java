@@ -46,7 +46,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public SecurityProfileEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

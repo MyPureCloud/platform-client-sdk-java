@@ -45,7 +45,7 @@ public class QueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-
+  
   /**
    **/
   public QueryRequest pageNumber(Integer pageNumber) {
@@ -62,7 +62,7 @@ public class QueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public QueryRequest pageSize(Integer pageSize) {
@@ -79,7 +79,7 @@ public class QueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public QueryRequest facetNameRequests(List<String> facetNameRequests) {
@@ -96,7 +96,7 @@ public class QueryRequest  implements Serializable {
     this.facetNameRequests = facetNameRequests;
   }
 
-
+  
   /**
    **/
   public QueryRequest sort(List<SortItem> sort) {
@@ -113,7 +113,7 @@ public class QueryRequest  implements Serializable {
     this.sort = sort;
   }
 
-
+  
   /**
    **/
   public QueryRequest filters(List<ContentFilterItem> filters) {
@@ -130,7 +130,7 @@ public class QueryRequest  implements Serializable {
     this.filters = filters;
   }
 
-
+  
   /**
    **/
   public QueryRequest attributeFilters(List<AttributeFilterItem> attributeFilters) {
@@ -147,7 +147,7 @@ public class QueryRequest  implements Serializable {
     this.attributeFilters = attributeFilters;
   }
 
-
+  
   /**
    **/
   public QueryRequest includeShares(Boolean includeShares) {
@@ -164,6 +164,7 @@ public class QueryRequest  implements Serializable {
     this.includeShares = includeShares;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

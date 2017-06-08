@@ -35,7 +35,7 @@ public class SequenceScheduleNotificationScheduleInterval  implements Serializab
     this.start = start;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotificationScheduleInterval end(String end) {
@@ -52,7 +52,7 @@ public class SequenceScheduleNotificationScheduleInterval  implements Serializab
     this.end = end;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotificationScheduleInterval additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class SequenceScheduleNotificationScheduleInterval  implements Serializab
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

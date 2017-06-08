@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailMessageMediaRequest {
+    
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -45,6 +46,7 @@ public class GetVoicemailMessageMediaRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -59,6 +61,7 @@ public class GetVoicemailMessageMediaRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetVoicemailMessageMediaRequest {
                 .withPathParameter("messageId", messageId)
         
                 .withQueryParameters("formatId", "", formatId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetVoicemailMessageMediaRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String messageId) {
 	    return new Builder()
 	            .withRequiredParams(messageId);
 	}
+	
 
 	public static class Builder {
 		private final GetVoicemailMessageMediaRequest request;
@@ -113,19 +119,25 @@ public class GetVoicemailMessageMediaRequest {
 			request = new GetVoicemailMessageMediaRequest();
 		}
 
+		
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String messageId) {
 			request.setMessageId(messageId);
+			
 			return this;
 		}
+		
 
 
 		public GetVoicemailMessageMediaRequest build() {

@@ -270,7 +270,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **responseId** | **String**| Response ID | |
-| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -327,7 +327,7 @@ try {
 | **libraryId** | **String**| Library ID | |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -431,7 +431,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**Response**](Response.html)| Response | |
-| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type
@@ -590,7 +590,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **responseId** | **String**| Response ID | |
 | **body** | [**Response**](Response.html)| Response | |
-| **expand** | **String**| Expand instructions for the return value. | [optional] [enum: substitutionsSchema] |
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
 {: class="table table-striped"}
 
 ### Return type

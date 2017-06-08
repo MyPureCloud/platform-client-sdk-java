@@ -46,7 +46,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.total = total;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public TimeZoneEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

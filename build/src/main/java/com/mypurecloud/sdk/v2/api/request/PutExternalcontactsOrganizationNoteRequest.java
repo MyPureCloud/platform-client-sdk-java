@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PutExternalcontactsOrganizationNoteRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	    return this;
 	}
 
+	
 	private String noteId;
 	public String getNoteId() {
 		return this.noteId;
@@ -59,6 +61,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	    return this;
 	}
 
+	
 	private Note body;
 	public Note getBody() {
 		return this.body;
@@ -73,6 +76,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -111,6 +115,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
                 .withPathParameter("noteId", noteId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -122,10 +127,12 @@ public class PutExternalcontactsOrganizationNoteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId, String noteId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId, noteId);
 	}
+	
 
 	public static class Builder {
 		private final PutExternalcontactsOrganizationNoteRequest request;
@@ -134,24 +141,31 @@ public class PutExternalcontactsOrganizationNoteRequest {
 			request = new PutExternalcontactsOrganizationNoteRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 		public Builder withNoteId(String noteId) {
 			request.setNoteId(noteId);
 			return this;
 		}
+		
 		public Builder withBody(Note body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId, String noteId) {
 			request.setExternalOrganizationId(externalOrganizationId);
-			request.setNoteId(noteId);
+						request.setNoteId(noteId);
+			
 			return this;
 		}
+		
 
 
 		public PutExternalcontactsOrganizationNoteRequest build() {

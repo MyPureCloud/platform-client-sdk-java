@@ -34,7 +34,7 @@ public class CallbackConversationNotificationUriReference  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationUriReference name(String name) {
@@ -51,6 +51,7 @@ public class CallbackConversationNotificationUriReference  implements Serializab
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

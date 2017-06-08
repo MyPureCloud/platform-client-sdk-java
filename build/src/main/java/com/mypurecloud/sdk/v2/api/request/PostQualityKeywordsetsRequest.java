@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostQualityKeywordsetsRequest {
+    
 	private KeywordSet body;
 	public KeywordSet getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostQualityKeywordsetsRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -66,6 +68,7 @@ public class PostQualityKeywordsetsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -97,6 +100,7 @@ public class PostQualityKeywordsetsRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -108,10 +112,12 @@ public class PostQualityKeywordsetsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(KeywordSet body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostQualityKeywordsetsRequest request;
@@ -120,19 +126,25 @@ public class PostQualityKeywordsetsRequest {
 			request = new PostQualityKeywordsetsRequest();
 		}
 
+		
 		public Builder withBody(KeywordSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(KeywordSet body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostQualityKeywordsetsRequest build() {

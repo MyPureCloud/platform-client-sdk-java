@@ -111,7 +111,7 @@ public class CreateShareRequest  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-
+  
   /**
    * The entity that will be shared
    **/
@@ -129,7 +129,7 @@ public class CreateShareRequest  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-
+  
   /**
    **/
   public CreateShareRequest memberType(MemberTypeEnum memberType) {
@@ -146,7 +146,7 @@ public class CreateShareRequest  implements Serializable {
     this.memberType = memberType;
   }
 
-
+  
   /**
    * The member that will have access to this share. Only required if a list of members is not provided.
    **/
@@ -164,7 +164,7 @@ public class CreateShareRequest  implements Serializable {
     this.member = member;
   }
 
-
+  
   /**
    **/
   public CreateShareRequest members(List<CreateShareRequestMember> members) {
@@ -181,6 +181,7 @@ public class CreateShareRequest  implements Serializable {
     this.members = members;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

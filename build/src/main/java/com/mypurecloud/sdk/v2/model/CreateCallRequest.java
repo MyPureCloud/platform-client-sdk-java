@@ -45,7 +45,7 @@ public class CreateCallRequest  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-
+  
   /**
    * The queue ID to call on behalf of.
    **/
@@ -63,7 +63,7 @@ public class CreateCallRequest  implements Serializable {
     this.callFromQueueId = callFromQueueId;
   }
 
-
+  
   /**
    * The queue ID to call.
    **/
@@ -81,7 +81,7 @@ public class CreateCallRequest  implements Serializable {
     this.callQueueId = callQueueId;
   }
 
-
+  
   /**
    * The user ID to call.
    **/
@@ -99,7 +99,7 @@ public class CreateCallRequest  implements Serializable {
     this.callUserId = callUserId;
   }
 
-
+  
   /**
    * The priority to assign to this call (if calling a queue).
    **/
@@ -117,7 +117,7 @@ public class CreateCallRequest  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * The language skill ID to use for routing this call (if calling a queue).
    **/
@@ -135,7 +135,7 @@ public class CreateCallRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-
+  
   /**
    * The skill ID's to use for routing this call (if calling a queue).
    **/
@@ -153,7 +153,7 @@ public class CreateCallRequest  implements Serializable {
     this.routingSkillsIds = routingSkillsIds;
   }
 
-
+  
   /**
    * The list of existing call conversations to merge into a new ad-hoc conference.
    **/
@@ -171,7 +171,7 @@ public class CreateCallRequest  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-
+  
   /**
    * The list of participants to call to create a new ad-hoc conference.
    **/
@@ -189,6 +189,7 @@ public class CreateCallRequest  implements Serializable {
     this.participants = participants;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

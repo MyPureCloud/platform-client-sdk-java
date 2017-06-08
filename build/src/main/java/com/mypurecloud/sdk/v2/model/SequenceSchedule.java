@@ -36,7 +36,7 @@ public class SequenceSchedule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public SequenceSchedule name(String name) {
@@ -53,21 +53,21 @@ public class SequenceSchedule  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -85,7 +85,7 @@ public class SequenceSchedule  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * a list of start and end times
    **/
@@ -103,7 +103,7 @@ public class SequenceSchedule  implements Serializable {
     this.intervals = intervals;
   }
 
-
+  
   /**
    * time zone identifier to be applied to the intervals; for example Africa/Abidjan
    **/
@@ -121,7 +121,7 @@ public class SequenceSchedule  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    * identifier of the sequence to be scheduled
    **/
@@ -139,13 +139,14 @@ public class SequenceSchedule  implements Serializable {
     this.sequence = sequence;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

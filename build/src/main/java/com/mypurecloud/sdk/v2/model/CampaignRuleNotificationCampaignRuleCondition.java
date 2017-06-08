@@ -74,7 +74,7 @@ public class CampaignRuleNotificationCampaignRuleCondition  implements Serializa
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleCondition parameters(Map<String, String> parameters) {
@@ -91,7 +91,7 @@ public class CampaignRuleNotificationCampaignRuleCondition  implements Serializa
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleCondition conditionType(ConditionTypeEnum conditionType) {
@@ -108,7 +108,7 @@ public class CampaignRuleNotificationCampaignRuleCondition  implements Serializa
     this.conditionType = conditionType;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleCondition additionalProperties(Object additionalProperties) {
@@ -125,6 +125,7 @@ public class CampaignRuleNotificationCampaignRuleCondition  implements Serializa
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

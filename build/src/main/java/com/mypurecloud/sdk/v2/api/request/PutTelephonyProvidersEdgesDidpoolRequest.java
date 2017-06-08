@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesDidpoolRequest {
+    
 	private String didPoolId;
 	public String getDidPoolId() {
 		return this.didPoolId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesDidpoolRequest {
 	    return this;
 	}
 
+	
 	private DIDPool body;
 	public DIDPool getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesDidpoolRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesDidpoolRequest {
                 .withPathParameter("didPoolId", didPoolId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesDidpoolRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String didPoolId, DIDPool body) {
 	    return new Builder()
 	            .withRequiredParams(didPoolId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesDidpoolRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesDidpoolRequest {
 			request = new PutTelephonyProvidersEdgesDidpoolRequest();
 		}
 
+		
 		public Builder withDidPoolId(String didPoolId) {
 			request.setDidPoolId(didPoolId);
 			return this;
 		}
+		
 		public Builder withBody(DIDPool body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String didPoolId, DIDPool body) {
 			request.setDidPoolId(didPoolId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesDidpoolRequest build() {

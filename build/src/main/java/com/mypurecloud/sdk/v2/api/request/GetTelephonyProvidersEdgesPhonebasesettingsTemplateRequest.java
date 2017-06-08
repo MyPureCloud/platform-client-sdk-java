@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
+    
 	private String phoneMetabaseId;
 	public String getPhoneMetabaseId() {
 		return this.phoneMetabaseId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/phonebasesettings/template")
                 .withQueryParameters("phoneMetabaseId", "", phoneMetabaseId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String phoneMetabaseId) {
 	    return new Builder()
 	            .withRequiredParams(phoneMetabaseId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest {
 			request = new GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest();
 		}
 
+		
 		public Builder withPhoneMetabaseId(String phoneMetabaseId) {
 			request.setPhoneMetabaseId(phoneMetabaseId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String phoneMetabaseId) {
 			request.setPhoneMetabaseId(phoneMetabaseId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest build() {

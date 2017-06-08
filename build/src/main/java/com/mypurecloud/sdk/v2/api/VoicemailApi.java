@@ -64,6 +64,7 @@ public class VoicemailApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a message.
    * 
@@ -88,6 +89,7 @@ public class VoicemailApi {
   private DeleteVoicemailMessageRequest createDeleteVoicemailMessageRequest(String messageId) {
     return DeleteVoicemailMessageRequest.builder()
             .withMessageId(messageId)
+    
             .build();
   }
 
@@ -138,6 +140,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Delete all voicemail messages
    * 
@@ -158,7 +161,8 @@ public class VoicemailApi {
   }
 
   private DeleteVoicemailMessagesRequest createDeleteVoicemailMessagesRequest() {
-    return DeleteVoicemailMessagesRequest.builder()            .build();
+    return DeleteVoicemailMessagesRequest.builder()
+            .build();
   }
 
   /**
@@ -208,6 +212,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get the group&#39;s mailbox information
    * 
@@ -234,6 +239,7 @@ public class VoicemailApi {
   private GetVoicemailGroupMailboxRequest createGetVoicemailGroupMailboxRequest(String groupId) {
     return GetVoicemailGroupMailboxRequest.builder()
             .withGroupId(groupId)
+    
             .build();
   }
 
@@ -285,6 +291,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * List voicemail messages
    * 
@@ -315,10 +322,11 @@ public class VoicemailApi {
   private GetVoicemailGroupMessagesRequest createGetVoicemailGroupMessagesRequest(String groupId, Integer pageSize, Integer pageNumber) {
     return GetVoicemailGroupMessagesRequest.builder()
             .withGroupId(groupId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -370,6 +378,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get a group&#39;s voicemail policy
    * 
@@ -396,6 +405,7 @@ public class VoicemailApi {
   private GetVoicemailGroupPolicyRequest createGetVoicemailGroupPolicyRequest(String groupId) {
     return GetVoicemailGroupPolicyRequest.builder()
             .withGroupId(groupId)
+    
             .build();
   }
 
@@ -447,6 +457,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get the current user&#39;s mailbox information
    * 
@@ -469,7 +480,8 @@ public class VoicemailApi {
   }
 
   private GetVoicemailMailboxRequest createGetVoicemailMailboxRequest() {
-    return GetVoicemailMailboxRequest.builder()            .build();
+    return GetVoicemailMailboxRequest.builder()
+            .build();
   }
 
   /**
@@ -520,6 +532,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get the current user&#39;s mailbox information
    * 
@@ -542,7 +555,8 @@ public class VoicemailApi {
   }
 
   private GetVoicemailMeMailboxRequest createGetVoicemailMeMailboxRequest() {
-    return GetVoicemailMeMailboxRequest.builder()            .build();
+    return GetVoicemailMeMailboxRequest.builder()
+            .build();
   }
 
   /**
@@ -593,6 +607,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * List voicemail messages
    * 
@@ -621,8 +636,9 @@ public class VoicemailApi {
   private GetVoicemailMeMessagesRequest createGetVoicemailMeMessagesRequest(Integer pageSize, Integer pageNumber) {
     return GetVoicemailMeMessagesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -674,6 +690,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get the current user&#39;s voicemail policy
    * 
@@ -696,7 +713,8 @@ public class VoicemailApi {
   }
 
   private GetVoicemailMePolicyRequest createGetVoicemailMePolicyRequest() {
-    return GetVoicemailMePolicyRequest.builder()            .build();
+    return GetVoicemailMePolicyRequest.builder()
+            .build();
   }
 
   /**
@@ -747,6 +765,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get message.
    * 
@@ -775,8 +794,9 @@ public class VoicemailApi {
   private GetVoicemailMessageRequest createGetVoicemailMessageRequest(String messageId, List<String> expand) {
     return GetVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -828,6 +848,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get media playback URI for this message
    * 
@@ -856,8 +877,9 @@ public class VoicemailApi {
   private GetVoicemailMessageMediaRequest createGetVoicemailMessageMediaRequest(String messageId, String formatId) {
     return GetVoicemailMessageMediaRequest.builder()
             .withMessageId(messageId)
-
+    
             .withFormatId(formatId)
+    
             .build();
   }
 
@@ -909,6 +931,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * List voicemail messages
    * 
@@ -937,8 +960,9 @@ public class VoicemailApi {
   private GetVoicemailMessagesRequest createGetVoicemailMessagesRequest(String ids, List<String> expand) {
     return GetVoicemailMessagesRequest.builder()
             .withIds(ids)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -990,6 +1014,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get a policy
    * 
@@ -1012,7 +1037,8 @@ public class VoicemailApi {
   }
 
   private GetVoicemailPolicyRequest createGetVoicemailPolicyRequest() {
-    return GetVoicemailPolicyRequest.builder()            .build();
+    return GetVoicemailPolicyRequest.builder()
+            .build();
   }
 
   /**
@@ -1063,6 +1089,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -1091,8 +1118,9 @@ public class VoicemailApi {
   private GetVoicemailSearchRequest createGetVoicemailSearchRequest(String q64, List<String> expand) {
     return GetVoicemailSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1144,6 +1172,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Get a user&#39;s voicemail policy
    * 
@@ -1170,6 +1199,7 @@ public class VoicemailApi {
   private GetVoicemailUserpolicyRequest createGetVoicemailUserpolicyRequest(String userId) {
     return GetVoicemailUserpolicyRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1221,6 +1251,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Update a group&#39;s voicemail policy
    * 
@@ -1249,8 +1280,9 @@ public class VoicemailApi {
   private PatchVoicemailGroupPolicyRequest createPatchVoicemailGroupPolicyRequest(String groupId, VoicemailGroupPolicy body) {
     return PatchVoicemailGroupPolicyRequest.builder()
             .withGroupId(groupId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1302,6 +1334,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Update the current user&#39;s voicemail policy
    * 
@@ -1328,6 +1361,7 @@ public class VoicemailApi {
   private PatchVoicemailMePolicyRequest createPatchVoicemailMePolicyRequest(VoicemailUserPolicy body) {
     return PatchVoicemailMePolicyRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1379,6 +1413,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Update a user&#39;s voicemail policy
    * 
@@ -1407,8 +1442,9 @@ public class VoicemailApi {
   private PatchVoicemailUserpolicyRequest createPatchVoicemailUserpolicyRequest(String userId, VoicemailUserPolicy body) {
     return PatchVoicemailUserpolicyRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1460,6 +1496,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Copy a voicemail message to a user or group
    * 
@@ -1486,6 +1523,7 @@ public class VoicemailApi {
   private PostVoicemailMessagesRequest createPostVoicemailMessagesRequest(CopyVoicemailMessage body) {
     return PostVoicemailMessagesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1537,6 +1575,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Search voicemails
    * 
@@ -1563,6 +1602,7 @@ public class VoicemailApi {
   private PostVoicemailSearchRequest createPostVoicemailSearchRequest(VoicemailSearchRequest body) {
     return PostVoicemailSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1614,6 +1654,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Update a message.
    * 
@@ -1642,8 +1683,9 @@ public class VoicemailApi {
   private PutVoicemailMessageRequest createPutVoicemailMessageRequest(String messageId, VoicemailMessage body) {
     return PutVoicemailMessageRequest.builder()
             .withMessageId(messageId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1695,6 +1737,7 @@ public class VoicemailApi {
     }
   }
 
+  
   /**
    * Update a policy
    * 
@@ -1721,6 +1764,7 @@ public class VoicemailApi {
   private PutVoicemailPolicyRequest createPutVoicemailPolicyRequest(VoicemailOrganizationPolicy body) {
     return PutVoicemailPolicyRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1772,4 +1816,5 @@ public class VoicemailApi {
     }
   }
 
+  
 }

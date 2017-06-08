@@ -46,7 +46,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class VoicemailMessageEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

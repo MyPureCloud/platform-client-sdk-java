@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetUserrecordingsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -39,6 +40,7 @@ public class GetUserrecordingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -53,6 +55,7 @@ public class GetUserrecordingsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -67,6 +70,7 @@ public class GetUserrecordingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,7 +99,8 @@ public class GetUserrecordingsRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -106,6 +111,7 @@ public class GetUserrecordingsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetUserrecordingsRequest request;
@@ -114,19 +120,24 @@ public class GetUserrecordingsRequest {
 			request = new GetUserrecordingsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetUserrecordingsRequest build() {

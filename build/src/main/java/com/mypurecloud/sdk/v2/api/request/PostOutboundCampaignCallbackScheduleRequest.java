@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCampaignCallbackScheduleRequest {
+    
 	private String campaignId;
 	public String getCampaignId() {
 		return this.campaignId;
@@ -74,6 +75,7 @@ public class PostOutboundCampaignCallbackScheduleRequest {
 	    return this;
 	}
 
+	
 	private ContactCallbackRequest body;
 	public ContactCallbackRequest getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostOutboundCampaignCallbackScheduleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PostOutboundCampaignCallbackScheduleRequest {
                 .withPathParameter("campaignId", campaignId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PostOutboundCampaignCallbackScheduleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String campaignId, ContactCallbackRequest body) {
 	    return new Builder()
 	            .withRequiredParams(campaignId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundCampaignCallbackScheduleRequest request;
@@ -147,20 +153,26 @@ public class PostOutboundCampaignCallbackScheduleRequest {
 			request = new PostOutboundCampaignCallbackScheduleRequest();
 		}
 
+		
 		public Builder withCampaignId(String campaignId) {
 			request.setCampaignId(campaignId);
 			return this;
 		}
+		
 		public Builder withBody(ContactCallbackRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String campaignId, ContactCallbackRequest body) {
 			request.setCampaignId(campaignId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundCampaignCallbackScheduleRequest build() {

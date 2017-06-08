@@ -84,7 +84,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification name(String name) {
@@ -101,7 +101,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification dateCreated(Date dateCreated) {
@@ -118,7 +118,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification dateModified(Date dateModified) {
@@ -135,7 +135,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification version(Integer version) {
@@ -152,7 +152,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification maxAttemptsPerContact(Integer maxAttemptsPerContact) {
@@ -169,7 +169,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification maxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
@@ -186,7 +186,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification timeZoneId(String timeZoneId) {
@@ -203,7 +203,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification resetPeriod(ResetPeriodEnum resetPeriod) {
@@ -220,7 +220,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.resetPeriod = resetPeriod;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification recallEntries(Map<String, AttemptLimitsNotificationRecallEntries> recallEntries) {
@@ -237,7 +237,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.recallEntries = recallEntries;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification breadthFirstRecalls(Boolean breadthFirstRecalls) {
@@ -254,7 +254,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.breadthFirstRecalls = breadthFirstRecalls;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotification additionalProperties(Object additionalProperties) {
@@ -271,6 +271,7 @@ public class AttemptLimitsNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

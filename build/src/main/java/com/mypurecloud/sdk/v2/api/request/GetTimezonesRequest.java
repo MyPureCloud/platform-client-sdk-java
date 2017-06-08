@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
 
 public class GetTimezonesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -39,6 +40,7 @@ public class GetTimezonesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -53,6 +55,7 @@ public class GetTimezonesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -79,7 +82,8 @@ public class GetTimezonesRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -90,6 +94,7 @@ public class GetTimezonesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTimezonesRequest request;
@@ -98,15 +103,19 @@ public class GetTimezonesRequest {
 			request = new GetTimezonesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTimezonesRequest build() {

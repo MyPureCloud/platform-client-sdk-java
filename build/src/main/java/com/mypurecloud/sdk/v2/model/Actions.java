@@ -36,6 +36,7 @@ public class Actions  implements Serializable {
     this.skillsToRemove = skillsToRemove;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -39,7 +39,7 @@ public class CampaignRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CampaignRule name(String name) {
@@ -56,21 +56,21 @@ public class CampaignRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -88,7 +88,7 @@ public class CampaignRule  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * the list of entities the rule monitors
    **/
@@ -106,7 +106,7 @@ public class CampaignRule  implements Serializable {
     this.campaignRuleEntities = campaignRuleEntities;
   }
 
-
+  
   /**
    * the list of conditions the are evaluated
    **/
@@ -124,7 +124,7 @@ public class CampaignRule  implements Serializable {
     this.campaignRuleConditions = campaignRuleConditions;
   }
 
-
+  
   /**
    * the list of actions that are executed if the conditions are satisfied
    **/
@@ -142,7 +142,7 @@ public class CampaignRule  implements Serializable {
     this.campaignRuleActions = campaignRuleActions;
   }
 
-
+  
   /**
    **/
   public CampaignRule matchAnyConditions(Boolean matchAnyConditions) {
@@ -159,7 +159,7 @@ public class CampaignRule  implements Serializable {
     this.matchAnyConditions = matchAnyConditions;
   }
 
-
+  
   /**
    **/
   public CampaignRule enabled(Boolean enabled) {
@@ -176,13 +176,14 @@ public class CampaignRule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

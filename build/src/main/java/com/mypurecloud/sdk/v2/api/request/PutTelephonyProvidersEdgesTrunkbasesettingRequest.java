@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
+    
 	private String trunkBaseSettingsId;
 	public String getTrunkBaseSettingsId() {
 		return this.trunkBaseSettingsId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
 	    return this;
 	}
 
+	
 	private TrunkBase body;
 	public TrunkBase getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
                 .withPathParameter("trunkBaseSettingsId", trunkBaseSettingsId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String trunkBaseSettingsId, TrunkBase body) {
 	    return new Builder()
 	            .withRequiredParams(trunkBaseSettingsId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesTrunkbasesettingRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesTrunkbasesettingRequest {
 			request = new PutTelephonyProvidersEdgesTrunkbasesettingRequest();
 		}
 
+		
 		public Builder withTrunkBaseSettingsId(String trunkBaseSettingsId) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
 			return this;
 		}
+		
 		public Builder withBody(TrunkBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String trunkBaseSettingsId, TrunkBase body) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesTrunkbasesettingRequest build() {

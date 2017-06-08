@@ -37,7 +37,7 @@ public class ProvisionInfo  implements Serializable {
     this.time = time;
   }
 
-
+  
   /**
    * The source of the provisioning
    **/
@@ -55,7 +55,7 @@ public class ProvisionInfo  implements Serializable {
     this.source = source;
   }
 
-
+  
   /**
    * The error information from the provision process, if any
    **/
@@ -73,6 +73,7 @@ public class ProvisionInfo  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

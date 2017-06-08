@@ -57,6 +57,7 @@ public class AuthorizationApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete an organization role.
    * 
@@ -81,6 +82,7 @@ public class AuthorizationApi {
   private DeleteAuthorizationRoleRequest createDeleteAuthorizationRoleRequest(String roleId) {
     return DeleteAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
+    
             .build();
   }
 
@@ -131,6 +133,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Removes all the roles from the user.
    * 
@@ -155,6 +158,7 @@ public class AuthorizationApi {
   private DeleteUserRolesRequest createDeleteUserRolesRequest(String userId) {
     return DeleteUserRolesRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -205,6 +209,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
@@ -233,8 +238,9 @@ public class AuthorizationApi {
   private GetAuthorizationPermissionsRequest createGetAuthorizationPermissionsRequest(Integer pageSize, Integer pageNumber) {
     return GetAuthorizationPermissionsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -286,6 +292,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
@@ -308,7 +315,8 @@ public class AuthorizationApi {
   }
 
   private GetAuthorizationProductsRequest createGetAuthorizationProductsRequest() {
-    return GetAuthorizationProductsRequest.builder()            .build();
+    return GetAuthorizationProductsRequest.builder()
+            .build();
   }
 
   /**
@@ -359,6 +367,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
@@ -385,6 +394,7 @@ public class AuthorizationApi {
   private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId) {
     return GetAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
+    
             .build();
   }
 
@@ -436,6 +446,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Get an org role to default role comparison comparison
    * Compares any organization role to a default role id and show differences
@@ -464,8 +475,9 @@ public class AuthorizationApi {
   private GetAuthorizationRoleComparedefaultRightRoleIdRequest createGetAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId) {
     return GetAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
             .withLeftRoleId(leftRoleId)
-
+    
             .withRightRoleId(rightRoleId)
+    
             .build();
   }
 
@@ -517,6 +529,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Retrieve a list of all roles defined for the organization
    * 
@@ -559,22 +572,23 @@ public class AuthorizationApi {
   private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, List<Object> permission, List<Object> defaultRoleId, Boolean userCount) {
     return GetAuthorizationRolesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withPermission(permission)
-
+    
             .withDefaultRoleId(defaultRoleId)
-
+    
             .withUserCount(userCount)
+    
             .build();
   }
 
@@ -626,6 +640,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -652,6 +667,7 @@ public class AuthorizationApi {
   private GetUserRolesRequest createGetUserRolesRequest(String userId) {
     return GetUserRolesRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -703,6 +719,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
@@ -731,8 +748,9 @@ public class AuthorizationApi {
   private PatchAuthorizationRoleRequest createPatchAuthorizationRoleRequest(String roleId, DomainOrganizationRole body) {
     return PatchAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -784,6 +802,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
@@ -814,10 +833,11 @@ public class AuthorizationApi {
   private PostAuthorizationRoleComparedefaultRightRoleIdRequest createPostAuthorizationRoleComparedefaultRightRoleIdRequest(String leftRoleId, String rightRoleId, DomainOrganizationRole body) {
     return PostAuthorizationRoleComparedefaultRightRoleIdRequest.builder()
             .withLeftRoleId(leftRoleId)
-
+    
             .withRightRoleId(rightRoleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -869,6 +889,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Create an organization role.
    * 
@@ -895,6 +916,7 @@ public class AuthorizationApi {
   private PostAuthorizationRolesRequest createPostAuthorizationRolesRequest(DomainOrganizationRoleCreate body) {
     return PostAuthorizationRolesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -946,9 +968,10 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param force Restore default roles (optional, default to false)
    * @return OrganizationRoleEntityListing
    * @throws ApiException if the request fails on the server
@@ -960,7 +983,7 @@ public class AuthorizationApi {
 
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param force Restore default roles (optional, default to false)
    * @return OrganizationRoleEntityListing
    * @throws IOException if the request fails to be processed
@@ -972,12 +995,13 @@ public class AuthorizationApi {
   private PostAuthorizationRolesDefaultRequest createPostAuthorizationRolesDefaultRequest(Boolean force) {
     return PostAuthorizationRolesDefaultRequest.builder()
             .withForce(force)
+    
             .build();
   }
 
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param request The request object
    * @return OrganizationRoleEntityListing
    * @throws ApiException if the request fails on the server
@@ -996,7 +1020,7 @@ public class AuthorizationApi {
 
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1023,6 +1047,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Update an organization role.
    * Update
@@ -1051,8 +1076,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleRequest createPutAuthorizationRoleRequest(String roleId, DomainOrganizationRoleUpdate body) {
     return PutAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1104,6 +1130,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Sets the users for the role
    * 
@@ -1132,8 +1159,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleUsersAddRequest createPutAuthorizationRoleUsersAddRequest(String roleId, List<String> body) {
     return PutAuthorizationRoleUsersAddRequest.builder()
             .withRoleId(roleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1185,6 +1213,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Removes the users from the role
    * 
@@ -1213,8 +1242,9 @@ public class AuthorizationApi {
   private PutAuthorizationRoleUsersRemoveRequest createPutAuthorizationRoleUsersRemoveRequest(String roleId, List<String> body) {
     return PutAuthorizationRoleUsersRemoveRequest.builder()
             .withRoleId(roleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1266,6 +1296,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Restore specified default roles
    * 
@@ -1292,6 +1323,7 @@ public class AuthorizationApi {
   private PutAuthorizationRolesDefaultRequest createPutAuthorizationRolesDefaultRequest(List<DomainOrganizationRole> body) {
     return PutAuthorizationRolesDefaultRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1343,6 +1375,7 @@ public class AuthorizationApi {
     }
   }
 
+  
   /**
    * Sets the user&#39;s roles
    * 
@@ -1371,8 +1404,9 @@ public class AuthorizationApi {
   private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
     return PutUserRolesRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1424,4 +1458,5 @@ public class AuthorizationApi {
     }
   }
 
+  
 }

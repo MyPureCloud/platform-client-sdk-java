@@ -106,7 +106,7 @@ public class HeartBeatAlert  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -124,7 +124,7 @@ public class HeartBeatAlert  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The value that identifies the sender of the heartbeat.
    **/
@@ -142,7 +142,7 @@ public class HeartBeatAlert  implements Serializable {
     this.senderId = senderId;
   }
 
-
+  
   /**
    * The number of minutes to wait before alerting missing heartbeats.
    **/
@@ -160,28 +160,28 @@ public class HeartBeatAlert  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The id of the rule.")
   @JsonProperty("ruleId")
   public String getRuleId() {
     return ruleId;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;
   }
 
-
+  
   /**
    * The ids of users who were notified of alarm state change.
    **/
@@ -199,7 +199,7 @@ public class HeartBeatAlert  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -217,7 +217,7 @@ public class HeartBeatAlert  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    * The type of heartbeat rule that generated the alert
    **/
@@ -235,7 +235,7 @@ public class HeartBeatAlert  implements Serializable {
     this.ruleType = ruleType;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlert ruleUri(String ruleUri) {
@@ -252,13 +252,14 @@ public class HeartBeatAlert  implements Serializable {
     this.ruleUri = ruleUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

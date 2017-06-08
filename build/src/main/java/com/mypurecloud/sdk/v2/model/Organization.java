@@ -75,7 +75,7 @@ public class Organization  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Organization name(String name) {
@@ -92,7 +92,7 @@ public class Organization  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The default language for this organization. Example: 'en'
    **/
@@ -110,7 +110,7 @@ public class Organization  implements Serializable {
     this.defaultLanguage = defaultLanguage;
   }
 
-
+  
   /**
    * The default country code for this organization. Example: 'US'
    **/
@@ -128,14 +128,14 @@ public class Organization  implements Serializable {
     this.defaultCountryCode = defaultCountryCode;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The short name for the organization. This field is globally unique and cannot be changed.")
   @JsonProperty("thirdPartyOrgName")
   public String getThirdPartyOrgName() {
     return thirdPartyOrgName;
   }
 
-
+  
   /**
    **/
   public Organization thirdPartyURI(String thirdPartyURI) {
@@ -152,7 +152,7 @@ public class Organization  implements Serializable {
     this.thirdPartyURI = thirdPartyURI;
   }
 
-
+  
   /**
    **/
   public Organization domain(String domain) {
@@ -169,7 +169,7 @@ public class Organization  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    * The current version of the organization.
    **/
@@ -187,7 +187,7 @@ public class Organization  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * The current state. Examples are active, inactive, deleted.
    **/
@@ -205,7 +205,7 @@ public class Organization  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Organization defaultSiteId(String defaultSiteId) {
@@ -222,7 +222,7 @@ public class Organization  implements Serializable {
     this.defaultSiteId = defaultSiteId;
   }
 
-
+  
   /**
    * Email address where support tickets are sent to.
    **/
@@ -240,7 +240,7 @@ public class Organization  implements Serializable {
     this.supportURI = supportURI;
   }
 
-
+  
   /**
    **/
   public Organization voicemailEnabled(Boolean voicemailEnabled) {
@@ -257,14 +257,14 @@ public class Organization  implements Serializable {
     this.voicemailEnabled = voicemailEnabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-
+  
   /**
    * The state of features available for the organization.
    **/
@@ -282,6 +282,7 @@ public class Organization  implements Serializable {
     this.features = features;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -38,7 +38,7 @@ public class FilterPreviewResponse  implements Serializable {
     this.filteredContacts = filteredContacts;
   }
 
-
+  
   /**
    **/
   public FilterPreviewResponse totalContacts(Long totalContacts) {
@@ -55,7 +55,7 @@ public class FilterPreviewResponse  implements Serializable {
     this.totalContacts = totalContacts;
   }
 
-
+  
   /**
    **/
   public FilterPreviewResponse preview(List<DialerContact> preview) {
@@ -72,6 +72,7 @@ public class FilterPreviewResponse  implements Serializable {
     this.preview = preview;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

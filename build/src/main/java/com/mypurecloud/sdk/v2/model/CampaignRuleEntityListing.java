@@ -46,7 +46,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.total = total;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public CampaignRuleEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class CampaignRuleEntityListing  implements Serializable, PagedResource<C
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

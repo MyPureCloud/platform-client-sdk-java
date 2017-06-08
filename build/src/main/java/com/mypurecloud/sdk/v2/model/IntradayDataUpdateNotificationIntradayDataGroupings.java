@@ -83,7 +83,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings forecastDataPerInterval(List<IntradayDataUpdateNotificationForecastDataPerInterval> forecastDataPerInterval) {
@@ -100,7 +100,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings scheduleDataPerInterval(List<IntradayDataUpdateNotificationScheduleDataPerInterval> scheduleDataPerInterval) {
@@ -117,7 +117,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings historicalAgentDataPerInterval(List<IntradayDataUpdateNotificationHistoricalAgentDataPerInterval> historicalAgentDataPerInterval) {
@@ -134,7 +134,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.historicalAgentDataPerInterval = historicalAgentDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings historicalQueueDataPerInterval(List<IntradayDataUpdateNotificationHistoricalQueueDataPerInterval> historicalQueueDataPerInterval) {
@@ -151,7 +151,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.historicalQueueDataPerInterval = historicalQueueDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings performancePredictionAgentDataPerInterval(List<IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval> performancePredictionAgentDataPerInterval) {
@@ -168,7 +168,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.performancePredictionAgentDataPerInterval = performancePredictionAgentDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroupings performancePredictionQueueDataPerInterval(List<IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval> performancePredictionQueueDataPerInterval) {
@@ -185,6 +185,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     this.performancePredictionQueueDataPerInterval = performancePredictionQueueDataPerInterval;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsChatsRequest {
+    
 	private CreateWebChatRequest body;
 	public CreateWebChatRequest getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostConversationsChatsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostConversationsChatsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/chats")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostConversationsChatsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(CreateWebChatRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationsChatsRequest request;
@@ -126,15 +131,20 @@ public class PostConversationsChatsRequest {
 			request = new PostConversationsChatsRequest();
 		}
 
+		
 		public Builder withBody(CreateWebChatRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(CreateWebChatRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationsChatsRequest build() {

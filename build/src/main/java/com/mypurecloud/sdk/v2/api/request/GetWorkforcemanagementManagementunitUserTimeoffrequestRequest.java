@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +64,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private String timeOffRequestId;
 	public String getTimeOffRequestId() {
 		return this.timeOffRequestId;
@@ -76,6 +79,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,7 +123,8 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
                 .withPathParameter("userId", userId)
         
                 .withPathParameter("timeOffRequestId", timeOffRequestId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -130,10 +135,12 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId, String userId, String timeOffRequestId) {
 	    return new Builder()
 	            .withRequiredParams(muId, userId, timeOffRequestId);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request;
@@ -142,25 +149,32 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 			request = new GetWorkforcemanagementManagementunitUserTimeoffrequestRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withTimeOffRequestId(String timeOffRequestId) {
 			request.setTimeOffRequestId(timeOffRequestId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId, String userId, String timeOffRequestId) {
 			request.setMuId(muId);
-			request.setUserId(userId);
-			request.setTimeOffRequestId(timeOffRequestId);
+						request.setUserId(userId);
+						request.setTimeOffRequestId(timeOffRequestId);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementManagementunitUserTimeoffrequestRequest build() {

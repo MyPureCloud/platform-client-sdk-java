@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PostResponsemanagementLibrariesRequest {
+    
 	private Library body;
 	public Library getBody() {
 		return this.body;
@@ -41,6 +42,7 @@ public class PostResponsemanagementLibrariesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,6 +72,7 @@ public class PostResponsemanagementLibrariesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/responsemanagement/libraries")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -81,10 +84,12 @@ public class PostResponsemanagementLibrariesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Library body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostResponsemanagementLibrariesRequest request;
@@ -93,15 +98,20 @@ public class PostResponsemanagementLibrariesRequest {
 			request = new PostResponsemanagementLibrariesRequest();
 		}
 
+		
 		public Builder withBody(Library body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Library body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostResponsemanagementLibrariesRequest build() {

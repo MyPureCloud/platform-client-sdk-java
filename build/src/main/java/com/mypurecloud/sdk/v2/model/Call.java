@@ -222,7 +222,7 @@ public class Call  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -240,7 +240,7 @@ public class Call  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The direction of the call
    **/
@@ -258,7 +258,7 @@ public class Call  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * True if this call is being recorded.
    **/
@@ -276,7 +276,7 @@ public class Call  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    * State of recording on this call.
    **/
@@ -294,7 +294,7 @@ public class Call  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    * True if this call is muted so that remote participants can't hear any audio from this end.
    **/
@@ -312,7 +312,7 @@ public class Call  implements Serializable {
     this.muted = muted;
   }
 
-
+  
   /**
    * True if this call is held and the person on this side hears hold music.
    **/
@@ -330,7 +330,7 @@ public class Call  implements Serializable {
     this.confined = confined;
   }
 
-
+  
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -348,7 +348,7 @@ public class Call  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * A globally unique identifier for the recording associated with this call.
    **/
@@ -366,7 +366,7 @@ public class Call  implements Serializable {
     this.recordingId = recordingId;
   }
 
-
+  
   /**
    * The time line of the participant's call, divided into activity segments.
    **/
@@ -384,7 +384,7 @@ public class Call  implements Serializable {
     this.segments = segments;
   }
 
-
+  
   /**
    **/
   public Call errorInfo(ErrorBody errorInfo) {
@@ -401,7 +401,7 @@ public class Call  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -419,7 +419,7 @@ public class Call  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * The timestamp the call was placed on hold in the cloud clock if the call is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -437,7 +437,7 @@ public class Call  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * If call is an outbound fax of a document from content management, then this is the id in content management.
    **/
@@ -455,7 +455,7 @@ public class Call  implements Serializable {
     this.documentId = documentId;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -473,7 +473,7 @@ public class Call  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -491,7 +491,7 @@ public class Call  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * List of reasons that this call was disconnected. This will be set once the call disconnects.
    **/
@@ -509,7 +509,7 @@ public class Call  implements Serializable {
     this.disconnectReasons = disconnectReasons;
   }
 
-
+  
   /**
    * Extra information on fax transmission.
    **/
@@ -527,7 +527,7 @@ public class Call  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-
+  
   /**
    * The source provider for the call.
    **/
@@ -545,7 +545,7 @@ public class Call  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The UUID of the script to use.
    **/
@@ -563,7 +563,7 @@ public class Call  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -581,6 +581,7 @@ public class Call  implements Serializable {
     this.peerId = peerId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

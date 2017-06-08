@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class GetAuthorizationRolesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -43,6 +44,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +59,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -71,6 +74,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -85,6 +89,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -99,6 +104,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -113,6 +119,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private List<Object> permission;
 	public List<Object> getPermission() {
 		return this.permission;
@@ -127,6 +134,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private List<Object> defaultRoleId;
 	public List<Object> getDefaultRoleId() {
 		return this.defaultRoleId;
@@ -141,6 +149,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private Boolean userCount;
 	public Boolean getUserCount() {
 		return this.userCount;
@@ -155,6 +164,7 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -195,7 +205,8 @@ public class GetAuthorizationRolesRequest {
                 .withQueryParameters("defaultRoleId", "multi", defaultRoleId)
         
                 .withQueryParameters("userCount", "", userCount)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -206,6 +217,7 @@ public class GetAuthorizationRolesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetAuthorizationRolesRequest request;
@@ -214,43 +226,54 @@ public class GetAuthorizationRolesRequest {
 			request = new GetAuthorizationRolesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withPermission(List<Object> permission) {
 			request.setPermission(permission);
 			return this;
 		}
+		
 		public Builder withDefaultRoleId(List<Object> defaultRoleId) {
 			request.setDefaultRoleId(defaultRoleId);
 			return this;
 		}
+		
 		public Builder withUserCount(Boolean userCount) {
 			request.setUserCount(userCount);
 			return this;
 		}
+		
 
+		
 
 
 		public GetAuthorizationRolesRequest build() {

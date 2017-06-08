@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementWorkspaceTagvaluesRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 	    return this;
 	}
 
+	
 	private TagValue body;
 	public TagValue getBody() {
 		return this.body;
@@ -78,6 +80,7 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,6 +117,7 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -125,10 +129,12 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, TagValue body) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementWorkspaceTagvaluesRequest request;
@@ -137,20 +143,26 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 			request = new PostContentmanagementWorkspaceTagvaluesRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withBody(TagValue body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, TagValue body) {
 			request.setWorkspaceId(workspaceId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementWorkspaceTagvaluesRequest build() {

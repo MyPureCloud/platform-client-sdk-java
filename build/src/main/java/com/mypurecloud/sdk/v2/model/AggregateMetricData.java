@@ -111,7 +111,7 @@ public class AggregateMetricData  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    **/
   public AggregateMetricData qualifier(String qualifier) {
@@ -128,7 +128,7 @@ public class AggregateMetricData  implements Serializable {
     this.qualifier = qualifier;
   }
 
-
+  
   /**
    **/
   public AggregateMetricData stats(StatisticalSummary stats) {
@@ -145,6 +145,7 @@ public class AggregateMetricData  implements Serializable {
     this.stats = stats;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

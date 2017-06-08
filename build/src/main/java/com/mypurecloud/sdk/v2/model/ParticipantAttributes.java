@@ -37,6 +37,7 @@ public class ParticipantAttributes  implements Serializable {
     this.attributes = attributes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

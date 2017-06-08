@@ -47,7 +47,7 @@ public class Keyword  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public Keyword name(String name) {
@@ -64,7 +64,7 @@ public class Keyword  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The word or phrase which is being looked for with speech recognition.
    **/
@@ -82,7 +82,7 @@ public class Keyword  implements Serializable {
     this.phrase = phrase;
   }
 
-
+  
   /**
    * A sensitivity threshold that can be increased to lower false positives or decreased to reduce false negatives.
    **/
@@ -100,7 +100,7 @@ public class Keyword  implements Serializable {
     this.confidence = confidence;
   }
 
-
+  
   /**
    * A modifier to the evaluation score when the phrase is spotted in the agent channel
    **/
@@ -118,7 +118,7 @@ public class Keyword  implements Serializable {
     this.agentScoreModifier = agentScoreModifier;
   }
 
-
+  
   /**
    * A modifier to the evaluation score when the phrase is spotted in the customer channel
    **/
@@ -136,7 +136,7 @@ public class Keyword  implements Serializable {
     this.customerScoreModifier = customerScoreModifier;
   }
 
-
+  
   /**
    * Other spellings of the phrase that can be added to reduce missed spots (false negatives).
    **/
@@ -154,7 +154,7 @@ public class Keyword  implements Serializable {
     this.alternateSpellings = alternateSpellings;
   }
 
-
+  
   /**
    * The phonetic spellings for the phrase and alternate spellings.
    **/
@@ -172,7 +172,7 @@ public class Keyword  implements Serializable {
     this.pronunciations = pronunciations;
   }
 
-
+  
   /**
    * Words that are similar to the phrase but not desired. Added to reduce incorrect spots (false positives).
    **/
@@ -190,7 +190,7 @@ public class Keyword  implements Serializable {
     this.antiWords = antiWords;
   }
 
-
+  
   /**
    * The phonetic spellings for the antiWords.
    **/
@@ -208,7 +208,7 @@ public class Keyword  implements Serializable {
     this.antiPronunciations = antiPronunciations;
   }
 
-
+  
   /**
    * A prediction of how easy it is to unambiguously spot the keyword within its language based on spelling.
    **/
@@ -226,7 +226,7 @@ public class Keyword  implements Serializable {
     this.spotabilityIndex = spotabilityIndex;
   }
 
-
+  
   /**
    **/
   public Keyword marginOfError(Double marginOfError) {
@@ -243,7 +243,7 @@ public class Keyword  implements Serializable {
     this.marginOfError = marginOfError;
   }
 
-
+  
   /**
    **/
   public Keyword pronunciation(String pronunciation) {
@@ -260,6 +260,7 @@ public class Keyword  implements Serializable {
     this.pronunciation = pronunciation;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

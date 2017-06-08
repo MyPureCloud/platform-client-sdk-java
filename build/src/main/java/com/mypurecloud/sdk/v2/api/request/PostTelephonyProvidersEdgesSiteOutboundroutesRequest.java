@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
 	    return this;
 	}
 
+	
 	private OutboundRouteBase body;
 	public OutboundRouteBase getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
                 .withPathParameter("siteId", siteId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId, OutboundRouteBase body) {
 	    return new Builder()
 	            .withRequiredParams(siteId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesSiteOutboundroutesRequest request;
@@ -171,20 +177,26 @@ public class PostTelephonyProvidersEdgesSiteOutboundroutesRequest {
 			request = new PostTelephonyProvidersEdgesSiteOutboundroutesRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withBody(OutboundRouteBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId, OutboundRouteBase body) {
 			request.setSiteId(siteId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesSiteOutboundroutesRequest build() {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCampaignAgentRequest {
+    
 	private String campaignId;
 	public String getCampaignId() {
 		return this.campaignId;
@@ -74,6 +75,7 @@ public class PutOutboundCampaignAgentRequest {
 	    return this;
 	}
 
+	
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -88,6 +90,7 @@ public class PutOutboundCampaignAgentRequest {
 	    return this;
 	}
 
+	
 	private Agent body;
 	public Agent getBody() {
 		return this.body;
@@ -102,6 +105,7 @@ public class PutOutboundCampaignAgentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,6 +149,7 @@ public class PutOutboundCampaignAgentRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -156,10 +161,12 @@ public class PutOutboundCampaignAgentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String campaignId, String userId, Agent body) {
 	    return new Builder()
 	            .withRequiredParams(campaignId, userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundCampaignAgentRequest request;
@@ -168,25 +175,32 @@ public class PutOutboundCampaignAgentRequest {
 			request = new PutOutboundCampaignAgentRequest();
 		}
 
+		
 		public Builder withCampaignId(String campaignId) {
 			request.setCampaignId(campaignId);
 			return this;
 		}
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(Agent body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String campaignId, String userId, Agent body) {
 			request.setCampaignId(campaignId);
-			request.setUserId(userId);
-			request.setBody(body);
+						request.setUserId(userId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundCampaignAgentRequest build() {

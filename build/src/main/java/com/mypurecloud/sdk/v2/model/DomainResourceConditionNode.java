@@ -114,7 +114,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.variableName = variableName;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionNode operator(OperatorEnum operator) {
@@ -131,7 +131,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionNode operands(List<DomainResourceConditionValue> operands) {
@@ -148,7 +148,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.operands = operands;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionNode conjunction(ConjunctionEnum conjunction) {
@@ -165,7 +165,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.conjunction = conjunction;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionNode terms(List<DomainResourceConditionNode> terms) {
@@ -182,6 +182,7 @@ public class DomainResourceConditionNode  implements Serializable {
     this.terms = terms;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

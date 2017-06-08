@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PatchVoicemailMePolicyRequest {
+    
 	private VoicemailUserPolicy body;
 	public VoicemailUserPolicy getBody() {
 		return this.body;
@@ -45,6 +46,7 @@ public class PatchVoicemailMePolicyRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,6 +76,7 @@ public class PatchVoicemailMePolicyRequest {
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/voicemail/me/policy")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -85,10 +88,12 @@ public class PatchVoicemailMePolicyRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(VoicemailUserPolicy body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PatchVoicemailMePolicyRequest request;
@@ -97,15 +102,20 @@ public class PatchVoicemailMePolicyRequest {
 			request = new PatchVoicemailMePolicyRequest();
 		}
 
+		
 		public Builder withBody(VoicemailUserPolicy body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(VoicemailUserPolicy body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchVoicemailMePolicyRequest build() {

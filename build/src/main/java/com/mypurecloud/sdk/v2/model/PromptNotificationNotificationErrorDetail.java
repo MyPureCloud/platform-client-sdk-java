@@ -36,7 +36,7 @@ public class PromptNotificationNotificationErrorDetail  implements Serializable 
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationErrorDetail entityId(String entityId) {
@@ -53,7 +53,7 @@ public class PromptNotificationNotificationErrorDetail  implements Serializable 
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationErrorDetail entityName(String entityName) {
@@ -70,7 +70,7 @@ public class PromptNotificationNotificationErrorDetail  implements Serializable 
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationErrorDetail fieldName(String fieldName) {
@@ -87,6 +87,7 @@ public class PromptNotificationNotificationErrorDetail  implements Serializable 
     this.fieldName = fieldName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

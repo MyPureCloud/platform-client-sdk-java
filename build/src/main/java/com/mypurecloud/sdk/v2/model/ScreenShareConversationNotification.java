@@ -39,7 +39,7 @@ public class ScreenShareConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotification name(String name) {
@@ -56,7 +56,7 @@ public class ScreenShareConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotification participants(List<ScreenShareConversationNotificationParticipants> participants) {
@@ -73,7 +73,7 @@ public class ScreenShareConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -90,6 +90,7 @@ public class ScreenShareConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

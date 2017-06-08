@@ -42,7 +42,7 @@ public class CertificateDetails  implements Serializable {
     this.issuer = issuer;
   }
 
-
+  
   /**
    * Information about the subject of the certificate.  The value of this property is a comma separated key=value format.  Each key is one of the attribute names supported by X.500.
    **/
@@ -60,7 +60,7 @@ public class CertificateDetails  implements Serializable {
     this.subject = subject;
   }
 
-
+  
   /**
    * The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -78,7 +78,7 @@ public class CertificateDetails  implements Serializable {
     this.expirationDate = expirationDate;
   }
 
-
+  
   /**
    * The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -96,7 +96,7 @@ public class CertificateDetails  implements Serializable {
     this.issueDate = issueDate;
   }
 
-
+  
   /**
    * True if the certificate is expired, false otherwise.
    **/
@@ -114,7 +114,7 @@ public class CertificateDetails  implements Serializable {
     this.expired = expired;
   }
 
-
+  
   /**
    **/
   public CertificateDetails signatureValid(Boolean signatureValid) {
@@ -131,7 +131,7 @@ public class CertificateDetails  implements Serializable {
     this.signatureValid = signatureValid;
   }
 
-
+  
   /**
    **/
   public CertificateDetails valid(Boolean valid) {
@@ -148,6 +148,7 @@ public class CertificateDetails  implements Serializable {
     this.valid = valid;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

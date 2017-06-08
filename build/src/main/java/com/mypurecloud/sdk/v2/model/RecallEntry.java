@@ -34,7 +34,7 @@ public class RecallEntry  implements Serializable {
     this.nbrAttempts = nbrAttempts;
   }
 
-
+  
   /**
    **/
   public RecallEntry minutesBetweenAttempts(Integer minutesBetweenAttempts) {
@@ -51,6 +51,7 @@ public class RecallEntry  implements Serializable {
     this.minutesBetweenAttempts = minutesBetweenAttempts;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

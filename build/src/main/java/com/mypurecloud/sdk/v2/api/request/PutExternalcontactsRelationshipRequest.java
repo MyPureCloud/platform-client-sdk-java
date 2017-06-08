@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PutExternalcontactsRelationshipRequest {
+    
 	private String relationshipId;
 	public String getRelationshipId() {
 		return this.relationshipId;
@@ -45,6 +46,7 @@ public class PutExternalcontactsRelationshipRequest {
 	    return this;
 	}
 
+	
 	private Relationship body;
 	public Relationship getBody() {
 		return this.body;
@@ -59,6 +61,7 @@ public class PutExternalcontactsRelationshipRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,6 +93,7 @@ public class PutExternalcontactsRelationshipRequest {
                 .withPathParameter("relationshipId", relationshipId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,10 +105,12 @@ public class PutExternalcontactsRelationshipRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String relationshipId) {
 	    return new Builder()
 	            .withRequiredParams(relationshipId);
 	}
+	
 
 	public static class Builder {
 		private final PutExternalcontactsRelationshipRequest request;
@@ -113,19 +119,25 @@ public class PutExternalcontactsRelationshipRequest {
 			request = new PutExternalcontactsRelationshipRequest();
 		}
 
+		
 		public Builder withRelationshipId(String relationshipId) {
 			request.setRelationshipId(relationshipId);
 			return this;
 		}
+		
 		public Builder withBody(Relationship body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String relationshipId) {
 			request.setRelationshipId(relationshipId);
+			
 			return this;
 		}
+		
 
 
 		public PutExternalcontactsRelationshipRequest build() {

@@ -98,6 +98,7 @@ public class ArchitectApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete specified user prompt
    * 
@@ -124,8 +125,9 @@ public class ArchitectApi {
   private DeleteArchitectPromptRequest createDeleteArchitectPromptRequest(String promptId, Boolean allResources) {
     return DeleteArchitectPromptRequest.builder()
             .withPromptId(promptId)
-
+    
             .withAllResources(allResources)
+    
             .build();
   }
 
@@ -176,6 +178,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Delete specified user prompt resource
    * 
@@ -202,8 +205,9 @@ public class ArchitectApi {
   private DeleteArchitectPromptResourceRequest createDeleteArchitectPromptResourceRequest(String promptId, String languageCode) {
     return DeleteArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
+    
             .build();
   }
 
@@ -254,6 +258,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Batch-delete a list of prompts
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -280,6 +285,7 @@ public class ArchitectApi {
   private DeleteArchitectPromptsRequest createDeleteArchitectPromptsRequest(List<String> id) {
     return DeleteArchitectPromptsRequest.builder()
             .withId(id)
+    
             .build();
   }
 
@@ -331,6 +337,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Delete a system prompt resource override.
    * 
@@ -357,8 +364,9 @@ public class ArchitectApi {
   private DeleteArchitectSystempromptResourceRequest createDeleteArchitectSystempromptResourceRequest(String promptId, String languageCode) {
     return DeleteArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
+    
             .build();
   }
 
@@ -409,6 +417,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Delete flow
    * 
@@ -433,6 +442,7 @@ public class ArchitectApi {
   private DeleteFlowRequest createDeleteFlowRequest(String flowId) {
     return DeleteFlowRequest.builder()
             .withFlowId(flowId)
+    
             .build();
   }
 
@@ -483,6 +493,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -509,6 +520,7 @@ public class ArchitectApi {
   private DeleteFlowsRequest createDeleteFlowsRequest(List<String> id) {
     return DeleteFlowsRequest.builder()
             .withId(id)
+    
             .build();
   }
 
@@ -560,6 +572,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
@@ -600,20 +613,21 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingRequest createGetArchitectDependencytrackingRequest(String name, Integer pageNumber, Integer pageSize, List<String> objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
     return GetArchitectDependencytrackingRequest.builder()
             .withName(name)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withObjectType(objectType)
-
+    
             .withConsumedResources(consumedResources)
-
+    
             .withConsumingResources(consumingResources)
-
+    
             .withConsumedResourceType(consumedResourceType)
-
+    
             .withConsumingResourceType(consumingResourceType)
+    
             .build();
   }
 
@@ -665,6 +679,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get Dependency Tracking build status for an organization
    * 
@@ -687,7 +702,8 @@ public class ArchitectApi {
   }
 
   private GetArchitectDependencytrackingBuildRequest createGetArchitectDependencytrackingBuildRequest() {
-    return GetArchitectDependencytrackingBuildRequest.builder()            .build();
+    return GetArchitectDependencytrackingBuildRequest.builder()
+            .build();
   }
 
   /**
@@ -738,6 +754,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
@@ -770,12 +787,13 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingConsumedresourcesRequest createGetArchitectDependencytrackingConsumedresourcesRequest(String id, String version, String objectType, List<String> resourceType) {
     return GetArchitectDependencytrackingConsumedresourcesRequest.builder()
             .withId(id)
-
+    
             .withVersion(version)
-
+    
             .withObjectType(objectType)
-
+    
             .withResourceType(resourceType)
+    
             .build();
   }
 
@@ -827,6 +845,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
@@ -857,10 +876,11 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType) {
     return GetArchitectDependencytrackingConsumingresourcesRequest.builder()
             .withId(id)
-
+    
             .withObjectType(objectType)
-
+    
             .withResourceType(resourceType)
+    
             .build();
   }
 
@@ -912,6 +932,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
@@ -950,18 +971,19 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingDeletedresourceconsumersRequest createGetArchitectDependencytrackingDeletedresourceconsumersRequest(String name, List<String> objectType, String flowFilter, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingDeletedresourceconsumersRequest.builder()
             .withName(name)
-
+    
             .withObjectType(objectType)
-
+    
             .withFlowFilter(flowFilter)
-
+    
             .withConsumedResources(consumedResources)
-
+    
             .withConsumedResourceType(consumedResourceType)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -1013,6 +1035,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a Dependency Tracking object
    * 
@@ -1051,18 +1074,19 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingObjectRequest createGetArchitectDependencytrackingObjectRequest(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
     return GetArchitectDependencytrackingObjectRequest.builder()
             .withId(id)
-
+    
             .withVersion(version)
-
+    
             .withObjectType(objectType)
-
+    
             .withConsumedResources(consumedResources)
-
+    
             .withConsumingResources(consumingResources)
-
+    
             .withConsumedResourceType(consumedResourceType)
-
+    
             .withConsumingResourceType(consumingResourceType)
+    
             .build();
   }
 
@@ -1114,6 +1138,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a Dependency Tracking type.
    * 
@@ -1140,6 +1165,7 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingTypeRequest createGetArchitectDependencytrackingTypeRequest(String typeId) {
     return GetArchitectDependencytrackingTypeRequest.builder()
             .withTypeId(typeId)
+    
             .build();
   }
 
@@ -1191,6 +1217,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get Dependency Tracking types.
    * 
@@ -1219,8 +1246,9 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingTypesRequest createGetArchitectDependencytrackingTypesRequest(Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingTypesRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -1272,6 +1300,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
@@ -1308,16 +1337,17 @@ public class ArchitectApi {
   private GetArchitectDependencytrackingUpdatedresourceconsumersRequest createGetArchitectDependencytrackingUpdatedresourceconsumersRequest(String name, List<String> objectType, Boolean consumedResources, List<String> consumedResourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingUpdatedresourceconsumersRequest.builder()
             .withName(name)
-
+    
             .withObjectType(objectType)
-
+    
             .withConsumedResources(consumedResources)
-
+    
             .withConsumedResourceType(consumedResourceType)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -1369,6 +1399,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get specified user prompt
    * 
@@ -1395,6 +1426,7 @@ public class ArchitectApi {
   private GetArchitectPromptRequest createGetArchitectPromptRequest(String promptId) {
     return GetArchitectPromptRequest.builder()
             .withPromptId(promptId)
+    
             .build();
   }
 
@@ -1446,6 +1478,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get specified user prompt resource
    * 
@@ -1474,8 +1507,9 @@ public class ArchitectApi {
   private GetArchitectPromptResourceRequest createGetArchitectPromptResourceRequest(String promptId, String languageCode) {
     return GetArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
+    
             .build();
   }
 
@@ -1527,6 +1561,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
@@ -1557,10 +1592,11 @@ public class ArchitectApi {
   private GetArchitectPromptResourcesRequest createGetArchitectPromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize) {
     return GetArchitectPromptResourcesRequest.builder()
             .withPromptId(promptId)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -1612,6 +1648,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
@@ -1646,14 +1683,15 @@ public class ArchitectApi {
   private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withName(name)
-
+    
             .withDescription(description)
-
+    
             .withNameOrDescription(nameOrDescription)
+    
             .build();
   }
 
@@ -1705,6 +1743,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a system prompt
    * 
@@ -1731,6 +1770,7 @@ public class ArchitectApi {
   private GetArchitectSystempromptRequest createGetArchitectSystempromptRequest(String promptId) {
     return GetArchitectSystempromptRequest.builder()
             .withPromptId(promptId)
+    
             .build();
   }
 
@@ -1782,6 +1822,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a system prompt resource.
    * 
@@ -1810,8 +1851,9 @@ public class ArchitectApi {
   private GetArchitectSystempromptResourceRequest createGetArchitectSystempromptResourceRequest(String promptId, String languageCode) {
     return GetArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
+    
             .build();
   }
 
@@ -1863,6 +1905,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get system prompt resources.
    * 
@@ -1897,14 +1940,15 @@ public class ArchitectApi {
   private GetArchitectSystempromptResourcesRequest createGetArchitectSystempromptResourcesRequest(String promptId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
     return GetArchitectSystempromptResourcesRequest.builder()
             .withPromptId(promptId)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -1956,6 +2000,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get System Prompts
    * 
@@ -1994,18 +2039,19 @@ public class ArchitectApi {
   private GetArchitectSystempromptsRequest createGetArchitectSystempromptsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String description, String nameOrDescription) {
     return GetArchitectSystempromptsRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withName(name)
-
+    
             .withDescription(description)
-
+    
             .withNameOrDescription(nameOrDescription)
+    
             .build();
   }
 
@@ -2057,6 +2103,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get flow
    * 
@@ -2085,8 +2132,9 @@ public class ArchitectApi {
   private GetFlowRequest createGetFlowRequest(String flowId, Boolean deleted) {
     return GetFlowRequest.builder()
             .withFlowId(flowId)
-
+    
             .withDeleted(deleted)
+    
             .build();
   }
 
@@ -2138,6 +2186,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get the latest configuration for flow
    * 
@@ -2166,8 +2215,9 @@ public class ArchitectApi {
   private GetFlowLatestconfigurationRequest createGetFlowLatestconfigurationRequest(String flowId, Boolean deleted) {
     return GetFlowLatestconfigurationRequest.builder()
             .withFlowId(flowId)
-
+    
             .withDeleted(deleted)
+    
             .build();
   }
 
@@ -2219,6 +2269,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get flow version
    * 
@@ -2249,10 +2300,11 @@ public class ArchitectApi {
   private GetFlowVersionRequest createGetFlowVersionRequest(String flowId, String versionId, String deleted) {
     return GetFlowVersionRequest.builder()
             .withFlowId(flowId)
-
+    
             .withVersionId(versionId)
-
+    
             .withDeleted(deleted)
+    
             .build();
   }
 
@@ -2304,6 +2356,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create flow version configuration
    * 
@@ -2334,10 +2387,11 @@ public class ArchitectApi {
   private GetFlowVersionConfigurationRequest createGetFlowVersionConfigurationRequest(String flowId, String versionId, String deleted) {
     return GetFlowVersionConfigurationRequest.builder()
             .withFlowId(flowId)
-
+    
             .withVersionId(versionId)
-
+    
             .withDeleted(deleted)
+    
             .build();
   }
 
@@ -2389,6 +2443,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get flow version list
    * 
@@ -2421,12 +2476,13 @@ public class ArchitectApi {
   private GetFlowVersionsRequest createGetFlowVersionsRequest(String flowId, Integer pageNumber, Integer pageSize, Boolean deleted) {
     return GetFlowVersionsRequest.builder()
             .withFlowId(flowId)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withDeleted(deleted)
+    
             .build();
   }
 
@@ -2478,6 +2534,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
@@ -2532,34 +2589,35 @@ public class ArchitectApi {
   private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) {
     return GetFlowsRequest.builder()
             .withType(type)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withId(id)
-
+    
             .withName(name)
-
+    
             .withDescription(description)
-
+    
             .withNameOrDescription(nameOrDescription)
-
+    
             .withPublishVersionId(publishVersionId)
-
+    
             .withEditableBy(editableBy)
-
+    
             .withLockedBy(lockedBy)
-
+    
             .withSecure(secure)
-
+    
             .withDeleted(deleted)
-
+    
             .withIncludeSchemas(includeSchemas)
+    
             .build();
   }
 
@@ -2611,6 +2669,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
@@ -2631,7 +2690,8 @@ public class ArchitectApi {
   }
 
   private PostArchitectDependencytrackingBuildRequest createPostArchitectDependencytrackingBuildRequest() {
-    return PostArchitectDependencytrackingBuildRequest.builder()            .build();
+    return PostArchitectDependencytrackingBuildRequest.builder()
+            .build();
   }
 
   /**
@@ -2681,6 +2741,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create a new user prompt resource
    * 
@@ -2709,8 +2770,9 @@ public class ArchitectApi {
   private PostArchitectPromptResourcesRequest createPostArchitectPromptResourcesRequest(String promptId, PromptAssetCreate body) {
     return PostArchitectPromptResourcesRequest.builder()
             .withPromptId(promptId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2762,6 +2824,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create a new user prompt
    * 
@@ -2788,6 +2851,7 @@ public class ArchitectApi {
   private PostArchitectPromptsRequest createPostArchitectPromptsRequest(Prompt body) {
     return PostArchitectPromptsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2839,6 +2903,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create system prompt resource override.
    * 
@@ -2867,8 +2932,9 @@ public class ArchitectApi {
   private PostArchitectSystempromptResourcesRequest createPostArchitectSystempromptResourcesRequest(String promptId, SystemPromptAsset body) {
     return PostArchitectSystempromptResourcesRequest.builder()
             .withPromptId(promptId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2920,6 +2986,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create flow version
    * 
@@ -2948,8 +3015,9 @@ public class ArchitectApi {
   private PostFlowVersionsRequest createPostFlowVersionsRequest(String flowId, Object body) {
     return PostFlowVersionsRequest.builder()
             .withFlowId(flowId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3001,6 +3069,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Create flow
    * 
@@ -3027,6 +3096,7 @@ public class ArchitectApi {
   private PostFlowsRequest createPostFlowsRequest(Flow body) {
     return PostFlowsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3078,6 +3148,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -3104,6 +3175,7 @@ public class ArchitectApi {
   private PostFlowsActionsCheckinRequest createPostFlowsActionsCheckinRequest(String flow) {
     return PostFlowsActionsCheckinRequest.builder()
             .withFlow(flow)
+    
             .build();
   }
 
@@ -3155,6 +3227,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Check-out flow
    * 
@@ -3181,6 +3254,7 @@ public class ArchitectApi {
   private PostFlowsActionsCheckoutRequest createPostFlowsActionsCheckoutRequest(String flow) {
     return PostFlowsActionsCheckoutRequest.builder()
             .withFlow(flow)
+    
             .build();
   }
 
@@ -3232,6 +3306,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Deactivate flow
    * 
@@ -3258,6 +3333,7 @@ public class ArchitectApi {
   private PostFlowsActionsDeactivateRequest createPostFlowsActionsDeactivateRequest(String flow) {
     return PostFlowsActionsDeactivateRequest.builder()
             .withFlow(flow)
+    
             .build();
   }
 
@@ -3309,6 +3385,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Publish flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -3337,8 +3414,9 @@ public class ArchitectApi {
   private PostFlowsActionsPublishRequest createPostFlowsActionsPublishRequest(String flow, String version) {
     return PostFlowsActionsPublishRequest.builder()
             .withFlow(flow)
-
+    
             .withVersion(version)
+    
             .build();
   }
 
@@ -3390,6 +3468,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Revert flow
    * 
@@ -3416,6 +3495,7 @@ public class ArchitectApi {
   private PostFlowsActionsRevertRequest createPostFlowsActionsRevertRequest(String flow) {
     return PostFlowsActionsRevertRequest.builder()
             .withFlow(flow)
+    
             .build();
   }
 
@@ -3467,6 +3547,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
@@ -3493,6 +3574,7 @@ public class ArchitectApi {
   private PostFlowsActionsUnlockRequest createPostFlowsActionsUnlockRequest(String flow) {
     return PostFlowsActionsUnlockRequest.builder()
             .withFlow(flow)
+    
             .build();
   }
 
@@ -3544,6 +3626,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Update specified user prompt
    * 
@@ -3572,8 +3655,9 @@ public class ArchitectApi {
   private PutArchitectPromptRequest createPutArchitectPromptRequest(String promptId, Prompt body) {
     return PutArchitectPromptRequest.builder()
             .withPromptId(promptId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3625,6 +3709,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Update specified user prompt resource
    * 
@@ -3655,10 +3740,11 @@ public class ArchitectApi {
   private PutArchitectPromptResourceRequest createPutArchitectPromptResourceRequest(String promptId, String languageCode, PromptAsset body) {
     return PutArchitectPromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3710,6 +3796,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Updates a system prompt resource override.
    * 
@@ -3740,10 +3827,11 @@ public class ArchitectApi {
   private PutArchitectSystempromptResourceRequest createPutArchitectSystempromptResourceRequest(String promptId, String languageCode, SystemPromptAsset body) {
     return PutArchitectSystempromptResourceRequest.builder()
             .withPromptId(promptId)
-
+    
             .withLanguageCode(languageCode)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3795,6 +3883,7 @@ public class ArchitectApi {
     }
   }
 
+  
   /**
    * Update flow
    * 
@@ -3823,8 +3912,9 @@ public class ArchitectApi {
   private PutFlowRequest createPutFlowRequest(String flowId, Flow body) {
     return PutFlowRequest.builder()
             .withFlowId(flowId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3876,4 +3966,5 @@ public class ArchitectApi {
     }
   }
 
+  
 }

@@ -40,7 +40,7 @@ public class CalibrationAssignment  implements Serializable {
     this.calibrator = calibrator;
   }
 
-
+  
   /**
    **/
   public CalibrationAssignment evaluators(List<User> evaluators) {
@@ -57,7 +57,7 @@ public class CalibrationAssignment  implements Serializable {
     this.evaluators = evaluators;
   }
 
-
+  
   /**
    **/
   public CalibrationAssignment evaluationForm(EvaluationForm evaluationForm) {
@@ -74,7 +74,7 @@ public class CalibrationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public CalibrationAssignment expertEvaluator(User expertEvaluator) {
@@ -91,6 +91,7 @@ public class CalibrationAssignment  implements Serializable {
     this.expertEvaluator = expertEvaluator;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

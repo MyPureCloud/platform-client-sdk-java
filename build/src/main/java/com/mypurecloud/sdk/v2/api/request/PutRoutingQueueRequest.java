@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PutRoutingQueueRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class PutRoutingQueueRequest {
 	    return this;
 	}
 
+	
 	private Queue body;
 	public Queue getBody() {
 		return this.body;
@@ -72,6 +74,7 @@ public class PutRoutingQueueRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,6 +111,7 @@ public class PutRoutingQueueRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -119,10 +123,12 @@ public class PutRoutingQueueRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, Queue body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutRoutingQueueRequest request;
@@ -131,20 +137,26 @@ public class PutRoutingQueueRequest {
 			request = new PutRoutingQueueRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withBody(Queue body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, Queue body) {
 			request.setQueueId(queueId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRoutingQueueRequest build() {

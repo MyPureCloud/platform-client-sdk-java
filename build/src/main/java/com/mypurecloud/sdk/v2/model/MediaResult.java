@@ -36,7 +36,7 @@ public class MediaResult  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-
+  
   /**
    **/
   public MediaResult waveformData(List<Float> waveformData) {
@@ -53,6 +53,7 @@ public class MediaResult  implements Serializable {
     this.waveformData = waveformData;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

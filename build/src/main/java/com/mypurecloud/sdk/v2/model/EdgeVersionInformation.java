@@ -33,6 +33,7 @@ public class EdgeVersionInformation  implements Serializable {
     this.softwareVersion = softwareVersion;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

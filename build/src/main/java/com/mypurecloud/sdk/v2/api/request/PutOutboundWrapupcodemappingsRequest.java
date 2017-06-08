@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundWrapupcodemappingsRequest {
+    
 	private WrapUpCodeMapping body;
 	public WrapUpCodeMapping getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PutOutboundWrapupcodemappingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PutOutboundWrapupcodemappingsRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/outbound/wrapupcodemappings")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PutOutboundWrapupcodemappingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(WrapUpCodeMapping body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundWrapupcodemappingsRequest request;
@@ -126,15 +131,20 @@ public class PutOutboundWrapupcodemappingsRequest {
 			request = new PutOutboundWrapupcodemappingsRequest();
 		}
 
+		
 		public Builder withBody(WrapUpCodeMapping body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(WrapUpCodeMapping body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundWrapupcodemappingsRequest build() {

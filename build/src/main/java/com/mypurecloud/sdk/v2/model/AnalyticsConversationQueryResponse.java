@@ -38,7 +38,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     this.conversations = conversations;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationQueryResponse aggregations(List<AggregationResult> aggregations) {
@@ -55,6 +55,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     this.aggregations = aggregations;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
+    
 	private String trunkBaseSettingsId;
 	public String getTrunkBaseSettingsId() {
 		return this.trunkBaseSettingsId;
@@ -98,6 +99,7 @@ public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}")
                 .withPathParameter("trunkBaseSettingsId", trunkBaseSettingsId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String trunkBaseSettingsId) {
 	    return new Builder()
 	            .withRequiredParams(trunkBaseSettingsId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteTelephonyProvidersEdgesTrunkbasesettingRequest request;
@@ -150,15 +155,20 @@ public class DeleteTelephonyProvidersEdgesTrunkbasesettingRequest {
 			request = new DeleteTelephonyProvidersEdgesTrunkbasesettingRequest();
 		}
 
+		
 		public Builder withTrunkBaseSettingsId(String trunkBaseSettingsId) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String trunkBaseSettingsId) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteTelephonyProvidersEdgesTrunkbasesettingRequest build() {

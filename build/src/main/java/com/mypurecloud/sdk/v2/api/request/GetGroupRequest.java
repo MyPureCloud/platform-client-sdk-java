@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class GetGroupRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -44,6 +45,7 @@ public class GetGroupRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,7 +75,8 @@ public class GetGroupRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}")
                 .withPathParameter("groupId", groupId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -84,10 +87,12 @@ public class GetGroupRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
+	
 
 	public static class Builder {
 		private final GetGroupRequest request;
@@ -96,15 +101,20 @@ public class GetGroupRequest {
 			request = new GetGroupRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
+			
 			return this;
 		}
+		
 
 
 		public GetGroupRequest build() {

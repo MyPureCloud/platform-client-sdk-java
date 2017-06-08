@@ -40,7 +40,7 @@ public class RoutingData  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    * The identifier of a language to be considered in routing
    **/
@@ -58,7 +58,7 @@ public class RoutingData  implements Serializable {
     this.languageId = languageId;
   }
 
-
+  
   /**
    * The priority for routing
    **/
@@ -76,7 +76,7 @@ public class RoutingData  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * A list of skill identifiers to be considered in routing
    **/
@@ -94,7 +94,7 @@ public class RoutingData  implements Serializable {
     this.skillIds = skillIds;
   }
 
-
+  
   /**
    * A list of agents to be preferred in routing
    **/
@@ -112,6 +112,7 @@ public class RoutingData  implements Serializable {
     this.preferredAgentIds = preferredAgentIds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

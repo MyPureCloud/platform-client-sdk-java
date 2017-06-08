@@ -32,7 +32,7 @@ public class OAuthClientListing  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the OAuth client.
    **/
@@ -50,7 +50,7 @@ public class OAuthClientListing  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.
    **/
@@ -68,7 +68,7 @@ public class OAuthClientListing  implements Serializable {
     this.accessTokenValiditySeconds = accessTokenValiditySeconds;
   }
 
-
+  
   /**
    **/
   public OAuthClientListing description(String description) {
@@ -85,7 +85,7 @@ public class OAuthClientListing  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback
    **/
@@ -103,7 +103,7 @@ public class OAuthClientListing  implements Serializable {
     this.registeredRedirectUri = registeredRedirectUri;
   }
 
-
+  
   /**
    * System created secret assigned to this client. Secrets are required for code authorization and client credential grants.
    **/
@@ -121,7 +121,7 @@ public class OAuthClientListing  implements Serializable {
     this.secret = secret;
   }
 
-
+  
   /**
    * Roles assigned to this client. Roles only apply to clients using the client_credential grant
    **/
@@ -139,13 +139,14 @@ public class OAuthClientListing  implements Serializable {
     this.roleIds = roleIds;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -40,41 +40,42 @@ public class CampaignStats  implements Serializable {
     this.contactRate = contactRate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of available agents not currently being utilized")
   @JsonProperty("idleAgents")
   public Integer getIdleAgents() {
     return idleAgents;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of effective available agents not currently being utilized")
   @JsonProperty("effectiveIdleAgents")
   public Double getEffectiveIdleAgents() {
     return effectiveIdleAgents;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Calls per agent adjusted by pace")
   @JsonProperty("adjustedCallsPerAgent")
   public Double getAdjustedCallsPerAgent() {
     return adjustedCallsPerAgent;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of campaign calls currently ongoing")
   @JsonProperty("outstandingCalls")
   public Integer getOutstandingCalls() {
     return outstandingCalls;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of campaign calls currently scheduled")
   @JsonProperty("scheduledCalls")
   public Integer getScheduledCalls() {
     return scheduledCalls;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

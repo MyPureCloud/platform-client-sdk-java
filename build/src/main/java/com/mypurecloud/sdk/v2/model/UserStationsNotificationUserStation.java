@@ -36,7 +36,7 @@ public class UserStationsNotificationUserStation  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public UserStationsNotificationUserStation name(String name) {
@@ -53,7 +53,7 @@ public class UserStationsNotificationUserStation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UserStationsNotificationUserStation associatedUser(DocumentDataV2NotificationWorkspace associatedUser) {
@@ -70,6 +70,7 @@ public class UserStationsNotificationUserStation  implements Serializable {
     this.associatedUser = associatedUser;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

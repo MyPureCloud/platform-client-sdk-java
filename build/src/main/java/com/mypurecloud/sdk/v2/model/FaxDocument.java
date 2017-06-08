@@ -34,8 +34,8 @@ public class FaxDocument  implements Serializable {
   private String callerAddress = null;
   private String receiverAddress = null;
   private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
-  private String sharingUri = null;
   private String downloadSharingUri = null;
+  private String sharingUri = null;
   private String selfUri = null;
 
   
@@ -45,7 +45,7 @@ public class FaxDocument  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public FaxDocument name(String name) {
@@ -62,7 +62,7 @@ public class FaxDocument  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -80,7 +80,7 @@ public class FaxDocument  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -98,7 +98,7 @@ public class FaxDocument  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public FaxDocument contentUri(String contentUri) {
@@ -115,7 +115,7 @@ public class FaxDocument  implements Serializable {
     this.contentUri = contentUri;
   }
 
-
+  
   /**
    **/
   public FaxDocument workspace(UriReference workspace) {
@@ -132,7 +132,7 @@ public class FaxDocument  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public FaxDocument createdBy(UriReference createdBy) {
@@ -149,7 +149,7 @@ public class FaxDocument  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public FaxDocument contentType(String contentType) {
@@ -166,7 +166,7 @@ public class FaxDocument  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public FaxDocument contentLength(Long contentLength) {
@@ -183,7 +183,7 @@ public class FaxDocument  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public FaxDocument filename(String filename) {
@@ -200,7 +200,7 @@ public class FaxDocument  implements Serializable {
     this.filename = filename;
   }
 
-
+  
   /**
    **/
   public FaxDocument read(Boolean read) {
@@ -217,7 +217,7 @@ public class FaxDocument  implements Serializable {
     this.read = read;
   }
 
-
+  
   /**
    **/
   public FaxDocument pageCount(Long pageCount) {
@@ -234,7 +234,7 @@ public class FaxDocument  implements Serializable {
     this.pageCount = pageCount;
   }
 
-
+  
   /**
    **/
   public FaxDocument callerAddress(String callerAddress) {
@@ -251,7 +251,7 @@ public class FaxDocument  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    **/
   public FaxDocument receiverAddress(String receiverAddress) {
@@ -268,7 +268,7 @@ public class FaxDocument  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-
+  
   /**
    **/
   public FaxDocument thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -285,24 +285,7 @@ public class FaxDocument  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-
-  /**
-   **/
-  public FaxDocument sharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("sharingUri")
-  public String getSharingUri() {
-    return sharingUri;
-  }
-  public void setSharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-  }
-
-
   /**
    **/
   public FaxDocument downloadSharingUri(String downloadSharingUri) {
@@ -319,13 +302,31 @@ public class FaxDocument  implements Serializable {
     this.downloadSharingUri = downloadSharingUri;
   }
 
+  
+  /**
+   **/
+  public FaxDocument sharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sharingUri")
+  public String getSharingUri() {
+    return sharingUri;
+  }
+  public void setSharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
+  }
 
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -351,14 +352,14 @@ public class FaxDocument  implements Serializable {
         Objects.equals(this.callerAddress, faxDocument.callerAddress) &&
         Objects.equals(this.receiverAddress, faxDocument.receiverAddress) &&
         Objects.equals(this.thumbnails, faxDocument.thumbnails) &&
-        Objects.equals(this.sharingUri, faxDocument.sharingUri) &&
         Objects.equals(this.downloadSharingUri, faxDocument.downloadSharingUri) &&
+        Objects.equals(this.sharingUri, faxDocument.sharingUri) &&
         Objects.equals(this.selfUri, faxDocument.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, contentUri, workspace, createdBy, contentType, contentLength, filename, read, pageCount, callerAddress, receiverAddress, thumbnails, sharingUri, downloadSharingUri, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, contentUri, workspace, createdBy, contentType, contentLength, filename, read, pageCount, callerAddress, receiverAddress, thumbnails, downloadSharingUri, sharingUri, selfUri);
   }
 
   @Override
@@ -381,8 +382,8 @@ public class FaxDocument  implements Serializable {
     sb.append("    callerAddress: ").append(toIndentedString(callerAddress)).append("\n");
     sb.append("    receiverAddress: ").append(toIndentedString(receiverAddress)).append("\n");
     sb.append("    thumbnails: ").append(toIndentedString(thumbnails)).append("\n");
-    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    downloadSharingUri: ").append(toIndentedString(downloadSharingUri)).append("\n");
+    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

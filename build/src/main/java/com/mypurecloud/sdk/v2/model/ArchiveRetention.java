@@ -68,7 +68,7 @@ public class ArchiveRetention  implements Serializable {
     this.days = days;
   }
 
-
+  
   /**
    **/
   public ArchiveRetention storageMedium(StorageMediumEnum storageMedium) {
@@ -85,6 +85,7 @@ public class ArchiveRetention  implements Serializable {
     this.storageMedium = storageMedium;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

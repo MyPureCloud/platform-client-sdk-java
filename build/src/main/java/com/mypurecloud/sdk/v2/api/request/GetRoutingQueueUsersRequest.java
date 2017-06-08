@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingQueueUsersRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -72,6 +74,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -86,6 +89,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -100,6 +104,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -114,6 +119,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private Boolean joined;
 	public Boolean getJoined() {
 		return this.joined;
@@ -128,6 +134,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -142,6 +149,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> profileSkills;
 	public List<String> getProfileSkills() {
 		return this.profileSkills;
@@ -156,6 +164,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> skills;
 	public List<String> getSkills() {
 		return this.skills;
@@ -170,6 +179,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> languages;
 	public List<String> getLanguages() {
 		return this.languages;
@@ -184,6 +194,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> routingStatus;
 	public List<String> getRoutingStatus() {
 		return this.routingStatus;
@@ -198,6 +209,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> presence;
 	public List<String> getPresence() {
 		return this.presence;
@@ -212,6 +224,7 @@ public class GetRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -263,7 +276,8 @@ public class GetRoutingQueueUsersRequest {
                 .withQueryParameters("routingStatus", "multi", routingStatus)
         
                 .withQueryParameters("presence", "multi", presence)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -274,10 +288,12 @@ public class GetRoutingQueueUsersRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId) {
 	    return new Builder()
 	            .withRequiredParams(queueId);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingQueueUsersRequest request;
@@ -286,59 +302,75 @@ public class GetRoutingQueueUsersRequest {
 			request = new GetRoutingQueueUsersRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withJoined(Boolean joined) {
 			request.setJoined(joined);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withProfileSkills(List<String> profileSkills) {
 			request.setProfileSkills(profileSkills);
 			return this;
 		}
+		
 		public Builder withSkills(List<String> skills) {
 			request.setSkills(skills);
 			return this;
 		}
+		
 		public Builder withLanguages(List<String> languages) {
 			request.setLanguages(languages);
 			return this;
 		}
+		
 		public Builder withRoutingStatus(List<String> routingStatus) {
 			request.setRoutingStatus(routingStatus);
 			return this;
 		}
+		
 		public Builder withPresence(List<String> presence) {
 			request.setPresence(presence);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId) {
 			request.setQueueId(queueId);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingQueueUsersRequest build() {

@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PutResponsemanagementLibraryRequest {
+    
 	private String libraryId;
 	public String getLibraryId() {
 		return this.libraryId;
@@ -41,6 +42,7 @@ public class PutResponsemanagementLibraryRequest {
 	    return this;
 	}
 
+	
 	private Library body;
 	public Library getBody() {
 		return this.body;
@@ -55,6 +57,7 @@ public class PutResponsemanagementLibraryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +94,7 @@ public class PutResponsemanagementLibraryRequest {
                 .withPathParameter("libraryId", libraryId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -102,10 +106,12 @@ public class PutResponsemanagementLibraryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String libraryId, Library body) {
 	    return new Builder()
 	            .withRequiredParams(libraryId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutResponsemanagementLibraryRequest request;
@@ -114,20 +120,26 @@ public class PutResponsemanagementLibraryRequest {
 			request = new PutResponsemanagementLibraryRequest();
 		}
 
+		
 		public Builder withLibraryId(String libraryId) {
 			request.setLibraryId(libraryId);
 			return this;
 		}
+		
 		public Builder withBody(Library body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String libraryId, Library body) {
 			request.setLibraryId(libraryId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutResponsemanagementLibraryRequest build() {

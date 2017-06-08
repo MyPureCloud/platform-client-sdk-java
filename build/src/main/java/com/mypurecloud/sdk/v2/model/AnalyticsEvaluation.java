@@ -42,7 +42,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.evaluationId = evaluationId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation evaluatorId(String evaluatorId) {
@@ -59,7 +59,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.evaluatorId = evaluatorId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation userId(String userId) {
@@ -76,7 +76,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation eventTime(String eventTime) {
@@ -93,7 +93,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.eventTime = eventTime;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation queueId(String queueId) {
@@ -110,7 +110,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation formId(String formId) {
@@ -127,7 +127,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.formId = formId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation contextId(String contextId) {
@@ -144,7 +144,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation formName(String formName) {
@@ -161,7 +161,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.formName = formName;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation getoTotalScore(Long getoTotalScore) {
@@ -178,7 +178,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.getoTotalScore = getoTotalScore;
   }
 
-
+  
   /**
    **/
   public AnalyticsEvaluation getoTotalCriticalScore(Long getoTotalCriticalScore) {
@@ -195,6 +195,7 @@ public class AnalyticsEvaluation  implements Serializable {
     this.getoTotalCriticalScore = getoTotalCriticalScore;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

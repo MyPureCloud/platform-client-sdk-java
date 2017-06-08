@@ -58,6 +58,7 @@ public class WorkforceManagementApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
@@ -84,6 +85,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementAdherenceRequest createGetWorkforcemanagementAdherenceRequest(List<String> userId) {
     return GetWorkforcemanagementAdherenceRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -135,6 +137,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get activity codes corresponding to a management unit
    * 
@@ -161,6 +164,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitActivitycodesRequest createGetWorkforcemanagementManagementunitActivitycodesRequest(String muId) {
     return GetWorkforcemanagementManagementunitActivitycodesRequest.builder()
             .withMuId(muId)
+    
             .build();
   }
 
@@ -212,6 +216,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get intraday queues for the given date
    * 
@@ -240,8 +245,9 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitIntradayQueuesRequest createGetWorkforcemanagementManagementunitIntradayQueuesRequest(String muId, String date) {
     return GetWorkforcemanagementManagementunitIntradayQueuesRequest.builder()
             .withMuId(muId)
-
+    
             .withDate(date)
+    
             .build();
   }
 
@@ -293,6 +299,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get a time off request by id
    * 
@@ -323,10 +330,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUserTimeoffrequestRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(String muId, String userId, String timeOffRequestId) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
             .withMuId(muId)
-
+    
             .withUserId(userId)
-
+    
             .withTimeOffRequestId(timeOffRequestId)
+    
             .build();
   }
 
@@ -378,6 +386,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get a list of time off requests for any user
    * 
@@ -408,10 +417,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String muId, String userId, Boolean recentlyReviewed) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.builder()
             .withMuId(muId)
-
+    
             .withUserId(userId)
-
+    
             .withRecentlyReviewed(recentlyReviewed)
+    
             .build();
   }
 
@@ -463,6 +473,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get agents in the management unit
    * 
@@ -489,6 +500,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitUsersRequest createGetWorkforcemanagementManagementunitUsersRequest(String muId) {
     return GetWorkforcemanagementManagementunitUsersRequest.builder()
             .withMuId(muId)
+    
             .build();
   }
 
@@ -540,6 +552,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get management units
    * 
@@ -570,10 +583,11 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(String selector, Integer pageSize, Integer pageNumber) {
     return GetWorkforcemanagementManagementunitsRequest.builder()
             .withSelector(selector)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -625,6 +639,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get a time off request for the current user by id
    * 
@@ -651,6 +666,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementTimeoffrequestRequest createGetWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId) {
     return GetWorkforcemanagementTimeoffrequestRequest.builder()
             .withTimeOffRequestId(timeOffRequestId)
+    
             .build();
   }
 
@@ -702,6 +718,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get a list of time off requests for the current user
    * 
@@ -728,6 +745,7 @@ public class WorkforceManagementApi {
   private GetWorkforcemanagementTimeoffrequestsRequest createGetWorkforcemanagementTimeoffrequestsRequest(Boolean recentlyReviewed) {
     return GetWorkforcemanagementTimeoffrequestsRequest.builder()
             .withRecentlyReviewed(recentlyReviewed)
+    
             .build();
   }
 
@@ -779,6 +797,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Mark a time off request for the current user as read or unread
    * 
@@ -805,8 +824,9 @@ public class WorkforceManagementApi {
   private PatchWorkforcemanagementTimeoffrequestRequest createPatchWorkforcemanagementTimeoffrequestRequest(String timeOffRequestId, TimeOffRequestPatch body) {
     return PatchWorkforcemanagementTimeoffrequestRequest.builder()
             .withTimeOffRequestId(timeOffRequestId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -857,6 +877,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get intraday data for the given date for the requested queueIds
    * 
@@ -885,8 +906,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitIntradayRequest createPostWorkforcemanagementManagementunitIntradayRequest(String muId, IntradayQueryDataCommand body) {
     return PostWorkforcemanagementManagementunitIntradayRequest.builder()
             .withMuId(muId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -938,6 +960,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get user schedules within the given time range
    * 
@@ -966,8 +989,9 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementManagementunitSchedulesSearchRequest createPostWorkforcemanagementManagementunitSchedulesSearchRequest(String muId, UserListScheduleRequestBody body) {
     return PostWorkforcemanagementManagementunitSchedulesSearchRequest.builder()
             .withMuId(muId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1019,6 +1043,7 @@ public class WorkforceManagementApi {
     }
   }
 
+  
   /**
    * Get a schedule for the current user
    * 
@@ -1045,6 +1070,7 @@ public class WorkforceManagementApi {
   private PostWorkforcemanagementSchedulesRequest createPostWorkforcemanagementSchedulesRequest(CurrentUserScheduleRequestBody body) {
     return PostWorkforcemanagementSchedulesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1096,4 +1122,5 @@ public class WorkforceManagementApi {
     }
   }
 
+  
 }

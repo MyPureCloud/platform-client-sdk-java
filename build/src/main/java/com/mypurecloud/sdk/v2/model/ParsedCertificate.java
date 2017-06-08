@@ -38,6 +38,7 @@ public class ParsedCertificate  implements Serializable {
     this.certificateDetails = certificateDetails;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

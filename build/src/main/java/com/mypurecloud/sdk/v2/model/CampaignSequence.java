@@ -73,7 +73,7 @@ public class CampaignSequence  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CampaignSequence name(String name) {
@@ -90,21 +90,21 @@ public class CampaignSequence  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -122,7 +122,7 @@ public class CampaignSequence  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * the ordered list of campaign identifiers
    **/
@@ -140,14 +140,14 @@ public class CampaignSequence  implements Serializable {
     this.campaigns = campaigns;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "the zero-based index of the current campaign in the campaigns list")
   @JsonProperty("currentCampaign")
   public Integer getCurrentCampaign() {
     return currentCampaign;
   }
 
-
+  
   /**
    * status of the sequence
    **/
@@ -165,14 +165,14 @@ public class CampaignSequence  implements Serializable {
     this.status = status;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "if a sequence has unexpectedly stopped, this message provides the reason")
   @JsonProperty("stopMessage")
   public String getStopMessage() {
     return stopMessage;
   }
 
-
+  
   /**
    * indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
    **/
@@ -190,13 +190,14 @@ public class CampaignSequence  implements Serializable {
     this.repeat = repeat;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

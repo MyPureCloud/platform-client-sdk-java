@@ -71,7 +71,7 @@ public class FlowVersion  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public FlowVersion name(String name) {
@@ -88,7 +88,7 @@ public class FlowVersion  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FlowVersion commitVersion(String commitVersion) {
@@ -105,7 +105,7 @@ public class FlowVersion  implements Serializable {
     this.commitVersion = commitVersion;
   }
 
-
+  
   /**
    **/
   public FlowVersion configurationVersion(String configurationVersion) {
@@ -122,7 +122,7 @@ public class FlowVersion  implements Serializable {
     this.configurationVersion = configurationVersion;
   }
 
-
+  
   /**
    **/
   public FlowVersion type(TypeEnum type) {
@@ -139,7 +139,7 @@ public class FlowVersion  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public FlowVersion secure(Boolean secure) {
@@ -156,7 +156,7 @@ public class FlowVersion  implements Serializable {
     this.secure = secure;
   }
 
-
+  
   /**
    **/
   public FlowVersion createdBy(User createdBy) {
@@ -173,7 +173,7 @@ public class FlowVersion  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public FlowVersion configurationUri(String configurationUri) {
@@ -190,7 +190,7 @@ public class FlowVersion  implements Serializable {
     this.configurationUri = configurationUri;
   }
 
-
+  
   /**
    **/
   public FlowVersion dateCreated(Long dateCreated) {
@@ -207,7 +207,7 @@ public class FlowVersion  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public FlowVersion generationId(String generationId) {
@@ -224,7 +224,7 @@ public class FlowVersion  implements Serializable {
     this.generationId = generationId;
   }
 
-
+  
   /**
    **/
   public FlowVersion publishResultUri(String publishResultUri) {
@@ -241,13 +241,14 @@ public class FlowVersion  implements Serializable {
     this.publishResultUri = publishResultUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

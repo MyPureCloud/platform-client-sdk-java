@@ -84,6 +84,7 @@ public class QualityApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a calibration by id.
    * 
@@ -159,6 +160,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Delete an evaluation
    * 
@@ -234,6 +236,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Delete an evaluation form.
    * 
@@ -309,6 +312,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Delete a keywordSet by id.
    * 
@@ -384,6 +388,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
@@ -459,6 +464,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Gets a list of Agent Activities
    * Including the number of evaluations and average evaluation score
@@ -534,6 +540,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get a calibration by id.
    * 
@@ -609,6 +616,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get the list of calibrations
    * 
@@ -684,6 +692,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get audits for conversation or recording
    * 
@@ -759,6 +768,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get an evaluation
    * 
@@ -834,6 +844,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Queries Evaluations and returns a paged list
    * Query params must include one of conversationId, evaluatorUserId, or agentUserId
@@ -909,6 +920,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get an evaluator activity
    * 
@@ -984,6 +996,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get an evaluation form
    * 
@@ -1059,6 +1072,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1134,6 +1148,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get the list of evaluation forms
    * 
@@ -1209,6 +1224,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get a keywordSet by id.
    * 
@@ -1284,6 +1300,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get the list of keyword sets
    * 
@@ -1359,6 +1376,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get the published evaluation forms.
    * 
@@ -1434,6 +1452,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Get the published evaluation forms.
    * 
@@ -1509,6 +1528,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Query for evaluation aggregates
    * 
@@ -1584,6 +1604,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Create a calibration
    * 
@@ -1659,6 +1680,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Create an evaluation
    * 
@@ -1734,6 +1756,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Score evaluation
    * 
@@ -1809,6 +1832,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Create an evaluation form.
    * 
@@ -1884,6 +1908,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Create a Keyword Set
    * 
@@ -1959,6 +1984,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Publish an evaluation form.
    * 
@@ -2034,6 +2060,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Retrieve the spotability statistic
    * 
@@ -2109,6 +2136,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
@@ -2184,6 +2212,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Update an evaluation
    * 
@@ -2259,6 +2288,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Update an evaluation form.
    * 
@@ -2334,6 +2364,7 @@ public class QualityApiAsync {
     }
   }
 
+  
   /**
    * Update a keywordSet to the specified keywordSet via PUT.
    * 
@@ -2409,6 +2440,7 @@ public class QualityApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -72,7 +72,7 @@ public class ConsultTransfer  implements Serializable {
     this.speakTo = speakTo;
   }
 
-
+  
   /**
    * Destination phone number and name.
    **/
@@ -90,6 +90,7 @@ public class ConsultTransfer  implements Serializable {
     this.destination = destination;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

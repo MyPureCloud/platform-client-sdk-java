@@ -46,7 +46,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DocumentEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DocumentEntityListing  implements Serializable, PagedResource<Docum
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

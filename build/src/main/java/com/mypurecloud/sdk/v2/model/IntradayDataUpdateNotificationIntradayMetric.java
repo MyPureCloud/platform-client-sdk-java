@@ -73,7 +73,7 @@ public class IntradayDataUpdateNotificationIntradayMetric  implements Serializab
     this.category = category;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayMetric version(String version) {
@@ -90,6 +90,7 @@ public class IntradayDataUpdateNotificationIntradayMetric  implements Serializab
     this.version = version;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

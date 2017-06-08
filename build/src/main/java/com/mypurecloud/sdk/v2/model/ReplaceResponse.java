@@ -74,7 +74,7 @@ public class ReplaceResponse  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ReplaceResponse name(String name) {
@@ -91,7 +91,7 @@ public class ReplaceResponse  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ReplaceResponse changeNumber(Integer changeNumber) {
@@ -108,7 +108,7 @@ public class ReplaceResponse  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    **/
   public ReplaceResponse uploadStatus(UriReference uploadStatus) {
@@ -125,7 +125,7 @@ public class ReplaceResponse  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public ReplaceResponse uploadDestinationUri(String uploadDestinationUri) {
@@ -142,7 +142,7 @@ public class ReplaceResponse  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-
+  
   /**
    **/
   public ReplaceResponse uploadMethod(UploadMethodEnum uploadMethod) {
@@ -159,6 +159,7 @@ public class ReplaceResponse  implements Serializable {
     this.uploadMethod = uploadMethod;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -240,7 +240,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant name(String name) {
@@ -257,7 +257,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant address(String address) {
@@ -274,7 +274,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.address = address;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant startTime(Date startTime) {
@@ -291,7 +291,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant connectedTime(Date connectedTime) {
@@ -308,7 +308,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant endTime(Date endTime) {
@@ -325,7 +325,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant startHoldTime(Date startHoldTime) {
@@ -342,7 +342,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant purpose(String purpose) {
@@ -359,7 +359,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant state(StateEnum state) {
@@ -376,7 +376,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.state = state;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant direction(DirectionEnum direction) {
@@ -393,7 +393,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -410,7 +410,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant held(Boolean held) {
@@ -427,7 +427,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.held = held;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -444,7 +444,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -461,7 +461,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -478,7 +478,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant queue(CallConversationNotificationUriReference queue) {
@@ -495,7 +495,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant attributes(Map<String, String> attributes) {
@@ -512,7 +512,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant errorInfo(CallConversationNotificationErrorInfo errorInfo) {
@@ -529,7 +529,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant script(CallConversationNotificationUriReference script) {
@@ -546,7 +546,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -563,7 +563,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -580,7 +580,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant provider(String provider) {
@@ -597,7 +597,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant externalContact(CallConversationNotificationUriReference externalContact) {
@@ -614,7 +614,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant externalOrganization(CallConversationNotificationUriReference externalOrganization) {
@@ -631,7 +631,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -648,7 +648,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant peer(String peer) {
@@ -665,7 +665,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant muted(Boolean muted) {
@@ -682,7 +682,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.muted = muted;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant confined(Boolean confined) {
@@ -699,7 +699,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.confined = confined;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant recording(Boolean recording) {
@@ -716,7 +716,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.recording = recording;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant recordingState(RecordingStateEnum recordingState) {
@@ -733,7 +733,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant group(CallConversationNotificationUriReference group) {
@@ -750,7 +750,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.group = group;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant ani(String ani) {
@@ -767,7 +767,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.ani = ani;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant dnis(String dnis) {
@@ -784,7 +784,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.dnis = dnis;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant documentId(String documentId) {
@@ -801,7 +801,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.documentId = documentId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant monitoredParticipantId(String monitoredParticipantId) {
@@ -818,7 +818,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant consultParticipantId(String consultParticipantId) {
@@ -835,7 +835,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.consultParticipantId = consultParticipantId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationCallMediaParticipant faxStatus(CallConversationNotificationFaxStatus faxStatus) {
@@ -852,6 +852,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     this.faxStatus = faxStatus;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

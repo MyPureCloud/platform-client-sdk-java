@@ -33,6 +33,7 @@ public class FaxDataV2NotificationWorkspaceData  implements Serializable {
     this.id = id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

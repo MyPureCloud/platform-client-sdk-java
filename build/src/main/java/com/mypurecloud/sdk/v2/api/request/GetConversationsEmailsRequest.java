@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsEmailsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -82,7 +83,8 @@ public class GetConversationsEmailsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/conversations/emails")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -93,6 +95,7 @@ public class GetConversationsEmailsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetConversationsEmailsRequest request;
@@ -101,7 +104,9 @@ public class GetConversationsEmailsRequest {
 			request = new GetConversationsEmailsRequest();
 		}
 
+		
 
+		
 
 
 		public GetConversationsEmailsRequest build() {

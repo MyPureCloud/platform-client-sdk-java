@@ -270,7 +270,7 @@ public class UserScheduleAdherence  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherence name(String name) {
@@ -287,7 +287,7 @@ public class UserScheduleAdherence  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The user for whom this status applies
    **/
@@ -305,7 +305,7 @@ public class UserScheduleAdherence  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The management unit to which this user belongs
    **/
@@ -323,76 +323,77 @@ public class UserScheduleAdherence  implements Serializable {
     this.managementUnit = managementUnit;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Activity for which the user is scheduled")
   @JsonProperty("scheduledActivityCategory")
   public ScheduledActivityCategoryEnum getScheduledActivityCategory() {
     return scheduledActivityCategory;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Actual underlying system presence value")
   @JsonProperty("systemPresence")
   public SystemPresenceEnum getSystemPresence() {
     return systemPresence;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Organization Secondary Presence Id.")
   @JsonProperty("organizationSecondaryPresenceId")
   public String getOrganizationSecondaryPresenceId() {
     return organizationSecondaryPresenceId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue")
   @JsonProperty("routingStatus")
   public RoutingStatusEnum getRoutingStatus() {
     return routingStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Activity in which the user is actually engaged")
   @JsonProperty("actualActivityCategory")
   public ActualActivityCategoryEnum getActualActivityCategory() {
     return actualActivityCategory;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Whether the user is marked OutOfOffice")
   @JsonProperty("isOutOfOffice")
   public Boolean getIsOutOfOffice() {
     return isOutOfOffice;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The user's current adherence state")
   @JsonProperty("adherenceState")
   public AdherenceStateEnum getAdherenceState() {
     return adherenceState;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The impact of the user's current adherenceState")
   @JsonProperty("impact")
   public ImpactEnum getImpact() {
     return impact;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Time when the user entered the current adherenceState in ISO-8601 format")
   @JsonProperty("timeOfAdherenceChange")
   public String getTimeOfAdherenceChange() {
     return timeOfAdherenceChange;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,7 +34,7 @@ public class SortItem  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SortItem ascending(Boolean ascending) {
@@ -51,6 +51,7 @@ public class SortItem  implements Serializable {
     this.ascending = ascending;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

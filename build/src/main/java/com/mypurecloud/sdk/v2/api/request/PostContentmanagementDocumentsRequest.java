@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementDocumentsRequest {
+    
 	private DocumentUpload body;
 	public DocumentUpload getBody() {
 		return this.body;
@@ -64,6 +65,7 @@ public class PostContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private String copySource;
 	public String getCopySource() {
 		return this.copySource;
@@ -78,6 +80,7 @@ public class PostContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private String moveSource;
 	public String getMoveSource() {
 		return this.moveSource;
@@ -92,6 +95,7 @@ public class PostContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private Boolean override;
 	public Boolean getOverride() {
 		return this.override;
@@ -106,6 +110,7 @@ public class PostContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -141,6 +146,7 @@ public class PostContentmanagementDocumentsRequest {
                 .withQueryParameters("override", "", override)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -152,10 +158,12 @@ public class PostContentmanagementDocumentsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DocumentUpload body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementDocumentsRequest request;
@@ -164,27 +172,35 @@ public class PostContentmanagementDocumentsRequest {
 			request = new PostContentmanagementDocumentsRequest();
 		}
 
+		
 		public Builder withBody(DocumentUpload body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withCopySource(String copySource) {
 			request.setCopySource(copySource);
 			return this;
 		}
+		
 		public Builder withMoveSource(String moveSource) {
 			request.setMoveSource(moveSource);
 			return this;
 		}
+		
 		public Builder withOverride(Boolean override) {
 			request.setOverride(override);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DocumentUpload body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementDocumentsRequest build() {

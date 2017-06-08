@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PutArchitectPromptRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class PutArchitectPromptRequest {
 	    return this;
 	}
 
+	
 	private Prompt body;
 	public Prompt getBody() {
 		return this.body;
@@ -70,6 +72,7 @@ public class PutArchitectPromptRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,6 +104,7 @@ public class PutArchitectPromptRequest {
                 .withPathParameter("promptId", promptId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -112,10 +116,12 @@ public class PutArchitectPromptRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId) {
 	    return new Builder()
 	            .withRequiredParams(promptId);
 	}
+	
 
 	public static class Builder {
 		private final PutArchitectPromptRequest request;
@@ -124,19 +130,25 @@ public class PutArchitectPromptRequest {
 			request = new PutArchitectPromptRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withBody(Prompt body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId) {
 			request.setPromptId(promptId);
+			
 			return this;
 		}
+		
 
 
 		public PutArchitectPromptRequest build() {

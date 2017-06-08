@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingRoutingstatusRulesRequest {
+    
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -53,6 +54,7 @@ public class GetAlertingRoutingstatusRulesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,7 +79,8 @@ public class GetAlertingRoutingstatusRulesRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/alerting/routingstatus/rules")
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -88,6 +91,7 @@ public class GetAlertingRoutingstatusRulesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetAlertingRoutingstatusRulesRequest request;
@@ -96,11 +100,14 @@ public class GetAlertingRoutingstatusRulesRequest {
 			request = new GetAlertingRoutingstatusRulesRequest();
 		}
 
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetAlertingRoutingstatusRulesRequest build() {

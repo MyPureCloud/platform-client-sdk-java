@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCallabletimesetsRequest {
+    
 	private CallableTimeSet body;
 	public CallableTimeSet getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundCallabletimesetsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundCallabletimesetsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/callabletimesets")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundCallabletimesetsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(CallableTimeSet body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundCallabletimesetsRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundCallabletimesetsRequest {
 			request = new PostOutboundCallabletimesetsRequest();
 		}
 
+		
 		public Builder withBody(CallableTimeSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(CallableTimeSet body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundCallabletimesetsRequest build() {

@@ -29,41 +29,42 @@ public class VoicemailMailboxInfo  implements Serializable {
     return usageSizeBytes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages")
   @JsonProperty("totalCount")
   public Integer getTotalCount() {
     return totalCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages marked as unread")
   @JsonProperty("unreadCount")
   public Integer getUnreadCount() {
     return unreadCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The total number of voicemail messages marked as deleted")
   @JsonProperty("deletedCount")
   public Integer getDeletedCount() {
     return deletedCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

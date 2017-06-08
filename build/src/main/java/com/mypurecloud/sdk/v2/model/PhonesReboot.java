@@ -37,7 +37,7 @@ public class PhonesReboot  implements Serializable {
     this.phoneIds = phoneIds;
   }
 
-
+  
   /**
    * ID of the site for which to reboot all phones at that site. no.active.edge and phone.cannot.resolve errors are ignored.
    **/
@@ -55,6 +55,7 @@ public class PhonesReboot  implements Serializable {
     this.siteId = siteId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

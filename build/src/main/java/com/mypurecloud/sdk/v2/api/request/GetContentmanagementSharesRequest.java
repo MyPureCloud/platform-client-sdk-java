@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementSharesRequest {
+    
 	private String entityId;
 	public String getEntityId() {
 		return this.entityId;
@@ -64,6 +65,7 @@ public class GetContentmanagementSharesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -78,6 +80,7 @@ public class GetContentmanagementSharesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -92,6 +95,7 @@ public class GetContentmanagementSharesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -106,6 +110,7 @@ public class GetContentmanagementSharesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -136,7 +141,8 @@ public class GetContentmanagementSharesRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -147,6 +153,7 @@ public class GetContentmanagementSharesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetContentmanagementSharesRequest request;
@@ -155,23 +162,29 @@ public class GetContentmanagementSharesRequest {
 			request = new GetContentmanagementSharesRequest();
 		}
 
+		
 		public Builder withEntityId(String entityId) {
 			request.setEntityId(entityId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 
 
 		public GetContentmanagementSharesRequest build() {

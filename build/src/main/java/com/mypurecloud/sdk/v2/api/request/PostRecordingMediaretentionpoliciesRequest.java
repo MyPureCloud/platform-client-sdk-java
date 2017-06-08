@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PostRecordingMediaretentionpoliciesRequest {
+    
 	private PolicyCreate body;
 	public PolicyCreate getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PostRecordingMediaretentionpoliciesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/recording/mediaretentionpolicies")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PostRecordingMediaretentionpoliciesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(PolicyCreate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostRecordingMediaretentionpoliciesRequest request;
@@ -104,15 +109,20 @@ public class PostRecordingMediaretentionpoliciesRequest {
 			request = new PostRecordingMediaretentionpoliciesRequest();
 		}
 
+		
 		public Builder withBody(PolicyCreate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(PolicyCreate body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRecordingMediaretentionpoliciesRequest build() {

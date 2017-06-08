@@ -216,6 +216,7 @@ public class TelephonyProvidersEdgeApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a edge.
    * 
@@ -240,6 +241,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgeRequest createDeleteTelephonyProvidersEdgeRequest(String edgeId) {
     return DeleteTelephonyProvidersEdgeRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -290,6 +292,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete an edge logical interface
    * 
@@ -316,8 +319,9 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgeLogicalinterfaceRequest createDeleteTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId) {
     return DeleteTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withInterfaceId(interfaceId)
+    
             .build();
   }
 
@@ -368,6 +372,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Cancels any in-progress update for this edge.
    * 
@@ -392,6 +397,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgeSoftwareupdateRequest createDeleteTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId) {
     return DeleteTelephonyProvidersEdgeSoftwareupdateRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -442,6 +448,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a certificate authority.
    * 
@@ -466,6 +473,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesCertificateauthorityRequest createDeleteTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId) {
     return DeleteTelephonyProvidersEdgesCertificateauthorityRequest.builder()
             .withCertificateId(certificateId)
+    
             .build();
   }
 
@@ -516,6 +524,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a DID Pool by ID.
    * 
@@ -540,6 +549,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesDidpoolRequest createDeleteTelephonyProvidersEdgesDidpoolRequest(String didPoolId) {
     return DeleteTelephonyProvidersEdgesDidpoolRequest.builder()
             .withDidPoolId(didPoolId)
+    
             .build();
   }
 
@@ -590,6 +600,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete an edge group.
    * 
@@ -614,6 +625,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesEdgegroupRequest createDeleteTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId) {
     return DeleteTelephonyProvidersEdgesEdgegroupRequest.builder()
             .withEdgeGroupId(edgeGroupId)
+    
             .build();
   }
 
@@ -664,6 +676,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete endpoint
    * 
@@ -688,6 +701,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesEndpointRequest createDeleteTelephonyProvidersEdgesEndpointRequest(String endpointId) {
     return DeleteTelephonyProvidersEdgesEndpointRequest.builder()
             .withEndpointId(endpointId)
+    
             .build();
   }
 
@@ -738,6 +752,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete an extension pool by ID
    * 
@@ -762,6 +777,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesExtensionpoolRequest createDeleteTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId) {
     return DeleteTelephonyProvidersEdgesExtensionpoolRequest.builder()
             .withExtensionPoolId(extensionPoolId)
+    
             .build();
   }
 
@@ -812,6 +828,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete Outbound Route
    * 
@@ -836,6 +853,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesOutboundrouteRequest createDeleteTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
     return DeleteTelephonyProvidersEdgesOutboundrouteRequest.builder()
             .withOutboundRouteId(outboundRouteId)
+    
             .build();
   }
 
@@ -886,6 +904,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a Phone by ID
    * 
@@ -910,6 +929,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesPhoneRequest createDeleteTelephonyProvidersEdgesPhoneRequest(String phoneId) {
     return DeleteTelephonyProvidersEdgesPhoneRequest.builder()
             .withPhoneId(phoneId)
+    
             .build();
   }
 
@@ -960,6 +980,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a Phone Base Settings by ID
    * 
@@ -984,6 +1005,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesPhonebasesettingRequest createDeleteTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId) {
     return DeleteTelephonyProvidersEdgesPhonebasesettingRequest.builder()
             .withPhoneBaseId(phoneBaseId)
+    
             .build();
   }
 
@@ -1034,6 +1056,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a Site by ID
    * 
@@ -1058,6 +1081,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesSiteRequest createDeleteTelephonyProvidersEdgesSiteRequest(String siteId) {
     return DeleteTelephonyProvidersEdgesSiteRequest.builder()
             .withSiteId(siteId)
+    
             .build();
   }
 
@@ -1108,6 +1132,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete Outbound Route
    * 
@@ -1134,8 +1159,9 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest createDeleteTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId) {
     return DeleteTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
             .withSiteId(siteId)
-
+    
             .withOutboundRouteId(outboundRouteId)
+    
             .build();
   }
 
@@ -1186,6 +1212,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Delete a Trunk Base Settings object by ID
    * 
@@ -1210,6 +1237,7 @@ public class TelephonyProvidersEdgeApi {
   private DeleteTelephonyProvidersEdgesTrunkbasesettingRequest createDeleteTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId) {
     return DeleteTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
             .withTrunkBaseSettingsId(trunkBaseSettingsId)
+    
             .build();
   }
 
@@ -1260,6 +1288,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Lists available schema categories (Deprecated)
    * 
@@ -1288,8 +1317,9 @@ public class TelephonyProvidersEdgeApi {
   private GetConfigurationSchemasEdgesVnextRequest createGetConfigurationSchemasEdgesVnextRequest(Integer pageSize, Integer pageNumber) {
     return GetConfigurationSchemasEdgesVnextRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1341,6 +1371,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * List schemas of a specific category (Deprecated)
    * 
@@ -1371,10 +1402,11 @@ public class TelephonyProvidersEdgeApi {
   private GetConfigurationSchemasEdgesVnextSchemaCategoryRequest createGetConfigurationSchemasEdgesVnextSchemaCategoryRequest(String schemaCategory, Integer pageSize, Integer pageNumber) {
     return GetConfigurationSchemasEdgesVnextSchemaCategoryRequest.builder()
             .withSchemaCategory(schemaCategory)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1426,6 +1458,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * List schemas of a specific category (Deprecated)
    * 
@@ -1458,12 +1491,13 @@ public class TelephonyProvidersEdgeApi {
   private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest(String schemaCategory, String schemaType, Integer pageSize, Integer pageNumber) {
     return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest.builder()
             .withSchemaCategory(schemaCategory)
-
+    
             .withSchemaType(schemaType)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1515,6 +1549,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a json schema (Deprecated)
    * 
@@ -1545,10 +1580,11 @@ public class TelephonyProvidersEdgeApi {
   private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest(String schemaCategory, String schemaType, String schemaId) {
     return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest.builder()
             .withSchemaCategory(schemaCategory)
-
+    
             .withSchemaType(schemaType)
-
+    
             .withSchemaId(schemaId)
+    
             .build();
   }
 
@@ -1600,6 +1636,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get metadata for a schema (Deprecated)
    * 
@@ -1636,16 +1673,17 @@ public class TelephonyProvidersEdgeApi {
   private GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest createGetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId, String type) {
     return GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest.builder()
             .withSchemaCategory(schemaCategory)
-
+    
             .withSchemaType(schemaType)
-
+    
             .withSchemaId(schemaId)
-
+    
             .withExtensionType(extensionType)
-
+    
             .withMetadataId(metadataId)
-
+    
             .withType(type)
+    
             .build();
   }
 
@@ -1697,6 +1735,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get edge.
    * 
@@ -1725,8 +1764,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeRequest createGetTelephonyProvidersEdgeRequest(String edgeId, List<String> expand) {
     return GetTelephonyProvidersEdgeRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1778,6 +1818,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get line
    * 
@@ -1806,8 +1847,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeLineRequest createGetTelephonyProvidersEdgeLineRequest(String edgeId, String lineId) {
     return GetTelephonyProvidersEdgeLineRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withLineId(lineId)
+    
             .build();
   }
 
@@ -1859,6 +1901,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of lines.
    * 
@@ -1889,10 +1932,11 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeLinesRequest createGetTelephonyProvidersEdgeLinesRequest(String edgeId, Integer pageSize, Integer pageNumber) {
     return GetTelephonyProvidersEdgeLinesRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1944,6 +1988,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get an edge logical interface
    * 
@@ -1974,10 +2019,11 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeLogicalinterfaceRequest createGetTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId, List<String> expand) {
     return GetTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withInterfaceId(interfaceId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2029,6 +2075,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
@@ -2057,8 +2104,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeLogicalinterfacesRequest createGetTelephonyProvidersEdgeLogicalinterfacesRequest(String edgeId, List<String> expand) {
     return GetTelephonyProvidersEdgeLogicalinterfacesRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2110,6 +2158,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get an Edge logs job.
    * 
@@ -2138,8 +2187,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeLogsJobRequest createGetTelephonyProvidersEdgeLogsJobRequest(String edgeId, String jobId) {
     return GetTelephonyProvidersEdgeLogsJobRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withJobId(jobId)
+    
             .build();
   }
 
@@ -2191,6 +2241,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
@@ -2219,8 +2270,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgePhysicalinterfaceRequest createGetTelephonyProvidersEdgePhysicalinterfaceRequest(String edgeId, String interfaceId) {
     return GetTelephonyProvidersEdgePhysicalinterfaceRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withInterfaceId(interfaceId)
+    
             .build();
   }
 
@@ -2272,6 +2324,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
@@ -2298,6 +2351,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgePhysicalinterfacesRequest createGetTelephonyProvidersEdgePhysicalinterfacesRequest(String edgeId) {
     return GetTelephonyProvidersEdgePhysicalinterfacesRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -2349,6 +2403,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
@@ -2375,6 +2430,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeSetuppackageRequest createGetTelephonyProvidersEdgeSetuppackageRequest(String edgeId) {
     return GetTelephonyProvidersEdgeSetuppackageRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -2426,6 +2482,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Gets software update status information about any edge.
    * 
@@ -2452,6 +2509,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeSoftwareupdateRequest createGetTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId) {
     return GetTelephonyProvidersEdgeSoftwareupdateRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -2503,6 +2561,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Gets all the available software versions for this edge.
    * 
@@ -2529,6 +2588,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeSoftwareversionsRequest createGetTelephonyProvidersEdgeSoftwareversionsRequest(String edgeId) {
     return GetTelephonyProvidersEdgeSoftwareversionsRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -2580,6 +2640,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of available trunks for the given Edge.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
@@ -2618,18 +2679,19 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgeTrunksRequest createGetTelephonyProvidersEdgeTrunksRequest(String edgeId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String trunkBaseId, String trunkType) {
     return GetTelephonyProvidersEdgeTrunksRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withTrunkBaseId(trunkBaseId)
-
+    
             .withTrunkType(trunkType)
+    
             .build();
   }
 
@@ -2681,6 +2743,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of edges.
    * 
@@ -2719,18 +2782,19 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesRequest createGetTelephonyProvidersEdgesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String edgeGroupId, String sortBy, Boolean managed) {
     return GetTelephonyProvidersEdgesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSiteId(siteId)
-
+    
             .withEdgeGroupId(edgeGroupId)
-
+    
             .withSortBy(sortBy)
-
+    
             .withManaged(managed)
+    
             .build();
   }
 
@@ -2782,6 +2846,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of available languages.
    * 
@@ -2804,7 +2869,8 @@ public class TelephonyProvidersEdgeApi {
   }
 
   private GetTelephonyProvidersEdgesAvailablelanguagesRequest createGetTelephonyProvidersEdgesAvailablelanguagesRequest() {
-    return GetTelephonyProvidersEdgesAvailablelanguagesRequest.builder()            .build();
+    return GetTelephonyProvidersEdgesAvailablelanguagesRequest.builder()
+            .build();
   }
 
   /**
@@ -2855,6 +2921,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of certificate authorities.
    * 
@@ -2877,7 +2944,8 @@ public class TelephonyProvidersEdgeApi {
   }
 
   private GetTelephonyProvidersEdgesCertificateauthoritiesRequest createGetTelephonyProvidersEdgesCertificateauthoritiesRequest() {
-    return GetTelephonyProvidersEdgesCertificateauthoritiesRequest.builder()            .build();
+    return GetTelephonyProvidersEdgesCertificateauthoritiesRequest.builder()
+            .build();
   }
 
   /**
@@ -2928,6 +2996,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a certificate authority.
    * 
@@ -2954,6 +3023,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesCertificateauthorityRequest createGetTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId) {
     return GetTelephonyProvidersEdgesCertificateauthorityRequest.builder()
             .withCertificateId(certificateId)
+    
             .build();
   }
 
@@ -3005,6 +3075,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a DID by ID.
    * 
@@ -3031,6 +3102,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesDidRequest createGetTelephonyProvidersEdgesDidRequest(String didId) {
     return GetTelephonyProvidersEdgesDidRequest.builder()
             .withDidId(didId)
+    
             .build();
   }
 
@@ -3082,6 +3154,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a DID Pool by ID.
    * 
@@ -3108,6 +3181,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesDidpoolRequest createGetTelephonyProvidersEdgesDidpoolRequest(String didPoolId) {
     return GetTelephonyProvidersEdgesDidpoolRequest.builder()
             .withDidPoolId(didPoolId)
+    
             .build();
   }
 
@@ -3159,6 +3233,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a listing of DID Pools
    * 
@@ -3189,10 +3264,11 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesDidpoolsRequest createGetTelephonyProvidersEdgesDidpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy) {
     return GetTelephonyProvidersEdgesDidpoolsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
+    
             .build();
   }
 
@@ -3244,6 +3320,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a listing of DIDs
    * 
@@ -3278,14 +3355,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) {
     return GetTelephonyProvidersEdgesDidsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withPhoneNumber(phoneNumber)
+    
             .build();
   }
 
@@ -3337,6 +3415,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get edge group.
    * 
@@ -3365,8 +3444,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesEdgegroupRequest createGetTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId, List<String> expand) {
     return GetTelephonyProvidersEdgesEdgegroupRequest.builder()
             .withEdgeGroupId(edgeGroupId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -3418,6 +3498,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Gets the edge trunk base associated with the edge group
    * 
@@ -3446,8 +3527,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId) {
     return GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
             .withEdgegroupId(edgegroupId)
-
+    
             .withEdgetrunkbaseId(edgetrunkbaseId)
+    
             .build();
   }
 
@@ -3499,6 +3581,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of edge groups.
    * 
@@ -3533,14 +3616,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesEdgegroupsRequest createGetTelephonyProvidersEdgesEdgegroupsRequest(Integer pageSize, Integer pageNumber, String name, String sortBy, Boolean managed) {
     return GetTelephonyProvidersEdgesEdgegroupsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSortBy(sortBy)
-
+    
             .withManaged(managed)
+    
             .build();
   }
 
@@ -3592,6 +3676,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
@@ -3614,7 +3699,8 @@ public class TelephonyProvidersEdgeApi {
   }
 
   private GetTelephonyProvidersEdgesEdgeversionreportRequest createGetTelephonyProvidersEdgesEdgeversionreportRequest() {
-    return GetTelephonyProvidersEdgesEdgeversionreportRequest.builder()            .build();
+    return GetTelephonyProvidersEdgesEdgeversionreportRequest.builder()
+            .build();
   }
 
   /**
@@ -3665,6 +3751,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get endpoint
    * 
@@ -3691,6 +3778,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesEndpointRequest createGetTelephonyProvidersEdgesEndpointRequest(String endpointId) {
     return GetTelephonyProvidersEdgesEndpointRequest.builder()
             .withEndpointId(endpointId)
+    
             .build();
   }
 
@@ -3742,6 +3830,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get endpoints
    * 
@@ -3774,12 +3863,13 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesEndpointsRequest createGetTelephonyProvidersEdgesEndpointsRequest(Integer pageSize, Integer pageNumber, String name, String sortBy) {
     return GetTelephonyProvidersEdgesEndpointsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSortBy(sortBy)
+    
             .build();
   }
 
@@ -3831,6 +3921,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get an extension by ID.
    * 
@@ -3857,6 +3948,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesExtensionRequest createGetTelephonyProvidersEdgesExtensionRequest(String extensionId) {
     return GetTelephonyProvidersEdgesExtensionRequest.builder()
             .withExtensionId(extensionId)
+    
             .build();
   }
 
@@ -3908,6 +4000,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get an extension pool by ID
    * 
@@ -3934,6 +4027,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesExtensionpoolRequest createGetTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId) {
     return GetTelephonyProvidersEdgesExtensionpoolRequest.builder()
             .withExtensionPoolId(extensionPoolId)
+    
             .build();
   }
 
@@ -3985,6 +4079,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a listing of extension pools
    * 
@@ -4017,12 +4112,13 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesExtensionpoolsRequest createGetTelephonyProvidersEdgesExtensionpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy, String number) {
     return GetTelephonyProvidersEdgesExtensionpoolsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withNumber(number)
+    
             .build();
   }
 
@@ -4074,6 +4170,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a listing of extensions
    * 
@@ -4108,14 +4205,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesExtensionsRequest createGetTelephonyProvidersEdgesExtensionsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String number) {
     return GetTelephonyProvidersEdgesExtensionsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withNumber(number)
+    
             .build();
   }
 
@@ -4167,6 +4265,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Line by ID
    * 
@@ -4193,6 +4292,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLineRequest createGetTelephonyProvidersEdgesLineRequest(String lineId) {
     return GetTelephonyProvidersEdgesLineRequest.builder()
             .withLineId(lineId)
+    
             .build();
   }
 
@@ -4244,6 +4344,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a line base settings object by ID
    * 
@@ -4270,6 +4371,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLinebasesettingRequest createGetTelephonyProvidersEdgesLinebasesettingRequest(String lineBaseId) {
     return GetTelephonyProvidersEdgesLinebasesettingRequest.builder()
             .withLineBaseId(lineBaseId)
+    
             .build();
   }
 
@@ -4321,6 +4423,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a listing of line base settings objects
    * 
@@ -4353,12 +4456,13 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLinebasesettingsRequest createGetTelephonyProvidersEdgesLinebasesettingsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
     return GetTelephonyProvidersEdgesLinebasesettingsRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -4410,6 +4514,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of Lines
    * 
@@ -4444,14 +4549,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLinesRequest createGetTelephonyProvidersEdgesLinesRequest(Integer pageSize, Integer pageNumber, String name, String sortBy, List<String> expand) {
     return GetTelephonyProvidersEdgesLinesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -4503,6 +4609,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
@@ -4529,6 +4636,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLinesTemplateRequest createGetTelephonyProvidersEdgesLinesTemplateRequest(String lineBaseSettingsId) {
     return GetTelephonyProvidersEdgesLinesTemplateRequest.builder()
             .withLineBaseSettingsId(lineBaseSettingsId)
+    
             .build();
   }
 
@@ -4580,6 +4688,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
@@ -4608,8 +4717,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesLogicalinterfacesRequest createGetTelephonyProvidersEdgesLogicalinterfacesRequest(String edgeIds, List<String> expand) {
     return GetTelephonyProvidersEdgesLogicalinterfacesRequest.builder()
             .withEdgeIds(edgeIds)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -4661,6 +4771,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get outbound route
    * 
@@ -4687,6 +4798,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesOutboundrouteRequest createGetTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId) {
     return GetTelephonyProvidersEdgesOutboundrouteRequest.builder()
             .withOutboundRouteId(outboundRouteId)
+    
             .build();
   }
 
@@ -4738,6 +4850,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get outbound routes
    * 
@@ -4772,14 +4885,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesOutboundroutesRequest createGetTelephonyProvidersEdgesOutboundroutesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) {
     return GetTelephonyProvidersEdgesOutboundroutesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSiteId(siteId)
-
+    
             .withSortBy(sortBy)
+    
             .build();
   }
 
@@ -4831,6 +4945,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Phone by ID
    * 
@@ -4857,6 +4972,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhoneRequest createGetTelephonyProvidersEdgesPhoneRequest(String phoneId) {
     return GetTelephonyProvidersEdgesPhoneRequest.builder()
             .withPhoneId(phoneId)
+    
             .build();
   }
 
@@ -4908,6 +5024,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Phone Base Settings object by ID
    * 
@@ -4934,6 +5051,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonebasesettingRequest createGetTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId) {
     return GetTelephonyProvidersEdgesPhonebasesettingRequest.builder()
             .withPhoneBaseId(phoneBaseId)
+    
             .build();
   }
 
@@ -4985,6 +5103,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of Phone Base Settings objects
    * 
@@ -5021,16 +5140,17 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonebasesettingsRequest createGetTelephonyProvidersEdgesPhonebasesettingsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand, String name) {
     return GetTelephonyProvidersEdgesPhonebasesettingsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withExpand(expand)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -5082,6 +5202,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
@@ -5110,8 +5231,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest createGetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest(Integer pageSize, Integer pageNumber) {
     return GetTelephonyProvidersEdgesPhonebasesettingsAvailablemetabasesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -5163,6 +5285,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
@@ -5189,6 +5312,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest createGetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest(String phoneMetabaseId) {
     return GetTelephonyProvidersEdgesPhonebasesettingsTemplateRequest.builder()
             .withPhoneMetabaseId(phoneMetabaseId)
+    
             .build();
   }
 
@@ -5240,6 +5364,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of Phone Instances
    * 
@@ -5292,32 +5417,33 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonesRequest createGetTelephonyProvidersEdgesPhonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) {
     return GetTelephonyProvidersEdgesPhonesRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withSiteId(siteId)
-
+    
             .withWebRtcUserId(webRtcUserId)
-
+    
             .withPhoneBaseSettingsId(phoneBaseSettingsId)
-
+    
             .withLinesLoggedInUserId(linesLoggedInUserId)
-
+    
             .withLinesDefaultForUserId(linesDefaultForUserId)
-
+    
             .withPhoneHardwareId(phoneHardwareId)
-
+    
             .withLinesId(linesId)
-
+    
             .withLinesName(linesName)
-
+    
             .withExpand(expand)
-
+    
             .withFields(fields)
+    
             .build();
   }
 
@@ -5369,6 +5495,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
@@ -5395,6 +5522,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhonesTemplateRequest createGetTelephonyProvidersEdgesPhonesTemplateRequest(String phoneBaseSettingsId) {
     return GetTelephonyProvidersEdgesPhonesTemplateRequest.builder()
             .withPhoneBaseSettingsId(phoneBaseSettingsId)
+    
             .build();
   }
 
@@ -5446,6 +5574,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get physical interfaces for edges.
    * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
@@ -5472,6 +5601,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesPhysicalinterfacesRequest createGetTelephonyProvidersEdgesPhysicalinterfacesRequest(String edgeIds) {
     return GetTelephonyProvidersEdgesPhysicalinterfacesRequest.builder()
             .withEdgeIds(edgeIds)
+    
             .build();
   }
 
@@ -5523,6 +5653,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Site by ID.
    * 
@@ -5549,6 +5680,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteRequest createGetTelephonyProvidersEdgesSiteRequest(String siteId) {
     return GetTelephonyProvidersEdgesSiteRequest.builder()
             .withSiteId(siteId)
+    
             .build();
   }
 
@@ -5600,6 +5732,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Number Plan by ID.
    * 
@@ -5628,8 +5761,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteNumberplanRequest createGetTelephonyProvidersEdgesSiteNumberplanRequest(String siteId, String numberPlanId) {
     return GetTelephonyProvidersEdgesSiteNumberplanRequest.builder()
             .withSiteId(siteId)
-
+    
             .withNumberPlanId(numberPlanId)
+    
             .build();
   }
 
@@ -5681,6 +5815,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of Number Plans for this Site.
    * 
@@ -5707,6 +5842,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteNumberplansRequest createGetTelephonyProvidersEdgesSiteNumberplansRequest(String siteId) {
     return GetTelephonyProvidersEdgesSiteNumberplansRequest.builder()
             .withSiteId(siteId)
+    
             .build();
   }
 
@@ -5758,6 +5894,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of Classifications for this Site
    * 
@@ -5786,8 +5923,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest createGetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest(String siteId, String classification) {
     return GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest.builder()
             .withSiteId(siteId)
-
+    
             .withClassification(classification)
+    
             .build();
   }
 
@@ -5839,6 +5977,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get an outbound route
    * 
@@ -5867,8 +6006,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteOutboundrouteRequest createGetTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId) {
     return GetTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
             .withSiteId(siteId)
-
+    
             .withOutboundRouteId(outboundRouteId)
+    
             .build();
   }
 
@@ -5920,6 +6060,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get outbound routes
    * 
@@ -5954,14 +6095,15 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSiteOutboundroutesRequest createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) {
     return GetTelephonyProvidersEdgesSiteOutboundroutesRequest.builder()
             .withSiteId(siteId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
-
+    
             .withSortBy(sortBy)
+    
             .build();
   }
 
@@ -6013,6 +6155,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of Sites.
    * 
@@ -6051,18 +6194,19 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesSitesRequest createGetTelephonyProvidersEdgesSitesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String locationId, Boolean managed) {
     return GetTelephonyProvidersEdgesSitesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withName(name)
-
+    
             .withLocationId(locationId)
-
+    
             .withManaged(managed)
+    
             .build();
   }
 
@@ -6114,6 +6258,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of Edge-compatible time zones
    * 
@@ -6142,8 +6287,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTimezonesRequest createGetTelephonyProvidersEdgesTimezonesRequest(Integer pageSize, Integer pageNumber) {
     return GetTelephonyProvidersEdgesTimezonesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -6195,6 +6341,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Trunk by ID
    * 
@@ -6221,6 +6368,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkRequest createGetTelephonyProvidersEdgesTrunkRequest(String trunkId) {
     return GetTelephonyProvidersEdgesTrunkRequest.builder()
             .withTrunkId(trunkId)
+    
             .build();
   }
 
@@ -6272,6 +6420,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
@@ -6300,8 +6449,9 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkbasesettingRequest createGetTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId, Boolean ignoreHidden) {
     return GetTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
             .withTrunkBaseSettingsId(trunkBaseSettingsId)
-
+    
             .withIgnoreHidden(ignoreHidden)
+    
             .build();
   }
 
@@ -6353,6 +6503,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
@@ -6395,22 +6546,23 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkbasesettingsRequest createGetTelephonyProvidersEdgesTrunkbasesettingsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, Boolean recordingEnabled, Boolean ignoreHidden, Boolean managed, List<String> expand, String name) {
     return GetTelephonyProvidersEdgesTrunkbasesettingsRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withRecordingEnabled(recordingEnabled)
-
+    
             .withIgnoreHidden(ignoreHidden)
-
+    
             .withManaged(managed)
-
+    
             .withExpand(expand)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -6462,6 +6614,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
@@ -6492,10 +6645,11 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest createGetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest(String type, Integer pageSize, Integer pageNumber) {
     return GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest.builder()
             .withType(type)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -6547,6 +6701,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
@@ -6573,6 +6728,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest createGetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest(String trunkMetabaseId) {
     return GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest.builder()
             .withTrunkMetabaseId(trunkMetabaseId)
+    
             .build();
   }
 
@@ -6624,6 +6780,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
@@ -6662,18 +6819,19 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunksRequest createGetTelephonyProvidersEdgesTrunksRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String edgeId, String trunkBaseId, String trunkType) {
     return GetTelephonyProvidersEdgesTrunksRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withEdgeId(edgeId)
-
+    
             .withTrunkBaseId(trunkBaseId)
-
+    
             .withTrunkType(trunkType)
+    
             .build();
   }
 
@@ -6725,6 +6883,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
@@ -6751,6 +6910,7 @@ public class TelephonyProvidersEdgeApi {
   private GetTelephonyProvidersEdgesTrunkswithrecordingRequest createGetTelephonyProvidersEdgesTrunkswithrecordingRequest(String trunkType) {
     return GetTelephonyProvidersEdgesTrunkswithrecordingRequest.builder()
             .withTrunkType(trunkType)
+    
             .build();
   }
 
@@ -6802,6 +6962,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create an edge logical interface.
    * Create
@@ -6830,8 +6991,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeLogicalinterfacesRequest createPostTelephonyProvidersEdgeLogicalinterfacesRequest(String edgeId, DomainLogicalInterface body) {
     return PostTelephonyProvidersEdgeLogicalinterfacesRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -6883,6 +7045,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
@@ -6911,10 +7074,11 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeLogsJobUploadRequest createPostTelephonyProvidersEdgeLogsJobUploadRequest(String edgeId, String jobId, EdgeLogsJobUploadRequest body) {
     return PostTelephonyProvidersEdgeLogsJobUploadRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withJobId(jobId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -6965,6 +7129,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a job to upload a list of Edge logs.
    * 
@@ -6993,8 +7158,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeLogsJobsRequest createPostTelephonyProvidersEdgeLogsJobsRequest(String edgeId, EdgeLogsJobRequest body) {
     return PostTelephonyProvidersEdgeLogsJobsRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -7046,6 +7212,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Reboot an Edge
    * 
@@ -7074,8 +7241,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeRebootRequest createPostTelephonyProvidersEdgeRebootRequest(String edgeId, EdgeRebootParameters body) {
     return PostTelephonyProvidersEdgeRebootRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -7127,6 +7295,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Starts a software update for this edge.
    * 
@@ -7155,8 +7324,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeSoftwareupdateRequest createPostTelephonyProvidersEdgeSoftwareupdateRequest(String edgeId, DomainEdgeSoftwareUpdateDto body) {
     return PostTelephonyProvidersEdgeSoftwareupdateRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -7208,6 +7378,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Take an Edge in or out of service
    * 
@@ -7236,8 +7407,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeStatuscodeRequest createPostTelephonyProvidersEdgeStatuscodeRequest(String edgeId, EdgeServiceStateRequest body) {
     return PostTelephonyProvidersEdgeStatuscodeRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -7289,6 +7461,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Unpair an Edge
    * 
@@ -7315,6 +7488,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgeUnpairRequest createPostTelephonyProvidersEdgeUnpairRequest(String edgeId) {
     return PostTelephonyProvidersEdgeUnpairRequest.builder()
             .withEdgeId(edgeId)
+    
             .build();
   }
 
@@ -7366,6 +7540,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create an edge.
    * 
@@ -7392,6 +7567,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesRequest createPostTelephonyProvidersEdgesRequest(Edge body) {
     return PostTelephonyProvidersEdgesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7443,6 +7619,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Validates a street address
    * 
@@ -7469,6 +7646,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesAddressvalidationRequest createPostTelephonyProvidersEdgesAddressvalidationRequest(ValidateAddressRequest body) {
     return PostTelephonyProvidersEdgesAddressvalidationRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7520,6 +7698,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a certificate authority.
    * 
@@ -7546,6 +7725,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesCertificateauthoritiesRequest createPostTelephonyProvidersEdgesCertificateauthoritiesRequest(DomainCertificateAuthority body) {
     return PostTelephonyProvidersEdgesCertificateauthoritiesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7597,6 +7777,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a new DID pool
    * 
@@ -7623,6 +7804,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesDidpoolsRequest createPostTelephonyProvidersEdgesDidpoolsRequest(DIDPool body) {
     return PostTelephonyProvidersEdgesDidpoolsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7674,6 +7856,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create an edge group.
    * 
@@ -7700,6 +7883,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesEdgegroupsRequest createPostTelephonyProvidersEdgesEdgegroupsRequest(EdgeGroup body) {
     return PostTelephonyProvidersEdgesEdgegroupsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7751,6 +7935,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create endpoint
    * 
@@ -7777,6 +7962,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesEndpointsRequest createPostTelephonyProvidersEdgesEndpointsRequest(Endpoint body) {
     return PostTelephonyProvidersEdgesEndpointsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7828,6 +8014,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a new extension pool
    * 
@@ -7854,6 +8041,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesExtensionpoolsRequest createPostTelephonyProvidersEdgesExtensionpoolsRequest(ExtensionPool body) {
     return PostTelephonyProvidersEdgesExtensionpoolsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7905,6 +8093,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create outbound rule
    * 
@@ -7931,6 +8120,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesOutboundroutesRequest createPostTelephonyProvidersEdgesOutboundroutesRequest(OutboundRoute body) {
     return PostTelephonyProvidersEdgesOutboundroutesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -7982,6 +8172,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Reboot a Phone
    * 
@@ -8006,6 +8197,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesPhoneRebootRequest createPostTelephonyProvidersEdgesPhoneRebootRequest(String phoneId) {
     return PostTelephonyProvidersEdgesPhoneRebootRequest.builder()
             .withPhoneId(phoneId)
+    
             .build();
   }
 
@@ -8056,6 +8248,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a new Phone Base Settings object
    * 
@@ -8082,6 +8275,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesPhonebasesettingsRequest createPostTelephonyProvidersEdgesPhonebasesettingsRequest(PhoneBase body) {
     return PostTelephonyProvidersEdgesPhonebasesettingsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -8133,6 +8327,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a new Phone
    * 
@@ -8159,6 +8354,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesPhonesRequest createPostTelephonyProvidersEdgesPhonesRequest(Phone body) {
     return PostTelephonyProvidersEdgesPhonesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -8210,6 +8406,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Reboot Multiple Phones
    * 
@@ -8234,6 +8431,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesPhonesRebootRequest createPostTelephonyProvidersEdgesPhonesRebootRequest(PhonesReboot body) {
     return PostTelephonyProvidersEdgesPhonesRebootRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -8284,6 +8482,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create outbound route
    * 
@@ -8312,8 +8511,9 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesSiteOutboundroutesRequest createPostTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, OutboundRouteBase body) {
     return PostTelephonyProvidersEdgesSiteOutboundroutesRequest.builder()
             .withSiteId(siteId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -8365,6 +8565,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Triggers the rebalance operation.
    * 
@@ -8389,6 +8590,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesSiteRebalanceRequest createPostTelephonyProvidersEdgesSiteRebalanceRequest(String siteId) {
     return PostTelephonyProvidersEdgesSiteRebalanceRequest.builder()
             .withSiteId(siteId)
+    
             .build();
   }
 
@@ -8439,6 +8641,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a Site.
    * 
@@ -8465,6 +8668,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesSitesRequest createPostTelephonyProvidersEdgesSitesRequest(Site body) {
     return PostTelephonyProvidersEdgesSitesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -8516,6 +8720,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Create a Trunk Base Settings object
    * 
@@ -8542,6 +8747,7 @@ public class TelephonyProvidersEdgeApi {
   private PostTelephonyProvidersEdgesTrunkbasesettingsRequest createPostTelephonyProvidersEdgesTrunkbasesettingsRequest(TrunkBase body) {
     return PostTelephonyProvidersEdgesTrunkbasesettingsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -8593,6 +8799,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a edge.
    * 
@@ -8621,8 +8828,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgeRequest createPutTelephonyProvidersEdgeRequest(String edgeId, Edge body) {
     return PutTelephonyProvidersEdgeRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -8674,6 +8882,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a line.
    * 
@@ -8704,10 +8913,11 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgeLineRequest createPutTelephonyProvidersEdgeLineRequest(String edgeId, String lineId, EdgeLine body) {
     return PutTelephonyProvidersEdgeLineRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withLineId(lineId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -8759,6 +8969,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update an edge logical interface.
    * 
@@ -8789,10 +9000,11 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgeLogicalinterfaceRequest createPutTelephonyProvidersEdgeLogicalinterfaceRequest(String edgeId, String interfaceId, DomainLogicalInterface body) {
     return PutTelephonyProvidersEdgeLogicalinterfaceRequest.builder()
             .withEdgeId(edgeId)
-
+    
             .withInterfaceId(interfaceId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -8844,6 +9056,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a certificate authority.
    * 
@@ -8872,8 +9085,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesCertificateauthorityRequest createPutTelephonyProvidersEdgesCertificateauthorityRequest(String certificateId, DomainCertificateAuthority body) {
     return PutTelephonyProvidersEdgesCertificateauthorityRequest.builder()
             .withCertificateId(certificateId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -8925,6 +9139,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a DID by ID.
    * 
@@ -8953,8 +9168,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesDidRequest createPutTelephonyProvidersEdgesDidRequest(String didId, DID body) {
     return PutTelephonyProvidersEdgesDidRequest.builder()
             .withDidId(didId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9006,6 +9222,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a DID Pool by ID.
    * 
@@ -9034,8 +9251,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesDidpoolRequest createPutTelephonyProvidersEdgesDidpoolRequest(String didPoolId, DIDPool body) {
     return PutTelephonyProvidersEdgesDidpoolRequest.builder()
             .withDidPoolId(didPoolId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9087,6 +9305,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update an edge group.
    * 
@@ -9115,8 +9334,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesEdgegroupRequest createPutTelephonyProvidersEdgesEdgegroupRequest(String edgeGroupId, EdgeGroup body) {
     return PutTelephonyProvidersEdgesEdgegroupRequest.builder()
             .withEdgeGroupId(edgeGroupId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9168,6 +9388,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update the edge trunk base associated with the edge group
    * 
@@ -9198,10 +9419,11 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
     return PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
             .withEdgegroupId(edgegroupId)
-
+    
             .withEdgetrunkbaseId(edgetrunkbaseId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9253,6 +9475,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update endpoint
    * 
@@ -9281,8 +9504,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesEndpointRequest createPutTelephonyProvidersEdgesEndpointRequest(String endpointId, Endpoint body) {
     return PutTelephonyProvidersEdgesEndpointRequest.builder()
             .withEndpointId(endpointId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9334,6 +9558,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update an extension by ID.
    * 
@@ -9362,8 +9587,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesExtensionRequest createPutTelephonyProvidersEdgesExtensionRequest(String extensionId, Extension body) {
     return PutTelephonyProvidersEdgesExtensionRequest.builder()
             .withExtensionId(extensionId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9415,6 +9641,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update an extension pool by ID
    * 
@@ -9443,8 +9670,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesExtensionpoolRequest createPutTelephonyProvidersEdgesExtensionpoolRequest(String extensionPoolId, ExtensionPool body) {
     return PutTelephonyProvidersEdgesExtensionpoolRequest.builder()
             .withExtensionPoolId(extensionPoolId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9496,6 +9724,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update outbound route
    * 
@@ -9524,8 +9753,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesOutboundrouteRequest createPutTelephonyProvidersEdgesOutboundrouteRequest(String outboundRouteId, OutboundRoute body) {
     return PutTelephonyProvidersEdgesOutboundrouteRequest.builder()
             .withOutboundRouteId(outboundRouteId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9577,6 +9807,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a Phone by ID
    * 
@@ -9605,8 +9836,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesPhoneRequest createPutTelephonyProvidersEdgesPhoneRequest(String phoneId, Phone body) {
     return PutTelephonyProvidersEdgesPhoneRequest.builder()
             .withPhoneId(phoneId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9658,6 +9890,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a Phone Base Settings by ID
    * 
@@ -9686,8 +9919,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesPhonebasesettingRequest createPutTelephonyProvidersEdgesPhonebasesettingRequest(String phoneBaseId, PhoneBase body) {
     return PutTelephonyProvidersEdgesPhonebasesettingRequest.builder()
             .withPhoneBaseId(phoneBaseId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9739,6 +9973,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a Site by ID.
    * 
@@ -9767,8 +10002,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesSiteRequest createPutTelephonyProvidersEdgesSiteRequest(String siteId, Site body) {
     return PutTelephonyProvidersEdgesSiteRequest.builder()
             .withSiteId(siteId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9820,6 +10056,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update the list of Number Plans.
    * 
@@ -9848,8 +10085,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesSiteNumberplansRequest createPutTelephonyProvidersEdgesSiteNumberplansRequest(String siteId, List<NumberPlan> body) {
     return PutTelephonyProvidersEdgesSiteNumberplansRequest.builder()
             .withSiteId(siteId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9901,6 +10139,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update outbound route
    * 
@@ -9931,10 +10170,11 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesSiteOutboundrouteRequest createPutTelephonyProvidersEdgesSiteOutboundrouteRequest(String siteId, String outboundRouteId, OutboundRouteBase body) {
     return PutTelephonyProvidersEdgesSiteOutboundrouteRequest.builder()
             .withSiteId(siteId)
-
+    
             .withOutboundRouteId(outboundRouteId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -9986,6 +10226,7 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
   /**
    * Update a Trunk Base Settings object by ID
    * 
@@ -10014,8 +10255,9 @@ public class TelephonyProvidersEdgeApi {
   private PutTelephonyProvidersEdgesTrunkbasesettingRequest createPutTelephonyProvidersEdgesTrunkbasesettingRequest(String trunkBaseSettingsId, TrunkBase body) {
     return PutTelephonyProvidersEdgesTrunkbasesettingRequest.builder()
             .withTrunkBaseSettingsId(trunkBaseSettingsId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -10067,4 +10309,5 @@ public class TelephonyProvidersEdgeApi {
     }
   }
 
+  
 }

@@ -34,7 +34,7 @@ public class UserConversationSummaryNotificationMediaSummaryDetail  implements S
     this.active = active;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotificationMediaSummaryDetail acw(Integer acw) {
@@ -51,6 +51,7 @@ public class UserConversationSummaryNotificationMediaSummaryDetail  implements S
     this.acw = acw;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

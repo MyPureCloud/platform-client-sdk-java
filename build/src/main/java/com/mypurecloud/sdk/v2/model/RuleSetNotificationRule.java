@@ -78,7 +78,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule name(String name) {
@@ -95,7 +95,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule order(Integer order) {
@@ -112,7 +112,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.order = order;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule category(CategoryEnum category) {
@@ -129,7 +129,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.category = category;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule conditions(List<RuleSetNotificationConditions> conditions) {
@@ -146,7 +146,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.conditions = conditions;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule actions(List<RuleSetNotificationActions> actions) {
@@ -163,7 +163,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.actions = actions;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationRule additionalProperties(Object additionalProperties) {
@@ -180,6 +180,7 @@ public class RuleSetNotificationRule  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

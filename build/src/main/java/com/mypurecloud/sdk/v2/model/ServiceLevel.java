@@ -34,7 +34,7 @@ public class ServiceLevel  implements Serializable {
     this.percentage = percentage;
   }
 
-
+  
   /**
    **/
   public ServiceLevel durationMs(Long durationMs) {
@@ -51,6 +51,7 @@ public class ServiceLevel  implements Serializable {
     this.durationMs = durationMs;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

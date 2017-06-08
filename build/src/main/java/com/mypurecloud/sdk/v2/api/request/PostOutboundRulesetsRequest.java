@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundRulesetsRequest {
+    
 	private RuleSet body;
 	public RuleSet getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundRulesetsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundRulesetsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/rulesets")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundRulesetsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(RuleSet body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundRulesetsRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundRulesetsRequest {
 			request = new PostOutboundRulesetsRequest();
 		}
 
+		
 		public Builder withBody(RuleSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(RuleSet body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundRulesetsRequest build() {

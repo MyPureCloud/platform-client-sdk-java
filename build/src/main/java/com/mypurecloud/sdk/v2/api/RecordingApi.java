@@ -82,6 +82,7 @@ public class RecordingApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete annotation
    * 
@@ -110,10 +111,11 @@ public class RecordingApi {
   private DeleteConversationRecordingAnnotationRequest createDeleteConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId) {
     return DeleteConversationRecordingAnnotationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withAnnotationId(annotationId)
+    
             .build();
   }
 
@@ -164,6 +166,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Deletes a single orphan recording
    * 
@@ -190,6 +193,7 @@ public class RecordingApi {
   private DeleteOrphanrecordingRequest createDeleteOrphanrecordingRequest(String orphanId) {
     return DeleteOrphanrecordingRequest.builder()
             .withOrphanId(orphanId)
+    
             .build();
   }
 
@@ -241,6 +245,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Delete media retention policies
    * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
@@ -265,6 +270,7 @@ public class RecordingApi {
   private DeleteRecordingMediaretentionpoliciesRequest createDeleteRecordingMediaretentionpoliciesRequest(String ids) {
     return DeleteRecordingMediaretentionpoliciesRequest.builder()
             .withIds(ids)
+    
             .build();
   }
 
@@ -315,6 +321,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Delete a media retention policy
    * 
@@ -339,6 +346,7 @@ public class RecordingApi {
   private DeleteRecordingMediaretentionpolicyRequest createDeleteRecordingMediaretentionpolicyRequest(String policyId) {
     return DeleteRecordingMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
+    
             .build();
   }
 
@@ -389,6 +397,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Gets a specific recording.
    * 
@@ -423,14 +432,15 @@ public class RecordingApi {
   private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, Boolean download, String fileName) {
     return GetConversationRecordingRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withFormatId(formatId)
-
+    
             .withDownload(download)
-
+    
             .withFileName(fileName)
+    
             .build();
   }
 
@@ -482,6 +492,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get annotation
    * 
@@ -512,10 +523,11 @@ public class RecordingApi {
   private GetConversationRecordingAnnotationRequest createGetConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId) {
     return GetConversationRecordingAnnotationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withAnnotationId(annotationId)
+    
             .build();
   }
 
@@ -567,6 +579,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get annotations for recording
    * 
@@ -595,8 +608,9 @@ public class RecordingApi {
   private GetConversationRecordingAnnotationsRequest createGetConversationRecordingAnnotationsRequest(String conversationId, String recordingId) {
     return GetConversationRecordingAnnotationsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
+    
             .build();
   }
 
@@ -648,6 +662,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get all of a Conversation&#39;s Recordings.
    * 
@@ -678,10 +693,11 @@ public class RecordingApi {
   private GetConversationRecordingsRequest createGetConversationRecordingsRequest(String conversationId, Integer maxWaitMs, String formatId) {
     return GetConversationRecordingsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withMaxWaitMs(maxWaitMs)
-
+    
             .withFormatId(formatId)
+    
             .build();
   }
 
@@ -733,6 +749,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Gets a single orphan recording
    * 
@@ -759,6 +776,7 @@ public class RecordingApi {
   private GetOrphanrecordingRequest createGetOrphanrecordingRequest(String orphanId) {
     return GetOrphanrecordingRequest.builder()
             .withOrphanId(orphanId)
+    
             .build();
   }
 
@@ -810,6 +828,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Gets the media of a single orphan recording
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
@@ -842,12 +861,13 @@ public class RecordingApi {
   private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, Boolean download, String fileName) {
     return GetOrphanrecordingMediaRequest.builder()
             .withOrphanId(orphanId)
-
+    
             .withFormatId(formatId)
-
+    
             .withDownload(download)
-
+    
             .withFileName(fileName)
+    
             .build();
   }
 
@@ -899,6 +919,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Gets all orphan recordings
    * 
@@ -939,20 +960,21 @@ public class RecordingApi {
   private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) {
     return GetOrphanrecordingsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withHasConversation(hasConversation)
-
+    
             .withMedia(media)
+    
             .build();
   }
 
@@ -1004,6 +1026,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get the local encryption settings
    * 
@@ -1030,6 +1053,7 @@ public class RecordingApi {
   private GetRecordingLocalkeysSettingRequest createGetRecordingLocalkeysSettingRequest(String settingsId) {
     return GetRecordingLocalkeysSettingRequest.builder()
             .withSettingsId(settingsId)
+    
             .build();
   }
 
@@ -1081,6 +1105,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * gets a list local key settings data
    * 
@@ -1103,7 +1128,8 @@ public class RecordingApi {
   }
 
   private GetRecordingLocalkeysSettingsRequest createGetRecordingLocalkeysSettingsRequest() {
-    return GetRecordingLocalkeysSettingsRequest.builder()            .build();
+    return GetRecordingLocalkeysSettingsRequest.builder()
+            .build();
   }
 
   /**
@@ -1154,9 +1180,10 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
-   * for a less verbose response, add summary&#x3D;true to this endpoint
+   * for a less verbose response, add summary=true to this endpoint
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -1164,7 +1191,7 @@ public class RecordingApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param name the policy name - used for filtering results in searches. (optional)
-   * @param enabled checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false (optional)
+   * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
    * @return PolicyEntityListing
@@ -1177,7 +1204,7 @@ public class RecordingApi {
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
-   * for a less verbose response, add summary&#x3D;true to this endpoint
+   * for a less verbose response, add summary=true to this endpoint
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
@@ -1185,7 +1212,7 @@ public class RecordingApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param name the policy name - used for filtering results in searches. (optional)
-   * @param enabled checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false (optional)
+   * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
    * @param summary provides a less verbose response of policy lists. (optional, default to false)
    * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
    * @return PolicyEntityListing
@@ -1198,30 +1225,31 @@ public class RecordingApi {
   private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
     return GetRecordingMediaretentionpoliciesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withName(name)
-
+    
             .withEnabled(enabled)
-
+    
             .withSummary(summary)
-
+    
             .withHasErrors(hasErrors)
+    
             .build();
   }
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
-   * for a less verbose response, add summary&#x3D;true to this endpoint
+   * for a less verbose response, add summary=true to this endpoint
    * @param request The request object
    * @return PolicyEntityListing
    * @throws ApiException if the request fails on the server
@@ -1240,7 +1268,7 @@ public class RecordingApi {
 
   /**
    * Gets media retention policy list with query options to filter on name and enabled.
-   * for a less verbose response, add summary&#x3D;true to this endpoint
+   * for a less verbose response, add summary=true to this endpoint
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1267,6 +1295,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get a media retention policy
    * 
@@ -1293,6 +1322,7 @@ public class RecordingApi {
   private GetRecordingMediaretentionpolicyRequest createGetRecordingMediaretentionpolicyRequest(String policyId) {
     return GetRecordingMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
+    
             .build();
   }
 
@@ -1344,6 +1374,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get encryption key list
    * 
@@ -1372,8 +1403,9 @@ public class RecordingApi {
   private GetRecordingRecordingkeysRequest createGetRecordingRecordingkeysRequest(Integer pageSize, Integer pageNumber) {
     return GetRecordingRecordingkeysRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1425,6 +1457,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get key rotation schedule
    * 
@@ -1447,7 +1480,8 @@ public class RecordingApi {
   }
 
   private GetRecordingRecordingkeysRotationscheduleRequest createGetRecordingRecordingkeysRotationscheduleRequest() {
-    return GetRecordingRecordingkeysRotationscheduleRequest.builder()            .build();
+    return GetRecordingRecordingkeysRotationscheduleRequest.builder()
+            .build();
   }
 
   /**
@@ -1498,6 +1532,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Get the Recording Settings for the Organization
    * 
@@ -1524,6 +1559,7 @@ public class RecordingApi {
   private GetRecordingSettingsRequest createGetRecordingSettingsRequest(Boolean createDefault) {
     return GetRecordingSettingsRequest.builder()
             .withCreateDefault(createDefault)
+    
             .build();
   }
 
@@ -1575,6 +1611,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Retrieves a paged listing of screen recording sessions
    * 
@@ -1603,8 +1640,9 @@ public class RecordingApi {
   private GetRecordingsScreensessionsRequest createGetRecordingsScreensessionsRequest(Integer pageSize, Integer pageNumber) {
     return GetRecordingsScreensessionsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1656,6 +1694,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Patch a media retention policy
    * 
@@ -1684,8 +1723,9 @@ public class RecordingApi {
   private PatchRecordingMediaretentionpolicyRequest createPatchRecordingMediaretentionpolicyRequest(String policyId, Policy body) {
     return PatchRecordingMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1737,6 +1777,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update a screen recording session
    * 
@@ -1763,8 +1804,9 @@ public class RecordingApi {
   private PatchRecordingsScreensessionRequest createPatchRecordingsScreensessionRequest(String recordingSessionId, ScreenRecordingSessionRequest body) {
     return PatchRecordingsScreensessionRequest.builder()
             .withRecordingSessionId(recordingSessionId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1815,6 +1857,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Create annotation
    * 
@@ -1845,10 +1888,11 @@ public class RecordingApi {
   private PostConversationRecordingAnnotationsRequest createPostConversationRecordingAnnotationsRequest(String conversationId, String recordingId, Annotation body) {
     return PostConversationRecordingAnnotationsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1900,6 +1944,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * create a local recording key
    * 
@@ -1926,6 +1971,7 @@ public class RecordingApi {
   private PostRecordingLocalkeysRequest createPostRecordingLocalkeysRequest(LocalEncryptionKeyRequest body) {
     return PostRecordingLocalkeysRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1977,6 +2023,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * create settings for local key creation
    * 
@@ -2003,6 +2050,7 @@ public class RecordingApi {
   private PostRecordingLocalkeysSettingsRequest createPostRecordingLocalkeysSettingsRequest(LocalEncryptionConfiguration body) {
     return PostRecordingLocalkeysSettingsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2054,6 +2102,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Create media retention policy
    * 
@@ -2080,6 +2129,7 @@ public class RecordingApi {
   private PostRecordingMediaretentionpoliciesRequest createPostRecordingMediaretentionpoliciesRequest(PolicyCreate body) {
     return PostRecordingMediaretentionpoliciesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2131,6 +2181,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Create encryption key
    * 
@@ -2153,7 +2204,8 @@ public class RecordingApi {
   }
 
   private PostRecordingRecordingkeysRequest createPostRecordingRecordingkeysRequest() {
-    return PostRecordingRecordingkeysRequest.builder()            .build();
+    return PostRecordingRecordingkeysRequest.builder()
+            .build();
   }
 
   /**
@@ -2204,6 +2256,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
@@ -2234,10 +2287,11 @@ public class RecordingApi {
   private PutConversationRecordingRequest createPutConversationRecordingRequest(String conversationId, String recordingId, Recording body) {
     return PutConversationRecordingRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2289,6 +2343,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update annotation
    * 
@@ -2321,12 +2376,13 @@ public class RecordingApi {
   private PutConversationRecordingAnnotationRequest createPutConversationRecordingAnnotationRequest(String conversationId, String recordingId, String annotationId, Annotation body) {
     return PutConversationRecordingAnnotationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withAnnotationId(annotationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2378,6 +2434,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Updates an orphan recording to a regular recording with retention values
    * If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
@@ -2406,8 +2463,9 @@ public class RecordingApi {
   private PutOrphanrecordingRequest createPutOrphanrecordingRequest(String orphanId, OrphanUpdateRequest body) {
     return PutOrphanrecordingRequest.builder()
             .withOrphanId(orphanId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2459,6 +2517,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update the local encryption settings
    * 
@@ -2487,8 +2546,9 @@ public class RecordingApi {
   private PutRecordingLocalkeysSettingRequest createPutRecordingLocalkeysSettingRequest(String settingsId, LocalEncryptionConfiguration body) {
     return PutRecordingLocalkeysSettingRequest.builder()
             .withSettingsId(settingsId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2540,6 +2600,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update a media retention policy
    * 
@@ -2568,8 +2629,9 @@ public class RecordingApi {
   private PutRecordingMediaretentionpolicyRequest createPutRecordingMediaretentionpolicyRequest(String policyId, Policy body) {
     return PutRecordingMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2621,6 +2683,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update key rotation schedule
    * 
@@ -2647,6 +2710,7 @@ public class RecordingApi {
   private PutRecordingRecordingkeysRotationscheduleRequest createPutRecordingRecordingkeysRotationscheduleRequest(KeyRotationSchedule body) {
     return PutRecordingRecordingkeysRotationscheduleRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2698,6 +2762,7 @@ public class RecordingApi {
     }
   }
 
+  
   /**
    * Update the Recording Settings for the Organization
    * 
@@ -2724,6 +2789,7 @@ public class RecordingApi {
   private PutRecordingSettingsRequest createPutRecordingSettingsRequest(RecordingSettings body) {
     return PutRecordingSettingsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2775,4 +2841,5 @@ public class RecordingApi {
     }
   }
 
+  
 }

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -140,6 +144,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private Boolean recordingEnabled;
 	public Boolean getRecordingEnabled() {
 		return this.recordingEnabled;
@@ -154,6 +159,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private Boolean ignoreHidden;
 	public Boolean getIgnoreHidden() {
 		return this.ignoreHidden;
@@ -168,6 +174,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private Boolean managed;
 	public Boolean getManaged() {
 		return this.managed;
@@ -182,6 +189,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -196,6 +204,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -210,6 +219,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -250,7 +260,8 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("name", "", name)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -261,6 +272,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesTrunkbasesettingsRequest request;
@@ -269,43 +281,54 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 			request = new GetTelephonyProvidersEdgesTrunkbasesettingsRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withRecordingEnabled(Boolean recordingEnabled) {
 			request.setRecordingEnabled(recordingEnabled);
 			return this;
 		}
+		
 		public Builder withIgnoreHidden(Boolean ignoreHidden) {
 			request.setIgnoreHidden(ignoreHidden);
 			return this;
 		}
+		
 		public Builder withManaged(Boolean managed) {
 			request.setManaged(managed);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesTrunkbasesettingsRequest build() {

@@ -70,7 +70,7 @@ public class WorkspaceMember  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember name(String name) {
@@ -87,7 +87,7 @@ public class WorkspaceMember  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember workspace(UriReference workspace) {
@@ -104,7 +104,7 @@ public class WorkspaceMember  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    * The workspace member type.
    **/
@@ -122,7 +122,7 @@ public class WorkspaceMember  implements Serializable {
     this.memberType = memberType;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember member(UriReference member) {
@@ -139,7 +139,7 @@ public class WorkspaceMember  implements Serializable {
     this.member = member;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember user(User user) {
@@ -156,7 +156,7 @@ public class WorkspaceMember  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember group(Group group) {
@@ -173,7 +173,7 @@ public class WorkspaceMember  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    **/
   public WorkspaceMember securityProfile(SecurityProfile securityProfile) {
@@ -190,13 +190,14 @@ public class WorkspaceMember  implements Serializable {
     this.securityProfile = securityProfile;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

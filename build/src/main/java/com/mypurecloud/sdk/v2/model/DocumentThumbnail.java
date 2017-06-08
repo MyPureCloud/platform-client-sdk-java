@@ -36,7 +36,7 @@ public class DocumentThumbnail  implements Serializable {
     this.resolution = resolution;
   }
 
-
+  
   /**
    **/
   public DocumentThumbnail imageUri(String imageUri) {
@@ -53,7 +53,7 @@ public class DocumentThumbnail  implements Serializable {
     this.imageUri = imageUri;
   }
 
-
+  
   /**
    **/
   public DocumentThumbnail height(Integer height) {
@@ -70,7 +70,7 @@ public class DocumentThumbnail  implements Serializable {
     this.height = height;
   }
 
-
+  
   /**
    **/
   public DocumentThumbnail width(Integer width) {
@@ -87,6 +87,7 @@ public class DocumentThumbnail  implements Serializable {
     this.width = width;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

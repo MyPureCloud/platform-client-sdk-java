@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingQueueUsersRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class PostRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private List<QueueMember> body;
 	public List<QueueMember> getBody() {
 		return this.body;
@@ -72,6 +74,7 @@ public class PostRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private Boolean delete;
 	public Boolean getDelete() {
 		return this.delete;
@@ -86,6 +89,7 @@ public class PostRoutingQueueUsersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +128,7 @@ public class PostRoutingQueueUsersRequest {
                 .withQueryParameters("delete", "", delete)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +140,12 @@ public class PostRoutingQueueUsersRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, List<QueueMember> body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostRoutingQueueUsersRequest request;
@@ -147,24 +154,31 @@ public class PostRoutingQueueUsersRequest {
 			request = new PostRoutingQueueUsersRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withBody(List<QueueMember> body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withDelete(Boolean delete) {
 			request.setDelete(delete);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, List<QueueMember> body) {
 			request.setQueueId(queueId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRoutingQueueUsersRequest build() {

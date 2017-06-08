@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowLatestconfigurationRequest {
+    
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -56,6 +57,7 @@ public class GetFlowLatestconfigurationRequest {
 	    return this;
 	}
 
+	
 	private Boolean deleted;
 	public Boolean getDeleted() {
 		return this.deleted;
@@ -70,6 +72,7 @@ public class GetFlowLatestconfigurationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,7 +104,8 @@ public class GetFlowLatestconfigurationRequest {
                 .withPathParameter("flowId", flowId)
         
                 .withQueryParameters("deleted", "", deleted)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -112,10 +116,12 @@ public class GetFlowLatestconfigurationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flowId) {
 	    return new Builder()
 	            .withRequiredParams(flowId);
 	}
+	
 
 	public static class Builder {
 		private final GetFlowLatestconfigurationRequest request;
@@ -124,19 +130,25 @@ public class GetFlowLatestconfigurationRequest {
 			request = new GetFlowLatestconfigurationRequest();
 		}
 
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 		public Builder withDeleted(Boolean deleted) {
 			request.setDeleted(deleted);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flowId) {
 			request.setFlowId(flowId);
+			
 			return this;
 		}
+		
 
 
 		public GetFlowLatestconfigurationRequest build() {

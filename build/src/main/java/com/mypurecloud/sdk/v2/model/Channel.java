@@ -34,13 +34,14 @@ public class Channel  implements Serializable {
     this.connectUri = connectUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The channel identifier.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

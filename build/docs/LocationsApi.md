@@ -112,7 +112,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Sort order | [optional] [enum: asc, desc] |
+| **sortOrder** | **String**| Sort order | [optional]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type

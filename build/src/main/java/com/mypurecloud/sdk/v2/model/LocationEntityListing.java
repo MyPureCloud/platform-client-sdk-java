@@ -46,7 +46,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.total = total;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public LocationEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesAddressvalidationRequest {
+    
 	private ValidateAddressRequest body;
 	public ValidateAddressRequest getBody() {
 		return this.body;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesAddressvalidationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +129,7 @@ public class PostTelephonyProvidersEdgesAddressvalidationRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/addressvalidation")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesAddressvalidationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ValidateAddressRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesAddressvalidationRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesAddressvalidationRequest {
 			request = new PostTelephonyProvidersEdgesAddressvalidationRequest();
 		}
 
+		
 		public Builder withBody(ValidateAddressRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ValidateAddressRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesAddressvalidationRequest build() {

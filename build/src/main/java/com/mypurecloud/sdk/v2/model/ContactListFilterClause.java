@@ -73,7 +73,7 @@ public class ContactListFilterClause  implements Serializable {
     this.filterType = filterType;
   }
 
-
+  
   /**
    **/
   public ContactListFilterClause predicates(List<ContactListFilterPredicate> predicates) {
@@ -90,6 +90,7 @@ public class ContactListFilterClause  implements Serializable {
     this.predicates = predicates;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

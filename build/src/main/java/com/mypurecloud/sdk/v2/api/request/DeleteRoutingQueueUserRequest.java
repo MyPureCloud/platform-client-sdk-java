@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingQueueUserRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class DeleteRoutingQueueUserRequest {
 	    return this;
 	}
 
+	
 	private String memberId;
 	public String getMemberId() {
 		return this.memberId;
@@ -72,6 +74,7 @@ public class DeleteRoutingQueueUserRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,7 +111,8 @@ public class DeleteRoutingQueueUserRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withPathParameter("memberId", memberId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -119,10 +123,12 @@ public class DeleteRoutingQueueUserRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, String memberId) {
 	    return new Builder()
 	            .withRequiredParams(queueId, memberId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRoutingQueueUserRequest request;
@@ -131,20 +137,26 @@ public class DeleteRoutingQueueUserRequest {
 			request = new DeleteRoutingQueueUserRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withMemberId(String memberId) {
 			request.setMemberId(memberId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, String memberId) {
 			request.setQueueId(queueId);
-			request.setMemberId(memberId);
+						request.setMemberId(memberId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRoutingQueueUserRequest build() {

@@ -35,7 +35,7 @@ public class DialerContact  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DialerContact name(String name) {
@@ -52,7 +52,7 @@ public class DialerContact  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Identifier of the contact list containing this contact
    **/
@@ -70,7 +70,7 @@ public class DialerContact  implements Serializable {
     this.contactListId = contactListId;
   }
 
-
+  
   /**
    * An ordered map of the contact's data attributes and values
    **/
@@ -88,7 +88,7 @@ public class DialerContact  implements Serializable {
     this.data = data;
   }
 
-
+  
   /**
    * A map of call records for the contact phone columns
    **/
@@ -106,7 +106,7 @@ public class DialerContact  implements Serializable {
     this.callRecords = callRecords;
   }
 
-
+  
   /**
    * false if the contact is not to be called
    **/
@@ -124,7 +124,7 @@ public class DialerContact  implements Serializable {
     this.callable = callable;
   }
 
-
+  
   /**
    * A map of statuses for the contact phone columns
    **/
@@ -142,13 +142,14 @@ public class DialerContact  implements Serializable {
     this.phoneNumberStatus = phoneNumberStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

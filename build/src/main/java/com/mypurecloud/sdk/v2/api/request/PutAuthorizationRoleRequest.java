@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PutAuthorizationRoleRequest {
+    
 	private String roleId;
 	public String getRoleId() {
 		return this.roleId;
@@ -43,6 +44,7 @@ public class PutAuthorizationRoleRequest {
 	    return this;
 	}
 
+	
 	private DomainOrganizationRoleUpdate body;
 	public DomainOrganizationRoleUpdate getBody() {
 		return this.body;
@@ -57,6 +59,7 @@ public class PutAuthorizationRoleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +96,7 @@ public class PutAuthorizationRoleRequest {
                 .withPathParameter("roleId", roleId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +108,12 @@ public class PutAuthorizationRoleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String roleId, DomainOrganizationRoleUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(roleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAuthorizationRoleRequest request;
@@ -116,20 +122,26 @@ public class PutAuthorizationRoleRequest {
 			request = new PutAuthorizationRoleRequest();
 		}
 
+		
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
 			return this;
 		}
+		
 		public Builder withBody(DomainOrganizationRoleUpdate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String roleId, DomainOrganizationRoleUpdate body) {
 			request.setRoleId(roleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAuthorizationRoleRequest build() {

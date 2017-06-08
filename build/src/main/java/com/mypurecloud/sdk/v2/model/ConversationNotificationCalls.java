@@ -223,7 +223,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls state(StateEnum state) {
@@ -240,7 +240,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls recording(Boolean recording) {
@@ -257,7 +257,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls recordingState(RecordingStateEnum recordingState) {
@@ -274,7 +274,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls muted(Boolean muted) {
@@ -291,7 +291,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.muted = muted;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls confined(Boolean confined) {
@@ -308,7 +308,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.confined = confined;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls held(Boolean held) {
@@ -325,7 +325,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls errorInfo(ConversationNotificationErrorInfo errorInfo) {
@@ -342,7 +342,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls disconnectType(DisconnectTypeEnum disconnectType) {
@@ -359,7 +359,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls startHoldTime(Date startHoldTime) {
@@ -376,7 +376,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls direction(DirectionEnum direction) {
@@ -393,7 +393,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls documentId(String documentId) {
@@ -410,7 +410,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.documentId = documentId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls self(ConversationNotificationSelf self) {
@@ -427,7 +427,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.self = self;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls other(ConversationNotificationAddress other) {
@@ -444,7 +444,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.other = other;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls provider(String provider) {
@@ -461,7 +461,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls scriptId(String scriptId) {
@@ -478,7 +478,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls peerId(String peerId) {
@@ -495,7 +495,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls connectedTime(Date connectedTime) {
@@ -512,7 +512,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls disconnectedTime(Date disconnectedTime) {
@@ -529,7 +529,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls disconnectReasons(List<ConversationNotificationDisconnectReasons> disconnectReasons) {
@@ -546,7 +546,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.disconnectReasons = disconnectReasons;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls faxStatus(ConversationNotificationFaxStatus faxStatus) {
@@ -563,7 +563,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCalls additionalProperties(Object additionalProperties) {
@@ -580,6 +580,7 @@ public class ConversationNotificationCalls  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,6 +46,7 @@ public class UserRecordingsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a user recording.
    * 
@@ -121,6 +122,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
   /**
    * Get a user recording.
    * 
@@ -196,6 +198,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
   /**
    * Download a user recording.
    * 
@@ -271,6 +274,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of user recordings.
    * 
@@ -346,6 +350,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
   /**
    * Get user recording summary
    * 
@@ -421,6 +426,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
   /**
    * Update a user recording.
    * 
@@ -496,6 +502,7 @@ public class UserRecordingsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

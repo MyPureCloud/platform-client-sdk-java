@@ -36,7 +36,7 @@ public class CobrowseConversationNotificationDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationDetail fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class CobrowseConversationNotificationDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationDetail entityId(String entityId) {
@@ -70,7 +70,7 @@ public class CobrowseConversationNotificationDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationDetail entityName(String entityName) {
@@ -87,6 +87,7 @@ public class CobrowseConversationNotificationDetail  implements Serializable {
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesEndpointRequest {
+    
 	private String endpointId;
 	public String getEndpointId() {
 		return this.endpointId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
 	    return this;
 	}
 
+	
 	private Endpoint body;
 	public Endpoint getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
                 .withPathParameter("endpointId", endpointId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String endpointId, Endpoint body) {
 	    return new Builder()
 	            .withRequiredParams(endpointId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesEndpointRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesEndpointRequest {
 			request = new PutTelephonyProvidersEdgesEndpointRequest();
 		}
 
+		
 		public Builder withEndpointId(String endpointId) {
 			request.setEndpointId(endpointId);
 			return this;
 		}
+		
 		public Builder withBody(Endpoint body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String endpointId, Endpoint body) {
 			request.setEndpointId(endpointId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesEndpointRequest build() {

@@ -37,7 +37,7 @@ public class DocumentAttribute  implements Serializable {
     this.attribute = attribute;
   }
 
-
+  
   /**
    **/
   public DocumentAttribute values(List<String> values) {
@@ -54,6 +54,7 @@ public class DocumentAttribute  implements Serializable {
     this.values = values;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

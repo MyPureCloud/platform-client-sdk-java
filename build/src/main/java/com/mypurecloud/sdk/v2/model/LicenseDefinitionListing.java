@@ -46,7 +46,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing total(Long total) {
@@ -97,7 +97,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.total = total;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public LicenseDefinitionListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class LicenseDefinitionListing  implements Serializable, PagedResource<Li
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

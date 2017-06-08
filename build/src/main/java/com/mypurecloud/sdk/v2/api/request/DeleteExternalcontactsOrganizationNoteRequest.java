@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsOrganizationNoteRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
 	    return this;
 	}
 
+	
 	private String noteId;
 	public String getNoteId() {
 		return this.noteId;
@@ -59,6 +61,7 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,7 +98,8 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
         
                 .withPathParameter("noteId", noteId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -106,10 +110,12 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId, String noteId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId, noteId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteExternalcontactsOrganizationNoteRequest request;
@@ -118,20 +124,26 @@ public class DeleteExternalcontactsOrganizationNoteRequest {
 			request = new DeleteExternalcontactsOrganizationNoteRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 		public Builder withNoteId(String noteId) {
 			request.setNoteId(noteId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId, String noteId) {
 			request.setExternalOrganizationId(externalOrganizationId);
-			request.setNoteId(noteId);
+						request.setNoteId(noteId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteExternalcontactsOrganizationNoteRequest build() {

@@ -71,7 +71,7 @@ public class VisibilityCondition  implements Serializable {
     this.combiningOperation = combiningOperation;
   }
 
-
+  
   /**
    * A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \"/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\" or, to assume the current question group, \"../question/{questionIndex}/answer/{answerIndex}\". Note: Indexes are zero-based
    **/
@@ -89,6 +89,7 @@ public class VisibilityCondition  implements Serializable {
     this.predicates = predicates;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

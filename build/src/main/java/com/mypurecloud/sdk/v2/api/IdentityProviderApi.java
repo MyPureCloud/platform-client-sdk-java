@@ -72,6 +72,7 @@ public class IdentityProviderApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete ADFS Identity Provider
    * 
@@ -94,7 +95,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersAdfsRequest createDeleteIdentityprovidersAdfsRequest() {
-    return DeleteIdentityprovidersAdfsRequest.builder()            .build();
+    return DeleteIdentityprovidersAdfsRequest.builder()
+            .build();
   }
 
   /**
@@ -145,6 +147,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete Customer Interaction Center (CIC) Identity Provider
    * 
@@ -167,7 +170,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersCicRequest createDeleteIdentityprovidersCicRequest() {
-    return DeleteIdentityprovidersCicRequest.builder()            .build();
+    return DeleteIdentityprovidersCicRequest.builder()
+            .build();
   }
 
   /**
@@ -218,6 +222,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete G Suite Identity Provider
    * 
@@ -240,7 +245,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersGsuiteRequest createDeleteIdentityprovidersGsuiteRequest() {
-    return DeleteIdentityprovidersGsuiteRequest.builder()            .build();
+    return DeleteIdentityprovidersGsuiteRequest.builder()
+            .build();
   }
 
   /**
@@ -291,6 +297,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete IdentityNow Provider
    * 
@@ -313,7 +320,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersIdentitynowRequest createDeleteIdentityprovidersIdentitynowRequest() {
-    return DeleteIdentityprovidersIdentitynowRequest.builder()            .build();
+    return DeleteIdentityprovidersIdentitynowRequest.builder()
+            .build();
   }
 
   /**
@@ -364,6 +372,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete Okta Identity Provider
    * 
@@ -386,7 +395,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersOktaRequest createDeleteIdentityprovidersOktaRequest() {
-    return DeleteIdentityprovidersOktaRequest.builder()            .build();
+    return DeleteIdentityprovidersOktaRequest.builder()
+            .build();
   }
 
   /**
@@ -437,6 +447,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete OneLogin Identity Provider
    * 
@@ -459,7 +470,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersOneloginRequest createDeleteIdentityprovidersOneloginRequest() {
-    return DeleteIdentityprovidersOneloginRequest.builder()            .build();
+    return DeleteIdentityprovidersOneloginRequest.builder()
+            .build();
   }
 
   /**
@@ -510,6 +522,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete Ping Identity Provider
    * 
@@ -532,7 +545,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersPingRequest createDeleteIdentityprovidersPingRequest() {
-    return DeleteIdentityprovidersPingRequest.builder()            .build();
+    return DeleteIdentityprovidersPingRequest.builder()
+            .build();
   }
 
   /**
@@ -583,6 +597,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete PureCloud Identity Provider
    * 
@@ -605,7 +620,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersPurecloudRequest createDeleteIdentityprovidersPurecloudRequest() {
-    return DeleteIdentityprovidersPurecloudRequest.builder()            .build();
+    return DeleteIdentityprovidersPurecloudRequest.builder()
+            .build();
   }
 
   /**
@@ -656,6 +672,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Delete Salesforce Identity Provider
    * 
@@ -678,7 +695,8 @@ public class IdentityProviderApi {
   }
 
   private DeleteIdentityprovidersSalesforceRequest createDeleteIdentityprovidersSalesforceRequest() {
-    return DeleteIdentityprovidersSalesforceRequest.builder()            .build();
+    return DeleteIdentityprovidersSalesforceRequest.builder()
+            .build();
   }
 
   /**
@@ -729,6 +747,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * The list of identity providers
    * 
@@ -751,7 +770,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersRequest createGetIdentityprovidersRequest() {
-    return GetIdentityprovidersRequest.builder()            .build();
+    return GetIdentityprovidersRequest.builder()
+            .build();
   }
 
   /**
@@ -802,6 +822,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get ADFS Identity Provider
    * 
@@ -824,7 +845,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersAdfsRequest createGetIdentityprovidersAdfsRequest() {
-    return GetIdentityprovidersAdfsRequest.builder()            .build();
+    return GetIdentityprovidersAdfsRequest.builder()
+            .build();
   }
 
   /**
@@ -875,6 +897,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get Customer Interaction Center (CIC) Identity Provider
    * 
@@ -897,7 +920,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersCicRequest createGetIdentityprovidersCicRequest() {
-    return GetIdentityprovidersCicRequest.builder()            .build();
+    return GetIdentityprovidersCicRequest.builder()
+            .build();
   }
 
   /**
@@ -948,6 +972,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get G Suite Identity Provider
    * 
@@ -970,7 +995,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersGsuiteRequest createGetIdentityprovidersGsuiteRequest() {
-    return GetIdentityprovidersGsuiteRequest.builder()            .build();
+    return GetIdentityprovidersGsuiteRequest.builder()
+            .build();
   }
 
   /**
@@ -1021,6 +1047,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get IdentityNow Provider
    * 
@@ -1043,7 +1070,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersIdentitynowRequest createGetIdentityprovidersIdentitynowRequest() {
-    return GetIdentityprovidersIdentitynowRequest.builder()            .build();
+    return GetIdentityprovidersIdentitynowRequest.builder()
+            .build();
   }
 
   /**
@@ -1094,6 +1122,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get Okta Identity Provider
    * 
@@ -1116,7 +1145,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersOktaRequest createGetIdentityprovidersOktaRequest() {
-    return GetIdentityprovidersOktaRequest.builder()            .build();
+    return GetIdentityprovidersOktaRequest.builder()
+            .build();
   }
 
   /**
@@ -1167,6 +1197,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get OneLogin Identity Provider
    * 
@@ -1189,7 +1220,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersOneloginRequest createGetIdentityprovidersOneloginRequest() {
-    return GetIdentityprovidersOneloginRequest.builder()            .build();
+    return GetIdentityprovidersOneloginRequest.builder()
+            .build();
   }
 
   /**
@@ -1240,6 +1272,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get Ping Identity Provider
    * 
@@ -1262,7 +1295,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersPingRequest createGetIdentityprovidersPingRequest() {
-    return GetIdentityprovidersPingRequest.builder()            .build();
+    return GetIdentityprovidersPingRequest.builder()
+            .build();
   }
 
   /**
@@ -1313,6 +1347,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get PureCloud Identity Provider
    * 
@@ -1335,7 +1370,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersPurecloudRequest createGetIdentityprovidersPurecloudRequest() {
-    return GetIdentityprovidersPurecloudRequest.builder()            .build();
+    return GetIdentityprovidersPurecloudRequest.builder()
+            .build();
   }
 
   /**
@@ -1386,6 +1422,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Get Salesforce Identity Provider
    * 
@@ -1408,7 +1445,8 @@ public class IdentityProviderApi {
   }
 
   private GetIdentityprovidersSalesforceRequest createGetIdentityprovidersSalesforceRequest() {
-    return GetIdentityprovidersSalesforceRequest.builder()            .build();
+    return GetIdentityprovidersSalesforceRequest.builder()
+            .build();
   }
 
   /**
@@ -1459,6 +1497,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create ADFS Identity Provider
    * 
@@ -1485,6 +1524,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersAdfsRequest createPutIdentityprovidersAdfsRequest(ADFS body) {
     return PutIdentityprovidersAdfsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1536,6 +1576,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create Customer Interaction Center (CIC) Identity Provider
    * 
@@ -1562,6 +1603,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersCicRequest createPutIdentityprovidersCicRequest(CustomerInteractionCenter body) {
     return PutIdentityprovidersCicRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1613,6 +1655,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create G Suite Identity Provider
    * 
@@ -1639,6 +1682,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersGsuiteRequest createPutIdentityprovidersGsuiteRequest(GSuite body) {
     return PutIdentityprovidersGsuiteRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1690,6 +1734,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create IdentityNow Provider
    * 
@@ -1716,6 +1761,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersIdentitynowRequest createPutIdentityprovidersIdentitynowRequest(IdentityNow body) {
     return PutIdentityprovidersIdentitynowRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1767,6 +1813,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create Okta Identity Provider
    * 
@@ -1793,6 +1840,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersOktaRequest createPutIdentityprovidersOktaRequest(Okta body) {
     return PutIdentityprovidersOktaRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1844,6 +1892,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create OneLogin Identity Provider
    * 
@@ -1870,6 +1919,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersOneloginRequest createPutIdentityprovidersOneloginRequest(OneLogin body) {
     return PutIdentityprovidersOneloginRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1921,6 +1971,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create Ping Identity Provider
    * 
@@ -1947,6 +1998,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersPingRequest createPutIdentityprovidersPingRequest(PingIdentity body) {
     return PutIdentityprovidersPingRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1998,6 +2050,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create PureCloud Identity Provider
    * 
@@ -2024,6 +2077,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersPurecloudRequest createPutIdentityprovidersPurecloudRequest(PureCloud body) {
     return PutIdentityprovidersPurecloudRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2075,6 +2129,7 @@ public class IdentityProviderApi {
     }
   }
 
+  
   /**
    * Update/Create Salesforce Identity Provider
    * 
@@ -2101,6 +2156,7 @@ public class IdentityProviderApi {
   private PutIdentityprovidersSalesforceRequest createPutIdentityprovidersSalesforceRequest(Salesforce body) {
     return PutIdentityprovidersSalesforceRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2152,4 +2208,5 @@ public class IdentityProviderApi {
     }
   }
 
+  
 }

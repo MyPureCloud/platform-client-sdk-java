@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsContactRequest {
+    
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -45,6 +46,7 @@ public class GetExternalcontactsContactRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -59,6 +61,7 @@ public class GetExternalcontactsContactRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetExternalcontactsContactRequest {
                 .withPathParameter("contactId", contactId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetExternalcontactsContactRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactId) {
 	    return new Builder()
 	            .withRequiredParams(contactId);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsContactRequest request;
@@ -113,19 +119,25 @@ public class GetExternalcontactsContactRequest {
 			request = new GetExternalcontactsContactRequest();
 		}
 
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactId) {
 			request.setContactId(contactId);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsContactRequest build() {

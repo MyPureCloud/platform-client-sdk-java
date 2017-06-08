@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCampaignsProgressRequest {
+    
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundCampaignsProgressRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundCampaignsProgressRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/campaigns/progress")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundCampaignsProgressRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(List<String> body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundCampaignsProgressRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundCampaignsProgressRequest {
 			request = new PostOutboundCampaignsProgressRequest();
 		}
 
+		
 		public Builder withBody(List<String> body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(List<String> body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundCampaignsProgressRequest build() {

@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetOrphanrecordingMediaRequest {
+    
 	private String orphanId;
 	public String getOrphanId() {
 		return this.orphanId;
@@ -52,6 +53,7 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -66,6 +68,7 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private Boolean download;
 	public Boolean getDownload() {
 		return this.download;
@@ -80,6 +83,7 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private String fileName;
 	public String getFileName() {
 		return this.fileName;
@@ -94,6 +98,7 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -129,7 +134,8 @@ public class GetOrphanrecordingMediaRequest {
                 .withQueryParameters("download", "", download)
         
                 .withQueryParameters("fileName", "", fileName)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -140,10 +146,12 @@ public class GetOrphanrecordingMediaRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String orphanId) {
 	    return new Builder()
 	            .withRequiredParams(orphanId);
 	}
+	
 
 	public static class Builder {
 		private final GetOrphanrecordingMediaRequest request;
@@ -152,27 +160,35 @@ public class GetOrphanrecordingMediaRequest {
 			request = new GetOrphanrecordingMediaRequest();
 		}
 
+		
 		public Builder withOrphanId(String orphanId) {
 			request.setOrphanId(orphanId);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 		public Builder withDownload(Boolean download) {
 			request.setDownload(download);
 			return this;
 		}
+		
 		public Builder withFileName(String fileName) {
 			request.setFileName(fileName);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String orphanId) {
 			request.setOrphanId(orphanId);
+			
 			return this;
 		}
+		
 
 
 		public GetOrphanrecordingMediaRequest build() {

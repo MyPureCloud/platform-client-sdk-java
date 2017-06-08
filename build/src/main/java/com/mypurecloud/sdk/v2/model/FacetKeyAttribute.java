@@ -35,7 +35,7 @@ public class FacetKeyAttribute  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FacetKeyAttribute name(String name) {
@@ -52,7 +52,7 @@ public class FacetKeyAttribute  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FacetKeyAttribute count(Integer count) {
@@ -69,6 +69,7 @@ public class FacetKeyAttribute  implements Serializable {
     this.count = count;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

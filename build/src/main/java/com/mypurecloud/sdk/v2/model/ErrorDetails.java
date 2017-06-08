@@ -44,7 +44,7 @@ public class ErrorDetails  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public ErrorDetails message(String message) {
@@ -61,7 +61,7 @@ public class ErrorDetails  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ErrorDetails messageWithParams(String messageWithParams) {
@@ -78,7 +78,7 @@ public class ErrorDetails  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public ErrorDetails messageParams(Map<String, String> messageParams) {
@@ -95,7 +95,7 @@ public class ErrorDetails  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public ErrorDetails code(String code) {
@@ -112,7 +112,7 @@ public class ErrorDetails  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ErrorDetails contextId(String contextId) {
@@ -129,7 +129,7 @@ public class ErrorDetails  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public ErrorDetails nested(ErrorDetails nested) {
@@ -146,7 +146,7 @@ public class ErrorDetails  implements Serializable {
     this.nested = nested;
   }
 
-
+  
   /**
    **/
   public ErrorDetails details(String details) {
@@ -163,6 +163,7 @@ public class ErrorDetails  implements Serializable {
     this.details = details;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -43,7 +43,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-
+  
   /**
    **/
   public EmailMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -60,7 +60,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-
+  
   /**
    **/
   public EmailMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -77,7 +77,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-
+  
   /**
    **/
   public EmailMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -94,7 +94,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-
+  
   /**
    **/
   public EmailMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -111,6 +111,7 @@ public class EmailMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

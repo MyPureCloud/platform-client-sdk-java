@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class DeletePresencedefinitionRequest {
+    
 	private String presenceId;
 	public String getPresenceId() {
 		return this.presenceId;
@@ -39,6 +40,7 @@ public class DeletePresencedefinitionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -68,7 +70,8 @@ public class DeletePresencedefinitionRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/presencedefinitions/{presenceId}")
                 .withPathParameter("presenceId", presenceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -79,10 +82,12 @@ public class DeletePresencedefinitionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String presenceId) {
 	    return new Builder()
 	            .withRequiredParams(presenceId);
 	}
+	
 
 	public static class Builder {
 		private final DeletePresencedefinitionRequest request;
@@ -91,15 +96,20 @@ public class DeletePresencedefinitionRequest {
 			request = new DeletePresencedefinitionRequest();
 		}
 
+		
 		public Builder withPresenceId(String presenceId) {
 			request.setPresenceId(presenceId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String presenceId) {
 			request.setPresenceId(presenceId);
+			
 			return this;
 		}
+		
 
 
 		public DeletePresencedefinitionRequest build() {

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectPromptResourcesRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class GetArchitectPromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,6 +72,7 @@ public class GetArchitectPromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -84,6 +87,7 @@ public class GetArchitectPromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -117,7 +121,8 @@ public class GetArchitectPromptResourcesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -128,10 +133,12 @@ public class GetArchitectPromptResourcesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId) {
 	    return new Builder()
 	            .withRequiredParams(promptId);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectPromptResourcesRequest request;
@@ -140,23 +147,30 @@ public class GetArchitectPromptResourcesRequest {
 			request = new GetArchitectPromptResourcesRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId) {
 			request.setPromptId(promptId);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectPromptResourcesRequest build() {

@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingWrapupcodesRequest {
+    
 	private WrapupCode body;
 	public WrapupCode getBody() {
 		return this.body;
@@ -58,6 +59,7 @@ public class PostRoutingWrapupcodesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,6 +89,7 @@ public class PostRoutingWrapupcodesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/routing/wrapupcodes")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,10 +101,12 @@ public class PostRoutingWrapupcodesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(WrapupCode body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostRoutingWrapupcodesRequest request;
@@ -110,15 +115,20 @@ public class PostRoutingWrapupcodesRequest {
 			request = new PostRoutingWrapupcodesRequest();
 		}
 
+		
 		public Builder withBody(WrapupCode body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(WrapupCode body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRoutingWrapupcodesRequest build() {

@@ -46,7 +46,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EdgeGroupEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EdgeGroupEntityListing  implements Serializable, PagedResource<Edge
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

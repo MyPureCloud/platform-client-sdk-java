@@ -35,6 +35,7 @@ public class Certificate  implements Serializable {
     this.certificate = certificate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

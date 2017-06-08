@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
+    
 	private String certificateId;
 	public String getCertificateId() {
 		return this.certificateId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}")
                 .withPathParameter("certificateId", certificateId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String certificateId) {
 	    return new Builder()
 	            .withRequiredParams(certificateId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesCertificateauthorityRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesCertificateauthorityRequest {
 			request = new GetTelephonyProvidersEdgesCertificateauthorityRequest();
 		}
 
+		
 		public Builder withCertificateId(String certificateId) {
 			request.setCertificateId(certificateId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String certificateId) {
 			request.setCertificateId(certificateId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesCertificateauthorityRequest build() {

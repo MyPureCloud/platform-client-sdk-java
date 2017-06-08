@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class PostGreetingsRequest {
+    
 	private Greeting body;
 	public Greeting getBody() {
 		return this.body;
@@ -40,6 +41,7 @@ public class PostGreetingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,6 +71,7 @@ public class PostGreetingsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/greetings")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -80,10 +83,12 @@ public class PostGreetingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Greeting body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostGreetingsRequest request;
@@ -92,15 +97,20 @@ public class PostGreetingsRequest {
 			request = new PostGreetingsRequest();
 		}
 
+		
 		public Builder withBody(Greeting body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Greeting body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostGreetingsRequest build() {

@@ -67,7 +67,7 @@ public class DialerRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the rule
    **/
@@ -85,7 +85,7 @@ public class DialerRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The ranked order of the rule; rules are processed from lowest number to highest
    **/
@@ -103,7 +103,7 @@ public class DialerRule  implements Serializable {
     this.order = order;
   }
 
-
+  
   /**
    * The category of the rule
    **/
@@ -121,7 +121,7 @@ public class DialerRule  implements Serializable {
     this.category = category;
   }
 
-
+  
   /**
    * The list of rule conditions; all must evaluate to true to trigger the rule actions
    **/
@@ -139,7 +139,7 @@ public class DialerRule  implements Serializable {
     this.conditions = conditions;
   }
 
-
+  
   /**
    * The list of rule actions to be taken if the conditions are true
    **/
@@ -157,6 +157,7 @@ public class DialerRule  implements Serializable {
     this.actions = actions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

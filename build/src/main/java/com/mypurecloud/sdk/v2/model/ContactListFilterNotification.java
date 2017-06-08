@@ -82,7 +82,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification name(String name) {
@@ -99,7 +99,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification dateCreated(Date dateCreated) {
@@ -116,7 +116,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification dateModified(Date dateModified) {
@@ -133,7 +133,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification version(Integer version) {
@@ -150,7 +150,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification contactList(DocumentDataV2NotificationCreatedBy contactList) {
@@ -167,7 +167,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification contactListColumns(List<String> contactListColumns) {
@@ -184,7 +184,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.contactListColumns = contactListColumns;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification clauses(List<ContactListFilterNotificationClauses> clauses) {
@@ -201,7 +201,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.clauses = clauses;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification filterType(FilterTypeEnum filterType) {
@@ -218,7 +218,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.filterType = filterType;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotification additionalProperties(Object additionalProperties) {
@@ -235,6 +235,7 @@ public class ContactListFilterNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

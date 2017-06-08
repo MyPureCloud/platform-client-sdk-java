@@ -38,7 +38,7 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.licenseId = licenseId;
   }
 
-
+  
   /**
    * The ids of users to assign this license to.
    **/
@@ -56,7 +56,7 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.userIdsAdd = userIdsAdd;
   }
 
-
+  
   /**
    * The ids of users to unassign this license from.
    **/
@@ -74,6 +74,7 @@ public class LicenseAssignmentRequest  implements Serializable {
     this.userIdsRemove = userIdsRemove;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

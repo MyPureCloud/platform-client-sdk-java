@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesTranslationsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -46,7 +47,8 @@ public class GetLanguagesTranslationsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/languages/translations")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/languages/translations")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -57,6 +59,7 @@ public class GetLanguagesTranslationsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetLanguagesTranslationsRequest request;
@@ -65,7 +68,9 @@ public class GetLanguagesTranslationsRequest {
 			request = new GetLanguagesTranslationsRequest();
 		}
 
+		
 
+		
 
 
 		public GetLanguagesTranslationsRequest build() {

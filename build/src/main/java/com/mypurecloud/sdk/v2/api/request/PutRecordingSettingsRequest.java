@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PutRecordingSettingsRequest {
+    
 	private RecordingSettings body;
 	public RecordingSettings getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PutRecordingSettingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PutRecordingSettingsRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/recording/settings")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PutRecordingSettingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(RecordingSettings body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutRecordingSettingsRequest request;
@@ -104,15 +109,20 @@ public class PutRecordingSettingsRequest {
 			request = new PutRecordingSettingsRequest();
 		}
 
+		
 		public Builder withBody(RecordingSettings body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(RecordingSettings body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRecordingSettingsRequest build() {

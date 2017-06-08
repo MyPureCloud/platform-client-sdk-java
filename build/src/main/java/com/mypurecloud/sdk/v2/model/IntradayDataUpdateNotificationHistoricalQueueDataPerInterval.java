@@ -41,7 +41,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.offered = offered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval completed(Integer completed) {
@@ -58,7 +58,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.completed = completed;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval answered(Integer answered) {
@@ -75,7 +75,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.answered = answered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval abandoned(Integer abandoned) {
@@ -92,7 +92,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.abandoned = abandoned;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -109,7 +109,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -126,7 +126,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval serviceLevelPercent(BigDecimal serviceLevelPercent) {
@@ -143,7 +143,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalQueueDataPerInterval averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -160,6 +160,7 @@ public class IntradayDataUpdateNotificationHistoricalQueueDataPerInterval  imple
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

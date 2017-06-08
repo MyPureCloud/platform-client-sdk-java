@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingQueueEstimatedwaittimeRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class GetRoutingQueueEstimatedwaittimeRequest {
 	    return this;
 	}
 
+	
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -72,6 +74,7 @@ public class GetRoutingQueueEstimatedwaittimeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +106,8 @@ public class GetRoutingQueueEstimatedwaittimeRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withQueryParameters("conversationId", "", conversationId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +118,12 @@ public class GetRoutingQueueEstimatedwaittimeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId) {
 	    return new Builder()
 	            .withRequiredParams(queueId);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingQueueEstimatedwaittimeRequest request;
@@ -126,19 +132,25 @@ public class GetRoutingQueueEstimatedwaittimeRequest {
 			request = new GetRoutingQueueEstimatedwaittimeRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId) {
 			request.setQueueId(queueId);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingQueueEstimatedwaittimeRequest build() {

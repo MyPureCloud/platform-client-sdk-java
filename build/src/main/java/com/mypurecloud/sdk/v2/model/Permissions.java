@@ -27,7 +27,7 @@ public class Permissions  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Permissions name(String name) {
@@ -44,7 +44,7 @@ public class Permissions  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * List of permission ids.
    **/
@@ -62,6 +62,7 @@ public class Permissions  implements Serializable {
     this.ids = ids;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

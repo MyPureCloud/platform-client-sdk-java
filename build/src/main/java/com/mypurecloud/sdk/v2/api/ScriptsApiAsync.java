@@ -48,6 +48,7 @@ public class ScriptsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get a script
    * 
@@ -123,6 +124,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get a page
    * 
@@ -198,6 +200,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the list of pages
    * 
@@ -273,6 +276,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the list of scripts
    * 
@@ -348,6 +352,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the published scripts.
    * 
@@ -423,6 +428,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the published script.
    * 
@@ -498,6 +504,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the published page.
    * 
@@ -573,6 +580,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the list of published pages
    * 
@@ -648,6 +656,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
   /**
    * Get the published variables
    * 
@@ -723,6 +732,7 @@ public class ScriptsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

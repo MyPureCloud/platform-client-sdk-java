@@ -75,7 +75,7 @@ public class EdgeLogsJob  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -93,7 +93,7 @@ public class EdgeLogsJob  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob description(String description) {
@@ -110,7 +110,7 @@ public class EdgeLogsJob  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob version(Integer version) {
@@ -127,7 +127,7 @@ public class EdgeLogsJob  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -145,7 +145,7 @@ public class EdgeLogsJob  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -163,7 +163,7 @@ public class EdgeLogsJob  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob modifiedBy(String modifiedBy) {
@@ -180,7 +180,7 @@ public class EdgeLogsJob  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob createdBy(String createdBy) {
@@ -197,7 +197,7 @@ public class EdgeLogsJob  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob state(StateEnum state) {
@@ -214,7 +214,7 @@ public class EdgeLogsJob  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob modifiedByApp(String modifiedByApp) {
@@ -231,7 +231,7 @@ public class EdgeLogsJob  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJob createdByApp(String createdByApp) {
@@ -248,7 +248,7 @@ public class EdgeLogsJob  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The files available to upload from the Edge to the cloud.
    **/
@@ -266,13 +266,14 @@ public class EdgeLogsJob  implements Serializable {
     this.files = files;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

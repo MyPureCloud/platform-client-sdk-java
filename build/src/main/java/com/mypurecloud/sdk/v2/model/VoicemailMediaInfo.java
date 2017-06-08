@@ -28,7 +28,7 @@ public class VoicemailMediaInfo  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public VoicemailMediaInfo mediaFileUri(String mediaFileUri) {
@@ -45,7 +45,7 @@ public class VoicemailMediaInfo  implements Serializable {
     this.mediaFileUri = mediaFileUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMediaInfo mediaImageUri(String mediaImageUri) {
@@ -62,7 +62,7 @@ public class VoicemailMediaInfo  implements Serializable {
     this.mediaImageUri = mediaImageUri;
   }
 
-
+  
   /**
    **/
   public VoicemailMediaInfo waveformData(List<Float> waveformData) {
@@ -79,6 +79,7 @@ public class VoicemailMediaInfo  implements Serializable {
     this.waveformData = waveformData;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

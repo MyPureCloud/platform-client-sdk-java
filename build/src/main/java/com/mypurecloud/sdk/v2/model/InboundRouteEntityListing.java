@@ -46,7 +46,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.total = total;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public InboundRouteEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class InboundRouteEntityListing  implements Serializable, PagedResource<I
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

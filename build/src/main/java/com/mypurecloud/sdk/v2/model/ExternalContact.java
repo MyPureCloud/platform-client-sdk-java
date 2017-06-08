@@ -50,7 +50,7 @@ public class ExternalContact  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The first name of the contact.
    **/
@@ -68,7 +68,7 @@ public class ExternalContact  implements Serializable {
     this.firstName = firstName;
   }
 
-
+  
   /**
    **/
   public ExternalContact middleName(String middleName) {
@@ -85,7 +85,7 @@ public class ExternalContact  implements Serializable {
     this.middleName = middleName;
   }
 
-
+  
   /**
    * The last name of the contact.
    **/
@@ -103,7 +103,7 @@ public class ExternalContact  implements Serializable {
     this.lastName = lastName;
   }
 
-
+  
   /**
    **/
   public ExternalContact salutation(String salutation) {
@@ -120,7 +120,7 @@ public class ExternalContact  implements Serializable {
     this.salutation = salutation;
   }
 
-
+  
   /**
    **/
   public ExternalContact title(String title) {
@@ -137,7 +137,7 @@ public class ExternalContact  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public ExternalContact workPhone(PhoneNumber workPhone) {
@@ -154,7 +154,7 @@ public class ExternalContact  implements Serializable {
     this.workPhone = workPhone;
   }
 
-
+  
   /**
    **/
   public ExternalContact cellPhone(PhoneNumber cellPhone) {
@@ -171,7 +171,7 @@ public class ExternalContact  implements Serializable {
     this.cellPhone = cellPhone;
   }
 
-
+  
   /**
    **/
   public ExternalContact homePhone(PhoneNumber homePhone) {
@@ -188,7 +188,7 @@ public class ExternalContact  implements Serializable {
     this.homePhone = homePhone;
   }
 
-
+  
   /**
    **/
   public ExternalContact otherPhone(PhoneNumber otherPhone) {
@@ -205,7 +205,7 @@ public class ExternalContact  implements Serializable {
     this.otherPhone = otherPhone;
   }
 
-
+  
   /**
    **/
   public ExternalContact workEmail(String workEmail) {
@@ -222,7 +222,7 @@ public class ExternalContact  implements Serializable {
     this.workEmail = workEmail;
   }
 
-
+  
   /**
    **/
   public ExternalContact personalEmail(String personalEmail) {
@@ -239,7 +239,7 @@ public class ExternalContact  implements Serializable {
     this.personalEmail = personalEmail;
   }
 
-
+  
   /**
    **/
   public ExternalContact otherEmail(String otherEmail) {
@@ -256,7 +256,7 @@ public class ExternalContact  implements Serializable {
     this.otherEmail = otherEmail;
   }
 
-
+  
   /**
    **/
   public ExternalContact address(ContactAddress address) {
@@ -273,7 +273,7 @@ public class ExternalContact  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ExternalContact twitterId(TwitterId twitterId) {
@@ -290,7 +290,7 @@ public class ExternalContact  implements Serializable {
     this.twitterId = twitterId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -308,7 +308,7 @@ public class ExternalContact  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -326,7 +326,7 @@ public class ExternalContact  implements Serializable {
     this.createDate = createDate;
   }
 
-
+  
   /**
    **/
   public ExternalContact externalOrganization(ExternalOrganization externalOrganization) {
@@ -343,7 +343,7 @@ public class ExternalContact  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
@@ -361,13 +361,14 @@ public class ExternalContact  implements Serializable {
     this.externalDataSources = externalDataSources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,7 +46,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DIDEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DIDEntityListing  implements Serializable, PagedResource<DID> {
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

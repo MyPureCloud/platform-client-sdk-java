@@ -41,7 +41,7 @@ public class LineStatus  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * Indicates whether the edge can reach the line.
    **/
@@ -59,7 +59,7 @@ public class LineStatus  implements Serializable {
     this.reachable = reachable;
   }
 
-
+  
   /**
    * The line's address of record.
    **/
@@ -77,7 +77,7 @@ public class LineStatus  implements Serializable {
     this.addressOfRecord = addressOfRecord;
   }
 
-
+  
   /**
    * The addresses used to contact the line.
    **/
@@ -95,7 +95,7 @@ public class LineStatus  implements Serializable {
     this.contactAddresses = contactAddresses;
   }
 
-
+  
   /**
    * The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -113,6 +113,7 @@ public class LineStatus  implements Serializable {
     this.reachableStateTime = reachableStateTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingEmailDomainRouteRequest {
+    
 	private String domainName;
 	public String getDomainName() {
 		return this.domainName;
@@ -58,6 +59,7 @@ public class GetRoutingEmailDomainRouteRequest {
 	    return this;
 	}
 
+	
 	private String routeId;
 	public String getRouteId() {
 		return this.routeId;
@@ -72,6 +74,7 @@ public class GetRoutingEmailDomainRouteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,7 +111,8 @@ public class GetRoutingEmailDomainRouteRequest {
                 .withPathParameter("domainName", domainName)
         
                 .withPathParameter("routeId", routeId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -119,10 +123,12 @@ public class GetRoutingEmailDomainRouteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String domainName, String routeId) {
 	    return new Builder()
 	            .withRequiredParams(domainName, routeId);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingEmailDomainRouteRequest request;
@@ -131,20 +137,26 @@ public class GetRoutingEmailDomainRouteRequest {
 			request = new GetRoutingEmailDomainRouteRequest();
 		}
 
+		
 		public Builder withDomainName(String domainName) {
 			request.setDomainName(domainName);
 			return this;
 		}
+		
 		public Builder withRouteId(String routeId) {
 			request.setRouteId(routeId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String domainName, String routeId) {
 			request.setDomainName(domainName);
-			request.setRouteId(routeId);
+						request.setRouteId(routeId);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingEmailDomainRouteRequest build() {

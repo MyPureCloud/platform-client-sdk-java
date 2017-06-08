@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsReversewhitepageslookupRequest {
+    
 	private String lookupVal;
 	public String getLookupVal() {
 		return this.lookupVal;
@@ -45,6 +46,7 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -59,6 +61,7 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
                 .withQueryParameters("lookupVal", "", lookupVal)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String lookupVal) {
 	    return new Builder()
 	            .withRequiredParams(lookupVal);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsReversewhitepageslookupRequest request;
@@ -113,19 +119,25 @@ public class GetExternalcontactsReversewhitepageslookupRequest {
 			request = new GetExternalcontactsReversewhitepageslookupRequest();
 		}
 
+		
 		public Builder withLookupVal(String lookupVal) {
 			request.setLookupVal(lookupVal);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String lookupVal) {
 			request.setLookupVal(lookupVal);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsReversewhitepageslookupRequest build() {

@@ -36,7 +36,7 @@ public class ContactListNotificationContactPhoneNumberColumn  implements Seriali
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationContactPhoneNumberColumn type(String type) {
@@ -53,7 +53,7 @@ public class ContactListNotificationContactPhoneNumberColumn  implements Seriali
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationContactPhoneNumberColumn callableTimeColumn(String callableTimeColumn) {
@@ -70,7 +70,7 @@ public class ContactListNotificationContactPhoneNumberColumn  implements Seriali
     this.callableTimeColumn = callableTimeColumn;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationContactPhoneNumberColumn additionalProperties(Object additionalProperties) {
@@ -87,6 +87,7 @@ public class ContactListNotificationContactPhoneNumberColumn  implements Seriali
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

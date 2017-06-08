@@ -46,7 +46,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EdgeLineEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EdgeLineEntityListing  implements Serializable, PagedResource<EdgeL
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

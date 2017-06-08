@@ -36,7 +36,7 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationUser name(String name) {
@@ -53,7 +53,7 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationUser homeOrg(DependencyTrackingBuildNotificationNotificationUserHomeOrg homeOrg) {
@@ -70,6 +70,7 @@ public class DependencyTrackingBuildNotificationNotificationUser  implements Ser
     this.homeOrg = homeOrg;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

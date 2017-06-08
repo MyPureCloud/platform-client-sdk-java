@@ -46,7 +46,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing total(Long total) {
@@ -97,7 +97,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EmailMessageListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EmailMessageListing  implements Serializable, PagedResource<EmailMe
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

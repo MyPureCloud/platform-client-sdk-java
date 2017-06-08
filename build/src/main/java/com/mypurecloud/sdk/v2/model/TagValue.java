@@ -29,7 +29,7 @@ public class TagValue  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The workspace tag name.
    **/
@@ -47,7 +47,7 @@ public class TagValue  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public TagValue inUse(Boolean inUse) {
@@ -64,7 +64,7 @@ public class TagValue  implements Serializable {
     this.inUse = inUse;
   }
 
-
+  
   /**
    **/
   public TagValue acl(List<String> acl) {
@@ -81,13 +81,14 @@ public class TagValue  implements Serializable {
     this.acl = acl;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

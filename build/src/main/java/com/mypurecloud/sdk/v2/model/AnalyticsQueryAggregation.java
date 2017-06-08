@@ -76,7 +76,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * For use with termFrequency aggregations
    **/
@@ -94,7 +94,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.dimension = dimension;
   }
 
-
+  
   /**
    * For use with numericRange aggregations
    **/
@@ -112,7 +112,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    * For use with termFrequency aggregations
    **/
@@ -130,7 +130,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.size = size;
   }
 
-
+  
   /**
    * For use with numericRange aggregations
    **/
@@ -148,6 +148,7 @@ public class AnalyticsQueryAggregation  implements Serializable {
     this.ranges = ranges;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

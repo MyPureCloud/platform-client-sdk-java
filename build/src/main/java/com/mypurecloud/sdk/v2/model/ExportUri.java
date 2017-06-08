@@ -35,7 +35,7 @@ public class ExportUri  implements Serializable {
     this.uri = uri;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -53,6 +53,7 @@ public class ExportUri  implements Serializable {
     this.exportTimestamp = exportTimestamp;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

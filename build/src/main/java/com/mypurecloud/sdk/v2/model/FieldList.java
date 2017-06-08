@@ -45,7 +45,7 @@ public class FieldList  implements Serializable {
     this.customLabels = customLabels;
   }
 
-
+  
   /**
    **/
   public FieldList instructionText(String instructionText) {
@@ -62,7 +62,7 @@ public class FieldList  implements Serializable {
     this.instructionText = instructionText;
   }
 
-
+  
   /**
    **/
   public FieldList key(String key) {
@@ -79,7 +79,7 @@ public class FieldList  implements Serializable {
     this.key = key;
   }
 
-
+  
   /**
    **/
   public FieldList labelKeys(List<String> labelKeys) {
@@ -96,7 +96,7 @@ public class FieldList  implements Serializable {
     this.labelKeys = labelKeys;
   }
 
-
+  
   /**
    **/
   public FieldList params(Map<String, Object> params) {
@@ -113,7 +113,7 @@ public class FieldList  implements Serializable {
     this.params = params;
   }
 
-
+  
   /**
    **/
   public FieldList repeatable(Boolean repeatable) {
@@ -130,7 +130,7 @@ public class FieldList  implements Serializable {
     this.repeatable = repeatable;
   }
 
-
+  
   /**
    **/
   public FieldList state(String state) {
@@ -147,7 +147,7 @@ public class FieldList  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public FieldList type(String type) {
@@ -164,7 +164,7 @@ public class FieldList  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public FieldList required(Boolean required) {
@@ -181,6 +181,7 @@ public class FieldList  implements Serializable {
     this.required = required;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

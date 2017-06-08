@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class DeleteResponsemanagementResponseRequest {
+    
 	private String responseId;
 	public String getResponseId() {
 		return this.responseId;
@@ -41,6 +42,7 @@ public class DeleteResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,7 +72,8 @@ public class DeleteResponsemanagementResponseRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/responsemanagement/responses/{responseId}")
                 .withPathParameter("responseId", responseId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -81,10 +84,12 @@ public class DeleteResponsemanagementResponseRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String responseId) {
 	    return new Builder()
 	            .withRequiredParams(responseId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteResponsemanagementResponseRequest request;
@@ -93,15 +98,20 @@ public class DeleteResponsemanagementResponseRequest {
 			request = new DeleteResponsemanagementResponseRequest();
 		}
 
+		
 		public Builder withResponseId(String responseId) {
 			request.setResponseId(responseId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String responseId) {
 			request.setResponseId(responseId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteResponsemanagementResponseRequest build() {

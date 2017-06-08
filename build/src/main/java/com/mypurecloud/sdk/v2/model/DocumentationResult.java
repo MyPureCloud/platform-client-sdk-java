@@ -56,7 +56,7 @@ public class DocumentationResult  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The category of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -74,7 +74,7 @@ public class DocumentationResult  implements Serializable {
     this.categories = categories;
   }
 
-
+  
   /**
    * The description of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -92,7 +92,7 @@ public class DocumentationResult  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * The text or html content for the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -110,7 +110,7 @@ public class DocumentationResult  implements Serializable {
     this.content = content;
   }
 
-
+  
   /**
    * The excerpt of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -128,7 +128,7 @@ public class DocumentationResult  implements Serializable {
     this.excerpt = excerpt;
   }
 
-
+  
   /**
    * URL link for the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -146,7 +146,7 @@ public class DocumentationResult  implements Serializable {
     this.link = link;
   }
 
-
+  
   /**
    * The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -164,7 +164,7 @@ public class DocumentationResult  implements Serializable {
     this.modified = modified;
   }
 
-
+  
   /**
    * The name of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -182,7 +182,7 @@ public class DocumentationResult  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The service of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -200,7 +200,7 @@ public class DocumentationResult  implements Serializable {
     this.service = service;
   }
 
-
+  
   /**
    * The slug of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -218,7 +218,7 @@ public class DocumentationResult  implements Serializable {
     this.slug = slug;
   }
 
-
+  
   /**
    * The title of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -236,7 +236,7 @@ public class DocumentationResult  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    * The search type. Will be returned in responses for certain entities.
    **/
@@ -254,7 +254,7 @@ public class DocumentationResult  implements Serializable {
     this.getType = getType;
   }
 
-
+  
   /**
    * The facet feature of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -272,7 +272,7 @@ public class DocumentationResult  implements Serializable {
     this.facetFeature = facetFeature;
   }
 
-
+  
   /**
    * The facet role of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -290,7 +290,7 @@ public class DocumentationResult  implements Serializable {
     this.facetRole = facetRole;
   }
 
-
+  
   /**
    * The facet service of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -308,7 +308,7 @@ public class DocumentationResult  implements Serializable {
     this.facetService = facetService;
   }
 
-
+  
   /**
    * The faq categories of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -326,7 +326,7 @@ public class DocumentationResult  implements Serializable {
     this.faqCategories = faqCategories;
   }
 
-
+  
   /**
    * The releasenote category of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -344,7 +344,7 @@ public class DocumentationResult  implements Serializable {
     this.releasenoteCategory = releasenoteCategory;
   }
 
-
+  
   /**
    * The releasenote tag of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -362,7 +362,7 @@ public class DocumentationResult  implements Serializable {
     this.releasenoteTag = releasenoteTag;
   }
 
-
+  
   /**
    * The service area of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -380,7 +380,7 @@ public class DocumentationResult  implements Serializable {
     this.serviceArea = serviceArea;
   }
 
-
+  
   /**
    * The video categories of the documentation entity. Will be returned in responses for certain entities.
    **/
@@ -398,6 +398,7 @@ public class DocumentationResult  implements Serializable {
     this.videoCategories = videoCategories;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

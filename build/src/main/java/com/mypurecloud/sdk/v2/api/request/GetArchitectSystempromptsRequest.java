@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectSystempromptsRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -56,6 +57,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -70,6 +72,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -84,6 +87,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -98,6 +102,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -112,6 +117,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private String description;
 	public String getDescription() {
 		return this.description;
@@ -126,6 +132,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private String nameOrDescription;
 	public String getNameOrDescription() {
 		return this.nameOrDescription;
@@ -140,6 +147,7 @@ public class GetArchitectSystempromptsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -176,7 +184,8 @@ public class GetArchitectSystempromptsRequest {
                 .withQueryParameters("description", "", description)
         
                 .withQueryParameters("nameOrDescription", "", nameOrDescription)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -187,6 +196,7 @@ public class GetArchitectSystempromptsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetArchitectSystempromptsRequest request;
@@ -195,35 +205,44 @@ public class GetArchitectSystempromptsRequest {
 			request = new GetArchitectSystempromptsRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withDescription(String description) {
 			request.setDescription(description);
 			return this;
 		}
+		
 		public Builder withNameOrDescription(String nameOrDescription) {
 			request.setNameOrDescription(nameOrDescription);
 			return this;
 		}
+		
 
+		
 
 
 		public GetArchitectSystempromptsRequest build() {

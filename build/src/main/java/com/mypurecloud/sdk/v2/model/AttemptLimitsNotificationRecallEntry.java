@@ -35,7 +35,7 @@ public class AttemptLimitsNotificationRecallEntry  implements Serializable {
     this.nbrAttempts = nbrAttempts;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotificationRecallEntry minutesBetweenAttempts(Integer minutesBetweenAttempts) {
@@ -52,7 +52,7 @@ public class AttemptLimitsNotificationRecallEntry  implements Serializable {
     this.minutesBetweenAttempts = minutesBetweenAttempts;
   }
 
-
+  
   /**
    **/
   public AttemptLimitsNotificationRecallEntry additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class AttemptLimitsNotificationRecallEntry  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

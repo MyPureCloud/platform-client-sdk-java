@@ -73,7 +73,7 @@ public class TermAttribute  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public TermAttribute name(String name) {
@@ -90,7 +90,7 @@ public class TermAttribute  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public TermAttribute type(TypeEnum type) {
@@ -107,6 +107,7 @@ public class TermAttribute  implements Serializable {
     this.type = type;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

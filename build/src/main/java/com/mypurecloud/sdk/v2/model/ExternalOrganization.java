@@ -59,7 +59,7 @@ public class ExternalOrganization  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The name of the company.
    **/
@@ -77,7 +77,7 @@ public class ExternalOrganization  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization companyType(String companyType) {
@@ -94,7 +94,7 @@ public class ExternalOrganization  implements Serializable {
     this.companyType = companyType;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization industry(String industry) {
@@ -111,7 +111,7 @@ public class ExternalOrganization  implements Serializable {
     this.industry = industry;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization primaryContactId(String primaryContactId) {
@@ -128,7 +128,7 @@ public class ExternalOrganization  implements Serializable {
     this.primaryContactId = primaryContactId;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization address(ContactAddress address) {
@@ -145,7 +145,7 @@ public class ExternalOrganization  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization phoneNumber(PhoneNumber phoneNumber) {
@@ -162,7 +162,7 @@ public class ExternalOrganization  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization faxNumber(PhoneNumber faxNumber) {
@@ -179,7 +179,7 @@ public class ExternalOrganization  implements Serializable {
     this.faxNumber = faxNumber;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization employeeCount(Long employeeCount) {
@@ -196,7 +196,7 @@ public class ExternalOrganization  implements Serializable {
     this.employeeCount = employeeCount;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization revenue(Long revenue) {
@@ -213,7 +213,7 @@ public class ExternalOrganization  implements Serializable {
     this.revenue = revenue;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization tags(List<String> tags) {
@@ -230,7 +230,7 @@ public class ExternalOrganization  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization websites(List<String> websites) {
@@ -247,7 +247,7 @@ public class ExternalOrganization  implements Serializable {
     this.websites = websites;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization tickers(List<Ticker> tickers) {
@@ -264,7 +264,7 @@ public class ExternalOrganization  implements Serializable {
     this.tickers = tickers;
   }
 
-
+  
   /**
    **/
   public ExternalOrganization twitterId(TwitterId twitterId) {
@@ -281,7 +281,7 @@ public class ExternalOrganization  implements Serializable {
     this.twitterId = twitterId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -299,7 +299,7 @@ public class ExternalOrganization  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -317,7 +317,7 @@ public class ExternalOrganization  implements Serializable {
     this.createDate = createDate;
   }
 
-
+  
   /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
@@ -335,13 +335,14 @@ public class ExternalOrganization  implements Serializable {
     this.externalDataSources = externalDataSources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

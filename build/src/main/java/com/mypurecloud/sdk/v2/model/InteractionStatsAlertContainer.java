@@ -46,7 +46,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer total(Long total) {
@@ -97,7 +97,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.total = total;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlertContainer pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class InteractionStatsAlertContainer  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -137,7 +137,7 @@ public class Screenshare  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -155,7 +155,7 @@ public class Screenshare  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -173,7 +173,7 @@ public class Screenshare  implements Serializable {
     this.context = context;
   }
 
-
+  
   /**
    * Indicates whether this participant is sharing their screen.
    **/
@@ -191,7 +191,7 @@ public class Screenshare  implements Serializable {
     this.sharing = sharing;
   }
 
-
+  
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
@@ -209,7 +209,7 @@ public class Screenshare  implements Serializable {
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -227,7 +227,7 @@ public class Screenshare  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -245,7 +245,7 @@ public class Screenshare  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -263,7 +263,7 @@ public class Screenshare  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * The source provider for the screen share.
    **/
@@ -281,7 +281,7 @@ public class Screenshare  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -299,7 +299,7 @@ public class Screenshare  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    * The time line of the participant's call, divided into activity segments.
    **/
@@ -317,6 +317,7 @@ public class Screenshare  implements Serializable {
     this.segments = segments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementTimeoffrequestRequest {
+    
 	private String timeOffRequestId;
 	public String getTimeOffRequestId() {
 		return this.timeOffRequestId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,7 +79,8 @@ public class GetWorkforcemanagementTimeoffrequestRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}")
                 .withPathParameter("timeOffRequestId", timeOffRequestId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -88,10 +91,12 @@ public class GetWorkforcemanagementTimeoffrequestRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String timeOffRequestId) {
 	    return new Builder()
 	            .withRequiredParams(timeOffRequestId);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementTimeoffrequestRequest request;
@@ -100,15 +105,20 @@ public class GetWorkforcemanagementTimeoffrequestRequest {
 			request = new GetWorkforcemanagementTimeoffrequestRequest();
 		}
 
+		
 		public Builder withTimeOffRequestId(String timeOffRequestId) {
 			request.setTimeOffRequestId(timeOffRequestId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String timeOffRequestId) {
 			request.setTimeOffRequestId(timeOffRequestId);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementTimeoffrequestRequest build() {

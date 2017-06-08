@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PatchUserGeolocationRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PatchUserGeolocationRequest {
 	    return this;
 	}
 
+	
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -76,6 +78,7 @@ public class PatchUserGeolocationRequest {
 	    return this;
 	}
 
+	
 	private Geolocation body;
 	public Geolocation getBody() {
 		return this.body;
@@ -90,6 +93,7 @@ public class PatchUserGeolocationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,6 +137,7 @@ public class PatchUserGeolocationRequest {
                 .withPathParameter("clientId", clientId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -144,10 +149,12 @@ public class PatchUserGeolocationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String clientId, Geolocation body) {
 	    return new Builder()
 	            .withRequiredParams(userId, clientId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchUserGeolocationRequest request;
@@ -156,25 +163,32 @@ public class PatchUserGeolocationRequest {
 			request = new PatchUserGeolocationRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
+		
 		public Builder withBody(Geolocation body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String clientId, Geolocation body) {
 			request.setUserId(userId);
-			request.setClientId(clientId);
-			request.setBody(body);
+						request.setClientId(clientId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchUserGeolocationRequest build() {

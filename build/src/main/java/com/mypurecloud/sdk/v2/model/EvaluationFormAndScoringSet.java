@@ -36,7 +36,7 @@ public class EvaluationFormAndScoringSet  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public EvaluationFormAndScoringSet answers(EvaluationScoringSet answers) {
@@ -53,6 +53,7 @@ public class EvaluationFormAndScoringSet  implements Serializable {
     this.answers = answers;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

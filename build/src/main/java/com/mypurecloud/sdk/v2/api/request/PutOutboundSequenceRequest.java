@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundSequenceRequest {
+    
 	private String sequenceId;
 	public String getSequenceId() {
 		return this.sequenceId;
@@ -74,6 +75,7 @@ public class PutOutboundSequenceRequest {
 	    return this;
 	}
 
+	
 	private CampaignSequence body;
 	public CampaignSequence getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundSequenceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundSequenceRequest {
                 .withPathParameter("sequenceId", sequenceId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundSequenceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String sequenceId, CampaignSequence body) {
 	    return new Builder()
 	            .withRequiredParams(sequenceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundSequenceRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundSequenceRequest {
 			request = new PutOutboundSequenceRequest();
 		}
 
+		
 		public Builder withSequenceId(String sequenceId) {
 			request.setSequenceId(sequenceId);
 			return this;
 		}
+		
 		public Builder withBody(CampaignSequence body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String sequenceId, CampaignSequence body) {
 			request.setSequenceId(sequenceId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundSequenceRequest build() {

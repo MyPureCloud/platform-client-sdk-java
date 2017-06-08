@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PostAlertingHeartbeatRulesRequest {
+    
 	private HeartBeatRule body;
 	public HeartBeatRule getBody() {
 		return this.body;
@@ -53,6 +54,7 @@ public class PostAlertingHeartbeatRulesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -67,6 +69,7 @@ public class PostAlertingHeartbeatRulesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,6 +101,7 @@ public class PostAlertingHeartbeatRulesRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -109,10 +113,12 @@ public class PostAlertingHeartbeatRulesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(HeartBeatRule body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAlertingHeartbeatRulesRequest request;
@@ -121,19 +127,25 @@ public class PostAlertingHeartbeatRulesRequest {
 			request = new PostAlertingHeartbeatRulesRequest();
 		}
 
+		
 		public Builder withBody(HeartBeatRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(HeartBeatRule body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAlertingHeartbeatRulesRequest build() {

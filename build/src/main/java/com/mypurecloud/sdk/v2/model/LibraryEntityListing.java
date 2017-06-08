@@ -46,7 +46,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.total = total;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public LibraryEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class LibraryEntityListing  implements Serializable, PagedResource<Librar
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

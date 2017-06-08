@@ -35,7 +35,7 @@ public class AggregateViewData  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public AggregateViewData stats(StatisticalSummary stats) {
@@ -52,6 +52,7 @@ public class AggregateViewData  implements Serializable {
     this.stats = stats;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

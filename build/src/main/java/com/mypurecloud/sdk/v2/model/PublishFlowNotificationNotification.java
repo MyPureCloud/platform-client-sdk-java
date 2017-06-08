@@ -37,7 +37,7 @@ public class PublishFlowNotificationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PublishFlowNotificationNotification type(String type) {
@@ -54,7 +54,7 @@ public class PublishFlowNotificationNotification  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public PublishFlowNotificationNotification message(String message) {
@@ -71,7 +71,7 @@ public class PublishFlowNotificationNotification  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public PublishFlowNotificationNotification dateCreated(Date dateCreated) {
@@ -88,6 +88,7 @@ public class PublishFlowNotificationNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

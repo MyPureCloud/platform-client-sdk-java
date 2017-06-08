@@ -114,7 +114,7 @@ public class TrunkBase  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -132,7 +132,7 @@ public class TrunkBase  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public TrunkBase description(String description) {
@@ -149,7 +149,7 @@ public class TrunkBase  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public TrunkBase version(Integer version) {
@@ -166,7 +166,7 @@ public class TrunkBase  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -184,7 +184,7 @@ public class TrunkBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -202,7 +202,7 @@ public class TrunkBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public TrunkBase modifiedBy(String modifiedBy) {
@@ -219,7 +219,7 @@ public class TrunkBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public TrunkBase createdBy(String createdBy) {
@@ -236,7 +236,7 @@ public class TrunkBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public TrunkBase state(StateEnum state) {
@@ -253,7 +253,7 @@ public class TrunkBase  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public TrunkBase modifiedByApp(String modifiedByApp) {
@@ -270,7 +270,7 @@ public class TrunkBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public TrunkBase createdByApp(String createdByApp) {
@@ -287,7 +287,7 @@ public class TrunkBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The meta-base this trunk is based on.
    **/
@@ -305,7 +305,7 @@ public class TrunkBase  implements Serializable {
     this.trunkMetabase = trunkMetabase;
   }
 
-
+  
   /**
    **/
   public TrunkBase properties(Map<String, Object> properties) {
@@ -322,7 +322,7 @@ public class TrunkBase  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    * The type of this trunk base.
    **/
@@ -340,7 +340,7 @@ public class TrunkBase  implements Serializable {
     this.trunkType = trunkType;
   }
 
-
+  
   /**
    * Is this trunk being managed remotely. This property is synchronized with the managed property of the Edge Group to which it is assigned.
    **/
@@ -358,13 +358,14 @@ public class TrunkBase  implements Serializable {
     this.managed = managed;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

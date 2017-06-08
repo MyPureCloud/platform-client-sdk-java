@@ -46,7 +46,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.total = total;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public TrunkMetabaseEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

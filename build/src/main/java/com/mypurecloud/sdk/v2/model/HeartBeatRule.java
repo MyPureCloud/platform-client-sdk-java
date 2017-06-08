@@ -103,7 +103,7 @@ public class HeartBeatRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -121,7 +121,7 @@ public class HeartBeatRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The value that identifies the sender of the heartbeat.
    **/
@@ -139,7 +139,7 @@ public class HeartBeatRule  implements Serializable {
     this.senderId = senderId;
   }
 
-
+  
   /**
    * The number of minutes to wait before alerting missing heartbeats.
    **/
@@ -157,7 +157,7 @@ public class HeartBeatRule  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-
+  
   /**
    * Indicates if the rule is enabled.
    **/
@@ -175,14 +175,14 @@ public class HeartBeatRule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Indicates if the rule is in alarm state.")
   @JsonProperty("inAlarm")
   public Boolean getInAlarm() {
     return inAlarm;
   }
 
-
+  
   /**
    * The ids of users who will be notified of alarm state change.
    **/
@@ -200,7 +200,7 @@ public class HeartBeatRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -218,7 +218,7 @@ public class HeartBeatRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    * The type of system the will be generating the heartbeat.
    **/
@@ -236,13 +236,14 @@ public class HeartBeatRule  implements Serializable {
     this.ruleType = ruleType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

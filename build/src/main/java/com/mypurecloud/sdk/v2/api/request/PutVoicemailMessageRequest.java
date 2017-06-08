@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PutVoicemailMessageRequest {
+    
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -45,6 +46,7 @@ public class PutVoicemailMessageRequest {
 	    return this;
 	}
 
+	
 	private VoicemailMessage body;
 	public VoicemailMessage getBody() {
 		return this.body;
@@ -59,6 +61,7 @@ public class PutVoicemailMessageRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,6 +98,7 @@ public class PutVoicemailMessageRequest {
                 .withPathParameter("messageId", messageId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -106,10 +110,12 @@ public class PutVoicemailMessageRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String messageId, VoicemailMessage body) {
 	    return new Builder()
 	            .withRequiredParams(messageId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutVoicemailMessageRequest request;
@@ -118,20 +124,26 @@ public class PutVoicemailMessageRequest {
 			request = new PutVoicemailMessageRequest();
 		}
 
+		
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
+		
 		public Builder withBody(VoicemailMessage body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String messageId, VoicemailMessage body) {
 			request.setMessageId(messageId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutVoicemailMessageRequest build() {

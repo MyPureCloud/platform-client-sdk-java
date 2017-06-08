@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundEventsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -74,6 +75,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -88,6 +90,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private String filterType;
 	public String getFilterType() {
 		return this.filterType;
@@ -102,6 +105,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private String category;
 	public String getCategory() {
 		return this.category;
@@ -116,6 +120,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private String level;
 	public String getLevel() {
 		return this.level;
@@ -130,6 +135,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -144,6 +150,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -158,6 +165,7 @@ public class GetOutboundEventsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -194,7 +202,8 @@ public class GetOutboundEventsRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -205,6 +214,7 @@ public class GetOutboundEventsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOutboundEventsRequest request;
@@ -213,35 +223,44 @@ public class GetOutboundEventsRequest {
 			request = new GetOutboundEventsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withFilterType(String filterType) {
 			request.setFilterType(filterType);
 			return this;
 		}
+		
 		public Builder withCategory(String category) {
 			request.setCategory(category);
 			return this;
 		}
+		
 		public Builder withLevel(String level) {
 			request.setLevel(level);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 
 
 		public GetOutboundEventsRequest build() {

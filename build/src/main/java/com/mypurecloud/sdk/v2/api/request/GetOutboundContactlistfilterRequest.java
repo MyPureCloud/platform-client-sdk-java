@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundContactlistfilterRequest {
+    
 	private String contactListFilterId;
 	public String getContactListFilterId() {
 		return this.contactListFilterId;
@@ -74,6 +75,7 @@ public class GetOutboundContactlistfilterRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class GetOutboundContactlistfilterRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/contactlistfilters/{contactListFilterId}")
                 .withPathParameter("contactListFilterId", contactListFilterId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class GetOutboundContactlistfilterRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListFilterId) {
 	    return new Builder()
 	            .withRequiredParams(contactListFilterId);
 	}
+	
 
 	public static class Builder {
 		private final GetOutboundContactlistfilterRequest request;
@@ -126,15 +131,20 @@ public class GetOutboundContactlistfilterRequest {
 			request = new GetOutboundContactlistfilterRequest();
 		}
 
+		
 		public Builder withContactListFilterId(String contactListFilterId) {
 			request.setContactListFilterId(contactListFilterId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListFilterId) {
 			request.setContactListFilterId(contactListFilterId);
+			
 			return this;
 		}
+		
 
 
 		public GetOutboundContactlistfilterRequest build() {

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementDocumentsRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -78,6 +80,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -92,6 +95,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -106,6 +110,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -120,6 +125,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -134,6 +140,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -148,6 +155,7 @@ public class GetContentmanagementDocumentsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -189,7 +197,8 @@ public class GetContentmanagementDocumentsRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -200,10 +209,12 @@ public class GetContentmanagementDocumentsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementDocumentsRequest request;
@@ -212,39 +223,50 @@ public class GetContentmanagementDocumentsRequest {
 			request = new GetContentmanagementDocumentsRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementDocumentsRequest build() {

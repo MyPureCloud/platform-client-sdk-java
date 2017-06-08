@@ -78,7 +78,7 @@ public class CampaignRuleAction  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignRuleAction parameters(CampaignRuleParameters parameters) {
@@ -95,7 +95,7 @@ public class CampaignRuleAction  implements Serializable {
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public CampaignRuleAction actionType(ActionTypeEnum actionType) {
@@ -112,7 +112,7 @@ public class CampaignRuleAction  implements Serializable {
     this.actionType = actionType;
   }
 
-
+  
   /**
    **/
   public CampaignRuleAction campaignRuleActionEntities(CampaignRuleActionEntities campaignRuleActionEntities) {
@@ -129,6 +129,7 @@ public class CampaignRuleAction  implements Serializable {
     this.campaignRuleActionEntities = campaignRuleActionEntities;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

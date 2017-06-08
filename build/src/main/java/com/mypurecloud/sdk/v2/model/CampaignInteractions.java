@@ -42,7 +42,7 @@ public class CampaignInteractions  implements Serializable {
     this.campaign = campaign;
   }
 
-
+  
   /**
    **/
   public CampaignInteractions pendingInteractions(List<CampaignInteraction> pendingInteractions) {
@@ -59,7 +59,7 @@ public class CampaignInteractions  implements Serializable {
     this.pendingInteractions = pendingInteractions;
   }
 
-
+  
   /**
    **/
   public CampaignInteractions proceedingInteractions(List<CampaignInteraction> proceedingInteractions) {
@@ -76,7 +76,7 @@ public class CampaignInteractions  implements Serializable {
     this.proceedingInteractions = proceedingInteractions;
   }
 
-
+  
   /**
    **/
   public CampaignInteractions previewingInteractions(List<CampaignInteraction> previewingInteractions) {
@@ -93,7 +93,7 @@ public class CampaignInteractions  implements Serializable {
     this.previewingInteractions = previewingInteractions;
   }
 
-
+  
   /**
    **/
   public CampaignInteractions interactingInteractions(List<CampaignInteraction> interactingInteractions) {
@@ -110,7 +110,7 @@ public class CampaignInteractions  implements Serializable {
     this.interactingInteractions = interactingInteractions;
   }
 
-
+  
   /**
    **/
   public CampaignInteractions scheduledInteractions(List<CampaignInteraction> scheduledInteractions) {
@@ -127,6 +127,7 @@ public class CampaignInteractions  implements Serializable {
     this.scheduledInteractions = scheduledInteractions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

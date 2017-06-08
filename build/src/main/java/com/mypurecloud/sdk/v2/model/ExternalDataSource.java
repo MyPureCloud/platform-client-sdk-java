@@ -70,7 +70,7 @@ public class ExternalDataSource  implements Serializable {
     this.platform = platform;
   }
 
-
+  
   /**
    * An URL that links to the source record that contributed data to the associated entity.
    **/
@@ -88,6 +88,7 @@ public class ExternalDataSource  implements Serializable {
     this.url = url;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

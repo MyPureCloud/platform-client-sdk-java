@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetConversationRecordingsRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class GetConversationRecordingsRequest {
 	    return this;
 	}
 
+	
 	private Integer maxWaitMs;
 	public Integer getMaxWaitMs() {
 		return this.maxWaitMs;
@@ -66,6 +68,7 @@ public class GetConversationRecordingsRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -80,6 +83,7 @@ public class GetConversationRecordingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -113,7 +117,8 @@ public class GetConversationRecordingsRequest {
                 .withQueryParameters("maxWaitMs", "", maxWaitMs)
         
                 .withQueryParameters("formatId", "", formatId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -124,10 +129,12 @@ public class GetConversationRecordingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
+	
 
 	public static class Builder {
 		private final GetConversationRecordingsRequest request;
@@ -136,23 +143,30 @@ public class GetConversationRecordingsRequest {
 			request = new GetConversationRecordingsRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withMaxWaitMs(Integer maxWaitMs) {
 			request.setMaxWaitMs(maxWaitMs);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
+			
 			return this;
 		}
+		
 
 
 		public GetConversationRecordingsRequest build() {

@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class GetGreetingMediaRequest {
+    
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -40,6 +41,7 @@ public class GetGreetingMediaRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -54,6 +56,7 @@ public class GetGreetingMediaRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,7 +88,8 @@ public class GetGreetingMediaRequest {
                 .withPathParameter("greetingId", greetingId)
         
                 .withQueryParameters("formatId", "", formatId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -96,10 +100,12 @@ public class GetGreetingMediaRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String greetingId) {
 	    return new Builder()
 	            .withRequiredParams(greetingId);
 	}
+	
 
 	public static class Builder {
 		private final GetGreetingMediaRequest request;
@@ -108,19 +114,25 @@ public class GetGreetingMediaRequest {
 			request = new GetGreetingMediaRequest();
 		}
 
+		
 		public Builder withGreetingId(String greetingId) {
 			request.setGreetingId(greetingId);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String greetingId) {
 			request.setGreetingId(greetingId);
+			
 			return this;
 		}
+		
 
 
 		public GetGreetingMediaRequest build() {

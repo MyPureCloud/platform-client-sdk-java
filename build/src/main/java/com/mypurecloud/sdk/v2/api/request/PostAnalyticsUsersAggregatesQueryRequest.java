@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersAggregatesQueryRequest {
+    
 	private AggregationQuery body;
 	public AggregationQuery getBody() {
 		return this.body;
@@ -62,6 +63,7 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +93,7 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/users/aggregates/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -102,10 +105,12 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(AggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsUsersAggregatesQueryRequest request;
@@ -114,15 +119,20 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 			request = new PostAnalyticsUsersAggregatesQueryRequest();
 		}
 
+		
 		public Builder withBody(AggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(AggregationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsUsersAggregatesQueryRequest build() {

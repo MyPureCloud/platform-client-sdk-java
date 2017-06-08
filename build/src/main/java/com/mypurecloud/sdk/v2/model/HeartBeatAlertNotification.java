@@ -115,7 +115,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification name(String name) {
@@ -132,7 +132,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification senderId(String senderId) {
@@ -149,7 +149,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.senderId = senderId;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification heartBeatTimeoutInMinutes(BigDecimal heartBeatTimeoutInMinutes) {
@@ -166,7 +166,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification ruleId(String ruleId) {
@@ -183,7 +183,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.ruleId = ruleId;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification startDate(Date startDate) {
@@ -200,7 +200,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification endDate(Date endDate) {
@@ -217,7 +217,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.endDate = endDate;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification notificationUsers(List<HeartBeatAlertNotificationNotificationUsers> notificationUsers) {
@@ -234,7 +234,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -251,7 +251,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    **/
   public HeartBeatAlertNotification ruleType(RuleTypeEnum ruleType) {
@@ -268,6 +268,7 @@ public class HeartBeatAlertNotification  implements Serializable {
     this.ruleType = ruleType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,7 +34,7 @@ public class EmailAddress  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    **/
   public EmailAddress name(String name) {
@@ -51,6 +51,7 @@ public class EmailAddress  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

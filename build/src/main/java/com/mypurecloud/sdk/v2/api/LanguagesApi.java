@@ -45,6 +45,7 @@ public class LanguagesApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -69,6 +70,7 @@ public class LanguagesApi {
   private DeleteLanguageRequest createDeleteLanguageRequest(String languageId) {
     return DeleteLanguageRequest.builder()
             .withLanguageId(languageId)
+    
             .build();
   }
 
@@ -119,6 +121,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Delete Language
    * 
@@ -143,6 +146,7 @@ public class LanguagesApi {
   private DeleteRoutingLanguageRequest createDeleteRoutingLanguageRequest(String languageId) {
     return DeleteRoutingLanguageRequest.builder()
             .withLanguageId(languageId)
+    
             .build();
   }
 
@@ -193,6 +197,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -219,6 +224,7 @@ public class LanguagesApi {
   private GetLanguageRequest createGetLanguageRequest(String languageId) {
     return GetLanguageRequest.builder()
             .withLanguageId(languageId)
+    
             .build();
   }
 
@@ -270,6 +276,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get the list of supported languages. (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -302,12 +309,13 @@ public class LanguagesApi {
   private GetLanguagesRequest createGetLanguagesRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
     return GetLanguagesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -359,6 +367,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get all available languages for translation
    * 
@@ -381,7 +390,8 @@ public class LanguagesApi {
   }
 
   private GetLanguagesTranslationsRequest createGetLanguagesTranslationsRequest() {
-    return GetLanguagesTranslationsRequest.builder()            .build();
+    return GetLanguagesTranslationsRequest.builder()
+            .build();
   }
 
   /**
@@ -432,6 +442,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get the builtin translation for a language
    * 
@@ -458,6 +469,7 @@ public class LanguagesApi {
   private GetLanguagesTranslationsBuiltinRequest createGetLanguagesTranslationsBuiltinRequest(String language) {
     return GetLanguagesTranslationsBuiltinRequest.builder()
             .withLanguage(language)
+    
             .build();
   }
 
@@ -509,6 +521,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get effective translation for an organization by language
    * 
@@ -535,6 +548,7 @@ public class LanguagesApi {
   private GetLanguagesTranslationsOrganizationRequest createGetLanguagesTranslationsOrganizationRequest(String language) {
     return GetLanguagesTranslationsOrganizationRequest.builder()
             .withLanguage(language)
+    
             .build();
   }
 
@@ -586,6 +600,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get effective language translation for a user
    * 
@@ -612,6 +627,7 @@ public class LanguagesApi {
   private GetLanguagesTranslationsUserRequest createGetLanguagesTranslationsUserRequest(String userId) {
     return GetLanguagesTranslationsUserRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -663,6 +679,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Get language
    * 
@@ -689,6 +706,7 @@ public class LanguagesApi {
   private GetRoutingLanguageRequest createGetRoutingLanguageRequest(String languageId) {
     return GetRoutingLanguageRequest.builder()
             .withLanguageId(languageId)
+    
             .build();
   }
 
@@ -740,6 +758,7 @@ public class LanguagesApi {
     }
   }
 
+  
   /**
    * Create Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -766,6 +785,7 @@ public class LanguagesApi {
   private PostLanguagesRequest createPostLanguagesRequest(Language body) {
     return PostLanguagesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -817,4 +837,5 @@ public class LanguagesApi {
     }
   }
 
+  
 }

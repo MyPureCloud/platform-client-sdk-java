@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCallabletimesetRequest {
+    
 	private String callableTimeSetId;
 	public String getCallableTimeSetId() {
 		return this.callableTimeSetId;
@@ -74,6 +75,7 @@ public class PutOutboundCallabletimesetRequest {
 	    return this;
 	}
 
+	
 	private CallableTimeSet body;
 	public CallableTimeSet getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundCallabletimesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundCallabletimesetRequest {
                 .withPathParameter("callableTimeSetId", callableTimeSetId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundCallabletimesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String callableTimeSetId, CallableTimeSet body) {
 	    return new Builder()
 	            .withRequiredParams(callableTimeSetId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundCallabletimesetRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundCallabletimesetRequest {
 			request = new PutOutboundCallabletimesetRequest();
 		}
 
+		
 		public Builder withCallableTimeSetId(String callableTimeSetId) {
 			request.setCallableTimeSetId(callableTimeSetId);
 			return this;
 		}
+		
 		public Builder withBody(CallableTimeSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String callableTimeSetId, CallableTimeSet body) {
 			request.setCallableTimeSetId(callableTimeSetId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundCallabletimesetRequest build() {

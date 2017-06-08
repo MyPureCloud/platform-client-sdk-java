@@ -34,7 +34,7 @@ public class IntradayDataUpdateNotificationScheduleDataPerInterval  implements S
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationScheduleDataPerInterval scheduledTimeSeconds(Integer scheduledTimeSeconds) {
@@ -51,6 +51,7 @@ public class IntradayDataUpdateNotificationScheduleDataPerInterval  implements S
     this.scheduledTimeSeconds = scheduledTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

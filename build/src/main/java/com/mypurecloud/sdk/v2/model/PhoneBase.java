@@ -82,7 +82,7 @@ public class PhoneBase  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -100,7 +100,7 @@ public class PhoneBase  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PhoneBase description(String description) {
@@ -117,7 +117,7 @@ public class PhoneBase  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public PhoneBase version(Integer version) {
@@ -134,7 +134,7 @@ public class PhoneBase  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -152,7 +152,7 @@ public class PhoneBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -170,7 +170,7 @@ public class PhoneBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public PhoneBase modifiedBy(String modifiedBy) {
@@ -187,7 +187,7 @@ public class PhoneBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public PhoneBase createdBy(String createdBy) {
@@ -204,7 +204,7 @@ public class PhoneBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public PhoneBase state(StateEnum state) {
@@ -221,7 +221,7 @@ public class PhoneBase  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public PhoneBase modifiedByApp(String modifiedByApp) {
@@ -238,7 +238,7 @@ public class PhoneBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public PhoneBase createdByApp(String createdByApp) {
@@ -255,7 +255,7 @@ public class PhoneBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * A phone metabase is essentially a database for storing phone configuration settings, which simplifies the configuration process.
    **/
@@ -273,7 +273,7 @@ public class PhoneBase  implements Serializable {
     this.phoneMetaBase = phoneMetaBase;
   }
 
-
+  
   /**
    * The list of linebases associated with the phone base.
    **/
@@ -291,7 +291,7 @@ public class PhoneBase  implements Serializable {
     this.lines = lines;
   }
 
-
+  
   /**
    **/
   public PhoneBase properties(Map<String, Object> properties) {
@@ -308,7 +308,7 @@ public class PhoneBase  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public PhoneBase capabilities(PhoneCapabilities capabilities) {
@@ -325,13 +325,14 @@ public class PhoneBase  implements Serializable {
     this.capabilities = capabilities;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

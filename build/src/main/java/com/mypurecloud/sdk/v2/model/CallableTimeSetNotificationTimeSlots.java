@@ -36,7 +36,7 @@ public class CallableTimeSetNotificationTimeSlots  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotificationTimeSlots stopTime(String stopTime) {
@@ -53,7 +53,7 @@ public class CallableTimeSetNotificationTimeSlots  implements Serializable {
     this.stopTime = stopTime;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotificationTimeSlots day(Integer day) {
@@ -70,7 +70,7 @@ public class CallableTimeSetNotificationTimeSlots  implements Serializable {
     this.day = day;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotificationTimeSlots additionalProperties(Object additionalProperties) {
@@ -87,6 +87,7 @@ public class CallableTimeSetNotificationTimeSlots  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

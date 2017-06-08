@@ -27,7 +27,7 @@ public class VoicemailUserPolicy  implements Serializable {
     return enabled;
   }
 
-
+  
   /**
    * The number of seconds to ring the user's phone before a call is transfered to voicemail
    **/
@@ -45,7 +45,7 @@ public class VoicemailUserPolicy  implements Serializable {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
   }
 
-
+  
   /**
    * The user's PIN to access their voicemail. This property is only used for updates and never provided otherwise to ensure security
    **/
@@ -63,13 +63,14 @@ public class VoicemailUserPolicy  implements Serializable {
     this.pin = pin;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

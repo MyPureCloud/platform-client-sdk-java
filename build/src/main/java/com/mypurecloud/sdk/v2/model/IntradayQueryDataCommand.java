@@ -42,7 +42,7 @@ public class IntradayQueryDataCommand  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * End date of the requested date range in ISO-8601 format.  Must be within the same 7 day schedule week as defined by the management unit's start day of week
    **/
@@ -60,7 +60,7 @@ public class IntradayQueryDataCommand  implements Serializable {
     this.endDate = endDate;
   }
 
-
+  
   /**
    * The metrics to validate
    **/
@@ -78,7 +78,7 @@ public class IntradayQueryDataCommand  implements Serializable {
     this.metrics = metrics;
   }
 
-
+  
   /**
    * The queue IDs for which to fetch data.  Omitting or passing an empty list will return all available queues
    **/
@@ -96,7 +96,7 @@ public class IntradayQueryDataCommand  implements Serializable {
     this.queueIds = queueIds;
   }
 
-
+  
   /**
    * The period/interval for which to aggregate the data.  Optional, defaults to 15
    **/
@@ -114,6 +114,7 @@ public class IntradayQueryDataCommand  implements Serializable {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

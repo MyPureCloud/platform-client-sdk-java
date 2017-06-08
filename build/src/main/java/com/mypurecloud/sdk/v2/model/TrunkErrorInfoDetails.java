@@ -35,7 +35,7 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public TrunkErrorInfoDetails message(String message) {
@@ -52,7 +52,7 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public TrunkErrorInfoDetails hostname(String hostname) {
@@ -69,6 +69,7 @@ public class TrunkErrorInfoDetails  implements Serializable {
     this.hostname = hostname;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

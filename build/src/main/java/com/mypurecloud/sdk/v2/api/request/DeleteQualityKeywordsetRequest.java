@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class DeleteQualityKeywordsetRequest {
+    
 	private String keywordSetId;
 	public String getKeywordSetId() {
 		return this.keywordSetId;
@@ -52,6 +53,7 @@ public class DeleteQualityKeywordsetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class DeleteQualityKeywordsetRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/quality/keywordsets/{keywordSetId}")
                 .withPathParameter("keywordSetId", keywordSetId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class DeleteQualityKeywordsetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String keywordSetId) {
 	    return new Builder()
 	            .withRequiredParams(keywordSetId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteQualityKeywordsetRequest request;
@@ -104,15 +109,20 @@ public class DeleteQualityKeywordsetRequest {
 			request = new DeleteQualityKeywordsetRequest();
 		}
 
+		
 		public Builder withKeywordSetId(String keywordSetId) {
 			request.setKeywordSetId(keywordSetId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String keywordSetId) {
 			request.setKeywordSetId(keywordSetId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteQualityKeywordsetRequest build() {

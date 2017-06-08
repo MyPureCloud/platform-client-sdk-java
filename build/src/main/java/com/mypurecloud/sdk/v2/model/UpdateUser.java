@@ -82,7 +82,7 @@ public class UpdateUser  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UpdateUser name(String name) {
@@ -99,7 +99,7 @@ public class UpdateUser  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UpdateUser chat(Chat chat) {
@@ -116,7 +116,7 @@ public class UpdateUser  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public UpdateUser department(String department) {
@@ -133,7 +133,7 @@ public class UpdateUser  implements Serializable {
     this.department = department;
   }
 
-
+  
   /**
    **/
   public UpdateUser email(String email) {
@@ -150,7 +150,7 @@ public class UpdateUser  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    **/
   public UpdateUser primaryContactInfo(List<Contact> primaryContactInfo) {
@@ -167,7 +167,7 @@ public class UpdateUser  implements Serializable {
     this.primaryContactInfo = primaryContactInfo;
   }
 
-
+  
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -185,7 +185,7 @@ public class UpdateUser  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    **/
   public UpdateUser title(String title) {
@@ -202,7 +202,7 @@ public class UpdateUser  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public UpdateUser username(String username) {
@@ -219,7 +219,7 @@ public class UpdateUser  implements Serializable {
     this.username = username;
   }
 
-
+  
   /**
    **/
   public UpdateUser manager(String manager) {
@@ -236,7 +236,7 @@ public class UpdateUser  implements Serializable {
     this.manager = manager;
   }
 
-
+  
   /**
    **/
   public UpdateUser images(List<UserImage> images) {
@@ -253,7 +253,7 @@ public class UpdateUser  implements Serializable {
     this.images = images;
   }
 
-
+  
   /**
    * This value should be the current version of the user. The current version can be obtained with a GET on the user before doing a PATCH.
    **/
@@ -271,7 +271,7 @@ public class UpdateUser  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Skills possessed by the user
    **/
@@ -289,7 +289,7 @@ public class UpdateUser  implements Serializable {
     this.profileSkills = profileSkills;
   }
 
-
+  
   /**
    * The user placement at each site location.
    **/
@@ -307,7 +307,7 @@ public class UpdateUser  implements Serializable {
     this.locations = locations;
   }
 
-
+  
   /**
    * The groups the user is a member of
    **/
@@ -325,7 +325,7 @@ public class UpdateUser  implements Serializable {
     this.groups = groups;
   }
 
-
+  
   /**
    * The state of the user. This property can be used to restore a deleted user or transition between active and inactive. If specified, it is the only modifiable field.
    **/
@@ -343,13 +343,14 @@ public class UpdateUser  implements Serializable {
     this.state = state;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

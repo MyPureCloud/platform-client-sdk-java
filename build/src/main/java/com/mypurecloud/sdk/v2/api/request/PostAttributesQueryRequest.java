@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AttributeEntityListing;
 import com.mypurecloud.sdk.v2.model.AttributeQueryRequest;
 
 public class PostAttributesQueryRequest {
+    
 	private AttributeQueryRequest body;
 	public AttributeQueryRequest getBody() {
 		return this.body;
@@ -38,6 +39,7 @@ public class PostAttributesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,6 +69,7 @@ public class PostAttributesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/attributes/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -78,10 +81,12 @@ public class PostAttributesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(AttributeQueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAttributesQueryRequest request;
@@ -90,15 +95,20 @@ public class PostAttributesQueryRequest {
 			request = new PostAttributesQueryRequest();
 		}
 
+		
 		public Builder withBody(AttributeQueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(AttributeQueryRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAttributesQueryRequest build() {

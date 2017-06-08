@@ -38,7 +38,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationAddress nameRaw(String nameRaw) {
@@ -55,7 +55,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.nameRaw = nameRaw;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationAddress addressNormalized(String addressNormalized) {
@@ -72,7 +72,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.addressNormalized = addressNormalized;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationAddress addressRaw(String addressRaw) {
@@ -89,7 +89,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.addressRaw = addressRaw;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationAddress addressDisplayable(String addressDisplayable) {
@@ -106,7 +106,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.addressDisplayable = addressDisplayable;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationAddress additionalProperties(Object additionalProperties) {
@@ -123,6 +123,7 @@ public class ConversationNotificationAddress  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

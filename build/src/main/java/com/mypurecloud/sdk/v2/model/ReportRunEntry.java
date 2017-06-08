@@ -73,7 +73,7 @@ public class ReportRunEntry  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry name(String name) {
@@ -90,7 +90,7 @@ public class ReportRunEntry  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry reportId(String reportId) {
@@ -107,7 +107,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportId = reportId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -125,7 +125,7 @@ public class ReportRunEntry  implements Serializable {
     this.runTime = runTime;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry runStatus(RunStatusEnum runStatus) {
@@ -142,7 +142,7 @@ public class ReportRunEntry  implements Serializable {
     this.runStatus = runStatus;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry errorMessage(String errorMessage) {
@@ -159,7 +159,7 @@ public class ReportRunEntry  implements Serializable {
     this.errorMessage = errorMessage;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry runDurationMsec(Long runDurationMsec) {
@@ -176,7 +176,7 @@ public class ReportRunEntry  implements Serializable {
     this.runDurationMsec = runDurationMsec;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry reportUrl(String reportUrl) {
@@ -193,7 +193,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportUrl = reportUrl;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry reportFormat(String reportFormat) {
@@ -210,7 +210,7 @@ public class ReportRunEntry  implements Serializable {
     this.reportFormat = reportFormat;
   }
 
-
+  
   /**
    **/
   public ReportRunEntry scheduleUri(String scheduleUri) {
@@ -227,13 +227,14 @@ public class ReportRunEntry  implements Serializable {
     this.scheduleUri = scheduleUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

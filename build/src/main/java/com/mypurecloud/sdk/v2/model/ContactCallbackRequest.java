@@ -38,7 +38,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.campaignId = campaignId;
   }
 
-
+  
   /**
    * Contact list identifier
    **/
@@ -56,7 +56,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.contactListId = contactListId;
   }
 
-
+  
   /**
    * Contact identifier
    **/
@@ -74,7 +74,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.contactId = contactId;
   }
 
-
+  
   /**
    * Name of the phone column containing the number to be called
    **/
@@ -92,7 +92,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.phoneColumn = phoneColumn;
   }
 
-
+  
   /**
    * The scheduled time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ\", example = \"2016-01-02T16:59:59\"
    **/
@@ -110,6 +110,7 @@ public class ContactCallbackRequest  implements Serializable {
     this.schedule = schedule;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

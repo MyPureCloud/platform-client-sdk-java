@@ -40,7 +40,7 @@ public class RuleSetNotificationActions  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationActions actionTypeName(String actionTypeName) {
@@ -57,7 +57,7 @@ public class RuleSetNotificationActions  implements Serializable {
     this.actionTypeName = actionTypeName;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationActions updateOption(String updateOption) {
@@ -74,7 +74,7 @@ public class RuleSetNotificationActions  implements Serializable {
     this.updateOption = updateOption;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationActions properties(Map<String, String> properties) {
@@ -91,7 +91,7 @@ public class RuleSetNotificationActions  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationActions additionalProperties(Object additionalProperties) {
@@ -108,6 +108,7 @@ public class RuleSetNotificationActions  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

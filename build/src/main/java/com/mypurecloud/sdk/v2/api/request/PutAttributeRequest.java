@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AttributeEntityListing;
 import com.mypurecloud.sdk.v2.model.AttributeQueryRequest;
 
 public class PutAttributeRequest {
+    
 	private String attributeId;
 	public String getAttributeId() {
 		return this.attributeId;
@@ -38,6 +39,7 @@ public class PutAttributeRequest {
 	    return this;
 	}
 
+	
 	private Attribute body;
 	public Attribute getBody() {
 		return this.body;
@@ -52,6 +54,7 @@ public class PutAttributeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,6 +91,7 @@ public class PutAttributeRequest {
                 .withPathParameter("attributeId", attributeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -99,10 +103,12 @@ public class PutAttributeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String attributeId, Attribute body) {
 	    return new Builder()
 	            .withRequiredParams(attributeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAttributeRequest request;
@@ -111,20 +117,26 @@ public class PutAttributeRequest {
 			request = new PutAttributeRequest();
 		}
 
+		
 		public Builder withAttributeId(String attributeId) {
 			request.setAttributeId(attributeId);
 			return this;
 		}
+		
 		public Builder withBody(Attribute body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String attributeId, Attribute body) {
 			request.setAttributeId(attributeId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAttributeRequest build() {

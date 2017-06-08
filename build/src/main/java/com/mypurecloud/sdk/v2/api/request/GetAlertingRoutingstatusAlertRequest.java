@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingRoutingstatusAlertRequest {
+    
 	private String alertId;
 	public String getAlertId() {
 		return this.alertId;
@@ -53,6 +54,7 @@ public class GetAlertingRoutingstatusAlertRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -67,6 +69,7 @@ public class GetAlertingRoutingstatusAlertRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,7 +101,8 @@ public class GetAlertingRoutingstatusAlertRequest {
                 .withPathParameter("alertId", alertId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -109,10 +113,12 @@ public class GetAlertingRoutingstatusAlertRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String alertId) {
 	    return new Builder()
 	            .withRequiredParams(alertId);
 	}
+	
 
 	public static class Builder {
 		private final GetAlertingRoutingstatusAlertRequest request;
@@ -121,19 +127,25 @@ public class GetAlertingRoutingstatusAlertRequest {
 			request = new GetAlertingRoutingstatusAlertRequest();
 		}
 
+		
 		public Builder withAlertId(String alertId) {
 			request.setAlertId(alertId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String alertId) {
 			request.setAlertId(alertId);
+			
 			return this;
 		}
+		
 
 
 		public GetAlertingRoutingstatusAlertRequest build() {

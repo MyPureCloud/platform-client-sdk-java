@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
 	    return this;
 	}
 
+	
 	private DomainLogicalInterface body;
 	public DomainLogicalInterface getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, DomainLogicalInterface body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgeLogicalinterfacesRequest request;
@@ -171,20 +177,26 @@ public class PostTelephonyProvidersEdgeLogicalinterfacesRequest {
 			request = new PostTelephonyProvidersEdgeLogicalinterfacesRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withBody(DomainLogicalInterface body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, DomainLogicalInterface body) {
 			request.setEdgeId(edgeId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgeLogicalinterfacesRequest build() {

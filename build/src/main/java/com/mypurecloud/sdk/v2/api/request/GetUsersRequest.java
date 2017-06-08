@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUsersRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -62,6 +63,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -76,6 +78,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -90,6 +93,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -104,6 +108,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -118,6 +123,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private String state;
 	public String getState() {
 		return this.state;
@@ -132,6 +138,7 @@ public class GetUsersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -166,7 +173,8 @@ public class GetUsersRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("state", "", state)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -177,6 +185,7 @@ public class GetUsersRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetUsersRequest request;
@@ -185,31 +194,39 @@ public class GetUsersRequest {
 			request = new GetUsersRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withState(String state) {
 			request.setState(state);
 			return this;
 		}
+		
 
+		
 
 
 		public GetUsersRequest build() {

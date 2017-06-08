@@ -74,7 +74,7 @@ public class SystemPromptAsset  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset name(String name) {
@@ -91,7 +91,7 @@ public class SystemPromptAsset  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset promptId(String promptId) {
@@ -108,7 +108,7 @@ public class SystemPromptAsset  implements Serializable {
     this.promptId = promptId;
   }
 
-
+  
   /**
    * The asset resource language
    **/
@@ -126,7 +126,7 @@ public class SystemPromptAsset  implements Serializable {
     this.language = language;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset durationSeconds(Double durationSeconds) {
@@ -143,7 +143,7 @@ public class SystemPromptAsset  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset mediaUri(String mediaUri) {
@@ -160,7 +160,7 @@ public class SystemPromptAsset  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset ttsString(String ttsString) {
@@ -177,7 +177,7 @@ public class SystemPromptAsset  implements Serializable {
     this.ttsString = ttsString;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset uploadUri(String uploadUri) {
@@ -194,7 +194,7 @@ public class SystemPromptAsset  implements Serializable {
     this.uploadUri = uploadUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset uploadStatus(UploadStatusEnum uploadStatus) {
@@ -211,7 +211,7 @@ public class SystemPromptAsset  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset hasDefault(Boolean hasDefault) {
@@ -228,7 +228,7 @@ public class SystemPromptAsset  implements Serializable {
     this.hasDefault = hasDefault;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset languageDefault(Boolean languageDefault) {
@@ -245,7 +245,7 @@ public class SystemPromptAsset  implements Serializable {
     this.languageDefault = languageDefault;
   }
 
-
+  
   /**
    **/
   public SystemPromptAsset tags(Map<String, List<String>> tags) {
@@ -262,13 +262,14 @@ public class SystemPromptAsset  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

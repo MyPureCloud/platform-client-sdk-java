@@ -38,7 +38,7 @@ public class FacetInfo  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The entries resulting from this facet.
    **/
@@ -56,6 +56,7 @@ public class FacetInfo  implements Serializable {
     this.entries = entries;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

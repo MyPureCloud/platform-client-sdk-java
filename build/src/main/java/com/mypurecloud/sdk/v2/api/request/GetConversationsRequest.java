@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsRequest {
+    
 	private String communicationType;
 	public String getCommunicationType() {
 		return this.communicationType;
@@ -74,6 +75,7 @@ public class GetConversationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,7 +100,8 @@ public class GetConversationsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/conversations")
                 .withQueryParameters("communicationType", "", communicationType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -109,6 +112,7 @@ public class GetConversationsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetConversationsRequest request;
@@ -117,11 +121,14 @@ public class GetConversationsRequest {
 			request = new GetConversationsRequest();
 		}
 
+		
 		public Builder withCommunicationType(String communicationType) {
 			request.setCommunicationType(communicationType);
 			return this;
 		}
+		
 
+		
 
 
 		public GetConversationsRequest build() {

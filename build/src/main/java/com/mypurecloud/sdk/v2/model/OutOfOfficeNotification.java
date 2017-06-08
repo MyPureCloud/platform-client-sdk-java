@@ -38,7 +38,7 @@ public class OutOfOfficeNotification  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public OutOfOfficeNotification active(Boolean active) {
@@ -55,7 +55,7 @@ public class OutOfOfficeNotification  implements Serializable {
     this.active = active;
   }
 
-
+  
   /**
    **/
   public OutOfOfficeNotification startDate(Date startDate) {
@@ -72,7 +72,7 @@ public class OutOfOfficeNotification  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    **/
   public OutOfOfficeNotification endDate(Date endDate) {
@@ -89,6 +89,7 @@ public class OutOfOfficeNotification  implements Serializable {
     this.endDate = endDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

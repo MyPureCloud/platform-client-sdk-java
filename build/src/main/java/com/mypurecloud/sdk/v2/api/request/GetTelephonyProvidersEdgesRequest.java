@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -140,6 +144,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private String edgeGroupId;
 	public String getEdgeGroupId() {
 		return this.edgeGroupId;
@@ -154,6 +159,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -168,6 +174,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private Boolean managed;
 	public Boolean getManaged() {
 		return this.managed;
@@ -182,6 +189,7 @@ public class GetTelephonyProvidersEdgesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -218,7 +226,8 @@ public class GetTelephonyProvidersEdgesRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("managed", "", managed)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -229,6 +238,7 @@ public class GetTelephonyProvidersEdgesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesRequest request;
@@ -237,35 +247,44 @@ public class GetTelephonyProvidersEdgesRequest {
 			request = new GetTelephonyProvidersEdgesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withEdgeGroupId(String edgeGroupId) {
 			request.setEdgeGroupId(edgeGroupId);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withManaged(Boolean managed) {
 			request.setManaged(managed);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesRequest build() {

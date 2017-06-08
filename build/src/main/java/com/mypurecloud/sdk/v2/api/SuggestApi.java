@@ -39,6 +39,7 @@ public class SuggestApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Search using the q64 value returned from a previous search.
    * 
@@ -69,10 +70,11 @@ public class SuggestApi {
   private GetSearchRequest createGetSearchRequest(String q64, List<String> expand, Boolean profile) {
     return GetSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -124,6 +126,7 @@ public class SuggestApi {
     }
   }
 
+  
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
@@ -154,10 +157,11 @@ public class SuggestApi {
   private GetSearchSuggestRequest createGetSearchSuggestRequest(String q64, List<String> expand, Boolean profile) {
     return GetSearchSuggestRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -209,6 +213,7 @@ public class SuggestApi {
     }
   }
 
+  
   /**
    * Search resources.
    * 
@@ -237,8 +242,9 @@ public class SuggestApi {
   private PostSearchRequest createPostSearchRequest(SearchRequest body, Boolean profile) {
     return PostSearchRequest.builder()
             .withBody(body)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -290,6 +296,7 @@ public class SuggestApi {
     }
   }
 
+  
   /**
    * Suggest resources.
    * 
@@ -318,8 +325,9 @@ public class SuggestApi {
   private PostSearchSuggestRequest createPostSearchSuggestRequest(SuggestSearchRequest body, Boolean profile) {
     return PostSearchSuggestRequest.builder()
             .withBody(body)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -371,4 +379,5 @@ public class SuggestApi {
     }
   }
 
+  
 }

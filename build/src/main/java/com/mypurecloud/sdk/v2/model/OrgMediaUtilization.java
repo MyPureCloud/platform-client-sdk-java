@@ -38,7 +38,7 @@ public class OrgMediaUtilization  implements Serializable {
     this.maximumCapacity = maximumCapacity;
   }
 
-
+  
   /**
    * Defines the list of other media types that can interrupt a conversation of this media type.  Values can be: call, chat, email, or socialExpression
    **/
@@ -56,7 +56,7 @@ public class OrgMediaUtilization  implements Serializable {
     this.interruptableMediaTypes = interruptableMediaTypes;
   }
 
-
+  
   /**
    * If true, then track non-ACD conversations against utilization
    **/
@@ -74,6 +74,7 @@ public class OrgMediaUtilization  implements Serializable {
     this.includeNonAcd = includeNonAcd;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

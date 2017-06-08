@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PostResponsemanagementResponsesRequest {
+    
 	private Response body;
 	public Response getBody() {
 		return this.body;
@@ -41,6 +42,7 @@ public class PostResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -55,6 +57,7 @@ public class PostResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,6 +89,7 @@ public class PostResponsemanagementResponsesRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -97,10 +101,12 @@ public class PostResponsemanagementResponsesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Response body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostResponsemanagementResponsesRequest request;
@@ -109,19 +115,25 @@ public class PostResponsemanagementResponsesRequest {
 			request = new PostResponsemanagementResponsesRequest();
 		}
 
+		
 		public Builder withBody(Response body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Response body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostResponsemanagementResponsesRequest build() {

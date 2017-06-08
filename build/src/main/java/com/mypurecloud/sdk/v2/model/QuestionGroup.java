@@ -46,7 +46,7 @@ public class QuestionGroup  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public QuestionGroup name(String name) {
@@ -63,7 +63,7 @@ public class QuestionGroup  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public QuestionGroup type(String type) {
@@ -80,7 +80,7 @@ public class QuestionGroup  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public QuestionGroup defaultAnswersToHighest(Boolean defaultAnswersToHighest) {
@@ -97,7 +97,7 @@ public class QuestionGroup  implements Serializable {
     this.defaultAnswersToHighest = defaultAnswersToHighest;
   }
 
-
+  
   /**
    **/
   public QuestionGroup defaultAnswersToNA(Boolean defaultAnswersToNA) {
@@ -114,7 +114,7 @@ public class QuestionGroup  implements Serializable {
     this.defaultAnswersToNA = defaultAnswersToNA;
   }
 
-
+  
   /**
    **/
   public QuestionGroup naEnabled(Boolean naEnabled) {
@@ -131,7 +131,7 @@ public class QuestionGroup  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-
+  
   /**
    **/
   public QuestionGroup weight(Float weight) {
@@ -148,7 +148,7 @@ public class QuestionGroup  implements Serializable {
     this.weight = weight;
   }
 
-
+  
   /**
    **/
   public QuestionGroup manualWeight(Boolean manualWeight) {
@@ -165,7 +165,7 @@ public class QuestionGroup  implements Serializable {
     this.manualWeight = manualWeight;
   }
 
-
+  
   /**
    **/
   public QuestionGroup questions(List<Question> questions) {
@@ -182,7 +182,7 @@ public class QuestionGroup  implements Serializable {
     this.questions = questions;
   }
 
-
+  
   /**
    **/
   public QuestionGroup visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -199,6 +199,7 @@ public class QuestionGroup  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

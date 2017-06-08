@@ -41,7 +41,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDialerPreview contactId(String contactId) {
@@ -58,7 +58,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.contactId = contactId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDialerPreview contactListId(String contactListId) {
@@ -75,7 +75,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.contactListId = contactListId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDialerPreview campaignId(String campaignId) {
@@ -92,7 +92,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.campaignId = campaignId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDialerPreview phoneNumberColumns(List<CampaignNotificationPhoneColumns> phoneNumberColumns) {
@@ -109,7 +109,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDialerPreview additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class ConversationNotificationDialerPreview  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

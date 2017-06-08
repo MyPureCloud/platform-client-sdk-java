@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
 
 public class GetSearchSuggestRequest {
+    
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -38,6 +39,7 @@ public class GetSearchSuggestRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -52,6 +54,7 @@ public class GetSearchSuggestRequest {
 	    return this;
 	}
 
+	
 	private Boolean profile;
 	public Boolean getProfile() {
 		return this.profile;
@@ -66,6 +69,7 @@ public class GetSearchSuggestRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -99,7 +103,8 @@ public class GetSearchSuggestRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("profile", "", profile)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -110,10 +115,12 @@ public class GetSearchSuggestRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
+	
 
 	public static class Builder {
 		private final GetSearchSuggestRequest request;
@@ -122,23 +129,30 @@ public class GetSearchSuggestRequest {
 			request = new GetSearchSuggestRequest();
 		}
 
+		
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withProfile(Boolean profile) {
 			request.setProfile(profile);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
+			
 			return this;
 		}
+		
 
 
 		public GetSearchSuggestRequest build() {

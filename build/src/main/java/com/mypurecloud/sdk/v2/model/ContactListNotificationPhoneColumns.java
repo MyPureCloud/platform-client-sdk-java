@@ -36,7 +36,7 @@ public class ContactListNotificationPhoneColumns  implements Serializable {
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationPhoneColumns type(String type) {
@@ -53,7 +53,7 @@ public class ContactListNotificationPhoneColumns  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationPhoneColumns callableTimeColumn(String callableTimeColumn) {
@@ -70,7 +70,7 @@ public class ContactListNotificationPhoneColumns  implements Serializable {
     this.callableTimeColumn = callableTimeColumn;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationPhoneColumns additionalProperties(Object additionalProperties) {
@@ -87,6 +87,7 @@ public class ContactListNotificationPhoneColumns  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

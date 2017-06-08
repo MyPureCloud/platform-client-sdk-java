@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class PostOauthClientsRequest {
+    
 	private OAuthClient body;
 	public OAuthClient getBody() {
 		return this.body;
@@ -37,6 +38,7 @@ public class PostOauthClientsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,6 +68,7 @@ public class PostOauthClientsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/oauth/clients")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -77,10 +80,12 @@ public class PostOauthClientsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(OAuthClient body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOauthClientsRequest request;
@@ -89,15 +94,20 @@ public class PostOauthClientsRequest {
 			request = new PostOauthClientsRequest();
 		}
 
+		
 		public Builder withBody(OAuthClient body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(OAuthClient body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOauthClientsRequest build() {

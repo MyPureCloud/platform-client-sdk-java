@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetFaxDocumentContentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -39,6 +40,7 @@ public class GetFaxDocumentContentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -68,7 +70,8 @@ public class GetFaxDocumentContentRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/fax/documents/{documentId}/content")
                 .withPathParameter("documentId", documentId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -79,10 +82,12 @@ public class GetFaxDocumentContentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId) {
 	    return new Builder()
 	            .withRequiredParams(documentId);
 	}
+	
 
 	public static class Builder {
 		private final GetFaxDocumentContentRequest request;
@@ -91,15 +96,20 @@ public class GetFaxDocumentContentRequest {
 			request = new GetFaxDocumentContentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId) {
 			request.setDocumentId(documentId);
+			
 			return this;
 		}
+		
 
 
 		public GetFaxDocumentContentRequest build() {

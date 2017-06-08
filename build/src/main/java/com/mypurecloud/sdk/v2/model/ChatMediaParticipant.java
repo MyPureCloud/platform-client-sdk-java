@@ -191,7 +191,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The display friendly name of the participant.
    **/
@@ -209,7 +209,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The participant address.
    **/
@@ -227,7 +227,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -245,7 +245,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -263,7 +263,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -281,7 +281,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -299,7 +299,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -317,7 +317,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -335,7 +335,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -353,7 +353,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -371,7 +371,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * Value is true when the participant is on hold.
    **/
@@ -389,7 +389,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -407,7 +407,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -425,7 +425,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    * The PureCloud user for this participant.
    **/
@@ -443,7 +443,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The PureCloud queue for this participant.
    **/
@@ -461,7 +461,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -479,7 +479,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -497,7 +497,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -515,7 +515,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -533,7 +533,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -551,7 +551,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    * The source provider for the communication.
    **/
@@ -569,7 +569,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -587,7 +587,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -605,7 +605,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -623,7 +623,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -641,7 +641,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-
+  
   /**
    * The ID of the chat room.
    **/
@@ -659,6 +659,7 @@ public class ChatMediaParticipant  implements Serializable {
     this.roomId = roomId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

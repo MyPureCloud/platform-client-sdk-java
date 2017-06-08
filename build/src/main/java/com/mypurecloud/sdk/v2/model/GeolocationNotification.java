@@ -37,7 +37,7 @@ public class GeolocationNotification  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public GeolocationNotification type(String type) {
@@ -54,7 +54,7 @@ public class GeolocationNotification  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public GeolocationNotification country(String country) {
@@ -71,7 +71,7 @@ public class GeolocationNotification  implements Serializable {
     this.country = country;
   }
 
-
+  
   /**
    **/
   public GeolocationNotification region(String region) {
@@ -88,7 +88,7 @@ public class GeolocationNotification  implements Serializable {
     this.region = region;
   }
 
-
+  
   /**
    **/
   public GeolocationNotification city(String city) {
@@ -105,6 +105,7 @@ public class GeolocationNotification  implements Serializable {
     this.city = city;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

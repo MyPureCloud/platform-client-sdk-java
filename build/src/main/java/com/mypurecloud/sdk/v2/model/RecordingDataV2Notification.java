@@ -54,7 +54,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification name(String name) {
@@ -71,7 +71,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification dateCreated(Date dateCreated) {
@@ -88,7 +88,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification dateModified(Date dateModified) {
@@ -105,7 +105,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification workspace(DocumentDataV2NotificationWorkspace workspace) {
@@ -122,7 +122,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification createdBy(DocumentDataV2NotificationCreatedBy createdBy) {
@@ -139,7 +139,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification contentType(String contentType) {
@@ -156,7 +156,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification contentLength(Integer contentLength) {
@@ -173,7 +173,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification filename(String filename) {
@@ -190,7 +190,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.filename = filename;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification changeNumber(Integer changeNumber) {
@@ -207,7 +207,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification dateUploaded(Date dateUploaded) {
@@ -224,7 +224,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification uploadedBy(RecordingDataV2NotificationUserData uploadedBy) {
@@ -241,7 +241,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification lockInfo(RecordingDataV2NotificationLockInfo lockInfo) {
@@ -258,7 +258,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification selfUri(String selfUri) {
@@ -275,7 +275,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification durationMillieconds(Integer durationMillieconds) {
@@ -292,7 +292,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.durationMillieconds = durationMillieconds;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification conversation(DocumentDataV2NotificationWorkspace conversation) {
@@ -309,7 +309,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2Notification read(Boolean read) {
@@ -326,6 +326,7 @@ public class RecordingDataV2Notification  implements Serializable {
     this.read = read;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

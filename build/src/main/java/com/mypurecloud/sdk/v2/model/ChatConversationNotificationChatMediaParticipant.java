@@ -194,7 +194,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant name(String name) {
@@ -211,7 +211,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant address(String address) {
@@ -228,7 +228,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant startTime(Date startTime) {
@@ -245,7 +245,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant connectedTime(Date connectedTime) {
@@ -262,7 +262,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant endTime(Date endTime) {
@@ -279,7 +279,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant startHoldTime(Date startHoldTime) {
@@ -296,7 +296,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant purpose(String purpose) {
@@ -313,7 +313,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant state(StateEnum state) {
@@ -330,7 +330,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant direction(DirectionEnum direction) {
@@ -347,7 +347,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -364,7 +364,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant held(Boolean held) {
@@ -381,7 +381,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -398,7 +398,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -415,7 +415,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -432,7 +432,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.user = user;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant queue(ChatConversationNotificationUriReference queue) {
@@ -449,7 +449,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant attributes(Map<String, String> attributes) {
@@ -466,7 +466,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant errorInfo(ChatConversationNotificationErrorInfo errorInfo) {
@@ -483,7 +483,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant script(ChatConversationNotificationUriReference script) {
@@ -500,7 +500,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.script = script;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -517,7 +517,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -534,7 +534,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant provider(String provider) {
@@ -551,7 +551,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant externalContact(ChatConversationNotificationUriReference externalContact) {
@@ -568,7 +568,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant externalOrganization(ChatConversationNotificationUriReference externalOrganization) {
@@ -585,7 +585,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -602,7 +602,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant peer(String peer) {
@@ -619,7 +619,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationChatMediaParticipant roomId(String roomId) {
@@ -636,6 +636,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     this.roomId = roomId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 public class PatchOrganizationsFeatureRequest {
+    
 	private String featureName;
 	public String getFeatureName() {
 		return this.featureName;
@@ -39,6 +40,7 @@ public class PatchOrganizationsFeatureRequest {
 	    return this;
 	}
 
+	
 	private FeatureState enabled;
 	public FeatureState getEnabled() {
 		return this.enabled;
@@ -53,6 +55,7 @@ public class PatchOrganizationsFeatureRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -89,6 +92,7 @@ public class PatchOrganizationsFeatureRequest {
                 .withPathParameter("featureName", featureName)
         
                 .withBody(enabled)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -100,10 +104,12 @@ public class PatchOrganizationsFeatureRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String featureName, FeatureState enabled) {
 	    return new Builder()
 	            .withRequiredParams(featureName, enabled);
 	}
+	
 
 	public static class Builder {
 		private final PatchOrganizationsFeatureRequest request;
@@ -112,20 +118,26 @@ public class PatchOrganizationsFeatureRequest {
 			request = new PatchOrganizationsFeatureRequest();
 		}
 
+		
 		public Builder withFeatureName(String featureName) {
 			request.setFeatureName(featureName);
 			return this;
 		}
+		
 		public Builder withEnabled(FeatureState enabled) {
 			request.setEnabled(enabled);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String featureName, FeatureState enabled) {
 			request.setFeatureName(featureName);
-			request.setEnabled(enabled);
+						request.setEnabled(enabled);
+			
 			return this;
 		}
+		
 
 
 		public PatchOrganizationsFeatureRequest build() {

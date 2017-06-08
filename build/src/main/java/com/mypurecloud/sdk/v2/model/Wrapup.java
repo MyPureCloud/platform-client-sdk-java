@@ -43,7 +43,7 @@ public class Wrapup  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    * The user configured wrap up code name.
    **/
@@ -61,7 +61,7 @@ public class Wrapup  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Text entered by the agent to describe the call or disposition.
    **/
@@ -79,7 +79,7 @@ public class Wrapup  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    * List of tags selected by the agent to describe the call or disposition.
    **/
@@ -97,7 +97,7 @@ public class Wrapup  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    * The length of time in seconds that the agent spent doing after call work.
    **/
@@ -115,7 +115,7 @@ public class Wrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    * The timestamp when the wrapup was finished. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -133,7 +133,7 @@ public class Wrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * Indicates if this is a pending save and should not require a code to be specified.  This allows someone to save some temporary wrapup that will be used later.
    **/
@@ -151,6 +151,7 @@ public class Wrapup  implements Serializable {
     this.provisional = provisional;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

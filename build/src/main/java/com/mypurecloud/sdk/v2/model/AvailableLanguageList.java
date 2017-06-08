@@ -35,6 +35,7 @@ public class AvailableLanguageList  implements Serializable {
     this.languages = languages;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

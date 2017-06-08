@@ -116,7 +116,7 @@ public class SearchAggregation  implements Serializable {
     this.field = field;
   }
 
-
+  
   /**
    * The name of the aggregation. The response aggregation uses this name.
    **/
@@ -134,7 +134,7 @@ public class SearchAggregation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The type of aggregation to perform
    **/
@@ -152,7 +152,7 @@ public class SearchAggregation  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * A value to use for aggregation
    **/
@@ -170,7 +170,7 @@ public class SearchAggregation  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * The number aggregations results to return out of the entire result set
    **/
@@ -188,7 +188,7 @@ public class SearchAggregation  implements Serializable {
     this.size = size;
   }
 
-
+  
   /**
    * The order in which aggregation results are sorted
    **/
@@ -206,6 +206,7 @@ public class SearchAggregation  implements Serializable {
     this.order = order;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -36,7 +36,7 @@ public class SocialConversationNotificationDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationDetail fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class SocialConversationNotificationDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationDetail entityId(String entityId) {
@@ -70,7 +70,7 @@ public class SocialConversationNotificationDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationDetail entityName(String entityName) {
@@ -87,6 +87,7 @@ public class SocialConversationNotificationDetail  implements Serializable {
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesEndpointRequest {
+    
 	private String endpointId;
 	public String getEndpointId() {
 		return this.endpointId;
@@ -98,6 +99,7 @@ public class DeleteTelephonyProvidersEdgesEndpointRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class DeleteTelephonyProvidersEdgesEndpointRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/telephony/providers/edges/endpoints/{endpointId}")
                 .withPathParameter("endpointId", endpointId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class DeleteTelephonyProvidersEdgesEndpointRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String endpointId) {
 	    return new Builder()
 	            .withRequiredParams(endpointId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteTelephonyProvidersEdgesEndpointRequest request;
@@ -150,15 +155,20 @@ public class DeleteTelephonyProvidersEdgesEndpointRequest {
 			request = new DeleteTelephonyProvidersEdgesEndpointRequest();
 		}
 
+		
 		public Builder withEndpointId(String endpointId) {
 			request.setEndpointId(endpointId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String endpointId) {
 			request.setEndpointId(endpointId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteTelephonyProvidersEdgesEndpointRequest build() {

@@ -88,7 +88,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification user(DocumentDataV2NotificationWorkspace user) {
@@ -105,7 +105,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification isFullDayRequest(Boolean isFullDayRequest) {
@@ -122,7 +122,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.isFullDayRequest = isFullDayRequest;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification markedAsRead(Boolean markedAsRead) {
@@ -139,7 +139,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification activityCodeId(String activityCodeId) {
@@ -156,7 +156,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification status(StatusEnum status) {
@@ -173,7 +173,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification partialDayStartDateTimes(List<String> partialDayStartDateTimes) {
@@ -190,7 +190,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification fullDayManagementUnitDates(List<String> fullDayManagementUnitDates) {
@@ -207,7 +207,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification dailyDurationMinutes(Integer dailyDurationMinutes) {
@@ -224,7 +224,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification notes(String notes) {
@@ -241,7 +241,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification reviewedDate(String reviewedDate) {
@@ -258,7 +258,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.reviewedDate = reviewedDate;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification reviewedBy(String reviewedBy) {
@@ -275,7 +275,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.reviewedBy = reviewedBy;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification submittedDate(String submittedDate) {
@@ -292,7 +292,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.submittedDate = submittedDate;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification submittedBy(String submittedBy) {
@@ -309,7 +309,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.submittedBy = submittedBy;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification modifiedDate(String modifiedDate) {
@@ -326,7 +326,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestUpdateNotification modifiedBy(String modifiedBy) {
@@ -343,6 +343,7 @@ public class TimeOffRequestUpdateNotification  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

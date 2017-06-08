@@ -43,7 +43,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy entityName(String entityName) {
@@ -60,7 +60,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy policyName(String policyName) {
@@ -77,7 +77,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.policyName = policyName;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy policyDescription(String policyDescription) {
@@ -94,7 +94,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.policyDescription = policyDescription;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy actionSet(List<String> actionSet) {
@@ -111,7 +111,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.actionSet = actionSet;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy namedResources(List<String> namedResources) {
@@ -128,7 +128,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.namedResources = namedResources;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy allowConditions(Boolean allowConditions) {
@@ -145,7 +145,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.allowConditions = allowConditions;
   }
 
-
+  
   /**
    **/
   public DomainPermissionPolicy resourceConditionNode(DomainResourceConditionNode resourceConditionNode) {
@@ -162,6 +162,7 @@ public class DomainPermissionPolicy  implements Serializable {
     this.resourceConditionNode = resourceConditionNode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

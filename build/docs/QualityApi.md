@@ -1051,7 +1051,7 @@ try {
 | **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] |
 | **queueId** | **String**| the queue id - used for filtering results in searches. | [optional] |
 | **agentId** | **String**| the agent id - used for filtering results in searches. | [optional] |
-| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] [enum: AND, OR] |
+| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional]<br />**Values**: AND, OR |
 {: class="table table-striped"}
 
 ### Return type

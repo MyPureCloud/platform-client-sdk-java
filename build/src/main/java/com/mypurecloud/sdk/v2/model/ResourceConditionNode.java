@@ -114,7 +114,7 @@ public class ResourceConditionNode  implements Serializable {
     this.variableName = variableName;
   }
 
-
+  
   /**
    **/
   public ResourceConditionNode conjunction(ConjunctionEnum conjunction) {
@@ -131,7 +131,7 @@ public class ResourceConditionNode  implements Serializable {
     this.conjunction = conjunction;
   }
 
-
+  
   /**
    **/
   public ResourceConditionNode operator(OperatorEnum operator) {
@@ -148,7 +148,7 @@ public class ResourceConditionNode  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public ResourceConditionNode operands(List<ResourceConditionValue> operands) {
@@ -165,7 +165,7 @@ public class ResourceConditionNode  implements Serializable {
     this.operands = operands;
   }
 
-
+  
   /**
    **/
   public ResourceConditionNode terms(List<ResourceConditionNode> terms) {
@@ -182,6 +182,7 @@ public class ResourceConditionNode  implements Serializable {
     this.terms = terms;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

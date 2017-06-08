@@ -197,7 +197,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants name(String name) {
@@ -214,7 +214,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants address(String address) {
@@ -231,7 +231,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.address = address;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants startTime(Date startTime) {
@@ -248,7 +248,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -265,7 +265,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants endTime(Date endTime) {
@@ -282,7 +282,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -299,7 +299,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants purpose(String purpose) {
@@ -316,7 +316,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants state(StateEnum state) {
@@ -333,7 +333,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.state = state;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -350,7 +350,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -367,7 +367,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants held(Boolean held) {
@@ -384,7 +384,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.held = held;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -401,7 +401,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -418,7 +418,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -435,7 +435,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.user = user;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants queue(SocialConversationNotificationUriReference queue) {
@@ -452,7 +452,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -469,7 +469,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants errorInfo(SocialConversationNotificationErrorInfo errorInfo) {
@@ -486,7 +486,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants script(SocialConversationNotificationUriReference script) {
@@ -503,7 +503,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.script = script;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -520,7 +520,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -537,7 +537,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants provider(String provider) {
@@ -554,7 +554,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants externalContact(SocialConversationNotificationUriReference externalContact) {
@@ -571,7 +571,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants externalOrganization(SocialConversationNotificationUriReference externalOrganization) {
@@ -588,7 +588,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -605,7 +605,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants peer(String peer) {
@@ -622,7 +622,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants socialMediaId(String socialMediaId) {
@@ -639,7 +639,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.socialMediaId = socialMediaId;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants socialMediaHub(String socialMediaHub) {
@@ -656,7 +656,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.socialMediaHub = socialMediaHub;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants socialUserName(String socialUserName) {
@@ -673,7 +673,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.socialUserName = socialUserName;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationParticipants previewText(String previewText) {
@@ -690,6 +690,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     this.previewText = previewText;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

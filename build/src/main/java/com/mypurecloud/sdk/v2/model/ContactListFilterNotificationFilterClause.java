@@ -73,7 +73,7 @@ public class ContactListFilterNotificationFilterClause  implements Serializable 
     this.filterType = filterType;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterClause predicates(List<ContactListFilterNotificationPredicates> predicates) {
@@ -90,7 +90,7 @@ public class ContactListFilterNotificationFilterClause  implements Serializable 
     this.predicates = predicates;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterClause additionalProperties(Object additionalProperties) {
@@ -107,6 +107,7 @@ public class ContactListFilterNotificationFilterClause  implements Serializable 
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

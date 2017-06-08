@@ -37,7 +37,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    **/
   public EdgeAutoUpdateConfig rrule(String rrule) {
@@ -54,7 +54,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.rrule = rrule;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -72,7 +72,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.start = start;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS
    **/
@@ -90,6 +90,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     this.end = end;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

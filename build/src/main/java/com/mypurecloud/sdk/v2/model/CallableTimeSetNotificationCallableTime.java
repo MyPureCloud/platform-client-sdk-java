@@ -38,7 +38,7 @@ public class CallableTimeSetNotificationCallableTime  implements Serializable {
     this.timeSlots = timeSlots;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotificationCallableTime timeZoneId(String timeZoneId) {
@@ -55,7 +55,7 @@ public class CallableTimeSetNotificationCallableTime  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotificationCallableTime additionalProperties(Object additionalProperties) {
@@ -72,6 +72,7 @@ public class CallableTimeSetNotificationCallableTime  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

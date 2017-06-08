@@ -106,7 +106,7 @@ public class CreateShareResponse  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse name(String name) {
@@ -123,7 +123,7 @@ public class CreateShareResponse  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse sharedEntityType(SharedEntityTypeEnum sharedEntityType) {
@@ -140,7 +140,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse sharedEntity(UriReference sharedEntity) {
@@ -157,7 +157,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse memberType(MemberTypeEnum memberType) {
@@ -174,7 +174,7 @@ public class CreateShareResponse  implements Serializable {
     this.memberType = memberType;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse member(UriReference member) {
@@ -191,7 +191,7 @@ public class CreateShareResponse  implements Serializable {
     this.member = member;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse sharedBy(UriReference sharedBy) {
@@ -208,7 +208,7 @@ public class CreateShareResponse  implements Serializable {
     this.sharedBy = sharedBy;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse workspace(UriReference workspace) {
@@ -225,7 +225,7 @@ public class CreateShareResponse  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse succeeded(List<Share> succeeded) {
@@ -242,7 +242,7 @@ public class CreateShareResponse  implements Serializable {
     this.succeeded = succeeded;
   }
 
-
+  
   /**
    **/
   public CreateShareResponse failed(List<Share> failed) {
@@ -259,13 +259,14 @@ public class CreateShareResponse  implements Serializable {
     this.failed = failed;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

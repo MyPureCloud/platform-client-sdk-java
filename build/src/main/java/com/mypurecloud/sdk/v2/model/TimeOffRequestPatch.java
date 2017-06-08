@@ -33,6 +33,7 @@ public class TimeOffRequestPatch  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

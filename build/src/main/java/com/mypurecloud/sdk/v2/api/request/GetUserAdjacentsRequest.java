@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUserAdjacentsRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class GetUserAdjacentsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -76,6 +78,7 @@ public class GetUserAdjacentsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,7 +110,8 @@ public class GetUserAdjacentsRequest {
                 .withPathParameter("userId", userId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -118,10 +122,12 @@ public class GetUserAdjacentsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final GetUserAdjacentsRequest request;
@@ -130,19 +136,25 @@ public class GetUserAdjacentsRequest {
 			request = new GetUserAdjacentsRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public GetUserAdjacentsRequest build() {

@@ -41,7 +41,7 @@ public class UserRecording  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UserRecording name(String name) {
@@ -58,7 +58,7 @@ public class UserRecording  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -76,7 +76,7 @@ public class UserRecording  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -94,7 +94,7 @@ public class UserRecording  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public UserRecording contentUri(String contentUri) {
@@ -111,7 +111,7 @@ public class UserRecording  implements Serializable {
     this.contentUri = contentUri;
   }
 
-
+  
   /**
    **/
   public UserRecording workspace(UriReference workspace) {
@@ -128,7 +128,7 @@ public class UserRecording  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public UserRecording createdBy(UriReference createdBy) {
@@ -145,7 +145,7 @@ public class UserRecording  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public UserRecording conversation(Conversation conversation) {
@@ -162,7 +162,7 @@ public class UserRecording  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    **/
   public UserRecording contentLength(Long contentLength) {
@@ -179,7 +179,7 @@ public class UserRecording  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public UserRecording durationMilliseconds(Long durationMilliseconds) {
@@ -196,7 +196,7 @@ public class UserRecording  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
-
+  
   /**
    **/
   public UserRecording thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -213,7 +213,7 @@ public class UserRecording  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-
+  
   /**
    **/
   public UserRecording read(Boolean read) {
@@ -230,13 +230,14 @@ public class UserRecording  implements Serializable {
     this.read = read;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

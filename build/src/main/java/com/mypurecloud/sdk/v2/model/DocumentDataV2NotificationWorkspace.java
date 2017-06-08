@@ -33,6 +33,7 @@ public class DocumentDataV2NotificationWorkspace  implements Serializable {
     this.id = id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

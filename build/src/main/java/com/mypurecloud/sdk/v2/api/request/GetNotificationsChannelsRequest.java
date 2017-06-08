@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.Channel;
 
 public class GetNotificationsChannelsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -48,7 +49,8 @@ public class GetNotificationsChannelsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/notifications/channels")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/notifications/channels")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -59,6 +61,7 @@ public class GetNotificationsChannelsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetNotificationsChannelsRequest request;
@@ -67,7 +70,9 @@ public class GetNotificationsChannelsRequest {
 			request = new GetNotificationsChannelsRequest();
 		}
 
+		
 
+		
 
 
 		public GetNotificationsChannelsRequest build() {

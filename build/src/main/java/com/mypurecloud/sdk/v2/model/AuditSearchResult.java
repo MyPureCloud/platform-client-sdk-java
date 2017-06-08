@@ -43,7 +43,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    * The number of results in a page.
    **/
@@ -61,7 +61,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The total number of results.
    **/
@@ -79,7 +79,7 @@ public class AuditSearchResult  implements Serializable {
     this.total = total;
   }
 
-
+  
   /**
    * The number of pages of results.
    **/
@@ -97,7 +97,7 @@ public class AuditSearchResult  implements Serializable {
     this.pageCount = pageCount;
   }
 
-
+  
   /**
    **/
   public AuditSearchResult facetInfo(List<FacetInfo> facetInfo) {
@@ -114,7 +114,7 @@ public class AuditSearchResult  implements Serializable {
     this.facetInfo = facetInfo;
   }
 
-
+  
   /**
    **/
   public AuditSearchResult auditMessages(List<AuditMessage> auditMessages) {
@@ -131,6 +131,7 @@ public class AuditSearchResult  implements Serializable {
     this.auditMessages = auditMessages;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

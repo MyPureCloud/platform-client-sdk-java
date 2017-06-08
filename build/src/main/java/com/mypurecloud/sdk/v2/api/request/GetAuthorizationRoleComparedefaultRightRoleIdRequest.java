@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
+    
 	private String leftRoleId;
 	public String getLeftRoleId() {
 		return this.leftRoleId;
@@ -43,6 +44,7 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
 	    return this;
 	}
 
+	
 	private String rightRoleId;
 	public String getRightRoleId() {
 		return this.rightRoleId;
@@ -57,6 +59,7 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +96,8 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
                 .withPathParameter("leftRoleId", leftRoleId)
         
                 .withPathParameter("rightRoleId", rightRoleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -104,10 +108,12 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String leftRoleId, String rightRoleId) {
 	    return new Builder()
 	            .withRequiredParams(leftRoleId, rightRoleId);
 	}
+	
 
 	public static class Builder {
 		private final GetAuthorizationRoleComparedefaultRightRoleIdRequest request;
@@ -116,20 +122,26 @@ public class GetAuthorizationRoleComparedefaultRightRoleIdRequest {
 			request = new GetAuthorizationRoleComparedefaultRightRoleIdRequest();
 		}
 
+		
 		public Builder withLeftRoleId(String leftRoleId) {
 			request.setLeftRoleId(leftRoleId);
 			return this;
 		}
+		
 		public Builder withRightRoleId(String rightRoleId) {
 			request.setRightRoleId(rightRoleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String leftRoleId, String rightRoleId) {
 			request.setLeftRoleId(leftRoleId);
-			request.setRightRoleId(rightRoleId);
+						request.setRightRoleId(rightRoleId);
+			
 			return this;
 		}
+		
 
 
 		public GetAuthorizationRoleComparedefaultRightRoleIdRequest build() {

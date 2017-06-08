@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class PutGreetingRequest {
+    
 	private String greetingId;
 	public String getGreetingId() {
 		return this.greetingId;
@@ -40,6 +41,7 @@ public class PutGreetingRequest {
 	    return this;
 	}
 
+	
 	private Greeting body;
 	public Greeting getBody() {
 		return this.body;
@@ -54,6 +56,7 @@ public class PutGreetingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,6 +93,7 @@ public class PutGreetingRequest {
                 .withPathParameter("greetingId", greetingId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,10 +105,12 @@ public class PutGreetingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String greetingId, Greeting body) {
 	    return new Builder()
 	            .withRequiredParams(greetingId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutGreetingRequest request;
@@ -113,20 +119,26 @@ public class PutGreetingRequest {
 			request = new PutGreetingRequest();
 		}
 
+		
 		public Builder withGreetingId(String greetingId) {
 			request.setGreetingId(greetingId);
 			return this;
 		}
+		
 		public Builder withBody(Greeting body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String greetingId, Greeting body) {
 			request.setGreetingId(greetingId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutGreetingRequest build() {

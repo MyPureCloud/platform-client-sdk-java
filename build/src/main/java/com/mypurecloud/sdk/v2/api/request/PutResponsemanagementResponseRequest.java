@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PutResponsemanagementResponseRequest {
+    
 	private String responseId;
 	public String getResponseId() {
 		return this.responseId;
@@ -41,6 +42,7 @@ public class PutResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private Response body;
 	public Response getBody() {
 		return this.body;
@@ -55,6 +57,7 @@ public class PutResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -69,6 +72,7 @@ public class PutResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,6 +111,7 @@ public class PutResponsemanagementResponseRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -118,10 +123,12 @@ public class PutResponsemanagementResponseRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String responseId, Response body) {
 	    return new Builder()
 	            .withRequiredParams(responseId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutResponsemanagementResponseRequest request;
@@ -130,24 +137,31 @@ public class PutResponsemanagementResponseRequest {
 			request = new PutResponsemanagementResponseRequest();
 		}
 
+		
 		public Builder withResponseId(String responseId) {
 			request.setResponseId(responseId);
 			return this;
 		}
+		
 		public Builder withBody(Response body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String responseId, Response body) {
 			request.setResponseId(responseId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutResponsemanagementResponseRequest build() {

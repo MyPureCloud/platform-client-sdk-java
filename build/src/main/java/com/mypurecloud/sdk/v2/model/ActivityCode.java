@@ -83,7 +83,7 @@ public class ActivityCode  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Whether this activity code is active or only used for historical schedules
    **/
@@ -101,7 +101,7 @@ public class ActivityCode  implements Serializable {
     this.isActive = isActive;
   }
 
-
+  
   /**
    * Whether this is a default activity code
    **/
@@ -119,7 +119,7 @@ public class ActivityCode  implements Serializable {
     this.isDefault = isDefault;
   }
 
-
+  
   /**
    * The activity code's category
    **/
@@ -137,7 +137,7 @@ public class ActivityCode  implements Serializable {
     this.category = category;
   }
 
-
+  
   /**
    * The default length of the activity in minutes
    **/
@@ -155,7 +155,7 @@ public class ActivityCode  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-
+  
   /**
    * Whether an agent is paid while performing this activity
    **/
@@ -173,7 +173,7 @@ public class ActivityCode  implements Serializable {
     this.countsAsPaidTime = countsAsPaidTime;
   }
 
-
+  
   /**
    * Indicates whether or not the activity should be counted as work time
    **/
@@ -191,7 +191,7 @@ public class ActivityCode  implements Serializable {
     this.countsAsWorkTime = countsAsWorkTime;
   }
 
-
+  
   /**
    * Whether an agent can select this activity code when creating or editing a time off request
    **/
@@ -209,6 +209,7 @@ public class ActivityCode  implements Serializable {
     this.isAgentTimeOffSelectable = isAgentTimeOffSelectable;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

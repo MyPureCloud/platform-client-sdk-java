@@ -152,7 +152,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentStart = segmentStart;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -170,7 +170,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentEnd = segmentEnd;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment queueId(String queueId) {
@@ -187,7 +187,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment wrapUpCode(String wrapUpCode) {
@@ -204,7 +204,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpCode = wrapUpCode;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment wrapUpNote(String wrapUpNote) {
@@ -221,7 +221,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpNote = wrapUpNote;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment wrapUpTags(List<String> wrapUpTags) {
@@ -238,7 +238,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.wrapUpTags = wrapUpTags;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment errorCode(String errorCode) {
@@ -255,7 +255,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment disconnectType(DisconnectTypeEnum disconnectType) {
@@ -272,7 +272,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment segmentType(SegmentTypeEnum segmentType) {
@@ -289,7 +289,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.segmentType = segmentType;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment requestedRoutingUserIds(List<String> requestedRoutingUserIds) {
@@ -306,7 +306,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedRoutingUserIds = requestedRoutingUserIds;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment requestedRoutingSkillIds(List<String> requestedRoutingSkillIds) {
@@ -323,7 +323,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedRoutingSkillIds = requestedRoutingSkillIds;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment requestedLanguageId(String requestedLanguageId) {
@@ -340,7 +340,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.requestedLanguageId = requestedLanguageId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment properties(List<AnalyticsProperty> properties) {
@@ -357,7 +357,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment sourceConversationId(String sourceConversationId) {
@@ -374,7 +374,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sourceConversationId = sourceConversationId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment destinationConversationId(String destinationConversationId) {
@@ -391,7 +391,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.destinationConversationId = destinationConversationId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment sourceSessionId(String sourceSessionId) {
@@ -408,7 +408,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sourceSessionId = sourceSessionId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment destinationSessionId(String destinationSessionId) {
@@ -425,7 +425,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.destinationSessionId = destinationSessionId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment sipResponseCodes(List<Long> sipResponseCodes) {
@@ -442,7 +442,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.sipResponseCodes = sipResponseCodes;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment q850ResponseCodes(List<Long> q850ResponseCodes) {
@@ -459,7 +459,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.q850ResponseCodes = q850ResponseCodes;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment conference(Boolean conference) {
@@ -476,7 +476,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.conference = conference;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment groupId(String groupId) {
@@ -493,7 +493,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.groupId = groupId;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment subject(String subject) {
@@ -510,7 +510,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.subject = subject;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment audioMuted(Boolean audioMuted) {
@@ -527,7 +527,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversationSegment videoMuted(Boolean videoMuted) {
@@ -544,6 +544,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

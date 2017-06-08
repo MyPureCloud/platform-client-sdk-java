@@ -40,6 +40,7 @@ public class LocationsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get Location by ID.
    * 
@@ -66,6 +67,7 @@ public class LocationsApi {
   private GetLocationRequest createGetLocationRequest(String locationId) {
     return GetLocationRequest.builder()
             .withLocationId(locationId)
+    
             .build();
   }
 
@@ -117,6 +119,7 @@ public class LocationsApi {
     }
   }
 
+  
   /**
    * Get a list of all locations.
    * 
@@ -147,10 +150,11 @@ public class LocationsApi {
   private GetLocationsRequest createGetLocationsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetLocationsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -202,6 +206,7 @@ public class LocationsApi {
     }
   }
 
+  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -230,8 +235,9 @@ public class LocationsApi {
   private GetLocationsSearchRequest createGetLocationsSearchRequest(String q64, List<String> expand) {
     return GetLocationsSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -283,6 +289,7 @@ public class LocationsApi {
     }
   }
 
+  
   /**
    * Search locations
    * 
@@ -309,6 +316,7 @@ public class LocationsApi {
   private PostLocationsSearchRequest createPostLocationsSearchRequest(LocationSearchRequest body) {
     return PostLocationsSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -360,4 +368,5 @@ public class LocationsApi {
     }
   }
 
+  
 }

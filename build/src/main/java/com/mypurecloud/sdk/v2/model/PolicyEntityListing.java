@@ -46,7 +46,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.total = total;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public PolicyEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class PolicyEntityListing  implements Serializable, PagedResource<Policy>
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

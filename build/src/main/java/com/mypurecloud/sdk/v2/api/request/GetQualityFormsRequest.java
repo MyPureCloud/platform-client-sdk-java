@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityFormsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -52,6 +53,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -66,6 +68,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -80,6 +83,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -94,6 +98,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -108,6 +113,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -122,6 +128,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -136,6 +143,7 @@ public class GetQualityFormsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -172,7 +180,8 @@ public class GetQualityFormsRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withQueryParameters("name", "", name)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -183,6 +192,7 @@ public class GetQualityFormsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetQualityFormsRequest request;
@@ -191,35 +201,44 @@ public class GetQualityFormsRequest {
 			request = new GetQualityFormsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 
+		
 
 
 		public GetQualityFormsRequest build() {

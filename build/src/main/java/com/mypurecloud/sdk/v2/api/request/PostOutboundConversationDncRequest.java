@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundConversationDncRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PostOutboundConversationDncRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class PostOutboundConversationDncRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/conversations/{conversationId}/dnc")
                 .withPathParameter("conversationId", conversationId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class PostOutboundConversationDncRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundConversationDncRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundConversationDncRequest {
 			request = new PostOutboundConversationDncRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundConversationDncRequest build() {

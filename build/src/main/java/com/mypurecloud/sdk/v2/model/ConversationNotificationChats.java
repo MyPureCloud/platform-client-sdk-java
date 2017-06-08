@@ -134,7 +134,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats id(String id) {
@@ -151,7 +151,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats provider(String provider) {
@@ -168,7 +168,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats scriptId(String scriptId) {
@@ -185,7 +185,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats peerId(String peerId) {
@@ -202,7 +202,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats roomId(String roomId) {
@@ -219,7 +219,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.roomId = roomId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats held(Boolean held) {
@@ -236,7 +236,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats disconnectType(DisconnectTypeEnum disconnectType) {
@@ -253,7 +253,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats startHoldTime(Date startHoldTime) {
@@ -270,7 +270,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats connectedTime(Date connectedTime) {
@@ -287,7 +287,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats disconnectedTime(Date disconnectedTime) {
@@ -304,7 +304,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationChats additionalProperties(Object additionalProperties) {
@@ -321,6 +321,7 @@ public class ConversationNotificationChats  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

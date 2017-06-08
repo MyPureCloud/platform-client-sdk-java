@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
+    
 	private String phoneBaseSettingsId;
 	public String getPhoneBaseSettingsId() {
 		return this.phoneBaseSettingsId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/phones/template")
                 .withQueryParameters("phoneBaseSettingsId", "", phoneBaseSettingsId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String phoneBaseSettingsId) {
 	    return new Builder()
 	            .withRequiredParams(phoneBaseSettingsId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesPhonesTemplateRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesPhonesTemplateRequest {
 			request = new GetTelephonyProvidersEdgesPhonesTemplateRequest();
 		}
 
+		
 		public Builder withPhoneBaseSettingsId(String phoneBaseSettingsId) {
 			request.setPhoneBaseSettingsId(phoneBaseSettingsId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String phoneBaseSettingsId) {
 			request.setPhoneBaseSettingsId(phoneBaseSettingsId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesPhonesTemplateRequest build() {

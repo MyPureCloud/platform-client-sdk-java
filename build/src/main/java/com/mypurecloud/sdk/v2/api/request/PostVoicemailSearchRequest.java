@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PostVoicemailSearchRequest {
+    
 	private VoicemailSearchRequest body;
 	public VoicemailSearchRequest getBody() {
 		return this.body;
@@ -45,6 +46,7 @@ public class PostVoicemailSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,6 +76,7 @@ public class PostVoicemailSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/voicemail/search")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -85,10 +88,12 @@ public class PostVoicemailSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(VoicemailSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostVoicemailSearchRequest request;
@@ -97,15 +102,20 @@ public class PostVoicemailSearchRequest {
 			request = new PostVoicemailSearchRequest();
 		}
 
+		
 		public Builder withBody(VoicemailSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(VoicemailSearchRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostVoicemailSearchRequest build() {

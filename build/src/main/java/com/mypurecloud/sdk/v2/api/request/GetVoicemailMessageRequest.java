@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailMessageRequest {
+    
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -45,6 +46,7 @@ public class GetVoicemailMessageRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -59,6 +61,7 @@ public class GetVoicemailMessageRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetVoicemailMessageRequest {
                 .withPathParameter("messageId", messageId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetVoicemailMessageRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String messageId) {
 	    return new Builder()
 	            .withRequiredParams(messageId);
 	}
+	
 
 	public static class Builder {
 		private final GetVoicemailMessageRequest request;
@@ -113,19 +119,25 @@ public class GetVoicemailMessageRequest {
 			request = new GetVoicemailMessageRequest();
 		}
 
+		
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String messageId) {
 			request.setMessageId(messageId);
+			
 			return this;
 		}
+		
 
 
 		public GetVoicemailMessageRequest build() {

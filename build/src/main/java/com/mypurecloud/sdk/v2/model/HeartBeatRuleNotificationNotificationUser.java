@@ -34,7 +34,7 @@ public class HeartBeatRuleNotificationNotificationUser  implements Serializable 
     this.id = id;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotificationNotificationUser displayName(String displayName) {
@@ -51,6 +51,7 @@ public class HeartBeatRuleNotificationNotificationUser  implements Serializable 
     this.displayName = displayName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

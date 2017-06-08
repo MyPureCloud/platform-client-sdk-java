@@ -75,7 +75,7 @@ public class AggregationResult  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * For termFrequency aggregations
    **/
@@ -93,7 +93,7 @@ public class AggregationResult  implements Serializable {
     this.dimension = dimension;
   }
 
-
+  
   /**
    * For numericRange aggregations
    **/
@@ -111,7 +111,7 @@ public class AggregationResult  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    **/
   public AggregationResult count(Long count) {
@@ -128,7 +128,7 @@ public class AggregationResult  implements Serializable {
     this.count = count;
   }
 
-
+  
   /**
    **/
   public AggregationResult results(List<AggregationResultEntry> results) {
@@ -145,6 +145,7 @@ public class AggregationResult  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

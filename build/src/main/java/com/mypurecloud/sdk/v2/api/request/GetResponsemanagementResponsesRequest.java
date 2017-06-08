@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class GetResponsemanagementResponsesRequest {
+    
 	private String libraryId;
 	public String getLibraryId() {
 		return this.libraryId;
@@ -41,6 +42,7 @@ public class GetResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -55,6 +57,7 @@ public class GetResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -69,6 +72,7 @@ public class GetResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -83,6 +87,7 @@ public class GetResponsemanagementResponsesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,7 +123,8 @@ public class GetResponsemanagementResponsesRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("expand", "", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -129,10 +135,12 @@ public class GetResponsemanagementResponsesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String libraryId) {
 	    return new Builder()
 	            .withRequiredParams(libraryId);
 	}
+	
 
 	public static class Builder {
 		private final GetResponsemanagementResponsesRequest request;
@@ -141,27 +149,35 @@ public class GetResponsemanagementResponsesRequest {
 			request = new GetResponsemanagementResponsesRequest();
 		}
 
+		
 		public Builder withLibraryId(String libraryId) {
 			request.setLibraryId(libraryId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String libraryId) {
 			request.setLibraryId(libraryId);
+			
 			return this;
 		}
+		
 
 
 		public GetResponsemanagementResponsesRequest build() {

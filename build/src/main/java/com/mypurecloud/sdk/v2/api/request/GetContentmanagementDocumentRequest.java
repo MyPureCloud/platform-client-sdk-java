@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementDocumentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -64,6 +65,7 @@ public class GetContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -78,6 +80,7 @@ public class GetContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +112,8 @@ public class GetContentmanagementDocumentRequest {
                 .withPathParameter("documentId", documentId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -120,10 +124,12 @@ public class GetContentmanagementDocumentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId) {
 	    return new Builder()
 	            .withRequiredParams(documentId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementDocumentRequest request;
@@ -132,19 +138,25 @@ public class GetContentmanagementDocumentRequest {
 			request = new GetContentmanagementDocumentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId) {
 			request.setDocumentId(documentId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementDocumentRequest build() {

@@ -198,7 +198,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.id = id;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants name(String name) {
@@ -215,7 +215,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.name = name;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants address(String address) {
@@ -232,7 +232,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.address = address;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants startTime(Date startTime) {
@@ -249,7 +249,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -266,7 +266,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants endTime(Date endTime) {
@@ -283,7 +283,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -300,7 +300,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants purpose(String purpose) {
@@ -317,7 +317,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants state(StateEnum state) {
@@ -334,7 +334,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.state = state;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -351,7 +351,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -368,7 +368,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants held(Boolean held) {
@@ -385,7 +385,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.held = held;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -402,7 +402,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -419,7 +419,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -436,7 +436,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.user = user;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants queue(VideoConversationNotificationUriReference queue) {
@@ -453,7 +453,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -470,7 +470,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants errorInfo(VideoConversationNotificationErrorInfo errorInfo) {
@@ -487,7 +487,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants script(VideoConversationNotificationUriReference script) {
@@ -504,7 +504,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.script = script;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -521,7 +521,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -538,7 +538,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants provider(String provider) {
@@ -555,7 +555,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants externalContact(VideoConversationNotificationUriReference externalContact) {
@@ -572,7 +572,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants externalOrganization(VideoConversationNotificationUriReference externalOrganization) {
@@ -589,7 +589,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -606,7 +606,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants peer(String peer) {
@@ -623,7 +623,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants audioMuted(Boolean audioMuted) {
@@ -640,7 +640,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.audioMuted = audioMuted;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants videoMuted(Boolean videoMuted) {
@@ -657,7 +657,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.videoMuted = videoMuted;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants sharingScreen(Boolean sharingScreen) {
@@ -674,7 +674,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.sharingScreen = sharingScreen;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants peerCount(Integer peerCount) {
@@ -691,7 +691,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationParticipants context(String context) {
@@ -708,6 +708,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     this.context = context;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

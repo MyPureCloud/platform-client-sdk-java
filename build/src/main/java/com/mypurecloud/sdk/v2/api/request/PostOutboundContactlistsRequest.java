@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundContactlistsRequest {
+    
 	private ContactList body;
 	public ContactList getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundContactlistsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundContactlistsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/contactlists")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundContactlistsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ContactList body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundContactlistsRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundContactlistsRequest {
 			request = new PostOutboundContactlistsRequest();
 		}
 
+		
 		public Builder withBody(ContactList body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ContactList body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundContactlistsRequest build() {

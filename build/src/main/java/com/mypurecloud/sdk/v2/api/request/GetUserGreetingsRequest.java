@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class GetUserGreetingsRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -40,6 +41,7 @@ public class GetUserGreetingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -54,6 +56,7 @@ public class GetUserGreetingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -68,6 +71,7 @@ public class GetUserGreetingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,7 +105,8 @@ public class GetUserGreetingsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -112,10 +117,12 @@ public class GetUserGreetingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final GetUserGreetingsRequest request;
@@ -124,23 +131,30 @@ public class GetUserGreetingsRequest {
 			request = new GetUserGreetingsRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public GetUserGreetingsRequest build() {

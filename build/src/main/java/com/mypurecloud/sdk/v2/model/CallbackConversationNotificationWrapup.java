@@ -41,7 +41,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationWrapup notes(String notes) {
@@ -58,7 +58,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationWrapup tags(List<String> tags) {
@@ -75,7 +75,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationWrapup durationSeconds(Integer durationSeconds) {
@@ -92,7 +92,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationWrapup endTime(Date endTime) {
@@ -109,7 +109,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationWrapup additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class CallbackConversationNotificationWrapup  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

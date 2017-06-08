@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesCertificateauthoritiesRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -106,7 +107,8 @@ public class GetTelephonyProvidersEdgesCertificateauthoritiesRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/certificateauthorities")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/certificateauthorities")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -117,6 +119,7 @@ public class GetTelephonyProvidersEdgesCertificateauthoritiesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesCertificateauthoritiesRequest request;
@@ -125,7 +128,9 @@ public class GetTelephonyProvidersEdgesCertificateauthoritiesRequest {
 			request = new GetTelephonyProvidersEdgesCertificateauthoritiesRequest();
 		}
 
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesCertificateauthoritiesRequest build() {

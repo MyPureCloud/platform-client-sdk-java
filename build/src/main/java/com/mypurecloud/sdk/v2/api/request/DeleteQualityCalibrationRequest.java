@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class DeleteQualityCalibrationRequest {
+    
 	private String calibrationId;
 	public String getCalibrationId() {
 		return this.calibrationId;
@@ -52,6 +53,7 @@ public class DeleteQualityCalibrationRequest {
 	    return this;
 	}
 
+	
 	private String calibratorId;
 	public String getCalibratorId() {
 		return this.calibratorId;
@@ -66,6 +68,7 @@ public class DeleteQualityCalibrationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,7 +105,8 @@ public class DeleteQualityCalibrationRequest {
                 .withPathParameter("calibrationId", calibrationId)
         
                 .withQueryParameters("calibratorId", "", calibratorId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -113,10 +117,12 @@ public class DeleteQualityCalibrationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String calibrationId, String calibratorId) {
 	    return new Builder()
 	            .withRequiredParams(calibrationId, calibratorId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteQualityCalibrationRequest request;
@@ -125,20 +131,26 @@ public class DeleteQualityCalibrationRequest {
 			request = new DeleteQualityCalibrationRequest();
 		}
 
+		
 		public Builder withCalibrationId(String calibrationId) {
 			request.setCalibrationId(calibrationId);
 			return this;
 		}
+		
 		public Builder withCalibratorId(String calibratorId) {
 			request.setCalibratorId(calibratorId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String calibrationId, String calibratorId) {
 			request.setCalibrationId(calibrationId);
-			request.setCalibratorId(calibratorId);
+						request.setCalibratorId(calibratorId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteQualityCalibrationRequest build() {

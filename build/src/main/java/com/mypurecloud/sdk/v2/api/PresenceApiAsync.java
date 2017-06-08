@@ -48,6 +48,7 @@ public class PresenceApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a Presence Definition
    * 
@@ -123,6 +124,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Get a Presence Definition
    * 
@@ -198,6 +200,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Get an Organization&#39;s list of Presence Definitions
    * 
@@ -273,6 +276,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Get the list of SystemPresences
    * 
@@ -348,6 +352,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Get a user&#39;s Presence
    * 
@@ -423,6 +428,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Patch a user&#39;s Presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
@@ -498,6 +504,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Create a Presence Definition
    * 
@@ -573,6 +580,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
   /**
    * Update a Presence Definition
    * 
@@ -648,6 +656,7 @@ public class PresenceApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

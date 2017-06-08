@@ -34,7 +34,7 @@ public class FaxDataV2NotificationUserData  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FaxDataV2NotificationUserData name(String name) {
@@ -51,6 +51,7 @@ public class FaxDataV2NotificationUserData  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

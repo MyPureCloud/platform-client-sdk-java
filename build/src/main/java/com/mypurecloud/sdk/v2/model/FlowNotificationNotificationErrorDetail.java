@@ -36,7 +36,7 @@ public class FlowNotificationNotificationErrorDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationErrorDetail entityId(String entityId) {
@@ -53,7 +53,7 @@ public class FlowNotificationNotificationErrorDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationErrorDetail entityName(String entityName) {
@@ -70,7 +70,7 @@ public class FlowNotificationNotificationErrorDetail  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationErrorDetail fieldName(String fieldName) {
@@ -87,6 +87,7 @@ public class FlowNotificationNotificationErrorDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

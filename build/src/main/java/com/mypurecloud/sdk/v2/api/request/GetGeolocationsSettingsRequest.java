@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 
 public class GetGeolocationsSettingsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -45,7 +46,8 @@ public class GetGeolocationsSettingsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/geolocations/settings")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/geolocations/settings")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -56,6 +58,7 @@ public class GetGeolocationsSettingsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetGeolocationsSettingsRequest request;
@@ -64,7 +67,9 @@ public class GetGeolocationsSettingsRequest {
 			request = new GetGeolocationsSettingsRequest();
 		}
 
+		
 
+		
 
 
 		public GetGeolocationsSettingsRequest build() {

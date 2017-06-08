@@ -35,7 +35,7 @@ public class EdgeVersionReport  implements Serializable {
     this.oldestVersion = oldestVersion;
   }
 
-
+  
   /**
    **/
   public EdgeVersionReport newestVersion(EdgeVersionInformation newestVersion) {
@@ -52,6 +52,7 @@ public class EdgeVersionReport  implements Serializable {
     this.newestVersion = newestVersion;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

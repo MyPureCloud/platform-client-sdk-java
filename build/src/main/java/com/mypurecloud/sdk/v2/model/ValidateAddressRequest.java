@@ -35,6 +35,7 @@ public class ValidateAddressRequest  implements Serializable {
     this.address = address;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -35,7 +35,7 @@ public class UserImage  implements Serializable {
     this.resolution = resolution;
   }
 
-
+  
   /**
    **/
   public UserImage imageUri(String imageUri) {
@@ -52,6 +52,7 @@ public class UserImage  implements Serializable {
     this.imageUri = imageUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

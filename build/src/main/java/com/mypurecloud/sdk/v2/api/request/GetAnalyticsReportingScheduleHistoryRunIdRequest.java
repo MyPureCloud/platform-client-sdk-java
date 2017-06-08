@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
+    
 	private String runId;
 	public String getRunId() {
 		return this.runId;
@@ -54,6 +55,7 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 	    return this;
 	}
 
+	
 	private String scheduleId;
 	public String getScheduleId() {
 		return this.scheduleId;
@@ -68,6 +70,7 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -104,7 +107,8 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
                 .withPathParameter("runId", runId)
         
                 .withPathParameter("scheduleId", scheduleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -115,10 +119,12 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String runId, String scheduleId) {
 	    return new Builder()
 	            .withRequiredParams(runId, scheduleId);
 	}
+	
 
 	public static class Builder {
 		private final GetAnalyticsReportingScheduleHistoryRunIdRequest request;
@@ -127,20 +133,26 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 			request = new GetAnalyticsReportingScheduleHistoryRunIdRequest();
 		}
 
+		
 		public Builder withRunId(String runId) {
 			request.setRunId(runId);
 			return this;
 		}
+		
 		public Builder withScheduleId(String scheduleId) {
 			request.setScheduleId(scheduleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String runId, String scheduleId) {
 			request.setRunId(runId);
-			request.setScheduleId(scheduleId);
+						request.setScheduleId(scheduleId);
+			
 			return this;
 		}
+		
 
 
 		public GetAnalyticsReportingScheduleHistoryRunIdRequest build() {

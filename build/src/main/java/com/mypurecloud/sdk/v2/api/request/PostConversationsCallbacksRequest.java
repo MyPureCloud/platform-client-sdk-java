@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsCallbacksRequest {
+    
 	private CreateCallbackCommand body;
 	public CreateCallbackCommand getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostConversationsCallbacksRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostConversationsCallbacksRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/callbacks")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostConversationsCallbacksRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(CreateCallbackCommand body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationsCallbacksRequest request;
@@ -126,15 +131,20 @@ public class PostConversationsCallbacksRequest {
 			request = new PostConversationsCallbacksRequest();
 		}
 
+		
 		public Builder withBody(CreateCallbackCommand body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(CreateCallbackCommand body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationsCallbacksRequest build() {

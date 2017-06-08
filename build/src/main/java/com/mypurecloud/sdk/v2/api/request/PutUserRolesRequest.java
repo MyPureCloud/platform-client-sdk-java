@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PutUserRolesRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PutUserRolesRequest {
 	    return this;
 	}
 
+	
 	private List<String> body;
 	public List<String> getBody() {
 		return this.body;
@@ -76,6 +78,7 @@ public class PutUserRolesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,6 +115,7 @@ public class PutUserRolesRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -123,10 +127,12 @@ public class PutUserRolesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, List<String> body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutUserRolesRequest request;
@@ -135,20 +141,26 @@ public class PutUserRolesRequest {
 			request = new PutUserRolesRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(List<String> body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, List<String> body) {
 			request.setUserId(userId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutUserRolesRequest build() {

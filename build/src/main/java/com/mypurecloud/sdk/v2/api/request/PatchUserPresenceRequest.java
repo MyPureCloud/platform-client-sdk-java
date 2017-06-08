@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class PatchUserPresenceRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -39,6 +40,7 @@ public class PatchUserPresenceRequest {
 	    return this;
 	}
 
+	
 	private String sourceId;
 	public String getSourceId() {
 		return this.sourceId;
@@ -53,6 +55,7 @@ public class PatchUserPresenceRequest {
 	    return this;
 	}
 
+	
 	private UserPresence body;
 	public UserPresence getBody() {
 		return this.body;
@@ -67,6 +70,7 @@ public class PatchUserPresenceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -110,6 +114,7 @@ public class PatchUserPresenceRequest {
                 .withPathParameter("sourceId", sourceId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -121,10 +126,12 @@ public class PatchUserPresenceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String sourceId, UserPresence body) {
 	    return new Builder()
 	            .withRequiredParams(userId, sourceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchUserPresenceRequest request;
@@ -133,25 +140,32 @@ public class PatchUserPresenceRequest {
 			request = new PatchUserPresenceRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withSourceId(String sourceId) {
 			request.setSourceId(sourceId);
 			return this;
 		}
+		
 		public Builder withBody(UserPresence body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String sourceId, UserPresence body) {
 			request.setUserId(userId);
-			request.setSourceId(sourceId);
-			request.setBody(body);
+						request.setSourceId(sourceId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchUserPresenceRequest build() {

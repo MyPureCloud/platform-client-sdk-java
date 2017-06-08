@@ -34,6 +34,7 @@ public class Agent  implements Serializable {
     this.stage = stage;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -79,7 +79,7 @@ public class ContentAttributeFilterItem  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ContentAttributeFilterItem operator(OperatorEnum operator) {
@@ -96,7 +96,7 @@ public class ContentAttributeFilterItem  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public ContentAttributeFilterItem values(List<String> values) {
@@ -113,6 +113,7 @@ public class ContentAttributeFilterItem  implements Serializable {
     this.values = values;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

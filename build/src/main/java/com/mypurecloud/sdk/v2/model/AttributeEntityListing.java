@@ -46,7 +46,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.total = total;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public AttributeEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class AttributeEntityListing  implements Serializable, PagedResource<Attr
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

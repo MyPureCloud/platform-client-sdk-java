@@ -14,6 +14,7 @@ title: PhoneCapabilities
 | **hardwareIdType** | **String** |  |  [optional] |
 | **allowReboot** | **Boolean** |  |  [optional] |
 | **noRebalance** | **Boolean** |  |  [optional] |
+| **noCloudProvisioning** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

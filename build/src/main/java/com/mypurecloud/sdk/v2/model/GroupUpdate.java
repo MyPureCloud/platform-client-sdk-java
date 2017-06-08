@@ -107,7 +107,7 @@ public class GroupUpdate  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The group name.
    **/
@@ -125,7 +125,7 @@ public class GroupUpdate  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public GroupUpdate description(String description) {
@@ -142,7 +142,7 @@ public class GroupUpdate  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * State of the group.
    **/
@@ -160,7 +160,7 @@ public class GroupUpdate  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * Current version for this resource.
    **/
@@ -178,7 +178,7 @@ public class GroupUpdate  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public GroupUpdate images(List<UserImage> images) {
@@ -195,7 +195,7 @@ public class GroupUpdate  implements Serializable {
     this.images = images;
   }
 
-
+  
   /**
    **/
   public GroupUpdate addresses(List<GroupContact> addresses) {
@@ -212,7 +212,7 @@ public class GroupUpdate  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    * Are membership rules visible to the person requesting to view the group
    **/
@@ -230,7 +230,7 @@ public class GroupUpdate  implements Serializable {
     this.rulesVisible = rulesVisible;
   }
 
-
+  
   /**
    * Who can view this group
    **/
@@ -248,13 +248,14 @@ public class GroupUpdate  implements Serializable {
     this.visibility = visibility;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

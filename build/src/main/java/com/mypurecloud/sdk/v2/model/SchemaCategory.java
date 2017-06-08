@@ -71,7 +71,7 @@ public class SchemaCategory  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -89,7 +89,7 @@ public class SchemaCategory  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SchemaCategory description(String description) {
@@ -106,7 +106,7 @@ public class SchemaCategory  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public SchemaCategory version(Integer version) {
@@ -123,7 +123,7 @@ public class SchemaCategory  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -141,7 +141,7 @@ public class SchemaCategory  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -159,7 +159,7 @@ public class SchemaCategory  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public SchemaCategory modifiedBy(String modifiedBy) {
@@ -176,7 +176,7 @@ public class SchemaCategory  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public SchemaCategory createdBy(String createdBy) {
@@ -193,7 +193,7 @@ public class SchemaCategory  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public SchemaCategory state(StateEnum state) {
@@ -210,7 +210,7 @@ public class SchemaCategory  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public SchemaCategory modifiedByApp(String modifiedByApp) {
@@ -227,7 +227,7 @@ public class SchemaCategory  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public SchemaCategory createdByApp(String createdByApp) {
@@ -244,13 +244,14 @@ public class SchemaCategory  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

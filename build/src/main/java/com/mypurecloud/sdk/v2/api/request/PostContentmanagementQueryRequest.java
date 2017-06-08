@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementQueryRequest {
+    
 	private QueryRequest body;
 	public QueryRequest getBody() {
 		return this.body;
@@ -64,6 +65,7 @@ public class PostContentmanagementQueryRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -78,6 +80,7 @@ public class PostContentmanagementQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,6 +112,7 @@ public class PostContentmanagementQueryRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -120,10 +124,12 @@ public class PostContentmanagementQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(QueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementQueryRequest request;
@@ -132,19 +138,25 @@ public class PostContentmanagementQueryRequest {
 			request = new PostContentmanagementQueryRequest();
 		}
 
+		
 		public Builder withBody(QueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(QueryRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementQueryRequest build() {

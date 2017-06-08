@@ -38,7 +38,7 @@ public class DownloadResponse  implements Serializable {
     this.contentLocationUri = contentLocationUri;
   }
 
-
+  
   /**
    **/
   public DownloadResponse imageUri(String imageUri) {
@@ -55,7 +55,7 @@ public class DownloadResponse  implements Serializable {
     this.imageUri = imageUri;
   }
 
-
+  
   /**
    **/
   public DownloadResponse thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -72,6 +72,7 @@ public class DownloadResponse  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

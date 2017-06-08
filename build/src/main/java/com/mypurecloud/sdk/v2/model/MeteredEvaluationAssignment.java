@@ -43,7 +43,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluationContextId = evaluationContextId;
   }
 
-
+  
   /**
    **/
   public MeteredEvaluationAssignment evaluators(List<User> evaluators) {
@@ -60,7 +60,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluators = evaluators;
   }
 
-
+  
   /**
    **/
   public MeteredEvaluationAssignment maxNumberEvaluations(Integer maxNumberEvaluations) {
@@ -77,7 +77,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.maxNumberEvaluations = maxNumberEvaluations;
   }
 
-
+  
   /**
    **/
   public MeteredEvaluationAssignment evaluationForm(EvaluationForm evaluationForm) {
@@ -94,7 +94,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public MeteredEvaluationAssignment assignToActiveUser(Boolean assignToActiveUser) {
@@ -111,7 +111,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.assignToActiveUser = assignToActiveUser;
   }
 
-
+  
   /**
    **/
   public MeteredEvaluationAssignment timeInterval(TimeInterval timeInterval) {
@@ -128,6 +128,7 @@ public class MeteredEvaluationAssignment  implements Serializable {
     this.timeInterval = timeInterval;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

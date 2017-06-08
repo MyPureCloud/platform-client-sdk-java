@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingEmailDomainsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,7 +67,8 @@ public class GetRoutingEmailDomainsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/routing/email/domains")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/routing/email/domains")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -77,6 +79,7 @@ public class GetRoutingEmailDomainsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetRoutingEmailDomainsRequest request;
@@ -85,7 +88,9 @@ public class GetRoutingEmailDomainsRequest {
 			request = new GetRoutingEmailDomainsRequest();
 		}
 
+		
 
+		
 
 
 		public GetRoutingEmailDomainsRequest build() {

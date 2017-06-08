@@ -37,7 +37,7 @@ public class PromptAsset  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public PromptAsset name(String name) {
@@ -54,7 +54,7 @@ public class PromptAsset  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PromptAsset promptId(String promptId) {
@@ -71,7 +71,7 @@ public class PromptAsset  implements Serializable {
     this.promptId = promptId;
   }
 
-
+  
   /**
    **/
   public PromptAsset language(String language) {
@@ -88,7 +88,7 @@ public class PromptAsset  implements Serializable {
     this.language = language;
   }
 
-
+  
   /**
    **/
   public PromptAsset mediaUri(String mediaUri) {
@@ -105,7 +105,7 @@ public class PromptAsset  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-
+  
   /**
    **/
   public PromptAsset ttsString(String ttsString) {
@@ -122,7 +122,7 @@ public class PromptAsset  implements Serializable {
     this.ttsString = ttsString;
   }
 
-
+  
   /**
    **/
   public PromptAsset uploadStatus(String uploadStatus) {
@@ -139,7 +139,7 @@ public class PromptAsset  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public PromptAsset uploadUri(String uploadUri) {
@@ -156,7 +156,7 @@ public class PromptAsset  implements Serializable {
     this.uploadUri = uploadUri;
   }
 
-
+  
   /**
    **/
   public PromptAsset languageDefault(Boolean languageDefault) {
@@ -173,7 +173,7 @@ public class PromptAsset  implements Serializable {
     this.languageDefault = languageDefault;
   }
 
-
+  
   /**
    **/
   public PromptAsset tags(Map<String, List<String>> tags) {
@@ -190,7 +190,7 @@ public class PromptAsset  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public PromptAsset durationSeconds(Double durationSeconds) {
@@ -207,13 +207,14 @@ public class PromptAsset  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

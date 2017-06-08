@@ -84,7 +84,7 @@ public class FacetEntry  implements Serializable {
     this.attribute = attribute;
   }
 
-
+  
   /**
    **/
   public FacetEntry statistics(FacetStatistics statistics) {
@@ -101,7 +101,7 @@ public class FacetEntry  implements Serializable {
     this.statistics = statistics;
   }
 
-
+  
   /**
    **/
   public FacetEntry other(Long other) {
@@ -118,7 +118,7 @@ public class FacetEntry  implements Serializable {
     this.other = other;
   }
 
-
+  
   /**
    **/
   public FacetEntry total(Long total) {
@@ -135,7 +135,7 @@ public class FacetEntry  implements Serializable {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public FacetEntry missing(Long missing) {
@@ -152,7 +152,7 @@ public class FacetEntry  implements Serializable {
     this.missing = missing;
   }
 
-
+  
   /**
    **/
   public FacetEntry termCount(Integer termCount) {
@@ -169,7 +169,7 @@ public class FacetEntry  implements Serializable {
     this.termCount = termCount;
   }
 
-
+  
   /**
    **/
   public FacetEntry termType(TermTypeEnum termType) {
@@ -186,7 +186,7 @@ public class FacetEntry  implements Serializable {
     this.termType = termType;
   }
 
-
+  
   /**
    **/
   public FacetEntry terms(List<FacetTerm> terms) {
@@ -203,6 +203,7 @@ public class FacetEntry  implements Serializable {
     this.terms = terms;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

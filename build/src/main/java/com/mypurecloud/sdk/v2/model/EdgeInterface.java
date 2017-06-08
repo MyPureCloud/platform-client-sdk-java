@@ -78,7 +78,7 @@ public class EdgeInterface  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public EdgeInterface ipAddress(String ipAddress) {
@@ -95,7 +95,7 @@ public class EdgeInterface  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-
+  
   /**
    **/
   public EdgeInterface name(String name) {
@@ -112,7 +112,7 @@ public class EdgeInterface  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeInterface macAddress(String macAddress) {
@@ -129,7 +129,7 @@ public class EdgeInterface  implements Serializable {
     this.macAddress = macAddress;
   }
 
-
+  
   /**
    **/
   public EdgeInterface ifName(String ifName) {
@@ -146,7 +146,7 @@ public class EdgeInterface  implements Serializable {
     this.ifName = ifName;
   }
 
-
+  
   /**
    **/
   public EdgeInterface endpoints(List<UriReference> endpoints) {
@@ -163,7 +163,7 @@ public class EdgeInterface  implements Serializable {
     this.endpoints = endpoints;
   }
 
-
+  
   /**
    **/
   public EdgeInterface lineTypes(List<LineTypesEnum> lineTypes) {
@@ -180,7 +180,7 @@ public class EdgeInterface  implements Serializable {
     this.lineTypes = lineTypes;
   }
 
-
+  
   /**
    **/
   public EdgeInterface addressFamilyId(String addressFamilyId) {
@@ -197,6 +197,7 @@ public class EdgeInterface  implements Serializable {
     this.addressFamilyId = addressFamilyId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

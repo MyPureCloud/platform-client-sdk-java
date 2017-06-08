@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementWorkspaceTagvalueRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class DeleteContentmanagementWorkspaceTagvalueRequest {
 	    return this;
 	}
 
+	
 	private String tagId;
 	public String getTagId() {
 		return this.tagId;
@@ -78,6 +80,7 @@ public class DeleteContentmanagementWorkspaceTagvalueRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,7 +117,8 @@ public class DeleteContentmanagementWorkspaceTagvalueRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withPathParameter("tagId", tagId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -125,10 +129,12 @@ public class DeleteContentmanagementWorkspaceTagvalueRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, String tagId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, tagId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteContentmanagementWorkspaceTagvalueRequest request;
@@ -137,20 +143,26 @@ public class DeleteContentmanagementWorkspaceTagvalueRequest {
 			request = new DeleteContentmanagementWorkspaceTagvalueRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withTagId(String tagId) {
 			request.setTagId(tagId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, String tagId) {
 			request.setWorkspaceId(workspaceId);
-			request.setTagId(tagId);
+						request.setTagId(tagId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteContentmanagementWorkspaceTagvalueRequest build() {

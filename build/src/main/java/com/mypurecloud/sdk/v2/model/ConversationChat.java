@@ -168,7 +168,7 @@ public class ConversationChat  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -186,7 +186,7 @@ public class ConversationChat  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The room id for the chat.
    **/
@@ -204,7 +204,7 @@ public class ConversationChat  implements Serializable {
     this.roomId = roomId;
   }
 
-
+  
   /**
    * A globally unique identifier for the recording associated with this chat.
    **/
@@ -222,7 +222,7 @@ public class ConversationChat  implements Serializable {
     this.recordingId = recordingId;
   }
 
-
+  
   /**
    * The time line of the participant's chat, divided into activity segments.
    **/
@@ -240,7 +240,7 @@ public class ConversationChat  implements Serializable {
     this.segments = segments;
   }
 
-
+  
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -258,7 +258,7 @@ public class ConversationChat  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * The direction of the chat
    **/
@@ -276,7 +276,7 @@ public class ConversationChat  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -294,7 +294,7 @@ public class ConversationChat  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -312,7 +312,7 @@ public class ConversationChat  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -330,7 +330,7 @@ public class ConversationChat  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -348,7 +348,7 @@ public class ConversationChat  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * The source provider for the email.
    **/
@@ -366,7 +366,7 @@ public class ConversationChat  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -384,6 +384,7 @@ public class ConversationChat  implements Serializable {
     this.peerId = peerId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

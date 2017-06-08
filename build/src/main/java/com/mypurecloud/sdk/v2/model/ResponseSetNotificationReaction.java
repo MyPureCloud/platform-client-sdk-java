@@ -73,7 +73,7 @@ public class ResponseSetNotificationReaction  implements Serializable {
     this.data = data;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotificationReaction name(String name) {
@@ -90,7 +90,7 @@ public class ResponseSetNotificationReaction  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotificationReaction reactionType(ReactionTypeEnum reactionType) {
@@ -107,7 +107,7 @@ public class ResponseSetNotificationReaction  implements Serializable {
     this.reactionType = reactionType;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotificationReaction additionalProperties(Object additionalProperties) {
@@ -124,6 +124,7 @@ public class ResponseSetNotificationReaction  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

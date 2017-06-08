@@ -35,7 +35,7 @@ public class DependencyTrackingBuildNotificationNotificationUserHomeOrg  impleme
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationUserHomeOrg name(String name) {
@@ -52,7 +52,7 @@ public class DependencyTrackingBuildNotificationNotificationUserHomeOrg  impleme
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationUserHomeOrg thirdPartyOrgName(String thirdPartyOrgName) {
@@ -69,6 +69,7 @@ public class DependencyTrackingBuildNotificationNotificationUserHomeOrg  impleme
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

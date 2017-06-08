@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundSchedulesCampaignsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -82,7 +83,8 @@ public class GetOutboundSchedulesCampaignsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/outbound/schedules/campaigns")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/outbound/schedules/campaigns")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -93,6 +95,7 @@ public class GetOutboundSchedulesCampaignsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOutboundSchedulesCampaignsRequest request;
@@ -101,7 +104,9 @@ public class GetOutboundSchedulesCampaignsRequest {
 			request = new GetOutboundSchedulesCampaignsRequest();
 		}
 
+		
 
+		
 
 
 		public GetOutboundSchedulesCampaignsRequest build() {

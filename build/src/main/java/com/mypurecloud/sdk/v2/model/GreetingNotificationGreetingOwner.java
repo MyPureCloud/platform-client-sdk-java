@@ -33,6 +33,7 @@ public class GreetingNotificationGreetingOwner  implements Serializable {
     this.id = id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

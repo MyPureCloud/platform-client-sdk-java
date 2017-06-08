@@ -25,13 +25,14 @@ public class CallRecord  implements Serializable {
     return lastAttempt;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Result of the last attempt to reach this number")
   @JsonProperty("lastResult")
   public String getLastResult() {
     return lastResult;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

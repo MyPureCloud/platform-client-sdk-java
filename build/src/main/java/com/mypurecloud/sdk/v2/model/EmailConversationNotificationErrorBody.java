@@ -48,7 +48,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody code(String code) {
@@ -65,7 +65,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody entityId(String entityId) {
@@ -82,7 +82,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody entityName(String entityName) {
@@ -99,7 +99,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody message(String message) {
@@ -116,7 +116,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody contextId(String contextId) {
@@ -167,7 +167,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationErrorBody errors(List<EmailConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class EmailConversationNotificationErrorBody  implements Serializable {
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

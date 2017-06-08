@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class DeleteFlowRequest {
+    
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -56,6 +57,7 @@ public class DeleteFlowRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,7 +87,8 @@ public class DeleteFlowRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/flows/{flowId}")
                 .withPathParameter("flowId", flowId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -96,10 +99,12 @@ public class DeleteFlowRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flowId) {
 	    return new Builder()
 	            .withRequiredParams(flowId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteFlowRequest request;
@@ -108,15 +113,20 @@ public class DeleteFlowRequest {
 			request = new DeleteFlowRequest();
 		}
 
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flowId) {
 			request.setFlowId(flowId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteFlowRequest build() {

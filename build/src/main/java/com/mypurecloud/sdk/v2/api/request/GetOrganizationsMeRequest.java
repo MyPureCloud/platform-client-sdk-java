@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 public class GetOrganizationsMeRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -47,7 +48,8 @@ public class GetOrganizationsMeRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/organizations/me")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/organizations/me")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -58,6 +60,7 @@ public class GetOrganizationsMeRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOrganizationsMeRequest request;
@@ -66,7 +69,9 @@ public class GetOrganizationsMeRequest {
 			request = new GetOrganizationsMeRequest();
 		}
 
+		
 
+		
 
 
 		public GetOrganizationsMeRequest build() {

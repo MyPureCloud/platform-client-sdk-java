@@ -41,7 +41,7 @@ public class FaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * Total number of expected pages, if known.
    **/
@@ -59,7 +59,7 @@ public class FaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-
+  
   /**
    * Active page of the transmission.
    **/
@@ -77,7 +77,7 @@ public class FaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-
+  
   /**
    * Number of lines that have completed transmission.
    **/
@@ -95,7 +95,7 @@ public class FaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-
+  
   /**
    * Number of bytes that have competed transmission.
    **/
@@ -113,7 +113,7 @@ public class FaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-
+  
   /**
    * Current signaling rate of transmission, baud rate.
    **/
@@ -131,7 +131,7 @@ public class FaxStatus  implements Serializable {
     this.baudRate = baudRate;
   }
 
-
+  
   /**
    * Number of page errors.
    **/
@@ -149,7 +149,7 @@ public class FaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-
+  
   /**
    * Number of line errors.
    **/
@@ -167,6 +167,7 @@ public class FaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

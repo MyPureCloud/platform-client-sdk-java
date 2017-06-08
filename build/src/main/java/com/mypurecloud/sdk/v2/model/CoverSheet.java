@@ -35,7 +35,7 @@ public class CoverSheet  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    * Locale, e.g. = en-US
    **/
@@ -53,6 +53,7 @@ public class CoverSheet  implements Serializable {
     this.locale = locale;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

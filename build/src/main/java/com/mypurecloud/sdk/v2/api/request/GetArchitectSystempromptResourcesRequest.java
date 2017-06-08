@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectSystempromptResourcesRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,6 +72,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -84,6 +87,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -98,6 +102,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -112,6 +117,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -149,7 +155,8 @@ public class GetArchitectSystempromptResourcesRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -160,10 +167,12 @@ public class GetArchitectSystempromptResourcesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId) {
 	    return new Builder()
 	            .withRequiredParams(promptId);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectSystempromptResourcesRequest request;
@@ -172,31 +181,40 @@ public class GetArchitectSystempromptResourcesRequest {
 			request = new GetArchitectSystempromptResourcesRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId) {
 			request.setPromptId(promptId);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectSystempromptResourcesRequest build() {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesSiteRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesSiteRequest {
 	    return this;
 	}
 
+	
 	private Site body;
 	public Site getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesSiteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesSiteRequest {
                 .withPathParameter("siteId", siteId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesSiteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId, Site body) {
 	    return new Builder()
 	            .withRequiredParams(siteId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesSiteRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesSiteRequest {
 			request = new PutTelephonyProvidersEdgesSiteRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withBody(Site body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId, Site body) {
 			request.setSiteId(siteId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesSiteRequest build() {

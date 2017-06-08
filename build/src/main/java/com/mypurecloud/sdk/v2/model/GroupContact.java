@@ -105,14 +105,14 @@ public class GroupContact  implements Serializable {
     this.address = address;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Formatted version of the address property")
   @JsonProperty("display")
   public String getDisplay() {
     return display;
   }
 
-
+  
   /**
    * Contact type of the address
    **/
@@ -130,7 +130,7 @@ public class GroupContact  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Media type of the address
    **/
@@ -148,6 +148,7 @@ public class GroupContact  implements Serializable {
     this.mediaType = mediaType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetDocumentationSearchRequest {
+    
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -48,6 +49,7 @@ public class GetDocumentationSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,7 +79,8 @@ public class GetDocumentationSearchRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/documentation/search")
                 .withQueryParameters("q64", "", q64)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -88,10 +91,12 @@ public class GetDocumentationSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
+	
 
 	public static class Builder {
 		private final GetDocumentationSearchRequest request;
@@ -100,15 +105,20 @@ public class GetDocumentationSearchRequest {
 			request = new GetDocumentationSearchRequest();
 		}
 
+		
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
+			
 			return this;
 		}
+		
 
 
 		public GetDocumentationSearchRequest build() {

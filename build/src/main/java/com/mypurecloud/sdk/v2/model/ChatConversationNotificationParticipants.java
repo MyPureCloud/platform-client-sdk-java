@@ -194,7 +194,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants name(String name) {
@@ -211,7 +211,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants address(String address) {
@@ -228,7 +228,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants startTime(Date startTime) {
@@ -245,7 +245,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -262,7 +262,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants endTime(Date endTime) {
@@ -279,7 +279,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -296,7 +296,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants purpose(String purpose) {
@@ -313,7 +313,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants state(StateEnum state) {
@@ -330,7 +330,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -347,7 +347,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -364,7 +364,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants held(Boolean held) {
@@ -381,7 +381,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -398,7 +398,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -415,7 +415,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -432,7 +432,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants queue(ChatConversationNotificationUriReference queue) {
@@ -449,7 +449,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -466,7 +466,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants errorInfo(ChatConversationNotificationErrorInfo errorInfo) {
@@ -483,7 +483,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants script(ChatConversationNotificationUriReference script) {
@@ -500,7 +500,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -517,7 +517,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -534,7 +534,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants provider(String provider) {
@@ -551,7 +551,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants externalContact(ChatConversationNotificationUriReference externalContact) {
@@ -568,7 +568,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants externalOrganization(ChatConversationNotificationUriReference externalOrganization) {
@@ -585,7 +585,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -602,7 +602,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants peer(String peer) {
@@ -619,7 +619,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationParticipants roomId(String roomId) {
@@ -636,6 +636,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     this.roomId = roomId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

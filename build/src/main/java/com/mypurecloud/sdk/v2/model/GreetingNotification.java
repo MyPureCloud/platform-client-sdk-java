@@ -41,7 +41,7 @@ public class GreetingNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public GreetingNotification name(String name) {
@@ -58,7 +58,7 @@ public class GreetingNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public GreetingNotification type(String type) {
@@ -75,7 +75,7 @@ public class GreetingNotification  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public GreetingNotification ownerType(String ownerType) {
@@ -92,7 +92,7 @@ public class GreetingNotification  implements Serializable {
     this.ownerType = ownerType;
   }
 
-
+  
   /**
    **/
   public GreetingNotification owner(DocumentDataV2NotificationWorkspace owner) {
@@ -109,7 +109,7 @@ public class GreetingNotification  implements Serializable {
     this.owner = owner;
   }
 
-
+  
   /**
    **/
   public GreetingNotification greetingAudioFile(GreetingNotificationGreetingAudioFile greetingAudioFile) {
@@ -126,7 +126,7 @@ public class GreetingNotification  implements Serializable {
     this.greetingAudioFile = greetingAudioFile;
   }
 
-
+  
   /**
    **/
   public GreetingNotification audioTTS(String audioTTS) {
@@ -143,6 +143,7 @@ public class GreetingNotification  implements Serializable {
     this.audioTTS = audioTTS;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

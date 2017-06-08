@@ -81,7 +81,7 @@ public class Flow  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The flow name
    **/
@@ -99,7 +99,7 @@ public class Flow  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Flow description(String description) {
@@ -116,7 +116,7 @@ public class Flow  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Flow type(TypeEnum type) {
@@ -133,7 +133,7 @@ public class Flow  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Flow lockedUser(User lockedUser) {
@@ -150,7 +150,7 @@ public class Flow  implements Serializable {
     this.lockedUser = lockedUser;
   }
 
-
+  
   /**
    **/
   public Flow active(Boolean active) {
@@ -167,7 +167,7 @@ public class Flow  implements Serializable {
     this.active = active;
   }
 
-
+  
   /**
    **/
   public Flow system(Boolean system) {
@@ -184,7 +184,7 @@ public class Flow  implements Serializable {
     this.system = system;
   }
 
-
+  
   /**
    **/
   public Flow deleted(Boolean deleted) {
@@ -201,7 +201,7 @@ public class Flow  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    **/
   public Flow publishedVersion(FlowVersion publishedVersion) {
@@ -218,7 +218,7 @@ public class Flow  implements Serializable {
     this.publishedVersion = publishedVersion;
   }
 
-
+  
   /**
    **/
   public Flow savedVersion(FlowVersion savedVersion) {
@@ -235,7 +235,7 @@ public class Flow  implements Serializable {
     this.savedVersion = savedVersion;
   }
 
-
+  
   /**
    * json schema describing the inputs for the flow
    **/
@@ -253,7 +253,7 @@ public class Flow  implements Serializable {
     this.inputSchema = inputSchema;
   }
 
-
+  
   /**
    * json schema describing the outputs for the flow
    **/
@@ -271,7 +271,7 @@ public class Flow  implements Serializable {
     this.outputSchema = outputSchema;
   }
 
-
+  
   /**
    **/
   public Flow checkedInVersion(FlowVersion checkedInVersion) {
@@ -288,7 +288,7 @@ public class Flow  implements Serializable {
     this.checkedInVersion = checkedInVersion;
   }
 
-
+  
   /**
    **/
   public Flow publishedBy(User publishedBy) {
@@ -305,7 +305,7 @@ public class Flow  implements Serializable {
     this.publishedBy = publishedBy;
   }
 
-
+  
   /**
    **/
   public Flow currentOperation(Operation currentOperation) {
@@ -322,13 +322,14 @@ public class Flow  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

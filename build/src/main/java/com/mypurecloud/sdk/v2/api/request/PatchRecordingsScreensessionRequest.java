@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PatchRecordingsScreensessionRequest {
+    
 	private String recordingSessionId;
 	public String getRecordingSessionId() {
 		return this.recordingSessionId;
@@ -52,6 +53,7 @@ public class PatchRecordingsScreensessionRequest {
 	    return this;
 	}
 
+	
 	private ScreenRecordingSessionRequest body;
 	public ScreenRecordingSessionRequest getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PatchRecordingsScreensessionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -97,6 +100,7 @@ public class PatchRecordingsScreensessionRequest {
                 .withPathParameter("recordingSessionId", recordingSessionId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -108,10 +112,12 @@ public class PatchRecordingsScreensessionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String recordingSessionId) {
 	    return new Builder()
 	            .withRequiredParams(recordingSessionId);
 	}
+	
 
 	public static class Builder {
 		private final PatchRecordingsScreensessionRequest request;
@@ -120,19 +126,25 @@ public class PatchRecordingsScreensessionRequest {
 			request = new PatchRecordingsScreensessionRequest();
 		}
 
+		
 		public Builder withRecordingSessionId(String recordingSessionId) {
 			request.setRecordingSessionId(recordingSessionId);
 			return this;
 		}
+		
 		public Builder withBody(ScreenRecordingSessionRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String recordingSessionId) {
 			request.setRecordingSessionId(recordingSessionId);
+			
 			return this;
 		}
+		
 
 
 		public PatchRecordingsScreensessionRequest build() {

@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class DeleteUserStationAssociatedstationRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class DeleteUserStationAssociatedstationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,7 +93,8 @@ public class DeleteUserStationAssociatedstationRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/users/{userId}/station/associatedstation")
                 .withPathParameter("userId", userId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -102,10 +105,12 @@ public class DeleteUserStationAssociatedstationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteUserStationAssociatedstationRequest request;
@@ -114,15 +119,20 @@ public class DeleteUserStationAssociatedstationRequest {
 			request = new DeleteUserStationAssociatedstationRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteUserStationAssociatedstationRequest build() {

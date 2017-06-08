@@ -73,7 +73,7 @@ public class ExtensionPool  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -91,7 +91,7 @@ public class ExtensionPool  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ExtensionPool description(String description) {
@@ -108,7 +108,7 @@ public class ExtensionPool  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public ExtensionPool version(Integer version) {
@@ -125,7 +125,7 @@ public class ExtensionPool  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -143,7 +143,7 @@ public class ExtensionPool  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -161,7 +161,7 @@ public class ExtensionPool  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public ExtensionPool modifiedBy(String modifiedBy) {
@@ -178,7 +178,7 @@ public class ExtensionPool  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public ExtensionPool createdBy(String createdBy) {
@@ -195,7 +195,7 @@ public class ExtensionPool  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public ExtensionPool state(StateEnum state) {
@@ -212,7 +212,7 @@ public class ExtensionPool  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ExtensionPool modifiedByApp(String modifiedByApp) {
@@ -229,7 +229,7 @@ public class ExtensionPool  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public ExtensionPool createdByApp(String createdByApp) {
@@ -246,7 +246,7 @@ public class ExtensionPool  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The starting phone number for the range of this Extension pool. Must be in E.164 format
    **/
@@ -264,7 +264,7 @@ public class ExtensionPool  implements Serializable {
     this.startNumber = startNumber;
   }
 
-
+  
   /**
    * The ending phone number for the range of this Extension pool. Must be in E.164 format
    **/
@@ -282,13 +282,14 @@ public class ExtensionPool  implements Serializable {
     this.endNumber = endNumber;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
+    
 	private String schemaCategory;
 	public String getSchemaCategory() {
 		return this.schemaCategory;
@@ -98,6 +99,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	    return this;
 	}
 
+	
 	private String schemaType;
 	public String getSchemaType() {
 		return this.schemaType;
@@ -112,6 +114,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -126,6 +129,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -140,6 +144,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -180,7 +185,8 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -191,10 +197,12 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String schemaCategory, String schemaType) {
 	    return new Builder()
 	            .withRequiredParams(schemaCategory, schemaType);
 	}
+	
 
 	public static class Builder {
 		private final GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest request;
@@ -203,28 +211,36 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 			request = new GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest();
 		}
 
+		
 		public Builder withSchemaCategory(String schemaCategory) {
 			request.setSchemaCategory(schemaCategory);
 			return this;
 		}
+		
 		public Builder withSchemaType(String schemaType) {
 			request.setSchemaType(schemaType);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String schemaCategory, String schemaType) {
 			request.setSchemaCategory(schemaCategory);
-			request.setSchemaType(schemaType);
+						request.setSchemaType(schemaType);
+			
 			return this;
 		}
+		
 
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest build() {

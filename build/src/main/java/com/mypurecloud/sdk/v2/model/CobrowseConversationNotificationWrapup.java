@@ -41,7 +41,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationWrapup notes(String notes) {
@@ -58,7 +58,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationWrapup tags(List<String> tags) {
@@ -75,7 +75,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationWrapup durationSeconds(Integer durationSeconds) {
@@ -92,7 +92,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationWrapup endTime(Date endTime) {
@@ -109,7 +109,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationWrapup additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class CobrowseConversationNotificationWrapup  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

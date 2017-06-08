@@ -36,6 +36,7 @@ public class PromptNotificationNotificationErrorMessageParams  implements Serial
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

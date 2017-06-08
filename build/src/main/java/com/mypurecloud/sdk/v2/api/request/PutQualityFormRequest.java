@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PutQualityFormRequest {
+    
 	private String formId;
 	public String getFormId() {
 		return this.formId;
@@ -52,6 +53,7 @@ public class PutQualityFormRequest {
 	    return this;
 	}
 
+	
 	private EvaluationForm body;
 	public EvaluationForm getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PutQualityFormRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +105,7 @@ public class PutQualityFormRequest {
                 .withPathParameter("formId", formId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -113,10 +117,12 @@ public class PutQualityFormRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String formId, EvaluationForm body) {
 	    return new Builder()
 	            .withRequiredParams(formId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutQualityFormRequest request;
@@ -125,20 +131,26 @@ public class PutQualityFormRequest {
 			request = new PutQualityFormRequest();
 		}
 
+		
 		public Builder withFormId(String formId) {
 			request.setFormId(formId);
 			return this;
 		}
+		
 		public Builder withBody(EvaluationForm body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String formId, EvaluationForm body) {
 			request.setFormId(formId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutQualityFormRequest build() {

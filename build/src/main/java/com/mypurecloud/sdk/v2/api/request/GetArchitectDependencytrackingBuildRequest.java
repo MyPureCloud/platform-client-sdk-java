@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingBuildRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -64,7 +65,8 @@ public class GetArchitectDependencytrackingBuildRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/architect/dependencytracking/build")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/architect/dependencytracking/build")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -75,6 +77,7 @@ public class GetArchitectDependencytrackingBuildRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingBuildRequest request;
@@ -83,7 +86,9 @@ public class GetArchitectDependencytrackingBuildRequest {
 			request = new GetArchitectDependencytrackingBuildRequest();
 		}
 
+		
 
+		
 
 
 		public GetArchitectDependencytrackingBuildRequest build() {

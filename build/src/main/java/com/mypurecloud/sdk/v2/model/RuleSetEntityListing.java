@@ -46,7 +46,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.total = total;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public RuleSetEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class RuleSetEntityListing  implements Serializable, PagedResource<RuleSe
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

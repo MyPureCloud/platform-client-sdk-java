@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCallsHistoryRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -74,6 +75,7 @@ public class GetConversationsCallsHistoryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -88,6 +90,7 @@ public class GetConversationsCallsHistoryRequest {
 	    return this;
 	}
 
+	
 	private String interval;
 	public String getInterval() {
 		return this.interval;
@@ -102,6 +105,7 @@ public class GetConversationsCallsHistoryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,7 +134,8 @@ public class GetConversationsCallsHistoryRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("interval", "", interval)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -141,6 +146,7 @@ public class GetConversationsCallsHistoryRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetConversationsCallsHistoryRequest request;
@@ -149,19 +155,24 @@ public class GetConversationsCallsHistoryRequest {
 			request = new GetConversationsCallsHistoryRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
 			return this;
 		}
+		
 
+		
 
 
 		public GetConversationsCallsHistoryRequest build() {

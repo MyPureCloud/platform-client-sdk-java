@@ -37,7 +37,7 @@ public class AttributeQueryRequest  implements Serializable {
     this.query = query;
   }
 
-
+  
   /**
    * The maximum number of hits to return. Default: 25, Maximum: 500.
    **/
@@ -55,7 +55,7 @@ public class AttributeQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The page number to start at. The first page is number 1.
    **/
@@ -73,6 +73,7 @@ public class AttributeQueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

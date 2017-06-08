@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesEdgegroupRequest {
+    
 	private String edgeGroupId;
 	public String getEdgeGroupId() {
 		return this.edgeGroupId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesEdgegroupRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesEdgegroupRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,7 +146,8 @@ public class GetTelephonyProvidersEdgesEdgegroupRequest {
                 .withPathParameter("edgeGroupId", edgeGroupId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -154,10 +158,12 @@ public class GetTelephonyProvidersEdgesEdgegroupRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeGroupId) {
 	    return new Builder()
 	            .withRequiredParams(edgeGroupId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesEdgegroupRequest request;
@@ -166,19 +172,25 @@ public class GetTelephonyProvidersEdgesEdgegroupRequest {
 			request = new GetTelephonyProvidersEdgesEdgegroupRequest();
 		}
 
+		
 		public Builder withEdgeGroupId(String edgeGroupId) {
 			request.setEdgeGroupId(edgeGroupId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeGroupId) {
 			request.setEdgeGroupId(edgeGroupId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesEdgegroupRequest build() {

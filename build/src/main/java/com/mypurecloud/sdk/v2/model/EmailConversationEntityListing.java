@@ -46,7 +46,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EmailConversationEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EmailConversationEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

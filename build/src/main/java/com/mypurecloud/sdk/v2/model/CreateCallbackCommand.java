@@ -47,7 +47,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    * The identifier of the queue to be used for the callback. Either queueId or routingData is required.
    **/
@@ -65,7 +65,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    * The routing data to be used for the callback. Either queueId or routingData is required.
    **/
@@ -83,7 +83,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.routingData = routingData;
   }
 
-
+  
   /**
    * The name of the party to be called back.
    **/
@@ -101,7 +101,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-
+  
   /**
    * A list of phone numbers for the callback.
    **/
@@ -119,7 +119,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-
+  
   /**
    * The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -137,7 +137,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-
+  
   /**
    * The country code to be associated with the callback numbers.
    **/
@@ -155,7 +155,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.countryCode = countryCode;
   }
 
-
+  
   /**
    * A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \"notes\": \"ready to close the deal!\", \"customerPreferredName\": \"Doc\" }
    **/
@@ -173,6 +173,7 @@ public class CreateCallbackCommand  implements Serializable {
     this.data = data;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

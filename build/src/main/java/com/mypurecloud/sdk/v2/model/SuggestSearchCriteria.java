@@ -79,7 +79,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.endValue = endValue;
   }
 
-
+  
   /**
    * A list of values for the search to match against
    **/
@@ -97,7 +97,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.values = values;
   }
 
-
+  
   /**
    * The start value of the range. This field is used for range search types.
    **/
@@ -115,7 +115,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.startValue = startValue;
   }
 
-
+  
   /**
    * Field names to search against
    **/
@@ -133,7 +133,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.fields = fields;
   }
 
-
+  
   /**
    * A value for the search to match against
    **/
@@ -151,7 +151,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * How to apply this search criteria against other criteria
    **/
@@ -169,7 +169,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * Groups multiple conditions
    **/
@@ -187,6 +187,7 @@ public class SuggestSearchCriteria  implements Serializable {
     this.group = group;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

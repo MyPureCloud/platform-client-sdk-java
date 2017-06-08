@@ -113,7 +113,7 @@ public class EdgeTrunkBase  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -131,7 +131,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase description(String description) {
@@ -148,7 +148,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase version(Integer version) {
@@ -165,7 +165,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -183,7 +183,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -201,7 +201,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase modifiedBy(String modifiedBy) {
@@ -218,7 +218,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase createdBy(String createdBy) {
@@ -235,7 +235,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase state(StateEnum state) {
@@ -252,7 +252,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase modifiedByApp(String modifiedByApp) {
@@ -269,7 +269,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase createdByApp(String createdByApp) {
@@ -286,7 +286,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The meta-base this trunk is based on.
    **/
@@ -304,7 +304,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.trunkMetabase = trunkMetabase;
   }
 
-
+  
   /**
    **/
   public EdgeTrunkBase properties(Map<String, Object> properties) {
@@ -321,7 +321,7 @@ public class EdgeTrunkBase  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    * The type of this trunk base.
    **/
@@ -339,13 +339,14 @@ public class EdgeTrunkBase  implements Serializable {
     this.trunkType = trunkType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

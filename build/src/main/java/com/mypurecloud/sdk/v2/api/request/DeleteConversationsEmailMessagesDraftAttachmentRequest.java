@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 	    return this;
 	}
 
+	
 	private String attachmentId;
 	public String getAttachmentId() {
 		return this.attachmentId;
@@ -88,6 +90,7 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,7 +127,8 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("attachmentId", attachmentId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -135,10 +139,12 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String attachmentId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, attachmentId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteConversationsEmailMessagesDraftAttachmentRequest request;
@@ -147,20 +153,26 @@ public class DeleteConversationsEmailMessagesDraftAttachmentRequest {
 			request = new DeleteConversationsEmailMessagesDraftAttachmentRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withAttachmentId(String attachmentId) {
 			request.setAttachmentId(attachmentId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String attachmentId) {
 			request.setConversationId(conversationId);
-			request.setAttachmentId(attachmentId);
+						request.setAttachmentId(attachmentId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteConversationsEmailMessagesDraftAttachmentRequest build() {

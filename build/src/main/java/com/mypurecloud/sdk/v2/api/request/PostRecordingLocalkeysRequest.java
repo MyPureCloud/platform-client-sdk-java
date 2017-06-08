@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PostRecordingLocalkeysRequest {
+    
 	private LocalEncryptionKeyRequest body;
 	public LocalEncryptionKeyRequest getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostRecordingLocalkeysRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PostRecordingLocalkeysRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/recording/localkeys")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PostRecordingLocalkeysRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(LocalEncryptionKeyRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostRecordingLocalkeysRequest request;
@@ -104,15 +109,20 @@ public class PostRecordingLocalkeysRequest {
 			request = new PostRecordingLocalkeysRequest();
 		}
 
+		
 		public Builder withBody(LocalEncryptionKeyRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(LocalEncryptionKeyRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRecordingLocalkeysRequest build() {

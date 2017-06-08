@@ -30,7 +30,7 @@ public class DomainPermissionCollection  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DomainPermissionCollection name(String name) {
@@ -47,7 +47,7 @@ public class DomainPermissionCollection  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainPermissionCollection domain(String domain) {
@@ -64,7 +64,7 @@ public class DomainPermissionCollection  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    **/
   public DomainPermissionCollection permissionMap(Map<String, List<DomainPermission>> permissionMap) {
@@ -81,13 +81,14 @@ public class DomainPermissionCollection  implements Serializable {
     this.permissionMap = permissionMap;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

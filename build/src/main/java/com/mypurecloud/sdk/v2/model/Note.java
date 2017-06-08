@@ -35,7 +35,7 @@ public class Note  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Note name(String name) {
@@ -52,7 +52,7 @@ public class Note  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Note noteText(String noteText) {
@@ -69,7 +69,7 @@ public class Note  implements Serializable {
     this.noteText = noteText;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -87,7 +87,7 @@ public class Note  implements Serializable {
     this.modifyDate = modifyDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -105,7 +105,7 @@ public class Note  implements Serializable {
     this.createDate = createDate;
   }
 
-
+  
   /**
    * The author of this note
    **/
@@ -123,7 +123,7 @@ public class Note  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
@@ -141,13 +141,14 @@ public class Note  implements Serializable {
     this.externalDataSources = externalDataSources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

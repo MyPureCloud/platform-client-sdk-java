@@ -119,7 +119,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.column = column;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates columnType(ColumnTypeEnum columnType) {
@@ -136,7 +136,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.columnType = columnType;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates operator(OperatorEnum operator) {
@@ -153,7 +153,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates value(String value) {
@@ -170,7 +170,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates range(ContactListFilterNotificationRange range) {
@@ -187,7 +187,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.range = range;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates inverted(Boolean inverted) {
@@ -204,7 +204,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.inverted = inverted;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationPredicates additionalProperties(Object additionalProperties) {
@@ -221,6 +221,7 @@ public class ContactListFilterNotificationPredicates  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

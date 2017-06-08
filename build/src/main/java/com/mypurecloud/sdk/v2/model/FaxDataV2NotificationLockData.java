@@ -37,7 +37,7 @@ public class FaxDataV2NotificationLockData  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-
+  
   /**
    **/
   public FaxDataV2NotificationLockData dateCreated(Date dateCreated) {
@@ -54,7 +54,7 @@ public class FaxDataV2NotificationLockData  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public FaxDataV2NotificationLockData dateExpires(Date dateExpires) {
@@ -71,6 +71,7 @@ public class FaxDataV2NotificationLockData  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

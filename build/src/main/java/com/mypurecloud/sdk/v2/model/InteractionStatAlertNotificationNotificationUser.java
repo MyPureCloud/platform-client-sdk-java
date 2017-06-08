@@ -34,7 +34,7 @@ public class InteractionStatAlertNotificationNotificationUser  implements Serial
     this.id = id;
   }
 
-
+  
   /**
    **/
   public InteractionStatAlertNotificationNotificationUser displayName(String displayName) {
@@ -51,6 +51,7 @@ public class InteractionStatAlertNotificationNotificationUser  implements Serial
     this.displayName = displayName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

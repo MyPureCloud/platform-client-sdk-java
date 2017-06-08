@@ -46,7 +46,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EvaluationEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EvaluationEntityListing  implements Serializable, PagedResource<Eva
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

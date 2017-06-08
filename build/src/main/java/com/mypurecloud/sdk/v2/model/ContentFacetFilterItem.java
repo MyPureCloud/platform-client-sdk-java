@@ -117,7 +117,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ContentFacetFilterItem type(TypeEnum type) {
@@ -134,7 +134,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ContentFacetFilterItem operator(OperatorEnum operator) {
@@ -151,7 +151,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public ContentFacetFilterItem values(List<String> values) {
@@ -168,6 +168,7 @@ public class ContentFacetFilterItem  implements Serializable {
     this.values = values;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetConversationRecordingRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class GetConversationRecordingRequest {
 	    return this;
 	}
 
+	
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -66,6 +68,7 @@ public class GetConversationRecordingRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -80,6 +83,7 @@ public class GetConversationRecordingRequest {
 	    return this;
 	}
 
+	
 	private Boolean download;
 	public Boolean getDownload() {
 		return this.download;
@@ -94,6 +98,7 @@ public class GetConversationRecordingRequest {
 	    return this;
 	}
 
+	
 	private String fileName;
 	public String getFileName() {
 		return this.fileName;
@@ -108,6 +113,7 @@ public class GetConversationRecordingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,7 +156,8 @@ public class GetConversationRecordingRequest {
                 .withQueryParameters("download", "", download)
         
                 .withQueryParameters("fileName", "", fileName)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -161,10 +168,12 @@ public class GetConversationRecordingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, recordingId);
 	}
+	
 
 	public static class Builder {
 		private final GetConversationRecordingRequest request;
@@ -173,32 +182,41 @@ public class GetConversationRecordingRequest {
 			request = new GetConversationRecordingRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 		public Builder withDownload(Boolean download) {
 			request.setDownload(download);
 			return this;
 		}
+		
 		public Builder withFileName(String fileName) {
 			request.setFileName(fileName);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String recordingId) {
 			request.setConversationId(conversationId);
-			request.setRecordingId(recordingId);
+						request.setRecordingId(recordingId);
+			
 			return this;
 		}
+		
 
 
 		public GetConversationRecordingRequest build() {

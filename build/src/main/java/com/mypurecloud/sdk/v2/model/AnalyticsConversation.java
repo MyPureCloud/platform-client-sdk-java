@@ -42,7 +42,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationId = conversationId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -60,7 +60,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationStart = conversationStart;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -78,7 +78,7 @@ public class AnalyticsConversation  implements Serializable {
     this.conversationEnd = conversationEnd;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversation participants(List<AnalyticsParticipant> participants) {
@@ -95,7 +95,7 @@ public class AnalyticsConversation  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public AnalyticsConversation evaluations(List<AnalyticsEvaluation> evaluations) {
@@ -112,6 +112,7 @@ public class AnalyticsConversation  implements Serializable {
     this.evaluations = evaluations;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

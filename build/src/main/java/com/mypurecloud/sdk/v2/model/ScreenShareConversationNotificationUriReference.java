@@ -34,7 +34,7 @@ public class ScreenShareConversationNotificationUriReference  implements Seriali
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationUriReference name(String name) {
@@ -51,6 +51,7 @@ public class ScreenShareConversationNotificationUriReference  implements Seriali
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

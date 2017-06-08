@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsChatParticipantCommunicationRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 	    return this;
 	}
 
+	
 	private String participantId;
 	public String getParticipantId() {
 		return this.participantId;
@@ -88,6 +90,7 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 	    return this;
 	}
 
+	
 	private String communicationId;
 	public String getCommunicationId() {
 		return this.communicationId;
@@ -102,6 +105,7 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 	    return this;
 	}
 
+	
 	private MediaParticipantRequest body;
 	public MediaParticipantRequest getBody() {
 		return this.body;
@@ -116,6 +120,7 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -166,6 +171,7 @@ public class PatchConversationsChatParticipantCommunicationRequest {
                 .withPathParameter("communicationId", communicationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -177,10 +183,12 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, participantId, communicationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchConversationsChatParticipantCommunicationRequest request;
@@ -189,30 +197,38 @@ public class PatchConversationsChatParticipantCommunicationRequest {
 			request = new PatchConversationsChatParticipantCommunicationRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withParticipantId(String participantId) {
 			request.setParticipantId(participantId);
 			return this;
 		}
+		
 		public Builder withCommunicationId(String communicationId) {
 			request.setCommunicationId(communicationId);
 			return this;
 		}
+		
 		public Builder withBody(MediaParticipantRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
 			request.setConversationId(conversationId);
-			request.setParticipantId(participantId);
-			request.setCommunicationId(communicationId);
-			request.setBody(body);
+						request.setParticipantId(participantId);
+						request.setCommunicationId(communicationId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchConversationsChatParticipantCommunicationRequest build() {

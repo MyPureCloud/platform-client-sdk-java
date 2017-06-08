@@ -36,6 +36,7 @@ public class Bullseye  implements Serializable {
     this.rings = rings;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

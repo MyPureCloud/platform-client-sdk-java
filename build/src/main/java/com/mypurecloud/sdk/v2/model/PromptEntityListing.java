@@ -46,7 +46,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.total = total;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public PromptEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class PromptEntityListing  implements Serializable, PagedResource<Prompt>
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

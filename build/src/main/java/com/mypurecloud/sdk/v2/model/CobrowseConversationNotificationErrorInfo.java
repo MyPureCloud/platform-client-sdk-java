@@ -48,7 +48,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.status = status;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo code(String code) {
@@ -65,7 +65,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.code = code;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo entityId(String entityId) {
@@ -82,7 +82,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo entityName(String entityName) {
@@ -99,7 +99,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo message(String message) {
@@ -116,7 +116,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.message = message;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo contextId(String contextId) {
@@ -167,7 +167,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.details = details;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationErrorInfo errors(List<CobrowseConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class CobrowseConversationNotificationErrorInfo  implements Serializable 
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

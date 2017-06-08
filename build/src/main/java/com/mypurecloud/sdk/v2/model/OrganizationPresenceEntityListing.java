@@ -46,7 +46,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public OrganizationPresenceEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class OrganizationPresenceEntityListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

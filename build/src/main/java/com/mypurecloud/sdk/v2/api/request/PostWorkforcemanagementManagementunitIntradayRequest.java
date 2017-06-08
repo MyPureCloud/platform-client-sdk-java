@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class PostWorkforcemanagementManagementunitIntradayRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class PostWorkforcemanagementManagementunitIntradayRequest {
 	    return this;
 	}
 
+	
 	private IntradayQueryDataCommand body;
 	public IntradayQueryDataCommand getBody() {
 		return this.body;
@@ -62,6 +64,7 @@ public class PostWorkforcemanagementManagementunitIntradayRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +96,7 @@ public class PostWorkforcemanagementManagementunitIntradayRequest {
                 .withPathParameter("muId", muId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +108,12 @@ public class PostWorkforcemanagementManagementunitIntradayRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId) {
 	    return new Builder()
 	            .withRequiredParams(muId);
 	}
+	
 
 	public static class Builder {
 		private final PostWorkforcemanagementManagementunitIntradayRequest request;
@@ -116,19 +122,25 @@ public class PostWorkforcemanagementManagementunitIntradayRequest {
 			request = new PostWorkforcemanagementManagementunitIntradayRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 		public Builder withBody(IntradayQueryDataCommand body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId) {
 			request.setMuId(muId);
+			
 			return this;
 		}
+		
 
 
 		public PostWorkforcemanagementManagementunitIntradayRequest build() {

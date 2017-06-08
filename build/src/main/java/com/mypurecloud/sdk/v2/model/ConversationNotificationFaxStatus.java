@@ -40,7 +40,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus expectedPages(Integer expectedPages) {
@@ -57,7 +57,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.expectedPages = expectedPages;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus activePage(Integer activePage) {
@@ -74,7 +74,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.activePage = activePage;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus linesTransmitted(Integer linesTransmitted) {
@@ -91,7 +91,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.linesTransmitted = linesTransmitted;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus bytesTransmitted(Integer bytesTransmitted) {
@@ -108,7 +108,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.bytesTransmitted = bytesTransmitted;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus baudRate(Integer baudRate) {
@@ -125,7 +125,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.baudRate = baudRate;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus pageErrors(Integer pageErrors) {
@@ -142,7 +142,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.pageErrors = pageErrors;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationFaxStatus lineErrors(Integer lineErrors) {
@@ -159,6 +159,7 @@ public class ConversationNotificationFaxStatus  implements Serializable {
     this.lineErrors = lineErrors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PostDocumentationSearchRequest {
+    
 	private DocumentationSearchRequest body;
 	public DocumentationSearchRequest getBody() {
 		return this.body;
@@ -48,6 +49,7 @@ public class PostDocumentationSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,6 +79,7 @@ public class PostDocumentationSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/documentation/search")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -88,10 +91,12 @@ public class PostDocumentationSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DocumentationSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostDocumentationSearchRequest request;
@@ -100,15 +105,20 @@ public class PostDocumentationSearchRequest {
 			request = new PostDocumentationSearchRequest();
 		}
 
+		
 		public Builder withBody(DocumentationSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DocumentationSearchRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostDocumentationSearchRequest build() {

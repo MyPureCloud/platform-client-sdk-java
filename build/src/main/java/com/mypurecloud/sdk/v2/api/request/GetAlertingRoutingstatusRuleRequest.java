@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingRoutingstatusRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class GetAlertingRoutingstatusRuleRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -67,6 +69,7 @@ public class GetAlertingRoutingstatusRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,7 +101,8 @@ public class GetAlertingRoutingstatusRuleRequest {
                 .withPathParameter("ruleId", ruleId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -109,10 +113,12 @@ public class GetAlertingRoutingstatusRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId) {
 	    return new Builder()
 	            .withRequiredParams(ruleId);
 	}
+	
 
 	public static class Builder {
 		private final GetAlertingRoutingstatusRuleRequest request;
@@ -121,19 +127,25 @@ public class GetAlertingRoutingstatusRuleRequest {
 			request = new GetAlertingRoutingstatusRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId) {
 			request.setRuleId(ruleId);
+			
 			return this;
 		}
+		
 
 
 		public GetAlertingRoutingstatusRuleRequest build() {

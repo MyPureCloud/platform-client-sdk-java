@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class GetOauthClientsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -45,7 +46,8 @@ public class GetOauthClientsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/oauth/clients")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/oauth/clients")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -56,6 +58,7 @@ public class GetOauthClientsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOauthClientsRequest request;
@@ -64,7 +67,9 @@ public class GetOauthClientsRequest {
 			request = new GetOauthClientsRequest();
 		}
 
+		
 
+		
 
 
 		public GetOauthClientsRequest build() {

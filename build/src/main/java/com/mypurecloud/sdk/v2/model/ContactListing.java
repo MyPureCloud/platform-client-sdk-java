@@ -46,7 +46,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ContactListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ContactListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ContactListing total(Long total) {
@@ -97,7 +97,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ContactListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ContactListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ContactListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ContactListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ContactListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ContactListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ContactListing  implements Serializable, PagedResource<ExternalCont
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

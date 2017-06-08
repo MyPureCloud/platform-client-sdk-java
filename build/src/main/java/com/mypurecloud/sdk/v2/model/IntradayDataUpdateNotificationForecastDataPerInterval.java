@@ -36,7 +36,7 @@ public class IntradayDataUpdateNotificationForecastDataPerInterval  implements S
     this.offered = offered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationForecastDataPerInterval averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -53,7 +53,7 @@ public class IntradayDataUpdateNotificationForecastDataPerInterval  implements S
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationForecastDataPerInterval averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -70,6 +70,7 @@ public class IntradayDataUpdateNotificationForecastDataPerInterval  implements S
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

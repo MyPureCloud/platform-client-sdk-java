@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesExtensionsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -140,6 +144,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 	    return this;
 	}
 
+	
 	private String number;
 	public String getNumber() {
 		return this.number;
@@ -154,6 +159,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -186,7 +192,8 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("number", "", number)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -197,6 +204,7 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesExtensionsRequest request;
@@ -205,27 +213,34 @@ public class GetTelephonyProvidersEdgesExtensionsRequest {
 			request = new GetTelephonyProvidersEdgesExtensionsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withNumber(String number) {
 			request.setNumber(number);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesExtensionsRequest build() {

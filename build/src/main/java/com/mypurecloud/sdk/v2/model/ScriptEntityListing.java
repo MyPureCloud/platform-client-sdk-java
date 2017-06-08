@@ -46,7 +46,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ScriptEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ScriptEntityListing  implements Serializable, PagedResource<Script>
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

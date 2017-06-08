@@ -33,6 +33,7 @@ public class UserScheduleAdherenceUpdateNotificationUser  implements Serializabl
     this.id = id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

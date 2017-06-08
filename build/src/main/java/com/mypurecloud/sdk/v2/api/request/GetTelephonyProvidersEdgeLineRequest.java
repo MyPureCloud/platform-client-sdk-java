@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgeLineRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgeLineRequest {
 	    return this;
 	}
 
+	
 	private String lineId;
 	public String getLineId() {
 		return this.lineId;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgeLineRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,7 +151,8 @@ public class GetTelephonyProvidersEdgeLineRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withPathParameter("lineId", lineId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -159,10 +163,12 @@ public class GetTelephonyProvidersEdgeLineRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String lineId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, lineId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgeLineRequest request;
@@ -171,20 +177,26 @@ public class GetTelephonyProvidersEdgeLineRequest {
 			request = new GetTelephonyProvidersEdgeLineRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withLineId(String lineId) {
 			request.setLineId(lineId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String lineId) {
 			request.setEdgeId(edgeId);
-			request.setLineId(lineId);
+						request.setLineId(lineId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgeLineRequest build() {

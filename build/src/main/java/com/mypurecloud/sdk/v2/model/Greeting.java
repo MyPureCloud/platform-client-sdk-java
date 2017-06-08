@@ -108,7 +108,7 @@ public class Greeting  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Greeting name(String name) {
@@ -125,7 +125,7 @@ public class Greeting  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Greeting type
    **/
@@ -143,7 +143,7 @@ public class Greeting  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Greeting owner type
    **/
@@ -161,7 +161,7 @@ public class Greeting  implements Serializable {
     this.ownerType = ownerType;
   }
 
-
+  
   /**
    * Greeting owner
    **/
@@ -179,7 +179,7 @@ public class Greeting  implements Serializable {
     this.owner = owner;
   }
 
-
+  
   /**
    **/
   public Greeting audioFile(GreetingAudioFile audioFile) {
@@ -196,7 +196,7 @@ public class Greeting  implements Serializable {
     this.audioFile = audioFile;
   }
 
-
+  
   /**
    **/
   public Greeting audioTTS(String audioTTS) {
@@ -213,7 +213,7 @@ public class Greeting  implements Serializable {
     this.audioTTS = audioTTS;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -231,7 +231,7 @@ public class Greeting  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public Greeting createdBy(String createdBy) {
@@ -248,7 +248,7 @@ public class Greeting  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -266,7 +266,7 @@ public class Greeting  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public Greeting modifiedBy(String modifiedBy) {
@@ -283,13 +283,14 @@ public class Greeting  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -87,7 +87,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto maxDownloadRate(Integer maxDownloadRate) {
@@ -104,7 +104,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.maxDownloadRate = maxDownloadRate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -122,7 +122,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.downloadStartTime = downloadStartTime;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -140,7 +140,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeStartTime = executeStartTime;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -158,7 +158,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeStopTime = executeStopTime;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto executeOnIdle(Boolean executeOnIdle) {
@@ -175,7 +175,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.executeOnIdle = executeOnIdle;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto status(StatusEnum status) {
@@ -192,7 +192,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto edgeUri(String edgeUri) {
@@ -209,7 +209,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto callDrainingWaitTimeSeconds(Long callDrainingWaitTimeSeconds) {
@@ -226,7 +226,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.callDrainingWaitTimeSeconds = callDrainingWaitTimeSeconds;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareUpdateDto current(Boolean current) {
@@ -243,6 +243,7 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
     this.current = current;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

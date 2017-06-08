@@ -32,7 +32,7 @@ public class ScreenRecordingSession  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ScreenRecordingSession name(String name) {
@@ -49,7 +49,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ScreenRecordingSession user(User user) {
@@ -66,7 +66,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The id of the participant whose screen is being recorded on the conversation
    **/
@@ -84,7 +84,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.participantId = participantId;
   }
 
-
+  
   /**
    **/
   public ScreenRecordingSession conversation(Conversation conversation) {
@@ -101,7 +101,7 @@ public class ScreenRecordingSession  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -119,13 +119,14 @@ public class ScreenRecordingSession  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -142,7 +142,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession sessionId(String sessionId) {
@@ -159,7 +159,7 @@ public class AnalyticsSession  implements Serializable {
     this.sessionId = sessionId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession addressOther(String addressOther) {
@@ -176,7 +176,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressOther = addressOther;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession addressSelf(String addressSelf) {
@@ -193,7 +193,7 @@ public class AnalyticsSession  implements Serializable {
     this.addressSelf = addressSelf;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession ani(String ani) {
@@ -210,7 +210,7 @@ public class AnalyticsSession  implements Serializable {
     this.ani = ani;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession direction(DirectionEnum direction) {
@@ -227,7 +227,7 @@ public class AnalyticsSession  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession dnis(String dnis) {
@@ -244,7 +244,7 @@ public class AnalyticsSession  implements Serializable {
     this.dnis = dnis;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession outboundCampaignId(String outboundCampaignId) {
@@ -261,7 +261,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundCampaignId = outboundCampaignId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession outboundContactId(String outboundContactId) {
@@ -278,7 +278,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundContactId = outboundContactId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession outboundContactListId(String outboundContactListId) {
@@ -295,7 +295,7 @@ public class AnalyticsSession  implements Serializable {
     this.outboundContactListId = outboundContactListId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession dispositionAnalyzer(String dispositionAnalyzer) {
@@ -312,7 +312,7 @@ public class AnalyticsSession  implements Serializable {
     this.dispositionAnalyzer = dispositionAnalyzer;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession dispositionName(String dispositionName) {
@@ -329,7 +329,7 @@ public class AnalyticsSession  implements Serializable {
     this.dispositionName = dispositionName;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession edgeId(String edgeId) {
@@ -346,7 +346,7 @@ public class AnalyticsSession  implements Serializable {
     this.edgeId = edgeId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession remoteNameDisplayable(String remoteNameDisplayable) {
@@ -363,7 +363,7 @@ public class AnalyticsSession  implements Serializable {
     this.remoteNameDisplayable = remoteNameDisplayable;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession roomId(String roomId) {
@@ -380,7 +380,7 @@ public class AnalyticsSession  implements Serializable {
     this.roomId = roomId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession monitoredSessionId(String monitoredSessionId) {
@@ -397,7 +397,7 @@ public class AnalyticsSession  implements Serializable {
     this.monitoredSessionId = monitoredSessionId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession monitoredParticipantId(String monitoredParticipantId) {
@@ -414,7 +414,7 @@ public class AnalyticsSession  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession callbackUserName(String callbackUserName) {
@@ -431,7 +431,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession callbackNumbers(List<String> callbackNumbers) {
@@ -448,7 +448,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -466,7 +466,7 @@ public class AnalyticsSession  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession scriptId(String scriptId) {
@@ -483,7 +483,7 @@ public class AnalyticsSession  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession skipEnabled(Boolean skipEnabled) {
@@ -500,7 +500,7 @@ public class AnalyticsSession  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
@@ -517,7 +517,7 @@ public class AnalyticsSession  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession cobrowseRole(String cobrowseRole) {
@@ -534,7 +534,7 @@ public class AnalyticsSession  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession cobrowseRoomId(String cobrowseRoomId) {
@@ -551,7 +551,7 @@ public class AnalyticsSession  implements Serializable {
     this.cobrowseRoomId = cobrowseRoomId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession mediaBridgeId(String mediaBridgeId) {
@@ -568,7 +568,7 @@ public class AnalyticsSession  implements Serializable {
     this.mediaBridgeId = mediaBridgeId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession screenShareAddressSelf(String screenShareAddressSelf) {
@@ -585,7 +585,7 @@ public class AnalyticsSession  implements Serializable {
     this.screenShareAddressSelf = screenShareAddressSelf;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession sharingScreen(Boolean sharingScreen) {
@@ -602,7 +602,7 @@ public class AnalyticsSession  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession screenShareRoomId(String screenShareRoomId) {
@@ -619,7 +619,7 @@ public class AnalyticsSession  implements Serializable {
     this.screenShareRoomId = screenShareRoomId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession videoRoomId(String videoRoomId) {
@@ -636,7 +636,7 @@ public class AnalyticsSession  implements Serializable {
     this.videoRoomId = videoRoomId;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession videoAddressSelf(String videoAddressSelf) {
@@ -653,7 +653,7 @@ public class AnalyticsSession  implements Serializable {
     this.videoAddressSelf = videoAddressSelf;
   }
 
-
+  
   /**
    **/
   public AnalyticsSession segments(List<AnalyticsConversationSegment> segments) {
@@ -670,6 +670,7 @@ public class AnalyticsSession  implements Serializable {
     this.segments = segments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

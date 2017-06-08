@@ -121,7 +121,7 @@ public class ParticipantBasic  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -139,7 +139,7 @@ public class ParticipantBasic  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -157,7 +157,7 @@ public class ParticipantBasic  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -175,7 +175,7 @@ public class ParticipantBasic  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * A human readable name identifying the participant.
    **/
@@ -193,7 +193,7 @@ public class ParticipantBasic  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * If this participant represents a user, then this will be an URI that can be used to fetch the user.
    **/
@@ -211,7 +211,7 @@ public class ParticipantBasic  implements Serializable {
     this.userUri = userUri;
   }
 
-
+  
   /**
    * If this participant represents a user, then this will be the globally unique identifier for the user.
    **/
@@ -229,7 +229,7 @@ public class ParticipantBasic  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    * If this participant represents an external contact, then this will be the globally unique identifier for the external contact.
    **/
@@ -247,7 +247,7 @@ public class ParticipantBasic  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-
+  
   /**
    * If this participant represents an external org, then this will be the globally unique identifier for the external org.
    **/
@@ -265,7 +265,7 @@ public class ParticipantBasic  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-
+  
   /**
    * If present, the queue id that the communication channel came in on.
    **/
@@ -283,7 +283,7 @@ public class ParticipantBasic  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    * If present, group of users the participant represents.
    **/
@@ -301,7 +301,7 @@ public class ParticipantBasic  implements Serializable {
     this.groupId = groupId;
   }
 
-
+  
   /**
    * If present, the queue name that the communication channel came in on.
    **/
@@ -319,7 +319,7 @@ public class ParticipantBasic  implements Serializable {
     this.queueName = queueName;
   }
 
-
+  
   /**
    * A well known string that specifies the purpose of this participant.
    **/
@@ -337,7 +337,7 @@ public class ParticipantBasic  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    * A well known string that specifies the type of this participant.
    **/
@@ -355,7 +355,7 @@ public class ParticipantBasic  implements Serializable {
     this.participantType = participantType;
   }
 
-
+  
   /**
    * If this participant is part of a consult transfer, then this will be the participant id of the participant being transferred.
    **/
@@ -373,7 +373,7 @@ public class ParticipantBasic  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-
+  
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -391,7 +391,7 @@ public class ParticipantBasic  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -409,7 +409,7 @@ public class ParticipantBasic  implements Serializable {
     this.ani = ani;
   }
 
-
+  
   /**
    * The ani-based name for this participant.
    **/
@@ -427,7 +427,7 @@ public class ParticipantBasic  implements Serializable {
     this.aniName = aniName;
   }
 
-
+  
   /**
    * The address for the this participant. For a phone call this will be the ANI.
    **/
@@ -445,7 +445,7 @@ public class ParticipantBasic  implements Serializable {
     this.dnis = dnis;
   }
 
-
+  
   /**
    * An ISO 639 language code specifying the locale for this participant
    **/
@@ -463,7 +463,7 @@ public class ParticipantBasic  implements Serializable {
     this.locale = locale;
   }
 
-
+  
   /**
    * True iff this participant is required to enter wrapup for this conversation.
    **/
@@ -481,7 +481,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    **/
@@ -499,7 +499,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    * Specifies how long a timed ACW session will last.
    **/
@@ -517,7 +517,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    * The UI sets this field when the agent chooses to skip entering a wrapup for this participant.
    **/
@@ -535,7 +535,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    * Call wrap up or disposition data.
    **/
@@ -553,7 +553,7 @@ public class ParticipantBasic  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
@@ -571,7 +571,7 @@ public class ParticipantBasic  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    * Additional participant attributes
    **/
@@ -589,7 +589,7 @@ public class ParticipantBasic  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic calls(List<CallBasic> calls) {
@@ -606,7 +606,7 @@ public class ParticipantBasic  implements Serializable {
     this.calls = calls;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic callbacks(List<CallbackBasic> callbacks) {
@@ -623,7 +623,7 @@ public class ParticipantBasic  implements Serializable {
     this.callbacks = callbacks;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic chats(List<ConversationChat> chats) {
@@ -640,7 +640,7 @@ public class ParticipantBasic  implements Serializable {
     this.chats = chats;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic cobrowsesessions(List<Cobrowsesession> cobrowsesessions) {
@@ -657,7 +657,7 @@ public class ParticipantBasic  implements Serializable {
     this.cobrowsesessions = cobrowsesessions;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic emails(List<Email> emails) {
@@ -674,7 +674,7 @@ public class ParticipantBasic  implements Serializable {
     this.emails = emails;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic screenshares(List<Screenshare> screenshares) {
@@ -691,7 +691,7 @@ public class ParticipantBasic  implements Serializable {
     this.screenshares = screenshares;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic socialExpressions(List<SocialExpression> socialExpressions) {
@@ -708,7 +708,7 @@ public class ParticipantBasic  implements Serializable {
     this.socialExpressions = socialExpressions;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic videos(List<Video> videos) {
@@ -725,7 +725,7 @@ public class ParticipantBasic  implements Serializable {
     this.videos = videos;
   }
 
-
+  
   /**
    **/
   public ParticipantBasic evaluations(List<Evaluation> evaluations) {
@@ -742,6 +742,7 @@ public class ParticipantBasic  implements Serializable {
     this.evaluations = evaluations;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

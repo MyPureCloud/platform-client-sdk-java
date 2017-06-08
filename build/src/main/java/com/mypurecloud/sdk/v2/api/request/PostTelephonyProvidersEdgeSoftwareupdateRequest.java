@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
 	    return this;
 	}
 
+	
 	private DomainEdgeSoftwareUpdateDto body;
 	public DomainEdgeSoftwareUpdateDto getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, DomainEdgeSoftwareUpdateDto body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgeSoftwareupdateRequest request;
@@ -171,20 +177,26 @@ public class PostTelephonyProvidersEdgeSoftwareupdateRequest {
 			request = new PostTelephonyProvidersEdgeSoftwareupdateRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withBody(DomainEdgeSoftwareUpdateDto body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, DomainEdgeSoftwareUpdateDto body) {
 			request.setEdgeId(edgeId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgeSoftwareupdateRequest build() {

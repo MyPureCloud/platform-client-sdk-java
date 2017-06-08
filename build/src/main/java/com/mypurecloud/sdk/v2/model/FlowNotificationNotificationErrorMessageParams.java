@@ -36,6 +36,7 @@ public class FlowNotificationNotificationErrorMessageParams  implements Serializ
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

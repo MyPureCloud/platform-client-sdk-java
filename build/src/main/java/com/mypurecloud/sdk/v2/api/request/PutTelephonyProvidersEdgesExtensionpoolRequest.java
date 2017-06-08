@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesExtensionpoolRequest {
+    
 	private String extensionPoolId;
 	public String getExtensionPoolId() {
 		return this.extensionPoolId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesExtensionpoolRequest {
 	    return this;
 	}
 
+	
 	private ExtensionPool body;
 	public ExtensionPool getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesExtensionpoolRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesExtensionpoolRequest {
                 .withPathParameter("extensionPoolId", extensionPoolId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesExtensionpoolRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String extensionPoolId, ExtensionPool body) {
 	    return new Builder()
 	            .withRequiredParams(extensionPoolId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesExtensionpoolRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesExtensionpoolRequest {
 			request = new PutTelephonyProvidersEdgesExtensionpoolRequest();
 		}
 
+		
 		public Builder withExtensionPoolId(String extensionPoolId) {
 			request.setExtensionPoolId(extensionPoolId);
 			return this;
 		}
+		
 		public Builder withBody(ExtensionPool body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String extensionPoolId, ExtensionPool body) {
 			request.setExtensionPoolId(extensionPoolId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesExtensionpoolRequest build() {

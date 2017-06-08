@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PatchUserRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PatchUserRequest {
 	    return this;
 	}
 
+	
 	private UpdateUser body;
 	public UpdateUser getBody() {
 		return this.body;
@@ -76,6 +78,7 @@ public class PatchUserRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,6 +115,7 @@ public class PatchUserRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -123,10 +127,12 @@ public class PatchUserRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, UpdateUser body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchUserRequest request;
@@ -135,20 +141,26 @@ public class PatchUserRequest {
 			request = new PatchUserRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(UpdateUser body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, UpdateUser body) {
 			request.setUserId(userId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchUserRequest build() {

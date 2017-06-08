@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementStatusStatusIdRequest {
+    
 	private String statusId;
 	public String getStatusId() {
 		return this.statusId;
@@ -64,6 +65,7 @@ public class GetContentmanagementStatusStatusIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +95,8 @@ public class GetContentmanagementStatusStatusIdRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/status/{statusId}")
                 .withPathParameter("statusId", statusId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -104,10 +107,12 @@ public class GetContentmanagementStatusStatusIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String statusId) {
 	    return new Builder()
 	            .withRequiredParams(statusId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementStatusStatusIdRequest request;
@@ -116,15 +121,20 @@ public class GetContentmanagementStatusStatusIdRequest {
 			request = new GetContentmanagementStatusStatusIdRequest();
 		}
 
+		
 		public Builder withStatusId(String statusId) {
 			request.setStatusId(statusId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String statusId) {
 			request.setStatusId(statusId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementStatusStatusIdRequest build() {

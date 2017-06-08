@@ -199,7 +199,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants name(String name) {
@@ -216,7 +216,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants address(String address) {
@@ -233,7 +233,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.address = address;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants startTime(Date startTime) {
@@ -250,7 +250,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -267,7 +267,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants endTime(Date endTime) {
@@ -284,7 +284,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -301,7 +301,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants purpose(String purpose) {
@@ -318,7 +318,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants state(StateEnum state) {
@@ -335,7 +335,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.state = state;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -352,7 +352,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -369,7 +369,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants held(Boolean held) {
@@ -386,7 +386,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.held = held;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -403,7 +403,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -420,7 +420,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -437,7 +437,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants queue(CobrowseConversationNotificationUriReference queue) {
@@ -454,7 +454,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -471,7 +471,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants errorInfo(CobrowseConversationNotificationErrorInfo errorInfo) {
@@ -488,7 +488,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants script(CobrowseConversationNotificationUriReference script) {
@@ -505,7 +505,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -522,7 +522,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -539,7 +539,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants provider(String provider) {
@@ -556,7 +556,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants externalContact(CobrowseConversationNotificationUriReference externalContact) {
@@ -573,7 +573,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants externalOrganization(CobrowseConversationNotificationUriReference externalOrganization) {
@@ -590,7 +590,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -607,7 +607,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants peer(String peer) {
@@ -624,7 +624,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants cobrowseSessionId(String cobrowseSessionId) {
@@ -641,7 +641,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants cobrowseRole(String cobrowseRole) {
@@ -658,7 +658,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.cobrowseRole = cobrowseRole;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants viewerUrl(String viewerUrl) {
@@ -675,7 +675,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.viewerUrl = viewerUrl;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants providerEventTime(Date providerEventTime) {
@@ -692,7 +692,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.providerEventTime = providerEventTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationParticipants controlling(List<String> controlling) {
@@ -709,6 +709,7 @@ public class CobrowseConversationNotificationParticipants  implements Serializab
     this.controlling = controlling;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

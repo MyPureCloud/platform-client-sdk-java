@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetLocationsSearchRequest {
+    
 	private String q64;
 	public String getQ64() {
 		return this.q64;
@@ -48,6 +49,7 @@ public class GetLocationsSearchRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -62,6 +64,7 @@ public class GetLocationsSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +96,8 @@ public class GetLocationsSearchRequest {
                 .withQueryParameters("q64", "", q64)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -104,10 +108,12 @@ public class GetLocationsSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String q64) {
 	    return new Builder()
 	            .withRequiredParams(q64);
 	}
+	
 
 	public static class Builder {
 		private final GetLocationsSearchRequest request;
@@ -116,19 +122,25 @@ public class GetLocationsSearchRequest {
 			request = new GetLocationsSearchRequest();
 		}
 
+		
 		public Builder withQ64(String q64) {
 			request.setQ64(q64);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String q64) {
 			request.setQ64(q64);
+			
 			return this;
 		}
+		
 
 
 		public GetLocationsSearchRequest build() {

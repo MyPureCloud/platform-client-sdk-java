@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptPageRequest {
+    
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -38,6 +39,7 @@ public class GetScriptPageRequest {
 	    return this;
 	}
 
+	
 	private String pageId;
 	public String getPageId() {
 		return this.pageId;
@@ -52,6 +54,7 @@ public class GetScriptPageRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,7 +91,8 @@ public class GetScriptPageRequest {
                 .withPathParameter("scriptId", scriptId)
         
                 .withPathParameter("pageId", pageId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -99,10 +103,12 @@ public class GetScriptPageRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scriptId, String pageId) {
 	    return new Builder()
 	            .withRequiredParams(scriptId, pageId);
 	}
+	
 
 	public static class Builder {
 		private final GetScriptPageRequest request;
@@ -111,20 +117,26 @@ public class GetScriptPageRequest {
 			request = new GetScriptPageRequest();
 		}
 
+		
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
 			return this;
 		}
+		
 		public Builder withPageId(String pageId) {
 			request.setPageId(pageId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scriptId, String pageId) {
 			request.setScriptId(scriptId);
-			request.setPageId(pageId);
+						request.setPageId(pageId);
+			
 			return this;
 		}
+		
 
 
 		public GetScriptPageRequest build() {

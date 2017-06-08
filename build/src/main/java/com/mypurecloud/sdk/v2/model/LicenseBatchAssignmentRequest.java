@@ -37,6 +37,7 @@ public class LicenseBatchAssignmentRequest  implements Serializable {
     this.assignments = assignments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

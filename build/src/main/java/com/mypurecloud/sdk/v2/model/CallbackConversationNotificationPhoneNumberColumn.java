@@ -35,7 +35,7 @@ public class CallbackConversationNotificationPhoneNumberColumn  implements Seria
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationPhoneNumberColumn type(String type) {
@@ -52,7 +52,7 @@ public class CallbackConversationNotificationPhoneNumberColumn  implements Seria
     this.type = type;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationPhoneNumberColumn additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class CallbackConversationNotificationPhoneNumberColumn  implements Seria
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

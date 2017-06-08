@@ -42,7 +42,7 @@ public class CampaignDiagnostics  implements Serializable {
     this.callableContacts = callableContacts;
   }
 
-
+  
   /**
    * Information regarding the campaign's queue
    **/
@@ -60,7 +60,7 @@ public class CampaignDiagnostics  implements Serializable {
     this.queueUtilizationDiagnostic = queueUtilizationDiagnostic;
   }
 
-
+  
   /**
    * Information regarding the campaign's rule sets
    **/
@@ -78,13 +78,14 @@ public class CampaignDiagnostics  implements Serializable {
     this.ruleSetDiagnostics = ruleSetDiagnostics;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Current number of outstanding interactions on the campaign")
   @JsonProperty("outstandingInteractionsCount")
   public Integer getOutstandingInteractionsCount() {
     return outstandingInteractionsCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

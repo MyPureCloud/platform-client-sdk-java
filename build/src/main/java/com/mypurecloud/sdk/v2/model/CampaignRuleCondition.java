@@ -71,7 +71,7 @@ public class CampaignRuleCondition  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignRuleCondition parameters(CampaignRuleParameters parameters) {
@@ -88,7 +88,7 @@ public class CampaignRuleCondition  implements Serializable {
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public CampaignRuleCondition conditionType(ConditionTypeEnum conditionType) {
@@ -105,6 +105,7 @@ public class CampaignRuleCondition  implements Serializable {
     this.conditionType = conditionType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

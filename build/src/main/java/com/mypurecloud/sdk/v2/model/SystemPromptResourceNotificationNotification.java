@@ -39,7 +39,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.promptId = promptId;
   }
 
-
+  
   /**
    **/
   public SystemPromptResourceNotificationNotification id(String id) {
@@ -56,7 +56,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SystemPromptResourceNotificationNotification language(String language) {
@@ -73,7 +73,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.language = language;
   }
 
-
+  
   /**
    **/
   public SystemPromptResourceNotificationNotification mediaUri(String mediaUri) {
@@ -90,7 +90,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.mediaUri = mediaUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptResourceNotificationNotification uploadStatus(String uploadStatus) {
@@ -107,7 +107,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public SystemPromptResourceNotificationNotification durationSeconds(BigDecimal durationSeconds) {
@@ -124,6 +124,7 @@ public class SystemPromptResourceNotificationNotification  implements Serializab
     this.durationSeconds = durationSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

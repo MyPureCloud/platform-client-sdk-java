@@ -245,6 +245,7 @@ public class Edge  implements Serializable {
   private CallDrainingStateEnum callDrainingState = null;
   private Integer conversationCount = null;
   private String proxy = null;
+  private String osName = null;
   private String selfUri = null;
 
   
@@ -254,7 +255,7 @@ public class Edge  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -272,7 +273,7 @@ public class Edge  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Edge description(String description) {
@@ -289,7 +290,7 @@ public class Edge  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Edge version(Integer version) {
@@ -306,7 +307,7 @@ public class Edge  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -324,7 +325,7 @@ public class Edge  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -342,7 +343,7 @@ public class Edge  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Edge modifiedBy(String modifiedBy) {
@@ -359,7 +360,7 @@ public class Edge  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Edge createdBy(String createdBy) {
@@ -376,7 +377,7 @@ public class Edge  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Edge state(StateEnum state) {
@@ -393,7 +394,7 @@ public class Edge  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Edge modifiedByApp(String modifiedByApp) {
@@ -410,7 +411,7 @@ public class Edge  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Edge createdByApp(String createdByApp) {
@@ -427,7 +428,7 @@ public class Edge  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The list of interfaces for the edge. (Deprecated) Replaced by configuring trunks/ip info on the logical interface instead
    **/
@@ -445,7 +446,7 @@ public class Edge  implements Serializable {
     this.interfaces = interfaces;
   }
 
-
+  
   /**
    **/
   public Edge make(String make) {
@@ -462,7 +463,7 @@ public class Edge  implements Serializable {
     this.make = make;
   }
 
-
+  
   /**
    **/
   public Edge model(String model) {
@@ -479,7 +480,7 @@ public class Edge  implements Serializable {
     this.model = model;
   }
 
-
+  
   /**
    **/
   public Edge apiVersion(String apiVersion) {
@@ -496,7 +497,7 @@ public class Edge  implements Serializable {
     this.apiVersion = apiVersion;
   }
 
-
+  
   /**
    **/
   public Edge softwareVersion(String softwareVersion) {
@@ -513,7 +514,7 @@ public class Edge  implements Serializable {
     this.softwareVersion = softwareVersion;
   }
 
-
+  
   /**
    **/
   public Edge softwareVersionTimestamp(String softwareVersionTimestamp) {
@@ -530,7 +531,7 @@ public class Edge  implements Serializable {
     this.softwareVersionTimestamp = softwareVersionTimestamp;
   }
 
-
+  
   /**
    **/
   public Edge softwareVersionPlatform(String softwareVersionPlatform) {
@@ -547,7 +548,7 @@ public class Edge  implements Serializable {
     this.softwareVersionPlatform = softwareVersionPlatform;
   }
 
-
+  
   /**
    **/
   public Edge softwareVersionConfiguration(String softwareVersionConfiguration) {
@@ -564,7 +565,7 @@ public class Edge  implements Serializable {
     this.softwareVersionConfiguration = softwareVersionConfiguration;
   }
 
-
+  
   /**
    **/
   public Edge fullSoftwareVersion(String fullSoftwareVersion) {
@@ -581,7 +582,7 @@ public class Edge  implements Serializable {
     this.fullSoftwareVersion = fullSoftwareVersion;
   }
 
-
+  
   /**
    * The pairing Id for a hardware Edge in the format: 00000-00000-00000-00000-00000. This field is only required when creating an Edge with a deployment type of HARDWARE.
    **/
@@ -599,7 +600,7 @@ public class Edge  implements Serializable {
     this.pairingId = pairingId;
   }
 
-
+  
   /**
    **/
   public Edge fingerprint(String fingerprint) {
@@ -616,7 +617,7 @@ public class Edge  implements Serializable {
     this.fingerprint = fingerprint;
   }
 
-
+  
   /**
    **/
   public Edge fingerprintHint(String fingerprintHint) {
@@ -633,7 +634,7 @@ public class Edge  implements Serializable {
     this.fingerprintHint = fingerprintHint;
   }
 
-
+  
   /**
    **/
   public Edge currentVersion(String currentVersion) {
@@ -650,7 +651,7 @@ public class Edge  implements Serializable {
     this.currentVersion = currentVersion;
   }
 
-
+  
   /**
    **/
   public Edge stagedVersion(String stagedVersion) {
@@ -667,7 +668,7 @@ public class Edge  implements Serializable {
     this.stagedVersion = stagedVersion;
   }
 
-
+  
   /**
    **/
   public Edge patch(String patch) {
@@ -684,7 +685,7 @@ public class Edge  implements Serializable {
     this.patch = patch;
   }
 
-
+  
   /**
    **/
   public Edge statusCode(StatusCodeEnum statusCode) {
@@ -701,7 +702,7 @@ public class Edge  implements Serializable {
     this.statusCode = statusCode;
   }
 
-
+  
   /**
    **/
   public Edge edgeGroup(EdgeGroup edgeGroup) {
@@ -718,7 +719,7 @@ public class Edge  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   /**
    * The Site to which the Edge is assigned.
    **/
@@ -736,7 +737,7 @@ public class Edge  implements Serializable {
     this.site = site;
   }
 
-
+  
   /**
    **/
   public Edge softwareStatus(DomainEdgeSoftwareUpdateDto softwareStatus) {
@@ -753,7 +754,7 @@ public class Edge  implements Serializable {
     this.softwareStatus = softwareStatus;
   }
 
-
+  
   /**
    **/
   public Edge onlineStatus(OnlineStatusEnum onlineStatus) {
@@ -770,7 +771,7 @@ public class Edge  implements Serializable {
     this.onlineStatus = onlineStatus;
   }
 
-
+  
   /**
    **/
   public Edge serialNumber(String serialNumber) {
@@ -787,7 +788,7 @@ public class Edge  implements Serializable {
     this.serialNumber = serialNumber;
   }
 
-
+  
   /**
    **/
   public Edge physicalEdge(Boolean physicalEdge) {
@@ -804,7 +805,7 @@ public class Edge  implements Serializable {
     this.physicalEdge = physicalEdge;
   }
 
-
+  
   /**
    **/
   public Edge managed(Boolean managed) {
@@ -821,7 +822,7 @@ public class Edge  implements Serializable {
     this.managed = managed;
   }
 
-
+  
   /**
    **/
   public Edge edgeDeploymentType(EdgeDeploymentTypeEnum edgeDeploymentType) {
@@ -838,7 +839,7 @@ public class Edge  implements Serializable {
     this.edgeDeploymentType = edgeDeploymentType;
   }
 
-
+  
   /**
    **/
   public Edge callDrainingState(CallDrainingStateEnum callDrainingState) {
@@ -855,7 +856,7 @@ public class Edge  implements Serializable {
     this.callDrainingState = callDrainingState;
   }
 
-
+  
   /**
    **/
   public Edge conversationCount(Integer conversationCount) {
@@ -872,7 +873,7 @@ public class Edge  implements Serializable {
     this.conversationCount = conversationCount;
   }
 
-
+  
   /**
    * Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed.
    **/
@@ -890,13 +891,21 @@ public class Edge  implements Serializable {
     this.proxy = proxy;
   }
 
+  
+  @ApiModelProperty(example = "null", value = "The name provided by the operating system of the Edge.")
+  @JsonProperty("osName")
+  public String getOsName() {
+    return osName;
+  }
 
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -945,12 +954,13 @@ public class Edge  implements Serializable {
         Objects.equals(this.callDrainingState, edge.callDrainingState) &&
         Objects.equals(this.conversationCount, edge.conversationCount) &&
         Objects.equals(this.proxy, edge.proxy) &&
+        Objects.equals(this.osName, edge.osName) &&
         Objects.equals(this.selfUri, edge.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, osName, selfUri);
   }
 
   @Override
@@ -996,6 +1006,7 @@ public class Edge  implements Serializable {
     sb.append("    callDrainingState: ").append(toIndentedString(callDrainingState)).append("\n");
     sb.append("    conversationCount: ").append(toIndentedString(conversationCount)).append("\n");
     sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
+    sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

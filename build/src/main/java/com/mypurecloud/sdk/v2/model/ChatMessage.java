@@ -42,7 +42,7 @@ public class ChatMessage  implements Serializable {
     this.body = body;
   }
 
-
+  
   /**
    **/
   public ChatMessage id(String id) {
@@ -59,7 +59,7 @@ public class ChatMessage  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ChatMessage to(String to) {
@@ -76,7 +76,7 @@ public class ChatMessage  implements Serializable {
     this.to = to;
   }
 
-
+  
   /**
    **/
   public ChatMessage from(String from) {
@@ -93,7 +93,7 @@ public class ChatMessage  implements Serializable {
     this.from = from;
   }
 
-
+  
   /**
    **/
   public ChatMessage utc(String utc) {
@@ -110,7 +110,7 @@ public class ChatMessage  implements Serializable {
     this.utc = utc;
   }
 
-
+  
   /**
    **/
   public ChatMessage chat(String chat) {
@@ -127,7 +127,7 @@ public class ChatMessage  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public ChatMessage message(String message) {
@@ -144,7 +144,7 @@ public class ChatMessage  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ChatMessage type(String type) {
@@ -161,7 +161,7 @@ public class ChatMessage  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ChatMessage user(ChatMessageUser user) {
@@ -178,6 +178,7 @@ public class ChatMessage  implements Serializable {
     this.user = user;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

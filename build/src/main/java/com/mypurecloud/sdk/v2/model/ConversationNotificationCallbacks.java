@@ -181,7 +181,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks id(String id) {
@@ -198,7 +198,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks direction(DirectionEnum direction) {
@@ -215,7 +215,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks held(Boolean held) {
@@ -232,7 +232,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks disconnectType(DisconnectTypeEnum disconnectType) {
@@ -249,7 +249,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks startHoldTime(Date startHoldTime) {
@@ -266,7 +266,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks dialerPreview(ConversationNotificationDialerPreview dialerPreview) {
@@ -283,7 +283,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.dialerPreview = dialerPreview;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks voicemail(DocumentDataV2NotificationWorkspace voicemail) {
@@ -300,7 +300,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.voicemail = voicemail;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks callbackNumbers(List<String> callbackNumbers) {
@@ -317,7 +317,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks callbackUserName(String callbackUserName) {
@@ -334,7 +334,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks scriptId(String scriptId) {
@@ -351,7 +351,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks peerId(String peerId) {
@@ -368,7 +368,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks skipEnabled(Boolean skipEnabled) {
@@ -385,7 +385,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks provider(String provider) {
@@ -402,7 +402,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks timeoutSeconds(Integer timeoutSeconds) {
@@ -419,7 +419,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks connectedTime(Date connectedTime) {
@@ -436,7 +436,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks disconnectedTime(Date disconnectedTime) {
@@ -453,7 +453,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks callbackScheduledTime(Date callbackScheduledTime) {
@@ -470,7 +470,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks automatedCallbackConfigId(String automatedCallbackConfigId) {
@@ -487,7 +487,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCallbacks additionalProperties(Object additionalProperties) {
@@ -504,6 +504,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

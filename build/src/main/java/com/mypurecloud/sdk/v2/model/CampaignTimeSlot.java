@@ -36,7 +36,7 @@ public class CampaignTimeSlot  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * interval stop time as an ISO-8601 string. For example: HH:mm:ss
    **/
@@ -54,7 +54,7 @@ public class CampaignTimeSlot  implements Serializable {
     this.stopTime = stopTime;
   }
 
-
+  
   /**
    * must be within [1-7], representing Monday through Sunday
    **/
@@ -72,6 +72,7 @@ public class CampaignTimeSlot  implements Serializable {
     this.day = day;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

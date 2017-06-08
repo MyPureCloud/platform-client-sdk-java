@@ -203,7 +203,7 @@ public class AggregationQuery  implements Serializable {
     this.interval = interval;
   }
 
-
+  
   /**
    * Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
@@ -221,7 +221,7 @@ public class AggregationQuery  implements Serializable {
     this.granularity = granularity;
   }
 
-
+  
   /**
    * Sets the time zone for the query interval, defaults to UTC. Time zones are represented as an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
    **/
@@ -239,7 +239,7 @@ public class AggregationQuery  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    * Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
    **/
@@ -257,7 +257,7 @@ public class AggregationQuery  implements Serializable {
     this.groupBy = groupBy;
   }
 
-
+  
   /**
    * Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
    **/
@@ -275,7 +275,7 @@ public class AggregationQuery  implements Serializable {
     this.filter = filter;
   }
 
-
+  
   /**
    * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
    **/
@@ -293,7 +293,7 @@ public class AggregationQuery  implements Serializable {
     this.metrics = metrics;
   }
 
-
+  
   /**
    * Flattens any multivalued dimensions used in response groups (e.g. ['a','b','c']->'a,b,c')
    **/
@@ -311,7 +311,7 @@ public class AggregationQuery  implements Serializable {
     this.flattenMultivaluedDimensions = flattenMultivaluedDimensions;
   }
 
-
+  
   /**
    * Custom derived metric views
    **/
@@ -329,6 +329,7 @@ public class AggregationQuery  implements Serializable {
     this.views = views;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

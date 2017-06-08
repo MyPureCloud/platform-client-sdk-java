@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingConsumingresourcesRequest {
+    
 	private String id;
 	public String getId() {
 		return this.id;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 	    return this;
 	}
 
+	
 	private String objectType;
 	public String getObjectType() {
 		return this.objectType;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 	    return this;
 	}
 
+	
 	private List<String> resourceType;
 	public List<String> getResourceType() {
 		return this.resourceType;
@@ -84,6 +87,7 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,7 +126,8 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
                 .withQueryParameters("objectType", "", objectType)
         
                 .withQueryParameters("resourceType", "multi", resourceType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -133,10 +138,12 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String id, String objectType) {
 	    return new Builder()
 	            .withRequiredParams(id, objectType);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingConsumingresourcesRequest request;
@@ -145,24 +152,31 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 			request = new GetArchitectDependencytrackingConsumingresourcesRequest();
 		}
 
+		
 		public Builder withId(String id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withObjectType(String objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+		
 		public Builder withResourceType(List<String> resourceType) {
 			request.setResourceType(resourceType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String id, String objectType) {
 			request.setId(id);
-			request.setObjectType(objectType);
+						request.setObjectType(objectType);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectDependencytrackingConsumingresourcesRequest build() {

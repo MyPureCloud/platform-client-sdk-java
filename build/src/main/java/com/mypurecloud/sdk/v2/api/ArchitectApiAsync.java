@@ -102,6 +102,7 @@ public class ArchitectApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete specified user prompt
    * 
@@ -177,6 +178,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Delete specified user prompt resource
    * 
@@ -252,6 +254,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Batch-delete a list of prompts
    * Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
@@ -327,6 +330,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Delete a system prompt resource override.
    * 
@@ -402,6 +406,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Delete flow
    * 
@@ -477,6 +482,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Batch-delete a list of flows
    * Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -552,6 +558,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that have a given display name
    * 
@@ -627,6 +634,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get Dependency Tracking build status for an organization
    * 
@@ -702,6 +710,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get resources that are consumed by a given Dependency Tracking object
    * 
@@ -777,6 +786,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get resources that consume a given Dependency Tracking object
    * 
@@ -852,6 +862,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that consume deleted resources
    * 
@@ -927,6 +938,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a Dependency Tracking object
    * 
@@ -1002,6 +1014,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a Dependency Tracking type.
    * 
@@ -1077,6 +1090,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get Dependency Tracking types.
    * 
@@ -1152,6 +1166,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get Dependency Tracking objects that depend on updated resources
    * 
@@ -1227,6 +1242,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get specified user prompt
    * 
@@ -1302,6 +1318,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get specified user prompt resource
    * 
@@ -1377,6 +1394,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a pageable list of user prompt resources
    * The returned list is pageable, and query parameters can be used for filtering.
@@ -1452,6 +1470,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a pageable list of user prompts
    * The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
@@ -1527,6 +1546,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a system prompt
    * 
@@ -1602,6 +1622,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a system prompt resource.
    * 
@@ -1677,6 +1698,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get system prompt resources.
    * 
@@ -1752,6 +1774,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get System Prompts
    * 
@@ -1827,6 +1850,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get flow
    * 
@@ -1902,6 +1926,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get the latest configuration for flow
    * 
@@ -1977,6 +2002,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get flow version
    * 
@@ -2052,6 +2078,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create flow version configuration
    * 
@@ -2127,6 +2154,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get flow version list
    * 
@@ -2202,6 +2230,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
@@ -2277,6 +2306,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
@@ -2352,6 +2382,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create a new user prompt resource
    * 
@@ -2427,6 +2458,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create a new user prompt
    * 
@@ -2502,6 +2534,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create system prompt resource override.
    * 
@@ -2577,6 +2610,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create flow version
    * 
@@ -2652,6 +2686,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Create flow
    * 
@@ -2727,6 +2762,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -2802,6 +2838,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Check-out flow
    * 
@@ -2877,6 +2914,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Deactivate flow
    * 
@@ -2952,6 +2990,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Publish flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
@@ -3027,6 +3066,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Revert flow
    * 
@@ -3102,6 +3142,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Unlock flow
    * Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
@@ -3177,6 +3218,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Update specified user prompt
    * 
@@ -3252,6 +3294,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Update specified user prompt resource
    * 
@@ -3327,6 +3370,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Updates a system prompt resource override.
    * 
@@ -3402,6 +3446,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
   /**
    * Update flow
    * 
@@ -3477,6 +3522,7 @@ public class ArchitectApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

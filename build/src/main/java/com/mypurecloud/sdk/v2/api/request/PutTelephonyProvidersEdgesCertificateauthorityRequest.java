@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
+    
 	private String certificateId;
 	public String getCertificateId() {
 		return this.certificateId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
 	    return this;
 	}
 
+	
 	private DomainCertificateAuthority body;
 	public DomainCertificateAuthority getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
                 .withPathParameter("certificateId", certificateId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String certificateId, DomainCertificateAuthority body) {
 	    return new Builder()
 	            .withRequiredParams(certificateId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesCertificateauthorityRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesCertificateauthorityRequest {
 			request = new PutTelephonyProvidersEdgesCertificateauthorityRequest();
 		}
 
+		
 		public Builder withCertificateId(String certificateId) {
 			request.setCertificateId(certificateId);
 			return this;
 		}
+		
 		public Builder withBody(DomainCertificateAuthority body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String certificateId, DomainCertificateAuthority body) {
 			request.setCertificateId(certificateId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesCertificateauthorityRequest build() {

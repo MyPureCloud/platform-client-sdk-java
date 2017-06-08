@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundAttemptlimitRequest {
+    
 	private String attemptLimitsId;
 	public String getAttemptLimitsId() {
 		return this.attemptLimitsId;
@@ -74,6 +75,7 @@ public class PutOutboundAttemptlimitRequest {
 	    return this;
 	}
 
+	
 	private AttemptLimits body;
 	public AttemptLimits getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundAttemptlimitRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundAttemptlimitRequest {
                 .withPathParameter("attemptLimitsId", attemptLimitsId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundAttemptlimitRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String attemptLimitsId, AttemptLimits body) {
 	    return new Builder()
 	            .withRequiredParams(attemptLimitsId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundAttemptlimitRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundAttemptlimitRequest {
 			request = new PutOutboundAttemptlimitRequest();
 		}
 
+		
 		public Builder withAttemptLimitsId(String attemptLimitsId) {
 			request.setAttemptLimitsId(attemptLimitsId);
 			return this;
 		}
+		
 		public Builder withBody(AttemptLimits body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String attemptLimitsId, AttemptLimits body) {
 			request.setAttemptLimitsId(attemptLimitsId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundAttemptlimitRequest build() {

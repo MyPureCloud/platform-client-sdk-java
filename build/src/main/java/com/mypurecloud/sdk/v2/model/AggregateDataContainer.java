@@ -40,7 +40,7 @@ public class AggregateDataContainer  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    **/
   public AggregateDataContainer data(List<StatisticalResponse> data) {
@@ -57,6 +57,7 @@ public class AggregateDataContainer  implements Serializable {
     this.data = data;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

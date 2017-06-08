@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostUsersSearchRequest {
+    
 	private UserSearchRequest body;
 	public UserSearchRequest getBody() {
 		return this.body;
@@ -62,6 +63,7 @@ public class PostUsersSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +93,7 @@ public class PostUsersSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/users/search")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -102,10 +105,12 @@ public class PostUsersSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(UserSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostUsersSearchRequest request;
@@ -114,15 +119,20 @@ public class PostUsersSearchRequest {
 			request = new PostUsersSearchRequest();
 		}
 
+		
 		public Builder withBody(UserSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(UserSearchRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostUsersSearchRequest build() {

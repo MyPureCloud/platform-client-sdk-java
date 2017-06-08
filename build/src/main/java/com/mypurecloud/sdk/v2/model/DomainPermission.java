@@ -37,7 +37,7 @@ public class DomainPermission  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    **/
   public DomainPermission entityType(String entityType) {
@@ -54,7 +54,7 @@ public class DomainPermission  implements Serializable {
     this.entityType = entityType;
   }
 
-
+  
   /**
    **/
   public DomainPermission action(String action) {
@@ -71,7 +71,7 @@ public class DomainPermission  implements Serializable {
     this.action = action;
   }
 
-
+  
   /**
    **/
   public DomainPermission label(String label) {
@@ -88,7 +88,7 @@ public class DomainPermission  implements Serializable {
     this.label = label;
   }
 
-
+  
   /**
    **/
   public DomainPermission allowsConditions(Boolean allowsConditions) {
@@ -105,6 +105,7 @@ public class DomainPermission  implements Serializable {
     this.allowsConditions = allowsConditions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

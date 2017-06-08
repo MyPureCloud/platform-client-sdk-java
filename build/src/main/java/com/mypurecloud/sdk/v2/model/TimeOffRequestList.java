@@ -29,7 +29,7 @@ public class TimeOffRequestList  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestList name(String name) {
@@ -46,7 +46,7 @@ public class TimeOffRequestList  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public TimeOffRequestList timeOffRequests(List<TimeOffRequest> timeOffRequests) {
@@ -63,13 +63,14 @@ public class TimeOffRequestList  implements Serializable {
     this.timeOffRequests = timeOffRequests;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

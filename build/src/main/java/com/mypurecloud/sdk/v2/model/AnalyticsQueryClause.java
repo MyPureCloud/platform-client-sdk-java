@@ -73,7 +73,7 @@ public class AnalyticsQueryClause  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value). These can be one of three types: dimension, property, metric.
    **/
@@ -91,6 +91,7 @@ public class AnalyticsQueryClause  implements Serializable {
     this.predicates = predicates;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

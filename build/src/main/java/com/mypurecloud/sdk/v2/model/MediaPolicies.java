@@ -39,7 +39,7 @@ public class MediaPolicies  implements Serializable {
     this.callPolicy = callPolicy;
   }
 
-
+  
   /**
    * Conditions and actions for chats
    **/
@@ -57,7 +57,7 @@ public class MediaPolicies  implements Serializable {
     this.chatPolicy = chatPolicy;
   }
 
-
+  
   /**
    * Conditions and actions for emails
    **/
@@ -75,6 +75,7 @@ public class MediaPolicies  implements Serializable {
     this.emailPolicy = emailPolicy;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

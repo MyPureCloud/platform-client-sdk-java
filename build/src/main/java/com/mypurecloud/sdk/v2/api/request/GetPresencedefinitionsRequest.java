@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class GetPresencedefinitionsRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -39,6 +40,7 @@ public class GetPresencedefinitionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -53,6 +55,7 @@ public class GetPresencedefinitionsRequest {
 	    return this;
 	}
 
+	
 	private String deleted;
 	public String getDeleted() {
 		return this.deleted;
@@ -67,6 +70,7 @@ public class GetPresencedefinitionsRequest {
 	    return this;
 	}
 
+	
 	private String localeCode;
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -81,6 +85,7 @@ public class GetPresencedefinitionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -111,7 +116,8 @@ public class GetPresencedefinitionsRequest {
                 .withQueryParameters("deleted", "", deleted)
         
                 .withQueryParameters("localeCode", "", localeCode)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -122,6 +128,7 @@ public class GetPresencedefinitionsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetPresencedefinitionsRequest request;
@@ -130,23 +137,29 @@ public class GetPresencedefinitionsRequest {
 			request = new GetPresencedefinitionsRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withDeleted(String deleted) {
 			request.setDeleted(deleted);
 			return this;
 		}
+		
 		public Builder withLocaleCode(String localeCode) {
 			request.setLocaleCode(localeCode);
 			return this;
 		}
+		
 
+		
 
 
 		public GetPresencedefinitionsRequest build() {

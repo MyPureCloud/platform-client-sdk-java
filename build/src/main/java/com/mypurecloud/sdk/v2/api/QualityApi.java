@@ -80,6 +80,7 @@ public class QualityApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a calibration by id.
    * 
@@ -108,8 +109,9 @@ public class QualityApi {
   private DeleteQualityCalibrationRequest createDeleteQualityCalibrationRequest(String calibrationId, String calibratorId) {
     return DeleteQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-
+    
             .withCalibratorId(calibratorId)
+    
             .build();
   }
 
@@ -161,6 +163,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Delete an evaluation
    * 
@@ -191,10 +194,11 @@ public class QualityApi {
   private DeleteQualityConversationEvaluationRequest createDeleteQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
     return DeleteQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withEvaluationId(evaluationId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -246,6 +250,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Delete an evaluation form.
    * 
@@ -270,6 +275,7 @@ public class QualityApi {
   private DeleteQualityFormRequest createDeleteQualityFormRequest(String formId) {
     return DeleteQualityFormRequest.builder()
             .withFormId(formId)
+    
             .build();
   }
 
@@ -320,6 +326,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Delete a keywordSet by id.
    * 
@@ -344,6 +351,7 @@ public class QualityApi {
   private DeleteQualityKeywordsetRequest createDeleteQualityKeywordsetRequest(String keywordSetId) {
     return DeleteQualityKeywordsetRequest.builder()
             .withKeywordSetId(keywordSetId)
+    
             .build();
   }
 
@@ -394,6 +402,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Delete keyword sets
    * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
@@ -418,6 +427,7 @@ public class QualityApi {
   private DeleteQualityKeywordsetsRequest createDeleteQualityKeywordsetsRequest(String ids) {
     return DeleteQualityKeywordsetsRequest.builder()
             .withIds(ids)
+    
             .build();
   }
 
@@ -468,6 +478,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Gets a list of Agent Activities
    * Including the number of evaluations and average evaluation score
@@ -516,28 +527,29 @@ public class QualityApi {
   private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) {
     return GetQualityAgentsActivityRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withStartTime(startTime)
-
+    
             .withEndTime(endTime)
-
+    
             .withAgentUserId(agentUserId)
-
+    
             .withEvaluatorUserId(evaluatorUserId)
-
+    
             .withName(name)
-
+    
             .withGroup(group)
+    
             .build();
   }
 
@@ -589,6 +601,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get a calibration by id.
    * 
@@ -617,8 +630,9 @@ public class QualityApi {
   private GetQualityCalibrationRequest createGetQualityCalibrationRequest(String calibrationId, String calibratorId) {
     return GetQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-
+    
             .withCalibratorId(calibratorId)
+    
             .build();
   }
 
@@ -670,6 +684,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get the list of calibrations
    * 
@@ -714,24 +729,25 @@ public class QualityApi {
   private GetQualityCalibrationsRequest createGetQualityCalibrationsRequest(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) {
     return GetQualityCalibrationsRequest.builder()
             .withCalibratorId(calibratorId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withConversationId(conversationId)
-
+    
             .withStartTime(startTime)
-
+    
             .withEndTime(endTime)
+    
             .build();
   }
 
@@ -783,6 +799,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get audits for conversation or recording
    * 
@@ -825,22 +842,23 @@ public class QualityApi {
   private GetQualityConversationAuditsRequest createGetQualityConversationAuditsRequest(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) {
     return GetQualityConversationAuditsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withRecordingId(recordingId)
-
+    
             .withEntityType(entityType)
+    
             .build();
   }
 
@@ -892,6 +910,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get an evaluation
    * 
@@ -922,10 +941,11 @@ public class QualityApi {
   private GetQualityConversationEvaluationRequest createGetQualityConversationEvaluationRequest(String conversationId, String evaluationId, String expand) {
     return GetQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withEvaluationId(evaluationId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -977,6 +997,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Queries Evaluations and returns a paged list
    * Query params must include one of conversationId, evaluatorUserId, or agentUserId
@@ -1035,38 +1056,39 @@ public class QualityApi {
   private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withConversationId(conversationId)
-
+    
             .withAgentUserId(agentUserId)
-
+    
             .withEvaluatorUserId(evaluatorUserId)
-
+    
             .withQueueId(queueId)
-
+    
             .withStartTime(startTime)
-
+    
             .withEndTime(endTime)
-
+    
             .withEvaluationState(evaluationState)
-
+    
             .withIsReleased(isReleased)
-
+    
             .withAgentHasRead(agentHasRead)
-
+    
             .withExpandAnswerTotalScores(expandAnswerTotalScores)
-
+    
             .withMaximum(maximum)
+    
             .build();
   }
 
@@ -1118,6 +1140,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get an evaluator activity
    * 
@@ -1164,26 +1187,27 @@ public class QualityApi {
   private GetQualityEvaluatorsActivityRequest createGetQualityEvaluatorsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) {
     return GetQualityEvaluatorsActivityRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withStartTime(startTime)
-
+    
             .withEndTime(endTime)
-
+    
             .withName(name)
-
+    
             .withPermission(permission)
-
+    
             .withGroup(group)
+    
             .build();
   }
 
@@ -1235,6 +1259,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get an evaluation form
    * 
@@ -1261,6 +1286,7 @@ public class QualityApi {
   private GetQualityFormRequest createGetQualityFormRequest(String formId) {
     return GetQualityFormRequest.builder()
             .withFormId(formId)
+    
             .build();
   }
 
@@ -1312,6 +1338,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Gets all the revisions for a specific evaluation.
    * 
@@ -1342,10 +1369,11 @@ public class QualityApi {
   private GetQualityFormVersionsRequest createGetQualityFormVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
     return GetQualityFormVersionsRequest.builder()
             .withFormId(formId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1397,6 +1425,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get the list of evaluation forms
    * 
@@ -1435,18 +1464,19 @@ public class QualityApi {
   private GetQualityFormsRequest createGetQualityFormsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
     return GetQualityFormsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withExpand(expand)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -1498,6 +1528,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get a keywordSet by id.
    * 
@@ -1524,6 +1555,7 @@ public class QualityApi {
   private GetQualityKeywordsetRequest createGetQualityKeywordsetRequest(String keywordSetId) {
     return GetQualityKeywordsetRequest.builder()
             .withKeywordSetId(keywordSetId)
+    
             .build();
   }
 
@@ -1575,6 +1607,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get the list of keyword sets
    * 
@@ -1619,24 +1652,25 @@ public class QualityApi {
   private GetQualityKeywordsetsRequest createGetQualityKeywordsetsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) {
     return GetQualityKeywordsetsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withNextPage(nextPage)
-
+    
             .withPreviousPage(previousPage)
-
+    
             .withName(name)
-
+    
             .withQueueId(queueId)
-
+    
             .withAgentId(agentId)
-
+    
             .withOperator(operator)
+    
             .build();
   }
 
@@ -1688,6 +1722,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get the published evaluation forms.
    * 
@@ -1714,6 +1749,7 @@ public class QualityApi {
   private GetQualityPublishedformRequest createGetQualityPublishedformRequest(String formId) {
     return GetQualityPublishedformRequest.builder()
             .withFormId(formId)
+    
             .build();
   }
 
@@ -1765,6 +1801,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Get the published evaluation forms.
    * 
@@ -1795,10 +1832,11 @@ public class QualityApi {
   private GetQualityPublishedformsRequest createGetQualityPublishedformsRequest(Integer pageSize, Integer pageNumber, String name) {
     return GetQualityPublishedformsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -1850,6 +1888,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Query for evaluation aggregates
    * 
@@ -1876,6 +1915,7 @@ public class QualityApi {
   private PostAnalyticsEvaluationsAggregatesQueryRequest createPostAnalyticsEvaluationsAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsEvaluationsAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1927,6 +1967,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Create a calibration
    * 
@@ -1955,8 +1996,9 @@ public class QualityApi {
   private PostQualityCalibrationsRequest createPostQualityCalibrationsRequest(CalibrationCreate body, String expand) {
     return PostQualityCalibrationsRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2008,6 +2050,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Create an evaluation
    * 
@@ -2038,10 +2081,11 @@ public class QualityApi {
   private PostQualityConversationEvaluationsRequest createPostQualityConversationEvaluationsRequest(String conversationId, Evaluation body, String expand) {
     return PostQualityConversationEvaluationsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2093,6 +2137,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Score evaluation
    * 
@@ -2119,6 +2164,7 @@ public class QualityApi {
   private PostQualityEvaluationsScoringRequest createPostQualityEvaluationsScoringRequest(EvaluationFormAndScoringSet body) {
     return PostQualityEvaluationsScoringRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2170,6 +2216,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Create an evaluation form.
    * 
@@ -2196,6 +2243,7 @@ public class QualityApi {
   private PostQualityFormsRequest createPostQualityFormsRequest(EvaluationForm body) {
     return PostQualityFormsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2247,6 +2295,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Create a Keyword Set
    * 
@@ -2275,8 +2324,9 @@ public class QualityApi {
   private PostQualityKeywordsetsRequest createPostQualityKeywordsetsRequest(KeywordSet body, String expand) {
     return PostQualityKeywordsetsRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2328,6 +2378,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Publish an evaluation form.
    * 
@@ -2354,6 +2405,7 @@ public class QualityApi {
   private PostQualityPublishedformsRequest createPostQualityPublishedformsRequest(EvaluationForm body) {
     return PostQualityPublishedformsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2405,6 +2457,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Retrieve the spotability statistic
    * 
@@ -2431,6 +2484,7 @@ public class QualityApi {
   private PostQualitySpotabilityRequest createPostQualitySpotabilityRequest(KeywordSet body) {
     return PostQualitySpotabilityRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2482,6 +2536,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
@@ -2510,8 +2565,9 @@ public class QualityApi {
   private PutQualityCalibrationRequest createPutQualityCalibrationRequest(String calibrationId, Calibration body) {
     return PutQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2563,6 +2619,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Update an evaluation
    * 
@@ -2595,12 +2652,13 @@ public class QualityApi {
   private PutQualityConversationEvaluationRequest createPutQualityConversationEvaluationRequest(String conversationId, String evaluationId, Evaluation body, String expand) {
     return PutQualityConversationEvaluationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withEvaluationId(evaluationId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2652,6 +2710,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Update an evaluation form.
    * 
@@ -2680,8 +2739,9 @@ public class QualityApi {
   private PutQualityFormRequest createPutQualityFormRequest(String formId, EvaluationForm body) {
     return PutQualityFormRequest.builder()
             .withFormId(formId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2733,6 +2793,7 @@ public class QualityApi {
     }
   }
 
+  
   /**
    * Update a keywordSet to the specified keywordSet via PUT.
    * 
@@ -2761,8 +2822,9 @@ public class QualityApi {
   private PutQualityKeywordsetRequest createPutQualityKeywordsetRequest(String keywordSetId, KeywordSet body) {
     return PutQualityKeywordsetRequest.builder()
             .withKeywordSetId(keywordSetId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2814,4 +2876,5 @@ public class QualityApi {
     }
   }
 
+  
 }

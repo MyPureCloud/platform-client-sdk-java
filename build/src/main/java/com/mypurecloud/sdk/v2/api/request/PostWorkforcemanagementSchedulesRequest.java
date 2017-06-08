@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class PostWorkforcemanagementSchedulesRequest {
+    
 	private CurrentUserScheduleRequestBody body;
 	public CurrentUserScheduleRequestBody getBody() {
 		return this.body;
@@ -48,6 +49,7 @@ public class PostWorkforcemanagementSchedulesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,6 +74,7 @@ public class PostWorkforcemanagementSchedulesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/schedules")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -83,6 +86,7 @@ public class PostWorkforcemanagementSchedulesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostWorkforcemanagementSchedulesRequest request;
@@ -91,11 +95,14 @@ public class PostWorkforcemanagementSchedulesRequest {
 			request = new PostWorkforcemanagementSchedulesRequest();
 		}
 
+		
 		public Builder withBody(CurrentUserScheduleRequestBody body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostWorkforcemanagementSchedulesRequest build() {

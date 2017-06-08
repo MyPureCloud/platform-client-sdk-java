@@ -337,7 +337,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional]<br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -392,7 +392,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | |
 | **noteId** | **String**| Note Id | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -451,7 +451,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 20] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -510,7 +510,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -563,7 +563,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalDataSources) | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -624,7 +624,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization) | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization) | [optional]<br />**Values**: externalOrganization |
 {: class="table table-striped"}
 
 ### Return type
@@ -679,7 +679,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | |
 | **noteId** | **String**| Note Id | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -738,7 +738,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 20] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -796,7 +796,7 @@ try {
 | **externalOrganizationId** | **String**| External Organization ID | |
 | **pageSize** | **Integer**| Page size | [optional] [default to 20] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | **String**| which fields, if any, to expand | [optional] [enum: externalDataSources] |
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
 | **sortOrder** | **String**| Sort order | [optional] |
 {: class="table table-striped"}
 
@@ -856,7 +856,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| Search query | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | **String**| which fields, if any, to expand | [optional] [enum: externalDataSources] |
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -909,7 +909,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **relationshipId** | **String**| Relationship Id | |
-| **expand** | **String**| which fields, if any, to expand | [optional] [enum: externalDataSources] |
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -962,7 +962,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which field, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type

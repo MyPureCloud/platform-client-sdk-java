@@ -145,7 +145,7 @@ public class Group  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The group name.
    **/
@@ -163,7 +163,7 @@ public class Group  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Group description(String description) {
@@ -180,35 +180,35 @@ public class Group  implements Serializable {
     this.description = description;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of members.")
   @JsonProperty("memberCount")
   public Long getMemberCount() {
     return memberCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Active, inactive, or deleted state.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
 
-
+  
   /**
    * Type of group.
    **/
@@ -226,7 +226,7 @@ public class Group  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Group images(List<UserImage> images) {
@@ -243,7 +243,7 @@ public class Group  implements Serializable {
     this.images = images;
   }
 
-
+  
   /**
    **/
   public Group addresses(List<GroupContact> addresses) {
@@ -260,7 +260,7 @@ public class Group  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    * Are membership rules visible to the person requesting to view the group
    **/
@@ -278,7 +278,7 @@ public class Group  implements Serializable {
     this.rulesVisible = rulesVisible;
   }
 
-
+  
   /**
    * Who can view this group
    **/
@@ -296,13 +296,14 @@ public class Group  implements Serializable {
     this.visibility = visibility;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

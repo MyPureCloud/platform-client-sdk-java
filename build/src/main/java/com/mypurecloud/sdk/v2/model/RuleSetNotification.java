@@ -47,7 +47,7 @@ public class RuleSetNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification name(String name) {
@@ -64,7 +64,7 @@ public class RuleSetNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification dateCreated(Date dateCreated) {
@@ -81,7 +81,7 @@ public class RuleSetNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification dateModified(Date dateModified) {
@@ -98,7 +98,7 @@ public class RuleSetNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification version(Integer version) {
@@ -115,7 +115,7 @@ public class RuleSetNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification contactList(DocumentDataV2NotificationCreatedBy contactList) {
@@ -132,7 +132,7 @@ public class RuleSetNotification  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification queue(RuleSetNotificationUriReference queue) {
@@ -149,7 +149,7 @@ public class RuleSetNotification  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification rules(List<RuleSetNotificationRules> rules) {
@@ -166,7 +166,7 @@ public class RuleSetNotification  implements Serializable {
     this.rules = rules;
   }
 
-
+  
   /**
    **/
   public RuleSetNotification additionalProperties(Object additionalProperties) {
@@ -183,6 +183,7 @@ public class RuleSetNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,7 +34,7 @@ public class CobrowseConversationNotificationUriReference  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationUriReference name(String name) {
@@ -51,6 +51,7 @@ public class CobrowseConversationNotificationUriReference  implements Serializab
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

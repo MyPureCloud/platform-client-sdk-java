@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityCalibrationsRequest {
+    
 	private String calibratorId;
 	public String getCalibratorId() {
 		return this.calibratorId;
@@ -52,6 +53,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -66,6 +68,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -80,6 +83,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -94,6 +98,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -108,6 +113,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -122,6 +128,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -136,6 +143,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -150,6 +158,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private Date startTime;
 	public Date getStartTime() {
 		return this.startTime;
@@ -164,6 +173,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private Date endTime;
 	public Date getEndTime() {
 		return this.endTime;
@@ -178,6 +188,7 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -225,7 +236,8 @@ public class GetQualityCalibrationsRequest {
                 .withQueryParameters("endTime", "", endTime)
         
                 .withQueryParameters("calibratorId", "", calibratorId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -236,10 +248,12 @@ public class GetQualityCalibrationsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String calibratorId) {
 	    return new Builder()
 	            .withRequiredParams(calibratorId);
 	}
+	
 
 	public static class Builder {
 		private final GetQualityCalibrationsRequest request;
@@ -248,51 +262,65 @@ public class GetQualityCalibrationsRequest {
 			request = new GetQualityCalibrationsRequest();
 		}
 
+		
 		public Builder withCalibratorId(String calibratorId) {
 			request.setCalibratorId(calibratorId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withStartTime(Date startTime) {
 			request.setStartTime(startTime);
 			return this;
 		}
+		
 		public Builder withEndTime(Date endTime) {
 			request.setEndTime(endTime);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String calibratorId) {
 			request.setCalibratorId(calibratorId);
+			
 			return this;
 		}
+		
 
 
 		public GetQualityCalibrationsRequest build() {

@@ -62,6 +62,7 @@ public class WorkforceManagementApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get a list of UserScheduleAdherence records for the requested users
    * 
@@ -137,6 +138,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get activity codes corresponding to a management unit
    * 
@@ -212,6 +214,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get intraday queues for the given date
    * 
@@ -287,6 +290,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get a time off request by id
    * 
@@ -362,6 +366,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get a list of time off requests for any user
    * 
@@ -437,6 +442,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get agents in the management unit
    * 
@@ -512,6 +518,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get management units
    * 
@@ -587,6 +594,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get a time off request for the current user by id
    * 
@@ -662,6 +670,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get a list of time off requests for the current user
    * 
@@ -737,6 +746,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Mark a time off request for the current user as read or unread
    * 
@@ -812,6 +822,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get intraday data for the given date for the requested queueIds
    * 
@@ -887,6 +898,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get user schedules within the given time range
    * 
@@ -962,6 +974,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
   /**
    * Get a schedule for the current user
    * 
@@ -1037,6 +1050,7 @@ public class WorkforceManagementApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

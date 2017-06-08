@@ -42,7 +42,7 @@ public class StatisticalSummary  implements Serializable {
     this.max = max;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary min(BigDecimal min) {
@@ -59,7 +59,7 @@ public class StatisticalSummary  implements Serializable {
     this.min = min;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary count(Long count) {
@@ -76,7 +76,7 @@ public class StatisticalSummary  implements Serializable {
     this.count = count;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary sum(BigDecimal sum) {
@@ -93,7 +93,7 @@ public class StatisticalSummary  implements Serializable {
     this.sum = sum;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary current(BigDecimal current) {
@@ -110,7 +110,7 @@ public class StatisticalSummary  implements Serializable {
     this.current = current;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary ratio(BigDecimal ratio) {
@@ -127,7 +127,7 @@ public class StatisticalSummary  implements Serializable {
     this.ratio = ratio;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary numerator(BigDecimal numerator) {
@@ -144,7 +144,7 @@ public class StatisticalSummary  implements Serializable {
     this.numerator = numerator;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary denominator(BigDecimal denominator) {
@@ -161,7 +161,7 @@ public class StatisticalSummary  implements Serializable {
     this.denominator = denominator;
   }
 
-
+  
   /**
    **/
   public StatisticalSummary target(BigDecimal target) {
@@ -178,6 +178,7 @@ public class StatisticalSummary  implements Serializable {
     this.target = target;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

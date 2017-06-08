@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementWorkspacesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -64,6 +65,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -78,6 +80,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    return this;
 	}
 
+	
 	private List<String> access;
 	public List<String> getAccess() {
 		return this.access;
@@ -92,6 +95,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -106,6 +110,7 @@ public class GetContentmanagementWorkspacesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -136,7 +141,8 @@ public class GetContentmanagementWorkspacesRequest {
                 .withQueryParameters("access", "multi", access)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -147,6 +153,7 @@ public class GetContentmanagementWorkspacesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetContentmanagementWorkspacesRequest request;
@@ -155,23 +162,29 @@ public class GetContentmanagementWorkspacesRequest {
 			request = new GetContentmanagementWorkspacesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withAccess(List<String> access) {
 			request.setAccess(access);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetContentmanagementWorkspacesRequest build() {

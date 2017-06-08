@@ -36,7 +36,7 @@ public class AggregationRange  implements Serializable {
     this.gte = gte;
   }
 
-
+  
   /**
    * Less than
    **/
@@ -54,6 +54,7 @@ public class AggregationRange  implements Serializable {
     this.lt = lt;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

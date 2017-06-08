@@ -48,7 +48,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.status = status;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo code(String code) {
@@ -65,7 +65,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo entityId(String entityId) {
@@ -82,7 +82,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo entityName(String entityName) {
@@ -99,7 +99,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo message(String message) {
@@ -116,7 +116,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo contextId(String contextId) {
@@ -167,7 +167,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.details = details;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationErrorInfo errors(List<ScreenShareConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class ScreenShareConversationNotificationErrorInfo  implements Serializab
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

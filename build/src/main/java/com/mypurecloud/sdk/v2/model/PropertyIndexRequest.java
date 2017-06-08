@@ -40,7 +40,7 @@ public class PropertyIndexRequest  implements Serializable {
     this.sessionId = sessionId;
   }
 
-
+  
   /**
    * Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -58,7 +58,7 @@ public class PropertyIndexRequest  implements Serializable {
     this.targetDate = targetDate;
   }
 
-
+  
   /**
    * The list of properties to index
    **/
@@ -76,6 +76,7 @@ public class PropertyIndexRequest  implements Serializable {
     this.properties = properties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

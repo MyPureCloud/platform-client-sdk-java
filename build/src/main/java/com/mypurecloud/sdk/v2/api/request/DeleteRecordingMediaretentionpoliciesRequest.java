@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class DeleteRecordingMediaretentionpoliciesRequest {
+    
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -52,6 +53,7 @@ public class DeleteRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class DeleteRecordingMediaretentionpoliciesRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/recording/mediaretentionpolicies")
                 .withQueryParameters("ids", "", ids)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class DeleteRecordingMediaretentionpoliciesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ids) {
 	    return new Builder()
 	            .withRequiredParams(ids);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRecordingMediaretentionpoliciesRequest request;
@@ -104,15 +109,20 @@ public class DeleteRecordingMediaretentionpoliciesRequest {
 			request = new DeleteRecordingMediaretentionpoliciesRequest();
 		}
 
+		
 		public Builder withIds(String ids) {
 			request.setIds(ids);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ids) {
 			request.setIds(ids);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRecordingMediaretentionpoliciesRequest build() {

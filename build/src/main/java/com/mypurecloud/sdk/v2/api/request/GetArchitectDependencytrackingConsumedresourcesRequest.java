@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingConsumedresourcesRequest {
+    
 	private String id;
 	public String getId() {
 		return this.id;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	    return this;
 	}
 
+	
 	private String version;
 	public String getVersion() {
 		return this.version;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	    return this;
 	}
 
+	
 	private String objectType;
 	public String getObjectType() {
 		return this.objectType;
@@ -84,6 +87,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	    return this;
 	}
 
+	
 	private List<String> resourceType;
 	public List<String> getResourceType() {
 		return this.resourceType;
@@ -98,6 +102,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,7 +148,8 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
                 .withQueryParameters("objectType", "", objectType)
         
                 .withQueryParameters("resourceType", "multi", resourceType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -154,10 +160,12 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String id, String version, String objectType) {
 	    return new Builder()
 	            .withRequiredParams(id, version, objectType);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingConsumedresourcesRequest request;
@@ -166,29 +174,37 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 			request = new GetArchitectDependencytrackingConsumedresourcesRequest();
 		}
 
+		
 		public Builder withId(String id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withVersion(String version) {
 			request.setVersion(version);
 			return this;
 		}
+		
 		public Builder withObjectType(String objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+		
 		public Builder withResourceType(List<String> resourceType) {
 			request.setResourceType(resourceType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String id, String version, String objectType) {
 			request.setId(id);
-			request.setVersion(version);
-			request.setObjectType(objectType);
+						request.setVersion(version);
+						request.setObjectType(objectType);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectDependencytrackingConsumedresourcesRequest build() {

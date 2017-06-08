@@ -105,7 +105,7 @@ public class UserPresenceRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -123,7 +123,7 @@ public class UserPresenceRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The user whose presence will be watched.
    **/
@@ -141,7 +141,7 @@ public class UserPresenceRule  implements Serializable {
     this.presenceUser = presenceUser;
   }
 
-
+  
   /**
    * Indicates to which presence type the presence value belongs.
    **/
@@ -159,7 +159,7 @@ public class UserPresenceRule  implements Serializable {
     this.presenceType = presenceType;
   }
 
-
+  
   /**
    * The Org's UUID or Systems enum constance indicating the presence of concern.
    **/
@@ -177,7 +177,7 @@ public class UserPresenceRule  implements Serializable {
     this.presenceValue = presenceValue;
   }
 
-
+  
   /**
    * The number of seconds to wait before alerting based upon the user's presence.
    **/
@@ -195,7 +195,7 @@ public class UserPresenceRule  implements Serializable {
     this.presenceLimitInSeconds = presenceLimitInSeconds;
   }
 
-
+  
   /**
    * Indicates if the rule is enabled.
    **/
@@ -213,14 +213,14 @@ public class UserPresenceRule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Indicates if the rule is in alarm state.")
   @JsonProperty("inAlarm")
   public Boolean getInAlarm() {
     return inAlarm;
   }
 
-
+  
   /**
    * The ids of users who will be notified of alarm state change.
    **/
@@ -238,7 +238,7 @@ public class UserPresenceRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -256,13 +256,14 @@ public class UserPresenceRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -68,7 +68,7 @@ public class ExpansionCriterium  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ExpansionCriterium threshold(Double threshold) {
@@ -85,6 +85,7 @@ public class ExpansionCriterium  implements Serializable {
     this.threshold = threshold;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

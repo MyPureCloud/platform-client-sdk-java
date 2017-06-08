@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCallParticipantConsultRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	    return this;
 	}
 
+	
 	private String participantId;
 	public String getParticipantId() {
 		return this.participantId;
@@ -88,6 +90,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	    return this;
 	}
 
+	
 	private ConsultTransferUpdate body;
 	public ConsultTransferUpdate getBody() {
 		return this.body;
@@ -102,6 +105,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,6 +149,7 @@ public class PatchConversationsCallParticipantConsultRequest {
                 .withPathParameter("participantId", participantId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -156,10 +161,12 @@ public class PatchConversationsCallParticipantConsultRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String participantId, ConsultTransferUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, participantId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchConversationsCallParticipantConsultRequest request;
@@ -168,25 +175,32 @@ public class PatchConversationsCallParticipantConsultRequest {
 			request = new PatchConversationsCallParticipantConsultRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withParticipantId(String participantId) {
 			request.setParticipantId(participantId);
 			return this;
 		}
+		
 		public Builder withBody(ConsultTransferUpdate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String participantId, ConsultTransferUpdate body) {
 			request.setConversationId(conversationId);
-			request.setParticipantId(participantId);
-			request.setBody(body);
+						request.setParticipantId(participantId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchConversationsCallParticipantConsultRequest build() {

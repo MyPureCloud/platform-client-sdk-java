@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityEvaluationsQueryRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -52,6 +53,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -66,6 +68,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -80,6 +83,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -94,6 +98,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -108,6 +113,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -122,6 +128,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -136,6 +143,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String agentUserId;
 	public String getAgentUserId() {
 		return this.agentUserId;
@@ -150,6 +158,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String evaluatorUserId;
 	public String getEvaluatorUserId() {
 		return this.evaluatorUserId;
@@ -164,6 +173,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -178,6 +188,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String startTime;
 	public String getStartTime() {
 		return this.startTime;
@@ -192,6 +203,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private String endTime;
 	public String getEndTime() {
 		return this.endTime;
@@ -206,6 +218,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private List<Object> evaluationState;
 	public List<Object> getEvaluationState() {
 		return this.evaluationState;
@@ -220,6 +233,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private Boolean isReleased;
 	public Boolean getIsReleased() {
 		return this.isReleased;
@@ -234,6 +248,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private Boolean agentHasRead;
 	public Boolean getAgentHasRead() {
 		return this.agentHasRead;
@@ -248,6 +263,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private Boolean expandAnswerTotalScores;
 	public Boolean getExpandAnswerTotalScores() {
 		return this.expandAnswerTotalScores;
@@ -262,6 +278,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private Integer maximum;
 	public Integer getMaximum() {
 		return this.maximum;
@@ -276,6 +293,7 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -332,7 +350,8 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("expandAnswerTotalScores", "", expandAnswerTotalScores)
         
                 .withQueryParameters("maximum", "", maximum)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -343,6 +362,7 @@ public class GetQualityEvaluationsQueryRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetQualityEvaluationsQueryRequest request;
@@ -351,75 +371,94 @@ public class GetQualityEvaluationsQueryRequest {
 			request = new GetQualityEvaluationsQueryRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withAgentUserId(String agentUserId) {
 			request.setAgentUserId(agentUserId);
 			return this;
 		}
+		
 		public Builder withEvaluatorUserId(String evaluatorUserId) {
 			request.setEvaluatorUserId(evaluatorUserId);
 			return this;
 		}
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withStartTime(String startTime) {
 			request.setStartTime(startTime);
 			return this;
 		}
+		
 		public Builder withEndTime(String endTime) {
 			request.setEndTime(endTime);
 			return this;
 		}
+		
 		public Builder withEvaluationState(List<Object> evaluationState) {
 			request.setEvaluationState(evaluationState);
 			return this;
 		}
+		
 		public Builder withIsReleased(Boolean isReleased) {
 			request.setIsReleased(isReleased);
 			return this;
 		}
+		
 		public Builder withAgentHasRead(Boolean agentHasRead) {
 			request.setAgentHasRead(agentHasRead);
 			return this;
 		}
+		
 		public Builder withExpandAnswerTotalScores(Boolean expandAnswerTotalScores) {
 			request.setExpandAnswerTotalScores(expandAnswerTotalScores);
 			return this;
 		}
+		
 		public Builder withMaximum(Integer maximum) {
 			request.setMaximum(maximum);
 			return this;
 		}
+		
 
+		
 
 
 		public GetQualityEvaluationsQueryRequest build() {

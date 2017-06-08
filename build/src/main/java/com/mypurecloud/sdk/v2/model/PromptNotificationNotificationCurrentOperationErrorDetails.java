@@ -36,7 +36,7 @@ public class PromptNotificationNotificationCurrentOperationErrorDetails  impleme
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperationErrorDetails entityId(String entityId) {
@@ -53,7 +53,7 @@ public class PromptNotificationNotificationCurrentOperationErrorDetails  impleme
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperationErrorDetails entityName(String entityName) {
@@ -70,7 +70,7 @@ public class PromptNotificationNotificationCurrentOperationErrorDetails  impleme
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperationErrorDetails fieldName(String fieldName) {
@@ -87,6 +87,7 @@ public class PromptNotificationNotificationCurrentOperationErrorDetails  impleme
     this.fieldName = fieldName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

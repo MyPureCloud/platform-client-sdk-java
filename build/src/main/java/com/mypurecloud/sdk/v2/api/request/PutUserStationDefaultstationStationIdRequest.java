@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PutUserStationDefaultstationStationIdRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PutUserStationDefaultstationStationIdRequest {
 	    return this;
 	}
 
+	
 	private String stationId;
 	public String getStationId() {
 		return this.stationId;
@@ -76,6 +78,7 @@ public class PutUserStationDefaultstationStationIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,7 +115,8 @@ public class PutUserStationDefaultstationStationIdRequest {
                 .withPathParameter("userId", userId)
         
                 .withPathParameter("stationId", stationId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -123,10 +127,12 @@ public class PutUserStationDefaultstationStationIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String stationId) {
 	    return new Builder()
 	            .withRequiredParams(userId, stationId);
 	}
+	
 
 	public static class Builder {
 		private final PutUserStationDefaultstationStationIdRequest request;
@@ -135,20 +141,26 @@ public class PutUserStationDefaultstationStationIdRequest {
 			request = new PutUserStationDefaultstationStationIdRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withStationId(String stationId) {
 			request.setStationId(stationId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String stationId) {
 			request.setUserId(userId);
-			request.setStationId(stationId);
+						request.setStationId(stationId);
+			
 			return this;
 		}
+		
 
 
 		public PutUserStationDefaultstationStationIdRequest build() {

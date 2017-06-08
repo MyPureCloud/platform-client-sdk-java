@@ -41,7 +41,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationWrapup notes(String notes) {
@@ -58,7 +58,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationWrapup tags(List<String> tags) {
@@ -75,7 +75,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationWrapup durationSeconds(Integer durationSeconds) {
@@ -92,7 +92,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationWrapup endTime(Date endTime) {
@@ -109,7 +109,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationWrapup additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class VideoConversationNotificationWrapup  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

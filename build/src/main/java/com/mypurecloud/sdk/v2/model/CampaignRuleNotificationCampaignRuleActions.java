@@ -80,7 +80,7 @@ public class CampaignRuleNotificationCampaignRuleActions  implements Serializabl
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActions parameters(Map<String, String> parameters) {
@@ -97,7 +97,7 @@ public class CampaignRuleNotificationCampaignRuleActions  implements Serializabl
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActions actionType(ActionTypeEnum actionType) {
@@ -114,7 +114,7 @@ public class CampaignRuleNotificationCampaignRuleActions  implements Serializabl
     this.actionType = actionType;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActions campaignRuleActionEntities(CampaignRuleNotificationCampaignRuleActionEntities campaignRuleActionEntities) {
@@ -131,7 +131,7 @@ public class CampaignRuleNotificationCampaignRuleActions  implements Serializabl
     this.campaignRuleActionEntities = campaignRuleActionEntities;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActions additionalProperties(Object additionalProperties) {
@@ -148,6 +148,7 @@ public class CampaignRuleNotificationCampaignRuleActions  implements Serializabl
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

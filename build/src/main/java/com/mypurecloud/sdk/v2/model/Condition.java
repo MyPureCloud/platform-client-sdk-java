@@ -141,6 +141,42 @@ public class Condition  implements Serializable {
   private OperatorEnum operator = null;
   private List<String> codes = new ArrayList<String>();
 
+  /**
+   * Determines the type of the property associated with the condition
+   */
+  public enum PropertyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BY_COLUMN("LAST_ATTEMPT_BY_COLUMN"),
+    OVERALL("LAST_ATTEMPT_OVERALL");
+
+    private String value;
+
+    PropertyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PropertyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PropertyTypeEnum value : PropertyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PropertyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PropertyTypeEnum propertyType = null;
+  private String property = null;
+
   
   /**
    * The type of the condition
@@ -159,7 +195,7 @@ public class Condition  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Indicates whether to evaluate for the opposite of the stated condition; default is false
    **/
@@ -177,7 +213,7 @@ public class Condition  implements Serializable {
     this.inverted = inverted;
   }
 
-
+  
   /**
    * An attribute name associated with the condition (applies only to certain rule conditions)
    **/
@@ -195,7 +231,7 @@ public class Condition  implements Serializable {
     this.attributeName = attributeName;
   }
 
-
+  
   /**
    * A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
    **/
@@ -213,7 +249,7 @@ public class Condition  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * Determines the type of the value associated with the condition
    **/
@@ -231,7 +267,7 @@ public class Condition  implements Serializable {
     this.valueType = valueType;
   }
 
-
+  
   /**
    * An operation type for condition evaluation
    **/
@@ -249,7 +285,7 @@ public class Condition  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
    **/
@@ -267,6 +303,43 @@ public class Condition  implements Serializable {
     this.codes = codes;
   }
 
+  
+  /**
+   * Determines the type of the property associated with the condition
+   **/
+  public Condition propertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Determines the type of the property associated with the condition")
+  @JsonProperty("propertyType")
+  public PropertyTypeEnum getPropertyType() {
+    return propertyType;
+  }
+  public void setPropertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+  }
+
+  
+  /**
+   * A value associated with the property type of this condition
+   **/
+  public Condition property(String property) {
+    this.property = property;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A value associated with the property type of this condition")
+  @JsonProperty("property")
+  public String getProperty() {
+    return property;
+  }
+  public void setProperty(String property) {
+    this.property = property;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -283,12 +356,14 @@ public class Condition  implements Serializable {
         Objects.equals(this.value, condition.value) &&
         Objects.equals(this.valueType, condition.valueType) &&
         Objects.equals(this.operator, condition.operator) &&
-        Objects.equals(this.codes, condition.codes);
+        Objects.equals(this.codes, condition.codes) &&
+        Objects.equals(this.propertyType, condition.propertyType) &&
+        Objects.equals(this.property, condition.property);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property);
   }
 
   @Override
@@ -303,6 +378,8 @@ public class Condition  implements Serializable {
     sb.append("    valueType: ").append(toIndentedString(valueType)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
+    sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
+    sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("}");
     return sb.toString();
   }

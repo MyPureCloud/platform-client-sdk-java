@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetAnalyticsConversationDetailsRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class GetAnalyticsConversationDetailsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class GetAnalyticsConversationDetailsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/analytics/conversations/{conversationId}/details")
                 .withPathParameter("conversationId", conversationId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class GetAnalyticsConversationDetailsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId);
 	}
+	
 
 	public static class Builder {
 		private final GetAnalyticsConversationDetailsRequest request;
@@ -126,15 +131,20 @@ public class GetAnalyticsConversationDetailsRequest {
 			request = new GetAnalyticsConversationDetailsRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId) {
 			request.setConversationId(conversationId);
+			
 			return this;
 		}
+		
 
 
 		public GetAnalyticsConversationDetailsRequest build() {

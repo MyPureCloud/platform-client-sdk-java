@@ -46,6 +46,7 @@ public class FaxApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a fax document.
    * 
@@ -121,6 +122,7 @@ public class FaxApiAsync {
     }
   }
 
+  
   /**
    * Get a document.
    * 
@@ -196,6 +198,7 @@ public class FaxApiAsync {
     }
   }
 
+  
   /**
    * Download a fax document.
    * 
@@ -271,6 +274,7 @@ public class FaxApiAsync {
     }
   }
 
+  
   /**
    * Get a list of fax documents.
    * 
@@ -346,6 +350,7 @@ public class FaxApiAsync {
     }
   }
 
+  
   /**
    * Get fax summary
    * 
@@ -421,6 +426,7 @@ public class FaxApiAsync {
     }
   }
 
+  
   /**
    * Update a fax document.
    * 
@@ -496,6 +502,7 @@ public class FaxApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

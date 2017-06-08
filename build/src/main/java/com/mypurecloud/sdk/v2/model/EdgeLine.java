@@ -122,7 +122,7 @@ public class EdgeLine  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -140,7 +140,7 @@ public class EdgeLine  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeLine description(String description) {
@@ -157,7 +157,7 @@ public class EdgeLine  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeLine version(Integer version) {
@@ -174,7 +174,7 @@ public class EdgeLine  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -192,7 +192,7 @@ public class EdgeLine  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -210,7 +210,7 @@ public class EdgeLine  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeLine modifiedBy(String modifiedBy) {
@@ -227,7 +227,7 @@ public class EdgeLine  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeLine createdBy(String createdBy) {
@@ -244,7 +244,7 @@ public class EdgeLine  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeLine state(StateEnum state) {
@@ -261,7 +261,7 @@ public class EdgeLine  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeLine modifiedByApp(String modifiedByApp) {
@@ -278,7 +278,7 @@ public class EdgeLine  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeLine createdByApp(String createdByApp) {
@@ -295,7 +295,7 @@ public class EdgeLine  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public EdgeLine schema(UriReference schema) {
@@ -312,7 +312,7 @@ public class EdgeLine  implements Serializable {
     this.schema = schema;
   }
 
-
+  
   /**
    **/
   public EdgeLine properties(Map<String, Object> properties) {
@@ -329,7 +329,7 @@ public class EdgeLine  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public EdgeLine edge(Edge edge) {
@@ -346,7 +346,7 @@ public class EdgeLine  implements Serializable {
     this.edge = edge;
   }
 
-
+  
   /**
    **/
   public EdgeLine edgeGroup(EdgeGroup edgeGroup) {
@@ -363,7 +363,7 @@ public class EdgeLine  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   /**
    **/
   public EdgeLine lineType(LineTypeEnum lineType) {
@@ -380,7 +380,7 @@ public class EdgeLine  implements Serializable {
     this.lineType = lineType;
   }
 
-
+  
   /**
    **/
   public EdgeLine endpoint(Endpoint endpoint) {
@@ -397,7 +397,7 @@ public class EdgeLine  implements Serializable {
     this.endpoint = endpoint;
   }
 
-
+  
   /**
    **/
   public EdgeLine ipAddress(String ipAddress) {
@@ -414,7 +414,7 @@ public class EdgeLine  implements Serializable {
     this.ipAddress = ipAddress;
   }
 
-
+  
   /**
    **/
   public EdgeLine logicalInterfaceId(String logicalInterfaceId) {
@@ -431,13 +431,14 @@ public class EdgeLine  implements Serializable {
     this.logicalInterfaceId = logicalInterfaceId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

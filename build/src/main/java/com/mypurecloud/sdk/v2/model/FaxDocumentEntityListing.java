@@ -46,7 +46,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.total = total;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public FaxDocumentEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class FaxDocumentEntityListing  implements Serializable, PagedResource<Fa
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

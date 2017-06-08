@@ -46,7 +46,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer total(Long total) {
@@ -97,7 +97,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.total = total;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleContainer pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class HeartBeatRuleContainer  implements Serializable, PagedResource<Hear
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -39,7 +39,7 @@ public class StatisticalResponse  implements Serializable {
     this.interval = interval;
   }
 
-
+  
   /**
    **/
   public StatisticalResponse metrics(List<AggregateMetricData> metrics) {
@@ -56,7 +56,7 @@ public class StatisticalResponse  implements Serializable {
     this.metrics = metrics;
   }
 
-
+  
   /**
    **/
   public StatisticalResponse views(List<AggregateViewData> views) {
@@ -73,6 +73,7 @@ public class StatisticalResponse  implements Serializable {
     this.views = views;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

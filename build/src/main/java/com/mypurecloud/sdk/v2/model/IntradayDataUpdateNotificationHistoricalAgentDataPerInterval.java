@@ -35,7 +35,7 @@ public class IntradayDataUpdateNotificationHistoricalAgentDataPerInterval  imple
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationHistoricalAgentDataPerInterval interactingTimeSeconds(BigDecimal interactingTimeSeconds) {
@@ -52,6 +52,7 @@ public class IntradayDataUpdateNotificationHistoricalAgentDataPerInterval  imple
     this.interactingTimeSeconds = interactingTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

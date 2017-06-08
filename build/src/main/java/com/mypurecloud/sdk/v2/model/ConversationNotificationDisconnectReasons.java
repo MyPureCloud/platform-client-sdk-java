@@ -70,7 +70,7 @@ public class ConversationNotificationDisconnectReasons  implements Serializable 
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDisconnectReasons code(Integer code) {
@@ -87,7 +87,7 @@ public class ConversationNotificationDisconnectReasons  implements Serializable 
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationDisconnectReasons phrase(String phrase) {
@@ -104,6 +104,7 @@ public class ConversationNotificationDisconnectReasons  implements Serializable 
     this.phrase = phrase;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

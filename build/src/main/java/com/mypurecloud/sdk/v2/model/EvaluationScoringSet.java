@@ -41,7 +41,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.totalScore = totalScore;
   }
 
-
+  
   /**
    **/
   public EvaluationScoringSet totalCriticalScore(Float totalCriticalScore) {
@@ -58,7 +58,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.totalCriticalScore = totalCriticalScore;
   }
 
-
+  
   /**
    **/
   public EvaluationScoringSet questionGroupScores(List<QuestionGroupScore> questionGroupScores) {
@@ -75,7 +75,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.questionGroupScores = questionGroupScores;
   }
 
-
+  
   /**
    **/
   public EvaluationScoringSet anyFailedKillQuestions(Boolean anyFailedKillQuestions) {
@@ -92,7 +92,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.anyFailedKillQuestions = anyFailedKillQuestions;
   }
 
-
+  
   /**
    **/
   public EvaluationScoringSet comments(String comments) {
@@ -109,7 +109,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.comments = comments;
   }
 
-
+  
   /**
    **/
   public EvaluationScoringSet agentComments(String agentComments) {
@@ -126,6 +126,7 @@ public class EvaluationScoringSet  implements Serializable {
     this.agentComments = agentComments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

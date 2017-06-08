@@ -40,7 +40,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public OrganizationProductEntityListing pageSize(Integer pageSize) {
@@ -57,7 +57,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public OrganizationProductEntityListing pageNumber(Integer pageNumber) {
@@ -74,7 +74,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public OrganizationProductEntityListing total(Long total) {
@@ -91,7 +91,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public OrganizationProductEntityListing pageCount(Integer pageCount) {
@@ -108,6 +108,7 @@ public class OrganizationProductEntityListing  implements Serializable {
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

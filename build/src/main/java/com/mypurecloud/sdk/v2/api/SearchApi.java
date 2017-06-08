@@ -59,6 +59,7 @@ public class SearchApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Search documentation using the q64 value returned from a previous search
    * 
@@ -85,6 +86,7 @@ public class SearchApi {
   private GetDocumentationSearchRequest createGetDocumentationSearchRequest(String q64) {
     return GetDocumentationSearchRequest.builder()
             .withQ64(q64)
+    
             .build();
   }
 
@@ -136,6 +138,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -164,8 +167,9 @@ public class SearchApi {
   private GetGroupsSearchRequest createGetGroupsSearchRequest(String q64, List<String> expand) {
     return GetGroupsSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -217,6 +221,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -245,8 +250,9 @@ public class SearchApi {
   private GetLocationsSearchRequest createGetLocationsSearchRequest(String q64, List<String> expand) {
     return GetLocationsSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -298,6 +304,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search using the q64 value returned from a previous search.
    * 
@@ -328,10 +335,11 @@ public class SearchApi {
   private GetSearchRequest createGetSearchRequest(String q64, List<String> expand, Boolean profile) {
     return GetSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -383,6 +391,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
@@ -413,10 +422,11 @@ public class SearchApi {
   private GetSearchSuggestRequest createGetSearchSuggestRequest(String q64, List<String> expand, Boolean profile) {
     return GetSearchSuggestRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -468,6 +478,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -496,8 +507,9 @@ public class SearchApi {
   private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand) {
     return GetUsersSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -549,6 +561,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -577,8 +590,9 @@ public class SearchApi {
   private GetVoicemailSearchRequest createGetVoicemailSearchRequest(String q64, List<String> expand) {
     return GetVoicemailSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -630,6 +644,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search documentation
    * 
@@ -656,6 +671,7 @@ public class SearchApi {
   private PostDocumentationSearchRequest createPostDocumentationSearchRequest(DocumentationSearchRequest body) {
     return PostDocumentationSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -707,6 +723,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search groups
    * 
@@ -733,6 +750,7 @@ public class SearchApi {
   private PostGroupsSearchRequest createPostGroupsSearchRequest(GroupSearchRequest body) {
     return PostGroupsSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -784,6 +802,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search locations
    * 
@@ -810,6 +829,7 @@ public class SearchApi {
   private PostLocationsSearchRequest createPostLocationsSearchRequest(LocationSearchRequest body) {
     return PostLocationsSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -861,6 +881,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search resources.
    * 
@@ -889,8 +910,9 @@ public class SearchApi {
   private PostSearchRequest createPostSearchRequest(SearchRequest body, Boolean profile) {
     return PostSearchRequest.builder()
             .withBody(body)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -942,6 +964,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Suggest resources.
    * 
@@ -970,8 +993,9 @@ public class SearchApi {
   private PostSearchSuggestRequest createPostSearchSuggestRequest(SuggestSearchRequest body, Boolean profile) {
     return PostSearchSuggestRequest.builder()
             .withBody(body)
-
+    
             .withProfile(profile)
+    
             .build();
   }
 
@@ -1023,6 +1047,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search users
    * 
@@ -1049,6 +1074,7 @@ public class SearchApi {
   private PostUsersSearchRequest createPostUsersSearchRequest(UserSearchRequest body) {
     return PostUsersSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1100,6 +1126,7 @@ public class SearchApi {
     }
   }
 
+  
   /**
    * Search voicemails
    * 
@@ -1126,6 +1153,7 @@ public class SearchApi {
   private PostVoicemailSearchRequest createPostVoicemailSearchRequest(VoicemailSearchRequest body) {
     return PostVoicemailSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1177,4 +1205,5 @@ public class SearchApi {
     }
   }
 
+  
 }

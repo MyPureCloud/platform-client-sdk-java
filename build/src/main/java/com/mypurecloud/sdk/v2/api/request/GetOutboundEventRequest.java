@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundEventRequest {
+    
 	private String eventId;
 	public String getEventId() {
 		return this.eventId;
@@ -74,6 +75,7 @@ public class GetOutboundEventRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class GetOutboundEventRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/events/{eventId}")
                 .withPathParameter("eventId", eventId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class GetOutboundEventRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String eventId) {
 	    return new Builder()
 	            .withRequiredParams(eventId);
 	}
+	
 
 	public static class Builder {
 		private final GetOutboundEventRequest request;
@@ -126,15 +131,20 @@ public class GetOutboundEventRequest {
 			request = new GetOutboundEventRequest();
 		}
 
+		
 		public Builder withEventId(String eventId) {
 			request.setEventId(eventId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String eventId) {
 			request.setEventId(eventId);
+			
 			return this;
 		}
+		
 
 
 		public GetOutboundEventRequest build() {

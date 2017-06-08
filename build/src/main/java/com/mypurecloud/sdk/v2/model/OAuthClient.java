@@ -71,7 +71,7 @@ public class OAuthClient  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the OAuth client.
    **/
@@ -89,7 +89,7 @@ public class OAuthClient  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The number of seconds, between 5mins and 48hrs, until tokens created with this client expire. If this field is omitted, a default of 24 hours will be applied.
    **/
@@ -107,7 +107,7 @@ public class OAuthClient  implements Serializable {
     this.accessTokenValiditySeconds = accessTokenValiditySeconds;
   }
 
-
+  
   /**
    **/
   public OAuthClient description(String description) {
@@ -124,7 +124,7 @@ public class OAuthClient  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * List of allowed callbacks for this client. For example: https://myap.example.com/auth/callback
    **/
@@ -142,7 +142,7 @@ public class OAuthClient  implements Serializable {
     this.registeredRedirectUri = registeredRedirectUri;
   }
 
-
+  
   /**
    * System created secret assigned to this client. Secrets are required for code authorization and client credential grants.
    **/
@@ -160,7 +160,7 @@ public class OAuthClient  implements Serializable {
     this.secret = secret;
   }
 
-
+  
   /**
    * Roles assigned to this client. Roles only apply to clients using the client_credential grant
    **/
@@ -178,7 +178,7 @@ public class OAuthClient  implements Serializable {
     this.roleIds = roleIds;
   }
 
-
+  
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
    **/
@@ -196,13 +196,14 @@ public class OAuthClient  implements Serializable {
     this.authorizedGrantType = authorizedGrantType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

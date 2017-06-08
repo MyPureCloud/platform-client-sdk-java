@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class GetIdentityprovidersRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -55,7 +56,8 @@ public class GetIdentityprovidersRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/identityproviders")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/identityproviders")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -66,6 +68,7 @@ public class GetIdentityprovidersRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetIdentityprovidersRequest request;
@@ -74,7 +77,9 @@ public class GetIdentityprovidersRequest {
 			request = new GetIdentityprovidersRequest();
 		}
 
+		
 
+		
 
 
 		public GetIdentityprovidersRequest build() {

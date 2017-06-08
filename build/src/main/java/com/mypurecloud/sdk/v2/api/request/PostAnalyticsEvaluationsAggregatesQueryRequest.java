@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostAnalyticsEvaluationsAggregatesQueryRequest {
+    
 	private AggregationQuery body;
 	public AggregationQuery getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostAnalyticsEvaluationsAggregatesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PostAnalyticsEvaluationsAggregatesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/evaluations/aggregates/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PostAnalyticsEvaluationsAggregatesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(AggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsEvaluationsAggregatesQueryRequest request;
@@ -104,15 +109,20 @@ public class PostAnalyticsEvaluationsAggregatesQueryRequest {
 			request = new PostAnalyticsEvaluationsAggregatesQueryRequest();
 		}
 
+		
 		public Builder withBody(AggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(AggregationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsEvaluationsAggregatesQueryRequest build() {

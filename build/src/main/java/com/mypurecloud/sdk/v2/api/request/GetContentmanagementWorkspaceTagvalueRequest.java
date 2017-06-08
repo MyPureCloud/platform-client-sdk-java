@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementWorkspaceTagvalueRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
 	    return this;
 	}
 
+	
 	private String tagId;
 	public String getTagId() {
 		return this.tagId;
@@ -78,6 +80,7 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -92,6 +95,7 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,7 +134,8 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
                 .withPathParameter("tagId", tagId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -141,10 +146,12 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, String tagId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, tagId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementWorkspaceTagvalueRequest request;
@@ -153,24 +160,31 @@ public class GetContentmanagementWorkspaceTagvalueRequest {
 			request = new GetContentmanagementWorkspaceTagvalueRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withTagId(String tagId) {
 			request.setTagId(tagId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, String tagId) {
 			request.setWorkspaceId(workspaceId);
-			request.setTagId(tagId);
+						request.setTagId(tagId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementWorkspaceTagvalueRequest build() {

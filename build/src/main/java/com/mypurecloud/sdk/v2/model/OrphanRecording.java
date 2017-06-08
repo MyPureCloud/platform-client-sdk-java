@@ -185,7 +185,7 @@ public class OrphanRecording  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public OrphanRecording name(String name) {
@@ -202,7 +202,7 @@ public class OrphanRecording  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -220,7 +220,7 @@ public class OrphanRecording  implements Serializable {
     this.createdTime = createdTime;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -238,7 +238,7 @@ public class OrphanRecording  implements Serializable {
     this.recoveredTime = recoveredTime;
   }
 
-
+  
   /**
    **/
   public OrphanRecording providerType(ProviderTypeEnum providerType) {
@@ -255,7 +255,7 @@ public class OrphanRecording  implements Serializable {
     this.providerType = providerType;
   }
 
-
+  
   /**
    **/
   public OrphanRecording mediaSizeBytes(Long mediaSizeBytes) {
@@ -272,7 +272,7 @@ public class OrphanRecording  implements Serializable {
     this.mediaSizeBytes = mediaSizeBytes;
   }
 
-
+  
   /**
    **/
   public OrphanRecording mediaType(MediaTypeEnum mediaType) {
@@ -289,7 +289,7 @@ public class OrphanRecording  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public OrphanRecording fileState(FileStateEnum fileState) {
@@ -306,7 +306,7 @@ public class OrphanRecording  implements Serializable {
     this.fileState = fileState;
   }
 
-
+  
   /**
    **/
   public OrphanRecording providerEndpoint(Endpoint providerEndpoint) {
@@ -323,7 +323,7 @@ public class OrphanRecording  implements Serializable {
     this.providerEndpoint = providerEndpoint;
   }
 
-
+  
   /**
    **/
   public OrphanRecording recording(Recording recording) {
@@ -340,7 +340,7 @@ public class OrphanRecording  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    * The status of the orphaned recording's conversation.
    **/
@@ -358,13 +358,14 @@ public class OrphanRecording  implements Serializable {
     this.orphanStatus = orphanStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

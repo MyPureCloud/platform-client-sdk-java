@@ -43,7 +43,7 @@ public class QueueMember  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public QueueMember name(String name) {
@@ -60,7 +60,7 @@ public class QueueMember  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public QueueMember user(User user) {
@@ -77,7 +77,7 @@ public class QueueMember  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public QueueMember ringNumber(Integer ringNumber) {
@@ -94,7 +94,7 @@ public class QueueMember  implements Serializable {
     this.ringNumber = ringNumber;
   }
 
-
+  
   /**
    **/
   public QueueMember joined(Boolean joined) {
@@ -111,7 +111,7 @@ public class QueueMember  implements Serializable {
     this.joined = joined;
   }
 
-
+  
   /**
    **/
   public QueueMember memberBy(String memberBy) {
@@ -128,7 +128,7 @@ public class QueueMember  implements Serializable {
     this.memberBy = memberBy;
   }
 
-
+  
   /**
    **/
   public QueueMember routingStatus(RoutingStatus routingStatus) {
@@ -145,13 +145,14 @@ public class QueueMember  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

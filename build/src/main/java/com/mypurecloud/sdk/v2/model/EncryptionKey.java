@@ -32,7 +32,7 @@ public class EncryptionKey  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public EncryptionKey name(String name) {
@@ -49,7 +49,7 @@ public class EncryptionKey  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -67,7 +67,7 @@ public class EncryptionKey  implements Serializable {
     this.createDate = createDate;
   }
 
-
+  
   /**
    * key data summary (base 64 encoded public key)
    **/
@@ -85,7 +85,7 @@ public class EncryptionKey  implements Serializable {
     this.keydataSummary = keydataSummary;
   }
 
-
+  
   /**
    * user that requested generation of public key
    **/
@@ -103,7 +103,7 @@ public class EncryptionKey  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * Local configuration
    **/
@@ -121,13 +121,14 @@ public class EncryptionKey  implements Serializable {
     this.localEncryptionConfiguration = localEncryptionConfiguration;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

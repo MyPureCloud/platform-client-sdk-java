@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingRequest {
+    
 	private String name;
 	public String getName() {
 		return this.name;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -84,6 +87,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private List<String> objectType;
 	public List<String> getObjectType() {
 		return this.objectType;
@@ -98,6 +102,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private Boolean consumedResources;
 	public Boolean getConsumedResources() {
 		return this.consumedResources;
@@ -112,6 +117,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private Boolean consumingResources;
 	public Boolean getConsumingResources() {
 		return this.consumingResources;
@@ -126,6 +132,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private List<String> consumedResourceType;
 	public List<String> getConsumedResourceType() {
 		return this.consumedResourceType;
@@ -140,6 +147,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private List<String> consumingResourceType;
 	public List<String> getConsumingResourceType() {
 		return this.consumingResourceType;
@@ -154,6 +162,7 @@ public class GetArchitectDependencytrackingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -197,7 +206,8 @@ public class GetArchitectDependencytrackingRequest {
                 .withQueryParameters("consumedResourceType", "multi", consumedResourceType)
         
                 .withQueryParameters("consumingResourceType", "multi", consumingResourceType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -208,10 +218,12 @@ public class GetArchitectDependencytrackingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String name) {
 	    return new Builder()
 	            .withRequiredParams(name);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingRequest request;
@@ -220,43 +232,55 @@ public class GetArchitectDependencytrackingRequest {
 			request = new GetArchitectDependencytrackingRequest();
 		}
 
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withObjectType(List<String> objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+		
 		public Builder withConsumedResources(Boolean consumedResources) {
 			request.setConsumedResources(consumedResources);
 			return this;
 		}
+		
 		public Builder withConsumingResources(Boolean consumingResources) {
 			request.setConsumingResources(consumingResources);
 			return this;
 		}
+		
 		public Builder withConsumedResourceType(List<String> consumedResourceType) {
 			request.setConsumedResourceType(consumedResourceType);
 			return this;
 		}
+		
 		public Builder withConsumingResourceType(List<String> consumingResourceType) {
 			request.setConsumingResourceType(consumingResourceType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String name) {
 			request.setName(name);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectDependencytrackingRequest build() {

@@ -70,7 +70,7 @@ public class FieldConfig  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public FieldConfig name(String name) {
@@ -87,7 +87,7 @@ public class FieldConfig  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FieldConfig entityType(EntityTypeEnum entityType) {
@@ -104,7 +104,7 @@ public class FieldConfig  implements Serializable {
     this.entityType = entityType;
   }
 
-
+  
   /**
    **/
   public FieldConfig state(String state) {
@@ -121,7 +121,7 @@ public class FieldConfig  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public FieldConfig sections(List<Section> sections) {
@@ -138,7 +138,7 @@ public class FieldConfig  implements Serializable {
     this.sections = sections;
   }
 
-
+  
   /**
    **/
   public FieldConfig version(String version) {
@@ -155,7 +155,7 @@ public class FieldConfig  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public FieldConfig schemaVersion(String schemaVersion) {
@@ -172,13 +172,14 @@ public class FieldConfig  implements Serializable {
     this.schemaVersion = schemaVersion;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

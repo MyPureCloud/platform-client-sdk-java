@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.Channel;
 
 public class DeleteNotificationsChannelSubscriptionsRequest {
+    
 	private String channelId;
 	public String getChannelId() {
 		return this.channelId;
@@ -40,6 +41,7 @@ public class DeleteNotificationsChannelSubscriptionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,7 +71,8 @@ public class DeleteNotificationsChannelSubscriptionsRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/notifications/channels/{channelId}/subscriptions")
                 .withPathParameter("channelId", channelId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -80,10 +83,12 @@ public class DeleteNotificationsChannelSubscriptionsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String channelId) {
 	    return new Builder()
 	            .withRequiredParams(channelId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteNotificationsChannelSubscriptionsRequest request;
@@ -92,15 +97,20 @@ public class DeleteNotificationsChannelSubscriptionsRequest {
 			request = new DeleteNotificationsChannelSubscriptionsRequest();
 		}
 
+		
 		public Builder withChannelId(String channelId) {
 			request.setChannelId(channelId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String channelId) {
 			request.setChannelId(channelId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteNotificationsChannelSubscriptionsRequest build() {

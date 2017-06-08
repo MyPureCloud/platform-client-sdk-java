@@ -112,7 +112,7 @@ public class PredictionResults  implements Serializable {
     this.intent = intent;
   }
 
-
+  
   /**
    * Indicates the estimated wait time Formula
    **/
@@ -130,7 +130,7 @@ public class PredictionResults  implements Serializable {
     this.formula = formula;
   }
 
-
+  
   /**
    * Estimated wait time in seconds
    **/
@@ -148,6 +148,7 @@ public class PredictionResults  implements Serializable {
     this.estimatedWaitTimeSeconds = estimatedWaitTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

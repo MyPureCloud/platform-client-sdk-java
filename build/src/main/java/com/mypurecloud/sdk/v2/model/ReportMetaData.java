@@ -34,7 +34,7 @@ public class ReportMetaData  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ReportMetaData name(String name) {
@@ -51,7 +51,7 @@ public class ReportMetaData  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ReportMetaData title(String title) {
@@ -68,7 +68,7 @@ public class ReportMetaData  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public ReportMetaData description(String description) {
@@ -85,7 +85,7 @@ public class ReportMetaData  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public ReportMetaData keywords(List<String> keywords) {
@@ -102,7 +102,7 @@ public class ReportMetaData  implements Serializable {
     this.keywords = keywords;
   }
 
-
+  
   /**
    **/
   public ReportMetaData availableLocales(List<String> availableLocales) {
@@ -119,7 +119,7 @@ public class ReportMetaData  implements Serializable {
     this.availableLocales = availableLocales;
   }
 
-
+  
   /**
    **/
   public ReportMetaData parameters(List<Parameter> parameters) {
@@ -136,7 +136,7 @@ public class ReportMetaData  implements Serializable {
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public ReportMetaData exampleUrl(String exampleUrl) {
@@ -153,13 +153,14 @@ public class ReportMetaData  implements Serializable {
     this.exampleUrl = exampleUrl;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

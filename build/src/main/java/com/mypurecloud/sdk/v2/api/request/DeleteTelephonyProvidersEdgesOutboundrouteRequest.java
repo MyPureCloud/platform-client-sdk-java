@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
+    
 	private String outboundRouteId;
 	public String getOutboundRouteId() {
 		return this.outboundRouteId;
@@ -98,6 +99,7 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}")
                 .withPathParameter("outboundRouteId", outboundRouteId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String outboundRouteId) {
 	    return new Builder()
 	            .withRequiredParams(outboundRouteId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteTelephonyProvidersEdgesOutboundrouteRequest request;
@@ -150,15 +155,20 @@ public class DeleteTelephonyProvidersEdgesOutboundrouteRequest {
 			request = new DeleteTelephonyProvidersEdgesOutboundrouteRequest();
 		}
 
+		
 		public Builder withOutboundRouteId(String outboundRouteId) {
 			request.setOutboundRouteId(outboundRouteId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String outboundRouteId) {
 			request.setOutboundRouteId(outboundRouteId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteTelephonyProvidersEdgesOutboundrouteRequest build() {

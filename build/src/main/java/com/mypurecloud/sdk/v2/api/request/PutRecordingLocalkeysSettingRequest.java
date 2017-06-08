@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PutRecordingLocalkeysSettingRequest {
+    
 	private String settingsId;
 	public String getSettingsId() {
 		return this.settingsId;
@@ -52,6 +53,7 @@ public class PutRecordingLocalkeysSettingRequest {
 	    return this;
 	}
 
+	
 	private LocalEncryptionConfiguration body;
 	public LocalEncryptionConfiguration getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PutRecordingLocalkeysSettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +105,7 @@ public class PutRecordingLocalkeysSettingRequest {
                 .withPathParameter("settingsId", settingsId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -113,10 +117,12 @@ public class PutRecordingLocalkeysSettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String settingsId, LocalEncryptionConfiguration body) {
 	    return new Builder()
 	            .withRequiredParams(settingsId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutRecordingLocalkeysSettingRequest request;
@@ -125,20 +131,26 @@ public class PutRecordingLocalkeysSettingRequest {
 			request = new PutRecordingLocalkeysSettingRequest();
 		}
 
+		
 		public Builder withSettingsId(String settingsId) {
 			request.setSettingsId(settingsId);
 			return this;
 		}
+		
 		public Builder withBody(LocalEncryptionConfiguration body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String settingsId, LocalEncryptionConfiguration body) {
 			request.setSettingsId(settingsId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRecordingLocalkeysSettingRequest build() {

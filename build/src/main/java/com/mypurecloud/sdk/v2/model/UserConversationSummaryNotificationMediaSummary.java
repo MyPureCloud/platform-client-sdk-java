@@ -36,7 +36,7 @@ public class UserConversationSummaryNotificationMediaSummary  implements Seriali
     this.contactCenter = contactCenter;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotificationMediaSummary enterprise(UserConversationSummaryNotificationMediaSummaryDetail enterprise) {
@@ -53,6 +53,7 @@ public class UserConversationSummaryNotificationMediaSummary  implements Seriali
     this.enterprise = enterprise;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

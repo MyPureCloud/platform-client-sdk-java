@@ -30,7 +30,7 @@ public class WrapupCode  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The wrap-up code name.
    **/
@@ -48,7 +48,7 @@ public class WrapupCode  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -66,7 +66,7 @@ public class WrapupCode  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -84,7 +84,7 @@ public class WrapupCode  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public WrapupCode modifiedBy(String modifiedBy) {
@@ -101,7 +101,7 @@ public class WrapupCode  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public WrapupCode createdBy(String createdBy) {
@@ -118,13 +118,14 @@ public class WrapupCode  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

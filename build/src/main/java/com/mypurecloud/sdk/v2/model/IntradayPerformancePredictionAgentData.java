@@ -34,6 +34,7 @@ public class IntradayPerformancePredictionAgentData  implements Serializable {
     this.interactingTimeSeconds = interactingTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

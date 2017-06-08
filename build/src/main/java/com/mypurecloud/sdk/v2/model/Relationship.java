@@ -34,7 +34,7 @@ public class Relationship  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Relationship name(String name) {
@@ -51,7 +51,7 @@ public class Relationship  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The user associated with the external organization
    **/
@@ -69,7 +69,7 @@ public class Relationship  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The external organization this relationship is attached to
    **/
@@ -87,7 +87,7 @@ public class Relationship  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    * The relationship or role of the user to this external organization.Examples: Account Manager, Sales Engineer, Implementation Consultant
    **/
@@ -105,7 +105,7 @@ public class Relationship  implements Serializable {
     this.relationship = relationship;
   }
 
-
+  
   /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
@@ -123,13 +123,14 @@ public class Relationship  implements Serializable {
     this.externalDataSources = externalDataSources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 	    return this;
 	}
 
+	
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +64,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 	    return this;
 	}
 
+	
 	private Boolean recentlyReviewed;
 	public Boolean getRecentlyReviewed() {
 		return this.recentlyReviewed;
@@ -76,6 +79,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,7 +118,8 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
                 .withPathParameter("userId", userId)
         
                 .withQueryParameters("recentlyReviewed", "", recentlyReviewed)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -125,10 +130,12 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId, String userId) {
 	    return new Builder()
 	            .withRequiredParams(muId, userId);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest request;
@@ -137,24 +144,31 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 			request = new GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withRecentlyReviewed(Boolean recentlyReviewed) {
 			request.setRecentlyReviewed(recentlyReviewed);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId, String userId) {
 			request.setMuId(muId);
-			request.setUserId(userId);
+						request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest build() {

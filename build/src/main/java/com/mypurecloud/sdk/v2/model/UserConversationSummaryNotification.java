@@ -41,7 +41,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification call(UserConversationSummaryNotificationCall call) {
@@ -58,7 +58,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.call = call;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification callback(UserConversationSummaryNotificationMediaSummary callback) {
@@ -75,7 +75,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.callback = callback;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification email(UserConversationSummaryNotificationMediaSummary email) {
@@ -92,7 +92,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification chat(UserConversationSummaryNotificationMediaSummary chat) {
@@ -109,7 +109,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification socialExpression(UserConversationSummaryNotificationMediaSummary socialExpression) {
@@ -126,7 +126,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.socialExpression = socialExpression;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotification video(UserConversationSummaryNotificationMediaSummary video) {
@@ -143,6 +143,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     this.video = video;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -270,7 +270,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification name(String name) {
@@ -287,7 +287,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification dimension(DimensionEnum dimension) {
@@ -304,7 +304,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.dimension = dimension;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification dimensionValue(String dimensionValue) {
@@ -321,7 +321,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.dimensionValue = dimensionValue;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification dimensionValueName(String dimensionValueName) {
@@ -338,7 +338,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.dimensionValueName = dimensionValueName;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification metric(MetricEnum metric) {
@@ -355,7 +355,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification mediaType(MediaTypeEnum mediaType) {
@@ -372,7 +372,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification numericRange(NumericRangeEnum numericRange) {
@@ -389,7 +389,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.numericRange = numericRange;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification statistic(StatisticEnum statistic) {
@@ -406,7 +406,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.statistic = statistic;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification value(BigDecimal value) {
@@ -423,7 +423,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification inAlarm(Boolean inAlarm) {
@@ -440,7 +440,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.inAlarm = inAlarm;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification enabled(Boolean enabled) {
@@ -457,7 +457,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification notificationUsers(List<HeartBeatAlertNotificationNotificationUsers> notificationUsers) {
@@ -474,7 +474,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotification alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -491,6 +491,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

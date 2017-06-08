@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PostAuthorizationRolesDefaultRequest {
+    
 	private Boolean force;
 	public Boolean getForce() {
 		return this.force;
@@ -43,6 +44,7 @@ public class PostAuthorizationRolesDefaultRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,7 +69,8 @@ public class PostAuthorizationRolesDefaultRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/roles/default")
                 .withQueryParameters("force", "", force)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -78,6 +81,7 @@ public class PostAuthorizationRolesDefaultRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostAuthorizationRolesDefaultRequest request;
@@ -86,11 +90,14 @@ public class PostAuthorizationRolesDefaultRequest {
 			request = new PostAuthorizationRolesDefaultRequest();
 		}
 
+		
 		public Builder withForce(Boolean force) {
 			request.setForce(force);
 			return this;
 		}
+		
 
+		
 
 
 		public PostAuthorizationRolesDefaultRequest build() {

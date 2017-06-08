@@ -36,7 +36,7 @@ public class QueryResults  implements Serializable {
     this.results = results;
   }
 
-
+  
   /**
    **/
   public QueryResults facetInfo(QueryFacetInfo facetInfo) {
@@ -53,6 +53,7 @@ public class QueryResults  implements Serializable {
     this.facetInfo = facetInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

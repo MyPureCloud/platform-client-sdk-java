@@ -113,7 +113,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification name(String name) {
@@ -130,7 +130,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification senderId(String senderId) {
@@ -147,7 +147,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.senderId = senderId;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification heartBeatTimeoutInMinutes(BigDecimal heartBeatTimeoutInMinutes) {
@@ -164,7 +164,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.heartBeatTimeoutInMinutes = heartBeatTimeoutInMinutes;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification enabled(Boolean enabled) {
@@ -181,7 +181,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification inAlarm(Boolean inAlarm) {
@@ -198,7 +198,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.inAlarm = inAlarm;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification notificationUsers(List<HeartBeatAlertNotificationNotificationUsers> notificationUsers) {
@@ -215,7 +215,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification alertTypes(List<AlertTypesEnum> alertTypes) {
@@ -232,7 +232,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    **/
   public HeartBeatRuleNotification ruleType(RuleTypeEnum ruleType) {
@@ -249,6 +249,7 @@ public class HeartBeatRuleNotification  implements Serializable {
     this.ruleType = ruleType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

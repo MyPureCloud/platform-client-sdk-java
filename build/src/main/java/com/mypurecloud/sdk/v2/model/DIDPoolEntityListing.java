@@ -46,7 +46,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DIDPoolEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DIDPoolEntityListing  implements Serializable, PagedResource<DIDPoo
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

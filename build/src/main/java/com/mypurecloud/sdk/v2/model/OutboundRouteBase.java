@@ -112,7 +112,7 @@ public class OutboundRouteBase  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -130,7 +130,7 @@ public class OutboundRouteBase  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase description(String description) {
@@ -147,7 +147,7 @@ public class OutboundRouteBase  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase version(Integer version) {
@@ -164,7 +164,7 @@ public class OutboundRouteBase  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -182,7 +182,7 @@ public class OutboundRouteBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -200,7 +200,7 @@ public class OutboundRouteBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase modifiedBy(String modifiedBy) {
@@ -217,7 +217,7 @@ public class OutboundRouteBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase createdBy(String createdBy) {
@@ -234,7 +234,7 @@ public class OutboundRouteBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase state(StateEnum state) {
@@ -251,7 +251,7 @@ public class OutboundRouteBase  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase modifiedByApp(String modifiedByApp) {
@@ -268,7 +268,7 @@ public class OutboundRouteBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase createdByApp(String createdByApp) {
@@ -285,7 +285,7 @@ public class OutboundRouteBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The site associated to the outbound route.
    **/
@@ -303,7 +303,7 @@ public class OutboundRouteBase  implements Serializable {
     this.classificationTypes = classificationTypes;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase enabled(Boolean enabled) {
@@ -320,7 +320,7 @@ public class OutboundRouteBase  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public OutboundRouteBase distribution(DistributionEnum distribution) {
@@ -337,7 +337,7 @@ public class OutboundRouteBase  implements Serializable {
     this.distribution = distribution;
   }
 
-
+  
   /**
    * Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.
    **/
@@ -355,13 +355,14 @@ public class OutboundRouteBase  implements Serializable {
     this.externalTrunkBases = externalTrunkBases;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

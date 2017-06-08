@@ -36,6 +36,7 @@ public class LicenseUpdateResponse  implements Serializable {
     this.statuses = statuses;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

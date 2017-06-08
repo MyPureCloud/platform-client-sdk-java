@@ -34,7 +34,7 @@ public class PhoneNumberColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public PhoneNumberColumn type(String type) {
@@ -51,6 +51,7 @@ public class PhoneNumberColumn  implements Serializable {
     this.type = type;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

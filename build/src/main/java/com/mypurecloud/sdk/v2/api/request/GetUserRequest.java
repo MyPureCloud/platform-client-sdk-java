@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUserRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class GetUserRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -76,6 +78,22 @@ public class GetUserRequest {
 	    return this;
 	}
 
+	
+	private String state;
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public GetUserRequest withState(String state) {
+	    this.setState(state);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -107,7 +125,10 @@ public class GetUserRequest {
                 .withPathParameter("userId", userId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withQueryParameters("state", "", state)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -118,10 +139,12 @@ public class GetUserRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final GetUserRequest request;
@@ -130,19 +153,30 @@ public class GetUserRequest {
 			request = new GetUserRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
-
-		public Builder withRequiredParams(String userId) {
-			request.setUserId(userId);
+		
+		public Builder withState(String state) {
+			request.setState(state);
 			return this;
 		}
+		
+
+		
+		public Builder withRequiredParams(String userId) {
+			request.setUserId(userId);
+			
+			return this;
+		}
+		
 
 
 		public GetUserRequest build() {

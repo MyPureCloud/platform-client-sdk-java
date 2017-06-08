@@ -99,6 +99,7 @@ public class RoutingApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a domain
    * 
@@ -123,6 +124,7 @@ public class RoutingApi {
   private DeleteRoutingEmailDomainRequest createDeleteRoutingEmailDomainRequest(String domainId) {
     return DeleteRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
+    
             .build();
   }
 
@@ -173,6 +175,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete a route
    * 
@@ -199,8 +202,9 @@ public class RoutingApi {
   private DeleteRoutingEmailDomainRouteRequest createDeleteRoutingEmailDomainRouteRequest(String domainName, String routeId) {
     return DeleteRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-
+    
             .withRouteId(routeId)
+    
             .build();
   }
 
@@ -251,6 +255,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete a queue
    * 
@@ -277,8 +282,9 @@ public class RoutingApi {
   private DeleteRoutingQueueRequest createDeleteRoutingQueueRequest(String queueId, Boolean forceDelete) {
     return DeleteRoutingQueueRequest.builder()
             .withQueueId(queueId)
-
+    
             .withForceDelete(forceDelete)
+    
             .build();
   }
 
@@ -329,6 +335,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete queue member
    * 
@@ -355,8 +362,9 @@ public class RoutingApi {
   private DeleteRoutingQueueUserRequest createDeleteRoutingQueueUserRequest(String queueId, String memberId) {
     return DeleteRoutingQueueUserRequest.builder()
             .withQueueId(queueId)
-
+    
             .withMemberId(memberId)
+    
             .build();
   }
 
@@ -407,6 +415,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete a wrap-up code from a queue
    * 
@@ -433,8 +442,9 @@ public class RoutingApi {
   private DeleteRoutingQueueWrapupcodeRequest createDeleteRoutingQueueWrapupcodeRequest(String queueId, String codeId) {
     return DeleteRoutingQueueWrapupcodeRequest.builder()
             .withQueueId(queueId)
-
+    
             .withCodeId(codeId)
+    
             .build();
   }
 
@@ -485,6 +495,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete Routing Skill
    * 
@@ -509,6 +520,7 @@ public class RoutingApi {
   private DeleteRoutingSkillRequest createDeleteRoutingSkillRequest(String skillId) {
     return DeleteRoutingSkillRequest.builder()
             .withSkillId(skillId)
+    
             .build();
   }
 
@@ -559,6 +571,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete utilization settings and revert to system defaults.
    * 
@@ -579,7 +592,8 @@ public class RoutingApi {
   }
 
   private DeleteRoutingUtilizationRequest createDeleteRoutingUtilizationRequest() {
-    return DeleteRoutingUtilizationRequest.builder()            .build();
+    return DeleteRoutingUtilizationRequest.builder()
+            .build();
   }
 
   /**
@@ -629,6 +643,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Delete wrap-up code
    * 
@@ -653,6 +668,7 @@ public class RoutingApi {
   private DeleteRoutingWrapupcodeRequest createDeleteRoutingWrapupcodeRequest(String codeId) {
     return DeleteRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
+    
             .build();
   }
 
@@ -703,6 +719,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Remove routing skill from user
    * 
@@ -729,8 +746,9 @@ public class RoutingApi {
   private DeleteUserRoutingskillRequest createDeleteUserRoutingskillRequest(String userId, String skillId) {
     return DeleteUserRoutingskillRequest.builder()
             .withUserId(userId)
-
+    
             .withSkillId(skillId)
+    
             .build();
   }
 
@@ -781,6 +799,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get domain
    * 
@@ -807,6 +826,7 @@ public class RoutingApi {
   private GetRoutingEmailDomainRequest createGetRoutingEmailDomainRequest(String domainId) {
     return GetRoutingEmailDomainRequest.builder()
             .withDomainId(domainId)
+    
             .build();
   }
 
@@ -858,6 +878,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get a route
    * 
@@ -886,8 +907,9 @@ public class RoutingApi {
   private GetRoutingEmailDomainRouteRequest createGetRoutingEmailDomainRouteRequest(String domainName, String routeId) {
     return GetRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-
+    
             .withRouteId(routeId)
+    
             .build();
   }
 
@@ -939,6 +961,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get routes
    * 
@@ -971,12 +994,13 @@ public class RoutingApi {
   private GetRoutingEmailDomainRoutesRequest createGetRoutingEmailDomainRoutesRequest(String domainName, Integer pageSize, Integer pageNumber, String pattern) {
     return GetRoutingEmailDomainRoutesRequest.builder()
             .withDomainName(domainName)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPattern(pattern)
+    
             .build();
   }
 
@@ -1028,6 +1052,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get domains
    * 
@@ -1050,7 +1075,8 @@ public class RoutingApi {
   }
 
   private GetRoutingEmailDomainsRequest createGetRoutingEmailDomainsRequest() {
-    return GetRoutingEmailDomainsRequest.builder()            .build();
+    return GetRoutingEmailDomainsRequest.builder()
+            .build();
   }
 
   /**
@@ -1101,6 +1127,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get email setup
    * 
@@ -1123,7 +1150,8 @@ public class RoutingApi {
   }
 
   private GetRoutingEmailSetupRequest createGetRoutingEmailSetupRequest() {
-    return GetRoutingEmailSetupRequest.builder()            .build();
+    return GetRoutingEmailSetupRequest.builder()
+            .build();
   }
 
   /**
@@ -1174,6 +1202,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get the list of supported languages.
    * 
@@ -1206,12 +1235,13 @@ public class RoutingApi {
   private GetRoutingLanguagesRequest createGetRoutingLanguagesRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
     return GetRoutingLanguagesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -1263,6 +1293,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get details about this queue.
    * 
@@ -1289,6 +1320,7 @@ public class RoutingApi {
   private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId) {
     return GetRoutingQueueRequest.builder()
             .withQueueId(queueId)
+    
             .build();
   }
 
@@ -1340,6 +1372,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get Estimated Wait Time
    * 
@@ -1368,8 +1401,9 @@ public class RoutingApi {
   private GetRoutingQueueEstimatedwaittimeRequest createGetRoutingQueueEstimatedwaittimeRequest(String queueId, String conversationId) {
     return GetRoutingQueueEstimatedwaittimeRequest.builder()
             .withQueueId(queueId)
-
+    
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -1421,6 +1455,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get Estimated Wait Time
    * 
@@ -1449,8 +1484,9 @@ public class RoutingApi {
   private GetRoutingQueueMediatypeEstimatedwaittimeRequest createGetRoutingQueueMediatypeEstimatedwaittimeRequest(String queueId, String mediaType) {
     return GetRoutingQueueMediatypeEstimatedwaittimeRequest.builder()
             .withQueueId(queueId)
-
+    
             .withMediaType(mediaType)
+    
             .build();
   }
 
@@ -1502,6 +1538,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get the members of this queue
    * 
@@ -1550,28 +1587,29 @@ public class RoutingApi {
   private GetRoutingQueueUsersRequest createGetRoutingQueueUsersRequest(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
     return GetRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withExpand(expand)
-
+    
             .withJoined(joined)
-
+    
             .withName(name)
-
+    
             .withProfileSkills(profileSkills)
-
+    
             .withSkills(skills)
-
+    
             .withLanguages(languages)
-
+    
             .withRoutingStatus(routingStatus)
-
+    
             .withPresence(presence)
+    
             .build();
   }
 
@@ -1623,6 +1661,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get the wrap-up codes for a queue
    * 
@@ -1649,6 +1688,7 @@ public class RoutingApi {
   private GetRoutingQueueWrapupcodesRequest createGetRoutingQueueWrapupcodesRequest(String queueId) {
     return GetRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
+    
             .build();
   }
 
@@ -1700,6 +1740,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get list of queues.
    * 
@@ -1734,14 +1775,15 @@ public class RoutingApi {
   private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active) {
     return GetRoutingQueuesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withName(name)
-
+    
             .withActive(active)
+    
             .build();
   }
 
@@ -1793,6 +1835,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get Routing Skill
    * 
@@ -1819,6 +1862,7 @@ public class RoutingApi {
   private GetRoutingSkillRequest createGetRoutingSkillRequest(String skillId) {
     return GetRoutingSkillRequest.builder()
             .withSkillId(skillId)
+    
             .build();
   }
 
@@ -1870,6 +1914,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get the list of routing skills.
    * 
@@ -1900,10 +1945,11 @@ public class RoutingApi {
   private GetRoutingSkillsRequest createGetRoutingSkillsRequest(Integer pageSize, Integer pageNumber, String name) {
     return GetRoutingSkillsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withName(name)
+    
             .build();
   }
 
@@ -1955,6 +2001,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get the utilization settings.
    * 
@@ -1977,7 +2024,8 @@ public class RoutingApi {
   }
 
   private GetRoutingUtilizationRequest createGetRoutingUtilizationRequest() {
-    return GetRoutingUtilizationRequest.builder()            .build();
+    return GetRoutingUtilizationRequest.builder()
+            .build();
   }
 
   /**
@@ -2028,6 +2076,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get details about this wrap-up code.
    * 
@@ -2054,6 +2103,7 @@ public class RoutingApi {
   private GetRoutingWrapupcodeRequest createGetRoutingWrapupcodeRequest(String codeId) {
     return GetRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
+    
             .build();
   }
 
@@ -2105,6 +2155,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes.
    * 
@@ -2135,10 +2186,11 @@ public class RoutingApi {
   private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy) {
     return GetRoutingWrapupcodesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
+    
             .build();
   }
 
@@ -2190,6 +2242,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * List routing skills for user
    * 
@@ -2222,12 +2275,13 @@ public class RoutingApi {
   private GetUserRoutingskillsRequest createGetUserRoutingskillsRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetUserRoutingskillsRequest.builder()
             .withUserId(userId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -2279,6 +2333,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update the ring number of joined status for a User in a Queue
    * 
@@ -2309,10 +2364,11 @@ public class RoutingApi {
   private PatchRoutingQueueUserRequest createPatchRoutingQueueUserRequest(String queueId, String memberId, QueueMember body) {
     return PatchRoutingQueueUserRequest.builder()
             .withQueueId(queueId)
-
+    
             .withMemberId(memberId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2364,6 +2420,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Join or unjoin a set of users for a queue
    * 
@@ -2392,8 +2449,9 @@ public class RoutingApi {
   private PatchRoutingQueueUsersRequest createPatchRoutingQueueUsersRequest(String queueId, List<QueueMember> body) {
     return PatchRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2445,6 +2503,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Query for queue observations
    * 
@@ -2471,6 +2530,7 @@ public class RoutingApi {
   private PostAnalyticsQueuesObservationsQueryRequest createPostAnalyticsQueuesObservationsQueryRequest(ObservationQuery body) {
     return PostAnalyticsQueuesObservationsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2522,6 +2582,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create a route
    * 
@@ -2550,8 +2611,9 @@ public class RoutingApi {
   private PostRoutingEmailDomainRoutesRequest createPostRoutingEmailDomainRoutesRequest(String domainName, InboundRoute body) {
     return PostRoutingEmailDomainRoutesRequest.builder()
             .withDomainName(domainName)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2603,6 +2665,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create a domain
    * 
@@ -2629,6 +2692,7 @@ public class RoutingApi {
   private PostRoutingEmailDomainsRequest createPostRoutingEmailDomainsRequest(InboundDomain body) {
     return PostRoutingEmailDomainsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2680,6 +2744,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create Language
    * 
@@ -2706,6 +2771,7 @@ public class RoutingApi {
   private PostRoutingLanguagesRequest createPostRoutingLanguagesRequest(Language body) {
     return PostRoutingLanguagesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2757,6 +2823,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Bulk add or delete up to 100 queue members
    * 
@@ -2787,10 +2854,11 @@ public class RoutingApi {
   private PostRoutingQueueUsersRequest createPostRoutingQueueUsersRequest(String queueId, List<QueueMember> body, Boolean delete) {
     return PostRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
-
+    
             .withBody(body)
-
+    
             .withDelete(delete)
+    
             .build();
   }
 
@@ -2842,6 +2910,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Add up to 100 wrap-up codes to a queue
    * 
@@ -2870,8 +2939,9 @@ public class RoutingApi {
   private PostRoutingQueueWrapupcodesRequest createPostRoutingQueueWrapupcodesRequest(String queueId, List<WrapupCode> body) {
     return PostRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2923,6 +2993,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create queue
    * 
@@ -2949,6 +3020,7 @@ public class RoutingApi {
   private PostRoutingQueuesRequest createPostRoutingQueuesRequest(CreateQueueRequest body) {
     return PostRoutingQueuesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3000,6 +3072,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create Skill
    * 
@@ -3026,6 +3099,7 @@ public class RoutingApi {
   private PostRoutingSkillsRequest createPostRoutingSkillsRequest(RoutingSkill body) {
     return PostRoutingSkillsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3077,6 +3151,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Create a wrap-up code
    * 
@@ -3103,6 +3178,7 @@ public class RoutingApi {
   private PostRoutingWrapupcodesRequest createPostRoutingWrapupcodesRequest(WrapupCode body) {
     return PostRoutingWrapupcodesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3154,6 +3230,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Add routing skill to user
    * 
@@ -3182,8 +3259,9 @@ public class RoutingApi {
   private PostUserRoutingskillsRequest createPostUserRoutingskillsRequest(String userId, UserRoutingSkillPost body) {
     return PostUserRoutingskillsRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3235,6 +3313,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update a route
    * 
@@ -3265,10 +3344,11 @@ public class RoutingApi {
   private PutRoutingEmailDomainRouteRequest createPutRoutingEmailDomainRouteRequest(String domainName, String routeId, InboundRoute body) {
     return PutRoutingEmailDomainRouteRequest.builder()
             .withDomainName(domainName)
-
+    
             .withRouteId(routeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3320,6 +3400,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update a queue
    * 
@@ -3348,8 +3429,9 @@ public class RoutingApi {
   private PutRoutingQueueRequest createPutRoutingQueueRequest(String queueId, Queue body) {
     return PutRoutingQueueRequest.builder()
             .withQueueId(queueId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3401,6 +3483,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update the utilization settings.
    * 
@@ -3427,6 +3510,7 @@ public class RoutingApi {
   private PutRoutingUtilizationRequest createPutRoutingUtilizationRequest(Utilization body) {
     return PutRoutingUtilizationRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3478,6 +3562,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update wrap-up code
    * 
@@ -3506,8 +3591,9 @@ public class RoutingApi {
   private PutRoutingWrapupcodeRequest createPutRoutingWrapupcodeRequest(String codeId, WrapupCode body) {
     return PutRoutingWrapupcodeRequest.builder()
             .withCodeId(codeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3559,6 +3645,7 @@ public class RoutingApi {
     }
   }
 
+  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -3589,10 +3676,11 @@ public class RoutingApi {
   private PutUserRoutingskillRequest createPutUserRoutingskillRequest(String userId, String skillId, UserRoutingSkill body) {
     return PutUserRoutingskillRequest.builder()
             .withUserId(userId)
-
+    
             .withSkillId(skillId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3644,4 +3732,5 @@ public class RoutingApi {
     }
   }
 
+  
 }

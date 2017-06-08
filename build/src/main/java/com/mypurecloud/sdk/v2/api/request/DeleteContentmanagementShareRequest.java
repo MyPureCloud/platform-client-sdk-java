@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementShareRequest {
+    
 	private String shareId;
 	public String getShareId() {
 		return this.shareId;
@@ -64,6 +65,7 @@ public class DeleteContentmanagementShareRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +95,8 @@ public class DeleteContentmanagementShareRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/contentmanagement/shares/{shareId}")
                 .withPathParameter("shareId", shareId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -104,10 +107,12 @@ public class DeleteContentmanagementShareRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String shareId) {
 	    return new Builder()
 	            .withRequiredParams(shareId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteContentmanagementShareRequest request;
@@ -116,15 +121,20 @@ public class DeleteContentmanagementShareRequest {
 			request = new DeleteContentmanagementShareRequest();
 		}
 
+		
 		public Builder withShareId(String shareId) {
 			request.setShareId(shareId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String shareId) {
 			request.setShareId(shareId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteContentmanagementShareRequest build() {

@@ -35,7 +35,7 @@ public class FlowNotificationNotificationHomeOrganization  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationHomeOrganization name(String name) {
@@ -52,7 +52,7 @@ public class FlowNotificationNotificationHomeOrganization  implements Serializab
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationHomeOrganization thirdPartyOrgName(String thirdPartyOrgName) {
@@ -69,6 +69,7 @@ public class FlowNotificationNotificationHomeOrganization  implements Serializab
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -73,7 +73,7 @@ public class UserRoutingStatusNotificationRoutingStatus  implements Serializable
     this.status = status;
   }
 
-
+  
   /**
    **/
   public UserRoutingStatusNotificationRoutingStatus startTime(Date startTime) {
@@ -90,6 +90,7 @@ public class UserRoutingStatusNotificationRoutingStatus  implements Serializable
     this.startTime = startTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

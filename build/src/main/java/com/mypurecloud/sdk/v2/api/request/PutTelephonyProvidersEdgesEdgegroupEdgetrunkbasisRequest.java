@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
+    
 	private String edgegroupId;
 	public String getEdgegroupId() {
 		return this.edgegroupId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
 	    return this;
 	}
 
+	
 	private String edgetrunkbaseId;
 	public String getEdgetrunkbaseId() {
 		return this.edgetrunkbaseId;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
 	    return this;
 	}
 
+	
 	private EdgeTrunkBase body;
 	public EdgeTrunkBase getBody() {
 		return this.body;
@@ -126,6 +129,7 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +173,7 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
                 .withPathParameter("edgetrunkbaseId", edgetrunkbaseId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -180,10 +185,12 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
 	    return new Builder()
 	            .withRequiredParams(edgegroupId, edgetrunkbaseId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request;
@@ -192,25 +199,32 @@ public class PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest {
 			request = new PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest();
 		}
 
+		
 		public Builder withEdgegroupId(String edgegroupId) {
 			request.setEdgegroupId(edgegroupId);
 			return this;
 		}
+		
 		public Builder withEdgetrunkbaseId(String edgetrunkbaseId) {
 			request.setEdgetrunkbaseId(edgetrunkbaseId);
 			return this;
 		}
+		
 		public Builder withBody(EdgeTrunkBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
 			request.setEdgegroupId(edgegroupId);
-			request.setEdgetrunkbaseId(edgetrunkbaseId);
-			request.setBody(body);
+						request.setEdgetrunkbaseId(edgetrunkbaseId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest build() {

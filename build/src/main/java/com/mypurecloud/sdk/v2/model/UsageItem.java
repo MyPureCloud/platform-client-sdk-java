@@ -72,7 +72,7 @@ public class UsageItem  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public UsageItem totalDocumentByteCount(Long totalDocumentByteCount) {
@@ -89,7 +89,7 @@ public class UsageItem  implements Serializable {
     this.totalDocumentByteCount = totalDocumentByteCount;
   }
 
-
+  
   /**
    **/
   public UsageItem totalDocumentCount(Long totalDocumentCount) {
@@ -106,6 +106,7 @@ public class UsageItem  implements Serializable {
     this.totalDocumentCount = totalDocumentCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -40,7 +40,7 @@ public class QualifierMappingObservationQueryResponse  implements Serializable {
     this.systemToOrganizationMappings = systemToOrganizationMappings;
   }
 
-
+  
   /**
    **/
   public QualifierMappingObservationQueryResponse results(List<ObservationDataContainer> results) {
@@ -57,6 +57,7 @@ public class QualifierMappingObservationQueryResponse  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

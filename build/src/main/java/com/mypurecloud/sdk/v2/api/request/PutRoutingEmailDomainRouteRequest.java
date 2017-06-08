@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PutRoutingEmailDomainRouteRequest {
+    
 	private String domainName;
 	public String getDomainName() {
 		return this.domainName;
@@ -58,6 +59,7 @@ public class PutRoutingEmailDomainRouteRequest {
 	    return this;
 	}
 
+	
 	private String routeId;
 	public String getRouteId() {
 		return this.routeId;
@@ -72,6 +74,7 @@ public class PutRoutingEmailDomainRouteRequest {
 	    return this;
 	}
 
+	
 	private InboundRoute body;
 	public InboundRoute getBody() {
 		return this.body;
@@ -86,6 +89,7 @@ public class PutRoutingEmailDomainRouteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -129,6 +133,7 @@ public class PutRoutingEmailDomainRouteRequest {
                 .withPathParameter("routeId", routeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -140,10 +145,12 @@ public class PutRoutingEmailDomainRouteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String domainName, String routeId, InboundRoute body) {
 	    return new Builder()
 	            .withRequiredParams(domainName, routeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutRoutingEmailDomainRouteRequest request;
@@ -152,25 +159,32 @@ public class PutRoutingEmailDomainRouteRequest {
 			request = new PutRoutingEmailDomainRouteRequest();
 		}
 
+		
 		public Builder withDomainName(String domainName) {
 			request.setDomainName(domainName);
 			return this;
 		}
+		
 		public Builder withRouteId(String routeId) {
 			request.setRouteId(routeId);
 			return this;
 		}
+		
 		public Builder withBody(InboundRoute body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String domainName, String routeId, InboundRoute body) {
 			request.setDomainName(domainName);
-			request.setRouteId(routeId);
-			request.setBody(body);
+						request.setRouteId(routeId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRoutingEmailDomainRouteRequest build() {

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsRequest {
+    
 	private String type;
 	public String getType() {
 		return this.type;
@@ -56,6 +57,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,6 +72,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -84,6 +87,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -98,6 +102,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -112,6 +117,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -126,6 +132,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -140,6 +147,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String description;
 	public String getDescription() {
 		return this.description;
@@ -154,6 +162,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String nameOrDescription;
 	public String getNameOrDescription() {
 		return this.nameOrDescription;
@@ -168,6 +177,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String publishVersionId;
 	public String getPublishVersionId() {
 		return this.publishVersionId;
@@ -182,6 +192,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String editableBy;
 	public String getEditableBy() {
 		return this.editableBy;
@@ -196,6 +207,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String lockedBy;
 	public String getLockedBy() {
 		return this.lockedBy;
@@ -210,6 +222,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private String secure;
 	public String getSecure() {
 		return this.secure;
@@ -224,6 +237,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private Boolean deleted;
 	public Boolean getDeleted() {
 		return this.deleted;
@@ -238,6 +252,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeSchemas;
 	public Boolean getIncludeSchemas() {
 		return this.includeSchemas;
@@ -252,6 +267,7 @@ public class GetFlowsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -309,7 +325,8 @@ public class GetFlowsRequest {
                 .withQueryParameters("deleted", "", deleted)
         
                 .withQueryParameters("includeSchemas", "", includeSchemas)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -320,10 +337,12 @@ public class GetFlowsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String type) {
 	    return new Builder()
 	            .withRequiredParams(type);
 	}
+	
 
 	public static class Builder {
 		private final GetFlowsRequest request;
@@ -332,71 +351,90 @@ public class GetFlowsRequest {
 			request = new GetFlowsRequest();
 		}
 
+		
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withId(List<String> id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withDescription(String description) {
 			request.setDescription(description);
 			return this;
 		}
+		
 		public Builder withNameOrDescription(String nameOrDescription) {
 			request.setNameOrDescription(nameOrDescription);
 			return this;
 		}
+		
 		public Builder withPublishVersionId(String publishVersionId) {
 			request.setPublishVersionId(publishVersionId);
 			return this;
 		}
+		
 		public Builder withEditableBy(String editableBy) {
 			request.setEditableBy(editableBy);
 			return this;
 		}
+		
 		public Builder withLockedBy(String lockedBy) {
 			request.setLockedBy(lockedBy);
 			return this;
 		}
+		
 		public Builder withSecure(String secure) {
 			request.setSecure(secure);
 			return this;
 		}
+		
 		public Builder withDeleted(Boolean deleted) {
 			request.setDeleted(deleted);
 			return this;
 		}
+		
 		public Builder withIncludeSchemas(Boolean includeSchemas) {
 			request.setIncludeSchemas(includeSchemas);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String type) {
 			request.setType(type);
+			
 			return this;
 		}
+		
 
 
 		public GetFlowsRequest build() {

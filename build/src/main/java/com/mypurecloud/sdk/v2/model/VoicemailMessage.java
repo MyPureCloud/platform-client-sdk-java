@@ -48,7 +48,7 @@ public class VoicemailMessage  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The conversation that the voicemail message is associated with
    **/
@@ -66,7 +66,7 @@ public class VoicemailMessage  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    * Whether the voicemail message is marked as read
    **/
@@ -84,49 +84,49 @@ public class VoicemailMessage  implements Serializable {
     this.read = read;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The voicemail message's audio recording duration in seconds")
   @JsonProperty("audioRecordingDurationSeconds")
   public Integer getAudioRecordingDurationSeconds() {
     return audioRecordingDurationSeconds;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The voicemail message's audio recording size in bytes")
   @JsonProperty("audioRecordingSizeBytes")
   public Long getAudioRecordingSizeBytes() {
     return audioRecordingSizeBytes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("createdDate")
   public Date getCreatedDate() {
     return createdDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The caller address")
   @JsonProperty("callerAddress")
   public String getCallerAddress() {
     return callerAddress;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Optionally the name of the caller that left the voicemail message if the caller was a known user")
   @JsonProperty("callerName")
   public String getCallerName() {
     return callerName;
   }
 
-
+  
   /**
    * Optionally the user that left the voicemail message if the caller was a known user
    **/
@@ -144,7 +144,7 @@ public class VoicemailMessage  implements Serializable {
     this.callerUser = callerUser;
   }
 
-
+  
   /**
    * Whether the voicemail message has been marked as deleted
    **/
@@ -162,7 +162,7 @@ public class VoicemailMessage  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    * An optional note
    **/
@@ -180,7 +180,7 @@ public class VoicemailMessage  implements Serializable {
     this.note = note;
   }
 
-
+  
   /**
    * The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
    **/
@@ -198,7 +198,7 @@ public class VoicemailMessage  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
    **/
@@ -216,7 +216,7 @@ public class VoicemailMessage  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    * The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
    **/
@@ -234,7 +234,7 @@ public class VoicemailMessage  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * Represents where this voicemail message was copied from
    **/
@@ -252,7 +252,7 @@ public class VoicemailMessage  implements Serializable {
     this.copiedFrom = copiedFrom;
   }
 
-
+  
   /**
    * Represents where this voicemail has been copied to
    **/
@@ -270,13 +270,14 @@ public class VoicemailMessage  implements Serializable {
     this.copiedTo = copiedTo;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

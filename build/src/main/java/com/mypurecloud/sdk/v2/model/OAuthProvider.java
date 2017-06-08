@@ -26,7 +26,7 @@ public class OAuthProvider  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public OAuthProvider name(String name) {
@@ -43,7 +43,7 @@ public class OAuthProvider  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public OAuthProvider disabled(Boolean disabled) {
@@ -60,13 +60,14 @@ public class OAuthProvider  implements Serializable {
     this.disabled = disabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

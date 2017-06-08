@@ -36,7 +36,7 @@ public class IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInte
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -53,7 +53,7 @@ public class IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInte
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval numberOfInteractions(BigDecimal numberOfInteractions) {
@@ -70,6 +70,7 @@ public class IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInte
     this.numberOfInteractions = numberOfInteractions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -38,7 +38,7 @@ public class TokenInfo  implements Serializable {
     this.organization = organization;
   }
 
-
+  
   /**
    * The token's home organization
    **/
@@ -56,7 +56,7 @@ public class TokenInfo  implements Serializable {
     this.homeOrganization = homeOrganization;
   }
 
-
+  
   /**
    **/
   public TokenInfo oAuthClient(OrgOAuthClient oAuthClient) {
@@ -73,6 +73,7 @@ public class TokenInfo  implements Serializable {
     this.oAuthClient = oAuthClient;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

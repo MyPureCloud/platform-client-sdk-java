@@ -73,7 +73,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.importState = importState;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationImportStatus totalRecords(Integer totalRecords) {
@@ -90,7 +90,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.totalRecords = totalRecords;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationImportStatus completedRecords(Integer completedRecords) {
@@ -107,7 +107,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.completedRecords = completedRecords;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationImportStatus percentageComplete(Integer percentageComplete) {
@@ -124,7 +124,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.percentageComplete = percentageComplete;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationImportStatus failureReason(String failureReason) {
@@ -141,7 +141,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.failureReason = failureReason;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationImportStatus additionalProperties(Object additionalProperties) {
@@ -158,6 +158,7 @@ public class ContactListNotificationImportStatus  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

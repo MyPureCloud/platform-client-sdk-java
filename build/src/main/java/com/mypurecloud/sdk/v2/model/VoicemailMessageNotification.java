@@ -45,7 +45,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification read(Boolean read) {
@@ -62,7 +62,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.read = read;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification audioRecordingDurationSeconds(Integer audioRecordingDurationSeconds) {
@@ -79,7 +79,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.audioRecordingDurationSeconds = audioRecordingDurationSeconds;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification audioRecordingSizeBytes(Integer audioRecordingSizeBytes) {
@@ -96,7 +96,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.audioRecordingSizeBytes = audioRecordingSizeBytes;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification createdDate(Date createdDate) {
@@ -113,7 +113,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification modifiedDate(Date modifiedDate) {
@@ -130,7 +130,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification callerAddress(String callerAddress) {
@@ -147,7 +147,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification callerName(String callerName) {
@@ -164,7 +164,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.callerName = callerName;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification action(String action) {
@@ -181,7 +181,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.action = action;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification note(String note) {
@@ -198,7 +198,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.note = note;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification deleted(Boolean deleted) {
@@ -215,7 +215,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    **/
   public VoicemailMessageNotification modifiedByUserId(String modifiedByUserId) {
@@ -232,6 +232,7 @@ public class VoicemailMessageNotification  implements Serializable {
     this.modifiedByUserId = modifiedByUserId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

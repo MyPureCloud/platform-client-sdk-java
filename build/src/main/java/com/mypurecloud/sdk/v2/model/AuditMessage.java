@@ -55,7 +55,7 @@ public class AuditMessage  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public AuditMessage user(AuditUser user) {
@@ -72,7 +72,7 @@ public class AuditMessage  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * Correlation ID.
    **/
@@ -90,7 +90,7 @@ public class AuditMessage  implements Serializable {
     this.correlationId = correlationId;
   }
 
-
+  
   /**
    * Transaction ID.
    **/
@@ -108,7 +108,7 @@ public class AuditMessage  implements Serializable {
     this.transactionId = transactionId;
   }
 
-
+  
   /**
    * Whether or not this audit can be considered the initiator of the transaction it is a part of.
    **/
@@ -126,7 +126,7 @@ public class AuditMessage  implements Serializable {
     this.transactionInitiator = transactionInitiator;
   }
 
-
+  
   /**
    * The application through which the action of this AuditMessage was initiated.
    **/
@@ -144,7 +144,7 @@ public class AuditMessage  implements Serializable {
     this.application = application;
   }
 
-
+  
   /**
    * The name of the service which sent this AuditMessage.
    **/
@@ -162,7 +162,7 @@ public class AuditMessage  implements Serializable {
     this.serviceName = serviceName;
   }
 
-
+  
   /**
    * The level of this audit. USER or SYSTEM.
    **/
@@ -180,7 +180,7 @@ public class AuditMessage  implements Serializable {
     this.level = level;
   }
 
-
+  
   /**
    * The time at which the action of this AuditMessage was initiated.
    **/
@@ -198,7 +198,7 @@ public class AuditMessage  implements Serializable {
     this.timestamp = timestamp;
   }
 
-
+  
   /**
    * The time at which this AuditMessage was received.
    **/
@@ -216,7 +216,7 @@ public class AuditMessage  implements Serializable {
     this.receivedTimestamp = receivedTimestamp;
   }
 
-
+  
   /**
    * The status of the action of this AuditMessage
    **/
@@ -234,7 +234,7 @@ public class AuditMessage  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    * The context of a system-level action
    **/
@@ -252,7 +252,7 @@ public class AuditMessage  implements Serializable {
     this.actionContext = actionContext;
   }
 
-
+  
   /**
    * A string representing the action that took place
    **/
@@ -270,7 +270,7 @@ public class AuditMessage  implements Serializable {
     this.action = action;
   }
 
-
+  
   /**
    * Details about any changes that occurred in this audit
    **/
@@ -288,7 +288,7 @@ public class AuditMessage  implements Serializable {
     this.changes = changes;
   }
 
-
+  
   /**
    **/
   public AuditMessage entity(AuditEntity entity) {
@@ -305,7 +305,7 @@ public class AuditMessage  implements Serializable {
     this.entity = entity;
   }
 
-
+  
   /**
    * The service-specific context associated with this AuditMessage.
    **/
@@ -323,6 +323,7 @@ public class AuditMessage  implements Serializable {
     this.serviceContext = serviceContext;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

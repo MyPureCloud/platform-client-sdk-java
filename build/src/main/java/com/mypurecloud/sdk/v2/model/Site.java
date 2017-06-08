@@ -87,7 +87,7 @@ public class Site  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -105,7 +105,7 @@ public class Site  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Site description(String description) {
@@ -122,7 +122,7 @@ public class Site  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Site version(Integer version) {
@@ -139,7 +139,7 @@ public class Site  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -157,7 +157,7 @@ public class Site  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -175,7 +175,7 @@ public class Site  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Site modifiedBy(String modifiedBy) {
@@ -192,7 +192,7 @@ public class Site  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Site createdBy(String createdBy) {
@@ -209,7 +209,7 @@ public class Site  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Site state(StateEnum state) {
@@ -226,7 +226,7 @@ public class Site  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Site modifiedByApp(String modifiedByApp) {
@@ -243,7 +243,7 @@ public class Site  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Site createdByApp(String createdByApp) {
@@ -260,7 +260,7 @@ public class Site  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public Site primarySites(List<UriReference> primarySites) {
@@ -277,7 +277,7 @@ public class Site  implements Serializable {
     this.primarySites = primarySites;
   }
 
-
+  
   /**
    **/
   public Site secondarySites(List<UriReference> secondarySites) {
@@ -294,7 +294,7 @@ public class Site  implements Serializable {
     this.secondarySites = secondarySites;
   }
 
-
+  
   /**
    **/
   public Site primaryEdges(List<Edge> primaryEdges) {
@@ -311,7 +311,7 @@ public class Site  implements Serializable {
     this.primaryEdges = primaryEdges;
   }
 
-
+  
   /**
    **/
   public Site secondaryEdges(List<Edge> secondaryEdges) {
@@ -328,7 +328,7 @@ public class Site  implements Serializable {
     this.secondaryEdges = secondaryEdges;
   }
 
-
+  
   /**
    **/
   public Site addresses(List<Contact> addresses) {
@@ -345,7 +345,7 @@ public class Site  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    **/
   public Site edges(List<Edge> edges) {
@@ -362,7 +362,7 @@ public class Site  implements Serializable {
     this.edges = edges;
   }
 
-
+  
   /**
    * Recurrance rule, time zone, and start/end settings for automatic edge updates for this site
    **/
@@ -380,7 +380,7 @@ public class Site  implements Serializable {
     this.edgeAutoUpdateConfig = edgeAutoUpdateConfig;
   }
 
-
+  
   /**
    * Location
    **/
@@ -398,7 +398,7 @@ public class Site  implements Serializable {
     this.location = location;
   }
 
-
+  
   /**
    **/
   public Site managed(Boolean managed) {
@@ -415,13 +415,14 @@ public class Site  implements Serializable {
     this.managed = managed;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

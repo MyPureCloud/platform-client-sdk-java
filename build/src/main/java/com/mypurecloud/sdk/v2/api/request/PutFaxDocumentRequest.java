@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.FaxDocumentEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class PutFaxDocumentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -39,6 +40,7 @@ public class PutFaxDocumentRequest {
 	    return this;
 	}
 
+	
 	private FaxDocument body;
 	public FaxDocument getBody() {
 		return this.body;
@@ -53,6 +55,7 @@ public class PutFaxDocumentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -89,6 +92,7 @@ public class PutFaxDocumentRequest {
                 .withPathParameter("documentId", documentId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -100,10 +104,12 @@ public class PutFaxDocumentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId, FaxDocument body) {
 	    return new Builder()
 	            .withRequiredParams(documentId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutFaxDocumentRequest request;
@@ -112,20 +118,26 @@ public class PutFaxDocumentRequest {
 			request = new PutFaxDocumentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 		public Builder withBody(FaxDocument body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId, FaxDocument body) {
 			request.setDocumentId(documentId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutFaxDocumentRequest build() {

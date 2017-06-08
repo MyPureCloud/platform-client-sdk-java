@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgeTrunksRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -140,6 +144,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -154,6 +159,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private String trunkBaseId;
 	public String getTrunkBaseId() {
 		return this.trunkBaseId;
@@ -168,6 +174,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private String trunkType;
 	public String getTrunkType() {
 		return this.trunkType;
@@ -182,6 +189,7 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -223,7 +231,8 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
                 .withQueryParameters("trunkBase.id", "", trunkBaseId)
         
                 .withQueryParameters("trunkType", "", trunkType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -234,10 +243,12 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgeTrunksRequest request;
@@ -246,39 +257,50 @@ public class GetTelephonyProvidersEdgeTrunksRequest {
 			request = new GetTelephonyProvidersEdgeTrunksRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withTrunkBaseId(String trunkBaseId) {
 			request.setTrunkBaseId(trunkBaseId);
 			return this;
 		}
+		
 		public Builder withTrunkType(String trunkType) {
 			request.setTrunkType(trunkType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId) {
 			request.setEdgeId(edgeId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgeTrunksRequest build() {

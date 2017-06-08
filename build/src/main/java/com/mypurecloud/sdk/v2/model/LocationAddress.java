@@ -39,7 +39,7 @@ public class LocationAddress  implements Serializable {
     this.city = city;
   }
 
-
+  
   /**
    **/
   public LocationAddress country(String country) {
@@ -56,7 +56,7 @@ public class LocationAddress  implements Serializable {
     this.country = country;
   }
 
-
+  
   /**
    **/
   public LocationAddress countryName(String countryName) {
@@ -73,7 +73,7 @@ public class LocationAddress  implements Serializable {
     this.countryName = countryName;
   }
 
-
+  
   /**
    **/
   public LocationAddress state(String state) {
@@ -90,7 +90,7 @@ public class LocationAddress  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public LocationAddress street1(String street1) {
@@ -107,7 +107,7 @@ public class LocationAddress  implements Serializable {
     this.street1 = street1;
   }
 
-
+  
   /**
    **/
   public LocationAddress street2(String street2) {
@@ -124,7 +124,7 @@ public class LocationAddress  implements Serializable {
     this.street2 = street2;
   }
 
-
+  
   /**
    **/
   public LocationAddress zipcode(String zipcode) {
@@ -141,6 +141,7 @@ public class LocationAddress  implements Serializable {
     this.zipcode = zipcode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

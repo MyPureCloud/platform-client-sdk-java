@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingObjectRequest {
+    
 	private String id;
 	public String getId() {
 		return this.id;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private String version;
 	public String getVersion() {
 		return this.version;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private String objectType;
 	public String getObjectType() {
 		return this.objectType;
@@ -84,6 +87,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private Boolean consumedResources;
 	public Boolean getConsumedResources() {
 		return this.consumedResources;
@@ -98,6 +102,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private Boolean consumingResources;
 	public Boolean getConsumingResources() {
 		return this.consumingResources;
@@ -112,6 +117,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private List<String> consumedResourceType;
 	public List<String> getConsumedResourceType() {
 		return this.consumedResourceType;
@@ -126,6 +132,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private List<String> consumingResourceType;
 	public List<String> getConsumingResourceType() {
 		return this.consumingResourceType;
@@ -140,6 +147,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -181,7 +189,8 @@ public class GetArchitectDependencytrackingObjectRequest {
                 .withQueryParameters("consumedResourceType", "multi", consumedResourceType)
         
                 .withQueryParameters("consumingResourceType", "multi", consumingResourceType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -192,10 +201,12 @@ public class GetArchitectDependencytrackingObjectRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String id) {
 	    return new Builder()
 	            .withRequiredParams(id);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingObjectRequest request;
@@ -204,39 +215,50 @@ public class GetArchitectDependencytrackingObjectRequest {
 			request = new GetArchitectDependencytrackingObjectRequest();
 		}
 
+		
 		public Builder withId(String id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withVersion(String version) {
 			request.setVersion(version);
 			return this;
 		}
+		
 		public Builder withObjectType(String objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+		
 		public Builder withConsumedResources(Boolean consumedResources) {
 			request.setConsumedResources(consumedResources);
 			return this;
 		}
+		
 		public Builder withConsumingResources(Boolean consumingResources) {
 			request.setConsumingResources(consumingResources);
 			return this;
 		}
+		
 		public Builder withConsumedResourceType(List<String> consumedResourceType) {
 			request.setConsumedResourceType(consumedResourceType);
 			return this;
 		}
+		
 		public Builder withConsumingResourceType(List<String> consumingResourceType) {
 			request.setConsumingResourceType(consumingResourceType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String id) {
 			request.setId(id);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectDependencytrackingObjectRequest build() {

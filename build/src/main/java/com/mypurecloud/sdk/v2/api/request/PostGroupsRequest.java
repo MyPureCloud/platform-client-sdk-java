@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class PostGroupsRequest {
+    
 	private Group body;
 	public Group getBody() {
 		return this.body;
@@ -44,6 +45,7 @@ public class PostGroupsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -73,6 +75,7 @@ public class PostGroupsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/groups")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -84,10 +87,12 @@ public class PostGroupsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Group body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostGroupsRequest request;
@@ -96,15 +101,20 @@ public class PostGroupsRequest {
 			request = new PostGroupsRequest();
 		}
 
+		
 		public Builder withBody(Group body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Group body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostGroupsRequest build() {

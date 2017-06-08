@@ -74,7 +74,7 @@ public class DependencyStatus  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DependencyStatus name(String name) {
@@ -91,7 +91,7 @@ public class DependencyStatus  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DependencyStatus user(User user) {
@@ -108,7 +108,7 @@ public class DependencyStatus  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public DependencyStatus buildId(String buildId) {
@@ -125,7 +125,7 @@ public class DependencyStatus  implements Serializable {
     this.buildId = buildId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -143,7 +143,7 @@ public class DependencyStatus  implements Serializable {
     this.dateStarted = dateStarted;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -161,7 +161,7 @@ public class DependencyStatus  implements Serializable {
     this.dateCompleted = dateCompleted;
   }
 
-
+  
   /**
    **/
   public DependencyStatus status(StatusEnum status) {
@@ -178,7 +178,7 @@ public class DependencyStatus  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public DependencyStatus failedObjects(List<FailedObject> failedObjects) {
@@ -195,13 +195,14 @@ public class DependencyStatus  implements Serializable {
     this.failedObjects = failedObjects;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

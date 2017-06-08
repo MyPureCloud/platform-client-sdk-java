@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementWorkspaceMembersRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class GetContentmanagementWorkspaceMembersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -78,6 +80,7 @@ public class GetContentmanagementWorkspaceMembersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -92,6 +95,7 @@ public class GetContentmanagementWorkspaceMembersRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -106,6 +110,7 @@ public class GetContentmanagementWorkspaceMembersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -141,7 +146,8 @@ public class GetContentmanagementWorkspaceMembersRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -152,10 +158,12 @@ public class GetContentmanagementWorkspaceMembersRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementWorkspaceMembersRequest request;
@@ -164,27 +172,35 @@ public class GetContentmanagementWorkspaceMembersRequest {
 			request = new GetContentmanagementWorkspaceMembersRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementWorkspaceMembersRequest build() {

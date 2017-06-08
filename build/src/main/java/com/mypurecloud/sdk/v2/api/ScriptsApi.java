@@ -44,6 +44,7 @@ public class ScriptsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get a script
    * 
@@ -70,6 +71,7 @@ public class ScriptsApi {
   private GetScriptRequest createGetScriptRequest(String scriptId) {
     return GetScriptRequest.builder()
             .withScriptId(scriptId)
+    
             .build();
   }
 
@@ -121,6 +123,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get a page
    * 
@@ -149,8 +152,9 @@ public class ScriptsApi {
   private GetScriptPageRequest createGetScriptPageRequest(String scriptId, String pageId) {
     return GetScriptPageRequest.builder()
             .withScriptId(scriptId)
-
+    
             .withPageId(pageId)
+    
             .build();
   }
 
@@ -202,6 +206,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the list of pages
    * 
@@ -228,6 +233,7 @@ public class ScriptsApi {
   private GetScriptPagesRequest createGetScriptPagesRequest(String scriptId) {
     return GetScriptPagesRequest.builder()
             .withScriptId(scriptId)
+    
             .build();
   }
 
@@ -279,6 +285,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the list of scripts
    * 
@@ -319,20 +326,21 @@ public class ScriptsApi {
   private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) {
     return GetScriptsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withExpand(expand)
-
+    
             .withName(name)
-
+    
             .withFeature(feature)
-
+    
             .withFlowId(flowId)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -384,6 +392,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the published scripts.
    * 
@@ -420,16 +429,17 @@ public class ScriptsApi {
   private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) {
     return GetScriptsPublishedRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withExpand(expand)
-
+    
             .withName(name)
-
+    
             .withFeature(feature)
-
+    
             .withFlowId(flowId)
+    
             .build();
   }
 
@@ -481,6 +491,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the published script.
    * 
@@ -507,6 +518,7 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdRequest createGetScriptsPublishedScriptIdRequest(String scriptId) {
     return GetScriptsPublishedScriptIdRequest.builder()
             .withScriptId(scriptId)
+    
             .build();
   }
 
@@ -558,6 +570,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the published page.
    * 
@@ -586,8 +599,9 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdPageRequest createGetScriptsPublishedScriptIdPageRequest(String scriptId, String pageId) {
     return GetScriptsPublishedScriptIdPageRequest.builder()
             .withScriptId(scriptId)
-
+    
             .withPageId(pageId)
+    
             .build();
   }
 
@@ -639,6 +653,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the list of published pages
    * 
@@ -665,6 +680,7 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId) {
     return GetScriptsPublishedScriptIdPagesRequest.builder()
             .withScriptId(scriptId)
+    
             .build();
   }
 
@@ -716,6 +732,7 @@ public class ScriptsApi {
     }
   }
 
+  
   /**
    * Get the published variables
    * 
@@ -748,12 +765,13 @@ public class ScriptsApi {
   private GetScriptsPublishedScriptIdVariablesRequest createGetScriptsPublishedScriptIdVariablesRequest(String scriptId, String input, String output, String type) {
     return GetScriptsPublishedScriptIdVariablesRequest.builder()
             .withScriptId(scriptId)
-
+    
             .withInput(input)
-
+    
             .withOutput(output)
-
+    
             .withType(type)
+    
             .build();
   }
 
@@ -805,4 +823,5 @@ public class ScriptsApi {
     }
   }
 
+  
 }

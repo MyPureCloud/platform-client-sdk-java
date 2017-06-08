@@ -140,7 +140,7 @@ public class Cobrowsesession  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -158,7 +158,7 @@ public class Cobrowsesession  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -176,7 +176,7 @@ public class Cobrowsesession  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * Address and name data for a call endpoint.
    **/
@@ -194,7 +194,7 @@ public class Cobrowsesession  implements Serializable {
     this.self = self;
   }
 
-
+  
   /**
    * The co-browse session ID.
    **/
@@ -212,7 +212,7 @@ public class Cobrowsesession  implements Serializable {
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-
+  
   /**
    * This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer).
    **/
@@ -230,7 +230,7 @@ public class Cobrowsesession  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-
+  
   /**
    * ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages).
    **/
@@ -248,7 +248,7 @@ public class Cobrowsesession  implements Serializable {
     this.controlling = controlling;
   }
 
-
+  
   /**
    * The URL that can be used to open co-browse session in web browser.
    **/
@@ -266,7 +266,7 @@ public class Cobrowsesession  implements Serializable {
     this.viewerUrl = viewerUrl;
   }
 
-
+  
   /**
    * The time when the provider event which triggered this conversation update happened in the corrected provider clock (milliseconds since 1970-01-01 00:00:00 UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -284,7 +284,7 @@ public class Cobrowsesession  implements Serializable {
     this.providerEventTime = providerEventTime;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -302,7 +302,7 @@ public class Cobrowsesession  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -320,7 +320,7 @@ public class Cobrowsesession  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * The source provider for the co-browse session.
    **/
@@ -338,7 +338,7 @@ public class Cobrowsesession  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -356,7 +356,7 @@ public class Cobrowsesession  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    * The time line of the participant's call, divided into activity segments.
    **/
@@ -374,6 +374,7 @@ public class Cobrowsesession  implements Serializable {
     this.segments = segments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

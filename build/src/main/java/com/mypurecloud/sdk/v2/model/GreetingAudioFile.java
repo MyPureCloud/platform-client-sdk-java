@@ -35,7 +35,7 @@ public class GreetingAudioFile  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
-
+  
   /**
    **/
   public GreetingAudioFile sizeBytes(Long sizeBytes) {
@@ -52,7 +52,7 @@ public class GreetingAudioFile  implements Serializable {
     this.sizeBytes = sizeBytes;
   }
 
-
+  
   /**
    **/
   public GreetingAudioFile selfUri(String selfUri) {
@@ -69,6 +69,7 @@ public class GreetingAudioFile  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

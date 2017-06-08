@@ -125,7 +125,7 @@ public class Operation  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public Operation complete(Boolean complete) {
@@ -142,7 +142,7 @@ public class Operation  implements Serializable {
     this.complete = complete;
   }
 
-
+  
   /**
    **/
   public Operation user(User user) {
@@ -159,7 +159,7 @@ public class Operation  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public Operation errorMessage(String errorMessage) {
@@ -176,7 +176,7 @@ public class Operation  implements Serializable {
     this.errorMessage = errorMessage;
   }
 
-
+  
   /**
    **/
   public Operation errorCode(String errorCode) {
@@ -193,7 +193,7 @@ public class Operation  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public Operation errorDetails(List<Detail> errorDetails) {
@@ -210,7 +210,7 @@ public class Operation  implements Serializable {
     this.errorDetails = errorDetails;
   }
 
-
+  
   /**
    **/
   public Operation errorMessageParams(Map<String, String> errorMessageParams) {
@@ -227,7 +227,7 @@ public class Operation  implements Serializable {
     this.errorMessageParams = errorMessageParams;
   }
 
-
+  
   /**
    * Action name
    **/
@@ -245,7 +245,7 @@ public class Operation  implements Serializable {
     this.actionName = actionName;
   }
 
-
+  
   /**
    * Action status
    **/
@@ -263,6 +263,7 @@ public class Operation  implements Serializable {
     this.actionStatus = actionStatus;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

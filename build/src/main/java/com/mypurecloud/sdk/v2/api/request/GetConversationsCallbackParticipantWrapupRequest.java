@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsCallbackParticipantWrapupRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class GetConversationsCallbackParticipantWrapupRequest {
 	    return this;
 	}
 
+	
 	private String participantId;
 	public String getParticipantId() {
 		return this.participantId;
@@ -88,6 +90,7 @@ public class GetConversationsCallbackParticipantWrapupRequest {
 	    return this;
 	}
 
+	
 	private Boolean provisional;
 	public Boolean getProvisional() {
 		return this.provisional;
@@ -102,6 +105,7 @@ public class GetConversationsCallbackParticipantWrapupRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -140,7 +144,8 @@ public class GetConversationsCallbackParticipantWrapupRequest {
                 .withPathParameter("participantId", participantId)
         
                 .withQueryParameters("provisional", "", provisional)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -151,10 +156,12 @@ public class GetConversationsCallbackParticipantWrapupRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, participantId);
 	}
+	
 
 	public static class Builder {
 		private final GetConversationsCallbackParticipantWrapupRequest request;
@@ -163,24 +170,31 @@ public class GetConversationsCallbackParticipantWrapupRequest {
 			request = new GetConversationsCallbackParticipantWrapupRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withParticipantId(String participantId) {
 			request.setParticipantId(participantId);
 			return this;
 		}
+		
 		public Builder withProvisional(Boolean provisional) {
 			request.setProvisional(provisional);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String participantId) {
 			request.setConversationId(conversationId);
-			request.setParticipantId(participantId);
+						request.setParticipantId(participantId);
+			
 			return this;
 		}
+		
 
 
 		public GetConversationsCallbackParticipantWrapupRequest build() {

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
 	    return this;
 	}
 
+	
 	private TagQueryRequest body;
 	public TagQueryRequest getBody() {
 		return this.body;
@@ -78,6 +80,7 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -92,6 +95,7 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -130,6 +134,7 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -141,10 +146,12 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, TagQueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementWorkspaceTagvaluesQueryRequest request;
@@ -153,24 +160,31 @@ public class PostContentmanagementWorkspaceTagvaluesQueryRequest {
 			request = new PostContentmanagementWorkspaceTagvaluesQueryRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withBody(TagQueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, TagQueryRequest body) {
 			request.setWorkspaceId(workspaceId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementWorkspaceTagvaluesQueryRequest build() {

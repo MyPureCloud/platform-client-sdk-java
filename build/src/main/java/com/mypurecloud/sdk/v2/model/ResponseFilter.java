@@ -75,7 +75,7 @@ public class ResponseFilter  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Filter operation: IN, EQUALS, NOTEQUALS.
    **/
@@ -93,7 +93,7 @@ public class ResponseFilter  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * Values to filter on.
    **/
@@ -111,6 +111,7 @@ public class ResponseFilter  implements Serializable {
     this.values = values;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

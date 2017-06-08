@@ -76,7 +76,7 @@ public class CallConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallConversationNotification name(String name) {
@@ -93,7 +93,7 @@ public class CallConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallConversationNotification participants(List<CallConversationNotificationParticipants> participants) {
@@ -110,7 +110,7 @@ public class CallConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public CallConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -127,7 +127,7 @@ public class CallConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-
+  
   /**
    **/
   public CallConversationNotification recordingState(RecordingStateEnum recordingState) {
@@ -144,6 +144,7 @@ public class CallConversationNotification  implements Serializable {
     this.recordingState = recordingState;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

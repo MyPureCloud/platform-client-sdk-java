@@ -74,7 +74,7 @@ public class WfmIntradayQueueListing  implements Serializable {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public WfmIntradayQueueListing noDataReason(NoDataReasonEnum noDataReason) {
@@ -91,6 +91,7 @@ public class WfmIntradayQueueListing  implements Serializable {
     this.noDataReason = noDataReason;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

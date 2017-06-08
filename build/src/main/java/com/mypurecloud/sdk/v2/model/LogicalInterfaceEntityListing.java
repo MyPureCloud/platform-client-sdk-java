@@ -46,7 +46,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.total = total;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public LogicalInterfaceEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class LogicalInterfaceEntityListing  implements Serializable, PagedResour
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

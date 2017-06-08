@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgeStatuscodeRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgeStatuscodeRequest {
 	    return this;
 	}
 
+	
 	private EdgeServiceStateRequest body;
 	public EdgeServiceStateRequest getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgeStatuscodeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,6 +146,7 @@ public class PostTelephonyProvidersEdgeStatuscodeRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -154,10 +158,12 @@ public class PostTelephonyProvidersEdgeStatuscodeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgeStatuscodeRequest request;
@@ -166,19 +172,25 @@ public class PostTelephonyProvidersEdgeStatuscodeRequest {
 			request = new PostTelephonyProvidersEdgeStatuscodeRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withBody(EdgeServiceStateRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId) {
 			request.setEdgeId(edgeId);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgeStatuscodeRequest build() {

@@ -82,7 +82,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -100,7 +100,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse description(String description) {
@@ -117,7 +117,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse version(Integer version) {
@@ -134,7 +134,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -152,7 +152,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -170,7 +170,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse modifiedBy(String modifiedBy) {
@@ -187,7 +187,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse createdBy(String createdBy) {
@@ -204,7 +204,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse state(StateEnum state) {
@@ -221,7 +221,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse modifiedByApp(String modifiedByApp) {
@@ -238,7 +238,7 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobResponse createdByApp(String createdByApp) {
@@ -255,13 +255,14 @@ public class EdgeLogsJobResponse  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

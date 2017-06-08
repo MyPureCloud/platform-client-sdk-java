@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class DeleteUserrecordingRequest {
+    
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -39,6 +40,7 @@ public class DeleteUserrecordingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -68,7 +70,8 @@ public class DeleteUserrecordingRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/userrecordings/{recordingId}")
                 .withPathParameter("recordingId", recordingId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -79,10 +82,12 @@ public class DeleteUserrecordingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(recordingId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteUserrecordingRequest request;
@@ -91,15 +96,20 @@ public class DeleteUserrecordingRequest {
 			request = new DeleteUserrecordingRequest();
 		}
 
+		
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String recordingId) {
 			request.setRecordingId(recordingId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteUserrecordingRequest build() {

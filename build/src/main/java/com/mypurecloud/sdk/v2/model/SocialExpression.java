@@ -141,7 +141,7 @@ public class SocialExpression  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -159,7 +159,7 @@ public class SocialExpression  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * A globally unique identifier for the social media.
    **/
@@ -177,7 +177,7 @@ public class SocialExpression  implements Serializable {
     this.socialMediaId = socialMediaId;
   }
 
-
+  
   /**
    * The social network of the communication
    **/
@@ -195,7 +195,7 @@ public class SocialExpression  implements Serializable {
     this.socialMediaHub = socialMediaHub;
   }
 
-
+  
   /**
    * The user name for the communication.
    **/
@@ -213,7 +213,7 @@ public class SocialExpression  implements Serializable {
     this.socialUserName = socialUserName;
   }
 
-
+  
   /**
    * The text preview of the communication contents
    **/
@@ -231,7 +231,7 @@ public class SocialExpression  implements Serializable {
     this.previewText = previewText;
   }
 
-
+  
   /**
    * A globally unique identifier for the recording associated with this chat.
    **/
@@ -249,7 +249,7 @@ public class SocialExpression  implements Serializable {
     this.recordingId = recordingId;
   }
 
-
+  
   /**
    * The time line of the participant's chat, divided into activity segments.
    **/
@@ -267,7 +267,7 @@ public class SocialExpression  implements Serializable {
     this.segments = segments;
   }
 
-
+  
   /**
    * True if this call is held and the person on this side hears silence.
    **/
@@ -285,7 +285,7 @@ public class SocialExpression  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -303,7 +303,7 @@ public class SocialExpression  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * The timestamp the chat was placed on hold in the cloud clock if the chat is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -321,7 +321,7 @@ public class SocialExpression  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -339,7 +339,7 @@ public class SocialExpression  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -357,7 +357,7 @@ public class SocialExpression  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * The source provider for the social expression.
    **/
@@ -375,7 +375,7 @@ public class SocialExpression  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -393,6 +393,7 @@ public class SocialExpression  implements Serializable {
     this.peerId = peerId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,7 +46,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification name(String name) {
@@ -63,7 +63,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification dateCreated(Date dateCreated) {
@@ -80,7 +80,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification dateModified(Date dateModified) {
@@ -97,7 +97,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification version(Integer version) {
@@ -114,7 +114,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification intervals(List<CampaignScheduleNotificationIntervals> intervals) {
@@ -131,7 +131,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.intervals = intervals;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification timeZone(String timeZone) {
@@ -148,7 +148,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification sequence(DocumentDataV2NotificationCreatedBy sequence) {
@@ -165,7 +165,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.sequence = sequence;
   }
 
-
+  
   /**
    **/
   public SequenceScheduleNotification additionalProperties(Object additionalProperties) {
@@ -182,6 +182,7 @@ public class SequenceScheduleNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

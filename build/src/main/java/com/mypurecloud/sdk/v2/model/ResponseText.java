@@ -71,7 +71,7 @@ public class ResponseText  implements Serializable {
     this.content = content;
   }
 
-
+  
   /**
    * Response text content type.
    **/
@@ -89,6 +89,7 @@ public class ResponseText  implements Serializable {
     this.contentType = contentType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

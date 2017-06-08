@@ -36,7 +36,7 @@ public class CallbackConversationNotificationErrorInfoDetails  implements Serial
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorInfoDetails fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class CallbackConversationNotificationErrorInfoDetails  implements Serial
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorInfoDetails entityId(String entityId) {
@@ -70,7 +70,7 @@ public class CallbackConversationNotificationErrorInfoDetails  implements Serial
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorInfoDetails entityName(String entityName) {
@@ -87,6 +87,7 @@ public class CallbackConversationNotificationErrorInfoDetails  implements Serial
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

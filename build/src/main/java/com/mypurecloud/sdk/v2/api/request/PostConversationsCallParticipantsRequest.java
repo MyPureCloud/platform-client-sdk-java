@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsCallParticipantsRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PostConversationsCallParticipantsRequest {
 	    return this;
 	}
 
+	
 	private Conversation body;
 	public Conversation getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostConversationsCallParticipantsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PostConversationsCallParticipantsRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PostConversationsCallParticipantsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, Conversation body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationsCallParticipantsRequest request;
@@ -147,20 +153,26 @@ public class PostConversationsCallParticipantsRequest {
 			request = new PostConversationsCallParticipantsRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withBody(Conversation body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, Conversation body) {
 			request.setConversationId(conversationId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationsCallParticipantsRequest build() {

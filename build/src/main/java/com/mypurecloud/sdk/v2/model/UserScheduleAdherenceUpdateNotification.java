@@ -83,7 +83,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification managementUnitId(String managementUnitId) {
@@ -100,7 +100,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.managementUnitId = managementUnitId;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification scheduledActivityCategory(String scheduledActivityCategory) {
@@ -117,7 +117,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.scheduledActivityCategory = scheduledActivityCategory;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification systemPresence(String systemPresence) {
@@ -134,7 +134,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification routingStatus(RoutingStatusEnum routingStatus) {
@@ -151,7 +151,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification actualActivityCategory(String actualActivityCategory) {
@@ -168,7 +168,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.actualActivityCategory = actualActivityCategory;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification isOutOfOffice(Boolean isOutOfOffice) {
@@ -185,7 +185,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.isOutOfOffice = isOutOfOffice;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification adherenceState(String adherenceState) {
@@ -202,7 +202,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.adherenceState = adherenceState;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification impact(String impact) {
@@ -219,7 +219,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.impact = impact;
   }
 
-
+  
   /**
    **/
   public UserScheduleAdherenceUpdateNotification adherenceChangeTime(String adherenceChangeTime) {
@@ -236,6 +236,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     this.adherenceChangeTime = adherenceChangeTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

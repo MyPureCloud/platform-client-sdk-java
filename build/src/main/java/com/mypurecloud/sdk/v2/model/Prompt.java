@@ -32,7 +32,7 @@ public class Prompt  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The prompt name.
    **/
@@ -50,7 +50,7 @@ public class Prompt  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Prompt description(String description) {
@@ -67,7 +67,7 @@ public class Prompt  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Prompt resources(List<PromptAsset> resources) {
@@ -84,7 +84,7 @@ public class Prompt  implements Serializable {
     this.resources = resources;
   }
 
-
+  
   /**
    **/
   public Prompt currentOperation(Operation currentOperation) {
@@ -101,13 +101,14 @@ public class Prompt  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

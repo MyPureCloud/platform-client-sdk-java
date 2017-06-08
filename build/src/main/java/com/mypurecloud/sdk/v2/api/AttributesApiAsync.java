@@ -45,6 +45,7 @@ public class AttributesApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete an existing Attribute.
    * This will remove attribute.
@@ -120,6 +121,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
   /**
    * Get details about an existing attribute.
    * 
@@ -195,6 +197,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
   /**
    * Gets a list of existing attributes.
    * 
@@ -270,6 +273,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
   /**
    * Create an attribute.
    * 
@@ -345,6 +349,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
   /**
    * Query attributes
    * 
@@ -420,6 +425,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
   /**
    * Update an existing attribute.
    * Fields that can be updated: name, description. The most recent version is required for updates.
@@ -495,6 +501,7 @@ public class AttributesApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

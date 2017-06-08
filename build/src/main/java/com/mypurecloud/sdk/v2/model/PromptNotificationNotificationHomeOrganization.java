@@ -35,7 +35,7 @@ public class PromptNotificationNotificationHomeOrganization  implements Serializ
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationHomeOrganization name(String name) {
@@ -52,7 +52,7 @@ public class PromptNotificationNotificationHomeOrganization  implements Serializ
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationHomeOrganization thirdPartyOrgName(String thirdPartyOrgName) {
@@ -69,6 +69,7 @@ public class PromptNotificationNotificationHomeOrganization  implements Serializ
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

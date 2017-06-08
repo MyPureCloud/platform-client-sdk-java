@@ -45,7 +45,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.total = total;
   }
 
-
+  
   /**
    * The total number of pages
    **/
@@ -63,7 +63,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.pageCount = pageCount;
   }
 
-
+  
   /**
    * The current page size
    **/
@@ -81,7 +81,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The current page number
    **/
@@ -99,7 +99,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    * Q64 value for the previous page of results
    **/
@@ -117,7 +117,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.previousPage = previousPage;
   }
 
-
+  
   /**
    * Q64 value for the current page of results
    **/
@@ -135,7 +135,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.currentPage = currentPage;
   }
 
-
+  
   /**
    * Q64 value for the next page of results
    **/
@@ -153,7 +153,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.nextPage = nextPage;
   }
 
-
+  
   /**
    * Resource types the search was performed against
    **/
@@ -171,7 +171,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.types = types;
   }
 
-
+  
   /**
    * Search results
    **/
@@ -189,6 +189,7 @@ public class DocumentationSearchResponse  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

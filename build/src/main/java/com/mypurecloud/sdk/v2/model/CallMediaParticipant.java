@@ -237,7 +237,7 @@ public class CallMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The display friendly name of the participant.
    **/
@@ -255,7 +255,7 @@ public class CallMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The participant address.
    **/
@@ -273,7 +273,7 @@ public class CallMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -291,7 +291,7 @@ public class CallMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -309,7 +309,7 @@ public class CallMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -327,7 +327,7 @@ public class CallMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -345,7 +345,7 @@ public class CallMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -363,7 +363,7 @@ public class CallMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -381,7 +381,7 @@ public class CallMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -399,7 +399,7 @@ public class CallMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -417,7 +417,7 @@ public class CallMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * Value is true when the participant is on hold.
    **/
@@ -435,7 +435,7 @@ public class CallMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -453,7 +453,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -471,7 +471,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    * The PureCloud user for this participant.
    **/
@@ -489,7 +489,7 @@ public class CallMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The PureCloud queue for this participant.
    **/
@@ -507,7 +507,7 @@ public class CallMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -525,7 +525,7 @@ public class CallMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -543,7 +543,7 @@ public class CallMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -561,7 +561,7 @@ public class CallMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -579,7 +579,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -597,7 +597,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    * The source provider for the communication.
    **/
@@ -615,7 +615,7 @@ public class CallMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -633,7 +633,7 @@ public class CallMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -651,7 +651,7 @@ public class CallMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -669,7 +669,7 @@ public class CallMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -687,7 +687,7 @@ public class CallMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-
+  
   /**
    * Value is true when the call is muted.
    **/
@@ -705,7 +705,7 @@ public class CallMediaParticipant  implements Serializable {
     this.muted = muted;
   }
 
-
+  
   /**
    * Value is true when the call is confined.
    **/
@@ -723,7 +723,7 @@ public class CallMediaParticipant  implements Serializable {
     this.confined = confined;
   }
 
-
+  
   /**
    * Value is true when the call is being recorded.
    **/
@@ -741,7 +741,7 @@ public class CallMediaParticipant  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    * The state of the call recording.
    **/
@@ -759,7 +759,7 @@ public class CallMediaParticipant  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    * The group involved in the group ring call.
    **/
@@ -777,7 +777,7 @@ public class CallMediaParticipant  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    * The call ANI.
    **/
@@ -795,7 +795,7 @@ public class CallMediaParticipant  implements Serializable {
     this.ani = ani;
   }
 
-
+  
   /**
    * The call DNIS.
    **/
@@ -813,7 +813,7 @@ public class CallMediaParticipant  implements Serializable {
     this.dnis = dnis;
   }
 
-
+  
   /**
    * The ID of the Content Management document if the call is a fax.
    **/
@@ -831,7 +831,7 @@ public class CallMediaParticipant  implements Serializable {
     this.documentId = documentId;
   }
 
-
+  
   /**
    * Extra fax information if the call is a fax.
    **/
@@ -849,7 +849,7 @@ public class CallMediaParticipant  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
-
+  
   /**
    * The ID of the participant being monitored when performing a call monitor.
    **/
@@ -867,7 +867,7 @@ public class CallMediaParticipant  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    * The ID of the consult transfer target participant when performing a consult transfer.
    **/
@@ -885,6 +885,7 @@ public class CallMediaParticipant  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

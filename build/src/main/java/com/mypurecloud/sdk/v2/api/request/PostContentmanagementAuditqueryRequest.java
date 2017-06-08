@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementAuditqueryRequest {
+    
 	private ContentQueryRequest body;
 	public ContentQueryRequest getBody() {
 		return this.body;
@@ -64,6 +65,7 @@ public class PostContentmanagementAuditqueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +95,7 @@ public class PostContentmanagementAuditqueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/contentmanagement/auditquery")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +107,12 @@ public class PostContentmanagementAuditqueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ContentQueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementAuditqueryRequest request;
@@ -116,15 +121,20 @@ public class PostContentmanagementAuditqueryRequest {
 			request = new PostContentmanagementAuditqueryRequest();
 		}
 
+		
 		public Builder withBody(ContentQueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ContentQueryRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementAuditqueryRequest build() {

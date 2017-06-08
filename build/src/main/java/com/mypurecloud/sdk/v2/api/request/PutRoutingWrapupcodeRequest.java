@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PutRoutingWrapupcodeRequest {
+    
 	private String codeId;
 	public String getCodeId() {
 		return this.codeId;
@@ -58,6 +59,7 @@ public class PutRoutingWrapupcodeRequest {
 	    return this;
 	}
 
+	
 	private WrapupCode body;
 	public WrapupCode getBody() {
 		return this.body;
@@ -72,6 +74,7 @@ public class PutRoutingWrapupcodeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,6 +111,7 @@ public class PutRoutingWrapupcodeRequest {
                 .withPathParameter("codeId", codeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -119,10 +123,12 @@ public class PutRoutingWrapupcodeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String codeId, WrapupCode body) {
 	    return new Builder()
 	            .withRequiredParams(codeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutRoutingWrapupcodeRequest request;
@@ -131,20 +137,26 @@ public class PutRoutingWrapupcodeRequest {
 			request = new PutRoutingWrapupcodeRequest();
 		}
 
+		
 		public Builder withCodeId(String codeId) {
 			request.setCodeId(codeId);
 			return this;
 		}
+		
 		public Builder withBody(WrapupCode body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String codeId, WrapupCode body) {
 			request.setCodeId(codeId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRoutingWrapupcodeRequest build() {

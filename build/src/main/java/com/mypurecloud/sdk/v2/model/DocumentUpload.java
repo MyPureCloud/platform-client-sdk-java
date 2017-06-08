@@ -40,7 +40,7 @@ public class DocumentUpload  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The workspace the document will be uploaded to
    **/
@@ -58,7 +58,7 @@ public class DocumentUpload  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public DocumentUpload tags(List<String> tags) {
@@ -75,7 +75,7 @@ public class DocumentUpload  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public DocumentUpload tagIds(List<String> tagIds) {
@@ -92,6 +92,7 @@ public class DocumentUpload  implements Serializable {
     this.tagIds = tagIds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

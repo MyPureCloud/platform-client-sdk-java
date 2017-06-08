@@ -40,7 +40,7 @@ public class ConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotification maxParticipants(Integer maxParticipants) {
@@ -57,7 +57,7 @@ public class ConversationNotification  implements Serializable {
     this.maxParticipants = maxParticipants;
   }
 
-
+  
   /**
    **/
   public ConversationNotification participants(List<ConversationNotificationParticipants> participants) {
@@ -74,7 +74,7 @@ public class ConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public ConversationNotification recordingState(String recordingState) {
@@ -91,7 +91,7 @@ public class ConversationNotification  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    **/
   public ConversationNotification address(String address) {
@@ -108,6 +108,7 @@ public class ConversationNotification  implements Serializable {
     this.address = address;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

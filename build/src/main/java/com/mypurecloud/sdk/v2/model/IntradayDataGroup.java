@@ -84,7 +84,7 @@ public class IntradayDataGroup  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    * Forecast data for this date range
    **/
@@ -102,7 +102,7 @@ public class IntradayDataGroup  implements Serializable {
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-
+  
   /**
    * Schedule data for this date range
    **/
@@ -120,7 +120,7 @@ public class IntradayDataGroup  implements Serializable {
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-
+  
   /**
    * Historical agent data for this date range
    **/
@@ -138,7 +138,7 @@ public class IntradayDataGroup  implements Serializable {
     this.historicalAgentDataPerInterval = historicalAgentDataPerInterval;
   }
 
-
+  
   /**
    * Historical queue data for this date range
    **/
@@ -156,7 +156,7 @@ public class IntradayDataGroup  implements Serializable {
     this.historicalQueueDataPerInterval = historicalQueueDataPerInterval;
   }
 
-
+  
   /**
    * Performance prediction data for this date range
    **/
@@ -174,7 +174,7 @@ public class IntradayDataGroup  implements Serializable {
     this.performancePredictionAgentDataPerInterval = performancePredictionAgentDataPerInterval;
   }
 
-
+  
   /**
    * Performance prediction data for this date range
    **/
@@ -192,6 +192,7 @@ public class IntradayDataGroup  implements Serializable {
     this.performancePredictionQueueDataPerInterval = performancePredictionQueueDataPerInterval;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

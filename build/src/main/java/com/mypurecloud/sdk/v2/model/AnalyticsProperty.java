@@ -75,7 +75,7 @@ public class AnalyticsProperty  implements Serializable {
     this.propertyType = propertyType;
   }
 
-
+  
   /**
    * User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
    **/
@@ -93,7 +93,7 @@ public class AnalyticsProperty  implements Serializable {
     this.property = property;
   }
 
-
+  
   /**
    * What property value to match against
    **/
@@ -111,6 +111,7 @@ public class AnalyticsProperty  implements Serializable {
     this.value = value;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

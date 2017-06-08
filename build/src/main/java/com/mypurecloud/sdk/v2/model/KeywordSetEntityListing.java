@@ -46,7 +46,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.total = total;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public KeywordSetEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class KeywordSetEntityListing  implements Serializable, PagedResource<Key
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

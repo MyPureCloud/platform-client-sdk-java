@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class GetResponsemanagementLibrariesRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -41,6 +42,7 @@ public class GetResponsemanagementLibrariesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -55,6 +57,7 @@ public class GetResponsemanagementLibrariesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +84,8 @@ public class GetResponsemanagementLibrariesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,6 +96,7 @@ public class GetResponsemanagementLibrariesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetResponsemanagementLibrariesRequest request;
@@ -100,15 +105,19 @@ public class GetResponsemanagementLibrariesRequest {
 			request = new GetResponsemanagementLibrariesRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 
+		
 
 
 		public GetResponsemanagementLibrariesRequest build() {

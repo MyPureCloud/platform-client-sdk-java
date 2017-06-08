@@ -198,7 +198,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.id = id;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant name(String name) {
@@ -215,7 +215,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.name = name;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant address(String address) {
@@ -232,7 +232,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.address = address;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant startTime(Date startTime) {
@@ -249,7 +249,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant connectedTime(Date connectedTime) {
@@ -266,7 +266,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant endTime(Date endTime) {
@@ -283,7 +283,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant startHoldTime(Date startHoldTime) {
@@ -300,7 +300,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant purpose(String purpose) {
@@ -317,7 +317,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant state(StateEnum state) {
@@ -334,7 +334,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.state = state;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant direction(DirectionEnum direction) {
@@ -351,7 +351,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -368,7 +368,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant held(Boolean held) {
@@ -385,7 +385,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.held = held;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -402,7 +402,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -419,7 +419,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -436,7 +436,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.user = user;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant queue(VideoConversationNotificationUriReference queue) {
@@ -453,7 +453,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant attributes(Map<String, String> attributes) {
@@ -470,7 +470,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant errorInfo(VideoConversationNotificationErrorInfo errorInfo) {
@@ -487,7 +487,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant script(VideoConversationNotificationUriReference script) {
@@ -504,7 +504,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.script = script;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -521,7 +521,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -538,7 +538,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant provider(String provider) {
@@ -555,7 +555,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant externalContact(VideoConversationNotificationUriReference externalContact) {
@@ -572,7 +572,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant externalOrganization(VideoConversationNotificationUriReference externalOrganization) {
@@ -589,7 +589,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -606,7 +606,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant peer(String peer) {
@@ -623,7 +623,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant audioMuted(Boolean audioMuted) {
@@ -640,7 +640,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.audioMuted = audioMuted;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant videoMuted(Boolean videoMuted) {
@@ -657,7 +657,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.videoMuted = videoMuted;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant sharingScreen(Boolean sharingScreen) {
@@ -674,7 +674,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.sharingScreen = sharingScreen;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant peerCount(Integer peerCount) {
@@ -691,7 +691,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationVideoMediaParticipant context(String context) {
@@ -708,6 +708,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     this.context = context;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

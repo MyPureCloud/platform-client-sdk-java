@@ -39,7 +39,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.proxyAddress = proxyAddress;
   }
 
-
+  
   /**
    **/
   public TrunkMetricsOptions optionState(Boolean optionState) {
@@ -56,7 +56,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.optionState = optionState;
   }
 
-
+  
   /**
    * ISO 8601 format UTC absolute date & time of the last change of the option state.
    **/
@@ -74,7 +74,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.optionStateTime = optionStateTime;
   }
 
-
+  
   /**
    **/
   public TrunkMetricsOptions errorInfo(TrunkErrorInfo errorInfo) {
@@ -91,6 +91,7 @@ public class TrunkMetricsOptions  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

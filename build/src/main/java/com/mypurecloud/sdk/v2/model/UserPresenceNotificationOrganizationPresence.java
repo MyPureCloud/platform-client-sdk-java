@@ -34,7 +34,7 @@ public class UserPresenceNotificationOrganizationPresence  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotificationOrganizationPresence systemPresence(String systemPresence) {
@@ -51,6 +51,7 @@ public class UserPresenceNotificationOrganizationPresence  implements Serializab
     this.systemPresence = systemPresence;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -34,6 +34,7 @@ public class EmailSetup  implements Serializable {
     this.rootDomain = rootDomain;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

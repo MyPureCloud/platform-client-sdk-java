@@ -220,6 +220,7 @@ public class TelephonyProvidersEdgeApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a edge.
    * 
@@ -295,6 +296,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete an edge logical interface
    * 
@@ -370,6 +372,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Cancels any in-progress update for this edge.
    * 
@@ -445,6 +448,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a certificate authority.
    * 
@@ -520,6 +524,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a DID Pool by ID.
    * 
@@ -595,6 +600,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete an edge group.
    * 
@@ -670,6 +676,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete endpoint
    * 
@@ -745,6 +752,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete an extension pool by ID
    * 
@@ -820,6 +828,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete Outbound Route
    * 
@@ -895,6 +904,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a Phone by ID
    * 
@@ -970,6 +980,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a Phone Base Settings by ID
    * 
@@ -1045,6 +1056,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a Site by ID
    * 
@@ -1120,6 +1132,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete Outbound Route
    * 
@@ -1195,6 +1208,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Delete a Trunk Base Settings object by ID
    * 
@@ -1270,6 +1284,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Lists available schema categories (Deprecated)
    * 
@@ -1345,6 +1360,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * List schemas of a specific category (Deprecated)
    * 
@@ -1420,6 +1436,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * List schemas of a specific category (Deprecated)
    * 
@@ -1495,6 +1512,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a json schema (Deprecated)
    * 
@@ -1570,6 +1588,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get metadata for a schema (Deprecated)
    * 
@@ -1645,6 +1664,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get edge.
    * 
@@ -1720,6 +1740,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get line
    * 
@@ -1795,6 +1816,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of lines.
    * 
@@ -1870,6 +1892,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get an edge logical interface
    * 
@@ -1945,6 +1968,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get edge logical interfaces.
    * Retrieve a list of all configured logical interfaces from a specific edge.
@@ -2020,6 +2044,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get an Edge logs job.
    * 
@@ -2095,6 +2120,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get edge physical interface.
    * Retrieve a physical interface from a specific edge.
@@ -2170,6 +2196,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Retrieve a list of all configured physical interfaces from a specific edge.
    * 
@@ -2245,6 +2272,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
    * 
@@ -2320,6 +2348,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Gets software update status information about any edge.
    * 
@@ -2395,6 +2424,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Gets all the available software versions for this edge.
    * 
@@ -2470,6 +2500,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of available trunks for the given Edge.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
@@ -2545,6 +2576,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of edges.
    * 
@@ -2620,6 +2652,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of available languages.
    * 
@@ -2695,6 +2728,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of certificate authorities.
    * 
@@ -2770,6 +2804,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a certificate authority.
    * 
@@ -2845,6 +2880,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a DID by ID.
    * 
@@ -2920,6 +2956,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a DID Pool by ID.
    * 
@@ -2995,6 +3032,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a listing of DID Pools
    * 
@@ -3070,6 +3108,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a listing of DIDs
    * 
@@ -3145,6 +3184,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get edge group.
    * 
@@ -3220,6 +3260,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Gets the edge trunk base associated with the edge group
    * 
@@ -3295,6 +3336,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of edge groups.
    * 
@@ -3370,6 +3412,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the edge version report.
    * The report will not have consistent data about the edge version(s) until all edges have been reset.
@@ -3445,6 +3488,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get endpoint
    * 
@@ -3520,6 +3564,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get endpoints
    * 
@@ -3595,6 +3640,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get an extension by ID.
    * 
@@ -3670,6 +3716,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get an extension pool by ID
    * 
@@ -3745,6 +3792,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a listing of extension pools
    * 
@@ -3820,6 +3868,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a listing of extensions
    * 
@@ -3895,6 +3944,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Line by ID
    * 
@@ -3970,6 +4020,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a line base settings object by ID
    * 
@@ -4045,6 +4096,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a listing of line base settings objects
    * 
@@ -4120,6 +4172,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of Lines
    * 
@@ -4195,6 +4248,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
    * 
@@ -4270,6 +4324,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get edge logical interfaces.
    * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
@@ -4345,6 +4400,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get outbound route
    * 
@@ -4420,6 +4476,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get outbound routes
    * 
@@ -4495,6 +4552,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Phone by ID
    * 
@@ -4570,6 +4628,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Phone Base Settings object by ID
    * 
@@ -4645,6 +4704,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of Phone Base Settings objects
    * 
@@ -4720,6 +4780,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of available makes and models to create a new Phone Base Settings
    * 
@@ -4795,6 +4856,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
    * 
@@ -4870,6 +4932,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of Phone Instances
    * 
@@ -4945,6 +5008,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
    * 
@@ -5020,6 +5084,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get physical interfaces for edges.
    * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
@@ -5095,6 +5160,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Site by ID.
    * 
@@ -5170,6 +5236,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Number Plan by ID.
    * 
@@ -5245,6 +5312,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of Number Plans for this Site.
    * 
@@ -5320,6 +5388,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of Classifications for this Site
    * 
@@ -5395,6 +5464,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get an outbound route
    * 
@@ -5470,6 +5540,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get outbound routes
    * 
@@ -5545,6 +5616,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of Sites.
    * 
@@ -5620,6 +5692,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of Edge-compatible time zones
    * 
@@ -5695,6 +5768,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Trunk by ID
    * 
@@ -5770,6 +5844,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
@@ -5845,6 +5920,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get Trunk Base Settings listing
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
@@ -5920,6 +5996,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a list of available makes and models to create a new Trunk Base Settings
    * 
@@ -5995,6 +6072,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
    * 
@@ -6070,6 +6148,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get the list of available trunks.
    * Trunks are created by assigning trunk base settings to an Edge or Edge Group.
@@ -6145,6 +6224,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Get Counts of trunks that have recording disabled or enabled
    * 
@@ -6220,6 +6300,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create an edge logical interface.
    * Create
@@ -6295,6 +6376,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Request that the specified fileIds be uploaded from the Edge.
    * 
@@ -6370,6 +6452,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a job to upload a list of Edge logs.
    * 
@@ -6445,6 +6528,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Reboot an Edge
    * 
@@ -6520,6 +6604,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Starts a software update for this edge.
    * 
@@ -6595,6 +6680,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Take an Edge in or out of service
    * 
@@ -6670,6 +6756,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Unpair an Edge
    * 
@@ -6745,6 +6832,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create an edge.
    * 
@@ -6820,6 +6908,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Validates a street address
    * 
@@ -6895,6 +6984,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a certificate authority.
    * 
@@ -6970,6 +7060,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a new DID pool
    * 
@@ -7045,6 +7136,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create an edge group.
    * 
@@ -7120,6 +7212,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create endpoint
    * 
@@ -7195,6 +7288,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a new extension pool
    * 
@@ -7270,6 +7364,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create outbound rule
    * 
@@ -7345,6 +7440,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Reboot a Phone
    * 
@@ -7420,6 +7516,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a new Phone Base Settings object
    * 
@@ -7495,6 +7592,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a new Phone
    * 
@@ -7570,6 +7668,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Reboot Multiple Phones
    * 
@@ -7645,6 +7744,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create outbound route
    * 
@@ -7720,6 +7820,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Triggers the rebalance operation.
    * 
@@ -7795,6 +7896,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a Site.
    * 
@@ -7870,6 +7972,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Create a Trunk Base Settings object
    * 
@@ -7945,6 +8048,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a edge.
    * 
@@ -8020,6 +8124,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a line.
    * 
@@ -8095,6 +8200,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update an edge logical interface.
    * 
@@ -8170,6 +8276,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a certificate authority.
    * 
@@ -8245,6 +8352,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a DID by ID.
    * 
@@ -8320,6 +8428,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a DID Pool by ID.
    * 
@@ -8395,6 +8504,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update an edge group.
    * 
@@ -8470,6 +8580,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update the edge trunk base associated with the edge group
    * 
@@ -8545,6 +8656,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update endpoint
    * 
@@ -8620,6 +8732,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update an extension by ID.
    * 
@@ -8695,6 +8808,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update an extension pool by ID
    * 
@@ -8770,6 +8884,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update outbound route
    * 
@@ -8845,6 +8960,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a Phone by ID
    * 
@@ -8920,6 +9036,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a Phone Base Settings by ID
    * 
@@ -8995,6 +9112,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a Site by ID.
    * 
@@ -9070,6 +9188,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update the list of Number Plans.
    * 
@@ -9145,6 +9264,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update outbound route
    * 
@@ -9220,6 +9340,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
   /**
    * Update a Trunk Base Settings object by ID
    * 
@@ -9295,6 +9416,7 @@ public class TelephonyProvidersEdgeApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

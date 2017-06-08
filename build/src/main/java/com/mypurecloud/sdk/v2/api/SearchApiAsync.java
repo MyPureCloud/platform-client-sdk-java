@@ -63,6 +63,7 @@ public class SearchApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Search documentation using the q64 value returned from a previous search
    * 
@@ -138,6 +139,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -213,6 +215,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -288,6 +291,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search using the q64 value returned from a previous search.
    * 
@@ -363,6 +367,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Suggest resources using the q64 value returned from a previous suggest query.
    * 
@@ -438,6 +443,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -513,6 +519,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search voicemails using the q64 value returned from a previous search
    * 
@@ -588,6 +595,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search documentation
    * 
@@ -663,6 +671,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search groups
    * 
@@ -738,6 +747,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search locations
    * 
@@ -813,6 +823,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search resources.
    * 
@@ -888,6 +899,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Suggest resources.
    * 
@@ -963,6 +975,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search users
    * 
@@ -1038,6 +1051,7 @@ public class SearchApiAsync {
     }
   }
 
+  
   /**
    * Search voicemails
    * 
@@ -1113,6 +1127,7 @@ public class SearchApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

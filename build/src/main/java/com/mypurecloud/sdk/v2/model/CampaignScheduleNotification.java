@@ -46,7 +46,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification name(String name) {
@@ -63,7 +63,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification dateCreated(Date dateCreated) {
@@ -80,7 +80,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification dateModified(Date dateModified) {
@@ -97,7 +97,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification version(Integer version) {
@@ -114,7 +114,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification intervals(List<CampaignScheduleNotificationIntervals> intervals) {
@@ -131,7 +131,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.intervals = intervals;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification timeZone(String timeZone) {
@@ -148,7 +148,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification campaign(DocumentDataV2NotificationCreatedBy campaign) {
@@ -165,7 +165,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.campaign = campaign;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotification additionalProperties(Object additionalProperties) {
@@ -182,6 +182,7 @@ public class CampaignScheduleNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private String interfaceId;
 	public String getInterfaceId() {
 		return this.interfaceId;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,7 +151,8 @@ public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withPathParameter("interfaceId", interfaceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -159,10 +163,12 @@ public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String interfaceId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, interfaceId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgePhysicalinterfaceRequest request;
@@ -171,20 +177,26 @@ public class GetTelephonyProvidersEdgePhysicalinterfaceRequest {
 			request = new GetTelephonyProvidersEdgePhysicalinterfaceRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withInterfaceId(String interfaceId) {
 			request.setInterfaceId(interfaceId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String interfaceId) {
 			request.setEdgeId(edgeId);
-			request.setInterfaceId(interfaceId);
+						request.setInterfaceId(interfaceId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgePhysicalinterfaceRequest build() {

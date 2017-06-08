@@ -46,7 +46,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EvaluatorActivityEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -149,7 +149,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * The value for comparison. Required for all campaign rule conditions
    **/
@@ -167,7 +167,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * The priority to set the campaign to. Required for 'set campaign priority' actions
    **/
@@ -185,7 +185,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions
    **/
@@ -203,6 +203,7 @@ public class CampaignRuleParameters  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

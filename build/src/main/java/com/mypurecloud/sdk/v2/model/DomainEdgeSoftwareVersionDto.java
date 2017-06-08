@@ -20,8 +20,8 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
   private String edgeVersion = null;
   private Date publishDate = null;
   private String edgeUri = null;
-  private Boolean latestRelease = null;
   private Boolean current = null;
+  private Boolean latestRelease = null;
   private String selfUri = null;
 
   
@@ -31,7 +31,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDto name(String name) {
@@ -48,7 +48,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDto edgeVersion(String edgeVersion) {
@@ -65,7 +65,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.edgeVersion = edgeVersion;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -83,7 +83,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.publishDate = publishDate;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDto edgeUri(String edgeUri) {
@@ -100,24 +100,7 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-
-  /**
-   **/
-  public DomainEdgeSoftwareVersionDto latestRelease(Boolean latestRelease) {
-    this.latestRelease = latestRelease;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("latestRelease")
-  public Boolean getLatestRelease() {
-    return latestRelease;
-  }
-  public void setLatestRelease(Boolean latestRelease) {
-    this.latestRelease = latestRelease;
-  }
-
-
   /**
    **/
   public DomainEdgeSoftwareVersionDto current(Boolean current) {
@@ -134,13 +117,31 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     this.current = current;
   }
 
+  
+  /**
+   **/
+  public DomainEdgeSoftwareVersionDto latestRelease(Boolean latestRelease) {
+    this.latestRelease = latestRelease;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("latestRelease")
+  public Boolean getLatestRelease() {
+    return latestRelease;
+  }
+  public void setLatestRelease(Boolean latestRelease) {
+    this.latestRelease = latestRelease;
+  }
 
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,14 +157,14 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
         Objects.equals(this.edgeVersion, domainEdgeSoftwareVersionDto.edgeVersion) &&
         Objects.equals(this.publishDate, domainEdgeSoftwareVersionDto.publishDate) &&
         Objects.equals(this.edgeUri, domainEdgeSoftwareVersionDto.edgeUri) &&
-        Objects.equals(this.latestRelease, domainEdgeSoftwareVersionDto.latestRelease) &&
         Objects.equals(this.current, domainEdgeSoftwareVersionDto.current) &&
+        Objects.equals(this.latestRelease, domainEdgeSoftwareVersionDto.latestRelease) &&
         Objects.equals(this.selfUri, domainEdgeSoftwareVersionDto.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, edgeVersion, publishDate, edgeUri, latestRelease, current, selfUri);
+    return Objects.hash(id, name, edgeVersion, publishDate, edgeUri, current, latestRelease, selfUri);
   }
 
   @Override
@@ -176,8 +177,8 @@ public class DomainEdgeSoftwareVersionDto  implements Serializable {
     sb.append("    edgeVersion: ").append(toIndentedString(edgeVersion)).append("\n");
     sb.append("    publishDate: ").append(toIndentedString(publishDate)).append("\n");
     sb.append("    edgeUri: ").append(toIndentedString(edgeUri)).append("\n");
-    sb.append("    latestRelease: ").append(toIndentedString(latestRelease)).append("\n");
     sb.append("    current: ").append(toIndentedString(current)).append("\n");
+    sb.append("    latestRelease: ").append(toIndentedString(latestRelease)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -39,7 +39,7 @@ public class Segment  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -57,7 +57,7 @@ public class Segment  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The activity taking place for the participant in the segment.
    **/
@@ -75,7 +75,7 @@ public class Segment  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * A description of the event that ended the segment.
    **/
@@ -93,7 +93,7 @@ public class Segment  implements Serializable {
     this.howEnded = howEnded;
   }
 
-
+  
   /**
    * A description of the event that disconnected the segment
    **/
@@ -111,6 +111,7 @@ public class Segment  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

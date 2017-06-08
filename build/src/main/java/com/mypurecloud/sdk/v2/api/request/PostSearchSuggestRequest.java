@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
 
 public class PostSearchSuggestRequest {
+    
 	private SuggestSearchRequest body;
 	public SuggestSearchRequest getBody() {
 		return this.body;
@@ -38,6 +39,7 @@ public class PostSearchSuggestRequest {
 	    return this;
 	}
 
+	
 	private Boolean profile;
 	public Boolean getProfile() {
 		return this.profile;
@@ -52,6 +54,7 @@ public class PostSearchSuggestRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -83,6 +86,7 @@ public class PostSearchSuggestRequest {
                 .withQueryParameters("profile", "", profile)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -94,10 +98,12 @@ public class PostSearchSuggestRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(SuggestSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostSearchSuggestRequest request;
@@ -106,19 +112,25 @@ public class PostSearchSuggestRequest {
 			request = new PostSearchSuggestRequest();
 		}
 
+		
 		public Builder withBody(SuggestSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withProfile(Boolean profile) {
 			request.setProfile(profile);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(SuggestSearchRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostSearchSuggestRequest build() {

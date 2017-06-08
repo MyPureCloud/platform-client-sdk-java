@@ -116,7 +116,7 @@ public class Conversation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Conversation name(String name) {
@@ -133,7 +133,7 @@ public class Conversation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -151,7 +151,7 @@ public class Conversation  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -169,7 +169,7 @@ public class Conversation  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The address of the conversation as seen from an external participant. For phone calls this will be the DNIS for inbound calls and the ANI for outbound calls. For other media types this will be the address of the destination participant for inbound and the address of the initiating participant for outbound.
    **/
@@ -187,7 +187,7 @@ public class Conversation  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * The list of all participants in the conversation.
    **/
@@ -205,7 +205,7 @@ public class Conversation  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    * A list of conversations to merge into this conversation to create a conference. This field is null except when being used to create a conference.
    **/
@@ -223,7 +223,7 @@ public class Conversation  implements Serializable {
     this.conversationIds = conversationIds;
   }
 
-
+  
   /**
    * If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
    **/
@@ -241,7 +241,7 @@ public class Conversation  implements Serializable {
     this.maxParticipants = maxParticipants;
   }
 
-
+  
   /**
    * On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.
    **/
@@ -259,7 +259,7 @@ public class Conversation  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    * The conversation's state.  Values can be: 'disconnected'
    **/
@@ -277,13 +277,14 @@ public class Conversation  implements Serializable {
     this.state = state;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

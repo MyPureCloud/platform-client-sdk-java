@@ -54,7 +54,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification name(String name) {
@@ -71,7 +71,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification dateCreated(Date dateCreated) {
@@ -88,7 +88,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification dateModified(Date dateModified) {
@@ -105,7 +105,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification workspace(DocumentDataV2NotificationWorkspace workspace) {
@@ -122,7 +122,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification createdBy(DocumentDataV2NotificationCreatedBy createdBy) {
@@ -139,7 +139,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification contentType(String contentType) {
@@ -156,7 +156,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification contentLength(Integer contentLength) {
@@ -173,7 +173,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification filename(String filename) {
@@ -190,7 +190,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.filename = filename;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification changeNumber(Integer changeNumber) {
@@ -207,7 +207,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification dateUploaded(Date dateUploaded) {
@@ -224,7 +224,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification uploadedBy(FaxDataV2NotificationUserData uploadedBy) {
@@ -241,7 +241,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification lockInfo(FaxDataV2NotificationLockInfo lockInfo) {
@@ -258,7 +258,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification selfUri(String selfUri) {
@@ -275,7 +275,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification callerAddress(String callerAddress) {
@@ -292,7 +292,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification receiverAddress(String receiverAddress) {
@@ -309,7 +309,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-
+  
   /**
    **/
   public FaxDataV2Notification read(Boolean read) {
@@ -326,6 +326,7 @@ public class FaxDataV2Notification  implements Serializable {
     this.read = read;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

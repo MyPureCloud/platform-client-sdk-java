@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementWorkspaceRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class DeleteContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private String moveChildrenToWorkspaceId;
 	public String getMoveChildrenToWorkspaceId() {
 		return this.moveChildrenToWorkspaceId;
@@ -78,6 +80,7 @@ public class DeleteContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +112,8 @@ public class DeleteContentmanagementWorkspaceRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withQueryParameters("moveChildrenToWorkspaceId", "", moveChildrenToWorkspaceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -120,10 +124,12 @@ public class DeleteContentmanagementWorkspaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteContentmanagementWorkspaceRequest request;
@@ -132,19 +138,25 @@ public class DeleteContentmanagementWorkspaceRequest {
 			request = new DeleteContentmanagementWorkspaceRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withMoveChildrenToWorkspaceId(String moveChildrenToWorkspaceId) {
 			request.setMoveChildrenToWorkspaceId(moveChildrenToWorkspaceId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteContentmanagementWorkspaceRequest build() {

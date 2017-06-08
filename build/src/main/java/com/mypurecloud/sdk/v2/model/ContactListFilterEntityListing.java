@@ -46,7 +46,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ContactListFilterEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundContactlistfiltersPreviewRequest {
+    
 	private ContactListFilter body;
 	public ContactListFilter getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundContactlistfiltersPreviewRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundContactlistfiltersPreviewRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/contactlistfilters/preview")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundContactlistfiltersPreviewRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ContactListFilter body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundContactlistfiltersPreviewRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundContactlistfiltersPreviewRequest {
 			request = new PostOutboundContactlistfiltersPreviewRequest();
 		}
 
+		
 		public Builder withBody(ContactListFilter body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ContactListFilter body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundContactlistfiltersPreviewRequest build() {

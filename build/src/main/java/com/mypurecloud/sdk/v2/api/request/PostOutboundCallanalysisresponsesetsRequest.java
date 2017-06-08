@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCallanalysisresponsesetsRequest {
+    
 	private ResponseSet body;
 	public ResponseSet getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundCallanalysisresponsesetsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundCallanalysisresponsesetsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/callanalysisresponsesets")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundCallanalysisresponsesetsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ResponseSet body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundCallanalysisresponsesetsRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundCallanalysisresponsesetsRequest {
 			request = new PostOutboundCallanalysisresponsesetsRequest();
 		}
 
+		
 		public Builder withBody(ResponseSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ResponseSet body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundCallanalysisresponsesetsRequest build() {

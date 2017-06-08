@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsPublishedScriptIdVariablesRequest {
+    
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -38,6 +39,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	}
 
+	
 	private String input;
 	public String getInput() {
 		return this.input;
@@ -52,6 +54,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	}
 
+	
 	private String output;
 	public String getOutput() {
 		return this.output;
@@ -66,6 +69,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	}
 
+	
 	private String type;
 	public String getType() {
 		return this.type;
@@ -80,6 +84,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -115,7 +120,8 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
                 .withQueryParameters("output", "", output)
         
                 .withQueryParameters("type", "", type)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -126,10 +132,12 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scriptId) {
 	    return new Builder()
 	            .withRequiredParams(scriptId);
 	}
+	
 
 	public static class Builder {
 		private final GetScriptsPublishedScriptIdVariablesRequest request;
@@ -138,27 +146,35 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 			request = new GetScriptsPublishedScriptIdVariablesRequest();
 		}
 
+		
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
 			return this;
 		}
+		
 		public Builder withInput(String input) {
 			request.setInput(input);
 			return this;
 		}
+		
 		public Builder withOutput(String output) {
 			request.setOutput(output);
 			return this;
 		}
+		
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scriptId) {
 			request.setScriptId(scriptId);
+			
 			return this;
 		}
+		
 
 
 		public GetScriptsPublishedScriptIdVariablesRequest build() {

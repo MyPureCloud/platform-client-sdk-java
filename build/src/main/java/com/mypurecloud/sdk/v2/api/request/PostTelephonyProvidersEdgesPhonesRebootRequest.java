@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesPhonesRebootRequest {
+    
 	private PhonesReboot body;
 	public PhonesReboot getBody() {
 		return this.body;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesPhonesRebootRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +129,7 @@ public class PostTelephonyProvidersEdgesPhonesRebootRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/phones/reboot")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesPhonesRebootRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(PhonesReboot body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesPhonesRebootRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesPhonesRebootRequest {
 			request = new PostTelephonyProvidersEdgesPhonesRebootRequest();
 		}
 
+		
 		public Builder withBody(PhonesReboot body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(PhonesReboot body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesPhonesRebootRequest build() {

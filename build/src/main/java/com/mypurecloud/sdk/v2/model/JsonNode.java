@@ -95,7 +95,7 @@ public class JsonNode  implements Serializable {
     this.array = array;
   }
 
-
+  
   /**
    **/
   public JsonNode _null(Boolean _null) {
@@ -112,7 +112,7 @@ public class JsonNode  implements Serializable {
     this._null = _null;
   }
 
-
+  
   /**
    **/
   public JsonNode nodeType(NodeTypeEnum nodeType) {
@@ -129,7 +129,7 @@ public class JsonNode  implements Serializable {
     this.nodeType = nodeType;
   }
 
-
+  
   /**
    **/
   public JsonNode _float(Boolean _float) {
@@ -146,7 +146,7 @@ public class JsonNode  implements Serializable {
     this._float = _float;
   }
 
-
+  
   /**
    **/
   public JsonNode object(Boolean object) {
@@ -163,7 +163,7 @@ public class JsonNode  implements Serializable {
     this.object = object;
   }
 
-
+  
   /**
    **/
   public JsonNode _boolean(Boolean _boolean) {
@@ -180,7 +180,7 @@ public class JsonNode  implements Serializable {
     this._boolean = _boolean;
   }
 
-
+  
   /**
    **/
   public JsonNode number(Boolean number) {
@@ -197,7 +197,7 @@ public class JsonNode  implements Serializable {
     this.number = number;
   }
 
-
+  
   /**
    **/
   public JsonNode valueNode(Boolean valueNode) {
@@ -214,7 +214,7 @@ public class JsonNode  implements Serializable {
     this.valueNode = valueNode;
   }
 
-
+  
   /**
    **/
   public JsonNode containerNode(Boolean containerNode) {
@@ -231,7 +231,7 @@ public class JsonNode  implements Serializable {
     this.containerNode = containerNode;
   }
 
-
+  
   /**
    **/
   public JsonNode missingNode(Boolean missingNode) {
@@ -248,7 +248,7 @@ public class JsonNode  implements Serializable {
     this.missingNode = missingNode;
   }
 
-
+  
   /**
    **/
   public JsonNode pojo(Boolean pojo) {
@@ -265,7 +265,7 @@ public class JsonNode  implements Serializable {
     this.pojo = pojo;
   }
 
-
+  
   /**
    **/
   public JsonNode integralNumber(Boolean integralNumber) {
@@ -282,7 +282,7 @@ public class JsonNode  implements Serializable {
     this.integralNumber = integralNumber;
   }
 
-
+  
   /**
    **/
   public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
@@ -299,7 +299,7 @@ public class JsonNode  implements Serializable {
     this.floatingPointNumber = floatingPointNumber;
   }
 
-
+  
   /**
    **/
   public JsonNode _short(Boolean _short) {
@@ -316,7 +316,7 @@ public class JsonNode  implements Serializable {
     this._short = _short;
   }
 
-
+  
   /**
    **/
   public JsonNode _int(Boolean _int) {
@@ -333,7 +333,7 @@ public class JsonNode  implements Serializable {
     this._int = _int;
   }
 
-
+  
   /**
    **/
   public JsonNode _long(Boolean _long) {
@@ -350,7 +350,7 @@ public class JsonNode  implements Serializable {
     this._long = _long;
   }
 
-
+  
   /**
    **/
   public JsonNode _double(Boolean _double) {
@@ -367,7 +367,7 @@ public class JsonNode  implements Serializable {
     this._double = _double;
   }
 
-
+  
   /**
    **/
   public JsonNode bigDecimal(Boolean bigDecimal) {
@@ -384,7 +384,7 @@ public class JsonNode  implements Serializable {
     this.bigDecimal = bigDecimal;
   }
 
-
+  
   /**
    **/
   public JsonNode bigInteger(Boolean bigInteger) {
@@ -401,7 +401,7 @@ public class JsonNode  implements Serializable {
     this.bigInteger = bigInteger;
   }
 
-
+  
   /**
    **/
   public JsonNode textual(Boolean textual) {
@@ -418,7 +418,7 @@ public class JsonNode  implements Serializable {
     this.textual = textual;
   }
 
-
+  
   /**
    **/
   public JsonNode binary(Boolean binary) {
@@ -435,6 +435,7 @@ public class JsonNode  implements Serializable {
     this.binary = binary;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

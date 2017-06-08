@@ -32,7 +32,7 @@ public class ConversationBasic  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ConversationBasic name(String name) {
@@ -49,7 +49,7 @@ public class ConversationBasic  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The time when the conversation started. This will be the time when the first participant joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -67,7 +67,7 @@ public class ConversationBasic  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The time when the conversation ended. This will be the time when the last participant left the conversation, or null when the conversation is still active. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -85,14 +85,14 @@ public class ConversationBasic  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-
+  
   /**
    **/
   public ConversationBasic participants(List<ParticipantBasic> participants) {
@@ -109,6 +109,7 @@ public class ConversationBasic  implements Serializable {
     this.participants = participants;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundContactlistContactsRequest {
+    
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -74,6 +75,7 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	}
 
+	
 	private List<DialerContact> body;
 	public List<DialerContact> getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	}
 
+	
 	private Boolean priority;
 	public Boolean getPriority() {
 		return this.priority;
@@ -102,6 +105,7 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	}
 
+	
 	private Boolean clearSystemData;
 	public Boolean getClearSystemData() {
 		return this.clearSystemData;
@@ -116,6 +120,7 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -156,6 +161,7 @@ public class PostOutboundContactlistContactsRequest {
                 .withQueryParameters("clearSystemData", "", clearSystemData)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -167,10 +173,12 @@ public class PostOutboundContactlistContactsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListId, List<DialerContact> body) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundContactlistContactsRequest request;
@@ -179,28 +187,36 @@ public class PostOutboundContactlistContactsRequest {
 			request = new PostOutboundContactlistContactsRequest();
 		}
 
+		
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
+		
 		public Builder withBody(List<DialerContact> body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withPriority(Boolean priority) {
 			request.setPriority(priority);
 			return this;
 		}
+		
 		public Builder withClearSystemData(Boolean clearSystemData) {
 			request.setClearSystemData(clearSystemData);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListId, List<DialerContact> body) {
 			request.setContactListId(contactListId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundContactlistContactsRequest build() {

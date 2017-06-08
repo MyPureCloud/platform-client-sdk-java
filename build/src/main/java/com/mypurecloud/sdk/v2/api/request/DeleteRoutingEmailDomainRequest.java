@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingEmailDomainRequest {
+    
 	private String domainId;
 	public String getDomainId() {
 		return this.domainId;
@@ -58,6 +59,7 @@ public class DeleteRoutingEmailDomainRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,7 +89,8 @@ public class DeleteRoutingEmailDomainRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/routing/email/domains/{domainId}")
                 .withPathParameter("domainId", domainId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -98,10 +101,12 @@ public class DeleteRoutingEmailDomainRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String domainId) {
 	    return new Builder()
 	            .withRequiredParams(domainId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRoutingEmailDomainRequest request;
@@ -110,15 +115,20 @@ public class DeleteRoutingEmailDomainRequest {
 			request = new DeleteRoutingEmailDomainRequest();
 		}
 
+		
 		public Builder withDomainId(String domainId) {
 			request.setDomainId(domainId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String domainId) {
 			request.setDomainId(domainId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRoutingEmailDomainRequest build() {

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementShareRequest {
+    
 	private String shareId;
 	public String getShareId() {
 		return this.shareId;
@@ -64,6 +65,7 @@ public class GetContentmanagementShareRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -78,6 +80,7 @@ public class GetContentmanagementShareRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +112,8 @@ public class GetContentmanagementShareRequest {
                 .withPathParameter("shareId", shareId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -120,10 +124,12 @@ public class GetContentmanagementShareRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String shareId) {
 	    return new Builder()
 	            .withRequiredParams(shareId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementShareRequest request;
@@ -132,19 +138,25 @@ public class GetContentmanagementShareRequest {
 			request = new GetContentmanagementShareRequest();
 		}
 
+		
 		public Builder withShareId(String shareId) {
 			request.setShareId(shareId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String shareId) {
 			request.setShareId(shareId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementShareRequest build() {

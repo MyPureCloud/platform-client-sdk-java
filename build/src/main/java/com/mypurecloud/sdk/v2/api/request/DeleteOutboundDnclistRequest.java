@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundDnclistRequest {
+    
 	private String dncListId;
 	public String getDncListId() {
 		return this.dncListId;
@@ -74,6 +75,7 @@ public class DeleteOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundDnclistRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/dnclists/{dncListId}")
                 .withPathParameter("dncListId", dncListId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundDnclistRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String dncListId) {
 	    return new Builder()
 	            .withRequiredParams(dncListId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundDnclistRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundDnclistRequest {
 			request = new DeleteOutboundDnclistRequest();
 		}
 
+		
 		public Builder withDncListId(String dncListId) {
 			request.setDncListId(dncListId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String dncListId) {
 			request.setDncListId(dncListId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundDnclistRequest build() {

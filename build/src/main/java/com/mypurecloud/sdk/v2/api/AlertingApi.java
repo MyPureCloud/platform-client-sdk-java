@@ -84,6 +84,7 @@ public class AlertingApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a heart beat alert
    * 
@@ -108,6 +109,7 @@ public class AlertingApi {
   private DeleteAlertingHeartbeatAlertRequest createDeleteAlertingHeartbeatAlertRequest(String alertId) {
     return DeleteAlertingHeartbeatAlertRequest.builder()
             .withAlertId(alertId)
+    
             .build();
   }
 
@@ -158,6 +160,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete a heart beat rule.
    * 
@@ -182,6 +185,7 @@ public class AlertingApi {
   private DeleteAlertingHeartbeatRuleRequest createDeleteAlertingHeartbeatRuleRequest(String ruleId) {
     return DeleteAlertingHeartbeatRuleRequest.builder()
             .withRuleId(ruleId)
+    
             .build();
   }
 
@@ -232,6 +236,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete an interaction stats alert
    * 
@@ -256,6 +261,7 @@ public class AlertingApi {
   private DeleteAlertingInteractionstatsAlertRequest createDeleteAlertingInteractionstatsAlertRequest(String alertId) {
     return DeleteAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
+    
             .build();
   }
 
@@ -306,6 +312,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete an interaction stats rule.
    * 
@@ -330,6 +337,7 @@ public class AlertingApi {
   private DeleteAlertingInteractionstatsRuleRequest createDeleteAlertingInteractionstatsRuleRequest(String ruleId) {
     return DeleteAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
+    
             .build();
   }
 
@@ -380,6 +388,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete a routing status alert
    * 
@@ -404,6 +413,7 @@ public class AlertingApi {
   private DeleteAlertingRoutingstatusAlertRequest createDeleteAlertingRoutingstatusAlertRequest(String alertId) {
     return DeleteAlertingRoutingstatusAlertRequest.builder()
             .withAlertId(alertId)
+    
             .build();
   }
 
@@ -454,6 +464,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete a routing status rule.
    * 
@@ -478,6 +489,7 @@ public class AlertingApi {
   private DeleteAlertingRoutingstatusRuleRequest createDeleteAlertingRoutingstatusRuleRequest(String ruleId) {
     return DeleteAlertingRoutingstatusRuleRequest.builder()
             .withRuleId(ruleId)
+    
             .build();
   }
 
@@ -528,6 +540,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete a user presence alert
    * 
@@ -552,6 +565,7 @@ public class AlertingApi {
   private DeleteAlertingUserpresenceAlertRequest createDeleteAlertingUserpresenceAlertRequest(String alertId) {
     return DeleteAlertingUserpresenceAlertRequest.builder()
             .withAlertId(alertId)
+    
             .build();
   }
 
@@ -602,6 +616,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Delete a user presence rule.
    * 
@@ -626,6 +641,7 @@ public class AlertingApi {
   private DeleteAlertingUserpresenceRuleRequest createDeleteAlertingUserpresenceRuleRequest(String ruleId) {
     return DeleteAlertingUserpresenceRuleRequest.builder()
             .withRuleId(ruleId)
+    
             .build();
   }
 
@@ -676,6 +692,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a heart beat alert
    * 
@@ -704,8 +721,9 @@ public class AlertingApi {
   private GetAlertingHeartbeatAlertRequest createGetAlertingHeartbeatAlertRequest(String alertId, List<String> expand) {
     return GetAlertingHeartbeatAlertRequest.builder()
             .withAlertId(alertId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -757,6 +775,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get heart beat alert list.
    * 
@@ -783,6 +802,7 @@ public class AlertingApi {
   private GetAlertingHeartbeatAlertsRequest createGetAlertingHeartbeatAlertsRequest(List<String> expand) {
     return GetAlertingHeartbeatAlertsRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -834,6 +854,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a heart beat rule.
    * 
@@ -862,8 +883,9 @@ public class AlertingApi {
   private GetAlertingHeartbeatRuleRequest createGetAlertingHeartbeatRuleRequest(String ruleId, List<String> expand) {
     return GetAlertingHeartbeatRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -915,6 +937,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a heart beat rule list.
    * 
@@ -941,6 +964,7 @@ public class AlertingApi {
   private GetAlertingHeartbeatRulesRequest createGetAlertingHeartbeatRulesRequest(List<String> expand) {
     return GetAlertingHeartbeatRulesRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -992,6 +1016,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get an interaction stats alert
    * 
@@ -1020,8 +1045,9 @@ public class AlertingApi {
   private GetAlertingInteractionstatsAlertRequest createGetAlertingInteractionstatsAlertRequest(String alertId, List<String> expand) {
     return GetAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1073,6 +1099,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get interaction stats alert list.
    * 
@@ -1099,6 +1126,7 @@ public class AlertingApi {
   private GetAlertingInteractionstatsAlertsRequest createGetAlertingInteractionstatsAlertsRequest(List<String> expand) {
     return GetAlertingInteractionstatsAlertsRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1150,6 +1178,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Gets user unread count of interaction stats alerts.
    * 
@@ -1172,7 +1201,8 @@ public class AlertingApi {
   }
 
   private GetAlertingInteractionstatsAlertsUnreadRequest createGetAlertingInteractionstatsAlertsUnreadRequest() {
-    return GetAlertingInteractionstatsAlertsUnreadRequest.builder()            .build();
+    return GetAlertingInteractionstatsAlertsUnreadRequest.builder()
+            .build();
   }
 
   /**
@@ -1223,6 +1253,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get an interaction stats rule.
    * 
@@ -1251,8 +1282,9 @@ public class AlertingApi {
   private GetAlertingInteractionstatsRuleRequest createGetAlertingInteractionstatsRuleRequest(String ruleId, List<String> expand) {
     return GetAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1304,6 +1336,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get an interaction stats rule list.
    * 
@@ -1330,6 +1363,7 @@ public class AlertingApi {
   private GetAlertingInteractionstatsRulesRequest createGetAlertingInteractionstatsRulesRequest(List<String> expand) {
     return GetAlertingInteractionstatsRulesRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1381,6 +1415,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a routing status alert
    * 
@@ -1409,8 +1444,9 @@ public class AlertingApi {
   private GetAlertingRoutingstatusAlertRequest createGetAlertingRoutingstatusAlertRequest(String alertId, List<String> expand) {
     return GetAlertingRoutingstatusAlertRequest.builder()
             .withAlertId(alertId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1462,6 +1498,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get routing status alert list.
    * 
@@ -1488,6 +1525,7 @@ public class AlertingApi {
   private GetAlertingRoutingstatusAlertsRequest createGetAlertingRoutingstatusAlertsRequest(List<String> expand) {
     return GetAlertingRoutingstatusAlertsRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1539,6 +1577,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a routing status rule.
    * 
@@ -1567,8 +1606,9 @@ public class AlertingApi {
   private GetAlertingRoutingstatusRuleRequest createGetAlertingRoutingstatusRuleRequest(String ruleId, List<String> expand) {
     return GetAlertingRoutingstatusRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1620,6 +1660,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a routing status rule list.
    * 
@@ -1646,6 +1687,7 @@ public class AlertingApi {
   private GetAlertingRoutingstatusRulesRequest createGetAlertingRoutingstatusRulesRequest(List<String> expand) {
     return GetAlertingRoutingstatusRulesRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1697,6 +1739,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a user presence alert
    * 
@@ -1725,8 +1768,9 @@ public class AlertingApi {
   private GetAlertingUserpresenceAlertRequest createGetAlertingUserpresenceAlertRequest(String alertId, List<String> expand) {
     return GetAlertingUserpresenceAlertRequest.builder()
             .withAlertId(alertId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1778,6 +1822,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get user presence alert list.
    * 
@@ -1804,6 +1849,7 @@ public class AlertingApi {
   private GetAlertingUserpresenceAlertsRequest createGetAlertingUserpresenceAlertsRequest(List<String> expand) {
     return GetAlertingUserpresenceAlertsRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1855,6 +1901,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a user presence rule.
    * 
@@ -1883,8 +1930,9 @@ public class AlertingApi {
   private GetAlertingUserpresenceRuleRequest createGetAlertingUserpresenceRuleRequest(String ruleId, List<String> expand) {
     return GetAlertingUserpresenceRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1936,6 +1984,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Get a user presence rule list.
    * 
@@ -1962,6 +2011,7 @@ public class AlertingApi {
   private GetAlertingUserpresenceRulesRequest createGetAlertingUserpresenceRulesRequest(List<String> expand) {
     return GetAlertingUserpresenceRulesRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2013,6 +2063,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Create a heart beat rule.
    * 
@@ -2041,8 +2092,9 @@ public class AlertingApi {
   private PostAlertingHeartbeatRulesRequest createPostAlertingHeartbeatRulesRequest(HeartBeatRule body, List<String> expand) {
     return PostAlertingHeartbeatRulesRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2094,6 +2146,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Create an interaction stats rule.
    * 
@@ -2122,8 +2175,9 @@ public class AlertingApi {
   private PostAlertingInteractionstatsRulesRequest createPostAlertingInteractionstatsRulesRequest(InteractionStatsRule body, List<String> expand) {
     return PostAlertingInteractionstatsRulesRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2175,6 +2229,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Create a routing status rule.
    * 
@@ -2203,8 +2258,9 @@ public class AlertingApi {
   private PostAlertingRoutingstatusRulesRequest createPostAlertingRoutingstatusRulesRequest(RoutingStatusRule body, List<String> expand) {
     return PostAlertingRoutingstatusRulesRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2256,6 +2312,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Create a user presence rule.
    * 
@@ -2284,8 +2341,9 @@ public class AlertingApi {
   private PostAlertingUserpresenceRulesRequest createPostAlertingUserpresenceRulesRequest(UserPresenceRule body, List<String> expand) {
     return PostAlertingUserpresenceRulesRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2337,6 +2395,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Update a heart beat rule
    * 
@@ -2367,10 +2426,11 @@ public class AlertingApi {
   private PutAlertingHeartbeatRuleRequest createPutAlertingHeartbeatRuleRequest(String ruleId, HeartBeatRule body, List<String> expand) {
     return PutAlertingHeartbeatRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2422,6 +2482,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Update an interaction stats alert read status
    * 
@@ -2452,10 +2513,11 @@ public class AlertingApi {
   private PutAlertingInteractionstatsAlertRequest createPutAlertingInteractionstatsAlertRequest(String alertId, UnreadStatus body, List<String> expand) {
     return PutAlertingInteractionstatsAlertRequest.builder()
             .withAlertId(alertId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2507,6 +2569,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Update an interaction stats rule
    * 
@@ -2537,10 +2600,11 @@ public class AlertingApi {
   private PutAlertingInteractionstatsRuleRequest createPutAlertingInteractionstatsRuleRequest(String ruleId, InteractionStatsRule body, List<String> expand) {
     return PutAlertingInteractionstatsRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2592,6 +2656,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Update a routing status rule
    * 
@@ -2622,10 +2687,11 @@ public class AlertingApi {
   private PutAlertingRoutingstatusRuleRequest createPutAlertingRoutingstatusRuleRequest(String ruleId, RoutingStatusRule body, List<String> expand) {
     return PutAlertingRoutingstatusRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2677,6 +2743,7 @@ public class AlertingApi {
     }
   }
 
+  
   /**
    * Update a user presence rule
    * 
@@ -2707,10 +2774,11 @@ public class AlertingApi {
   private PutAlertingUserpresenceRuleRequest createPutAlertingUserpresenceRuleRequest(String ruleId, UserPresenceRule body, List<String> expand) {
     return PutAlertingUserpresenceRuleRequest.builder()
             .withRuleId(ruleId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2762,4 +2830,5 @@ public class AlertingApi {
     }
   }
 
+  
 }

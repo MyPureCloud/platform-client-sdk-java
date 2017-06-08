@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailMeMailboxRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -53,7 +54,8 @@ public class GetVoicemailMeMailboxRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/voicemail/me/mailbox")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/voicemail/me/mailbox")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -64,6 +66,7 @@ public class GetVoicemailMeMailboxRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetVoicemailMeMailboxRequest request;
@@ -72,7 +75,9 @@ public class GetVoicemailMeMailboxRequest {
 			request = new GetVoicemailMeMailboxRequest();
 		}
 
+		
 
+		
 
 
 		public GetVoicemailMeMailboxRequest build() {

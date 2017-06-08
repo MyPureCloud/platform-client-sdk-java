@@ -72,7 +72,7 @@ public class Reaction  implements Serializable {
     this.data = data;
   }
 
-
+  
   /**
    **/
   public Reaction name(String name) {
@@ -89,7 +89,7 @@ public class Reaction  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Reaction reactionType(ReactionTypeEnum reactionType) {
@@ -106,6 +106,7 @@ public class Reaction  implements Serializable {
     this.reactionType = reactionType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

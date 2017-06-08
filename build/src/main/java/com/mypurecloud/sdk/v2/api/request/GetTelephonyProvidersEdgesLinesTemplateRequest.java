@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesLinesTemplateRequest {
+    
 	private String lineBaseSettingsId;
 	public String getLineBaseSettingsId() {
 		return this.lineBaseSettingsId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesLinesTemplateRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesLinesTemplateRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/lines/template")
                 .withQueryParameters("lineBaseSettingsId", "", lineBaseSettingsId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesLinesTemplateRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String lineBaseSettingsId) {
 	    return new Builder()
 	            .withRequiredParams(lineBaseSettingsId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesLinesTemplateRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesLinesTemplateRequest {
 			request = new GetTelephonyProvidersEdgesLinesTemplateRequest();
 		}
 
+		
 		public Builder withLineBaseSettingsId(String lineBaseSettingsId) {
 			request.setLineBaseSettingsId(lineBaseSettingsId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String lineBaseSettingsId) {
 			request.setLineBaseSettingsId(lineBaseSettingsId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesLinesTemplateRequest build() {

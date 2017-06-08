@@ -40,6 +40,7 @@ public class OrganizationApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -66,6 +67,7 @@ public class OrganizationApi {
   private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
     return GetFieldconfigRequest.builder()
             .withType(type)
+    
             .build();
   }
 
@@ -117,6 +119,7 @@ public class OrganizationApi {
     }
   }
 
+  
   /**
    * Get organization.
    * 
@@ -139,7 +142,8 @@ public class OrganizationApi {
   }
 
   private GetOrganizationsMeRequest createGetOrganizationsMeRequest() {
-    return GetOrganizationsMeRequest.builder()            .build();
+    return GetOrganizationsMeRequest.builder()
+            .build();
   }
 
   /**
@@ -190,6 +194,7 @@ public class OrganizationApi {
     }
   }
 
+  
   /**
    * Update organization
    * 
@@ -218,8 +223,9 @@ public class OrganizationApi {
   private PatchOrganizationsFeatureRequest createPatchOrganizationsFeatureRequest(String featureName, FeatureState enabled) {
     return PatchOrganizationsFeatureRequest.builder()
             .withFeatureName(featureName)
-
+    
             .withEnabled(enabled)
+    
             .build();
   }
 
@@ -271,6 +277,7 @@ public class OrganizationApi {
     }
   }
 
+  
   /**
    * Update organization.
    * 
@@ -297,6 +304,7 @@ public class OrganizationApi {
   private PutOrganizationsMeRequest createPutOrganizationsMeRequest(Organization body) {
     return PutOrganizationsMeRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -348,4 +356,5 @@ public class OrganizationApi {
     }
   }
 
+  
 }

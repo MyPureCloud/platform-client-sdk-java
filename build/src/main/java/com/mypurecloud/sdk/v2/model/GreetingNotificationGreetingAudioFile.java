@@ -34,7 +34,7 @@ public class GreetingNotificationGreetingAudioFile  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
-
+  
   /**
    **/
   public GreetingNotificationGreetingAudioFile sizeBytes(Integer sizeBytes) {
@@ -51,6 +51,7 @@ public class GreetingNotificationGreetingAudioFile  implements Serializable {
     this.sizeBytes = sizeBytes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

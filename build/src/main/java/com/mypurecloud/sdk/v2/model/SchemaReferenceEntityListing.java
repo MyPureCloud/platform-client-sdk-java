@@ -46,7 +46,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public SchemaReferenceEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class SchemaReferenceEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

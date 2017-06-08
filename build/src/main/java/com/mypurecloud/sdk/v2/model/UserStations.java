@@ -38,7 +38,7 @@ public class UserStations  implements Serializable {
     this.associatedStation = associatedStation;
   }
 
-
+  
   /**
    * The station where the user can be reached based on their default and associated station.
    **/
@@ -56,7 +56,7 @@ public class UserStations  implements Serializable {
     this.effectiveStation = effectiveStation;
   }
 
-
+  
   /**
    * Default station to be used if not associated with a station.
    **/
@@ -74,7 +74,7 @@ public class UserStations  implements Serializable {
     this.defaultStation = defaultStation;
   }
 
-
+  
   /**
    * Last associated station for this user.
    **/
@@ -92,6 +92,7 @@ public class UserStations  implements Serializable {
     this.lastAssociatedStation = lastAssociatedStation;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

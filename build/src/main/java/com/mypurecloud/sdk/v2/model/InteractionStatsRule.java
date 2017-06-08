@@ -259,7 +259,7 @@ public class InteractionStatsRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -277,7 +277,7 @@ public class InteractionStatsRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The dimension of concern.
    **/
@@ -295,7 +295,7 @@ public class InteractionStatsRule  implements Serializable {
     this.dimension = dimension;
   }
 
-
+  
   /**
    * The value of the dimension.
    **/
@@ -313,7 +313,7 @@ public class InteractionStatsRule  implements Serializable {
     this.dimensionValue = dimensionValue;
   }
 
-
+  
   /**
    * The metric to be assessed.
    **/
@@ -331,7 +331,7 @@ public class InteractionStatsRule  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    * The media type.
    **/
@@ -349,7 +349,7 @@ public class InteractionStatsRule  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    * The comparison descriptor used against the metric's value.
    **/
@@ -367,7 +367,7 @@ public class InteractionStatsRule  implements Serializable {
     this.numericRange = numericRange;
   }
 
-
+  
   /**
    * The statistic of concern for the metric.
    **/
@@ -385,7 +385,7 @@ public class InteractionStatsRule  implements Serializable {
     this.statistic = statistic;
   }
 
-
+  
   /**
    * The threshold value.
    **/
@@ -403,7 +403,7 @@ public class InteractionStatsRule  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * Indicates if the rule is enabled.
    **/
@@ -421,14 +421,14 @@ public class InteractionStatsRule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Indicates if the rule is in alarm state.")
   @JsonProperty("inAlarm")
   public Boolean getInAlarm() {
     return inAlarm;
   }
 
-
+  
   /**
    * The ids of users who will be notified of alarm state change.
    **/
@@ -446,7 +446,7 @@ public class InteractionStatsRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -464,13 +464,14 @@ public class InteractionStatsRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesTrunkbasesettingsRequest {
+    
 	private TrunkBase body;
 	public TrunkBase getBody() {
 		return this.body;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +129,7 @@ public class PostTelephonyProvidersEdgesTrunkbasesettingsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/trunkbasesettings")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesTrunkbasesettingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(TrunkBase body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesTrunkbasesettingsRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesTrunkbasesettingsRequest {
 			request = new PostTelephonyProvidersEdgesTrunkbasesettingsRequest();
 		}
 
+		
 		public Builder withBody(TrunkBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(TrunkBase body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesTrunkbasesettingsRequest build() {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundContactlistContactRequest {
+    
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -74,6 +75,7 @@ public class DeleteOutboundContactlistContactRequest {
 	    return this;
 	}
 
+	
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -88,6 +90,7 @@ public class DeleteOutboundContactlistContactRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,7 +127,8 @@ public class DeleteOutboundContactlistContactRequest {
                 .withPathParameter("contactListId", contactListId)
         
                 .withPathParameter("contactId", contactId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -135,10 +139,12 @@ public class DeleteOutboundContactlistContactRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListId, String contactId) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, contactId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundContactlistContactRequest request;
@@ -147,20 +153,26 @@ public class DeleteOutboundContactlistContactRequest {
 			request = new DeleteOutboundContactlistContactRequest();
 		}
 
+		
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListId, String contactId) {
 			request.setContactListId(contactListId);
-			request.setContactId(contactId);
+						request.setContactId(contactId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundContactlistContactRequest build() {

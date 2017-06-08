@@ -48,6 +48,7 @@ public class NotificationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Remove all subscriptions
    * 
@@ -123,6 +124,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * Get available notification topics.
    * 
@@ -198,6 +200,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * The list of all subscriptions for this channel
    * 
@@ -273,6 +276,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * The list of existing channels
    * 
@@ -348,6 +352,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
@@ -423,6 +428,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
@@ -498,6 +504,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
   /**
    * Replace the current list of subscriptions with a new list.
    * 
@@ -573,6 +580,7 @@ public class NotificationsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

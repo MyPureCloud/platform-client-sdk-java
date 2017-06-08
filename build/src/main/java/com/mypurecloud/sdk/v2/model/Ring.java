@@ -38,7 +38,7 @@ public class Ring  implements Serializable {
     this.expansionCriteria = expansionCriteria;
   }
 
-
+  
   /**
    **/
   public Ring actions(Actions actions) {
@@ -55,6 +55,7 @@ public class Ring  implements Serializable {
     this.actions = actions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

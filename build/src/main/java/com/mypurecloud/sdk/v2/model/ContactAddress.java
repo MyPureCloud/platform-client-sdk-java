@@ -38,7 +38,7 @@ public class ContactAddress  implements Serializable {
     this.address1 = address1;
   }
 
-
+  
   /**
    **/
   public ContactAddress address2(String address2) {
@@ -55,7 +55,7 @@ public class ContactAddress  implements Serializable {
     this.address2 = address2;
   }
 
-
+  
   /**
    **/
   public ContactAddress city(String city) {
@@ -72,7 +72,7 @@ public class ContactAddress  implements Serializable {
     this.city = city;
   }
 
-
+  
   /**
    **/
   public ContactAddress state(String state) {
@@ -89,7 +89,7 @@ public class ContactAddress  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ContactAddress postalCode(String postalCode) {
@@ -106,7 +106,7 @@ public class ContactAddress  implements Serializable {
     this.postalCode = postalCode;
   }
 
-
+  
   /**
    **/
   public ContactAddress countryCode(String countryCode) {
@@ -123,6 +123,7 @@ public class ContactAddress  implements Serializable {
     this.countryCode = countryCode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

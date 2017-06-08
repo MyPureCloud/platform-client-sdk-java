@@ -39,7 +39,7 @@ public class UserPresenceNotification  implements Serializable {
     this.source = source;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotification presenceDefinition(UserPresenceNotificationPresenceDefinition presenceDefinition) {
@@ -56,7 +56,7 @@ public class UserPresenceNotification  implements Serializable {
     this.presenceDefinition = presenceDefinition;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotification primary(Boolean primary) {
@@ -73,7 +73,7 @@ public class UserPresenceNotification  implements Serializable {
     this.primary = primary;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotification message(String message) {
@@ -90,7 +90,7 @@ public class UserPresenceNotification  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotification modifiedDate(Date modifiedDate) {
@@ -107,6 +107,7 @@ public class UserPresenceNotification  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

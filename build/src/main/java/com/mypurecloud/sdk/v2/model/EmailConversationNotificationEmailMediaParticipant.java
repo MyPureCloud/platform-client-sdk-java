@@ -196,7 +196,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.id = id;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant name(String name) {
@@ -213,7 +213,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant address(String address) {
@@ -230,7 +230,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.address = address;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant startTime(Date startTime) {
@@ -247,7 +247,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant connectedTime(Date connectedTime) {
@@ -264,7 +264,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant endTime(Date endTime) {
@@ -281,7 +281,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant startHoldTime(Date startHoldTime) {
@@ -298,7 +298,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant purpose(String purpose) {
@@ -315,7 +315,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant state(StateEnum state) {
@@ -332,7 +332,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant direction(DirectionEnum direction) {
@@ -349,7 +349,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -366,7 +366,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant held(Boolean held) {
@@ -383,7 +383,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.held = held;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -400,7 +400,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -417,7 +417,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -434,7 +434,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.user = user;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant queue(EmailConversationNotificationUriReference queue) {
@@ -451,7 +451,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant attributes(Map<String, String> attributes) {
@@ -468,7 +468,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant errorInfo(EmailConversationNotificationErrorInfo errorInfo) {
@@ -485,7 +485,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant script(EmailConversationNotificationUriReference script) {
@@ -502,7 +502,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.script = script;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -519,7 +519,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -536,7 +536,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant provider(String provider) {
@@ -553,7 +553,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant externalContact(EmailConversationNotificationUriReference externalContact) {
@@ -570,7 +570,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant externalOrganization(EmailConversationNotificationUriReference externalOrganization) {
@@ -587,7 +587,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -604,7 +604,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant peer(String peer) {
@@ -621,7 +621,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant subject(String subject) {
@@ -638,7 +638,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.subject = subject;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant messagesSent(Integer messagesSent) {
@@ -655,7 +655,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.messagesSent = messagesSent;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationEmailMediaParticipant autoGenerated(Boolean autoGenerated) {
@@ -672,6 +672,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
     this.autoGenerated = autoGenerated;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

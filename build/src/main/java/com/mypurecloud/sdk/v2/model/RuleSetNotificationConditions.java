@@ -121,7 +121,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions inverted(Boolean inverted) {
@@ -138,7 +138,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.inverted = inverted;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions attributeName(String attributeName) {
@@ -155,7 +155,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.attributeName = attributeName;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions value(String value) {
@@ -172,7 +172,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions valueType(ValueTypeEnum valueType) {
@@ -189,7 +189,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.valueType = valueType;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions operator(OperatorEnum operator) {
@@ -206,7 +206,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions codes(List<String> codes) {
@@ -223,7 +223,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.codes = codes;
   }
 
-
+  
   /**
    **/
   public RuleSetNotificationConditions additionalProperties(Object additionalProperties) {
@@ -240,6 +240,7 @@ public class RuleSetNotificationConditions  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -28,7 +28,7 @@ public class SecurityProfile  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public SecurityProfile name(String name) {
@@ -45,7 +45,7 @@ public class SecurityProfile  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SecurityProfile permissions(List<String> permissions) {
@@ -62,13 +62,14 @@ public class SecurityProfile  implements Serializable {
     this.permissions = permissions;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

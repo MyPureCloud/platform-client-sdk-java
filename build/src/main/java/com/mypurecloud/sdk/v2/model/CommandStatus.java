@@ -112,7 +112,7 @@ public class CommandStatus  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CommandStatus name(String name) {
@@ -129,7 +129,7 @@ public class CommandStatus  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -147,7 +147,7 @@ public class CommandStatus  implements Serializable {
     this.expiration = expiration;
   }
 
-
+  
   /**
    **/
   public CommandStatus userId(String userId) {
@@ -164,7 +164,7 @@ public class CommandStatus  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public CommandStatus statusCode(StatusCodeEnum statusCode) {
@@ -181,7 +181,7 @@ public class CommandStatus  implements Serializable {
     this.statusCode = statusCode;
   }
 
-
+  
   /**
    **/
   public CommandStatus commandType(CommandTypeEnum commandType) {
@@ -198,7 +198,7 @@ public class CommandStatus  implements Serializable {
     this.commandType = commandType;
   }
 
-
+  
   /**
    **/
   public CommandStatus document(Document document) {
@@ -215,13 +215,14 @@ public class CommandStatus  implements Serializable {
     this.document = document;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

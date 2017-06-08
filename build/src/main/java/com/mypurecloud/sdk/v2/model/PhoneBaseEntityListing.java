@@ -46,7 +46,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.total = total;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public PhoneBaseEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class PhoneBaseEntityListing  implements Serializable, PagedResource<Phon
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

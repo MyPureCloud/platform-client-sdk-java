@@ -33,7 +33,7 @@ public class CallableTimeSet  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CallableTimeSet name(String name) {
@@ -50,21 +50,21 @@ public class CallableTimeSet  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -82,7 +82,7 @@ public class CallableTimeSet  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * list of time/timezone groupings for which it is acceptable to place outbound calls
    **/
@@ -100,13 +100,14 @@ public class CallableTimeSet  implements Serializable {
     this.callableTimes = callableTimes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class PutAnalyticsReportingScheduleRequest {
+    
 	private String scheduleId;
 	public String getScheduleId() {
 		return this.scheduleId;
@@ -54,6 +55,7 @@ public class PutAnalyticsReportingScheduleRequest {
 	    return this;
 	}
 
+	
 	private ReportSchedule body;
 	public ReportSchedule getBody() {
 		return this.body;
@@ -68,6 +70,7 @@ public class PutAnalyticsReportingScheduleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -104,6 +107,7 @@ public class PutAnalyticsReportingScheduleRequest {
                 .withPathParameter("scheduleId", scheduleId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -115,10 +119,12 @@ public class PutAnalyticsReportingScheduleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scheduleId, ReportSchedule body) {
 	    return new Builder()
 	            .withRequiredParams(scheduleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAnalyticsReportingScheduleRequest request;
@@ -127,20 +133,26 @@ public class PutAnalyticsReportingScheduleRequest {
 			request = new PutAnalyticsReportingScheduleRequest();
 		}
 
+		
 		public Builder withScheduleId(String scheduleId) {
 			request.setScheduleId(scheduleId);
 			return this;
 		}
+		
 		public Builder withBody(ReportSchedule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scheduleId, ReportSchedule body) {
 			request.setScheduleId(scheduleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAnalyticsReportingScheduleRequest build() {

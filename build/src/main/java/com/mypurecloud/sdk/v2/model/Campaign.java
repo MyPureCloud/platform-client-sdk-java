@@ -97,7 +97,7 @@ public class Campaign  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Campaign name(String name) {
@@ -114,21 +114,21 @@ public class Campaign  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -146,7 +146,7 @@ public class Campaign  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * identifier of the contact list for the campaign
    **/
@@ -164,7 +164,7 @@ public class Campaign  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    * identifier of the agent assignment queue, required for all dialing modes other than agentless
    **/
@@ -182,7 +182,7 @@ public class Campaign  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * dialing mode of the campaign
    **/
@@ -200,7 +200,7 @@ public class Campaign  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-
+  
   /**
    * identifier of the campaign script, required for all dialing modes other than agentless
    **/
@@ -218,7 +218,7 @@ public class Campaign  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    * identifier of the edge group, required for all dialing modes other than preview
    **/
@@ -236,7 +236,7 @@ public class Campaign  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   /**
    * status of the campaign; can be set to 'on' or 'off'
    **/
@@ -254,7 +254,7 @@ public class Campaign  implements Serializable {
     this.campaignStatus = campaignStatus;
   }
 
-
+  
   /**
    * the contact list phone columns to be called for the campaign
    **/
@@ -272,7 +272,7 @@ public class Campaign  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-
+  
   /**
    * the targeted abandon rate percentage
    **/
@@ -290,7 +290,7 @@ public class Campaign  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-
+  
   /**
    * identifiers of the do not call lists
    **/
@@ -308,7 +308,7 @@ public class Campaign  implements Serializable {
     this.dncLists = dncLists;
   }
 
-
+  
   /**
    * the identifier of the callable time set
    **/
@@ -326,7 +326,7 @@ public class Campaign  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-
+  
   /**
    * the identifier of the call analysis response set, required for all dialing modes other than preview
    **/
@@ -344,7 +344,7 @@ public class Campaign  implements Serializable {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
   }
 
-
+  
   /**
    * a list of current error conditions associated with the campaign
    **/
@@ -362,7 +362,7 @@ public class Campaign  implements Serializable {
     this.errors = errors;
   }
 
-
+  
   /**
    * caller id name to be displayed on the outbound call
    **/
@@ -380,7 +380,7 @@ public class Campaign  implements Serializable {
     this.callerName = callerName;
   }
 
-
+  
   /**
    * caller id phone number to be displayed on the outbound call
    **/
@@ -398,7 +398,7 @@ public class Campaign  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    * for agentless campaigns, the number of outbound lines to be concurrently dialed
    **/
@@ -416,7 +416,7 @@ public class Campaign  implements Serializable {
     this.outboundLineCount = outboundLineCount;
   }
 
-
+  
   /**
    * identifiers of the rule sets
    **/
@@ -434,7 +434,7 @@ public class Campaign  implements Serializable {
     this.ruleSets = ruleSets;
   }
 
-
+  
   /**
    * for preview campaigns, indicator of whether the agent can skip a preview without placing a call
    **/
@@ -452,7 +452,7 @@ public class Campaign  implements Serializable {
     this.skipPreviewDisabled = skipPreviewDisabled;
   }
 
-
+  
   /**
    * for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
    **/
@@ -470,7 +470,7 @@ public class Campaign  implements Serializable {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
   }
 
-
+  
   /**
    * information determining the order in which the contacts will be dialed
    **/
@@ -488,7 +488,7 @@ public class Campaign  implements Serializable {
     this.contactSort = contactSort;
   }
 
-
+  
   /**
    * column prioritized information determining the order in which the contacts will be dialed
    **/
@@ -506,7 +506,7 @@ public class Campaign  implements Serializable {
     this.contactSorts = contactSorts;
   }
 
-
+  
   /**
    * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
    **/
@@ -524,7 +524,7 @@ public class Campaign  implements Serializable {
     this.noAnswerTimeout = noAnswerTimeout;
   }
 
-
+  
   /**
    * The language the edge will use to analyse the call
    **/
@@ -542,7 +542,7 @@ public class Campaign  implements Serializable {
     this.callAnalysisLanguage = callAnalysisLanguage;
   }
 
-
+  
   /**
    * The priority of this campaign relative to other campaigns
    **/
@@ -560,7 +560,7 @@ public class Campaign  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * Filter defining a subset of contacts from the contact list to be dialed
    **/
@@ -578,13 +578,14 @@ public class Campaign  implements Serializable {
     this.contactListFilters = contactListFilters;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -35,7 +35,7 @@ public class AuditFacet  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The type of the facet, DATE or STRING.
    **/
@@ -53,6 +53,7 @@ public class AuditFacet  implements Serializable {
     this.type = type;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

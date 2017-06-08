@@ -39,6 +39,7 @@ public class ActivityCodeContainer  implements Serializable {
     this.activityCodes = activityCodes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

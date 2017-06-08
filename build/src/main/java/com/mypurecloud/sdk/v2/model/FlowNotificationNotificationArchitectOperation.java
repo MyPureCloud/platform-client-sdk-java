@@ -124,7 +124,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation complete(Boolean complete) {
@@ -141,7 +141,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.complete = complete;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation user(DependencyTrackingBuildNotificationNotificationUser user) {
@@ -158,7 +158,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.user = user;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation actionName(ActionNameEnum actionName) {
@@ -175,7 +175,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.actionName = actionName;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation actionStatus(ActionStatusEnum actionStatus) {
@@ -192,7 +192,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.actionStatus = actionStatus;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation errorMessage(String errorMessage) {
@@ -209,7 +209,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.errorMessage = errorMessage;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation errorCode(String errorCode) {
@@ -226,7 +226,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation errorMessageParams(PromptNotificationNotificationCurrentOperationErrorMessageParams errorMessageParams) {
@@ -243,7 +243,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.errorMessageParams = errorMessageParams;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotificationArchitectOperation errorDetails(List<PromptNotificationNotificationCurrentOperationErrorDetails> errorDetails) {
@@ -260,6 +260,7 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
     this.errorDetails = errorDetails;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

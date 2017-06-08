@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundContactlistRequest {
+    
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -74,6 +75,7 @@ public class PutOutboundContactlistRequest {
 	    return this;
 	}
 
+	
 	private ContactList body;
 	public ContactList getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundContactlistRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundContactlistRequest {
                 .withPathParameter("contactListId", contactListId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundContactlistRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListId, ContactList body) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundContactlistRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundContactlistRequest {
 			request = new PutOutboundContactlistRequest();
 		}
 
+		
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
+		
 		public Builder withBody(ContactList body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListId, ContactList body) {
 			request.setContactListId(contactListId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundContactlistRequest build() {

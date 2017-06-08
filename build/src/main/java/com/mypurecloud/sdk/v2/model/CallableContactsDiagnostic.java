@@ -40,7 +40,7 @@ public class CallableContactsDiagnostic  implements Serializable {
     this.attemptLimits = attemptLimits;
   }
 
-
+  
   /**
    * Do not call lists for the campaign
    **/
@@ -58,7 +58,7 @@ public class CallableContactsDiagnostic  implements Serializable {
     this.dncLists = dncLists;
   }
 
-
+  
   /**
    * Callable time sets for the campaign
    **/
@@ -76,7 +76,7 @@ public class CallableContactsDiagnostic  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-
+  
   /**
    * Rule sets for the campaign
    **/
@@ -94,6 +94,7 @@ public class CallableContactsDiagnostic  implements Serializable {
     this.ruleSets = ruleSets;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

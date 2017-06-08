@@ -111,7 +111,7 @@ public class Parameter  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Parameter parameterType(ParameterTypeEnum parameterType) {
@@ -128,7 +128,7 @@ public class Parameter  implements Serializable {
     this.parameterType = parameterType;
   }
 
-
+  
   /**
    **/
   public Parameter domain(DomainEnum domain) {
@@ -145,7 +145,7 @@ public class Parameter  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    **/
   public Parameter required(Boolean required) {
@@ -162,6 +162,7 @@ public class Parameter  implements Serializable {
     this.required = required;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

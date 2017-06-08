@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUserGeolocationRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class GetUserGeolocationRequest {
 	    return this;
 	}
 
+	
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -76,6 +78,7 @@ public class GetUserGeolocationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,7 +115,8 @@ public class GetUserGeolocationRequest {
                 .withPathParameter("userId", userId)
         
                 .withPathParameter("clientId", clientId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -123,10 +127,12 @@ public class GetUserGeolocationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String clientId) {
 	    return new Builder()
 	            .withRequiredParams(userId, clientId);
 	}
+	
 
 	public static class Builder {
 		private final GetUserGeolocationRequest request;
@@ -135,20 +141,26 @@ public class GetUserGeolocationRequest {
 			request = new GetUserGeolocationRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String clientId) {
 			request.setUserId(userId);
-			request.setClientId(clientId);
+						request.setClientId(clientId);
+			
 			return this;
 		}
+		
 
 
 		public GetUserGeolocationRequest build() {

@@ -41,6 +41,7 @@ public class AttributesApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete an existing Attribute.
    * This will remove attribute.
@@ -65,6 +66,7 @@ public class AttributesApi {
   private DeleteAttributeRequest createDeleteAttributeRequest(String attributeId) {
     return DeleteAttributeRequest.builder()
             .withAttributeId(attributeId)
+    
             .build();
   }
 
@@ -115,6 +117,7 @@ public class AttributesApi {
     }
   }
 
+  
   /**
    * Get details about an existing attribute.
    * 
@@ -141,6 +144,7 @@ public class AttributesApi {
   private GetAttributeRequest createGetAttributeRequest(String attributeId) {
     return GetAttributeRequest.builder()
             .withAttributeId(attributeId)
+    
             .build();
   }
 
@@ -192,6 +196,7 @@ public class AttributesApi {
     }
   }
 
+  
   /**
    * Gets a list of existing attributes.
    * 
@@ -220,8 +225,9 @@ public class AttributesApi {
   private GetAttributesRequest createGetAttributesRequest(Integer pageNumber, Integer pageSize) {
     return GetAttributesRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -273,6 +279,7 @@ public class AttributesApi {
     }
   }
 
+  
   /**
    * Create an attribute.
    * 
@@ -299,6 +306,7 @@ public class AttributesApi {
   private PostAttributesRequest createPostAttributesRequest(Attribute body) {
     return PostAttributesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -350,6 +358,7 @@ public class AttributesApi {
     }
   }
 
+  
   /**
    * Query attributes
    * 
@@ -376,6 +385,7 @@ public class AttributesApi {
   private PostAttributesQueryRequest createPostAttributesQueryRequest(AttributeQueryRequest body) {
     return PostAttributesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -427,6 +437,7 @@ public class AttributesApi {
     }
   }
 
+  
   /**
    * Update an existing attribute.
    * Fields that can be updated: name, description. The most recent version is required for updates.
@@ -455,8 +466,9 @@ public class AttributesApi {
   private PutAttributeRequest createPutAttributeRequest(String attributeId, Attribute body) {
     return PutAttributeRequest.builder()
             .withAttributeId(attributeId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -508,4 +520,5 @@ public class AttributesApi {
     }
   }
 
+  
 }

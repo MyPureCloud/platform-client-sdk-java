@@ -38,7 +38,7 @@ public class QuestionScore  implements Serializable {
     this.questionId = questionId;
   }
 
-
+  
   /**
    **/
   public QuestionScore answerId(String answerId) {
@@ -55,7 +55,7 @@ public class QuestionScore  implements Serializable {
     this.answerId = answerId;
   }
 
-
+  
   /**
    **/
   public QuestionScore score(Integer score) {
@@ -72,7 +72,7 @@ public class QuestionScore  implements Serializable {
     this.score = score;
   }
 
-
+  
   /**
    **/
   public QuestionScore markedNA(Boolean markedNA) {
@@ -89,7 +89,7 @@ public class QuestionScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-
+  
   /**
    **/
   public QuestionScore failedKillQuestion(Boolean failedKillQuestion) {
@@ -106,7 +106,7 @@ public class QuestionScore  implements Serializable {
     this.failedKillQuestion = failedKillQuestion;
   }
 
-
+  
   /**
    **/
   public QuestionScore comments(String comments) {
@@ -123,6 +123,7 @@ public class QuestionScore  implements Serializable {
     this.comments = comments;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

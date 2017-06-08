@@ -38,7 +38,7 @@ public class PhoneNumber  implements Serializable {
     this.display = display;
   }
 
-
+  
   /**
    **/
   public PhoneNumber extension(Long extension) {
@@ -55,7 +55,7 @@ public class PhoneNumber  implements Serializable {
     this.extension = extension;
   }
 
-
+  
   /**
    **/
   public PhoneNumber acceptsSMS(Boolean acceptsSMS) {
@@ -72,7 +72,7 @@ public class PhoneNumber  implements Serializable {
     this.acceptsSMS = acceptsSMS;
   }
 
-
+  
   /**
    **/
   public PhoneNumber userInput(String userInput) {
@@ -89,7 +89,7 @@ public class PhoneNumber  implements Serializable {
     this.userInput = userInput;
   }
 
-
+  
   /**
    **/
   public PhoneNumber e164(String e164) {
@@ -106,7 +106,7 @@ public class PhoneNumber  implements Serializable {
     this.e164 = e164;
   }
 
-
+  
   /**
    **/
   public PhoneNumber countryCode(String countryCode) {
@@ -123,6 +123,7 @@ public class PhoneNumber  implements Serializable {
     this.countryCode = countryCode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

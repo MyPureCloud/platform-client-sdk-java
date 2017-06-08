@@ -46,7 +46,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public RelationshipListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public RelationshipListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public RelationshipListing total(Long total) {
@@ -97,7 +97,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.total = total;
   }
 
-
+  
   /**
    **/
   public RelationshipListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public RelationshipListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public RelationshipListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public RelationshipListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public RelationshipListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public RelationshipListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

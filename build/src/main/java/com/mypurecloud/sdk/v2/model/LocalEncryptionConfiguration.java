@@ -28,7 +28,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public LocalEncryptionConfiguration name(String name) {
@@ -45,7 +45,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The url for decryption. This must specify the path to where Purecloud can requests decryption
    **/
@@ -63,7 +63,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.url = url;
   }
 
-
+  
   /**
    * The api id for Hawk Authentication.
    **/
@@ -81,7 +81,7 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.apiId = apiId;
   }
 
-
+  
   /**
    * The api shared symmetric key used for hawk authentication
    **/
@@ -99,13 +99,14 @@ public class LocalEncryptionConfiguration  implements Serializable {
     this.apiKey = apiKey;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

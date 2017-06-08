@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetUserrecordingMediaRequest {
+    
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -39,6 +40,7 @@ public class GetUserrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private String formatId;
 	public String getFormatId() {
 		return this.formatId;
@@ -53,6 +55,7 @@ public class GetUserrecordingMediaRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -84,7 +87,8 @@ public class GetUserrecordingMediaRequest {
                 .withPathParameter("recordingId", recordingId)
         
                 .withQueryParameters("formatId", "", formatId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -95,10 +99,12 @@ public class GetUserrecordingMediaRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String recordingId) {
 	    return new Builder()
 	            .withRequiredParams(recordingId);
 	}
+	
 
 	public static class Builder {
 		private final GetUserrecordingMediaRequest request;
@@ -107,19 +113,25 @@ public class GetUserrecordingMediaRequest {
 			request = new GetUserrecordingMediaRequest();
 		}
 
+		
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
+		
 		public Builder withFormatId(String formatId) {
 			request.setFormatId(formatId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String recordingId) {
 			request.setRecordingId(recordingId);
+			
 			return this;
 		}
+		
 
 
 		public GetUserrecordingMediaRequest build() {

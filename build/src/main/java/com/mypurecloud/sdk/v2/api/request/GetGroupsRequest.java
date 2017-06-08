@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class GetGroupsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -44,6 +45,7 @@ public class GetGroupsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -58,6 +60,7 @@ public class GetGroupsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -72,6 +75,7 @@ public class GetGroupsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -100,7 +104,8 @@ public class GetGroupsRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -111,6 +116,7 @@ public class GetGroupsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetGroupsRequest request;
@@ -119,19 +125,24 @@ public class GetGroupsRequest {
 			request = new GetGroupsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 
 
 		public GetGroupsRequest build() {

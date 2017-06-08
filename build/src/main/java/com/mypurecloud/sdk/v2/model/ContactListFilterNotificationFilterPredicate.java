@@ -119,7 +119,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.column = column;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate columnType(ColumnTypeEnum columnType) {
@@ -136,7 +136,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.columnType = columnType;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate operator(OperatorEnum operator) {
@@ -153,7 +153,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.operator = operator;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate value(String value) {
@@ -170,7 +170,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.value = value;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate range(ContactListFilterNotificationRange range) {
@@ -187,7 +187,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.range = range;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate inverted(Boolean inverted) {
@@ -204,7 +204,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.inverted = inverted;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationFilterPredicate additionalProperties(Object additionalProperties) {
@@ -221,6 +221,7 @@ public class ContactListFilterNotificationFilterPredicate  implements Serializab
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

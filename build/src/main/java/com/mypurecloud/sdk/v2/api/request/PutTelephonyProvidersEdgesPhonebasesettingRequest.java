@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
+    
 	private String phoneBaseId;
 	public String getPhoneBaseId() {
 		return this.phoneBaseId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
 	    return this;
 	}
 
+	
 	private PhoneBase body;
 	public PhoneBase getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
                 .withPathParameter("phoneBaseId", phoneBaseId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String phoneBaseId, PhoneBase body) {
 	    return new Builder()
 	            .withRequiredParams(phoneBaseId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesPhonebasesettingRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesPhonebasesettingRequest {
 			request = new PutTelephonyProvidersEdgesPhonebasesettingRequest();
 		}
 
+		
 		public Builder withPhoneBaseId(String phoneBaseId) {
 			request.setPhoneBaseId(phoneBaseId);
 			return this;
 		}
+		
 		public Builder withBody(PhoneBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String phoneBaseId, PhoneBase body) {
 			request.setPhoneBaseId(phoneBaseId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesPhonebasesettingRequest build() {

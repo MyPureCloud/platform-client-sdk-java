@@ -39,7 +39,7 @@ public class Change  implements Serializable {
     this.entity = entity;
   }
 
-
+  
   /**
    * The property that was changed
    **/
@@ -57,7 +57,7 @@ public class Change  implements Serializable {
     this.property = property;
   }
 
-
+  
   /**
    * The old values which were modified and/or removed by this action.
    **/
@@ -75,7 +75,7 @@ public class Change  implements Serializable {
     this.oldValues = oldValues;
   }
 
-
+  
   /**
    * The new values which were modified and/or added by this action.
    **/
@@ -93,6 +93,7 @@ public class Change  implements Serializable {
     this.newValues = newValues;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

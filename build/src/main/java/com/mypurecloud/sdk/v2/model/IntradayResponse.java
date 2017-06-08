@@ -82,7 +82,7 @@ public class IntradayResponse  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * The end of the date range for which this data applies. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -100,7 +100,7 @@ public class IntradayResponse  implements Serializable {
     this.endDate = endDate;
   }
 
-
+  
   /**
    * The aggregation period in minutes, which determines the interval duration of the returned data
    **/
@@ -118,7 +118,7 @@ public class IntradayResponse  implements Serializable {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-
+  
   /**
    * The total number of time intervals represented by this data
    **/
@@ -136,7 +136,7 @@ public class IntradayResponse  implements Serializable {
     this.numberOfIntervals = numberOfIntervals;
   }
 
-
+  
   /**
    * The metrics to which this data corresponds
    **/
@@ -154,7 +154,7 @@ public class IntradayResponse  implements Serializable {
     this.metrics = metrics;
   }
 
-
+  
   /**
    * If not null, the reason there was no data for the request
    **/
@@ -172,7 +172,7 @@ public class IntradayResponse  implements Serializable {
     this.noDataReason = noDataReason;
   }
 
-
+  
   /**
    * The IDs of the queues this data corresponds to
    **/
@@ -190,7 +190,7 @@ public class IntradayResponse  implements Serializable {
     this.queueIds = queueIds;
   }
 
-
+  
   /**
    * Intraday data grouped by a single media type and set of queue IDs
    **/
@@ -208,6 +208,7 @@ public class IntradayResponse  implements Serializable {
     this.intradayDataGroupings = intradayDataGroupings;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -40,7 +40,7 @@ public class AnalyticsUserDetail  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    * The presence records for the user
    **/
@@ -58,7 +58,7 @@ public class AnalyticsUserDetail  implements Serializable {
     this.primaryPresence = primaryPresence;
   }
 
-
+  
   /**
    * The ACD routing status records for the user
    **/
@@ -76,6 +76,7 @@ public class AnalyticsUserDetail  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

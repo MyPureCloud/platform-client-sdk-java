@@ -42,7 +42,7 @@ public class CreateUser  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CreateUser department(String department) {
@@ -59,7 +59,7 @@ public class CreateUser  implements Serializable {
     this.department = department;
   }
 
-
+  
   /**
    * User's email and username
    **/
@@ -77,7 +77,7 @@ public class CreateUser  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -95,7 +95,7 @@ public class CreateUser  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    **/
   public CreateUser title(String title) {
@@ -112,7 +112,7 @@ public class CreateUser  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    * User's password
    **/
@@ -130,6 +130,7 @@ public class CreateUser  implements Serializable {
     this.password = password;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

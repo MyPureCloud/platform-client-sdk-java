@@ -51,7 +51,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification name(String name) {
@@ -68,7 +68,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification dateCreated(Date dateCreated) {
@@ -85,7 +85,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification dateModified(Date dateModified) {
@@ -102,7 +102,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification workspace(DocumentDataV2NotificationWorkspace workspace) {
@@ -119,7 +119,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification createdBy(DocumentDataV2NotificationCreatedBy createdBy) {
@@ -136,7 +136,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification contentType(String contentType) {
@@ -153,7 +153,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification contentLength(Integer contentLength) {
@@ -170,7 +170,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification filename(String filename) {
@@ -187,7 +187,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.filename = filename;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification changeNumber(Integer changeNumber) {
@@ -204,7 +204,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification dateUploaded(Date dateUploaded) {
@@ -221,7 +221,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification uploadedBy(DocumentDataV2NotificationUserData uploadedBy) {
@@ -238,7 +238,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification lockInfo(DocumentDataV2NotificationLockInfo lockInfo) {
@@ -255,7 +255,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2Notification selfUri(String selfUri) {
@@ -272,6 +272,7 @@ public class DocumentDataV2Notification  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

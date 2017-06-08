@@ -57,6 +57,7 @@ public class GreetingsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Deletes a Greeting with the given GreetingId
    * 
@@ -132,6 +133,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Get a Greeting with the given GreetingId
    * 
@@ -207,6 +209,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Get media playback URI for this greeting
    * 
@@ -282,6 +285,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Gets an Organization&#39;s Greetings
    * 
@@ -357,6 +361,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Get an Organization&#39;s DefaultGreetingList
    * 
@@ -432,6 +437,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of the Group&#39;s Greetings
    * 
@@ -507,6 +513,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Grabs the list of Default Greetings given a Group&#39;s ID
    * 
@@ -582,6 +589,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of the User&#39;s Greetings
    * 
@@ -657,6 +665,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Grabs the list of Default Greetings given a User&#39;s ID
    * 
@@ -732,6 +741,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Create a Greeting for an Organization
    * 
@@ -807,6 +817,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Creates a Greeting for a Group
    * 
@@ -882,6 +893,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Creates a Greeting for a User
    * 
@@ -957,6 +969,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Updates the Greeting with the given GreetingId
    * 
@@ -1032,6 +1045,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Update an Organization&#39;s DefaultGreetingList
    * 
@@ -1107,6 +1121,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Updates the DefaultGreetingList of the specified Group
    * 
@@ -1182,6 +1197,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
   /**
    * Updates the DefaultGreetingList of the specified User
    * 
@@ -1257,6 +1273,7 @@ public class GreetingsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

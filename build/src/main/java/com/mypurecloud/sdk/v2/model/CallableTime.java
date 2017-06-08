@@ -38,7 +38,7 @@ public class CallableTime  implements Serializable {
     this.timeSlots = timeSlots;
   }
 
-
+  
   /**
    * time zone identifier to be applied to the time slots; for example Africa/Abidjan
    **/
@@ -56,6 +56,7 @@ public class CallableTime  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

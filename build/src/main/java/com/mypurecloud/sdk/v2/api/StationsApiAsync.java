@@ -41,6 +41,7 @@ public class StationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Unassigns the user assigned to this station
    * 
@@ -116,6 +117,7 @@ public class StationsApiAsync {
     }
   }
 
+  
   /**
    * Get station.
    * 
@@ -191,6 +193,7 @@ public class StationsApiAsync {
     }
   }
 
+  
   /**
    * Get the list of available stations.
    * 
@@ -266,6 +269,7 @@ public class StationsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

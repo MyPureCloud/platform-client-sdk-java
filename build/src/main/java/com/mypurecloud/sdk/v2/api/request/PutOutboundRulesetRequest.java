@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundRulesetRequest {
+    
 	private String ruleSetId;
 	public String getRuleSetId() {
 		return this.ruleSetId;
@@ -74,6 +75,7 @@ public class PutOutboundRulesetRequest {
 	    return this;
 	}
 
+	
 	private RuleSet body;
 	public RuleSet getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundRulesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundRulesetRequest {
                 .withPathParameter("ruleSetId", ruleSetId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundRulesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleSetId, RuleSet body) {
 	    return new Builder()
 	            .withRequiredParams(ruleSetId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundRulesetRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundRulesetRequest {
 			request = new PutOutboundRulesetRequest();
 		}
 
+		
 		public Builder withRuleSetId(String ruleSetId) {
 			request.setRuleSetId(ruleSetId);
 			return this;
 		}
+		
 		public Builder withBody(RuleSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleSetId, RuleSet body) {
 			request.setRuleSetId(ruleSetId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundRulesetRequest build() {

@@ -37,7 +37,7 @@ public class EmailMediaPolicy  implements Serializable {
     this.actions = actions;
   }
 
-
+  
   /**
    * Conditions for when actions should be applied
    **/
@@ -55,6 +55,7 @@ public class EmailMediaPolicy  implements Serializable {
     this.conditions = conditions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

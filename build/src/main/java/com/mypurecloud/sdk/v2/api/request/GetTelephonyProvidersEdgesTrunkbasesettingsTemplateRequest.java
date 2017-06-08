@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
+    
 	private String trunkMetabaseId;
 	public String getTrunkMetabaseId() {
 		return this.trunkMetabaseId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/trunkbasesettings/template")
                 .withQueryParameters("trunkMetabaseId", "", trunkMetabaseId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String trunkMetabaseId) {
 	    return new Builder()
 	            .withRequiredParams(trunkMetabaseId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest {
 			request = new GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest();
 		}
 
+		
 		public Builder withTrunkMetabaseId(String trunkMetabaseId) {
 			request.setTrunkMetabaseId(trunkMetabaseId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String trunkMetabaseId) {
 			request.setTrunkMetabaseId(trunkMetabaseId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest build() {

@@ -25,7 +25,7 @@ public class RunNowResponse  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public RunNowResponse name(String name) {
@@ -42,13 +42,14 @@ public class RunNowResponse  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

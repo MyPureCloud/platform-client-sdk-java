@@ -34,6 +34,7 @@ public class UnreadMetric  implements Serializable {
     this.count = count;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

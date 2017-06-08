@@ -73,7 +73,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.prefix = prefix;
   }
 
-
+  
   /**
    * The IPv4 or IPv6 nexthop IP address.
    **/
@@ -91,7 +91,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.nexthop = nexthop;
   }
 
-
+  
   /**
    * True if this route will persist on Edge restart.  Routes assigned by DHCP will be returned as false.
    **/
@@ -109,7 +109,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.persistent = persistent;
   }
 
-
+  
   /**
    * The metric being used for route. Lower values will have a higher priority.
    **/
@@ -127,7 +127,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    * The address family for this route.
    **/
@@ -145,6 +145,7 @@ public class DomainNetworkRoute  implements Serializable {
     this.family = family;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

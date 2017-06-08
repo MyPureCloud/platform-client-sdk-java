@@ -38,7 +38,7 @@ public class VmPairingInfo  implements Serializable {
     this.metaData = metaData;
   }
 
-
+  
   /**
    **/
   public VmPairingInfo edgeId(String edgeId) {
@@ -55,7 +55,7 @@ public class VmPairingInfo  implements Serializable {
     this.edgeId = edgeId;
   }
 
-
+  
   /**
    **/
   public VmPairingInfo authToken(String authToken) {
@@ -72,7 +72,7 @@ public class VmPairingInfo  implements Serializable {
     this.authToken = authToken;
   }
 
-
+  
   /**
    **/
   public VmPairingInfo orgId(String orgId) {
@@ -89,6 +89,7 @@ public class VmPairingInfo  implements Serializable {
     this.orgId = orgId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

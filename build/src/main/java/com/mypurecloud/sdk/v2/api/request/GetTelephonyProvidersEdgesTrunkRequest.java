@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesTrunkRequest {
+    
 	private String trunkId;
 	public String getTrunkId() {
 		return this.trunkId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesTrunkRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesTrunkRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/trunks/{trunkId}")
                 .withPathParameter("trunkId", trunkId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesTrunkRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String trunkId) {
 	    return new Builder()
 	            .withRequiredParams(trunkId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesTrunkRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesTrunkRequest {
 			request = new GetTelephonyProvidersEdgesTrunkRequest();
 		}
 
+		
 		public Builder withTrunkId(String trunkId) {
 			request.setTrunkId(trunkId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String trunkId) {
 			request.setTrunkId(trunkId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesTrunkRequest build() {

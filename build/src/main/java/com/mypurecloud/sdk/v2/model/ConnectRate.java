@@ -25,20 +25,21 @@ public class ConnectRate  implements Serializable {
     return attempts;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of calls with a live voice detected")
   @JsonProperty("connects")
   public Long getConnects() {
     return connects;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Ratio of connects to attempts")
   @JsonProperty("connectRatio")
   public Double getConnectRatio() {
     return connectRatio;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

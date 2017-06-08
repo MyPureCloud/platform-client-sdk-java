@@ -88,6 +88,7 @@ public class AlertingApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a heart beat alert
    * 
@@ -163,6 +164,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete a heart beat rule.
    * 
@@ -238,6 +240,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete an interaction stats alert
    * 
@@ -313,6 +316,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete an interaction stats rule.
    * 
@@ -388,6 +392,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete a routing status alert
    * 
@@ -463,6 +468,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete a routing status rule.
    * 
@@ -538,6 +544,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete a user presence alert
    * 
@@ -613,6 +620,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Delete a user presence rule.
    * 
@@ -688,6 +696,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a heart beat alert
    * 
@@ -763,6 +772,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get heart beat alert list.
    * 
@@ -838,6 +848,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a heart beat rule.
    * 
@@ -913,6 +924,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a heart beat rule list.
    * 
@@ -988,6 +1000,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get an interaction stats alert
    * 
@@ -1063,6 +1076,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get interaction stats alert list.
    * 
@@ -1138,6 +1152,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Gets user unread count of interaction stats alerts.
    * 
@@ -1213,6 +1228,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get an interaction stats rule.
    * 
@@ -1288,6 +1304,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get an interaction stats rule list.
    * 
@@ -1363,6 +1380,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a routing status alert
    * 
@@ -1438,6 +1456,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get routing status alert list.
    * 
@@ -1513,6 +1532,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a routing status rule.
    * 
@@ -1588,6 +1608,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a routing status rule list.
    * 
@@ -1663,6 +1684,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a user presence alert
    * 
@@ -1738,6 +1760,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get user presence alert list.
    * 
@@ -1813,6 +1836,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a user presence rule.
    * 
@@ -1888,6 +1912,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Get a user presence rule list.
    * 
@@ -1963,6 +1988,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Create a heart beat rule.
    * 
@@ -2038,6 +2064,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Create an interaction stats rule.
    * 
@@ -2113,6 +2140,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Create a routing status rule.
    * 
@@ -2188,6 +2216,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Create a user presence rule.
    * 
@@ -2263,6 +2292,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Update a heart beat rule
    * 
@@ -2338,6 +2368,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Update an interaction stats alert read status
    * 
@@ -2413,6 +2444,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Update an interaction stats rule
    * 
@@ -2488,6 +2520,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Update a routing status rule
    * 
@@ -2563,6 +2596,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
   /**
    * Update a user presence rule
    * 
@@ -2638,6 +2672,7 @@ public class AlertingApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class DeleteAuthorizationRoleRequest {
+    
 	private String roleId;
 	public String getRoleId() {
 		return this.roleId;
@@ -43,6 +44,7 @@ public class DeleteAuthorizationRoleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +74,8 @@ public class DeleteAuthorizationRoleRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/authorization/roles/{roleId}")
                 .withPathParameter("roleId", roleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -83,10 +86,12 @@ public class DeleteAuthorizationRoleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String roleId) {
 	    return new Builder()
 	            .withRequiredParams(roleId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteAuthorizationRoleRequest request;
@@ -95,15 +100,20 @@ public class DeleteAuthorizationRoleRequest {
 			request = new DeleteAuthorizationRoleRequest();
 		}
 
+		
 		public Builder withRoleId(String roleId) {
 			request.setRoleId(roleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String roleId) {
 			request.setRoleId(roleId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteAuthorizationRoleRequest build() {

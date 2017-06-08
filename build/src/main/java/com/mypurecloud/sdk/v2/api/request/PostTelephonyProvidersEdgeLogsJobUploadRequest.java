@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	    return this;
 	}
 
+	
 	private String jobId;
 	public String getJobId() {
 		return this.jobId;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	    return this;
 	}
 
+	
 	private EdgeLogsJobUploadRequest body;
 	public EdgeLogsJobUploadRequest getBody() {
 		return this.body;
@@ -126,6 +129,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +173,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
                 .withPathParameter("jobId", jobId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -180,10 +185,12 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String jobId, EdgeLogsJobUploadRequest body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, jobId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgeLogsJobUploadRequest request;
@@ -192,25 +199,32 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 			request = new PostTelephonyProvidersEdgeLogsJobUploadRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withJobId(String jobId) {
 			request.setJobId(jobId);
 			return this;
 		}
+		
 		public Builder withBody(EdgeLogsJobUploadRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String jobId, EdgeLogsJobUploadRequest body) {
 			request.setEdgeId(edgeId);
-			request.setJobId(jobId);
-			request.setBody(body);
+						request.setJobId(jobId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgeLogsJobUploadRequest build() {

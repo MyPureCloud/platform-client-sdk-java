@@ -230,8 +230,8 @@ try {
 | **name** | **String**| Name filter | [optional] |
 | **feature** | **String**| Feature filter | [optional] |
 | **flowId** | **String**| Secure flow id filter | [optional] |
-| **sortBy** | **String**| SortBy | [optional] [enum: modifiedDate, createdDate] |
-| **sortOrder** | **String**| SortOrder | [optional] [enum: ascending, descending] |
+| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate |
+| **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type

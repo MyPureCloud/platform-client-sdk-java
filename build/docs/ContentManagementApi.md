@@ -401,7 +401,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: lockInfo, acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
@@ -518,8 +518,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | |
-| **disposition** | **String**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] [enum: attachment, inline] |
-| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional] |
+| **disposition** | **String**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional]<br />**Values**: attachment, inline |
+| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -578,7 +578,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
 | **name** | **String**| Name | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl, workspace |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| name or dateCreated | [optional] |
@@ -643,7 +643,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| name or dateCreated | [optional] [default to name] |
 | **sortOrder** | **String**| ascending or descending | [optional] [default to ascending] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
@@ -794,7 +794,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shareId** | **String**| Share ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
@@ -851,9 +851,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **sharedId** | **String**| Shared ID | |
 | **redirect** | **Boolean**| Turn on or off redirect | [optional] [default to true] |
-| **disposition** | **String**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment] [enum: attachment, inline, none] |
-| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional] |
-| **expand** | **String**| Expand some document fields | [optional] [enum: document.acl] |
+| **disposition** | **String**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to attachment]<br />**Values**: attachment, inline, none |
+| **contentType** | **String**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav | [optional] |
+| **expand** | **String**| Expand some document fields | [optional]<br />**Values**: document.acl |
 {: class="table table-striped"}
 
 ### Return type
@@ -908,7 +908,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **entityId** | **String**| Filters the shares returned to only the entity specified by the value of this parameter. | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: member |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -1114,7 +1114,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: summary, acl |
 {: class="table table-striped"}
 
 ### Return type
@@ -1171,7 +1171,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl, workspace |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| name or dateCreated | [optional] |
@@ -1230,7 +1230,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
 | **memberId** | **String**| Member ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
@@ -1287,7 +1287,7 @@ try {
 | **workspaceId** | **String**| Workspace ID | |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: member |
 {: class="table table-striped"}
 
 ### Return type
@@ -1342,7 +1342,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
 | **tagId** | **String**| Tag ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type
@@ -1401,7 +1401,7 @@ try {
 | **value** | **String**| filter the list of tags returned | [optional] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type
@@ -1457,8 +1457,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **access** | [**List&lt;String&gt;**](String.html)| Requested access level. | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **access** | [**List&lt;String&gt;**](String.html)| Requested access level. | [optional]<br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: summary, acl |
 {: class="table table-striped"}
 
 ### Return type
@@ -1565,7 +1565,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | |
 | **body** | [**DocumentUpdate**](DocumentUpdate.html)| Document | |
-| **expand** | **String**| Expand some document fields | [optional] [enum: acl] |
+| **expand** | **String**| Expand some document fields | [optional]<br />**Values**: acl |
 | **override** | **Boolean**| Override any lock on the document | [optional] |
 {: class="table table-striped"}
 
@@ -1731,7 +1731,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**QueryRequest**](QueryRequest.html)| Allows for a filtered query returning facet information | |
-| **expand** | **String**| Expand some document fields | [optional] [enum: acl, workspace] |
+| **expand** | **String**| Expand some document fields | [optional]<br />**Values**: acl, workspace |
 {: class="table table-striped"}
 
 ### Return type
@@ -1890,7 +1890,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **workspaceId** | **String**| Workspace ID | |
 | **body** | [**TagQueryRequest**](TagQueryRequest.html)| query | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: acl |
 {: class="table table-striped"}
 
 ### Return type

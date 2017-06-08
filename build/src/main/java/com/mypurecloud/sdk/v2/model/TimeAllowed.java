@@ -38,7 +38,7 @@ public class TimeAllowed  implements Serializable {
     this.timeSlots = timeSlots;
   }
 
-
+  
   /**
    **/
   public TimeAllowed timeZoneId(String timeZoneId) {
@@ -55,7 +55,7 @@ public class TimeAllowed  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-
+  
   /**
    **/
   public TimeAllowed empty(Boolean empty) {
@@ -72,6 +72,7 @@ public class TimeAllowed  implements Serializable {
     this.empty = empty;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

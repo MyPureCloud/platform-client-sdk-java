@@ -44,6 +44,7 @@ public class LocationsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get Location by ID.
    * 
@@ -119,6 +120,7 @@ public class LocationsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of all locations.
    * 
@@ -194,6 +196,7 @@ public class LocationsApiAsync {
     }
   }
 
+  
   /**
    * Search locations using the q64 value returned from a previous search
    * 
@@ -269,6 +272,7 @@ public class LocationsApiAsync {
     }
   }
 
+  
   /**
    * Search locations
    * 
@@ -344,6 +348,7 @@ public class LocationsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

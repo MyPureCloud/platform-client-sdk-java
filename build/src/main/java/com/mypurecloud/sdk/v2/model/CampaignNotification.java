@@ -147,7 +147,7 @@ public class CampaignNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignNotification name(String name) {
@@ -164,7 +164,7 @@ public class CampaignNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CampaignNotification dateCreated(Date dateCreated) {
@@ -181,7 +181,7 @@ public class CampaignNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public CampaignNotification dateModified(Date dateModified) {
@@ -198,7 +198,7 @@ public class CampaignNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public CampaignNotification version(Integer version) {
@@ -215,7 +215,7 @@ public class CampaignNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public CampaignNotification contactList(DocumentDataV2NotificationCreatedBy contactList) {
@@ -232,7 +232,7 @@ public class CampaignNotification  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    **/
   public CampaignNotification queue(CampaignNotificationUriReference queue) {
@@ -249,7 +249,7 @@ public class CampaignNotification  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CampaignNotification dialingMode(DialingModeEnum dialingMode) {
@@ -266,7 +266,7 @@ public class CampaignNotification  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-
+  
   /**
    **/
   public CampaignNotification script(CampaignNotificationUriReference script) {
@@ -283,7 +283,7 @@ public class CampaignNotification  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CampaignNotification edgeGroup(CampaignNotificationUriReference edgeGroup) {
@@ -300,7 +300,7 @@ public class CampaignNotification  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   /**
    **/
   public CampaignNotification campaignStatus(CampaignStatusEnum campaignStatus) {
@@ -317,7 +317,7 @@ public class CampaignNotification  implements Serializable {
     this.campaignStatus = campaignStatus;
   }
 
-
+  
   /**
    **/
   public CampaignNotification phoneColumns(List<CampaignNotificationPhoneColumns> phoneColumns) {
@@ -334,7 +334,7 @@ public class CampaignNotification  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-
+  
   /**
    **/
   public CampaignNotification abandonRate(BigDecimal abandonRate) {
@@ -351,7 +351,7 @@ public class CampaignNotification  implements Serializable {
     this.abandonRate = abandonRate;
   }
 
-
+  
   /**
    **/
   public CampaignNotification dncLists(List<CampaignNotificationUriReference> dncLists) {
@@ -368,7 +368,7 @@ public class CampaignNotification  implements Serializable {
     this.dncLists = dncLists;
   }
 
-
+  
   /**
    **/
   public CampaignNotification callableTimeSet(CampaignNotificationUriReference callableTimeSet) {
@@ -385,7 +385,7 @@ public class CampaignNotification  implements Serializable {
     this.callableTimeSet = callableTimeSet;
   }
 
-
+  
   /**
    **/
   public CampaignNotification callAnalysisResponseSet(CampaignNotificationUriReference callAnalysisResponseSet) {
@@ -402,7 +402,7 @@ public class CampaignNotification  implements Serializable {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
   }
 
-
+  
   /**
    **/
   public CampaignNotification callerName(String callerName) {
@@ -419,7 +419,7 @@ public class CampaignNotification  implements Serializable {
     this.callerName = callerName;
   }
 
-
+  
   /**
    **/
   public CampaignNotification callerAddress(String callerAddress) {
@@ -436,7 +436,7 @@ public class CampaignNotification  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    **/
   public CampaignNotification outboundLineCount(Integer outboundLineCount) {
@@ -453,7 +453,7 @@ public class CampaignNotification  implements Serializable {
     this.outboundLineCount = outboundLineCount;
   }
 
-
+  
   /**
    **/
   public CampaignNotification errors(List<CampaignNotificationErrors> errors) {
@@ -470,7 +470,7 @@ public class CampaignNotification  implements Serializable {
     this.errors = errors;
   }
 
-
+  
   /**
    **/
   public CampaignNotification ruleSets(List<CampaignNotificationUriReference> ruleSets) {
@@ -487,7 +487,7 @@ public class CampaignNotification  implements Serializable {
     this.ruleSets = ruleSets;
   }
 
-
+  
   /**
    **/
   public CampaignNotification skipPreviewDisabled(Boolean skipPreviewDisabled) {
@@ -504,7 +504,7 @@ public class CampaignNotification  implements Serializable {
     this.skipPreviewDisabled = skipPreviewDisabled;
   }
 
-
+  
   /**
    **/
   public CampaignNotification previewTimeOutSeconds(Integer previewTimeOutSeconds) {
@@ -521,7 +521,7 @@ public class CampaignNotification  implements Serializable {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
   }
 
-
+  
   /**
    **/
   public CampaignNotification singleNumberPreview(Boolean singleNumberPreview) {
@@ -538,7 +538,7 @@ public class CampaignNotification  implements Serializable {
     this.singleNumberPreview = singleNumberPreview;
   }
 
-
+  
   /**
    **/
   public CampaignNotification contactSort(CampaignNotificationContactSort contactSort) {
@@ -555,7 +555,7 @@ public class CampaignNotification  implements Serializable {
     this.contactSort = contactSort;
   }
 
-
+  
   /**
    **/
   public CampaignNotification contactSorts(List<CampaignNotificationContactSort> contactSorts) {
@@ -572,7 +572,7 @@ public class CampaignNotification  implements Serializable {
     this.contactSorts = contactSorts;
   }
 
-
+  
   /**
    **/
   public CampaignNotification noAnswerTimeout(Integer noAnswerTimeout) {
@@ -589,7 +589,7 @@ public class CampaignNotification  implements Serializable {
     this.noAnswerTimeout = noAnswerTimeout;
   }
 
-
+  
   /**
    **/
   public CampaignNotification callAnalysisLanguage(String callAnalysisLanguage) {
@@ -606,7 +606,7 @@ public class CampaignNotification  implements Serializable {
     this.callAnalysisLanguage = callAnalysisLanguage;
   }
 
-
+  
   /**
    **/
   public CampaignNotification priority(Integer priority) {
@@ -623,7 +623,7 @@ public class CampaignNotification  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    **/
   public CampaignNotification contactListFilters(List<CampaignNotificationUriReference> contactListFilters) {
@@ -640,7 +640,7 @@ public class CampaignNotification  implements Serializable {
     this.contactListFilters = contactListFilters;
   }
 
-
+  
   /**
    **/
   public CampaignNotification additionalProperties(Object additionalProperties) {
@@ -657,6 +657,7 @@ public class CampaignNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

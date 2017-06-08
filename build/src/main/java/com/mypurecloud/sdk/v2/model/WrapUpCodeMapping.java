@@ -69,7 +69,7 @@ public class WrapUpCodeMapping  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMapping name(String name) {
@@ -86,21 +86,21 @@ public class WrapUpCodeMapping  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -118,7 +118,7 @@ public class WrapUpCodeMapping  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * The default set of wrapup values
    **/
@@ -136,7 +136,7 @@ public class WrapUpCodeMapping  implements Serializable {
     this.defaultSet = defaultSet;
   }
 
-
+  
   /**
    * A map from wrapup code identifiers to a set of wrapup values
    **/
@@ -154,13 +154,14 @@ public class WrapUpCodeMapping  implements Serializable {
     this.mapping = mapping;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

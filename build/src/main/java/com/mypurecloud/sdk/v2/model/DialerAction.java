@@ -152,7 +152,7 @@ public class DialerAction  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Identifier of the action
    **/
@@ -170,7 +170,7 @@ public class DialerAction  implements Serializable {
     this.actionTypeName = actionTypeName;
   }
 
-
+  
   /**
    * Indicator of the type of update action (applicable only to certain types of actions)
    **/
@@ -188,7 +188,7 @@ public class DialerAction  implements Serializable {
     this.updateOption = updateOption;
   }
 
-
+  
   /**
    * Map of key-value pairs pertinent to the action (different actions require different properties)
    **/
@@ -206,6 +206,7 @@ public class DialerAction  implements Serializable {
     this.properties = properties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

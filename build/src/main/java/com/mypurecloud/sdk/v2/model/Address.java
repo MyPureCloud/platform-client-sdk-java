@@ -38,7 +38,7 @@ public class Address  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The name as close to the bits on the wire as possible.
    **/
@@ -56,7 +56,7 @@ public class Address  implements Serializable {
     this.nameRaw = nameRaw;
   }
 
-
+  
   /**
    * The normalized address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
@@ -74,7 +74,7 @@ public class Address  implements Serializable {
     this.addressNormalized = addressNormalized;
   }
 
-
+  
   /**
    * The address as close to the bits on the wire as possible.
    **/
@@ -92,7 +92,7 @@ public class Address  implements Serializable {
     this.addressRaw = addressRaw;
   }
 
-
+  
   /**
    * The displayable address. This field is acquired from the Address Normalization Table.  The addressRaw could have gone through some transformations, such as only using the numeric portion, before being run through the Address Normalization Table.
    **/
@@ -110,6 +110,7 @@ public class Address  implements Serializable {
     this.addressDisplayable = addressDisplayable;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

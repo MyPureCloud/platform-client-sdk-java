@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingTypesRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingTypesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingTypesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -96,7 +99,8 @@ public class GetArchitectDependencytrackingTypesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -107,6 +111,7 @@ public class GetArchitectDependencytrackingTypesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingTypesRequest request;
@@ -115,15 +120,19 @@ public class GetArchitectDependencytrackingTypesRequest {
 			request = new GetArchitectDependencytrackingTypesRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 
+		
 
 
 		public GetArchitectDependencytrackingTypesRequest build() {

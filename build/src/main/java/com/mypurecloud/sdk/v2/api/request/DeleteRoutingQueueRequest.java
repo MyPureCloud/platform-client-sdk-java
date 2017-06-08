@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingQueueRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class DeleteRoutingQueueRequest {
 	    return this;
 	}
 
+	
 	private Boolean forceDelete;
 	public Boolean getForceDelete() {
 		return this.forceDelete;
@@ -72,6 +74,7 @@ public class DeleteRoutingQueueRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +106,8 @@ public class DeleteRoutingQueueRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withQueryParameters("forceDelete", "", forceDelete)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +118,12 @@ public class DeleteRoutingQueueRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId) {
 	    return new Builder()
 	            .withRequiredParams(queueId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRoutingQueueRequest request;
@@ -126,19 +132,25 @@ public class DeleteRoutingQueueRequest {
 			request = new DeleteRoutingQueueRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withForceDelete(Boolean forceDelete) {
 			request.setForceDelete(forceDelete);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId) {
 			request.setQueueId(queueId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRoutingQueueRequest build() {

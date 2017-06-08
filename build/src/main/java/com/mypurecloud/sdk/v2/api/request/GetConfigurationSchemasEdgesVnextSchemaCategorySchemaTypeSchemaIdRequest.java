@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest {
+    
 	private String schemaCategory;
 	public String getSchemaCategory() {
 		return this.schemaCategory;
@@ -98,6 +99,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	    return this;
 	}
 
+	
 	private String schemaType;
 	public String getSchemaType() {
 		return this.schemaType;
@@ -112,6 +114,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	    return this;
 	}
 
+	
 	private String schemaId;
 	public String getSchemaId() {
 		return this.schemaId;
@@ -126,6 +129,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,7 +173,8 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
                 .withPathParameter("schemaType", schemaType)
         
                 .withPathParameter("schemaId", schemaId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -180,10 +185,12 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String schemaCategory, String schemaType, String schemaId) {
 	    return new Builder()
 	            .withRequiredParams(schemaCategory, schemaType, schemaId);
 	}
+	
 
 	public static class Builder {
 		private final GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest request;
@@ -192,25 +199,32 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 			request = new GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest();
 		}
 
+		
 		public Builder withSchemaCategory(String schemaCategory) {
 			request.setSchemaCategory(schemaCategory);
 			return this;
 		}
+		
 		public Builder withSchemaType(String schemaType) {
 			request.setSchemaType(schemaType);
 			return this;
 		}
+		
 		public Builder withSchemaId(String schemaId) {
 			request.setSchemaId(schemaId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String schemaCategory, String schemaType, String schemaId) {
 			request.setSchemaCategory(schemaCategory);
-			request.setSchemaType(schemaType);
-			request.setSchemaId(schemaId);
+						request.setSchemaType(schemaType);
+						request.setSchemaId(schemaId);
+			
 			return this;
 		}
+		
 
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest build() {

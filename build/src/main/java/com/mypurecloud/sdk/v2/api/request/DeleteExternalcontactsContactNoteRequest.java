@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsContactNoteRequest {
+    
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -45,6 +46,7 @@ public class DeleteExternalcontactsContactNoteRequest {
 	    return this;
 	}
 
+	
 	private String noteId;
 	public String getNoteId() {
 		return this.noteId;
@@ -59,6 +61,7 @@ public class DeleteExternalcontactsContactNoteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,7 +98,8 @@ public class DeleteExternalcontactsContactNoteRequest {
                 .withPathParameter("contactId", contactId)
         
                 .withPathParameter("noteId", noteId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -106,10 +110,12 @@ public class DeleteExternalcontactsContactNoteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactId, String noteId) {
 	    return new Builder()
 	            .withRequiredParams(contactId, noteId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteExternalcontactsContactNoteRequest request;
@@ -118,20 +124,26 @@ public class DeleteExternalcontactsContactNoteRequest {
 			request = new DeleteExternalcontactsContactNoteRequest();
 		}
 
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withNoteId(String noteId) {
 			request.setNoteId(noteId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactId, String noteId) {
 			request.setContactId(contactId);
-			request.setNoteId(noteId);
+						request.setNoteId(noteId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteExternalcontactsContactNoteRequest build() {

@@ -46,7 +46,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing total(Long total) {
@@ -97,7 +97,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ReportRunEntryEntityDomainListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ReportRunEntryEntityDomainListing  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

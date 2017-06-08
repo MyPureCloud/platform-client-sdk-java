@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersSalesforceRequest {
+    
 	private Salesforce body;
 	public Salesforce getBody() {
 		return this.body;
@@ -47,6 +48,7 @@ public class PutIdentityprovidersSalesforceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,6 +78,7 @@ public class PutIdentityprovidersSalesforceRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/salesforce")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,10 +90,12 @@ public class PutIdentityprovidersSalesforceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Salesforce body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutIdentityprovidersSalesforceRequest request;
@@ -99,15 +104,20 @@ public class PutIdentityprovidersSalesforceRequest {
 			request = new PutIdentityprovidersSalesforceRequest();
 		}
 
+		
 		public Builder withBody(Salesforce body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Salesforce body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutIdentityprovidersSalesforceRequest build() {

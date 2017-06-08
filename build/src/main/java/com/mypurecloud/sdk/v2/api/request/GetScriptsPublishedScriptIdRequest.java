@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsPublishedScriptIdRequest {
+    
 	private String scriptId;
 	public String getScriptId() {
 		return this.scriptId;
@@ -38,6 +39,7 @@ public class GetScriptsPublishedScriptIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,7 +69,8 @@ public class GetScriptsPublishedScriptIdRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published/{scriptId}")
                 .withPathParameter("scriptId", scriptId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -78,10 +81,12 @@ public class GetScriptsPublishedScriptIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scriptId) {
 	    return new Builder()
 	            .withRequiredParams(scriptId);
 	}
+	
 
 	public static class Builder {
 		private final GetScriptsPublishedScriptIdRequest request;
@@ -90,15 +95,20 @@ public class GetScriptsPublishedScriptIdRequest {
 			request = new GetScriptsPublishedScriptIdRequest();
 		}
 
+		
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scriptId) {
 			request.setScriptId(scriptId);
+			
 			return this;
 		}
+		
 
 
 		public GetScriptsPublishedScriptIdRequest build() {

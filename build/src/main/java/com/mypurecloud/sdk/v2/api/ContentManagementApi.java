@@ -99,6 +99,7 @@ public class ContentManagementApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a document.
    * 
@@ -125,8 +126,9 @@ public class ContentManagementApi {
   private DeleteContentmanagementDocumentRequest createDeleteContentmanagementDocumentRequest(String documentId, Boolean override) {
     return DeleteContentmanagementDocumentRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withOverride(override)
+    
             .build();
   }
 
@@ -177,6 +179,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Deletes an existing share.
    * This revokes sharing rights specified in the share record
@@ -201,6 +204,7 @@ public class ContentManagementApi {
   private DeleteContentmanagementShareRequest createDeleteContentmanagementShareRequest(String shareId) {
     return DeleteContentmanagementShareRequest.builder()
             .withShareId(shareId)
+    
             .build();
   }
 
@@ -251,6 +255,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Cancel the command for this status
    * 
@@ -275,6 +280,7 @@ public class ContentManagementApi {
   private DeleteContentmanagementStatusStatusIdRequest createDeleteContentmanagementStatusStatusIdRequest(String statusId) {
     return DeleteContentmanagementStatusStatusIdRequest.builder()
             .withStatusId(statusId)
+    
             .build();
   }
 
@@ -325,6 +331,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Delete a workspace
    * 
@@ -351,8 +358,9 @@ public class ContentManagementApi {
   private DeleteContentmanagementWorkspaceRequest createDeleteContentmanagementWorkspaceRequest(String workspaceId, String moveChildrenToWorkspaceId) {
     return DeleteContentmanagementWorkspaceRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withMoveChildrenToWorkspaceId(moveChildrenToWorkspaceId)
+    
             .build();
   }
 
@@ -403,6 +411,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Delete a member from a workspace
    * 
@@ -429,8 +438,9 @@ public class ContentManagementApi {
   private DeleteContentmanagementWorkspaceMemberRequest createDeleteContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId) {
     return DeleteContentmanagementWorkspaceMemberRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withMemberId(memberId)
+    
             .build();
   }
 
@@ -481,6 +491,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Delete workspace tag
    * Delete a tag from a workspace. Will remove this tag from all documents.
@@ -507,8 +518,9 @@ public class ContentManagementApi {
   private DeleteContentmanagementWorkspaceTagvalueRequest createDeleteContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId) {
     return DeleteContentmanagementWorkspaceTagvalueRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withTagId(tagId)
+    
             .build();
   }
 
@@ -559,6 +571,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a document.
    * 
@@ -587,8 +600,9 @@ public class ContentManagementApi {
   private GetContentmanagementDocumentRequest createGetContentmanagementDocumentRequest(String documentId, List<String> expand) {
     return GetContentmanagementDocumentRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -640,6 +654,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of audits for a document.
    * 
@@ -678,18 +693,19 @@ public class ContentManagementApi {
   private GetContentmanagementDocumentAuditsRequest createGetContentmanagementDocumentAuditsRequest(String documentId, Integer pageSize, Integer pageNumber, String transactionFilter, String level, String sortBy, String sortOrder) {
     return GetContentmanagementDocumentAuditsRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withTransactionFilter(transactionFilter)
-
+    
             .withLevel(level)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -741,12 +757,13 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Download a document.
    * 
    * @param documentId Document ID (required)
    * @param disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment. (optional)
-   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
+   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @return DownloadResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -760,7 +777,7 @@ public class ContentManagementApi {
    * 
    * @param documentId Document ID (required)
    * @param disposition Request how the content will be downloaded: a file attachment or inline. Default is attachment. (optional)
-   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
+   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @return DownloadResponse
    * @throws IOException if the request fails to be processed
    */
@@ -771,10 +788,11 @@ public class ContentManagementApi {
   private GetContentmanagementDocumentContentRequest createGetContentmanagementDocumentContentRequest(String documentId, String disposition, String contentType) {
     return GetContentmanagementDocumentContentRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withDisposition(disposition)
-
+    
             .withContentType(contentType)
+    
             .build();
   }
 
@@ -826,6 +844,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of documents.
    * 
@@ -864,18 +883,19 @@ public class ContentManagementApi {
   private GetContentmanagementDocumentsRequest createGetContentmanagementDocumentsRequest(String workspaceId, String name, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
     return GetContentmanagementDocumentsRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withName(name)
-
+    
             .withExpand(expand)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -927,6 +947,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Query content
    * 
@@ -963,16 +984,17 @@ public class ContentManagementApi {
   private GetContentmanagementQueryRequest createGetContentmanagementQueryRequest(String queryPhrase, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, List<String> expand) {
     return GetContentmanagementQueryRequest.builder()
             .withQueryPhrase(queryPhrase)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1024,6 +1046,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a Security Profile
    * 
@@ -1050,6 +1073,7 @@ public class ContentManagementApi {
   private GetContentmanagementSecurityprofileRequest createGetContentmanagementSecurityprofileRequest(String securityProfileId) {
     return GetContentmanagementSecurityprofileRequest.builder()
             .withSecurityProfileId(securityProfileId)
+    
             .build();
   }
 
@@ -1101,6 +1125,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a List of Security Profiles
    * 
@@ -1123,7 +1148,8 @@ public class ContentManagementApi {
   }
 
   private GetContentmanagementSecurityprofilesRequest createGetContentmanagementSecurityprofilesRequest() {
-    return GetContentmanagementSecurityprofilesRequest.builder()            .build();
+    return GetContentmanagementSecurityprofilesRequest.builder()
+            .build();
   }
 
   /**
@@ -1174,6 +1200,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Retrieve details about an existing share.
    * 
@@ -1202,8 +1229,9 @@ public class ContentManagementApi {
   private GetContentmanagementShareRequest createGetContentmanagementShareRequest(String shareId, List<String> expand) {
     return GetContentmanagementShareRequest.builder()
             .withShareId(shareId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1255,13 +1283,14 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get shared documents. Securely download a shared document.
    * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
    * @param sharedId Shared ID (required)
    * @param redirect Turn on or off redirect (optional, default to true)
    * @param disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional, default to attachment)
-   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
+   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @param expand Expand some document fields (optional)
    * @return SharedResponse
    * @throws ApiException if the request fails on the server
@@ -1277,7 +1306,7 @@ public class ContentManagementApi {
    * @param sharedId Shared ID (required)
    * @param redirect Turn on or off redirect (optional, default to true)
    * @param disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional, default to attachment)
-   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav (optional)
+   * @param contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
    * @param expand Expand some document fields (optional)
    * @return SharedResponse
    * @throws IOException if the request fails to be processed
@@ -1289,14 +1318,15 @@ public class ContentManagementApi {
   private GetContentmanagementSharedSharedIdRequest createGetContentmanagementSharedSharedIdRequest(String sharedId, Boolean redirect, String disposition, String contentType, String expand) {
     return GetContentmanagementSharedSharedIdRequest.builder()
             .withSharedId(sharedId)
-
+    
             .withRedirect(redirect)
-
+    
             .withDisposition(disposition)
-
+    
             .withContentType(contentType)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1348,6 +1378,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Gets a list of shares.  You must specify at least one filter (e.g. entityId).
    * Failing to specify a filter will return 400.
@@ -1380,12 +1411,13 @@ public class ContentManagementApi {
   private GetContentmanagementSharesRequest createGetContentmanagementSharesRequest(String entityId, List<String> expand, Integer pageSize, Integer pageNumber) {
     return GetContentmanagementSharesRequest.builder()
             .withEntityId(entityId)
-
+    
             .withExpand(expand)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1437,6 +1469,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of statuses for pending operations
    * 
@@ -1465,8 +1498,9 @@ public class ContentManagementApi {
   private GetContentmanagementStatusRequest createGetContentmanagementStatusRequest(Integer pageSize, Integer pageNumber) {
     return GetContentmanagementStatusRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
+    
             .build();
   }
 
@@ -1518,6 +1552,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a status.
    * 
@@ -1544,6 +1579,7 @@ public class ContentManagementApi {
   private GetContentmanagementStatusStatusIdRequest createGetContentmanagementStatusStatusIdRequest(String statusId) {
     return GetContentmanagementStatusStatusIdRequest.builder()
             .withStatusId(statusId)
+    
             .build();
   }
 
@@ -1595,6 +1631,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get usage details.
    * 
@@ -1617,7 +1654,8 @@ public class ContentManagementApi {
   }
 
   private GetContentmanagementUsageRequest createGetContentmanagementUsageRequest() {
-    return GetContentmanagementUsageRequest.builder()            .build();
+    return GetContentmanagementUsageRequest.builder()
+            .build();
   }
 
   /**
@@ -1668,6 +1706,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a workspace.
    * 
@@ -1696,8 +1735,9 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceRequest createGetContentmanagementWorkspaceRequest(String workspaceId, List<String> expand) {
     return GetContentmanagementWorkspaceRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1749,6 +1789,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of documents.
    * 
@@ -1785,16 +1826,17 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceDocumentsRequest createGetContentmanagementWorkspaceDocumentsRequest(String workspaceId, List<String> expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
     return GetContentmanagementWorkspaceDocumentsRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withExpand(expand)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -1846,6 +1888,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a workspace member
    * 
@@ -1876,10 +1919,11 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceMemberRequest createGetContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId, List<String> expand) {
     return GetContentmanagementWorkspaceMemberRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withMemberId(memberId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1931,6 +1975,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list workspace members
    * 
@@ -1963,12 +2008,13 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceMembersRequest createGetContentmanagementWorkspaceMembersRequest(String workspaceId, Integer pageSize, Integer pageNumber, List<String> expand) {
     return GetContentmanagementWorkspaceMembersRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2020,6 +2066,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a workspace tag
    * 
@@ -2050,10 +2097,11 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceTagvalueRequest createGetContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId, List<String> expand) {
     return GetContentmanagementWorkspaceTagvalueRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withTagId(tagId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2105,6 +2153,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of workspace tags
    * 
@@ -2139,14 +2188,15 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspaceTagvaluesRequest createGetContentmanagementWorkspaceTagvaluesRequest(String workspaceId, String value, Integer pageSize, Integer pageNumber, List<String> expand) {
     return GetContentmanagementWorkspaceTagvaluesRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withValue(value)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2198,6 +2248,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Get a list of workspaces.
    * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
@@ -2230,12 +2281,13 @@ public class ContentManagementApi {
   private GetContentmanagementWorkspacesRequest createGetContentmanagementWorkspacesRequest(Integer pageSize, Integer pageNumber, List<String> access, List<String> expand) {
     return GetContentmanagementWorkspacesRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withAccess(access)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2287,6 +2339,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Query audits
    * 
@@ -2313,6 +2366,7 @@ public class ContentManagementApi {
   private PostContentmanagementAuditqueryRequest createPostContentmanagementAuditqueryRequest(ContentQueryRequest body) {
     return PostContentmanagementAuditqueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2364,6 +2418,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Update a document.
    * 
@@ -2396,12 +2451,13 @@ public class ContentManagementApi {
   private PostContentmanagementDocumentRequest createPostContentmanagementDocumentRequest(String documentId, DocumentUpdate body, String expand, Boolean override) {
     return PostContentmanagementDocumentRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
-
+    
             .withOverride(override)
+    
             .build();
   }
 
@@ -2453,6 +2509,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Replace the contents of a document.
    * 
@@ -2483,10 +2540,11 @@ public class ContentManagementApi {
   private PostContentmanagementDocumentContentRequest createPostContentmanagementDocumentContentRequest(String documentId, ReplaceRequest body, Boolean override) {
     return PostContentmanagementDocumentContentRequest.builder()
             .withDocumentId(documentId)
-
+    
             .withBody(body)
-
+    
             .withOverride(override)
+    
             .build();
   }
 
@@ -2538,6 +2596,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Add a document.
    * 
@@ -2570,12 +2629,13 @@ public class ContentManagementApi {
   private PostContentmanagementDocumentsRequest createPostContentmanagementDocumentsRequest(DocumentUpload body, String copySource, String moveSource, Boolean override) {
     return PostContentmanagementDocumentsRequest.builder()
             .withBody(body)
-
+    
             .withCopySource(copySource)
-
+    
             .withMoveSource(moveSource)
-
+    
             .withOverride(override)
+    
             .build();
   }
 
@@ -2627,6 +2687,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Query content
    * 
@@ -2655,8 +2716,9 @@ public class ContentManagementApi {
   private PostContentmanagementQueryRequest createPostContentmanagementQueryRequest(QueryRequest body, String expand) {
     return PostContentmanagementQueryRequest.builder()
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2708,6 +2770,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Creates a new share or updates an existing share if the entity has already been shared
    * 
@@ -2734,6 +2797,7 @@ public class ContentManagementApi {
   private PostContentmanagementSharesRequest createPostContentmanagementSharesRequest(CreateShareRequest body) {
     return PostContentmanagementSharesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2785,6 +2849,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Create a workspace tag
    * 
@@ -2813,8 +2878,9 @@ public class ContentManagementApi {
   private PostContentmanagementWorkspaceTagvaluesRequest createPostContentmanagementWorkspaceTagvaluesRequest(String workspaceId, TagValue body) {
     return PostContentmanagementWorkspaceTagvaluesRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2866,6 +2932,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Perform a prefix query on tags in the workspace
    * 
@@ -2896,10 +2963,11 @@ public class ContentManagementApi {
   private PostContentmanagementWorkspaceTagvaluesQueryRequest createPostContentmanagementWorkspaceTagvaluesQueryRequest(String workspaceId, TagQueryRequest body, List<String> expand) {
     return PostContentmanagementWorkspaceTagvaluesQueryRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -2951,6 +3019,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Create a group workspace
    * 
@@ -2977,6 +3046,7 @@ public class ContentManagementApi {
   private PostContentmanagementWorkspacesRequest createPostContentmanagementWorkspacesRequest(WorkspaceCreate body) {
     return PostContentmanagementWorkspacesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -3028,6 +3098,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Update a workspace
    * 
@@ -3056,8 +3127,9 @@ public class ContentManagementApi {
   private PutContentmanagementWorkspaceRequest createPutContentmanagementWorkspaceRequest(String workspaceId, Workspace body) {
     return PutContentmanagementWorkspaceRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3109,6 +3181,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Add a member to a workspace
    * 
@@ -3139,10 +3212,11 @@ public class ContentManagementApi {
   private PutContentmanagementWorkspaceMemberRequest createPutContentmanagementWorkspaceMemberRequest(String workspaceId, String memberId, WorkspaceMember body) {
     return PutContentmanagementWorkspaceMemberRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withMemberId(memberId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3194,6 +3268,7 @@ public class ContentManagementApi {
     }
   }
 
+  
   /**
    * Update a workspace tag. Will update all documents with the new tag value.
    * 
@@ -3224,10 +3299,11 @@ public class ContentManagementApi {
   private PutContentmanagementWorkspaceTagvalueRequest createPutContentmanagementWorkspaceTagvalueRequest(String workspaceId, String tagId, TagValue body) {
     return PutContentmanagementWorkspaceTagvalueRequest.builder()
             .withWorkspaceId(workspaceId)
-
+    
             .withTagId(tagId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3279,4 +3355,5 @@ public class ContentManagementApi {
     }
   }
 
+  
 }

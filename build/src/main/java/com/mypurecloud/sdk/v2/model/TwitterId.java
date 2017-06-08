@@ -39,7 +39,7 @@ public class TwitterId  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * twitter user.name
    **/
@@ -57,7 +57,7 @@ public class TwitterId  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * twitter user.screen_name
    **/
@@ -75,20 +75,21 @@ public class TwitterId  implements Serializable {
     this.screenName = screenName;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "whether this data has been verified using the twitter API")
   @JsonProperty("verified")
   public Boolean getVerified() {
     return verified;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "url of user's twitter profile")
   @JsonProperty("profileUrl")
   public String getProfileUrl() {
     return profileUrl;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

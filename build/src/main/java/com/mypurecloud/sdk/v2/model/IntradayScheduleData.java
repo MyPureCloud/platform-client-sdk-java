@@ -35,7 +35,7 @@ public class IntradayScheduleData  implements Serializable {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
-
+  
   /**
    * The total scheduled time in seconds for all agents in this group
    **/
@@ -53,6 +53,7 @@ public class IntradayScheduleData  implements Serializable {
     this.scheduledTimeSeconds = scheduledTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

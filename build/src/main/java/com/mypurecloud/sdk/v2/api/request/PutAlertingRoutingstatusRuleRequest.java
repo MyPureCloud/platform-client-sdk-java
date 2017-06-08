@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PutAlertingRoutingstatusRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class PutAlertingRoutingstatusRuleRequest {
 	    return this;
 	}
 
+	
 	private RoutingStatusRule body;
 	public RoutingStatusRule getBody() {
 		return this.body;
@@ -67,6 +69,7 @@ public class PutAlertingRoutingstatusRuleRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,6 +84,7 @@ public class PutAlertingRoutingstatusRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,6 +123,7 @@ public class PutAlertingRoutingstatusRuleRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -130,10 +135,12 @@ public class PutAlertingRoutingstatusRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId, RoutingStatusRule body) {
 	    return new Builder()
 	            .withRequiredParams(ruleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAlertingRoutingstatusRuleRequest request;
@@ -142,24 +149,31 @@ public class PutAlertingRoutingstatusRuleRequest {
 			request = new PutAlertingRoutingstatusRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 		public Builder withBody(RoutingStatusRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId, RoutingStatusRule body) {
 			request.setRuleId(ruleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAlertingRoutingstatusRuleRequest build() {

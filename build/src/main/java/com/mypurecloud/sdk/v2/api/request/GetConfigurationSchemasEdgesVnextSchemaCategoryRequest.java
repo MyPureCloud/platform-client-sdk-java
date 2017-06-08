@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
+    
 	private String schemaCategory;
 	public String getSchemaCategory() {
 		return this.schemaCategory;
@@ -98,6 +99,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -112,6 +114,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -126,6 +129,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -159,7 +163,8 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -170,10 +175,12 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String schemaCategory) {
 	    return new Builder()
 	            .withRequiredParams(schemaCategory);
 	}
+	
 
 	public static class Builder {
 		private final GetConfigurationSchemasEdgesVnextSchemaCategoryRequest request;
@@ -182,23 +189,30 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategoryRequest {
 			request = new GetConfigurationSchemasEdgesVnextSchemaCategoryRequest();
 		}
 
+		
 		public Builder withSchemaCategory(String schemaCategory) {
 			request.setSchemaCategory(schemaCategory);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String schemaCategory) {
 			request.setSchemaCategory(schemaCategory);
+			
 			return this;
 		}
+		
 
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategoryRequest build() {

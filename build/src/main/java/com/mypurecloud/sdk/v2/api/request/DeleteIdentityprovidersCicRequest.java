@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class DeleteIdentityprovidersCicRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -55,7 +56,8 @@ public class DeleteIdentityprovidersCicRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("DELETE", "/api/v2/identityproviders/cic")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("DELETE", "/api/v2/identityproviders/cic")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -66,6 +68,7 @@ public class DeleteIdentityprovidersCicRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final DeleteIdentityprovidersCicRequest request;
@@ -74,7 +77,9 @@ public class DeleteIdentityprovidersCicRequest {
 			request = new DeleteIdentityprovidersCicRequest();
 		}
 
+		
 
+		
 
 
 		public DeleteIdentityprovidersCicRequest build() {

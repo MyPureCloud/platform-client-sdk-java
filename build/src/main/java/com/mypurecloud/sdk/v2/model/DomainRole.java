@@ -35,7 +35,7 @@ public class DomainRole  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The name of the role
    **/
@@ -53,6 +53,7 @@ public class DomainRole  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

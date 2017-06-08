@@ -39,7 +39,7 @@ public class AuditFilter  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The type of the filter, DATE or STRING.
    **/
@@ -57,7 +57,7 @@ public class AuditFilter  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * The operation that the filter performs.
    **/
@@ -75,7 +75,7 @@ public class AuditFilter  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * The values to make the filter comparison against.
    **/
@@ -93,6 +93,7 @@ public class AuditFilter  implements Serializable {
     this.values = values;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

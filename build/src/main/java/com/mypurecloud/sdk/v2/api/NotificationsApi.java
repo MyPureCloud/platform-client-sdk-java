@@ -44,6 +44,7 @@ public class NotificationsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Remove all subscriptions
    * 
@@ -68,6 +69,7 @@ public class NotificationsApi {
   private DeleteNotificationsChannelSubscriptionsRequest createDeleteNotificationsChannelSubscriptionsRequest(String channelId) {
     return DeleteNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
+    
             .build();
   }
 
@@ -118,6 +120,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * Get available notification topics.
    * 
@@ -144,6 +147,7 @@ public class NotificationsApi {
   private GetNotificationsAvailabletopicsRequest createGetNotificationsAvailabletopicsRequest(List<String> expand) {
     return GetNotificationsAvailabletopicsRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -195,6 +199,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * The list of all subscriptions for this channel
    * 
@@ -221,6 +226,7 @@ public class NotificationsApi {
   private GetNotificationsChannelSubscriptionsRequest createGetNotificationsChannelSubscriptionsRequest(String channelId) {
     return GetNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
+    
             .build();
   }
 
@@ -272,6 +278,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * The list of existing channels
    * 
@@ -294,7 +301,8 @@ public class NotificationsApi {
   }
 
   private GetNotificationsChannelsRequest createGetNotificationsChannelsRequest() {
-    return GetNotificationsChannelsRequest.builder()            .build();
+    return GetNotificationsChannelsRequest.builder()
+            .build();
   }
 
   /**
@@ -345,6 +353,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * Add a list of subscriptions to the existing list of subscriptions
    * 
@@ -373,8 +382,9 @@ public class NotificationsApi {
   private PostNotificationsChannelSubscriptionsRequest createPostNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
     return PostNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -426,6 +436,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * Create a new channel
    * There is a limit of 10 channels. Creating an 11th channel will remove the channel with oldest last used date.
@@ -448,7 +459,8 @@ public class NotificationsApi {
   }
 
   private PostNotificationsChannelsRequest createPostNotificationsChannelsRequest() {
-    return PostNotificationsChannelsRequest.builder()            .build();
+    return PostNotificationsChannelsRequest.builder()
+            .build();
   }
 
   /**
@@ -499,6 +511,7 @@ public class NotificationsApi {
     }
   }
 
+  
   /**
    * Replace the current list of subscriptions with a new list.
    * 
@@ -527,8 +540,9 @@ public class NotificationsApi {
   private PutNotificationsChannelSubscriptionsRequest createPutNotificationsChannelSubscriptionsRequest(String channelId, List<ChannelTopic> body) {
     return PutNotificationsChannelSubscriptionsRequest.builder()
             .withChannelId(channelId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -580,4 +594,5 @@ public class NotificationsApi {
     }
   }
 
+  
 }

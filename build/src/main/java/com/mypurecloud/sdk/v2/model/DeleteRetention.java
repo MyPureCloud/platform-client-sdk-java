@@ -33,6 +33,7 @@ public class DeleteRetention  implements Serializable {
     this.days = days;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

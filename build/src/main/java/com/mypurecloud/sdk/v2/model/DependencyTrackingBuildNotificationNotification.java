@@ -37,7 +37,7 @@ public class DependencyTrackingBuildNotificationNotification  implements Seriali
     this.status = status;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotification user(DependencyTrackingBuildNotificationNotificationUser user) {
@@ -54,7 +54,7 @@ public class DependencyTrackingBuildNotificationNotification  implements Seriali
     this.user = user;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotification startTime(Date startTime) {
@@ -71,6 +71,7 @@ public class DependencyTrackingBuildNotificationNotification  implements Seriali
     this.startTime = startTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

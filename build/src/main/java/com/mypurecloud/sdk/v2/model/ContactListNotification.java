@@ -51,7 +51,7 @@ public class ContactListNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ContactListNotification name(String name) {
@@ -68,7 +68,7 @@ public class ContactListNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ContactListNotification dateCreated(Date dateCreated) {
@@ -85,7 +85,7 @@ public class ContactListNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public ContactListNotification dateModified(Date dateModified) {
@@ -102,7 +102,7 @@ public class ContactListNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public ContactListNotification version(Integer version) {
@@ -119,7 +119,7 @@ public class ContactListNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public ContactListNotification columnNames(List<String> columnNames) {
@@ -136,7 +136,7 @@ public class ContactListNotification  implements Serializable {
     this.columnNames = columnNames;
   }
 
-
+  
   /**
    **/
   public ContactListNotification phoneColumns(List<ContactListNotificationPhoneColumns> phoneColumns) {
@@ -153,7 +153,7 @@ public class ContactListNotification  implements Serializable {
     this.phoneColumns = phoneColumns;
   }
 
-
+  
   /**
    **/
   public ContactListNotification importStatus(ContactListNotificationImportStatus importStatus) {
@@ -170,7 +170,7 @@ public class ContactListNotification  implements Serializable {
     this.importStatus = importStatus;
   }
 
-
+  
   /**
    **/
   public ContactListNotification previewModeColumnName(String previewModeColumnName) {
@@ -187,7 +187,7 @@ public class ContactListNotification  implements Serializable {
     this.previewModeColumnName = previewModeColumnName;
   }
 
-
+  
   /**
    **/
   public ContactListNotification previewModeAcceptedValues(List<String> previewModeAcceptedValues) {
@@ -204,7 +204,7 @@ public class ContactListNotification  implements Serializable {
     this.previewModeAcceptedValues = previewModeAcceptedValues;
   }
 
-
+  
   /**
    **/
   public ContactListNotification size(Integer size) {
@@ -221,7 +221,7 @@ public class ContactListNotification  implements Serializable {
     this.size = size;
   }
 
-
+  
   /**
    **/
   public ContactListNotification attemptLimits(DocumentDataV2NotificationCreatedBy attemptLimits) {
@@ -238,7 +238,7 @@ public class ContactListNotification  implements Serializable {
     this.attemptLimits = attemptLimits;
   }
 
-
+  
   /**
    **/
   public ContactListNotification additionalProperties(Object additionalProperties) {
@@ -255,6 +255,7 @@ public class ContactListNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

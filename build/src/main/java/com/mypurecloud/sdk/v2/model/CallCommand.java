@@ -34,6 +34,7 @@ public class CallCommand  implements Serializable {
     this.callNumber = callNumber;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

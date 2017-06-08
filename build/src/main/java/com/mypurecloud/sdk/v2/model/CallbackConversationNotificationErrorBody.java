@@ -48,7 +48,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.status = status;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody code(String code) {
@@ -65,7 +65,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.code = code;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody entityId(String entityId) {
@@ -82,7 +82,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody entityName(String entityName) {
@@ -99,7 +99,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody message(String message) {
@@ -116,7 +116,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.message = message;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody contextId(String contextId) {
@@ -167,7 +167,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.details = details;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationErrorBody errors(List<CallbackConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class CallbackConversationNotificationErrorBody  implements Serializable 
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

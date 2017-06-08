@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingWrapupcodesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -58,6 +59,7 @@ public class GetRoutingWrapupcodesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -72,6 +74,7 @@ public class GetRoutingWrapupcodesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -86,6 +89,7 @@ public class GetRoutingWrapupcodesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,7 +118,8 @@ public class GetRoutingWrapupcodesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("sortBy", "", sortBy)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -125,6 +130,7 @@ public class GetRoutingWrapupcodesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetRoutingWrapupcodesRequest request;
@@ -133,19 +139,24 @@ public class GetRoutingWrapupcodesRequest {
 			request = new GetRoutingWrapupcodesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 
+		
 
 
 		public GetRoutingWrapupcodesRequest build() {

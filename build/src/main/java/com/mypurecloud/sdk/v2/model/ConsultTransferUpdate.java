@@ -70,6 +70,7 @@ public class ConsultTransferUpdate  implements Serializable {
     this.speakTo = speakTo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

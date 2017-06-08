@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PutUserCallforwardingRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PutUserCallforwardingRequest {
 	    return this;
 	}
 
+	
 	private CallForwarding body;
 	public CallForwarding getBody() {
 		return this.body;
@@ -76,6 +78,7 @@ public class PutUserCallforwardingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,6 +115,7 @@ public class PutUserCallforwardingRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -123,10 +127,12 @@ public class PutUserCallforwardingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, CallForwarding body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutUserCallforwardingRequest request;
@@ -135,20 +141,26 @@ public class PutUserCallforwardingRequest {
 			request = new PutUserCallforwardingRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(CallForwarding body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, CallForwarding body) {
 			request.setUserId(userId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutUserCallforwardingRequest build() {

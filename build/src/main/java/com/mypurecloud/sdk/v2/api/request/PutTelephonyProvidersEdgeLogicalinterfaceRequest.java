@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private String interfaceId;
 	public String getInterfaceId() {
 		return this.interfaceId;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private DomainLogicalInterface body;
 	public DomainLogicalInterface getBody() {
 		return this.body;
@@ -126,6 +129,7 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +173,7 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
                 .withPathParameter("interfaceId", interfaceId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -180,10 +185,12 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String interfaceId, DomainLogicalInterface body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, interfaceId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgeLogicalinterfaceRequest request;
@@ -192,25 +199,32 @@ public class PutTelephonyProvidersEdgeLogicalinterfaceRequest {
 			request = new PutTelephonyProvidersEdgeLogicalinterfaceRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withInterfaceId(String interfaceId) {
 			request.setInterfaceId(interfaceId);
 			return this;
 		}
+		
 		public Builder withBody(DomainLogicalInterface body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String interfaceId, DomainLogicalInterface body) {
 			request.setEdgeId(edgeId);
-			request.setInterfaceId(interfaceId);
-			request.setBody(body);
+						request.setInterfaceId(interfaceId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgeLogicalinterfaceRequest build() {

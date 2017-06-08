@@ -18,8 +18,8 @@ public class IdentityNow  implements Serializable {
   private String name = null;
   private String relyingPartyIdentifier = null;
   private String certificate = null;
-  private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String issuerURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -30,7 +30,7 @@ public class IdentityNow  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public IdentityNow name(String name) {
@@ -47,7 +47,7 @@ public class IdentityNow  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public IdentityNow relyingPartyIdentifier(String relyingPartyIdentifier) {
@@ -64,7 +64,7 @@ public class IdentityNow  implements Serializable {
     this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
-
+  
   /**
    **/
   public IdentityNow certificate(String certificate) {
@@ -81,24 +81,7 @@ public class IdentityNow  implements Serializable {
     this.certificate = certificate;
   }
 
-
-  /**
-   **/
-  public IdentityNow issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-
   /**
    **/
   public IdentityNow ssoTargetURI(String ssoTargetURI) {
@@ -115,7 +98,24 @@ public class IdentityNow  implements Serializable {
     this.ssoTargetURI = ssoTargetURI;
   }
 
+  
+  /**
+   **/
+  public IdentityNow issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+  }
 
+  
   /**
    **/
   public IdentityNow disabled(Boolean disabled) {
@@ -132,13 +132,14 @@ public class IdentityNow  implements Serializable {
     this.disabled = disabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,15 +154,15 @@ public class IdentityNow  implements Serializable {
         Objects.equals(this.name, identityNow.name) &&
         Objects.equals(this.relyingPartyIdentifier, identityNow.relyingPartyIdentifier) &&
         Objects.equals(this.certificate, identityNow.certificate) &&
-        Objects.equals(this.issuerURI, identityNow.issuerURI) &&
         Objects.equals(this.ssoTargetURI, identityNow.ssoTargetURI) &&
+        Objects.equals(this.issuerURI, identityNow.issuerURI) &&
         Objects.equals(this.disabled, identityNow.disabled) &&
         Objects.equals(this.selfUri, identityNow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, relyingPartyIdentifier, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, relyingPartyIdentifier, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
   }
 
   @Override
@@ -173,8 +174,8 @@ public class IdentityNow  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

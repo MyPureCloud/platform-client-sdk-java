@@ -36,7 +36,7 @@ public class PromptNotificationNotificationUser  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationUser name(String name) {
@@ -53,7 +53,7 @@ public class PromptNotificationNotificationUser  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationUser homeOrg(DependencyTrackingBuildNotificationNotificationUserHomeOrg homeOrg) {
@@ -70,6 +70,7 @@ public class PromptNotificationNotificationUser  implements Serializable {
     this.homeOrg = homeOrg;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

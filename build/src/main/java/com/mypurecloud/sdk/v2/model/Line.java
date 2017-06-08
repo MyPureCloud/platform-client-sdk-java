@@ -85,7 +85,7 @@ public class Line  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -103,7 +103,7 @@ public class Line  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Line description(String description) {
@@ -120,7 +120,7 @@ public class Line  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Line version(Integer version) {
@@ -137,7 +137,7 @@ public class Line  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -155,7 +155,7 @@ public class Line  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -173,7 +173,7 @@ public class Line  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Line modifiedBy(String modifiedBy) {
@@ -190,7 +190,7 @@ public class Line  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Line createdBy(String createdBy) {
@@ -207,7 +207,7 @@ public class Line  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Line state(StateEnum state) {
@@ -224,7 +224,7 @@ public class Line  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Line modifiedByApp(String modifiedByApp) {
@@ -241,7 +241,7 @@ public class Line  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Line createdByApp(String createdByApp) {
@@ -258,7 +258,7 @@ public class Line  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public Line properties(Map<String, Object> properties) {
@@ -275,7 +275,7 @@ public class Line  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public Line edgeGroup(UriReference edgeGroup) {
@@ -292,7 +292,7 @@ public class Line  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   /**
    **/
   public Line template(UriReference template) {
@@ -309,7 +309,7 @@ public class Line  implements Serializable {
     this.template = template;
   }
 
-
+  
   /**
    **/
   public Line site(UriReference site) {
@@ -326,7 +326,7 @@ public class Line  implements Serializable {
     this.site = site;
   }
 
-
+  
   /**
    **/
   public Line lineBaseSettings(UriReference lineBaseSettings) {
@@ -343,7 +343,7 @@ public class Line  implements Serializable {
     this.lineBaseSettings = lineBaseSettings;
   }
 
-
+  
   /**
    * The primary edge associated to the line. (Deprecated)
    **/
@@ -361,7 +361,7 @@ public class Line  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-
+  
   /**
    * The secondary edge associated to the line. (Deprecated)
    **/
@@ -379,7 +379,7 @@ public class Line  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-
+  
   /**
    **/
   public Line loggedInUser(UriReference loggedInUser) {
@@ -396,7 +396,7 @@ public class Line  implements Serializable {
     this.loggedInUser = loggedInUser;
   }
 
-
+  
   /**
    **/
   public Line defaultForUser(UriReference defaultForUser) {
@@ -413,13 +413,14 @@ public class Line  implements Serializable {
     this.defaultForUser = defaultForUser;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

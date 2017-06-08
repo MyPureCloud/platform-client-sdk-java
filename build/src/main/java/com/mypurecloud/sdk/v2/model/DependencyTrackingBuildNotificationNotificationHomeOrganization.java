@@ -35,7 +35,7 @@ public class DependencyTrackingBuildNotificationNotificationHomeOrganization  im
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationHomeOrganization name(String name) {
@@ -52,7 +52,7 @@ public class DependencyTrackingBuildNotificationNotificationHomeOrganization  im
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DependencyTrackingBuildNotificationNotificationHomeOrganization thirdPartyOrgName(String thirdPartyOrgName) {
@@ -69,6 +69,7 @@ public class DependencyTrackingBuildNotificationNotificationHomeOrganization  im
     this.thirdPartyOrgName = thirdPartyOrgName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

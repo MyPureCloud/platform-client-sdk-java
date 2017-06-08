@@ -73,6 +73,7 @@ public class AnalyticsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a scheduled report job.
    * 
@@ -97,6 +98,7 @@ public class AnalyticsApi {
   private DeleteAnalyticsReportingScheduleRequest createDeleteAnalyticsReportingScheduleRequest(String scheduleId) {
     return DeleteAnalyticsReportingScheduleRequest.builder()
             .withScheduleId(scheduleId)
+    
             .build();
   }
 
@@ -147,6 +149,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a conversation by id
    * 
@@ -173,6 +176,7 @@ public class AnalyticsApi {
   private GetAnalyticsConversationDetailsRequest createGetAnalyticsConversationDetailsRequest(String conversationId) {
     return GetAnalyticsConversationDetailsRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -224,6 +228,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get list of reporting metadata.
    * 
@@ -254,10 +259,11 @@ public class AnalyticsApi {
   private GetAnalyticsReportingMetadataRequest createGetAnalyticsReportingMetadataRequest(Integer pageNumber, Integer pageSize, String locale) {
     return GetAnalyticsReportingMetadataRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
-
+    
             .withLocale(locale)
+    
             .build();
   }
 
@@ -309,6 +315,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a reporting metadata.
    * 
@@ -337,8 +344,9 @@ public class AnalyticsApi {
   private GetAnalyticsReportingReportIdMetadataRequest createGetAnalyticsReportingReportIdMetadataRequest(String reportId, String locale) {
     return GetAnalyticsReportingReportIdMetadataRequest.builder()
             .withReportId(reportId)
-
+    
             .withLocale(locale)
+    
             .build();
   }
 
@@ -390,6 +398,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a list of report formats
    * Get a list of report formats.
@@ -412,7 +421,8 @@ public class AnalyticsApi {
   }
 
   private GetAnalyticsReportingReportformatsRequest createGetAnalyticsReportingReportformatsRequest() {
-    return GetAnalyticsReportingReportformatsRequest.builder()            .build();
+    return GetAnalyticsReportingReportformatsRequest.builder()
+            .build();
   }
 
   /**
@@ -463,6 +473,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a scheduled report job.
    * 
@@ -489,6 +500,7 @@ public class AnalyticsApi {
   private GetAnalyticsReportingScheduleRequest createGetAnalyticsReportingScheduleRequest(String scheduleId) {
     return GetAnalyticsReportingScheduleRequest.builder()
             .withScheduleId(scheduleId)
+    
             .build();
   }
 
@@ -540,6 +552,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get list of completed scheduled report jobs.
    * 
@@ -570,10 +583,11 @@ public class AnalyticsApi {
   private GetAnalyticsReportingScheduleHistoryRequest createGetAnalyticsReportingScheduleHistoryRequest(String scheduleId, Integer pageNumber, Integer pageSize) {
     return GetAnalyticsReportingScheduleHistoryRequest.builder()
             .withScheduleId(scheduleId)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -625,6 +639,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get most recently completed scheduled report job.
    * 
@@ -651,6 +666,7 @@ public class AnalyticsApi {
   private GetAnalyticsReportingScheduleHistoryLatestRequest createGetAnalyticsReportingScheduleHistoryLatestRequest(String scheduleId) {
     return GetAnalyticsReportingScheduleHistoryLatestRequest.builder()
             .withScheduleId(scheduleId)
+    
             .build();
   }
 
@@ -702,6 +718,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * A completed scheduled report job
    * A completed scheduled report job.
@@ -730,8 +747,9 @@ public class AnalyticsApi {
   private GetAnalyticsReportingScheduleHistoryRunIdRequest createGetAnalyticsReportingScheduleHistoryRunIdRequest(String runId, String scheduleId) {
     return GetAnalyticsReportingScheduleHistoryRunIdRequest.builder()
             .withRunId(runId)
-
+    
             .withScheduleId(scheduleId)
+    
             .build();
   }
 
@@ -783,6 +801,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a list of scheduled report jobs
    * Get a list of scheduled report jobs.
@@ -811,8 +830,9 @@ public class AnalyticsApi {
   private GetAnalyticsReportingSchedulesRequest createGetAnalyticsReportingSchedulesRequest(Integer pageNumber, Integer pageSize) {
     return GetAnalyticsReportingSchedulesRequest.builder()
             .withPageNumber(pageNumber)
-
+    
             .withPageSize(pageSize)
+    
             .build();
   }
 
@@ -864,6 +884,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Get a list of report time periods.
    * 
@@ -886,7 +907,8 @@ public class AnalyticsApi {
   }
 
   private GetAnalyticsReportingTimeperiodsRequest createGetAnalyticsReportingTimeperiodsRequest() {
-    return GetAnalyticsReportingTimeperiodsRequest.builder()            .build();
+    return GetAnalyticsReportingTimeperiodsRequest.builder()
+            .build();
   }
 
   /**
@@ -937,6 +959,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Index conversation properties
    * 
@@ -965,8 +988,9 @@ public class AnalyticsApi {
   private PostAnalyticsConversationDetailsPropertiesRequest createPostAnalyticsConversationDetailsPropertiesRequest(String conversationId, PropertyIndexRequest body) {
     return PostAnalyticsConversationDetailsPropertiesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1018,6 +1042,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for conversation aggregates
    * 
@@ -1044,6 +1069,7 @@ public class AnalyticsApi {
   private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsConversationsAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1095,6 +1121,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for conversation details
    * 
@@ -1121,6 +1148,7 @@ public class AnalyticsApi {
   private PostAnalyticsConversationsDetailsQueryRequest createPostAnalyticsConversationsDetailsQueryRequest(ConversationQuery body) {
     return PostAnalyticsConversationsDetailsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1172,6 +1200,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for evaluation aggregates
    * 
@@ -1198,6 +1227,7 @@ public class AnalyticsApi {
   private PostAnalyticsEvaluationsAggregatesQueryRequest createPostAnalyticsEvaluationsAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsEvaluationsAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1249,6 +1279,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for queue observations
    * 
@@ -1275,6 +1306,7 @@ public class AnalyticsApi {
   private PostAnalyticsQueuesObservationsQueryRequest createPostAnalyticsQueuesObservationsQueryRequest(ObservationQuery body) {
     return PostAnalyticsQueuesObservationsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1326,6 +1358,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Place a scheduled report immediately into the reporting queue
    * 
@@ -1352,6 +1385,7 @@ public class AnalyticsApi {
   private PostAnalyticsReportingScheduleRunreportRequest createPostAnalyticsReportingScheduleRunreportRequest(String scheduleId) {
     return PostAnalyticsReportingScheduleRunreportRequest.builder()
             .withScheduleId(scheduleId)
+    
             .build();
   }
 
@@ -1403,6 +1437,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Create a scheduled report job
    * Create a scheduled report job.
@@ -1429,6 +1464,7 @@ public class AnalyticsApi {
   private PostAnalyticsReportingSchedulesRequest createPostAnalyticsReportingSchedulesRequest(ReportSchedule body) {
     return PostAnalyticsReportingSchedulesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1480,6 +1516,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for user aggregates
    * 
@@ -1506,6 +1543,7 @@ public class AnalyticsApi {
   private PostAnalyticsUsersAggregatesQueryRequest createPostAnalyticsUsersAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsUsersAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1557,6 +1595,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for user details
    * 
@@ -1583,6 +1622,7 @@ public class AnalyticsApi {
   private PostAnalyticsUsersDetailsQueryRequest createPostAnalyticsUsersDetailsQueryRequest(UserDetailsQuery body) {
     return PostAnalyticsUsersDetailsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1634,6 +1674,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Query for user observations
    * 
@@ -1660,6 +1701,7 @@ public class AnalyticsApi {
   private PostAnalyticsUsersObservationsQueryRequest createPostAnalyticsUsersObservationsQueryRequest(ObservationQuery body) {
     return PostAnalyticsUsersObservationsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -1711,6 +1753,7 @@ public class AnalyticsApi {
     }
   }
 
+  
   /**
    * Update a scheduled report job.
    * 
@@ -1739,8 +1782,9 @@ public class AnalyticsApi {
   private PutAnalyticsReportingScheduleRequest createPutAnalyticsReportingScheduleRequest(String scheduleId, ReportSchedule body) {
     return PutAnalyticsReportingScheduleRequest.builder()
             .withScheduleId(scheduleId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -1792,4 +1836,5 @@ public class AnalyticsApi {
     }
   }
 
+  
 }

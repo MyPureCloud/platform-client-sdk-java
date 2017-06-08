@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundSchedulesSequenceRequest {
+    
 	private String sequenceId;
 	public String getSequenceId() {
 		return this.sequenceId;
@@ -74,6 +75,7 @@ public class DeleteOutboundSchedulesSequenceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundSchedulesSequenceRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/schedules/sequences/{sequenceId}")
                 .withPathParameter("sequenceId", sequenceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundSchedulesSequenceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String sequenceId) {
 	    return new Builder()
 	            .withRequiredParams(sequenceId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundSchedulesSequenceRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundSchedulesSequenceRequest {
 			request = new DeleteOutboundSchedulesSequenceRequest();
 		}
 
+		
 		public Builder withSequenceId(String sequenceId) {
 			request.setSequenceId(sequenceId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String sequenceId) {
 			request.setSequenceId(sequenceId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundSchedulesSequenceRequest build() {

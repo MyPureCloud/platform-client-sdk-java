@@ -38,7 +38,7 @@ public class OrganizationPresence  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence name(String name) {
@@ -55,7 +55,7 @@ public class OrganizationPresence  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The label used for the system presence in each specified language
    **/
@@ -73,7 +73,7 @@ public class OrganizationPresence  implements Serializable {
     this.languageLabels = languageLabels;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence systemPresence(String systemPresence) {
@@ -90,7 +90,7 @@ public class OrganizationPresence  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence deactivated(Boolean deactivated) {
@@ -107,7 +107,7 @@ public class OrganizationPresence  implements Serializable {
     this.deactivated = deactivated;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence primary(Boolean primary) {
@@ -124,7 +124,7 @@ public class OrganizationPresence  implements Serializable {
     this.primary = primary;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence createdBy(User createdBy) {
@@ -141,7 +141,7 @@ public class OrganizationPresence  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -159,7 +159,7 @@ public class OrganizationPresence  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public OrganizationPresence modifiedBy(User modifiedBy) {
@@ -176,7 +176,7 @@ public class OrganizationPresence  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -194,13 +194,14 @@ public class OrganizationPresence  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

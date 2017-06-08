@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundAuditsRequest {
+    
 	private DialerAuditRequest body;
 	public DialerAuditRequest getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -88,6 +90,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -102,6 +105,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -116,6 +120,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -130,6 +135,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private Boolean facetsOnly;
 	public Boolean getFacetsOnly() {
 		return this.facetsOnly;
@@ -144,6 +150,7 @@ public class PostOutboundAuditsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -183,6 +190,7 @@ public class PostOutboundAuditsRequest {
                 .withQueryParameters("facetsOnly", "", facetsOnly)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -194,10 +202,12 @@ public class PostOutboundAuditsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DialerAuditRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundAuditsRequest request;
@@ -206,35 +216,45 @@ public class PostOutboundAuditsRequest {
 			request = new PostOutboundAuditsRequest();
 		}
 
+		
 		public Builder withBody(DialerAuditRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withFacetsOnly(Boolean facetsOnly) {
 			request.setFacetsOnly(facetsOnly);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DialerAuditRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundAuditsRequest build() {

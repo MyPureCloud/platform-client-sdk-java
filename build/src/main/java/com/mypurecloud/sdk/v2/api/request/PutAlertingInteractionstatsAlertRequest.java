@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PutAlertingInteractionstatsAlertRequest {
+    
 	private String alertId;
 	public String getAlertId() {
 		return this.alertId;
@@ -53,6 +54,7 @@ public class PutAlertingInteractionstatsAlertRequest {
 	    return this;
 	}
 
+	
 	private UnreadStatus body;
 	public UnreadStatus getBody() {
 		return this.body;
@@ -67,6 +69,7 @@ public class PutAlertingInteractionstatsAlertRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,6 +84,7 @@ public class PutAlertingInteractionstatsAlertRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,6 +123,7 @@ public class PutAlertingInteractionstatsAlertRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -130,10 +135,12 @@ public class PutAlertingInteractionstatsAlertRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String alertId, UnreadStatus body) {
 	    return new Builder()
 	            .withRequiredParams(alertId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAlertingInteractionstatsAlertRequest request;
@@ -142,24 +149,31 @@ public class PutAlertingInteractionstatsAlertRequest {
 			request = new PutAlertingInteractionstatsAlertRequest();
 		}
 
+		
 		public Builder withAlertId(String alertId) {
 			request.setAlertId(alertId);
 			return this;
 		}
+		
 		public Builder withBody(UnreadStatus body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String alertId, UnreadStatus body) {
 			request.setAlertId(alertId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAlertingInteractionstatsAlertRequest build() {

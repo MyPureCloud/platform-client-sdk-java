@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsRelationshipRequest {
+    
 	private String relationshipId;
 	public String getRelationshipId() {
 		return this.relationshipId;
@@ -45,6 +46,7 @@ public class GetExternalcontactsRelationshipRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -59,6 +61,7 @@ public class GetExternalcontactsRelationshipRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetExternalcontactsRelationshipRequest {
                 .withPathParameter("relationshipId", relationshipId)
         
                 .withQueryParameters("expand", "", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetExternalcontactsRelationshipRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String relationshipId) {
 	    return new Builder()
 	            .withRequiredParams(relationshipId);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsRelationshipRequest request;
@@ -113,19 +119,25 @@ public class GetExternalcontactsRelationshipRequest {
 			request = new GetExternalcontactsRelationshipRequest();
 		}
 
+		
 		public Builder withRelationshipId(String relationshipId) {
 			request.setRelationshipId(relationshipId);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String relationshipId) {
 			request.setRelationshipId(relationshipId);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsRelationshipRequest build() {

@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersObservationsQueryRequest {
+    
 	private ObservationQuery body;
 	public ObservationQuery getBody() {
 		return this.body;
@@ -62,6 +63,7 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +93,7 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/users/observations/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -102,10 +105,12 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsUsersObservationsQueryRequest request;
@@ -114,15 +119,20 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 			request = new PostAnalyticsUsersObservationsQueryRequest();
 		}
 
+		
 		public Builder withBody(ObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ObservationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsUsersObservationsQueryRequest build() {

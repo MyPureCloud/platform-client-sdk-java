@@ -48,7 +48,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody code(String code) {
@@ -65,7 +65,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody entityId(String entityId) {
@@ -82,7 +82,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody entityName(String entityName) {
@@ -99,7 +99,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody message(String message) {
@@ -116,7 +116,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody contextId(String contextId) {
@@ -167,7 +167,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationErrorBody errors(List<VideoConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class VideoConversationNotificationErrorBody  implements Serializable {
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

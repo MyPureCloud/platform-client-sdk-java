@@ -71,7 +71,7 @@ public class Station  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Station name(String name) {
@@ -88,7 +88,7 @@ public class Station  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Station description(String description) {
@@ -105,7 +105,7 @@ public class Station  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Station status(StatusEnum status) {
@@ -122,7 +122,7 @@ public class Station  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    * The Id of the user currently logged in and associated with the station.
    **/
@@ -140,7 +140,7 @@ public class Station  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    * The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
    **/
@@ -158,7 +158,7 @@ public class Station  implements Serializable {
     this.webRtcUserId = webRtcUserId;
   }
 
-
+  
   /**
    **/
   public Station primaryEdge(UriReference primaryEdge) {
@@ -175,7 +175,7 @@ public class Station  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-
+  
   /**
    **/
   public Station secondaryEdge(UriReference secondaryEdge) {
@@ -192,7 +192,7 @@ public class Station  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-
+  
   /**
    **/
   public Station type(String type) {
@@ -209,7 +209,7 @@ public class Station  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Station lineAppearanceId(String lineAppearanceId) {
@@ -226,27 +226,28 @@ public class Station  implements Serializable {
     this.lineAppearanceId = lineAppearanceId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.")
   @JsonProperty("webRtcMediaDscp")
   public Integer getWebRtcMediaDscp() {
     return webRtcMediaDscp;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.")
   @JsonProperty("webRtcPersistentEnabled")
   public Boolean getWebRtcPersistentEnabled() {
     return webRtcPersistentEnabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

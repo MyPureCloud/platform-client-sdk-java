@@ -74,6 +74,7 @@ public class ExternalContactsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete an external contact
    * 
@@ -149,6 +150,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Delete a note for an external contact
    * 
@@ -224,6 +226,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Delete an external organization
    * 
@@ -299,6 +302,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Delete a note for an external organization
    * 
@@ -374,6 +378,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Delete a relationship
    * 
@@ -449,6 +454,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch an external contact
    * 
@@ -524,6 +530,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch a note for an external contact
    * 
@@ -599,6 +606,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * List notes for an external contact
    * 
@@ -674,6 +682,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Search for external contacts
    * 
@@ -749,6 +758,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch an external organization
    * 
@@ -824,6 +834,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Search for external contacts in an external organization
    * 
@@ -899,6 +910,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch a note for an external organization
    * 
@@ -974,6 +986,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * List notes for an external organization
    * 
@@ -1049,6 +1062,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch a relationship for an external organization
    * 
@@ -1124,6 +1138,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Search for external organizations
    * 
@@ -1199,6 +1214,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Fetch a relationship
    * 
@@ -1274,6 +1290,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Lookup contacts and externalOrganizations based on an attribute
    * 
@@ -1349,6 +1366,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Create a note for an external contact
    * 
@@ -1424,6 +1442,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Create an external contact
    * 
@@ -1499,6 +1518,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Create a note for an external organization
    * 
@@ -1574,6 +1594,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Create an external organization
    * 
@@ -1649,6 +1670,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Create a relationship
    * 
@@ -1724,6 +1746,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Update an external contact
    * 
@@ -1799,6 +1822,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Update a note for an external contact
    * 
@@ -1874,6 +1898,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Associate an external contact with a conversation
    * 
@@ -1949,6 +1974,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Update an external organization
    * 
@@ -2024,6 +2050,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Update a note for an external organization
    * 
@@ -2099,6 +2126,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
   /**
    * Update a relationship
    * 
@@ -2174,6 +2202,7 @@ public class ExternalContactsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

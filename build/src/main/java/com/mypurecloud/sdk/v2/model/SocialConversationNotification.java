@@ -39,7 +39,7 @@ public class SocialConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotification name(String name) {
@@ -56,7 +56,7 @@ public class SocialConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotification participants(List<SocialConversationNotificationParticipants> participants) {
@@ -73,7 +73,7 @@ public class SocialConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -90,6 +90,7 @@ public class SocialConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

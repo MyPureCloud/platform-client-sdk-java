@@ -38,6 +38,7 @@ public class Utilization  implements Serializable {
     this.utilization = utilization;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

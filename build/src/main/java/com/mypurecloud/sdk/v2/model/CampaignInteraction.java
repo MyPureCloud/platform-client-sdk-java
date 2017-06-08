@@ -99,7 +99,7 @@ public class CampaignInteraction  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction campaign(UriReference campaign) {
@@ -116,7 +116,7 @@ public class CampaignInteraction  implements Serializable {
     this.campaign = campaign;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction agent(UriReference agent) {
@@ -133,7 +133,7 @@ public class CampaignInteraction  implements Serializable {
     this.agent = agent;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction contact(UriReference contact) {
@@ -150,7 +150,7 @@ public class CampaignInteraction  implements Serializable {
     this.contact = contact;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction destinationAddress(String destinationAddress) {
@@ -167,7 +167,7 @@ public class CampaignInteraction  implements Serializable {
     this.destinationAddress = destinationAddress;
   }
 
-
+  
   /**
    * Boolean value if there is an active preview call on the interaction
    **/
@@ -185,7 +185,7 @@ public class CampaignInteraction  implements Serializable {
     this.activePreviewCall = activePreviewCall;
   }
 
-
+  
   /**
    * The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -203,7 +203,7 @@ public class CampaignInteraction  implements Serializable {
     this.lastActivePreviewWrapupTime = lastActivePreviewWrapupTime;
   }
 
-
+  
   /**
    * The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -221,7 +221,7 @@ public class CampaignInteraction  implements Serializable {
     this.creationTime = creationTime;
   }
 
-
+  
   /**
    * The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -239,7 +239,7 @@ public class CampaignInteraction  implements Serializable {
     this.callPlacedTime = callPlacedTime;
   }
 
-
+  
   /**
    * The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -257,7 +257,7 @@ public class CampaignInteraction  implements Serializable {
     this.callRoutedTime = callRoutedTime;
   }
 
-
+  
   /**
    * The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -275,7 +275,7 @@ public class CampaignInteraction  implements Serializable {
     this.previewConnectedTime = previewConnectedTime;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction queue(UriReference queue) {
@@ -292,7 +292,7 @@ public class CampaignInteraction  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction script(UriReference script) {
@@ -309,7 +309,7 @@ public class CampaignInteraction  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    * Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer
    **/
@@ -327,7 +327,7 @@ public class CampaignInteraction  implements Serializable {
     this.disposition = disposition;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction callerName(String callerName) {
@@ -344,7 +344,7 @@ public class CampaignInteraction  implements Serializable {
     this.callerName = callerName;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction callerAddress(String callerAddress) {
@@ -361,7 +361,7 @@ public class CampaignInteraction  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -379,7 +379,7 @@ public class CampaignInteraction  implements Serializable {
     this.previewPopDeliveredTime = previewPopDeliveredTime;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction conversation(ConversationBasic conversation) {
@@ -396,7 +396,7 @@ public class CampaignInteraction  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    * conversation participant id that is the dialer system participant to monitor the call from dialer perspective
    **/
@@ -414,7 +414,7 @@ public class CampaignInteraction  implements Serializable {
     this.dialerSystemParticipantId = dialerSystemParticipantId;
   }
 
-
+  
   /**
    **/
   public CampaignInteraction dialingMode(String dialingMode) {
@@ -431,7 +431,7 @@ public class CampaignInteraction  implements Serializable {
     this.dialingMode = dialingMode;
   }
 
-
+  
   /**
    * Any skills that are attached to the call for routing
    **/
@@ -449,6 +449,7 @@ public class CampaignInteraction  implements Serializable {
     this.skills = skills;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

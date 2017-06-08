@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PutUserRoutingskillRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PutUserRoutingskillRequest {
 	    return this;
 	}
 
+	
 	private String skillId;
 	public String getSkillId() {
 		return this.skillId;
@@ -76,6 +78,7 @@ public class PutUserRoutingskillRequest {
 	    return this;
 	}
 
+	
 	private UserRoutingSkill body;
 	public UserRoutingSkill getBody() {
 		return this.body;
@@ -90,6 +93,7 @@ public class PutUserRoutingskillRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,6 +137,7 @@ public class PutUserRoutingskillRequest {
                 .withPathParameter("skillId", skillId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -144,10 +149,12 @@ public class PutUserRoutingskillRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String skillId, UserRoutingSkill body) {
 	    return new Builder()
 	            .withRequiredParams(userId, skillId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutUserRoutingskillRequest request;
@@ -156,25 +163,32 @@ public class PutUserRoutingskillRequest {
 			request = new PutUserRoutingskillRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withSkillId(String skillId) {
 			request.setSkillId(skillId);
 			return this;
 		}
+		
 		public Builder withBody(UserRoutingSkill body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String skillId, UserRoutingSkill body) {
 			request.setUserId(userId);
-			request.setSkillId(skillId);
-			request.setBody(body);
+						request.setSkillId(skillId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutUserRoutingskillRequest build() {

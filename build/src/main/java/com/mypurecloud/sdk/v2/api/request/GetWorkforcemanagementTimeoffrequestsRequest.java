@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementTimeoffrequestsRequest {
+    
 	private Boolean recentlyReviewed;
 	public Boolean getRecentlyReviewed() {
 		return this.recentlyReviewed;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +74,8 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/timeoffrequests")
                 .withQueryParameters("recentlyReviewed", "", recentlyReviewed)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -83,6 +86,7 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementTimeoffrequestsRequest request;
@@ -91,11 +95,14 @@ public class GetWorkforcemanagementTimeoffrequestsRequest {
 			request = new GetWorkforcemanagementTimeoffrequestsRequest();
 		}
 
+		
 		public Builder withRecentlyReviewed(Boolean recentlyReviewed) {
 			request.setRecentlyReviewed(recentlyReviewed);
 			return this;
 		}
+		
 
+		
 
 
 		public GetWorkforcemanagementTimeoffrequestsRequest build() {

@@ -48,7 +48,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo code(String code) {
@@ -65,7 +65,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo entityId(String entityId) {
@@ -82,7 +82,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo entityName(String entityName) {
@@ -99,7 +99,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo message(String message) {
@@ -116,7 +116,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo contextId(String contextId) {
@@ -167,7 +167,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationErrorInfo errors(List<SocialConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class SocialConversationNotificationErrorInfo  implements Serializable {
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

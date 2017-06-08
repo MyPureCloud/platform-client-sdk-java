@@ -25,7 +25,7 @@ public class GreetingMediaInfo  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public GreetingMediaInfo mediaFileUri(String mediaFileUri) {
@@ -42,7 +42,7 @@ public class GreetingMediaInfo  implements Serializable {
     this.mediaFileUri = mediaFileUri;
   }
 
-
+  
   /**
    **/
   public GreetingMediaInfo mediaImageUri(String mediaImageUri) {
@@ -59,6 +59,7 @@ public class GreetingMediaInfo  implements Serializable {
     this.mediaImageUri = mediaImageUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

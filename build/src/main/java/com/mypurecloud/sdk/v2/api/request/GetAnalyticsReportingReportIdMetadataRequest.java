@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingReportIdMetadataRequest {
+    
 	private String reportId;
 	public String getReportId() {
 		return this.reportId;
@@ -54,6 +55,7 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
 	    return this;
 	}
 
+	
 	private String locale;
 	public String getLocale() {
 		return this.locale;
@@ -68,6 +70,7 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -99,7 +102,8 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
                 .withPathParameter("reportId", reportId)
         
                 .withQueryParameters("locale", "", locale)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -110,10 +114,12 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String reportId) {
 	    return new Builder()
 	            .withRequiredParams(reportId);
 	}
+	
 
 	public static class Builder {
 		private final GetAnalyticsReportingReportIdMetadataRequest request;
@@ -122,19 +128,25 @@ public class GetAnalyticsReportingReportIdMetadataRequest {
 			request = new GetAnalyticsReportingReportIdMetadataRequest();
 		}
 
+		
 		public Builder withReportId(String reportId) {
 			request.setReportId(reportId);
 			return this;
 		}
+		
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String reportId) {
 			request.setReportId(reportId);
+			
 			return this;
 		}
+		
 
 
 		public GetAnalyticsReportingReportIdMetadataRequest build() {

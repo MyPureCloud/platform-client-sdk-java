@@ -98,7 +98,7 @@ public class EventMessage  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public EventMessage message(String message) {
@@ -115,7 +115,7 @@ public class EventMessage  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public EventMessage messageWithParams(String messageWithParams) {
@@ -132,7 +132,7 @@ public class EventMessage  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public EventMessage messageParams(Map<String, Object> messageParams) {
@@ -149,7 +149,7 @@ public class EventMessage  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public EventMessage documentationUri(String documentationUri) {
@@ -166,7 +166,7 @@ public class EventMessage  implements Serializable {
     this.documentationUri = documentationUri;
   }
 
-
+  
   /**
    **/
   public EventMessage resourceURIs(List<String> resourceURIs) {
@@ -183,6 +183,7 @@ public class EventMessage  implements Serializable {
     this.resourceURIs = resourceURIs;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

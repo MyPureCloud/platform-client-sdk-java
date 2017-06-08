@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowVersionsRequest {
+    
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -56,6 +57,7 @@ public class GetFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -70,6 +72,7 @@ public class GetFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -84,6 +87,7 @@ public class GetFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private Boolean deleted;
 	public Boolean getDeleted() {
 		return this.deleted;
@@ -98,6 +102,7 @@ public class GetFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,7 +138,8 @@ public class GetFlowVersionsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("deleted", "", deleted)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -144,10 +150,12 @@ public class GetFlowVersionsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flowId) {
 	    return new Builder()
 	            .withRequiredParams(flowId);
 	}
+	
 
 	public static class Builder {
 		private final GetFlowVersionsRequest request;
@@ -156,27 +164,35 @@ public class GetFlowVersionsRequest {
 			request = new GetFlowVersionsRequest();
 		}
 
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withDeleted(Boolean deleted) {
 			request.setDeleted(deleted);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flowId) {
 			request.setFlowId(flowId);
+			
 			return this;
 		}
+		
 
 
 		public GetFlowVersionsRequest build() {

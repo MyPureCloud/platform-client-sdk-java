@@ -46,7 +46,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ConversationEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ConversationEntityListing  implements Serializable, PagedResource<C
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

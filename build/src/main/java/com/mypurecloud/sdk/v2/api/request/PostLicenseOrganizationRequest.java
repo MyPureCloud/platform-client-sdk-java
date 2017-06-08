@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class PostLicenseOrganizationRequest {
+    
 	private LicenseBatchAssignmentRequest body;
 	public LicenseBatchAssignmentRequest getBody() {
 		return this.body;
@@ -41,6 +42,7 @@ public class PostLicenseOrganizationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -65,6 +67,7 @@ public class PostLicenseOrganizationRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/license/organization")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -76,6 +79,7 @@ public class PostLicenseOrganizationRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostLicenseOrganizationRequest request;
@@ -84,11 +88,14 @@ public class PostLicenseOrganizationRequest {
 			request = new PostLicenseOrganizationRequest();
 		}
 
+		
 		public Builder withBody(LicenseBatchAssignmentRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostLicenseOrganizationRequest build() {

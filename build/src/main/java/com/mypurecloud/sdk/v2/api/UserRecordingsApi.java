@@ -42,6 +42,7 @@ public class UserRecordingsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a user recording.
    * 
@@ -66,6 +67,7 @@ public class UserRecordingsApi {
   private DeleteUserrecordingRequest createDeleteUserrecordingRequest(String recordingId) {
     return DeleteUserrecordingRequest.builder()
             .withRecordingId(recordingId)
+    
             .build();
   }
 
@@ -116,6 +118,7 @@ public class UserRecordingsApi {
     }
   }
 
+  
   /**
    * Get a user recording.
    * 
@@ -144,8 +147,9 @@ public class UserRecordingsApi {
   private GetUserrecordingRequest createGetUserrecordingRequest(String recordingId, List<String> expand) {
     return GetUserrecordingRequest.builder()
             .withRecordingId(recordingId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -197,6 +201,7 @@ public class UserRecordingsApi {
     }
   }
 
+  
   /**
    * Download a user recording.
    * 
@@ -225,8 +230,9 @@ public class UserRecordingsApi {
   private GetUserrecordingMediaRequest createGetUserrecordingMediaRequest(String recordingId, String formatId) {
     return GetUserrecordingMediaRequest.builder()
             .withRecordingId(recordingId)
-
+    
             .withFormatId(formatId)
+    
             .build();
   }
 
@@ -278,6 +284,7 @@ public class UserRecordingsApi {
     }
   }
 
+  
   /**
    * Get a list of user recordings.
    * 
@@ -308,10 +315,11 @@ public class UserRecordingsApi {
   private GetUserrecordingsRequest createGetUserrecordingsRequest(Integer pageSize, Integer pageNumber, List<String> expand) {
     return GetUserrecordingsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -363,6 +371,7 @@ public class UserRecordingsApi {
     }
   }
 
+  
   /**
    * Get user recording summary
    * 
@@ -385,7 +394,8 @@ public class UserRecordingsApi {
   }
 
   private GetUserrecordingsSummaryRequest createGetUserrecordingsSummaryRequest() {
-    return GetUserrecordingsSummaryRequest.builder()            .build();
+    return GetUserrecordingsSummaryRequest.builder()
+            .build();
   }
 
   /**
@@ -436,6 +446,7 @@ public class UserRecordingsApi {
     }
   }
 
+  
   /**
    * Update a user recording.
    * 
@@ -466,10 +477,11 @@ public class UserRecordingsApi {
   private PutUserrecordingRequest createPutUserrecordingRequest(String recordingId, UserRecording body, List<String> expand) {
     return PutUserrecordingRequest.builder()
             .withRecordingId(recordingId)
-
+    
             .withBody(body)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -521,4 +533,5 @@ public class UserRecordingsApi {
     }
   }
 
+  
 }

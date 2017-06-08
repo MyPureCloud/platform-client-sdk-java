@@ -37,7 +37,7 @@ public class ResponseSubstitution  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * Response substitution description.
    **/
@@ -55,7 +55,7 @@ public class ResponseSubstitution  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * Response substitution default value.
    **/
@@ -73,6 +73,7 @@ public class ResponseSubstitution  implements Serializable {
     this.defaultValue = defaultValue;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -41,7 +41,7 @@ public class StreetAddress  implements Serializable {
     this.country = country;
   }
 
-
+  
   /**
    * State or Province
    **/
@@ -59,7 +59,7 @@ public class StreetAddress  implements Serializable {
     this.a1 = a1;
   }
 
-
+  
   /**
    * City or township
    **/
@@ -77,7 +77,7 @@ public class StreetAddress  implements Serializable {
     this.a3 = a3;
   }
 
-
+  
   /**
    **/
   public StreetAddress RD(String RD) {
@@ -94,7 +94,7 @@ public class StreetAddress  implements Serializable {
     this.RD = RD;
   }
 
-
+  
   /**
    **/
   public StreetAddress HNO(String HNO) {
@@ -111,7 +111,7 @@ public class StreetAddress  implements Serializable {
     this.HNO = HNO;
   }
 
-
+  
   /**
    **/
   public StreetAddress LOC(String LOC) {
@@ -128,7 +128,7 @@ public class StreetAddress  implements Serializable {
     this.LOC = LOC;
   }
 
-
+  
   /**
    **/
   public StreetAddress NAM(String NAM) {
@@ -145,7 +145,7 @@ public class StreetAddress  implements Serializable {
     this.NAM = NAM;
   }
 
-
+  
   /**
    **/
   public StreetAddress PC(String PC) {
@@ -162,6 +162,7 @@ public class StreetAddress  implements Serializable {
     this.PC = PC;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

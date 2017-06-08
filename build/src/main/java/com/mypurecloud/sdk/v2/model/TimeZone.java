@@ -26,7 +26,7 @@ public class TimeZone  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public TimeZone name(String name) {
@@ -43,7 +43,7 @@ public class TimeZone  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public TimeZone offset(Long offset) {
@@ -60,13 +60,14 @@ public class TimeZone  implements Serializable {
     this.offset = offset;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

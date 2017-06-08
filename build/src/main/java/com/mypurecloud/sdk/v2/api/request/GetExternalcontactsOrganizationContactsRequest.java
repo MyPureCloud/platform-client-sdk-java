@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsOrganizationContactsRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,6 +61,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -73,6 +76,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private String q;
 	public String getQ() {
 		return this.q;
@@ -87,6 +91,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -101,6 +106,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -115,6 +121,7 @@ public class GetExternalcontactsOrganizationContactsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -154,7 +161,8 @@ public class GetExternalcontactsOrganizationContactsRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -165,10 +173,12 @@ public class GetExternalcontactsOrganizationContactsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsOrganizationContactsRequest request;
@@ -177,35 +187,45 @@ public class GetExternalcontactsOrganizationContactsRequest {
 			request = new GetExternalcontactsOrganizationContactsRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withQ(String q) {
 			request.setQ(q);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsOrganizationContactsRequest build() {

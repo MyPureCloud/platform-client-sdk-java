@@ -34,7 +34,7 @@ public class UserPresenceNotificationPresenceDefinition  implements Serializable
     this.id = id;
   }
 
-
+  
   /**
    **/
   public UserPresenceNotificationPresenceDefinition systemPresence(String systemPresence) {
@@ -51,6 +51,7 @@ public class UserPresenceNotificationPresenceDefinition  implements Serializable
     this.systemPresence = systemPresence;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

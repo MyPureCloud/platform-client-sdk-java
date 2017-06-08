@@ -44,7 +44,7 @@ public class ResponseSetNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification name(String name) {
@@ -61,7 +61,7 @@ public class ResponseSetNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification dateCreated(Date dateCreated) {
@@ -78,7 +78,7 @@ public class ResponseSetNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification dateModified(Date dateModified) {
@@ -95,7 +95,7 @@ public class ResponseSetNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification version(Integer version) {
@@ -112,7 +112,7 @@ public class ResponseSetNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification responses(Map<String, ResponseSetNotificationResponses> responses) {
@@ -129,7 +129,7 @@ public class ResponseSetNotification  implements Serializable {
     this.responses = responses;
   }
 
-
+  
   /**
    **/
   public ResponseSetNotification additionalProperties(Object additionalProperties) {
@@ -146,6 +146,7 @@ public class ResponseSetNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

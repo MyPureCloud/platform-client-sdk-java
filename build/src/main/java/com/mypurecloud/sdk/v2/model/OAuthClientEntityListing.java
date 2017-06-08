@@ -46,7 +46,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.total = total;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public OAuthClientEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class OAuthClientEntityListing  implements Serializable, PagedResource<OA
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

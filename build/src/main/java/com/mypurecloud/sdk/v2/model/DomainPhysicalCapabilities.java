@@ -34,7 +34,7 @@ public class DomainPhysicalCapabilities  implements Serializable {
     this.vlan = vlan;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalCapabilities team(Boolean team) {
@@ -51,6 +51,7 @@ public class DomainPhysicalCapabilities  implements Serializable {
     this.team = team;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

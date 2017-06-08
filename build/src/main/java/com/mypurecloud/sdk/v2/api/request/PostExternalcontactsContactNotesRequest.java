@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PostExternalcontactsContactNotesRequest {
+    
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -45,6 +46,7 @@ public class PostExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private Note body;
 	public Note getBody() {
 		return this.body;
@@ -59,6 +61,7 @@ public class PostExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,6 +93,7 @@ public class PostExternalcontactsContactNotesRequest {
                 .withPathParameter("contactId", contactId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,10 +105,12 @@ public class PostExternalcontactsContactNotesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactId) {
 	    return new Builder()
 	            .withRequiredParams(contactId);
 	}
+	
 
 	public static class Builder {
 		private final PostExternalcontactsContactNotesRequest request;
@@ -113,19 +119,25 @@ public class PostExternalcontactsContactNotesRequest {
 			request = new PostExternalcontactsContactNotesRequest();
 		}
 
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withBody(Note body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactId) {
 			request.setContactId(contactId);
+			
 			return this;
 		}
+		
 
 
 		public PostExternalcontactsContactNotesRequest build() {

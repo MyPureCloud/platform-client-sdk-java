@@ -489,7 +489,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -540,7 +540,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -593,7 +593,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -644,7 +644,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -697,7 +697,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -748,7 +748,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -848,7 +848,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -899,7 +899,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -952,7 +952,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1003,7 +1003,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1056,7 +1056,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1107,7 +1107,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1160,7 +1160,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1211,7 +1211,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1264,7 +1264,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1315,7 +1315,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1368,7 +1368,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1421,7 +1421,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1474,7 +1474,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1527,7 +1527,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -1582,7 +1582,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
 | **body** | [**HeartBeatRule**](HeartBeatRule.html)| HeartBeatRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1637,7 +1637,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **alertId** | **String**| Alert ID | |
 | **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1692,7 +1692,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
 | **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
 {: class="table table-striped"}
 
 ### Return type
@@ -1747,7 +1747,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
 | **body** | [**RoutingStatusRule**](RoutingStatusRule.html)| RoutingStatusRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, agent |
 {: class="table table-striped"}
 
 ### Return type
@@ -1802,7 +1802,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **String**| Rule ID | |
 | **body** | [**UserPresenceRule**](UserPresenceRule.html)| UserPresenceRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers, presenceUser |
 {: class="table table-striped"}
 
 ### Return type

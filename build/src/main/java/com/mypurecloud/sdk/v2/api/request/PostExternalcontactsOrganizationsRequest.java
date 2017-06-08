@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PostExternalcontactsOrganizationsRequest {
+    
 	private ExternalOrganization body;
 	public ExternalOrganization getBody() {
 		return this.body;
@@ -45,6 +46,7 @@ public class PostExternalcontactsOrganizationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -69,6 +71,7 @@ public class PostExternalcontactsOrganizationsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/externalcontacts/organizations")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -80,6 +83,7 @@ public class PostExternalcontactsOrganizationsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostExternalcontactsOrganizationsRequest request;
@@ -88,11 +92,14 @@ public class PostExternalcontactsOrganizationsRequest {
 			request = new PostExternalcontactsOrganizationsRequest();
 		}
 
+		
 		public Builder withBody(ExternalOrganization body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostExternalcontactsOrganizationsRequest build() {

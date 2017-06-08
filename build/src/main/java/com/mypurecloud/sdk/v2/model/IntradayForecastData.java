@@ -36,7 +36,7 @@ public class IntradayForecastData  implements Serializable {
     this.offered = offered;
   }
 
-
+  
   /**
    * The average time in seconds an agent spends interacting with a customer
    **/
@@ -54,7 +54,7 @@ public class IntradayForecastData  implements Serializable {
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-
+  
   /**
    * The average time in seconds spent in after-call work. After-call work is the work that an agent performs immediately following an interaction
    **/
@@ -72,6 +72,7 @@ public class IntradayForecastData  implements Serializable {
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

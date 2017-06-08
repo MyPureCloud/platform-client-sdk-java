@@ -72,7 +72,7 @@ public class AcwSettings  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    * The amount of time the agent can stay in ACW (Min: 1 sec, Max: 1 day).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
    **/
@@ -90,6 +90,7 @@ public class AcwSettings  implements Serializable {
     this.timeoutMs = timeoutMs;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

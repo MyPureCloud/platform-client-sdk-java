@@ -46,7 +46,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage total(Long total) {
@@ -97,7 +97,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.total = total;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public QualityAuditPage pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class QualityAuditPage  implements Serializable, PagedResource<QualityAud
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

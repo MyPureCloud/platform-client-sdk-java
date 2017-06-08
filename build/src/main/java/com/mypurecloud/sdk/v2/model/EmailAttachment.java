@@ -37,7 +37,7 @@ public class EmailAttachment  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EmailAttachment contentPath(String contentPath) {
@@ -54,7 +54,7 @@ public class EmailAttachment  implements Serializable {
     this.contentPath = contentPath;
   }
 
-
+  
   /**
    **/
   public EmailAttachment contentType(String contentType) {
@@ -71,7 +71,7 @@ public class EmailAttachment  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public EmailAttachment attachmentId(String attachmentId) {
@@ -88,7 +88,7 @@ public class EmailAttachment  implements Serializable {
     this.attachmentId = attachmentId;
   }
 
-
+  
   /**
    **/
   public EmailAttachment contentLength(Integer contentLength) {
@@ -105,6 +105,7 @@ public class EmailAttachment  implements Serializable {
     this.contentLength = contentLength;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

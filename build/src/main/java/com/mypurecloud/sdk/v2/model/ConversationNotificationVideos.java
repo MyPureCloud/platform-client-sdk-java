@@ -137,7 +137,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos self(ConversationNotificationAddress self) {
@@ -154,7 +154,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.self = self;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos id(String id) {
@@ -171,7 +171,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos context(String context) {
@@ -188,7 +188,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.context = context;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos audioMuted(Boolean audioMuted) {
@@ -205,7 +205,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos videoMuted(Boolean videoMuted) {
@@ -222,7 +222,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos sharingScreen(Boolean sharingScreen) {
@@ -239,7 +239,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos provider(String provider) {
@@ -256,7 +256,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos scriptId(String scriptId) {
@@ -273,7 +273,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos peerId(String peerId) {
@@ -290,7 +290,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos disconnectType(DisconnectTypeEnum disconnectType) {
@@ -307,7 +307,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos connectedTime(Date connectedTime) {
@@ -324,7 +324,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos disconnectedTime(Date disconnectedTime) {
@@ -341,7 +341,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationVideos additionalProperties(Object additionalProperties) {
@@ -358,6 +358,7 @@ public class ConversationNotificationVideos  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -83,7 +83,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup forecastDataPerInterval(List<IntradayDataUpdateNotificationForecastDataPerInterval> forecastDataPerInterval) {
@@ -100,7 +100,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.forecastDataPerInterval = forecastDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup scheduleDataPerInterval(List<IntradayDataUpdateNotificationScheduleDataPerInterval> scheduleDataPerInterval) {
@@ -117,7 +117,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.scheduleDataPerInterval = scheduleDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup historicalAgentDataPerInterval(List<IntradayDataUpdateNotificationHistoricalAgentDataPerInterval> historicalAgentDataPerInterval) {
@@ -134,7 +134,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.historicalAgentDataPerInterval = historicalAgentDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup historicalQueueDataPerInterval(List<IntradayDataUpdateNotificationHistoricalQueueDataPerInterval> historicalQueueDataPerInterval) {
@@ -151,7 +151,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.historicalQueueDataPerInterval = historicalQueueDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup performancePredictionAgentDataPerInterval(List<IntradayDataUpdateNotificationPerformancePredictionAgentDataPerInterval> performancePredictionAgentDataPerInterval) {
@@ -168,7 +168,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.performancePredictionAgentDataPerInterval = performancePredictionAgentDataPerInterval;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayDataGroup performancePredictionQueueDataPerInterval(List<IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval> performancePredictionQueueDataPerInterval) {
@@ -185,6 +185,7 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     this.performancePredictionQueueDataPerInterval = performancePredictionQueueDataPerInterval;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

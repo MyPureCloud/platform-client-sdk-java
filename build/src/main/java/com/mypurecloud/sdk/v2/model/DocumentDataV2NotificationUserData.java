@@ -34,7 +34,7 @@ public class DocumentDataV2NotificationUserData  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2NotificationUserData name(String name) {
@@ -51,6 +51,7 @@ public class DocumentDataV2NotificationUserData  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

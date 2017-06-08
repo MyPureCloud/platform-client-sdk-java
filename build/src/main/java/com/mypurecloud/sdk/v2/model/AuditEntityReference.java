@@ -81,7 +81,7 @@ public class AuditEntityReference  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public AuditEntityReference name(String name) {
@@ -98,7 +98,7 @@ public class AuditEntityReference  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public AuditEntityReference selfUri(String selfUri) {
@@ -115,7 +115,7 @@ public class AuditEntityReference  implements Serializable {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public AuditEntityReference type(TypeEnum type) {
@@ -132,7 +132,7 @@ public class AuditEntityReference  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public AuditEntityReference action(String action) {
@@ -149,6 +149,7 @@ public class AuditEntityReference  implements Serializable {
     this.action = action;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

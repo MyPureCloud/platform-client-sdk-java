@@ -36,7 +36,7 @@ public class QueueEmailAddress  implements Serializable {
     this.domain = domain;
   }
 
-
+  
   /**
    **/
   public QueueEmailAddress route(InboundRoute route) {
@@ -53,6 +53,7 @@ public class QueueEmailAddress  implements Serializable {
     this.route = route;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

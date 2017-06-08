@@ -35,7 +35,7 @@ public class TagQueryRequest  implements Serializable {
     this.query = query;
   }
 
-
+  
   /**
    **/
   public TagQueryRequest pageNumber(Integer pageNumber) {
@@ -52,7 +52,7 @@ public class TagQueryRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public TagQueryRequest pageSize(Integer pageSize) {
@@ -69,6 +69,7 @@ public class TagQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

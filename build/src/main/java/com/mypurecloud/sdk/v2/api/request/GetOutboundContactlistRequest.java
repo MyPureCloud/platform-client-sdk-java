@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundContactlistRequest {
+    
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -74,6 +75,7 @@ public class GetOutboundContactlistRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeImportStatus;
 	public Boolean getIncludeImportStatus() {
 		return this.includeImportStatus;
@@ -88,6 +90,7 @@ public class GetOutboundContactlistRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeSize;
 	public Boolean getIncludeSize() {
 		return this.includeSize;
@@ -102,6 +105,7 @@ public class GetOutboundContactlistRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,7 +139,8 @@ public class GetOutboundContactlistRequest {
                 .withQueryParameters("includeImportStatus", "", includeImportStatus)
         
                 .withQueryParameters("includeSize", "", includeSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -146,10 +151,12 @@ public class GetOutboundContactlistRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListId) {
 	    return new Builder()
 	            .withRequiredParams(contactListId);
 	}
+	
 
 	public static class Builder {
 		private final GetOutboundContactlistRequest request;
@@ -158,23 +165,30 @@ public class GetOutboundContactlistRequest {
 			request = new GetOutboundContactlistRequest();
 		}
 
+		
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
+		
 		public Builder withIncludeImportStatus(Boolean includeImportStatus) {
 			request.setIncludeImportStatus(includeImportStatus);
 			return this;
 		}
+		
 		public Builder withIncludeSize(Boolean includeSize) {
 			request.setIncludeSize(includeSize);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListId) {
 			request.setContactListId(contactListId);
+			
 			return this;
 		}
+		
 
 
 		public GetOutboundContactlistRequest build() {

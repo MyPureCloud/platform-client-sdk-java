@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundDnclistRequest {
+    
 	private String dncListId;
 	public String getDncListId() {
 		return this.dncListId;
@@ -74,6 +75,7 @@ public class GetOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeImportStatus;
 	public Boolean getIncludeImportStatus() {
 		return this.includeImportStatus;
@@ -88,6 +90,7 @@ public class GetOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private Boolean includeSize;
 	public Boolean getIncludeSize() {
 		return this.includeSize;
@@ -102,6 +105,7 @@ public class GetOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,7 +139,8 @@ public class GetOutboundDnclistRequest {
                 .withQueryParameters("includeImportStatus", "", includeImportStatus)
         
                 .withQueryParameters("includeSize", "", includeSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -146,10 +151,12 @@ public class GetOutboundDnclistRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String dncListId) {
 	    return new Builder()
 	            .withRequiredParams(dncListId);
 	}
+	
 
 	public static class Builder {
 		private final GetOutboundDnclistRequest request;
@@ -158,23 +165,30 @@ public class GetOutboundDnclistRequest {
 			request = new GetOutboundDnclistRequest();
 		}
 
+		
 		public Builder withDncListId(String dncListId) {
 			request.setDncListId(dncListId);
 			return this;
 		}
+		
 		public Builder withIncludeImportStatus(Boolean includeImportStatus) {
 			request.setIncludeImportStatus(includeImportStatus);
 			return this;
 		}
+		
 		public Builder withIncludeSize(Boolean includeSize) {
 			request.setIncludeSize(includeSize);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String dncListId) {
 			request.setDncListId(dncListId);
+			
 			return this;
 		}
+		
 
 
 		public GetOutboundDnclistRequest build() {

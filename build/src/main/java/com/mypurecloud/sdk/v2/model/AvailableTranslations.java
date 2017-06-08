@@ -36,7 +36,7 @@ public class AvailableTranslations  implements Serializable {
     this.orgSpecific = orgSpecific;
   }
 
-
+  
   /**
    **/
   public AvailableTranslations builtin(List<String> builtin) {
@@ -53,6 +53,7 @@ public class AvailableTranslations  implements Serializable {
     this.builtin = builtin;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

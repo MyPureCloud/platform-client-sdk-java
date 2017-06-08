@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundDnclistRequest {
+    
 	private String dncListId;
 	public String getDncListId() {
 		return this.dncListId;
@@ -74,6 +75,7 @@ public class PutOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private DncList body;
 	public DncList getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundDnclistRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundDnclistRequest {
                 .withPathParameter("dncListId", dncListId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundDnclistRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String dncListId, DncList body) {
 	    return new Builder()
 	            .withRequiredParams(dncListId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundDnclistRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundDnclistRequest {
 			request = new PutOutboundDnclistRequest();
 		}
 
+		
 		public Builder withDncListId(String dncListId) {
 			request.setDncListId(dncListId);
 			return this;
 		}
+		
 		public Builder withBody(DncList body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String dncListId, DncList body) {
 			request.setDncListId(dncListId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundDnclistRequest build() {

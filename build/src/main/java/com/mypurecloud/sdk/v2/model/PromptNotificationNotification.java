@@ -37,7 +37,7 @@ public class PromptNotificationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotification name(String name) {
@@ -54,7 +54,7 @@ public class PromptNotificationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotification description(String description) {
@@ -71,7 +71,7 @@ public class PromptNotificationNotification  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotification currentOperation(PromptNotificationNotificationCurrentOperation currentOperation) {
@@ -88,6 +88,7 @@ public class PromptNotificationNotification  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

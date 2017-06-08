@@ -30,7 +30,7 @@ public class Library  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The library name.
    **/
@@ -48,7 +48,7 @@ public class Library  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Library version(Integer version) {
@@ -65,7 +65,7 @@ public class Library  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public Library createdBy(User createdBy) {
@@ -82,7 +82,7 @@ public class Library  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -100,13 +100,14 @@ public class Library  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

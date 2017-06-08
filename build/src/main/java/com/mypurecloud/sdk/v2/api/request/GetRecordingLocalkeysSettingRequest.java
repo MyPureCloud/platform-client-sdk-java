@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingLocalkeysSettingRequest {
+    
 	private String settingsId;
 	public String getSettingsId() {
 		return this.settingsId;
@@ -52,6 +53,7 @@ public class GetRecordingLocalkeysSettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class GetRecordingLocalkeysSettingRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/recording/localkeys/settings/{settingsId}")
                 .withPathParameter("settingsId", settingsId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class GetRecordingLocalkeysSettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String settingsId) {
 	    return new Builder()
 	            .withRequiredParams(settingsId);
 	}
+	
 
 	public static class Builder {
 		private final GetRecordingLocalkeysSettingRequest request;
@@ -104,15 +109,20 @@ public class GetRecordingLocalkeysSettingRequest {
 			request = new GetRecordingLocalkeysSettingRequest();
 		}
 
+		
 		public Builder withSettingsId(String settingsId) {
 			request.setSettingsId(settingsId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String settingsId) {
 			request.setSettingsId(settingsId);
+			
 			return this;
 		}
+		
 
 
 		public GetRecordingLocalkeysSettingRequest build() {

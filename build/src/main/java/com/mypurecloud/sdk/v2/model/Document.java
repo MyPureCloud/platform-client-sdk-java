@@ -155,8 +155,8 @@ public class Document  implements Serializable {
     }
   }
   private SharingStatusEnum sharingStatus = null;
-  private String sharingUri = null;
   private String downloadSharingUri = null;
+  private String sharingUri = null;
   private String selfUri = null;
 
   
@@ -166,7 +166,7 @@ public class Document  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Document name(String name) {
@@ -183,7 +183,7 @@ public class Document  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Document changeNumber(Integer changeNumber) {
@@ -200,7 +200,7 @@ public class Document  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -218,7 +218,7 @@ public class Document  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -236,7 +236,7 @@ public class Document  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -254,7 +254,7 @@ public class Document  implements Serializable {
     this.dateUploaded = dateUploaded;
   }
 
-
+  
   /**
    **/
   public Document contentUri(String contentUri) {
@@ -271,7 +271,7 @@ public class Document  implements Serializable {
     this.contentUri = contentUri;
   }
 
-
+  
   /**
    **/
   public Document workspace(UriReference workspace) {
@@ -288,7 +288,7 @@ public class Document  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public Document createdBy(UriReference createdBy) {
@@ -305,7 +305,7 @@ public class Document  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Document uploadedBy(UriReference uploadedBy) {
@@ -322,7 +322,7 @@ public class Document  implements Serializable {
     this.uploadedBy = uploadedBy;
   }
 
-
+  
   /**
    **/
   public Document contentType(String contentType) {
@@ -339,7 +339,7 @@ public class Document  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public Document contentLength(Long contentLength) {
@@ -356,7 +356,7 @@ public class Document  implements Serializable {
     this.contentLength = contentLength;
   }
 
-
+  
   /**
    **/
   public Document systemType(SystemTypeEnum systemType) {
@@ -373,7 +373,7 @@ public class Document  implements Serializable {
     this.systemType = systemType;
   }
 
-
+  
   /**
    **/
   public Document filename(String filename) {
@@ -390,7 +390,7 @@ public class Document  implements Serializable {
     this.filename = filename;
   }
 
-
+  
   /**
    **/
   public Document pageCount(Long pageCount) {
@@ -407,7 +407,7 @@ public class Document  implements Serializable {
     this.pageCount = pageCount;
   }
 
-
+  
   /**
    **/
   public Document read(Boolean read) {
@@ -424,7 +424,7 @@ public class Document  implements Serializable {
     this.read = read;
   }
 
-
+  
   /**
    **/
   public Document callerAddress(String callerAddress) {
@@ -441,7 +441,7 @@ public class Document  implements Serializable {
     this.callerAddress = callerAddress;
   }
 
-
+  
   /**
    **/
   public Document receiverAddress(String receiverAddress) {
@@ -458,7 +458,7 @@ public class Document  implements Serializable {
     this.receiverAddress = receiverAddress;
   }
 
-
+  
   /**
    **/
   public Document tags(List<String> tags) {
@@ -475,7 +475,7 @@ public class Document  implements Serializable {
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public Document tagValues(List<TagValue> tagValues) {
@@ -492,7 +492,7 @@ public class Document  implements Serializable {
     this.tagValues = tagValues;
   }
 
-
+  
   /**
    **/
   public Document attributes(List<DocumentAttribute> attributes) {
@@ -509,7 +509,7 @@ public class Document  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public Document thumbnails(List<DocumentThumbnail> thumbnails) {
@@ -526,7 +526,7 @@ public class Document  implements Serializable {
     this.thumbnails = thumbnails;
   }
 
-
+  
   /**
    **/
   public Document uploadStatus(UriReference uploadStatus) {
@@ -543,7 +543,7 @@ public class Document  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public Document uploadDestinationUri(String uploadDestinationUri) {
@@ -560,7 +560,7 @@ public class Document  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-
+  
   /**
    **/
   public Document uploadMethod(UploadMethodEnum uploadMethod) {
@@ -577,7 +577,7 @@ public class Document  implements Serializable {
     this.uploadMethod = uploadMethod;
   }
 
-
+  
   /**
    **/
   public Document lockInfo(LockInfo lockInfo) {
@@ -594,7 +594,7 @@ public class Document  implements Serializable {
     this.lockInfo = lockInfo;
   }
 
-
+  
   /**
    * A list of permitted action rights for the user making the request
    **/
@@ -612,7 +612,7 @@ public class Document  implements Serializable {
     this.acl = acl;
   }
 
-
+  
   /**
    **/
   public Document sharingStatus(SharingStatusEnum sharingStatus) {
@@ -629,24 +629,7 @@ public class Document  implements Serializable {
     this.sharingStatus = sharingStatus;
   }
 
-
-  /**
-   **/
-  public Document sharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-    return this;
-  }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("sharingUri")
-  public String getSharingUri() {
-    return sharingUri;
-  }
-  public void setSharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-  }
-
-
   /**
    **/
   public Document downloadSharingUri(String downloadSharingUri) {
@@ -663,13 +646,31 @@ public class Document  implements Serializable {
     this.downloadSharingUri = downloadSharingUri;
   }
 
+  
+  /**
+   **/
+  public Document sharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sharingUri")
+  public String getSharingUri() {
+    return sharingUri;
+  }
+  public void setSharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
+  }
 
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -708,14 +709,14 @@ public class Document  implements Serializable {
         Objects.equals(this.lockInfo, document.lockInfo) &&
         Objects.equals(this.acl, document.acl) &&
         Objects.equals(this.sharingStatus, document.sharingStatus) &&
-        Objects.equals(this.sharingUri, document.sharingUri) &&
         Objects.equals(this.downloadSharingUri, document.downloadSharingUri) &&
+        Objects.equals(this.sharingUri, document.sharingUri) &&
         Objects.equals(this.selfUri, document.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, changeNumber, dateCreated, dateModified, dateUploaded, contentUri, workspace, createdBy, uploadedBy, contentType, contentLength, systemType, filename, pageCount, read, callerAddress, receiverAddress, tags, tagValues, attributes, thumbnails, uploadStatus, uploadDestinationUri, uploadMethod, lockInfo, acl, sharingStatus, sharingUri, downloadSharingUri, selfUri);
+    return Objects.hash(id, name, changeNumber, dateCreated, dateModified, dateUploaded, contentUri, workspace, createdBy, uploadedBy, contentType, contentLength, systemType, filename, pageCount, read, callerAddress, receiverAddress, tags, tagValues, attributes, thumbnails, uploadStatus, uploadDestinationUri, uploadMethod, lockInfo, acl, sharingStatus, downloadSharingUri, sharingUri, selfUri);
   }
 
   @Override
@@ -751,8 +752,8 @@ public class Document  implements Serializable {
     sb.append("    lockInfo: ").append(toIndentedString(lockInfo)).append("\n");
     sb.append("    acl: ").append(toIndentedString(acl)).append("\n");
     sb.append("    sharingStatus: ").append(toIndentedString(sharingStatus)).append("\n");
-    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    downloadSharingUri: ").append(toIndentedString(downloadSharingUri)).append("\n");
+    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

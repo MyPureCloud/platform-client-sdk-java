@@ -37,7 +37,7 @@ public class GroupMembersUpdate  implements Serializable {
     this.memberIds = memberIds;
   }
 
-
+  
   /**
    * The current group version.
    **/
@@ -55,6 +55,7 @@ public class GroupMembersUpdate  implements Serializable {
     this.version = version;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

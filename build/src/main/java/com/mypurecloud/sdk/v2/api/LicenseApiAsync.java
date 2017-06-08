@@ -48,6 +48,7 @@ public class LicenseApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get PureCloud license definition.
    * 
@@ -123,6 +124,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
@@ -198,6 +200,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
   /**
    * Get license assignments for the organization.
    * 
@@ -273,6 +276,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
   /**
    * Get licenses for specified user.
    * 
@@ -348,6 +352,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
   /**
    * Update the organization&#39;s license assignments in a batch.
    * 
@@ -423,6 +428,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
   /**
    * Fetch user licenses in a batch.
    * 
@@ -498,6 +504,7 @@ public class LicenseApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

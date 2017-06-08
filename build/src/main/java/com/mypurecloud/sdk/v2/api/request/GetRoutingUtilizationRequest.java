@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingUtilizationRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,7 +67,8 @@ public class GetRoutingUtilizationRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/routing/utilization")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/routing/utilization")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -77,6 +79,7 @@ public class GetRoutingUtilizationRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetRoutingUtilizationRequest request;
@@ -85,7 +88,9 @@ public class GetRoutingUtilizationRequest {
 			request = new GetRoutingUtilizationRequest();
 		}
 
+		
 
+		
 
 
 		public GetRoutingUtilizationRequest build() {

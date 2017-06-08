@@ -36,6 +36,7 @@ public class EdgeLogsJobUploadRequest  implements Serializable {
     this.fileIds = fileIds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

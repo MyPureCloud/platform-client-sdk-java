@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgeLogsJobsRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
 	    return this;
 	}
 
+	
 	private EdgeLogsJobRequest body;
 	public EdgeLogsJobRequest getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, EdgeLogsJobRequest body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgeLogsJobsRequest request;
@@ -171,20 +177,26 @@ public class PostTelephonyProvidersEdgeLogsJobsRequest {
 			request = new PostTelephonyProvidersEdgeLogsJobsRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withBody(EdgeLogsJobRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, EdgeLogsJobRequest body) {
 			request.setEdgeId(edgeId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgeLogsJobsRequest build() {

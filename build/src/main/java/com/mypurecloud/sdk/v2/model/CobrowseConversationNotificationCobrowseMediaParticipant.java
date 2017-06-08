@@ -199,7 +199,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant name(String name) {
@@ -216,7 +216,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant address(String address) {
@@ -233,7 +233,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.address = address;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant startTime(Date startTime) {
@@ -250,7 +250,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant connectedTime(Date connectedTime) {
@@ -267,7 +267,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant endTime(Date endTime) {
@@ -284,7 +284,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant startHoldTime(Date startHoldTime) {
@@ -301,7 +301,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant purpose(String purpose) {
@@ -318,7 +318,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant state(StateEnum state) {
@@ -335,7 +335,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.state = state;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant direction(DirectionEnum direction) {
@@ -352,7 +352,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -369,7 +369,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant held(Boolean held) {
@@ -386,7 +386,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.held = held;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -403,7 +403,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -420,7 +420,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -437,7 +437,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant queue(CobrowseConversationNotificationUriReference queue) {
@@ -454,7 +454,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant attributes(Map<String, String> attributes) {
@@ -471,7 +471,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant errorInfo(CobrowseConversationNotificationErrorInfo errorInfo) {
@@ -488,7 +488,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant script(CobrowseConversationNotificationUriReference script) {
@@ -505,7 +505,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -522,7 +522,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -539,7 +539,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant provider(String provider) {
@@ -556,7 +556,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant externalContact(CobrowseConversationNotificationUriReference externalContact) {
@@ -573,7 +573,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant externalOrganization(CobrowseConversationNotificationUriReference externalOrganization) {
@@ -590,7 +590,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -607,7 +607,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant peer(String peer) {
@@ -624,7 +624,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -641,7 +641,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant cobrowseRole(String cobrowseRole) {
@@ -658,7 +658,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.cobrowseRole = cobrowseRole;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant viewerUrl(String viewerUrl) {
@@ -675,7 +675,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.viewerUrl = viewerUrl;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant providerEventTime(Date providerEventTime) {
@@ -692,7 +692,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.providerEventTime = providerEventTime;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotificationCobrowseMediaParticipant controlling(List<String> controlling) {
@@ -709,6 +709,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     this.controlling = controlling;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

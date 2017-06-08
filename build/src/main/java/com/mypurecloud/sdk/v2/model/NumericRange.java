@@ -38,7 +38,7 @@ public class NumericRange  implements Serializable {
     this.gt = gt;
   }
 
-
+  
   /**
    * Greater than or equal to
    **/
@@ -56,7 +56,7 @@ public class NumericRange  implements Serializable {
     this.gte = gte;
   }
 
-
+  
   /**
    * Less than
    **/
@@ -74,7 +74,7 @@ public class NumericRange  implements Serializable {
     this.lt = lt;
   }
 
-
+  
   /**
    * Less than or equal to
    **/
@@ -92,6 +92,7 @@ public class NumericRange  implements Serializable {
     this.lte = lte;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

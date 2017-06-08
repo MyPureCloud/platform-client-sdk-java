@@ -45,7 +45,7 @@ public class Calibration  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Calibration name(String name) {
@@ -62,7 +62,7 @@ public class Calibration  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Calibration calibrator(User calibrator) {
@@ -79,7 +79,7 @@ public class Calibration  implements Serializable {
     this.calibrator = calibrator;
   }
 
-
+  
   /**
    **/
   public Calibration agent(User agent) {
@@ -96,7 +96,7 @@ public class Calibration  implements Serializable {
     this.agent = agent;
   }
 
-
+  
   /**
    **/
   public Calibration conversation(Conversation conversation) {
@@ -113,7 +113,7 @@ public class Calibration  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    **/
   public Calibration evaluationForm(EvaluationForm evaluationForm) {
@@ -130,7 +130,7 @@ public class Calibration  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public Calibration contextId(String contextId) {
@@ -147,7 +147,7 @@ public class Calibration  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public Calibration averageScore(Integer averageScore) {
@@ -164,7 +164,7 @@ public class Calibration  implements Serializable {
     this.averageScore = averageScore;
   }
 
-
+  
   /**
    **/
   public Calibration highScore(Integer highScore) {
@@ -181,7 +181,7 @@ public class Calibration  implements Serializable {
     this.highScore = highScore;
   }
 
-
+  
   /**
    **/
   public Calibration lowScore(Integer lowScore) {
@@ -198,7 +198,7 @@ public class Calibration  implements Serializable {
     this.lowScore = lowScore;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -216,7 +216,7 @@ public class Calibration  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public Calibration evaluations(List<Evaluation> evaluations) {
@@ -233,7 +233,7 @@ public class Calibration  implements Serializable {
     this.evaluations = evaluations;
   }
 
-
+  
   /**
    **/
   public Calibration evaluators(List<User> evaluators) {
@@ -250,7 +250,7 @@ public class Calibration  implements Serializable {
     this.evaluators = evaluators;
   }
 
-
+  
   /**
    **/
   public Calibration scoringIndex(Evaluation scoringIndex) {
@@ -267,7 +267,7 @@ public class Calibration  implements Serializable {
     this.scoringIndex = scoringIndex;
   }
 
-
+  
   /**
    **/
   public Calibration expertEvaluator(User expertEvaluator) {
@@ -284,13 +284,14 @@ public class Calibration  implements Serializable {
     this.expertEvaluator = expertEvaluator;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

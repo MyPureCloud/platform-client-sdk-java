@@ -35,7 +35,7 @@ public class EdgeServiceStateRequest  implements Serializable {
     this.inService = inService;
   }
 
-
+  
   /**
    * The number of seconds to wait for call draining to complete before initiating the reboot. A value of 0 will prevent call draining and all calls will disconnect immediately.
    **/
@@ -53,6 +53,7 @@ public class EdgeServiceStateRequest  implements Serializable {
     this.callDrainingWaitTimeSeconds = callDrainingWaitTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

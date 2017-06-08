@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesExtensionRequest {
+    
 	private String extensionId;
 	public String getExtensionId() {
 		return this.extensionId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesExtensionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesExtensionRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/extensions/{extensionId}")
                 .withPathParameter("extensionId", extensionId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesExtensionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String extensionId) {
 	    return new Builder()
 	            .withRequiredParams(extensionId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesExtensionRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesExtensionRequest {
 			request = new GetTelephonyProvidersEdgesExtensionRequest();
 		}
 
+		
 		public Builder withExtensionId(String extensionId) {
 			request.setExtensionId(extensionId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String extensionId) {
 			request.setExtensionId(extensionId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesExtensionRequest build() {

@@ -39,7 +39,7 @@ public class CampaignProgress  implements Serializable {
     this.campaign = campaign;
   }
 
-
+  
   /**
    * Identifier of the contact list
    **/
@@ -57,27 +57,28 @@ public class CampaignProgress  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Number of contacts processed during the campaign")
   @JsonProperty("numberOfContactsCalled")
   public Long getNumberOfContactsCalled() {
     return numberOfContactsCalled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Total number of contacts in the campaign")
   @JsonProperty("totalNumberOfContacts")
   public Long getTotalNumberOfContacts() {
     return totalNumberOfContacts;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Percentage of contacts processed during the campaign")
   @JsonProperty("percentage")
   public Long getPercentage() {
     return percentage;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

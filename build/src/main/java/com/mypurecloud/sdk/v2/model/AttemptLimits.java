@@ -73,7 +73,7 @@ public class AttemptLimits  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public AttemptLimits name(String name) {
@@ -90,21 +90,21 @@ public class AttemptLimits  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -122,7 +122,7 @@ public class AttemptLimits  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public AttemptLimits maxAttemptsPerContact(Integer maxAttemptsPerContact) {
@@ -139,7 +139,7 @@ public class AttemptLimits  implements Serializable {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
   }
 
-
+  
   /**
    **/
   public AttemptLimits maxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
@@ -156,7 +156,7 @@ public class AttemptLimits  implements Serializable {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
   }
 
-
+  
   /**
    * The timezone is necessary to define when \"today\" starts and ends
    **/
@@ -174,7 +174,7 @@ public class AttemptLimits  implements Serializable {
     this.timeZoneId = timeZoneId;
   }
 
-
+  
   /**
    * After how long the number of attempts will be set back to 0
    **/
@@ -192,7 +192,7 @@ public class AttemptLimits  implements Serializable {
     this.resetPeriod = resetPeriod;
   }
 
-
+  
   /**
    * Configuration for recall attempts
    **/
@@ -210,13 +210,14 @@ public class AttemptLimits  implements Serializable {
     this.recallEntries = recallEntries;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

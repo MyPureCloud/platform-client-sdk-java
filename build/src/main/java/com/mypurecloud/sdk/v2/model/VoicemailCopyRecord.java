@@ -39,7 +39,7 @@ public class VoicemailCopyRecord  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The group that the voicemail message was copied to/from
    **/
@@ -57,13 +57,14 @@ public class VoicemailCopyRecord  implements Serializable {
     this.group = group;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("date")
   public Date getDate() {
     return date;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

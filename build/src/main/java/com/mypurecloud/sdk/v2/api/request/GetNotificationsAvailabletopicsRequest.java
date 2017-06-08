@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.Channel;
 
 public class GetNotificationsAvailabletopicsRequest {
+    
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -40,6 +41,7 @@ public class GetNotificationsAvailabletopicsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -64,7 +66,8 @@ public class GetNotificationsAvailabletopicsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/notifications/availabletopics")
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -75,6 +78,7 @@ public class GetNotificationsAvailabletopicsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetNotificationsAvailabletopicsRequest request;
@@ -83,11 +87,14 @@ public class GetNotificationsAvailabletopicsRequest {
 			request = new GetNotificationsAvailabletopicsRequest();
 		}
 
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetNotificationsAvailabletopicsRequest build() {

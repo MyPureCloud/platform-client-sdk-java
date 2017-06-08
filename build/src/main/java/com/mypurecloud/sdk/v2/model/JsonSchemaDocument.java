@@ -44,7 +44,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument schema(String schema) {
@@ -61,7 +61,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.schema = schema;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument title(String title) {
@@ -78,7 +78,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument description(String description) {
@@ -95,7 +95,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument type(String type) {
@@ -112,7 +112,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument required(List<String> required) {
@@ -129,7 +129,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.required = required;
   }
 
-
+  
   /**
    **/
   public JsonSchemaDocument properties(Map<String, Object> properties) {
@@ -146,6 +146,7 @@ public class JsonSchemaDocument  implements Serializable {
     this.properties = properties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

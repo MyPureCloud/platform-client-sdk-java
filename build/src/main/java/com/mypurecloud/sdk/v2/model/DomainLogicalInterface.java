@@ -171,7 +171,7 @@ public class DomainLogicalInterface  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -189,7 +189,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface description(String description) {
@@ -206,7 +206,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface version(Integer version) {
@@ -223,7 +223,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -241,7 +241,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -259,7 +259,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface modifiedBy(String modifiedBy) {
@@ -276,7 +276,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface createdBy(String createdBy) {
@@ -293,7 +293,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface state(StateEnum state) {
@@ -310,7 +310,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface modifiedByApp(String modifiedByApp) {
@@ -327,7 +327,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface createdByApp(String createdByApp) {
@@ -344,7 +344,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface edgeUri(String edgeUri) {
@@ -361,7 +361,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface edgeAssignedId(String edgeAssignedId) {
@@ -378,7 +378,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.edgeAssignedId = edgeAssignedId;
   }
 
-
+  
   /**
    * Friendly Name
    **/
@@ -396,7 +396,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.friendlyName = friendlyName;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface vlanTagId(Integer vlanTagId) {
@@ -413,7 +413,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.vlanTagId = vlanTagId;
   }
 
-
+  
   /**
    * Hardware Address
    **/
@@ -431,7 +431,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.hardwareAddress = hardwareAddress;
   }
 
-
+  
   /**
    * Physical Adapter Id
    **/
@@ -449,7 +449,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.physicalAdapterId = physicalAdapterId;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface ifStatus(String ifStatus) {
@@ -466,14 +466,14 @@ public class DomainLogicalInterface  implements Serializable {
     this.ifStatus = ifStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The type of this network interface.")
   @JsonProperty("interfaceType")
   public InterfaceTypeEnum getInterfaceType() {
     return interfaceType;
   }
 
-
+  
   /**
    * The list of routes assigned to this interface.
    **/
@@ -491,7 +491,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.routes = routes;
   }
 
-
+  
   /**
    * The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list.
    **/
@@ -509,7 +509,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    * IPv4 interface settings.
    **/
@@ -527,7 +527,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.ipv4Capabilities = ipv4Capabilities;
   }
 
-
+  
   /**
    * IPv6 interface settings.
    **/
@@ -545,7 +545,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.ipv6Capabilities = ipv6Capabilities;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface currentState(CurrentStateEnum currentState) {
@@ -562,7 +562,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.currentState = currentState;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface lastModifiedUserId(String lastModifiedUserId) {
@@ -579,7 +579,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.lastModifiedUserId = lastModifiedUserId;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface lastModifiedCorrelationId(String lastModifiedCorrelationId) {
@@ -596,7 +596,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.lastModifiedCorrelationId = lastModifiedCorrelationId;
   }
 
-
+  
   /**
    **/
   public DomainLogicalInterface commandResponses(List<DomainNetworkCommandResponse> commandResponses) {
@@ -613,7 +613,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.commandResponses = commandResponses;
   }
 
-
+  
   /**
    * The IPv4 phone trunk base assignment will be inherited from the Edge Group.
    **/
@@ -631,7 +631,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.inheritPhoneTrunkBasesIPv4 = inheritPhoneTrunkBasesIPv4;
   }
 
-
+  
   /**
    * The IPv6 phone trunk base assignment will be inherited from the Edge Group.
    **/
@@ -649,7 +649,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.inheritPhoneTrunkBasesIPv6 = inheritPhoneTrunkBasesIPv6;
   }
 
-
+  
   /**
    * This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group.
    **/
@@ -667,7 +667,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.useForInternalEdgeCommunication = useForInternalEdgeCommunication;
   }
 
-
+  
   /**
    * External trunk base settings to use for external communication from this interface.
    **/
@@ -685,7 +685,7 @@ public class DomainLogicalInterface  implements Serializable {
     this.externalTrunkBaseAssignments = externalTrunkBaseAssignments;
   }
 
-
+  
   /**
    * Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \"inheritPhoneTrunkBases\" is true.
    **/
@@ -703,13 +703,14 @@ public class DomainLogicalInterface  implements Serializable {
     this.phoneTrunkBaseAssignments = phoneTrunkBaseAssignments;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

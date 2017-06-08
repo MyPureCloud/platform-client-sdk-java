@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.Station;
 import com.mypurecloud.sdk.v2.model.StationEntityListing;
 
 public class GetStationsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -37,6 +38,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -51,6 +53,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -65,6 +68,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -79,6 +83,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String userSelectable;
 	public String getUserSelectable() {
 		return this.userSelectable;
@@ -93,6 +98,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
 		return this.webRtcUserId;
@@ -107,6 +113,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String id;
 	public String getId() {
 		return this.id;
@@ -121,6 +128,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private String lineAppearanceId;
 	public String getLineAppearanceId() {
 		return this.lineAppearanceId;
@@ -135,6 +143,7 @@ public class GetStationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -173,7 +182,8 @@ public class GetStationsRequest {
                 .withQueryParameters("id", "", id)
         
                 .withQueryParameters("lineAppearanceId", "", lineAppearanceId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -184,6 +194,7 @@ public class GetStationsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetStationsRequest request;
@@ -192,39 +203,49 @@ public class GetStationsRequest {
 			request = new GetStationsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withUserSelectable(String userSelectable) {
 			request.setUserSelectable(userSelectable);
 			return this;
 		}
+		
 		public Builder withWebRtcUserId(String webRtcUserId) {
 			request.setWebRtcUserId(webRtcUserId);
 			return this;
 		}
+		
 		public Builder withId(String id) {
 			request.setId(id);
 			return this;
 		}
+		
 		public Builder withLineAppearanceId(String lineAppearanceId) {
 			request.setLineAppearanceId(lineAppearanceId);
 			return this;
 		}
+		
 
+		
 
 
 		public GetStationsRequest build() {

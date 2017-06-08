@@ -35,7 +35,7 @@ public class TrunkRecordingEnabledCount  implements Serializable {
     this.enabledCount = enabledCount;
   }
 
-
+  
   /**
    * The amount of trunks that do not have recording enabled
    **/
@@ -53,6 +53,7 @@ public class TrunkRecordingEnabledCount  implements Serializable {
     this.disabledCount = disabledCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

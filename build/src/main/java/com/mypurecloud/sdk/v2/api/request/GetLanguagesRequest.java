@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -38,6 +39,7 @@ public class GetLanguagesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -52,6 +54,7 @@ public class GetLanguagesRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -66,6 +69,7 @@ public class GetLanguagesRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -80,6 +84,7 @@ public class GetLanguagesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -110,7 +115,8 @@ public class GetLanguagesRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("name", "", name)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -121,6 +127,7 @@ public class GetLanguagesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetLanguagesRequest request;
@@ -129,23 +136,29 @@ public class GetLanguagesRequest {
 			request = new GetLanguagesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 
+		
 
 
 		public GetLanguagesRequest build() {

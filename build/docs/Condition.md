@@ -15,6 +15,8 @@ title: Condition
 | **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | Determines the type of the value associated with the condition |  [optional] |
 | **operator** | [**OperatorEnum**](#OperatorEnum) | An operation type for condition evaluation |  [optional] |
 | **codes** | **List&lt;String&gt;** | List of wrap-up code identifiers (used only in conditions of type &#39;wrapupCondition&#39;) |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) | Determines the type of the property associated with the condition |  [optional] |
+| **property** | **String** | A value associated with the property type of this condition |  [optional] |
 {: class="table table-striped"}
 
 
@@ -63,6 +65,17 @@ title: Condition
 | ENDS_WITH | &quot;ENDS_WITH&quot; |
 | BEFORE | &quot;BEFORE&quot; |
 | AFTER | &quot;AFTER&quot; |
+
+
+<a name="PropertyTypeEnum"></a>
+
+## Enum: PropertyTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; |
+| OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; |
 {: class="table table-striped"}
 
 

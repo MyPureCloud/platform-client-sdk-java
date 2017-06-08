@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class DeleteExternalcontactsOrganizationRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class DeleteExternalcontactsOrganizationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +76,8 @@ public class DeleteExternalcontactsOrganizationRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -85,10 +88,12 @@ public class DeleteExternalcontactsOrganizationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteExternalcontactsOrganizationRequest request;
@@ -97,15 +102,20 @@ public class DeleteExternalcontactsOrganizationRequest {
 			request = new DeleteExternalcontactsOrganizationRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteExternalcontactsOrganizationRequest build() {

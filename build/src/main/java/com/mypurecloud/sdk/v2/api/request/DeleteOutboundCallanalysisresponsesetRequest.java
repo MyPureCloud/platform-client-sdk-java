@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundCallanalysisresponsesetRequest {
+    
 	private String callAnalysisSetId;
 	public String getCallAnalysisSetId() {
 		return this.callAnalysisSetId;
@@ -74,6 +75,7 @@ public class DeleteOutboundCallanalysisresponsesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundCallanalysisresponsesetRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}")
                 .withPathParameter("callAnalysisSetId", callAnalysisSetId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundCallanalysisresponsesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String callAnalysisSetId) {
 	    return new Builder()
 	            .withRequiredParams(callAnalysisSetId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundCallanalysisresponsesetRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundCallanalysisresponsesetRequest {
 			request = new DeleteOutboundCallanalysisresponsesetRequest();
 		}
 
+		
 		public Builder withCallAnalysisSetId(String callAnalysisSetId) {
 			request.setCallAnalysisSetId(callAnalysisSetId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String callAnalysisSetId) {
 			request.setCallAnalysisSetId(callAnalysisSetId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundCallanalysisresponsesetRequest build() {

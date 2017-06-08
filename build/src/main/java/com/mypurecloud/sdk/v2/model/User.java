@@ -97,7 +97,7 @@ public class User  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public User name(String name) {
@@ -114,7 +114,7 @@ public class User  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public User chat(Chat chat) {
@@ -131,7 +131,7 @@ public class User  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public User department(String department) {
@@ -148,7 +148,7 @@ public class User  implements Serializable {
     this.department = department;
   }
 
-
+  
   /**
    **/
   public User email(String email) {
@@ -165,7 +165,7 @@ public class User  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    * Auto populated from addresses.
    **/
@@ -183,7 +183,7 @@ public class User  implements Serializable {
     this.primaryContactInfo = primaryContactInfo;
   }
 
-
+  
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -201,14 +201,14 @@ public class User  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The current state for this user.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-
+  
   /**
    **/
   public User title(String title) {
@@ -225,7 +225,7 @@ public class User  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public User username(String username) {
@@ -242,7 +242,7 @@ public class User  implements Serializable {
     this.username = username;
   }
 
-
+  
   /**
    **/
   public User manager(User manager) {
@@ -259,7 +259,7 @@ public class User  implements Serializable {
     this.manager = manager;
   }
 
-
+  
   /**
    **/
   public User images(List<UserImage> images) {
@@ -276,7 +276,7 @@ public class User  implements Serializable {
     this.images = images;
   }
 
-
+  
   /**
    * Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
    **/
@@ -294,7 +294,7 @@ public class User  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * ACD routing status
    **/
@@ -312,7 +312,7 @@ public class User  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   /**
    * Active presence
    **/
@@ -330,7 +330,7 @@ public class User  implements Serializable {
     this.presence = presence;
   }
 
-
+  
   /**
    * Summary of conversion statistics for conversation types.
    **/
@@ -348,7 +348,7 @@ public class User  implements Serializable {
     this.conversationSummary = conversationSummary;
   }
 
-
+  
   /**
    * Determine if out of office is enabled
    **/
@@ -366,7 +366,7 @@ public class User  implements Serializable {
     this.outOfOffice = outOfOffice;
   }
 
-
+  
   /**
    * Current geolocation position
    **/
@@ -384,7 +384,7 @@ public class User  implements Serializable {
     this.geolocation = geolocation;
   }
 
-
+  
   /**
    * Effective, default, and last station information
    **/
@@ -402,7 +402,7 @@ public class User  implements Serializable {
     this.station = station;
   }
 
-
+  
   /**
    * Roles and permissions assigned to the user
    **/
@@ -420,7 +420,7 @@ public class User  implements Serializable {
     this.authorization = authorization;
   }
 
-
+  
   /**
    * Skills possessed by the user
    **/
@@ -438,7 +438,7 @@ public class User  implements Serializable {
     this.profileSkills = profileSkills;
   }
 
-
+  
   /**
    * The user placement at each site location.
    **/
@@ -456,7 +456,7 @@ public class User  implements Serializable {
     this.locations = locations;
   }
 
-
+  
   /**
    * The groups the user is a member of
    **/
@@ -474,13 +474,14 @@ public class User  implements Serializable {
     this.groups = groups;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

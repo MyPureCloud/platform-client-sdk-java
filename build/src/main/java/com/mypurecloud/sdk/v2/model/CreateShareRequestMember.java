@@ -71,7 +71,7 @@ public class CreateShareRequestMember  implements Serializable {
     this.memberType = memberType;
   }
 
-
+  
   /**
    **/
   public CreateShareRequestMember member(MemberEntity member) {
@@ -88,6 +88,7 @@ public class CreateShareRequestMember  implements Serializable {
     this.member = member;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

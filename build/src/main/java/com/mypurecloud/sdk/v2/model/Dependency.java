@@ -88,7 +88,7 @@ public class Dependency  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Dependency name(String name) {
@@ -105,7 +105,7 @@ public class Dependency  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Dependency version(String version) {
@@ -122,7 +122,7 @@ public class Dependency  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public Dependency type(TypeEnum type) {
@@ -139,7 +139,7 @@ public class Dependency  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Dependency deleted(Boolean deleted) {
@@ -156,7 +156,7 @@ public class Dependency  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    **/
   public Dependency updated(Boolean updated) {
@@ -173,7 +173,7 @@ public class Dependency  implements Serializable {
     this.updated = updated;
   }
 
-
+  
   /**
    **/
   public Dependency stateUnknown(Boolean stateUnknown) {
@@ -190,13 +190,14 @@ public class Dependency  implements Serializable {
     this.stateUnknown = stateUnknown;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

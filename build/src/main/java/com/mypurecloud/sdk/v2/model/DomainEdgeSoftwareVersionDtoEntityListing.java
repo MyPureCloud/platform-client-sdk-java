@@ -46,7 +46,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DomainEdgeSoftwareVersionDtoEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DomainEdgeSoftwareVersionDtoEntityListing  implements Serializable,
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

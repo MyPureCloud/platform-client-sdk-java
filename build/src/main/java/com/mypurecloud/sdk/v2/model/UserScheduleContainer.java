@@ -40,7 +40,7 @@ public class UserScheduleContainer  implements Serializable {
     this.managementUnitTimeZone = managementUnitTimeZone;
   }
 
-
+  
   /**
    * Map of user id to user schedule
    **/
@@ -58,6 +58,7 @@ public class UserScheduleContainer  implements Serializable {
     this.userSchedules = userSchedules;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

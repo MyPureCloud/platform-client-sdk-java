@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetOrphanrecordingsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -52,6 +53,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -66,6 +68,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -80,6 +83,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -94,6 +98,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -108,6 +113,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -122,6 +128,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private Boolean hasConversation;
 	public Boolean getHasConversation() {
 		return this.hasConversation;
@@ -136,6 +143,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private String media;
 	public String getMedia() {
 		return this.media;
@@ -150,6 +158,7 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -188,7 +197,8 @@ public class GetOrphanrecordingsRequest {
                 .withQueryParameters("hasConversation", "", hasConversation)
         
                 .withQueryParameters("media", "", media)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -199,6 +209,7 @@ public class GetOrphanrecordingsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetOrphanrecordingsRequest request;
@@ -207,39 +218,49 @@ public class GetOrphanrecordingsRequest {
 			request = new GetOrphanrecordingsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withHasConversation(Boolean hasConversation) {
 			request.setHasConversation(hasConversation);
 			return this;
 		}
+		
 		public Builder withMedia(String media) {
 			request.setMedia(media);
 			return this;
 		}
+		
 
+		
 
 
 		public GetOrphanrecordingsRequest build() {

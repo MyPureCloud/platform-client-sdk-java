@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PutAuthorizationRolesDefaultRequest {
+    
 	private List<DomainOrganizationRole> body;
 	public List<DomainOrganizationRole> getBody() {
 		return this.body;
@@ -43,6 +44,7 @@ public class PutAuthorizationRolesDefaultRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,6 +74,7 @@ public class PutAuthorizationRolesDefaultRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/authorization/roles/default")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -83,10 +86,12 @@ public class PutAuthorizationRolesDefaultRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(List<DomainOrganizationRole> body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutAuthorizationRolesDefaultRequest request;
@@ -95,15 +100,20 @@ public class PutAuthorizationRolesDefaultRequest {
 			request = new PutAuthorizationRolesDefaultRequest();
 		}
 
+		
 		public Builder withBody(List<DomainOrganizationRole> body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(List<DomainOrganizationRole> body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAuthorizationRolesDefaultRequest build() {

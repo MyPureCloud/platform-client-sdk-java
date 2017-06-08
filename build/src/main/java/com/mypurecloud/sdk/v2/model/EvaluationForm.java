@@ -36,7 +36,7 @@ public class EvaluationForm  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The evaluation form name
    **/
@@ -54,7 +54,7 @@ public class EvaluationForm  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The form type (evaluation)
    **/
@@ -72,7 +72,7 @@ public class EvaluationForm  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -90,7 +90,7 @@ public class EvaluationForm  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public EvaluationForm published(Boolean published) {
@@ -107,7 +107,7 @@ public class EvaluationForm  implements Serializable {
     this.published = published;
   }
 
-
+  
   /**
    **/
   public EvaluationForm contextId(String contextId) {
@@ -124,7 +124,7 @@ public class EvaluationForm  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    * A list of question groups
    **/
@@ -142,7 +142,7 @@ public class EvaluationForm  implements Serializable {
     this.questionGroups = questionGroups;
   }
 
-
+  
   /**
    **/
   public EvaluationForm publishedVersions(DomainEntityListingEvaluationForm publishedVersions) {
@@ -159,13 +159,14 @@ public class EvaluationForm  implements Serializable {
     this.publishedVersions = publishedVersions;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

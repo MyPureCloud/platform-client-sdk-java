@@ -34,7 +34,7 @@ public class TimeInterval  implements Serializable {
     this.days = days;
   }
 
-
+  
   /**
    **/
   public TimeInterval hours(Integer hours) {
@@ -51,6 +51,7 @@ public class TimeInterval  implements Serializable {
     this.hours = hours;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,7 +46,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.total = total;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public TagValueEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class TagValueEntityListing  implements Serializable, PagedResource<TagVa
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

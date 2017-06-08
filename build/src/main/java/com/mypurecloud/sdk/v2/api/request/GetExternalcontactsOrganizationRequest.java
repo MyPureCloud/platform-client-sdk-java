@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsOrganizationRequest {
+    
 	private String externalOrganizationId;
 	public String getExternalOrganizationId() {
 		return this.externalOrganizationId;
@@ -45,6 +46,7 @@ public class GetExternalcontactsOrganizationRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -59,6 +61,7 @@ public class GetExternalcontactsOrganizationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,7 +93,8 @@ public class GetExternalcontactsOrganizationRequest {
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -101,10 +105,12 @@ public class GetExternalcontactsOrganizationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String externalOrganizationId) {
 	    return new Builder()
 	            .withRequiredParams(externalOrganizationId);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsOrganizationRequest request;
@@ -113,19 +119,25 @@ public class GetExternalcontactsOrganizationRequest {
 			request = new GetExternalcontactsOrganizationRequest();
 		}
 
+		
 		public Builder withExternalOrganizationId(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String externalOrganizationId) {
 			request.setExternalOrganizationId(externalOrganizationId);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsOrganizationRequest build() {

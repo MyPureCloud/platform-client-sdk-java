@@ -39,7 +39,7 @@ public class CreateCallbackResponse  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    * The list of communication identifiers for the callback participants
    **/
@@ -57,6 +57,7 @@ public class CreateCallbackResponse  implements Serializable {
     this.callbackIdentifiers = callbackIdentifiers;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

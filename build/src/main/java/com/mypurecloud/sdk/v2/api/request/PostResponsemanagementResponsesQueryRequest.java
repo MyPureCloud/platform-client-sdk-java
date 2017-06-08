@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class PostResponsemanagementResponsesQueryRequest {
+    
 	private ResponseQueryRequest body;
 	public ResponseQueryRequest getBody() {
 		return this.body;
@@ -41,6 +42,7 @@ public class PostResponsemanagementResponsesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,6 +72,7 @@ public class PostResponsemanagementResponsesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/responsemanagement/responses/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -81,10 +84,12 @@ public class PostResponsemanagementResponsesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ResponseQueryRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostResponsemanagementResponsesQueryRequest request;
@@ -93,15 +98,20 @@ public class PostResponsemanagementResponsesQueryRequest {
 			request = new PostResponsemanagementResponsesQueryRequest();
 		}
 
+		
 		public Builder withBody(ResponseQueryRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ResponseQueryRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostResponsemanagementResponsesQueryRequest build() {

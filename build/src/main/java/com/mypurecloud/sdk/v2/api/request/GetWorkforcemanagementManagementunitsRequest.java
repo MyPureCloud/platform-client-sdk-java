@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitsRequest {
+    
 	private String selector;
 	public String getSelector() {
 		return this.selector;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -62,6 +64,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -76,6 +79,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -104,7 +108,8 @@ public class GetWorkforcemanagementManagementunitsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -115,6 +120,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementManagementunitsRequest request;
@@ -123,19 +129,24 @@ public class GetWorkforcemanagementManagementunitsRequest {
 			request = new GetWorkforcemanagementManagementunitsRequest();
 		}
 
+		
 		public Builder withSelector(String selector) {
 			request.setSelector(selector);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 
 
 		public GetWorkforcemanagementManagementunitsRequest build() {

@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.UserRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.FaxSummary;
 
 public class GetUserrecordingsSummaryRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -47,7 +48,8 @@ public class GetUserrecordingsSummaryRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/userrecordings/summary")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/userrecordings/summary")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -58,6 +60,7 @@ public class GetUserrecordingsSummaryRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetUserrecordingsSummaryRequest request;
@@ -66,7 +69,9 @@ public class GetUserrecordingsSummaryRequest {
 			request = new GetUserrecordingsSummaryRequest();
 		}
 
+		
 
+		
 
 
 		public GetUserrecordingsSummaryRequest build() {

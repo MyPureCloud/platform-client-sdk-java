@@ -75,7 +75,7 @@ public class AnalyticsQueryFilter  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Boolean 'and/or' logic with up to two-levels of nesting
    **/
@@ -93,7 +93,7 @@ public class AnalyticsQueryFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-
+  
   /**
    * Like a three-word sentence: (attribute-name) (operator) (target-value). These can be one of three types: dimension, property, metric.
    **/
@@ -111,6 +111,7 @@ public class AnalyticsQueryFilter  implements Serializable {
     this.predicates = predicates;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

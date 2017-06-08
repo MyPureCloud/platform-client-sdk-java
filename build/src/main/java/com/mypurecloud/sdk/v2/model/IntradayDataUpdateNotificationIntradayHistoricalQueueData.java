@@ -41,7 +41,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.offered = offered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData completed(Integer completed) {
@@ -58,7 +58,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.completed = completed;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData answered(Integer answered) {
@@ -75,7 +75,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.answered = answered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData abandoned(Integer abandoned) {
@@ -92,7 +92,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.abandoned = abandoned;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -109,7 +109,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -126,7 +126,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData serviceLevelPercent(BigDecimal serviceLevelPercent) {
@@ -143,7 +143,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayHistoricalQueueData averageSpeedOfAnswerSeconds(BigDecimal averageSpeedOfAnswerSeconds) {
@@ -160,6 +160,7 @@ public class IntradayDataUpdateNotificationIntradayHistoricalQueueData  implemen
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

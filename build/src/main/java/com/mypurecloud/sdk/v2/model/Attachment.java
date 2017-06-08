@@ -37,7 +37,7 @@ public class Attachment  implements Serializable {
     this.attachmentId = attachmentId;
   }
 
-
+  
   /**
    **/
   public Attachment name(String name) {
@@ -54,7 +54,7 @@ public class Attachment  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Attachment contentUri(String contentUri) {
@@ -71,7 +71,7 @@ public class Attachment  implements Serializable {
     this.contentUri = contentUri;
   }
 
-
+  
   /**
    **/
   public Attachment contentType(String contentType) {
@@ -88,7 +88,7 @@ public class Attachment  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    **/
   public Attachment contentLength(Integer contentLength) {
@@ -105,6 +105,7 @@ public class Attachment  implements Serializable {
     this.contentLength = contentLength;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

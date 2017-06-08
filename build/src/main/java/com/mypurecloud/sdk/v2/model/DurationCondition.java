@@ -70,7 +70,7 @@ public class DurationCondition  implements Serializable {
     this.durationTarget = durationTarget;
   }
 
-
+  
   /**
    **/
   public DurationCondition durationOperator(String durationOperator) {
@@ -87,7 +87,7 @@ public class DurationCondition  implements Serializable {
     this.durationOperator = durationOperator;
   }
 
-
+  
   /**
    **/
   public DurationCondition durationRange(String durationRange) {
@@ -104,6 +104,7 @@ public class DurationCondition  implements Serializable {
     this.durationRange = durationRange;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

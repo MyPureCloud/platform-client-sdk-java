@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PostConversationRecordingAnnotationsRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	    return this;
 	}
 
+	
 	private String recordingId;
 	public String getRecordingId() {
 		return this.recordingId;
@@ -66,6 +68,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	    return this;
 	}
 
+	
 	private Annotation body;
 	public Annotation getBody() {
 		return this.body;
@@ -80,6 +83,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -123,6 +127,7 @@ public class PostConversationRecordingAnnotationsRequest {
                 .withPathParameter("recordingId", recordingId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -134,10 +139,12 @@ public class PostConversationRecordingAnnotationsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String recordingId, Annotation body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, recordingId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationRecordingAnnotationsRequest request;
@@ -146,25 +153,32 @@ public class PostConversationRecordingAnnotationsRequest {
 			request = new PostConversationRecordingAnnotationsRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withRecordingId(String recordingId) {
 			request.setRecordingId(recordingId);
 			return this;
 		}
+		
 		public Builder withBody(Annotation body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String recordingId, Annotation body) {
 			request.setConversationId(conversationId);
-			request.setRecordingId(recordingId);
-			request.setBody(body);
+						request.setRecordingId(recordingId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationRecordingAnnotationsRequest build() {

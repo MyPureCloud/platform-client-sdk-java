@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesCertificateauthoritiesRequest {
+    
 	private DomainCertificateAuthority body;
 	public DomainCertificateAuthority getBody() {
 		return this.body;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesCertificateauthoritiesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +129,7 @@ public class PostTelephonyProvidersEdgesCertificateauthoritiesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/certificateauthorities")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesCertificateauthoritiesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DomainCertificateAuthority body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesCertificateauthoritiesRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesCertificateauthoritiesRequest {
 			request = new PostTelephonyProvidersEdgesCertificateauthoritiesRequest();
 		}
 
+		
 		public Builder withBody(DomainCertificateAuthority body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DomainCertificateAuthority body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesCertificateauthoritiesRequest build() {

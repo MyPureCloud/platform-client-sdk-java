@@ -36,7 +36,7 @@ public class AuditUser  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The full username of the user who initiated the action of this AuditMessage.
    **/
@@ -54,7 +54,7 @@ public class AuditUser  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The display name of the user who initiated the action of this AuditMessage.
    **/
@@ -72,6 +72,7 @@ public class AuditUser  implements Serializable {
     this.display = display;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

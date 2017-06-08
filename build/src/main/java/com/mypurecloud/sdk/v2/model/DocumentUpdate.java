@@ -44,7 +44,7 @@ public class DocumentUpdate  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    * The name of the document
    **/
@@ -62,7 +62,7 @@ public class DocumentUpdate  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate read(Boolean read) {
@@ -79,7 +79,7 @@ public class DocumentUpdate  implements Serializable {
     this.read = read;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate addTags(List<String> addTags) {
@@ -96,7 +96,7 @@ public class DocumentUpdate  implements Serializable {
     this.addTags = addTags;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate removeTags(List<String> removeTags) {
@@ -113,7 +113,7 @@ public class DocumentUpdate  implements Serializable {
     this.removeTags = removeTags;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate addTagIds(List<String> addTagIds) {
@@ -130,7 +130,7 @@ public class DocumentUpdate  implements Serializable {
     this.addTagIds = addTagIds;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate removeTagIds(List<String> removeTagIds) {
@@ -147,7 +147,7 @@ public class DocumentUpdate  implements Serializable {
     this.removeTagIds = removeTagIds;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate updateAttributes(List<DocumentAttribute> updateAttributes) {
@@ -164,7 +164,7 @@ public class DocumentUpdate  implements Serializable {
     this.updateAttributes = updateAttributes;
   }
 
-
+  
   /**
    **/
   public DocumentUpdate removeAttributes(List<String> removeAttributes) {
@@ -181,6 +181,7 @@ public class DocumentUpdate  implements Serializable {
     this.removeAttributes = removeAttributes;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

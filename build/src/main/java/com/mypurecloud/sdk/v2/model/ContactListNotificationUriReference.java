@@ -34,7 +34,7 @@ public class ContactListNotificationUriReference  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ContactListNotificationUriReference name(String name) {
@@ -51,6 +51,7 @@ public class ContactListNotificationUriReference  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

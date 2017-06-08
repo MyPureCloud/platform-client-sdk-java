@@ -109,7 +109,7 @@ public class DIDPool  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -127,7 +127,7 @@ public class DIDPool  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DIDPool description(String description) {
@@ -144,7 +144,7 @@ public class DIDPool  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public DIDPool version(Integer version) {
@@ -161,7 +161,7 @@ public class DIDPool  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -179,7 +179,7 @@ public class DIDPool  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -197,7 +197,7 @@ public class DIDPool  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DIDPool modifiedBy(String modifiedBy) {
@@ -214,7 +214,7 @@ public class DIDPool  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public DIDPool createdBy(String createdBy) {
@@ -231,7 +231,7 @@ public class DIDPool  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public DIDPool state(StateEnum state) {
@@ -248,7 +248,7 @@ public class DIDPool  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public DIDPool modifiedByApp(String modifiedByApp) {
@@ -265,7 +265,7 @@ public class DIDPool  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public DIDPool createdByApp(String createdByApp) {
@@ -282,7 +282,7 @@ public class DIDPool  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The starting phone number for the range of this DID pool. Must be in E.164 format
    **/
@@ -300,7 +300,7 @@ public class DIDPool  implements Serializable {
     this.startPhoneNumber = startPhoneNumber;
   }
 
-
+  
   /**
    * The ending phone number for the range of this DID pool. Must be in E.164 format
    **/
@@ -318,7 +318,7 @@ public class DIDPool  implements Serializable {
     this.endPhoneNumber = endPhoneNumber;
   }
 
-
+  
   /**
    **/
   public DIDPool comments(String comments) {
@@ -335,7 +335,7 @@ public class DIDPool  implements Serializable {
     this.comments = comments;
   }
 
-
+  
   /**
    * The provider for this DID pool
    **/
@@ -353,13 +353,14 @@ public class DIDPool  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

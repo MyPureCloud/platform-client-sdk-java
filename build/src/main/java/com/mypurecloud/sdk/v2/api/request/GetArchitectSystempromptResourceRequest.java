@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectSystempromptResourceRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class GetArchitectSystempromptResourceRequest {
 	    return this;
 	}
 
+	
 	private String languageCode;
 	public String getLanguageCode() {
 		return this.languageCode;
@@ -70,6 +72,7 @@ public class GetArchitectSystempromptResourceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -106,7 +109,8 @@ public class GetArchitectSystempromptResourceRequest {
                 .withPathParameter("promptId", promptId)
         
                 .withPathParameter("languageCode", languageCode)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -117,10 +121,12 @@ public class GetArchitectSystempromptResourceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId, String languageCode) {
 	    return new Builder()
 	            .withRequiredParams(promptId, languageCode);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectSystempromptResourceRequest request;
@@ -129,20 +135,26 @@ public class GetArchitectSystempromptResourceRequest {
 			request = new GetArchitectSystempromptResourceRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withLanguageCode(String languageCode) {
 			request.setLanguageCode(languageCode);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId, String languageCode) {
 			request.setPromptId(promptId);
-			request.setLanguageCode(languageCode);
+						request.setLanguageCode(languageCode);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectSystempromptResourceRequest build() {

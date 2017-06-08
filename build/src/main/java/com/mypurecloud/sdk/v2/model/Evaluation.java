@@ -118,7 +118,7 @@ public class Evaluation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Evaluation name(String name) {
@@ -135,7 +135,7 @@ public class Evaluation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Evaluation conversation(Conversation conversation) {
@@ -152,7 +152,7 @@ public class Evaluation  implements Serializable {
     this.conversation = conversation;
   }
 
-
+  
   /**
    * Evaluation form used for evaluation.
    **/
@@ -170,7 +170,7 @@ public class Evaluation  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public Evaluation evaluator(User evaluator) {
@@ -187,7 +187,7 @@ public class Evaluation  implements Serializable {
     this.evaluator = evaluator;
   }
 
-
+  
   /**
    **/
   public Evaluation agent(User agent) {
@@ -204,7 +204,7 @@ public class Evaluation  implements Serializable {
     this.agent = agent;
   }
 
-
+  
   /**
    **/
   public Evaluation calibration(Calibration calibration) {
@@ -221,7 +221,7 @@ public class Evaluation  implements Serializable {
     this.calibration = calibration;
   }
 
-
+  
   /**
    **/
   public Evaluation status(StatusEnum status) {
@@ -238,7 +238,7 @@ public class Evaluation  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public Evaluation answers(EvaluationScoringSet answers) {
@@ -255,7 +255,7 @@ public class Evaluation  implements Serializable {
     this.answers = answers;
   }
 
-
+  
   /**
    **/
   public Evaluation agentHasRead(Boolean agentHasRead) {
@@ -272,7 +272,7 @@ public class Evaluation  implements Serializable {
     this.agentHasRead = agentHasRead;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -290,7 +290,7 @@ public class Evaluation  implements Serializable {
     this.releaseDate = releaseDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -308,7 +308,7 @@ public class Evaluation  implements Serializable {
     this.assignedDate = assignedDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -326,7 +326,7 @@ public class Evaluation  implements Serializable {
     this.changedDate = changedDate;
   }
 
-
+  
   /**
    **/
   public Evaluation queue(Queue queue) {
@@ -343,7 +343,7 @@ public class Evaluation  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * Signifies if the evaluation is never to be released. This cannot be set true if release date is also set.
    **/
@@ -361,7 +361,7 @@ public class Evaluation  implements Serializable {
     this.neverRelease = neverRelease;
   }
 
-
+  
   /**
    * Only used for email evaluations. Will be null for all other evaluations.
    **/
@@ -379,7 +379,7 @@ public class Evaluation  implements Serializable {
     this.resourceId = resourceId;
   }
 
-
+  
   /**
    * The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.
    **/
@@ -397,7 +397,7 @@ public class Evaluation  implements Serializable {
     this.resourceType = resourceType;
   }
 
-
+  
   /**
    * Is only true when the user making the request does not have sufficient permissions to see evaluation
    **/
@@ -415,7 +415,7 @@ public class Evaluation  implements Serializable {
     this.redacted = redacted;
   }
 
-
+  
   /**
    **/
   public Evaluation isScoringIndex(Boolean isScoringIndex) {
@@ -432,13 +432,14 @@ public class Evaluation  implements Serializable {
     this.isScoringIndex = isScoringIndex;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersOneloginRequest {
+    
 	private OneLogin body;
 	public OneLogin getBody() {
 		return this.body;
@@ -47,6 +48,7 @@ public class PutIdentityprovidersOneloginRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,6 +78,7 @@ public class PutIdentityprovidersOneloginRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/onelogin")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,10 +90,12 @@ public class PutIdentityprovidersOneloginRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(OneLogin body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutIdentityprovidersOneloginRequest request;
@@ -99,15 +104,20 @@ public class PutIdentityprovidersOneloginRequest {
 			request = new PutIdentityprovidersOneloginRequest();
 		}
 
+		
 		public Builder withBody(OneLogin body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(OneLogin body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutIdentityprovidersOneloginRequest build() {

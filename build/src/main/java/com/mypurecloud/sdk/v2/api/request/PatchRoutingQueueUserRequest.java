@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PatchRoutingQueueUserRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class PatchRoutingQueueUserRequest {
 	    return this;
 	}
 
+	
 	private String memberId;
 	public String getMemberId() {
 		return this.memberId;
@@ -72,6 +74,7 @@ public class PatchRoutingQueueUserRequest {
 	    return this;
 	}
 
+	
 	private QueueMember body;
 	public QueueMember getBody() {
 		return this.body;
@@ -86,6 +89,7 @@ public class PatchRoutingQueueUserRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -129,6 +133,7 @@ public class PatchRoutingQueueUserRequest {
                 .withPathParameter("memberId", memberId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -140,10 +145,12 @@ public class PatchRoutingQueueUserRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, String memberId, QueueMember body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, memberId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchRoutingQueueUserRequest request;
@@ -152,25 +159,32 @@ public class PatchRoutingQueueUserRequest {
 			request = new PatchRoutingQueueUserRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withMemberId(String memberId) {
 			request.setMemberId(memberId);
 			return this;
 		}
+		
 		public Builder withBody(QueueMember body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, String memberId, QueueMember body) {
 			request.setQueueId(queueId);
-			request.setMemberId(memberId);
-			request.setBody(body);
+						request.setMemberId(memberId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchRoutingQueueUserRequest build() {

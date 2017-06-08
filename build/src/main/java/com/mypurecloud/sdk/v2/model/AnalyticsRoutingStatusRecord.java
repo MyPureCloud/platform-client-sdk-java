@@ -76,7 +76,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -94,7 +94,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The user's ACD routing status
    **/
@@ -112,7 +112,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   /**
    * The duration of the status (in milliseconds)
    **/
@@ -130,6 +130,7 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

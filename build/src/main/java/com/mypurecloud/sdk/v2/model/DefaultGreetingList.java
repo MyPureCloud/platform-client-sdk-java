@@ -74,7 +74,7 @@ public class DefaultGreetingList  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList name(String name) {
@@ -91,7 +91,7 @@ public class DefaultGreetingList  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList owner(GreetingOwner owner) {
@@ -108,7 +108,7 @@ public class DefaultGreetingList  implements Serializable {
     this.owner = owner;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList ownerType(OwnerTypeEnum ownerType) {
@@ -125,7 +125,7 @@ public class DefaultGreetingList  implements Serializable {
     this.ownerType = ownerType;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList greetings(Map<String, Greeting> greetings) {
@@ -142,7 +142,7 @@ public class DefaultGreetingList  implements Serializable {
     this.greetings = greetings;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -160,7 +160,7 @@ public class DefaultGreetingList  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList createdBy(String createdBy) {
@@ -177,7 +177,7 @@ public class DefaultGreetingList  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -195,7 +195,7 @@ public class DefaultGreetingList  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public DefaultGreetingList modifiedBy(String modifiedBy) {
@@ -212,13 +212,14 @@ public class DefaultGreetingList  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

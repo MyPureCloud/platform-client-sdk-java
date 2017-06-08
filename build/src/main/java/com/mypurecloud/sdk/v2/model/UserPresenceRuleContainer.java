@@ -46,7 +46,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer total(Long total) {
@@ -97,7 +97,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.total = total;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public UserPresenceRuleContainer pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class UserPresenceRuleContainer  implements Serializable, PagedResource<U
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

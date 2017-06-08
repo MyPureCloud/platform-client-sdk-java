@@ -34,7 +34,7 @@ public class RecordingDataV2NotificationUserData  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public RecordingDataV2NotificationUserData name(String name) {
@@ -51,6 +51,7 @@ public class RecordingDataV2NotificationUserData  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

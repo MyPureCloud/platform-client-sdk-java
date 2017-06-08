@@ -35,7 +35,7 @@ public class IntradayHistoricalAgentData  implements Serializable {
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
-
+  
   /**
    * The total time spent interacting in seconds for all agents in this group
    **/
@@ -53,6 +53,7 @@ public class IntradayHistoricalAgentData  implements Serializable {
     this.interactingTimeSeconds = interactingTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

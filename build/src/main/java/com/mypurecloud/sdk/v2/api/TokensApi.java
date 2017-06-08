@@ -35,6 +35,7 @@ public class TokensApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete  auth token used to make the request.
    * 
@@ -55,7 +56,8 @@ public class TokensApi {
   }
 
   private DeleteTokensMeRequest createDeleteTokensMeRequest() {
-    return DeleteTokensMeRequest.builder()            .build();
+    return DeleteTokensMeRequest.builder()
+            .build();
   }
 
   /**
@@ -105,6 +107,7 @@ public class TokensApi {
     }
   }
 
+  
   /**
    * Fetch information about the current token
    * 
@@ -127,7 +130,8 @@ public class TokensApi {
   }
 
   private GetTokensMeRequest createGetTokensMeRequest() {
-    return GetTokensMeRequest.builder()            .build();
+    return GetTokensMeRequest.builder()
+            .build();
   }
 
   /**
@@ -178,4 +182,5 @@ public class TokensApi {
     }
   }
 
+  
 }

@@ -78,7 +78,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-
+  
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -96,7 +96,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-
+  
   /**
    * The number of results per page
    **/
@@ -114,7 +114,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The page of resources you want to retrieve
    **/
@@ -132,7 +132,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    * Provides more details about a specified resource
    **/
@@ -150,7 +150,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-
+  
   /**
    **/
   public VoicemailSearchRequest query(List<VoicemailSearchCriteria> query) {
@@ -167,6 +167,7 @@ public class VoicemailSearchRequest  implements Serializable {
     this.query = query;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

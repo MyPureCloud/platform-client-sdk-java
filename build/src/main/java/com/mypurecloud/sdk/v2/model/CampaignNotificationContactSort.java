@@ -71,7 +71,7 @@ public class CampaignNotificationContactSort  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationContactSort direction(DirectionEnum direction) {
@@ -88,7 +88,7 @@ public class CampaignNotificationContactSort  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationContactSort numeric(Boolean numeric) {
@@ -105,7 +105,7 @@ public class CampaignNotificationContactSort  implements Serializable {
     this.numeric = numeric;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationContactSort additionalProperties(Object additionalProperties) {
@@ -122,6 +122,7 @@ public class CampaignNotificationContactSort  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

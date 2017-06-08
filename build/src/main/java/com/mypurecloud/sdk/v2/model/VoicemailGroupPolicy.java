@@ -77,7 +77,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The group associated with the policy
    **/
@@ -95,7 +95,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    * Whether voicemail is enabled for the group
    **/
@@ -113,7 +113,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    * Whether email notifications are sent to group members when a new voicemail is received
    **/
@@ -131,7 +131,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.sendEmailNotifications = sendEmailNotifications;
   }
 
-
+  
   /**
    * How many seconds to ring before rotating to the next member in the group
    **/
@@ -149,7 +149,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.rotateCallsSecs = rotateCallsSecs;
   }
 
-
+  
   /**
    * How many rotations to go through
    **/
@@ -167,7 +167,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.stopRingingAfterRotations = stopRingingAfterRotations;
   }
 
-
+  
   /**
    *  A fallback group to contact when all of the members in this group did not answer the call.
    **/
@@ -185,7 +185,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.overflowGroupId = overflowGroupId;
   }
 
-
+  
   /**
    * Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin.
    **/
@@ -203,6 +203,7 @@ public class VoicemailGroupPolicy  implements Serializable {
     this.groupAlertType = groupAlertType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

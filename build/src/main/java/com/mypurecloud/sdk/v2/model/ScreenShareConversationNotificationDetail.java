@@ -36,7 +36,7 @@ public class ScreenShareConversationNotificationDetail  implements Serializable 
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationDetail fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class ScreenShareConversationNotificationDetail  implements Serializable 
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationDetail entityId(String entityId) {
@@ -70,7 +70,7 @@ public class ScreenShareConversationNotificationDetail  implements Serializable 
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationDetail entityName(String entityName) {
@@ -87,6 +87,7 @@ public class ScreenShareConversationNotificationDetail  implements Serializable 
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -36,6 +36,7 @@ public class AggregateQueryResponse  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

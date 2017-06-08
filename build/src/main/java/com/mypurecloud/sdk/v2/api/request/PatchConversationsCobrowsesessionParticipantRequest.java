@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PatchConversationsCobrowsesessionParticipantRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 	    return this;
 	}
 
+	
 	private String participantId;
 	public String getParticipantId() {
 		return this.participantId;
@@ -88,6 +90,7 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 	    return this;
 	}
 
+	
 	private MediaParticipantRequest body;
 	public MediaParticipantRequest getBody() {
 		return this.body;
@@ -102,6 +105,7 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -140,6 +144,7 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
                 .withPathParameter("participantId", participantId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -151,10 +156,12 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String participantId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, participantId);
 	}
+	
 
 	public static class Builder {
 		private final PatchConversationsCobrowsesessionParticipantRequest request;
@@ -163,24 +170,31 @@ public class PatchConversationsCobrowsesessionParticipantRequest {
 			request = new PatchConversationsCobrowsesessionParticipantRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withParticipantId(String participantId) {
 			request.setParticipantId(participantId);
 			return this;
 		}
+		
 		public Builder withBody(MediaParticipantRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String participantId) {
 			request.setConversationId(conversationId);
-			request.setParticipantId(participantId);
+						request.setParticipantId(participantId);
+			
 			return this;
 		}
+		
 
 
 		public PatchConversationsCobrowsesessionParticipantRequest build() {

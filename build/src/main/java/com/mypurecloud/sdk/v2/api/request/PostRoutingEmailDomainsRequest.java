@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingEmailDomainsRequest {
+    
 	private InboundDomain body;
 	public InboundDomain getBody() {
 		return this.body;
@@ -58,6 +59,7 @@ public class PostRoutingEmailDomainsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,6 +89,7 @@ public class PostRoutingEmailDomainsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/routing/email/domains")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,10 +101,12 @@ public class PostRoutingEmailDomainsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(InboundDomain body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostRoutingEmailDomainsRequest request;
@@ -110,15 +115,20 @@ public class PostRoutingEmailDomainsRequest {
 			request = new PostRoutingEmailDomainsRequest();
 		}
 
+		
 		public Builder withBody(InboundDomain body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(InboundDomain body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRoutingEmailDomainsRequest build() {

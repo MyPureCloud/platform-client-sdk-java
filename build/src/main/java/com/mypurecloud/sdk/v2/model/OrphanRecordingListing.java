@@ -46,7 +46,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing total(Long total) {
@@ -97,7 +97,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.total = total;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public OrphanRecordingListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class OrphanRecordingListing  implements Serializable, PagedResource<Orph
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

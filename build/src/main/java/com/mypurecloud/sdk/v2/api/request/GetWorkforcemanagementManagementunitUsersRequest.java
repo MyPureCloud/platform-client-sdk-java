@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitUsersRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementManagementunitUsersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,7 +79,8 @@ public class GetWorkforcemanagementManagementunitUsersRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{muId}/users")
                 .withPathParameter("muId", muId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -88,10 +91,12 @@ public class GetWorkforcemanagementManagementunitUsersRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId) {
 	    return new Builder()
 	            .withRequiredParams(muId);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementManagementunitUsersRequest request;
@@ -100,15 +105,20 @@ public class GetWorkforcemanagementManagementunitUsersRequest {
 			request = new GetWorkforcemanagementManagementunitUsersRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId) {
 			request.setMuId(muId);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementManagementunitUsersRequest build() {

@@ -35,7 +35,7 @@ public class LicenseUpdateStatus  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public LicenseUpdateStatus licenseId(String licenseId) {
@@ -52,7 +52,7 @@ public class LicenseUpdateStatus  implements Serializable {
     this.licenseId = licenseId;
   }
 
-
+  
   /**
    **/
   public LicenseUpdateStatus result(String result) {
@@ -69,6 +69,7 @@ public class LicenseUpdateStatus  implements Serializable {
     this.result = result;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

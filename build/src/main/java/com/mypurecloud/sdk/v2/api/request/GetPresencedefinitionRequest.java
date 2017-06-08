@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
 
 public class GetPresencedefinitionRequest {
+    
 	private String presenceId;
 	public String getPresenceId() {
 		return this.presenceId;
@@ -39,6 +40,7 @@ public class GetPresencedefinitionRequest {
 	    return this;
 	}
 
+	
 	private String localeCode;
 	public String getLocaleCode() {
 		return this.localeCode;
@@ -53,6 +55,7 @@ public class GetPresencedefinitionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -84,7 +87,8 @@ public class GetPresencedefinitionRequest {
                 .withPathParameter("presenceId", presenceId)
         
                 .withQueryParameters("localeCode", "", localeCode)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -95,10 +99,12 @@ public class GetPresencedefinitionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String presenceId) {
 	    return new Builder()
 	            .withRequiredParams(presenceId);
 	}
+	
 
 	public static class Builder {
 		private final GetPresencedefinitionRequest request;
@@ -107,19 +113,25 @@ public class GetPresencedefinitionRequest {
 			request = new GetPresencedefinitionRequest();
 		}
 
+		
 		public Builder withPresenceId(String presenceId) {
 			request.setPresenceId(presenceId);
 			return this;
 		}
+		
 		public Builder withLocaleCode(String localeCode) {
 			request.setLocaleCode(localeCode);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String presenceId) {
 			request.setPresenceId(presenceId);
+			
 			return this;
 		}
+		
 
 
 		public GetPresencedefinitionRequest build() {

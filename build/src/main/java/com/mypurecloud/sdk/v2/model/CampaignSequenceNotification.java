@@ -83,7 +83,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification name(String name) {
@@ -100,7 +100,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification dateCreated(Date dateCreated) {
@@ -117,7 +117,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification dateModified(Date dateModified) {
@@ -134,7 +134,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification version(Integer version) {
@@ -151,7 +151,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification campaigns(List<DocumentDataV2NotificationCreatedBy> campaigns) {
@@ -168,7 +168,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.campaigns = campaigns;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification currentCampaign(Integer currentCampaign) {
@@ -185,7 +185,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.currentCampaign = currentCampaign;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification status(StatusEnum status) {
@@ -202,7 +202,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification stopMessage(String stopMessage) {
@@ -219,7 +219,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.stopMessage = stopMessage;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification repeat(Boolean repeat) {
@@ -236,7 +236,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.repeat = repeat;
   }
 
-
+  
   /**
    **/
   public CampaignSequenceNotification additionalProperties(Object additionalProperties) {
@@ -253,6 +253,7 @@ public class CampaignSequenceNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

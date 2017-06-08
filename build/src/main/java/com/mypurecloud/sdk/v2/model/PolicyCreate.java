@@ -39,7 +39,7 @@ public class PolicyCreate  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The policy name.
    **/
@@ -57,7 +57,7 @@ public class PolicyCreate  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -75,7 +75,7 @@ public class PolicyCreate  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -93,7 +93,7 @@ public class PolicyCreate  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public PolicyCreate order(Integer order) {
@@ -110,7 +110,7 @@ public class PolicyCreate  implements Serializable {
     this.order = order;
   }
 
-
+  
   /**
    **/
   public PolicyCreate description(String description) {
@@ -127,7 +127,7 @@ public class PolicyCreate  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public PolicyCreate enabled(Boolean enabled) {
@@ -144,7 +144,7 @@ public class PolicyCreate  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    * Conditions and actions per media type
    **/
@@ -162,7 +162,7 @@ public class PolicyCreate  implements Serializable {
     this.mediaPolicies = mediaPolicies;
   }
 
-
+  
   /**
    * Conditions
    **/
@@ -180,7 +180,7 @@ public class PolicyCreate  implements Serializable {
     this.conditions = conditions;
   }
 
-
+  
   /**
    * Actions
    **/
@@ -198,7 +198,7 @@ public class PolicyCreate  implements Serializable {
     this.actions = actions;
   }
 
-
+  
   /**
    **/
   public PolicyCreate policyErrors(PolicyErrors policyErrors) {
@@ -215,13 +215,14 @@ public class PolicyCreate  implements Serializable {
     this.policyErrors = policyErrors;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class GetGroupGreetingsRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -40,6 +41,7 @@ public class GetGroupGreetingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -54,6 +56,7 @@ public class GetGroupGreetingsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -68,6 +71,7 @@ public class GetGroupGreetingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,7 +105,8 @@ public class GetGroupGreetingsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -112,10 +117,12 @@ public class GetGroupGreetingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
+	
 
 	public static class Builder {
 		private final GetGroupGreetingsRequest request;
@@ -124,23 +131,30 @@ public class GetGroupGreetingsRequest {
 			request = new GetGroupGreetingsRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
+			
 			return this;
 		}
+		
 
 
 		public GetGroupGreetingsRequest build() {

@@ -37,6 +37,7 @@ public class EstimatedWaitTimePredictions  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

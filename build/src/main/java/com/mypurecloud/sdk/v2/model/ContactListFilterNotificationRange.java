@@ -40,7 +40,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.min = min;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationRange max(String max) {
@@ -57,7 +57,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.max = max;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationRange minInclusive(Boolean minInclusive) {
@@ -74,7 +74,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.minInclusive = minInclusive;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationRange maxInclusive(Boolean maxInclusive) {
@@ -91,7 +91,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.maxInclusive = maxInclusive;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationRange inSet(List<String> inSet) {
@@ -108,7 +108,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.inSet = inSet;
   }
 
-
+  
   /**
    **/
   public ContactListFilterNotificationRange additionalProperties(Object additionalProperties) {
@@ -125,6 +125,7 @@ public class ContactListFilterNotificationRange  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

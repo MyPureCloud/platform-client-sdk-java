@@ -62,34 +62,35 @@ public class ImportStatus  implements Serializable {
     return state;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "total number of records to be imported")
   @JsonProperty("totalRecords")
   public Long getTotalRecords() {
     return totalRecords;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "number of records finished importing")
   @JsonProperty("completedRecords")
   public Long getCompletedRecords() {
     return completedRecords;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "percentage of records finished importing")
   @JsonProperty("percentComplete")
   public Integer getPercentComplete() {
     return percentComplete;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "if the import has failed, the reason for the failure")
   @JsonProperty("failureReason")
   public String getFailureReason() {
     return failureReason;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

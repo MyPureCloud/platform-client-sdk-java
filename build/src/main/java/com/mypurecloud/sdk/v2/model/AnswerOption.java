@@ -35,7 +35,7 @@ public class AnswerOption  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public AnswerOption text(String text) {
@@ -52,7 +52,7 @@ public class AnswerOption  implements Serializable {
     this.text = text;
   }
 
-
+  
   /**
    **/
   public AnswerOption value(Integer value) {
@@ -69,6 +69,7 @@ public class AnswerOption  implements Serializable {
     this.value = value;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

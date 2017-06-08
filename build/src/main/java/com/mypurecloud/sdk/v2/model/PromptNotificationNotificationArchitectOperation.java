@@ -124,7 +124,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation complete(Boolean complete) {
@@ -141,7 +141,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.complete = complete;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation user(DependencyTrackingBuildNotificationNotificationUser user) {
@@ -158,7 +158,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.user = user;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation actionName(ActionNameEnum actionName) {
@@ -175,7 +175,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.actionName = actionName;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation actionStatus(ActionStatusEnum actionStatus) {
@@ -192,7 +192,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.actionStatus = actionStatus;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation errorMessage(String errorMessage) {
@@ -209,7 +209,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.errorMessage = errorMessage;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation errorCode(String errorCode) {
@@ -226,7 +226,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation errorMessageParams(PromptNotificationNotificationCurrentOperationErrorMessageParams errorMessageParams) {
@@ -243,7 +243,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.errorMessageParams = errorMessageParams;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationArchitectOperation errorDetails(List<PromptNotificationNotificationCurrentOperationErrorDetails> errorDetails) {
@@ -260,6 +260,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     this.errorDetails = errorDetails;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

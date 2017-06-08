@@ -31,7 +31,7 @@ public class CallForwarding  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public CallForwarding name(String name) {
@@ -48,7 +48,7 @@ public class CallForwarding  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallForwarding user(User user) {
@@ -65,7 +65,7 @@ public class CallForwarding  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CallForwarding enabled(Boolean enabled) {
@@ -82,7 +82,7 @@ public class CallForwarding  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public CallForwarding phoneNumber(String phoneNumber) {
@@ -99,7 +99,7 @@ public class CallForwarding  implements Serializable {
     this.phoneNumber = phoneNumber;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -117,13 +117,14 @@ public class CallForwarding  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

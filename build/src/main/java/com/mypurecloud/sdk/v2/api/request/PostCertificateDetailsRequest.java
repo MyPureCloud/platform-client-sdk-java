@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
 
 public class PostCertificateDetailsRequest {
+    
 	private Certificate body;
 	public Certificate getBody() {
 		return this.body;
@@ -39,6 +40,7 @@ public class PostCertificateDetailsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -68,6 +70,7 @@ public class PostCertificateDetailsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/certificate/details")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -79,10 +82,12 @@ public class PostCertificateDetailsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Certificate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostCertificateDetailsRequest request;
@@ -91,15 +96,20 @@ public class PostCertificateDetailsRequest {
 			request = new PostCertificateDetailsRequest();
 		}
 
+		
 		public Builder withBody(Certificate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Certificate body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostCertificateDetailsRequest build() {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostAnalyticsConversationsDetailsQueryRequest {
+    
 	private ConversationQuery body;
 	public ConversationQuery getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostAnalyticsConversationsDetailsQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostAnalyticsConversationsDetailsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/conversations/details/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostAnalyticsConversationsDetailsQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ConversationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsConversationsDetailsQueryRequest request;
@@ -126,15 +131,20 @@ public class PostAnalyticsConversationsDetailsQueryRequest {
 			request = new PostAnalyticsConversationsDetailsQueryRequest();
 		}
 
+		
 		public Builder withBody(ConversationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ConversationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsConversationsDetailsQueryRequest build() {

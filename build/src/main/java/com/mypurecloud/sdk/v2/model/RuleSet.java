@@ -36,7 +36,7 @@ public class RuleSet  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public RuleSet name(String name) {
@@ -53,21 +53,21 @@ public class RuleSet  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -85,7 +85,7 @@ public class RuleSet  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * The identifier of an example contact list that provides user-interface suggestions for contact-based conditions and actions
    **/
@@ -103,7 +103,7 @@ public class RuleSet  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    * The identifier of an example queue that provides user-interface suggestions for wrap-up associated conditions
    **/
@@ -121,7 +121,7 @@ public class RuleSet  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * The list of rules
    **/
@@ -139,13 +139,14 @@ public class RuleSet  implements Serializable {
     this.rules = rules;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

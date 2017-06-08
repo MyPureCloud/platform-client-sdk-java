@@ -30,7 +30,7 @@ public class SystemPrompt  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public SystemPrompt name(String name) {
@@ -47,7 +47,7 @@ public class SystemPrompt  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SystemPrompt description(String description) {
@@ -64,7 +64,7 @@ public class SystemPrompt  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public SystemPrompt resources(List<SystemPromptAsset> resources) {
@@ -81,13 +81,14 @@ public class SystemPrompt  implements Serializable {
     this.resources = resources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

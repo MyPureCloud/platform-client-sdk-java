@@ -34,6 +34,7 @@ public class EdgeRebootParameters  implements Serializable {
     this.callDrainingWaitTimeSeconds = callDrainingWaitTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

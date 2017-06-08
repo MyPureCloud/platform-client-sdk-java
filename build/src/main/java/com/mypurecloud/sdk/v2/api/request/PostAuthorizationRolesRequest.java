@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PostAuthorizationRolesRequest {
+    
 	private DomainOrganizationRoleCreate body;
 	public DomainOrganizationRoleCreate getBody() {
 		return this.body;
@@ -43,6 +44,7 @@ public class PostAuthorizationRolesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,6 +74,7 @@ public class PostAuthorizationRolesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/roles")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -83,10 +86,12 @@ public class PostAuthorizationRolesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DomainOrganizationRoleCreate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAuthorizationRolesRequest request;
@@ -95,15 +100,20 @@ public class PostAuthorizationRolesRequest {
 			request = new PostAuthorizationRolesRequest();
 		}
 
+		
 		public Builder withBody(DomainOrganizationRoleCreate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DomainOrganizationRoleCreate body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAuthorizationRolesRequest build() {

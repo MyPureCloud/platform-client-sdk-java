@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesTranslationsBuiltinRequest {
+    
 	private String language;
 	public String getLanguage() {
 		return this.language;
@@ -38,6 +39,7 @@ public class GetLanguagesTranslationsBuiltinRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,7 +69,8 @@ public class GetLanguagesTranslationsBuiltinRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/languages/translations/builtin")
                 .withQueryParameters("language", "", language)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -78,10 +81,12 @@ public class GetLanguagesTranslationsBuiltinRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String language) {
 	    return new Builder()
 	            .withRequiredParams(language);
 	}
+	
 
 	public static class Builder {
 		private final GetLanguagesTranslationsBuiltinRequest request;
@@ -90,15 +95,20 @@ public class GetLanguagesTranslationsBuiltinRequest {
 			request = new GetLanguagesTranslationsBuiltinRequest();
 		}
 
+		
 		public Builder withLanguage(String language) {
 			request.setLanguage(language);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String language) {
 			request.setLanguage(language);
+			
 			return this;
 		}
+		
 
 
 		public GetLanguagesTranslationsBuiltinRequest build() {

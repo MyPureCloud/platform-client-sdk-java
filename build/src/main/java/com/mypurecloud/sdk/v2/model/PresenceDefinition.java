@@ -36,7 +36,7 @@ public class PresenceDefinition  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PresenceDefinition systemPresence(String systemPresence) {
@@ -53,13 +53,14 @@ public class PresenceDefinition  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

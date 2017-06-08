@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingTypeRequest {
+    
 	private String typeId;
 	public String getTypeId() {
 		return this.typeId;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingTypeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,7 +87,8 @@ public class GetArchitectDependencytrackingTypeRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/architect/dependencytracking/types/{typeId}")
                 .withPathParameter("typeId", typeId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -96,10 +99,12 @@ public class GetArchitectDependencytrackingTypeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String typeId) {
 	    return new Builder()
 	            .withRequiredParams(typeId);
 	}
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingTypeRequest request;
@@ -108,15 +113,20 @@ public class GetArchitectDependencytrackingTypeRequest {
 			request = new GetArchitectDependencytrackingTypeRequest();
 		}
 
+		
 		public Builder withTypeId(String typeId) {
 			request.setTypeId(typeId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String typeId) {
 			request.setTypeId(typeId);
+			
 			return this;
 		}
+		
 
 
 		public GetArchitectDependencytrackingTypeRequest build() {

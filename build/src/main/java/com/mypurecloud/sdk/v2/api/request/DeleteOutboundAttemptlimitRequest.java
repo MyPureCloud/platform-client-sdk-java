@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundAttemptlimitRequest {
+    
 	private String attemptLimitsId;
 	public String getAttemptLimitsId() {
 		return this.attemptLimitsId;
@@ -74,6 +75,7 @@ public class DeleteOutboundAttemptlimitRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundAttemptlimitRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/attemptlimits/{attemptLimitsId}")
                 .withPathParameter("attemptLimitsId", attemptLimitsId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundAttemptlimitRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String attemptLimitsId) {
 	    return new Builder()
 	            .withRequiredParams(attemptLimitsId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundAttemptlimitRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundAttemptlimitRequest {
 			request = new DeleteOutboundAttemptlimitRequest();
 		}
 
+		
 		public Builder withAttemptLimitsId(String attemptLimitsId) {
 			request.setAttemptLimitsId(attemptLimitsId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String attemptLimitsId) {
 			request.setAttemptLimitsId(attemptLimitsId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundAttemptlimitRequest build() {

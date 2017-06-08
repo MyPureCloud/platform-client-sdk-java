@@ -39,7 +39,7 @@ public class EmailMessage  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public EmailMessage name(String name) {
@@ -56,7 +56,7 @@ public class EmailMessage  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The recipients of the email message.
    **/
@@ -74,7 +74,7 @@ public class EmailMessage  implements Serializable {
     this.to = to;
   }
 
-
+  
   /**
    * The recipients that were copied on the email message.
    **/
@@ -92,7 +92,7 @@ public class EmailMessage  implements Serializable {
     this.cc = cc;
   }
 
-
+  
   /**
    * The recipients that were blind copied on the email message.
    **/
@@ -110,7 +110,7 @@ public class EmailMessage  implements Serializable {
     this.bcc = bcc;
   }
 
-
+  
   /**
    * The sender of the email message.
    **/
@@ -128,7 +128,7 @@ public class EmailMessage  implements Serializable {
     this.from = from;
   }
 
-
+  
   /**
    * The subject of the email message.
    **/
@@ -146,7 +146,7 @@ public class EmailMessage  implements Serializable {
     this.subject = subject;
   }
 
-
+  
   /**
    * The attachments of the email message.
    **/
@@ -164,7 +164,7 @@ public class EmailMessage  implements Serializable {
     this.attachments = attachments;
   }
 
-
+  
   /**
    * The text body of the email message.
    **/
@@ -182,7 +182,7 @@ public class EmailMessage  implements Serializable {
     this.textBody = textBody;
   }
 
-
+  
   /**
    * The html body of the email message.
    **/
@@ -200,7 +200,7 @@ public class EmailMessage  implements Serializable {
     this.htmlBody = htmlBody;
   }
 
-
+  
   /**
    * The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -218,13 +218,14 @@ public class EmailMessage  implements Serializable {
     this.time = time;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

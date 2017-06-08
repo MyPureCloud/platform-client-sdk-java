@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingMediaretentionpoliciesRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -52,6 +53,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -66,6 +68,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -80,6 +83,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private List<Object> expand;
 	public List<Object> getExpand() {
 		return this.expand;
@@ -94,6 +98,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private String nextPage;
 	public String getNextPage() {
 		return this.nextPage;
@@ -108,6 +113,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private String previousPage;
 	public String getPreviousPage() {
 		return this.previousPage;
@@ -122,6 +128,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -136,6 +143,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private Boolean enabled;
 	public Boolean getEnabled() {
 		return this.enabled;
@@ -150,6 +158,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private Boolean summary;
 	public Boolean getSummary() {
 		return this.summary;
@@ -164,6 +173,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private Boolean hasErrors;
 	public Boolean getHasErrors() {
 		return this.hasErrors;
@@ -178,6 +188,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -220,7 +231,8 @@ public class GetRecordingMediaretentionpoliciesRequest {
                 .withQueryParameters("summary", "", summary)
         
                 .withQueryParameters("hasErrors", "", hasErrors)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -231,6 +243,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetRecordingMediaretentionpoliciesRequest request;
@@ -239,47 +252,59 @@ public class GetRecordingMediaretentionpoliciesRequest {
 			request = new GetRecordingMediaretentionpoliciesRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withNextPage(String nextPage) {
 			request.setNextPage(nextPage);
 			return this;
 		}
+		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withEnabled(Boolean enabled) {
 			request.setEnabled(enabled);
 			return this;
 		}
+		
 		public Builder withSummary(Boolean summary) {
 			request.setSummary(summary);
 			return this;
 		}
+		
 		public Builder withHasErrors(Boolean hasErrors) {
 			request.setHasErrors(hasErrors);
 			return this;
 		}
+		
 
+		
 
 
 		public GetRecordingMediaretentionpoliciesRequest build() {

@@ -139,7 +139,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse disconnectType(DisconnectTypeEnum disconnectType) {
@@ -156,7 +156,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse id(String id) {
@@ -173,7 +173,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse self(ConversationNotificationAddress self) {
@@ -190,7 +190,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.self = self;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse roomId(String roomId) {
@@ -207,7 +207,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.roomId = roomId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse cobrowseSessionId(String cobrowseSessionId) {
@@ -224,7 +224,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.cobrowseSessionId = cobrowseSessionId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse cobrowseRole(String cobrowseRole) {
@@ -241,7 +241,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.cobrowseRole = cobrowseRole;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse controlling(List<String> controlling) {
@@ -258,7 +258,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.controlling = controlling;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse viewerUrl(String viewerUrl) {
@@ -275,7 +275,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.viewerUrl = viewerUrl;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse provider(String provider) {
@@ -292,7 +292,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse scriptId(String scriptId) {
@@ -309,7 +309,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse peerId(String peerId) {
@@ -326,7 +326,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse providerEventTime(Date providerEventTime) {
@@ -343,7 +343,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.providerEventTime = providerEventTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse connectedTime(Date connectedTime) {
@@ -360,7 +360,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse disconnectedTime(Date disconnectedTime) {
@@ -377,7 +377,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationCobrowse additionalProperties(Object additionalProperties) {
@@ -394,6 +394,7 @@ public class ConversationNotificationCobrowse  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

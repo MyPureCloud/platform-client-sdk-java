@@ -24,13 +24,14 @@ public class RestErrorDetail  implements Serializable {
     return error;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "additional information regarding the error")
   @JsonProperty("details")
   public String getDetails() {
     return details;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

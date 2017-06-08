@@ -74,7 +74,7 @@ public class DncList  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the list.
    **/
@@ -92,21 +92,21 @@ public class DncList  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -124,7 +124,7 @@ public class DncList  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * the status of the import process
    **/
@@ -142,21 +142,21 @@ public class DncList  implements Serializable {
     this.importStatus = importStatus;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "the number of phone numbers in the do not call list")
   @JsonProperty("size")
   public Long getSize() {
     return size;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "the type of dnc list being created, rds (csv file), gryphon, or dnc.com")
   @JsonProperty("dncSourceType")
   public DncSourceTypeEnum getDncSourceType() {
     return dncSourceType;
   }
 
-
+  
   /**
    * the loginId if the dncSourceType is dnc.com
    **/
@@ -174,7 +174,7 @@ public class DncList  implements Serializable {
     this.loginId = loginId;
   }
 
-
+  
   /**
    * the list of dnc.com codes to be treated as DNC
    **/
@@ -192,7 +192,7 @@ public class DncList  implements Serializable {
     this.dncCodes = dncCodes;
   }
 
-
+  
   /**
    * the license number if the dncSourceType is gryphon
    **/
@@ -210,13 +210,14 @@ public class DncList  implements Serializable {
     this.licenseId = licenseId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

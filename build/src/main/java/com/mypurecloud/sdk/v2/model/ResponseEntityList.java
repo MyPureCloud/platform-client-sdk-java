@@ -47,7 +47,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList pageSize(Integer pageSize) {
@@ -64,7 +64,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList pageNumber(Integer pageNumber) {
@@ -81,7 +81,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList total(Long total) {
@@ -98,7 +98,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList selfUri(String selfUri) {
@@ -115,7 +115,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList firstUri(String firstUri) {
@@ -132,7 +132,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList previousUri(String previousUri) {
@@ -149,7 +149,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList nextUri(String nextUri) {
@@ -166,7 +166,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList lastUri(String lastUri) {
@@ -183,7 +183,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ResponseEntityList pageCount(Integer pageCount) {
@@ -200,6 +200,7 @@ public class ResponseEntityList  implements Serializable, PagedResource<Response
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class DeleteAnalyticsReportingScheduleRequest {
+    
 	private String scheduleId;
 	public String getScheduleId() {
 		return this.scheduleId;
@@ -54,6 +55,7 @@ public class DeleteAnalyticsReportingScheduleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -83,7 +85,8 @@ public class DeleteAnalyticsReportingScheduleRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/analytics/reporting/schedules/{scheduleId}")
                 .withPathParameter("scheduleId", scheduleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -94,10 +97,12 @@ public class DeleteAnalyticsReportingScheduleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scheduleId) {
 	    return new Builder()
 	            .withRequiredParams(scheduleId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteAnalyticsReportingScheduleRequest request;
@@ -106,15 +111,20 @@ public class DeleteAnalyticsReportingScheduleRequest {
 			request = new DeleteAnalyticsReportingScheduleRequest();
 		}
 
+		
 		public Builder withScheduleId(String scheduleId) {
 			request.setScheduleId(scheduleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scheduleId) {
 			request.setScheduleId(scheduleId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteAnalyticsReportingScheduleRequest build() {

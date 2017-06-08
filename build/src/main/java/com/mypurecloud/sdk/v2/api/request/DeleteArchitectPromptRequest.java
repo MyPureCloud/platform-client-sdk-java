@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class DeleteArchitectPromptRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class DeleteArchitectPromptRequest {
 	    return this;
 	}
 
+	
 	private Boolean allResources;
 	public Boolean getAllResources() {
 		return this.allResources;
@@ -70,6 +72,7 @@ public class DeleteArchitectPromptRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,7 +104,8 @@ public class DeleteArchitectPromptRequest {
                 .withPathParameter("promptId", promptId)
         
                 .withQueryParameters("allResources", "", allResources)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -112,10 +116,12 @@ public class DeleteArchitectPromptRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId) {
 	    return new Builder()
 	            .withRequiredParams(promptId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteArchitectPromptRequest request;
@@ -124,19 +130,25 @@ public class DeleteArchitectPromptRequest {
 			request = new DeleteArchitectPromptRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withAllResources(Boolean allResources) {
 			request.setAllResources(allResources);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId) {
 			request.setPromptId(promptId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteArchitectPromptRequest build() {

@@ -36,7 +36,7 @@ public class UserAgentInfo  implements Serializable {
     this.firmwareVersion = firmwareVersion;
   }
 
-
+  
   /**
    * The manufacturer of the phone.
    **/
@@ -54,7 +54,7 @@ public class UserAgentInfo  implements Serializable {
     this.manufacturer = manufacturer;
   }
 
-
+  
   /**
    * The model of the phone.
    **/
@@ -72,6 +72,7 @@ public class UserAgentInfo  implements Serializable {
     this.model = model;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

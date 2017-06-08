@@ -39,7 +39,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.promptId = promptId;
   }
 
-
+  
   /**
    **/
   public PromptResourceNotificationNotification id(String id) {
@@ -56,7 +56,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptResourceNotificationNotification language(String language) {
@@ -73,7 +73,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.language = language;
   }
 
-
+  
   /**
    **/
   public PromptResourceNotificationNotification mediaUri(String mediaUri) {
@@ -90,7 +90,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.mediaUri = mediaUri;
   }
 
-
+  
   /**
    **/
   public PromptResourceNotificationNotification uploadStatus(String uploadStatus) {
@@ -107,7 +107,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    **/
   public PromptResourceNotificationNotification durationSeconds(BigDecimal durationSeconds) {
@@ -124,6 +124,7 @@ public class PromptResourceNotificationNotification  implements Serializable {
     this.durationSeconds = durationSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

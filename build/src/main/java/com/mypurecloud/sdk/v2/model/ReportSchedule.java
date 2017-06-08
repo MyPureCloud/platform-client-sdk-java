@@ -44,7 +44,7 @@ public class ReportSchedule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ReportSchedule name(String name) {
@@ -61,7 +61,7 @@ public class ReportSchedule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Quartz Cron Expression
    **/
@@ -79,7 +79,7 @@ public class ReportSchedule  implements Serializable {
     this.quartzCronExpression = quartzCronExpression;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -97,7 +97,7 @@ public class ReportSchedule  implements Serializable {
     this.nextFireTime = nextFireTime;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -115,7 +115,7 @@ public class ReportSchedule  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -133,7 +133,7 @@ public class ReportSchedule  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public ReportSchedule description(String description) {
@@ -150,7 +150,7 @@ public class ReportSchedule  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public ReportSchedule timeZone(String timeZone) {
@@ -167,7 +167,7 @@ public class ReportSchedule  implements Serializable {
     this.timeZone = timeZone;
   }
 
-
+  
   /**
    **/
   public ReportSchedule timePeriod(String timePeriod) {
@@ -184,7 +184,7 @@ public class ReportSchedule  implements Serializable {
     this.timePeriod = timePeriod;
   }
 
-
+  
   /**
    * Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
@@ -202,7 +202,7 @@ public class ReportSchedule  implements Serializable {
     this.interval = interval;
   }
 
-
+  
   /**
    **/
   public ReportSchedule reportFormat(String reportFormat) {
@@ -219,7 +219,7 @@ public class ReportSchedule  implements Serializable {
     this.reportFormat = reportFormat;
   }
 
-
+  
   /**
    **/
   public ReportSchedule locale(String locale) {
@@ -236,7 +236,7 @@ public class ReportSchedule  implements Serializable {
     this.locale = locale;
   }
 
-
+  
   /**
    **/
   public ReportSchedule enabled(Boolean enabled) {
@@ -253,7 +253,7 @@ public class ReportSchedule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    * Report ID
    **/
@@ -271,7 +271,7 @@ public class ReportSchedule  implements Serializable {
     this.reportId = reportId;
   }
 
-
+  
   /**
    **/
   public ReportSchedule parameters(Map<String, Object> parameters) {
@@ -288,7 +288,7 @@ public class ReportSchedule  implements Serializable {
     this.parameters = parameters;
   }
 
-
+  
   /**
    **/
   public ReportSchedule lastRun(ReportRunEntry lastRun) {
@@ -305,13 +305,14 @@ public class ReportSchedule  implements Serializable {
     this.lastRun = lastRun;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

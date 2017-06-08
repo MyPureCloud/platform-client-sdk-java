@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 	    return this;
 	}
 
+	
 	private String date;
 	public String getDate() {
 		return this.date;
@@ -62,6 +64,7 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,7 +101,8 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
                 .withPathParameter("muId", muId)
         
                 .withQueryParameters("date", "", date)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -109,10 +113,12 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId, String date) {
 	    return new Builder()
 	            .withRequiredParams(muId, date);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementManagementunitIntradayQueuesRequest request;
@@ -121,20 +127,26 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 			request = new GetWorkforcemanagementManagementunitIntradayQueuesRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 		public Builder withDate(String date) {
 			request.setDate(date);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId, String date) {
 			request.setMuId(muId);
-			request.setDate(date);
+						request.setDate(date);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementManagementunitIntradayQueuesRequest build() {

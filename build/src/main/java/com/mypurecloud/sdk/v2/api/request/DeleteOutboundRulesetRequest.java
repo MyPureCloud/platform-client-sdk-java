@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class DeleteOutboundRulesetRequest {
+    
 	private String ruleSetId;
 	public String getRuleSetId() {
 		return this.ruleSetId;
@@ -74,6 +75,7 @@ public class DeleteOutboundRulesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class DeleteOutboundRulesetRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/outbound/rulesets/{ruleSetId}")
                 .withPathParameter("ruleSetId", ruleSetId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class DeleteOutboundRulesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleSetId) {
 	    return new Builder()
 	            .withRequiredParams(ruleSetId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOutboundRulesetRequest request;
@@ -126,15 +131,20 @@ public class DeleteOutboundRulesetRequest {
 			request = new DeleteOutboundRulesetRequest();
 		}
 
+		
 		public Builder withRuleSetId(String ruleSetId) {
 			request.setRuleSetId(ruleSetId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleSetId) {
 			request.setRuleSetId(ruleSetId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOutboundRulesetRequest build() {

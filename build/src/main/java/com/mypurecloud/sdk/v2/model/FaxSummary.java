@@ -35,7 +35,7 @@ public class FaxSummary  implements Serializable {
     this.readCount = readCount;
   }
 
-
+  
   /**
    **/
   public FaxSummary unreadCount(Integer unreadCount) {
@@ -52,7 +52,7 @@ public class FaxSummary  implements Serializable {
     this.unreadCount = unreadCount;
   }
 
-
+  
   /**
    **/
   public FaxSummary totalCount(Integer totalCount) {
@@ -69,6 +69,7 @@ public class FaxSummary  implements Serializable {
     this.totalCount = totalCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -43,7 +43,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification name(String name) {
@@ -60,7 +60,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification dateCreated(Date dateCreated) {
@@ -77,7 +77,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification dateModified(Date dateModified) {
@@ -94,7 +94,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification version(Integer version) {
@@ -111,7 +111,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification callableTimes(List<CallableTimeSetNotificationCallableTimes> callableTimes) {
@@ -128,7 +128,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.callableTimes = callableTimes;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetNotification additionalProperties(Object additionalProperties) {
@@ -145,6 +145,7 @@ public class CallableTimeSetNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

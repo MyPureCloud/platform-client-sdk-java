@@ -311,7 +311,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Left hand side for dimension predicates
    **/
@@ -329,7 +329,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.dimension = dimension;
   }
 
-
+  
   /**
    * Left hand side for property predicates
    **/
@@ -347,7 +347,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.propertyType = propertyType;
   }
 
-
+  
   /**
    * Left hand side for property predicates
    **/
@@ -365,7 +365,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.property = property;
   }
 
-
+  
   /**
    * Left hand side for metric predicates
    **/
@@ -383,7 +383,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.metric = metric;
   }
 
-
+  
   /**
    * Optional operator, default is matches
    **/
@@ -401,7 +401,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.operator = operator;
   }
 
-
+  
   /**
    * Right hand side for dimension, property, or metric predicates
    **/
@@ -419,7 +419,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * Right hand side for property or metric predicates
    **/
@@ -437,6 +437,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     this.range = range;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

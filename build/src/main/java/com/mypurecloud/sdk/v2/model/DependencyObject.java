@@ -93,7 +93,7 @@ public class DependencyObject  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DependencyObject name(String name) {
@@ -110,7 +110,7 @@ public class DependencyObject  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DependencyObject version(String version) {
@@ -127,7 +127,7 @@ public class DependencyObject  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public DependencyObject type(TypeEnum type) {
@@ -144,7 +144,7 @@ public class DependencyObject  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public DependencyObject deleted(Boolean deleted) {
@@ -161,7 +161,7 @@ public class DependencyObject  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    **/
   public DependencyObject updated(Boolean updated) {
@@ -178,7 +178,7 @@ public class DependencyObject  implements Serializable {
     this.updated = updated;
   }
 
-
+  
   /**
    **/
   public DependencyObject stateUnknown(Boolean stateUnknown) {
@@ -195,7 +195,7 @@ public class DependencyObject  implements Serializable {
     this.stateUnknown = stateUnknown;
   }
 
-
+  
   /**
    **/
   public DependencyObject consumedResources(List<Dependency> consumedResources) {
@@ -212,7 +212,7 @@ public class DependencyObject  implements Serializable {
     this.consumedResources = consumedResources;
   }
 
-
+  
   /**
    **/
   public DependencyObject consumingResources(List<Dependency> consumingResources) {
@@ -229,13 +229,14 @@ public class DependencyObject  implements Serializable {
     this.consumingResources = consumingResources;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

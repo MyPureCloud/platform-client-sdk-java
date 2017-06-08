@@ -36,7 +36,7 @@ public class IntradayDataUpdateNotificationIntradayForecastData  implements Seri
     this.offered = offered;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayForecastData averageTalkTimeSeconds(BigDecimal averageTalkTimeSeconds) {
@@ -53,7 +53,7 @@ public class IntradayDataUpdateNotificationIntradayForecastData  implements Seri
     this.averageTalkTimeSeconds = averageTalkTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayForecastData averageAfterCallWorkSeconds(BigDecimal averageAfterCallWorkSeconds) {
@@ -70,6 +70,7 @@ public class IntradayDataUpdateNotificationIntradayForecastData  implements Seri
     this.averageAfterCallWorkSeconds = averageAfterCallWorkSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

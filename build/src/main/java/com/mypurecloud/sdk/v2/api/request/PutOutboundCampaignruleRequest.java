@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCampaignruleRequest {
+    
 	private String campaignRuleId;
 	public String getCampaignRuleId() {
 		return this.campaignRuleId;
@@ -74,6 +75,7 @@ public class PutOutboundCampaignruleRequest {
 	    return this;
 	}
 
+	
 	private CampaignRule body;
 	public CampaignRule getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundCampaignruleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundCampaignruleRequest {
                 .withPathParameter("campaignRuleId", campaignRuleId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundCampaignruleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String campaignRuleId, CampaignRule body) {
 	    return new Builder()
 	            .withRequiredParams(campaignRuleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundCampaignruleRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundCampaignruleRequest {
 			request = new PutOutboundCampaignruleRequest();
 		}
 
+		
 		public Builder withCampaignRuleId(String campaignRuleId) {
 			request.setCampaignRuleId(campaignRuleId);
 			return this;
 		}
+		
 		public Builder withBody(CampaignRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String campaignRuleId, CampaignRule body) {
 			request.setCampaignRuleId(campaignRuleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundCampaignruleRequest build() {

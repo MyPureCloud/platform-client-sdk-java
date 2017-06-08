@@ -34,6 +34,7 @@ public class ConsultTransferResponse  implements Serializable {
     this.destinationParticipantId = destinationParticipantId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

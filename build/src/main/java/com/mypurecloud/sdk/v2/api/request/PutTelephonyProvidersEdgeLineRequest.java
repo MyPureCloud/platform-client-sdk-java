@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgeLineRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgeLineRequest {
 	    return this;
 	}
 
+	
 	private String lineId;
 	public String getLineId() {
 		return this.lineId;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgeLineRequest {
 	    return this;
 	}
 
+	
 	private EdgeLine body;
 	public EdgeLine getBody() {
 		return this.body;
@@ -126,6 +129,7 @@ public class PutTelephonyProvidersEdgeLineRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +173,7 @@ public class PutTelephonyProvidersEdgeLineRequest {
                 .withPathParameter("lineId", lineId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -180,10 +185,12 @@ public class PutTelephonyProvidersEdgeLineRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String lineId, EdgeLine body) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, lineId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgeLineRequest request;
@@ -192,25 +199,32 @@ public class PutTelephonyProvidersEdgeLineRequest {
 			request = new PutTelephonyProvidersEdgeLineRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withLineId(String lineId) {
 			request.setLineId(lineId);
 			return this;
 		}
+		
 		public Builder withBody(EdgeLine body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String lineId, EdgeLine body) {
 			request.setEdgeId(edgeId);
-			request.setLineId(lineId);
-			request.setBody(body);
+						request.setLineId(lineId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgeLineRequest build() {

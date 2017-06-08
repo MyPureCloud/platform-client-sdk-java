@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgeLinesRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgeLinesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgeLinesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgeLinesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -159,7 +163,8 @@ public class GetTelephonyProvidersEdgeLinesRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -170,10 +175,12 @@ public class GetTelephonyProvidersEdgeLinesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgeLinesRequest request;
@@ -182,23 +189,30 @@ public class GetTelephonyProvidersEdgeLinesRequest {
 			request = new GetTelephonyProvidersEdgeLinesRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId) {
 			request.setEdgeId(edgeId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgeLinesRequest build() {

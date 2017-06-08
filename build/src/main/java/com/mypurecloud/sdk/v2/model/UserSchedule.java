@@ -40,7 +40,7 @@ public class UserSchedule  implements Serializable {
     this.shifts = shifts;
   }
 
-
+  
   /**
    * Markers to indicate a full day time off request, relative to the management unit time zone
    **/
@@ -58,6 +58,7 @@ public class UserSchedule  implements Serializable {
     this.fullDayTimeOffMarkers = fullDayTimeOffMarkers;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,7 +46,7 @@ public class QuestionGroupScore  implements Serializable {
     this.questionGroupId = questionGroupId;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore totalScore(Float totalScore) {
@@ -63,7 +63,7 @@ public class QuestionGroupScore  implements Serializable {
     this.totalScore = totalScore;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore maxTotalScore(Float maxTotalScore) {
@@ -80,7 +80,7 @@ public class QuestionGroupScore  implements Serializable {
     this.maxTotalScore = maxTotalScore;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore totalCriticalScore(Float totalCriticalScore) {
@@ -97,7 +97,7 @@ public class QuestionGroupScore  implements Serializable {
     this.totalCriticalScore = totalCriticalScore;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore maxTotalCriticalScore(Float maxTotalCriticalScore) {
@@ -114,7 +114,7 @@ public class QuestionGroupScore  implements Serializable {
     this.maxTotalCriticalScore = maxTotalCriticalScore;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore totalScoreUnweighted(Float totalScoreUnweighted) {
@@ -131,7 +131,7 @@ public class QuestionGroupScore  implements Serializable {
     this.totalScoreUnweighted = totalScoreUnweighted;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore maxTotalScoreUnweighted(Float maxTotalScoreUnweighted) {
@@ -148,7 +148,7 @@ public class QuestionGroupScore  implements Serializable {
     this.maxTotalScoreUnweighted = maxTotalScoreUnweighted;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore totalCriticalScoreUnweighted(Float totalCriticalScoreUnweighted) {
@@ -165,7 +165,7 @@ public class QuestionGroupScore  implements Serializable {
     this.totalCriticalScoreUnweighted = totalCriticalScoreUnweighted;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore maxTotalCriticalScoreUnweighted(Float maxTotalCriticalScoreUnweighted) {
@@ -182,7 +182,7 @@ public class QuestionGroupScore  implements Serializable {
     this.maxTotalCriticalScoreUnweighted = maxTotalCriticalScoreUnweighted;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore markedNA(Boolean markedNA) {
@@ -199,7 +199,7 @@ public class QuestionGroupScore  implements Serializable {
     this.markedNA = markedNA;
   }
 
-
+  
   /**
    **/
   public QuestionGroupScore questionScores(List<QuestionScore> questionScores) {
@@ -216,6 +216,7 @@ public class QuestionGroupScore  implements Serializable {
     this.questionScores = questionScores;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

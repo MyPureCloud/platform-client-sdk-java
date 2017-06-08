@@ -78,7 +78,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification name(String name) {
@@ -95,7 +95,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification dateCreated(Date dateCreated) {
@@ -112,7 +112,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification dateModified(Date dateModified) {
@@ -129,7 +129,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification version(Integer version) {
@@ -146,7 +146,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification defaultSet(List<DefaultSetEnum> defaultSet) {
@@ -163,7 +163,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.defaultSet = defaultSet;
   }
 
-
+  
   /**
    **/
   public WrapUpCodeMappingNotification mapping(Map<String, List<String>> mapping) {
@@ -180,6 +180,7 @@ public class WrapUpCodeMappingNotification  implements Serializable {
     this.mapping = mapping;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

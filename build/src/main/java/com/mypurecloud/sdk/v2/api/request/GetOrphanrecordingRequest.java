@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetOrphanrecordingRequest {
+    
 	private String orphanId;
 	public String getOrphanId() {
 		return this.orphanId;
@@ -52,6 +53,7 @@ public class GetOrphanrecordingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class GetOrphanrecordingRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/orphanrecordings/{orphanId}")
                 .withPathParameter("orphanId", orphanId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class GetOrphanrecordingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String orphanId) {
 	    return new Builder()
 	            .withRequiredParams(orphanId);
 	}
+	
 
 	public static class Builder {
 		private final GetOrphanrecordingRequest request;
@@ -104,15 +109,20 @@ public class GetOrphanrecordingRequest {
 			request = new GetOrphanrecordingRequest();
 		}
 
+		
 		public Builder withOrphanId(String orphanId) {
 			request.setOrphanId(orphanId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String orphanId) {
 			request.setOrphanId(orphanId);
+			
 			return this;
 		}
+		
 
 
 		public GetOrphanrecordingRequest build() {

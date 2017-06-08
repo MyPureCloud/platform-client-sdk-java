@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementDocumentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -64,6 +65,7 @@ public class PostContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private DocumentUpdate body;
 	public DocumentUpdate getBody() {
 		return this.body;
@@ -78,6 +80,7 @@ public class PostContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -92,6 +95,7 @@ public class PostContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private Boolean override;
 	public Boolean getOverride() {
 		return this.override;
@@ -106,6 +110,7 @@ public class PostContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -146,6 +151,7 @@ public class PostContentmanagementDocumentRequest {
                 .withQueryParameters("override", "", override)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -157,10 +163,12 @@ public class PostContentmanagementDocumentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId, DocumentUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(documentId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementDocumentRequest request;
@@ -169,28 +177,36 @@ public class PostContentmanagementDocumentRequest {
 			request = new PostContentmanagementDocumentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 		public Builder withBody(DocumentUpdate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withOverride(Boolean override) {
 			request.setOverride(override);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId, DocumentUpdate body) {
 			request.setDocumentId(documentId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementDocumentRequest build() {

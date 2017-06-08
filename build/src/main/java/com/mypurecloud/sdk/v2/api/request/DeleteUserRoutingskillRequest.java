@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class DeleteUserRoutingskillRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class DeleteUserRoutingskillRequest {
 	    return this;
 	}
 
+	
 	private String skillId;
 	public String getSkillId() {
 		return this.skillId;
@@ -76,6 +78,7 @@ public class DeleteUserRoutingskillRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,7 +115,8 @@ public class DeleteUserRoutingskillRequest {
                 .withPathParameter("userId", userId)
         
                 .withPathParameter("skillId", skillId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -123,10 +127,12 @@ public class DeleteUserRoutingskillRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, String skillId) {
 	    return new Builder()
 	            .withRequiredParams(userId, skillId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteUserRoutingskillRequest request;
@@ -135,20 +141,26 @@ public class DeleteUserRoutingskillRequest {
 			request = new DeleteUserRoutingskillRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withSkillId(String skillId) {
 			request.setSkillId(skillId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, String skillId) {
 			request.setUserId(userId);
-			request.setSkillId(skillId);
+						request.setSkillId(skillId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteUserRoutingskillRequest build() {

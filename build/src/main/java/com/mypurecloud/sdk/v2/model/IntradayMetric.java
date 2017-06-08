@@ -74,7 +74,7 @@ public class IntradayMetric  implements Serializable {
     this.category = category;
   }
 
-
+  
   /**
    * The current version id for this metric category
    **/
@@ -92,6 +92,7 @@ public class IntradayMetric  implements Serializable {
     this.version = version;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

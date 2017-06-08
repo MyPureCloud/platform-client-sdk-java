@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -98,6 +99,7 @@ public class GetConfigurationSchemasEdgesVnextRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -112,6 +114,7 @@ public class GetConfigurationSchemasEdgesVnextRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,7 +141,8 @@ public class GetConfigurationSchemasEdgesVnextRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -149,6 +153,7 @@ public class GetConfigurationSchemasEdgesVnextRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetConfigurationSchemasEdgesVnextRequest request;
@@ -157,15 +162,19 @@ public class GetConfigurationSchemasEdgesVnextRequest {
 			request = new GetConfigurationSchemasEdgesVnextRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 
 
 		public GetConfigurationSchemasEdgesVnextRequest build() {

@@ -74,7 +74,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -91,7 +91,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants endTime(Date endTime) {
@@ -108,7 +108,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants userId(String userId) {
@@ -125,7 +125,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants externalContactId(String externalContactId) {
@@ -142,7 +142,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants externalOrganizationId(String externalOrganizationId) {
@@ -159,7 +159,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.externalOrganizationId = externalOrganizationId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants name(String name) {
@@ -176,7 +176,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants queueId(String queueId) {
@@ -193,7 +193,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants groupId(String groupId) {
@@ -210,7 +210,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.groupId = groupId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants purpose(String purpose) {
@@ -227,7 +227,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants consultParticipantId(String consultParticipantId) {
@@ -244,7 +244,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants address(String address) {
@@ -261,7 +261,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -278,7 +278,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants wrapupExpected(Boolean wrapupExpected) {
@@ -295,7 +295,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.wrapupExpected = wrapupExpected;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -312,7 +312,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -329,7 +329,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -346,7 +346,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants monitoredParticipantId(String monitoredParticipantId) {
@@ -363,7 +363,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -380,7 +380,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants calls(List<ConversationNotificationCalls> calls) {
@@ -397,7 +397,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.calls = calls;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants callbacks(List<ConversationNotificationCallbacks> callbacks) {
@@ -414,7 +414,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.callbacks = callbacks;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants chats(List<ConversationNotificationChats> chats) {
@@ -431,7 +431,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.chats = chats;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants cobrowsesessions(List<ConversationNotificationCobrowsesessions> cobrowsesessions) {
@@ -448,7 +448,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.cobrowsesessions = cobrowsesessions;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants emails(List<ConversationNotificationEmails> emails) {
@@ -465,7 +465,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.emails = emails;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants screenshares(List<ConversationNotificationScreenshares> screenshares) {
@@ -482,7 +482,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.screenshares = screenshares;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants socialExpressions(List<ConversationNotificationSocialExpressions> socialExpressions) {
@@ -499,7 +499,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.socialExpressions = socialExpressions;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants videos(List<ConversationNotificationVideos> videos) {
@@ -516,7 +516,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.videos = videos;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationParticipants additionalProperties(Object additionalProperties) {
@@ -533,6 +533,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

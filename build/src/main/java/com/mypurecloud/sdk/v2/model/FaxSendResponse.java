@@ -62,7 +62,7 @@ public class FaxSendResponse  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public FaxSendResponse name(String name) {
@@ -79,7 +79,7 @@ public class FaxSendResponse  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FaxSendResponse uploadDestinationUri(String uploadDestinationUri) {
@@ -96,7 +96,7 @@ public class FaxSendResponse  implements Serializable {
     this.uploadDestinationUri = uploadDestinationUri;
   }
 
-
+  
   /**
    **/
   public FaxSendResponse uploadMethodType(UploadMethodTypeEnum uploadMethodType) {
@@ -113,13 +113,14 @@ public class FaxSendResponse  implements Serializable {
     this.uploadMethodType = uploadMethodType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

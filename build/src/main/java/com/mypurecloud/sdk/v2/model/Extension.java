@@ -112,7 +112,7 @@ public class Extension  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -130,7 +130,7 @@ public class Extension  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Extension description(String description) {
@@ -147,7 +147,7 @@ public class Extension  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Extension version(Integer version) {
@@ -164,7 +164,7 @@ public class Extension  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -182,7 +182,7 @@ public class Extension  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -200,7 +200,7 @@ public class Extension  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Extension modifiedBy(String modifiedBy) {
@@ -217,7 +217,7 @@ public class Extension  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Extension createdBy(String createdBy) {
@@ -234,7 +234,7 @@ public class Extension  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Extension state(StateEnum state) {
@@ -251,7 +251,7 @@ public class Extension  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Extension modifiedByApp(String modifiedByApp) {
@@ -268,7 +268,7 @@ public class Extension  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Extension createdByApp(String createdByApp) {
@@ -285,7 +285,7 @@ public class Extension  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public Extension number(String number) {
@@ -302,7 +302,7 @@ public class Extension  implements Serializable {
     this.number = number;
   }
 
-
+  
   /**
    * A Uri reference to the owner of this extension, which is either a User or an IVR
    **/
@@ -320,7 +320,7 @@ public class Extension  implements Serializable {
     this.owner = owner;
   }
 
-
+  
   /**
    **/
   public Extension extensionPool(UriReference extensionPool) {
@@ -337,7 +337,7 @@ public class Extension  implements Serializable {
     this.extensionPool = extensionPool;
   }
 
-
+  
   /**
    **/
   public Extension ownerType(OwnerTypeEnum ownerType) {
@@ -354,13 +354,14 @@ public class Extension  implements Serializable {
     this.ownerType = ownerType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

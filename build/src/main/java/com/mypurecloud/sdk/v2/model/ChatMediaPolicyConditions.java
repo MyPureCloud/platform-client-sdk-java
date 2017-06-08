@@ -45,7 +45,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-
+  
   /**
    **/
   public ChatMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -62,7 +62,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-
+  
   /**
    **/
   public ChatMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -79,7 +79,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-
+  
   /**
    **/
   public ChatMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -96,7 +96,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-
+  
   /**
    **/
   public ChatMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -113,7 +113,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-
+  
   /**
    **/
   public ChatMediaPolicyConditions duration(DurationCondition duration) {
@@ -130,6 +130,7 @@ public class ChatMediaPolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

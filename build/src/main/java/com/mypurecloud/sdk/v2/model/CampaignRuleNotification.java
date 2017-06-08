@@ -49,7 +49,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification name(String name) {
@@ -66,7 +66,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification dateCreated(Date dateCreated) {
@@ -83,7 +83,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification dateModified(Date dateModified) {
@@ -100,7 +100,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification version(Integer version) {
@@ -117,7 +117,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification campaignRuleEntities(CampaignRuleNotificationCampaignRuleEntities campaignRuleEntities) {
@@ -134,7 +134,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.campaignRuleEntities = campaignRuleEntities;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification campaignRuleConditions(List<CampaignRuleNotificationCampaignRuleConditions> campaignRuleConditions) {
@@ -151,7 +151,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.campaignRuleConditions = campaignRuleConditions;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification campaignRuleActions(List<CampaignRuleNotificationCampaignRuleActions> campaignRuleActions) {
@@ -168,7 +168,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.campaignRuleActions = campaignRuleActions;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification matchAnyConditions(Boolean matchAnyConditions) {
@@ -185,7 +185,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.matchAnyConditions = matchAnyConditions;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification enabled(Boolean enabled) {
@@ -202,7 +202,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotification additionalProperties(Object additionalProperties) {
@@ -219,6 +219,7 @@ public class CampaignRuleNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

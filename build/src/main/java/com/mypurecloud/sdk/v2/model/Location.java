@@ -41,7 +41,7 @@ public class Location  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public Location floorplanId(String floorplanId) {
@@ -58,7 +58,7 @@ public class Location  implements Serializable {
     this.floorplanId = floorplanId;
   }
 
-
+  
   /**
    **/
   public Location coordinates(Map<String, Double> coordinates) {
@@ -75,7 +75,7 @@ public class Location  implements Serializable {
     this.coordinates = coordinates;
   }
 
-
+  
   /**
    **/
   public Location notes(String notes) {
@@ -92,7 +92,7 @@ public class Location  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public Location locationDefinition(LocationDefinition locationDefinition) {
@@ -109,6 +109,7 @@ public class Location  implements Serializable {
     this.locationDefinition = locationDefinition;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

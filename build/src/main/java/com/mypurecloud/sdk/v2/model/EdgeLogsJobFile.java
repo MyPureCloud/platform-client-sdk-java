@@ -113,7 +113,7 @@ public class EdgeLogsJobFile  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -131,7 +131,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile description(String description) {
@@ -148,7 +148,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile version(Integer version) {
@@ -165,7 +165,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -183,7 +183,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -201,7 +201,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile modifiedBy(String modifiedBy) {
@@ -218,7 +218,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile createdBy(String createdBy) {
@@ -235,7 +235,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile state(StateEnum state) {
@@ -252,7 +252,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile modifiedByApp(String modifiedByApp) {
@@ -269,7 +269,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeLogsJobFile createdByApp(String createdByApp) {
@@ -286,7 +286,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -304,7 +304,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.timeCreated = timeCreated;
   }
 
-
+  
   /**
    * The time this log file was last modified on the Edge. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -322,7 +322,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.timeModified = timeModified;
   }
 
-
+  
   /**
    * The size of this file in bytes.
    **/
@@ -340,7 +340,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.sizeBytes = sizeBytes;
   }
 
-
+  
   /**
    * The status of the upload of this file from the Edge to the cloud.  Use /upload to start an upload.
    **/
@@ -358,7 +358,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.uploadStatus = uploadStatus;
   }
 
-
+  
   /**
    * The path of this file on the Edge.
    **/
@@ -376,7 +376,7 @@ public class EdgeLogsJobFile  implements Serializable {
     this.edgePath = edgePath;
   }
 
-
+  
   /**
    * The download ID to use with the downloads API.
    **/
@@ -394,13 +394,14 @@ public class EdgeLogsJobFile  implements Serializable {
     this.downloadId = downloadId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

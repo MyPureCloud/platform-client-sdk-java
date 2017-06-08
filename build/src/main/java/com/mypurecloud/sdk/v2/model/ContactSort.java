@@ -70,7 +70,7 @@ public class ContactSort  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    * The sort direction
    **/
@@ -88,7 +88,7 @@ public class ContactSort  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * Whether that column contains numeric data
    **/
@@ -106,6 +106,7 @@ public class ContactSort  implements Serializable {
     this.numeric = numeric;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

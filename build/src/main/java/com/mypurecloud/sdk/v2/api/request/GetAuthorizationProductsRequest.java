@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class GetAuthorizationProductsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -51,7 +52,8 @@ public class GetAuthorizationProductsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/authorization/products")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/authorization/products")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -62,6 +64,7 @@ public class GetAuthorizationProductsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetAuthorizationProductsRequest request;
@@ -70,7 +73,9 @@ public class GetAuthorizationProductsRequest {
 			request = new GetAuthorizationProductsRequest();
 		}
 
+		
 
+		
 
 
 		public GetAuthorizationProductsRequest build() {

@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingSkillRequest {
+    
 	private String skillId;
 	public String getSkillId() {
 		return this.skillId;
@@ -58,6 +59,7 @@ public class GetRoutingSkillRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,7 +89,8 @@ public class GetRoutingSkillRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/skills/{skillId}")
                 .withPathParameter("skillId", skillId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -98,10 +101,12 @@ public class GetRoutingSkillRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String skillId) {
 	    return new Builder()
 	            .withRequiredParams(skillId);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingSkillRequest request;
@@ -110,15 +115,20 @@ public class GetRoutingSkillRequest {
 			request = new GetRoutingSkillRequest();
 		}
 
+		
 		public Builder withSkillId(String skillId) {
 			request.setSkillId(skillId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String skillId) {
 			request.setSkillId(skillId);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingSkillRequest build() {

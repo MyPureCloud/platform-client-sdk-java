@@ -114,7 +114,7 @@ public class Trunk  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -132,7 +132,7 @@ public class Trunk  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Trunk description(String description) {
@@ -149,7 +149,7 @@ public class Trunk  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Trunk version(Integer version) {
@@ -166,7 +166,7 @@ public class Trunk  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -184,7 +184,7 @@ public class Trunk  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -202,7 +202,7 @@ public class Trunk  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Trunk modifiedBy(String modifiedBy) {
@@ -219,7 +219,7 @@ public class Trunk  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Trunk createdBy(String createdBy) {
@@ -236,7 +236,7 @@ public class Trunk  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Trunk state(StateEnum state) {
@@ -253,7 +253,7 @@ public class Trunk  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Trunk modifiedByApp(String modifiedByApp) {
@@ -270,7 +270,7 @@ public class Trunk  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Trunk createdByApp(String createdByApp) {
@@ -287,7 +287,7 @@ public class Trunk  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The type of this trunk.
    **/
@@ -305,7 +305,7 @@ public class Trunk  implements Serializable {
     this.trunkType = trunkType;
   }
 
-
+  
   /**
    * The Edge using this trunk.
    **/
@@ -323,7 +323,7 @@ public class Trunk  implements Serializable {
     this.edge = edge;
   }
 
-
+  
   /**
    * The trunk base configuration used on this trunk.
    **/
@@ -341,7 +341,7 @@ public class Trunk  implements Serializable {
     this.trunkBase = trunkBase;
   }
 
-
+  
   /**
    * The metabase used to create this trunk.
    **/
@@ -359,7 +359,7 @@ public class Trunk  implements Serializable {
     this.trunkMetabase = trunkMetabase;
   }
 
-
+  
   /**
    * The edge group associated with this trunk.
    **/
@@ -377,14 +377,14 @@ public class Trunk  implements Serializable {
     this.edgeGroup = edgeGroup;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base.")
   @JsonProperty("inService")
   public Boolean getInService() {
     return inService;
   }
 
-
+  
   /**
    * True if the Edge used by this trunk is in-service
    **/
@@ -402,13 +402,14 @@ public class Trunk  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

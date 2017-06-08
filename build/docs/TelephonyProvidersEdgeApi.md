@@ -1161,7 +1161,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **edgeId** | **String**| Edge ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: site |
 {: class="table table-striped"}
 
 ### Return type
@@ -1324,7 +1324,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **edgeId** | **String**| Edge ID | |
 | **interfaceId** | **String**| Interface ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -1377,7 +1377,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **edgeId** | **String**| Edge ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -1750,7 +1750,7 @@ try {
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
 | **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] |
-| **trunkType** | **String**| Filter by a Trunk type | [optional] [enum: EXTERNAL, PHONE, EDGE] |
+| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
@@ -2227,7 +2227,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **edgeGroupId** | **String**| Edge group ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response | [optional]<br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
 {: class="table table-striped"}
 
 ### Return type
@@ -2930,7 +2930,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **name** | **String**| Name | [optional] |
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -3034,7 +3034,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
 ### Return type
@@ -3306,7 +3306,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, lines |
 | **name** | **String**| Name | [optional] |
 {: class="table table-striped"}
 
@@ -3487,8 +3487,8 @@ try {
 | **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional] |
 | **linesId** | **String**| Filter by lines.id | [optional] |
 | **linesName** | **String**| Filter by lines.name | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
-| **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
+| **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}
 
 ### Return type
@@ -4196,7 +4196,7 @@ try {
 | **recordingEnabled** | **Boolean**| Filter trunks by recording enabled | [optional] |
 | **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
 | **managed** | **Boolean**| Filter by managed | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties |
 | **name** | **String**| Name of the TrunkBase to filter by | [optional] |
 {: class="table table-striped"}
 
@@ -4250,7 +4250,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**|  | [optional] [enum: EXTERNAL, PHONE, EDGE] |
+| **type** | **String**|  | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
 | **pageSize** | **Integer**|  | [optional] [default to 25] |
 | **pageNumber** | **Integer**|  | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -4366,7 +4366,7 @@ try {
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
 | **edgeId** | **String**| Filter by Edge Ids | [optional] |
 | **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] |
-| **trunkType** | **String**| Filter by a Trunk type | [optional] [enum: EXTERNAL, PHONE, EDGE] |
+| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type
@@ -4417,7 +4417,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkType** | **String**| The type of this trunk base. | [optional] [enum: EXTERNAL, PHONE, EDGE] |
+| **trunkType** | **String**| The type of this trunk base. | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
 {: class="table table-striped"}
 
 ### Return type

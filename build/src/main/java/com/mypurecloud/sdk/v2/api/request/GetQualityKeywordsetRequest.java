@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityKeywordsetRequest {
+    
 	private String keywordSetId;
 	public String getKeywordSetId() {
 		return this.keywordSetId;
@@ -52,6 +53,7 @@ public class GetQualityKeywordsetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class GetQualityKeywordsetRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/keywordsets/{keywordSetId}")
                 .withPathParameter("keywordSetId", keywordSetId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class GetQualityKeywordsetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String keywordSetId) {
 	    return new Builder()
 	            .withRequiredParams(keywordSetId);
 	}
+	
 
 	public static class Builder {
 		private final GetQualityKeywordsetRequest request;
@@ -104,15 +109,20 @@ public class GetQualityKeywordsetRequest {
 			request = new GetQualityKeywordsetRequest();
 		}
 
+		
 		public Builder withKeywordSetId(String keywordSetId) {
 			request.setKeywordSetId(keywordSetId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String keywordSetId) {
 			request.setKeywordSetId(keywordSetId);
+			
 			return this;
 		}
+		
 
 
 		public GetQualityKeywordsetRequest build() {

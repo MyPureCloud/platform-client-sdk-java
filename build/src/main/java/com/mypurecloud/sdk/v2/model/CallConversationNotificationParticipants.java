@@ -240,7 +240,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants name(String name) {
@@ -257,7 +257,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants address(String address) {
@@ -274,7 +274,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants startTime(Date startTime) {
@@ -291,7 +291,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -308,7 +308,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants endTime(Date endTime) {
@@ -325,7 +325,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -342,7 +342,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants purpose(String purpose) {
@@ -359,7 +359,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants state(StateEnum state) {
@@ -376,7 +376,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -393,7 +393,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -410,7 +410,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants held(Boolean held) {
@@ -427,7 +427,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -444,7 +444,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -461,7 +461,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -478,7 +478,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants queue(CallConversationNotificationUriReference queue) {
@@ -495,7 +495,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -512,7 +512,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants errorInfo(CallConversationNotificationErrorInfo errorInfo) {
@@ -529,7 +529,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants script(CallConversationNotificationUriReference script) {
@@ -546,7 +546,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -563,7 +563,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -580,7 +580,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants provider(String provider) {
@@ -597,7 +597,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants externalContact(CallConversationNotificationUriReference externalContact) {
@@ -614,7 +614,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants externalOrganization(CallConversationNotificationUriReference externalOrganization) {
@@ -631,7 +631,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -648,7 +648,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants peer(String peer) {
@@ -665,7 +665,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants muted(Boolean muted) {
@@ -682,7 +682,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.muted = muted;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants confined(Boolean confined) {
@@ -699,7 +699,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.confined = confined;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants recording(Boolean recording) {
@@ -716,7 +716,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants recordingState(RecordingStateEnum recordingState) {
@@ -733,7 +733,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.recordingState = recordingState;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants group(CallConversationNotificationUriReference group) {
@@ -750,7 +750,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants ani(String ani) {
@@ -767,7 +767,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.ani = ani;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants dnis(String dnis) {
@@ -784,7 +784,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.dnis = dnis;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants documentId(String documentId) {
@@ -801,7 +801,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.documentId = documentId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants monitoredParticipantId(String monitoredParticipantId) {
@@ -818,7 +818,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.monitoredParticipantId = monitoredParticipantId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants consultParticipantId(String consultParticipantId) {
@@ -835,7 +835,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.consultParticipantId = consultParticipantId;
   }
 
-
+  
   /**
    **/
   public CallConversationNotificationParticipants faxStatus(CallConversationNotificationFaxStatus faxStatus) {
@@ -852,6 +852,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     this.faxStatus = faxStatus;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

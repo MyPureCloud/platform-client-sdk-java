@@ -35,7 +35,7 @@ public class ExportUriNotification  implements Serializable {
     this.uri = uri;
   }
 
-
+  
   /**
    **/
   public ExportUriNotification exportTimestamp(String exportTimestamp) {
@@ -52,7 +52,7 @@ public class ExportUriNotification  implements Serializable {
     this.exportTimestamp = exportTimestamp;
   }
 
-
+  
   /**
    **/
   public ExportUriNotification additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class ExportUriNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

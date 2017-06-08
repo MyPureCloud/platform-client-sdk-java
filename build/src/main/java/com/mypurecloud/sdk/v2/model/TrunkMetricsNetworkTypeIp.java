@@ -36,7 +36,7 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * Information about the error.
    **/
@@ -54,6 +54,7 @@ public class TrunkMetricsNetworkTypeIp  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

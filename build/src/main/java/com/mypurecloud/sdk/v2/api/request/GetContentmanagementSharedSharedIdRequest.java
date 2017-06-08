@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementSharedSharedIdRequest {
+    
 	private String sharedId;
 	public String getSharedId() {
 		return this.sharedId;
@@ -64,6 +65,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	}
 
+	
 	private Boolean redirect;
 	public Boolean getRedirect() {
 		return this.redirect;
@@ -78,6 +80,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	}
 
+	
 	private String disposition;
 	public String getDisposition() {
 		return this.disposition;
@@ -92,6 +95,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	}
 
+	
 	private String contentType;
 	public String getContentType() {
 		return this.contentType;
@@ -106,6 +110,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -120,6 +125,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -157,7 +163,8 @@ public class GetContentmanagementSharedSharedIdRequest {
                 .withQueryParameters("contentType", "", contentType)
         
                 .withQueryParameters("expand", "", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -168,10 +175,12 @@ public class GetContentmanagementSharedSharedIdRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String sharedId) {
 	    return new Builder()
 	            .withRequiredParams(sharedId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementSharedSharedIdRequest request;
@@ -180,31 +189,40 @@ public class GetContentmanagementSharedSharedIdRequest {
 			request = new GetContentmanagementSharedSharedIdRequest();
 		}
 
+		
 		public Builder withSharedId(String sharedId) {
 			request.setSharedId(sharedId);
 			return this;
 		}
+		
 		public Builder withRedirect(Boolean redirect) {
 			request.setRedirect(redirect);
 			return this;
 		}
+		
 		public Builder withDisposition(String disposition) {
 			request.setDisposition(disposition);
 			return this;
 		}
+		
 		public Builder withContentType(String contentType) {
 			request.setContentType(contentType);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String sharedId) {
 			request.setSharedId(sharedId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementSharedSharedIdRequest build() {

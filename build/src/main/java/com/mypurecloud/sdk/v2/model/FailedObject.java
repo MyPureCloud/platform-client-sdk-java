@@ -36,7 +36,7 @@ public class FailedObject  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FailedObject version(String version) {
@@ -53,7 +53,7 @@ public class FailedObject  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public FailedObject name(String name) {
@@ -70,7 +70,7 @@ public class FailedObject  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FailedObject errorCode(String errorCode) {
@@ -87,6 +87,7 @@ public class FailedObject  implements Serializable {
     this.errorCode = errorCode;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

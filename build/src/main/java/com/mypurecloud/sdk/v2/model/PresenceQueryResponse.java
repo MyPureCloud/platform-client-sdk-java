@@ -40,7 +40,7 @@ public class PresenceQueryResponse  implements Serializable {
     this.systemToOrganizationMappings = systemToOrganizationMappings;
   }
 
-
+  
   /**
    **/
   public PresenceQueryResponse results(List<AggregateDataContainer> results) {
@@ -57,6 +57,7 @@ public class PresenceQueryResponse  implements Serializable {
     this.results = results;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

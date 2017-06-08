@@ -39,7 +39,7 @@ public class CampaignRuleNotificationCampaignRuleActionEntities  implements Seri
     this.campaigns = campaigns;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActionEntities sequences(List<CampaignRuleNotificationUriReference> sequences) {
@@ -56,7 +56,7 @@ public class CampaignRuleNotificationCampaignRuleActionEntities  implements Seri
     this.sequences = sequences;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActionEntities useTriggeringEntity(Boolean useTriggeringEntity) {
@@ -73,7 +73,7 @@ public class CampaignRuleNotificationCampaignRuleActionEntities  implements Seri
     this.useTriggeringEntity = useTriggeringEntity;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleActionEntities additionalProperties(Object additionalProperties) {
@@ -90,6 +90,7 @@ public class CampaignRuleNotificationCampaignRuleActionEntities  implements Seri
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

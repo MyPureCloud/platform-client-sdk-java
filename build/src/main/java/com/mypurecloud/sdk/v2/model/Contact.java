@@ -114,14 +114,14 @@ public class Contact  implements Serializable {
     this.address = address;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Formatted version of the address property")
   @JsonProperty("display")
   public String getDisplay() {
     return display;
   }
 
-
+  
   /**
    **/
   public Contact mediaType(MediaTypeEnum mediaType) {
@@ -138,7 +138,7 @@ public class Contact  implements Serializable {
     this.mediaType = mediaType;
   }
 
-
+  
   /**
    **/
   public Contact type(TypeEnum type) {
@@ -155,7 +155,7 @@ public class Contact  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Use extension instead of address for setting internal extensions
    **/
@@ -173,6 +173,7 @@ public class Contact  implements Serializable {
     this.extension = extension;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

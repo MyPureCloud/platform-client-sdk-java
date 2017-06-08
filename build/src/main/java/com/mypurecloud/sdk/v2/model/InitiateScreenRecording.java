@@ -37,7 +37,7 @@ public class InitiateScreenRecording  implements Serializable {
     this.recordACW = recordACW;
   }
 
-
+  
   /**
    **/
   public InitiateScreenRecording archiveRetention(ArchiveRetention archiveRetention) {
@@ -54,7 +54,7 @@ public class InitiateScreenRecording  implements Serializable {
     this.archiveRetention = archiveRetention;
   }
 
-
+  
   /**
    **/
   public InitiateScreenRecording deleteRetention(DeleteRetention deleteRetention) {
@@ -71,6 +71,7 @@ public class InitiateScreenRecording  implements Serializable {
     this.deleteRetention = deleteRetention;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

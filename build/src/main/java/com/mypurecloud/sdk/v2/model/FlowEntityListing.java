@@ -46,7 +46,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public FlowEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class FlowEntityListing  implements Serializable, PagedResource<Flow> {
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

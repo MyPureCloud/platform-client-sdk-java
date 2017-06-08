@@ -39,7 +39,7 @@ public class ContactListFilterRange  implements Serializable {
     this.min = min;
   }
 
-
+  
   /**
    **/
   public ContactListFilterRange max(String max) {
@@ -56,7 +56,7 @@ public class ContactListFilterRange  implements Serializable {
     this.max = max;
   }
 
-
+  
   /**
    **/
   public ContactListFilterRange minInclusive(Boolean minInclusive) {
@@ -73,7 +73,7 @@ public class ContactListFilterRange  implements Serializable {
     this.minInclusive = minInclusive;
   }
 
-
+  
   /**
    **/
   public ContactListFilterRange maxInclusive(Boolean maxInclusive) {
@@ -90,7 +90,7 @@ public class ContactListFilterRange  implements Serializable {
     this.maxInclusive = maxInclusive;
   }
 
-
+  
   /**
    **/
   public ContactListFilterRange inSet(List<String> inSet) {
@@ -107,6 +107,7 @@ public class ContactListFilterRange  implements Serializable {
     this.inSet = inSet;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

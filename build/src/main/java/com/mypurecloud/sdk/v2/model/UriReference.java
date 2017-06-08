@@ -35,7 +35,7 @@ public class UriReference  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public UriReference name(String name) {
@@ -52,7 +52,7 @@ public class UriReference  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UriReference selfUri(String selfUri) {
@@ -69,6 +69,7 @@ public class UriReference  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

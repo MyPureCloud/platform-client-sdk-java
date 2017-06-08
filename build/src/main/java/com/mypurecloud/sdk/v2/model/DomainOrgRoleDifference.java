@@ -41,7 +41,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.removedPermissionPolicies = removedPermissionPolicies;
   }
 
-
+  
   /**
    **/
   public DomainOrgRoleDifference addedPermissionPolicies(List<DomainPermissionPolicy> addedPermissionPolicies) {
@@ -58,7 +58,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.addedPermissionPolicies = addedPermissionPolicies;
   }
 
-
+  
   /**
    **/
   public DomainOrgRoleDifference samePermissionPolicies(List<DomainPermissionPolicy> samePermissionPolicies) {
@@ -75,7 +75,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.samePermissionPolicies = samePermissionPolicies;
   }
 
-
+  
   /**
    **/
   public DomainOrgRoleDifference userOrgRole(DomainOrganizationRole userOrgRole) {
@@ -92,7 +92,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.userOrgRole = userOrgRole;
   }
 
-
+  
   /**
    **/
   public DomainOrgRoleDifference roleFromDefault(DomainOrganizationRole roleFromDefault) {
@@ -109,6 +109,7 @@ public class DomainOrgRoleDifference  implements Serializable {
     this.roleFromDefault = roleFromDefault;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

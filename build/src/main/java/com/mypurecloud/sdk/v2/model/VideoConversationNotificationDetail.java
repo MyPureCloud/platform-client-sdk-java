@@ -36,7 +36,7 @@ public class VideoConversationNotificationDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationDetail fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class VideoConversationNotificationDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationDetail entityId(String entityId) {
@@ -70,7 +70,7 @@ public class VideoConversationNotificationDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public VideoConversationNotificationDetail entityName(String entityName) {
@@ -87,6 +87,7 @@ public class VideoConversationNotificationDetail  implements Serializable {
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

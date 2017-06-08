@@ -34,7 +34,7 @@ public class IntradayDataUpdateNotificationIntradayScheduleData  implements Seri
     this.onQueueTimeSeconds = onQueueTimeSeconds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotificationIntradayScheduleData scheduledTimeSeconds(Integer scheduledTimeSeconds) {
@@ -51,6 +51,7 @@ public class IntradayDataUpdateNotificationIntradayScheduleData  implements Seri
     this.scheduledTimeSeconds = scheduledTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementWorkspaceRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class GetContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -78,6 +80,7 @@ public class GetContentmanagementWorkspaceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +112,8 @@ public class GetContentmanagementWorkspaceRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -120,10 +124,12 @@ public class GetContentmanagementWorkspaceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementWorkspaceRequest request;
@@ -132,19 +138,25 @@ public class GetContentmanagementWorkspaceRequest {
 			request = new GetContentmanagementWorkspaceRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementWorkspaceRequest build() {

@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PostAlertingInteractionstatsRulesRequest {
+    
 	private InteractionStatsRule body;
 	public InteractionStatsRule getBody() {
 		return this.body;
@@ -53,6 +54,7 @@ public class PostAlertingInteractionstatsRulesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -67,6 +69,7 @@ public class PostAlertingInteractionstatsRulesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,6 +101,7 @@ public class PostAlertingInteractionstatsRulesRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -109,10 +113,12 @@ public class PostAlertingInteractionstatsRulesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(InteractionStatsRule body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAlertingInteractionstatsRulesRequest request;
@@ -121,19 +127,25 @@ public class PostAlertingInteractionstatsRulesRequest {
 			request = new PostAlertingInteractionstatsRulesRequest();
 		}
 
+		
 		public Builder withBody(InteractionStatsRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(InteractionStatsRule body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAlertingInteractionstatsRulesRequest build() {

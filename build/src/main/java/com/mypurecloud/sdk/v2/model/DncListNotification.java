@@ -84,7 +84,7 @@ public class DncListNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public DncListNotification name(String name) {
@@ -101,7 +101,7 @@ public class DncListNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DncListNotification dateCreated(Date dateCreated) {
@@ -118,7 +118,7 @@ public class DncListNotification  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public DncListNotification dateModified(Date dateModified) {
@@ -135,7 +135,7 @@ public class DncListNotification  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DncListNotification version(Integer version) {
@@ -152,7 +152,7 @@ public class DncListNotification  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public DncListNotification importStatus(ContactListNotificationImportStatus importStatus) {
@@ -169,7 +169,7 @@ public class DncListNotification  implements Serializable {
     this.importStatus = importStatus;
   }
 
-
+  
   /**
    **/
   public DncListNotification size(Integer size) {
@@ -186,7 +186,7 @@ public class DncListNotification  implements Serializable {
     this.size = size;
   }
 
-
+  
   /**
    **/
   public DncListNotification dncSourceType(DncSourceTypeEnum dncSourceType) {
@@ -203,7 +203,7 @@ public class DncListNotification  implements Serializable {
     this.dncSourceType = dncSourceType;
   }
 
-
+  
   /**
    **/
   public DncListNotification loginId(String loginId) {
@@ -220,7 +220,7 @@ public class DncListNotification  implements Serializable {
     this.loginId = loginId;
   }
 
-
+  
   /**
    **/
   public DncListNotification dncCodes(List<String> dncCodes) {
@@ -237,7 +237,7 @@ public class DncListNotification  implements Serializable {
     this.dncCodes = dncCodes;
   }
 
-
+  
   /**
    **/
   public DncListNotification licenseId(String licenseId) {
@@ -254,7 +254,7 @@ public class DncListNotification  implements Serializable {
     this.licenseId = licenseId;
   }
 
-
+  
   /**
    **/
   public DncListNotification additionalProperties(Object additionalProperties) {
@@ -271,6 +271,7 @@ public class DncListNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

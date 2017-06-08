@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class GetOutboundCallabletimesetRequest {
+    
 	private String callableTimeSetId;
 	public String getCallableTimeSetId() {
 		return this.callableTimeSetId;
@@ -74,6 +75,7 @@ public class GetOutboundCallabletimesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class GetOutboundCallabletimesetRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/outbound/callabletimesets/{callableTimeSetId}")
                 .withPathParameter("callableTimeSetId", callableTimeSetId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class GetOutboundCallabletimesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String callableTimeSetId) {
 	    return new Builder()
 	            .withRequiredParams(callableTimeSetId);
 	}
+	
 
 	public static class Builder {
 		private final GetOutboundCallabletimesetRequest request;
@@ -126,15 +131,20 @@ public class GetOutboundCallabletimesetRequest {
 			request = new GetOutboundCallabletimesetRequest();
 		}
 
+		
 		public Builder withCallableTimeSetId(String callableTimeSetId) {
 			request.setCallableTimeSetId(callableTimeSetId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String callableTimeSetId) {
 			request.setCallableTimeSetId(callableTimeSetId);
+			
 			return this;
 		}
+		
 
 
 		public GetOutboundCallabletimesetRequest build() {

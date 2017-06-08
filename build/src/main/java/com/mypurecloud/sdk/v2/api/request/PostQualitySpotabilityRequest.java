@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostQualitySpotabilityRequest {
+    
 	private KeywordSet body;
 	public KeywordSet getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostQualitySpotabilityRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,6 +78,7 @@ public class PostQualitySpotabilityRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/quality/spotability")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,6 +90,7 @@ public class PostQualitySpotabilityRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostQualitySpotabilityRequest request;
@@ -95,11 +99,14 @@ public class PostQualitySpotabilityRequest {
 			request = new PostQualitySpotabilityRequest();
 		}
 
+		
 		public Builder withBody(KeywordSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostQualitySpotabilityRequest build() {

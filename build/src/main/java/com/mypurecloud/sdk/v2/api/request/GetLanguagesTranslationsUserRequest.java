@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.AvailableTranslations;
 
 public class GetLanguagesTranslationsUserRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -38,6 +39,7 @@ public class GetLanguagesTranslationsUserRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,7 +69,8 @@ public class GetLanguagesTranslationsUserRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/languages/translations/users/{userId}")
                 .withPathParameter("userId", userId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -78,10 +81,12 @@ public class GetLanguagesTranslationsUserRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final GetLanguagesTranslationsUserRequest request;
@@ -90,15 +95,20 @@ public class GetLanguagesTranslationsUserRequest {
 			request = new GetLanguagesTranslationsUserRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId) {
 			request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public GetLanguagesTranslationsUserRequest build() {

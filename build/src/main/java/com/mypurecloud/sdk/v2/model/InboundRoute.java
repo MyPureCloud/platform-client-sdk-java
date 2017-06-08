@@ -36,7 +36,7 @@ public class InboundRoute  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public InboundRoute name(String name) {
@@ -53,7 +53,7 @@ public class InboundRoute  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The search pattern that the mailbox name should match.
    **/
@@ -71,7 +71,7 @@ public class InboundRoute  implements Serializable {
     this.pattern = pattern;
   }
 
-
+  
   /**
    * The queue to route the emails to.
    **/
@@ -89,7 +89,7 @@ public class InboundRoute  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * The priority to use for routing.
    **/
@@ -107,7 +107,7 @@ public class InboundRoute  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * The skills to use for routing.
    **/
@@ -125,7 +125,7 @@ public class InboundRoute  implements Serializable {
     this.skills = skills;
   }
 
-
+  
   /**
    * The language to use for routing.
    **/
@@ -143,7 +143,7 @@ public class InboundRoute  implements Serializable {
     this.language = language;
   }
 
-
+  
   /**
    * The sender name to use for outgoing replies.
    **/
@@ -161,7 +161,7 @@ public class InboundRoute  implements Serializable {
     this.fromName = fromName;
   }
 
-
+  
   /**
    * The sender email to use for outgoing replies.
    **/
@@ -179,7 +179,7 @@ public class InboundRoute  implements Serializable {
     this.fromEmail = fromEmail;
   }
 
-
+  
   /**
    * The flow to use for processing the email.
    **/
@@ -197,13 +197,14 @@ public class InboundRoute  implements Serializable {
     this.flow = flow;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

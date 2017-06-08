@@ -35,7 +35,7 @@ public class ScheduleInterval  implements Serializable {
     this.start = start;
   }
 
-
+  
   /**
    * scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -53,6 +53,7 @@ public class ScheduleInterval  implements Serializable {
     this.end = end;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

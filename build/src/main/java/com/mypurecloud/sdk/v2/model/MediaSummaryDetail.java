@@ -34,7 +34,7 @@ public class MediaSummaryDetail  implements Serializable {
     this.active = active;
   }
 
-
+  
   /**
    **/
   public MediaSummaryDetail acw(Integer acw) {
@@ -51,6 +51,7 @@ public class MediaSummaryDetail  implements Serializable {
     this.acw = acw;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

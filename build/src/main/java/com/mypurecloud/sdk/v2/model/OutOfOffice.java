@@ -31,7 +31,7 @@ public class OutOfOffice  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public OutOfOffice name(String name) {
@@ -48,7 +48,7 @@ public class OutOfOffice  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public OutOfOffice user(User user) {
@@ -65,7 +65,7 @@ public class OutOfOffice  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -83,7 +83,7 @@ public class OutOfOffice  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -101,7 +101,7 @@ public class OutOfOffice  implements Serializable {
     this.endDate = endDate;
   }
 
-
+  
   /**
    **/
   public OutOfOffice active(Boolean active) {
@@ -118,13 +118,14 @@ public class OutOfOffice  implements Serializable {
     this.active = active;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

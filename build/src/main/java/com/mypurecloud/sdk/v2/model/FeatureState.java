@@ -33,6 +33,7 @@ public class FeatureState  implements Serializable {
     this.enabled = enabled;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

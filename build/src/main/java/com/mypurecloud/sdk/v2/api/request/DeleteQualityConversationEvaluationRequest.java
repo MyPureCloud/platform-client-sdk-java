@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class DeleteQualityConversationEvaluationRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private String evaluationId;
 	public String getEvaluationId() {
 		return this.evaluationId;
@@ -66,6 +68,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -80,6 +83,7 @@ public class DeleteQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,7 +122,8 @@ public class DeleteQualityConversationEvaluationRequest {
                 .withPathParameter("evaluationId", evaluationId)
         
                 .withQueryParameters("expand", "", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -129,10 +134,12 @@ public class DeleteQualityConversationEvaluationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String evaluationId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, evaluationId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteQualityConversationEvaluationRequest request;
@@ -141,24 +148,31 @@ public class DeleteQualityConversationEvaluationRequest {
 			request = new DeleteQualityConversationEvaluationRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withEvaluationId(String evaluationId) {
 			request.setEvaluationId(evaluationId);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String evaluationId) {
 			request.setConversationId(conversationId);
-			request.setEvaluationId(evaluationId);
+						request.setEvaluationId(evaluationId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteQualityConversationEvaluationRequest build() {

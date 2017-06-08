@@ -43,7 +43,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.statusCode = statusCode;
   }
 
-
+  
   /**
    **/
   public PolicyErrorMessage userMessage(Object userMessage) {
@@ -60,7 +60,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userMessage = userMessage;
   }
 
-
+  
   /**
    **/
   public PolicyErrorMessage userParamsMessage(String userParamsMessage) {
@@ -77,7 +77,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userParamsMessage = userParamsMessage;
   }
 
-
+  
   /**
    **/
   public PolicyErrorMessage errorCode(String errorCode) {
@@ -94,7 +94,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public PolicyErrorMessage correlationId(String correlationId) {
@@ -111,7 +111,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.correlationId = correlationId;
   }
 
-
+  
   /**
    **/
   public PolicyErrorMessage userParams(List<UserParam> userParams) {
@@ -128,7 +128,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.userParams = userParams;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -146,6 +146,7 @@ public class PolicyErrorMessage  implements Serializable {
     this.insertDate = insertDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

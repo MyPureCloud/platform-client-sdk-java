@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class DeleteAlertingUserpresenceRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class DeleteAlertingUserpresenceRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -82,7 +84,8 @@ public class DeleteAlertingUserpresenceRuleRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/alerting/userpresence/rules/{ruleId}")
                 .withPathParameter("ruleId", ruleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -93,10 +96,12 @@ public class DeleteAlertingUserpresenceRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId) {
 	    return new Builder()
 	            .withRequiredParams(ruleId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteAlertingUserpresenceRuleRequest request;
@@ -105,15 +110,20 @@ public class DeleteAlertingUserpresenceRuleRequest {
 			request = new DeleteAlertingUserpresenceRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId) {
 			request.setRuleId(ruleId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteAlertingUserpresenceRuleRequest build() {

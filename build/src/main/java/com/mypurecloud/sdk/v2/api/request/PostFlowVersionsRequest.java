@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowVersionsRequest {
+    
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -56,6 +57,7 @@ public class PostFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private Object body;
 	public Object getBody() {
 		return this.body;
@@ -70,6 +72,7 @@ public class PostFlowVersionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,6 +104,7 @@ public class PostFlowVersionsRequest {
                 .withPathParameter("flowId", flowId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -112,10 +116,12 @@ public class PostFlowVersionsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flowId) {
 	    return new Builder()
 	            .withRequiredParams(flowId);
 	}
+	
 
 	public static class Builder {
 		private final PostFlowVersionsRequest request;
@@ -124,19 +130,25 @@ public class PostFlowVersionsRequest {
 			request = new PostFlowVersionsRequest();
 		}
 
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 		public Builder withBody(Object body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flowId) {
 			request.setFlowId(flowId);
+			
 			return this;
 		}
+		
 
 
 		public PostFlowVersionsRequest build() {

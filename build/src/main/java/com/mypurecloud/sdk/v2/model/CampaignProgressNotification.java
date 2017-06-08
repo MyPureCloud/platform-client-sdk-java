@@ -39,7 +39,7 @@ public class CampaignProgressNotification  implements Serializable {
     this.campaign = campaign;
   }
 
-
+  
   /**
    **/
   public CampaignProgressNotification numberOfContactsCalled(BigDecimal numberOfContactsCalled) {
@@ -56,7 +56,7 @@ public class CampaignProgressNotification  implements Serializable {
     this.numberOfContactsCalled = numberOfContactsCalled;
   }
 
-
+  
   /**
    **/
   public CampaignProgressNotification totalNumberOfContacts(BigDecimal totalNumberOfContacts) {
@@ -73,7 +73,7 @@ public class CampaignProgressNotification  implements Serializable {
     this.totalNumberOfContacts = totalNumberOfContacts;
   }
 
-
+  
   /**
    **/
   public CampaignProgressNotification percentage(Integer percentage) {
@@ -90,7 +90,7 @@ public class CampaignProgressNotification  implements Serializable {
     this.percentage = percentage;
   }
 
-
+  
   /**
    **/
   public CampaignProgressNotification additionalProperties(Object additionalProperties) {
@@ -107,6 +107,7 @@ public class CampaignProgressNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

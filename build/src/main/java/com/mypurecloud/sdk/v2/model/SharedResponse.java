@@ -39,7 +39,7 @@ public class SharedResponse  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SharedResponse downloadUri(String downloadUri) {
@@ -56,7 +56,7 @@ public class SharedResponse  implements Serializable {
     this.downloadUri = downloadUri;
   }
 
-
+  
   /**
    **/
   public SharedResponse viewUri(String viewUri) {
@@ -73,7 +73,7 @@ public class SharedResponse  implements Serializable {
     this.viewUri = viewUri;
   }
 
-
+  
   /**
    **/
   public SharedResponse document(Document document) {
@@ -90,7 +90,7 @@ public class SharedResponse  implements Serializable {
     this.document = document;
   }
 
-
+  
   /**
    **/
   public SharedResponse share(Share share) {
@@ -107,6 +107,7 @@ public class SharedResponse  implements Serializable {
     this.share = share;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

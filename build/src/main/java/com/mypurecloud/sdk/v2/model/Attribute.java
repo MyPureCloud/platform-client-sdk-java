@@ -33,7 +33,7 @@ public class Attribute  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The attribute name.
    **/
@@ -51,7 +51,7 @@ public class Attribute  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Attribute version(Integer version) {
@@ -68,7 +68,7 @@ public class Attribute  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public Attribute description(String description) {
@@ -85,7 +85,7 @@ public class Attribute  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Attribute createdBy(UriReference createdBy) {
@@ -102,7 +102,7 @@ public class Attribute  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -120,7 +120,7 @@ public class Attribute  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public Attribute modifiedBy(UriReference modifiedBy) {
@@ -137,7 +137,7 @@ public class Attribute  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -155,13 +155,14 @@ public class Attribute  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

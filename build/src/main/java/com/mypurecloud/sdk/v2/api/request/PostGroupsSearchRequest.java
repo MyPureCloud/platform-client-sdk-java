@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PostGroupsSearchRequest {
+    
 	private GroupSearchRequest body;
 	public GroupSearchRequest getBody() {
 		return this.body;
@@ -48,6 +49,7 @@ public class PostGroupsSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,6 +79,7 @@ public class PostGroupsSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/groups/search")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -88,10 +91,12 @@ public class PostGroupsSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(GroupSearchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostGroupsSearchRequest request;
@@ -100,15 +105,20 @@ public class PostGroupsSearchRequest {
 			request = new PostGroupsSearchRequest();
 		}
 
+		
 		public Builder withBody(GroupSearchRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(GroupSearchRequest body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostGroupsSearchRequest build() {

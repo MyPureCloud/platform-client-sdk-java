@@ -41,7 +41,7 @@ public class Annotation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Annotation name(String name) {
@@ -58,7 +58,7 @@ public class Annotation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Annotation type(String type) {
@@ -75,7 +75,7 @@ public class Annotation  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * Offset of annotation in milliseconds.
    **/
@@ -93,7 +93,7 @@ public class Annotation  implements Serializable {
     this.location = location;
   }
 
-
+  
   /**
    * Duration of annotation in milliseconds.
    **/
@@ -111,7 +111,7 @@ public class Annotation  implements Serializable {
     this.durationMs = durationMs;
   }
 
-
+  
   /**
    * User that created this annotation (if any).
    **/
@@ -129,7 +129,7 @@ public class Annotation  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * Text of annotation.
    **/
@@ -147,7 +147,7 @@ public class Annotation  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    * The word or phrase which is being looked for with speech recognition.
    **/
@@ -165,7 +165,7 @@ public class Annotation  implements Serializable {
     this.keywordName = keywordName;
   }
 
-
+  
   /**
    * Actual confidence that this is an accurate match.
    **/
@@ -183,7 +183,7 @@ public class Annotation  implements Serializable {
     this.confidence = confidence;
   }
 
-
+  
   /**
    * A unique identifier for the keyword set to which this spotted keyword belongs.
    **/
@@ -201,7 +201,7 @@ public class Annotation  implements Serializable {
     this.keywordSetId = keywordSetId;
   }
 
-
+  
   /**
    * The keyword set to which this spotted keyword belongs.
    **/
@@ -219,7 +219,7 @@ public class Annotation  implements Serializable {
     this.keywordSetName = keywordSetName;
   }
 
-
+  
   /**
    * The phonetic spellings for the phrase and alternate spellings.
    **/
@@ -237,7 +237,7 @@ public class Annotation  implements Serializable {
     this.utterance = utterance;
   }
 
-
+  
   /**
    * Beginning time offset of the keyword spot match.
    **/
@@ -255,7 +255,7 @@ public class Annotation  implements Serializable {
     this.timeBegin = timeBegin;
   }
 
-
+  
   /**
    * Ending time offset of the keyword spot match.
    **/
@@ -273,7 +273,7 @@ public class Annotation  implements Serializable {
     this.timeEnd = timeEnd;
   }
 
-
+  
   /**
    * Configured sensitivity threshold that can be increased to lower false positives or decreased to reduce false negatives.
    **/
@@ -291,7 +291,7 @@ public class Annotation  implements Serializable {
     this.keywordConfidenceThreshold = keywordConfidenceThreshold;
   }
 
-
+  
   /**
    * A modifier to the evaluation score when the phrase is spotted in the agent channel.
    **/
@@ -309,7 +309,7 @@ public class Annotation  implements Serializable {
     this.agentScoreModifier = agentScoreModifier;
   }
 
-
+  
   /**
    * A modifier to the evaluation score when the phrase is spotted in the customer channel.
    **/
@@ -327,13 +327,14 @@ public class Annotation  implements Serializable {
     this.customerScoreModifier = customerScoreModifier;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

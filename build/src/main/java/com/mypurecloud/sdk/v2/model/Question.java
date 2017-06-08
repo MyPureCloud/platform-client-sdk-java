@@ -48,7 +48,7 @@ public class Question  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public Question text(String text) {
@@ -65,7 +65,7 @@ public class Question  implements Serializable {
     this.text = text;
   }
 
-
+  
   /**
    **/
   public Question helpText(String helpText) {
@@ -82,7 +82,7 @@ public class Question  implements Serializable {
     this.helpText = helpText;
   }
 
-
+  
   /**
    **/
   public Question type(String type) {
@@ -99,7 +99,7 @@ public class Question  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public Question weight(Double weight) {
@@ -116,7 +116,7 @@ public class Question  implements Serializable {
     this.weight = weight;
   }
 
-
+  
   /**
    **/
   public Question naRequired(Boolean naRequired) {
@@ -133,7 +133,7 @@ public class Question  implements Serializable {
     this.naRequired = naRequired;
   }
 
-
+  
   /**
    **/
   public Question commentsRequired(Boolean commentsRequired) {
@@ -150,7 +150,7 @@ public class Question  implements Serializable {
     this.commentsRequired = commentsRequired;
   }
 
-
+  
   /**
    **/
   public Question isKill(Boolean isKill) {
@@ -167,7 +167,7 @@ public class Question  implements Serializable {
     this.isKill = isKill;
   }
 
-
+  
   /**
    **/
   public Question isCritical(Boolean isCritical) {
@@ -184,7 +184,7 @@ public class Question  implements Serializable {
     this.isCritical = isCritical;
   }
 
-
+  
   /**
    **/
   public Question naEnabled(Boolean naEnabled) {
@@ -201,7 +201,7 @@ public class Question  implements Serializable {
     this.naEnabled = naEnabled;
   }
 
-
+  
   /**
    **/
   public Question visibilityCondition(VisibilityCondition visibilityCondition) {
@@ -218,7 +218,7 @@ public class Question  implements Serializable {
     this.visibilityCondition = visibilityCondition;
   }
 
-
+  
   /**
    **/
   public Question answerOptions(List<AnswerOption> answerOptions) {
@@ -235,6 +235,7 @@ public class Question  implements Serializable {
     this.answerOptions = answerOptions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

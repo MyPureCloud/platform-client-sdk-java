@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PostQualityPublishedformsRequest {
+    
 	private EvaluationForm body;
 	public EvaluationForm getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PostQualityPublishedformsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PostQualityPublishedformsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/quality/publishedforms")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PostQualityPublishedformsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(EvaluationForm body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostQualityPublishedformsRequest request;
@@ -104,15 +109,20 @@ public class PostQualityPublishedformsRequest {
 			request = new PostQualityPublishedformsRequest();
 		}
 
+		
 		public Builder withBody(EvaluationForm body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(EvaluationForm body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostQualityPublishedformsRequest build() {

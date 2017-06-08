@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingScheduleHistoryRequest {
+    
 	private String scheduleId;
 	public String getScheduleId() {
 		return this.scheduleId;
@@ -54,6 +55,7 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -68,6 +70,7 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -82,6 +85,7 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -115,7 +119,8 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -126,10 +131,12 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scheduleId) {
 	    return new Builder()
 	            .withRequiredParams(scheduleId);
 	}
+	
 
 	public static class Builder {
 		private final GetAnalyticsReportingScheduleHistoryRequest request;
@@ -138,23 +145,30 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
 			request = new GetAnalyticsReportingScheduleHistoryRequest();
 		}
 
+		
 		public Builder withScheduleId(String scheduleId) {
 			request.setScheduleId(scheduleId);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scheduleId) {
 			request.setScheduleId(scheduleId);
+			
 			return this;
 		}
+		
 
 
 		public GetAnalyticsReportingScheduleHistoryRequest build() {

@@ -48,7 +48,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo code(String code) {
@@ -65,7 +65,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo entityId(String entityId) {
@@ -82,7 +82,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo entityName(String entityName) {
@@ -99,7 +99,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.entityName = entityName;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo message(String message) {
@@ -116,7 +116,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.message = message;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo messageWithParams(String messageWithParams) {
@@ -133,7 +133,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.messageWithParams = messageWithParams;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo messageParams(Map<String, String> messageParams) {
@@ -150,7 +150,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.messageParams = messageParams;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo contextId(String contextId) {
@@ -167,7 +167,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.contextId = contextId;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo details(List<CallbackConversationNotificationErrorInfoDetails> details) {
@@ -184,7 +184,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public ChatConversationNotificationErrorInfo errors(List<ChatConversationNotificationErrorBody> errors) {
@@ -201,6 +201,7 @@ public class ChatConversationNotificationErrorInfo  implements Serializable {
     this.errors = errors;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

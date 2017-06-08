@@ -39,7 +39,7 @@ public class EmailConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotification name(String name) {
@@ -56,7 +56,7 @@ public class EmailConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotification participants(List<EmailConversationNotificationParticipants> participants) {
@@ -73,7 +73,7 @@ public class EmailConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -90,6 +90,7 @@ public class EmailConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

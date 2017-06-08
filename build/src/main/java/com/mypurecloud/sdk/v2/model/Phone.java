@@ -94,7 +94,7 @@ public class Phone  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -112,7 +112,7 @@ public class Phone  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Phone description(String description) {
@@ -129,7 +129,7 @@ public class Phone  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Phone version(Integer version) {
@@ -146,7 +146,7 @@ public class Phone  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -164,7 +164,7 @@ public class Phone  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -182,7 +182,7 @@ public class Phone  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Phone modifiedBy(String modifiedBy) {
@@ -199,7 +199,7 @@ public class Phone  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Phone createdBy(String createdBy) {
@@ -216,7 +216,7 @@ public class Phone  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Phone state(StateEnum state) {
@@ -233,7 +233,7 @@ public class Phone  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Phone modifiedByApp(String modifiedByApp) {
@@ -250,7 +250,7 @@ public class Phone  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Phone createdByApp(String createdByApp) {
@@ -267,7 +267,7 @@ public class Phone  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The site associated to the phone.
    **/
@@ -285,7 +285,7 @@ public class Phone  implements Serializable {
     this.site = site;
   }
 
-
+  
   /**
    * Phone Base Settings
    **/
@@ -303,7 +303,7 @@ public class Phone  implements Serializable {
     this.phoneBaseSettings = phoneBaseSettings;
   }
 
-
+  
   /**
    **/
   public Phone lineBaseSettings(UriReference lineBaseSettings) {
@@ -320,7 +320,7 @@ public class Phone  implements Serializable {
     this.lineBaseSettings = lineBaseSettings;
   }
 
-
+  
   /**
    **/
   public Phone phoneMetaBase(UriReference phoneMetaBase) {
@@ -337,7 +337,7 @@ public class Phone  implements Serializable {
     this.phoneMetaBase = phoneMetaBase;
   }
 
-
+  
   /**
    * Lines
    **/
@@ -355,7 +355,7 @@ public class Phone  implements Serializable {
     this.lines = lines;
   }
 
-
+  
   /**
    * The status of the phone and lines from the primary Edge.
    **/
@@ -373,7 +373,7 @@ public class Phone  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    * The status of the phone and lines from the secondary Edge.
    **/
@@ -391,7 +391,7 @@ public class Phone  implements Serializable {
     this.secondaryStatus = secondaryStatus;
   }
 
-
+  
   /**
    * User Agent Information for this phone. This includes model, firmware version, and manufacturer.
    **/
@@ -409,7 +409,7 @@ public class Phone  implements Serializable {
     this.userAgentInfo = userAgentInfo;
   }
 
-
+  
   /**
    **/
   public Phone properties(Map<String, Object> properties) {
@@ -426,7 +426,7 @@ public class Phone  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    **/
   public Phone capabilities(PhoneCapabilities capabilities) {
@@ -443,7 +443,7 @@ public class Phone  implements Serializable {
     this.capabilities = capabilities;
   }
 
-
+  
   /**
    * This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
    **/
@@ -461,7 +461,7 @@ public class Phone  implements Serializable {
     this.webRtcUser = webRtcUser;
   }
 
-
+  
   /**
    **/
   public Phone primaryEdge(Edge primaryEdge) {
@@ -478,7 +478,7 @@ public class Phone  implements Serializable {
     this.primaryEdge = primaryEdge;
   }
 
-
+  
   /**
    **/
   public Phone secondaryEdge(Edge secondaryEdge) {
@@ -495,13 +495,14 @@ public class Phone  implements Serializable {
     this.secondaryEdge = secondaryEdge;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

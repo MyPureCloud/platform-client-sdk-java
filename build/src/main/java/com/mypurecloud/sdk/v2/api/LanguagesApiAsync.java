@@ -49,6 +49,7 @@ public class LanguagesApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -124,6 +125,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Delete Language
    * 
@@ -199,6 +201,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
@@ -274,6 +277,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get the list of supported languages. (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -349,6 +353,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get all available languages for translation
    * 
@@ -424,6 +429,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get the builtin translation for a language
    * 
@@ -499,6 +505,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get effective translation for an organization by language
    * 
@@ -574,6 +581,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get effective language translation for a user
    * 
@@ -649,6 +657,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Get language
    * 
@@ -724,6 +733,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
   /**
    * Create Language (Deprecated)
    * This endpoint is deprecated. It has been moved to /routing/languages
@@ -799,6 +809,7 @@ public class LanguagesApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

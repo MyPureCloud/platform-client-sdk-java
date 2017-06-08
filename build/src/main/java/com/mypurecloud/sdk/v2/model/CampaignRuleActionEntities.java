@@ -38,7 +38,7 @@ public class CampaignRuleActionEntities  implements Serializable {
     this.campaigns = campaigns;
   }
 
-
+  
   /**
    **/
   public CampaignRuleActionEntities sequences(List<UriReference> sequences) {
@@ -55,7 +55,7 @@ public class CampaignRuleActionEntities  implements Serializable {
     this.sequences = sequences;
   }
 
-
+  
   /**
    **/
   public CampaignRuleActionEntities useTriggeringEntity(Boolean useTriggeringEntity) {
@@ -72,6 +72,7 @@ public class CampaignRuleActionEntities  implements Serializable {
     this.useTriggeringEntity = useTriggeringEntity;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

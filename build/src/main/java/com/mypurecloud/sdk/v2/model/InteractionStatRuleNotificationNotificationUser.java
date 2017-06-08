@@ -34,7 +34,7 @@ public class InteractionStatRuleNotificationNotificationUser  implements Seriali
     this.id = id;
   }
 
-
+  
   /**
    **/
   public InteractionStatRuleNotificationNotificationUser displayName(String displayName) {
@@ -51,6 +51,7 @@ public class InteractionStatRuleNotificationNotificationUser  implements Seriali
     this.displayName = displayName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

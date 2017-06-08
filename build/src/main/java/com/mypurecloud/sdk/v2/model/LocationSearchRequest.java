@@ -77,7 +77,7 @@ public class LocationSearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-
+  
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -95,7 +95,7 @@ public class LocationSearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-
+  
   /**
    * The number of results per page
    **/
@@ -113,7 +113,7 @@ public class LocationSearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The page of resources you want to retrieve
    **/
@@ -131,7 +131,7 @@ public class LocationSearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public LocationSearchRequest query(List<LocationSearchCriteria> query) {
@@ -148,6 +148,7 @@ public class LocationSearchRequest  implements Serializable {
     this.query = query;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

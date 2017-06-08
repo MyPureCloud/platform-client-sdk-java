@@ -37,6 +37,7 @@ public class StationsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Unassigns the user assigned to this station
    * 
@@ -61,6 +62,7 @@ public class StationsApi {
   private DeleteStationAssociateduserRequest createDeleteStationAssociateduserRequest(String stationId) {
     return DeleteStationAssociateduserRequest.builder()
             .withStationId(stationId)
+    
             .build();
   }
 
@@ -111,6 +113,7 @@ public class StationsApi {
     }
   }
 
+  
   /**
    * Get station.
    * 
@@ -137,6 +140,7 @@ public class StationsApi {
   private GetStationRequest createGetStationRequest(String stationId) {
     return GetStationRequest.builder()
             .withStationId(stationId)
+    
             .build();
   }
 
@@ -188,6 +192,7 @@ public class StationsApi {
     }
   }
 
+  
   /**
    * Get the list of available stations.
    * 
@@ -228,20 +233,21 @@ public class StationsApi {
   private GetStationsRequest createGetStationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, String userSelectable, String webRtcUserId, String id, String lineAppearanceId) {
     return GetStationsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortBy(sortBy)
-
+    
             .withName(name)
-
+    
             .withUserSelectable(userSelectable)
-
+    
             .withWebRtcUserId(webRtcUserId)
-
+    
             .withId(id)
-
+    
             .withLineAppearanceId(lineAppearanceId)
+    
             .build();
   }
 
@@ -293,4 +299,5 @@ public class StationsApi {
     }
   }
 
+  
 }

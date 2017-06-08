@@ -35,7 +35,7 @@ public class CampaignScheduleNotificationIntervals  implements Serializable {
     this.start = start;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotificationIntervals end(String end) {
@@ -52,7 +52,7 @@ public class CampaignScheduleNotificationIntervals  implements Serializable {
     this.end = end;
   }
 
-
+  
   /**
    **/
   public CampaignScheduleNotificationIntervals additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class CampaignScheduleNotificationIntervals  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

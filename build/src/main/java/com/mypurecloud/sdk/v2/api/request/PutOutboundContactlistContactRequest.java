@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundContactlistContactRequest {
+    
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -74,6 +75,7 @@ public class PutOutboundContactlistContactRequest {
 	    return this;
 	}
 
+	
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -88,6 +90,7 @@ public class PutOutboundContactlistContactRequest {
 	    return this;
 	}
 
+	
 	private DialerContact body;
 	public DialerContact getBody() {
 		return this.body;
@@ -102,6 +105,7 @@ public class PutOutboundContactlistContactRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,6 +149,7 @@ public class PutOutboundContactlistContactRequest {
                 .withPathParameter("contactId", contactId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -156,10 +161,12 @@ public class PutOutboundContactlistContactRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListId, String contactId, DialerContact body) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, contactId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundContactlistContactRequest request;
@@ -168,25 +175,32 @@ public class PutOutboundContactlistContactRequest {
 			request = new PutOutboundContactlistContactRequest();
 		}
 
+		
 		public Builder withContactListId(String contactListId) {
 			request.setContactListId(contactListId);
 			return this;
 		}
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withBody(DialerContact body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListId, String contactId, DialerContact body) {
 			request.setContactListId(contactListId);
-			request.setContactId(contactId);
-			request.setBody(body);
+						request.setContactId(contactId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundContactlistContactRequest build() {

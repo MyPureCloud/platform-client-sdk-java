@@ -35,7 +35,7 @@ public class CampaignNotificationPhoneColumns  implements Serializable {
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationPhoneColumns type(String type) {
@@ -52,7 +52,7 @@ public class CampaignNotificationPhoneColumns  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationPhoneColumns additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class CampaignNotificationPhoneColumns  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

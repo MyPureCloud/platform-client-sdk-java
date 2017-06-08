@@ -45,7 +45,7 @@ public class OrganizationFeatures  implements Serializable {
     this.realtimeCIC = realtimeCIC;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures purecloud(Boolean purecloud) {
@@ -62,7 +62,7 @@ public class OrganizationFeatures  implements Serializable {
     this.purecloud = purecloud;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures hipaa(Boolean hipaa) {
@@ -79,7 +79,7 @@ public class OrganizationFeatures  implements Serializable {
     this.hipaa = hipaa;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures ucEnabled(Boolean ucEnabled) {
@@ -96,7 +96,7 @@ public class OrganizationFeatures  implements Serializable {
     this.ucEnabled = ucEnabled;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures pci(Boolean pci) {
@@ -113,7 +113,7 @@ public class OrganizationFeatures  implements Serializable {
     this.pci = pci;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures purecloudVoice(Boolean purecloudVoice) {
@@ -130,7 +130,7 @@ public class OrganizationFeatures  implements Serializable {
     this.purecloudVoice = purecloudVoice;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures xmppFederation(Boolean xmppFederation) {
@@ -147,7 +147,7 @@ public class OrganizationFeatures  implements Serializable {
     this.xmppFederation = xmppFederation;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures chat(Boolean chat) {
@@ -164,7 +164,7 @@ public class OrganizationFeatures  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures informalPhotos(Boolean informalPhotos) {
@@ -181,7 +181,7 @@ public class OrganizationFeatures  implements Serializable {
     this.informalPhotos = informalPhotos;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures directory(Boolean directory) {
@@ -198,7 +198,7 @@ public class OrganizationFeatures  implements Serializable {
     this.directory = directory;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures contactCenter(Boolean contactCenter) {
@@ -215,7 +215,7 @@ public class OrganizationFeatures  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures unifiedCommunications(Boolean unifiedCommunications) {
@@ -232,7 +232,7 @@ public class OrganizationFeatures  implements Serializable {
     this.unifiedCommunications = unifiedCommunications;
   }
 
-
+  
   /**
    **/
   public OrganizationFeatures custserv(Boolean custserv) {
@@ -249,6 +249,7 @@ public class OrganizationFeatures  implements Serializable {
     this.custserv = custserv;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

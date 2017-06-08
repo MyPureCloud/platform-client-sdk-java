@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsCallRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PostConversationsCallRequest {
 	    return this;
 	}
 
+	
 	private CallCommand body;
 	public CallCommand getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostConversationsCallRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PostConversationsCallRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PostConversationsCallRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, CallCommand body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationsCallRequest request;
@@ -147,20 +153,26 @@ public class PostConversationsCallRequest {
 			request = new PostConversationsCallRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withBody(CallCommand body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, CallCommand body) {
 			request.setConversationId(conversationId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationsCallRequest build() {

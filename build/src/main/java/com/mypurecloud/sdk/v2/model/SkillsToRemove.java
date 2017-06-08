@@ -35,7 +35,7 @@ public class SkillsToRemove  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SkillsToRemove id(String id) {
@@ -52,7 +52,7 @@ public class SkillsToRemove  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SkillsToRemove selfUri(String selfUri) {
@@ -69,6 +69,7 @@ public class SkillsToRemove  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

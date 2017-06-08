@@ -135,7 +135,7 @@ public class Video  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * A globally unique identifier for this communication.
    **/
@@ -153,7 +153,7 @@ public class Video  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The room id context (xmpp jid) for the conference session.
    **/
@@ -171,7 +171,7 @@ public class Video  implements Serializable {
     this.context = context;
   }
 
-
+  
   /**
    * Indicates whether this participant has muted their outgoing audio.
    **/
@@ -189,7 +189,7 @@ public class Video  implements Serializable {
     this.audioMuted = audioMuted;
   }
 
-
+  
   /**
    * Indicates whether this participant has muted/paused their outgoing video.
    **/
@@ -207,7 +207,7 @@ public class Video  implements Serializable {
     this.videoMuted = videoMuted;
   }
 
-
+  
   /**
    * Indicates whether this participant is sharing their screen to the session.
    **/
@@ -225,7 +225,7 @@ public class Video  implements Serializable {
     this.sharingScreen = sharingScreen;
   }
 
-
+  
   /**
    * The number of peer participants from the perspective of the participant in the conference.
    **/
@@ -243,7 +243,7 @@ public class Video  implements Serializable {
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    **/
@@ -261,7 +261,7 @@ public class Video  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -279,7 +279,7 @@ public class Video  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -297,7 +297,7 @@ public class Video  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    * The source provider for the video.
    **/
@@ -315,7 +315,7 @@ public class Video  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
@@ -333,6 +333,7 @@ public class Video  implements Serializable {
     this.peerId = peerId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

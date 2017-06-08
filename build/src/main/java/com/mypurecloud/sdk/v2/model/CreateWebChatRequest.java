@@ -44,7 +44,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    * The name of the provider that is sourcing the web chat.
    **/
@@ -62,7 +62,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The list of skill ID's to use for routing.
    **/
@@ -80,7 +80,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-
+  
   /**
    * The ID of the langauge to use for routing.
    **/
@@ -98,7 +98,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-
+  
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -116,7 +116,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * The list of attributes to associate with the customer participant.
    **/
@@ -134,7 +134,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    * The name of the customer participating in the web chat.
    **/
@@ -152,6 +152,7 @@ public class CreateWebChatRequest  implements Serializable {
     this.customerName = customerName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -107,7 +107,7 @@ public class RoutingStatusRule  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -125,7 +125,7 @@ public class RoutingStatusRule  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The agent whose routing status will be watched.
    **/
@@ -143,7 +143,7 @@ public class RoutingStatusRule  implements Serializable {
     this.agent = agent;
   }
 
-
+  
   /**
    * The routing status on which to alert.
    **/
@@ -161,7 +161,7 @@ public class RoutingStatusRule  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   /**
    * The number of seconds to wait before alerting based upon the agent's routing status.
    **/
@@ -179,7 +179,7 @@ public class RoutingStatusRule  implements Serializable {
     this.routingLimitInSeconds = routingLimitInSeconds;
   }
 
-
+  
   /**
    * Indicates if the rule is enabled.
    **/
@@ -197,14 +197,14 @@ public class RoutingStatusRule  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Indicates if the rule is in alarm state.")
   @JsonProperty("inAlarm")
   public Boolean getInAlarm() {
     return inAlarm;
   }
 
-
+  
   /**
    * The ids of users who will be notified of alarm state change.
    **/
@@ -222,7 +222,7 @@ public class RoutingStatusRule  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -240,13 +240,14 @@ public class RoutingStatusRule  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

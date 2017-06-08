@@ -138,7 +138,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions id(String id) {
@@ -155,7 +155,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions socialMediaId(String socialMediaId) {
@@ -172,7 +172,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.socialMediaId = socialMediaId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions socialMediaHub(String socialMediaHub) {
@@ -189,7 +189,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.socialMediaHub = socialMediaHub;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions socialUserName(String socialUserName) {
@@ -206,7 +206,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.socialUserName = socialUserName;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions previewText(String previewText) {
@@ -223,7 +223,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.previewText = previewText;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions recordingId(String recordingId) {
@@ -240,7 +240,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.recordingId = recordingId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions held(Boolean held) {
@@ -257,7 +257,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions provider(String provider) {
@@ -274,7 +274,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions scriptId(String scriptId) {
@@ -291,7 +291,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions peerId(String peerId) {
@@ -308,7 +308,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions disconnectType(DisconnectTypeEnum disconnectType) {
@@ -325,7 +325,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions startHoldTime(Date startHoldTime) {
@@ -342,7 +342,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions connectedTime(Date connectedTime) {
@@ -359,7 +359,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions disconnectedTime(Date disconnectedTime) {
@@ -376,7 +376,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationSocialExpressions additionalProperties(Object additionalProperties) {
@@ -393,6 +393,7 @@ public class ConversationNotificationSocialExpressions  implements Serializable 
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

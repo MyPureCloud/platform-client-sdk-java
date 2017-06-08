@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PutQualityConversationEvaluationRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -52,6 +53,7 @@ public class PutQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private String evaluationId;
 	public String getEvaluationId() {
 		return this.evaluationId;
@@ -66,6 +68,7 @@ public class PutQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private Evaluation body;
 	public Evaluation getBody() {
 		return this.body;
@@ -80,6 +83,7 @@ public class PutQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -94,6 +98,7 @@ public class PutQualityConversationEvaluationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,6 +144,7 @@ public class PutQualityConversationEvaluationRequest {
                 .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -150,10 +156,12 @@ public class PutQualityConversationEvaluationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String evaluationId, Evaluation body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, evaluationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutQualityConversationEvaluationRequest request;
@@ -162,29 +170,37 @@ public class PutQualityConversationEvaluationRequest {
 			request = new PutQualityConversationEvaluationRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withEvaluationId(String evaluationId) {
 			request.setEvaluationId(evaluationId);
 			return this;
 		}
+		
 		public Builder withBody(Evaluation body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String evaluationId, Evaluation body) {
 			request.setConversationId(conversationId);
-			request.setEvaluationId(evaluationId);
-			request.setBody(body);
+						request.setEvaluationId(evaluationId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutQualityConversationEvaluationRequest build() {

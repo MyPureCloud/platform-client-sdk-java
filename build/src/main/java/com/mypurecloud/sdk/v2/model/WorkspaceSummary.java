@@ -34,7 +34,7 @@ public class WorkspaceSummary  implements Serializable {
     this.totalDocumentCount = totalDocumentCount;
   }
 
-
+  
   /**
    **/
   public WorkspaceSummary totalDocumentByteCount(Long totalDocumentByteCount) {
@@ -51,6 +51,7 @@ public class WorkspaceSummary  implements Serializable {
     this.totalDocumentByteCount = totalDocumentByteCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

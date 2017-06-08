@@ -77,7 +77,7 @@ public class DomainPhysicalInterface  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -95,7 +95,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface description(String description) {
@@ -112,7 +112,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface version(Integer version) {
@@ -129,7 +129,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -147,7 +147,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -165,7 +165,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface modifiedBy(String modifiedBy) {
@@ -182,7 +182,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface createdBy(String createdBy) {
@@ -199,7 +199,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface state(StateEnum state) {
@@ -216,7 +216,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface modifiedByApp(String modifiedByApp) {
@@ -233,7 +233,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface createdByApp(String createdByApp) {
@@ -250,7 +250,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface edgeUri(String edgeUri) {
@@ -267,7 +267,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.edgeUri = edgeUri;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface friendlyName(String friendlyName) {
@@ -284,7 +284,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.friendlyName = friendlyName;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface hardwareAddress(String hardwareAddress) {
@@ -301,7 +301,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.hardwareAddress = hardwareAddress;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface portLabel(String portLabel) {
@@ -318,7 +318,7 @@ public class DomainPhysicalInterface  implements Serializable {
     this.portLabel = portLabel;
   }
 
-
+  
   /**
    **/
   public DomainPhysicalInterface physicalCapabilities(DomainPhysicalCapabilities physicalCapabilities) {
@@ -335,13 +335,14 @@ public class DomainPhysicalInterface  implements Serializable {
     this.physicalCapabilities = physicalCapabilities;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

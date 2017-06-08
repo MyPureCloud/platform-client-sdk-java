@@ -33,6 +33,7 @@ public class RecordingSettings  implements Serializable {
     this.maxSimultaneousStreams = maxSimultaneousStreams;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

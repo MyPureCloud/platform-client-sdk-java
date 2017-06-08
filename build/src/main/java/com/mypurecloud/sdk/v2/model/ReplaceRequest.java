@@ -35,7 +35,7 @@ public class ReplaceRequest  implements Serializable {
     this.changeNumber = changeNumber;
   }
 
-
+  
   /**
    **/
   public ReplaceRequest name(String name) {
@@ -52,7 +52,7 @@ public class ReplaceRequest  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ReplaceRequest authToken(String authToken) {
@@ -69,6 +69,7 @@ public class ReplaceRequest  implements Serializable {
     this.authToken = authToken;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

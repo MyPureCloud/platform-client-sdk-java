@@ -81,7 +81,7 @@ public class TimeOffRequest  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public TimeOffRequest name(String name) {
@@ -98,7 +98,7 @@ public class TimeOffRequest  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The user associated with this TimeOffRequest
    **/
@@ -116,7 +116,7 @@ public class TimeOffRequest  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * Whether this is a full day request (false means partial day)
    **/
@@ -134,7 +134,7 @@ public class TimeOffRequest  implements Serializable {
     this.isFullDayRequest = isFullDayRequest;
   }
 
-
+  
   /**
    * Whether this request has been marked as read by the agent
    **/
@@ -152,7 +152,7 @@ public class TimeOffRequest  implements Serializable {
     this.markedAsRead = markedAsRead;
   }
 
-
+  
   /**
    * The ID of the activity code associated with this TimeOffRequest
    **/
@@ -170,7 +170,7 @@ public class TimeOffRequest  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-
+  
   /**
    * The administrative status of this TimeOffRequest
    **/
@@ -188,7 +188,7 @@ public class TimeOffRequest  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    * The start date-times for partial day requests.  Required if isFullDayRequest == false
    **/
@@ -206,7 +206,7 @@ public class TimeOffRequest  implements Serializable {
     this.partialDayStartDateTimes = partialDayStartDateTimes;
   }
 
-
+  
   /**
    * The daily duration of this TimeOffRequest in minutes
    **/
@@ -224,7 +224,7 @@ public class TimeOffRequest  implements Serializable {
     this.dailyDurationMinutes = dailyDurationMinutes;
   }
 
-
+  
   /**
    * The notes as input by the one who entered the TimeOffRequest
    **/
@@ -242,7 +242,7 @@ public class TimeOffRequest  implements Serializable {
     this.notes = notes;
   }
 
-
+  
   /**
    * The user who submitted this TimeOffRequest
    **/
@@ -260,14 +260,14 @@ public class TimeOffRequest  implements Serializable {
     this.submittedBy = submittedBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("submittedDate")
   public Date getSubmittedDate() {
     return submittedDate;
   }
 
-
+  
   /**
    * The user who reviewed this TimeOffRequest
    **/
@@ -285,14 +285,14 @@ public class TimeOffRequest  implements Serializable {
     this.reviewedBy = reviewedBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("reviewedDate")
   public Date getReviewedDate() {
     return reviewedDate;
   }
 
-
+  
   /**
    * The user who last modified this TimeOffRequest
    **/
@@ -310,21 +310,21 @@ public class TimeOffRequest  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The timestamp when this request was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
-
+  
   /**
    * ISO-8601 date only with no timezones.  Should be interpreted in the Management Unit's configured time zone.  Required if isFullDayRequest == true
    **/
@@ -342,6 +342,7 @@ public class TimeOffRequest  implements Serializable {
     this.fullDayManagementUnitDates = fullDayManagementUnitDates;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class DeleteConversationParticipantCodeRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class DeleteConversationParticipantCodeRequest {
 	    return this;
 	}
 
+	
 	private String participantId;
 	public String getParticipantId() {
 		return this.participantId;
@@ -88,6 +90,7 @@ public class DeleteConversationParticipantCodeRequest {
 	    return this;
 	}
 
+	
 	private String addCommunicationCode;
 	public String getAddCommunicationCode() {
 		return this.addCommunicationCode;
@@ -102,6 +105,7 @@ public class DeleteConversationParticipantCodeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -145,7 +149,8 @@ public class DeleteConversationParticipantCodeRequest {
                 .withPathParameter("participantId", participantId)
         
                 .withPathParameter("addCommunicationCode", addCommunicationCode)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -156,10 +161,12 @@ public class DeleteConversationParticipantCodeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String participantId, String addCommunicationCode) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, participantId, addCommunicationCode);
 	}
+	
 
 	public static class Builder {
 		private final DeleteConversationParticipantCodeRequest request;
@@ -168,25 +175,32 @@ public class DeleteConversationParticipantCodeRequest {
 			request = new DeleteConversationParticipantCodeRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withParticipantId(String participantId) {
 			request.setParticipantId(participantId);
 			return this;
 		}
+		
 		public Builder withAddCommunicationCode(String addCommunicationCode) {
 			request.setAddCommunicationCode(addCommunicationCode);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String participantId, String addCommunicationCode) {
 			request.setConversationId(conversationId);
-			request.setParticipantId(participantId);
-			request.setAddCommunicationCode(addCommunicationCode);
+						request.setParticipantId(participantId);
+						request.setAddCommunicationCode(addCommunicationCode);
+			
 			return this;
 		}
+		
 
 
 		public DeleteConversationParticipantCodeRequest build() {

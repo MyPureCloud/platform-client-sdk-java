@@ -108,7 +108,7 @@ public class DomainNetworkAddress  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * An IPv4 or IPv6 IP address. When specifying an address of type \"ip\", use CIDR format for the subnet mask.
    **/
@@ -126,7 +126,7 @@ public class DomainNetworkAddress  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * True if this address will persist on Edge restart.  Addresses assigned by DHCP will be returned as false.
    **/
@@ -144,7 +144,7 @@ public class DomainNetworkAddress  implements Serializable {
     this.persistent = persistent;
   }
 
-
+  
   /**
    * The address family for this address.
    **/
@@ -162,6 +162,7 @@ public class DomainNetworkAddress  implements Serializable {
     this.family = family;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

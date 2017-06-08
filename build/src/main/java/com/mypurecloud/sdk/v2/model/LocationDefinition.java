@@ -70,7 +70,7 @@ public class LocationDefinition  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public LocationDefinition name(String name) {
@@ -87,7 +87,7 @@ public class LocationDefinition  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public LocationDefinition address(LocationAddress address) {
@@ -104,7 +104,7 @@ public class LocationDefinition  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public LocationDefinition addressVerified(Boolean addressVerified) {
@@ -121,7 +121,7 @@ public class LocationDefinition  implements Serializable {
     this.addressVerified = addressVerified;
   }
 
-
+  
   /**
    **/
   public LocationDefinition emergencyNumber(LocationEmergencyNumber emergencyNumber) {
@@ -138,7 +138,7 @@ public class LocationDefinition  implements Serializable {
     this.emergencyNumber = emergencyNumber;
   }
 
-
+  
   /**
    * Current activity status of the location.
    **/
@@ -156,7 +156,7 @@ public class LocationDefinition  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public LocationDefinition version(Integer version) {
@@ -173,7 +173,7 @@ public class LocationDefinition  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    **/
   public LocationDefinition path(List<String> path) {
@@ -190,13 +190,14 @@ public class LocationDefinition  implements Serializable {
     this.path = path;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

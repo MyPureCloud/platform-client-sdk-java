@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PutArchitectSystempromptResourceRequest {
+    
 	private String promptId;
 	public String getPromptId() {
 		return this.promptId;
@@ -56,6 +57,7 @@ public class PutArchitectSystempromptResourceRequest {
 	    return this;
 	}
 
+	
 	private String languageCode;
 	public String getLanguageCode() {
 		return this.languageCode;
@@ -70,6 +72,7 @@ public class PutArchitectSystempromptResourceRequest {
 	    return this;
 	}
 
+	
 	private SystemPromptAsset body;
 	public SystemPromptAsset getBody() {
 		return this.body;
@@ -84,6 +87,7 @@ public class PutArchitectSystempromptResourceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,6 +126,7 @@ public class PutArchitectSystempromptResourceRequest {
                 .withPathParameter("languageCode", languageCode)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -133,10 +138,12 @@ public class PutArchitectSystempromptResourceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String promptId, String languageCode) {
 	    return new Builder()
 	            .withRequiredParams(promptId, languageCode);
 	}
+	
 
 	public static class Builder {
 		private final PutArchitectSystempromptResourceRequest request;
@@ -145,24 +152,31 @@ public class PutArchitectSystempromptResourceRequest {
 			request = new PutArchitectSystempromptResourceRequest();
 		}
 
+		
 		public Builder withPromptId(String promptId) {
 			request.setPromptId(promptId);
 			return this;
 		}
+		
 		public Builder withLanguageCode(String languageCode) {
 			request.setLanguageCode(languageCode);
 			return this;
 		}
+		
 		public Builder withBody(SystemPromptAsset body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String promptId, String languageCode) {
 			request.setPromptId(promptId);
-			request.setLanguageCode(languageCode);
+						request.setLanguageCode(languageCode);
+			
 			return this;
 		}
+		
 
 
 		public PutArchitectSystempromptResourceRequest build() {

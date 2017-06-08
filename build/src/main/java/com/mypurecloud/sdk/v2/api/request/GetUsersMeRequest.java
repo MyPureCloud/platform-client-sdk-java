@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetUsersMeRequest {
+    
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -62,6 +63,7 @@ public class GetUsersMeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,7 +88,8 @@ public class GetUsersMeRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/users/me")
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -97,6 +100,7 @@ public class GetUsersMeRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetUsersMeRequest request;
@@ -105,11 +109,14 @@ public class GetUsersMeRequest {
 			request = new GetUsersMeRequest();
 		}
 
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetUsersMeRequest build() {

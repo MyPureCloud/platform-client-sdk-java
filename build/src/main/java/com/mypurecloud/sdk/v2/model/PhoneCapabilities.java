@@ -20,6 +20,7 @@ public class PhoneCapabilities  implements Serializable {
   private String hardwareIdType = null;
   private Boolean allowReboot = null;
   private Boolean noRebalance = null;
+  private Boolean noCloudProvisioning = null;
 
   
   /**
@@ -38,7 +39,7 @@ public class PhoneCapabilities  implements Serializable {
     this.provisions = provisions;
   }
 
-
+  
   /**
    **/
   public PhoneCapabilities registers(Boolean registers) {
@@ -55,7 +56,7 @@ public class PhoneCapabilities  implements Serializable {
     this.registers = registers;
   }
 
-
+  
   /**
    **/
   public PhoneCapabilities dualRegisters(Boolean dualRegisters) {
@@ -72,7 +73,7 @@ public class PhoneCapabilities  implements Serializable {
     this.dualRegisters = dualRegisters;
   }
 
-
+  
   /**
    **/
   public PhoneCapabilities hardwareIdType(String hardwareIdType) {
@@ -89,7 +90,7 @@ public class PhoneCapabilities  implements Serializable {
     this.hardwareIdType = hardwareIdType;
   }
 
-
+  
   /**
    **/
   public PhoneCapabilities allowReboot(Boolean allowReboot) {
@@ -106,7 +107,7 @@ public class PhoneCapabilities  implements Serializable {
     this.allowReboot = allowReboot;
   }
 
-
+  
   /**
    **/
   public PhoneCapabilities noRebalance(Boolean noRebalance) {
@@ -123,6 +124,24 @@ public class PhoneCapabilities  implements Serializable {
     this.noRebalance = noRebalance;
   }
 
+  
+  /**
+   **/
+  public PhoneCapabilities noCloudProvisioning(Boolean noCloudProvisioning) {
+    this.noCloudProvisioning = noCloudProvisioning;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("noCloudProvisioning")
+  public Boolean getNoCloudProvisioning() {
+    return noCloudProvisioning;
+  }
+  public void setNoCloudProvisioning(Boolean noCloudProvisioning) {
+    this.noCloudProvisioning = noCloudProvisioning;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -138,12 +157,13 @@ public class PhoneCapabilities  implements Serializable {
         Objects.equals(this.dualRegisters, phoneCapabilities.dualRegisters) &&
         Objects.equals(this.hardwareIdType, phoneCapabilities.hardwareIdType) &&
         Objects.equals(this.allowReboot, phoneCapabilities.allowReboot) &&
-        Objects.equals(this.noRebalance, phoneCapabilities.noRebalance);
+        Objects.equals(this.noRebalance, phoneCapabilities.noRebalance) &&
+        Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance);
+    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance, noCloudProvisioning);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class PhoneCapabilities  implements Serializable {
     sb.append("    hardwareIdType: ").append(toIndentedString(hardwareIdType)).append("\n");
     sb.append("    allowReboot: ").append(toIndentedString(allowReboot)).append("\n");
     sb.append("    noRebalance: ").append(toIndentedString(noRebalance)).append("\n");
+    sb.append("    noCloudProvisioning: ").append(toIndentedString(noCloudProvisioning)).append("\n");
     sb.append("}");
     return sb.toString();
   }

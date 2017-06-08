@@ -36,7 +36,7 @@ public class RetentionDuration  implements Serializable {
     this.archiveRetention = archiveRetention;
   }
 
-
+  
   /**
    **/
   public RetentionDuration deleteRetention(DeleteRetention deleteRetention) {
@@ -53,6 +53,7 @@ public class RetentionDuration  implements Serializable {
     this.deleteRetention = deleteRetention;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

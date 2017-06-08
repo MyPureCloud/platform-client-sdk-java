@@ -37,7 +37,7 @@ public class Destination  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    **/
   public Destination name(String name) {
@@ -54,7 +54,7 @@ public class Destination  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Destination userId(String userId) {
@@ -71,7 +71,7 @@ public class Destination  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    **/
   public Destination queueId(String queueId) {
@@ -88,6 +88,7 @@ public class Destination  implements Serializable {
     this.queueId = queueId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

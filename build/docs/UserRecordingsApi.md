@@ -111,7 +111,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
@@ -164,7 +164,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM] [enum: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE] |
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -219,7 +219,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type
@@ -321,7 +321,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **recordingId** | **String**| User Recording ID | |
 | **body** | [**UserRecording**](UserRecording.html)| UserRecording | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
 {: class="table table-striped"}
 
 ### Return type

@@ -39,7 +39,7 @@ public class AuditChange  implements Serializable {
     this.property = property;
   }
 
-
+  
   /**
    **/
   public AuditChange entity(AuditEntityReference entity) {
@@ -56,7 +56,7 @@ public class AuditChange  implements Serializable {
     this.entity = entity;
   }
 
-
+  
   /**
    **/
   public AuditChange oldValues(List<String> oldValues) {
@@ -73,7 +73,7 @@ public class AuditChange  implements Serializable {
     this.oldValues = oldValues;
   }
 
-
+  
   /**
    **/
   public AuditChange newValues(List<String> newValues) {
@@ -90,6 +90,7 @@ public class AuditChange  implements Serializable {
     this.newValues = newValues;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

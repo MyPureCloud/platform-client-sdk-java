@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.ResponseQueryResults;
 import com.mypurecloud.sdk.v2.model.ResponseQueryRequest;
 
 public class GetResponsemanagementResponseRequest {
+    
 	private String responseId;
 	public String getResponseId() {
 		return this.responseId;
@@ -41,6 +42,7 @@ public class GetResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -55,6 +57,7 @@ public class GetResponsemanagementResponseRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -86,7 +89,8 @@ public class GetResponsemanagementResponseRequest {
                 .withPathParameter("responseId", responseId)
         
                 .withQueryParameters("expand", "", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -97,10 +101,12 @@ public class GetResponsemanagementResponseRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String responseId) {
 	    return new Builder()
 	            .withRequiredParams(responseId);
 	}
+	
 
 	public static class Builder {
 		private final GetResponsemanagementResponseRequest request;
@@ -109,19 +115,25 @@ public class GetResponsemanagementResponseRequest {
 			request = new GetResponsemanagementResponseRequest();
 		}
 
+		
 		public Builder withResponseId(String responseId) {
 			request.setResponseId(responseId);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String responseId) {
 			request.setResponseId(responseId);
+			
 			return this;
 		}
+		
 
 
 		public GetResponsemanagementResponseRequest build() {

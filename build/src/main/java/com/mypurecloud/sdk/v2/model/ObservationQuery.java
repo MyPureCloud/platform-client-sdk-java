@@ -111,7 +111,7 @@ public class ObservationQuery  implements Serializable {
     this.filter = filter;
   }
 
-
+  
   /**
    * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
    **/
@@ -129,6 +129,7 @@ public class ObservationQuery  implements Serializable {
     this.metrics = metrics;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

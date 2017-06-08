@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementSecurityprofileRequest {
+    
 	private String securityProfileId;
 	public String getSecurityProfileId() {
 		return this.securityProfileId;
@@ -64,6 +65,7 @@ public class GetContentmanagementSecurityprofileRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,7 +95,8 @@ public class GetContentmanagementSecurityprofileRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/securityprofiles/{securityProfileId}")
                 .withPathParameter("securityProfileId", securityProfileId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -104,10 +107,12 @@ public class GetContentmanagementSecurityprofileRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String securityProfileId) {
 	    return new Builder()
 	            .withRequiredParams(securityProfileId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementSecurityprofileRequest request;
@@ -116,15 +121,20 @@ public class GetContentmanagementSecurityprofileRequest {
 			request = new GetContentmanagementSecurityprofileRequest();
 		}
 
+		
 		public Builder withSecurityProfileId(String securityProfileId) {
 			request.setSecurityProfileId(securityProfileId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String securityProfileId) {
 			request.setSecurityProfileId(securityProfileId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementSecurityprofileRequest build() {

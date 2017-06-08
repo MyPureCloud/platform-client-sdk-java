@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest {
+    
 	private String schemaCategory;
 	public String getSchemaCategory() {
 		return this.schemaCategory;
@@ -98,6 +99,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private String schemaType;
 	public String getSchemaType() {
 		return this.schemaType;
@@ -112,6 +114,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private String schemaId;
 	public String getSchemaId() {
 		return this.schemaId;
@@ -126,6 +129,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private String extensionType;
 	public String getExtensionType() {
 		return this.extensionType;
@@ -140,6 +144,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private String metadataId;
 	public String getMetadataId() {
 		return this.metadataId;
@@ -154,6 +159,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private String type;
 	public String getType() {
 		return this.type;
@@ -168,6 +174,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -227,7 +234,8 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
                 .withPathParameter("metadataId", metadataId)
         
                 .withQueryParameters("type", "", type)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -238,10 +246,12 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId) {
 	    return new Builder()
 	            .withRequiredParams(schemaCategory, schemaType, schemaId, extensionType, metadataId);
 	}
+	
 
 	public static class Builder {
 		private final GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest request;
@@ -250,39 +260,49 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 			request = new GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest();
 		}
 
+		
 		public Builder withSchemaCategory(String schemaCategory) {
 			request.setSchemaCategory(schemaCategory);
 			return this;
 		}
+		
 		public Builder withSchemaType(String schemaType) {
 			request.setSchemaType(schemaType);
 			return this;
 		}
+		
 		public Builder withSchemaId(String schemaId) {
 			request.setSchemaId(schemaId);
 			return this;
 		}
+		
 		public Builder withExtensionType(String extensionType) {
 			request.setExtensionType(extensionType);
 			return this;
 		}
+		
 		public Builder withMetadataId(String metadataId) {
 			request.setMetadataId(metadataId);
 			return this;
 		}
+		
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String schemaCategory, String schemaType, String schemaId, String extensionType, String metadataId) {
 			request.setSchemaCategory(schemaCategory);
-			request.setSchemaType(schemaType);
-			request.setSchemaId(schemaId);
-			request.setExtensionType(extensionType);
-			request.setMetadataId(metadataId);
+						request.setSchemaType(schemaType);
+						request.setSchemaId(schemaId);
+						request.setExtensionType(extensionType);
+						request.setMetadataId(metadataId);
+			
 			return this;
 		}
+		
 
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest build() {

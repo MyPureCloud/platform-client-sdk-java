@@ -46,7 +46,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public StationEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public StationEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public StationEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.total = total;
   }
 
-
+  
   /**
    **/
   public StationEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public StationEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public StationEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public StationEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public StationEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public StationEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class StationEntityListing  implements Serializable, PagedResource<Statio
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

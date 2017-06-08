@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundDnclistExportRequest {
+    
 	private String dncListId;
 	public String getDncListId() {
 		return this.dncListId;
@@ -74,6 +75,7 @@ public class PostOutboundDnclistExportRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,7 +105,8 @@ public class PostOutboundDnclistExportRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/dnclists/{dncListId}/export")
                 .withPathParameter("dncListId", dncListId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -114,10 +117,12 @@ public class PostOutboundDnclistExportRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String dncListId) {
 	    return new Builder()
 	            .withRequiredParams(dncListId);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundDnclistExportRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundDnclistExportRequest {
 			request = new PostOutboundDnclistExportRequest();
 		}
 
+		
 		public Builder withDncListId(String dncListId) {
 			request.setDncListId(dncListId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String dncListId) {
 			request.setDncListId(dncListId);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundDnclistExportRequest build() {

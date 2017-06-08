@@ -125,7 +125,7 @@ public class Recording  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Recording name(String name) {
@@ -142,7 +142,7 @@ public class Recording  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Recording conversationId(String conversationId) {
@@ -159,7 +159,7 @@ public class Recording  implements Serializable {
     this.conversationId = conversationId;
   }
 
-
+  
   /**
    **/
   public Recording path(String path) {
@@ -176,7 +176,7 @@ public class Recording  implements Serializable {
     this.path = path;
   }
 
-
+  
   /**
    **/
   public Recording startTime(String startTime) {
@@ -193,7 +193,7 @@ public class Recording  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public Recording endTime(String endTime) {
@@ -210,7 +210,7 @@ public class Recording  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The type of media that the recording is. At the moment that could be audio, chat, or email.
    **/
@@ -228,7 +228,7 @@ public class Recording  implements Serializable {
     this.media = media;
   }
 
-
+  
   /**
    * Annotations that belong to the recording.
    **/
@@ -246,7 +246,7 @@ public class Recording  implements Serializable {
     this.annotations = annotations;
   }
 
-
+  
   /**
    * Represents a chat transcript
    **/
@@ -264,7 +264,7 @@ public class Recording  implements Serializable {
     this.transcript = transcript;
   }
 
-
+  
   /**
    * Represents an email transcript
    **/
@@ -282,7 +282,7 @@ public class Recording  implements Serializable {
     this.emailTranscript = emailTranscript;
   }
 
-
+  
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    **/
@@ -300,7 +300,7 @@ public class Recording  implements Serializable {
     this.fileState = fileState;
   }
 
-
+  
   /**
    * The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -318,7 +318,7 @@ public class Recording  implements Serializable {
     this.restoreExpirationTime = restoreExpirationTime;
   }
 
-
+  
   /**
    * The different mediaUris for the recording.
    **/
@@ -336,7 +336,7 @@ public class Recording  implements Serializable {
     this.mediaUris = mediaUris;
   }
 
-
+  
   /**
    **/
   public Recording estimatedTranscodeTimeMs(Long estimatedTranscodeTimeMs) {
@@ -353,7 +353,7 @@ public class Recording  implements Serializable {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
-
+  
   /**
    **/
   public Recording actualTranscodeTimeMs(Long actualTranscodeTimeMs) {
@@ -370,7 +370,7 @@ public class Recording  implements Serializable {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 
-
+  
   /**
    * The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -388,7 +388,7 @@ public class Recording  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-
+  
   /**
    * The type of archive medium used. Example: CloudArchive
    **/
@@ -406,7 +406,7 @@ public class Recording  implements Serializable {
     this.archiveMedium = archiveMedium;
   }
 
-
+  
   /**
    * The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -424,7 +424,7 @@ public class Recording  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-
+  
   /**
    * How many archive restorations the organization is allowed to have.
    **/
@@ -442,7 +442,7 @@ public class Recording  implements Serializable {
     this.maxAllowedRestorationsForOrg = maxAllowedRestorationsForOrg;
   }
 
-
+  
   /**
    * The remaining archive restorations the organization has.
    **/
@@ -460,7 +460,7 @@ public class Recording  implements Serializable {
     this.remainingRestorationsAllowedForOrg = remainingRestorationsAllowedForOrg;
   }
 
-
+  
   /**
    * The session id represents an external resource id, such as email, call, chat, etc
    **/
@@ -478,13 +478,14 @@ public class Recording  implements Serializable {
     this.sessionId = sessionId;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -46,7 +46,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.total = total;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public CallableTimeSetEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

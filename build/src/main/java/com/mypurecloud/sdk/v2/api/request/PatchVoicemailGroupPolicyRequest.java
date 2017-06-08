@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class PatchVoicemailGroupPolicyRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -45,6 +46,7 @@ public class PatchVoicemailGroupPolicyRequest {
 	    return this;
 	}
 
+	
 	private VoicemailGroupPolicy body;
 	public VoicemailGroupPolicy getBody() {
 		return this.body;
@@ -59,6 +61,7 @@ public class PatchVoicemailGroupPolicyRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,6 +98,7 @@ public class PatchVoicemailGroupPolicyRequest {
                 .withPathParameter("groupId", groupId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -106,10 +110,12 @@ public class PatchVoicemailGroupPolicyRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId, VoicemailGroupPolicy body) {
 	    return new Builder()
 	            .withRequiredParams(groupId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchVoicemailGroupPolicyRequest request;
@@ -118,20 +124,26 @@ public class PatchVoicemailGroupPolicyRequest {
 			request = new PatchVoicemailGroupPolicyRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 		public Builder withBody(VoicemailGroupPolicy body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId, VoicemailGroupPolicy body) {
 			request.setGroupId(groupId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchVoicemailGroupPolicyRequest build() {

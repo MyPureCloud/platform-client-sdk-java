@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 public class DeleteTokensMeRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -44,7 +45,8 @@ public class DeleteTokensMeRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("DELETE", "/api/v2/tokens/me")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("DELETE", "/api/v2/tokens/me")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -55,6 +57,7 @@ public class DeleteTokensMeRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final DeleteTokensMeRequest request;
@@ -63,7 +66,9 @@ public class DeleteTokensMeRequest {
 			request = new DeleteTokensMeRequest();
 		}
 
+		
 
+		
 
 
 		public DeleteTokensMeRequest build() {

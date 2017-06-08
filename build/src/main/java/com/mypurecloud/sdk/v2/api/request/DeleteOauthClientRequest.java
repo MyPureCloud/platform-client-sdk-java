@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class DeleteOauthClientRequest {
+    
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -37,6 +38,7 @@ public class DeleteOauthClientRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,7 +68,8 @@ public class DeleteOauthClientRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/oauth/clients/{clientId}")
                 .withPathParameter("clientId", clientId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -77,10 +80,12 @@ public class DeleteOauthClientRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String clientId) {
 	    return new Builder()
 	            .withRequiredParams(clientId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteOauthClientRequest request;
@@ -89,15 +94,20 @@ public class DeleteOauthClientRequest {
 			request = new DeleteOauthClientRequest();
 		}
 
+		
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String clientId) {
 			request.setClientId(clientId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteOauthClientRequest build() {

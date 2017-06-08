@@ -77,7 +77,7 @@ public class LineBase  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -95,7 +95,7 @@ public class LineBase  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public LineBase description(String description) {
@@ -112,7 +112,7 @@ public class LineBase  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public LineBase version(Integer version) {
@@ -129,7 +129,7 @@ public class LineBase  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -147,7 +147,7 @@ public class LineBase  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -165,7 +165,7 @@ public class LineBase  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public LineBase modifiedBy(String modifiedBy) {
@@ -182,7 +182,7 @@ public class LineBase  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public LineBase createdBy(String createdBy) {
@@ -199,7 +199,7 @@ public class LineBase  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public LineBase state(StateEnum state) {
@@ -216,7 +216,7 @@ public class LineBase  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public LineBase modifiedByApp(String modifiedByApp) {
@@ -233,7 +233,7 @@ public class LineBase  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public LineBase createdByApp(String createdByApp) {
@@ -250,7 +250,7 @@ public class LineBase  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public LineBase lineMetaBase(UriReference lineMetaBase) {
@@ -267,7 +267,7 @@ public class LineBase  implements Serializable {
     this.lineMetaBase = lineMetaBase;
   }
 
-
+  
   /**
    **/
   public LineBase properties(Map<String, Object> properties) {
@@ -284,13 +284,14 @@ public class LineBase  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

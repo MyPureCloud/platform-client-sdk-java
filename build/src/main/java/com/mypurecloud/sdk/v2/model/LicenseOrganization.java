@@ -29,7 +29,7 @@ public class LicenseOrganization  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public LicenseOrganization name(String name) {
@@ -46,7 +46,7 @@ public class LicenseOrganization  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public LicenseOrganization licenses(Map<String, List<AddressableEntityUser>> licenses) {
@@ -63,13 +63,14 @@ public class LicenseOrganization  implements Serializable {
     this.licenses = licenses;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

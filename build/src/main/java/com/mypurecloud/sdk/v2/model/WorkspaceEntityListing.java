@@ -46,7 +46,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.total = total;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public WorkspaceEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class WorkspaceEntityListing  implements Serializable, PagedResource<Work
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

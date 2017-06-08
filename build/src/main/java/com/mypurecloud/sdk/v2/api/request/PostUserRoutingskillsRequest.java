@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostUserRoutingskillsRequest {
+    
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -62,6 +63,7 @@ public class PostUserRoutingskillsRequest {
 	    return this;
 	}
 
+	
 	private UserRoutingSkillPost body;
 	public UserRoutingSkillPost getBody() {
 		return this.body;
@@ -76,6 +78,7 @@ public class PostUserRoutingskillsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -112,6 +115,7 @@ public class PostUserRoutingskillsRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -123,10 +127,12 @@ public class PostUserRoutingskillsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String userId, UserRoutingSkillPost body) {
 	    return new Builder()
 	            .withRequiredParams(userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostUserRoutingskillsRequest request;
@@ -135,20 +141,26 @@ public class PostUserRoutingskillsRequest {
 			request = new PostUserRoutingskillsRequest();
 		}
 
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(UserRoutingSkillPost body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String userId, UserRoutingSkillPost body) {
 			request.setUserId(userId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostUserRoutingskillsRequest build() {

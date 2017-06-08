@@ -34,6 +34,7 @@ public class MaxParticipants  implements Serializable {
     this.maxParticipants = maxParticipants;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

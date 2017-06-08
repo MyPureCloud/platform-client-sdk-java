@@ -36,7 +36,7 @@ public class UserConversationSummaryNotificationCall  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotificationCall enterprise(UserConversationSummaryNotificationMediaSummaryDetail enterprise) {
@@ -53,6 +53,7 @@ public class UserConversationSummaryNotificationCall  implements Serializable {
     this.enterprise = enterprise;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -38,7 +38,7 @@ public class Adjacents  implements Serializable {
     this.superiors = superiors;
   }
 
-
+  
   /**
    **/
   public Adjacents siblings(List<User> siblings) {
@@ -55,7 +55,7 @@ public class Adjacents  implements Serializable {
     this.siblings = siblings;
   }
 
-
+  
   /**
    **/
   public Adjacents directReports(List<User> directReports) {
@@ -72,6 +72,7 @@ public class Adjacents  implements Serializable {
     this.directReports = directReports;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

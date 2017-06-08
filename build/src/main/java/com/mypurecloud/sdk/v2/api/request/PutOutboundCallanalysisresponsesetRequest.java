@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundCallanalysisresponsesetRequest {
+    
 	private String callAnalysisSetId;
 	public String getCallAnalysisSetId() {
 		return this.callAnalysisSetId;
@@ -74,6 +75,7 @@ public class PutOutboundCallanalysisresponsesetRequest {
 	    return this;
 	}
 
+	
 	private ResponseSet body;
 	public ResponseSet getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundCallanalysisresponsesetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundCallanalysisresponsesetRequest {
                 .withPathParameter("callAnalysisSetId", callAnalysisSetId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundCallanalysisresponsesetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String callAnalysisSetId, ResponseSet body) {
 	    return new Builder()
 	            .withRequiredParams(callAnalysisSetId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundCallanalysisresponsesetRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundCallanalysisresponsesetRequest {
 			request = new PutOutboundCallanalysisresponsesetRequest();
 		}
 
+		
 		public Builder withCallAnalysisSetId(String callAnalysisSetId) {
 			request.setCallAnalysisSetId(callAnalysisSetId);
 			return this;
 		}
+		
 		public Builder withBody(ResponseSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String callAnalysisSetId, ResponseSet body) {
 			request.setCallAnalysisSetId(callAnalysisSetId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundCallanalysisresponsesetRequest build() {

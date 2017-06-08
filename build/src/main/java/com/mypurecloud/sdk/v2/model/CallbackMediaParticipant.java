@@ -201,7 +201,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The display friendly name of the participant.
    **/
@@ -219,7 +219,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The participant address.
    **/
@@ -237,7 +237,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.address = address;
   }
 
-
+  
   /**
    * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -255,7 +255,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The time when this participant went connected for this media (eg: video connected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -273,7 +273,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -291,7 +291,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The time when this participant's hold started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -309,7 +309,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
    **/
@@ -327,7 +327,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.purpose = purpose;
   }
 
-
+  
   /**
    * The participant's state.  Values can be: 'alerting', 'connected', 'disconnected', 'dialing', 'contacting
    **/
@@ -345,7 +345,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    **/
@@ -363,7 +363,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.direction = direction;
   }
 
-
+  
   /**
    * The reason the participant was disconnected from the conversation.
    **/
@@ -381,7 +381,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    * Value is true when the participant is on hold.
    **/
@@ -399,7 +399,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * Value is true when the participant requires wrap-up.
    **/
@@ -417,7 +417,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    * The wrap-up prompt indicating the type of wrap-up to be performed.
    **/
@@ -435,7 +435,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    * The PureCloud user for this participant.
    **/
@@ -453,7 +453,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    * The PureCloud queue for this participant.
    **/
@@ -471,7 +471,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    * A list of ad-hoc attributes for the participant.
    **/
@@ -489,7 +489,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    * If the conversation ends in error, contains additional error details.
    **/
@@ -507,7 +507,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    * The Engage script that should be used by this participant.
    **/
@@ -525,7 +525,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.script = script;
   }
 
-
+  
   /**
    * The amount of time the participant has to complete wrap-up.
    **/
@@ -543,7 +543,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    * Value is true when the participant has skipped wrap-up.
    **/
@@ -561,7 +561,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    * The source provider for the communication.
    **/
@@ -579,7 +579,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
@@ -597,7 +597,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
@@ -615,7 +615,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    * Wrapup for this participant, if it has been applied.
    **/
@@ -633,7 +633,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    * The peer communication corresponding to a matching leg for this communication.
    **/
@@ -651,7 +651,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.peer = peer;
   }
 
-
+  
   /**
    * The outbound preview associated with this callback.
    **/
@@ -669,7 +669,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.outboundPreview = outboundPreview;
   }
 
-
+  
   /**
    * The voicemail associated with this callback.
    **/
@@ -687,7 +687,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.voicemail = voicemail;
   }
 
-
+  
   /**
    * The list of phone number to use for this callback.
    **/
@@ -705,7 +705,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackNumbers = callbackNumbers;
   }
 
-
+  
   /**
    * The name of the callback target.
    **/
@@ -723,7 +723,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackUserName = callbackUserName;
   }
 
-
+  
   /**
    * If true, the callback can be skipped
    **/
@@ -741,7 +741,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.skipEnabled = skipEnabled;
   }
 
-
+  
   /**
    * Duration in seconds before the callback will be auto-dialed.
    **/
@@ -759,7 +759,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.timeoutSeconds = timeoutSeconds;
   }
 
-
+  
   /**
    * The id of the config for automatically placing the callback (and handling the disposition). If absent, the callback will not be placed automatically but routed to an agent as per normal.
    **/
@@ -777,7 +777,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -795,6 +795,7 @@ public class CallbackMediaParticipant  implements Serializable {
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

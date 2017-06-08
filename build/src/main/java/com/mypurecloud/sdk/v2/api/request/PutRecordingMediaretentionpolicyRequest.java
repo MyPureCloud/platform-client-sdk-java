@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PutRecordingMediaretentionpolicyRequest {
+    
 	private String policyId;
 	public String getPolicyId() {
 		return this.policyId;
@@ -52,6 +53,7 @@ public class PutRecordingMediaretentionpolicyRequest {
 	    return this;
 	}
 
+	
 	private Policy body;
 	public Policy getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PutRecordingMediaretentionpolicyRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +105,7 @@ public class PutRecordingMediaretentionpolicyRequest {
                 .withPathParameter("policyId", policyId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -113,10 +117,12 @@ public class PutRecordingMediaretentionpolicyRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String policyId, Policy body) {
 	    return new Builder()
 	            .withRequiredParams(policyId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutRecordingMediaretentionpolicyRequest request;
@@ -125,20 +131,26 @@ public class PutRecordingMediaretentionpolicyRequest {
 			request = new PutRecordingMediaretentionpolicyRequest();
 		}
 
+		
 		public Builder withPolicyId(String policyId) {
 			request.setPolicyId(policyId);
 			return this;
 		}
+		
 		public Builder withBody(Policy body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String policyId, Policy body) {
 			request.setPolicyId(policyId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRecordingMediaretentionpolicyRequest build() {

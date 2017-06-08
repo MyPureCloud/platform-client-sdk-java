@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class PutExternalcontactsContactNoteRequest {
+    
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -45,6 +46,7 @@ public class PutExternalcontactsContactNoteRequest {
 	    return this;
 	}
 
+	
 	private String noteId;
 	public String getNoteId() {
 		return this.noteId;
@@ -59,6 +61,7 @@ public class PutExternalcontactsContactNoteRequest {
 	    return this;
 	}
 
+	
 	private Note body;
 	public Note getBody() {
 		return this.body;
@@ -73,6 +76,7 @@ public class PutExternalcontactsContactNoteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -111,6 +115,7 @@ public class PutExternalcontactsContactNoteRequest {
                 .withPathParameter("noteId", noteId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -122,10 +127,12 @@ public class PutExternalcontactsContactNoteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactId, String noteId) {
 	    return new Builder()
 	            .withRequiredParams(contactId, noteId);
 	}
+	
 
 	public static class Builder {
 		private final PutExternalcontactsContactNoteRequest request;
@@ -134,24 +141,31 @@ public class PutExternalcontactsContactNoteRequest {
 			request = new PutExternalcontactsContactNoteRequest();
 		}
 
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withNoteId(String noteId) {
 			request.setNoteId(noteId);
 			return this;
 		}
+		
 		public Builder withBody(Note body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactId, String noteId) {
 			request.setContactId(contactId);
-			request.setNoteId(noteId);
+						request.setNoteId(noteId);
+			
 			return this;
 		}
+		
 
 
 		public PutExternalcontactsContactNoteRequest build() {

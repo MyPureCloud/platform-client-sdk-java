@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class GetRecordingLocalkeysSettingsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -60,7 +61,8 @@ public class GetRecordingLocalkeysSettingsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/recording/localkeys/settings")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/recording/localkeys/settings")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -71,6 +73,7 @@ public class GetRecordingLocalkeysSettingsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetRecordingLocalkeysSettingsRequest request;
@@ -79,7 +82,9 @@ public class GetRecordingLocalkeysSettingsRequest {
 			request = new GetRecordingLocalkeysSettingsRequest();
 		}
 
+		
 
+		
 
 
 		public GetRecordingLocalkeysSettingsRequest build() {

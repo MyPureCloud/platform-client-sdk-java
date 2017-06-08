@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 
 public class GetScriptsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -38,6 +39,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -52,6 +54,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -66,6 +69,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -80,6 +84,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String feature;
 	public String getFeature() {
 		return this.feature;
@@ -94,6 +99,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -108,6 +114,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -122,6 +129,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -136,6 +144,7 @@ public class GetScriptsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -174,7 +183,8 @@ public class GetScriptsRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -185,6 +195,7 @@ public class GetScriptsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetScriptsRequest request;
@@ -193,39 +204,49 @@ public class GetScriptsRequest {
 			request = new GetScriptsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withFeature(String feature) {
 			request.setFeature(feature);
 			return this;
 		}
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 
+		
 
 
 		public GetScriptsRequest build() {

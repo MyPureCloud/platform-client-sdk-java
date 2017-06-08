@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersDetailsQueryRequest {
+    
 	private UserDetailsQuery body;
 	public UserDetailsQuery getBody() {
 		return this.body;
@@ -62,6 +63,7 @@ public class PostAnalyticsUsersDetailsQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,6 +93,7 @@ public class PostAnalyticsUsersDetailsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/users/details/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -102,10 +105,12 @@ public class PostAnalyticsUsersDetailsQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(UserDetailsQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsUsersDetailsQueryRequest request;
@@ -114,15 +119,20 @@ public class PostAnalyticsUsersDetailsQueryRequest {
 			request = new PostAnalyticsUsersDetailsQueryRequest();
 		}
 
+		
 		public Builder withBody(UserDetailsQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(UserDetailsQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsUsersDetailsQueryRequest build() {

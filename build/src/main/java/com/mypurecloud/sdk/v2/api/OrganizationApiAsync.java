@@ -44,6 +44,7 @@ public class OrganizationApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -119,6 +120,7 @@ public class OrganizationApiAsync {
     }
   }
 
+  
   /**
    * Get organization.
    * 
@@ -194,6 +196,7 @@ public class OrganizationApiAsync {
     }
   }
 
+  
   /**
    * Update organization
    * 
@@ -269,6 +272,7 @@ public class OrganizationApiAsync {
     }
   }
 
+  
   /**
    * Update organization.
    * 
@@ -344,6 +348,7 @@ public class OrganizationApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

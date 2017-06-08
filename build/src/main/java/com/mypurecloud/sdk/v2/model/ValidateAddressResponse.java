@@ -36,7 +36,7 @@ public class ValidateAddressResponse  implements Serializable {
     this.valid = valid;
   }
 
-
+  
   /**
    * Subscriber schema
    **/
@@ -54,6 +54,7 @@ public class ValidateAddressResponse  implements Serializable {
     this.response = response;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsActionsPublishRequest {
+    
 	private String flow;
 	public String getFlow() {
 		return this.flow;
@@ -56,6 +57,7 @@ public class PostFlowsActionsPublishRequest {
 	    return this;
 	}
 
+	
 	private String version;
 	public String getVersion() {
 		return this.version;
@@ -70,6 +72,7 @@ public class PostFlowsActionsPublishRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,7 +104,8 @@ public class PostFlowsActionsPublishRequest {
                 .withQueryParameters("flow", "", flow)
         
                 .withQueryParameters("version", "", version)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -112,10 +116,12 @@ public class PostFlowsActionsPublishRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flow) {
 	    return new Builder()
 	            .withRequiredParams(flow);
 	}
+	
 
 	public static class Builder {
 		private final PostFlowsActionsPublishRequest request;
@@ -124,19 +130,25 @@ public class PostFlowsActionsPublishRequest {
 			request = new PostFlowsActionsPublishRequest();
 		}
 
+		
 		public Builder withFlow(String flow) {
 			request.setFlow(flow);
 			return this;
 		}
+		
 		public Builder withVersion(String version) {
 			request.setVersion(version);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flow) {
 			request.setFlow(flow);
+			
 			return this;
 		}
+		
 
 
 		public PostFlowsActionsPublishRequest build() {

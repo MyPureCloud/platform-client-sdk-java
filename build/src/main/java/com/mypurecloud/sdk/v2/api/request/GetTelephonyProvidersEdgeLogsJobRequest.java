@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgeLogsJobRequest {
+    
 	private String edgeId;
 	public String getEdgeId() {
 		return this.edgeId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgeLogsJobRequest {
 	    return this;
 	}
 
+	
 	private String jobId;
 	public String getJobId() {
 		return this.jobId;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgeLogsJobRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,7 +151,8 @@ public class GetTelephonyProvidersEdgeLogsJobRequest {
                 .withPathParameter("edgeId", edgeId)
         
                 .withPathParameter("jobId", jobId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -159,10 +163,12 @@ public class GetTelephonyProvidersEdgeLogsJobRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeId, String jobId) {
 	    return new Builder()
 	            .withRequiredParams(edgeId, jobId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgeLogsJobRequest request;
@@ -171,20 +177,26 @@ public class GetTelephonyProvidersEdgeLogsJobRequest {
 			request = new GetTelephonyProvidersEdgeLogsJobRequest();
 		}
 
+		
 		public Builder withEdgeId(String edgeId) {
 			request.setEdgeId(edgeId);
 			return this;
 		}
+		
 		public Builder withJobId(String jobId) {
 			request.setJobId(jobId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeId, String jobId) {
 			request.setEdgeId(edgeId);
-			request.setJobId(jobId);
+						request.setJobId(jobId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgeLogsJobRequest build() {

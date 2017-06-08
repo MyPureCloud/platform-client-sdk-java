@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PutAlertingUserpresenceRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class PutAlertingUserpresenceRuleRequest {
 	    return this;
 	}
 
+	
 	private UserPresenceRule body;
 	public UserPresenceRule getBody() {
 		return this.body;
@@ -67,6 +69,7 @@ public class PutAlertingUserpresenceRuleRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,6 +84,7 @@ public class PutAlertingUserpresenceRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,6 +123,7 @@ public class PutAlertingUserpresenceRuleRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -130,10 +135,12 @@ public class PutAlertingUserpresenceRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId, UserPresenceRule body) {
 	    return new Builder()
 	            .withRequiredParams(ruleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAlertingUserpresenceRuleRequest request;
@@ -142,24 +149,31 @@ public class PutAlertingUserpresenceRuleRequest {
 			request = new PutAlertingUserpresenceRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 		public Builder withBody(UserPresenceRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId, UserPresenceRule body) {
 			request.setRuleId(ruleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAlertingUserpresenceRuleRequest build() {

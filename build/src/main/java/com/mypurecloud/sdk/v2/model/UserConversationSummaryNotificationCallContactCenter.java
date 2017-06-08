@@ -34,7 +34,7 @@ public class UserConversationSummaryNotificationCallContactCenter  implements Se
     this.active = active;
   }
 
-
+  
   /**
    **/
   public UserConversationSummaryNotificationCallContactCenter acw(Integer acw) {
@@ -51,6 +51,7 @@ public class UserConversationSummaryNotificationCallContactCenter  implements Se
     this.acw = acw;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

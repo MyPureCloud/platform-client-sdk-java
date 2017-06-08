@@ -63,7 +63,7 @@ public class InboundDomain  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public InboundDomain name(String name) {
@@ -80,7 +80,7 @@ public class InboundDomain  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Mx Record Status
    **/
@@ -98,7 +98,7 @@ public class InboundDomain  implements Serializable {
     this.mxRecordStatus = mxRecordStatus;
   }
 
-
+  
   /**
    * Indicates if this a PureCloud sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.
    **/
@@ -116,13 +116,14 @@ public class InboundDomain  implements Serializable {
     this.subDomain = subDomain;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

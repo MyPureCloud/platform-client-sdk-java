@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
 	    return this;
 	}
 
+	
 	private String outboundRouteId;
 	public String getOutboundRouteId() {
 		return this.outboundRouteId;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
 	    return this;
 	}
 
+	
 	private OutboundRouteBase body;
 	public OutboundRouteBase getBody() {
 		return this.body;
@@ -126,6 +129,7 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -169,6 +173,7 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
                 .withPathParameter("outboundRouteId", outboundRouteId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -180,10 +185,12 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId, String outboundRouteId, OutboundRouteBase body) {
 	    return new Builder()
 	            .withRequiredParams(siteId, outboundRouteId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesSiteOutboundrouteRequest request;
@@ -192,25 +199,32 @@ public class PutTelephonyProvidersEdgesSiteOutboundrouteRequest {
 			request = new PutTelephonyProvidersEdgesSiteOutboundrouteRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withOutboundRouteId(String outboundRouteId) {
 			request.setOutboundRouteId(outboundRouteId);
 			return this;
 		}
+		
 		public Builder withBody(OutboundRouteBase body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId, String outboundRouteId, OutboundRouteBase body) {
 			request.setSiteId(siteId);
-			request.setOutboundRouteId(outboundRouteId);
-			request.setBody(body);
+						request.setOutboundRouteId(outboundRouteId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesSiteOutboundrouteRequest build() {

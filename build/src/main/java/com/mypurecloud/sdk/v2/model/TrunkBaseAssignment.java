@@ -36,7 +36,7 @@ public class TrunkBaseAssignment  implements Serializable {
     this.family = family;
   }
 
-
+  
   /**
    * A trunk base settings reference.
    **/
@@ -54,6 +54,7 @@ public class TrunkBaseAssignment  implements Serializable {
     this.trunkBase = trunkBase;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

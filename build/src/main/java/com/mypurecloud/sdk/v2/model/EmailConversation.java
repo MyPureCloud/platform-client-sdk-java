@@ -30,7 +30,7 @@ public class EmailConversation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public EmailConversation name(String name) {
@@ -47,7 +47,7 @@ public class EmailConversation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The list of participants involved in the conversation.
    **/
@@ -65,7 +65,7 @@ public class EmailConversation  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    * The list of other media channels involved in the conversation.
    **/
@@ -83,13 +83,14 @@ public class EmailConversation  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

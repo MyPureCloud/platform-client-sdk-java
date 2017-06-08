@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingWrapupcodeRequest {
+    
 	private String codeId;
 	public String getCodeId() {
 		return this.codeId;
@@ -58,6 +59,7 @@ public class DeleteRoutingWrapupcodeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,7 +89,8 @@ public class DeleteRoutingWrapupcodeRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/routing/wrapupcodes/{codeId}")
                 .withPathParameter("codeId", codeId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -98,10 +101,12 @@ public class DeleteRoutingWrapupcodeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String codeId) {
 	    return new Builder()
 	            .withRequiredParams(codeId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRoutingWrapupcodeRequest request;
@@ -110,15 +115,20 @@ public class DeleteRoutingWrapupcodeRequest {
 			request = new DeleteRoutingWrapupcodeRequest();
 		}
 
+		
 		public Builder withCodeId(String codeId) {
 			request.setCodeId(codeId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String codeId) {
 			request.setCodeId(codeId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRoutingWrapupcodeRequest build() {

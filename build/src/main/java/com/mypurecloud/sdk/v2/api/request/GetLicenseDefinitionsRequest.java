@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class GetLicenseDefinitionsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -49,7 +50,8 @@ public class GetLicenseDefinitionsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/license/definitions")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/license/definitions")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -60,6 +62,7 @@ public class GetLicenseDefinitionsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetLicenseDefinitionsRequest request;
@@ -68,7 +71,9 @@ public class GetLicenseDefinitionsRequest {
 			request = new GetLicenseDefinitionsRequest();
 		}
 
+		
 
+		
 
 
 		public GetLicenseDefinitionsRequest build() {

@@ -35,7 +35,7 @@ public class MediaSetting  implements Serializable {
     this.alertingTimeoutSeconds = alertingTimeoutSeconds;
   }
 
-
+  
   /**
    **/
   public MediaSetting serviceLevel(ServiceLevel serviceLevel) {
@@ -52,6 +52,7 @@ public class MediaSetting  implements Serializable {
     this.serviceLevel = serviceLevel;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

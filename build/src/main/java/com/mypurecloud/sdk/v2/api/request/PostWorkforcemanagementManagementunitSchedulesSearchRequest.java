@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
+    
 	private String muId;
 	public String getMuId() {
 		return this.muId;
@@ -48,6 +49,7 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
 	    return this;
 	}
 
+	
 	private UserListScheduleRequestBody body;
 	public UserListScheduleRequestBody getBody() {
 		return this.body;
@@ -62,6 +64,7 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +96,7 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
                 .withPathParameter("muId", muId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +108,12 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String muId) {
 	    return new Builder()
 	            .withRequiredParams(muId);
 	}
+	
 
 	public static class Builder {
 		private final PostWorkforcemanagementManagementunitSchedulesSearchRequest request;
@@ -116,19 +122,25 @@ public class PostWorkforcemanagementManagementunitSchedulesSearchRequest {
 			request = new PostWorkforcemanagementManagementunitSchedulesSearchRequest();
 		}
 
+		
 		public Builder withMuId(String muId) {
 			request.setMuId(muId);
 			return this;
 		}
+		
 		public Builder withBody(UserListScheduleRequestBody body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String muId) {
 			request.setMuId(muId);
+			
 			return this;
 		}
+		
 
 
 		public PostWorkforcemanagementManagementunitSchedulesSearchRequest build() {

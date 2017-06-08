@@ -37,7 +37,7 @@ public class CopyVoicemailMessage  implements Serializable {
     this.voicemailMessageId = voicemailMessageId;
   }
 
-
+  
   /**
    * The id of the User to copy the VoicemailMessage to
    **/
@@ -55,7 +55,7 @@ public class CopyVoicemailMessage  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    * The id of the Group to copy the VoicemailMessage to
    **/
@@ -73,6 +73,7 @@ public class CopyVoicemailMessage  implements Serializable {
     this.groupId = groupId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

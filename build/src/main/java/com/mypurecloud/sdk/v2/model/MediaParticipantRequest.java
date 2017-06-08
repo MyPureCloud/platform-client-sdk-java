@@ -85,7 +85,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    * The state to update to set for this participant's communications.  Possible values are: 'connected' and 'disconnected'.
    **/
@@ -103,7 +103,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    * True to enable recording of this participant, otherwise false to disable recording.
    **/
@@ -121,7 +121,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.recording = recording;
   }
 
-
+  
   /**
    * True to mute this conversation participant.
    **/
@@ -139,7 +139,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.muted = muted;
   }
 
-
+  
   /**
    * True to confine this conversation participant.  Should only be used for ad-hoc conferences
    **/
@@ -157,7 +157,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.confined = confined;
   }
 
-
+  
   /**
    * True to hold this conversation participant.
    **/
@@ -175,7 +175,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.held = held;
   }
 
-
+  
   /**
    * True to skip wrap-up for this participant.
    **/
@@ -193,6 +193,7 @@ public class MediaParticipantRequest  implements Serializable {
     this.wrapupSkipped = wrapupSkipped;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

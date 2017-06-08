@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersGsuiteRequest {
+    
 	private GSuite body;
 	public GSuite getBody() {
 		return this.body;
@@ -47,6 +48,7 @@ public class PutIdentityprovidersGsuiteRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,6 +78,7 @@ public class PutIdentityprovidersGsuiteRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/gsuite")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,10 +90,12 @@ public class PutIdentityprovidersGsuiteRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(GSuite body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutIdentityprovidersGsuiteRequest request;
@@ -99,15 +104,20 @@ public class PutIdentityprovidersGsuiteRequest {
 			request = new PutIdentityprovidersGsuiteRequest();
 		}
 
+		
 		public Builder withBody(GSuite body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(GSuite body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutIdentityprovidersGsuiteRequest build() {

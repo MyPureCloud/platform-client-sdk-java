@@ -36,7 +36,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.columnName = columnName;
   }
 
-
+  
   /**
    * type of the phone column, for example, 'cell' or 'home'
    **/
@@ -54,7 +54,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * name of the column indicating the timezone to be considered for determining callable times
    **/
@@ -72,6 +72,7 @@ public class ContactPhoneNumberColumn  implements Serializable {
     this.callableTimeColumn = callableTimeColumn;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

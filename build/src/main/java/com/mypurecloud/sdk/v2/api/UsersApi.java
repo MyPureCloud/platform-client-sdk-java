@@ -101,6 +101,7 @@ public class UsersApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete user
    * 
@@ -127,6 +128,7 @@ public class UsersApi {
   private DeleteUserRequest createDeleteUserRequest(String userId) {
     return DeleteUserRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -178,6 +180,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Removes all the roles from the user.
    * 
@@ -202,6 +205,7 @@ public class UsersApi {
   private DeleteUserRolesRequest createDeleteUserRolesRequest(String userId) {
     return DeleteUserRolesRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -252,6 +256,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Remove routing skill from user
    * 
@@ -278,8 +283,9 @@ public class UsersApi {
   private DeleteUserRoutingskillRequest createDeleteUserRoutingskillRequest(String userId, String skillId) {
     return DeleteUserRoutingskillRequest.builder()
             .withUserId(userId)
-
+    
             .withSkillId(skillId)
+    
             .build();
   }
 
@@ -330,6 +336,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Clear associated station
    * 
@@ -354,6 +361,7 @@ public class UsersApi {
   private DeleteUserStationAssociatedstationRequest createDeleteUserStationAssociatedstationRequest(String userId) {
     return DeleteUserStationAssociatedstationRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -404,6 +412,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Clear default station
    * 
@@ -428,6 +437,7 @@ public class UsersApi {
   private DeleteUserStationDefaultstationRequest createDeleteUserStationDefaultstationRequest(String userId) {
     return DeleteUserStationDefaultstationRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -478,6 +488,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -504,6 +515,7 @@ public class UsersApi {
   private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
     return GetFieldconfigRequest.builder()
             .withType(type)
+    
             .build();
   }
 
@@ -555,17 +567,19 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get user.
    * 
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public User getUser(String userId, List<String> expand) throws IOException, ApiException {
-    return  getUser(createGetUserRequest(userId, expand));
+  public User getUser(String userId, List<String> expand, String state) throws IOException, ApiException {
+    return  getUser(createGetUserRequest(userId, expand, state));
   }
 
   /**
@@ -573,18 +587,22 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand) throws IOException {
-    return getUser(createGetUserRequest(userId, expand).withHttpInfo());
+  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand, String state) throws IOException {
+    return getUser(createGetUserRequest(userId, expand, state).withHttpInfo());
   }
 
-  private GetUserRequest createGetUserRequest(String userId, List<String> expand) {
+  private GetUserRequest createGetUserRequest(String userId, List<String> expand, String state) {
     return GetUserRequest.builder()
             .withUserId(userId)
-
+    
             .withExpand(expand)
+    
+            .withState(state)
+    
             .build();
   }
 
@@ -636,6 +654,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get adjacents
    * 
@@ -664,8 +683,9 @@ public class UsersApi {
   private GetUserAdjacentsRequest createGetUserAdjacentsRequest(String userId, List<String> expand) {
     return GetUserAdjacentsRequest.builder()
             .withUserId(userId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -717,6 +737,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get a user&#39;s CallForwarding
    * 
@@ -743,6 +764,7 @@ public class UsersApi {
   private GetUserCallforwardingRequest createGetUserCallforwardingRequest(String userId) {
     return GetUserCallforwardingRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -794,6 +816,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get direct reports
    * 
@@ -822,8 +845,9 @@ public class UsersApi {
   private GetUserDirectreportsRequest createGetUserDirectreportsRequest(String userId, List<String> expand) {
     return GetUserDirectreportsRequest.builder()
             .withUserId(userId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -875,6 +899,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get favorites
    * 
@@ -909,14 +934,15 @@ public class UsersApi {
   private GetUserFavoritesRequest createGetUserFavoritesRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
     return GetUserFavoritesRequest.builder()
             .withUserId(userId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -968,6 +994,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get a user&#39;s Geolocation
    * 
@@ -996,8 +1023,9 @@ public class UsersApi {
   private GetUserGeolocationRequest createGetUserGeolocationRequest(String userId, String clientId) {
     return GetUserGeolocationRequest.builder()
             .withUserId(userId)
-
+    
             .withClientId(clientId)
+    
             .build();
   }
 
@@ -1049,6 +1077,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get a OutOfOffice
    * 
@@ -1075,6 +1104,7 @@ public class UsersApi {
   private GetUserOutofofficeRequest createGetUserOutofofficeRequest(String userId) {
     return GetUserOutofofficeRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1126,6 +1156,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * List profile skills for a user
    * 
@@ -1152,6 +1183,7 @@ public class UsersApi {
   private GetUserProfileskillsRequest createGetUserProfileskillsRequest(String userId) {
     return GetUserProfileskillsRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1203,6 +1235,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get queues for user
    * 
@@ -1235,12 +1268,13 @@ public class UsersApi {
   private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined) {
     return GetUserQueuesRequest.builder()
             .withUserId(userId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withJoined(joined)
+    
             .build();
   }
 
@@ -1292,6 +1326,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1318,6 +1353,7 @@ public class UsersApi {
   private GetUserRolesRequest createGetUserRolesRequest(String userId) {
     return GetUserRolesRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1369,6 +1405,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * List routing skills for user
    * 
@@ -1401,12 +1438,13 @@ public class UsersApi {
   private GetUserRoutingskillsRequest createGetUserRoutingskillsRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetUserRoutingskillsRequest.builder()
             .withUserId(userId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -1458,6 +1496,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Fetch the routing status of a user
    * 
@@ -1484,6 +1523,7 @@ public class UsersApi {
   private GetUserRoutingstatusRequest createGetUserRoutingstatusRequest(String userId) {
     return GetUserRoutingstatusRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1535,6 +1575,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get station information for user
    * 
@@ -1561,6 +1602,7 @@ public class UsersApi {
   private GetUserStationRequest createGetUserStationRequest(String userId) {
     return GetUserStationRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -1612,6 +1654,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get superiors
    * 
@@ -1640,8 +1683,9 @@ public class UsersApi {
   private GetUserSuperiorsRequest createGetUserSuperiorsRequest(String userId, List<String> expand) {
     return GetUserSuperiorsRequest.builder()
             .withUserId(userId)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1693,6 +1737,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get the list of available users.
    * 
@@ -1729,16 +1774,17 @@ public class UsersApi {
   private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) {
     return GetUsersRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withId(id)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withExpand(expand)
-
+    
             .withState(state)
+    
             .build();
   }
 
@@ -1790,6 +1836,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
@@ -1816,6 +1863,7 @@ public class UsersApi {
   private GetUsersMeRequest createGetUsersMeRequest(List<String> expand) {
     return GetUsersMeRequest.builder()
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1867,6 +1915,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -1895,8 +1944,9 @@ public class UsersApi {
   private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand) {
     return GetUsersSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -1948,6 +1998,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update user
    * 
@@ -1976,8 +2027,9 @@ public class UsersApi {
   private PatchUserRequest createPatchUserRequest(String userId, UpdateUser body) {
     return PatchUserRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2029,6 +2081,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Patch a user&#39;s CallForwarding
    * 
@@ -2057,8 +2110,9 @@ public class UsersApi {
   private PatchUserCallforwardingRequest createPatchUserCallforwardingRequest(String userId, CallForwarding body) {
     return PatchUserCallforwardingRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2110,6 +2164,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
@@ -2140,10 +2195,11 @@ public class UsersApi {
   private PatchUserGeolocationRequest createPatchUserGeolocationRequest(String userId, String clientId, Geolocation body) {
     return PatchUserGeolocationRequest.builder()
             .withUserId(userId)
-
+    
             .withClientId(clientId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2195,6 +2251,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Join or unjoin a queue for a user
    * 
@@ -2225,10 +2282,11 @@ public class UsersApi {
   private PatchUserQueueRequest createPatchUserQueueRequest(String queueId, String userId, UserQueue body) {
     return PatchUserQueueRequest.builder()
             .withQueueId(queueId)
-
+    
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2280,6 +2338,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Join or unjoin a set of queues for a user
    * 
@@ -2308,8 +2367,9 @@ public class UsersApi {
   private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body) {
     return PatchUserQueuesRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2361,6 +2421,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Query for user aggregates
    * 
@@ -2387,6 +2448,7 @@ public class UsersApi {
   private PostAnalyticsUsersAggregatesQueryRequest createPostAnalyticsUsersAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsUsersAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2438,6 +2500,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Query for user details
    * 
@@ -2464,6 +2527,7 @@ public class UsersApi {
   private PostAnalyticsUsersDetailsQueryRequest createPostAnalyticsUsersDetailsQueryRequest(UserDetailsQuery body) {
     return PostAnalyticsUsersDetailsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2515,6 +2579,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Query for user observations
    * 
@@ -2541,6 +2606,7 @@ public class UsersApi {
   private PostAnalyticsUsersObservationsQueryRequest createPostAnalyticsUsersObservationsQueryRequest(ObservationQuery body) {
     return PostAnalyticsUsersObservationsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2592,6 +2658,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Add routing skill to user
    * 
@@ -2620,8 +2687,9 @@ public class UsersApi {
   private PostUserRoutingskillsRequest createPostUserRoutingskillsRequest(String userId, UserRoutingSkillPost body) {
     return PostUserRoutingskillsRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2673,6 +2741,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Create user
    * 
@@ -2699,6 +2768,7 @@ public class UsersApi {
   private PostUsersRequest createPostUsersRequest(CreateUser body) {
     return PostUsersRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2750,6 +2820,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Search users
    * 
@@ -2776,6 +2847,7 @@ public class UsersApi {
   private PostUsersSearchRequest createPostUsersSearchRequest(UserSearchRequest body) {
     return PostUsersSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -2827,6 +2899,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update a user&#39;s CallForwarding
    * 
@@ -2855,8 +2928,9 @@ public class UsersApi {
   private PutUserCallforwardingRequest createPutUserCallforwardingRequest(String userId, CallForwarding body) {
     return PutUserCallforwardingRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2908,6 +2982,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update an OutOfOffice
    * 
@@ -2936,8 +3011,9 @@ public class UsersApi {
   private PutUserOutofofficeRequest createPutUserOutofofficeRequest(String userId, OutOfOffice body) {
     return PutUserOutofofficeRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2989,6 +3065,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update profile skills for a user
    * 
@@ -3017,8 +3094,9 @@ public class UsersApi {
   private PutUserProfileskillsRequest createPutUserProfileskillsRequest(String userId, List<String> body) {
     return PutUserProfileskillsRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3070,6 +3148,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Sets the user&#39;s roles
    * 
@@ -3098,8 +3177,9 @@ public class UsersApi {
   private PutUserRolesRequest createPutUserRolesRequest(String userId, List<String> body) {
     return PutUserRolesRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3151,6 +3231,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -3181,10 +3262,11 @@ public class UsersApi {
   private PutUserRoutingskillRequest createPutUserRoutingskillRequest(String userId, String skillId, UserRoutingSkill body) {
     return PutUserRoutingskillRequest.builder()
             .withUserId(userId)
-
+    
             .withSkillId(skillId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3236,6 +3318,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Update the routing status of a user
    * 
@@ -3264,8 +3347,9 @@ public class UsersApi {
   private PutUserRoutingstatusRequest createPutUserRoutingstatusRequest(String userId, RoutingStatus body) {
     return PutUserRoutingstatusRequest.builder()
             .withUserId(userId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3317,6 +3401,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Set associated station
    * 
@@ -3343,8 +3428,9 @@ public class UsersApi {
   private PutUserStationAssociatedstationStationIdRequest createPutUserStationAssociatedstationStationIdRequest(String userId, String stationId) {
     return PutUserStationAssociatedstationStationIdRequest.builder()
             .withUserId(userId)
-
+    
             .withStationId(stationId)
+    
             .build();
   }
 
@@ -3395,6 +3481,7 @@ public class UsersApi {
     }
   }
 
+  
   /**
    * Set default station
    * 
@@ -3421,8 +3508,9 @@ public class UsersApi {
   private PutUserStationDefaultstationStationIdRequest createPutUserStationDefaultstationStationIdRequest(String userId, String stationId) {
     return PutUserStationDefaultstationStationIdRequest.builder()
             .withUserId(userId)
-
+    
             .withStationId(stationId)
+    
             .build();
   }
 
@@ -3473,4 +3561,5 @@ public class UsersApi {
     }
   }
 
+  
 }

@@ -37,7 +37,7 @@ public class AggregationResultEntry  implements Serializable {
     this.count = count;
   }
 
-
+  
   /**
    * For termFrequency aggregations
    **/
@@ -55,7 +55,7 @@ public class AggregationResultEntry  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * For numericRange aggregations
    **/
@@ -73,7 +73,7 @@ public class AggregationResultEntry  implements Serializable {
     this.gte = gte;
   }
 
-
+  
   /**
    * For numericRange aggregations
    **/
@@ -91,6 +91,7 @@ public class AggregationResultEntry  implements Serializable {
     this.lt = lt;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

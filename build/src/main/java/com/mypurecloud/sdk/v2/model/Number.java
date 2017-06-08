@@ -34,7 +34,7 @@ public class Number  implements Serializable {
     this.start = start;
   }
 
-
+  
   /**
    **/
   public Number end(String end) {
@@ -51,6 +51,7 @@ public class Number  implements Serializable {
     this.end = end;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

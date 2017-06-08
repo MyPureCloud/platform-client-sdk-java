@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PutQualityCalibrationRequest {
+    
 	private String calibrationId;
 	public String getCalibrationId() {
 		return this.calibrationId;
@@ -52,6 +53,7 @@ public class PutQualityCalibrationRequest {
 	    return this;
 	}
 
+	
 	private Calibration body;
 	public Calibration getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PutQualityCalibrationRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +105,7 @@ public class PutQualityCalibrationRequest {
                 .withPathParameter("calibrationId", calibrationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -113,10 +117,12 @@ public class PutQualityCalibrationRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String calibrationId, Calibration body) {
 	    return new Builder()
 	            .withRequiredParams(calibrationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutQualityCalibrationRequest request;
@@ -125,20 +131,26 @@ public class PutQualityCalibrationRequest {
 			request = new PutQualityCalibrationRequest();
 		}
 
+		
 		public Builder withCalibrationId(String calibrationId) {
 			request.setCalibrationId(calibrationId);
 			return this;
 		}
+		
 		public Builder withBody(Calibration body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String calibrationId, Calibration body) {
 			request.setCalibrationId(calibrationId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutQualityCalibrationRequest build() {

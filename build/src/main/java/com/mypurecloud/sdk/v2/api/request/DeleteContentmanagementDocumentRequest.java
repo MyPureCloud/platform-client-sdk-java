@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementDocumentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -64,6 +65,7 @@ public class DeleteContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private Boolean override;
 	public Boolean getOverride() {
 		return this.override;
@@ -78,6 +80,7 @@ public class DeleteContentmanagementDocumentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -109,7 +112,8 @@ public class DeleteContentmanagementDocumentRequest {
                 .withPathParameter("documentId", documentId)
         
                 .withQueryParameters("override", "", override)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -120,10 +124,12 @@ public class DeleteContentmanagementDocumentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId) {
 	    return new Builder()
 	            .withRequiredParams(documentId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteContentmanagementDocumentRequest request;
@@ -132,19 +138,25 @@ public class DeleteContentmanagementDocumentRequest {
 			request = new DeleteContentmanagementDocumentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 		public Builder withOverride(Boolean override) {
 			request.setOverride(override);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId) {
 			request.setDocumentId(documentId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteContentmanagementDocumentRequest build() {

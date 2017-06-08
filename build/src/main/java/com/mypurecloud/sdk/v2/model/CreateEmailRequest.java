@@ -84,7 +84,7 @@ public class CreateEmailRequest  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    * The name of the provider that is sourcing the web chat.
    **/
@@ -102,7 +102,7 @@ public class CreateEmailRequest  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    * The list of skill ID's to use for routing.
    **/
@@ -120,7 +120,7 @@ public class CreateEmailRequest  implements Serializable {
     this.skillIds = skillIds;
   }
 
-
+  
   /**
    * The ID of the language to use for routing.
    **/
@@ -138,7 +138,7 @@ public class CreateEmailRequest  implements Serializable {
     this.languageId = languageId;
   }
 
-
+  
   /**
    * The priority to assign to the conversation for routing.
    **/
@@ -156,7 +156,7 @@ public class CreateEmailRequest  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    * The list of attributes to associate with the customer participant.
    **/
@@ -174,7 +174,7 @@ public class CreateEmailRequest  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    * The email address of the recipient of the email.
    **/
@@ -192,7 +192,7 @@ public class CreateEmailRequest  implements Serializable {
     this.toAddress = toAddress;
   }
 
-
+  
   /**
    * The name of the recipient of the email.
    **/
@@ -210,7 +210,7 @@ public class CreateEmailRequest  implements Serializable {
     this.toName = toName;
   }
 
-
+  
   /**
    * The email address of the sender of the email.
    **/
@@ -228,7 +228,7 @@ public class CreateEmailRequest  implements Serializable {
     this.fromAddress = fromAddress;
   }
 
-
+  
   /**
    * The name of the sender of the email.
    **/
@@ -246,7 +246,7 @@ public class CreateEmailRequest  implements Serializable {
     this.fromName = fromName;
   }
 
-
+  
   /**
    * The subject of the email
    **/
@@ -264,7 +264,7 @@ public class CreateEmailRequest  implements Serializable {
     this.subject = subject;
   }
 
-
+  
   /**
    * Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.
    **/
@@ -282,6 +282,7 @@ public class CreateEmailRequest  implements Serializable {
     this.direction = direction;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

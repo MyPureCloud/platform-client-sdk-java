@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingUtilizationRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,7 +67,8 @@ public class DeleteRoutingUtilizationRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("DELETE", "/api/v2/routing/utilization")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("DELETE", "/api/v2/routing/utilization")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -77,6 +79,7 @@ public class DeleteRoutingUtilizationRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final DeleteRoutingUtilizationRequest request;
@@ -85,7 +88,9 @@ public class DeleteRoutingUtilizationRequest {
 			request = new DeleteRoutingUtilizationRequest();
 		}
 
+		
 
+		
 
 
 		public DeleteRoutingUtilizationRequest build() {

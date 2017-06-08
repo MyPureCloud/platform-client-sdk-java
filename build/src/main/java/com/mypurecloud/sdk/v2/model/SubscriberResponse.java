@@ -37,7 +37,7 @@ public class SubscriberResponse  implements Serializable {
     this.messageReturned = messageReturned;
   }
 
-
+  
   /**
    * http status
    **/
@@ -55,6 +55,7 @@ public class SubscriberResponse  implements Serializable {
     this.status = status;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

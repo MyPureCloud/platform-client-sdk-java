@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsActionsRevertRequest {
+    
 	private String flow;
 	public String getFlow() {
 		return this.flow;
@@ -56,6 +57,7 @@ public class PostFlowsActionsRevertRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,7 +87,8 @@ public class PostFlowsActionsRevertRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows/actions/revert")
                 .withQueryParameters("flow", "", flow)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -96,10 +99,12 @@ public class PostFlowsActionsRevertRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flow) {
 	    return new Builder()
 	            .withRequiredParams(flow);
 	}
+	
 
 	public static class Builder {
 		private final PostFlowsActionsRevertRequest request;
@@ -108,15 +113,20 @@ public class PostFlowsActionsRevertRequest {
 			request = new PostFlowsActionsRevertRequest();
 		}
 
+		
 		public Builder withFlow(String flow) {
 			request.setFlow(flow);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flow) {
 			request.setFlow(flow);
+			
 			return this;
 		}
+		
 
 
 		public PostFlowsActionsRevertRequest build() {

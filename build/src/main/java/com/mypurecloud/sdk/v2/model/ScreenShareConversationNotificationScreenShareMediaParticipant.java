@@ -196,7 +196,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant name(String name) {
@@ -213,7 +213,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant address(String address) {
@@ -230,7 +230,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant startTime(Date startTime) {
@@ -247,7 +247,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant connectedTime(Date connectedTime) {
@@ -264,7 +264,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant endTime(Date endTime) {
@@ -281,7 +281,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant startHoldTime(Date startHoldTime) {
@@ -298,7 +298,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant purpose(String purpose) {
@@ -315,7 +315,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant state(StateEnum state) {
@@ -332,7 +332,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant direction(DirectionEnum direction) {
@@ -349,7 +349,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -366,7 +366,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant held(Boolean held) {
@@ -383,7 +383,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -400,7 +400,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -417,7 +417,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -434,7 +434,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.user = user;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant queue(ScreenShareConversationNotificationUriReference queue) {
@@ -451,7 +451,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant attributes(Map<String, String> attributes) {
@@ -468,7 +468,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant errorInfo(ScreenShareConversationNotificationErrorInfo errorInfo) {
@@ -485,7 +485,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant script(ScreenShareConversationNotificationUriReference script) {
@@ -502,7 +502,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.script = script;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -519,7 +519,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -536,7 +536,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant provider(String provider) {
@@ -553,7 +553,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant externalContact(ScreenShareConversationNotificationUriReference externalContact) {
@@ -570,7 +570,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant externalOrganization(ScreenShareConversationNotificationUriReference externalOrganization) {
@@ -587,7 +587,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -604,7 +604,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant peer(String peer) {
@@ -621,7 +621,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant context(String context) {
@@ -638,7 +638,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.context = context;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant peerCount(Integer peerCount) {
@@ -655,7 +655,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant sharing(Boolean sharing) {
@@ -672,6 +672,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     this.sharing = sharing;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

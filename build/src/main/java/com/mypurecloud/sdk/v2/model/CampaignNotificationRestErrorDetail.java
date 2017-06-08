@@ -35,7 +35,7 @@ public class CampaignNotificationRestErrorDetail  implements Serializable {
     this.error = error;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationRestErrorDetail details(String details) {
@@ -52,7 +52,7 @@ public class CampaignNotificationRestErrorDetail  implements Serializable {
     this.details = details;
   }
 
-
+  
   /**
    **/
   public CampaignNotificationRestErrorDetail additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class CampaignNotificationRestErrorDetail  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

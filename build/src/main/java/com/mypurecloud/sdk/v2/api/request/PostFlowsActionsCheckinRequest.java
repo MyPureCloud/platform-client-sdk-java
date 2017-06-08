@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsActionsCheckinRequest {
+    
 	private String flow;
 	public String getFlow() {
 		return this.flow;
@@ -56,6 +57,7 @@ public class PostFlowsActionsCheckinRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -85,7 +87,8 @@ public class PostFlowsActionsCheckinRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows/actions/checkin")
                 .withQueryParameters("flow", "", flow)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -96,10 +99,12 @@ public class PostFlowsActionsCheckinRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flow) {
 	    return new Builder()
 	            .withRequiredParams(flow);
 	}
+	
 
 	public static class Builder {
 		private final PostFlowsActionsCheckinRequest request;
@@ -108,15 +113,20 @@ public class PostFlowsActionsCheckinRequest {
 			request = new PostFlowsActionsCheckinRequest();
 		}
 
+		
 		public Builder withFlow(String flow) {
 			request.setFlow(flow);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flow) {
 			request.setFlow(flow);
+			
 			return this;
 		}
+		
 
 
 		public PostFlowsActionsCheckinRequest build() {

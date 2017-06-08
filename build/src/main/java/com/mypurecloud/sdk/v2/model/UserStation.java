@@ -34,7 +34,7 @@ public class UserStation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UserStation name(String name) {
@@ -51,7 +51,7 @@ public class UserStation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UserStation type(String type) {
@@ -68,7 +68,7 @@ public class UserStation  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public UserStation associatedUser(User associatedUser) {
@@ -85,7 +85,7 @@ public class UserStation  implements Serializable {
     this.associatedUser = associatedUser;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -103,7 +103,7 @@ public class UserStation  implements Serializable {
     this.associatedDate = associatedDate;
   }
 
-
+  
   /**
    **/
   public UserStation defaultUser(User defaultUser) {
@@ -120,7 +120,7 @@ public class UserStation  implements Serializable {
     this.defaultUser = defaultUser;
   }
 
-
+  
   /**
    * Provider-specific info for this station, e.g. { \"edgeGroupId\": \"ffe7b15c-a9cc-4f4c-88f5-781327819a49\" }
    **/
@@ -138,6 +138,7 @@ public class UserStation  implements Serializable {
     this.providerInfo = providerInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

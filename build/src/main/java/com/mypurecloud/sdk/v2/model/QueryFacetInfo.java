@@ -38,7 +38,7 @@ public class QueryFacetInfo  implements Serializable {
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public QueryFacetInfo facets(List<FacetEntry> facets) {
@@ -55,6 +55,7 @@ public class QueryFacetInfo  implements Serializable {
     this.facets = facets;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

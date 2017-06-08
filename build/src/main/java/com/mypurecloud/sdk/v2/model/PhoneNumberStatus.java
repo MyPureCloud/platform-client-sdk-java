@@ -34,6 +34,7 @@ public class PhoneNumberStatus  implements Serializable {
     this.callable = callable;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

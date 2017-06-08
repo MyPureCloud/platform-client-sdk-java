@@ -43,7 +43,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification name(String name) {
@@ -60,7 +60,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification description(String description) {
@@ -77,7 +77,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification deleted(Boolean deleted) {
@@ -94,7 +94,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.deleted = deleted;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification checkedInVersion(DocumentDataV2NotificationWorkspace checkedInVersion) {
@@ -111,7 +111,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.checkedInVersion = checkedInVersion;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification savedVersion(FlowNotificationNotificationFlowVersion savedVersion) {
@@ -128,7 +128,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.savedVersion = savedVersion;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification publishedVersion(FlowNotificationNotificationFlowVersion publishedVersion) {
@@ -145,7 +145,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.publishedVersion = publishedVersion;
   }
 
-
+  
   /**
    **/
   public FlowNotificationNotification currentOperation(PromptNotificationNotificationCurrentOperation currentOperation) {
@@ -162,6 +162,7 @@ public class FlowNotificationNotification  implements Serializable {
     this.currentOperation = currentOperation;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

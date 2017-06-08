@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class PutQualityKeywordsetRequest {
+    
 	private String keywordSetId;
 	public String getKeywordSetId() {
 		return this.keywordSetId;
@@ -52,6 +53,7 @@ public class PutQualityKeywordsetRequest {
 	    return this;
 	}
 
+	
 	private KeywordSet body;
 	public KeywordSet getBody() {
 		return this.body;
@@ -66,6 +68,7 @@ public class PutQualityKeywordsetRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +105,7 @@ public class PutQualityKeywordsetRequest {
                 .withPathParameter("keywordSetId", keywordSetId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -113,10 +117,12 @@ public class PutQualityKeywordsetRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String keywordSetId, KeywordSet body) {
 	    return new Builder()
 	            .withRequiredParams(keywordSetId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutQualityKeywordsetRequest request;
@@ -125,20 +131,26 @@ public class PutQualityKeywordsetRequest {
 			request = new PutQualityKeywordsetRequest();
 		}
 
+		
 		public Builder withKeywordSetId(String keywordSetId) {
 			request.setKeywordSetId(keywordSetId);
 			return this;
 		}
+		
 		public Builder withBody(KeywordSet body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String keywordSetId, KeywordSet body) {
 			request.setKeywordSetId(keywordSetId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutQualityKeywordsetRequest build() {

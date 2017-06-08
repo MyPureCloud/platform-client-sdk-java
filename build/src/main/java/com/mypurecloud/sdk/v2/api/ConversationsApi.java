@@ -148,6 +148,7 @@ public class ConversationsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a code used to add a communication to this participant
    * 
@@ -176,10 +177,11 @@ public class ConversationsApi {
   private DeleteConversationParticipantCodeRequest createDeleteConversationParticipantCodeRequest(String conversationId, String participantId, String addCommunicationCode) {
     return DeleteConversationParticipantCodeRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withAddCommunicationCode(addCommunicationCode)
+    
             .build();
   }
 
@@ -230,6 +232,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Cancel the transfer
    * 
@@ -256,8 +259,9 @@ public class ConversationsApi {
   private DeleteConversationsCallParticipantConsultRequest createDeleteConversationsCallParticipantConsultRequest(String conversationId, String participantId) {
     return DeleteConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -308,6 +312,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Delete attachment from draft
    * 
@@ -334,8 +339,9 @@ public class ConversationsApi {
   private DeleteConversationsEmailMessagesDraftAttachmentRequest createDeleteConversationsEmailMessagesDraftAttachmentRequest(String conversationId, String attachmentId) {
     return DeleteConversationsEmailMessagesDraftAttachmentRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withAttachmentId(attachmentId)
+    
             .build();
   }
 
@@ -386,6 +392,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get a conversation by id
    * 
@@ -412,6 +419,7 @@ public class ConversationsApi {
   private GetAnalyticsConversationDetailsRequest createGetAnalyticsConversationDetailsRequest(String conversationId) {
     return GetAnalyticsConversationDetailsRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -463,6 +471,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get conversation
    * 
@@ -489,6 +498,7 @@ public class ConversationsApi {
   private GetConversationRequest createGetConversationRequest(String conversationId) {
     return GetConversationRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -540,6 +550,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -570,10 +581,11 @@ public class ConversationsApi {
   private GetConversationParticipantWrapupRequest createGetConversationParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -625,6 +637,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -653,8 +666,9 @@ public class ConversationsApi {
   private GetConversationParticipantWrapupcodesRequest createGetConversationParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -706,6 +720,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get conversations
    * 
@@ -732,6 +747,7 @@ public class ConversationsApi {
   private GetConversationsRequest createGetConversationsRequest(String communicationType) {
     return GetConversationsRequest.builder()
             .withCommunicationType(communicationType)
+    
             .build();
   }
 
@@ -783,6 +799,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get call conversation
    * 
@@ -809,6 +826,7 @@ public class ConversationsApi {
   private GetConversationsCallRequest createGetConversationsCallRequest(String conversationId) {
     return GetConversationsCallRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -860,6 +878,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -890,10 +909,11 @@ public class ConversationsApi {
   private GetConversationsCallParticipantWrapupRequest createGetConversationsCallParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCallParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -945,6 +965,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -973,8 +994,9 @@ public class ConversationsApi {
   private GetConversationsCallParticipantWrapupcodesRequest createGetConversationsCallParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCallParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -1026,6 +1048,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get callback conversation
    * 
@@ -1052,6 +1075,7 @@ public class ConversationsApi {
   private GetConversationsCallbackRequest createGetConversationsCallbackRequest(String conversationId) {
     return GetConversationsCallbackRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -1103,6 +1127,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -1133,10 +1158,11 @@ public class ConversationsApi {
   private GetConversationsCallbackParticipantWrapupRequest createGetConversationsCallbackParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCallbackParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -1188,6 +1214,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -1216,8 +1243,9 @@ public class ConversationsApi {
   private GetConversationsCallbackParticipantWrapupcodesRequest createGetConversationsCallbackParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCallbackParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -1269,6 +1297,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get callback conversations
    * 
@@ -1291,7 +1320,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsCallbacksRequest createGetConversationsCallbacksRequest() {
-    return GetConversationsCallbacksRequest.builder()            .build();
+    return GetConversationsCallbacksRequest.builder()
+            .build();
   }
 
   /**
@@ -1342,6 +1372,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get recent conversations
    * 
@@ -1364,7 +1395,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsCallsRequest createGetConversationsCallsRequest() {
-    return GetConversationsCallsRequest.builder()            .build();
+    return GetConversationsCallsRequest.builder()
+            .build();
   }
 
   /**
@@ -1415,6 +1447,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get call history
    * 
@@ -1445,10 +1478,11 @@ public class ConversationsApi {
   private GetConversationsCallsHistoryRequest createGetConversationsCallsHistoryRequest(Integer pageSize, Integer pageNumber, String interval) {
     return GetConversationsCallsHistoryRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withInterval(interval)
+    
             .build();
   }
 
@@ -1500,6 +1534,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the maximum number of participants that this user can have on a conference
    * 
@@ -1522,7 +1557,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsCallsMaximumconferencepartiesRequest createGetConversationsCallsMaximumconferencepartiesRequest() {
-    return GetConversationsCallsMaximumconferencepartiesRequest.builder()            .build();
+    return GetConversationsCallsMaximumconferencepartiesRequest.builder()
+            .build();
   }
 
   /**
@@ -1573,6 +1609,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get chat conversation
    * 
@@ -1599,6 +1636,7 @@ public class ConversationsApi {
   private GetConversationsChatRequest createGetConversationsChatRequest(String conversationId) {
     return GetConversationsChatRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -1650,6 +1688,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -1680,10 +1719,11 @@ public class ConversationsApi {
   private GetConversationsChatParticipantWrapupRequest createGetConversationsChatParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsChatParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -1735,6 +1775,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -1763,8 +1804,9 @@ public class ConversationsApi {
   private GetConversationsChatParticipantWrapupcodesRequest createGetConversationsChatParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsChatParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -1816,6 +1858,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get recent chat conversations
    * 
@@ -1838,7 +1881,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsChatsRequest createGetConversationsChatsRequest() {
-    return GetConversationsChatsRequest.builder()            .build();
+    return GetConversationsChatsRequest.builder()
+            .build();
   }
 
   /**
@@ -1889,6 +1933,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get cobrowse conversation
    * 
@@ -1915,6 +1960,7 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionRequest createGetConversationsCobrowsesessionRequest(String conversationId) {
     return GetConversationsCobrowsesessionRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -1966,6 +2012,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -1996,10 +2043,11 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionParticipantWrapupRequest createGetConversationsCobrowsesessionParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsCobrowsesessionParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -2051,6 +2099,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -2079,8 +2128,9 @@ public class ConversationsApi {
   private GetConversationsCobrowsesessionParticipantWrapupcodesRequest createGetConversationsCobrowsesessionParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsCobrowsesessionParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -2132,6 +2182,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get recent cobrowse conversations
    * 
@@ -2154,7 +2205,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsCobrowsesessionsRequest createGetConversationsCobrowsesessionsRequest() {
-    return GetConversationsCobrowsesessionsRequest.builder()            .build();
+    return GetConversationsCobrowsesessionsRequest.builder()
+            .build();
   }
 
   /**
@@ -2205,6 +2257,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get email conversation
    * 
@@ -2231,6 +2284,7 @@ public class ConversationsApi {
   private GetConversationsEmailRequest createGetConversationsEmailRequest(String conversationId) {
     return GetConversationsEmailRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -2282,6 +2336,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get conversation message
    * 
@@ -2310,8 +2365,9 @@ public class ConversationsApi {
   private GetConversationsEmailMessageRequest createGetConversationsEmailMessageRequest(String conversationId, String messageId) {
     return GetConversationsEmailMessageRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withMessageId(messageId)
+    
             .build();
   }
 
@@ -2363,6 +2419,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get conversation messages
    * 
@@ -2389,6 +2446,7 @@ public class ConversationsApi {
   private GetConversationsEmailMessagesRequest createGetConversationsEmailMessagesRequest(String conversationId) {
     return GetConversationsEmailMessagesRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -2440,6 +2498,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get conversation draft reply
    * 
@@ -2466,6 +2525,7 @@ public class ConversationsApi {
   private GetConversationsEmailMessagesDraftRequest createGetConversationsEmailMessagesDraftRequest(String conversationId) {
     return GetConversationsEmailMessagesDraftRequest.builder()
             .withConversationId(conversationId)
+    
             .build();
   }
 
@@ -2517,6 +2577,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get the wrap-up for this conversation participant. 
    * 
@@ -2547,10 +2608,11 @@ public class ConversationsApi {
   private GetConversationsEmailParticipantWrapupRequest createGetConversationsEmailParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
     return GetConversationsEmailParticipantWrapupRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withProvisional(provisional)
+    
             .build();
   }
 
@@ -2602,6 +2664,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get list of wrapup codes for this conversation participant
    * 
@@ -2630,8 +2693,9 @@ public class ConversationsApi {
   private GetConversationsEmailParticipantWrapupcodesRequest createGetConversationsEmailParticipantWrapupcodesRequest(String conversationId, String participantId) {
     return GetConversationsEmailParticipantWrapupcodesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -2683,6 +2747,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Get recent email conversations
    * 
@@ -2705,7 +2770,8 @@ public class ConversationsApi {
   }
 
   private GetConversationsEmailsRequest createGetConversationsEmailsRequest() {
-    return GetConversationsEmailsRequest.builder()            .build();
+    return GetConversationsEmailsRequest.builder()
+            .build();
   }
 
   /**
@@ -2756,6 +2822,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a participant.
    * Update conversation participant.
@@ -2784,10 +2851,11 @@ public class ConversationsApi {
   private PatchConversationParticipantRequest createPatchConversationParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2838,6 +2906,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -2866,10 +2935,11 @@ public class ConversationsApi {
   private PatchConversationParticipantAttributesRequest createPatchConversationParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -2920,6 +2990,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
    * 
@@ -2948,8 +3019,9 @@ public class ConversationsApi {
   private PatchConversationsCallRequest createPatchConversationsCallRequest(String conversationId, Conversation body) {
     return PatchConversationsCallRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3001,6 +3073,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant
    * 
@@ -3029,10 +3102,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantRequest createPatchConversationsCallParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCallParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3083,6 +3157,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -3111,10 +3186,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantAttributesRequest createPatchConversationsCallParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCallParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3165,6 +3241,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
@@ -3197,12 +3274,13 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantCommunicationRequest createPatchConversationsCallParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCallParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withCommunicationId(communicationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3254,6 +3332,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Change who can speak
    * 
@@ -3284,10 +3363,11 @@ public class ConversationsApi {
   private PatchConversationsCallParticipantConsultRequest createPatchConversationsCallParticipantConsultRequest(String conversationId, String participantId, ConsultTransferUpdate body) {
     return PatchConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3339,6 +3419,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -3367,8 +3448,9 @@ public class ConversationsApi {
   private PatchConversationsCallbackRequest createPatchConversationsCallbackRequest(String conversationId, Conversation body) {
     return PatchConversationsCallbackRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3420,6 +3502,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant
    * 
@@ -3448,10 +3531,11 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantRequest createPatchConversationsCallbackParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCallbackParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3502,6 +3586,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -3530,10 +3615,11 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantAttributesRequest createPatchConversationsCallbackParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCallbackParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3584,6 +3670,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
@@ -3616,12 +3703,13 @@ public class ConversationsApi {
   private PatchConversationsCallbackParticipantCommunicationRequest createPatchConversationsCallbackParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCallbackParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withCommunicationId(communicationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3673,6 +3761,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -3701,8 +3790,9 @@ public class ConversationsApi {
   private PatchConversationsChatRequest createPatchConversationsChatRequest(String conversationId, Conversation body) {
     return PatchConversationsChatRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3754,6 +3844,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant
    * 
@@ -3782,10 +3873,11 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantRequest createPatchConversationsChatParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsChatParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3836,6 +3928,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -3864,10 +3957,11 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantAttributesRequest createPatchConversationsChatParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsChatParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -3918,6 +4012,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
@@ -3950,12 +4045,13 @@ public class ConversationsApi {
   private PatchConversationsChatParticipantCommunicationRequest createPatchConversationsChatParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsChatParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withCommunicationId(communicationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4007,6 +4103,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -4035,8 +4132,9 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionRequest createPatchConversationsCobrowsesessionRequest(String conversationId, Conversation body) {
     return PatchConversationsCobrowsesessionRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4088,6 +4186,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant
    * 
@@ -4116,10 +4215,11 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantRequest createPatchConversationsCobrowsesessionParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsCobrowsesessionParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4170,6 +4270,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -4198,10 +4299,11 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantAttributesRequest createPatchConversationsCobrowsesessionParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsCobrowsesessionParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4252,6 +4354,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
@@ -4284,12 +4387,13 @@ public class ConversationsApi {
   private PatchConversationsCobrowsesessionParticipantCommunicationRequest createPatchConversationsCobrowsesessionParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsCobrowsesessionParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withCommunicationId(communicationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4341,6 +4445,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update a conversation by disconnecting all of the participants
    * 
@@ -4369,8 +4474,9 @@ public class ConversationsApi {
   private PatchConversationsEmailRequest createPatchConversationsEmailRequest(String conversationId, Conversation body) {
     return PatchConversationsEmailRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4422,6 +4528,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant
    * 
@@ -4450,10 +4557,11 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantRequest createPatchConversationsEmailParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
     return PatchConversationsEmailParticipantRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4504,6 +4612,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update the attributes on a conversation participant.
    * 
@@ -4532,10 +4641,11 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantAttributesRequest createPatchConversationsEmailParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
     return PatchConversationsEmailParticipantAttributesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4586,6 +4696,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation participant&#39;s communication by disconnecting it.
    * 
@@ -4618,12 +4729,13 @@ public class ConversationsApi {
   private PatchConversationsEmailParticipantCommunicationRequest createPatchConversationsEmailParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
     return PatchConversationsEmailParticipantCommunicationRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withCommunicationId(communicationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4675,6 +4787,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Index conversation properties
    * 
@@ -4703,8 +4816,9 @@ public class ConversationsApi {
   private PostAnalyticsConversationDetailsPropertiesRequest createPostAnalyticsConversationDetailsPropertiesRequest(String conversationId, PropertyIndexRequest body) {
     return PostAnalyticsConversationDetailsPropertiesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4756,6 +4870,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Query for conversation aggregates
    * 
@@ -4782,6 +4897,7 @@ public class ConversationsApi {
   private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(AggregationQuery body) {
     return PostAnalyticsConversationsAggregatesQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -4833,6 +4949,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Query for conversation details
    * 
@@ -4859,6 +4976,7 @@ public class ConversationsApi {
   private PostAnalyticsConversationsDetailsQueryRequest createPostAnalyticsConversationsDetailsQueryRequest(ConversationQuery body) {
     return PostAnalyticsConversationsDetailsQueryRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -4910,6 +5028,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create a new callback for the specified participant on the conversation.
    * 
@@ -4938,10 +5057,11 @@ public class ConversationsApi {
   private PostConversationParticipantCallbacksRequest createPostConversationParticipantCallbacksRequest(String conversationId, String participantId, CreateCallbackCommand body) {
     return PostConversationParticipantCallbacksRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -4992,6 +5112,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -5020,10 +5141,11 @@ public class ConversationsApi {
   private PostConversationParticipantReplaceRequest createPostConversationParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5074,6 +5196,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Add a new call to a conversation
    * 
@@ -5102,8 +5225,9 @@ public class ConversationsApi {
   private PostConversationsCallRequest createPostConversationsCallRequest(String conversationId, CallCommand body) {
     return PostConversationsCallRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5155,6 +5279,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Initiate and update consult transfer
    * 
@@ -5185,10 +5310,11 @@ public class ConversationsApi {
   private PostConversationsCallParticipantConsultRequest createPostConversationsCallParticipantConsultRequest(String conversationId, String participantId, ConsultTransfer body) {
     return PostConversationsCallParticipantConsultRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5240,6 +5366,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Listen in on the conversation from the point of view of a given participant.
    * 
@@ -5266,8 +5393,9 @@ public class ConversationsApi {
   private PostConversationsCallParticipantMonitorRequest createPostConversationsCallParticipantMonitorRequest(String conversationId, String participantId) {
     return PostConversationsCallParticipantMonitorRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
+    
             .build();
   }
 
@@ -5318,6 +5446,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -5346,10 +5475,11 @@ public class ConversationsApi {
   private PostConversationsCallParticipantReplaceRequest createPostConversationsCallParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCallParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5400,6 +5530,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Add participants to a conversation
    * 
@@ -5428,8 +5559,9 @@ public class ConversationsApi {
   private PostConversationsCallParticipantsRequest createPostConversationsCallParticipantsRequest(String conversationId, Conversation body) {
     return PostConversationsCallParticipantsRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5481,6 +5613,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -5509,10 +5642,11 @@ public class ConversationsApi {
   private PostConversationsCallbackParticipantReplaceRequest createPostConversationsCallbackParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCallbackParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5563,6 +5697,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create a Callback
    * 
@@ -5589,6 +5724,7 @@ public class ConversationsApi {
   private PostConversationsCallbacksRequest createPostConversationsCallbacksRequest(CreateCallbackCommand body) {
     return PostConversationsCallbacksRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -5640,6 +5776,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create a call conversation
    * 
@@ -5666,6 +5803,7 @@ public class ConversationsApi {
   private PostConversationsCallsRequest createPostConversationsCallsRequest(CreateCallRequest body) {
     return PostConversationsCallsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -5717,6 +5855,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -5745,10 +5884,11 @@ public class ConversationsApi {
   private PostConversationsChatParticipantReplaceRequest createPostConversationsChatParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsChatParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5799,6 +5939,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create a web chat conversation
    * 
@@ -5825,6 +5966,7 @@ public class ConversationsApi {
   private PostConversationsChatsRequest createPostConversationsChatsRequest(CreateWebChatRequest body) {
     return PostConversationsChatsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -5876,6 +6018,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -5904,10 +6047,11 @@ public class ConversationsApi {
   private PostConversationsCobrowsesessionParticipantReplaceRequest createPostConversationsCobrowsesessionParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsCobrowsesessionParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -5958,6 +6102,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Send an email reply
    * 
@@ -5986,8 +6131,9 @@ public class ConversationsApi {
   private PostConversationsEmailMessagesRequest createPostConversationsEmailMessagesRequest(String conversationId, EmailMessage body) {
     return PostConversationsEmailMessagesRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -6039,6 +6185,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Replace this participant with the specified user and/or address
    * 
@@ -6067,10 +6214,11 @@ public class ConversationsApi {
   private PostConversationsEmailParticipantReplaceRequest createPostConversationsEmailParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
     return PostConversationsEmailParticipantReplaceRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withParticipantId(participantId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -6121,6 +6269,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create an email conversation
    * 
@@ -6147,6 +6296,7 @@ public class ConversationsApi {
   private PostConversationsEmailsRequest createPostConversationsEmailsRequest(CreateEmailRequest body) {
     return PostConversationsEmailsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -6198,6 +6348,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Create Fax Conversation
    * 
@@ -6224,6 +6375,7 @@ public class ConversationsApi {
   private PostConversationsFaxesRequest createPostConversationsFaxesRequest(FaxSendRequest body) {
     return PostConversationsFaxesRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -6275,6 +6427,7 @@ public class ConversationsApi {
     }
   }
 
+  
   /**
    * Update conversation draft reply
    * 
@@ -6303,8 +6456,9 @@ public class ConversationsApi {
   private PutConversationsEmailMessagesDraftRequest createPutConversationsEmailMessagesDraftRequest(String conversationId, EmailMessage body) {
     return PutConversationsEmailMessagesDraftRequest.builder()
             .withConversationId(conversationId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -6356,4 +6510,5 @@ public class ConversationsApi {
     }
   }
 
+  
 }

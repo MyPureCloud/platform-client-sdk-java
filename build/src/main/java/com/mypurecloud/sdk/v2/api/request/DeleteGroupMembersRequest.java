@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class DeleteGroupMembersRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -44,6 +45,7 @@ public class DeleteGroupMembersRequest {
 	    return this;
 	}
 
+	
 	private String ids;
 	public String getIds() {
 		return this.ids;
@@ -58,6 +60,7 @@ public class DeleteGroupMembersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -94,7 +97,8 @@ public class DeleteGroupMembersRequest {
                 .withPathParameter("groupId", groupId)
         
                 .withQueryParameters("ids", "", ids)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -105,10 +109,12 @@ public class DeleteGroupMembersRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId, String ids) {
 	    return new Builder()
 	            .withRequiredParams(groupId, ids);
 	}
+	
 
 	public static class Builder {
 		private final DeleteGroupMembersRequest request;
@@ -117,20 +123,26 @@ public class DeleteGroupMembersRequest {
 			request = new DeleteGroupMembersRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 		public Builder withIds(String ids) {
 			request.setIds(ids);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId, String ids) {
 			request.setGroupId(groupId);
-			request.setIds(ids);
+						request.setIds(ids);
+			
 			return this;
 		}
+		
 
 
 		public DeleteGroupMembersRequest build() {

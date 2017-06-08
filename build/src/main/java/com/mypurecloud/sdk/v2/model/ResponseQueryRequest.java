@@ -40,7 +40,7 @@ public class ResponseQueryRequest  implements Serializable {
     this.queryPhrase = queryPhrase;
   }
 
-
+  
   /**
    * The maximum number of hits to return. Default: 25, Maximum: 500.
    **/
@@ -58,7 +58,7 @@ public class ResponseQueryRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * Filter the query results.
    **/
@@ -76,6 +76,7 @@ public class ResponseQueryRequest  implements Serializable {
     this.filters = filters;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

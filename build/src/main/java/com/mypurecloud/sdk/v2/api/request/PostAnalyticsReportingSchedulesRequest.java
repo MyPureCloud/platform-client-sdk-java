@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class PostAnalyticsReportingSchedulesRequest {
+    
 	private ReportSchedule body;
 	public ReportSchedule getBody() {
 		return this.body;
@@ -54,6 +55,7 @@ public class PostAnalyticsReportingSchedulesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -83,6 +85,7 @@ public class PostAnalyticsReportingSchedulesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/reporting/schedules")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -94,10 +97,12 @@ public class PostAnalyticsReportingSchedulesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ReportSchedule body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsReportingSchedulesRequest request;
@@ -106,15 +111,20 @@ public class PostAnalyticsReportingSchedulesRequest {
 			request = new PostAnalyticsReportingSchedulesRequest();
 		}
 
+		
 		public Builder withBody(ReportSchedule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ReportSchedule body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsReportingSchedulesRequest build() {

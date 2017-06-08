@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
 	    return this;
 	}
 
+	
 	private String classification;
 	public String getClassification() {
 		return this.classification;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,7 +146,8 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
                 .withPathParameter("siteId", siteId)
         
                 .withQueryParameters("classification", "", classification)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -154,10 +158,12 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId) {
 	    return new Builder()
 	            .withRequiredParams(siteId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest request;
@@ -166,19 +172,25 @@ public class GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest {
 			request = new GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withClassification(String classification) {
 			request.setClassification(classification);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId) {
 			request.setSiteId(siteId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest build() {

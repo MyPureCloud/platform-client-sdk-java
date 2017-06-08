@@ -120,7 +120,7 @@ public class UserMe  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UserMe name(String name) {
@@ -137,7 +137,7 @@ public class UserMe  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UserMe chat(Chat chat) {
@@ -154,7 +154,7 @@ public class UserMe  implements Serializable {
     this.chat = chat;
   }
 
-
+  
   /**
    **/
   public UserMe department(String department) {
@@ -171,7 +171,7 @@ public class UserMe  implements Serializable {
     this.department = department;
   }
 
-
+  
   /**
    **/
   public UserMe email(String email) {
@@ -188,7 +188,7 @@ public class UserMe  implements Serializable {
     this.email = email;
   }
 
-
+  
   /**
    * Auto populated from addresses.
    **/
@@ -206,7 +206,7 @@ public class UserMe  implements Serializable {
     this.primaryContactInfo = primaryContactInfo;
   }
 
-
+  
   /**
    * Email addresses and phone numbers for this user
    **/
@@ -224,14 +224,14 @@ public class UserMe  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The current state for this user.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
 
-
+  
   /**
    **/
   public UserMe title(String title) {
@@ -248,7 +248,7 @@ public class UserMe  implements Serializable {
     this.title = title;
   }
 
-
+  
   /**
    **/
   public UserMe username(String username) {
@@ -265,7 +265,7 @@ public class UserMe  implements Serializable {
     this.username = username;
   }
 
-
+  
   /**
    **/
   public UserMe manager(User manager) {
@@ -282,7 +282,7 @@ public class UserMe  implements Serializable {
     this.manager = manager;
   }
 
-
+  
   /**
    **/
   public UserMe images(List<UserImage> images) {
@@ -299,7 +299,7 @@ public class UserMe  implements Serializable {
     this.images = images;
   }
 
-
+  
   /**
    * Required when updating a user, this value should be the current version of the user.  The current version can be obtained with a GET on the user before doing a PATCH.
    **/
@@ -317,7 +317,7 @@ public class UserMe  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * ACD routing status
    **/
@@ -335,7 +335,7 @@ public class UserMe  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
-
+  
   /**
    * Active presence
    **/
@@ -353,7 +353,7 @@ public class UserMe  implements Serializable {
     this.presence = presence;
   }
 
-
+  
   /**
    * Summary of conversion statistics for conversation types.
    **/
@@ -371,7 +371,7 @@ public class UserMe  implements Serializable {
     this.conversationSummary = conversationSummary;
   }
 
-
+  
   /**
    * Determine if out of office is enabled
    **/
@@ -389,7 +389,7 @@ public class UserMe  implements Serializable {
     this.outOfOffice = outOfOffice;
   }
 
-
+  
   /**
    * Current geolocation position
    **/
@@ -407,7 +407,7 @@ public class UserMe  implements Serializable {
     this.geolocation = geolocation;
   }
 
-
+  
   /**
    * Effective, default, and last station information
    **/
@@ -425,7 +425,7 @@ public class UserMe  implements Serializable {
     this.station = station;
   }
 
-
+  
   /**
    * Roles and permissions assigned to the user
    **/
@@ -443,7 +443,7 @@ public class UserMe  implements Serializable {
     this.authorization = authorization;
   }
 
-
+  
   /**
    * Skills possessed by the user
    **/
@@ -461,7 +461,7 @@ public class UserMe  implements Serializable {
     this.profileSkills = profileSkills;
   }
 
-
+  
   /**
    * The user placement at each site location.
    **/
@@ -479,7 +479,7 @@ public class UserMe  implements Serializable {
     this.locations = locations;
   }
 
-
+  
   /**
    * The groups the user is a member of
    **/
@@ -497,7 +497,7 @@ public class UserMe  implements Serializable {
     this.groups = groups;
   }
 
-
+  
   /**
    * The PureCloud system date time.
    **/
@@ -515,7 +515,7 @@ public class UserMe  implements Serializable {
     this.date = date;
   }
 
-
+  
   /**
    * Geolocation settings for user's organization.
    **/
@@ -533,7 +533,7 @@ public class UserMe  implements Serializable {
     this.geolocationSettings = geolocationSettings;
   }
 
-
+  
   /**
    * Organization details for this user.
    **/
@@ -551,7 +551,7 @@ public class UserMe  implements Serializable {
     this.organization = organization;
   }
 
-
+  
   /**
    * The first 100 presence definitions for user's organization.
    **/
@@ -569,7 +569,7 @@ public class UserMe  implements Serializable {
     this.presenceDefinitions = presenceDefinitions;
   }
 
-
+  
   /**
    * The first 100 site locations for user's organization
    **/
@@ -587,7 +587,7 @@ public class UserMe  implements Serializable {
     this.locationDefinitions = locationDefinitions;
   }
 
-
+  
   /**
    * The first 100 organization roles, with applicable permission policies, for user's organization.
    **/
@@ -605,7 +605,7 @@ public class UserMe  implements Serializable {
     this.orgAuthorization = orgAuthorization;
   }
 
-
+  
   /**
    * The first 50 favorited users.
    **/
@@ -623,7 +623,7 @@ public class UserMe  implements Serializable {
     this.favorites = favorites;
   }
 
-
+  
   /**
    * The first 50 superiors of this user.
    **/
@@ -641,7 +641,7 @@ public class UserMe  implements Serializable {
     this.superiors = superiors;
   }
 
-
+  
   /**
    * The first 50 direct reports to this user.
    **/
@@ -659,7 +659,7 @@ public class UserMe  implements Serializable {
     this.directReports = directReports;
   }
 
-
+  
   /**
    * The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands.
    **/
@@ -677,7 +677,7 @@ public class UserMe  implements Serializable {
     this.adjacents = adjacents;
   }
 
-
+  
   /**
    * The first 50 routing skills for user's organizations
    **/
@@ -695,7 +695,7 @@ public class UserMe  implements Serializable {
     this.routingSkills = routingSkills;
   }
 
-
+  
   /**
    * The field config for all entities types of user's organization
    **/
@@ -713,7 +713,7 @@ public class UserMe  implements Serializable {
     this.fieldConfigs = fieldConfigs;
   }
 
-
+  
   /**
    * Information about the current token
    **/
@@ -731,13 +731,14 @@ public class UserMe  implements Serializable {
     this.token = token;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

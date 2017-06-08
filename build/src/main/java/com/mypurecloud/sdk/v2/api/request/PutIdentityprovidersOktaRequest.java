@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersOktaRequest {
+    
 	private Okta body;
 	public Okta getBody() {
 		return this.body;
@@ -47,6 +48,7 @@ public class PutIdentityprovidersOktaRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -76,6 +78,7 @@ public class PutIdentityprovidersOktaRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/identityproviders/okta")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -87,10 +90,12 @@ public class PutIdentityprovidersOktaRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Okta body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutIdentityprovidersOktaRequest request;
@@ -99,15 +104,20 @@ public class PutIdentityprovidersOktaRequest {
 			request = new PutIdentityprovidersOktaRequest();
 		}
 
+		
 		public Builder withBody(Okta body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Okta body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutIdentityprovidersOktaRequest build() {

@@ -78,7 +78,7 @@ public class ConversationAssociation  implements Serializable {
     this.externalContactId = externalContactId;
   }
 
-
+  
   /**
    * Conversation ID
    **/
@@ -96,7 +96,7 @@ public class ConversationAssociation  implements Serializable {
     this.conversationId = conversationId;
   }
 
-
+  
   /**
    * Communication ID
    **/
@@ -114,7 +114,7 @@ public class ConversationAssociation  implements Serializable {
     this.communicationId = communicationId;
   }
 
-
+  
   /**
    * Media type
    **/
@@ -132,6 +132,7 @@ public class ConversationAssociation  implements Serializable {
     this.mediaType = mediaType;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

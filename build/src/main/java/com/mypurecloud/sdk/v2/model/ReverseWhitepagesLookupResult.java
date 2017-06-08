@@ -38,7 +38,7 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     this.contacts = contacts;
   }
 
-
+  
   /**
    **/
   public ReverseWhitepagesLookupResult externalOrganizations(List<ExternalOrganization> externalOrganizations) {
@@ -55,6 +55,7 @@ public class ReverseWhitepagesLookupResult  implements Serializable {
     this.externalOrganizations = externalOrganizations;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

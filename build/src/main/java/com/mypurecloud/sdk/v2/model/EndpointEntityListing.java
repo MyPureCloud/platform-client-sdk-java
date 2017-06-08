@@ -46,7 +46,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.total = total;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public EndpointEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class EndpointEntityListing  implements Serializable, PagedResource<Endpo
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

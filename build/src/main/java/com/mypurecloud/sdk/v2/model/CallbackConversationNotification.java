@@ -39,7 +39,7 @@ public class CallbackConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotification name(String name) {
@@ -56,7 +56,7 @@ public class CallbackConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotification participants(List<CallbackConversationNotificationParticipants> participants) {
@@ -73,7 +73,7 @@ public class CallbackConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -90,6 +90,7 @@ public class CallbackConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

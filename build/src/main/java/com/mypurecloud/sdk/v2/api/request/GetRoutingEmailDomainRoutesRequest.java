@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class GetRoutingEmailDomainRoutesRequest {
+    
 	private String domainName;
 	public String getDomainName() {
 		return this.domainName;
@@ -58,6 +59,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -72,6 +74,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -86,6 +89,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private String pattern;
 	public String getPattern() {
 		return this.pattern;
@@ -100,6 +104,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,7 +140,8 @@ public class GetRoutingEmailDomainRoutesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pattern", "", pattern)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -146,10 +152,12 @@ public class GetRoutingEmailDomainRoutesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String domainName) {
 	    return new Builder()
 	            .withRequiredParams(domainName);
 	}
+	
 
 	public static class Builder {
 		private final GetRoutingEmailDomainRoutesRequest request;
@@ -158,27 +166,35 @@ public class GetRoutingEmailDomainRoutesRequest {
 			request = new GetRoutingEmailDomainRoutesRequest();
 		}
 
+		
 		public Builder withDomainName(String domainName) {
 			request.setDomainName(domainName);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPattern(String pattern) {
 			request.setPattern(pattern);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String domainName) {
 			request.setDomainName(domainName);
+			
 			return this;
 		}
+		
 
 
 		public GetRoutingEmailDomainRoutesRequest build() {

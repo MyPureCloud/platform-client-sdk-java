@@ -33,7 +33,7 @@ public class LicenseDefinition  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public LicenseDefinition description(String description) {
@@ -50,7 +50,7 @@ public class LicenseDefinition  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public LicenseDefinition permissions(Permissions permissions) {
@@ -67,7 +67,7 @@ public class LicenseDefinition  implements Serializable {
     this.permissions = permissions;
   }
 
-
+  
   /**
    **/
   public LicenseDefinition prerequisites(List<AddressableLicenseDefinition> prerequisites) {
@@ -84,7 +84,7 @@ public class LicenseDefinition  implements Serializable {
     this.prerequisites = prerequisites;
   }
 
-
+  
   /**
    **/
   public LicenseDefinition comprises(List<LicenseDefinition> comprises) {
@@ -101,13 +101,14 @@ public class LicenseDefinition  implements Serializable {
     this.comprises = comprises;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -82,7 +82,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.startTime = startTime;
   }
 
-
+  
   /**
    * The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -100,7 +100,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.endTime = endTime;
   }
 
-
+  
   /**
    * The user's system presence
    **/
@@ -118,7 +118,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.systemPresence = systemPresence;
   }
 
-
+  
   /**
    * The identifier for the user's organization presence
    **/
@@ -136,7 +136,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.organizationPresenceId = organizationPresenceId;
   }
 
-
+  
   /**
    * The duration of the status (in milliseconds)
    **/
@@ -154,6 +154,7 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     this.durationMilliseconds = durationMilliseconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -35,7 +35,7 @@ public class MediaSummary  implements Serializable {
     this.contactCenter = contactCenter;
   }
 
-
+  
   /**
    **/
   public MediaSummary enterprise(MediaSummaryDetail enterprise) {
@@ -52,6 +52,7 @@ public class MediaSummary  implements Serializable {
     this.enterprise = enterprise;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

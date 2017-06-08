@@ -37,7 +37,7 @@ public class DocumentDataV2NotificationLockInfo  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2NotificationLockInfo dateCreated(Date dateCreated) {
@@ -54,7 +54,7 @@ public class DocumentDataV2NotificationLockInfo  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    **/
   public DocumentDataV2NotificationLockInfo dateExpires(Date dateExpires) {
@@ -71,6 +71,7 @@ public class DocumentDataV2NotificationLockInfo  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

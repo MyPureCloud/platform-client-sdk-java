@@ -36,7 +36,7 @@ public class EvaluationAssignment  implements Serializable {
     this.evaluationForm = evaluationForm;
   }
 
-
+  
   /**
    **/
   public EvaluationAssignment user(User user) {
@@ -53,6 +53,7 @@ public class EvaluationAssignment  implements Serializable {
     this.user = user;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

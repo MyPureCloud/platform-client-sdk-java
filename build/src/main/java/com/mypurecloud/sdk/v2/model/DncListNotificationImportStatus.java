@@ -73,7 +73,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.importState = importState;
   }
 
-
+  
   /**
    **/
   public DncListNotificationImportStatus totalRecords(Integer totalRecords) {
@@ -90,7 +90,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.totalRecords = totalRecords;
   }
 
-
+  
   /**
    **/
   public DncListNotificationImportStatus completedRecords(Integer completedRecords) {
@@ -107,7 +107,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.completedRecords = completedRecords;
   }
 
-
+  
   /**
    **/
   public DncListNotificationImportStatus percentageComplete(Integer percentageComplete) {
@@ -124,7 +124,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.percentageComplete = percentageComplete;
   }
 
-
+  
   /**
    **/
   public DncListNotificationImportStatus failureReason(String failureReason) {
@@ -141,7 +141,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.failureReason = failureReason;
   }
 
-
+  
   /**
    **/
   public DncListNotificationImportStatus additionalProperties(Object additionalProperties) {
@@ -158,6 +158,7 @@ public class DncListNotificationImportStatus  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

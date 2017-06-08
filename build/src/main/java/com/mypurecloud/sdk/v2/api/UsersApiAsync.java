@@ -105,6 +105,7 @@ public class UsersApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete user
    * 
@@ -180,6 +181,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Removes all the roles from the user.
    * 
@@ -255,6 +257,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Remove routing skill from user
    * 
@@ -330,6 +333,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Clear associated station
    * 
@@ -405,6 +409,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Clear default station
    * 
@@ -480,6 +485,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -555,6 +561,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get user.
    * 
@@ -630,6 +637,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get adjacents
    * 
@@ -705,6 +713,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get a user&#39;s CallForwarding
    * 
@@ -780,6 +789,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get direct reports
    * 
@@ -855,6 +865,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get favorites
    * 
@@ -930,6 +941,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get a user&#39;s Geolocation
    * 
@@ -1005,6 +1017,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get a OutOfOffice
    * 
@@ -1080,6 +1093,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * List profile skills for a user
    * 
@@ -1155,6 +1169,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get queues for user
    * 
@@ -1230,6 +1245,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -1305,6 +1321,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * List routing skills for user
    * 
@@ -1380,6 +1397,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Fetch the routing status of a user
    * 
@@ -1455,6 +1473,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get station information for user
    * 
@@ -1530,6 +1549,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get superiors
    * 
@@ -1605,6 +1625,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get the list of available users.
    * 
@@ -1680,6 +1701,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
@@ -1755,6 +1777,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Search users using the q64 value returned from a previous search
    * 
@@ -1830,6 +1853,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update user
    * 
@@ -1905,6 +1929,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Patch a user&#39;s CallForwarding
    * 
@@ -1980,6 +2005,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Patch a user&#39;s Geolocation
    * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
@@ -2055,6 +2081,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Join or unjoin a queue for a user
    * 
@@ -2130,6 +2157,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Join or unjoin a set of queues for a user
    * 
@@ -2205,6 +2233,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Query for user aggregates
    * 
@@ -2280,6 +2309,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Query for user details
    * 
@@ -2355,6 +2385,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Query for user observations
    * 
@@ -2430,6 +2461,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Add routing skill to user
    * 
@@ -2505,6 +2537,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Create user
    * 
@@ -2580,6 +2613,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Search users
    * 
@@ -2655,6 +2689,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update a user&#39;s CallForwarding
    * 
@@ -2730,6 +2765,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update an OutOfOffice
    * 
@@ -2805,6 +2841,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update profile skills for a user
    * 
@@ -2880,6 +2917,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Sets the user&#39;s roles
    * 
@@ -2955,6 +2993,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update routing skill proficiency or state.
    * 
@@ -3030,6 +3069,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Update the routing status of a user
    * 
@@ -3105,6 +3145,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Set associated station
    * 
@@ -3180,6 +3221,7 @@ public class UsersApiAsync {
     }
   }
 
+  
   /**
    * Set default station
    * 
@@ -3255,6 +3297,7 @@ public class UsersApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

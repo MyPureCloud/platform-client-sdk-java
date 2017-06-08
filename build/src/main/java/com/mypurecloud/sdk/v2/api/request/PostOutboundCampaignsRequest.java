@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PostOutboundCampaignsRequest {
+    
 	private Campaign body;
 	public Campaign getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostOutboundCampaignsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostOutboundCampaignsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/outbound/campaigns")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostOutboundCampaignsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(Campaign body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostOutboundCampaignsRequest request;
@@ -126,15 +131,20 @@ public class PostOutboundCampaignsRequest {
 			request = new PostOutboundCampaignsRequest();
 		}
 
+		
 		public Builder withBody(Campaign body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(Campaign body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostOutboundCampaignsRequest build() {

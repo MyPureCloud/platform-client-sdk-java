@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class DeleteContentmanagementWorkspaceMemberRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
 	    return this;
 	}
 
+	
 	private String memberId;
 	public String getMemberId() {
 		return this.memberId;
@@ -78,6 +80,7 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,7 +117,8 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
                 .withPathParameter("workspaceId", workspaceId)
         
                 .withPathParameter("memberId", memberId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -125,10 +129,12 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, String memberId) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, memberId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteContentmanagementWorkspaceMemberRequest request;
@@ -137,20 +143,26 @@ public class DeleteContentmanagementWorkspaceMemberRequest {
 			request = new DeleteContentmanagementWorkspaceMemberRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withMemberId(String memberId) {
 			request.setMemberId(memberId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, String memberId) {
 			request.setWorkspaceId(workspaceId);
-			request.setMemberId(memberId);
+						request.setMemberId(memberId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteContentmanagementWorkspaceMemberRequest build() {

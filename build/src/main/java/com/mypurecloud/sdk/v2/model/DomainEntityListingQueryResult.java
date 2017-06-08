@@ -46,7 +46,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult total(Long total) {
@@ -97,7 +97,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingQueryResult pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DomainEntityListingQueryResult  implements Serializable, PagedResou
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

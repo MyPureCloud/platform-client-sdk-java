@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementAdherenceRequest {
+    
 	private List<String> userId;
 	public List<String> getUserId() {
 		return this.userId;
@@ -48,6 +49,7 @@ public class GetWorkforcemanagementAdherenceRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -77,7 +79,8 @@ public class GetWorkforcemanagementAdherenceRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/adherence")
                 .withQueryParameters("userId", "multi", userId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -88,10 +91,12 @@ public class GetWorkforcemanagementAdherenceRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(List<String> userId) {
 	    return new Builder()
 	            .withRequiredParams(userId);
 	}
+	
 
 	public static class Builder {
 		private final GetWorkforcemanagementAdherenceRequest request;
@@ -100,15 +105,20 @@ public class GetWorkforcemanagementAdherenceRequest {
 			request = new GetWorkforcemanagementAdherenceRequest();
 		}
 
+		
 		public Builder withUserId(List<String> userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(List<String> userId) {
 			request.setUserId(userId);
+			
 			return this;
 		}
+		
 
 
 		public GetWorkforcemanagementAdherenceRequest build() {

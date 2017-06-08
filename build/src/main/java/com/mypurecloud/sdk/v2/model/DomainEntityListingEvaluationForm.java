@@ -46,7 +46,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm total(Long total) {
@@ -97,7 +97,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DomainEntityListingEvaluationForm pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

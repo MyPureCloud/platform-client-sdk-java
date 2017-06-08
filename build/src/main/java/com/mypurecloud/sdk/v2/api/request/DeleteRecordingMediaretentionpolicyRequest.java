@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class DeleteRecordingMediaretentionpolicyRequest {
+    
 	private String policyId;
 	public String getPolicyId() {
 		return this.policyId;
@@ -52,6 +53,7 @@ public class DeleteRecordingMediaretentionpolicyRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class DeleteRecordingMediaretentionpolicyRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/recording/mediaretentionpolicies/{policyId}")
                 .withPathParameter("policyId", policyId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class DeleteRecordingMediaretentionpolicyRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String policyId) {
 	    return new Builder()
 	            .withRequiredParams(policyId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRecordingMediaretentionpolicyRequest request;
@@ -104,15 +109,20 @@ public class DeleteRecordingMediaretentionpolicyRequest {
 			request = new DeleteRecordingMediaretentionpolicyRequest();
 		}
 
+		
 		public Builder withPolicyId(String policyId) {
 			request.setPolicyId(policyId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String policyId) {
 			request.setPolicyId(policyId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRecordingMediaretentionpolicyRequest build() {

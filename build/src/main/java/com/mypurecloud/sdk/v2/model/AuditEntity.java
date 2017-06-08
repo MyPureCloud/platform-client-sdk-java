@@ -37,7 +37,7 @@ public class AuditEntity  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * The id of the entity the action of this AuditEntity targeted.
    **/
@@ -55,7 +55,7 @@ public class AuditEntity  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The name of the entity the action of this AuditEntity targeted.
    **/
@@ -73,7 +73,7 @@ public class AuditEntity  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The selfUri for this entity.
    **/
@@ -91,6 +91,7 @@ public class AuditEntity  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

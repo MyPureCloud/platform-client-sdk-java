@@ -70,7 +70,7 @@ public class LocationEmergencyNumber  implements Serializable {
     this.e164 = e164;
   }
 
-
+  
   /**
    **/
   public LocationEmergencyNumber number(String number) {
@@ -87,7 +87,7 @@ public class LocationEmergencyNumber  implements Serializable {
     this.number = number;
   }
 
-
+  
   /**
    * The type of emergency number.
    **/
@@ -105,6 +105,7 @@ public class LocationEmergencyNumber  implements Serializable {
     this.type = type;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

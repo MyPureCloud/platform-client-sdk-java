@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AttributeEntityListing;
 import com.mypurecloud.sdk.v2.model.AttributeQueryRequest;
 
 public class GetAttributeRequest {
+    
 	private String attributeId;
 	public String getAttributeId() {
 		return this.attributeId;
@@ -38,6 +39,7 @@ public class GetAttributeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -67,7 +69,8 @@ public class GetAttributeRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/attributes/{attributeId}")
                 .withPathParameter("attributeId", attributeId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -78,10 +81,12 @@ public class GetAttributeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String attributeId) {
 	    return new Builder()
 	            .withRequiredParams(attributeId);
 	}
+	
 
 	public static class Builder {
 		private final GetAttributeRequest request;
@@ -90,15 +95,20 @@ public class GetAttributeRequest {
 			request = new GetAttributeRequest();
 		}
 
+		
 		public Builder withAttributeId(String attributeId) {
 			request.setAttributeId(attributeId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String attributeId) {
 			request.setAttributeId(attributeId);
+			
 			return this;
 		}
+		
 
 
 		public GetAttributeRequest build() {

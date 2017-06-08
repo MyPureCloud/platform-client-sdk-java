@@ -39,7 +39,7 @@ public class SuggestSearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-
+  
   /**
    * Resource domain type to search
    **/
@@ -57,7 +57,7 @@ public class SuggestSearchRequest  implements Serializable {
     this.types = types;
   }
 
-
+  
   /**
    * Suggest query
    **/
@@ -75,6 +75,7 @@ public class SuggestSearchRequest  implements Serializable {
     this.query = query;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

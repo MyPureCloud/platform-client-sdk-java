@@ -50,7 +50,7 @@ public class PolicyActions  implements Serializable {
     this.retainRecording = retainRecording;
   }
 
-
+  
   /**
    * true to delete the recording associated with the conversation. If retainRecording = true, this will be ignored. Default = false
    **/
@@ -68,7 +68,7 @@ public class PolicyActions  implements Serializable {
     this.deleteRecording = deleteRecording;
   }
 
-
+  
   /**
    * true to delete the recording associated with the conversation regardless of the values of retainRecording or deleteRecording. Default = false
    **/
@@ -86,7 +86,7 @@ public class PolicyActions  implements Serializable {
     this.alwaysDelete = alwaysDelete;
   }
 
-
+  
   /**
    **/
   public PolicyActions assignEvaluations(List<EvaluationAssignment> assignEvaluations) {
@@ -103,7 +103,7 @@ public class PolicyActions  implements Serializable {
     this.assignEvaluations = assignEvaluations;
   }
 
-
+  
   /**
    **/
   public PolicyActions assignMeteredEvaluations(List<MeteredEvaluationAssignment> assignMeteredEvaluations) {
@@ -120,7 +120,7 @@ public class PolicyActions  implements Serializable {
     this.assignMeteredEvaluations = assignMeteredEvaluations;
   }
 
-
+  
   /**
    **/
   public PolicyActions assignCalibrations(List<CalibrationAssignment> assignCalibrations) {
@@ -137,7 +137,7 @@ public class PolicyActions  implements Serializable {
     this.assignCalibrations = assignCalibrations;
   }
 
-
+  
   /**
    **/
   public PolicyActions retentionDuration(RetentionDuration retentionDuration) {
@@ -154,7 +154,7 @@ public class PolicyActions  implements Serializable {
     this.retentionDuration = retentionDuration;
   }
 
-
+  
   /**
    **/
   public PolicyActions initiateScreenRecording(InitiateScreenRecording initiateScreenRecording) {
@@ -171,7 +171,7 @@ public class PolicyActions  implements Serializable {
     this.initiateScreenRecording = initiateScreenRecording;
   }
 
-
+  
   /**
    **/
   public PolicyActions mediaTranscriptions(List<MediaTranscription> mediaTranscriptions) {
@@ -188,6 +188,7 @@ public class PolicyActions  implements Serializable {
     this.mediaTranscriptions = mediaTranscriptions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

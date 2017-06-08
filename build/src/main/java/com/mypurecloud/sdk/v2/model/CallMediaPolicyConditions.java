@@ -79,7 +79,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions dateRanges(List<String> dateRanges) {
@@ -96,7 +96,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions forQueues(List<Queue> forQueues) {
@@ -113,7 +113,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -130,7 +130,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -147,7 +147,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions directions(List<DirectionsEnum> directions) {
@@ -164,7 +164,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.directions = directions;
   }
 
-
+  
   /**
    **/
   public CallMediaPolicyConditions duration(DurationCondition duration) {
@@ -181,6 +181,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

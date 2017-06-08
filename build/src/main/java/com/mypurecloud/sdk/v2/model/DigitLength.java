@@ -34,7 +34,7 @@ public class DigitLength  implements Serializable {
     this.start = start;
   }
 
-
+  
   /**
    **/
   public DigitLength end(String end) {
@@ -51,6 +51,7 @@ public class DigitLength  implements Serializable {
     this.end = end;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

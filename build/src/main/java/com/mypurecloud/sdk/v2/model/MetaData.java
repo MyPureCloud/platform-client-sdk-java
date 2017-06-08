@@ -37,7 +37,7 @@ public class MetaData  implements Serializable {
     this.pairingToken = pairingToken;
   }
 
-
+  
   /**
    **/
   public MetaData pairingTrust(List<String> pairingTrust) {
@@ -54,7 +54,7 @@ public class MetaData  implements Serializable {
     this.pairingTrust = pairingTrust;
   }
 
-
+  
   /**
    **/
   public MetaData pairingUrl(String pairingUrl) {
@@ -71,6 +71,7 @@ public class MetaData  implements Serializable {
     this.pairingUrl = pairingUrl;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

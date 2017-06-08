@@ -117,7 +117,7 @@ public class ConversationQuery  implements Serializable {
     this.interval = interval;
   }
 
-
+  
   /**
    * Filters that target conversation-level data
    **/
@@ -135,7 +135,7 @@ public class ConversationQuery  implements Serializable {
     this.conversationFilters = conversationFilters;
   }
 
-
+  
   /**
    * Filters that target quality management evaluation-level data
    **/
@@ -153,7 +153,7 @@ public class ConversationQuery  implements Serializable {
     this.evaluationFilters = evaluationFilters;
   }
 
-
+  
   /**
    * Filters that target individual segments within a conversation
    **/
@@ -171,7 +171,7 @@ public class ConversationQuery  implements Serializable {
     this.segmentFilters = segmentFilters;
   }
 
-
+  
   /**
    * Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
    **/
@@ -189,7 +189,7 @@ public class ConversationQuery  implements Serializable {
     this.aggregations = aggregations;
   }
 
-
+  
   /**
    * Page size and number to control iterating through large result sets. Default page size is 25
    **/
@@ -207,7 +207,7 @@ public class ConversationQuery  implements Serializable {
     this.paging = paging;
   }
 
-
+  
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
@@ -225,7 +225,7 @@ public class ConversationQuery  implements Serializable {
     this.order = order;
   }
 
-
+  
   /**
    * Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
    **/
@@ -243,6 +243,7 @@ public class ConversationQuery  implements Serializable {
     this.orderBy = orderBy;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

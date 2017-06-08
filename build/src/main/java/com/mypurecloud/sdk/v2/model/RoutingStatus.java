@@ -75,7 +75,7 @@ public class RoutingStatus  implements Serializable {
     this.userId = userId;
   }
 
-
+  
   /**
    * Indicates the Routing State of the agent.
    **/
@@ -93,7 +93,7 @@ public class RoutingStatus  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    * The timestamp when the agent went into this state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -111,6 +111,7 @@ public class RoutingStatus  implements Serializable {
     this.startTime = startTime;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

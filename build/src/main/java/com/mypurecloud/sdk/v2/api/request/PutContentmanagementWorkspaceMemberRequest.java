@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PutContentmanagementWorkspaceMemberRequest {
+    
 	private String workspaceId;
 	public String getWorkspaceId() {
 		return this.workspaceId;
@@ -64,6 +65,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	    return this;
 	}
 
+	
 	private String memberId;
 	public String getMemberId() {
 		return this.memberId;
@@ -78,6 +80,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	    return this;
 	}
 
+	
 	private WorkspaceMember body;
 	public WorkspaceMember getBody() {
 		return this.body;
@@ -92,6 +95,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -135,6 +139,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
                 .withPathParameter("memberId", memberId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -146,10 +151,12 @@ public class PutContentmanagementWorkspaceMemberRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String workspaceId, String memberId, WorkspaceMember body) {
 	    return new Builder()
 	            .withRequiredParams(workspaceId, memberId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutContentmanagementWorkspaceMemberRequest request;
@@ -158,25 +165,32 @@ public class PutContentmanagementWorkspaceMemberRequest {
 			request = new PutContentmanagementWorkspaceMemberRequest();
 		}
 
+		
 		public Builder withWorkspaceId(String workspaceId) {
 			request.setWorkspaceId(workspaceId);
 			return this;
 		}
+		
 		public Builder withMemberId(String memberId) {
 			request.setMemberId(memberId);
 			return this;
 		}
+		
 		public Builder withBody(WorkspaceMember body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String workspaceId, String memberId, WorkspaceMember body) {
 			request.setWorkspaceId(workspaceId);
-			request.setMemberId(memberId);
-			request.setBody(body);
+						request.setMemberId(memberId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutContentmanagementWorkspaceMemberRequest build() {

@@ -82,7 +82,7 @@ public class SearchRequest  implements Serializable {
     this.sortOrder = sortOrder;
   }
 
-
+  
   /**
    * The field in the resource that you want to sort the results by
    **/
@@ -100,7 +100,7 @@ public class SearchRequest  implements Serializable {
     this.sortBy = sortBy;
   }
 
-
+  
   /**
    * The number of results per page
    **/
@@ -118,7 +118,7 @@ public class SearchRequest  implements Serializable {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    * The page of resources you want to retrieve
    **/
@@ -136,7 +136,7 @@ public class SearchRequest  implements Serializable {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    * A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.
    **/
@@ -154,7 +154,7 @@ public class SearchRequest  implements Serializable {
     this.returnFields = returnFields;
   }
 
-
+  
   /**
    * Provides more details about a specified resource
    **/
@@ -172,7 +172,7 @@ public class SearchRequest  implements Serializable {
     this.expand = expand;
   }
 
-
+  
   /**
    * Resource domain type to search
    **/
@@ -190,7 +190,7 @@ public class SearchRequest  implements Serializable {
     this.types = types;
   }
 
-
+  
   /**
    * The search criteria
    **/
@@ -208,7 +208,7 @@ public class SearchRequest  implements Serializable {
     this.query = query;
   }
 
-
+  
   /**
    * Aggregation criteria
    **/
@@ -226,6 +226,7 @@ public class SearchRequest  implements Serializable {
     this.aggregations = aggregations;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

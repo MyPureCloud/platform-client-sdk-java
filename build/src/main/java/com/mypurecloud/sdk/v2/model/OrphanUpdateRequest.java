@@ -37,7 +37,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.archiveDate = archiveDate;
   }
 
-
+  
   /**
    * The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -55,7 +55,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.deleteDate = deleteDate;
   }
 
-
+  
   /**
    * A conversation Id that this orphan's recording is to be attached to. If not present, the conversationId will be deduced from the recording media.
    **/
@@ -73,6 +73,7 @@ public class OrphanUpdateRequest  implements Serializable {
     this.conversationId = conversationId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -12,8 +12,8 @@ title: GSuite
 | **name** | **String** |  |  [optional] |
 | **relyingPartyIdentifier** | **String** |  |  [optional] |
 | **certificate** | **String** |  |  [optional] |
-| **issuerURI** | **String** |  |  [optional] |
 | **ssoTargetURI** | **String** |  |  [optional] |
+| **issuerURI** | **String** |  |  [optional] |
 | **disabled** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

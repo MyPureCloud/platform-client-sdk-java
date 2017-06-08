@@ -108,7 +108,7 @@ public class UserPresenceAlert  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name of the rule
    **/
@@ -126,7 +126,7 @@ public class UserPresenceAlert  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The user whose presence will be watched.
    **/
@@ -144,7 +144,7 @@ public class UserPresenceAlert  implements Serializable {
     this.presenceUser = presenceUser;
   }
 
-
+  
   /**
    * Indicates to which presence type the presence value belongs.
    **/
@@ -162,7 +162,7 @@ public class UserPresenceAlert  implements Serializable {
     this.presenceType = presenceType;
   }
 
-
+  
   /**
    * The Org's UUID or Systems enum constance indicating the presence of concern.
    **/
@@ -180,7 +180,7 @@ public class UserPresenceAlert  implements Serializable {
     this.presenceValue = presenceValue;
   }
 
-
+  
   /**
    * The number of seconds to wait before alerting based upon the user's presence.
    **/
@@ -198,28 +198,28 @@ public class UserPresenceAlert  implements Serializable {
     this.presenceLimitInSeconds = presenceLimitInSeconds;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The id of the rule.")
   @JsonProperty("ruleId")
   public String getRuleId() {
     return ruleId;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;
   }
 
-
+  
   /**
    * The ids of users who were notified of alarm state change.
    **/
@@ -237,7 +237,7 @@ public class UserPresenceAlert  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -255,7 +255,7 @@ public class UserPresenceAlert  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    **/
   public UserPresenceAlert ruleUri(String ruleUri) {
@@ -272,13 +272,14 @@ public class UserPresenceAlert  implements Serializable {
     this.ruleUri = ruleUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

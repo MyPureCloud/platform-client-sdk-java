@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostAnalyticsConversationsAggregatesQueryRequest {
+    
 	private AggregationQuery body;
 	public AggregationQuery getBody() {
 		return this.body;
@@ -74,6 +75,7 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -103,6 +105,7 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/conversations/aggregates/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -114,10 +117,12 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(AggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsConversationsAggregatesQueryRequest request;
@@ -126,15 +131,20 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 			request = new PostAnalyticsConversationsAggregatesQueryRequest();
 		}
 
+		
 		public Builder withBody(AggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(AggregationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsConversationsAggregatesQueryRequest build() {

@@ -37,7 +37,7 @@ public class FieldConfigs  implements Serializable {
     this.org = org;
   }
 
-
+  
   /**
    **/
   public FieldConfigs person(FieldConfig person) {
@@ -54,7 +54,7 @@ public class FieldConfigs  implements Serializable {
     this.person = person;
   }
 
-
+  
   /**
    **/
   public FieldConfigs group(FieldConfig group) {
@@ -71,7 +71,7 @@ public class FieldConfigs  implements Serializable {
     this.group = group;
   }
 
-
+  
   /**
    **/
   public FieldConfigs externalContact(FieldConfig externalContact) {
@@ -88,6 +88,7 @@ public class FieldConfigs  implements Serializable {
     this.externalContact = externalContact;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesPhonesRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -126,6 +129,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -140,6 +144,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -154,6 +159,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
 		return this.webRtcUserId;
@@ -168,6 +174,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String phoneBaseSettingsId;
 	public String getPhoneBaseSettingsId() {
 		return this.phoneBaseSettingsId;
@@ -182,6 +189,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String linesLoggedInUserId;
 	public String getLinesLoggedInUserId() {
 		return this.linesLoggedInUserId;
@@ -196,6 +204,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String linesDefaultForUserId;
 	public String getLinesDefaultForUserId() {
 		return this.linesDefaultForUserId;
@@ -210,6 +219,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String phoneHardwareId;
 	public String getPhoneHardwareId() {
 		return this.phoneHardwareId;
@@ -224,6 +234,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String linesId;
 	public String getLinesId() {
 		return this.linesId;
@@ -238,6 +249,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private String linesName;
 	public String getLinesName() {
 		return this.linesName;
@@ -252,6 +264,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -266,6 +279,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private List<String> fields;
 	public List<String> getFields() {
 		return this.fields;
@@ -280,6 +294,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -330,7 +345,8 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("fields", "multi", fields)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -341,6 +357,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesPhonesRequest request;
@@ -349,63 +366,79 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 			request = new GetTelephonyProvidersEdgesPhonesRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withWebRtcUserId(String webRtcUserId) {
 			request.setWebRtcUserId(webRtcUserId);
 			return this;
 		}
+		
 		public Builder withPhoneBaseSettingsId(String phoneBaseSettingsId) {
 			request.setPhoneBaseSettingsId(phoneBaseSettingsId);
 			return this;
 		}
+		
 		public Builder withLinesLoggedInUserId(String linesLoggedInUserId) {
 			request.setLinesLoggedInUserId(linesLoggedInUserId);
 			return this;
 		}
+		
 		public Builder withLinesDefaultForUserId(String linesDefaultForUserId) {
 			request.setLinesDefaultForUserId(linesDefaultForUserId);
 			return this;
 		}
+		
 		public Builder withPhoneHardwareId(String phoneHardwareId) {
 			request.setPhoneHardwareId(phoneHardwareId);
 			return this;
 		}
+		
 		public Builder withLinesId(String linesId) {
 			request.setLinesId(linesId);
 			return this;
 		}
+		
 		public Builder withLinesName(String linesName) {
 			request.setLinesName(linesName);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 		public Builder withFields(List<String> fields) {
 			request.setFields(fields);
 			return this;
 		}
+		
 
+		
 
 
 		public GetTelephonyProvidersEdgesPhonesRequest build() {

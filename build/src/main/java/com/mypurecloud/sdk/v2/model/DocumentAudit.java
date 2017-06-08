@@ -259,7 +259,7 @@ public class DocumentAudit  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DocumentAudit name(String name) {
@@ -276,7 +276,7 @@ public class DocumentAudit  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DocumentAudit user(UriReference user) {
@@ -293,7 +293,7 @@ public class DocumentAudit  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public DocumentAudit workspace(UriReference workspace) {
@@ -310,7 +310,7 @@ public class DocumentAudit  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public DocumentAudit transactionId(String transactionId) {
@@ -327,7 +327,7 @@ public class DocumentAudit  implements Serializable {
     this.transactionId = transactionId;
   }
 
-
+  
   /**
    **/
   public DocumentAudit transactionInitiator(Boolean transactionInitiator) {
@@ -344,7 +344,7 @@ public class DocumentAudit  implements Serializable {
     this.transactionInitiator = transactionInitiator;
   }
 
-
+  
   /**
    **/
   public DocumentAudit application(String application) {
@@ -361,7 +361,7 @@ public class DocumentAudit  implements Serializable {
     this.application = application;
   }
 
-
+  
   /**
    **/
   public DocumentAudit serviceName(String serviceName) {
@@ -378,7 +378,7 @@ public class DocumentAudit  implements Serializable {
     this.serviceName = serviceName;
   }
 
-
+  
   /**
    **/
   public DocumentAudit level(LevelEnum level) {
@@ -395,7 +395,7 @@ public class DocumentAudit  implements Serializable {
     this.level = level;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -413,7 +413,7 @@ public class DocumentAudit  implements Serializable {
     this.timestamp = timestamp;
   }
 
-
+  
   /**
    **/
   public DocumentAudit status(StatusEnum status) {
@@ -430,7 +430,7 @@ public class DocumentAudit  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public DocumentAudit actionContext(ActionContextEnum actionContext) {
@@ -447,7 +447,7 @@ public class DocumentAudit  implements Serializable {
     this.actionContext = actionContext;
   }
 
-
+  
   /**
    **/
   public DocumentAudit action(ActionEnum action) {
@@ -464,7 +464,7 @@ public class DocumentAudit  implements Serializable {
     this.action = action;
   }
 
-
+  
   /**
    **/
   public DocumentAudit entity(AuditEntityReference entity) {
@@ -481,7 +481,7 @@ public class DocumentAudit  implements Serializable {
     this.entity = entity;
   }
 
-
+  
   /**
    **/
   public DocumentAudit changes(List<AuditChange> changes) {
@@ -498,13 +498,14 @@ public class DocumentAudit  implements Serializable {
     this.changes = changes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

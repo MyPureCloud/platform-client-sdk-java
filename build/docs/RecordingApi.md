@@ -297,7 +297,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | |
 | **recordingId** | **String**| Recording ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM] [enum: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE] |
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
 | **fileName** | **String**| the name of the downloaded fileName | [optional] |
 {: class="table table-striped"}
@@ -462,7 +462,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | |
 | **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **formatId** | **String**| The desired media format | [optional] [default to WEBM] [enum: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE] |
+| **formatId** | **String**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -568,7 +568,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **orphanId** | **String**| Orphan ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM] [enum: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE] |
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
 | **fileName** | **String**| the name of the downloaded fileName | [optional] |
 {: class="table table-striped"}
@@ -635,7 +635,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 | **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
-| **media** | **String**| Filter resulting orphans based on their media type | [optional] [enum: Call, Screen] |
+| **media** | **String**| Filter resulting orphans based on their media type | [optional]<br />**Values**: Call, Screen |
 {: class="table table-striped"}
 
 ### Return type
@@ -748,7 +748,7 @@ This endpoint does not require any parameters.
 
 Gets media retention policy list with query options to filter on name and enabled.
 
-for a less verbose response, add summary&#x3D;true to this endpoint
+for a less verbose response, add summary=true to this endpoint
 
 Wraps GET /api/v2/recording/mediaretentionpolicies  
 
@@ -800,7 +800,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 | **name** | **String**| the policy name - used for filtering results in searches. | [optional] |
-| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled &#x3D; true or enabled &#x3D; false | [optional] |
+| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] |
 | **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] |
 | **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] |
 {: class="table table-striped"}

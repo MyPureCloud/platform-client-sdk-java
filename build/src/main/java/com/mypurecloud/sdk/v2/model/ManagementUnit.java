@@ -71,7 +71,7 @@ public class ManagementUnit  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ManagementUnit name(String name) {
@@ -88,7 +88,7 @@ public class ManagementUnit  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Start day of week for workforce management planning purposes
    **/
@@ -106,7 +106,7 @@ public class ManagementUnit  implements Serializable {
     this.startDayOfWeek = startDayOfWeek;
   }
 
-
+  
   /**
    * The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
    **/
@@ -124,7 +124,7 @@ public class ManagementUnit  implements Serializable {
     this.timezone = timezone;
   }
 
-
+  
   /**
    * The version of the underlying ManagementUnit object. Useful for handling eventual consistency issues.  User must submit the current version they of the ManagementUnit in any write requests
    **/
@@ -142,7 +142,7 @@ public class ManagementUnit  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * The date and time at which this management unit was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -160,13 +160,14 @@ public class ManagementUnit  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

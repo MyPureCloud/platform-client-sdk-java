@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
+    
 	private String edgeIds;
 	public String getEdgeIds() {
 		return this.edgeIds;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,7 +146,8 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
                 .withQueryParameters("edgeIds", "", edgeIds)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -154,10 +158,12 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String edgeIds) {
 	    return new Builder()
 	            .withRequiredParams(edgeIds);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesLogicalinterfacesRequest request;
@@ -166,19 +172,25 @@ public class GetTelephonyProvidersEdgesLogicalinterfacesRequest {
 			request = new GetTelephonyProvidersEdgesLogicalinterfacesRequest();
 		}
 
+		
 		public Builder withEdgeIds(String edgeIds) {
 			request.setEdgeIds(edgeIds);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String edgeIds) {
 			request.setEdgeIds(edgeIds);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesLogicalinterfacesRequest build() {

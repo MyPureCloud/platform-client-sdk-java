@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class PostAnalyticsReportingScheduleRunreportRequest {
+    
 	private String scheduleId;
 	public String getScheduleId() {
 		return this.scheduleId;
@@ -54,6 +55,7 @@ public class PostAnalyticsReportingScheduleRunreportRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -83,7 +85,8 @@ public class PostAnalyticsReportingScheduleRunreportRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/reporting/schedules/{scheduleId}/runreport")
                 .withPathParameter("scheduleId", scheduleId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -94,10 +97,12 @@ public class PostAnalyticsReportingScheduleRunreportRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String scheduleId) {
 	    return new Builder()
 	            .withRequiredParams(scheduleId);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsReportingScheduleRunreportRequest request;
@@ -106,15 +111,20 @@ public class PostAnalyticsReportingScheduleRunreportRequest {
 			request = new PostAnalyticsReportingScheduleRunreportRequest();
 		}
 
+		
 		public Builder withScheduleId(String scheduleId) {
 			request.setScheduleId(scheduleId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String scheduleId) {
 			request.setScheduleId(scheduleId);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsReportingScheduleRunreportRequest build() {

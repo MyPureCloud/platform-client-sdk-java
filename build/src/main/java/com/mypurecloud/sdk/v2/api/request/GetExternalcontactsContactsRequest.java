@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsContactsRequest {
+    
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -45,6 +46,7 @@ public class GetExternalcontactsContactsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -59,6 +61,7 @@ public class GetExternalcontactsContactsRequest {
 	    return this;
 	}
 
+	
 	private String q;
 	public String getQ() {
 		return this.q;
@@ -73,6 +76,7 @@ public class GetExternalcontactsContactsRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -87,6 +91,7 @@ public class GetExternalcontactsContactsRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -101,6 +106,7 @@ public class GetExternalcontactsContactsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,7 +139,8 @@ public class GetExternalcontactsContactsRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -144,6 +151,7 @@ public class GetExternalcontactsContactsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetExternalcontactsContactsRequest request;
@@ -152,27 +160,34 @@ public class GetExternalcontactsContactsRequest {
 			request = new GetExternalcontactsContactsRequest();
 		}
 
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withQ(String q) {
 			request.setQ(q);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 
 
 		public GetExternalcontactsContactsRequest build() {

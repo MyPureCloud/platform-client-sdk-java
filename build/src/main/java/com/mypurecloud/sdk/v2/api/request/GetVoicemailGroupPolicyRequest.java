@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class GetVoicemailGroupPolicyRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -45,6 +46,7 @@ public class GetVoicemailGroupPolicyRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +76,8 @@ public class GetVoicemailGroupPolicyRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/voicemail/groups/{groupId}/policy")
                 .withPathParameter("groupId", groupId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -85,10 +88,12 @@ public class GetVoicemailGroupPolicyRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId) {
 	    return new Builder()
 	            .withRequiredParams(groupId);
 	}
+	
 
 	public static class Builder {
 		private final GetVoicemailGroupPolicyRequest request;
@@ -97,15 +102,20 @@ public class GetVoicemailGroupPolicyRequest {
 			request = new GetVoicemailGroupPolicyRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId) {
 			request.setGroupId(groupId);
+			
 			return this;
 		}
+		
 
 
 		public GetVoicemailGroupPolicyRequest build() {

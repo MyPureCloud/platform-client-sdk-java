@@ -44,7 +44,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification endDate(Date endDate) {
@@ -61,7 +61,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.endDate = endDate;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification intervalLengthMinutes(Integer intervalLengthMinutes) {
@@ -78,7 +78,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.intervalLengthMinutes = intervalLengthMinutes;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification numberOfIntervals(Integer numberOfIntervals) {
@@ -95,7 +95,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.numberOfIntervals = numberOfIntervals;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification metrics(List<IntradayDataUpdateNotificationMetrics> metrics) {
@@ -112,7 +112,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.metrics = metrics;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification queueIds(List<String> queueIds) {
@@ -129,7 +129,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.queueIds = queueIds;
   }
 
-
+  
   /**
    **/
   public IntradayDataUpdateNotification intradayDataGroupings(List<IntradayDataUpdateNotificationIntradayDataGroupings> intradayDataGroupings) {
@@ -146,6 +146,7 @@ public class IntradayDataUpdateNotification  implements Serializable {
     this.intradayDataGroupings = intradayDataGroupings;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

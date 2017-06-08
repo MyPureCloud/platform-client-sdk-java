@@ -46,7 +46,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.total = total;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public SystemPromptEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class SystemPromptEntityListing  implements Serializable, PagedResource<S
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

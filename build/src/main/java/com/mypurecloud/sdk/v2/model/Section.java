@@ -39,7 +39,7 @@ public class Section  implements Serializable {
     this.fieldList = fieldList;
   }
 
-
+  
   /**
    **/
   public Section instructionText(String instructionText) {
@@ -56,7 +56,7 @@ public class Section  implements Serializable {
     this.instructionText = instructionText;
   }
 
-
+  
   /**
    **/
   public Section key(String key) {
@@ -73,7 +73,7 @@ public class Section  implements Serializable {
     this.key = key;
   }
 
-
+  
   /**
    **/
   public Section state(String state) {
@@ -90,6 +90,7 @@ public class Section  implements Serializable {
     this.state = state;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

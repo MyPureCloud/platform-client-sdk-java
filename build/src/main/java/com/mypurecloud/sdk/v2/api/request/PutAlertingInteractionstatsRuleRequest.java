@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class PutAlertingInteractionstatsRuleRequest {
+    
 	private String ruleId;
 	public String getRuleId() {
 		return this.ruleId;
@@ -53,6 +54,7 @@ public class PutAlertingInteractionstatsRuleRequest {
 	    return this;
 	}
 
+	
 	private InteractionStatsRule body;
 	public InteractionStatsRule getBody() {
 		return this.body;
@@ -67,6 +69,7 @@ public class PutAlertingInteractionstatsRuleRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -81,6 +84,7 @@ public class PutAlertingInteractionstatsRuleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -119,6 +123,7 @@ public class PutAlertingInteractionstatsRuleRequest {
                 .withQueryParameters("expand", "multi", expand)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -130,10 +135,12 @@ public class PutAlertingInteractionstatsRuleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String ruleId, InteractionStatsRule body) {
 	    return new Builder()
 	            .withRequiredParams(ruleId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutAlertingInteractionstatsRuleRequest request;
@@ -142,24 +149,31 @@ public class PutAlertingInteractionstatsRuleRequest {
 			request = new PutAlertingInteractionstatsRuleRequest();
 		}
 
+		
 		public Builder withRuleId(String ruleId) {
 			request.setRuleId(ruleId);
 			return this;
 		}
+		
 		public Builder withBody(InteractionStatsRule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String ruleId, InteractionStatsRule body) {
 			request.setRuleId(ruleId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutAlertingInteractionstatsRuleRequest build() {

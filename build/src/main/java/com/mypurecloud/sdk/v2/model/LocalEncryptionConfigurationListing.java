@@ -38,7 +38,7 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public LocalEncryptionConfigurationListing entities(List<LocalEncryptionConfiguration> entities) {
@@ -55,7 +55,7 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public LocalEncryptionConfigurationListing selfUri(String selfUri) {
@@ -72,6 +72,7 @@ public class LocalEncryptionConfigurationListing  implements Serializable {
     this.selfUri = selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

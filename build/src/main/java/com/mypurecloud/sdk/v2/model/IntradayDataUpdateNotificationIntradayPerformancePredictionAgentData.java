@@ -34,6 +34,7 @@ public class IntradayDataUpdateNotificationIntradayPerformancePredictionAgentDat
     this.interactingTimeSeconds = interactingTimeSeconds;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

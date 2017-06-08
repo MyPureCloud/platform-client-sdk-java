@@ -36,7 +36,7 @@ public class DomainOrganizationRole  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole name(String name) {
@@ -53,7 +53,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole description(String description) {
@@ -70,7 +70,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole defaultRoleId(String defaultRoleId) {
@@ -87,7 +87,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.defaultRoleId = defaultRoleId;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole permissions(List<String> permissions) {
@@ -104,7 +104,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.permissions = permissions;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole permissionPolicies(List<DomainPermissionPolicy> permissionPolicies) {
@@ -121,7 +121,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.permissionPolicies = permissionPolicies;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole userCount(Integer userCount) {
@@ -138,7 +138,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.userCount = userCount;
   }
 
-
+  
   /**
    * Optional unless patch operation.
    **/
@@ -156,7 +156,7 @@ public class DomainOrganizationRole  implements Serializable {
     this.roleNeedsUpdate = roleNeedsUpdate;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole _default(Boolean _default) {
@@ -173,7 +173,7 @@ public class DomainOrganizationRole  implements Serializable {
     this._default = _default;
   }
 
-
+  
   /**
    **/
   public DomainOrganizationRole base(Boolean base) {
@@ -190,13 +190,14 @@ public class DomainOrganizationRole  implements Serializable {
     this.base = base;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesExtensionRequest {
+    
 	private String extensionId;
 	public String getExtensionId() {
 		return this.extensionId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
 	    return this;
 	}
 
+	
 	private Extension body;
 	public Extension getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
                 .withPathParameter("extensionId", extensionId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String extensionId, Extension body) {
 	    return new Builder()
 	            .withRequiredParams(extensionId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesExtensionRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesExtensionRequest {
 			request = new PutTelephonyProvidersEdgesExtensionRequest();
 		}
 
+		
 		public Builder withExtensionId(String extensionId) {
 			request.setExtensionId(extensionId);
 			return this;
 		}
+		
 		public Builder withBody(Extension body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String extensionId, Extension body) {
 			request.setExtensionId(extensionId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesExtensionRequest build() {

@@ -26,7 +26,7 @@ public class PureCloud  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public PureCloud name(String name) {
@@ -43,7 +43,7 @@ public class PureCloud  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public PureCloud disabled(Boolean disabled) {
@@ -60,13 +60,14 @@ public class PureCloud  implements Serializable {
     this.disabled = disabled;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

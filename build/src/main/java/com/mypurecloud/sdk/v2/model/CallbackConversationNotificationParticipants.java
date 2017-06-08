@@ -204,7 +204,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants name(String name) {
@@ -221,7 +221,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants address(String address) {
@@ -238,7 +238,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.address = address;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants startTime(Date startTime) {
@@ -255,7 +255,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -272,7 +272,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants endTime(Date endTime) {
@@ -289,7 +289,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -306,7 +306,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants purpose(String purpose) {
@@ -323,7 +323,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants state(StateEnum state) {
@@ -340,7 +340,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.state = state;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -357,7 +357,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -374,7 +374,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants held(Boolean held) {
@@ -391,7 +391,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.held = held;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -408,7 +408,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -425,7 +425,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -442,7 +442,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.user = user;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants queue(CallbackConversationNotificationUriReference queue) {
@@ -459,7 +459,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -476,7 +476,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants errorInfo(CallbackConversationNotificationErrorInfo errorInfo) {
@@ -493,7 +493,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants script(CallbackConversationNotificationUriReference script) {
@@ -510,7 +510,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.script = script;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -527,7 +527,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -544,7 +544,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants provider(String provider) {
@@ -561,7 +561,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants externalContact(CallbackConversationNotificationUriReference externalContact) {
@@ -578,7 +578,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants externalOrganization(CallbackConversationNotificationUriReference externalOrganization) {
@@ -595,7 +595,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -612,7 +612,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants peer(String peer) {
@@ -629,7 +629,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants outboundPreview(ConversationNotificationDialerPreview outboundPreview) {
@@ -646,7 +646,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.outboundPreview = outboundPreview;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants voicemail(DocumentDataV2NotificationWorkspace voicemail) {
@@ -663,7 +663,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.voicemail = voicemail;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants callbackNumbers(List<String> callbackNumbers) {
@@ -680,7 +680,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.callbackNumbers = callbackNumbers;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants callbackUserName(String callbackUserName) {
@@ -697,7 +697,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.callbackUserName = callbackUserName;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants skipEnabled(Boolean skipEnabled) {
@@ -714,7 +714,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.skipEnabled = skipEnabled;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants timeoutSeconds(Integer timeoutSeconds) {
@@ -731,7 +731,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.timeoutSeconds = timeoutSeconds;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants callbackScheduledTime(Date callbackScheduledTime) {
@@ -748,7 +748,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.callbackScheduledTime = callbackScheduledTime;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationParticipants automatedCallbackConfigId(String automatedCallbackConfigId) {
@@ -765,6 +765,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     this.automatedCallbackConfigId = automatedCallbackConfigId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

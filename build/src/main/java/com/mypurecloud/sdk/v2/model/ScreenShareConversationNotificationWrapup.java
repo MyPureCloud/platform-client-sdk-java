@@ -41,7 +41,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.code = code;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationWrapup notes(String notes) {
@@ -58,7 +58,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.notes = notes;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationWrapup tags(List<String> tags) {
@@ -75,7 +75,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.tags = tags;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationWrapup durationSeconds(Integer durationSeconds) {
@@ -92,7 +92,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.durationSeconds = durationSeconds;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationWrapup endTime(Date endTime) {
@@ -109,7 +109,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationWrapup additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class ScreenShareConversationNotificationWrapup  implements Serializable 
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

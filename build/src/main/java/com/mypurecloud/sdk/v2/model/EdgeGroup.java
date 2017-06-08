@@ -78,7 +78,7 @@ public class EdgeGroup  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -96,7 +96,7 @@ public class EdgeGroup  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EdgeGroup description(String description) {
@@ -113,7 +113,7 @@ public class EdgeGroup  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public EdgeGroup version(Integer version) {
@@ -130,7 +130,7 @@ public class EdgeGroup  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -148,7 +148,7 @@ public class EdgeGroup  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -166,7 +166,7 @@ public class EdgeGroup  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public EdgeGroup modifiedBy(String modifiedBy) {
@@ -183,7 +183,7 @@ public class EdgeGroup  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public EdgeGroup createdBy(String createdBy) {
@@ -200,7 +200,7 @@ public class EdgeGroup  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public EdgeGroup state(StateEnum state) {
@@ -217,7 +217,7 @@ public class EdgeGroup  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EdgeGroup modifiedByApp(String modifiedByApp) {
@@ -234,7 +234,7 @@ public class EdgeGroup  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public EdgeGroup createdByApp(String createdByApp) {
@@ -251,7 +251,7 @@ public class EdgeGroup  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * Is this edge group being managed remotely.
    **/
@@ -269,7 +269,7 @@ public class EdgeGroup  implements Serializable {
     this.managed = managed;
   }
 
-
+  
   /**
    * A trunk base settings assignment of trunkType \"EDGE\" to use for edge-to-edge communication.
    **/
@@ -287,7 +287,7 @@ public class EdgeGroup  implements Serializable {
     this.edgeTrunkBaseAssignment = edgeTrunkBaseAssignment;
   }
 
-
+  
   /**
    * Trunk base settings of trunkType \"PHONE\" to inherit to edge logical interface for phone communication.
    **/
@@ -305,13 +305,14 @@ public class EdgeGroup  implements Serializable {
     this.phoneTrunkBases = phoneTrunkBases;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

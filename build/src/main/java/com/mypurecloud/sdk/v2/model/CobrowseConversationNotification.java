@@ -39,7 +39,7 @@ public class CobrowseConversationNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotification name(String name) {
@@ -56,7 +56,7 @@ public class CobrowseConversationNotification  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotification participants(List<CobrowseConversationNotificationParticipants> participants) {
@@ -73,7 +73,7 @@ public class CobrowseConversationNotification  implements Serializable {
     this.participants = participants;
   }
 
-
+  
   /**
    **/
   public CobrowseConversationNotification otherMediaUris(List<String> otherMediaUris) {
@@ -90,6 +90,7 @@ public class CobrowseConversationNotification  implements Serializable {
     this.otherMediaUris = otherMediaUris;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

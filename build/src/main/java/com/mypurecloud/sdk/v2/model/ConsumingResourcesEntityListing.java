@@ -46,7 +46,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ConsumingResourcesEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ConsumingResourcesEntityListing  implements Serializable, PagedReso
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

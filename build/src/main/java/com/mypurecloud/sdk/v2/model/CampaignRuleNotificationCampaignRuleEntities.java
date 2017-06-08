@@ -38,7 +38,7 @@ public class CampaignRuleNotificationCampaignRuleEntities  implements Serializab
     this.campaigns = campaigns;
   }
 
-
+  
   /**
    **/
   public CampaignRuleNotificationCampaignRuleEntities sequences(List<CampaignRuleNotificationUriReference> sequences) {
@@ -55,6 +55,7 @@ public class CampaignRuleNotificationCampaignRuleEntities  implements Serializab
     this.sequences = sequences;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

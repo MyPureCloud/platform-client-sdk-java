@@ -36,7 +36,7 @@ public class QueueMemberNotification  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public QueueMemberNotification queueId(String queueId) {
@@ -53,7 +53,7 @@ public class QueueMemberNotification  implements Serializable {
     this.queueId = queueId;
   }
 
-
+  
   /**
    **/
   public QueueMemberNotification joined(Boolean joined) {
@@ -70,7 +70,7 @@ public class QueueMemberNotification  implements Serializable {
     this.joined = joined;
   }
 
-
+  
   /**
    **/
   public QueueMemberNotification additionalProperties(Object additionalProperties) {
@@ -87,6 +87,7 @@ public class QueueMemberNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

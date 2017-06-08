@@ -72,7 +72,7 @@ public class AnalyticsView  implements Serializable {
     this.target = target;
   }
 
-
+  
   /**
    * A unique name for this view. Must be distinct from other views and built-in metric names.
    **/
@@ -90,7 +90,7 @@ public class AnalyticsView  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Type of view you wish to create
    **/
@@ -108,7 +108,7 @@ public class AnalyticsView  implements Serializable {
     this.function = function;
   }
 
-
+  
   /**
    * Range of numbers for slicing up data
    **/
@@ -126,6 +126,7 @@ public class AnalyticsView  implements Serializable {
     this.range = range;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

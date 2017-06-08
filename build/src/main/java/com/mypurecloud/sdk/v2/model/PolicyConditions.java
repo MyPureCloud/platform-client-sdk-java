@@ -113,7 +113,7 @@ public class PolicyConditions  implements Serializable {
     this.forUsers = forUsers;
   }
 
-
+  
   /**
    **/
   public PolicyConditions directions(List<DirectionsEnum> directions) {
@@ -130,7 +130,7 @@ public class PolicyConditions  implements Serializable {
     this.directions = directions;
   }
 
-
+  
   /**
    **/
   public PolicyConditions dateRanges(List<String> dateRanges) {
@@ -147,7 +147,7 @@ public class PolicyConditions  implements Serializable {
     this.dateRanges = dateRanges;
   }
 
-
+  
   /**
    **/
   public PolicyConditions mediaTypes(List<MediaTypesEnum> mediaTypes) {
@@ -164,7 +164,7 @@ public class PolicyConditions  implements Serializable {
     this.mediaTypes = mediaTypes;
   }
 
-
+  
   /**
    **/
   public PolicyConditions forQueues(List<Queue> forQueues) {
@@ -181,7 +181,7 @@ public class PolicyConditions  implements Serializable {
     this.forQueues = forQueues;
   }
 
-
+  
   /**
    **/
   public PolicyConditions duration(DurationCondition duration) {
@@ -198,7 +198,7 @@ public class PolicyConditions  implements Serializable {
     this.duration = duration;
   }
 
-
+  
   /**
    **/
   public PolicyConditions wrapupCodes(List<WrapupCode> wrapupCodes) {
@@ -215,7 +215,7 @@ public class PolicyConditions  implements Serializable {
     this.wrapupCodes = wrapupCodes;
   }
 
-
+  
   /**
    **/
   public PolicyConditions timeAllowed(TimeAllowed timeAllowed) {
@@ -232,6 +232,7 @@ public class PolicyConditions  implements Serializable {
     this.timeAllowed = timeAllowed;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

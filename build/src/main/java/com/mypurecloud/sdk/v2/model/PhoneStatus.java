@@ -143,7 +143,7 @@ public class PhoneStatus  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public PhoneStatus name(String name) {
@@ -160,7 +160,7 @@ public class PhoneStatus  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * The Operational Status of this phone
    **/
@@ -178,7 +178,7 @@ public class PhoneStatus  implements Serializable {
     this.operationalStatus = operationalStatus;
   }
 
-
+  
   /**
    * The status of the primary or secondary Edges assigned to the phone lines.
    **/
@@ -196,7 +196,7 @@ public class PhoneStatus  implements Serializable {
     this.edgesStatus = edgesStatus;
   }
 
-
+  
   /**
    * Event Creation Time represents an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
    **/
@@ -214,7 +214,7 @@ public class PhoneStatus  implements Serializable {
     this.eventCreationTime = eventCreationTime;
   }
 
-
+  
   /**
    * Provision information for this phone
    **/
@@ -232,7 +232,7 @@ public class PhoneStatus  implements Serializable {
     this.provision = provision;
   }
 
-
+  
   /**
    * A list of LineStatus information for each of the lines of this phone
    **/
@@ -250,7 +250,7 @@ public class PhoneStatus  implements Serializable {
     this.lineStatuses = lineStatuses;
   }
 
-
+  
   /**
    * The phone status's edge assignment type.
    **/
@@ -268,7 +268,7 @@ public class PhoneStatus  implements Serializable {
     this.phoneAssignmentToEdgeType = phoneAssignmentToEdgeType;
   }
 
-
+  
   /**
    * The URI of the edge that provided this status information.
    **/
@@ -286,13 +286,14 @@ public class PhoneStatus  implements Serializable {
     this.edge = edge;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

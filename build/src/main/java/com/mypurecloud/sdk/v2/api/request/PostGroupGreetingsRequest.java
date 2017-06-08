@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.DefaultGreetingList;
 import com.mypurecloud.sdk.v2.model.GreetingListing;
 
 public class PostGroupGreetingsRequest {
+    
 	private String groupId;
 	public String getGroupId() {
 		return this.groupId;
@@ -40,6 +41,7 @@ public class PostGroupGreetingsRequest {
 	    return this;
 	}
 
+	
 	private Greeting body;
 	public Greeting getBody() {
 		return this.body;
@@ -54,6 +56,7 @@ public class PostGroupGreetingsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -90,6 +93,7 @@ public class PostGroupGreetingsRequest {
                 .withPathParameter("groupId", groupId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -101,10 +105,12 @@ public class PostGroupGreetingsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String groupId, Greeting body) {
 	    return new Builder()
 	            .withRequiredParams(groupId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostGroupGreetingsRequest request;
@@ -113,20 +119,26 @@ public class PostGroupGreetingsRequest {
 			request = new PostGroupGreetingsRequest();
 		}
 
+		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
 			return this;
 		}
+		
 		public Builder withBody(Greeting body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String groupId, Greeting body) {
 			request.setGroupId(groupId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostGroupGreetingsRequest build() {

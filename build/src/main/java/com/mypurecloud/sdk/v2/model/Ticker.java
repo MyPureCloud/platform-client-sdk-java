@@ -35,7 +35,7 @@ public class Ticker  implements Serializable {
     this.symbol = symbol;
   }
 
-
+  
   /**
    * The exchange for this ticker symbol. Examples: NYSE, FTSE, NASDAQ, etc.
    **/
@@ -53,6 +53,7 @@ public class Ticker  implements Serializable {
     this.exchange = exchange;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

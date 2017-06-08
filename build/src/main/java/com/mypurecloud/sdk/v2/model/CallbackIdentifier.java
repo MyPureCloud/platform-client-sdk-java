@@ -70,7 +70,7 @@ public class CallbackIdentifier  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * The identifier of the callback
    **/
@@ -88,6 +88,7 @@ public class CallbackIdentifier  implements Serializable {
     this.id = id;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PostTelephonyProvidersEdgesDidpoolsRequest {
+    
 	private DIDPool body;
 	public DIDPool getBody() {
 		return this.body;
@@ -98,6 +99,7 @@ public class PostTelephonyProvidersEdgesDidpoolsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +129,7 @@ public class PostTelephonyProvidersEdgesDidpoolsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/telephony/providers/edges/didpools")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -138,10 +141,12 @@ public class PostTelephonyProvidersEdgesDidpoolsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(DIDPool body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostTelephonyProvidersEdgesDidpoolsRequest request;
@@ -150,15 +155,20 @@ public class PostTelephonyProvidersEdgesDidpoolsRequest {
 			request = new PostTelephonyProvidersEdgesDidpoolsRequest();
 		}
 
+		
 		public Builder withBody(DIDPool body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(DIDPool body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostTelephonyProvidersEdgesDidpoolsRequest build() {

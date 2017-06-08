@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 
 public class GetExternalcontactsContactNotesRequest {
+    
 	private String contactId;
 	public String getContactId() {
 		return this.contactId;
@@ -45,6 +46,7 @@ public class GetExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -59,6 +61,7 @@ public class GetExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -73,6 +76,7 @@ public class GetExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -87,6 +91,7 @@ public class GetExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -101,6 +106,7 @@ public class GetExternalcontactsContactNotesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,7 +144,8 @@ public class GetExternalcontactsContactNotesRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -149,10 +156,12 @@ public class GetExternalcontactsContactNotesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactId) {
 	    return new Builder()
 	            .withRequiredParams(contactId);
 	}
+	
 
 	public static class Builder {
 		private final GetExternalcontactsContactNotesRequest request;
@@ -161,31 +170,40 @@ public class GetExternalcontactsContactNotesRequest {
 			request = new GetExternalcontactsContactNotesRequest();
 		}
 
+		
 		public Builder withContactId(String contactId) {
 			request.setContactId(contactId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactId) {
 			request.setContactId(contactId);
+			
 			return this;
 		}
+		
 
 
 		public GetExternalcontactsContactNotesRequest build() {

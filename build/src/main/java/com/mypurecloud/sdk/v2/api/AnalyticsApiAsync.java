@@ -77,6 +77,7 @@ public class AnalyticsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete a scheduled report job.
    * 
@@ -152,6 +153,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a conversation by id
    * 
@@ -227,6 +229,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get list of reporting metadata.
    * 
@@ -302,6 +305,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a reporting metadata.
    * 
@@ -377,6 +381,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of report formats
    * Get a list of report formats.
@@ -452,6 +457,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a scheduled report job.
    * 
@@ -527,6 +533,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get list of completed scheduled report jobs.
    * 
@@ -602,6 +609,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get most recently completed scheduled report job.
    * 
@@ -677,6 +685,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * A completed scheduled report job
    * A completed scheduled report job.
@@ -752,6 +761,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of scheduled report jobs
    * Get a list of scheduled report jobs.
@@ -827,6 +837,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Get a list of report time periods.
    * 
@@ -902,6 +913,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Index conversation properties
    * 
@@ -977,6 +989,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for conversation aggregates
    * 
@@ -1052,6 +1065,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for conversation details
    * 
@@ -1127,6 +1141,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for evaluation aggregates
    * 
@@ -1202,6 +1217,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for queue observations
    * 
@@ -1277,6 +1293,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Place a scheduled report immediately into the reporting queue
    * 
@@ -1352,6 +1369,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Create a scheduled report job
    * Create a scheduled report job.
@@ -1427,6 +1445,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for user aggregates
    * 
@@ -1502,6 +1521,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for user details
    * 
@@ -1577,6 +1597,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Query for user observations
    * 
@@ -1652,6 +1673,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
   /**
    * Update a scheduled report job.
    * 
@@ -1727,6 +1749,7 @@ public class AnalyticsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

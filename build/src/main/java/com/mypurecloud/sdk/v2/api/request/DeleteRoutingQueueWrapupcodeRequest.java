@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class DeleteRoutingQueueWrapupcodeRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -58,6 +59,7 @@ public class DeleteRoutingQueueWrapupcodeRequest {
 	    return this;
 	}
 
+	
 	private String codeId;
 	public String getCodeId() {
 		return this.codeId;
@@ -72,6 +74,7 @@ public class DeleteRoutingQueueWrapupcodeRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,7 +111,8 @@ public class DeleteRoutingQueueWrapupcodeRequest {
                 .withPathParameter("queueId", queueId)
         
                 .withPathParameter("codeId", codeId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -119,10 +123,12 @@ public class DeleteRoutingQueueWrapupcodeRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, String codeId) {
 	    return new Builder()
 	            .withRequiredParams(queueId, codeId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteRoutingQueueWrapupcodeRequest request;
@@ -131,20 +137,26 @@ public class DeleteRoutingQueueWrapupcodeRequest {
 			request = new DeleteRoutingQueueWrapupcodeRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withCodeId(String codeId) {
 			request.setCodeId(codeId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, String codeId) {
 			request.setQueueId(queueId);
-			request.setCodeId(codeId);
+						request.setCodeId(codeId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteRoutingQueueWrapupcodeRequest build() {

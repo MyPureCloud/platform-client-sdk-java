@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class PatchWorkforcemanagementTimeoffrequestRequest {
+    
 	private String timeOffRequestId;
 	public String getTimeOffRequestId() {
 		return this.timeOffRequestId;
@@ -48,6 +49,7 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private TimeOffRequestPatch body;
 	public TimeOffRequestPatch getBody() {
 		return this.body;
@@ -62,6 +64,7 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +96,7 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
                 .withPathParameter("timeOffRequestId", timeOffRequestId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +108,12 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String timeOffRequestId) {
 	    return new Builder()
 	            .withRequiredParams(timeOffRequestId);
 	}
+	
 
 	public static class Builder {
 		private final PatchWorkforcemanagementTimeoffrequestRequest request;
@@ -116,19 +122,25 @@ public class PatchWorkforcemanagementTimeoffrequestRequest {
 			request = new PatchWorkforcemanagementTimeoffrequestRequest();
 		}
 
+		
 		public Builder withTimeOffRequestId(String timeOffRequestId) {
 			request.setTimeOffRequestId(timeOffRequestId);
 			return this;
 		}
+		
 		public Builder withBody(TimeOffRequestPatch body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String timeOffRequestId) {
 			request.setTimeOffRequestId(timeOffRequestId);
+			
 			return this;
 		}
+		
 
 
 		public PatchWorkforcemanagementTimeoffrequestRequest build() {

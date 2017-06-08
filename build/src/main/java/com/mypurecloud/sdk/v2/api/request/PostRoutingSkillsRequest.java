@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingSkillsRequest {
+    
 	private RoutingSkill body;
 	public RoutingSkill getBody() {
 		return this.body;
@@ -58,6 +59,7 @@ public class PostRoutingSkillsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,6 +89,7 @@ public class PostRoutingSkillsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/routing/skills")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,10 +101,12 @@ public class PostRoutingSkillsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(RoutingSkill body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostRoutingSkillsRequest request;
@@ -110,15 +115,20 @@ public class PostRoutingSkillsRequest {
 			request = new PostRoutingSkillsRequest();
 		}
 
+		
 		public Builder withBody(RoutingSkill body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(RoutingSkill body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRoutingSkillsRequest build() {

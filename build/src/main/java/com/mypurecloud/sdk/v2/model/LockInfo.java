@@ -78,7 +78,7 @@ public class LockInfo  implements Serializable {
     this.lockedBy = lockedBy;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -96,7 +96,7 @@ public class LockInfo  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -114,7 +114,7 @@ public class LockInfo  implements Serializable {
     this.dateExpires = dateExpires;
   }
 
-
+  
   /**
    **/
   public LockInfo action(ActionEnum action) {
@@ -131,6 +131,7 @@ public class LockInfo  implements Serializable {
     this.action = action;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -36,7 +36,7 @@ public class IntradayPerformancePredictionQueueData  implements Serializable {
     this.serviceLevelPercent = serviceLevelPercent;
   }
 
-
+  
   /**
    * Predicted average time in seconds it takes to answer an interaction once the interaction becomes available to be routed
    **/
@@ -54,7 +54,7 @@ public class IntradayPerformancePredictionQueueData  implements Serializable {
     this.averageSpeedOfAnswerSeconds = averageSpeedOfAnswerSeconds;
   }
 
-
+  
   /**
    * Predicted number of interactions
    **/
@@ -72,6 +72,7 @@ public class IntradayPerformancePredictionQueueData  implements Serializable {
     this.numberOfInteractions = numberOfInteractions;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

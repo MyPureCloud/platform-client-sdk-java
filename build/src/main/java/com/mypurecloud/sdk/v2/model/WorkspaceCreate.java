@@ -36,7 +36,7 @@ public class WorkspaceCreate  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public WorkspaceCreate bucket(String bucket) {
@@ -53,7 +53,7 @@ public class WorkspaceCreate  implements Serializable {
     this.bucket = bucket;
   }
 
-
+  
   /**
    **/
   public WorkspaceCreate description(String description) {
@@ -70,6 +70,7 @@ public class WorkspaceCreate  implements Serializable {
     this.description = description;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

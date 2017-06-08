@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class DeleteTelephonyProvidersEdgesPhonebasesettingRequest {
+    
 	private String phoneBaseId;
 	public String getPhoneBaseId() {
 		return this.phoneBaseId;
@@ -98,6 +99,7 @@ public class DeleteTelephonyProvidersEdgesPhonebasesettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class DeleteTelephonyProvidersEdgesPhonebasesettingRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}")
                 .withPathParameter("phoneBaseId", phoneBaseId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class DeleteTelephonyProvidersEdgesPhonebasesettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String phoneBaseId) {
 	    return new Builder()
 	            .withRequiredParams(phoneBaseId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteTelephonyProvidersEdgesPhonebasesettingRequest request;
@@ -150,15 +155,20 @@ public class DeleteTelephonyProvidersEdgesPhonebasesettingRequest {
 			request = new DeleteTelephonyProvidersEdgesPhonebasesettingRequest();
 		}
 
+		
 		public Builder withPhoneBaseId(String phoneBaseId) {
 			request.setPhoneBaseId(phoneBaseId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String phoneBaseId) {
 			request.setPhoneBaseId(phoneBaseId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteTelephonyProvidersEdgesPhonebasesettingRequest build() {

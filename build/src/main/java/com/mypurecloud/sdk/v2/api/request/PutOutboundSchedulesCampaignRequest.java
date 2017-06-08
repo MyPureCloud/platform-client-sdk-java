@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundSchedulesCampaignRequest {
+    
 	private String campaignId;
 	public String getCampaignId() {
 		return this.campaignId;
@@ -74,6 +75,7 @@ public class PutOutboundSchedulesCampaignRequest {
 	    return this;
 	}
 
+	
 	private CampaignSchedule body;
 	public CampaignSchedule getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundSchedulesCampaignRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundSchedulesCampaignRequest {
                 .withPathParameter("campaignId", campaignId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundSchedulesCampaignRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String campaignId, CampaignSchedule body) {
 	    return new Builder()
 	            .withRequiredParams(campaignId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundSchedulesCampaignRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundSchedulesCampaignRequest {
 			request = new PutOutboundSchedulesCampaignRequest();
 		}
 
+		
 		public Builder withCampaignId(String campaignId) {
 			request.setCampaignId(campaignId);
 			return this;
 		}
+		
 		public Builder withBody(CampaignSchedule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String campaignId, CampaignSchedule body) {
 			request.setCampaignId(campaignId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundSchedulesCampaignRequest build() {

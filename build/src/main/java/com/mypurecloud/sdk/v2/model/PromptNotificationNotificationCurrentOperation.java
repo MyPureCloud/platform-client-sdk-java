@@ -124,7 +124,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.id = id;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation complete(Boolean complete) {
@@ -141,7 +141,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.complete = complete;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation user(DependencyTrackingBuildNotificationNotificationUser user) {
@@ -158,7 +158,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.user = user;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation actionName(ActionNameEnum actionName) {
@@ -175,7 +175,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.actionName = actionName;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation actionStatus(ActionStatusEnum actionStatus) {
@@ -192,7 +192,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.actionStatus = actionStatus;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation errorMessage(String errorMessage) {
@@ -209,7 +209,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.errorMessage = errorMessage;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation errorCode(String errorCode) {
@@ -226,7 +226,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation errorMessageParams(PromptNotificationNotificationCurrentOperationErrorMessageParams errorMessageParams) {
@@ -243,7 +243,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.errorMessageParams = errorMessageParams;
   }
 
-
+  
   /**
    **/
   public PromptNotificationNotificationCurrentOperation errorDetails(List<PromptNotificationNotificationCurrentOperationErrorDetails> errorDetails) {
@@ -260,6 +260,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     this.errorDetails = errorDetails;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

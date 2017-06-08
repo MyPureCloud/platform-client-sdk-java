@@ -39,6 +39,7 @@ public class TokensApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete  auth token used to make the request.
    * 
@@ -114,6 +115,7 @@ public class TokensApiAsync {
     }
   }
 
+  
   /**
    * Fetch information about the current token
    * 
@@ -189,6 +191,7 @@ public class TokensApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

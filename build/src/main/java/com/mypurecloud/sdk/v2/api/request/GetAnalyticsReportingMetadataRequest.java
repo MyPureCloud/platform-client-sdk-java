@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingMetadataRequest {
+    
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -54,6 +55,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -68,6 +70,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    return this;
 	}
 
+	
 	private String locale;
 	public String getLocale() {
 		return this.locale;
@@ -82,6 +85,7 @@ public class GetAnalyticsReportingMetadataRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -110,7 +114,8 @@ public class GetAnalyticsReportingMetadataRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("locale", "", locale)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -121,6 +126,7 @@ public class GetAnalyticsReportingMetadataRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetAnalyticsReportingMetadataRequest request;
@@ -129,19 +135,24 @@ public class GetAnalyticsReportingMetadataRequest {
 			request = new GetAnalyticsReportingMetadataRequest();
 		}
 
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withLocale(String locale) {
 			request.setLocale(locale);
 			return this;
 		}
+		
 
+		
 
 
 		public GetAnalyticsReportingMetadataRequest build() {

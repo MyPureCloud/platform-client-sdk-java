@@ -46,7 +46,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public NoteListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public NoteListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public NoteListing total(Long total) {
@@ -97,7 +97,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.total = total;
   }
 
-
+  
   /**
    **/
   public NoteListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public NoteListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public NoteListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public NoteListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public NoteListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public NoteListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class NoteListing  implements Serializable, PagedResource<Note> {
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

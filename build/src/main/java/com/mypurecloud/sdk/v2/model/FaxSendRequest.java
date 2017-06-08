@@ -73,7 +73,7 @@ public class FaxSendRequest  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public FaxSendRequest name(String name) {
@@ -90,7 +90,7 @@ public class FaxSendRequest  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * A list of outbound fax dialing addresses. E.g. +13175555555 or 3175555555
    **/
@@ -108,7 +108,7 @@ public class FaxSendRequest  implements Serializable {
     this.addresses = addresses;
   }
 
-
+  
   /**
    * DocumentId of Content Management artifact. If Content Management document is not used for faxing, documentId should be null
    **/
@@ -126,7 +126,7 @@ public class FaxSendRequest  implements Serializable {
     this.documentId = documentId;
   }
 
-
+  
   /**
    * The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored
    **/
@@ -144,7 +144,7 @@ public class FaxSendRequest  implements Serializable {
     this.contentType = contentType;
   }
 
-
+  
   /**
    * Workspace in which the document should be stored. If Content Management document is used for faxing, workspace will be ignored
    **/
@@ -162,7 +162,7 @@ public class FaxSendRequest  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    * Data for coversheet generation.
    **/
@@ -180,7 +180,7 @@ public class FaxSendRequest  implements Serializable {
     this.coverSheet = coverSheet;
   }
 
-
+  
   /**
    * Time zone offset minutes from GMT
    **/
@@ -198,13 +198,14 @@ public class FaxSendRequest  implements Serializable {
     this.timeZoneOffsetMinutes = timeZoneOffsetMinutes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
 
 public class PutOutboundContactlistfilterRequest {
+    
 	private String contactListFilterId;
 	public String getContactListFilterId() {
 		return this.contactListFilterId;
@@ -74,6 +75,7 @@ public class PutOutboundContactlistfilterRequest {
 	    return this;
 	}
 
+	
 	private ContactListFilter body;
 	public ContactListFilter getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PutOutboundContactlistfilterRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PutOutboundContactlistfilterRequest {
                 .withPathParameter("contactListFilterId", contactListFilterId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PutOutboundContactlistfilterRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String contactListFilterId, ContactListFilter body) {
 	    return new Builder()
 	            .withRequiredParams(contactListFilterId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutOutboundContactlistfilterRequest request;
@@ -147,20 +153,26 @@ public class PutOutboundContactlistfilterRequest {
 			request = new PutOutboundContactlistfilterRequest();
 		}
 
+		
 		public Builder withContactListFilterId(String contactListFilterId) {
 			request.setContactListFilterId(contactListFilterId);
 			return this;
 		}
+		
 		public Builder withBody(ContactListFilter body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String contactListFilterId, ContactListFilter body) {
 			request.setContactListFilterId(contactListFilterId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutOutboundContactlistfilterRequest build() {

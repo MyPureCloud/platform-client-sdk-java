@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
 
 public class GetLicenseDefinitionRequest {
+    
 	private String licenseId;
 	public String getLicenseId() {
 		return this.licenseId;
@@ -41,6 +42,7 @@ public class GetLicenseDefinitionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,7 +72,8 @@ public class GetLicenseDefinitionRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/license/definitions/{licenseId}")
                 .withPathParameter("licenseId", licenseId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -81,10 +84,12 @@ public class GetLicenseDefinitionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String licenseId) {
 	    return new Builder()
 	            .withRequiredParams(licenseId);
 	}
+	
 
 	public static class Builder {
 		private final GetLicenseDefinitionRequest request;
@@ -93,15 +98,20 @@ public class GetLicenseDefinitionRequest {
 			request = new GetLicenseDefinitionRequest();
 		}
 
+		
 		public Builder withLicenseId(String licenseId) {
 			request.setLicenseId(licenseId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String licenseId) {
 			request.setLicenseId(licenseId);
+			
 			return this;
 		}
+		
 
 
 		public GetLicenseDefinitionRequest build() {

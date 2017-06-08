@@ -37,7 +37,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.correlationId = correlationId;
   }
 
-
+  
   /**
    **/
   public DomainNetworkCommandResponse commandName(String commandName) {
@@ -54,7 +54,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.commandName = commandName;
   }
 
-
+  
   /**
    **/
   public DomainNetworkCommandResponse acknowledged(Boolean acknowledged) {
@@ -71,7 +71,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.acknowledged = acknowledged;
   }
 
-
+  
   /**
    **/
   public DomainNetworkCommandResponse errorInfo(ErrorDetails errorInfo) {
@@ -88,6 +88,7 @@ public class DomainNetworkCommandResponse  implements Serializable {
     this.errorInfo = errorInfo;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

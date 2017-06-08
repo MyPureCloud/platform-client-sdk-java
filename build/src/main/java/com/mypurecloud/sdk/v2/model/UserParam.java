@@ -34,7 +34,7 @@ public class UserParam  implements Serializable {
     this.key = key;
   }
 
-
+  
   /**
    **/
   public UserParam value(String value) {
@@ -51,6 +51,7 @@ public class UserParam  implements Serializable {
     this.value = value;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

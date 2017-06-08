@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostAnalyticsQueuesObservationsQueryRequest {
+    
 	private ObservationQuery body;
 	public ObservationQuery getBody() {
 		return this.body;
@@ -58,6 +59,7 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -87,6 +89,7 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/analytics/queues/observations/query")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,10 +101,12 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(ObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsQueuesObservationsQueryRequest request;
@@ -110,15 +115,20 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 			request = new PostAnalyticsQueuesObservationsQueryRequest();
 		}
 
+		
 		public Builder withBody(ObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(ObservationQuery body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsQueuesObservationsQueryRequest build() {

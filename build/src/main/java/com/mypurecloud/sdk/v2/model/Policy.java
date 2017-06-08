@@ -39,7 +39,7 @@ public class Policy  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Policy name(String name) {
@@ -56,7 +56,7 @@ public class Policy  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -74,7 +74,7 @@ public class Policy  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -92,7 +92,7 @@ public class Policy  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    **/
   public Policy order(Integer order) {
@@ -109,7 +109,7 @@ public class Policy  implements Serializable {
     this.order = order;
   }
 
-
+  
   /**
    **/
   public Policy description(String description) {
@@ -126,7 +126,7 @@ public class Policy  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Policy enabled(Boolean enabled) {
@@ -143,7 +143,7 @@ public class Policy  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    * Conditions and actions per media type
    **/
@@ -161,7 +161,7 @@ public class Policy  implements Serializable {
     this.mediaPolicies = mediaPolicies;
   }
 
-
+  
   /**
    * Conditions
    **/
@@ -179,7 +179,7 @@ public class Policy  implements Serializable {
     this.conditions = conditions;
   }
 
-
+  
   /**
    * Actions
    **/
@@ -197,7 +197,7 @@ public class Policy  implements Serializable {
     this.actions = actions;
   }
 
-
+  
   /**
    **/
   public Policy policyErrors(PolicyErrors policyErrors) {
@@ -214,13 +214,14 @@ public class Policy  implements Serializable {
     this.policyErrors = policyErrors;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

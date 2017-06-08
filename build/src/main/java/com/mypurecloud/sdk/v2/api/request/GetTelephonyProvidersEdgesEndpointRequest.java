@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesEndpointRequest {
+    
 	private String endpointId;
 	public String getEndpointId() {
 		return this.endpointId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesEndpointRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,7 +129,8 @@ public class GetTelephonyProvidersEdgesEndpointRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/telephony/providers/edges/endpoints/{endpointId}")
                 .withPathParameter("endpointId", endpointId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -138,10 +141,12 @@ public class GetTelephonyProvidersEdgesEndpointRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String endpointId) {
 	    return new Builder()
 	            .withRequiredParams(endpointId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesEndpointRequest request;
@@ -150,15 +155,20 @@ public class GetTelephonyProvidersEdgesEndpointRequest {
 			request = new GetTelephonyProvidersEdgesEndpointRequest();
 		}
 
+		
 		public Builder withEndpointId(String endpointId) {
 			request.setEndpointId(endpointId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String endpointId) {
 			request.setEndpointId(endpointId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesEndpointRequest build() {

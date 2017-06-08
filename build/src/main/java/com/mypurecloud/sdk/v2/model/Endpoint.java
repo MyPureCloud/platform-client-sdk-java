@@ -82,7 +82,7 @@ public class Endpoint  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * Name
    **/
@@ -100,7 +100,7 @@ public class Endpoint  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Endpoint description(String description) {
@@ -117,7 +117,7 @@ public class Endpoint  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public Endpoint version(Integer version) {
@@ -134,7 +134,7 @@ public class Endpoint  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -152,7 +152,7 @@ public class Endpoint  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -170,7 +170,7 @@ public class Endpoint  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public Endpoint modifiedBy(String modifiedBy) {
@@ -187,7 +187,7 @@ public class Endpoint  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public Endpoint createdBy(String createdBy) {
@@ -204,7 +204,7 @@ public class Endpoint  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public Endpoint state(StateEnum state) {
@@ -221,7 +221,7 @@ public class Endpoint  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public Endpoint modifiedByApp(String modifiedByApp) {
@@ -238,7 +238,7 @@ public class Endpoint  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public Endpoint createdByApp(String createdByApp) {
@@ -255,7 +255,7 @@ public class Endpoint  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public Endpoint count(Integer count) {
@@ -272,7 +272,7 @@ public class Endpoint  implements Serializable {
     this.count = count;
   }
 
-
+  
   /**
    **/
   public Endpoint properties(Map<String, Object> properties) {
@@ -289,7 +289,7 @@ public class Endpoint  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   /**
    * Schema
    **/
@@ -307,7 +307,7 @@ public class Endpoint  implements Serializable {
     this.schema = schema;
   }
 
-
+  
   /**
    **/
   public Endpoint enabled(Boolean enabled) {
@@ -324,7 +324,7 @@ public class Endpoint  implements Serializable {
     this.enabled = enabled;
   }
 
-
+  
   /**
    **/
   public Endpoint site(UriReference site) {
@@ -341,7 +341,7 @@ public class Endpoint  implements Serializable {
     this.site = site;
   }
 
-
+  
   /**
    **/
   public Endpoint dids(List<String> dids) {
@@ -358,13 +358,14 @@ public class Endpoint  implements Serializable {
     this.dids = dids;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -75,7 +75,7 @@ public class DomainResourceConditionValue  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionValue queue(Queue queue) {
@@ -92,7 +92,7 @@ public class DomainResourceConditionValue  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionValue value(String value) {
@@ -109,7 +109,7 @@ public class DomainResourceConditionValue  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    **/
   public DomainResourceConditionValue type(TypeEnum type) {
@@ -126,6 +126,7 @@ public class DomainResourceConditionValue  implements Serializable {
     this.type = type;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

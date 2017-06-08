@@ -126,7 +126,7 @@ public class UserQueue  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public UserQueue name(String name) {
@@ -143,7 +143,7 @@ public class UserQueue  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public UserQueue description(String description) {
@@ -160,7 +160,7 @@ public class UserQueue  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public UserQueue version(Integer version) {
@@ -177,7 +177,7 @@ public class UserQueue  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -195,7 +195,7 @@ public class UserQueue  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -213,7 +213,7 @@ public class UserQueue  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public UserQueue modifiedBy(String modifiedBy) {
@@ -230,7 +230,7 @@ public class UserQueue  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public UserQueue createdBy(String createdBy) {
@@ -247,7 +247,7 @@ public class UserQueue  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public UserQueue state(StateEnum state) {
@@ -264,7 +264,7 @@ public class UserQueue  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public UserQueue modifiedByApp(String modifiedByApp) {
@@ -281,7 +281,7 @@ public class UserQueue  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public UserQueue createdByApp(String createdByApp) {
@@ -298,7 +298,7 @@ public class UserQueue  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The media settings for the queue.
    **/
@@ -316,7 +316,7 @@ public class UserQueue  implements Serializable {
     this.mediaSettings = mediaSettings;
   }
 
-
+  
   /**
    * The bulls-eye settings for the queue.
    **/
@@ -334,7 +334,7 @@ public class UserQueue  implements Serializable {
     this.bullseye = bullseye;
   }
 
-
+  
   /**
    * The ACW settings for the queue.
    **/
@@ -352,7 +352,7 @@ public class UserQueue  implements Serializable {
     this.acwSettings = acwSettings;
   }
 
-
+  
   /**
    * The skill evaluation method to use when routing conversations.
    **/
@@ -370,7 +370,7 @@ public class UserQueue  implements Serializable {
     this.skillEvaluationMethod = skillEvaluationMethod;
   }
 
-
+  
   /**
    * The in-queue flow to use for conversations waiting in queue.
    **/
@@ -388,7 +388,7 @@ public class UserQueue  implements Serializable {
     this.queueFlow = queueFlow;
   }
 
-
+  
   /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
@@ -406,7 +406,7 @@ public class UserQueue  implements Serializable {
     this.callingPartyName = callingPartyName;
   }
 
-
+  
   /**
    * The phone number to use for caller identification for outbound calls from this queue.
    **/
@@ -424,7 +424,7 @@ public class UserQueue  implements Serializable {
     this.callingPartyNumber = callingPartyNumber;
   }
 
-
+  
   /**
    * The default script Ids for the communication types.
    **/
@@ -442,7 +442,7 @@ public class UserQueue  implements Serializable {
     this.defaultScripts = defaultScripts;
   }
 
-
+  
   /**
    **/
   public UserQueue outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
@@ -459,7 +459,7 @@ public class UserQueue  implements Serializable {
     this.outboundEmailAddress = outboundEmailAddress;
   }
 
-
+  
   /**
    **/
   public UserQueue joined(Boolean joined) {
@@ -476,7 +476,7 @@ public class UserQueue  implements Serializable {
     this.joined = joined;
   }
 
-
+  
   /**
    **/
   public UserQueue memberCount(Integer memberCount) {
@@ -493,13 +493,14 @@ public class UserQueue  implements Serializable {
     this.memberCount = memberCount;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

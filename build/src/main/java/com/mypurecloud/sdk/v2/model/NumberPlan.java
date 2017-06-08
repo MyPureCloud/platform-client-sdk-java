@@ -82,7 +82,7 @@ public class NumberPlan  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -100,7 +100,7 @@ public class NumberPlan  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public NumberPlan description(String description) {
@@ -117,7 +117,7 @@ public class NumberPlan  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public NumberPlan version(Integer version) {
@@ -134,7 +134,7 @@ public class NumberPlan  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -152,7 +152,7 @@ public class NumberPlan  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -170,7 +170,7 @@ public class NumberPlan  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public NumberPlan modifiedBy(String modifiedBy) {
@@ -187,7 +187,7 @@ public class NumberPlan  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public NumberPlan createdBy(String createdBy) {
@@ -204,7 +204,7 @@ public class NumberPlan  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public NumberPlan state(StateEnum state) {
@@ -221,7 +221,7 @@ public class NumberPlan  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public NumberPlan modifiedByApp(String modifiedByApp) {
@@ -238,7 +238,7 @@ public class NumberPlan  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public NumberPlan createdByApp(String createdByApp) {
@@ -255,7 +255,7 @@ public class NumberPlan  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    **/
   public NumberPlan match(String match) {
@@ -272,7 +272,7 @@ public class NumberPlan  implements Serializable {
     this.match = match;
   }
 
-
+  
   /**
    **/
   public NumberPlan normalizedFormat(String normalizedFormat) {
@@ -289,7 +289,7 @@ public class NumberPlan  implements Serializable {
     this.normalizedFormat = normalizedFormat;
   }
 
-
+  
   /**
    **/
   public NumberPlan priority(Integer priority) {
@@ -306,7 +306,7 @@ public class NumberPlan  implements Serializable {
     this.priority = priority;
   }
 
-
+  
   /**
    **/
   public NumberPlan numbers(List<Number> numbers) {
@@ -323,7 +323,7 @@ public class NumberPlan  implements Serializable {
     this.numbers = numbers;
   }
 
-
+  
   /**
    **/
   public NumberPlan digitLength(DigitLength digitLength) {
@@ -340,7 +340,7 @@ public class NumberPlan  implements Serializable {
     this.digitLength = digitLength;
   }
 
-
+  
   /**
    **/
   public NumberPlan classification(String classification) {
@@ -357,7 +357,7 @@ public class NumberPlan  implements Serializable {
     this.classification = classification;
   }
 
-
+  
   /**
    **/
   public NumberPlan matchType(String matchType) {
@@ -374,13 +374,14 @@ public class NumberPlan  implements Serializable {
     this.matchType = matchType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

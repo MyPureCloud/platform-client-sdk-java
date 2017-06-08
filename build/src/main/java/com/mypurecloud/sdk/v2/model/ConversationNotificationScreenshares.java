@@ -135,7 +135,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares self(ConversationNotificationAddress self) {
@@ -152,7 +152,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.self = self;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares id(String id) {
@@ -169,7 +169,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares context(String context) {
@@ -186,7 +186,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.context = context;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares sharing(Boolean sharing) {
@@ -203,7 +203,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.sharing = sharing;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares provider(String provider) {
@@ -220,7 +220,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares scriptId(String scriptId) {
@@ -237,7 +237,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.scriptId = scriptId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares peerId(String peerId) {
@@ -254,7 +254,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.peerId = peerId;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares disconnectType(DisconnectTypeEnum disconnectType) {
@@ -271,7 +271,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares connectedTime(Date connectedTime) {
@@ -288,7 +288,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares disconnectedTime(Date disconnectedTime) {
@@ -305,7 +305,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.disconnectedTime = disconnectedTime;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationScreenshares additionalProperties(Object additionalProperties) {
@@ -322,6 +322,7 @@ public class ConversationNotificationScreenshares  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

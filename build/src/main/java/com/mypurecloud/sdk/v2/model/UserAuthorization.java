@@ -39,7 +39,7 @@ public class UserAuthorization  implements Serializable {
     this.roles = roles;
   }
 
-
+  
   /**
    * A collection of the permissions granted by all assigned roles
    **/
@@ -57,7 +57,7 @@ public class UserAuthorization  implements Serializable {
     this.permissions = permissions;
   }
 
-
+  
   /**
    * The policies configured for assigned permissions.
    **/
@@ -75,6 +75,7 @@ public class UserAuthorization  implements Serializable {
     this.permissionPolicies = permissionPolicies;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

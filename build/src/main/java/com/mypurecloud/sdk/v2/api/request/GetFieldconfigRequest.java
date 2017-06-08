@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class GetFieldconfigRequest {
+    
 	private String type;
 	public String getType() {
 		return this.type;
@@ -62,6 +63,7 @@ public class GetFieldconfigRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -91,7 +93,8 @@ public class GetFieldconfigRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/fieldconfig")
                 .withQueryParameters("type", "", type)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -102,10 +105,12 @@ public class GetFieldconfigRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String type) {
 	    return new Builder()
 	            .withRequiredParams(type);
 	}
+	
 
 	public static class Builder {
 		private final GetFieldconfigRequest request;
@@ -114,15 +119,20 @@ public class GetFieldconfigRequest {
 			request = new GetFieldconfigRequest();
 		}
 
+		
 		public Builder withType(String type) {
 			request.setType(type);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String type) {
 			request.setType(type);
+			
 			return this;
 		}
+		
 
 
 		public GetFieldconfigRequest build() {

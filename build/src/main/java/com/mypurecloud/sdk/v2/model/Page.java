@@ -34,7 +34,7 @@ public class Page  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Page name(String name) {
@@ -51,7 +51,7 @@ public class Page  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Page versionId(String versionId) {
@@ -68,7 +68,7 @@ public class Page  implements Serializable {
     this.versionId = versionId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -86,7 +86,7 @@ public class Page  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -104,7 +104,7 @@ public class Page  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    **/
   public Page rootContainer(Map<String, Object> rootContainer) {
@@ -121,7 +121,7 @@ public class Page  implements Serializable {
     this.rootContainer = rootContainer;
   }
 
-
+  
   /**
    **/
   public Page properties(Map<String, Object> properties) {
@@ -138,13 +138,14 @@ public class Page  implements Serializable {
     this.properties = properties;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

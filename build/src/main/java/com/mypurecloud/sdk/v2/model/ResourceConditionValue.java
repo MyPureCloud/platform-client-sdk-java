@@ -71,7 +71,7 @@ public class ResourceConditionValue  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ResourceConditionValue value(String value) {
@@ -88,6 +88,7 @@ public class ResourceConditionValue  implements Serializable {
     this.value = value;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

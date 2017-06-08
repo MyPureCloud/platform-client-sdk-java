@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
+    
 	private String siteId;
 	public String getSiteId() {
 		return this.siteId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
 	    return this;
 	}
 
+	
 	private String numberPlanId;
 	public String getNumberPlanId() {
 		return this.numberPlanId;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,7 +151,8 @@ public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
                 .withPathParameter("siteId", siteId)
         
                 .withPathParameter("numberPlanId", numberPlanId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -159,10 +163,12 @@ public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String siteId, String numberPlanId) {
 	    return new Builder()
 	            .withRequiredParams(siteId, numberPlanId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesSiteNumberplanRequest request;
@@ -171,20 +177,26 @@ public class GetTelephonyProvidersEdgesSiteNumberplanRequest {
 			request = new GetTelephonyProvidersEdgesSiteNumberplanRequest();
 		}
 
+		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
 			return this;
 		}
+		
 		public Builder withNumberPlanId(String numberPlanId) {
 			request.setNumberPlanId(numberPlanId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String siteId, String numberPlanId) {
 			request.setSiteId(siteId);
-			request.setNumberPlanId(numberPlanId);
+						request.setNumberPlanId(numberPlanId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesSiteNumberplanRequest build() {

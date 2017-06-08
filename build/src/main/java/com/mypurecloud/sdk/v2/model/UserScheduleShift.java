@@ -41,7 +41,7 @@ public class UserScheduleShift  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * Length of this shift in minutes
    **/
@@ -59,7 +59,7 @@ public class UserScheduleShift  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-
+  
   /**
    * List of activities in this shift
    **/
@@ -77,6 +77,7 @@ public class UserScheduleShift  implements Serializable {
     this.activities = activities;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

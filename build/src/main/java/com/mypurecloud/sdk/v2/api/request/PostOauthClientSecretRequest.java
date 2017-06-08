@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 
 public class PostOauthClientSecretRequest {
+    
 	private String clientId;
 	public String getClientId() {
 		return this.clientId;
@@ -37,6 +38,7 @@ public class PostOauthClientSecretRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -66,7 +68,8 @@ public class PostOauthClientSecretRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/oauth/clients/{clientId}/secret")
                 .withPathParameter("clientId", clientId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -77,10 +80,12 @@ public class PostOauthClientSecretRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String clientId) {
 	    return new Builder()
 	            .withRequiredParams(clientId);
 	}
+	
 
 	public static class Builder {
 		private final PostOauthClientSecretRequest request;
@@ -89,15 +94,20 @@ public class PostOauthClientSecretRequest {
 			request = new PostOauthClientSecretRequest();
 		}
 
+		
 		public Builder withClientId(String clientId) {
 			request.setClientId(clientId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String clientId) {
 			request.setClientId(clientId);
+			
 			return this;
 		}
+		
 
 
 		public PostOauthClientSecretRequest build() {

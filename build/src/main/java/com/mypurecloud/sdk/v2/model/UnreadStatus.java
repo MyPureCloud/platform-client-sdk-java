@@ -34,6 +34,7 @@ public class UnreadStatus  implements Serializable {
     this.unread = unread;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementDocumentContentRequest {
+    
 	private String documentId;
 	public String getDocumentId() {
 		return this.documentId;
@@ -64,6 +65,7 @@ public class GetContentmanagementDocumentContentRequest {
 	    return this;
 	}
 
+	
 	private String disposition;
 	public String getDisposition() {
 		return this.disposition;
@@ -78,6 +80,7 @@ public class GetContentmanagementDocumentContentRequest {
 	    return this;
 	}
 
+	
 	private String contentType;
 	public String getContentType() {
 		return this.contentType;
@@ -92,6 +95,7 @@ public class GetContentmanagementDocumentContentRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -125,7 +129,8 @@ public class GetContentmanagementDocumentContentRequest {
                 .withQueryParameters("disposition", "", disposition)
         
                 .withQueryParameters("contentType", "", contentType)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -136,10 +141,12 @@ public class GetContentmanagementDocumentContentRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String documentId) {
 	    return new Builder()
 	            .withRequiredParams(documentId);
 	}
+	
 
 	public static class Builder {
 		private final GetContentmanagementDocumentContentRequest request;
@@ -148,23 +155,30 @@ public class GetContentmanagementDocumentContentRequest {
 			request = new GetContentmanagementDocumentContentRequest();
 		}
 
+		
 		public Builder withDocumentId(String documentId) {
 			request.setDocumentId(documentId);
 			return this;
 		}
+		
 		public Builder withDisposition(String disposition) {
 			request.setDisposition(disposition);
 			return this;
 		}
+		
 		public Builder withContentType(String contentType) {
 			request.setContentType(contentType);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String documentId) {
 			request.setDocumentId(documentId);
+			
 			return this;
 		}
+		
 
 
 		public GetContentmanagementDocumentContentRequest build() {

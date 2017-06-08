@@ -40,7 +40,7 @@ public class DialerPreview  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    * The contact associated with this preview data pop
    **/
@@ -58,7 +58,7 @@ public class DialerPreview  implements Serializable {
     this.contactId = contactId;
   }
 
-
+  
   /**
    * The contactList associated with this preview data pop.
    **/
@@ -76,7 +76,7 @@ public class DialerPreview  implements Serializable {
     this.contactListId = contactListId;
   }
 
-
+  
   /**
    * The campaignId associated with this preview data pop.
    **/
@@ -94,7 +94,7 @@ public class DialerPreview  implements Serializable {
     this.campaignId = campaignId;
   }
 
-
+  
   /**
    * The phone number columns associated with this campaign
    **/
@@ -112,6 +112,7 @@ public class DialerPreview  implements Serializable {
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

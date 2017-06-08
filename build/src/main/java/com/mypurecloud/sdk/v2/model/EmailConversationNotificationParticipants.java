@@ -196,7 +196,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.id = id;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants name(String name) {
@@ -213,7 +213,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.name = name;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants address(String address) {
@@ -230,7 +230,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.address = address;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants startTime(Date startTime) {
@@ -247,7 +247,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -264,7 +264,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants endTime(Date endTime) {
@@ -281,7 +281,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -298,7 +298,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants purpose(String purpose) {
@@ -315,7 +315,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants state(StateEnum state) {
@@ -332,7 +332,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.state = state;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -349,7 +349,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -366,7 +366,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants held(Boolean held) {
@@ -383,7 +383,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.held = held;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -400,7 +400,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -417,7 +417,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -434,7 +434,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.user = user;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants queue(EmailConversationNotificationUriReference queue) {
@@ -451,7 +451,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -468,7 +468,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants errorInfo(EmailConversationNotificationErrorInfo errorInfo) {
@@ -485,7 +485,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants script(EmailConversationNotificationUriReference script) {
@@ -502,7 +502,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.script = script;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -519,7 +519,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -536,7 +536,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants provider(String provider) {
@@ -553,7 +553,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants externalContact(EmailConversationNotificationUriReference externalContact) {
@@ -570,7 +570,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants externalOrganization(EmailConversationNotificationUriReference externalOrganization) {
@@ -587,7 +587,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -604,7 +604,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants peer(String peer) {
@@ -621,7 +621,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants subject(String subject) {
@@ -638,7 +638,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.subject = subject;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants messagesSent(Integer messagesSent) {
@@ -655,7 +655,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.messagesSent = messagesSent;
   }
 
-
+  
   /**
    **/
   public EmailConversationNotificationParticipants autoGenerated(Boolean autoGenerated) {
@@ -672,6 +672,7 @@ public class EmailConversationNotificationParticipants  implements Serializable 
     this.autoGenerated = autoGenerated;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

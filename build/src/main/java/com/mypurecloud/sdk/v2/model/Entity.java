@@ -24,7 +24,7 @@ public class Entity  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Entity name(String name) {
@@ -41,6 +41,7 @@ public class Entity  implements Serializable {
     this.name = name;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

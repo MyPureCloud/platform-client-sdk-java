@@ -61,6 +61,7 @@ public class AuthorizationApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete an organization role.
    * 
@@ -136,6 +137,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Removes all the roles from the user.
    * 
@@ -211,6 +213,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Get all permissions.
    * Retrieve a list of all permission defined in the system.
@@ -286,6 +289,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Get the list of enabled products
    * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
@@ -361,6 +365,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
@@ -436,6 +441,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Get an org role to default role comparison comparison
    * Compares any organization role to a default role id and show differences
@@ -511,6 +517,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Retrieve a list of all roles defined for the organization
    * 
@@ -586,6 +593,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Returns a listing of roles and permissions for a user.
    * 
@@ -661,6 +669,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Patch Organization Role for needsUpdate Field
    * Patch Organization Role for needsUpdate Field
@@ -736,6 +745,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Get an unsaved org role to default role comparison
    * Allows users to compare their existing roles in an unsaved state to its default role
@@ -811,6 +821,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Create an organization role.
    * 
@@ -886,9 +897,10 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -922,7 +934,7 @@ public class AuthorizationApiAsync {
 
   /**
    * Restores all default roles
-   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force&#x3D;true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force&#x3D;true, you can restore all default roles. Note: This does not have an effect on custom roles.
+   * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -961,6 +973,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Update an organization role.
    * Update
@@ -1036,6 +1049,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Sets the users for the role
    * 
@@ -1111,6 +1125,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Removes the users from the role
    * 
@@ -1186,6 +1201,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Restore specified default roles
    * 
@@ -1261,6 +1277,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
   /**
    * Sets the user&#39;s roles
    * 
@@ -1336,6 +1353,7 @@ public class AuthorizationApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

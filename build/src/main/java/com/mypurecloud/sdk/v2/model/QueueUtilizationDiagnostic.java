@@ -43,62 +43,63 @@ public class QueueUtilizationDiagnostic  implements Serializable {
     this.queue = queue;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users joined to the queue")
   @JsonProperty("usersInQueue")
   public Integer getUsersInQueue() {
     return usersInQueue;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users active on the queue")
   @JsonProperty("activeUsersInQueue")
   public Integer getActiveUsersInQueue() {
     return activeUsersInQueue;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users with a status of on-queue")
   @JsonProperty("usersOnQueue")
   public Integer getUsersOnQueue() {
     return usersOnQueue;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users in the queue currently not engaged")
   @JsonProperty("usersNotUtilized")
   public Integer getUsersNotUtilized() {
     return usersNotUtilized;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users in the queue with a station")
   @JsonProperty("usersOnQueueWithStation")
   public Integer getUsersOnQueueWithStation() {
     return usersOnQueueWithStation;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users currently engaged in a campaign call")
   @JsonProperty("usersOnACampaignCall")
   public Integer getUsersOnACampaignCall() {
     return usersOnACampaignCall;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users whose station is homed to an edge different from the campaign")
   @JsonProperty("usersOnDifferentEdgeGroup")
   public Integer getUsersOnDifferentEdgeGroup() {
     return usersOnDifferentEdgeGroup;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The number of users currently engaged in a communication that is not part of the campaign")
   @JsonProperty("usersOnANonCampaignCall")
   public Integer getUsersOnANonCampaignCall() {
     return usersOnANonCampaignCall;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

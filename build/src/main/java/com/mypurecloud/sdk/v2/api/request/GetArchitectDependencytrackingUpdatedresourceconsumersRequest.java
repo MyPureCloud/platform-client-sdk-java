@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
+    
 	private String name;
 	public String getName() {
 		return this.name;
@@ -56,6 +57,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private List<String> objectType;
 	public List<String> getObjectType() {
 		return this.objectType;
@@ -70,6 +72,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private Boolean consumedResources;
 	public Boolean getConsumedResources() {
 		return this.consumedResources;
@@ -84,6 +87,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private List<String> consumedResourceType;
 	public List<String> getConsumedResourceType() {
 		return this.consumedResourceType;
@@ -98,6 +102,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -112,6 +117,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -126,6 +132,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -160,7 +167,8 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -171,6 +179,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetArchitectDependencytrackingUpdatedresourceconsumersRequest request;
@@ -179,31 +188,39 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 			request = new GetArchitectDependencytrackingUpdatedresourceconsumersRequest();
 		}
 
+		
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
 		}
+		
 		public Builder withObjectType(List<String> objectType) {
 			request.setObjectType(objectType);
 			return this;
 		}
+		
 		public Builder withConsumedResources(Boolean consumedResources) {
 			request.setConsumedResources(consumedResources);
 			return this;
 		}
+		
 		public Builder withConsumedResourceType(List<String> consumedResourceType) {
 			request.setConsumedResourceType(consumedResourceType);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 
+		
 
 
 		public GetArchitectDependencytrackingUpdatedresourceconsumersRequest build() {

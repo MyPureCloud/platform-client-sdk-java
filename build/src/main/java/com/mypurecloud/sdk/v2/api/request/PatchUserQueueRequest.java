@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PatchUserQueueRequest {
+    
 	private String queueId;
 	public String getQueueId() {
 		return this.queueId;
@@ -62,6 +63,7 @@ public class PatchUserQueueRequest {
 	    return this;
 	}
 
+	
 	private String userId;
 	public String getUserId() {
 		return this.userId;
@@ -76,6 +78,7 @@ public class PatchUserQueueRequest {
 	    return this;
 	}
 
+	
 	private UserQueue body;
 	public UserQueue getBody() {
 		return this.body;
@@ -90,6 +93,7 @@ public class PatchUserQueueRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,6 +137,7 @@ public class PatchUserQueueRequest {
                 .withPathParameter("userId", userId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -144,10 +149,12 @@ public class PatchUserQueueRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String queueId, String userId, UserQueue body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, userId, body);
 	}
+	
 
 	public static class Builder {
 		private final PatchUserQueueRequest request;
@@ -156,25 +163,32 @@ public class PatchUserQueueRequest {
 			request = new PatchUserQueueRequest();
 		}
 
+		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
 			return this;
 		}
+		
 		public Builder withUserId(String userId) {
 			request.setUserId(userId);
 			return this;
 		}
+		
 		public Builder withBody(UserQueue body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String queueId, String userId, UserQueue body) {
 			request.setQueueId(queueId);
-			request.setUserId(userId);
-			request.setBody(body);
+						request.setUserId(userId);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PatchUserQueueRequest build() {

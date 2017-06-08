@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.CopyVoicemailMessage;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 public class DeleteVoicemailMessageRequest {
+    
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -45,6 +46,7 @@ public class DeleteVoicemailMessageRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -74,7 +76,8 @@ public class DeleteVoicemailMessageRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/voicemail/messages/{messageId}")
                 .withPathParameter("messageId", messageId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -85,10 +88,12 @@ public class DeleteVoicemailMessageRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String messageId) {
 	    return new Builder()
 	            .withRequiredParams(messageId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteVoicemailMessageRequest request;
@@ -97,15 +102,20 @@ public class DeleteVoicemailMessageRequest {
 			request = new DeleteVoicemailMessageRequest();
 		}
 
+		
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String messageId) {
 			request.setMessageId(messageId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteVoicemailMessageRequest build() {

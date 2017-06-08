@@ -56,6 +56,7 @@ public class GroupsApiAsync {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete group
    * 
@@ -131,6 +132,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Remove members
    * 
@@ -206,6 +208,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -281,6 +284,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Get group
    * 
@@ -356,6 +360,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Get group members
    * 
@@ -431,6 +436,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Get a group list
    * 
@@ -506,6 +512,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -581,6 +588,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Add members
    * 
@@ -656,6 +664,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Create a group
    * 
@@ -731,6 +740,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Search groups
    * 
@@ -806,6 +816,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
   /**
    * Update group
    * 
@@ -881,6 +892,7 @@ public class GroupsApiAsync {
     }
   }
 
+  
 
   private <T> void notifySuccess(SettableFuture<T> future, AsyncApiCallback<T> callback, T result) {
     if (callback != null) {

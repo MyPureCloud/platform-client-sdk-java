@@ -36,7 +36,7 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.path = path;
   }
 
-
+  
   /**
    * The pattern to use when searching for logs, which may include the wildcards {*, ?}.  Multiple search patterns may be combined using a pipe '|' as a delimiter.
    **/
@@ -54,7 +54,7 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.query = query;
   }
 
-
+  
   /**
    * Boolean whether or not to recurse into directories.
    **/
@@ -72,6 +72,7 @@ public class EdgeLogsJobRequest  implements Serializable {
     this.recurse = recurse;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

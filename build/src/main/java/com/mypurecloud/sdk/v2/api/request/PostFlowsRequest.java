@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsRequest {
+    
 	private Flow body;
 	public Flow getBody() {
 		return this.body;
@@ -56,6 +57,7 @@ public class PostFlowsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,6 +82,7 @@ public class PostFlowsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -91,6 +94,7 @@ public class PostFlowsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostFlowsRequest request;
@@ -99,11 +103,14 @@ public class PostFlowsRequest {
 			request = new PostFlowsRequest();
 		}
 
+		
 		public Builder withBody(Flow body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostFlowsRequest build() {

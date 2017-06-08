@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class GetContentmanagementUsageRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,7 +73,8 @@ public class GetContentmanagementUsageRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/usage")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/contentmanagement/usage")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -83,6 +85,7 @@ public class GetContentmanagementUsageRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetContentmanagementUsageRequest request;
@@ -91,7 +94,9 @@ public class GetContentmanagementUsageRequest {
 			request = new GetContentmanagementUsageRequest();
 		}
 
+		
 
+		
 
 
 		public GetContentmanagementUsageRequest build() {

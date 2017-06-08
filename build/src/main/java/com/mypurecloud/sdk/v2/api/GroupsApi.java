@@ -52,6 +52,7 @@ public class GroupsApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Delete group
    * 
@@ -76,6 +77,7 @@ public class GroupsApi {
   private DeleteGroupRequest createDeleteGroupRequest(String groupId) {
     return DeleteGroupRequest.builder()
             .withGroupId(groupId)
+    
             .build();
   }
 
@@ -126,6 +128,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Remove members
    * 
@@ -154,8 +157,9 @@ public class GroupsApi {
   private DeleteGroupMembersRequest createDeleteGroupMembersRequest(String groupId, String ids) {
     return DeleteGroupMembersRequest.builder()
             .withGroupId(groupId)
-
+    
             .withIds(ids)
+    
             .build();
   }
 
@@ -207,6 +211,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Fetch field config for an entity type
    * 
@@ -233,6 +238,7 @@ public class GroupsApi {
   private GetFieldconfigRequest createGetFieldconfigRequest(String type) {
     return GetFieldconfigRequest.builder()
             .withType(type)
+    
             .build();
   }
 
@@ -284,6 +290,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Get group
    * 
@@ -310,6 +317,7 @@ public class GroupsApi {
   private GetGroupRequest createGetGroupRequest(String groupId) {
     return GetGroupRequest.builder()
             .withGroupId(groupId)
+    
             .build();
   }
 
@@ -361,6 +369,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Get group members
    * 
@@ -395,14 +404,15 @@ public class GroupsApi {
   private GetGroupMembersRequest createGetGroupMembersRequest(String groupId, Integer pageSize, Integer pageNumber, String sortOrder, List<String> expand) {
     return GetGroupMembersRequest.builder()
             .withGroupId(groupId)
-
+    
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -454,6 +464,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Get a group list
    * 
@@ -484,10 +495,11 @@ public class GroupsApi {
   private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetGroupsRequest.builder()
             .withPageSize(pageSize)
-
+    
             .withPageNumber(pageNumber)
-
+    
             .withSortOrder(sortOrder)
+    
             .build();
   }
 
@@ -539,6 +551,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Search groups using the q64 value returned from a previous search
    * 
@@ -567,8 +580,9 @@ public class GroupsApi {
   private GetGroupsSearchRequest createGetGroupsSearchRequest(String q64, List<String> expand) {
     return GetGroupsSearchRequest.builder()
             .withQ64(q64)
-
+    
             .withExpand(expand)
+    
             .build();
   }
 
@@ -620,6 +634,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Add members
    * 
@@ -648,8 +663,9 @@ public class GroupsApi {
   private PostGroupMembersRequest createPostGroupMembersRequest(String groupId, GroupMembersUpdate body) {
     return PostGroupMembersRequest.builder()
             .withGroupId(groupId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -701,6 +717,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Create a group
    * 
@@ -727,6 +744,7 @@ public class GroupsApi {
   private PostGroupsRequest createPostGroupsRequest(Group body) {
     return PostGroupsRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -778,6 +796,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Search groups
    * 
@@ -804,6 +823,7 @@ public class GroupsApi {
   private PostGroupsSearchRequest createPostGroupsSearchRequest(GroupSearchRequest body) {
     return PostGroupsSearchRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -855,6 +875,7 @@ public class GroupsApi {
     }
   }
 
+  
   /**
    * Update group
    * 
@@ -883,8 +904,9 @@ public class GroupsApi {
   private PutGroupRequest createPutGroupRequest(String groupId, GroupUpdate body) {
     return PutGroupRequest.builder()
             .withGroupId(groupId)
-
+    
             .withBody(body)
+    
             .build();
   }
 
@@ -936,4 +958,5 @@ public class GroupsApi {
     }
   }
 
+  
 }

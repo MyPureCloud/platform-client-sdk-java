@@ -263,70 +263,70 @@ public class InteractionStatsAlert  implements Serializable {
     return id;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "Name of the rule that generated the alert")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The dimension of concern.")
   @JsonProperty("dimension")
   public DimensionEnum getDimension() {
     return dimension;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The value of the dimension.")
   @JsonProperty("dimensionValue")
   public String getDimensionValue() {
     return dimensionValue;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The metric to be assessed.")
   @JsonProperty("metric")
   public MetricEnum getMetric() {
     return metric;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The media type.")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The comparison descriptor used against the metric's value.")
   @JsonProperty("numericRange")
   public NumericRangeEnum getNumericRange() {
     return numericRange;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The statistic of concern for the metric.")
   @JsonProperty("statistic")
   public StatisticEnum getStatistic() {
     return statistic;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The threshold value.")
   @JsonProperty("value")
   public Double getValue() {
     return value;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The id of the rule.")
   @JsonProperty("ruleId")
   public String getRuleId() {
     return ruleId;
   }
 
-
+  
   /**
    * Indicates if the alert has been read.
    **/
@@ -344,21 +344,21 @@ public class InteractionStatsAlert  implements Serializable {
     this.unread = unread;
   }
 
-
+  
   @ApiModelProperty(example = "null", required = true, value = "The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;
   }
 
-
+  
   /**
    * The ids of users who were notified of alarm state change.
    **/
@@ -376,7 +376,7 @@ public class InteractionStatsAlert  implements Serializable {
     this.notificationUsers = notificationUsers;
   }
 
-
+  
   /**
    * A collection of notification methods.
    **/
@@ -394,7 +394,7 @@ public class InteractionStatsAlert  implements Serializable {
     this.alertTypes = alertTypes;
   }
 
-
+  
   /**
    **/
   public InteractionStatsAlert ruleUri(String ruleUri) {
@@ -411,13 +411,14 @@ public class InteractionStatsAlert  implements Serializable {
     this.ruleUri = ruleUri;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

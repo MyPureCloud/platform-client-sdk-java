@@ -39,7 +39,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.managementUnitDate = managementUnitDate;
   }
 
-
+  
   /**
    * The id for the activity code.  Look up a map of activity codes with the activities route
    **/
@@ -57,7 +57,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.activityCodeId = activityCodeId;
   }
 
-
+  
   /**
    * Whether this is paid time off
    **/
@@ -75,7 +75,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.isPaid = isPaid;
   }
 
-
+  
   /**
    * The length in minutes of this time off marker
    **/
@@ -93,7 +93,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.lengthInMinutes = lengthInMinutes;
   }
 
-
+  
   /**
    * The description associated with the time off request that this marker corresponds to
    **/
@@ -111,6 +111,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     this.description = description;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

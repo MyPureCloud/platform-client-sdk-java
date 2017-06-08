@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 
 public class PutRecordingRecordingkeysRotationscheduleRequest {
+    
 	private KeyRotationSchedule body;
 	public KeyRotationSchedule getBody() {
 		return this.body;
@@ -52,6 +53,7 @@ public class PutRecordingRecordingkeysRotationscheduleRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,6 +83,7 @@ public class PutRecordingRecordingkeysRotationscheduleRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/recording/recordingkeys/rotationschedule")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -92,10 +95,12 @@ public class PutRecordingRecordingkeysRotationscheduleRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(KeyRotationSchedule body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PutRecordingRecordingkeysRotationscheduleRequest request;
@@ -104,15 +109,20 @@ public class PutRecordingRecordingkeysRotationscheduleRequest {
 			request = new PutRecordingRecordingkeysRotationscheduleRequest();
 		}
 
+		
 		public Builder withBody(KeyRotationSchedule body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(KeyRotationSchedule body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutRecordingRecordingkeysRotationscheduleRequest build() {

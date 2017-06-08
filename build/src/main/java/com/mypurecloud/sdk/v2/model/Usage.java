@@ -36,6 +36,7 @@ public class Usage  implements Serializable {
     this.types = types;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

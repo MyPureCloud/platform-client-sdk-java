@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostArchitectPromptsRequest {
+    
 	private Prompt body;
 	public Prompt getBody() {
 		return this.body;
@@ -56,6 +57,7 @@ public class PostArchitectPromptsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -80,6 +82,7 @@ public class PostArchitectPromptsRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/architect/prompts")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -91,6 +94,7 @@ public class PostArchitectPromptsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final PostArchitectPromptsRequest request;
@@ -99,11 +103,14 @@ public class PostArchitectPromptsRequest {
 			request = new PostArchitectPromptsRequest();
 		}
 
+		
 		public Builder withBody(Prompt body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 
 
 		public PostArchitectPromptsRequest build() {

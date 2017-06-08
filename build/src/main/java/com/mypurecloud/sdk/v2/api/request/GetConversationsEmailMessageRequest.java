@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class GetConversationsEmailMessageRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class GetConversationsEmailMessageRequest {
 	    return this;
 	}
 
+	
 	private String messageId;
 	public String getMessageId() {
 		return this.messageId;
@@ -88,6 +90,7 @@ public class GetConversationsEmailMessageRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,7 +127,8 @@ public class GetConversationsEmailMessageRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withPathParameter("messageId", messageId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -135,10 +139,12 @@ public class GetConversationsEmailMessageRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, String messageId) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, messageId);
 	}
+	
 
 	public static class Builder {
 		private final GetConversationsEmailMessageRequest request;
@@ -147,20 +153,26 @@ public class GetConversationsEmailMessageRequest {
 			request = new GetConversationsEmailMessageRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withMessageId(String messageId) {
 			request.setMessageId(messageId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, String messageId) {
 			request.setConversationId(conversationId);
-			request.setMessageId(messageId);
+						request.setMessageId(messageId);
+			
 			return this;
 		}
+		
 
 
 		public GetConversationsEmailMessageRequest build() {

@@ -73,7 +73,7 @@ public class ImportStatusNotification  implements Serializable {
     this.importState = importState;
   }
 
-
+  
   /**
    **/
   public ImportStatusNotification totalRecords(Integer totalRecords) {
@@ -90,7 +90,7 @@ public class ImportStatusNotification  implements Serializable {
     this.totalRecords = totalRecords;
   }
 
-
+  
   /**
    **/
   public ImportStatusNotification completedRecords(Integer completedRecords) {
@@ -107,7 +107,7 @@ public class ImportStatusNotification  implements Serializable {
     this.completedRecords = completedRecords;
   }
 
-
+  
   /**
    **/
   public ImportStatusNotification percentageComplete(Integer percentageComplete) {
@@ -124,7 +124,7 @@ public class ImportStatusNotification  implements Serializable {
     this.percentageComplete = percentageComplete;
   }
 
-
+  
   /**
    **/
   public ImportStatusNotification failureReason(String failureReason) {
@@ -141,7 +141,7 @@ public class ImportStatusNotification  implements Serializable {
     this.failureReason = failureReason;
   }
 
-
+  
   /**
    **/
   public ImportStatusNotification additionalProperties(Object additionalProperties) {
@@ -158,6 +158,7 @@ public class ImportStatusNotification  implements Serializable {
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

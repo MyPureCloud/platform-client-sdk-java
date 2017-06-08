@@ -33,7 +33,7 @@ public class AgentActivity  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public AgentActivity name(String name) {
@@ -50,7 +50,7 @@ public class AgentActivity  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public AgentActivity agent(User agent) {
@@ -67,7 +67,7 @@ public class AgentActivity  implements Serializable {
     this.agent = agent;
   }
 
-
+  
   /**
    **/
   public AgentActivity numEvaluations(Integer numEvaluations) {
@@ -84,7 +84,7 @@ public class AgentActivity  implements Serializable {
     this.numEvaluations = numEvaluations;
   }
 
-
+  
   /**
    **/
   public AgentActivity averageEvaluationScore(Integer averageEvaluationScore) {
@@ -101,7 +101,7 @@ public class AgentActivity  implements Serializable {
     this.averageEvaluationScore = averageEvaluationScore;
   }
 
-
+  
   /**
    **/
   public AgentActivity agentEvaluatorActivityList(List<AgentEvaluatorActivity> agentEvaluatorActivityList) {
@@ -118,13 +118,14 @@ public class AgentActivity  implements Serializable {
     this.agentEvaluatorActivityList = agentEvaluatorActivityList;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

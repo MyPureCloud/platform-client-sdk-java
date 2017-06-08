@@ -47,7 +47,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.htmlBody = htmlBody;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage textBody(String textBody) {
@@ -64,7 +64,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.textBody = textBody;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage id(String id) {
@@ -81,7 +81,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.id = id;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage to(List<EmailAddress> to) {
@@ -98,7 +98,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.to = to;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage cc(List<EmailAddress> cc) {
@@ -115,7 +115,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.cc = cc;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage bcc(List<EmailAddress> bcc) {
@@ -132,7 +132,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.bcc = bcc;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage from(EmailAddress from) {
@@ -149,7 +149,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.from = from;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage subject(String subject) {
@@ -166,7 +166,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.subject = subject;
   }
 
-
+  
   /**
    **/
   public RecordingEmailMessage attachments(List<EmailAttachment> attachments) {
@@ -183,7 +183,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.attachments = attachments;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -201,6 +201,7 @@ public class RecordingEmailMessage  implements Serializable {
     this.time = time;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

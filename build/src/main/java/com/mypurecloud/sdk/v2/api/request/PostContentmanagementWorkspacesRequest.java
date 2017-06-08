@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.TagQueryRequest;
 import com.mypurecloud.sdk.v2.model.WorkspaceCreate;
 
 public class PostContentmanagementWorkspacesRequest {
+    
 	private WorkspaceCreate body;
 	public WorkspaceCreate getBody() {
 		return this.body;
@@ -64,6 +65,7 @@ public class PostContentmanagementWorkspacesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -93,6 +95,7 @@ public class PostContentmanagementWorkspacesRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/contentmanagement/workspaces")
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -104,10 +107,12 @@ public class PostContentmanagementWorkspacesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(WorkspaceCreate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
+	
 
 	public static class Builder {
 		private final PostContentmanagementWorkspacesRequest request;
@@ -116,15 +121,20 @@ public class PostContentmanagementWorkspacesRequest {
 			request = new PostContentmanagementWorkspacesRequest();
 		}
 
+		
 		public Builder withBody(WorkspaceCreate body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(WorkspaceCreate body) {
 			request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostContentmanagementWorkspacesRequest build() {

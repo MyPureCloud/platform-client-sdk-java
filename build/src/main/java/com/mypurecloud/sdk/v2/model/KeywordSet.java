@@ -69,7 +69,7 @@ public class KeywordSet  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public KeywordSet name(String name) {
@@ -86,7 +86,7 @@ public class KeywordSet  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public KeywordSet description(String description) {
@@ -103,7 +103,7 @@ public class KeywordSet  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public KeywordSet queues(List<Queue> queues) {
@@ -120,7 +120,7 @@ public class KeywordSet  implements Serializable {
     this.queues = queues;
   }
 
-
+  
   /**
    * Language code, such as 'en-US'
    **/
@@ -138,7 +138,7 @@ public class KeywordSet  implements Serializable {
     this.language = language;
   }
 
-
+  
   /**
    **/
   public KeywordSet agents(List<User> agents) {
@@ -155,7 +155,7 @@ public class KeywordSet  implements Serializable {
     this.agents = agents;
   }
 
-
+  
   /**
    * The list of keywords to be used for keyword spotting.
    **/
@@ -173,7 +173,7 @@ public class KeywordSet  implements Serializable {
     this.keywords = keywords;
   }
 
-
+  
   /**
    * The types of participants to use keyword spotting on.
    **/
@@ -191,13 +191,14 @@ public class KeywordSet  implements Serializable {
     this.participantPurposes = participantPurposes;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

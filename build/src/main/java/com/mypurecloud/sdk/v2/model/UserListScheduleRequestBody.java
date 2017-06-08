@@ -40,7 +40,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.userIds = userIds;
   }
 
-
+  
   /**
    * Beginning of the range of schedules to fetch, in ISO-8601 format
    **/
@@ -58,7 +58,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.startDate = startDate;
   }
 
-
+  
   /**
    * End of the range of schedules to fetch, in ISO-8601 format
    **/
@@ -76,6 +76,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     this.endDate = endDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

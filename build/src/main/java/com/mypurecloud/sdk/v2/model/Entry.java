@@ -35,7 +35,7 @@ public class Entry  implements Serializable {
     this.value = value;
   }
 
-
+  
   /**
    * The number of results with this value.
    **/
@@ -53,6 +53,7 @@ public class Entry  implements Serializable {
     this.count = count;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -35,7 +35,7 @@ public class ConversationNotificationPhoneNumberColumn  implements Serializable 
     this.columnName = columnName;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationPhoneNumberColumn type(String type) {
@@ -52,7 +52,7 @@ public class ConversationNotificationPhoneNumberColumn  implements Serializable 
     this.type = type;
   }
 
-
+  
   /**
    **/
   public ConversationNotificationPhoneNumberColumn additionalProperties(Object additionalProperties) {
@@ -69,6 +69,7 @@ public class ConversationNotificationPhoneNumberColumn  implements Serializable 
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

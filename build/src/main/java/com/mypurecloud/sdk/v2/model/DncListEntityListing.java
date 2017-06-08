@@ -46,7 +46,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.total = total;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public DncListEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class DncListEntityListing  implements Serializable, PagedResource<DncLis
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class GetQualityFormVersionsRequest {
+    
 	private String formId;
 	public String getFormId() {
 		return this.formId;
@@ -52,6 +53,7 @@ public class GetQualityFormVersionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -66,6 +68,7 @@ public class GetQualityFormVersionsRequest {
 	    return this;
 	}
 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -80,6 +83,7 @@ public class GetQualityFormVersionsRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -113,7 +117,8 @@ public class GetQualityFormVersionsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -124,10 +129,12 @@ public class GetQualityFormVersionsRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String formId) {
 	    return new Builder()
 	            .withRequiredParams(formId);
 	}
+	
 
 	public static class Builder {
 		private final GetQualityFormVersionsRequest request;
@@ -136,23 +143,30 @@ public class GetQualityFormVersionsRequest {
 			request = new GetQualityFormVersionsRequest();
 		}
 
+		
 		public Builder withFormId(String formId) {
 			request.setFormId(formId);
 			return this;
 		}
+		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}
+		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String formId) {
 			request.setFormId(formId);
+			
 			return this;
 		}
+		
 
 
 		public GetQualityFormVersionsRequest build() {

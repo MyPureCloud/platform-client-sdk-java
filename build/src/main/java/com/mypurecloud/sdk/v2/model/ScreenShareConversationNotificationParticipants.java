@@ -196,7 +196,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.id = id;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants name(String name) {
@@ -213,7 +213,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.name = name;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants address(String address) {
@@ -230,7 +230,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.address = address;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants startTime(Date startTime) {
@@ -247,7 +247,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants connectedTime(Date connectedTime) {
@@ -264,7 +264,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants endTime(Date endTime) {
@@ -281,7 +281,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants startHoldTime(Date startHoldTime) {
@@ -298,7 +298,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants purpose(String purpose) {
@@ -315,7 +315,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants state(StateEnum state) {
@@ -332,7 +332,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.state = state;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants direction(DirectionEnum direction) {
@@ -349,7 +349,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants disconnectType(DisconnectTypeEnum disconnectType) {
@@ -366,7 +366,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants held(Boolean held) {
@@ -383,7 +383,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.held = held;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants wrapupRequired(Boolean wrapupRequired) {
@@ -400,7 +400,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants wrapupPrompt(String wrapupPrompt) {
@@ -417,7 +417,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants user(DocumentDataV2NotificationCreatedBy user) {
@@ -434,7 +434,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.user = user;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants queue(ScreenShareConversationNotificationUriReference queue) {
@@ -451,7 +451,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants attributes(Map<String, String> attributes) {
@@ -468,7 +468,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants errorInfo(ScreenShareConversationNotificationErrorInfo errorInfo) {
@@ -485,7 +485,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants script(ScreenShareConversationNotificationUriReference script) {
@@ -502,7 +502,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.script = script;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -519,7 +519,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants wrapupSkipped(Boolean wrapupSkipped) {
@@ -536,7 +536,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants provider(String provider) {
@@ -553,7 +553,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants externalContact(ScreenShareConversationNotificationUriReference externalContact) {
@@ -570,7 +570,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants externalOrganization(ScreenShareConversationNotificationUriReference externalOrganization) {
@@ -587,7 +587,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants wrapup(ConversationNotificationWrapup wrapup) {
@@ -604,7 +604,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants peer(String peer) {
@@ -621,7 +621,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants context(String context) {
@@ -638,7 +638,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.context = context;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants peerCount(Integer peerCount) {
@@ -655,7 +655,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.peerCount = peerCount;
   }
 
-
+  
   /**
    **/
   public ScreenShareConversationNotificationParticipants sharing(Boolean sharing) {
@@ -672,6 +672,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     this.sharing = sharing;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

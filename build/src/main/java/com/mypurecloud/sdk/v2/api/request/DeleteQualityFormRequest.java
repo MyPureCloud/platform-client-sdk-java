@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 
 public class DeleteQualityFormRequest {
+    
 	private String formId;
 	public String getFormId() {
 		return this.formId;
@@ -52,6 +53,7 @@ public class DeleteQualityFormRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -81,7 +83,8 @@ public class DeleteQualityFormRequest {
 
         return ApiRequestBuilder.create("DELETE", "/api/v2/quality/forms/{formId}")
                 .withPathParameter("formId", formId)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -92,10 +95,12 @@ public class DeleteQualityFormRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String formId) {
 	    return new Builder()
 	            .withRequiredParams(formId);
 	}
+	
 
 	public static class Builder {
 		private final DeleteQualityFormRequest request;
@@ -104,15 +109,20 @@ public class DeleteQualityFormRequest {
 			request = new DeleteQualityFormRequest();
 		}
 
+		
 		public Builder withFormId(String formId) {
 			request.setFormId(formId);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String formId) {
 			request.setFormId(formId);
+			
 			return this;
 		}
+		
 
 
 		public DeleteQualityFormRequest build() {

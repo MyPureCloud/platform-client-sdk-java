@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowVersionRequest {
+    
 	private String flowId;
 	public String getFlowId() {
 		return this.flowId;
@@ -56,6 +57,7 @@ public class GetFlowVersionRequest {
 	    return this;
 	}
 
+	
 	private String versionId;
 	public String getVersionId() {
 		return this.versionId;
@@ -70,6 +72,7 @@ public class GetFlowVersionRequest {
 	    return this;
 	}
 
+	
 	private String deleted;
 	public String getDeleted() {
 		return this.deleted;
@@ -84,6 +87,7 @@ public class GetFlowVersionRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -122,7 +126,8 @@ public class GetFlowVersionRequest {
                 .withPathParameter("versionId", versionId)
         
                 .withQueryParameters("deleted", "", deleted)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -133,10 +138,12 @@ public class GetFlowVersionRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String flowId, String versionId) {
 	    return new Builder()
 	            .withRequiredParams(flowId, versionId);
 	}
+	
 
 	public static class Builder {
 		private final GetFlowVersionRequest request;
@@ -145,24 +152,31 @@ public class GetFlowVersionRequest {
 			request = new GetFlowVersionRequest();
 		}
 
+		
 		public Builder withFlowId(String flowId) {
 			request.setFlowId(flowId);
 			return this;
 		}
+		
 		public Builder withVersionId(String versionId) {
 			request.setVersionId(versionId);
 			return this;
 		}
+		
 		public Builder withDeleted(String deleted) {
 			request.setDeleted(deleted);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String flowId, String versionId) {
 			request.setFlowId(flowId);
-			request.setVersionId(versionId);
+						request.setVersionId(versionId);
+			
 			return this;
 		}
+		
 
 
 		public GetFlowVersionRequest build() {

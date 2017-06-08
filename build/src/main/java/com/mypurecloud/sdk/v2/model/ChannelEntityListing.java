@@ -36,6 +36,7 @@ public class ChannelEntityListing  implements Serializable {
     this.entities = entities;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

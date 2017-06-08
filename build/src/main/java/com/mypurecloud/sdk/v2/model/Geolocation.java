@@ -36,7 +36,7 @@ public class Geolocation  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Geolocation name(String name) {
@@ -53,7 +53,7 @@ public class Geolocation  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    * A string used to describe the type of client the geolocation is being updated from e.g. ios, android, web, etc.
    **/
@@ -71,7 +71,7 @@ public class Geolocation  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * A boolean used to tell whether or not to set this geolocation client as the primary on a PATCH
    **/
@@ -89,7 +89,7 @@ public class Geolocation  implements Serializable {
     this.primary = primary;
   }
 
-
+  
   /**
    **/
   public Geolocation latitude(Double latitude) {
@@ -106,7 +106,7 @@ public class Geolocation  implements Serializable {
     this.latitude = latitude;
   }
 
-
+  
   /**
    **/
   public Geolocation longitude(Double longitude) {
@@ -123,7 +123,7 @@ public class Geolocation  implements Serializable {
     this.longitude = longitude;
   }
 
-
+  
   /**
    **/
   public Geolocation country(String country) {
@@ -140,7 +140,7 @@ public class Geolocation  implements Serializable {
     this.country = country;
   }
 
-
+  
   /**
    **/
   public Geolocation region(String region) {
@@ -157,7 +157,7 @@ public class Geolocation  implements Serializable {
     this.region = region;
   }
 
-
+  
   /**
    **/
   public Geolocation city(String city) {
@@ -174,7 +174,7 @@ public class Geolocation  implements Serializable {
     this.city = city;
   }
 
-
+  
   /**
    **/
   public Geolocation locations(List<LocationDefinition> locations) {
@@ -191,13 +191,14 @@ public class Geolocation  implements Serializable {
     this.locations = locations;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

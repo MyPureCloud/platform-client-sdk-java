@@ -40,7 +40,7 @@ public class Script  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Script name(String name) {
@@ -57,7 +57,7 @@ public class Script  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Script versionId(String versionId) {
@@ -74,7 +74,7 @@ public class Script  implements Serializable {
     this.versionId = versionId;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -92,7 +92,7 @@ public class Script  implements Serializable {
     this.createdDate = createdDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -110,7 +110,7 @@ public class Script  implements Serializable {
     this.modifiedDate = modifiedDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -128,7 +128,7 @@ public class Script  implements Serializable {
     this.publishedDate = publishedDate;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -146,7 +146,7 @@ public class Script  implements Serializable {
     this.versionDate = versionDate;
   }
 
-
+  
   /**
    **/
   public Script startPageId(String startPageId) {
@@ -163,7 +163,7 @@ public class Script  implements Serializable {
     this.startPageId = startPageId;
   }
 
-
+  
   /**
    **/
   public Script startPageName(String startPageName) {
@@ -180,7 +180,7 @@ public class Script  implements Serializable {
     this.startPageName = startPageName;
   }
 
-
+  
   /**
    **/
   public Script features(Object features) {
@@ -197,7 +197,7 @@ public class Script  implements Serializable {
     this.features = features;
   }
 
-
+  
   /**
    **/
   public Script variables(Object variables) {
@@ -214,7 +214,7 @@ public class Script  implements Serializable {
     this.variables = variables;
   }
 
-
+  
   /**
    **/
   public Script customActions(Object customActions) {
@@ -231,7 +231,7 @@ public class Script  implements Serializable {
     this.customActions = customActions;
   }
 
-
+  
   /**
    **/
   public Script pages(List<Page> pages) {
@@ -248,13 +248,14 @@ public class Script  implements Serializable {
     this.pages = pages;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

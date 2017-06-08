@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class PutTelephonyProvidersEdgesDidRequest {
+    
 	private String didId;
 	public String getDidId() {
 		return this.didId;
@@ -98,6 +99,7 @@ public class PutTelephonyProvidersEdgesDidRequest {
 	    return this;
 	}
 
+	
 	private DID body;
 	public DID getBody() {
 		return this.body;
@@ -112,6 +114,7 @@ public class PutTelephonyProvidersEdgesDidRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -148,6 +151,7 @@ public class PutTelephonyProvidersEdgesDidRequest {
                 .withPathParameter("didId", didId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -159,10 +163,12 @@ public class PutTelephonyProvidersEdgesDidRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String didId, DID body) {
 	    return new Builder()
 	            .withRequiredParams(didId, body);
 	}
+	
 
 	public static class Builder {
 		private final PutTelephonyProvidersEdgesDidRequest request;
@@ -171,20 +177,26 @@ public class PutTelephonyProvidersEdgesDidRequest {
 			request = new PutTelephonyProvidersEdgesDidRequest();
 		}
 
+		
 		public Builder withDidId(String didId) {
 			request.setDidId(didId);
 			return this;
 		}
+		
 		public Builder withBody(DID body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String didId, DID body) {
 			request.setDidId(didId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PutTelephonyProvidersEdgesDidRequest build() {

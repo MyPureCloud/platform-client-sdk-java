@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
 public class PostRoutingEmailDomainRoutesRequest {
+    
 	private String domainName;
 	public String getDomainName() {
 		return this.domainName;
@@ -58,6 +59,7 @@ public class PostRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private InboundRoute body;
 	public InboundRoute getBody() {
 		return this.body;
@@ -72,6 +74,7 @@ public class PostRoutingEmailDomainRoutesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,6 +111,7 @@ public class PostRoutingEmailDomainRoutesRequest {
                 .withPathParameter("domainName", domainName)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -119,10 +123,12 @@ public class PostRoutingEmailDomainRoutesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String domainName, InboundRoute body) {
 	    return new Builder()
 	            .withRequiredParams(domainName, body);
 	}
+	
 
 	public static class Builder {
 		private final PostRoutingEmailDomainRoutesRequest request;
@@ -131,20 +137,26 @@ public class PostRoutingEmailDomainRoutesRequest {
 			request = new PostRoutingEmailDomainRoutesRequest();
 		}
 
+		
 		public Builder withDomainName(String domainName) {
 			request.setDomainName(domainName);
 			return this;
 		}
+		
 		public Builder withBody(InboundRoute body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String domainName, InboundRoute body) {
 			request.setDomainName(domainName);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostRoutingEmailDomainRoutesRequest build() {

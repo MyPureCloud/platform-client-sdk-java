@@ -36,7 +36,7 @@ public class CallbackConversationNotificationDetail  implements Serializable {
     this.errorCode = errorCode;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDetail fieldName(String fieldName) {
@@ -53,7 +53,7 @@ public class CallbackConversationNotificationDetail  implements Serializable {
     this.fieldName = fieldName;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDetail entityId(String entityId) {
@@ -70,7 +70,7 @@ public class CallbackConversationNotificationDetail  implements Serializable {
     this.entityId = entityId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDetail entityName(String entityName) {
@@ -87,6 +87,7 @@ public class CallbackConversationNotificationDetail  implements Serializable {
     this.entityName = entityName;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

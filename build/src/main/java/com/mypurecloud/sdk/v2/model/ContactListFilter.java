@@ -71,7 +71,7 @@ public class ContactListFilter  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public ContactListFilter name(String name) {
@@ -88,21 +88,21 @@ public class ContactListFilter  implements Serializable {
     this.name = name;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
 
-
+  
   /**
    * Required for updates, must match the version number of the most recent update
    **/
@@ -120,7 +120,7 @@ public class ContactListFilter  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * The contact list the filter is based on
    **/
@@ -138,7 +138,7 @@ public class ContactListFilter  implements Serializable {
     this.contactList = contactList;
   }
 
-
+  
   /**
    **/
   public ContactListFilter clauses(List<ContactListFilterClause> clauses) {
@@ -155,7 +155,7 @@ public class ContactListFilter  implements Serializable {
     this.clauses = clauses;
   }
 
-
+  
   /**
    * The filter type tells the api how to compare between clauses
    **/
@@ -173,13 +173,14 @@ public class ContactListFilter  implements Serializable {
     this.filterType = filterType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

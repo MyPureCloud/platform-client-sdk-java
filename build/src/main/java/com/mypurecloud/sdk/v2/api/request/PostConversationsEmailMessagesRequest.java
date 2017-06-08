@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostConversationsEmailMessagesRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PostConversationsEmailMessagesRequest {
 	    return this;
 	}
 
+	
 	private EmailMessage body;
 	public EmailMessage getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostConversationsEmailMessagesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PostConversationsEmailMessagesRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PostConversationsEmailMessagesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, EmailMessage body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostConversationsEmailMessagesRequest request;
@@ -147,20 +153,26 @@ public class PostConversationsEmailMessagesRequest {
 			request = new PostConversationsEmailMessagesRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withBody(EmailMessage body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, EmailMessage body) {
 			request.setConversationId(conversationId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostConversationsEmailMessagesRequest build() {

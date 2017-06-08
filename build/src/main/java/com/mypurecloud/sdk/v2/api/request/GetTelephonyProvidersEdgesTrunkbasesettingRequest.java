@@ -84,6 +84,7 @@ import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
 
 public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
+    
 	private String trunkBaseSettingsId;
 	public String getTrunkBaseSettingsId() {
 		return this.trunkBaseSettingsId;
@@ -98,6 +99,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
 	    return this;
 	}
 
+	
 	private Boolean ignoreHidden;
 	public Boolean getIgnoreHidden() {
 		return this.ignoreHidden;
@@ -112,6 +114,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,7 +146,8 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
                 .withPathParameter("trunkBaseSettingsId", trunkBaseSettingsId)
         
                 .withQueryParameters("ignoreHidden", "", ignoreHidden)
-                        .withCustomHeaders(customHeaders)
+        
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -154,10 +158,12 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String trunkBaseSettingsId) {
 	    return new Builder()
 	            .withRequiredParams(trunkBaseSettingsId);
 	}
+	
 
 	public static class Builder {
 		private final GetTelephonyProvidersEdgesTrunkbasesettingRequest request;
@@ -166,19 +172,25 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingRequest {
 			request = new GetTelephonyProvidersEdgesTrunkbasesettingRequest();
 		}
 
+		
 		public Builder withTrunkBaseSettingsId(String trunkBaseSettingsId) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
 			return this;
 		}
+		
 		public Builder withIgnoreHidden(Boolean ignoreHidden) {
 			request.setIgnoreHidden(ignoreHidden);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String trunkBaseSettingsId) {
 			request.setTrunkBaseSettingsId(trunkBaseSettingsId);
+			
 			return this;
 		}
+		
 
 
 		public GetTelephonyProvidersEdgesTrunkbasesettingRequest build() {

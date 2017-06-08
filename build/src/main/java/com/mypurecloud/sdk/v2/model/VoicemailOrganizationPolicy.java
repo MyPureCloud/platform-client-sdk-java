@@ -31,7 +31,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     return enabled;
   }
 
-
+  
   /**
    * The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail
    **/
@@ -49,7 +49,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
   }
 
-
+  
   /**
    * The configuration for user PINs to access their voicemail from a phone
    **/
@@ -67,7 +67,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.pinConfiguration = pinConfiguration;
   }
 
-
+  
   /**
    * The extension for voicemail retrieval.  The default value is *86.
    **/
@@ -85,7 +85,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.voicemailExtension = voicemailExtension;
   }
 
-
+  
   /**
    * If this is true, a PIN is required when accessing a user's voicemail from a phone.
    **/
@@ -103,7 +103,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.pinRequired = pinRequired;
   }
 
-
+  
   /**
    * Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting.
    **/
@@ -121,13 +121,14 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     this.sendEmailNotifications = sendEmailNotifications;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("modifiedDate")
   public Date getModifiedDate() {
     return modifiedDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

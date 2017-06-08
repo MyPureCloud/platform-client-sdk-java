@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 
 public class PostAnalyticsConversationDetailsPropertiesRequest {
+    
 	private String conversationId;
 	public String getConversationId() {
 		return this.conversationId;
@@ -74,6 +75,7 @@ public class PostAnalyticsConversationDetailsPropertiesRequest {
 	    return this;
 	}
 
+	
 	private PropertyIndexRequest body;
 	public PropertyIndexRequest getBody() {
 		return this.body;
@@ -88,6 +90,7 @@ public class PostAnalyticsConversationDetailsPropertiesRequest {
 	    return this;
 	}
 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +127,7 @@ public class PostAnalyticsConversationDetailsPropertiesRequest {
                 .withPathParameter("conversationId", conversationId)
         
                 .withBody(body)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -135,10 +139,12 @@ public class PostAnalyticsConversationDetailsPropertiesRequest {
 		return new Builder();
 	}
 
+	
 	public static Builder builder(String conversationId, PropertyIndexRequest body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
+	
 
 	public static class Builder {
 		private final PostAnalyticsConversationDetailsPropertiesRequest request;
@@ -147,20 +153,26 @@ public class PostAnalyticsConversationDetailsPropertiesRequest {
 			request = new PostAnalyticsConversationDetailsPropertiesRequest();
 		}
 
+		
 		public Builder withConversationId(String conversationId) {
 			request.setConversationId(conversationId);
 			return this;
 		}
+		
 		public Builder withBody(PropertyIndexRequest body) {
 			request.setBody(body);
 			return this;
 		}
+		
 
+		
 		public Builder withRequiredParams(String conversationId, PropertyIndexRequest body) {
 			request.setConversationId(conversationId);
-			request.setBody(body);
+						request.setBody(body);
+			
 			return this;
 		}
+		
 
 
 		public PostAnalyticsConversationDetailsPropertiesRequest build() {

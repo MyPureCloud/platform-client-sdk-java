@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 public class GetAnalyticsReportingTimeperiodsRequest {
+    
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -62,7 +63,8 @@ public class GetAnalyticsReportingTimeperiodsRequest {
     public ApiRequest<Void> withHttpInfo() {
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/analytics/reporting/timeperiods")                .withCustomHeaders(customHeaders)
+        return ApiRequestBuilder.create("GET", "/api/v2/analytics/reporting/timeperiods")
+                .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
                 .withAuthNames("PureCloud Auth")
@@ -73,6 +75,7 @@ public class GetAnalyticsReportingTimeperiodsRequest {
 		return new Builder();
 	}
 
+	
 
 	public static class Builder {
 		private final GetAnalyticsReportingTimeperiodsRequest request;
@@ -81,7 +84,9 @@ public class GetAnalyticsReportingTimeperiodsRequest {
 			request = new GetAnalyticsReportingTimeperiodsRequest();
 		}
 
+		
 
+		
 
 
 		public GetAnalyticsReportingTimeperiodsRequest build() {

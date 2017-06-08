@@ -34,6 +34,7 @@ public class UserStationsNotification  implements Serializable {
     this.associatedStation = associatedStation;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

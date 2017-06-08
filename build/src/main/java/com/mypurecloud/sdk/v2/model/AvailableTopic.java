@@ -40,14 +40,14 @@ public class AvailableTopic  implements Serializable {
     this.description = description;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
 
-
+  
   /**
    **/
   public AvailableTopic requiresPermissions(List<String> requiresPermissions) {
@@ -64,7 +64,7 @@ public class AvailableTopic  implements Serializable {
     this.requiresPermissions = requiresPermissions;
   }
 
-
+  
   /**
    **/
   public AvailableTopic schema(Map<String, Object> schema) {
@@ -81,6 +81,7 @@ public class AvailableTopic  implements Serializable {
     this.schema = schema;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

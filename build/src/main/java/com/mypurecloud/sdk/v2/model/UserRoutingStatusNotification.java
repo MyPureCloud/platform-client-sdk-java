@@ -34,6 +34,7 @@ public class UserRoutingStatusNotification  implements Serializable {
     this.routingStatus = routingStatus;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

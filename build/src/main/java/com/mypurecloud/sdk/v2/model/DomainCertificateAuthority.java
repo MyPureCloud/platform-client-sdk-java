@@ -147,7 +147,7 @@ public class DomainCertificateAuthority  implements Serializable {
     return id;
   }
 
-
+  
   /**
    * The name of the entity.
    **/
@@ -165,7 +165,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority description(String description) {
@@ -182,7 +182,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.description = description;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority version(Integer version) {
@@ -199,7 +199,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.version = version;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -217,7 +217,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.dateCreated = dateCreated;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -235,7 +235,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.dateModified = dateModified;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority modifiedBy(String modifiedBy) {
@@ -252,7 +252,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.modifiedBy = modifiedBy;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority createdBy(String createdBy) {
@@ -269,7 +269,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.createdBy = createdBy;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority state(StateEnum state) {
@@ -286,7 +286,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.state = state;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority modifiedByApp(String modifiedByApp) {
@@ -303,7 +303,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.modifiedByApp = modifiedByApp;
   }
 
-
+  
   /**
    **/
   public DomainCertificateAuthority createdByApp(String createdByApp) {
@@ -320,7 +320,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.createdByApp = createdByApp;
   }
 
-
+  
   /**
    * The authorities signed X509 PEM encoded certificate.
    **/
@@ -338,7 +338,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.certificate = certificate;
   }
 
-
+  
   /**
    * The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.
    **/
@@ -356,7 +356,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.type = type;
   }
 
-
+  
   /**
    * The service(s) that the authority can be used to authenticate.
    **/
@@ -374,7 +374,7 @@ public class DomainCertificateAuthority  implements Serializable {
     this.services = services;
   }
 
-
+  
   /**
    * The details of the parsed certificate(s).
    **/
@@ -392,13 +392,14 @@ public class DomainCertificateAuthority  implements Serializable {
     this.certificateDetails = certificateDetails;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

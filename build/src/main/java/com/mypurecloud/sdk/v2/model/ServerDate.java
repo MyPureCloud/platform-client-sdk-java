@@ -35,6 +35,7 @@ public class ServerDate  implements Serializable {
     this.currentDate = currentDate;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

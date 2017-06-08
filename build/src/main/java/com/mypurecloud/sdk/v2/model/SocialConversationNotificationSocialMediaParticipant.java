@@ -197,7 +197,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.id = id;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant name(String name) {
@@ -214,7 +214,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.name = name;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant address(String address) {
@@ -231,7 +231,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.address = address;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant startTime(Date startTime) {
@@ -248,7 +248,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.startTime = startTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant connectedTime(Date connectedTime) {
@@ -265,7 +265,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.connectedTime = connectedTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant endTime(Date endTime) {
@@ -282,7 +282,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.endTime = endTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant startHoldTime(Date startHoldTime) {
@@ -299,7 +299,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.startHoldTime = startHoldTime;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant purpose(String purpose) {
@@ -316,7 +316,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.purpose = purpose;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant state(StateEnum state) {
@@ -333,7 +333,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.state = state;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant direction(DirectionEnum direction) {
@@ -350,7 +350,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.direction = direction;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant disconnectType(DisconnectTypeEnum disconnectType) {
@@ -367,7 +367,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.disconnectType = disconnectType;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant held(Boolean held) {
@@ -384,7 +384,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.held = held;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant wrapupRequired(Boolean wrapupRequired) {
@@ -401,7 +401,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.wrapupRequired = wrapupRequired;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant wrapupPrompt(String wrapupPrompt) {
@@ -418,7 +418,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.wrapupPrompt = wrapupPrompt;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant user(DocumentDataV2NotificationCreatedBy user) {
@@ -435,7 +435,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.user = user;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant queue(SocialConversationNotificationUriReference queue) {
@@ -452,7 +452,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.queue = queue;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant attributes(Map<String, String> attributes) {
@@ -469,7 +469,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.attributes = attributes;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant errorInfo(SocialConversationNotificationErrorInfo errorInfo) {
@@ -486,7 +486,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.errorInfo = errorInfo;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant script(SocialConversationNotificationUriReference script) {
@@ -503,7 +503,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.script = script;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant wrapupTimeoutMs(Integer wrapupTimeoutMs) {
@@ -520,7 +520,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.wrapupTimeoutMs = wrapupTimeoutMs;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant wrapupSkipped(Boolean wrapupSkipped) {
@@ -537,7 +537,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.wrapupSkipped = wrapupSkipped;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant provider(String provider) {
@@ -554,7 +554,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.provider = provider;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant externalContact(SocialConversationNotificationUriReference externalContact) {
@@ -571,7 +571,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.externalContact = externalContact;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant externalOrganization(SocialConversationNotificationUriReference externalOrganization) {
@@ -588,7 +588,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.externalOrganization = externalOrganization;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant wrapup(ConversationNotificationWrapup wrapup) {
@@ -605,7 +605,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.wrapup = wrapup;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant peer(String peer) {
@@ -622,7 +622,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.peer = peer;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant socialMediaId(String socialMediaId) {
@@ -639,7 +639,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.socialMediaId = socialMediaId;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant socialMediaHub(String socialMediaHub) {
@@ -656,7 +656,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.socialMediaHub = socialMediaHub;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant socialUserName(String socialUserName) {
@@ -673,7 +673,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.socialUserName = socialUserName;
   }
 
-
+  
   /**
    **/
   public SocialConversationNotificationSocialMediaParticipant previewText(String previewText) {
@@ -690,6 +690,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     this.previewText = previewText;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

@@ -41,7 +41,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.id = id;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDialerPreview contactId(String contactId) {
@@ -58,7 +58,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.contactId = contactId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDialerPreview contactListId(String contactListId) {
@@ -75,7 +75,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.contactListId = contactListId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDialerPreview campaignId(String campaignId) {
@@ -92,7 +92,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.campaignId = campaignId;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDialerPreview phoneNumberColumns(List<CampaignNotificationPhoneColumns> phoneNumberColumns) {
@@ -109,7 +109,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.phoneNumberColumns = phoneNumberColumns;
   }
 
-
+  
   /**
    **/
   public CallbackConversationNotificationDialerPreview additionalProperties(Object additionalProperties) {
@@ -126,6 +126,7 @@ public class CallbackConversationNotificationDialerPreview  implements Serializa
     this.additionalProperties = additionalProperties;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

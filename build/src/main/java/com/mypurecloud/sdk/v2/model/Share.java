@@ -105,7 +105,7 @@ public class Share  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public Share name(String name) {
@@ -122,7 +122,7 @@ public class Share  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public Share sharedEntityType(SharedEntityTypeEnum sharedEntityType) {
@@ -139,7 +139,7 @@ public class Share  implements Serializable {
     this.sharedEntityType = sharedEntityType;
   }
 
-
+  
   /**
    **/
   public Share sharedEntity(UriReference sharedEntity) {
@@ -156,7 +156,7 @@ public class Share  implements Serializable {
     this.sharedEntity = sharedEntity;
   }
 
-
+  
   /**
    **/
   public Share memberType(MemberTypeEnum memberType) {
@@ -173,7 +173,7 @@ public class Share  implements Serializable {
     this.memberType = memberType;
   }
 
-
+  
   /**
    **/
   public Share member(UriReference member) {
@@ -190,7 +190,7 @@ public class Share  implements Serializable {
     this.member = member;
   }
 
-
+  
   /**
    **/
   public Share sharedBy(UriReference sharedBy) {
@@ -207,7 +207,7 @@ public class Share  implements Serializable {
     this.sharedBy = sharedBy;
   }
 
-
+  
   /**
    **/
   public Share workspace(UriReference workspace) {
@@ -224,7 +224,7 @@ public class Share  implements Serializable {
     this.workspace = workspace;
   }
 
-
+  
   /**
    **/
   public Share user(User user) {
@@ -241,7 +241,7 @@ public class Share  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public Share group(Group group) {
@@ -258,13 +258,14 @@ public class Share  implements Serializable {
     this.group = group;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

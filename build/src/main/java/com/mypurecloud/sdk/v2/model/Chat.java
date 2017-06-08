@@ -33,6 +33,7 @@ public class Chat  implements Serializable {
     this.jabberId = jabberId;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

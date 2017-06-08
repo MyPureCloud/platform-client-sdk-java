@@ -73,7 +73,7 @@ public class RuleSetDiagnostic  implements Serializable {
     this.ruleSet = ruleSet;
   }
 
-
+  
   /**
    * Diagnostic warnings for the rule set
    **/
@@ -91,6 +91,7 @@ public class RuleSetDiagnostic  implements Serializable {
     this.warnings = warnings;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

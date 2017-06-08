@@ -40,7 +40,7 @@ public class FacetStatistics  implements Serializable {
     this.count = count;
   }
 
-
+  
   /**
    **/
   public FacetStatistics min(Double min) {
@@ -57,7 +57,7 @@ public class FacetStatistics  implements Serializable {
     this.min = min;
   }
 
-
+  
   /**
    **/
   public FacetStatistics max(Double max) {
@@ -74,7 +74,7 @@ public class FacetStatistics  implements Serializable {
     this.max = max;
   }
 
-
+  
   /**
    **/
   public FacetStatistics mean(Double mean) {
@@ -91,7 +91,7 @@ public class FacetStatistics  implements Serializable {
     this.mean = mean;
   }
 
-
+  
   /**
    **/
   public FacetStatistics stdDeviation(Double stdDeviation) {
@@ -108,7 +108,7 @@ public class FacetStatistics  implements Serializable {
     this.stdDeviation = stdDeviation;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -126,7 +126,7 @@ public class FacetStatistics  implements Serializable {
     this.dateMin = dateMin;
   }
 
-
+  
   /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
@@ -144,6 +144,7 @@ public class FacetStatistics  implements Serializable {
     this.dateMax = dateMax;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

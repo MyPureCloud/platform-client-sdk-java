@@ -44,6 +44,7 @@ public class LicenseApi {
     this.pcapiClient = apiClient;
   }
 
+  
   /**
    * Get PureCloud license definition.
    * 
@@ -70,6 +71,7 @@ public class LicenseApi {
   private GetLicenseDefinitionRequest createGetLicenseDefinitionRequest(String licenseId) {
     return GetLicenseDefinitionRequest.builder()
             .withLicenseId(licenseId)
+    
             .build();
   }
 
@@ -121,6 +123,7 @@ public class LicenseApi {
     }
   }
 
+  
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
@@ -143,7 +146,8 @@ public class LicenseApi {
   }
 
   private GetLicenseDefinitionsRequest createGetLicenseDefinitionsRequest() {
-    return GetLicenseDefinitionsRequest.builder()            .build();
+    return GetLicenseDefinitionsRequest.builder()
+            .build();
   }
 
   /**
@@ -194,6 +198,7 @@ public class LicenseApi {
     }
   }
 
+  
   /**
    * Get license assignments for the organization.
    * 
@@ -216,7 +221,8 @@ public class LicenseApi {
   }
 
   private GetLicenseOrganizationRequest createGetLicenseOrganizationRequest() {
-    return GetLicenseOrganizationRequest.builder()            .build();
+    return GetLicenseOrganizationRequest.builder()
+            .build();
   }
 
   /**
@@ -267,6 +273,7 @@ public class LicenseApi {
     }
   }
 
+  
   /**
    * Get licenses for specified user.
    * 
@@ -293,6 +300,7 @@ public class LicenseApi {
   private GetLicenseUserRequest createGetLicenseUserRequest(String userId) {
     return GetLicenseUserRequest.builder()
             .withUserId(userId)
+    
             .build();
   }
 
@@ -344,6 +352,7 @@ public class LicenseApi {
     }
   }
 
+  
   /**
    * Update the organization&#39;s license assignments in a batch.
    * 
@@ -370,6 +379,7 @@ public class LicenseApi {
   private PostLicenseOrganizationRequest createPostLicenseOrganizationRequest(LicenseBatchAssignmentRequest body) {
     return PostLicenseOrganizationRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -421,6 +431,7 @@ public class LicenseApi {
     }
   }
 
+  
   /**
    * Fetch user licenses in a batch.
    * 
@@ -447,6 +458,7 @@ public class LicenseApi {
   private PostLicenseUsersRequest createPostLicenseUsersRequest(List<String> body) {
     return PostLicenseUsersRequest.builder()
             .withBody(body)
+    
             .build();
   }
 
@@ -498,4 +510,5 @@ public class LicenseApi {
     }
   }
 
+  
 }

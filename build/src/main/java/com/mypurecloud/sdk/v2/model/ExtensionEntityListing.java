@@ -46,7 +46,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.entities = entities;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing pageSize(Integer pageSize) {
@@ -63,7 +63,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.pageSize = pageSize;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing pageNumber(Integer pageNumber) {
@@ -80,7 +80,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.pageNumber = pageNumber;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing total(Long total) {
@@ -97,7 +97,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.total = total;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing selfUri(String selfUri) {
@@ -114,7 +114,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.selfUri = selfUri;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing firstUri(String firstUri) {
@@ -131,7 +131,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.firstUri = firstUri;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing previousUri(String previousUri) {
@@ -148,7 +148,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.previousUri = previousUri;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing nextUri(String nextUri) {
@@ -165,7 +165,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.nextUri = nextUri;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing lastUri(String lastUri) {
@@ -182,7 +182,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.lastUri = lastUri;
   }
 
-
+  
   /**
    **/
   public ExtensionEntityListing pageCount(Integer pageCount) {
@@ -199,6 +199,7 @@ public class ExtensionEntityListing  implements Serializable, PagedResource<Exte
     this.pageCount = pageCount;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {

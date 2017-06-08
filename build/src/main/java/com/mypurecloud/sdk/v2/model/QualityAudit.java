@@ -38,7 +38,7 @@ public class QualityAudit  implements Serializable {
     return id;
   }
 
-
+  
   /**
    **/
   public QualityAudit name(String name) {
@@ -55,7 +55,7 @@ public class QualityAudit  implements Serializable {
     this.name = name;
   }
 
-
+  
   /**
    **/
   public QualityAudit user(User user) {
@@ -72,7 +72,7 @@ public class QualityAudit  implements Serializable {
     this.user = user;
   }
 
-
+  
   /**
    **/
   public QualityAudit timestamp(String timestamp) {
@@ -89,7 +89,7 @@ public class QualityAudit  implements Serializable {
     this.timestamp = timestamp;
   }
 
-
+  
   /**
    **/
   public QualityAudit level(String level) {
@@ -106,7 +106,7 @@ public class QualityAudit  implements Serializable {
     this.level = level;
   }
 
-
+  
   /**
    **/
   public QualityAudit entity(AuditEntity entity) {
@@ -123,7 +123,7 @@ public class QualityAudit  implements Serializable {
     this.entity = entity;
   }
 
-
+  
   /**
    **/
   public QualityAudit action(String action) {
@@ -140,7 +140,7 @@ public class QualityAudit  implements Serializable {
     this.action = action;
   }
 
-
+  
   /**
    **/
   public QualityAudit status(String status) {
@@ -157,7 +157,7 @@ public class QualityAudit  implements Serializable {
     this.status = status;
   }
 
-
+  
   /**
    **/
   public QualityAudit changes(List<Change> changes) {
@@ -174,7 +174,7 @@ public class QualityAudit  implements Serializable {
     this.changes = changes;
   }
 
-
+  
   /**
    **/
   public QualityAudit entityType(String entityType) {
@@ -191,13 +191,14 @@ public class QualityAudit  implements Serializable {
     this.entityType = entityType;
   }
 
-
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
     return selfUri;
   }
 
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
