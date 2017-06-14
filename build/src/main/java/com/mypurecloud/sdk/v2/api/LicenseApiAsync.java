@@ -15,11 +15,10 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseDefinitionListing;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
@@ -132,13 +131,13 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseDefinitionListing> getLicenseDefinitionsAsync(GetLicenseDefinitionsRequest request, final AsyncApiCallback<LicenseDefinitionListing> callback) {
+  public Future<List<LicenseDefinition>> getLicenseDefinitionsAsync(GetLicenseDefinitionsRequest request, final AsyncApiCallback<List<LicenseDefinition>> callback) {
     try {
-      final SettableFuture<LicenseDefinitionListing> future = SettableFuture.create();
+      final SettableFuture<List<LicenseDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinitionListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<LicenseDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LicenseDefinition>>>() {
         @Override
-        public void onCompleted(ApiResponse<LicenseDefinitionListing> response) {
+        public void onCompleted(ApiResponse<List<LicenseDefinition>> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -166,13 +165,13 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseDefinitionListing>> getLicenseDefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseDefinitionListing>> callback) {
+  public Future<ApiResponse<List<LicenseDefinition>>> getLicenseDefinitionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<LicenseDefinition>>> callback) {
     try {
-      final SettableFuture<ApiResponse<LicenseDefinitionListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<List<LicenseDefinition>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LicenseDefinitionListing>() {}, new AsyncApiCallback<ApiResponse<LicenseDefinitionListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<List<LicenseDefinition>>() {}, new AsyncApiCallback<ApiResponse<List<LicenseDefinition>>>() {
         @Override
-        public void onCompleted(ApiResponse<LicenseDefinitionListing> response) {
+        public void onCompleted(ApiResponse<List<LicenseDefinition>> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -180,7 +179,7 @@ public class LicenseApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)exception;
+            ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -188,7 +187,7 @@ public class LicenseApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -360,13 +359,13 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LicenseUpdateResponse> postLicenseOrganizationAsync(PostLicenseOrganizationRequest request, final AsyncApiCallback<LicenseUpdateResponse> callback) {
+  public Future<List<LicenseUpdateStatus>> postLicenseOrganizationAsync(PostLicenseOrganizationRequest request, final AsyncApiCallback<List<LicenseUpdateStatus>> callback) {
     try {
-      final SettableFuture<LicenseUpdateResponse> future = SettableFuture.create();
+      final SettableFuture<List<LicenseUpdateStatus>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LicenseUpdateResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<LicenseUpdateStatus>>() {}, new AsyncApiCallback<ApiResponse<List<LicenseUpdateStatus>>>() {
         @Override
-        public void onCompleted(ApiResponse<LicenseUpdateResponse> response) {
+        public void onCompleted(ApiResponse<List<LicenseUpdateStatus>> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -394,13 +393,13 @@ public class LicenseApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LicenseUpdateResponse>> postLicenseOrganizationAsync(ApiRequest<LicenseBatchAssignmentRequest> request, final AsyncApiCallback<ApiResponse<LicenseUpdateResponse>> callback) {
+  public Future<ApiResponse<List<LicenseUpdateStatus>>> postLicenseOrganizationAsync(ApiRequest<LicenseBatchAssignmentRequest> request, final AsyncApiCallback<ApiResponse<List<LicenseUpdateStatus>>> callback) {
     try {
-      final SettableFuture<ApiResponse<LicenseUpdateResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<List<LicenseUpdateStatus>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LicenseUpdateResponse>() {}, new AsyncApiCallback<ApiResponse<LicenseUpdateResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<List<LicenseUpdateStatus>>() {}, new AsyncApiCallback<ApiResponse<List<LicenseUpdateStatus>>>() {
         @Override
-        public void onCompleted(ApiResponse<LicenseUpdateResponse> response) {
+        public void onCompleted(ApiResponse<List<LicenseUpdateStatus>> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -408,7 +407,7 @@ public class LicenseApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)exception;
+            ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -416,7 +415,7 @@ public class LicenseApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

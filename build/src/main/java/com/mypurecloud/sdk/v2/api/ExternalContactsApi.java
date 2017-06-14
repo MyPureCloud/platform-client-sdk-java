@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
@@ -50,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsRelationshipRequest;
 
 import java.io.IOException;
@@ -361,6 +363,82 @@ public class ExternalContactsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Unlink the Trustor for this External Organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsOrganizationTrustor(String externalOrganizationId) throws IOException, ApiException {
+     deleteExternalcontactsOrganizationTrustor(createDeleteExternalcontactsOrganizationTrustorRequest(externalOrganizationId));
+  }
+
+  /**
+   * Unlink the Trustor for this External Organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsOrganizationTrustorWithHttpInfo(String externalOrganizationId) throws IOException {
+    return deleteExternalcontactsOrganizationTrustor(createDeleteExternalcontactsOrganizationTrustorRequest(externalOrganizationId).withHttpInfo());
+  }
+
+  private DeleteExternalcontactsOrganizationTrustorRequest createDeleteExternalcontactsOrganizationTrustorRequest(String externalOrganizationId) {
+    return DeleteExternalcontactsOrganizationTrustorRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+    
+            .build();
+  }
+
+  /**
+   * Unlink the Trustor for this External Organization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsOrganizationTrustor(DeleteExternalcontactsOrganizationTrustorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Unlink the Trustor for this External Organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsOrganizationTrustor(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -824,12 +902,13 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization ID (required)
    * @param expand which fields, if any, to expand (externalDataSources) (optional)
+   * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, List<String> expand) throws IOException, ApiException {
-    return  getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand));
+  public ExternalOrganization getExternalcontactsOrganization(String externalOrganizationId, String expand, Boolean includeTrustors) throws IOException, ApiException {
+    return  getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand, includeTrustors));
   }
 
   /**
@@ -837,18 +916,21 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization ID (required)
    * @param expand which fields, if any, to expand (externalDataSources) (optional)
+   * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, List<String> expand) throws IOException {
-    return getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand).withHttpInfo());
+  public ApiResponse<ExternalOrganization> getExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId, String expand, Boolean includeTrustors) throws IOException {
+    return getExternalcontactsOrganization(createGetExternalcontactsOrganizationRequest(externalOrganizationId, expand, includeTrustors).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, List<String> expand) {
+  private GetExternalcontactsOrganizationRequest createGetExternalcontactsOrganizationRequest(String externalOrganizationId, String expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationRequest.builder()
             .withExternalOrganizationId(externalOrganizationId)
     
             .withExpand(expand)
+    
+            .withIncludeTrustors(includeTrustors)
     
             .build();
   }
@@ -1286,12 +1368,13 @@ public class ExternalContactsApi {
    * @param q Search query (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
+   * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganizationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException, ApiException {
-    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand));
+  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException, ApiException {
+    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand, includeTrustors));
   }
 
   /**
@@ -1302,14 +1385,15 @@ public class ExternalContactsApi {
    * @param q Search query (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
+   * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganizationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) throws IOException {
-    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand).withHttpInfo());
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException {
+    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand, includeTrustors).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, String expand) {
+  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1320,6 +1404,8 @@ public class ExternalContactsApi {
             .withSortOrder(sortOrder)
     
             .withExpand(expand)
+    
+            .withIncludeTrustors(includeTrustors)
     
             .build();
   }
@@ -2357,6 +2443,89 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Links a Trustor with an Extenral Organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @param trustorId Trustor ID (required)
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization putExternalcontactsOrganizationTrustorTrustorId(String externalOrganizationId, String trustorId) throws IOException, ApiException {
+    return  putExternalcontactsOrganizationTrustorTrustorId(createPutExternalcontactsOrganizationTrustorTrustorIdRequest(externalOrganizationId, trustorId));
+  }
+
+  /**
+   * Links a Trustor with an Extenral Organization
+   * 
+   * @param externalOrganizationId External Organization ID (required)
+   * @param trustorId Trustor ID (required)
+   * @return ExternalOrganization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationTrustorTrustorIdWithHttpInfo(String externalOrganizationId, String trustorId) throws IOException {
+    return putExternalcontactsOrganizationTrustorTrustorId(createPutExternalcontactsOrganizationTrustorTrustorIdRequest(externalOrganizationId, trustorId).withHttpInfo());
+  }
+
+  private PutExternalcontactsOrganizationTrustorTrustorIdRequest createPutExternalcontactsOrganizationTrustorTrustorIdRequest(String externalOrganizationId, String trustorId) {
+    return PutExternalcontactsOrganizationTrustorTrustorIdRequest.builder()
+            .withExternalOrganizationId(externalOrganizationId)
+    
+            .withTrustorId(trustorId)
+    
+            .build();
+  }
+
+  /**
+   * Links a Trustor with an Extenral Organization
+   * 
+   * @param request The request object
+   * @return ExternalOrganization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExternalOrganization putExternalcontactsOrganizationTrustorTrustorId(PutExternalcontactsOrganizationTrustorTrustorIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExternalOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Links a Trustor with an Extenral Organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExternalOrganization> putExternalcontactsOrganizationTrustorTrustorId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExternalOrganization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

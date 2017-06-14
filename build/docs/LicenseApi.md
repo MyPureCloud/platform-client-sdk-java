@@ -70,7 +70,7 @@ try {
 
 # **getLicenseDefinitions**
 
-> [LicenseDefinitionListing](LicenseDefinitionListing.html) getLicenseDefinitions()
+> [List&lt;LicenseDefinition&gt;](LicenseDefinition.html) getLicenseDefinitions()
 
 Get all PureCloud license definitions available for the organization.
 
@@ -96,7 +96,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 LicenseApi apiInstance = new LicenseApi();
 try {
-    LicenseDefinitionListing result = apiInstance.getLicenseDefinitions();
+    List<LicenseDefinition> result = apiInstance.getLicenseDefinitions();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LicenseApi#getLicenseDefinitions");
@@ -111,7 +111,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**LicenseDefinitionListing**](LicenseDefinitionListing.html)
+[**List&lt;LicenseDefinition&gt;**](LicenseDefinition.html)
 
 <a name="getLicenseOrganization"></a>
 
@@ -215,7 +215,7 @@ try {
 
 # **postLicenseOrganization**
 
-> [LicenseUpdateResponse](LicenseUpdateResponse.html) postLicenseOrganization(body)
+> [List&lt;LicenseUpdateStatus&gt;](LicenseUpdateStatus.html) postLicenseOrganization(body)
 
 Update the organization&#39;s license assignments in a batch.
 
@@ -242,7 +242,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 LicenseApi apiInstance = new LicenseApi();
 LicenseBatchAssignmentRequest body = new LicenseBatchAssignmentRequest(); // LicenseBatchAssignmentRequest | The license assignments to update.
 try {
-    LicenseUpdateResponse result = apiInstance.postLicenseOrganization(body);
+    List<LicenseUpdateStatus> result = apiInstance.postLicenseOrganization(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LicenseApi#postLicenseOrganization");
@@ -260,7 +260,7 @@ try {
 
 ### Return type
 
-[**LicenseUpdateResponse**](LicenseUpdateResponse.html)
+[**List&lt;LicenseUpdateStatus&gt;**](LicenseUpdateStatus.html)
 
 <a name="postLicenseUsers"></a>
 

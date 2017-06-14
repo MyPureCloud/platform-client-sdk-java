@@ -8,19 +8,38 @@ import java.util.*;
 public class ApiRequestBuilder<T> {
     private static ThreadLocal<DateFormat> DATE_FORMAT;
     private static final String[] EMPTY = new String[0];
+    private static DateFormat initialDateFormat;
 
-    public static void setDateFormat(DateFormat dateFormat) {
-        DATE_FORMAT = new ThreadLocal<>();
-        DATE_FORMAT.set(dateFormat);
+    public static void setDateFormat(final DateFormat dateFormat) {
+        // Set initial date format object
+        if (dateFormat != null) {
+            initializeDateFormat(dateFormat);
+        }
+
+        DATE_FORMAT = new ThreadLocal<DateFormat>(){
+            @Override protected DateFormat initialValue() {
+                return initialDateFormat;
+            }
+        };
+    }
+
+    private static void initializeDateFormat(final DateFormat dateFormat) {
+        initialDateFormat = dateFormat;
     }
 
     public static DateFormat getDateFormat() {
         // Lazy load ApiDateFormat
         synchronized (EMPTY) {
-            if (DATE_FORMAT == null) {
+            // Initialize the source date format object
+            if (initialDateFormat == null) {
                 DateFormat dateFormat = new ApiDateFormat();
                 dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-                setDateFormat(dateFormat);
+                initializeDateFormat(dateFormat);
+            }
+
+            // Ensure date format object has a value
+            if (DATE_FORMAT == null) {
+                setDateFormat(null);
             }
         }
 

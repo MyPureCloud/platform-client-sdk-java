@@ -20,11 +20,10 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseDefinitionListing;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 public class GetLicenseOrganizationRequest {
     

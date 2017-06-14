@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteExternalcontactsContactNote**](ExternalContactsApi.html#deleteExternalcontactsContactNote) | Delete a note for an external contact |
 | [**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | Delete an external organization |
 | [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | Delete a note for an external organization |
+| [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | Unlink the Trustor for this External Organization |
 | [**deleteExternalcontactsRelationship**](ExternalContactsApi.html#deleteExternalcontactsRelationship) | Delete a relationship |
 | [**getExternalcontactsContact**](ExternalContactsApi.html#getExternalcontactsContact) | Fetch an external contact |
 | [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | Fetch a note for an external contact |
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate an external contact with a conversation |
 | [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
+| [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an Extenral Organization |
 | [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | Update a relationship |
 {: class="table table-striped"}
 
@@ -235,6 +237,56 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | |
 | **noteId** | **String**| Note Id | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteExternalcontactsOrganizationTrustor"></a>
+
+# **deleteExternalcontactsOrganizationTrustor**
+
+> Void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
+
+Unlink the Trustor for this External Organization
+
+
+
+Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+try {
+    apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsOrganizationTrustor");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization ID | |
 {: class="table table-striped"}
 
 ### Return type
@@ -521,7 +573,7 @@ try {
 
 # **getExternalcontactsOrganization**
 
-> [ExternalOrganization](ExternalOrganization.html) getExternalcontactsOrganization(externalOrganizationId, expand)
+> [ExternalOrganization](ExternalOrganization.html) getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors)
 
 Fetch an external organization
 
@@ -547,9 +599,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand (externalDataSources)
+String expand = "expand_example"; // String | which fields, if any, to expand (externalDataSources)
+Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
-    ExternalOrganization result = apiInstance.getExternalcontactsOrganization(externalOrganizationId, expand);
+    ExternalOrganization result = apiInstance.getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganization");
@@ -563,7 +616,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources |
+| **expand** | **String**| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources |
+| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -808,7 +862,7 @@ try {
 
 # **getExternalcontactsOrganizations**
 
-> [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand)
+> [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand, includeTrustors)
 
 Search for external organizations
 
@@ -837,9 +891,10 @@ Integer pageSize = 20; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String q = "q_example"; // String | Search query
 String sortOrder = "sortOrder_example"; // String | Sort order
-String expand = "expand_example"; // String | which fields, if any, to expand
+List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
+Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
-    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand);
+    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand, includeTrustors);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizations");
@@ -856,7 +911,8 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| Search query | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
+| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1495,6 +1551,59 @@ try {
 ### Return type
 
 [**Note**](Note.html)
+
+<a name="putExternalcontactsOrganizationTrustorTrustorId"></a>
+
+# **putExternalcontactsOrganizationTrustorTrustorId**
+
+> [ExternalOrganization](ExternalOrganization.html) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+
+Links a Trustor with an Extenral Organization
+
+
+
+Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+String trustorId = "trustorId_example"; // String | Trustor ID
+try {
+    ExternalOrganization result = apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **externalOrganizationId** | **String**| External Organization ID | |
+| **trustorId** | **String**| Trustor ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalOrganization**](ExternalOrganization.html)
 
 <a name="putExternalcontactsRelationship"></a>
 

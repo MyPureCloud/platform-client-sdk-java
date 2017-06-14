@@ -47,17 +47,32 @@ public class GetExternalcontactsOrganizationRequest {
 	}
 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private String expand;
+	public String getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(String expand) {
 		this.expand = expand;
 	}
 
-	public GetExternalcontactsOrganizationRequest withExpand(List<String> expand) {
+	public GetExternalcontactsOrganizationRequest withExpand(String expand) {
 	    this.setExpand(expand);
+	    return this;
+	}
+
+	
+	private Boolean includeTrustors;
+	public Boolean getIncludeTrustors() {
+		return this.includeTrustors;
+	}
+
+	public void setIncludeTrustors(Boolean includeTrustors) {
+		this.includeTrustors = includeTrustors;
+	}
+
+	public GetExternalcontactsOrganizationRequest withIncludeTrustors(Boolean includeTrustors) {
+	    this.setIncludeTrustors(includeTrustors);
 	    return this;
 	}
 
@@ -92,7 +107,9 @@ public class GetExternalcontactsOrganizationRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
         
-                .withQueryParameters("expand", "multi", expand)
+                .withQueryParameters("expand", "", expand)
+        
+                .withQueryParameters("includeTrustors", "", includeTrustors)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -125,8 +142,13 @@ public class GetExternalcontactsOrganizationRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(String expand) {
 			request.setExpand(expand);
+			return this;
+		}
+		
+		public Builder withIncludeTrustors(Boolean includeTrustors) {
+			request.setIncludeTrustors(includeTrustors);
 			return this;
 		}
 		

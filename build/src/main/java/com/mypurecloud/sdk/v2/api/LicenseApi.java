@@ -12,11 +12,10 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseDefinitionListing;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
-import com.mypurecloud.sdk.v2.model.LicenseUpdateResponse;
+import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
@@ -127,21 +126,21 @@ public class LicenseApi {
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
-   * @return LicenseDefinitionListing
+   * @return List<LicenseDefinition>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LicenseDefinitionListing getLicenseDefinitions() throws IOException, ApiException {
+  public List<LicenseDefinition> getLicenseDefinitions() throws IOException, ApiException {
     return  getLicenseDefinitions(createGetLicenseDefinitionsRequest());
   }
 
   /**
    * Get all PureCloud license definitions available for the organization.
    * 
-   * @return LicenseDefinitionListing
+   * @return List<LicenseDefinition>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitionsWithHttpInfo() throws IOException {
+  public ApiResponse<List<LicenseDefinition>> getLicenseDefinitionsWithHttpInfo() throws IOException {
     return getLicenseDefinitions(createGetLicenseDefinitionsRequest().withHttpInfo());
   }
 
@@ -154,13 +153,13 @@ public class LicenseApi {
    * Get all PureCloud license definitions available for the organization.
    * 
    * @param request The request object
-   * @return LicenseDefinitionListing
+   * @return List<LicenseDefinition>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LicenseDefinitionListing getLicenseDefinitions(GetLicenseDefinitionsRequest request) throws IOException, ApiException {
+  public List<LicenseDefinition> getLicenseDefinitions(GetLicenseDefinitionsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<LicenseDefinitionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseDefinitionListing>() {});
+      ApiResponse<List<LicenseDefinition>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<LicenseDefinition>>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -176,13 +175,13 @@ public class LicenseApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseDefinitionListing> getLicenseDefinitions(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<List<LicenseDefinition>> getLicenseDefinitions(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<LicenseDefinitionListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<List<LicenseDefinition>>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)exception;
+      ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -193,7 +192,7 @@ public class LicenseApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<LicenseDefinitionListing> response = (ApiResponse<LicenseDefinitionListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -357,11 +356,11 @@ public class LicenseApi {
    * Update the organization&#39;s license assignments in a batch.
    * 
    * @param body The license assignments to update. (optional)
-   * @return LicenseUpdateResponse
+   * @return List<LicenseUpdateStatus>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LicenseUpdateResponse postLicenseOrganization(LicenseBatchAssignmentRequest body) throws IOException, ApiException {
+  public List<LicenseUpdateStatus> postLicenseOrganization(LicenseBatchAssignmentRequest body) throws IOException, ApiException {
     return  postLicenseOrganization(createPostLicenseOrganizationRequest(body));
   }
 
@@ -369,10 +368,10 @@ public class LicenseApi {
    * Update the organization&#39;s license assignments in a batch.
    * 
    * @param body The license assignments to update. (optional)
-   * @return LicenseUpdateResponse
+   * @return List<LicenseUpdateStatus>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUpdateResponse> postLicenseOrganizationWithHttpInfo(LicenseBatchAssignmentRequest body) throws IOException {
+  public ApiResponse<List<LicenseUpdateStatus>> postLicenseOrganizationWithHttpInfo(LicenseBatchAssignmentRequest body) throws IOException {
     return postLicenseOrganization(createPostLicenseOrganizationRequest(body).withHttpInfo());
   }
 
@@ -387,13 +386,13 @@ public class LicenseApi {
    * Update the organization&#39;s license assignments in a batch.
    * 
    * @param request The request object
-   * @return LicenseUpdateResponse
+   * @return List<LicenseUpdateStatus>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LicenseUpdateResponse postLicenseOrganization(PostLicenseOrganizationRequest request) throws IOException, ApiException {
+  public List<LicenseUpdateStatus> postLicenseOrganization(PostLicenseOrganizationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<LicenseUpdateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseUpdateResponse>() {});
+      ApiResponse<List<LicenseUpdateStatus>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<LicenseUpdateStatus>>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -409,13 +408,13 @@ public class LicenseApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LicenseUpdateResponse> postLicenseOrganization(ApiRequest<LicenseBatchAssignmentRequest> request) throws IOException {
+  public ApiResponse<List<LicenseUpdateStatus>> postLicenseOrganization(ApiRequest<LicenseBatchAssignmentRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<LicenseUpdateResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<List<LicenseUpdateStatus>>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)exception;
+      ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -426,7 +425,7 @@ public class LicenseApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<LicenseUpdateResponse> response = (ApiResponse<LicenseUpdateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

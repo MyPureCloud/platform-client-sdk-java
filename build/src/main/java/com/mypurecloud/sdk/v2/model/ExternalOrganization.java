@@ -8,6 +8,7 @@ import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.Ticker;
+import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TwitterId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -38,6 +39,7 @@ public class ExternalOrganization  implements Serializable {
   private TwitterId twitterId = null;
   private Date modifyDate = null;
   private Date createDate = null;
+  private Trustor trustor = null;
   private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
@@ -319,6 +321,23 @@ public class ExternalOrganization  implements Serializable {
 
   
   /**
+   **/
+  public ExternalOrganization trustor(Trustor trustor) {
+    this.trustor = trustor;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("trustor")
+  public Trustor getTrustor() {
+    return trustor;
+  }
+  public void setTrustor(Trustor trustor) {
+    this.trustor = trustor;
+  }
+
+  
+  /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
   public ExternalOrganization externalDataSources(List<ExternalDataSource> externalDataSources) {
@@ -369,13 +388,14 @@ public class ExternalOrganization  implements Serializable {
         Objects.equals(this.twitterId, externalOrganization.twitterId) &&
         Objects.equals(this.modifyDate, externalOrganization.modifyDate) &&
         Objects.equals(this.createDate, externalOrganization.createDate) &&
+        Objects.equals(this.trustor, externalOrganization.trustor) &&
         Objects.equals(this.externalDataSources, externalOrganization.externalDataSources) &&
         Objects.equals(this.selfUri, externalOrganization.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, modifyDate, createDate, externalDataSources, selfUri);
+    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, modifyDate, createDate, trustor, externalDataSources, selfUri);
   }
 
   @Override
@@ -399,6 +419,7 @@ public class ExternalOrganization  implements Serializable {
     sb.append("    twitterId: ").append(toIndentedString(twitterId)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    sb.append("    trustor: ").append(toIndentedString(trustor)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
