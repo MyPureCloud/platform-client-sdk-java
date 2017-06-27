@@ -172,7 +172,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **greetingId** | **String**| Greeting ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, NONE |
+| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -495,7 +495,7 @@ try {
 
 # **postGreetings**
 
-> [DefaultGreetingList](DefaultGreetingList.html) postGreetings(body)
+> [Greeting](Greeting.html) postGreetings(body)
 
 Create a Greeting for an Organization
 
@@ -522,7 +522,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 GreetingsApi apiInstance = new GreetingsApi();
 Greeting body = new Greeting(); // Greeting | The Greeting to create
 try {
-    DefaultGreetingList result = apiInstance.postGreetings(body);
+    Greeting result = apiInstance.postGreetings(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GreetingsApi#postGreetings");
@@ -540,7 +540,7 @@ try {
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**Greeting**](Greeting.html)
 
 <a name="postGroupGreetings"></a>
 

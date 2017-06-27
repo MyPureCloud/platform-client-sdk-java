@@ -65,6 +65,7 @@ public class EventLog  implements Serializable {
    */
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CAMPAIGN("CAMPAIGN"),
     CAMPAIGN_RULE("CAMPAIGN_RULE"),
     IMPORT_ERROR("IMPORT_ERROR"),
     CALLBACK("CALLBACK"),

@@ -749,13 +749,13 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<DefaultGreetingList> postGreetingsAsync(PostGreetingsRequest request, final AsyncApiCallback<DefaultGreetingList> callback) {
+  public Future<Greeting> postGreetingsAsync(PostGreetingsRequest request, final AsyncApiCallback<Greeting> callback) {
     try {
-      final SettableFuture<DefaultGreetingList> future = SettableFuture.create();
+      final SettableFuture<Greeting> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
-        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+        public void onCompleted(ApiResponse<Greeting> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -783,13 +783,13 @@ public class GreetingsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<DefaultGreetingList>> postGreetingsAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<DefaultGreetingList>> callback) {
+  public Future<ApiResponse<Greeting>> postGreetingsAsync(ApiRequest<Greeting> request, final AsyncApiCallback<ApiResponse<Greeting>> callback) {
     try {
-      final SettableFuture<ApiResponse<DefaultGreetingList>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Greeting>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<DefaultGreetingList>() {}, new AsyncApiCallback<ApiResponse<DefaultGreetingList>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<Greeting>() {}, new AsyncApiCallback<ApiResponse<Greeting>>() {
         @Override
-        public void onCompleted(ApiResponse<DefaultGreetingList> response) {
+        public void onCompleted(ApiResponse<Greeting> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -797,7 +797,7 @@ public class GreetingsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -805,7 +805,7 @@ public class GreetingsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

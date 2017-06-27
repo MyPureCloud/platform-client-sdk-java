@@ -1369,7 +1369,7 @@ try {
 
 # **getRoutingWrapupcodes**
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, name, sortBy)
 
 Get list of wrapup codes.
 
@@ -1396,9 +1396,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
 String sortBy = "name"; // String | Sort by
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy);
+    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, name, sortBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodes");
@@ -1413,6 +1414,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **name** | **String**| Name | [optional] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 

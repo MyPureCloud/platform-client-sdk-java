@@ -71,6 +71,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
@@ -2654,6 +2655,86 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ObservationQueryResponse> response = (ApiResponse<ObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Send an activation email to the user
+   * 
+   * @param userId User ID (required)
+   * @param force Resend the invitation even if one is already outstanding (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUserInvite(String userId, Boolean force) throws IOException, ApiException {
+     postUserInvite(createPostUserInviteRequest(userId, force));
+  }
+
+  /**
+   * Send an activation email to the user
+   * 
+   * @param userId User ID (required)
+   * @param force Resend the invitation even if one is already outstanding (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUserInviteWithHttpInfo(String userId, Boolean force) throws IOException {
+    return postUserInvite(createPostUserInviteRequest(userId, force).withHttpInfo());
+  }
+
+  private PostUserInviteRequest createPostUserInviteRequest(String userId, Boolean force) {
+    return PostUserInviteRequest.builder()
+            .withUserId(userId)
+    
+            .withForce(force)
+    
+            .build();
+  }
+
+  /**
+   * Send an activation email to the user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUserInvite(PostUserInviteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Send an activation email to the user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUserInvite(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

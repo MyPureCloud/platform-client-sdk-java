@@ -40,6 +40,7 @@ title: EventLog
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CAMPAIGN | &quot;CAMPAIGN&quot; |
 | CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; |
 | IMPORT_ERROR | &quot;IMPORT_ERROR&quot; |
 | CALLBACK | &quot;CALLBACK&quot; |

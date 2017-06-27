@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
+| [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
 | [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**postUsers**](UsersApi.html#postUsers) | Create user |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
@@ -1687,6 +1688,58 @@ try {
 ### Return type
 
 [**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="postUserInvite"></a>
+
+# **postUserInvite**
+
+> Void postUserInvite(userId, force)
+
+Send an activation email to the user
+
+
+
+Wraps POST /api/v2/users/{userId}/invite  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+Boolean force = false; // Boolean | Resend the invitation even if one is already outstanding
+try {
+    apiInstance.postUserInvite(userId, force);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUserInvite");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **force** | **Boolean**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postUserRoutingskills"></a>
 

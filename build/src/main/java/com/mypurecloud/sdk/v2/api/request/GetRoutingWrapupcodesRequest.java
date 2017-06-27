@@ -75,6 +75,21 @@ public class GetRoutingWrapupcodesRequest {
 	}
 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetRoutingWrapupcodesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	}
+
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -117,6 +132,8 @@ public class GetRoutingWrapupcodesRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+                .withQueryParameters("name", "", name)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withCustomHeaders(customHeaders)
@@ -147,6 +164,11 @@ public class GetRoutingWrapupcodesRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

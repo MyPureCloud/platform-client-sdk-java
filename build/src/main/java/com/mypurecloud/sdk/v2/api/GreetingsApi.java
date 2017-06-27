@@ -786,11 +786,11 @@ public class GreetingsApi {
    * Create a Greeting for an Organization
    * 
    * @param body The Greeting to create (required)
-   * @return DefaultGreetingList
+   * @return Greeting
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DefaultGreetingList postGreetings(Greeting body) throws IOException, ApiException {
+  public Greeting postGreetings(Greeting body) throws IOException, ApiException {
     return  postGreetings(createPostGreetingsRequest(body));
   }
 
@@ -798,10 +798,10 @@ public class GreetingsApi {
    * Create a Greeting for an Organization
    * 
    * @param body The Greeting to create (required)
-   * @return DefaultGreetingList
+   * @return Greeting
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> postGreetingsWithHttpInfo(Greeting body) throws IOException {
+  public ApiResponse<Greeting> postGreetingsWithHttpInfo(Greeting body) throws IOException {
     return postGreetings(createPostGreetingsRequest(body).withHttpInfo());
   }
 
@@ -816,13 +816,13 @@ public class GreetingsApi {
    * Create a Greeting for an Organization
    * 
    * @param request The request object
-   * @return DefaultGreetingList
+   * @return Greeting
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DefaultGreetingList postGreetings(PostGreetingsRequest request) throws IOException, ApiException {
+  public Greeting postGreetings(PostGreetingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<DefaultGreetingList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DefaultGreetingList>() {});
+      ApiResponse<Greeting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Greeting>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -838,13 +838,13 @@ public class GreetingsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DefaultGreetingList> postGreetings(ApiRequest<Greeting> request) throws IOException {
+  public ApiResponse<Greeting> postGreetings(ApiRequest<Greeting> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<DefaultGreetingList>() {});
+      return pcapiClient.invoke(request, new TypeReference<Greeting>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)exception;
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -855,7 +855,7 @@ public class GreetingsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<DefaultGreetingList> response = (ApiResponse<DefaultGreetingList>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Greeting> response = (ApiResponse<Greeting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
