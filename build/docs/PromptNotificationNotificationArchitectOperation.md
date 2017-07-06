@@ -30,6 +30,7 @@ title: PromptNotificationNotificationArchitectOperation
 | CHECKIN | &quot;CHECKIN&quot; |
 | DEBUG | &quot;DEBUG&quot; |
 | DELETE | &quot;DELETE&quot; |
+| HISTORY | &quot;HISTORY&quot; |
 | PUBLISH | &quot;PUBLISH&quot; |
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; |
 | VALIDATE | &quot;VALIDATE&quot; |

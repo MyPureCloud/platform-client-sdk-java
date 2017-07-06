@@ -15,7 +15,7 @@ title: ConversationNotificationCallback
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
 | **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
 | **dialerPreview** | [**ConversationNotificationDialerPreview**](ConversationNotificationDialerPreview.html) |  |  [optional] |
-| **voicemail** | [**DocumentDataV2NotificationWorkspace**](DocumentDataV2NotificationWorkspace.html) |  |  [optional] |
+| **voicemail** | [**ConversationNotificationVoicemail**](ConversationNotificationVoicemail.html) |  |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
 | **callbackUserName** | **String** |  |  [optional] |
 | **scriptId** | **String** |  |  [optional] |
@@ -46,6 +46,7 @@ title: ConversationNotificationCallback
 | DISCONNECTED | &quot;DISCONNECTED&quot; |
 | TERMINATED | &quot;TERMINATED&quot; |
 | SCHEDULED | &quot;SCHEDULED&quot; |
+| UPLOADING | &quot;UPLOADING&quot; |
 | NONE | &quot;NONE&quot; |
 
 

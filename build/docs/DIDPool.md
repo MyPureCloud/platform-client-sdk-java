@@ -46,8 +46,8 @@ title: DIDPool
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CLOUD | &quot;PURE_CLOUD&quot; |
-| CLOUD_VOICE | &quot;PURE_CLOUD_VOICE&quot; |
+| PURE_CLOUD | &quot;PURE_CLOUD&quot; |
+| PURE_CLOUD_VOICE | &quot;PURE_CLOUD_VOICE&quot; |
 {: class="table table-striped"}
 
 

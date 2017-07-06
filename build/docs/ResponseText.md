@@ -20,8 +20,8 @@ title: ResponseText
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PLAIN | &quot;text/plain&quot; |
-| HTML | &quot;text/html&quot; |
+| TEXT_PLAIN | &quot;text/plain&quot; |
+| TEXT_HTML | &quot;text/html&quot; |
 {: class="table table-striped"}
 
 

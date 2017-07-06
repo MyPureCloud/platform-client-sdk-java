@@ -26,8 +26,8 @@ public class CampaignRuleNotificationCampaignRuleCondition  implements Serializa
    */
   public enum ConditionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PROGRESS("CAMPAIGN_PROGRESS"),
-    AGENTS("CAMPAIGN_AGENTS");
+    CAMPAIGN_PROGRESS("CAMPAIGN_PROGRESS"),
+    CAMPAIGN_AGENTS("CAMPAIGN_AGENTS");
 
     private String value;
 

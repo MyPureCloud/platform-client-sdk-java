@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallbackConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.CallbackConversationNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationDialerPreview;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationVoicemail;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationWrapup;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -179,7 +179,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private ConversationNotificationDialerPreview outboundPreview = null;
-  private DocumentDataV2NotificationWorkspace voicemail = null;
+  private ConversationNotificationVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
@@ -649,17 +649,17 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   
   /**
    **/
-  public CallbackConversationNotificationCallbackMediaParticipant voicemail(DocumentDataV2NotificationWorkspace voicemail) {
+  public CallbackConversationNotificationCallbackMediaParticipant voicemail(ConversationNotificationVoicemail voicemail) {
     this.voicemail = voicemail;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("voicemail")
-  public DocumentDataV2NotificationWorkspace getVoicemail() {
+  public ConversationNotificationVoicemail getVoicemail() {
     return voicemail;
   }
-  public void setVoicemail(DocumentDataV2NotificationWorkspace voicemail) {
+  public void setVoicemail(ConversationNotificationVoicemail voicemail) {
     this.voicemail = voicemail;
   }
 

@@ -21,7 +21,7 @@ public class ExpansionCriterium  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SECONDS("TIMEOUT_SECONDS");
+    TIMEOUT_SECONDS("TIMEOUT_SECONDS");
 
     private String value;
 

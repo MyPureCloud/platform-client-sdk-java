@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationDialerPreview;
-import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationVoicemail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -34,6 +34,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
     DISCONNECTED("DISCONNECTED"),
     TERMINATED("TERMINATED"),
     SCHEDULED("SCHEDULED"),
+    UPLOADING("UPLOADING"),
     NONE("NONE");
 
     private String value;
@@ -150,7 +151,7 @@ public class ConversationNotificationCallbacks  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
   private ConversationNotificationDialerPreview dialerPreview = null;
-  private DocumentDataV2NotificationWorkspace voicemail = null;
+  private ConversationNotificationVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
@@ -286,17 +287,17 @@ public class ConversationNotificationCallbacks  implements Serializable {
   
   /**
    **/
-  public ConversationNotificationCallbacks voicemail(DocumentDataV2NotificationWorkspace voicemail) {
+  public ConversationNotificationCallbacks voicemail(ConversationNotificationVoicemail voicemail) {
     this.voicemail = voicemail;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("voicemail")
-  public DocumentDataV2NotificationWorkspace getVoicemail() {
+  public ConversationNotificationVoicemail getVoicemail() {
     return voicemail;
   }
-  public void setVoicemail(DocumentDataV2NotificationWorkspace voicemail) {
+  public void setVoicemail(ConversationNotificationVoicemail voicemail) {
     this.voicemail = voicemail;
   }
 

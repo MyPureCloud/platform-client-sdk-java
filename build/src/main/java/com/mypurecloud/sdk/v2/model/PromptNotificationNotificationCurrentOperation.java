@@ -32,6 +32,7 @@ public class PromptNotificationNotificationCurrentOperation  implements Serializ
     CHECKIN("CHECKIN"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
+    HISTORY("HISTORY"),
     PUBLISH("PUBLISH"),
     STATE_CHANGE("STATE_CHANGE"),
     VALIDATE("VALIDATE");

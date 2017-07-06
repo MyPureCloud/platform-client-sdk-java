@@ -74,8 +74,8 @@ title: Condition
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; |
-| OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; |
+| LAST_ATTEMPT_BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; |
+| LAST_ATTEMPT_OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; |
 {: class="table table-striped"}
 
 

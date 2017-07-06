@@ -146,8 +146,8 @@ public class Condition  implements Serializable {
    */
   public enum PropertyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    BY_COLUMN("LAST_ATTEMPT_BY_COLUMN"),
-    OVERALL("LAST_ATTEMPT_OVERALL");
+    LAST_ATTEMPT_BY_COLUMN("LAST_ATTEMPT_BY_COLUMN"),
+    LAST_ATTEMPT_OVERALL("LAST_ATTEMPT_OVERALL");
 
     private String value;
 

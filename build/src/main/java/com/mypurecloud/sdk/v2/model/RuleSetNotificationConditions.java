@@ -102,6 +102,44 @@ public class RuleSetNotificationConditions  implements Serializable {
   }
   private OperatorEnum operator = null;
   private List<String> codes = new ArrayList<String>();
+
+  /**
+   * Gets or Sets propertyType
+   */
+  public enum PropertyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LAST_ATTEMPT_BY_COLUMN("LAST_ATTEMPT_BY_COLUMN"),
+    LAST_ATTEMPT_OVERALL("LAST_ATTEMPT_OVERALL"),
+    LAST_RESULT_BY_COLUMN("LAST_RESULT_BY_COLUMN"),
+    LAST_RESULT_OVERALL("LAST_RESULT_OVERALL");
+
+    private String value;
+
+    PropertyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PropertyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PropertyTypeEnum value : PropertyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PropertyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PropertyTypeEnum propertyType = null;
+  private String property = null;
   private Object additionalProperties = null;
 
   
@@ -226,6 +264,40 @@ public class RuleSetNotificationConditions  implements Serializable {
   
   /**
    **/
+  public RuleSetNotificationConditions propertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("propertyType")
+  public PropertyTypeEnum getPropertyType() {
+    return propertyType;
+  }
+  public void setPropertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+  }
+
+  
+  /**
+   **/
+  public RuleSetNotificationConditions property(String property) {
+    this.property = property;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("property")
+  public String getProperty() {
+    return property;
+  }
+  public void setProperty(String property) {
+    this.property = property;
+  }
+
+  
+  /**
+   **/
   public RuleSetNotificationConditions additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -258,12 +330,14 @@ public class RuleSetNotificationConditions  implements Serializable {
         Objects.equals(this.valueType, ruleSetNotificationConditions.valueType) &&
         Objects.equals(this.operator, ruleSetNotificationConditions.operator) &&
         Objects.equals(this.codes, ruleSetNotificationConditions.codes) &&
+        Objects.equals(this.propertyType, ruleSetNotificationConditions.propertyType) &&
+        Objects.equals(this.property, ruleSetNotificationConditions.property) &&
         Objects.equals(this.additionalProperties, ruleSetNotificationConditions.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, additionalProperties);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, additionalProperties);
   }
 
   @Override
@@ -278,6 +352,8 @@ public class RuleSetNotificationConditions  implements Serializable {
     sb.append("    valueType: ").append(toIndentedString(valueType)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
+    sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
+    sb.append("    property: ").append(toIndentedString(property)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

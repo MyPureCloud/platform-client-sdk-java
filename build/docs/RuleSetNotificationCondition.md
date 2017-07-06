@@ -15,6 +15,8 @@ title: RuleSetNotificationCondition
 | **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) |  |  [optional] |
 | **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
 | **codes** | **List&lt;String&gt;** |  |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) |  |  [optional] |
+| **property** | **String** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 
@@ -49,6 +51,19 @@ title: RuleSetNotificationCondition
 | ENDS_WITH | &quot;ENDS_WITH&quot; |
 | BEFORE | &quot;BEFORE&quot; |
 | AFTER | &quot;AFTER&quot; |
+
+
+<a name="PropertyTypeEnum"></a>
+
+## Enum: PropertyTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| LAST_ATTEMPT_BY_COLUMN | &quot;LAST_ATTEMPT_BY_COLUMN&quot; |
+| LAST_ATTEMPT_OVERALL | &quot;LAST_ATTEMPT_OVERALL&quot; |
+| LAST_RESULT_BY_COLUMN | &quot;LAST_RESULT_BY_COLUMN&quot; |
+| LAST_RESULT_OVERALL | &quot;LAST_RESULT_OVERALL&quot; |
 {: class="table table-striped"}
 
 

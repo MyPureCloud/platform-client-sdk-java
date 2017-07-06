@@ -32,6 +32,7 @@ public class PromptNotificationNotificationArchitectOperation  implements Serial
     CHECKIN("CHECKIN"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
+    HISTORY("HISTORY"),
     PUBLISH("PUBLISH"),
     STATE_CHANGE("STATE_CHANGE"),
     VALIDATE("VALIDATE");

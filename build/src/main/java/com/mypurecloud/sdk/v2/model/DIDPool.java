@@ -71,8 +71,8 @@ public class DIDPool  implements Serializable {
    */
   public enum ProviderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CLOUD("PURE_CLOUD"),
-    CLOUD_VOICE("PURE_CLOUD_VOICE");
+    PURE_CLOUD("PURE_CLOUD"),
+    PURE_CLOUD_VOICE("PURE_CLOUD_VOICE");
 
     private String value;
 

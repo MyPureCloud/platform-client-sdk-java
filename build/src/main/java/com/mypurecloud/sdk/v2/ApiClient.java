@@ -836,7 +836,9 @@ public class ApiClient implements AutoCloseable {
         public ApiResponseWrapper(int statusCode, String reasonPhrase, Map<String, String> headers, String body, T entity) {
             this.statusCode = statusCode;
             this.reasonPhrase = reasonPhrase;
-            this.headers = Collections.unmodifiableMap(headers);
+            Map<String, String> caseInsensitiveMap = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+            caseInsensitiveMap.putAll(headers);
+            this.headers = Collections.unmodifiableMap(caseInsensitiveMap);
             this.body = body;
             this.entity = entity;
         }

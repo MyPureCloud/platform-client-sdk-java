@@ -20,7 +20,7 @@ title: ExpansionCriterium
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SECONDS | &quot;TIMEOUT_SECONDS&quot; |
+| TIMEOUT_SECONDS | &quot;TIMEOUT_SECONDS&quot; |
 {: class="table table-striped"}
 
 

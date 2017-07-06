@@ -23,8 +23,8 @@ public class ResponseText  implements Serializable {
    */
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PLAIN("text/plain"),
-    HTML("text/html");
+    TEXT_PLAIN("text/plain"),
+    TEXT_HTML("text/html");
 
     private String value;
 

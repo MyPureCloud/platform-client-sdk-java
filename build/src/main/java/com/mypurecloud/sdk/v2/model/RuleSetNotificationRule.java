@@ -28,8 +28,8 @@ public class RuleSetNotificationRule  implements Serializable {
    */
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    PRECALL("DIALER_PRECALL"),
-    WRAPUP("DIALER_WRAPUP");
+    DIALER_PRECALL("DIALER_PRECALL"),
+    DIALER_WRAPUP("DIALER_WRAPUP");
 
     private String value;
 

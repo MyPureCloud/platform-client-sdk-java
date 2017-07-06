@@ -22,8 +22,8 @@ title: CampaignRuleNotificationCampaignRuleConditions
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| PROGRESS | &quot;CAMPAIGN_PROGRESS&quot; |
-| AGENTS | &quot;CAMPAIGN_AGENTS&quot; |
+| CAMPAIGN_PROGRESS | &quot;CAMPAIGN_PROGRESS&quot; |
+| CAMPAIGN_AGENTS | &quot;CAMPAIGN_AGENTS&quot; |
 {: class="table table-striped"}
 
 
