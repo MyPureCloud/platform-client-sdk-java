@@ -73,7 +73,8 @@ public class DocumentationSearchCriteria  implements Serializable {
     TERMS("TERMS"),
     MATCH_ALL("MATCH_ALL"),
     SIMPLE("SIMPLE"),
-    QUERY_STRING("QUERY_STRING");
+    QUERY_STRING("QUERY_STRING"),
+    MULTI_MATCH("MULTI_MATCH");
 
     private String value;
 

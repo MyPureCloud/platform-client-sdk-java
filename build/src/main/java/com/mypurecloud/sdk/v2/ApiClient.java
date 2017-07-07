@@ -92,7 +92,7 @@ public class ApiClient implements AutoCloseable {
         connector.close();
     }
 
-    public ObjectMapper buildObjectMapper(DateFormat dateFormat) {
+    public static ObjectMapper buildObjectMapper(DateFormat dateFormat) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -464,7 +464,9 @@ public class ApiClient implements AutoCloseable {
             T entity = null;
             if (statusCode != 204 && returnType != null && returnType.getType() != Void.class && response.hasBody()) {
                 body = response.readBody();
-                if (body != null && body.length() > 0) {
+                if (body != null && body.length() > 0 && returnType.getType() == String.class) {
+                    entity = (T)body;
+                } else if (body != null && body.length() > 0) {
                     entity = objectMapper.readValue(body, returnType);
                 }
             }

@@ -46,6 +46,7 @@ title: DocumentationSearchCriteria
 | MATCH_ALL | &quot;MATCH_ALL&quot; |
 | SIMPLE | &quot;SIMPLE&quot; |
 | QUERY_STRING | &quot;QUERY_STRING&quot; |
+| MULTI_MATCH | &quot;MULTI_MATCH&quot; |
 {: class="table table-striped"}
 
 

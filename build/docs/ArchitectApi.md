@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get system prompt resources. |
 | [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | Get System Prompts |
 | [**getFlow**](ArchitectApi.html#getFlow) | Get flow |
+| [**getFlowHistoryHistoryId**](ArchitectApi.html#getFlowHistoryHistoryId) | Get generated flow history |
 | [**getFlowLatestconfiguration**](ArchitectApi.html#getFlowLatestconfiguration) | Get the latest configuration for flow |
 | [**getFlowVersion**](ArchitectApi.html#getFlowVersion) | Get flow version |
 | [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
@@ -1373,6 +1374,69 @@ try {
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="getFlowHistoryHistoryId"></a>
+
+# **getFlowHistoryHistoryId**
+
+> [HistoryListing](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action)
+
+Get generated flow history
+
+
+
+Wraps GET /api/v2/flows/{flowId}/history/{historyId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+String historyId = "historyId_example"; // String | History ID (generated history)
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "timestamp"; // String | Sort by
+String sortOrder = "desc"; // String | Sort order
+List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions
+try {
+    HistoryListing result = apiInstance.getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowHistoryHistoryId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | |
+| **historyId** | **String**| History ID (generated history) | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **sortOrder** | **String**| Sort order | [optional] [default to desc] |
+| **action** | [**List&lt;String&gt;**](String.html)| Flow actions | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
 
 <a name="getFlowLatestconfiguration"></a>
 

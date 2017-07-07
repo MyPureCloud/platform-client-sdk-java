@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
 import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -58,6 +59,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceReques
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
@@ -2182,6 +2184,109 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get generated flow history
+   * 
+   * @param flowId Flow ID (required)
+   * @param historyId History ID (generated history) (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param action Flow actions (optional)
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getFlowHistoryHistoryId(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) throws IOException, ApiException {
+    return  getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action));
+  }
+
+  /**
+   * Get generated flow history
+   * 
+   * @param flowId Flow ID (required)
+   * @param historyId History ID (generated history) (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param action Flow actions (optional)
+   * @return HistoryListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getFlowHistoryHistoryIdWithHttpInfo(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) throws IOException {
+    return getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action).withHttpInfo());
+  }
+
+  private GetFlowHistoryHistoryIdRequest createGetFlowHistoryHistoryIdRequest(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) {
+    return GetFlowHistoryHistoryIdRequest.builder()
+            .withFlowId(flowId)
+    
+            .withHistoryId(historyId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withAction(action)
+    
+            .build();
+  }
+
+  /**
+   * Get generated flow history
+   * 
+   * @param request The request object
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getFlowHistoryHistoryId(GetFlowHistoryHistoryIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoryListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoryListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get generated flow history
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getFlowHistoryHistoryId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoryListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

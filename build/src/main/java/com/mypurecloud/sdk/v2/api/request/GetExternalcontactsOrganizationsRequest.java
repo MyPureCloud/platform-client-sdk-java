@@ -77,6 +77,21 @@ public class GetExternalcontactsOrganizationsRequest {
 	}
 
 	
+	private List<String> trustorId;
+	public List<String> getTrustorId() {
+		return this.trustorId;
+	}
+
+	public void setTrustorId(List<String> trustorId) {
+		this.trustorId = trustorId;
+	}
+
+	public GetExternalcontactsOrganizationsRequest withTrustorId(List<String> trustorId) {
+	    this.setTrustorId(trustorId);
+	    return this;
+	}
+
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -151,6 +166,8 @@ public class GetExternalcontactsOrganizationsRequest {
         
                 .withQueryParameters("q", "", q)
         
+                .withQueryParameters("trustorId", "multi", trustorId)
+        
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
@@ -190,6 +207,11 @@ public class GetExternalcontactsOrganizationsRequest {
 		
 		public Builder withQ(String q) {
 			request.setQ(q);
+			return this;
+		}
+		
+		public Builder withTrustorId(List<String> trustorId) {
+			request.setTrustorId(trustorId);
 			return this;
 		}
 		

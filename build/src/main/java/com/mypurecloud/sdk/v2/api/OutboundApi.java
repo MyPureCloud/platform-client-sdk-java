@@ -5093,7 +5093,7 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
-   * @param priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. (optional)
+   * @param priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. (optional)
    * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
    * @return List<DialerContact>
    * @throws ApiException if the request fails on the server
@@ -5108,7 +5108,7 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
-   * @param priority Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. (optional)
+   * @param priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. (optional)
    * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
    * @return List<DialerContact>
    * @throws IOException if the request fails to be processed

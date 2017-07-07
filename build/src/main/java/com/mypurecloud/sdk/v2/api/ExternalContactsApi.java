@@ -1366,6 +1366,7 @@ public class ExternalContactsApi {
    * @param pageSize Page size (optional, default to 20)
    * @param pageNumber Page number (optional, default to 1)
    * @param q Search query (optional)
+   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
@@ -1373,8 +1374,8 @@ public class ExternalContactsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException, ApiException {
-    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand, includeTrustors));
+  public ExternalOrganizationListing getExternalcontactsOrganizations(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException, ApiException {
+    return  getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors));
   }
 
   /**
@@ -1383,23 +1384,26 @@ public class ExternalContactsApi {
    * @param pageSize Page size (optional, default to 20)
    * @param pageNumber Page number (optional, default to 1)
    * @param q Search query (optional)
+   * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @param includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
    * @return ExternalOrganizationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException {
-    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, sortOrder, expand, includeTrustors).withHttpInfo());
+  public ApiResponse<ExternalOrganizationListing> getExternalcontactsOrganizationsWithHttpInfo(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) throws IOException {
+    return getExternalcontactsOrganizations(createGetExternalcontactsOrganizationsRequest(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors).withHttpInfo());
   }
 
-  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, String sortOrder, List<String> expand, Boolean includeTrustors) {
+  private GetExternalcontactsOrganizationsRequest createGetExternalcontactsOrganizationsRequest(Integer pageSize, Integer pageNumber, String q, List<String> trustorId, String sortOrder, List<String> expand, Boolean includeTrustors) {
     return GetExternalcontactsOrganizationsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withQ(q)
+    
+            .withTrustorId(trustorId)
     
             .withSortOrder(sortOrder)
     

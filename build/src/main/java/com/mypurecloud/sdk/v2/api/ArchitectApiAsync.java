@@ -31,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
 import com.mypurecloud.sdk.v2.model.Flow;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -61,6 +62,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceReques
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowLatestconfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
@@ -1915,6 +1917,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get generated flow history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoryListing> getFlowHistoryHistoryIdAsync(GetFlowHistoryHistoryIdRequest request, final AsyncApiCallback<HistoryListing> callback) {
+    try {
+      final SettableFuture<HistoryListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get generated flow history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoryListing>> getFlowHistoryHistoryIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoryListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoryListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

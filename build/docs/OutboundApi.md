@@ -3270,7 +3270,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
 List<DialerContact> body = Arrays.asList(new DialerContact()); // List<DialerContact> | Contact
-Boolean priority = true; // Boolean | Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end.
+Boolean priority = true; // Boolean | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
 Boolean clearSystemData = true; // Boolean | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won't.
 try {
     List<DialerContact> result = apiInstance.postOutboundContactlistContacts(contactListId, body, priority, clearSystemData);
@@ -3288,7 +3288,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | |
 | **body** | [**List&lt;DialerContact&gt;**](DialerContact.html)| Contact | |
-| **priority** | **Boolean**| Contact priority.  True means the contact(s) will go to the beginning of the list, false means at the end. | [optional] |
+| **priority** | **Boolean**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional] |
 | **clearSystemData** | **Boolean**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional] |
 {: class="table table-striped"}
 

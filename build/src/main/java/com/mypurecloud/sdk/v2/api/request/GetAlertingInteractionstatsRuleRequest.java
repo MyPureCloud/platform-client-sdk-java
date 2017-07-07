@@ -19,23 +19,11 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.HeartBeatAlert;
-import com.mypurecloud.sdk.v2.model.HeartBeatAlertContainer;
-import com.mypurecloud.sdk.v2.model.HeartBeatRule;
-import com.mypurecloud.sdk.v2.model.HeartBeatRuleContainer;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
 import com.mypurecloud.sdk.v2.model.UnreadMetric;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRule;
 import com.mypurecloud.sdk.v2.model.InteractionStatsRuleContainer;
-import com.mypurecloud.sdk.v2.model.RoutingStatusAlert;
-import com.mypurecloud.sdk.v2.model.RoutingStatusAlertContainer;
-import com.mypurecloud.sdk.v2.model.RoutingStatusRule;
-import com.mypurecloud.sdk.v2.model.RoutingStatusRuleContainer;
-import com.mypurecloud.sdk.v2.model.UserPresenceAlert;
-import com.mypurecloud.sdk.v2.model.UserPresenceAlertContainer;
-import com.mypurecloud.sdk.v2.model.UserPresenceRule;
-import com.mypurecloud.sdk.v2.model.UserPresenceRuleContainer;
 import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 public class GetAlertingInteractionstatsRuleRequest {

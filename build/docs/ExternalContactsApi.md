@@ -862,7 +862,7 @@ try {
 
 # **getExternalcontactsOrganizations**
 
-> [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand, includeTrustors)
+> [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)
 
 Search for external organizations
 
@@ -890,11 +890,12 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 Integer pageSize = 20; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String q = "q_example"; // String | Search query
+List<String> trustorId = Arrays.asList("trustorId_example"); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
 String sortOrder = "sortOrder_example"; // String | Sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
 Boolean includeTrustors = true; // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
 try {
-    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, sortOrder, expand, includeTrustors);
+    ExternalOrganizationListing result = apiInstance.getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizations");
@@ -910,6 +911,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 20] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| Search query | [optional] |
+| **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
 | **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] |
