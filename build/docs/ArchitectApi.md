@@ -7,9 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | Delete an IVR Config. |
 | [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
 | [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts |
+| [**deleteArchitectSchedule**](ArchitectApi.html#deleteArchitectSchedule) | Delete a schedule by id |
+| [**deleteArchitectSchedulegroup**](ArchitectApi.html#deleteArchitectSchedulegroup) | Deletes a schedule group by ID |
 | [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
 | [**deleteFlow**](ArchitectApi.html#deleteFlow) | Delete flow |
 | [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows |
@@ -22,10 +25,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | Get a Dependency Tracking type. |
 | [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | Get Dependency Tracking types. |
 | [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
+| [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
+| [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
 | [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | Get specified user prompt resource |
 | [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | Get a pageable list of user prompt resources |
 | [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | Get a pageable list of user prompts |
+| [**getArchitectSchedule**](ArchitectApi.html#getArchitectSchedule) | Get a schedule by ID |
+| [**getArchitectSchedulegroup**](ArchitectApi.html#getArchitectSchedulegroup) | Gets a schedule group by ID |
+| [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | Get a list of schedule groups. |
+| [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | Get a list of schedules. |
 | [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | Get a system prompt |
 | [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | Get a system prompt resource. |
 | [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get system prompt resources. |
@@ -38,8 +47,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
+| [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
 | [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
 | [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | Create a new user prompt |
+| [**postArchitectSchedulegroups**](ArchitectApi.html#postArchitectSchedulegroups) | Creates a new schedule group |
+| [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | Create a new schedule. |
 | [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | Create system prompt resource override. |
 | [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | Create flow version |
 | [**postFlows**](ArchitectApi.html#postFlows) | Create flow |
@@ -49,11 +61,64 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
 | [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
 | [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
+| [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
 | [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | Update specified user prompt |
 | [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | Update specified user prompt resource |
+| [**putArchitectSchedule**](ArchitectApi.html#putArchitectSchedule) | Update schedule by ID |
+| [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | Updates a schedule group by ID |
 | [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | Updates a system prompt resource override. |
 | [**putFlow**](ArchitectApi.html#putFlow) | Update flow |
 {: class="table table-striped"}
+
+<a name="deleteArchitectIvr"></a>
+
+# **deleteArchitectIvr**
+
+> Void deleteArchitectIvr(ivrId)
+
+Delete an IVR Config.
+
+
+
+Wraps DELETE /api/v2/architect/ivrs/{ivrId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String ivrId = "ivrId_example"; // String | IVR id
+try {
+    apiInstance.deleteArchitectIvr(ivrId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectIvr");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ivrId** | **String**| IVR id | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteArchitectPrompt"></a>
 
@@ -209,6 +274,106 @@ try {
 ### Return type
 
 [**Operation**](Operation.html)
+
+<a name="deleteArchitectSchedule"></a>
+
+# **deleteArchitectSchedule**
+
+> Void deleteArchitectSchedule(scheduleId)
+
+Delete a schedule by id
+
+
+
+Wraps DELETE /api/v2/architect/schedules/{scheduleId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleId = "scheduleId_example"; // String | Schedule ID
+try {
+    apiInstance.deleteArchitectSchedule(scheduleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectSchedule");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleId** | **String**| Schedule ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteArchitectSchedulegroup"></a>
+
+# **deleteArchitectSchedulegroup**
+
+> Void deleteArchitectSchedulegroup(scheduleGroupId)
+
+Deletes a schedule group by ID
+
+
+
+Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+try {
+    apiInstance.deleteArchitectSchedulegroup(scheduleGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectSchedulegroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleGroupId** | **String**| Schedule group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteArchitectSystempromptResource"></a>
 
@@ -878,6 +1043,114 @@ try {
 
 [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
 
+<a name="getArchitectIvr"></a>
+
+# **getArchitectIvr**
+
+> [IVR](IVR.html) getArchitectIvr(ivrId)
+
+Get an IVR config.
+
+
+
+Wraps GET /api/v2/architect/ivrs/{ivrId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String ivrId = "ivrId_example"; // String | IVR id
+try {
+    IVR result = apiInstance.getArchitectIvr(ivrId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectIvr");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ivrId** | **String**| IVR id | |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
+<a name="getArchitectIvrs"></a>
+
+# **getArchitectIvrs**
+
+> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder)
+
+Get IVR configs.
+
+
+
+Wraps GET /api/v2/architect/ivrs  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+try {
+    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectIvrs");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVREntityListing**](IVREntityListing.html)
+
 <a name="getArchitectPrompt"></a>
 
 # **getArchitectPrompt**
@@ -1095,6 +1368,222 @@ try {
 ### Return type
 
 [**PromptEntityListing**](PromptEntityListing.html)
+
+<a name="getArchitectSchedule"></a>
+
+# **getArchitectSchedule**
+
+> [Schedule](Schedule.html) getArchitectSchedule(scheduleId)
+
+Get a schedule by ID
+
+
+
+Wraps GET /api/v2/architect/schedules/{scheduleId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleId = "scheduleId_example"; // String | Schedule ID
+try {
+    Schedule result = apiInstance.getArchitectSchedule(scheduleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedule");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleId** | **String**| Schedule ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="getArchitectSchedulegroup"></a>
+
+# **getArchitectSchedulegroup**
+
+> [ScheduleGroup](ScheduleGroup.html) getArchitectSchedulegroup(scheduleGroupId)
+
+Gets a schedule group by ID
+
+
+
+Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+try {
+    ScheduleGroup result = apiInstance.getArchitectSchedulegroup(scheduleGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedulegroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleGroupId** | **String**| Schedule group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="getArchitectSchedulegroups"></a>
+
+# **getArchitectSchedulegroups**
+
+> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder)
+
+Get a list of schedule groups.
+
+
+
+Wraps GET /api/v2/architect/schedulegroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+try {
+    ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedulegroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
+
+<a name="getArchitectSchedules"></a>
+
+# **getArchitectSchedules**
+
+> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder)
+
+Get a list of schedules.
+
+
+
+Wraps GET /api/v2/architect/schedules  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+try {
+    ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSchedules");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleEntityListing**](ScheduleEntityListing.html)
 
 <a name="getArchitectSystemprompt"></a>
 
@@ -1783,6 +2272,57 @@ This endpoint does not require any parameters.
 
 null (empty response body)
 
+<a name="postArchitectIvrs"></a>
+
+# **postArchitectIvrs**
+
+> [IVR](IVR.html) postArchitectIvrs(body)
+
+Create IVR config.
+
+
+
+Wraps POST /api/v2/architect/ivrs  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+IVR body = new IVR(); // IVR | 
+try {
+    IVR result = apiInstance.postArchitectIvrs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectIvrs");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**IVR**](IVR.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="postArchitectPromptResources"></a>
 
 # **postArchitectPromptResources**
@@ -1886,6 +2426,108 @@ try {
 ### Return type
 
 [**Prompt**](Prompt.html)
+
+<a name="postArchitectSchedulegroups"></a>
+
+# **postArchitectSchedulegroups**
+
+> [ScheduleGroup](ScheduleGroup.html) postArchitectSchedulegroups(body)
+
+Creates a new schedule group
+
+
+
+Wraps POST /api/v2/architect/schedulegroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+ScheduleGroup body = new ScheduleGroup(); // ScheduleGroup | 
+try {
+    ScheduleGroup result = apiInstance.postArchitectSchedulegroups(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectSchedulegroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
+
+<a name="postArchitectSchedules"></a>
+
+# **postArchitectSchedules**
+
+> [Schedule](Schedule.html) postArchitectSchedules(body)
+
+Create a new schedule.
+
+
+
+Wraps POST /api/v2/architect/schedules  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Schedule body = new Schedule(); // Schedule | 
+try {
+    Schedule result = apiInstance.postArchitectSchedules(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectSchedules");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Schedule**](Schedule.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
 
 <a name="postArchitectSystempromptResources"></a>
 
@@ -2352,6 +2994,59 @@ try {
 
 [**Flow**](Flow.html)
 
+<a name="putArchitectIvr"></a>
+
+# **putArchitectIvr**
+
+> [IVR](IVR.html) putArchitectIvr(ivrId, body)
+
+Update an IVR Config.
+
+
+
+Wraps PUT /api/v2/architect/ivrs/{ivrId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String ivrId = "ivrId_example"; // String | IVR id
+IVR body = new IVR(); // IVR | 
+try {
+    IVR result = apiInstance.putArchitectIvr(ivrId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putArchitectIvr");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ivrId** | **String**| IVR id | |
+| **body** | [**IVR**](IVR.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVR**](IVR.html)
+
 <a name="putArchitectPrompt"></a>
 
 # **putArchitectPrompt**
@@ -2459,6 +3154,112 @@ try {
 ### Return type
 
 [**PromptAsset**](PromptAsset.html)
+
+<a name="putArchitectSchedule"></a>
+
+# **putArchitectSchedule**
+
+> [Schedule](Schedule.html) putArchitectSchedule(scheduleId, body)
+
+Update schedule by ID
+
+
+
+Wraps PUT /api/v2/architect/schedules/{scheduleId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleId = "scheduleId_example"; // String | Schedule ID
+Schedule body = new Schedule(); // Schedule | 
+try {
+    Schedule result = apiInstance.putArchitectSchedule(scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putArchitectSchedule");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleId** | **String**| Schedule ID | |
+| **body** | [**Schedule**](Schedule.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Schedule**](Schedule.html)
+
+<a name="putArchitectSchedulegroup"></a>
+
+# **putArchitectSchedulegroup**
+
+> [ScheduleGroup](ScheduleGroup.html) putArchitectSchedulegroup(scheduleGroupId, body)
+
+Updates a schedule group by ID
+
+
+
+Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+ScheduleGroup body = new ScheduleGroup(); // ScheduleGroup | 
+try {
+    ScheduleGroup result = apiInstance.putArchitectSchedulegroup(scheduleGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putArchitectSchedulegroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scheduleGroupId** | **String**| Schedule group ID | |
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroup**](ScheduleGroup.html)
 
 <a name="putArchitectSystempromptResource"></a>
 

@@ -12,6 +12,7 @@ title: GroupSearchRequest
 | **sortBy** | **String** | The field in the resource that you want to sort the results by |  [optional] |
 | **pageSize** | **Integer** | The number of results per page |  [optional] |
 | **pageNumber** | **Integer** | The page of resources you want to retrieve |  [optional] |
+| **sort** | [**List&lt;SearchSort&gt;**](SearchSort.html) | Multi-value sort order, list of multiple sort values |  [optional] |
 | **query** | [**List&lt;GroupSearchCriteria&gt;**](GroupSearchCriteria.html) |  |  [optional] |
 {: class="table table-striped"}
 

@@ -103,6 +103,44 @@ public class Participant  implements Serializable {
   private List<Video> videos = new ArrayList<Video>();
   private List<Evaluation> evaluations = new ArrayList<Evaluation>();
 
+  /**
+   * The current screen recording state for this participant.
+   */
+  public enum ScreenRecordingStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REQUESTED("requested"),
+    ACTIVE("active"),
+    PAUSED("paused"),
+    STOPPED("stopped"),
+    ERROR("error");
+
+    private String value;
+
+    ScreenRecordingStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ScreenRecordingStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ScreenRecordingStateEnum value : ScreenRecordingStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ScreenRecordingStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ScreenRecordingStateEnum screenRecordingState = null;
+
   
   /**
    * A globally unique identifier for this conversation.
@@ -743,6 +781,24 @@ public class Participant  implements Serializable {
   }
 
   
+  /**
+   * The current screen recording state for this participant.
+   **/
+  public Participant screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The current screen recording state for this participant.")
+  @JsonProperty("screenRecordingState")
+  public ScreenRecordingStateEnum getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -788,12 +844,13 @@ public class Participant  implements Serializable {
         Objects.equals(this.screenshares, participant.screenshares) &&
         Objects.equals(this.socialExpressions, participant.socialExpressions) &&
         Objects.equals(this.videos, participant.videos) &&
-        Objects.equals(this.evaluations, participant.evaluations);
+        Objects.equals(this.evaluations, participant.evaluations) &&
+        Objects.equals(this.screenRecordingState, participant.screenRecordingState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, evaluations);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, evaluations, screenRecordingState);
   }
 
   @Override
@@ -837,6 +894,7 @@ public class Participant  implements Serializable {
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("}");
     return sb.toString();
   }

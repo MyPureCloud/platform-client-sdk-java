@@ -19,10 +19,16 @@ import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.IVR;
+import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
+import com.mypurecloud.sdk.v2.model.Schedule;
+import com.mypurecloud.sdk.v2.model.ScheduleGroup;
+import com.mypurecloud.sdk.v2.model.ScheduleGroupEntityListing;
+import com.mypurecloud.sdk.v2.model.ScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPrompt;
 import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
@@ -35,9 +41,12 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsRequest;
@@ -50,10 +59,16 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingObjectRe
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedresourceconsumersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesRequest;
@@ -66,8 +81,11 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
@@ -77,8 +95,11 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
 
@@ -98,6 +119,82 @@ public class ArchitectApi {
 
   public ArchitectApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete an IVR Config.
+   * 
+   * @param ivrId IVR id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectIvr(String ivrId) throws IOException, ApiException {
+     deleteArchitectIvr(createDeleteArchitectIvrRequest(ivrId));
+  }
+
+  /**
+   * Delete an IVR Config.
+   * 
+   * @param ivrId IVR id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectIvrWithHttpInfo(String ivrId) throws IOException {
+    return deleteArchitectIvr(createDeleteArchitectIvrRequest(ivrId).withHttpInfo());
+  }
+
+  private DeleteArchitectIvrRequest createDeleteArchitectIvrRequest(String ivrId) {
+    return DeleteArchitectIvrRequest.builder()
+            .withIvrId(ivrId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an IVR Config.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectIvr(DeleteArchitectIvrRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an IVR Config.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectIvr(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -335,6 +432,158 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a schedule by id
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectSchedule(String scheduleId) throws IOException, ApiException {
+     deleteArchitectSchedule(createDeleteArchitectScheduleRequest(scheduleId));
+  }
+
+  /**
+   * Delete a schedule by id
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectScheduleWithHttpInfo(String scheduleId) throws IOException {
+    return deleteArchitectSchedule(createDeleteArchitectScheduleRequest(scheduleId).withHttpInfo());
+  }
+
+  private DeleteArchitectScheduleRequest createDeleteArchitectScheduleRequest(String scheduleId) {
+    return DeleteArchitectScheduleRequest.builder()
+            .withScheduleId(scheduleId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a schedule by id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectSchedule(DeleteArchitectScheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schedule by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectSchedule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectSchedulegroup(String scheduleGroupId) throws IOException, ApiException {
+     deleteArchitectSchedulegroup(createDeleteArchitectSchedulegroupRequest(scheduleGroupId));
+  }
+
+  /**
+   * Deletes a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectSchedulegroupWithHttpInfo(String scheduleGroupId) throws IOException {
+    return deleteArchitectSchedulegroup(createDeleteArchitectSchedulegroupRequest(scheduleGroupId).withHttpInfo());
+  }
+
+  private DeleteArchitectSchedulegroupRequest createDeleteArchitectSchedulegroupRequest(String scheduleGroupId) {
+    return DeleteArchitectSchedulegroupRequest.builder()
+            .withScheduleGroupId(scheduleGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes a schedule group by ID
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectSchedulegroup(DeleteArchitectSchedulegroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a schedule group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectSchedulegroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1403,6 +1652,176 @@ public class ArchitectApi {
 
   
   /**
+   * Get an IVR config.
+   * 
+   * @param ivrId IVR id (required)
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR getArchitectIvr(String ivrId) throws IOException, ApiException {
+    return  getArchitectIvr(createGetArchitectIvrRequest(ivrId));
+  }
+
+  /**
+   * Get an IVR config.
+   * 
+   * @param ivrId IVR id (required)
+   * @return IVR
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> getArchitectIvrWithHttpInfo(String ivrId) throws IOException {
+    return getArchitectIvr(createGetArchitectIvrRequest(ivrId).withHttpInfo());
+  }
+
+  private GetArchitectIvrRequest createGetArchitectIvrRequest(String ivrId) {
+    return GetArchitectIvrRequest.builder()
+            .withIvrId(ivrId)
+    
+            .build();
+  }
+
+  /**
+   * Get an IVR config.
+   * 
+   * @param request The request object
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR getArchitectIvr(GetArchitectIvrRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IVR> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVR>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an IVR config.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> getArchitectIvr(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IVR>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get IVR configs.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return IVREntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder));
+  }
+
+  /**
+   * Get IVR configs.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return IVREntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetArchitectIvrsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get IVR configs.
+   * 
+   * @param request The request object
+   * @return IVREntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVREntityListing getArchitectIvrs(GetArchitectIvrsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IVREntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVREntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get IVR configs.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVREntityListing> getArchitectIvrs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IVREntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVREntityListing> response = (ApiResponse<IVREntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVREntityListing> response = (ApiResponse<IVREntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get specified user prompt
    * 
    * @param promptId Prompt ID (required)
@@ -1741,6 +2160,346 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PromptEntityListing> response = (ApiResponse<PromptEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a schedule by ID
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule getArchitectSchedule(String scheduleId) throws IOException, ApiException {
+    return  getArchitectSchedule(createGetArchitectScheduleRequest(scheduleId));
+  }
+
+  /**
+   * Get a schedule by ID
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @return Schedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> getArchitectScheduleWithHttpInfo(String scheduleId) throws IOException {
+    return getArchitectSchedule(createGetArchitectScheduleRequest(scheduleId).withHttpInfo());
+  }
+
+  private GetArchitectScheduleRequest createGetArchitectScheduleRequest(String scheduleId) {
+    return GetArchitectScheduleRequest.builder()
+            .withScheduleId(scheduleId)
+    
+            .build();
+  }
+
+  /**
+   * Get a schedule by ID
+   * 
+   * @param request The request object
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule getArchitectSchedule(GetArchitectScheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Schedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Schedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schedule by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> getArchitectSchedule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Schedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup getArchitectSchedulegroup(String scheduleGroupId) throws IOException, ApiException {
+    return  getArchitectSchedulegroup(createGetArchitectSchedulegroupRequest(scheduleGroupId));
+  }
+
+  /**
+   * Gets a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @return ScheduleGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> getArchitectSchedulegroupWithHttpInfo(String scheduleGroupId) throws IOException {
+    return getArchitectSchedulegroup(createGetArchitectSchedulegroupRequest(scheduleGroupId).withHttpInfo());
+  }
+
+  private GetArchitectSchedulegroupRequest createGetArchitectSchedulegroupRequest(String scheduleGroupId) {
+    return GetArchitectSchedulegroupRequest.builder()
+            .withScheduleGroupId(scheduleGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a schedule group by ID
+   * 
+   * @param request The request object
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup getArchitectSchedulegroup(GetArchitectSchedulegroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a schedule group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> getArchitectSchedulegroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of schedule groups.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return ScheduleGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroupEntityListing getArchitectSchedulegroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder));
+  }
+
+  /**
+   * Get a list of schedule groups.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return ScheduleGroupEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetArchitectSchedulegroupsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of schedule groups.
+   * 
+   * @param request The request object
+   * @return ScheduleGroupEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroupEntityListing getArchitectSchedulegroups(GetArchitectSchedulegroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGroupEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGroupEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schedule groups.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGroupEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroupEntityListing> response = (ApiResponse<ScheduleGroupEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroupEntityListing> response = (ApiResponse<ScheduleGroupEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of schedules.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return ScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleEntityListing getArchitectSchedules(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder));
+  }
+
+  /**
+   * Get a list of schedules.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @return ScheduleEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleEntityListing> getArchitectSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetArchitectSchedulesRequest createGetArchitectSchedulesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+    return GetArchitectSchedulesRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of schedules.
+   * 
+   * @param request The request object
+   * @return ScheduleEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleEntityListing getArchitectSchedules(GetArchitectSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schedules.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleEntityListing> getArchitectSchedules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleEntityListing> response = (ApiResponse<ScheduleEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleEntityListing> response = (ApiResponse<ScheduleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2848,6 +3607,85 @@ public class ArchitectApi {
 
   
   /**
+   * Create IVR config.
+   * 
+   * @param body  (optional)
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR postArchitectIvrs(IVR body) throws IOException, ApiException {
+    return  postArchitectIvrs(createPostArchitectIvrsRequest(body));
+  }
+
+  /**
+   * Create IVR config.
+   * 
+   * @param body  (optional)
+   * @return IVR
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> postArchitectIvrsWithHttpInfo(IVR body) throws IOException {
+    return postArchitectIvrs(createPostArchitectIvrsRequest(body).withHttpInfo());
+  }
+
+  private PostArchitectIvrsRequest createPostArchitectIvrsRequest(IVR body) {
+    return PostArchitectIvrsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create IVR config.
+   * 
+   * @param request The request object
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR postArchitectIvrs(PostArchitectIvrsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IVR> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVR>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create IVR config.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> postArchitectIvrs(ApiRequest<IVR> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IVR>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a new user prompt resource
    * 
    * @param promptId Prompt ID (required)
@@ -3004,6 +3842,164 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Prompt> response = (ApiResponse<Prompt>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a new schedule group
+   * 
+   * @param body  (optional)
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup postArchitectSchedulegroups(ScheduleGroup body) throws IOException, ApiException {
+    return  postArchitectSchedulegroups(createPostArchitectSchedulegroupsRequest(body));
+  }
+
+  /**
+   * Creates a new schedule group
+   * 
+   * @param body  (optional)
+   * @return ScheduleGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> postArchitectSchedulegroupsWithHttpInfo(ScheduleGroup body) throws IOException {
+    return postArchitectSchedulegroups(createPostArchitectSchedulegroupsRequest(body).withHttpInfo());
+  }
+
+  private PostArchitectSchedulegroupsRequest createPostArchitectSchedulegroupsRequest(ScheduleGroup body) {
+    return PostArchitectSchedulegroupsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a new schedule group
+   * 
+   * @param request The request object
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup postArchitectSchedulegroups(PostArchitectSchedulegroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new schedule group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> postArchitectSchedulegroups(ApiRequest<ScheduleGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new schedule.
+   * 
+   * @param body  (optional)
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule postArchitectSchedules(Schedule body) throws IOException, ApiException {
+    return  postArchitectSchedules(createPostArchitectSchedulesRequest(body));
+  }
+
+  /**
+   * Create a new schedule.
+   * 
+   * @param body  (optional)
+   * @return Schedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> postArchitectSchedulesWithHttpInfo(Schedule body) throws IOException {
+    return postArchitectSchedules(createPostArchitectSchedulesRequest(body).withHttpInfo());
+  }
+
+  private PostArchitectSchedulesRequest createPostArchitectSchedulesRequest(Schedule body) {
+    return PostArchitectSchedulesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new schedule.
+   * 
+   * @param request The request object
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule postArchitectSchedules(PostArchitectSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Schedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Schedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new schedule.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> postArchitectSchedules(ApiRequest<Schedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Schedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3733,6 +4729,89 @@ public class ArchitectApi {
 
   
   /**
+   * Update an IVR Config.
+   * 
+   * @param ivrId IVR id (required)
+   * @param body  (optional)
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR putArchitectIvr(String ivrId, IVR body) throws IOException, ApiException {
+    return  putArchitectIvr(createPutArchitectIvrRequest(ivrId, body));
+  }
+
+  /**
+   * Update an IVR Config.
+   * 
+   * @param ivrId IVR id (required)
+   * @param body  (optional)
+   * @return IVR
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> putArchitectIvrWithHttpInfo(String ivrId, IVR body) throws IOException {
+    return putArchitectIvr(createPutArchitectIvrRequest(ivrId, body).withHttpInfo());
+  }
+
+  private PutArchitectIvrRequest createPutArchitectIvrRequest(String ivrId, IVR body) {
+    return PutArchitectIvrRequest.builder()
+            .withIvrId(ivrId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an IVR Config.
+   * 
+   * @param request The request object
+   * @return IVR
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IVR putArchitectIvr(PutArchitectIvrRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IVR> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IVR>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an IVR Config.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IVR> putArchitectIvr(ApiRequest<IVR> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IVR>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IVR> response = (ApiResponse<IVR>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update specified user prompt
    * 
    * @param promptId Prompt ID (required)
@@ -3897,6 +4976,172 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PromptAsset> response = (ApiResponse<PromptAsset>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update schedule by ID
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @param body  (optional)
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule putArchitectSchedule(String scheduleId, Schedule body) throws IOException, ApiException {
+    return  putArchitectSchedule(createPutArchitectScheduleRequest(scheduleId, body));
+  }
+
+  /**
+   * Update schedule by ID
+   * 
+   * @param scheduleId Schedule ID (required)
+   * @param body  (optional)
+   * @return Schedule
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> putArchitectScheduleWithHttpInfo(String scheduleId, Schedule body) throws IOException {
+    return putArchitectSchedule(createPutArchitectScheduleRequest(scheduleId, body).withHttpInfo());
+  }
+
+  private PutArchitectScheduleRequest createPutArchitectScheduleRequest(String scheduleId, Schedule body) {
+    return PutArchitectScheduleRequest.builder()
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update schedule by ID
+   * 
+   * @param request The request object
+   * @return Schedule
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Schedule putArchitectSchedule(PutArchitectScheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Schedule> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Schedule>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update schedule by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Schedule> putArchitectSchedule(ApiRequest<Schedule> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Schedule>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @param body  (optional)
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup putArchitectSchedulegroup(String scheduleGroupId, ScheduleGroup body) throws IOException, ApiException {
+    return  putArchitectSchedulegroup(createPutArchitectSchedulegroupRequest(scheduleGroupId, body));
+  }
+
+  /**
+   * Updates a schedule group by ID
+   * 
+   * @param scheduleGroupId Schedule group ID (required)
+   * @param body  (optional)
+   * @return ScheduleGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> putArchitectSchedulegroupWithHttpInfo(String scheduleGroupId, ScheduleGroup body) throws IOException {
+    return putArchitectSchedulegroup(createPutArchitectSchedulegroupRequest(scheduleGroupId, body).withHttpInfo());
+  }
+
+  private PutArchitectSchedulegroupRequest createPutArchitectSchedulegroupRequest(String scheduleGroupId, ScheduleGroup body) {
+    return PutArchitectSchedulegroupRequest.builder()
+            .withScheduleGroupId(scheduleGroupId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a schedule group by ID
+   * 
+   * @param request The request object
+   * @return ScheduleGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGroup putArchitectSchedulegroup(PutArchitectSchedulegroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a schedule group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGroup> putArchitectSchedulegroup(ApiRequest<ScheduleGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGroup> response = (ApiResponse<ScheduleGroup>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

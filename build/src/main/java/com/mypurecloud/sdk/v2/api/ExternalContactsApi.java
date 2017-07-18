@@ -992,7 +992,7 @@ public class ExternalContactsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
-   * @param expand which fields, if any, to expand (externalOrganization) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1009,7 +1009,7 @@ public class ExternalContactsApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
-   * @param expand which fields, if any, to expand (externalOrganization) (optional)
+   * @param expand which fields, if any, to expand (optional)
    * @return ContactListing
    * @throws IOException if the request fails to be processed
    */

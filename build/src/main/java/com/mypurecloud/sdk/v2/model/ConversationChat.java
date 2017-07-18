@@ -148,6 +148,7 @@ public class ConversationChat  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String scriptId = null;
   private String peerId = null;
 
   
@@ -368,6 +369,24 @@ public class ConversationChat  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
+   **/
+  public ConversationChat scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+  
+  /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public ConversationChat peerId(String peerId) {
@@ -407,12 +426,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.connectedTime, conversationChat.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
         Objects.equals(this.provider, conversationChat.provider) &&
+        Objects.equals(this.scriptId, conversationChat.scriptId) &&
         Objects.equals(this.peerId, conversationChat.peerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, peerId);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
   }
 
   @Override
@@ -432,6 +452,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("}");
     return sb.toString();

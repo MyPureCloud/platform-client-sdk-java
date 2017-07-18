@@ -23,10 +23,10 @@ public class Reaction  implements Serializable {
    */
   public enum ReactionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    HANGUP("HANGUP"),
-    TRANSFER("TRANSFER"),
-    TRANSFER_FLOW("TRANSFER_FLOW"),
-    PLAY_FILE("PLAY_FILE");
+    HANGUP("hangup"),
+    TRANSFER("transfer"),
+    TRANSFER_FLOW("transfer_flow"),
+    PLAY_FILE("play_file");
 
     private String value;
 

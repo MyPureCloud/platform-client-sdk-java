@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SearchAggregation;
 import com.mypurecloud.sdk.v2.model.SearchCriteria;
+import com.mypurecloud.sdk.v2.model.SearchSort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class SearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
   private List<String> returnFields = new ArrayList<String>();
   private List<String> expand = new ArrayList<String>();
   private List<String> types = new ArrayList<String>();
@@ -134,6 +136,24 @@ public class SearchRequest  implements Serializable {
   }
   public void setPageNumber(Integer pageNumber) {
     this.pageNumber = pageNumber;
+  }
+
+  
+  /**
+   * Multi-value sort order, list of multiple sort values
+   **/
+  public SearchRequest sort(List<SearchSort> sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Multi-value sort order, list of multiple sort values")
+  @JsonProperty("sort")
+  public List<SearchSort> getSort() {
+    return sort;
+  }
+  public void setSort(List<SearchSort> sort) {
+    this.sort = sort;
   }
 
   
@@ -241,6 +261,7 @@ public class SearchRequest  implements Serializable {
         Objects.equals(this.sortBy, searchRequest.sortBy) &&
         Objects.equals(this.pageSize, searchRequest.pageSize) &&
         Objects.equals(this.pageNumber, searchRequest.pageNumber) &&
+        Objects.equals(this.sort, searchRequest.sort) &&
         Objects.equals(this.returnFields, searchRequest.returnFields) &&
         Objects.equals(this.expand, searchRequest.expand) &&
         Objects.equals(this.types, searchRequest.types) &&
@@ -250,7 +271,7 @@ public class SearchRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, returnFields, expand, types, query, aggregations);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, returnFields, expand, types, query, aggregations);
   }
 
   @Override
@@ -262,6 +283,7 @@ public class SearchRequest  implements Serializable {
     sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    returnFields: ").append(toIndentedString(returnFields)).append("\n");
     sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
     sb.append("    types: ").append(toIndentedString(types)).append("\n");

@@ -20,7 +20,7 @@ public class ScreenRecordingSession  implements Serializable {
   private String id = null;
   private String name = null;
   private User user = null;
-  private String participantId = null;
+  private String communicationId = null;
   private Conversation conversation = null;
   private Date startTime = null;
   private String selfUri = null;
@@ -68,20 +68,20 @@ public class ScreenRecordingSession  implements Serializable {
 
   
   /**
-   * The id of the participant whose screen is being recorded on the conversation
+   * The id of the communication that is being recorded on the conversation
    **/
-  public ScreenRecordingSession participantId(String participantId) {
-    this.participantId = participantId;
+  public ScreenRecordingSession communicationId(String communicationId) {
+    this.communicationId = communicationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the participant whose screen is being recorded on the conversation")
-  @JsonProperty("participantId")
-  public String getParticipantId() {
-    return participantId;
+  @ApiModelProperty(example = "null", value = "The id of the communication that is being recorded on the conversation")
+  @JsonProperty("communicationId")
+  public String getCommunicationId() {
+    return communicationId;
   }
-  public void setParticipantId(String participantId) {
-    this.participantId = participantId;
+  public void setCommunicationId(String communicationId) {
+    this.communicationId = communicationId;
   }
 
   
@@ -140,7 +140,7 @@ public class ScreenRecordingSession  implements Serializable {
     return Objects.equals(this.id, screenRecordingSession.id) &&
         Objects.equals(this.name, screenRecordingSession.name) &&
         Objects.equals(this.user, screenRecordingSession.user) &&
-        Objects.equals(this.participantId, screenRecordingSession.participantId) &&
+        Objects.equals(this.communicationId, screenRecordingSession.communicationId) &&
         Objects.equals(this.conversation, screenRecordingSession.conversation) &&
         Objects.equals(this.startTime, screenRecordingSession.startTime) &&
         Objects.equals(this.selfUri, screenRecordingSession.selfUri);
@@ -148,7 +148,7 @@ public class ScreenRecordingSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, participantId, conversation, startTime, selfUri);
+    return Objects.hash(id, name, user, communicationId, conversation, startTime, selfUri);
   }
 
   @Override
@@ -159,7 +159,7 @@ public class ScreenRecordingSession  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
+    sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -120,6 +120,21 @@ public class GetAuthorizationRolesRequest {
 	}
 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetAuthorizationRolesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	}
+
+	
 	private List<Object> permission;
 	public List<Object> getPermission() {
 		return this.permission;
@@ -200,6 +215,8 @@ public class GetAuthorizationRolesRequest {
         
                 .withQueryParameters("previousPage", "", previousPage)
         
+                .withQueryParameters("name", "", name)
+        
                 .withQueryParameters("permission", "multi", permission)
         
                 .withQueryParameters("defaultRoleId", "multi", defaultRoleId)
@@ -254,6 +271,11 @@ public class GetAuthorizationRolesRequest {
 		
 		public Builder withPreviousPage(String previousPage) {
 			request.setPreviousPage(previousPage);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

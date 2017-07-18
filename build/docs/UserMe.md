@@ -44,6 +44,7 @@ title: UserMe
 | **routingSkills** | [**List&lt;RoutingSkill&gt;**](RoutingSkill.html) | The first 50 routing skills for user&#39;s organizations |  [optional] |
 | **fieldConfigs** | [**FieldConfigs**](FieldConfigs.html) | The field config for all entities types of user&#39;s organization |  [optional] |
 | **token** | [**TokenInfo**](TokenInfo.html) | Information about the current token |  [optional] |
+| **trustors** | [**List&lt;Trustor&gt;**](Trustor.html) | Organizations having this user as a trustee |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

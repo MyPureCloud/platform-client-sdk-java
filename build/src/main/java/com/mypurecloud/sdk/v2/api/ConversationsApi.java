@@ -39,17 +39,19 @@ import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
-import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
+import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
+import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
+import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
@@ -128,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 
 import java.io.IOException;
@@ -5038,7 +5041,7 @@ public class ConversationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postConversationParticipantCallbacks(String conversationId, String participantId, CreateCallbackCommand body) throws IOException, ApiException {
+  public void postConversationParticipantCallbacks(String conversationId, String participantId, CreateCallbackOnConversationCommand body) throws IOException, ApiException {
      postConversationParticipantCallbacks(createPostConversationParticipantCallbacksRequest(conversationId, participantId, body));
   }
 
@@ -5050,11 +5053,11 @@ public class ConversationsApi {
    * @param body  (optional)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackCommand body) throws IOException {
+  public ApiResponse<Void> postConversationParticipantCallbacksWithHttpInfo(String conversationId, String participantId, CreateCallbackOnConversationCommand body) throws IOException {
     return postConversationParticipantCallbacks(createPostConversationParticipantCallbacksRequest(conversationId, participantId, body).withHttpInfo());
   }
 
-  private PostConversationParticipantCallbacksRequest createPostConversationParticipantCallbacksRequest(String conversationId, String participantId, CreateCallbackCommand body) {
+  private PostConversationParticipantCallbacksRequest createPostConversationParticipantCallbacksRequest(String conversationId, String participantId, CreateCallbackOnConversationCommand body) {
     return PostConversationParticipantCallbacksRequest.builder()
             .withConversationId(conversationId)
     
@@ -5090,7 +5093,7 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackCommand> request) throws IOException {
+  public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackOnConversationCommand> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -6423,6 +6426,97 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FaxSendResponse> response = (ApiResponse<FaxSendResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Set uuiData to be sent on future commands.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body UUIData Request (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty putConversationsCallParticipantCommunicationUuidata(String conversationId, String participantId, String communicationId, SetUuiDataRequest body) throws IOException, ApiException {
+    return  putConversationsCallParticipantCommunicationUuidata(createPutConversationsCallParticipantCommunicationUuidataRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Set uuiData to be sent on future commands.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body UUIData Request (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> putConversationsCallParticipantCommunicationUuidataWithHttpInfo(String conversationId, String participantId, String communicationId, SetUuiDataRequest body) throws IOException {
+    return putConversationsCallParticipantCommunicationUuidata(createPutConversationsCallParticipantCommunicationUuidataRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PutConversationsCallParticipantCommunicationUuidataRequest createPutConversationsCallParticipantCommunicationUuidataRequest(String conversationId, String participantId, String communicationId, SetUuiDataRequest body) {
+    return PutConversationsCallParticipantCommunicationUuidataRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withCommunicationId(communicationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Set uuiData to be sent on future commands.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty putConversationsCallParticipantCommunicationUuidata(PutConversationsCallParticipantCommunicationUuidataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set uuiData to be sent on future commands.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> putConversationsCallParticipantCommunicationUuidata(ApiRequest<SetUuiDataRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.ServerDate;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
+import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserConversationSummary;
@@ -111,6 +112,7 @@ public class UserMe  implements Serializable {
   private List<RoutingSkill> routingSkills = new ArrayList<RoutingSkill>();
   private FieldConfigs fieldConfigs = null;
   private TokenInfo token = null;
+  private List<Trustor> trustors = new ArrayList<Trustor>();
   private String selfUri = null;
 
   
@@ -732,6 +734,24 @@ public class UserMe  implements Serializable {
   }
 
   
+  /**
+   * Organizations having this user as a trustee
+   **/
+  public UserMe trustors(List<Trustor> trustors) {
+    this.trustors = trustors;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Organizations having this user as a trustee")
+  @JsonProperty("trustors")
+  public List<Trustor> getTrustors() {
+    return trustors;
+  }
+  public void setTrustors(List<Trustor> trustors) {
+    this.trustors = trustors;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -785,12 +805,13 @@ public class UserMe  implements Serializable {
         Objects.equals(this.routingSkills, userMe.routingSkills) &&
         Objects.equals(this.fieldConfigs, userMe.fieldConfigs) &&
         Objects.equals(this.token, userMe.token) &&
+        Objects.equals(this.trustors, userMe.trustors) &&
         Objects.equals(this.selfUri, userMe.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
   }
 
   @Override
@@ -834,6 +855,7 @@ public class UserMe  implements Serializable {
     sb.append("    routingSkills: ").append(toIndentedString(routingSkills)).append("\n");
     sb.append("    fieldConfigs: ").append(toIndentedString(fieldConfigs)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    trustors: ").append(toIndentedString(trustors)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

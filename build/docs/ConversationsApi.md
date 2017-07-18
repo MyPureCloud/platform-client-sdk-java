@@ -83,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
 | [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | Create Fax Conversation |
+| [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 {: class="table table-striped"}
 
@@ -3231,7 +3232,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversation ID
 String participantId = "participantId_example"; // String | participant ID
-CreateCallbackCommand body = new CreateCallbackCommand(); // CreateCallbackCommand | 
+CreateCallbackOnConversationCommand body = new CreateCallbackOnConversationCommand(); // CreateCallbackOnConversationCommand | 
 try {
     apiInstance.postConversationParticipantCallbacks(conversationId, participantId, body);
 } catch (ApiException e) {
@@ -3247,7 +3248,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversation ID | |
 | **participantId** | **String**| participant ID | |
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)|  | [optional] |
+| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4098,6 +4099,63 @@ try {
 ### Return type
 
 [**FaxSendResponse**](FaxSendResponse.html)
+
+<a name="putConversationsCallParticipantCommunicationUuidata"></a>
+
+# **putConversationsCallParticipantCommunicationUuidata**
+
+> [Empty](Empty.html) putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+
+Set uuiData to be sent on future commands.
+
+
+
+Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+SetUuiDataRequest body = new SetUuiDataRequest(); // SetUuiDataRequest | UUIData Request
+try {
+    Empty result = apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsCallParticipantCommunicationUuidata");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **participantId** | **String**| participantId | |
+| **communicationId** | **String**| communicationId | |
+| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
 
 <a name="putConversationsEmailMessagesDraft"></a>
 

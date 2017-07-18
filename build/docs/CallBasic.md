@@ -29,6 +29,7 @@ title: CallBasic
 | **provider** | **String** | The source provider for the call. |  [optional] |
 | **scriptId** | **String** | The UUID of the script to use. |  [optional] |
 | **peerId** | **String** | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **uuiData** | **String** | User to User Information (UUI) data managed by SIP session application. |  [optional] |
 {: class="table table-striped"}
 
 

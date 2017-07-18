@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GroupSearchCriteria;
+import com.mypurecloud.sdk.v2.model.SearchSort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class GroupSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
   private List<GroupSearchCriteria> query = new ArrayList<GroupSearchCriteria>();
 
   
@@ -133,6 +135,24 @@ public class GroupSearchRequest  implements Serializable {
 
   
   /**
+   * Multi-value sort order, list of multiple sort values
+   **/
+  public GroupSearchRequest sort(List<SearchSort> sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Multi-value sort order, list of multiple sort values")
+  @JsonProperty("sort")
+  public List<SearchSort> getSort() {
+    return sort;
+  }
+  public void setSort(List<SearchSort> sort) {
+    this.sort = sort;
+  }
+
+  
+  /**
    **/
   public GroupSearchRequest query(List<GroupSearchCriteria> query) {
     this.query = query;
@@ -163,12 +183,13 @@ public class GroupSearchRequest  implements Serializable {
         Objects.equals(this.sortBy, groupSearchRequest.sortBy) &&
         Objects.equals(this.pageSize, groupSearchRequest.pageSize) &&
         Objects.equals(this.pageNumber, groupSearchRequest.pageNumber) &&
+        Objects.equals(this.sort, groupSearchRequest.sort) &&
         Objects.equals(this.query, groupSearchRequest.query);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, query);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, query);
   }
 
   @Override
@@ -180,6 +201,7 @@ public class GroupSearchRequest  implements Serializable {
     sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -658,7 +658,7 @@ Integer pageSize = 20; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | Sort order
-List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand (externalOrganization)
+List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
 try {
     ContactListing result = apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand);
     System.out.println(result);
@@ -678,7 +678,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization) | [optional]<br />**Values**: externalOrganization |
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
 ### Return type

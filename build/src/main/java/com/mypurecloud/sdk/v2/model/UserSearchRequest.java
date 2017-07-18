@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SearchSort;
 import com.mypurecloud.sdk.v2.model.UserSearchCriteria;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -57,6 +58,7 @@ public class UserSearchRequest  implements Serializable {
   private String sortBy = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
+  private List<SearchSort> sort = new ArrayList<SearchSort>();
   private List<String> expand = new ArrayList<String>();
   private List<UserSearchCriteria> query = new ArrayList<UserSearchCriteria>();
 
@@ -134,6 +136,24 @@ public class UserSearchRequest  implements Serializable {
 
   
   /**
+   * Multi-value sort order, list of multiple sort values
+   **/
+  public UserSearchRequest sort(List<SearchSort> sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Multi-value sort order, list of multiple sort values")
+  @JsonProperty("sort")
+  public List<SearchSort> getSort() {
+    return sort;
+  }
+  public void setSort(List<SearchSort> sort) {
+    this.sort = sort;
+  }
+
+  
+  /**
    * Provides more details about a specified resource
    **/
   public UserSearchRequest expand(List<String> expand) {
@@ -182,13 +202,14 @@ public class UserSearchRequest  implements Serializable {
         Objects.equals(this.sortBy, userSearchRequest.sortBy) &&
         Objects.equals(this.pageSize, userSearchRequest.pageSize) &&
         Objects.equals(this.pageNumber, userSearchRequest.pageNumber) &&
+        Objects.equals(this.sort, userSearchRequest.sort) &&
         Objects.equals(this.expand, userSearchRequest.expand) &&
         Objects.equals(this.query, userSearchRequest.query);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, expand, query);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query);
   }
 
   @Override
@@ -200,6 +221,7 @@ public class UserSearchRequest  implements Serializable {
     sb.append("    sortBy: ").append(toIndentedString(sortBy)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("}");

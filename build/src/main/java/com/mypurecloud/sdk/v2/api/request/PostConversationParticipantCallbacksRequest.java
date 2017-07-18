@@ -47,17 +47,19 @@ import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
-import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
+import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
+import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
+import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 public class PostConversationParticipantCallbacksRequest {
     
@@ -91,16 +93,16 @@ public class PostConversationParticipantCallbacksRequest {
 	}
 
 	
-	private CreateCallbackCommand body;
-	public CreateCallbackCommand getBody() {
+	private CreateCallbackOnConversationCommand body;
+	public CreateCallbackOnConversationCommand getBody() {
 		return this.body;
 	}
 
-	public void setBody(CreateCallbackCommand body) {
+	public void setBody(CreateCallbackOnConversationCommand body) {
 		this.body = body;
 	}
 
-	public PostConversationParticipantCallbacksRequest withBody(CreateCallbackCommand body) {
+	public PostConversationParticipantCallbacksRequest withBody(CreateCallbackOnConversationCommand body) {
 	    this.setBody(body);
 	    return this;
 	}
@@ -125,7 +127,7 @@ public class PostConversationParticipantCallbacksRequest {
         return this;
     }
 
-    public ApiRequest<CreateCallbackCommand> withHttpInfo() {
+    public ApiRequest<CreateCallbackOnConversationCommand> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
@@ -181,7 +183,7 @@ public class PostConversationParticipantCallbacksRequest {
 			return this;
 		}
 		
-		public Builder withBody(CreateCallbackCommand body) {
+		public Builder withBody(CreateCallbackOnConversationCommand body) {
 			request.setBody(body);
 			return this;
 		}

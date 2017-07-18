@@ -21,10 +21,10 @@ title: Reaction
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HANGUP | &quot;HANGUP&quot; |
-| TRANSFER | &quot;TRANSFER&quot; |
-| TRANSFER_FLOW | &quot;TRANSFER_FLOW&quot; |
-| PLAY_FILE | &quot;PLAY_FILE&quot; |
+| HANGUP | &quot;hangup&quot; |
+| TRANSFER | &quot;transfer&quot; |
+| TRANSFER_FLOW | &quot;transfer_flow&quot; |
+| PLAY_FILE | &quot;play_file&quot; |
 {: class="table table-striped"}
 
 

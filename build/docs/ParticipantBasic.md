@@ -44,6 +44,7 @@ title: ParticipantBasic
 | **socialExpressions** | [**List&lt;SocialExpression&gt;**](SocialExpression.html) |  |  [optional] |
 | **videos** | [**List&lt;Video&gt;**](Video.html) |  |  [optional] |
 | **evaluations** | [**List&lt;Evaluation&gt;**](Evaluation.html) |  |  [optional] |
+| **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum) | The current screen recording state for this participant. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -58,6 +59,20 @@ title: ParticipantBasic
 | OPTIONAL | &quot;optional&quot; |
 | TIMEOUT | &quot;timeout&quot; |
 | FORCEDTIMEOUT | &quot;forcedTimeout&quot; |
+
+
+<a name="ScreenRecordingStateEnum"></a>
+
+## Enum: ScreenRecordingStateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| REQUESTED | &quot;requested&quot; |
+| ACTIVE | &quot;active&quot; |
+| PAUSED | &quot;paused&quot; |
+| STOPPED | &quot;stopped&quot; |
+| ERROR | &quot;error&quot; |
 {: class="table table-striped"}
 
 

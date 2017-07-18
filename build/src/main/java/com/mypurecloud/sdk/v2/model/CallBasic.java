@@ -203,6 +203,7 @@ public class CallBasic  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
+  private String uuiData = null;
 
   
   /**
@@ -582,6 +583,24 @@ public class CallBasic  implements Serializable {
   }
 
   
+  /**
+   * User to User Information (UUI) data managed by SIP session application.
+   **/
+  public CallBasic uuiData(String uuiData) {
+    this.uuiData = uuiData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User to User Information (UUI) data managed by SIP session application.")
+  @JsonProperty("uuiData")
+  public String getUuiData() {
+    return uuiData;
+  }
+  public void setUuiData(String uuiData) {
+    this.uuiData = uuiData;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -612,12 +631,13 @@ public class CallBasic  implements Serializable {
         Objects.equals(this.faxStatus, callBasic.faxStatus) &&
         Objects.equals(this.provider, callBasic.provider) &&
         Objects.equals(this.scriptId, callBasic.scriptId) &&
-        Objects.equals(this.peerId, callBasic.peerId);
+        Objects.equals(this.peerId, callBasic.peerId) &&
+        Objects.equals(this.uuiData, callBasic.uuiData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData);
   }
 
   @Override
@@ -646,6 +666,7 @@ public class CallBasic  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

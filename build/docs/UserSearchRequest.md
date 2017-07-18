@@ -12,6 +12,7 @@ title: UserSearchRequest
 | **sortBy** | **String** | The field in the resource that you want to sort the results by |  [optional] |
 | **pageSize** | **Integer** | The number of results per page |  [optional] |
 | **pageNumber** | **Integer** | The page of resources you want to retrieve |  [optional] |
+| **sort** | [**List&lt;SearchSort&gt;**](SearchSort.html) | Multi-value sort order, list of multiple sort values |  [optional] |
 | **expand** | **List&lt;String&gt;** | Provides more details about a specified resource |  [optional] |
 | **query** | [**List&lt;UserSearchCriteria&gt;**](UserSearchCriteria.html) |  |  [optional] |
 {: class="table table-striped"}

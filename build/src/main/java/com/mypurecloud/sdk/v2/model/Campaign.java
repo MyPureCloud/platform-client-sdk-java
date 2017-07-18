@@ -69,7 +69,44 @@ public class Campaign  implements Serializable {
   private DialingModeEnum dialingMode = null;
   private UriReference script = null;
   private UriReference edgeGroup = null;
-  private String campaignStatus = null;
+
+  /**
+   * status of the campaign; can be set to 'on' or 'off'
+   */
+  public enum CampaignStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ON("on"),
+    STOPPING("stopping"),
+    OFF("off"),
+    COMPLETE("complete"),
+    INVALID("invalid");
+
+    private String value;
+
+    CampaignStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CampaignStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CampaignStatusEnum value : CampaignStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CampaignStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CampaignStatusEnum campaignStatus = null;
   private List<PhoneColumn> phoneColumns = new ArrayList<PhoneColumn>();
   private Double abandonRate = null;
   private List<UriReference> dncLists = new ArrayList<UriReference>();
@@ -240,17 +277,17 @@ public class Campaign  implements Serializable {
   /**
    * status of the campaign; can be set to 'on' or 'off'
    **/
-  public Campaign campaignStatus(String campaignStatus) {
+  public Campaign campaignStatus(CampaignStatusEnum campaignStatus) {
     this.campaignStatus = campaignStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "status of the campaign; can be set to 'on' or 'off'")
   @JsonProperty("campaignStatus")
-  public String getCampaignStatus() {
+  public CampaignStatusEnum getCampaignStatus() {
     return campaignStatus;
   }
-  public void setCampaignStatus(String campaignStatus) {
+  public void setCampaignStatus(CampaignStatusEnum campaignStatus) {
     this.campaignStatus = campaignStatus;
   }
 

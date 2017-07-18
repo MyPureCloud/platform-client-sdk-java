@@ -18,7 +18,7 @@ title: Campaign
 | **dialingMode** | [**DialingModeEnum**](#DialingModeEnum) | dialing mode of the campaign |  |
 | **script** | [**UriReference**](UriReference.html) | identifier of the campaign script, required for all dialing modes other than agentless |  |
 | **edgeGroup** | [**UriReference**](UriReference.html) | identifier of the edge group, required for all dialing modes other than preview |  |
-| **campaignStatus** | **String** | status of the campaign; can be set to &#39;on&#39; or &#39;off&#39; |  |
+| **campaignStatus** | [**CampaignStatusEnum**](#CampaignStatusEnum) | status of the campaign; can be set to &#39;on&#39; or &#39;off&#39; |  |
 | **phoneColumns** | [**List&lt;PhoneColumn&gt;**](PhoneColumn.html) | the contact list phone columns to be called for the campaign |  |
 | **abandonRate** | **Double** | the targeted abandon rate percentage |  [optional] |
 | **dncLists** | [**List&lt;UriReference&gt;**](UriReference.html) | identifiers of the do not call lists |  [optional] |
@@ -53,6 +53,20 @@ title: Campaign
 | POWER | &quot;power&quot; |
 | PREDICTIVE | &quot;predictive&quot; |
 | PROGRESSIVE | &quot;progressive&quot; |
+
+
+<a name="CampaignStatusEnum"></a>
+
+## Enum: CampaignStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ON | &quot;on&quot; |
+| STOPPING | &quot;stopping&quot; |
+| OFF | &quot;off&quot; |
+| COMPLETE | &quot;complete&quot; |
+| INVALID | &quot;invalid&quot; |
 {: class="table table-striped"}
 
 

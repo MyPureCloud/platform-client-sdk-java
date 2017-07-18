@@ -121,6 +121,7 @@ public class SocialExpression  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private String scriptId = null;
   private String peerId = null;
 
   
@@ -377,6 +378,24 @@ public class SocialExpression  implements Serializable {
 
   
   /**
+   * The UUID of the script to use.
+   **/
+  public SocialExpression scriptId(String scriptId) {
+    this.scriptId = scriptId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The UUID of the script to use.")
+  @JsonProperty("scriptId")
+  public String getScriptId() {
+    return scriptId;
+  }
+  public void setScriptId(String scriptId) {
+    this.scriptId = scriptId;
+  }
+
+  
+  /**
    * The id of the peer communication corresponding to a matching leg for this communication.
    **/
   public SocialExpression peerId(String peerId) {
@@ -418,12 +437,13 @@ public class SocialExpression  implements Serializable {
         Objects.equals(this.connectedTime, socialExpression.connectedTime) &&
         Objects.equals(this.disconnectedTime, socialExpression.disconnectedTime) &&
         Objects.equals(this.provider, socialExpression.provider) &&
+        Objects.equals(this.scriptId, socialExpression.scriptId) &&
         Objects.equals(this.peerId, socialExpression.peerId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, peerId);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
   }
 
   @Override
@@ -445,6 +465,7 @@ public class SocialExpression  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("}");
     return sb.toString();
