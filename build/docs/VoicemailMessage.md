@@ -25,6 +25,7 @@ title: VoicemailMessage
 | **queue** | [**Queue**](Queue.html) | The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group |  [optional] |
 | **copiedFrom** | [**VoicemailCopyRecord**](VoicemailCopyRecord.html) | Represents where this voicemail message was copied from |  [optional] |
 | **copiedTo** | [**List&lt;VoicemailCopyRecord&gt;**](VoicemailCopyRecord.html) | Represents where this voicemail has been copied to |  [optional] |
+| **retentionPolicy** | [**VoicemailRetentionPolicy**](VoicemailRetentionPolicy.html) | The retention policy for this voicemail |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

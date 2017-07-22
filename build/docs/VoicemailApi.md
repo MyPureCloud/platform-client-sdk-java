@@ -7,7 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteVoicemailMessage**](VoicemailApi.html#deleteVoicemailMessage) | Delete a message. |
+| [**deleteVoicemailMessage**](VoicemailApi.html#deleteVoicemailMessage) | Delete a voicemail message. |
 | [**deleteVoicemailMessages**](VoicemailApi.html#deleteVoicemailMessages) | Delete all voicemail messages |
 | [**getVoicemailGroupMailbox**](VoicemailApi.html#getVoicemailGroupMailbox) | Get the group&#39;s mailbox information |
 | [**getVoicemailGroupMessages**](VoicemailApi.html#getVoicemailGroupMessages) | List voicemail messages |
@@ -16,18 +16,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getVoicemailMeMailbox**](VoicemailApi.html#getVoicemailMeMailbox) | Get the current user&#39;s mailbox information |
 | [**getVoicemailMeMessages**](VoicemailApi.html#getVoicemailMeMessages) | List voicemail messages |
 | [**getVoicemailMePolicy**](VoicemailApi.html#getVoicemailMePolicy) | Get the current user&#39;s voicemail policy |
-| [**getVoicemailMessage**](VoicemailApi.html#getVoicemailMessage) | Get message. |
-| [**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | Get media playback URI for this message |
+| [**getVoicemailMessage**](VoicemailApi.html#getVoicemailMessage) | Get a voicemail message |
+| [**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | Get media playback URI for this voicemail message |
 | [**getVoicemailMessages**](VoicemailApi.html#getVoicemailMessages) | List voicemail messages |
 | [**getVoicemailPolicy**](VoicemailApi.html#getVoicemailPolicy) | Get a policy |
 | [**getVoicemailSearch**](VoicemailApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
 | [**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | Get a user&#39;s voicemail policy |
 | [**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | Update a group&#39;s voicemail policy |
 | [**patchVoicemailMePolicy**](VoicemailApi.html#patchVoicemailMePolicy) | Update the current user&#39;s voicemail policy |
+| [**patchVoicemailMessage**](VoicemailApi.html#patchVoicemailMessage) | Update a voicemail message |
 | [**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | Update a user&#39;s voicemail policy |
 | [**postVoicemailMessages**](VoicemailApi.html#postVoicemailMessages) | Copy a voicemail message to a user or group |
 | [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | Search voicemails |
-| [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | Update a message. |
+| [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | Update a voicemail message |
 | [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | Update a policy |
 {: class="table table-striped"}
 
@@ -37,9 +38,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > Void deleteVoicemailMessage(messageId)
 
-Delete a message.
+Delete a voicemail message.
 
-
+A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
 Wraps DELETE /api/v2/voicemail/messages/{messageId}  
 
@@ -484,7 +485,7 @@ This endpoint does not require any parameters.
 
 > [VoicemailMessage](VoicemailMessage.html) getVoicemailMessage(messageId, expand)
 
-Get message.
+Get a voicemail message
 
 
 
@@ -537,7 +538,7 @@ try {
 
 > [VoicemailMediaInfo](VoicemailMediaInfo.html) getVoicemailMessageMedia(messageId, formatId)
 
-Get media playback URI for this message
+Get media playback URI for this voicemail message
 
 
 
@@ -892,6 +893,59 @@ try {
 
 [**VoicemailUserPolicy**](VoicemailUserPolicy.html)
 
+<a name="patchVoicemailMessage"></a>
+
+# **patchVoicemailMessage**
+
+> [VoicemailMessage](VoicemailMessage.html) patchVoicemailMessage(messageId, body)
+
+Update a voicemail message
+
+A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+
+Wraps PATCH /api/v2/voicemail/messages/{messageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String messageId = "messageId_example"; // String | Message ID
+VoicemailMessage body = new VoicemailMessage(); // VoicemailMessage | VoicemailMessage
+try {
+    VoicemailMessage result = apiInstance.patchVoicemailMessage(messageId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#patchVoicemailMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| Message ID | |
+| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessage**](VoicemailMessage.html)
+
 <a name="patchVoicemailUserpolicy"></a>
 
 # **patchVoicemailUserpolicy**
@@ -1053,9 +1107,9 @@ try {
 
 > [VoicemailMessage](VoicemailMessage.html) putVoicemailMessage(messageId, body)
 
-Update a message.
+Update a voicemail message
 
-
+A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
 Wraps PUT /api/v2/voicemail/messages/{messageId}  
 

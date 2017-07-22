@@ -32,7 +32,8 @@ public class ActivityCode  implements Serializable {
     OFFQUEUEWORK("OffQueueWork"),
     TIMEOFF("TimeOff"),
     TRAINING("Training"),
-    UNAVAILABLE("Unavailable");
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
 
     private String value;
 

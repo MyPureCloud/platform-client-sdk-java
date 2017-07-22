@@ -34,6 +34,7 @@ title: ActivityCode
 | TIMEOFF | &quot;TimeOff&quot; |
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
+| UNSCHEDULED | &quot;Unscheduled&quot; |
 {: class="table table-striped"}
 
 

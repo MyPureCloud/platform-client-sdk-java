@@ -40,6 +40,7 @@ title: UserScheduleAdherence
 | TIMEOFF | &quot;TimeOff&quot; |
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
+| UNSCHEDULED | &quot;Unscheduled&quot; |
 
 
 <a name="SystemPresenceEnum"></a>
@@ -90,6 +91,7 @@ title: UserScheduleAdherence
 | TIMEOFF | &quot;TimeOff&quot; |
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
+| UNSCHEDULED | &quot;Unscheduled&quot; |
 
 
 <a name="AdherenceStateEnum"></a>

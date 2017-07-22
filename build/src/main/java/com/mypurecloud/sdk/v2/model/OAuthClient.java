@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -24,6 +26,10 @@ public class OAuthClient  implements Serializable {
   private List<String> registeredRedirectUri = new ArrayList<String>();
   private String secret = null;
   private List<String> roleIds = new ArrayList<String>();
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private UriReference createdBy = null;
+  private UriReference modifiedBy = null;
 
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
@@ -180,6 +186,78 @@ public class OAuthClient  implements Serializable {
 
   
   /**
+   * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClient dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClient dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * User that created this client
+   **/
+  public OAuthClient createdBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that created this client")
+  @JsonProperty("createdBy")
+  public UriReference getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  
+  /**
+   * User that last modified this client
+   **/
+  public OAuthClient modifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that last modified this client")
+  @JsonProperty("modifiedBy")
+  public UriReference getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+  
+  /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
    **/
   public OAuthClient authorizedGrantType(AuthorizedGrantTypeEnum authorizedGrantType) {
@@ -221,13 +299,17 @@ public class OAuthClient  implements Serializable {
         Objects.equals(this.registeredRedirectUri, oAuthClient.registeredRedirectUri) &&
         Objects.equals(this.secret, oAuthClient.secret) &&
         Objects.equals(this.roleIds, oAuthClient.roleIds) &&
+        Objects.equals(this.dateCreated, oAuthClient.dateCreated) &&
+        Objects.equals(this.dateModified, oAuthClient.dateModified) &&
+        Objects.equals(this.createdBy, oAuthClient.createdBy) &&
+        Objects.equals(this.modifiedBy, oAuthClient.modifiedBy) &&
         Objects.equals(this.authorizedGrantType, oAuthClient.authorizedGrantType) &&
         Objects.equals(this.selfUri, oAuthClient.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, authorizedGrantType, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, selfUri);
   }
 
   @Override
@@ -242,6 +324,10 @@ public class OAuthClient  implements Serializable {
     sb.append("    registeredRedirectUri: ").append(toIndentedString(registeredRedirectUri)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

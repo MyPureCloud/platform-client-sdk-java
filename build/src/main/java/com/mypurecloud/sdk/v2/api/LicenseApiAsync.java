@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
+import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
@@ -24,8 +25,10 @@ import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseUsersRequest;
 
 import java.io.IOException;
@@ -277,6 +280,82 @@ public class LicenseApiAsync {
 
   
   /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LicenseOrgToggle> getLicenseToggleAsync(GetLicenseToggleRequest request, final AsyncApiCallback<LicenseOrgToggle> callback) {
+    try {
+      final SettableFuture<LicenseOrgToggle> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseOrgToggle>() {}, new AsyncApiCallback<ApiResponse<LicenseOrgToggle>>() {
+        @Override
+        public void onCompleted(ApiResponse<LicenseOrgToggle> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LicenseOrgToggle>> getLicenseToggleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseOrgToggle>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LicenseOrgToggle>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LicenseOrgToggle>() {}, new AsyncApiCallback<ApiResponse<LicenseOrgToggle>>() {
+        @Override
+        public void onCompleted(ApiResponse<LicenseOrgToggle> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get licenses for specified user.
    * 
    * @param request the request object
@@ -416,6 +495,82 @@ public class LicenseApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LicenseOrgToggle> postLicenseToggleAsync(PostLicenseToggleRequest request, final AsyncApiCallback<LicenseOrgToggle> callback) {
+    try {
+      final SettableFuture<LicenseOrgToggle> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseOrgToggle>() {}, new AsyncApiCallback<ApiResponse<LicenseOrgToggle>>() {
+        @Override
+        public void onCompleted(ApiResponse<LicenseOrgToggle> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LicenseOrgToggle>> postLicenseToggleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseOrgToggle>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LicenseOrgToggle>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LicenseOrgToggle>() {}, new AsyncApiCallback<ApiResponse<LicenseOrgToggle>>() {
+        @Override
+        public void onCompleted(ApiResponse<LicenseOrgToggle> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

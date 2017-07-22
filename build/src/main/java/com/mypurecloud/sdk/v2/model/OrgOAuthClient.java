@@ -6,8 +6,10 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -18,6 +20,10 @@ public class OrgOAuthClient  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private UriReference createdBy = null;
+  private UriReference modifiedBy = null;
 
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
@@ -85,6 +91,78 @@ public class OrgOAuthClient  implements Serializable {
 
   
   /**
+   * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OrgOAuthClient dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OrgOAuthClient dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * User that created this client
+   **/
+  public OrgOAuthClient createdBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that created this client")
+  @JsonProperty("createdBy")
+  public UriReference getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  
+  /**
+   * User that last modified this client
+   **/
+  public OrgOAuthClient modifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that last modified this client")
+  @JsonProperty("modifiedBy")
+  public UriReference getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+  
+  /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
    **/
   public OrgOAuthClient authorizedGrantType(AuthorizedGrantTypeEnum authorizedGrantType) {
@@ -132,13 +210,17 @@ public class OrgOAuthClient  implements Serializable {
     OrgOAuthClient orgOAuthClient = (OrgOAuthClient) o;
     return Objects.equals(this.id, orgOAuthClient.id) &&
         Objects.equals(this.name, orgOAuthClient.name) &&
+        Objects.equals(this.dateCreated, orgOAuthClient.dateCreated) &&
+        Objects.equals(this.dateModified, orgOAuthClient.dateModified) &&
+        Objects.equals(this.createdBy, orgOAuthClient.createdBy) &&
+        Objects.equals(this.modifiedBy, orgOAuthClient.modifiedBy) &&
         Objects.equals(this.authorizedGrantType, orgOAuthClient.authorizedGrantType) &&
         Objects.equals(this.organization, orgOAuthClient.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, authorizedGrantType, organization);
+    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, organization);
   }
 
   @Override
@@ -148,6 +230,10 @@ public class OrgOAuthClient  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");

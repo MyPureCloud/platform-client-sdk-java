@@ -22,6 +22,7 @@ public class OutOfOffice  implements Serializable {
   private Date startDate = null;
   private Date endDate = null;
   private Boolean active = null;
+  private Boolean indefinite = null;
   private String selfUri = null;
 
   
@@ -119,6 +120,23 @@ public class OutOfOffice  implements Serializable {
   }
 
   
+  /**
+   **/
+  public OutOfOffice indefinite(Boolean indefinite) {
+    this.indefinite = indefinite;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("indefinite")
+  public Boolean getIndefinite() {
+    return indefinite;
+  }
+  public void setIndefinite(Boolean indefinite) {
+    this.indefinite = indefinite;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -142,12 +160,13 @@ public class OutOfOffice  implements Serializable {
         Objects.equals(this.startDate, outOfOffice.startDate) &&
         Objects.equals(this.endDate, outOfOffice.endDate) &&
         Objects.equals(this.active, outOfOffice.active) &&
+        Objects.equals(this.indefinite, outOfOffice.indefinite) &&
         Objects.equals(this.selfUri, outOfOffice.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, startDate, endDate, active, selfUri);
+    return Objects.hash(id, name, user, startDate, endDate, active, indefinite, selfUri);
   }
 
   @Override
@@ -161,6 +180,7 @@ public class OutOfOffice  implements Serializable {
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    indefinite: ").append(toIndentedString(indefinite)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

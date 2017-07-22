@@ -245,6 +245,7 @@ public class Edge  implements Serializable {
   private CallDrainingStateEnum callDrainingState = null;
   private Integer conversationCount = null;
   private String proxy = null;
+  private Boolean offlineConfigCalled = null;
   private String osName = null;
   private String selfUri = null;
 
@@ -892,6 +893,13 @@ public class Edge  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "True if the offline edge configuration endpoint has been called for this edge.")
+  @JsonProperty("offlineConfigCalled")
+  public Boolean getOfflineConfigCalled() {
+    return offlineConfigCalled;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The name provided by the operating system of the Edge.")
   @JsonProperty("osName")
   public String getOsName() {
@@ -954,13 +962,14 @@ public class Edge  implements Serializable {
         Objects.equals(this.callDrainingState, edge.callDrainingState) &&
         Objects.equals(this.conversationCount, edge.conversationCount) &&
         Objects.equals(this.proxy, edge.proxy) &&
+        Objects.equals(this.offlineConfigCalled, edge.offlineConfigCalled) &&
         Objects.equals(this.osName, edge.osName) &&
         Objects.equals(this.selfUri, edge.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, osName, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, interfaces, make, model, apiVersion, softwareVersion, softwareVersionTimestamp, softwareVersionPlatform, softwareVersionConfiguration, fullSoftwareVersion, pairingId, fingerprint, fingerprintHint, currentVersion, stagedVersion, patch, statusCode, edgeGroup, site, softwareStatus, onlineStatus, serialNumber, physicalEdge, managed, edgeDeploymentType, callDrainingState, conversationCount, proxy, offlineConfigCalled, osName, selfUri);
   }
 
   @Override
@@ -1006,6 +1015,7 @@ public class Edge  implements Serializable {
     sb.append("    callDrainingState: ").append(toIndentedString(callDrainingState)).append("\n");
     sb.append("    conversationCount: ").append(toIndentedString(conversationCount)).append("\n");
     sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
+    sb.append("    offlineConfigCalled: ").append(toIndentedString(offlineConfigCalled)).append("\n");
     sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

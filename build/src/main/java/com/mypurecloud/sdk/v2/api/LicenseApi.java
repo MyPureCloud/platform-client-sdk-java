@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
+import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
@@ -21,8 +22,10 @@ import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseUsersRequest;
 
 import java.io.IOException;
@@ -274,6 +277,85 @@ public class LicenseApi {
 
   
   /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param featureName featureName (required)
+   * @return LicenseOrgToggle
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LicenseOrgToggle getLicenseToggle(String featureName) throws IOException, ApiException {
+    return  getLicenseToggle(createGetLicenseToggleRequest(featureName));
+  }
+
+  /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param featureName featureName (required)
+   * @return LicenseOrgToggle
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LicenseOrgToggle> getLicenseToggleWithHttpInfo(String featureName) throws IOException {
+    return getLicenseToggle(createGetLicenseToggleRequest(featureName).withHttpInfo());
+  }
+
+  private GetLicenseToggleRequest createGetLicenseToggleRequest(String featureName) {
+    return GetLicenseToggleRequest.builder()
+            .withFeatureName(featureName)
+    
+            .build();
+  }
+
+  /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param request The request object
+   * @return LicenseOrgToggle
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LicenseOrgToggle getLicenseToggle(GetLicenseToggleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LicenseOrgToggle> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseOrgToggle>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get PureCloud license feature toggle value.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LicenseOrgToggle> getLicenseToggle(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseOrgToggle>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get licenses for specified user.
    * 
    * @param userId ID (required)
@@ -426,6 +508,85 @@ public class LicenseApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<LicenseUpdateStatus>> response = (ApiResponse<List<LicenseUpdateStatus>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param featureName featureName (required)
+   * @return LicenseOrgToggle
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LicenseOrgToggle postLicenseToggle(String featureName) throws IOException, ApiException {
+    return  postLicenseToggle(createPostLicenseToggleRequest(featureName));
+  }
+
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param featureName featureName (required)
+   * @return LicenseOrgToggle
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LicenseOrgToggle> postLicenseToggleWithHttpInfo(String featureName) throws IOException {
+    return postLicenseToggle(createPostLicenseToggleRequest(featureName).withHttpInfo());
+  }
+
+  private PostLicenseToggleRequest createPostLicenseToggleRequest(String featureName) {
+    return PostLicenseToggleRequest.builder()
+            .withFeatureName(featureName)
+    
+            .build();
+  }
+
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param request The request object
+   * @return LicenseOrgToggle
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LicenseOrgToggle postLicenseToggle(PostLicenseToggleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LicenseOrgToggle> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseOrgToggle>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Switch PureCloud license feature toggle value.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LicenseOrgToggle> postLicenseToggle(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LicenseOrgToggle>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LicenseOrgToggle> response = (ApiResponse<LicenseOrgToggle>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

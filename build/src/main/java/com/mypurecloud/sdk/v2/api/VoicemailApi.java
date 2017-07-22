@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailGroupPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailMePolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
@@ -66,8 +67,8 @@ public class VoicemailApi {
 
   
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param messageId Message ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -77,8 +78,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param messageId Message ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -94,8 +95,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -112,8 +113,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -767,7 +768,7 @@ public class VoicemailApi {
 
   
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param messageId Message ID (required)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
@@ -780,7 +781,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param messageId Message ID (required)
    * @param expand If the caller is a known user, which fields, if any, to expand (optional)
@@ -801,7 +802,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param request The request object
    * @return VoicemailMessage
@@ -820,7 +821,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param request The request object
    * @return the response
@@ -850,7 +851,7 @@ public class VoicemailApi {
 
   
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
@@ -863,7 +864,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param messageId Message ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
@@ -884,7 +885,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param request The request object
    * @return VoicemailMediaInfo
@@ -903,7 +904,7 @@ public class VoicemailApi {
   }
 
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param request The request object
    * @return the response
@@ -1415,6 +1416,89 @@ public class VoicemailApi {
 
   
   /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param messageId Message ID (required)
+   * @param body VoicemailMessage (required)
+   * @return VoicemailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessage patchVoicemailMessage(String messageId, VoicemailMessage body) throws IOException, ApiException {
+    return  patchVoicemailMessage(createPatchVoicemailMessageRequest(messageId, body));
+  }
+
+  /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param messageId Message ID (required)
+   * @param body VoicemailMessage (required)
+   * @return VoicemailMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessage> patchVoicemailMessageWithHttpInfo(String messageId, VoicemailMessage body) throws IOException {
+    return patchVoicemailMessage(createPatchVoicemailMessageRequest(messageId, body).withHttpInfo());
+  }
+
+  private PatchVoicemailMessageRequest createPatchVoicemailMessageRequest(String messageId, VoicemailMessage body) {
+    return PatchVoicemailMessageRequest.builder()
+            .withMessageId(messageId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param request The request object
+   * @return VoicemailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessage patchVoicemailMessage(PatchVoicemailMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VoicemailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessage> patchVoicemailMessage(ApiRequest<VoicemailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a user&#39;s voicemail policy
    * 
    * @param userId User ID (required)
@@ -1656,8 +1740,8 @@ public class VoicemailApi {
 
   
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param messageId Message ID (required)
    * @param body VoicemailMessage (required)
    * @return VoicemailMessage
@@ -1669,8 +1753,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param messageId Message ID (required)
    * @param body VoicemailMessage (required)
    * @return VoicemailMessage
@@ -1690,8 +1774,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param request The request object
    * @return VoicemailMessage
    * @throws ApiException if the request fails on the server
@@ -1709,8 +1793,8 @@ public class VoicemailApi {
   }
 
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -34,7 +34,8 @@ public class UserScheduleAdherence  implements Serializable {
     OFFQUEUEWORK("OffQueueWork"),
     TIMEOFF("TimeOff"),
     TRAINING("Training"),
-    UNAVAILABLE("Unavailable");
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
 
     private String value;
 
@@ -157,7 +158,8 @@ public class UserScheduleAdherence  implements Serializable {
     OFFQUEUEWORK("OffQueueWork"),
     TIMEOFF("TimeOff"),
     TRAINING("Training"),
-    UNAVAILABLE("Unavailable");
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
 
     private String value;
 

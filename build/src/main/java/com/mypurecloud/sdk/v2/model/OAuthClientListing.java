@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -23,6 +25,10 @@ public class OAuthClientListing  implements Serializable {
   private List<String> registeredRedirectUri = new ArrayList<String>();
   private String secret = null;
   private List<String> roleIds = new ArrayList<String>();
+  private Date dateCreated = null;
+  private Date dateModified = null;
+  private UriReference createdBy = null;
+  private UriReference modifiedBy = null;
   private String selfUri = null;
 
   
@@ -140,6 +146,78 @@ public class OAuthClientListing  implements Serializable {
   }
 
   
+  /**
+   * Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClientListing dateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(Date dateCreated) {
+    this.dateCreated = dateCreated;
+  }
+
+  
+  /**
+   * Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClientListing dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this client was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+  
+  /**
+   * User that created this client
+   **/
+  public OAuthClientListing createdBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that created this client")
+  @JsonProperty("createdBy")
+  public UriReference getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(UriReference createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  
+  /**
+   * User that last modified this client
+   **/
+  public OAuthClientListing modifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User that last modified this client")
+  @JsonProperty("modifiedBy")
+  public UriReference getModifiedBy() {
+    return modifiedBy;
+  }
+  public void setModifiedBy(UriReference modifiedBy) {
+    this.modifiedBy = modifiedBy;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -164,12 +242,16 @@ public class OAuthClientListing  implements Serializable {
         Objects.equals(this.registeredRedirectUri, oAuthClientListing.registeredRedirectUri) &&
         Objects.equals(this.secret, oAuthClientListing.secret) &&
         Objects.equals(this.roleIds, oAuthClientListing.roleIds) &&
+        Objects.equals(this.dateCreated, oAuthClientListing.dateCreated) &&
+        Objects.equals(this.dateModified, oAuthClientListing.dateModified) &&
+        Objects.equals(this.createdBy, oAuthClientListing.createdBy) &&
+        Objects.equals(this.modifiedBy, oAuthClientListing.modifiedBy) &&
         Objects.equals(this.selfUri, oAuthClientListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
   }
 
   @Override
@@ -184,6 +266,10 @@ public class OAuthClientListing  implements Serializable {
     sb.append("    registeredRedirectUri: ").append(toIndentedString(registeredRedirectUri)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

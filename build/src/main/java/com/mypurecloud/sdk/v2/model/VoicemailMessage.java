@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.VoicemailCopyRecord;
+import com.mypurecloud.sdk.v2.model.VoicemailRetentionPolicy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class VoicemailMessage  implements Serializable {
   private Queue queue = null;
   private VoicemailCopyRecord copiedFrom = null;
   private List<VoicemailCopyRecord> copiedTo = new ArrayList<VoicemailCopyRecord>();
+  private VoicemailRetentionPolicy retentionPolicy = null;
   private String selfUri = null;
 
   
@@ -271,6 +273,24 @@ public class VoicemailMessage  implements Serializable {
   }
 
   
+  /**
+   * The retention policy for this voicemail
+   **/
+  public VoicemailMessage retentionPolicy(VoicemailRetentionPolicy retentionPolicy) {
+    this.retentionPolicy = retentionPolicy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The retention policy for this voicemail")
+  @JsonProperty("retentionPolicy")
+  public VoicemailRetentionPolicy getRetentionPolicy() {
+    return retentionPolicy;
+  }
+  public void setRetentionPolicy(VoicemailRetentionPolicy retentionPolicy) {
+    this.retentionPolicy = retentionPolicy;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -305,12 +325,13 @@ public class VoicemailMessage  implements Serializable {
         Objects.equals(this.queue, voicemailMessage.queue) &&
         Objects.equals(this.copiedFrom, voicemailMessage.copiedFrom) &&
         Objects.equals(this.copiedTo, voicemailMessage.copiedTo) &&
+        Objects.equals(this.retentionPolicy, voicemailMessage.retentionPolicy) &&
         Objects.equals(this.selfUri, voicemailMessage.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, callerUser, deleted, note, user, group, queue, copiedFrom, copiedTo, selfUri);
+    return Objects.hash(id, conversation, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, callerUser, deleted, note, user, group, queue, copiedFrom, copiedTo, retentionPolicy, selfUri);
   }
 
   @Override
@@ -335,6 +356,7 @@ public class VoicemailMessage  implements Serializable {
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    copiedFrom: ").append(toIndentedString(copiedFrom)).append("\n");
     sb.append("    copiedTo: ").append(toIndentedString(copiedTo)).append("\n");
+    sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -10,8 +10,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | Get PureCloud license definition. |
 | [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | Get all PureCloud license definitions available for the organization. |
 | [**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | Get license assignments for the organization. |
+| [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Get PureCloud license feature toggle value. |
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
 | [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization&#39;s license assignments in a batch. |
+| [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
 {: class="table table-striped"}
 
@@ -160,6 +162,57 @@ This endpoint does not require any parameters.
 
 [**LicenseOrganization**](LicenseOrganization.html)
 
+<a name="getLicenseToggle"></a>
+
+# **getLicenseToggle**
+
+> [LicenseOrgToggle](LicenseOrgToggle.html) getLicenseToggle(featureName)
+
+Get PureCloud license feature toggle value.
+
+
+
+Wraps GET /api/v2/license/toggles/{featureName}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.LicenseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+LicenseApi apiInstance = new LicenseApi();
+String featureName = "featureName_example"; // String | featureName
+try {
+    LicenseOrgToggle result = apiInstance.getLicenseToggle(featureName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LicenseApi#getLicenseToggle");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **featureName** | **String**| featureName | |
+{: class="table table-striped"}
+
+### Return type
+
+[**LicenseOrgToggle**](LicenseOrgToggle.html)
+
 <a name="getLicenseUser"></a>
 
 # **getLicenseUser**
@@ -261,6 +314,57 @@ try {
 ### Return type
 
 [**List&lt;LicenseUpdateStatus&gt;**](LicenseUpdateStatus.html)
+
+<a name="postLicenseToggle"></a>
+
+# **postLicenseToggle**
+
+> [LicenseOrgToggle](LicenseOrgToggle.html) postLicenseToggle(featureName)
+
+Switch PureCloud license feature toggle value.
+
+
+
+Wraps POST /api/v2/license/toggles/{featureName}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.LicenseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+LicenseApi apiInstance = new LicenseApi();
+String featureName = "featureName_example"; // String | featureName
+try {
+    LicenseOrgToggle result = apiInstance.postLicenseToggle(featureName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LicenseApi#postLicenseToggle");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **featureName** | **String**| featureName | |
+{: class="table table-striped"}
+
+### Return type
+
+[**LicenseOrgToggle**](LicenseOrgToggle.html)
 
 <a name="postLicenseUsers"></a>
 

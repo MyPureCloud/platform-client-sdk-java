@@ -1979,7 +1979,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
-OutOfOffice body = new OutOfOffice(); // OutOfOffice | The updated UserPresence
+OutOfOffice body = new OutOfOffice(); // OutOfOffice | The updated OutOffOffice
 try {
     OutOfOffice result = apiInstance.putUserOutofoffice(userId, body);
     System.out.println(result);
@@ -1995,7 +1995,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated UserPresence | |
+| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice | |
 {: class="table table-striped"}
 
 ### Return type

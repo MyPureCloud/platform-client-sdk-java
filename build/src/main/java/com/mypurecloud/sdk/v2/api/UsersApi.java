@@ -3068,7 +3068,7 @@ public class UsersApi {
    * Update an OutOfOffice
    * 
    * @param userId User ID (required)
-   * @param body The updated UserPresence (required)
+   * @param body The updated OutOffOffice (required)
    * @return OutOfOffice
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3081,7 +3081,7 @@ public class UsersApi {
    * Update an OutOfOffice
    * 
    * @param userId User ID (required)
-   * @param body The updated UserPresence (required)
+   * @param body The updated OutOffOffice (required)
    * @return OutOfOffice
    * @throws IOException if the request fails to be processed
    */

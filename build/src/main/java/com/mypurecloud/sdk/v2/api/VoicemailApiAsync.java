@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailGroupPolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailMePolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
@@ -70,8 +71,8 @@ public class VoicemailApiAsync {
 
   
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -104,8 +105,8 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Delete a message.
-   * 
+   * Delete a voicemail message.
+   * A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -754,7 +755,7 @@ public class VoicemailApiAsync {
 
   
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -788,7 +789,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get message.
+   * Get a voicemail message
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -830,7 +831,7 @@ public class VoicemailApiAsync {
 
   
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -864,7 +865,7 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Get media playback URI for this message
+   * Get media playback URI for this voicemail message
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1362,6 +1363,82 @@ public class VoicemailApiAsync {
 
   
   /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VoicemailMessage> patchVoicemailMessageAsync(PatchVoicemailMessageRequest request, final AsyncApiCallback<VoicemailMessage> callback) {
+    try {
+      final SettableFuture<VoicemailMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VoicemailMessage>> patchVoicemailMessageAsync(ApiRequest<VoicemailMessage> request, final AsyncApiCallback<ApiResponse<VoicemailMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VoicemailMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessage>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessage> response = (ApiResponse<VoicemailMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update a user&#39;s voicemail policy
    * 
    * @param request the request object
@@ -1590,8 +1667,8 @@ public class VoicemailApiAsync {
 
   
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1624,8 +1701,8 @@ public class VoicemailApiAsync {
   }
 
   /**
-   * Update a message.
-   * 
+   * Update a voicemail message
+   * A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
