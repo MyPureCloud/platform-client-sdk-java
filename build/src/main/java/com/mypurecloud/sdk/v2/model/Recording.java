@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.ChatMessage;
 import com.mypurecloud.sdk.v2.model.MediaResult;
 import com.mypurecloud.sdk.v2.model.RecordingEmailMessage;
+import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -116,6 +117,7 @@ public class Recording  implements Serializable {
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
+  private List<User> users = new ArrayList<User>();
   private String selfUri = null;
 
   
@@ -479,6 +481,24 @@ public class Recording  implements Serializable {
   }
 
   
+  /**
+   * The users participating in the conversation
+   **/
+  public Recording users(List<User> users) {
+    this.users = users;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The users participating in the conversation")
+  @JsonProperty("users")
+  public List<User> getUsers() {
+    return users;
+  }
+  public void setUsers(List<User> users) {
+    this.users = users;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -517,12 +537,13 @@ public class Recording  implements Serializable {
         Objects.equals(this.maxAllowedRestorationsForOrg, recording.maxAllowedRestorationsForOrg) &&
         Objects.equals(this.remainingRestorationsAllowedForOrg, recording.remainingRestorationsAllowedForOrg) &&
         Objects.equals(this.sessionId, recording.sessionId) &&
+        Objects.equals(this.users, recording.users) &&
         Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
   }
 
   @Override
@@ -551,6 +572,7 @@ public class Recording  implements Serializable {
     sb.append("    maxAllowedRestorationsForOrg: ").append(toIndentedString(maxAllowedRestorationsForOrg)).append("\n");
     sb.append("    remainingRestorationsAllowedForOrg: ").append(toIndentedString(remainingRestorationsAllowedForOrg)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

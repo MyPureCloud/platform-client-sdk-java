@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
+import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
@@ -126,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
@@ -6101,6 +6103,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Send external email reply (required)
+   * @return EmailConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailConversation postConversationsEmailInboundmessages(String conversationId, InboundMessageRequest body) throws IOException, ApiException {
+    return  postConversationsEmailInboundmessages(createPostConversationsEmailInboundmessagesRequest(conversationId, body));
+  }
+
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Send external email reply (required)
+   * @return EmailConversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailConversation> postConversationsEmailInboundmessagesWithHttpInfo(String conversationId, InboundMessageRequest body) throws IOException {
+    return postConversationsEmailInboundmessages(createPostConversationsEmailInboundmessagesRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationsEmailInboundmessagesRequest createPostConversationsEmailInboundmessagesRequest(String conversationId, InboundMessageRequest body) {
+    return PostConversationsEmailInboundmessagesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param request The request object
+   * @return EmailConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailConversation postConversationsEmailInboundmessages(PostConversationsEmailInboundmessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailConversation> postConversationsEmailInboundmessages(ApiRequest<InboundMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

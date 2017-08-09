@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
@@ -36,6 +38,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
@@ -873,6 +876,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Request a historical adherence report
+   * 
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(String muId, WfmHistoricalAdherenceQuery body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(muId, body));
+  }
+
+  /**
+   * Request a historical adherence report
+   * 
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return WfmHistoricalAdherenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementManagementunitHistoricaladherencequeryWithHttpInfo(String muId, WfmHistoricalAdherenceQuery body) throws IOException {
+    return postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(muId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(String muId, WfmHistoricalAdherenceQuery body) {
+    return PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest.builder()
+            .withMuId(muId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Request a historical adherence report
+   * 
+   * @param request The request object
+   * @return WfmHistoricalAdherenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmHistoricalAdherenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmHistoricalAdherenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request a historical adherence report
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementManagementunitHistoricaladherencequery(ApiRequest<WfmHistoricalAdherenceQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmHistoricalAdherenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

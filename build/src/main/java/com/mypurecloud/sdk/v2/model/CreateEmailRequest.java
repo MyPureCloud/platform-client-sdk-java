@@ -20,6 +20,7 @@ import java.io.Serializable;
 public class CreateEmailRequest  implements Serializable {
   
   private String queueId = null;
+  private String flowId = null;
   private String provider = null;
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
@@ -68,20 +69,38 @@ public class CreateEmailRequest  implements Serializable {
 
   
   /**
-   * The ID of the queue to use for routing the chat conversation.
+   * The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
    **/
   public CreateEmailRequest queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ID of the queue to use for routing the chat conversation.")
+  @ApiModelProperty(example = "null", value = "The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
   }
   public void setQueueId(String queueId) {
     this.queueId = queueId;
+  }
+
+  
+  /**
+   * The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+   **/
+  public CreateEmailRequest flowId(String flowId) {
+    this.flowId = flowId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId")
+  @JsonProperty("flowId")
+  public String getFlowId() {
+    return flowId;
+  }
+  public void setFlowId(String flowId) {
+    this.flowId = flowId;
   }
 
   
@@ -294,6 +313,7 @@ public class CreateEmailRequest  implements Serializable {
     }
     CreateEmailRequest createEmailRequest = (CreateEmailRequest) o;
     return Objects.equals(this.queueId, createEmailRequest.queueId) &&
+        Objects.equals(this.flowId, createEmailRequest.flowId) &&
         Objects.equals(this.provider, createEmailRequest.provider) &&
         Objects.equals(this.skillIds, createEmailRequest.skillIds) &&
         Objects.equals(this.languageId, createEmailRequest.languageId) &&
@@ -309,7 +329,7 @@ public class CreateEmailRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction);
+    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction);
   }
 
   @Override
@@ -318,6 +338,7 @@ public class CreateEmailRequest  implements Serializable {
     sb.append("class CreateEmailRequest {\n");
     
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
+    sb.append("    flowId: ").append(toIndentedString(flowId)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    languageId: ").append(toIndentedString(languageId)).append("\n");

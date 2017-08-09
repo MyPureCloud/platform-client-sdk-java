@@ -40,15 +40,16 @@ title: EventLog
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CAMPAIGN | &quot;CAMPAIGN&quot; |
-| CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; |
-| IMPORT_ERROR | &quot;IMPORT_ERROR&quot; |
 | CALLBACK | &quot;CALLBACK&quot; |
-| CONTACT_LIST_FILTER | &quot;CONTACT_LIST_FILTER&quot; |
-| SCHEDULE | &quot;SCHEDULE&quot; |
 | CALL_RESTRICTION | &quot;CALL_RESTRICTION&quot; |
 | CALL_RULE | &quot;CALL_RULE&quot; |
+| CAMPAIGN | &quot;CAMPAIGN&quot; |
+| CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; |
+| CONTACT_LIST_FILTER | &quot;CONTACT_LIST_FILTER&quot; |
+| ENTITY_LIMIT | &quot;ENTITY_LIMIT&quot; |
+| IMPORT_ERROR | &quot;IMPORT_ERROR&quot; |
 | ORGANIZATION_CONFIGURATION | &quot;ORGANIZATION_CONFIGURATION&quot; |
+| SCHEDULE | &quot;SCHEDULE&quot; |
 {: class="table table-striped"}
 
 

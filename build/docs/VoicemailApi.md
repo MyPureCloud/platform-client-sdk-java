@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | Get media playback URI for this voicemail message |
 | [**getVoicemailMessages**](VoicemailApi.html#getVoicemailMessages) | List voicemail messages |
 | [**getVoicemailPolicy**](VoicemailApi.html#getVoicemailPolicy) | Get a policy |
+| [**getVoicemailQueueMessages**](VoicemailApi.html#getVoicemailQueueMessages) | List voicemail messages |
 | [**getVoicemailSearch**](VoicemailApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
 | [**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | Get a user&#39;s voicemail policy |
 | [**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | Update a group&#39;s voicemail policy |
@@ -684,6 +685,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+
+<a name="getVoicemailQueueMessages"></a>
+
+# **getVoicemailQueueMessages**
+
+> [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailQueueMessages(queueId, pageSize, pageNumber)
+
+List voicemail messages
+
+
+
+Wraps GET /api/v2/voicemail/queues/{queueId}/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+VoicemailApi apiInstance = new VoicemailApi();
+String queueId = "queueId_example"; // String | Queue ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    VoicemailMessageEntityListing result = apiInstance.getVoicemailQueueMessages(queueId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#getVoicemailQueueMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
 
 <a name="getVoicemailSearch"></a>
 

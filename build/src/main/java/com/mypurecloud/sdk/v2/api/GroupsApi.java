@@ -470,13 +470,14 @@ public class GroupsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    return  getGroups(createGetGroupsRequest(pageSize, pageNumber, sortOrder));
+  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException, ApiException {
+    return  getGroups(createGetGroupsRequest(pageSize, pageNumber, id, sortOrder));
   }
 
   /**
@@ -484,19 +485,22 @@ public class GroupsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
-    return getGroups(createGetGroupsRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
+  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException {
+    return getGroups(createGetGroupsRequest(pageSize, pageNumber, id, sortOrder).withHttpInfo());
   }
 
-  private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
+  private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
     return GetGroupsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withId(id)
     
             .withSortOrder(sortOrder)
     

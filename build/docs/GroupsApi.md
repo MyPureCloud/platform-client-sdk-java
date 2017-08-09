@@ -288,7 +288,7 @@ try {
 
 # **getGroups**
 
-> [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, sortOrder)
+> [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, sortOrder)
 
 Get a group list
 
@@ -315,9 +315,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 GroupsApi apiInstance = new GroupsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 try {
-    GroupEntityListing result = apiInstance.getGroups(pageSize, pageNumber, sortOrder);
+    GroupEntityListing result = apiInstance.getGroups(pageSize, pageNumber, id, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#getGroups");
@@ -332,6 +333,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 

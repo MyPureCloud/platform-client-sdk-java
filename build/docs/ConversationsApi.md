@@ -79,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsChatParticipantReplace**](ConversationsApi.html#postConversationsChatParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsChats**](ConversationsApi.html#postConversationsChats) | Create a web chat conversation |
 | [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi.html#postConversationsCobrowsesessionParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsEmailInboundmessages**](ConversationsApi.html#postConversationsEmailInboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it. |
 | [**postConversationsEmailMessages**](ConversationsApi.html#postConversationsEmailMessages) | Send an email reply |
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
@@ -3890,6 +3891,59 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postConversationsEmailInboundmessages"></a>
+
+# **postConversationsEmailInboundmessages**
+
+> [EmailConversation](EmailConversation.html) postConversationsEmailInboundmessages(conversationId, body)
+
+Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+
+
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+InboundMessageRequest body = new InboundMessageRequest(); // InboundMessageRequest | Send external email reply
+try {
+    EmailConversation result = apiInstance.postConversationsEmailInboundmessages(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsEmailInboundmessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailConversation**](EmailConversation.html)
 
 <a name="postConversationsEmailMessages"></a>
 

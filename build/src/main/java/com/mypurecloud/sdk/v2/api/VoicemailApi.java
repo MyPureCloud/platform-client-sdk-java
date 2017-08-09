@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessageMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetVoicemailQueueMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailGroupPolicyRequest;
@@ -1086,6 +1087,93 @@ public class VoicemailApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * List voicemail messages
+   * 
+   * @param queueId Queue ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessageEntityListing getVoicemailQueueMessages(String queueId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getVoicemailQueueMessages(createGetVoicemailQueueMessagesRequest(queueId, pageSize, pageNumber));
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param queueId Queue ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return VoicemailMessageEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailQueueMessagesWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getVoicemailQueueMessages(createGetVoicemailQueueMessagesRequest(queueId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetVoicemailQueueMessagesRequest createGetVoicemailQueueMessagesRequest(String queueId, Integer pageSize, Integer pageNumber) {
+    return GetVoicemailQueueMessagesRequest.builder()
+            .withQueueId(queueId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param request The request object
+   * @return VoicemailMessageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailMessageEntityListing getVoicemailQueueMessages(GetVoicemailQueueMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VoicemailMessageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailMessageEntityListing> getVoicemailQueueMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailMessageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

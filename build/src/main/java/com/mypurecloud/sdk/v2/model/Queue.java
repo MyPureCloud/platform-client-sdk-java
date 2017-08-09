@@ -299,14 +299,14 @@ public class Queue  implements Serializable {
 
   
   /**
-   * The media settings for the queue.
+   * The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
    **/
   public Queue mediaSettings(Map<String, MediaSetting> mediaSettings) {
     this.mediaSettings = mediaSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The media settings for the queue.")
+  @ApiModelProperty(example = "null", required = true, value = "The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION")
   @JsonProperty("mediaSettings")
   public Map<String, MediaSetting> getMediaSettings() {
     return mediaSettings;

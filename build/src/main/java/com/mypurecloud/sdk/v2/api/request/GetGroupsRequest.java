@@ -61,6 +61,21 @@ public class GetGroupsRequest {
 	}
 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetGroupsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	}
+
+	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -103,6 +118,8 @@ public class GetGroupsRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
@@ -133,6 +150,11 @@ public class GetGroupsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

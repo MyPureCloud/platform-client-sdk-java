@@ -19,7 +19,7 @@ public class RoutingStatus  implements Serializable {
   private String userId = null;
 
   /**
-   * Indicates the Routing State of the agent.
+   * Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.
    */
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -77,14 +77,14 @@ public class RoutingStatus  implements Serializable {
 
   
   /**
-   * Indicates the Routing State of the agent.
+   * Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.
    **/
   public RoutingStatus status(StatusEnum status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates the Routing State of the agent.")
+  @ApiModelProperty(example = "null", value = "Indicates the Routing State of the agent.  A value of OFF_QUEUE will be returned if the specified user does not exist.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;

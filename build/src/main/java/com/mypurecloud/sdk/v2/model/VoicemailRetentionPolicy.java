@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Governs how the voicemail is retained when the deleted property is set to true
+ * Governs how the voicemail is retained
  */
-@ApiModel(description = "Governs how the voicemail is retained when the deleted property is set to true")
+@ApiModel(description = "Governs how the voicemail is retained")
 
 public class VoicemailRetentionPolicy  implements Serializable {
   

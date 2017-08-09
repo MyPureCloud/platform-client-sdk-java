@@ -35,6 +35,7 @@ title: DependencyObject
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; |
 | CONTACTLIST | &quot;CONTACTLIST&quot; |
 | DATAACTION | &quot;DATAACTION&quot; |
+| EMAILROUTE | &quot;EMAILROUTE&quot; |
 | GROUP | &quot;GROUP&quot; |
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; |
 | INBOUNDEMAILFLOW | &quot;INBOUNDEMAILFLOW&quot; |
@@ -48,6 +49,7 @@ title: DependencyObject
 | SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; |
 | SECUREACTION | &quot;SECUREACTION&quot; |
 | SECURECALLFLOW | &quot;SECURECALLFLOW&quot; |
+| SURVEYINVITEFLOW | &quot;SURVEYINVITEFLOW&quot; |
 | SYSTEMPROMPT | &quot;SYSTEMPROMPT&quot; |
 | USER | &quot;USER&quot; |
 | USERPROMPT | &quot;USERPROMPT&quot; |

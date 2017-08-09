@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessageMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetVoicemailQueueMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailUserpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchVoicemailGroupPolicyRequest;
@@ -1046,6 +1047,82 @@ public class VoicemailApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List voicemail messages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VoicemailMessageEntityListing> getVoicemailQueueMessagesAsync(GetVoicemailQueueMessagesRequest request, final AsyncApiCallback<VoicemailMessageEntityListing> callback) {
+    try {
+      final SettableFuture<VoicemailMessageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List voicemail messages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VoicemailMessageEntityListing>> getVoicemailQueueMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VoicemailMessageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailMessageEntityListing>() {}, new AsyncApiCallback<ApiResponse<VoicemailMessageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailMessageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailMessageEntityListing> response = (ApiResponse<VoicemailMessageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

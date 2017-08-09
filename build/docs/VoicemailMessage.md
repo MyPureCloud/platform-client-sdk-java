@@ -15,6 +15,7 @@ title: VoicemailMessage
 | **audioRecordingSizeBytes** | **Long** | The voicemail message&#39;s audio recording size in bytes |  [optional] |
 | **createdDate** | [**Date**](Date.html) | The date the voicemail message was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **modifiedDate** | [**Date**](Date.html) | The date the voicemail message was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **deletedDate** | [**Date**](Date.html) | The date the voicemail message deleted property was set to true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **callerAddress** | **String** | The caller address |  [optional] |
 | **callerName** | **String** | Optionally the name of the caller that left the voicemail message if the caller was a known user |  [optional] |
 | **callerUser** | [**User**](User.html) | Optionally the user that left the voicemail message if the caller was a known user |  [optional] |
@@ -25,7 +26,7 @@ title: VoicemailMessage
 | **queue** | [**Queue**](Queue.html) | The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group |  [optional] |
 | **copiedFrom** | [**VoicemailCopyRecord**](VoicemailCopyRecord.html) | Represents where this voicemail message was copied from |  [optional] |
 | **copiedTo** | [**List&lt;VoicemailCopyRecord&gt;**](VoicemailCopyRecord.html) | Represents where this voicemail has been copied to |  [optional] |
-| **retentionPolicy** | [**VoicemailRetentionPolicy**](VoicemailRetentionPolicy.html) | The retention policy for this voicemail |  [optional] |
+| **deleteRetentionPolicy** | [**VoicemailRetentionPolicy**](VoicemailRetentionPolicy.html) | The retention policy for this voicemail when deleted is set to true |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

@@ -19,7 +19,7 @@ title: Queue
 | **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
 | **modifiedByApp** | **String** |  |  [optional] |
 | **createdByApp** | **String** |  |  [optional] |
-| **mediaSettings** | [**Map&lt;String, MediaSetting&gt;**](MediaSetting.html) | The media settings for the queue. |  |
+| **mediaSettings** | [**Map&lt;String, MediaSetting&gt;**](MediaSetting.html) | The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION |  |
 | **bullseye** | [**Bullseye**](Bullseye.html) | The bulls-eye settings for the queue. |  [optional] |
 | **acwSettings** | [**AcwSettings**](AcwSettings.html) | The ACW settings for the queue. |  |
 | **skillEvaluationMethod** | [**SkillEvaluationMethodEnum**](#SkillEvaluationMethodEnum) | The skill evaluation method to use when routing conversations. |  |

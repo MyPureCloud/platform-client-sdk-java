@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
+import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
@@ -129,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
@@ -5616,6 +5618,82 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmailConversation> postConversationsEmailInboundmessagesAsync(PostConversationsEmailInboundmessagesRequest request, final AsyncApiCallback<EmailConversation> callback) {
+    try {
+      final SettableFuture<EmailConversation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailConversation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmailConversation>> postConversationsEmailInboundmessagesAsync(ApiRequest<InboundMessageRequest> request, final AsyncApiCallback<ApiResponse<EmailConversation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmailConversation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmailConversation>() {}, new AsyncApiCallback<ApiResponse<EmailConversation>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmailConversation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmailConversation> response = (ApiResponse<EmailConversation>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
