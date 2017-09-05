@@ -34,6 +34,7 @@ title: SocialConversationNotificationSocialMediaParticipant
 | **externalOrganization** | [**SocialConversationNotificationUriReference**](SocialConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **socialMediaId** | **String** |  |  [optional] |
 | **socialMediaHub** | **String** |  |  [optional] |
 | **socialUserName** | **String** |  |  [optional] |

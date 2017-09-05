@@ -34,6 +34,7 @@ title: CallConversationNotificationCallMediaParticipant
 | **externalOrganization** | [**CallConversationNotificationUriReference**](CallConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **muted** | **Boolean** |  |  [optional] |
 | **confined** | **Boolean** |  |  [optional] |
 | **recording** | **Boolean** |  |  [optional] |

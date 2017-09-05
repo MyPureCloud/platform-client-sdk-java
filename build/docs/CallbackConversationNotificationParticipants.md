@@ -34,6 +34,7 @@ title: CallbackConversationNotificationParticipants
 | **externalOrganization** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **outboundPreview** | [**ConversationNotificationDialerPreview**](ConversationNotificationDialerPreview.html) |  |  [optional] |
 | **voicemail** | [**ConversationNotificationVoicemail**](ConversationNotificationVoicemail.html) |  |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |

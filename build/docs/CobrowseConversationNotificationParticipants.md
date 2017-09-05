@@ -34,6 +34,7 @@ title: CobrowseConversationNotificationParticipants
 | **externalOrganization** | [**CobrowseConversationNotificationUriReference**](CobrowseConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **cobrowseSessionId** | **String** |  |  [optional] |
 | **cobrowseRole** | **String** |  |  [optional] |
 | **viewerUrl** | **String** |  |  [optional] |

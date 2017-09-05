@@ -62,6 +62,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
@@ -906,6 +907,82 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOutboundContactlistfilter(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete multiple contact lists.
+   * 
+   * @param id contact list id(s) to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlists(List<String> id) throws IOException, ApiException {
+     deleteOutboundContactlists(createDeleteOutboundContactlistsRequest(id));
+  }
+
+  /**
+   * Delete multiple contact lists.
+   * 
+   * @param id contact list id(s) to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlistsWithHttpInfo(List<String> id) throws IOException {
+    return deleteOutboundContactlists(createDeleteOutboundContactlistsRequest(id).withHttpInfo());
+  }
+
+  private DeleteOutboundContactlistsRequest createDeleteOutboundContactlistsRequest(List<String> id) {
+    return DeleteOutboundContactlistsRequest.builder()
+            .withId(id)
+    
+            .build();
+  }
+
+  /**
+   * Delete multiple contact lists.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOutboundContactlists(DeleteOutboundContactlistsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete multiple contact lists.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOutboundContactlists(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

@@ -223,14 +223,14 @@ public class AggregationQuery  implements Serializable {
 
   
   /**
-   * Sets the time zone for the query interval, defaults to UTC. Time zones are represented as an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London
+   * Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
   public AggregationQuery timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Sets the time zone for the query interval, defaults to UTC. Time zones are represented as an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London")
+  @ApiModelProperty(example = "null", value = "Sets the time zone for the query interval, defaults to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;

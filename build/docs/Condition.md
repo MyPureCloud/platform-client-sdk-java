@@ -65,6 +65,7 @@ title: Condition
 | ENDS_WITH | &quot;ENDS_WITH&quot; |
 | BEFORE | &quot;BEFORE&quot; |
 | AFTER | &quot;AFTER&quot; |
+| IN | &quot;IN&quot; |
 
 
 <a name="PropertyTypeEnum"></a>

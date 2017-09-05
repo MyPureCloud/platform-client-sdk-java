@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationRecording**](RecordingApi.html#getConversationRecording) | Gets a specific recording. |
 | [**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | Get annotation |
 | [**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | Get annotations for recording |
+| [**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | Get recording metadata for a conversation. Does not return playable media. |
+| [**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | Get metadata for a specific recording. Does not return playable media. |
 | [**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | Get all of a Conversation&#39;s Recordings. |
 | [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | Gets a single orphan recording |
 | [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
@@ -413,6 +415,110 @@ try {
 ### Return type
 
 [**List&lt;Annotation&gt;**](Annotation.html)
+
+<a name="getConversationRecordingmetadata"></a>
+
+# **getConversationRecordingmetadata**
+
+> [List&lt;Recording&gt;](Recording.html) getConversationRecordingmetadata(conversationId)
+
+Get recording metadata for a conversation. Does not return playable media.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RecordingApi apiInstance = new RecordingApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+try {
+    List<Recording> result = apiInstance.getConversationRecordingmetadata(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getConversationRecordingmetadata");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;Recording&gt;**](Recording.html)
+
+<a name="getConversationRecordingmetadataRecordingId"></a>
+
+# **getConversationRecordingmetadataRecordingId**
+
+> [Recording](Recording.html) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+
+Get metadata for a specific recording. Does not return playable media.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RecordingApi apiInstance = new RecordingApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+String recordingId = "recordingId_example"; // String | Recording ID
+try {
+    Recording result = apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getConversationRecordingmetadataRecordingId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | |
+| **recordingId** | **String**| Recording ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Recording**](Recording.html)
 
 <a name="getConversationRecordings"></a>
 

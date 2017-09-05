@@ -175,6 +175,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
   private VideoConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
+  private String screenRecordingState = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
@@ -626,6 +627,23 @@ public class VideoConversationNotificationParticipants  implements Serializable 
   
   /**
    **/
+  public VideoConversationNotificationParticipants screenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public String getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public VideoConversationNotificationParticipants audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -745,6 +763,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
         Objects.equals(this.externalOrganization, videoConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, videoConversationNotificationParticipants.wrapup) &&
         Objects.equals(this.peer, videoConversationNotificationParticipants.peer) &&
+        Objects.equals(this.screenRecordingState, videoConversationNotificationParticipants.screenRecordingState) &&
         Objects.equals(this.audioMuted, videoConversationNotificationParticipants.audioMuted) &&
         Objects.equals(this.videoMuted, videoConversationNotificationParticipants.videoMuted) &&
         Objects.equals(this.sharingScreen, videoConversationNotificationParticipants.sharingScreen) &&
@@ -754,7 +773,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, audioMuted, videoMuted, sharingScreen, peerCount, context);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, audioMuted, videoMuted, sharingScreen, peerCount, context);
   }
 
   @Override
@@ -788,6 +807,7 @@ public class VideoConversationNotificationParticipants  implements Serializable 
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");

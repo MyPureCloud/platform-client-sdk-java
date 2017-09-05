@@ -108,7 +108,8 @@ public class InteractionStatsAlert  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("voice"),
     CHAT("chat"),
-    EMAIL("email");
+    EMAIL("email"),
+    CALLBACK("callback");
 
     private String value;
 

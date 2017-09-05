@@ -34,6 +34,7 @@ title: ScreenShareConversationNotificationParticipants
 | **externalOrganization** | [**ScreenShareConversationNotificationUriReference**](ScreenShareConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **context** | **String** |  |  [optional] |
 | **peerCount** | **Integer** |  |  [optional] |
 | **sharing** | **Boolean** |  |  [optional] |

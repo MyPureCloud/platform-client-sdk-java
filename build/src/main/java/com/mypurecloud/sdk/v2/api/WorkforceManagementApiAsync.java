@@ -20,7 +20,7 @@ import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
-import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
@@ -529,13 +529,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<ManagementUnit>> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, final AsyncApiCallback<List<ManagementUnit>> callback) {
+  public Future<ManagementUnitListing> getWorkforcemanagementManagementunitsAsync(GetWorkforcemanagementManagementunitsRequest request, final AsyncApiCallback<ManagementUnitListing> callback) {
     try {
-      final SettableFuture<List<ManagementUnit>> future = SettableFuture.create();
+      final SettableFuture<ManagementUnitListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {}, new AsyncApiCallback<ApiResponse<List<ManagementUnit>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitListing>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<ManagementUnit>> response) {
+        public void onCompleted(ApiResponse<ManagementUnitListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -563,13 +563,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<ManagementUnit>>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<ManagementUnit>>> callback) {
+  public Future<ApiResponse<ManagementUnitListing>> getWorkforcemanagementManagementunitsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ManagementUnitListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<ManagementUnit>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ManagementUnitListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<ManagementUnit>>() {}, new AsyncApiCallback<ApiResponse<List<ManagementUnit>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitListing>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<ManagementUnit>> response) {
+        public void onCompleted(ApiResponse<ManagementUnitListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -577,7 +577,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)exception;
+            ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -585,7 +585,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

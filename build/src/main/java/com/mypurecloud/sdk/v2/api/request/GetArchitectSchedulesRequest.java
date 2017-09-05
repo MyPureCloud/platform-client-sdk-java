@@ -110,6 +110,21 @@ public class GetArchitectSchedulesRequest {
 	}
 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetArchitectSchedulesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -140,6 +155,8 @@ public class GetArchitectSchedulesRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("name", "", name)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -179,6 +196,11 @@ public class GetArchitectSchedulesRequest {
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

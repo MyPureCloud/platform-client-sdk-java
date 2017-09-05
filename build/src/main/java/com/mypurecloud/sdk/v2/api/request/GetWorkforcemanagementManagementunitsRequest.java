@@ -25,7 +25,7 @@ import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
-import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
@@ -37,21 +37,6 @@ import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class GetWorkforcemanagementManagementunitsRequest {
     
-	private String selector;
-	public String getSelector() {
-		return this.selector;
-	}
-
-	public void setSelector(String selector) {
-		this.selector = selector;
-	}
-
-	public GetWorkforcemanagementManagementunitsRequest withSelector(String selector) {
-	    this.setSelector(selector);
-	    return this;
-	}
-
-	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -105,8 +90,6 @@ public class GetWorkforcemanagementManagementunitsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits")
-                .withQueryParameters("selector", "", selector)
-        
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
@@ -131,11 +114,6 @@ public class GetWorkforcemanagementManagementunitsRequest {
 			request = new GetWorkforcemanagementManagementunitsRequest();
 		}
 
-		
-		public Builder withSelector(String selector) {
-			request.setSelector(selector);
-			return this;
-		}
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);

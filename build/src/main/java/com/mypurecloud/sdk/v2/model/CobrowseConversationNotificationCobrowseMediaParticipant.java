@@ -176,6 +176,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   private CobrowseConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
+  private String screenRecordingState = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
@@ -627,6 +628,23 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   
   /**
    **/
+  public CobrowseConversationNotificationCobrowseMediaParticipant screenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public String getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public CobrowseConversationNotificationCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
@@ -746,6 +764,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
         Objects.equals(this.externalOrganization, cobrowseConversationNotificationCobrowseMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, cobrowseConversationNotificationCobrowseMediaParticipant.wrapup) &&
         Objects.equals(this.peer, cobrowseConversationNotificationCobrowseMediaParticipant.peer) &&
+        Objects.equals(this.screenRecordingState, cobrowseConversationNotificationCobrowseMediaParticipant.screenRecordingState) &&
         Objects.equals(this.cobrowseSessionId, cobrowseConversationNotificationCobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseConversationNotificationCobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.viewerUrl, cobrowseConversationNotificationCobrowseMediaParticipant.viewerUrl) &&
@@ -755,7 +774,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -789,6 +808,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");

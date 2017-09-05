@@ -40,6 +40,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyReq
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingmetadataRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingmetadataRecordingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
@@ -607,6 +609,158 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<Recording>> getConversationRecordingmetadataAsync(GetConversationRecordingmetadataRequest request, final AsyncApiCallback<List<Recording>> callback) {
+    try {
+      final SettableFuture<List<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Recording>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<Recording>>> getConversationRecordingmetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<Recording>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Recording>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Recording> getConversationRecordingmetadataRecordingIdAsync(GetConversationRecordingmetadataRecordingIdRequest request, final AsyncApiCallback<Recording> callback) {
+    try {
+      final SettableFuture<Recording> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Recording>> getConversationRecordingmetadataRecordingIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recording> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

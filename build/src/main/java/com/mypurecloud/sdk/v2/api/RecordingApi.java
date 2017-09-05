@@ -37,6 +37,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyReq
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingmetadataRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingmetadataRecordingIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
@@ -658,6 +660,168 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<Annotation>> response = (ApiResponse<List<Annotation>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @return List<Recording>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Recording> getConversationRecordingmetadata(String conversationId) throws IOException, ApiException {
+    return  getConversationRecordingmetadata(createGetConversationRecordingmetadataRequest(conversationId));
+  }
+
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @return List<Recording>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Recording>> getConversationRecordingmetadataWithHttpInfo(String conversationId) throws IOException {
+    return getConversationRecordingmetadata(createGetConversationRecordingmetadataRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationRecordingmetadataRequest createGetConversationRecordingmetadataRequest(String conversationId) {
+    return GetConversationRecordingmetadataRequest.builder()
+            .withConversationId(conversationId)
+    
+            .build();
+  }
+
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param request The request object
+   * @return List<Recording>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Recording> getConversationRecordingmetadata(GetConversationRecordingmetadataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Recording>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Recording>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get recording metadata for a conversation. Does not return playable media.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Recording>> getConversationRecordingmetadata(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Recording>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param recordingId Recording ID (required)
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recording getConversationRecordingmetadataRecordingId(String conversationId, String recordingId) throws IOException, ApiException {
+    return  getConversationRecordingmetadataRecordingId(createGetConversationRecordingmetadataRecordingIdRequest(conversationId, recordingId));
+  }
+
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param conversationId Conversation ID (required)
+   * @param recordingId Recording ID (required)
+   * @return Recording
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recording> getConversationRecordingmetadataRecordingIdWithHttpInfo(String conversationId, String recordingId) throws IOException {
+    return getConversationRecordingmetadataRecordingId(createGetConversationRecordingmetadataRecordingIdRequest(conversationId, recordingId).withHttpInfo());
+  }
+
+  private GetConversationRecordingmetadataRecordingIdRequest createGetConversationRecordingmetadataRecordingIdRequest(String conversationId, String recordingId) {
+    return GetConversationRecordingmetadataRecordingIdRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withRecordingId(recordingId)
+    
+            .build();
+  }
+
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param request The request object
+   * @return Recording
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recording getConversationRecordingmetadataRecordingId(GetConversationRecordingmetadataRecordingIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get metadata for a specific recording. Does not return playable media.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recording> getConversationRecordingmetadataRecordingId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

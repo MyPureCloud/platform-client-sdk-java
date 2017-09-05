@@ -175,6 +175,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   private ChatConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
+  private String screenRecordingState = null;
   private String roomId = null;
 
   
@@ -622,6 +623,23 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   
   /**
    **/
+  public ChatConversationNotificationChatMediaParticipant screenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public String getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public ChatConversationNotificationChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -673,12 +691,13 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
         Objects.equals(this.externalOrganization, chatConversationNotificationChatMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, chatConversationNotificationChatMediaParticipant.wrapup) &&
         Objects.equals(this.peer, chatConversationNotificationChatMediaParticipant.peer) &&
+        Objects.equals(this.screenRecordingState, chatConversationNotificationChatMediaParticipant.screenRecordingState) &&
         Objects.equals(this.roomId, chatConversationNotificationChatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, roomId);
   }
 
   @Override
@@ -712,6 +731,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

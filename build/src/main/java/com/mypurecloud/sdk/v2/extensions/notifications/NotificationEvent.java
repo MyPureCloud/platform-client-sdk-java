@@ -4,6 +4,7 @@ package com.mypurecloud.sdk.v2.extensions.notifications;
 public class NotificationEvent<T> {
     private String topicName;
     private String version;
+    private String eventBodyRaw;
     private T eventBody;
     private Metadata metadata;
 
@@ -13,6 +14,14 @@ public class NotificationEvent<T> {
 
     public String getVersion() {
         return version;
+    }
+
+    public String getEventBodyRaw() {
+        return eventBodyRaw;
+    }
+
+    protected void setEventBodyRaw(String eventBodyRaw) {
+        this.eventBodyRaw = eventBodyRaw;
     }
 
     public T getEventBody() {

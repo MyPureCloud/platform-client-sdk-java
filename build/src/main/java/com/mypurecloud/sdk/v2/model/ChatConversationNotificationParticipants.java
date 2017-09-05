@@ -175,6 +175,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
   private ChatConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
+  private String screenRecordingState = null;
   private String roomId = null;
 
   
@@ -622,6 +623,23 @@ public class ChatConversationNotificationParticipants  implements Serializable {
   
   /**
    **/
+  public ChatConversationNotificationParticipants screenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public String getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public ChatConversationNotificationParticipants roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -673,12 +691,13 @@ public class ChatConversationNotificationParticipants  implements Serializable {
         Objects.equals(this.externalOrganization, chatConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, chatConversationNotificationParticipants.wrapup) &&
         Objects.equals(this.peer, chatConversationNotificationParticipants.peer) &&
+        Objects.equals(this.screenRecordingState, chatConversationNotificationParticipants.screenRecordingState) &&
         Objects.equals(this.roomId, chatConversationNotificationParticipants.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, roomId);
   }
 
   @Override
@@ -712,6 +731,7 @@ public class ChatConversationNotificationParticipants  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

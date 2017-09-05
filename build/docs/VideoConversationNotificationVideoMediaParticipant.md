@@ -34,6 +34,7 @@ title: VideoConversationNotificationVideoMediaParticipant
 | **externalOrganization** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **audioMuted** | **Boolean** |  |  [optional] |
 | **videoMuted** | **Boolean** |  |  [optional] |
 | **sharingScreen** | **Boolean** |  |  [optional] |

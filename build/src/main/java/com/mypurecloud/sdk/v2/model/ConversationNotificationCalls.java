@@ -204,6 +204,7 @@ public class ConversationNotificationCalls  implements Serializable {
   private Date disconnectedTime = null;
   private List<ConversationNotificationDisconnectReasons> disconnectReasons = new ArrayList<ConversationNotificationDisconnectReasons>();
   private ConversationNotificationFaxStatus faxStatus = null;
+  private String uuiData = null;
   private Object additionalProperties = null;
 
   
@@ -566,6 +567,23 @@ public class ConversationNotificationCalls  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationCalls uuiData(String uuiData) {
+    this.uuiData = uuiData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("uuiData")
+  public String getUuiData() {
+    return uuiData;
+  }
+  public void setUuiData(String uuiData) {
+    this.uuiData = uuiData;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationCalls additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -612,12 +630,13 @@ public class ConversationNotificationCalls  implements Serializable {
         Objects.equals(this.disconnectedTime, conversationNotificationCalls.disconnectedTime) &&
         Objects.equals(this.disconnectReasons, conversationNotificationCalls.disconnectReasons) &&
         Objects.equals(this.faxStatus, conversationNotificationCalls.faxStatus) &&
+        Objects.equals(this.uuiData, conversationNotificationCalls.uuiData) &&
         Objects.equals(this.additionalProperties, conversationNotificationCalls.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, additionalProperties);
   }
 
   @Override
@@ -646,6 +665,7 @@ public class ConversationNotificationCalls  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
+    sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

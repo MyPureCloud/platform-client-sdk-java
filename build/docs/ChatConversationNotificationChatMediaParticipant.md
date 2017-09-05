@@ -34,6 +34,7 @@ title: ChatConversationNotificationChatMediaParticipant
 | **externalOrganization** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
+| **screenRecordingState** | **String** |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
 {: class="table table-striped"}
 

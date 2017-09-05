@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
 import com.mypurecloud.sdk.v2.model.UnreadMetric;
@@ -24,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAlertingAlertsActiveRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertsUnreadRequest;
@@ -193,6 +195,82 @@ public class AlertingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActiveAlertCount> getAlertingAlertsActiveAsync(GetAlertingAlertsActiveRequest request, final AsyncApiCallback<ActiveAlertCount> callback) {
+    try {
+      final SettableFuture<ActiveAlertCount> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActiveAlertCount>() {}, new AsyncApiCallback<ApiResponse<ActiveAlertCount>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActiveAlertCount> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActiveAlertCount>> getAlertingAlertsActiveAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActiveAlertCount>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActiveAlertCount>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActiveAlertCount>() {}, new AsyncApiCallback<ApiResponse<ActiveAlertCount>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActiveAlertCount> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActiveAlertCount> response = (ApiResponse<ActiveAlertCount>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActiveAlertCount> response = (ApiResponse<ActiveAlertCount>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

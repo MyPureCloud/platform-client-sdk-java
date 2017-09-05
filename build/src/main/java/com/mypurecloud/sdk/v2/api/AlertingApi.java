@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
 import com.mypurecloud.sdk.v2.model.UnreadMetric;
@@ -21,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.UnreadStatus;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAlertingInteractionstatsRuleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAlertingAlertsActiveRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAlertingInteractionstatsAlertsUnreadRequest;
@@ -196,6 +198,81 @@ public class AlertingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @return ActiveAlertCount
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActiveAlertCount getAlertingAlertsActive() throws IOException, ApiException {
+    return  getAlertingAlertsActive(createGetAlertingAlertsActiveRequest());
+  }
+
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @return ActiveAlertCount
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActiveAlertCount> getAlertingAlertsActiveWithHttpInfo() throws IOException {
+    return getAlertingAlertsActive(createGetAlertingAlertsActiveRequest().withHttpInfo());
+  }
+
+  private GetAlertingAlertsActiveRequest createGetAlertingAlertsActiveRequest() {
+    return GetAlertingAlertsActiveRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @param request The request object
+   * @return ActiveAlertCount
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActiveAlertCount getAlertingAlertsActive(GetAlertingAlertsActiveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActiveAlertCount> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActiveAlertCount>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets active alert count for a user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActiveAlertCount> getAlertingAlertsActive(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActiveAlertCount>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActiveAlertCount> response = (ApiResponse<ActiveAlertCount>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActiveAlertCount> response = (ApiResponse<ActiveAlertCount>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

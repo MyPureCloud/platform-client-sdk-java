@@ -36,7 +36,7 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
             SocketAddress address = proxy.address();
             if (address instanceof InetSocketAddress) {
                 InetSocketAddress inetAddress = (InetSocketAddress)address;
-                HttpHost proxyHost = new HttpHost(inetAddress.getAddress());
+                HttpHost proxyHost = new HttpHost(inetAddress.getAddress(), inetAddress.getPort());
                 requestBuilder.setProxy(proxyHost);
             }
         }

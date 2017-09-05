@@ -36,6 +36,7 @@ title: Flow
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUNDCALL | &quot;INBOUNDCALL&quot; |
 | INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; |
+| INBOUNDSHORTMESSAGE | &quot;INBOUNDSHORTMESSAGE&quot; |
 | INQUEUECALL | &quot;INQUEUECALL&quot; |
 | OUTBOUNDCALL | &quot;OUTBOUNDCALL&quot; |
 | SECURECALL | &quot;SECURECALL&quot; |

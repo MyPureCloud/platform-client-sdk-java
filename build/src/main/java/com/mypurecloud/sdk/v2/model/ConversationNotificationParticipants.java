@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationCallbacks;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationCalls;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationChats;
@@ -46,6 +47,44 @@ public class ConversationNotificationParticipants  implements Serializable {
   private Integer wrapupTimeoutMs = null;
   private ConversationNotificationWrapup wrapup = null;
   private String monitoredParticipantId = null;
+
+  /**
+   * Gets or Sets screenRecordingState
+   */
+  public enum ScreenRecordingStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REQUESTED("REQUESTED"),
+    ACTIVE("ACTIVE"),
+    PAUSED("PAUSED"),
+    STOPPED("STOPPED"),
+    ERROR("ERROR");
+
+    private String value;
+
+    ScreenRecordingStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ScreenRecordingStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ScreenRecordingStateEnum value : ScreenRecordingStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ScreenRecordingStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ScreenRecordingStateEnum screenRecordingState = null;
   private Map<String, String> attributes = new HashMap<String, String>();
   private List<ConversationNotificationCalls> calls = new ArrayList<ConversationNotificationCalls>();
   private List<ConversationNotificationCallbacks> callbacks = new ArrayList<ConversationNotificationCallbacks>();
@@ -366,6 +405,23 @@ public class ConversationNotificationParticipants  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationParticipants screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public ScreenRecordingStateEnum getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationParticipants attributes(Map<String, String> attributes) {
     this.attributes = attributes;
     return this;
@@ -562,6 +618,7 @@ public class ConversationNotificationParticipants  implements Serializable {
         Objects.equals(this.wrapupTimeoutMs, conversationNotificationParticipants.wrapupTimeoutMs) &&
         Objects.equals(this.wrapup, conversationNotificationParticipants.wrapup) &&
         Objects.equals(this.monitoredParticipantId, conversationNotificationParticipants.monitoredParticipantId) &&
+        Objects.equals(this.screenRecordingState, conversationNotificationParticipants.screenRecordingState) &&
         Objects.equals(this.attributes, conversationNotificationParticipants.attributes) &&
         Objects.equals(this.calls, conversationNotificationParticipants.calls) &&
         Objects.equals(this.callbacks, conversationNotificationParticipants.callbacks) &&
@@ -576,7 +633,7 @@ public class ConversationNotificationParticipants  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -602,6 +659,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    callbacks: ").append(toIndentedString(callbacks)).append("\n");

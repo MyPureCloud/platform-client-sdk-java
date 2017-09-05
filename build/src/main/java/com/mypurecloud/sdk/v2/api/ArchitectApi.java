@@ -1011,7 +1011,7 @@ public class ArchitectApi {
    * 
    * @param id Consuming object ID (required)
    * @param version Consuming object version (required)
-   * @param objectType Consuming object type (required)
+   * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
    * @param resourceType Types of consumed resources to show (optional)
    * @return ConsumedResourcesEntityListing
    * @throws ApiException if the request fails on the server
@@ -1026,7 +1026,7 @@ public class ArchitectApi {
    * 
    * @param id Consuming object ID (required)
    * @param version Consuming object version (required)
-   * @param objectType Consuming object type (required)
+   * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
    * @param resourceType Types of consumed resources to show (optional)
    * @return ConsumedResourcesEntityListing
    * @throws IOException if the request fails to be processed
@@ -1101,8 +1101,8 @@ public class ArchitectApi {
    * Get resources that consume a given Dependency Tracking object
    * 
    * @param id Consumed object ID (required)
-   * @param objectType Consumed object type (only versioned object types are valid) (required)
-   * @param resourceType Types of consuming resources to show (optional)
+   * @param objectType Consumed object type (required)
+   * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
    * @return ConsumingResourcesEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1115,8 +1115,8 @@ public class ArchitectApi {
    * Get resources that consume a given Dependency Tracking object
    * 
    * @param id Consumed object ID (required)
-   * @param objectType Consumed object type (only versioned object types are valid) (required)
-   * @param resourceType Types of consuming resources to show (optional)
+   * @param objectType Consumed object type (required)
+   * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
    * @return ConsumingResourcesEntityListing
    * @throws IOException if the request fails to be processed
    */
@@ -1737,12 +1737,13 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the IVR to filter by. (optional)
    * @return IVREntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder));
+  public IVREntityListing getArchitectIvrs(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
+    return  getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name));
   }
 
   /**
@@ -1752,14 +1753,15 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the IVR to filter by. (optional)
    * @return IVREntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
-    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<IVREntityListing> getArchitectIvrsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
+    return getArchitectIvrs(createGetArchitectIvrsRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
   }
 
-  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+  private GetArchitectIvrsRequest createGetArchitectIvrsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
     return GetArchitectIvrsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -1768,6 +1770,8 @@ public class ArchitectApi {
             .withSortBy(sortBy)
     
             .withSortOrder(sortOrder)
+    
+            .withName(name)
     
             .build();
   }
@@ -2330,12 +2334,13 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Schedule Group to filter by. (optional)
    * @return ScheduleGroupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScheduleGroupEntityListing getArchitectSchedulegroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder));
+  public ScheduleGroupEntityListing getArchitectSchedulegroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
+    return  getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name));
   }
 
   /**
@@ -2345,14 +2350,15 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Schedule Group to filter by. (optional)
    * @return ScheduleGroupEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
-    return getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
+    return getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
   }
 
-  private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+  private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
     return GetArchitectSchedulegroupsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -2361,6 +2367,8 @@ public class ArchitectApi {
             .withSortBy(sortBy)
     
             .withSortOrder(sortOrder)
+    
+            .withName(name)
     
             .build();
   }
@@ -2421,12 +2429,13 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Schedule to filter by. (optional)
    * @return ScheduleEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScheduleEntityListing getArchitectSchedules(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder));
+  public ScheduleEntityListing getArchitectSchedules(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
+    return  getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder, name));
   }
 
   /**
@@ -2436,14 +2445,15 @@ public class ArchitectApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Schedule to filter by. (optional)
    * @return ScheduleEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScheduleEntityListing> getArchitectSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
-    return getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ScheduleEntityListing> getArchitectSchedulesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
+    return getArchitectSchedules(createGetArchitectSchedulesRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
   }
 
-  private GetArchitectSchedulesRequest createGetArchitectSchedulesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+  private GetArchitectSchedulesRequest createGetArchitectSchedulesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
     return GetArchitectSchedulesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -2452,6 +2462,8 @@ public class ArchitectApi {
             .withSortBy(sortBy)
     
             .withSortOrder(sortOrder)
+    
+            .withName(name)
     
             .build();
   }
@@ -2955,15 +2967,15 @@ public class ArchitectApi {
    * @param historyId History ID (generated history) (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to desc)
-   * @param action Flow actions (optional)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
    * @return HistoryListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public HistoryListing getFlowHistoryHistoryId(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) throws IOException, ApiException {
-    return  getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action));
+  public HistoryListing getFlowHistoryHistoryId(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException, ApiException {
+    return  getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action));
   }
 
   /**
@@ -2973,17 +2985,17 @@ public class ArchitectApi {
    * @param historyId History ID (generated history) (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param sortBy Sort by (optional, default to timestamp)
    * @param sortOrder Sort order (optional, default to desc)
-   * @param action Flow actions (optional)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
    * @return HistoryListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<HistoryListing> getFlowHistoryHistoryIdWithHttpInfo(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) throws IOException {
-    return getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action).withHttpInfo());
+  public ApiResponse<HistoryListing> getFlowHistoryHistoryIdWithHttpInfo(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException {
+    return getFlowHistoryHistoryId(createGetFlowHistoryHistoryIdRequest(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action).withHttpInfo());
   }
 
-  private GetFlowHistoryHistoryIdRequest createGetFlowHistoryHistoryIdRequest(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> action) {
+  private GetFlowHistoryHistoryIdRequest createGetFlowHistoryHistoryIdRequest(String flowId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
     return GetFlowHistoryHistoryIdRequest.builder()
             .withFlowId(flowId)
     
@@ -2993,9 +3005,9 @@ public class ArchitectApi {
     
             .withPageSize(pageSize)
     
-            .withSortBy(sortBy)
-    
             .withSortOrder(sortOrder)
+    
+            .withSortBy(sortBy)
     
             .withAction(action)
     

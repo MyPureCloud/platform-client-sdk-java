@@ -59,7 +59,7 @@ public class ManagementUnit  implements Serializable {
     }
   }
   private StartDayOfWeekEnum startDayOfWeek = null;
-  private String timezone = null;
+  private String timeZone = null;
   private Integer version = null;
   private Date dateModified = null;
   private String selfUri = null;
@@ -110,18 +110,18 @@ public class ManagementUnit  implements Serializable {
   /**
    * The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)
    **/
-  public ManagementUnit timezone(String timezone) {
-    this.timezone = timezone;
+  public ManagementUnit timeZone(String timeZone) {
+    this.timeZone = timeZone;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database)")
-  @JsonProperty("timezone")
-  public String getTimezone() {
-    return timezone;
+  @JsonProperty("timeZone")
+  public String getTimeZone() {
+    return timeZone;
   }
-  public void setTimezone(String timezone) {
-    this.timezone = timezone;
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
   }
 
   
@@ -181,7 +181,7 @@ public class ManagementUnit  implements Serializable {
     return Objects.equals(this.id, managementUnit.id) &&
         Objects.equals(this.name, managementUnit.name) &&
         Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
-        Objects.equals(this.timezone, managementUnit.timezone) &&
+        Objects.equals(this.timeZone, managementUnit.timeZone) &&
         Objects.equals(this.version, managementUnit.version) &&
         Objects.equals(this.dateModified, managementUnit.dateModified) &&
         Objects.equals(this.selfUri, managementUnit.selfUri);
@@ -189,7 +189,7 @@ public class ManagementUnit  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startDayOfWeek, timezone, version, dateModified, selfUri);
+    return Objects.hash(id, name, startDayOfWeek, timeZone, version, dateModified, selfUri);
   }
 
   @Override
@@ -200,7 +200,7 @@ public class ManagementUnit  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
-    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

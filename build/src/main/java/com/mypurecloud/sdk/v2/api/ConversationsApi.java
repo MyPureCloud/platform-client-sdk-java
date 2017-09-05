@@ -5203,7 +5203,7 @@ public class ConversationsApi {
 
   
   /**
-   * Add a new call to a conversation
+   * Place a new call as part of a callback conversation.
    * 
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
@@ -5216,7 +5216,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add a new call to a conversation
+   * Place a new call as part of a callback conversation.
    * 
    * @param conversationId conversationId (required)
    * @param body Conversation (required)
@@ -5237,7 +5237,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add a new call to a conversation
+   * Place a new call as part of a callback conversation.
    * 
    * @param request The request object
    * @return Conversation
@@ -5256,7 +5256,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Add a new call to a conversation
+   * Place a new call as part of a callback conversation.
    * 
    * @param request The request object
    * @return the response

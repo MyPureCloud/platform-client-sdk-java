@@ -176,6 +176,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
   private CallConversationNotificationUriReference externalOrganization = null;
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
+  private String screenRecordingState = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -668,6 +669,23 @@ public class CallConversationNotificationParticipants  implements Serializable {
   
   /**
    **/
+  public CallConversationNotificationParticipants screenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("screenRecordingState")
+  public String getScreenRecordingState() {
+    return screenRecordingState;
+  }
+  public void setScreenRecordingState(String screenRecordingState) {
+    this.screenRecordingState = screenRecordingState;
+  }
+
+  
+  /**
+   **/
   public CallConversationNotificationParticipants muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -889,6 +907,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
         Objects.equals(this.externalOrganization, callConversationNotificationParticipants.externalOrganization) &&
         Objects.equals(this.wrapup, callConversationNotificationParticipants.wrapup) &&
         Objects.equals(this.peer, callConversationNotificationParticipants.peer) &&
+        Objects.equals(this.screenRecordingState, callConversationNotificationParticipants.screenRecordingState) &&
         Objects.equals(this.muted, callConversationNotificationParticipants.muted) &&
         Objects.equals(this.confined, callConversationNotificationParticipants.confined) &&
         Objects.equals(this.recording, callConversationNotificationParticipants.recording) &&
@@ -904,7 +923,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -938,6 +957,7 @@ public class CallConversationNotificationParticipants  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

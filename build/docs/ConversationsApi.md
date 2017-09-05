@@ -68,7 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
 | [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
-| [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Add a new call to a conversation |
+| [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -3316,7 +3316,7 @@ null (empty response body)
 
 > [Conversation](Conversation.html) postConversationsCall(conversationId, body)
 
-Add a new call to a conversation
+Place a new call as part of a callback conversation.
 
 
 

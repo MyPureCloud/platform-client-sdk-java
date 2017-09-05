@@ -582,11 +582,11 @@ try {
 | **name** | **String**| Object name to search for | |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **consumedResources** | **Boolean**| Include resources each result item consumes | [optional] |
 | **consumingResources** | **Boolean**| Include resources that consume each result item | [optional] |
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
-| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -671,7 +671,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 ArchitectApi apiInstance = new ArchitectApi();
 String id = "id_example"; // String | Consuming object ID
 String version = "version_example"; // String | Consuming object version
-String objectType = "objectType_example"; // String | Consuming object type
+String objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
 List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consumed resources to show
 try {
     ConsumedResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType);
@@ -689,8 +689,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Consuming object ID | |
 | **version** | **String**| Consuming object version | |
-| **objectType** | **String**| Consuming object type |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
-| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to show | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | **String**| Consuming object type.  Only versioned types are allowed here. |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to show | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -727,8 +727,8 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String id = "id_example"; // String | Consumed object ID
-String objectType = "objectType_example"; // String | Consumed object type (only versioned object types are valid)
-List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show
+String objectType = "objectType_example"; // String | Consumed object type
+List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show.  Only versioned types are allowed here.
 try {
     ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType);
     System.out.println(result);
@@ -744,8 +744,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Consumed object ID | |
-| **objectType** | **String**| Consumed object type (only versioned object types are valid) |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
-| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | **String**| Consumed object type |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show.  Only versioned types are allowed here. | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -803,10 +803,10 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **String**| Name to search for | [optional] |
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **flowFilter** | **String**| Show only checkedIn or published flows | [optional]<br />**Values**: checkedIn, published |
 | **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -867,11 +867,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **String**| Object ID | |
 | **version** | **String**| Object version | [optional] |
-| **objectType** | **String**| Object type | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | **String**| Object type | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **consumedResources** | **Boolean**| Include resources this item consumes | [optional] |
 | **consumingResources** | **Boolean**| Include resources that consume this item | [optional] |
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
-| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -1032,9 +1032,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **String**| Name to search for | [optional] |
-| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **objectType** | [**List&lt;String&gt;**](String.html)| Object type(s) to search for | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **consumedResources** | **Boolean**| Return consumed resources? | [optional] [default to false] |
-| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
+| **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Resource type(s) to return | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, EMAILROUTE, GROUP, INBOUNDCALLFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGE, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, OUTBOUNDCALLFLOW, QUEUE, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, USER, USERPROMPT, VOICEXML, WORKFLOW |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1098,7 +1098,7 @@ try {
 
 # **getArchitectIvrs**
 
-> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder)
+> [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get IVR configs.
 
@@ -1127,8 +1127,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
+String name = "name_example"; // String | Name of the IVR to filter by.
 try {
-    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder);
+    IVREntityListing result = apiInstance.getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectIvrs");
@@ -1145,6 +1146,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **name** | **String**| Name of the IVR to filter by. | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1475,7 +1477,7 @@ try {
 
 # **getArchitectSchedulegroups**
 
-> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder)
+> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of schedule groups.
 
@@ -1504,8 +1506,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
+String name = "name_example"; // String | Name of the Schedule Group to filter by.
 try {
-    ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder);
+    ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSchedulegroups");
@@ -1522,6 +1525,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **name** | **String**| Name of the Schedule Group to filter by. | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1532,7 +1536,7 @@ try {
 
 # **getArchitectSchedules**
 
-> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder)
+> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of schedules.
 
@@ -1561,8 +1565,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
+String name = "name_example"; // String | Name of the Schedule to filter by.
 try {
-    ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder);
+    ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSchedules");
@@ -1579,6 +1584,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **name** | **String**| Name of the Schedule to filter by. | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1868,7 +1874,7 @@ try {
 
 # **getFlowHistoryHistoryId**
 
-> [HistoryListing](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action)
+> [HistoryListing](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated flow history
 
@@ -1897,11 +1903,11 @@ String flowId = "flowId_example"; // String | Flow ID
 String historyId = "historyId_example"; // String | History ID (generated history)
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-String sortBy = "timestamp"; // String | Sort by
 String sortOrder = "desc"; // String | Sort order
-List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions
+String sortBy = "timestamp"; // String | Sort by
+List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
 try {
-    HistoryListing result = apiInstance.getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortBy, sortOrder, action);
+    HistoryListing result = apiInstance.getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowHistoryHistoryId");
@@ -1918,9 +1924,9 @@ try {
 | **historyId** | **String**| History ID (generated history) | |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
 | **sortOrder** | **String**| Sort order | [optional] [default to desc] |
-| **action** | [**List&lt;String&gt;**](String.html)| Flow actions | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
 {: class="table table-striped"}
 
 ### Return type
@@ -2205,7 +2211,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Type | |
+| **type** | **String**| Type |<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to id] |

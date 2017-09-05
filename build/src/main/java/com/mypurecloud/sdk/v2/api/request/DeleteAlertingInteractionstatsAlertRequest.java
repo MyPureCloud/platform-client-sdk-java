@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActiveAlertCount;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlert;
 import com.mypurecloud.sdk.v2.model.InteractionStatsAlertContainer;
 import com.mypurecloud.sdk.v2.model.UnreadMetric;

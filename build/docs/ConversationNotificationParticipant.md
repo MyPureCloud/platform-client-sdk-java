@@ -26,6 +26,7 @@ title: ConversationNotificationParticipant
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **monitoredParticipantId** | **String** |  |  [optional] |
+| **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum) |  |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **calls** | [**List&lt;ConversationNotificationCalls&gt;**](ConversationNotificationCalls.html) |  |  [optional] |
 | **callbacks** | [**List&lt;ConversationNotificationCallbacks&gt;**](ConversationNotificationCallbacks.html) |  |  [optional] |
@@ -37,6 +38,20 @@ title: ConversationNotificationParticipant
 | **videos** | [**List&lt;ConversationNotificationVideos&gt;**](ConversationNotificationVideos.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
+
+
+<a name="ScreenRecordingStateEnum"></a>
+
+## Enum: ScreenRecordingStateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| REQUESTED | &quot;REQUESTED&quot; |
+| ACTIVE | &quot;ACTIVE&quot; |
+| PAUSED | &quot;PAUSED&quot; |
+| STOPPED | &quot;STOPPED&quot; |
+| ERROR | &quot;ERROR&quot; |
 {: class="table table-striped"}
 
 

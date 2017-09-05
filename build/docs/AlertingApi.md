@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAlertingInteractionstatsAlert**](AlertingApi.html#deleteAlertingInteractionstatsAlert) | Delete an interaction stats alert |
 | [**deleteAlertingInteractionstatsRule**](AlertingApi.html#deleteAlertingInteractionstatsRule) | Delete an interaction stats rule. |
+| [**getAlertingAlertsActive**](AlertingApi.html#getAlertingAlertsActive) | Gets active alert count for a user. |
 | [**getAlertingInteractionstatsAlert**](AlertingApi.html#getAlertingInteractionstatsAlert) | Get an interaction stats alert |
 | [**getAlertingInteractionstatsAlerts**](AlertingApi.html#getAlertingInteractionstatsAlerts) | Get interaction stats alert list. |
 | [**getAlertingInteractionstatsAlertsUnread**](AlertingApi.html#getAlertingInteractionstatsAlertsUnread) | Gets user unread count of interaction stats alerts. |
@@ -118,6 +119,53 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getAlertingAlertsActive"></a>
+
+# **getAlertingAlertsActive**
+
+> [ActiveAlertCount](ActiveAlertCount.html) getAlertingAlertsActive()
+
+Gets active alert count for a user.
+
+
+
+Wraps GET /api/v2/alerting/alerts/active  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.AlertingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+AlertingApi apiInstance = new AlertingApi();
+try {
+    ActiveAlertCount result = apiInstance.getAlertingAlertsActive();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AlertingApi#getAlertingAlertsActive");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**ActiveAlertCount**](ActiveAlertCount.html)
 
 <a name="getAlertingInteractionstatsAlert"></a>
 

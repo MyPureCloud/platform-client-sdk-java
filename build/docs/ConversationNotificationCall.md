@@ -29,6 +29,7 @@ title: ConversationNotificationCall
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectReasons** | [**List&lt;ConversationNotificationDisconnectReasons&gt;**](ConversationNotificationDisconnectReasons.html) |  |  [optional] |
 | **faxStatus** | [**ConversationNotificationFaxStatus**](ConversationNotificationFaxStatus.html) |  |  [optional] |
+| **uuiData** | **String** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

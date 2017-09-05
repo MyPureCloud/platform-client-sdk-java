@@ -110,21 +110,6 @@ public class GetFlowHistoryHistoryIdRequest {
 	}
 
 	
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-	}
-
-	public GetFlowHistoryHistoryIdRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
-	    return this;
-	}
-
-	
 	private String sortOrder;
 	public String getSortOrder() {
 		return this.sortOrder;
@@ -136,6 +121,21 @@ public class GetFlowHistoryHistoryIdRequest {
 
 	public GetFlowHistoryHistoryIdRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
+	    return this;
+	}
+
+	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetFlowHistoryHistoryIdRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
 	    return this;
 	}
 
@@ -196,9 +196,9 @@ public class GetFlowHistoryHistoryIdRequest {
         
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withQueryParameters("sortBy", "", sortBy)
-        
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("action", "multi", action)
         
@@ -248,13 +248,13 @@ public class GetFlowHistoryHistoryIdRequest {
 			return this;
 		}
 		
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
 			return this;
 		}
 		
-		public Builder withSortOrder(String sortOrder) {
-			request.setSortOrder(sortOrder);
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
 			return this;
 		}
 		

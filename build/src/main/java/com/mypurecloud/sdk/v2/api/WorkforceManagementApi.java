@@ -17,7 +17,7 @@ import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
-import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
@@ -559,34 +559,30 @@ public class WorkforceManagementApi {
   /**
    * Get management units
    * 
-   * @param selector Selector (optional)
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
-   * @return List<ManagementUnit>
+   * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<ManagementUnit> getWorkforcemanagementManagementunits(String selector, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(selector, pageSize, pageNumber));
+  public ManagementUnitListing getWorkforcemanagementManagementunits(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber));
   }
 
   /**
    * Get management units
    * 
-   * @param selector Selector (optional)
    * @param pageSize  (optional, default to 25)
    * @param pageNumber  (optional, default to 1)
-   * @return List<ManagementUnit>
+   * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunitsWithHttpInfo(String selector, Integer pageSize, Integer pageNumber) throws IOException {
-    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(selector, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(String selector, Integer pageSize, Integer pageNumber) {
+  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber) {
     return GetWorkforcemanagementManagementunitsRequest.builder()
-            .withSelector(selector)
-    
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
@@ -598,13 +594,13 @@ public class WorkforceManagementApi {
    * Get management units
    * 
    * @param request The request object
-   * @return List<ManagementUnit>
+   * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<ManagementUnit> getWorkforcemanagementManagementunits(GetWorkforcemanagementManagementunitsRequest request) throws IOException, ApiException {
+  public ManagementUnitListing getWorkforcemanagementManagementunits(GetWorkforcemanagementManagementunitsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<ManagementUnit>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<ManagementUnit>>() {});
+      ApiResponse<ManagementUnitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -620,13 +616,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<ManagementUnit>> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<ManagementUnit>>() {});
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)exception;
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -637,7 +633,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<ManagementUnit>> response = (ApiResponse<List<ManagementUnit>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

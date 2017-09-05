@@ -111,7 +111,8 @@ public class Condition  implements Serializable {
     BEGINS_WITH("BEGINS_WITH"),
     ENDS_WITH("ENDS_WITH"),
     BEFORE("BEFORE"),
-    AFTER("AFTER");
+    AFTER("AFTER"),
+    IN("IN");
 
     private String value;
 
