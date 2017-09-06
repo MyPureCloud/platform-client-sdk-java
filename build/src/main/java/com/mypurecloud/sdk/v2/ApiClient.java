@@ -131,6 +131,10 @@ public class ApiClient implements AutoCloseable {
         return basePath;
     }
 
+    public ObjectMapper getObjectMapper() {
+        return this.objectMapper;
+    }
+
     /**
      * Helper method to set access token for the first OAuth2 authentication.
      */

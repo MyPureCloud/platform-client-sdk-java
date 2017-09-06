@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.api.NotificationsApi;
 import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
@@ -23,6 +24,7 @@ public class NotificationHandler extends Object {
     private Channel channel;
     private Map<String, NotificationListener<?>> typeMap = new HashMap<>();
     private WebSocketListener webSocketListener = null;
+    private ObjectMapper objectMapper = null;
 
     public WebSocket getWebSocket() {
         return webSocket;
@@ -48,6 +50,15 @@ public class NotificationHandler extends Object {
             this.notificationsApi = new NotificationsApi();
         }
 
+        // Set object mapper
+        if (builder.objectMapper != null) {
+            this.objectMapper = builder.objectMapper;
+        } else if (builder.apiClient != null) {
+            this.objectMapper = builder.apiClient.getObjectMapper();
+        } else {
+            this.objectMapper = Configuration.getDefaultApiClient().getObjectMapper();
+        }
+
         // Set channel
         if (builder.channel == null) {
             this.channel = notificationsApi.postNotificationsChannels();
@@ -67,8 +78,6 @@ public class NotificationHandler extends Object {
         this.webSocket = new WebSocketFactory()
                 .createSocket(this.channel.getConnectUri())
                 .addListener(new WebSocketAdapter() {
-                    ObjectMapper objectMapper = new ObjectMapper();
-
                     @Override
                     public void onStateChanged(WebSocket websocket, WebSocketState newState) throws Exception {
                         if (webSocketListener != null)
@@ -150,6 +159,7 @@ public class NotificationHandler extends Object {
         private Boolean connectAsync;
         private ApiClient apiClient;
         private NotificationsApi notificationsApi;
+        private ObjectMapper objectMapper;
 
         public static Builder standard() {
             Builder builder = new Builder();
@@ -159,6 +169,7 @@ public class NotificationHandler extends Object {
             builder.connectAsync = null;
             builder.apiClient = null;
             builder.notificationsApi = null;
+            builder.objectMapper = null;
             return builder;
         }
 
@@ -194,6 +205,11 @@ public class NotificationHandler extends Object {
 
         public Builder withNotificationsApi(NotificationsApi notificationsApi) {
             this.notificationsApi = notificationsApi;
+            return this;
+        }
+
+        public Builder withObjectMapper(ObjectMapper objectMapper) {
+            this.objectMapper = objectMapper;
             return this;
         }
 
