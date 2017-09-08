@@ -131,7 +131,7 @@ public class NotificationHandler extends Object {
                                     webSocketListener.onUnhandledEvent(message);
                             }
                         } catch (Exception ex) {
-                            ex.printStackTrace();
+                            LOGGER.error(ex.getMessage(), ex);
                         }
                     }
 
@@ -278,7 +278,7 @@ public class NotificationHandler extends Object {
             // Ensure socket is closed on GC
             this.disconnect();
         } catch (Exception ex) {
-            System.out.println(ex);
+            LOGGER.error(ex.getMessage(), ex);
         }
         super.finalize();
     }

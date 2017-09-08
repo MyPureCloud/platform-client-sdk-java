@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.Wrapup;
 import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
@@ -1381,13 +1382,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CallConversationEntityListing> getConversationsCallsHistoryAsync(GetConversationsCallsHistoryRequest request, final AsyncApiCallback<CallConversationEntityListing> callback) {
+  public Future<CallHistoryConversationEntityListing> getConversationsCallsHistoryAsync(GetConversationsCallsHistoryRequest request, final AsyncApiCallback<CallHistoryConversationEntityListing> callback) {
     try {
-      final SettableFuture<CallConversationEntityListing> future = SettableFuture.create();
+      final SettableFuture<CallHistoryConversationEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CallHistoryConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallHistoryConversationEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
+        public void onCompleted(ApiResponse<CallHistoryConversationEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1415,13 +1416,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CallConversationEntityListing>> getConversationsCallsHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallConversationEntityListing>> callback) {
+  public Future<ApiResponse<CallHistoryConversationEntityListing>> getConversationsCallsHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CallHistoryConversationEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<CallConversationEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CallHistoryConversationEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<CallConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallConversationEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CallHistoryConversationEntityListing>() {}, new AsyncApiCallback<ApiResponse<CallHistoryConversationEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<CallConversationEntityListing> response) {
+        public void onCompleted(ApiResponse<CallHistoryConversationEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1429,7 +1430,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<CallHistoryConversationEntityListing> response = (ApiResponse<CallHistoryConversationEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1437,7 +1438,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CallHistoryConversationEntityListing> response = (ApiResponse<CallHistoryConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

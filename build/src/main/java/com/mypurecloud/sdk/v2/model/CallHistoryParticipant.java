@@ -1,0 +1,454 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.UriReference;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
+
+import java.io.Serializable;
+/**
+ * CallHistoryParticipant
+ */
+
+public class CallHistoryParticipant  implements Serializable {
+  
+  private String id = null;
+  private String name = null;
+  private String address = null;
+  private Date startTime = null;
+  private Date endTime = null;
+  private String purpose = null;
+
+  /**
+   * The participant's direction.  Values can be: 'inbound' or 'outbound'
+   */
+  public enum DirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DirectionEnum value : DirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DirectionEnum direction = null;
+  private String ani = null;
+  private String dnis = null;
+  private UriReference user = null;
+  private UriReference queue = null;
+  private UriReference group = null;
+
+  /**
+   * The reason the participant was disconnected from the conversation.
+   */
+  public enum DisconnectTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ENDPOINT("endpoint"),
+    CLIENT("client"),
+    SYSTEM("system"),
+    TRANSFER("transfer"),
+    TRANSFER_CONFERENCE("transfer.conference"),
+    TRANSFER_CONSULT("transfer.consult"),
+    TRANSFER_FORWARD("transfer.forward"),
+    TRANSFER_NOANSWER("transfer.noanswer"),
+    TRANSFER_NOTAVAILABLE("transfer.notavailable"),
+    TRANSPORT_FAILURE("transport.failure"),
+    ERROR("error"),
+    PEER("peer"),
+    OTHER("other"),
+    SPAM("spam");
+
+    private String value;
+
+    DisconnectTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DisconnectTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DisconnectTypeEnum value : DisconnectTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DisconnectTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DisconnectTypeEnum disconnectType = null;
+  private UriReference externalContact = null;
+  private UriReference externalOrganization = null;
+
+  
+  /**
+   * The unique participant ID.
+   **/
+  public CallHistoryParticipant id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The unique participant ID.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   * The display friendly name of the participant.
+   **/
+  public CallHistoryParticipant name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The display friendly name of the participant.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * The participant address.
+   **/
+  public CallHistoryParticipant address(String address) {
+    this.address = address;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The participant address.")
+  @JsonProperty("address")
+  public String getAddress() {
+    return address;
+  }
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  
+  /**
+   * The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallHistoryParticipant startTime(Date startTime) {
+    this.startTime = startTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startTime")
+  public Date getStartTime() {
+    return startTime;
+  }
+  public void setStartTime(Date startTime) {
+    this.startTime = startTime;
+  }
+
+  
+  /**
+   * The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallHistoryParticipant endTime(Date endTime) {
+    this.endTime = endTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endTime")
+  public Date getEndTime() {
+    return endTime;
+  }
+  public void setEndTime(Date endTime) {
+    this.endTime = endTime;
+  }
+
+  
+  /**
+   * The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr
+   **/
+  public CallHistoryParticipant purpose(String purpose) {
+    this.purpose = purpose;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The participant's purpose.  Values can be: 'agent', 'user', 'customer', 'external', 'acd', 'ivr")
+  @JsonProperty("purpose")
+  public String getPurpose() {
+    return purpose;
+  }
+  public void setPurpose(String purpose) {
+    this.purpose = purpose;
+  }
+
+  
+  /**
+   * The participant's direction.  Values can be: 'inbound' or 'outbound'
+   **/
+  public CallHistoryParticipant direction(DirectionEnum direction) {
+    this.direction = direction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The participant's direction.  Values can be: 'inbound' or 'outbound'")
+  @JsonProperty("direction")
+  public DirectionEnum getDirection() {
+    return direction;
+  }
+  public void setDirection(DirectionEnum direction) {
+    this.direction = direction;
+  }
+
+  
+  /**
+   * The call ANI.
+   **/
+  public CallHistoryParticipant ani(String ani) {
+    this.ani = ani;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The call ANI.")
+  @JsonProperty("ani")
+  public String getAni() {
+    return ani;
+  }
+  public void setAni(String ani) {
+    this.ani = ani;
+  }
+
+  
+  /**
+   * The call DNIS.
+   **/
+  public CallHistoryParticipant dnis(String dnis) {
+    this.dnis = dnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The call DNIS.")
+  @JsonProperty("dnis")
+  public String getDnis() {
+    return dnis;
+  }
+  public void setDnis(String dnis) {
+    this.dnis = dnis;
+  }
+
+  
+  /**
+   * The PureCloud user for this participant.
+   **/
+  public CallHistoryParticipant user(UriReference user) {
+    this.user = user;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud user for this participant.")
+  @JsonProperty("user")
+  public UriReference getUser() {
+    return user;
+  }
+  public void setUser(UriReference user) {
+    this.user = user;
+  }
+
+  
+  /**
+   * The PureCloud queue for this participant.
+   **/
+  public CallHistoryParticipant queue(UriReference queue) {
+    this.queue = queue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud queue for this participant.")
+  @JsonProperty("queue")
+  public UriReference getQueue() {
+    return queue;
+  }
+  public void setQueue(UriReference queue) {
+    this.queue = queue;
+  }
+
+  
+  /**
+   * The group involved in the group ring call.
+   **/
+  public CallHistoryParticipant group(UriReference group) {
+    this.group = group;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The group involved in the group ring call.")
+  @JsonProperty("group")
+  public UriReference getGroup() {
+    return group;
+  }
+  public void setGroup(UriReference group) {
+    this.group = group;
+  }
+
+  
+  /**
+   * The reason the participant was disconnected from the conversation.
+   **/
+  public CallHistoryParticipant disconnectType(DisconnectTypeEnum disconnectType) {
+    this.disconnectType = disconnectType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason the participant was disconnected from the conversation.")
+  @JsonProperty("disconnectType")
+  public DisconnectTypeEnum getDisconnectType() {
+    return disconnectType;
+  }
+  public void setDisconnectType(DisconnectTypeEnum disconnectType) {
+    this.disconnectType = disconnectType;
+  }
+
+  
+  /**
+   * The PureCloud external contact
+   **/
+  public CallHistoryParticipant externalContact(UriReference externalContact) {
+    this.externalContact = externalContact;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud external contact")
+  @JsonProperty("externalContact")
+  public UriReference getExternalContact() {
+    return externalContact;
+  }
+  public void setExternalContact(UriReference externalContact) {
+    this.externalContact = externalContact;
+  }
+
+  
+  /**
+   * The PureCloud external organization
+   **/
+  public CallHistoryParticipant externalOrganization(UriReference externalOrganization) {
+    this.externalOrganization = externalOrganization;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud external organization")
+  @JsonProperty("externalOrganization")
+  public UriReference getExternalOrganization() {
+    return externalOrganization;
+  }
+  public void setExternalOrganization(UriReference externalOrganization) {
+    this.externalOrganization = externalOrganization;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CallHistoryParticipant callHistoryParticipant = (CallHistoryParticipant) o;
+    return Objects.equals(this.id, callHistoryParticipant.id) &&
+        Objects.equals(this.name, callHistoryParticipant.name) &&
+        Objects.equals(this.address, callHistoryParticipant.address) &&
+        Objects.equals(this.startTime, callHistoryParticipant.startTime) &&
+        Objects.equals(this.endTime, callHistoryParticipant.endTime) &&
+        Objects.equals(this.purpose, callHistoryParticipant.purpose) &&
+        Objects.equals(this.direction, callHistoryParticipant.direction) &&
+        Objects.equals(this.ani, callHistoryParticipant.ani) &&
+        Objects.equals(this.dnis, callHistoryParticipant.dnis) &&
+        Objects.equals(this.user, callHistoryParticipant.user) &&
+        Objects.equals(this.queue, callHistoryParticipant.queue) &&
+        Objects.equals(this.group, callHistoryParticipant.group) &&
+        Objects.equals(this.disconnectType, callHistoryParticipant.disconnectType) &&
+        Objects.equals(this.externalContact, callHistoryParticipant.externalContact) &&
+        Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CallHistoryParticipant {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
+    sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
+    sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
+    sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

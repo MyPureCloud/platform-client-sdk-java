@@ -111,7 +111,9 @@ public class InteractionStatAlertNotification  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("voice"),
     CHAT("chat"),
-    EMAIL("email");
+    EMAIL("email"),
+    CALLBACK("callback"),
+    SMS("sms");
 
     private String value;
 

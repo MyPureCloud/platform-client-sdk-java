@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.Wrapup;
 import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;

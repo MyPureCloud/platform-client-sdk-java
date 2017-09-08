@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.Wrapup;
 import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
@@ -1459,11 +1460,11 @@ public class ConversationsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
-   * @return CallConversationEntityListing
+   * @return CallHistoryConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CallConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
+  public CallHistoryConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
     return  getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval));
   }
 
@@ -1473,10 +1474,10 @@ public class ConversationsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
-   * @return CallConversationEntityListing
+   * @return CallHistoryConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException {
+  public ApiResponse<CallHistoryConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException {
     return getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval).withHttpInfo());
   }
 
@@ -1495,13 +1496,13 @@ public class ConversationsApi {
    * Get call history
    * 
    * @param request The request object
-   * @return CallConversationEntityListing
+   * @return CallHistoryConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CallConversationEntityListing getConversationsCallsHistory(GetConversationsCallsHistoryRequest request) throws IOException, ApiException {
+  public CallHistoryConversationEntityListing getConversationsCallsHistory(GetConversationsCallsHistoryRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<CallConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallConversationEntityListing>() {});
+      ApiResponse<CallHistoryConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CallHistoryConversationEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1517,13 +1518,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CallHistoryConversationEntityListing> getConversationsCallsHistory(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<CallConversationEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<CallHistoryConversationEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<CallHistoryConversationEntityListing> response = (ApiResponse<CallHistoryConversationEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1534,7 +1535,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<CallConversationEntityListing> response = (ApiResponse<CallConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CallHistoryConversationEntityListing> response = (ApiResponse<CallHistoryConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

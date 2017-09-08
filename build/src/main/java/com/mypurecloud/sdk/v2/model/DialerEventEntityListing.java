@@ -24,8 +24,8 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String nextUri = null;
   private String previousUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -134,23 +134,6 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
   
   /**
    **/
-  public DialerEventEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public DialerEventEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -163,6 +146,23 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
+  public DialerEventEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -216,15 +216,15 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
         Objects.equals(this.total, dialerEventEntityListing.total) &&
         Objects.equals(this.selfUri, dialerEventEntityListing.selfUri) &&
         Objects.equals(this.firstUri, dialerEventEntityListing.firstUri) &&
-        Objects.equals(this.nextUri, dialerEventEntityListing.nextUri) &&
         Objects.equals(this.previousUri, dialerEventEntityListing.previousUri) &&
+        Objects.equals(this.nextUri, dialerEventEntityListing.nextUri) &&
         Objects.equals(this.lastUri, dialerEventEntityListing.lastUri) &&
         Objects.equals(this.pageCount, dialerEventEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,8 +238,8 @@ public class DialerEventEntityListing  implements Serializable, PagedResource<Ev
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

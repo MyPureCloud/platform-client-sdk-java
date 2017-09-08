@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.UserRoutingStatusNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusNotificationRoutingStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,6 +17,7 @@ import java.io.Serializable;
 public class UserRoutingStatusNotification  implements Serializable {
   
   private UserRoutingStatusNotificationRoutingStatus routingStatus = null;
+  private UserRoutingStatusNotificationErrorInfo errorInfo = null;
 
   
   /**
@@ -35,6 +37,23 @@ public class UserRoutingStatusNotification  implements Serializable {
   }
 
   
+  /**
+   **/
+  public UserRoutingStatusNotification errorInfo(UserRoutingStatusNotificationErrorInfo errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorInfo")
+  public UserRoutingStatusNotificationErrorInfo getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(UserRoutingStatusNotificationErrorInfo errorInfo) {
+    this.errorInfo = errorInfo;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -45,12 +64,13 @@ public class UserRoutingStatusNotification  implements Serializable {
       return false;
     }
     UserRoutingStatusNotification userRoutingStatusNotification = (UserRoutingStatusNotification) o;
-    return Objects.equals(this.routingStatus, userRoutingStatusNotification.routingStatus);
+    return Objects.equals(this.routingStatus, userRoutingStatusNotification.routingStatus) &&
+        Objects.equals(this.errorInfo, userRoutingStatusNotification.errorInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routingStatus);
+    return Objects.hash(routingStatus, errorInfo);
   }
 
   @Override
@@ -59,6 +79,7 @@ public class UserRoutingStatusNotification  implements Serializable {
     sb.append("class UserRoutingStatusNotification {\n");
     
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

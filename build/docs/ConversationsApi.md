@@ -923,7 +923,7 @@ This endpoint does not require any parameters.
 
 # **getConversationsCallsHistory**
 
-> [CallConversationEntityListing](CallConversationEntityListing.html) getConversationsCallsHistory(pageSize, pageNumber, interval)
+> [CallHistoryConversationEntityListing](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(pageSize, pageNumber, interval)
 
 Get call history
 
@@ -952,7 +952,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String interval = "interval_example"; // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
 try {
-    CallConversationEntityListing result = apiInstance.getConversationsCallsHistory(pageSize, pageNumber, interval);
+    CallHistoryConversationEntityListing result = apiInstance.getConversationsCallsHistory(pageSize, pageNumber, interval);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallsHistory");
@@ -972,7 +972,7 @@ try {
 
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html)
 
 <a name="getConversationsCallsMaximumconferenceparties"></a>
 
