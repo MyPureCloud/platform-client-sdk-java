@@ -65,7 +65,7 @@ public class Conversation  implements Serializable {
   private RecordingStateEnum recordingState = null;
 
   /**
-   * The conversation's state.  Values can be: 'disconnected'
+   * The conversation's state
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -261,14 +261,14 @@ public class Conversation  implements Serializable {
 
   
   /**
-   * The conversation's state.  Values can be: 'disconnected'
+   * The conversation's state
    **/
   public Conversation state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The conversation's state.  Values can be: 'disconnected'")
+  @ApiModelProperty(example = "null", value = "The conversation's state")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;

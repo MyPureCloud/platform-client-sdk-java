@@ -58,7 +58,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | Query for a list of dialer sequence schedules. |
 | [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | Get a dialer campaign sequence. |
 | [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | Query a list of dialer campaign sequences. |
+| [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | Get the outbound settings for this organization |
 | [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | Get the Dialer wrap up code mapping. |
+| [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | Update the outbound settings for this organization |
 | [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | Create attempt limits |
 | [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | Retrieves audits for dialer. |
 | [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | Create callable time set |
@@ -2823,6 +2825,53 @@ try {
 
 [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html)
 
+<a name="getOutboundSettings"></a>
+
+# **getOutboundSettings**
+
+> [OutboundSettings](OutboundSettings.html) getOutboundSettings()
+
+Get the outbound settings for this organization
+
+
+
+Wraps GET /api/v2/outbound/settings  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+try {
+    OutboundSettings result = apiInstance.getOutboundSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundSettings");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**OutboundSettings**](OutboundSettings.html)
+
 <a name="getOutboundWrapupcodemappings"></a>
 
 # **getOutboundWrapupcodemappings**
@@ -2869,6 +2918,56 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+
+<a name="patchOutboundSettings"></a>
+
+# **patchOutboundSettings**
+
+> Void patchOutboundSettings(body)
+
+Update the outbound settings for this organization
+
+
+
+Wraps PATCH /api/v2/outbound/settings  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+OutboundSettings body = new OutboundSettings(); // OutboundSettings | outboundSettings
+try {
+    apiInstance.patchOutboundSettings(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#patchOutboundSettings");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OutboundSettings**](OutboundSettings.html)| outboundSettings | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postOutboundAttemptlimits"></a>
 

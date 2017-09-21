@@ -32,7 +32,7 @@ public class Edge  implements Serializable {
   private String createdBy = null;
 
   /**
-   * Gets or Sets state
+   * Indicates if the resource is active, inactive, or deleted.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -85,7 +85,7 @@ public class Edge  implements Serializable {
   private String patch = null;
 
   /**
-   * Gets or Sets statusCode
+   * The current status of the Edge.
    */
   public enum StatusCodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -276,13 +276,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The resource's description.
    **/
   public Edge description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The resource's description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -293,13 +294,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The current version of the resource.
    **/
   public Edge version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current version of the resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -310,14 +312,14 @@ public class Edge  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public Edge dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -328,14 +330,14 @@ public class Edge  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public Edge dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -346,13 +348,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The ID of the user that last modified the resource.
    **/
   public Edge modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
@@ -363,13 +366,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The ID of the user that created the resource.
    **/
   public Edge createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -379,31 +383,22 @@ public class Edge  implements Serializable {
   }
 
   
-  /**
-   **/
-  public Edge state(StateEnum state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
 
   
   /**
+   * The application that last modified the resource.
    **/
   public Edge modifiedByApp(String modifiedByApp) {
     this.modifiedByApp = modifiedByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
@@ -414,13 +409,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The application that created the resource.
    **/
   public Edge createdByApp(String createdByApp) {
     this.createdByApp = createdByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that created the resource.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;
@@ -688,13 +684,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * The current status of the Edge.
    **/
   public Edge statusCode(StatusCodeEnum statusCode) {
     this.statusCode = statusCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current status of the Edge.")
   @JsonProperty("statusCode")
   public StatusCodeEnum getStatusCode() {
     return statusCode;

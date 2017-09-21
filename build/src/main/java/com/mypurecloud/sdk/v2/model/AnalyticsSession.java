@@ -21,7 +21,7 @@ public class AnalyticsSession  implements Serializable {
   
 
   /**
-   * Gets or Sets mediaType
+   * The session media type
    */
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -65,7 +65,7 @@ public class AnalyticsSession  implements Serializable {
   private String ani = null;
 
   /**
-   * Gets or Sets direction
+   * Direction
    */
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -103,7 +103,46 @@ public class AnalyticsSession  implements Serializable {
   private String outboundContactId = null;
   private String outboundContactListId = null;
   private String dispositionAnalyzer = null;
-  private String dispositionName = null;
+
+  /**
+   * (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
+   */
+  public enum DispositionNameEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DISCONNECT("disconnect"),
+    PERSON("person"),
+    BUSY("busy"),
+    MACHINE("machine"),
+    NOANSWER("noanswer"),
+    FAX("fax"),
+    SIT("sit");
+
+    private String value;
+
+    DispositionNameEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DispositionNameEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DispositionNameEnum value : DispositionNameEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DispositionNameEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DispositionNameEnum dispositionName = null;
   private String edgeId = null;
   private String remoteNameDisplayable = null;
   private String roomId = null;
@@ -127,13 +166,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The session media type
    **/
   public AnalyticsSession mediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The session media type")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
@@ -144,13 +184,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The unique identifier of this session
    **/
   public AnalyticsSession sessionId(String sessionId) {
     this.sessionId = sessionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique identifier of this session")
   @JsonProperty("sessionId")
   public String getSessionId() {
     return sessionId;
@@ -195,13 +236,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Automatic Number Identification (caller's number)
    **/
   public AnalyticsSession ani(String ani) {
     this.ani = ani;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Automatic Number Identification (caller's number)")
   @JsonProperty("ani")
   public String getAni() {
     return ani;
@@ -212,13 +254,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Direction
    **/
   public AnalyticsSession direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Direction")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;
@@ -229,13 +272,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Automatic Number Identification (caller's number)
    **/
   public AnalyticsSession dnis(String dnis) {
     this.dnis = dnis;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Automatic Number Identification (caller's number)")
   @JsonProperty("dnis")
   public String getDnis() {
     return dnis;
@@ -246,13 +290,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Unique identifier of the outbound campaign
    **/
   public AnalyticsSession outboundCampaignId(String outboundCampaignId) {
     this.outboundCampaignId = outboundCampaignId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Unique identifier of the outbound campaign")
   @JsonProperty("outboundCampaignId")
   public String getOutboundCampaignId() {
     return outboundCampaignId;
@@ -263,13 +308,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Unique identifier of the contact
    **/
   public AnalyticsSession outboundContactId(String outboundContactId) {
     this.outboundContactId = outboundContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Unique identifier of the contact")
   @JsonProperty("outboundContactId")
   public String getOutboundContactId() {
     return outboundContactId;
@@ -280,13 +326,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Unique identifier of the contact list that this contact belongs to
    **/
   public AnalyticsSession outboundContactListId(String outboundContactListId) {
     this.outboundContactListId = outboundContactListId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Unique identifier of the contact list that this contact belongs to")
   @JsonProperty("outboundContactListId")
   public String getOutboundContactListId() {
     return outboundContactListId;
@@ -297,13 +344,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Unique identifier of the contact list that this contact belongs to
    **/
   public AnalyticsSession dispositionAnalyzer(String dispositionAnalyzer) {
     this.dispositionAnalyzer = dispositionAnalyzer;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Unique identifier of the contact list that this contact belongs to")
   @JsonProperty("dispositionAnalyzer")
   public String getDispositionAnalyzer() {
     return dispositionAnalyzer;
@@ -314,30 +362,32 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
    **/
-  public AnalyticsSession dispositionName(String dispositionName) {
+  public AnalyticsSession dispositionName(DispositionNameEnum dispositionName) {
     this.dispositionName = dispositionName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Result of the analysis (for example disposition.classification.callable.machine) ")
   @JsonProperty("dispositionName")
-  public String getDispositionName() {
+  public DispositionNameEnum getDispositionName() {
     return dispositionName;
   }
-  public void setDispositionName(String dispositionName) {
+  public void setDispositionName(DispositionNameEnum dispositionName) {
     this.dispositionName = dispositionName;
   }
 
   
   /**
+   * Unique identifier of the edge device
    **/
   public AnalyticsSession edgeId(String edgeId) {
     this.edgeId = edgeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier of the edge device")
   @JsonProperty("edgeId")
   public String getEdgeId() {
     return edgeId;
@@ -365,13 +415,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Unique identifier for the room
    **/
   public AnalyticsSession roomId(String roomId) {
     this.roomId = roomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the room")
   @JsonProperty("roomId")
   public String getRoomId() {
     return roomId;
@@ -382,13 +433,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The sessionID being monitored
    **/
   public AnalyticsSession monitoredSessionId(String monitoredSessionId) {
     this.monitoredSessionId = monitoredSessionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The sessionID being monitored")
   @JsonProperty("monitoredSessionId")
   public String getMonitoredSessionId() {
     return monitoredSessionId;
@@ -416,13 +468,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The name of the user requesting a call back
    **/
   public AnalyticsSession callbackUserName(String callbackUserName) {
     this.callbackUserName = callbackUserName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the user requesting a call back")
   @JsonProperty("callbackUserName")
   public String getCallbackUserName() {
     return callbackUserName;
@@ -433,13 +486,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * List of numbers to callback
    **/
   public AnalyticsSession callbackNumbers(List<String> callbackNumbers) {
     this.callbackNumbers = callbackNumbers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of numbers to callback")
   @JsonProperty("callbackNumbers")
   public List<String> getCallbackNumbers() {
     return callbackNumbers;
@@ -450,14 +504,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public AnalyticsSession callbackScheduledTime(Date callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("callbackScheduledTime")
   public Date getCallbackScheduledTime() {
     return callbackScheduledTime;
@@ -468,13 +522,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
    **/
   public AnalyticsSession scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Scheduled callback date/time, Date time is represented as an ISO-8601 string. ")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;
@@ -485,13 +540,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * (Dialer) Whether the agent can skip the dialer contact
    **/
   public AnalyticsSession skipEnabled(Boolean skipEnabled) {
     this.skipEnabled = skipEnabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "(Dialer) Whether the agent can skip the dialer contact")
   @JsonProperty("skipEnabled")
   public Boolean getSkipEnabled() {
     return skipEnabled;
@@ -502,13 +558,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling
    **/
   public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling")
   @JsonProperty("timeoutSeconds")
   public Integer getTimeoutSeconds() {
     return timeoutSeconds;
@@ -519,13 +576,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Describe side of the cobrowse (sharer or viewer)
    **/
   public AnalyticsSession cobrowseRole(String cobrowseRole) {
     this.cobrowseRole = cobrowseRole;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Describe side of the cobrowse (sharer or viewer)")
   @JsonProperty("cobrowseRole")
   public String getCobrowseRole() {
     return cobrowseRole;
@@ -536,13 +594,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * A unique identifier for a PureCloud Cobrowse room.
    **/
   public AnalyticsSession cobrowseRoomId(String cobrowseRoomId) {
     this.cobrowseRoomId = cobrowseRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud Cobrowse room.")
   @JsonProperty("cobrowseRoomId")
   public String getCobrowseRoomId() {
     return cobrowseRoomId;
@@ -570,13 +629,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Direct ScreenShare address
    **/
   public AnalyticsSession screenShareAddressSelf(String screenShareAddressSelf) {
     this.screenShareAddressSelf = screenShareAddressSelf;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Direct ScreenShare address")
   @JsonProperty("screenShareAddressSelf")
   public String getScreenShareAddressSelf() {
     return screenShareAddressSelf;
@@ -587,13 +647,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Flag determining if screenShare is started or not (true/false)
    **/
   public AnalyticsSession sharingScreen(Boolean sharingScreen) {
     this.sharingScreen = sharingScreen;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Flag determining if screenShare is started or not (true/false)")
   @JsonProperty("sharingScreen")
   public Boolean getSharingScreen() {
     return sharingScreen;
@@ -604,13 +665,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * A unique identifier for a PureCloud ScreenShare room.
    **/
   public AnalyticsSession screenShareRoomId(String screenShareRoomId) {
     this.screenShareRoomId = screenShareRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud ScreenShare room.")
   @JsonProperty("screenShareRoomId")
   public String getScreenShareRoomId() {
     return screenShareRoomId;
@@ -621,13 +683,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * A unique identifier for a PureCloud video room.
    **/
   public AnalyticsSession videoRoomId(String videoRoomId) {
     this.videoRoomId = videoRoomId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a PureCloud video room.")
   @JsonProperty("videoRoomId")
   public String getVideoRoomId() {
     return videoRoomId;
@@ -638,13 +701,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Direct Video address
    **/
   public AnalyticsSession videoAddressSelf(String videoAddressSelf) {
     this.videoAddressSelf = videoAddressSelf;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Direct Video address")
   @JsonProperty("videoAddressSelf")
   public String getVideoAddressSelf() {
     return videoAddressSelf;
@@ -655,13 +719,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * List of segments for this session
    **/
   public AnalyticsSession segments(List<AnalyticsConversationSegment> segments) {
     this.segments = segments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of segments for this session")
   @JsonProperty("segments")
   public List<AnalyticsConversationSegment> getSegments() {
     return segments;

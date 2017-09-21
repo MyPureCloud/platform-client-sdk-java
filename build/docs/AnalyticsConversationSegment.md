@@ -8,18 +8,18 @@ title: AnalyticsConversationSegment
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **segmentStart** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **segmentEnd** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **queueId** | **String** |  |  [optional] |
-| **wrapUpCode** | **String** |  |  [optional] |
-| **wrapUpNote** | **String** |  |  [optional] |
+| **segmentStart** | [**Date**](Date.html) | The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **segmentEnd** | [**Date**](Date.html) | The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **queueId** | **String** | Queue identifier |  [optional] |
+| **wrapUpCode** | **String** | Wrapup Code id |  [optional] |
+| **wrapUpNote** | **String** | Note entered by an agent during after-call work |  [optional] |
 | **wrapUpTags** | **List&lt;String&gt;** |  |  [optional] |
 | **errorCode** | **String** |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **segmentType** | [**SegmentTypeEnum**](#SegmentTypeEnum) |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) | A description of the event that disconnected the segment |  [optional] |
+| **segmentType** | [**SegmentTypeEnum**](#SegmentTypeEnum) | The activity taking place for the participant in the segment |  [optional] |
 | **requestedRoutingUserIds** | **List&lt;String&gt;** |  |  [optional] |
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
-| **requestedLanguageId** | **String** |  |  [optional] |
+| **requestedLanguageId** | **String** | A unique identifier for the language requested for an interaction. |  [optional] |
 | **properties** | [**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty.html) |  |  [optional] |
 | **sourceConversationId** | **String** |  |  [optional] |
 | **destinationConversationId** | **String** |  |  [optional] |
@@ -27,7 +27,7 @@ title: AnalyticsConversationSegment
 | **destinationSessionId** | **String** |  |  [optional] |
 | **sipResponseCodes** | **List&lt;Long&gt;** |  |  [optional] |
 | **q850ResponseCodes** | **List&lt;Long&gt;** |  |  [optional] |
-| **conference** | **Boolean** |  |  [optional] |
+| **conference** | **Boolean** | Indicates whether the segment was a conference |  [optional] |
 | **groupId** | **String** |  |  [optional] |
 | **subject** | **String** |  |  [optional] |
 | **audioMuted** | **Boolean** |  |  [optional] |

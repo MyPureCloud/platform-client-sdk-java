@@ -47,6 +47,7 @@ title: Recording
 | RESTORED | &quot;RESTORED&quot; |
 | RESTORING | &quot;RESTORING&quot; |
 | UPLOADING | &quot;UPLOADING&quot; |
+| ERROR | &quot;ERROR&quot; |
 
 
 <a name="ArchiveMediumEnum"></a>

@@ -17,7 +17,7 @@ title: Conversation
 | **conversationIds** | **List&lt;String&gt;** | A list of conversations to merge into this conversation to create a conference. This field is null except when being used to create a conference. |  [optional] |
 | **maxParticipants** | **Integer** | If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference. |  [optional] |
 | **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum) | On update, &#39;paused&#39; initiates a secure pause, &#39;active&#39; resumes any paused recordings; otherwise indicates state of conversation recording. |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) | The conversation&#39;s state.  Values can be: &#39;disconnected&#39; |  [optional] |
+| **state** | [**StateEnum**](#StateEnum) | The conversation&#39;s state |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -35,7 +35,7 @@ public class CreateQueueRequest  implements Serializable {
   private String createdBy = null;
 
   /**
-   * Gets or Sets state
+   * Indicates if the resource is active, inactive, or deleted.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -145,13 +145,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The resource's description.
    **/
   public CreateQueueRequest description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The resource's description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -162,13 +163,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The current version of the resource.
    **/
   public CreateQueueRequest version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current version of the resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -179,14 +181,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public CreateQueueRequest dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -197,14 +199,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public CreateQueueRequest dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -215,13 +217,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The ID of the user that last modified the resource.
    **/
   public CreateQueueRequest modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
@@ -232,13 +235,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The ID of the user that created the resource.
    **/
   public CreateQueueRequest createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -248,31 +252,22 @@ public class CreateQueueRequest  implements Serializable {
   }
 
   
-  /**
-   **/
-  public CreateQueueRequest state(StateEnum state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
 
   
   /**
+   * The application that last modified the resource.
    **/
   public CreateQueueRequest modifiedByApp(String modifiedByApp) {
     this.modifiedByApp = modifiedByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
@@ -283,13 +278,14 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The application that created the resource.
    **/
   public CreateQueueRequest createdByApp(String createdByApp) {
     this.createdByApp = createdByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that created the resource.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;

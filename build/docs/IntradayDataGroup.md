@@ -28,6 +28,7 @@ title: IntradayDataGroup
 | VOICE | &quot;Voice&quot; |
 | CHAT | &quot;Chat&quot; |
 | EMAIL | &quot;Email&quot; |
+| CALLBACK | &quot;Callback&quot; |
 {: class="table table-striped"}
 
 

@@ -8,38 +8,38 @@ title: AnalyticsSession
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) |  |  [optional] |
-| **sessionId** | **String** |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) | The session media type |  [optional] |
+| **sessionId** | **String** | The unique identifier of this session |  [optional] |
 | **addressOther** | **String** |  |  [optional] |
 | **addressSelf** | **String** |  |  [optional] |
-| **ani** | **String** |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **dnis** | **String** |  |  [optional] |
-| **outboundCampaignId** | **String** |  |  [optional] |
-| **outboundContactId** | **String** |  |  [optional] |
-| **outboundContactListId** | **String** |  |  [optional] |
-| **dispositionAnalyzer** | **String** |  |  [optional] |
-| **dispositionName** | **String** |  |  [optional] |
-| **edgeId** | **String** |  |  [optional] |
+| **ani** | **String** | Automatic Number Identification (caller&#39;s number) |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum) | Direction |  [optional] |
+| **dnis** | **String** | Automatic Number Identification (caller&#39;s number) |  [optional] |
+| **outboundCampaignId** | **String** | (Dialer) Unique identifier of the outbound campaign |  [optional] |
+| **outboundContactId** | **String** | (Dialer) Unique identifier of the contact |  [optional] |
+| **outboundContactListId** | **String** | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
+| **dispositionAnalyzer** | **String** | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
+| **dispositionName** | [**DispositionNameEnum**](#DispositionNameEnum) | (Dialer) Result of the analysis (for example disposition.classification.callable.machine)  |  [optional] |
+| **edgeId** | **String** | Unique identifier of the edge device |  [optional] |
 | **remoteNameDisplayable** | **String** |  |  [optional] |
-| **roomId** | **String** |  |  [optional] |
-| **monitoredSessionId** | **String** |  |  [optional] |
+| **roomId** | **String** | Unique identifier for the room |  [optional] |
+| **monitoredSessionId** | **String** | The sessionID being monitored |  [optional] |
 | **monitoredParticipantId** | **String** |  |  [optional] |
-| **callbackUserName** | **String** |  |  [optional] |
-| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
-| **callbackScheduledTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **scriptId** | **String** |  |  [optional] |
-| **skipEnabled** | **Boolean** |  |  [optional] |
-| **timeoutSeconds** | **Integer** |  |  [optional] |
-| **cobrowseRole** | **String** |  |  [optional] |
-| **cobrowseRoomId** | **String** |  |  [optional] |
+| **callbackUserName** | **String** | The name of the user requesting a call back |  [optional] |
+| **callbackNumbers** | **List&lt;String&gt;** | List of numbers to callback |  [optional] |
+| **callbackScheduledTime** | [**Date**](Date.html) | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **scriptId** | **String** | Scheduled callback date/time, Date time is represented as an ISO-8601 string.  |  [optional] |
+| **skipEnabled** | **Boolean** | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
+| **timeoutSeconds** | **Integer** | The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling |  [optional] |
+| **cobrowseRole** | **String** | Describe side of the cobrowse (sharer or viewer) |  [optional] |
+| **cobrowseRoomId** | **String** | A unique identifier for a PureCloud Cobrowse room. |  [optional] |
 | **mediaBridgeId** | **String** |  |  [optional] |
-| **screenShareAddressSelf** | **String** |  |  [optional] |
-| **sharingScreen** | **Boolean** |  |  [optional] |
-| **screenShareRoomId** | **String** |  |  [optional] |
-| **videoRoomId** | **String** |  |  [optional] |
-| **videoAddressSelf** | **String** |  |  [optional] |
-| **segments** | [**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html) |  |  [optional] |
+| **screenShareAddressSelf** | **String** | Direct ScreenShare address |  [optional] |
+| **sharingScreen** | **Boolean** | Flag determining if screenShare is started or not (true/false) |  [optional] |
+| **screenShareRoomId** | **String** | A unique identifier for a PureCloud ScreenShare room. |  [optional] |
+| **videoRoomId** | **String** | A unique identifier for a PureCloud video room. |  [optional] |
+| **videoAddressSelf** | **String** | Direct Video address |  [optional] |
+| **segments** | [**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html) | List of segments for this session |  [optional] |
 {: class="table table-striped"}
 
 
@@ -68,6 +68,22 @@ title: AnalyticsSession
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+
+
+<a name="DispositionNameEnum"></a>
+
+## Enum: DispositionNameEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| DISCONNECT | &quot;disconnect&quot; |
+| PERSON | &quot;person&quot; |
+| BUSY | &quot;busy&quot; |
+| MACHINE | &quot;machine&quot; |
+| NOANSWER | &quot;noanswer&quot; |
+| FAX | &quot;fax&quot; |
+| SIT | &quot;sit&quot; |
 {: class="table table-striped"}
 
 

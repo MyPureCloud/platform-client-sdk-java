@@ -15,6 +15,7 @@ import java.io.Serializable;
 public class CallCommand  implements Serializable {
   
   private String callNumber = null;
+  private String phoneColumn = null;
 
   
   /**
@@ -35,6 +36,24 @@ public class CallCommand  implements Serializable {
   }
 
   
+  /**
+   * For a dialer preview or scheduled callback, the phone column associated with the phone number
+   **/
+  public CallCommand phoneColumn(String phoneColumn) {
+    this.phoneColumn = phoneColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "For a dialer preview or scheduled callback, the phone column associated with the phone number")
+  @JsonProperty("phoneColumn")
+  public String getPhoneColumn() {
+    return phoneColumn;
+  }
+  public void setPhoneColumn(String phoneColumn) {
+    this.phoneColumn = phoneColumn;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -45,12 +64,13 @@ public class CallCommand  implements Serializable {
       return false;
     }
     CallCommand callCommand = (CallCommand) o;
-    return Objects.equals(this.callNumber, callCommand.callNumber);
+    return Objects.equals(this.callNumber, callCommand.callNumber) &&
+        Objects.equals(this.phoneColumn, callCommand.phoneColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callNumber);
+    return Objects.hash(callNumber, phoneColumn);
   }
 
   @Override
@@ -59,6 +79,7 @@ public class CallCommand  implements Serializable {
     sb.append("class CallCommand {\n");
     
     sb.append("    callNumber: ").append(toIndentedString(callNumber)).append("\n");
+    sb.append("    phoneColumn: ").append(toIndentedString(phoneColumn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,13 +27,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Unique identifier for the evaluation
    **/
   public AnalyticsEvaluation evaluationId(String evaluationId) {
     this.evaluationId = evaluationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the evaluation")
   @JsonProperty("evaluationId")
   public String getEvaluationId() {
     return evaluationId;
@@ -44,13 +45,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * A unique identifier of the PureCloud user who evaluated the interaction
    **/
   public AnalyticsEvaluation evaluatorId(String evaluatorId) {
     this.evaluatorId = evaluatorId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier of the PureCloud user who evaluated the interaction")
   @JsonProperty("evaluatorId")
   public String getEvaluatorId() {
     return evaluatorId;
@@ -61,13 +63,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Unique identifier for the user being evaluated
    **/
   public AnalyticsEvaluation userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the user being evaluated")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;
@@ -78,13 +81,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Specifies when an evaluation occurred
    **/
   public AnalyticsEvaluation eventTime(String eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Specifies when an evaluation occurred")
   @JsonProperty("eventTime")
   public String getEventTime() {
     return eventTime;
@@ -95,13 +99,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Unique identifier for the queue the conversation was on
    **/
   public AnalyticsEvaluation queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the queue the conversation was on")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
@@ -112,13 +117,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Unique identifier for the form used to evaluate the conversation/agent
    **/
   public AnalyticsEvaluation formId(String formId) {
     this.formId = formId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the form used to evaluate the conversation/agent")
   @JsonProperty("formId")
   public String getFormId() {
     return formId;
@@ -129,13 +135,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * A unique identifier for an evaluation form, regardless of version
    **/
   public AnalyticsEvaluation contextId(String contextId) {
     this.contextId = contextId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier for an evaluation form, regardless of version")
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
@@ -146,13 +153,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Name of the evaluation form
    **/
   public AnalyticsEvaluation formName(String formName) {
     this.formName = formName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Name of the evaluation form")
   @JsonProperty("formName")
   public String getFormName() {
     return formName;
@@ -163,13 +171,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * The total evaluation for interactions
    **/
   public AnalyticsEvaluation getoTotalScore(Long getoTotalScore) {
     this.getoTotalScore = getoTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The total evaluation for interactions")
   @JsonProperty("getoTotalScore")
   public Long getGetoTotalScore() {
     return getoTotalScore;
@@ -180,13 +189,14 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * The score for critical evaluation questions
    **/
   public AnalyticsEvaluation getoTotalCriticalScore(Long getoTotalCriticalScore) {
     this.getoTotalCriticalScore = getoTotalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The score for critical evaluation questions")
   @JsonProperty("getoTotalCriticalScore")
   public Long getGetoTotalCriticalScore() {
     return getoTotalCriticalScore;

@@ -31,7 +31,8 @@ public class IntradayDataGroup  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("Voice"),
     CHAT("Chat"),
-    EMAIL("Email");
+    EMAIL("Email"),
+    CALLBACK("Callback");
 
     private String value;
 

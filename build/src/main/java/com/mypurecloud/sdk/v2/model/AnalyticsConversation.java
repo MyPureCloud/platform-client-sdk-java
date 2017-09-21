@@ -27,13 +27,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
+   * Unique identifier for the conversation
    **/
   public AnalyticsConversation conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the conversation")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;
@@ -44,14 +45,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public AnalyticsConversation conversationStart(Date conversationStart) {
     this.conversationStart = conversationStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("conversationStart")
   public Date getConversationStart() {
     return conversationStart;
@@ -62,14 +63,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public AnalyticsConversation conversationEnd(Date conversationEnd) {
     this.conversationEnd = conversationEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("conversationEnd")
   public Date getConversationEnd() {
     return conversationEnd;
@@ -80,13 +81,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
+   * Participants in the conversation
    **/
   public AnalyticsConversation participants(List<AnalyticsParticipant> participants) {
     this.participants = participants;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Participants in the conversation")
   @JsonProperty("participants")
   public List<AnalyticsParticipant> getParticipants() {
     return participants;
@@ -97,13 +99,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
+   * Evaluations tied to this conersation
    **/
   public AnalyticsConversation evaluations(List<AnalyticsEvaluation> evaluations) {
     this.evaluations = evaluations;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Evaluations tied to this conersation")
   @JsonProperty("evaluations")
   public List<AnalyticsEvaluation> getEvaluations() {
     return evaluations;

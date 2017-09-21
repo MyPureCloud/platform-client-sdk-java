@@ -30,7 +30,7 @@ public class ScheduleGroup  implements Serializable {
   private String createdBy = null;
 
   /**
-   * Gets or Sets state
+   * Indicates if the resource is active, inactive, or deleted.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -80,13 +80,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The name of the entity.
    **/
   public ScheduleGroup name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the entity.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -97,13 +98,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The resource's description.
    **/
   public ScheduleGroup description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The resource's description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -114,13 +116,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The current version of the resource.
    **/
   public ScheduleGroup version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current version of the resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -131,14 +134,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ScheduleGroup dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -149,14 +152,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ScheduleGroup dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -167,13 +170,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The ID of the user that last modified the resource.
    **/
   public ScheduleGroup modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
@@ -184,13 +188,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The ID of the user that created the resource.
    **/
   public ScheduleGroup createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -200,31 +205,22 @@ public class ScheduleGroup  implements Serializable {
   }
 
   
-  /**
-   **/
-  public ScheduleGroup state(StateEnum state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
 
   
   /**
+   * The application that last modified the resource.
    **/
   public ScheduleGroup modifiedByApp(String modifiedByApp) {
     this.modifiedByApp = modifiedByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
@@ -235,13 +231,14 @@ public class ScheduleGroup  implements Serializable {
 
   
   /**
+   * The application that created the resource.
    **/
   public ScheduleGroup createdByApp(String createdByApp) {
     this.createdByApp = createdByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that created the resource.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;

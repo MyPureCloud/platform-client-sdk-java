@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.CampaignSchedule;
 import com.mypurecloud.sdk.v2.model.SequenceSchedule;
 import com.mypurecloud.sdk.v2.model.CampaignSequence;
 import com.mypurecloud.sdk.v2.model.CampaignSequenceEntityListing;
+import com.mypurecloud.sdk.v2.model.OutboundSettings;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
@@ -103,7 +104,9 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSequencesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundWrapupcodemappingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchOutboundSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
@@ -4435,6 +4438,81 @@ public class OutboundApi {
 
   
   /**
+   * Get the outbound settings for this organization
+   * 
+   * @return OutboundSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundSettings getOutboundSettings() throws IOException, ApiException {
+    return  getOutboundSettings(createGetOutboundSettingsRequest());
+  }
+
+  /**
+   * Get the outbound settings for this organization
+   * 
+   * @return OutboundSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundSettings> getOutboundSettingsWithHttpInfo() throws IOException {
+    return getOutboundSettings(createGetOutboundSettingsRequest().withHttpInfo());
+  }
+
+  private GetOutboundSettingsRequest createGetOutboundSettingsRequest() {
+    return GetOutboundSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the outbound settings for this organization
+   * 
+   * @param request The request object
+   * @return OutboundSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundSettings getOutboundSettings(GetOutboundSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutboundSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the outbound settings for this organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundSettings> getOutboundSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundSettings> response = (ApiResponse<OutboundSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundSettings> response = (ApiResponse<OutboundSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the Dialer wrap up code mapping.
    * 
    * @return WrapUpCodeMapping
@@ -4504,6 +4582,82 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WrapUpCodeMapping> response = (ApiResponse<WrapUpCodeMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the outbound settings for this organization
+   * 
+   * @param body outboundSettings (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundSettings(OutboundSettings body) throws IOException, ApiException {
+     patchOutboundSettings(createPatchOutboundSettingsRequest(body));
+  }
+
+  /**
+   * Update the outbound settings for this organization
+   * 
+   * @param body outboundSettings (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundSettingsWithHttpInfo(OutboundSettings body) throws IOException {
+    return patchOutboundSettings(createPatchOutboundSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchOutboundSettingsRequest createPatchOutboundSettingsRequest(OutboundSettings body) {
+    return PatchOutboundSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the outbound settings for this organization
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchOutboundSettings(PatchOutboundSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update the outbound settings for this organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchOutboundSettings(ApiRequest<OutboundSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

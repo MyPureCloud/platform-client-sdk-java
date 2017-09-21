@@ -25,7 +25,8 @@ public class IntradayQueue  implements Serializable {
   public enum MediaTypesEnum {
     VOICE("Voice"),
     CHAT("Chat"),
-    EMAIL("Email");
+    EMAIL("Email"),
+    CALLBACK("Callback");
 
     private String value;
 

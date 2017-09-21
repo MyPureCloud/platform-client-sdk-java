@@ -8,13 +8,13 @@ title: AnalyticsParticipant
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **participantId** | **String** |  |  [optional] |
-| **participantName** | **String** |  |  [optional] |
-| **userId** | **String** |  |  [optional] |
-| **purpose** | [**PurposeEnum**](#PurposeEnum) |  |  [optional] |
-| **externalContactId** | **String** |  |  [optional] |
-| **externalOrganizationId** | **String** |  |  [optional] |
-| **sessions** | [**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html) |  |  [optional] |
+| **participantId** | **String** | Unique identifier for the participant |  [optional] |
+| **participantName** | **String** | A human readable name identifying the participant |  [optional] |
+| **userId** | **String** | If a user, then this will be the unique identifier for the user |  [optional] |
+| **purpose** | [**PurposeEnum**](#PurposeEnum) | The participant&#39;s purpose |  [optional] |
+| **externalContactId** | **String** | External Contact Identifier |  [optional] |
+| **externalOrganizationId** | **String** | External Organization Identifier |  [optional] |
+| **sessions** | [**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html) | List of sessions associated to this participant |  [optional] |
 {: class="table table-striped"}
 
 

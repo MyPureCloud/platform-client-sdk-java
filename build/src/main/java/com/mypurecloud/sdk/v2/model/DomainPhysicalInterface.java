@@ -27,7 +27,7 @@ public class DomainPhysicalInterface  implements Serializable {
   private String createdBy = null;
 
   /**
-   * Gets or Sets state
+   * Indicates if the resource is active, inactive, or deleted.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -97,13 +97,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
+   * The resource's description.
    **/
   public DomainPhysicalInterface description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The resource's description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -114,13 +115,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
+   * The current version of the resource.
    **/
   public DomainPhysicalInterface version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current version of the resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -131,14 +133,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public DomainPhysicalInterface dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -149,14 +151,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public DomainPhysicalInterface dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -167,13 +169,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
+   * The ID of the user that last modified the resource.
    **/
   public DomainPhysicalInterface modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
@@ -184,13 +187,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
+   * The ID of the user that created the resource.
    **/
   public DomainPhysicalInterface createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -200,31 +204,22 @@ public class DomainPhysicalInterface  implements Serializable {
   }
 
   
-  /**
-   **/
-  public DomainPhysicalInterface state(StateEnum state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
   }
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
 
   
   /**
+   * The application that last modified the resource.
    **/
   public DomainPhysicalInterface modifiedByApp(String modifiedByApp) {
     this.modifiedByApp = modifiedByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
@@ -235,13 +230,14 @@ public class DomainPhysicalInterface  implements Serializable {
 
   
   /**
+   * The application that created the resource.
    **/
   public DomainPhysicalInterface createdByApp(String createdByApp) {
     this.createdByApp = createdByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The application that created the resource.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;

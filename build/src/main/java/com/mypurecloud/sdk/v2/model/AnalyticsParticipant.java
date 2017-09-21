@@ -23,7 +23,7 @@ public class AnalyticsParticipant  implements Serializable {
   private String userId = null;
 
   /**
-   * Gets or Sets purpose
+   * The participant's purpose
    */
   public enum PurposeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -73,13 +73,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * Unique identifier for the participant
    **/
   public AnalyticsParticipant participantId(String participantId) {
     this.participantId = participantId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the participant")
   @JsonProperty("participantId")
   public String getParticipantId() {
     return participantId;
@@ -90,13 +91,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * A human readable name identifying the participant
    **/
   public AnalyticsParticipant participantName(String participantName) {
     this.participantName = participantName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A human readable name identifying the participant")
   @JsonProperty("participantName")
   public String getParticipantName() {
     return participantName;
@@ -107,13 +109,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * If a user, then this will be the unique identifier for the user
    **/
   public AnalyticsParticipant userId(String userId) {
     this.userId = userId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If a user, then this will be the unique identifier for the user")
   @JsonProperty("userId")
   public String getUserId() {
     return userId;
@@ -124,13 +127,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * The participant's purpose
    **/
   public AnalyticsParticipant purpose(PurposeEnum purpose) {
     this.purpose = purpose;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The participant's purpose")
   @JsonProperty("purpose")
   public PurposeEnum getPurpose() {
     return purpose;
@@ -141,13 +145,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * External Contact Identifier
    **/
   public AnalyticsParticipant externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "External Contact Identifier")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;
@@ -158,13 +163,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * External Organization Identifier
    **/
   public AnalyticsParticipant externalOrganizationId(String externalOrganizationId) {
     this.externalOrganizationId = externalOrganizationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "External Organization Identifier")
   @JsonProperty("externalOrganizationId")
   public String getExternalOrganizationId() {
     return externalOrganizationId;
@@ -175,13 +181,14 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * List of sessions associated to this participant
    **/
   public AnalyticsParticipant sessions(List<AnalyticsSession> sessions) {
     this.sessions = sessions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of sessions associated to this participant")
   @JsonProperty("sessions")
   public List<AnalyticsSession> getSessions() {
     return sessions;

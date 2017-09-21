@@ -46,7 +46,8 @@ public class Recording  implements Serializable {
     DELETED("DELETED"),
     RESTORED("RESTORED"),
     RESTORING("RESTORING"),
-    UPLOADING("UPLOADING");
+    UPLOADING("UPLOADING"),
+    ERROR("ERROR");
 
     private String value;
 

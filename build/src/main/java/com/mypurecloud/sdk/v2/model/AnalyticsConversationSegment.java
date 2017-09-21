@@ -28,7 +28,7 @@ public class AnalyticsConversationSegment  implements Serializable {
   private String errorCode = null;
 
   /**
-   * Gets or Sets disconnectType
+   * A description of the event that disconnected the segment
    */
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -76,7 +76,7 @@ public class AnalyticsConversationSegment  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
 
   /**
-   * Gets or Sets segmentType
+   * The activity taking place for the participant in the segment
    */
   public enum SegmentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -136,14 +136,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public AnalyticsConversationSegment segmentStart(Date segmentStart) {
     this.segmentStart = segmentStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("segmentStart")
   public Date getSegmentStart() {
     return segmentStart;
@@ -154,14 +154,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public AnalyticsConversationSegment segmentEnd(Date segmentEnd) {
     this.segmentEnd = segmentEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("segmentEnd")
   public Date getSegmentEnd() {
     return segmentEnd;
@@ -172,13 +172,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * Queue identifier
    **/
   public AnalyticsConversationSegment queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Queue identifier")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
@@ -189,13 +190,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * Wrapup Code id
    **/
   public AnalyticsConversationSegment wrapUpCode(String wrapUpCode) {
     this.wrapUpCode = wrapUpCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Wrapup Code id")
   @JsonProperty("wrapUpCode")
   public String getWrapUpCode() {
     return wrapUpCode;
@@ -206,13 +208,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * Note entered by an agent during after-call work
    **/
   public AnalyticsConversationSegment wrapUpNote(String wrapUpNote) {
     this.wrapUpNote = wrapUpNote;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Note entered by an agent during after-call work")
   @JsonProperty("wrapUpNote")
   public String getWrapUpNote() {
     return wrapUpNote;
@@ -257,13 +260,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * A description of the event that disconnected the segment
    **/
   public AnalyticsConversationSegment disconnectType(DisconnectTypeEnum disconnectType) {
     this.disconnectType = disconnectType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A description of the event that disconnected the segment")
   @JsonProperty("disconnectType")
   public DisconnectTypeEnum getDisconnectType() {
     return disconnectType;
@@ -274,13 +278,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * The activity taking place for the participant in the segment
    **/
   public AnalyticsConversationSegment segmentType(SegmentTypeEnum segmentType) {
     this.segmentType = segmentType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The activity taking place for the participant in the segment")
   @JsonProperty("segmentType")
   public SegmentTypeEnum getSegmentType() {
     return segmentType;
@@ -325,13 +330,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * A unique identifier for the language requested for an interaction.
    **/
   public AnalyticsConversationSegment requestedLanguageId(String requestedLanguageId) {
     this.requestedLanguageId = requestedLanguageId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A unique identifier for the language requested for an interaction.")
   @JsonProperty("requestedLanguageId")
   public String getRequestedLanguageId() {
     return requestedLanguageId;
@@ -461,13 +467,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
+   * Indicates whether the segment was a conference
    **/
   public AnalyticsConversationSegment conference(Boolean conference) {
     this.conference = conference;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates whether the segment was a conference")
   @JsonProperty("conference")
   public Boolean getConference() {
     return conference;

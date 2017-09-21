@@ -31,7 +31,8 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("VOICE"),
     CHAT("CHAT"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    CALLBACK("CALLBACK");
 
     private String value;
 
