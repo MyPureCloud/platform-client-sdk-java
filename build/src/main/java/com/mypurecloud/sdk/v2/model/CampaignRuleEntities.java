@@ -22,13 +22,14 @@ public class CampaignRuleEntities  implements Serializable {
 
   
   /**
+   * The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
    **/
   public CampaignRuleEntities campaigns(List<UriReference> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.")
   @JsonProperty("campaigns")
   public List<UriReference> getCampaigns() {
     return campaigns;
@@ -39,13 +40,14 @@ public class CampaignRuleEntities  implements Serializable {
 
   
   /**
+   * The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
    **/
   public CampaignRuleEntities sequences(List<UriReference> sequences) {
     this.sequences = sequences;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.")
   @JsonProperty("sequences")
   public List<UriReference> getSequences() {
     return sequences;

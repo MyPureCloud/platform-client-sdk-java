@@ -20,7 +20,7 @@ public class DialerAction  implements Serializable {
   
 
   /**
-   * Type of the action
+   * The type of this DialerAction.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -55,7 +55,7 @@ public class DialerAction  implements Serializable {
   private TypeEnum type = null;
 
   /**
-   * Identifier of the action
+   * Additional type specification for this DialerAction.
    */
   public enum ActionTypeNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -97,7 +97,7 @@ public class DialerAction  implements Serializable {
   private ActionTypeNameEnum actionTypeName = null;
 
   /**
-   * Indicator of the type of update action (applicable only to certain types of actions)
+   * Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
    */
   public enum UpdateOptionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -136,14 +136,14 @@ public class DialerAction  implements Serializable {
 
   
   /**
-   * Type of the action
+   * The type of this DialerAction.
    **/
   public DialerAction type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Type of the action")
+  @ApiModelProperty(example = "null", required = true, value = "The type of this DialerAction.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -154,14 +154,14 @@ public class DialerAction  implements Serializable {
 
   
   /**
-   * Identifier of the action
+   * Additional type specification for this DialerAction.
    **/
   public DialerAction actionTypeName(ActionTypeNameEnum actionTypeName) {
     this.actionTypeName = actionTypeName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Identifier of the action")
+  @ApiModelProperty(example = "null", required = true, value = "Additional type specification for this DialerAction.")
   @JsonProperty("actionTypeName")
   public ActionTypeNameEnum getActionTypeName() {
     return actionTypeName;
@@ -172,14 +172,14 @@ public class DialerAction  implements Serializable {
 
   
   /**
-   * Indicator of the type of update action (applicable only to certain types of actions)
+   * Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
    **/
   public DialerAction updateOption(UpdateOptionEnum updateOption) {
     this.updateOption = updateOption;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicator of the type of update action (applicable only to certain types of actions)")
+  @ApiModelProperty(example = "null", value = "Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.")
   @JsonProperty("updateOption")
   public UpdateOptionEnum getUpdateOption() {
     return updateOption;
@@ -190,14 +190,14 @@ public class DialerAction  implements Serializable {
 
   
   /**
-   * Map of key-value pairs pertinent to the action (different actions require different properties)
+   * A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key 'callbackOffset' that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: 'callerAddress', which should be the caller id phone number, and 'callerName'. For either key, you can also specify a column on the contact to get the value from. To do this, specify 'contact.Column', where 'Column' is the name of the contact column from which to get the value. SET_SKILLS takes a key 'skills' with an array of skill ids.
    **/
   public DialerAction properties(Map<String, String> properties) {
     this.properties = properties;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Map of key-value pairs pertinent to the action (different actions require different properties)")
+  @ApiModelProperty(example = "null", value = "A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key 'callbackOffset' that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: 'callerAddress', which should be the caller id phone number, and 'callerName'. For either key, you can also specify a column on the contact to get the value from. To do this, specify 'contact.Column', where 'Column' is the name of the contact column from which to get the value. SET_SKILLS takes a key 'skills' with an array of skill ids.")
   @JsonProperty("properties")
   public Map<String, String> getProperties() {
     return properties;

@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
+import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
@@ -110,6 +111,21 @@ public class GetConversationsCallsHistoryRequest {
 	}
 
 	
+	private List<String> expand;
+	public List<String> getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(List<String> expand) {
+		this.expand = expand;
+	}
+
+	public GetConversationsCallsHistoryRequest withExpand(List<String> expand) {
+	    this.setExpand(expand);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -138,6 +154,8 @@ public class GetConversationsCallsHistoryRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("interval", "", interval)
+        
+                .withQueryParameters("expand", "multi", expand)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -172,6 +190,11 @@ public class GetConversationsCallsHistoryRequest {
 		
 		public Builder withInterval(String interval) {
 			request.setInterval(interval);
+			return this;
+		}
+		
+		public Builder withExpand(List<String> expand) {
+			request.setExpand(expand);
 			return this;
 		}
 		

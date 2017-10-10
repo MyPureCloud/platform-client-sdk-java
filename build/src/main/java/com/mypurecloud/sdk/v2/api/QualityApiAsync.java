@@ -542,7 +542,7 @@ public class QualityApiAsync {
 
   
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -576,7 +576,7 @@ public class QualityApiAsync {
   }
 
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

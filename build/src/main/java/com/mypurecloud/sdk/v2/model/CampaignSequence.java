@@ -28,7 +28,7 @@ public class CampaignSequence  implements Serializable {
   private Integer currentCampaign = null;
 
   /**
-   * status of the sequence
+   * The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
    */
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -124,14 +124,14 @@ public class CampaignSequence  implements Serializable {
 
   
   /**
-   * the ordered list of campaign identifiers
+   * The ordered list of Campaigns that this CampaignSequence will run.
    **/
   public CampaignSequence campaigns(List<UriReference> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the ordered list of campaign identifiers")
+  @ApiModelProperty(example = "null", required = true, value = "The ordered list of Campaigns that this CampaignSequence will run.")
   @JsonProperty("campaigns")
   public List<UriReference> getCampaigns() {
     return campaigns;
@@ -141,7 +141,7 @@ public class CampaignSequence  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", required = true, value = "the zero-based index of the current campaign in the campaigns list")
+  @ApiModelProperty(example = "null", required = true, value = "A zero-based index indicating which Campaign this CampaignSequence is currently on.")
   @JsonProperty("currentCampaign")
   public Integer getCurrentCampaign() {
     return currentCampaign;
@@ -149,14 +149,14 @@ public class CampaignSequence  implements Serializable {
 
   
   /**
-   * status of the sequence
+   * The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
    **/
   public CampaignSequence status(StatusEnum status) {
     this.status = status;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "status of the sequence")
+  @ApiModelProperty(example = "null", required = true, value = "The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
@@ -166,7 +166,7 @@ public class CampaignSequence  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "if a sequence has unexpectedly stopped, this message provides the reason")
+  @ApiModelProperty(example = "null", value = "A message indicating if and why a CampaignSequence has stopped unexpectedly.")
   @JsonProperty("stopMessage")
   public String getStopMessage() {
     return stopMessage;
@@ -174,14 +174,14 @@ public class CampaignSequence  implements Serializable {
 
   
   /**
-   * indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false
+   * Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
    **/
   public CampaignSequence repeat(Boolean repeat) {
     this.repeat = repeat;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false")
+  @ApiModelProperty(example = "null", value = "Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.")
   @JsonProperty("repeat")
   public Boolean getRepeat() {
     return repeat;

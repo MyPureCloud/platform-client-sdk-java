@@ -29,7 +29,7 @@ public class ContactListFilter  implements Serializable {
   private List<ContactListFilterClause> clauses = new ArrayList<ContactListFilterClause>();
 
   /**
-   * The filter type tells the api how to compare between clauses
+   * How to join clauses together.
    */
   public enum FilterTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -73,13 +73,14 @@ public class ContactListFilter  implements Serializable {
 
   
   /**
+   * The name of the list.
    **/
   public ContactListFilter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the list.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -122,14 +123,14 @@ public class ContactListFilter  implements Serializable {
 
   
   /**
-   * The contact list the filter is based on
+   * The contact list the filter is based on.
    **/
   public ContactListFilter contactList(UriReference contactList) {
     this.contactList = contactList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The contact list the filter is based on")
+  @ApiModelProperty(example = "null", required = true, value = "The contact list the filter is based on.")
   @JsonProperty("contactList")
   public UriReference getContactList() {
     return contactList;
@@ -140,13 +141,14 @@ public class ContactListFilter  implements Serializable {
 
   
   /**
+   * Groups of conditions to filter the contacts by.
    **/
   public ContactListFilter clauses(List<ContactListFilterClause> clauses) {
     this.clauses = clauses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Groups of conditions to filter the contacts by.")
   @JsonProperty("clauses")
   public List<ContactListFilterClause> getClauses() {
     return clauses;
@@ -157,14 +159,14 @@ public class ContactListFilter  implements Serializable {
 
   
   /**
-   * The filter type tells the api how to compare between clauses
+   * How to join clauses together.
    **/
   public ContactListFilter filterType(FilterTypeEnum filterType) {
     this.filterType = filterType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The filter type tells the api how to compare between clauses")
+  @ApiModelProperty(example = "null", value = "How to join clauses together.")
   @JsonProperty("filterType")
   public FilterTypeEnum getFilterType() {
     return filterType;

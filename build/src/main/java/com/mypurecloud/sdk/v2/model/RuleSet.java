@@ -38,13 +38,14 @@ public class RuleSet  implements Serializable {
 
   
   /**
+   * The name of the RuleSet.
    **/
   public RuleSet name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the RuleSet.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -87,14 +88,14 @@ public class RuleSet  implements Serializable {
 
   
   /**
-   * The identifier of an example contact list that provides user-interface suggestions for contact-based conditions and actions
+   * A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
    **/
   public RuleSet contactList(UriReference contactList) {
     this.contactList = contactList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The identifier of an example contact list that provides user-interface suggestions for contact-based conditions and actions")
+  @ApiModelProperty(example = "null", value = "A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.")
   @JsonProperty("contactList")
   public UriReference getContactList() {
     return contactList;
@@ -105,14 +106,14 @@ public class RuleSet  implements Serializable {
 
   
   /**
-   * The identifier of an example queue that provides user-interface suggestions for wrap-up associated conditions
+   * A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
    **/
   public RuleSet queue(UriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The identifier of an example queue that provides user-interface suggestions for wrap-up associated conditions")
+  @ApiModelProperty(example = "null", value = "A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.")
   @JsonProperty("queue")
   public UriReference getQueue() {
     return queue;
@@ -123,14 +124,14 @@ public class RuleSet  implements Serializable {
 
   
   /**
-   * The list of rules
+   * The list of rules.
    **/
   public RuleSet rules(List<DialerRule> rules) {
     this.rules = rules;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of rules")
+  @ApiModelProperty(example = "null", required = true, value = "The list of rules.")
   @JsonProperty("rules")
   public List<DialerRule> getRules() {
     return rules;

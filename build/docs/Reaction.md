@@ -8,9 +8,9 @@ title: Reaction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **data** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum) |  |  [optional] |
+| **data** | **String** | Parameter for this reaction. For transfer_flow, this would be the outbound flow id. |  [optional] |
+| **name** | **String** | Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name. |  [optional] |
+| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum) | The reaction to take for a given call analysis result. |  |
 {: class="table table-striped"}
 
 

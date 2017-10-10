@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AgentActivityNotificationRoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserRoutingStatusNotificationErrorInfo;
-import com.mypurecloud.sdk.v2.model.UserRoutingStatusNotificationRoutingStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,23 +16,23 @@ import java.io.Serializable;
 
 public class UserRoutingStatusNotification  implements Serializable {
   
-  private UserRoutingStatusNotificationRoutingStatus routingStatus = null;
+  private AgentActivityNotificationRoutingStatus routingStatus = null;
   private UserRoutingStatusNotificationErrorInfo errorInfo = null;
 
   
   /**
    **/
-  public UserRoutingStatusNotification routingStatus(UserRoutingStatusNotificationRoutingStatus routingStatus) {
+  public UserRoutingStatusNotification routingStatus(AgentActivityNotificationRoutingStatus routingStatus) {
     this.routingStatus = routingStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("routingStatus")
-  public UserRoutingStatusNotificationRoutingStatus getRoutingStatus() {
+  public AgentActivityNotificationRoutingStatus getRoutingStatus() {
     return routingStatus;
   }
-  public void setRoutingStatus(UserRoutingStatusNotificationRoutingStatus routingStatus) {
+  public void setRoutingStatus(AgentActivityNotificationRoutingStatus routingStatus) {
     this.routingStatus = routingStatus;
   }
 

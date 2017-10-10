@@ -2157,7 +2157,7 @@ try {
 
 # **getFlows**
 
-> [FlowEntityListing](FlowEntityListing.html) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas)
+> [FlowEntityListing](FlowEntityListing.html) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore)
 
 Get a pageable list of flows, filtered by query parameters
 
@@ -2197,8 +2197,10 @@ String lockedBy = "lockedBy_example"; // String | Locked by
 String secure = "secure_example"; // String | Secure
 Boolean deleted = false; // Boolean | Include deleted
 Boolean includeSchemas = false; // Boolean | Include variable schemas
+String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
+String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
 try {
-    FlowEntityListing result = apiInstance.getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas);
+    FlowEntityListing result = apiInstance.getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlows");
@@ -2226,6 +2228,8 @@ try {
 | **secure** | **String**| Secure | [optional]<br />**Values**: any, checkedin, published |
 | **deleted** | **Boolean**| Include deleted | [optional] [default to false] |
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] |
+| **publishedAfter** | **String**| Published after | [optional] |
+| **publishedBefore** | **String**| Published before | [optional] |
 {: class="table table-striped"}
 
 ### Return type

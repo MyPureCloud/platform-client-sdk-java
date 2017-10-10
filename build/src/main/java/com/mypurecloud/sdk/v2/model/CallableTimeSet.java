@@ -35,13 +35,14 @@ public class CallableTimeSet  implements Serializable {
 
   
   /**
+   * The name of the CallableTimeSet.
    **/
   public CallableTimeSet name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the CallableTimeSet.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -84,14 +85,14 @@ public class CallableTimeSet  implements Serializable {
 
   
   /**
-   * list of time/timezone groupings for which it is acceptable to place outbound calls
+   * The list of CallableTimes for which it is acceptable to place outbound calls.
    **/
   public CallableTimeSet callableTimes(List<CallableTime> callableTimes) {
     this.callableTimes = callableTimes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "list of time/timezone groupings for which it is acceptable to place outbound calls")
+  @ApiModelProperty(example = "null", required = true, value = "The list of CallableTimes for which it is acceptable to place outbound calls.")
   @JsonProperty("callableTimes")
   public List<CallableTime> getCallableTimes() {
     return callableTimes;

@@ -24,13 +24,14 @@ public class ContactListFilterRange  implements Serializable {
 
   
   /**
+   * The minimum value of the range. Required for the operator BETWEEN.
    **/
   public ContactListFilterRange min(String min) {
     this.min = min;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The minimum value of the range. Required for the operator BETWEEN.")
   @JsonProperty("min")
   public String getMin() {
     return min;
@@ -41,13 +42,14 @@ public class ContactListFilterRange  implements Serializable {
 
   
   /**
+   * The maximum value of the range. Required for the operator BETWEEN.
    **/
   public ContactListFilterRange max(String max) {
     this.max = max;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The maximum value of the range. Required for the operator BETWEEN.")
   @JsonProperty("max")
   public String getMax() {
     return max;
@@ -58,13 +60,14 @@ public class ContactListFilterRange  implements Serializable {
 
   
   /**
+   * Whether or not to include the minimum in the range.
    **/
   public ContactListFilterRange minInclusive(Boolean minInclusive) {
     this.minInclusive = minInclusive;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not to include the minimum in the range.")
   @JsonProperty("minInclusive")
   public Boolean getMinInclusive() {
     return minInclusive;
@@ -75,13 +78,14 @@ public class ContactListFilterRange  implements Serializable {
 
   
   /**
+   * Whether or not to include the maximum in the range.
    **/
   public ContactListFilterRange maxInclusive(Boolean maxInclusive) {
     this.maxInclusive = maxInclusive;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not to include the maximum in the range.")
   @JsonProperty("maxInclusive")
   public Boolean getMaxInclusive() {
     return maxInclusive;
@@ -92,13 +96,14 @@ public class ContactListFilterRange  implements Serializable {
 
   
   /**
+   * A set of values that the contact data should be in. Required for the IN operator.
    **/
   public ContactListFilterRange inSet(List<String> inSet) {
     this.inSet = inSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A set of values that the contact data should be in. Required for the IN operator.")
   @JsonProperty("inSet")
   public List<String> getInSet() {
     return inSet;

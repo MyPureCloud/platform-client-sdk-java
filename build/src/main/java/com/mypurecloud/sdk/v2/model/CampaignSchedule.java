@@ -87,14 +87,14 @@ public class CampaignSchedule  implements Serializable {
 
   
   /**
-   * a list of start and end times
+   * A list of intervals during which to run the associated Campaign.
    **/
   public CampaignSchedule intervals(List<ScheduleInterval> intervals) {
     this.intervals = intervals;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "a list of start and end times")
+  @ApiModelProperty(example = "null", required = true, value = "A list of intervals during which to run the associated Campaign.")
   @JsonProperty("intervals")
   public List<ScheduleInterval> getIntervals() {
     return intervals;
@@ -105,14 +105,14 @@ public class CampaignSchedule  implements Serializable {
 
   
   /**
-   * time zone identifier to be applied to the intervals; for example Africa/Abidjan
+   * The time zone for this CampaignSchedule. For example, Africa/Abidjan.
    **/
   public CampaignSchedule timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "time zone identifier to be applied to the intervals; for example Africa/Abidjan")
+  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "The time zone for this CampaignSchedule. For example, Africa/Abidjan.")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -123,14 +123,14 @@ public class CampaignSchedule  implements Serializable {
 
   
   /**
-   * identifier of the campaign to be scheduled
+   * The Campaign that this CampaignSchedule is for.
    **/
   public CampaignSchedule campaign(UriReference campaign) {
     this.campaign = campaign;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the campaign to be scheduled")
+  @ApiModelProperty(example = "null", required = true, value = "The Campaign that this CampaignSchedule is for.")
   @JsonProperty("campaign")
   public UriReference getCampaign() {
     return campaign;

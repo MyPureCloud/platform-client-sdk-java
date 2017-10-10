@@ -21,7 +21,7 @@ public class CampaignRuleAction  implements Serializable {
   private CampaignRuleParameters parameters = null;
 
   /**
-   * Gets or Sets actionType
+   * The action to take on the campaignRuleActionEntities.
    */
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -80,13 +80,14 @@ public class CampaignRuleAction  implements Serializable {
 
   
   /**
+   * The parameters for the CampaignRuleAction. Required for certain actionTypes.
    **/
   public CampaignRuleAction parameters(CampaignRuleParameters parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The parameters for the CampaignRuleAction. Required for certain actionTypes.")
   @JsonProperty("parameters")
   public CampaignRuleParameters getParameters() {
     return parameters;
@@ -97,13 +98,14 @@ public class CampaignRuleAction  implements Serializable {
 
   
   /**
+   * The action to take on the campaignRuleActionEntities.
    **/
   public CampaignRuleAction actionType(ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The action to take on the campaignRuleActionEntities.")
   @JsonProperty("actionType")
   public ActionTypeEnum getActionType() {
     return actionType;
@@ -114,13 +116,14 @@ public class CampaignRuleAction  implements Serializable {
 
   
   /**
+   * The list of entities that this action will apply to.
    **/
   public CampaignRuleAction campaignRuleActionEntities(CampaignRuleActionEntities campaignRuleActionEntities) {
     this.campaignRuleActionEntities = campaignRuleActionEntities;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The list of entities that this action will apply to.")
   @JsonProperty("campaignRuleActionEntities")
   public CampaignRuleActionEntities getCampaignRuleActionEntities() {
     return campaignRuleActionEntities;

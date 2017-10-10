@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainLogicalInterface;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
+import com.mypurecloud.sdk.v2.model.EdgeMetrics;
 import com.mypurecloud.sdk.v2.model.DomainPhysicalInterface;
 import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.VmPairingInfo;
@@ -64,12 +65,14 @@ import com.mypurecloud.sdk.v2.model.PhoneBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
+import com.mypurecloud.sdk.v2.model.AsgInfoResponse;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
+import com.mypurecloud.sdk.v2.model.TrunkMetrics;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
@@ -82,6 +85,7 @@ import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAddressResponse;
 import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
+import com.mypurecloud.sdk.v2.model.CreateAsgRequest;
 
 public class GetTelephonyProvidersEdgeTrunksRequest {
     

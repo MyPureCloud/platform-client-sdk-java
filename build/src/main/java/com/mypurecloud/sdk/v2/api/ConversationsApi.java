@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
+import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
@@ -116,6 +117,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsProper
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
@@ -1457,37 +1459,41 @@ public class ConversationsApi {
   /**
    * Get call history
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size, maximum 50 (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param expand Which fields, if any, to expand. (optional)
    * @return CallHistoryConversationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CallHistoryConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval) throws IOException, ApiException {
-    return  getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval));
+  public CallHistoryConversationEntityListing getConversationsCallsHistory(Integer pageSize, Integer pageNumber, String interval, List<String> expand) throws IOException, ApiException {
+    return  getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval, expand));
   }
 
   /**
    * Get call history
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size, maximum 50 (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param expand Which fields, if any, to expand. (optional)
    * @return CallHistoryConversationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallHistoryConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval) throws IOException {
-    return getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval).withHttpInfo());
+  public ApiResponse<CallHistoryConversationEntityListing> getConversationsCallsHistoryWithHttpInfo(Integer pageSize, Integer pageNumber, String interval, List<String> expand) throws IOException {
+    return getConversationsCallsHistory(createGetConversationsCallsHistoryRequest(pageSize, pageNumber, interval, expand).withHttpInfo());
   }
 
-  private GetConversationsCallsHistoryRequest createGetConversationsCallsHistoryRequest(Integer pageSize, Integer pageNumber, String interval) {
+  private GetConversationsCallsHistoryRequest createGetConversationsCallsHistoryRequest(Integer pageSize, Integer pageNumber, String interval, List<String> expand) {
     return GetConversationsCallsHistoryRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withInterval(interval)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -5097,6 +5103,90 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postConversationParticipantCallbacks(ApiRequest<CreateCallbackOnConversationCommand> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Sends DTMF to the participant
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Digits (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantDigits(String conversationId, String participantId, Digits body) throws IOException, ApiException {
+     postConversationParticipantDigits(createPostConversationParticipantDigitsRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Sends DTMF to the participant
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body Digits (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantDigitsWithHttpInfo(String conversationId, String participantId, Digits body) throws IOException {
+    return postConversationParticipantDigits(createPostConversationParticipantDigitsRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantDigitsRequest createPostConversationParticipantDigitsRequest(String conversationId, String participantId, Digits body) {
+    return PostConversationParticipantDigitsRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Sends DTMF to the participant
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationParticipantDigits(PostConversationParticipantDigitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Sends DTMF to the participant
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationParticipantDigits(ApiRequest<Digits> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

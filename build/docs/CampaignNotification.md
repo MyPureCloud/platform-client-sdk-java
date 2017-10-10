@@ -18,6 +18,7 @@ title: CampaignNotification
 | **dialingMode** | [**DialingModeEnum**](#DialingModeEnum) |  |  [optional] |
 | **script** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  |  [optional] |
 | **edgeGroup** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  |  [optional] |
+| **site** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  |  [optional] |
 | **campaignStatus** | [**CampaignStatusEnum**](#CampaignStatusEnum) |  |  [optional] |
 | **phoneColumns** | [**List&lt;CampaignNotificationPhoneColumns&gt;**](CampaignNotificationPhoneColumns.html) |  |  [optional] |
 | **abandonRate** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |

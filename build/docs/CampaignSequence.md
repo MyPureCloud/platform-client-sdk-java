@@ -13,11 +13,11 @@ title: CampaignSequence
 | **dateCreated** | [**Date**](Date.html) | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **dateModified** | [**Date**](Date.html) | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
-| **campaigns** | [**List&lt;UriReference&gt;**](UriReference.html) | the ordered list of campaign identifiers |  |
-| **currentCampaign** | **Integer** | the zero-based index of the current campaign in the campaigns list |  |
-| **status** | [**StatusEnum**](#StatusEnum) | status of the sequence |  |
-| **stopMessage** | **String** | if a sequence has unexpectedly stopped, this message provides the reason |  [optional] |
-| **repeat** | **Boolean** | indicates if a sequence is to repeat from the beginning after the last campaign completes; default is false |  [optional] |
+| **campaigns** | [**List&lt;UriReference&gt;**](UriReference.html) | The ordered list of Campaigns that this CampaignSequence will run. |  |
+| **currentCampaign** | **Integer** | A zero-based index indicating which Campaign this CampaignSequence is currently on. |  |
+| **status** | [**StatusEnum**](#StatusEnum) | The current status of the CampaignSequence. A CampaignSequence can be turned &#39;on&#39; or &#39;off&#39;. |  |
+| **stopMessage** | **String** | A message indicating if and why a CampaignSequence has stopped unexpectedly. |  [optional] |
+| **repeat** | **Boolean** | Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

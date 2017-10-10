@@ -5,7 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.Group;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -60,9 +64,9 @@ public class CallHistoryParticipant  implements Serializable {
   private DirectionEnum direction = null;
   private String ani = null;
   private String dnis = null;
-  private UriReference user = null;
-  private UriReference queue = null;
-  private UriReference group = null;
+  private User user = null;
+  private Queue queue = null;
+  private Group group = null;
 
   /**
    * The reason the participant was disconnected from the conversation.
@@ -110,8 +114,8 @@ public class CallHistoryParticipant  implements Serializable {
     }
   }
   private DisconnectTypeEnum disconnectType = null;
-  private UriReference externalContact = null;
-  private UriReference externalOrganization = null;
+  private ExternalContact externalContact = null;
+  private ExternalOrganization externalOrganization = null;
 
   
   /**
@@ -279,17 +283,17 @@ public class CallHistoryParticipant  implements Serializable {
   /**
    * The PureCloud user for this participant.
    **/
-  public CallHistoryParticipant user(UriReference user) {
+  public CallHistoryParticipant user(User user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud user for this participant.")
   @JsonProperty("user")
-  public UriReference getUser() {
+  public User getUser() {
     return user;
   }
-  public void setUser(UriReference user) {
+  public void setUser(User user) {
     this.user = user;
   }
 
@@ -297,17 +301,17 @@ public class CallHistoryParticipant  implements Serializable {
   /**
    * The PureCloud queue for this participant.
    **/
-  public CallHistoryParticipant queue(UriReference queue) {
+  public CallHistoryParticipant queue(Queue queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud queue for this participant.")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public Queue getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(Queue queue) {
     this.queue = queue;
   }
 
@@ -315,17 +319,17 @@ public class CallHistoryParticipant  implements Serializable {
   /**
    * The group involved in the group ring call.
    **/
-  public CallHistoryParticipant group(UriReference group) {
+  public CallHistoryParticipant group(Group group) {
     this.group = group;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The group involved in the group ring call.")
   @JsonProperty("group")
-  public UriReference getGroup() {
+  public Group getGroup() {
     return group;
   }
-  public void setGroup(UriReference group) {
+  public void setGroup(Group group) {
     this.group = group;
   }
 
@@ -351,17 +355,17 @@ public class CallHistoryParticipant  implements Serializable {
   /**
    * The PureCloud external contact
    **/
-  public CallHistoryParticipant externalContact(UriReference externalContact) {
+  public CallHistoryParticipant externalContact(ExternalContact externalContact) {
     this.externalContact = externalContact;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud external contact")
   @JsonProperty("externalContact")
-  public UriReference getExternalContact() {
+  public ExternalContact getExternalContact() {
     return externalContact;
   }
-  public void setExternalContact(UriReference externalContact) {
+  public void setExternalContact(ExternalContact externalContact) {
     this.externalContact = externalContact;
   }
 
@@ -369,17 +373,17 @@ public class CallHistoryParticipant  implements Serializable {
   /**
    * The PureCloud external organization
    **/
-  public CallHistoryParticipant externalOrganization(UriReference externalOrganization) {
+  public CallHistoryParticipant externalOrganization(ExternalOrganization externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud external organization")
   @JsonProperty("externalOrganization")
-  public UriReference getExternalOrganization() {
+  public ExternalOrganization getExternalOrganization() {
     return externalOrganization;
   }
-  public void setExternalOrganization(UriReference externalOrganization) {
+  public void setExternalOrganization(ExternalOrganization externalOrganization) {
     this.externalOrganization = externalOrganization;
   }
 

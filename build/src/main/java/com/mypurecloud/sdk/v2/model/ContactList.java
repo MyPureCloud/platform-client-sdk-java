@@ -92,14 +92,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * the contact column names
+   * The names of the contact data columns.
    **/
   public ContactList columnNames(List<String> columnNames) {
     this.columnNames = columnNames;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the contact column names")
+  @ApiModelProperty(example = "null", required = true, value = "The names of the contact data columns.")
   @JsonProperty("columnNames")
   public List<String> getColumnNames() {
     return columnNames;
@@ -110,14 +110,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * the columns containing phone numbers
+   * Indicates which columns are phone numbers.
    **/
   public ContactList phoneColumns(List<ContactPhoneNumberColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the columns containing phone numbers")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates which columns are phone numbers.")
   @JsonProperty("phoneColumns")
   public List<ContactPhoneNumberColumn> getPhoneColumns() {
     return phoneColumns;
@@ -128,14 +128,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * the status of the import process
+   * The status of the import process.
    **/
   public ContactList importStatus(ImportStatus importStatus) {
     this.importStatus = importStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the status of the import process")
+  @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
@@ -146,14 +146,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * the name of the column that holds the indicators for contacts that are to be dialed in preview mode only
+   * A column to check if a contact should always be dialed in preview mode.
    **/
   public ContactList previewModeColumnName(String previewModeColumnName) {
     this.previewModeColumnName = previewModeColumnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the name of the column that holds the indicators for contacts that are to be dialed in preview mode only")
+  @ApiModelProperty(example = "null", value = "A column to check if a contact should always be dialed in preview mode.")
   @JsonProperty("previewModeColumnName")
   public String getPreviewModeColumnName() {
     return previewModeColumnName;
@@ -164,14 +164,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * list of user-defined values indicating the contact is to be dialed in preview mode only
+   * The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.
    **/
   public ContactList previewModeAcceptedValues(List<String> previewModeAcceptedValues) {
     this.previewModeAcceptedValues = previewModeAcceptedValues;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "list of user-defined values indicating the contact is to be dialed in preview mode only")
+  @ApiModelProperty(example = "null", value = "The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode.")
   @JsonProperty("previewModeAcceptedValues")
   public List<String> getPreviewModeAcceptedValues() {
     return previewModeAcceptedValues;
@@ -181,7 +181,7 @@ public class ContactList  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "the number of contacts in the contact list")
+  @ApiModelProperty(example = "null", value = "The number of contacts in the ContactList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
@@ -189,14 +189,14 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * the associated AttemptLimits
+   * AttemptLimits for this ContactList
    **/
   public ContactList attemptLimits(UriReference attemptLimits) {
     this.attemptLimits = attemptLimits;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the associated AttemptLimits")
+  @ApiModelProperty(example = "null", value = "AttemptLimits for this ContactList")
   @JsonProperty("attemptLimits")
   public UriReference getAttemptLimits() {
     return attemptLimits;

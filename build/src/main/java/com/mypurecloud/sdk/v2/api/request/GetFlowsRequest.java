@@ -275,6 +275,36 @@ public class GetFlowsRequest {
 	}
 
 	
+	private String publishedAfter;
+	public String getPublishedAfter() {
+		return this.publishedAfter;
+	}
+
+	public void setPublishedAfter(String publishedAfter) {
+		this.publishedAfter = publishedAfter;
+	}
+
+	public GetFlowsRequest withPublishedAfter(String publishedAfter) {
+	    this.setPublishedAfter(publishedAfter);
+	    return this;
+	}
+
+	
+	private String publishedBefore;
+	public String getPublishedBefore() {
+		return this.publishedBefore;
+	}
+
+	public void setPublishedBefore(String publishedBefore) {
+		this.publishedBefore = publishedBefore;
+	}
+
+	public GetFlowsRequest withPublishedBefore(String publishedBefore) {
+	    this.setPublishedBefore(publishedBefore);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -332,6 +362,10 @@ public class GetFlowsRequest {
                 .withQueryParameters("deleted", "", deleted)
         
                 .withQueryParameters("includeSchemas", "", includeSchemas)
+        
+                .withQueryParameters("publishedAfter", "", publishedAfter)
+        
+                .withQueryParameters("publishedBefore", "", publishedBefore)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -431,6 +465,16 @@ public class GetFlowsRequest {
 		
 		public Builder withIncludeSchemas(Boolean includeSchemas) {
 			request.setIncludeSchemas(includeSchemas);
+			return this;
+		}
+		
+		public Builder withPublishedAfter(String publishedAfter) {
+			request.setPublishedAfter(publishedAfter);
+			return this;
+		}
+		
+		public Builder withPublishedBefore(String publishedBefore) {
+			request.setPublishedBefore(publishedBefore);
 			return this;
 		}
 		

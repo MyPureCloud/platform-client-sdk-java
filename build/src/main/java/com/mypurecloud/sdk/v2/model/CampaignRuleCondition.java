@@ -20,7 +20,7 @@ public class CampaignRuleCondition  implements Serializable {
   private CampaignRuleParameters parameters = null;
 
   /**
-   * Gets or Sets conditionType
+   * The type of condition to evaluate.
    */
   public enum ConditionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -73,13 +73,14 @@ public class CampaignRuleCondition  implements Serializable {
 
   
   /**
+   * The parameters for the CampaignRuleCondition.
    **/
   public CampaignRuleCondition parameters(CampaignRuleParameters parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The parameters for the CampaignRuleCondition.")
   @JsonProperty("parameters")
   public CampaignRuleParameters getParameters() {
     return parameters;
@@ -90,13 +91,14 @@ public class CampaignRuleCondition  implements Serializable {
 
   
   /**
+   * The type of condition to evaluate.
    **/
   public CampaignRuleCondition conditionType(ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The type of condition to evaluate.")
   @JsonProperty("conditionType")
   public ConditionTypeEnum getConditionType() {
     return conditionType;

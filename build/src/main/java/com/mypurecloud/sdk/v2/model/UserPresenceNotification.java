@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UserPresenceNotificationPresenceDefinition;
+import com.mypurecloud.sdk.v2.model.AgentActivityNotificationPresencePresenceDefinition;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class UserPresenceNotification  implements Serializable {
   
   private String source = null;
-  private UserPresenceNotificationPresenceDefinition presenceDefinition = null;
+  private AgentActivityNotificationPresencePresenceDefinition presenceDefinition = null;
   private Boolean primary = null;
   private String message = null;
   private Date modifiedDate = null;
@@ -42,17 +42,17 @@ public class UserPresenceNotification  implements Serializable {
   
   /**
    **/
-  public UserPresenceNotification presenceDefinition(UserPresenceNotificationPresenceDefinition presenceDefinition) {
+  public UserPresenceNotification presenceDefinition(AgentActivityNotificationPresencePresenceDefinition presenceDefinition) {
     this.presenceDefinition = presenceDefinition;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("presenceDefinition")
-  public UserPresenceNotificationPresenceDefinition getPresenceDefinition() {
+  public AgentActivityNotificationPresencePresenceDefinition getPresenceDefinition() {
     return presenceDefinition;
   }
-  public void setPresenceDefinition(UserPresenceNotificationPresenceDefinition presenceDefinition) {
+  public void setPresenceDefinition(AgentActivityNotificationPresencePresenceDefinition presenceDefinition) {
     this.presenceDefinition = presenceDefinition;
   }
 

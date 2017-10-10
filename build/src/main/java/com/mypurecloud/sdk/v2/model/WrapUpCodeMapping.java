@@ -120,14 +120,14 @@ public class WrapUpCodeMapping  implements Serializable {
 
   
   /**
-   * The default set of wrapup values
+   * The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.
    **/
   public WrapUpCodeMapping defaultSet(List<DefaultSetEnum> defaultSet) {
     this.defaultSet = defaultSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The default set of wrapup values")
+  @ApiModelProperty(example = "null", value = "The default set of wrap-up flags. These will be used if there is no entry for a given wrap-up code in the mapping.")
   @JsonProperty("defaultSet")
   public List<DefaultSetEnum> getDefaultSet() {
     return defaultSet;
@@ -138,14 +138,14 @@ public class WrapUpCodeMapping  implements Serializable {
 
   
   /**
-   * A map from wrapup code identifiers to a set of wrapup values
+   * A map from wrap-up code identifiers to a set of wrap-up flags.
    **/
   public WrapUpCodeMapping mapping(Map<String, List<String>> mapping) {
     this.mapping = mapping;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A map from wrapup code identifiers to a set of wrapup values")
+  @ApiModelProperty(example = "null", value = "A map from wrap-up code identifiers to a set of wrap-up flags.")
   @JsonProperty("mapping")
   public Map<String, List<String>> getMapping() {
     return mapping;

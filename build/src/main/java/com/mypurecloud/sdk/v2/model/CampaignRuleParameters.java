@@ -17,7 +17,7 @@ public class CampaignRuleParameters  implements Serializable {
   
 
   /**
-   * The operator for comparison. Required for all campaign rule conditions
+   * The operator for comparison. Required for a CampaignRuleCondition.
    */
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -56,7 +56,7 @@ public class CampaignRuleParameters  implements Serializable {
   private String value = null;
 
   /**
-   * The priority to set the campaign to. Required for 'set campaign priority' actions
+   * The priority to set a campaign to. Required for the 'setCampaignPriority' action.
    */
   public enum PriorityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -94,7 +94,7 @@ public class CampaignRuleParameters  implements Serializable {
   private PriorityEnum priority = null;
 
   /**
-   * The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions
+   * The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
    */
   public enum DialingModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -133,14 +133,14 @@ public class CampaignRuleParameters  implements Serializable {
 
   
   /**
-   * The operator for comparison. Required for all campaign rule conditions
+   * The operator for comparison. Required for a CampaignRuleCondition.
    **/
   public CampaignRuleParameters operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The operator for comparison. Required for all campaign rule conditions")
+  @ApiModelProperty(example = "null", value = "The operator for comparison. Required for a CampaignRuleCondition.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -151,14 +151,14 @@ public class CampaignRuleParameters  implements Serializable {
 
   
   /**
-   * The value for comparison. Required for all campaign rule conditions
+   * The value for comparison. Required for a CampaignRuleCondition.
    **/
   public CampaignRuleParameters value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The value for comparison. Required for all campaign rule conditions")
+  @ApiModelProperty(example = "null", value = "The value for comparison. Required for a CampaignRuleCondition.")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -169,14 +169,14 @@ public class CampaignRuleParameters  implements Serializable {
 
   
   /**
-   * The priority to set the campaign to. Required for 'set campaign priority' actions
+   * The priority to set a campaign to. Required for the 'setCampaignPriority' action.
    **/
   public CampaignRuleParameters priority(PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The priority to set the campaign to. Required for 'set campaign priority' actions")
+  @ApiModelProperty(example = "null", value = "The priority to set a campaign to. Required for the 'setCampaignPriority' action.")
   @JsonProperty("priority")
   public PriorityEnum getPriority() {
     return priority;
@@ -187,14 +187,14 @@ public class CampaignRuleParameters  implements Serializable {
 
   
   /**
-   * The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions
+   * The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
    **/
   public CampaignRuleParameters dialingMode(DialingModeEnum dialingMode) {
     this.dialingMode = dialingMode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The dialing mode to set the campaign to. Reqired for 'set campaign dialing mode' actions")
+  @ApiModelProperty(example = "null", value = "The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.")
   @JsonProperty("dialingMode")
   public DialingModeEnum getDialingMode() {
     return dialingMode;

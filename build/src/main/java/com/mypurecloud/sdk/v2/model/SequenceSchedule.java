@@ -87,14 +87,14 @@ public class SequenceSchedule  implements Serializable {
 
   
   /**
-   * a list of start and end times
+   * A list of intervals during which to run the associated CampaignSequence.
    **/
   public SequenceSchedule intervals(List<ScheduleInterval> intervals) {
     this.intervals = intervals;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "a list of start and end times")
+  @ApiModelProperty(example = "null", required = true, value = "A list of intervals during which to run the associated CampaignSequence.")
   @JsonProperty("intervals")
   public List<ScheduleInterval> getIntervals() {
     return intervals;
@@ -105,14 +105,14 @@ public class SequenceSchedule  implements Serializable {
 
   
   /**
-   * time zone identifier to be applied to the intervals; for example Africa/Abidjan
+   * The time zone for this SequenceSchedule. For example, Africa/Abidjan.
    **/
   public SequenceSchedule timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "time zone identifier to be applied to the intervals; for example Africa/Abidjan")
+  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "The time zone for this SequenceSchedule. For example, Africa/Abidjan.")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -123,14 +123,14 @@ public class SequenceSchedule  implements Serializable {
 
   
   /**
-   * identifier of the sequence to be scheduled
+   * The CampaignSequence that this SequenceSchedule is for.
    **/
   public SequenceSchedule sequence(UriReference sequence) {
     this.sequence = sequence;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the sequence to be scheduled")
+  @ApiModelProperty(example = "null", required = true, value = "The CampaignSequence that this SequenceSchedule is for.")
   @JsonProperty("sequence")
   public UriReference getSequence() {
     return sequence;

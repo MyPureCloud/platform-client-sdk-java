@@ -13,13 +13,13 @@ title: ContactList
 | **dateCreated** | [**Date**](Date.html) | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **dateModified** | [**Date**](Date.html) | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
-| **columnNames** | **List&lt;String&gt;** | the contact column names |  |
-| **phoneColumns** | [**List&lt;ContactPhoneNumberColumn&gt;**](ContactPhoneNumberColumn.html) | the columns containing phone numbers |  |
-| **importStatus** | [**ImportStatus**](ImportStatus.html) | the status of the import process |  [optional] |
-| **previewModeColumnName** | **String** | the name of the column that holds the indicators for contacts that are to be dialed in preview mode only |  [optional] |
-| **previewModeAcceptedValues** | **List&lt;String&gt;** | list of user-defined values indicating the contact is to be dialed in preview mode only |  [optional] |
-| **size** | **Long** | the number of contacts in the contact list |  [optional] |
-| **attemptLimits** | [**UriReference**](UriReference.html) | the associated AttemptLimits |  [optional] |
+| **columnNames** | **List&lt;String&gt;** | The names of the contact data columns. |  |
+| **phoneColumns** | [**List&lt;ContactPhoneNumberColumn&gt;**](ContactPhoneNumberColumn.html) | Indicates which columns are phone numbers. |  |
+| **importStatus** | [**ImportStatus**](ImportStatus.html) | The status of the import process. |  [optional] |
+| **previewModeColumnName** | **String** | A column to check if a contact should always be dialed in preview mode. |  [optional] |
+| **previewModeAcceptedValues** | **List&lt;String&gt;** | The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode. |  [optional] |
+| **size** | **Long** | The number of contacts in the ContactList. |  [optional] |
+| **attemptLimits** | [**UriReference**](UriReference.html) | AttemptLimits for this ContactList |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

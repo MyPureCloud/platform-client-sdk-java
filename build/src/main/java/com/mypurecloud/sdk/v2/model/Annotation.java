@@ -20,6 +20,10 @@ public class Annotation  implements Serializable {
   private String type = null;
   private Long location = null;
   private Long durationMs = null;
+  private Long absoluteLocation = null;
+  private Long absoluteDurationMs = null;
+  private Long recordingLocation = null;
+  private Long recordingDurationMs = null;
   private User user = null;
   private String description = null;
   private String keywordName = null;
@@ -109,6 +113,78 @@ public class Annotation  implements Serializable {
   }
   public void setDurationMs(Long durationMs) {
     this.durationMs = durationMs;
+  }
+
+  
+  /**
+   * Offset of annotation (milliseconds) from start of recording.
+   **/
+  public Annotation absoluteLocation(Long absoluteLocation) {
+    this.absoluteLocation = absoluteLocation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Offset of annotation (milliseconds) from start of recording.")
+  @JsonProperty("absoluteLocation")
+  public Long getAbsoluteLocation() {
+    return absoluteLocation;
+  }
+  public void setAbsoluteLocation(Long absoluteLocation) {
+    this.absoluteLocation = absoluteLocation;
+  }
+
+  
+  /**
+   * Duration of annotation (milliseconds).
+   **/
+  public Annotation absoluteDurationMs(Long absoluteDurationMs) {
+    this.absoluteDurationMs = absoluteDurationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Duration of annotation (milliseconds).")
+  @JsonProperty("absoluteDurationMs")
+  public Long getAbsoluteDurationMs() {
+    return absoluteDurationMs;
+  }
+  public void setAbsoluteDurationMs(Long absoluteDurationMs) {
+    this.absoluteDurationMs = absoluteDurationMs;
+  }
+
+  
+  /**
+   * Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts
+   **/
+  public Annotation recordingLocation(Long recordingLocation) {
+    this.recordingLocation = recordingLocation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts")
+  @JsonProperty("recordingLocation")
+  public Long getRecordingLocation() {
+    return recordingLocation;
+  }
+  public void setRecordingLocation(Long recordingLocation) {
+    this.recordingLocation = recordingLocation;
+  }
+
+  
+  /**
+   * Duration of annotation (milliseconds), adjusted for any recording cuts.
+   **/
+  public Annotation recordingDurationMs(Long recordingDurationMs) {
+    this.recordingDurationMs = recordingDurationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Duration of annotation (milliseconds), adjusted for any recording cuts.")
+  @JsonProperty("recordingDurationMs")
+  public Long getRecordingDurationMs() {
+    return recordingDurationMs;
+  }
+  public void setRecordingDurationMs(Long recordingDurationMs) {
+    this.recordingDurationMs = recordingDurationMs;
   }
 
   
@@ -350,6 +426,10 @@ public class Annotation  implements Serializable {
         Objects.equals(this.type, annotation.type) &&
         Objects.equals(this.location, annotation.location) &&
         Objects.equals(this.durationMs, annotation.durationMs) &&
+        Objects.equals(this.absoluteLocation, annotation.absoluteLocation) &&
+        Objects.equals(this.absoluteDurationMs, annotation.absoluteDurationMs) &&
+        Objects.equals(this.recordingLocation, annotation.recordingLocation) &&
+        Objects.equals(this.recordingDurationMs, annotation.recordingDurationMs) &&
         Objects.equals(this.user, annotation.user) &&
         Objects.equals(this.description, annotation.description) &&
         Objects.equals(this.keywordName, annotation.keywordName) &&
@@ -367,7 +447,7 @@ public class Annotation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, location, durationMs, user, description, keywordName, confidence, keywordSetId, keywordSetName, utterance, timeBegin, timeEnd, keywordConfidenceThreshold, agentScoreModifier, customerScoreModifier, selfUri);
+    return Objects.hash(id, name, type, location, durationMs, absoluteLocation, absoluteDurationMs, recordingLocation, recordingDurationMs, user, description, keywordName, confidence, keywordSetId, keywordSetName, utterance, timeBegin, timeEnd, keywordConfidenceThreshold, agentScoreModifier, customerScoreModifier, selfUri);
   }
 
   @Override
@@ -380,6 +460,10 @@ public class Annotation  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
+    sb.append("    absoluteLocation: ").append(toIndentedString(absoluteLocation)).append("\n");
+    sb.append("    absoluteDurationMs: ").append(toIndentedString(absoluteDurationMs)).append("\n");
+    sb.append("    recordingLocation: ").append(toIndentedString(recordingLocation)).append("\n");
+    sb.append("    recordingDurationMs: ").append(toIndentedString(recordingDurationMs)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    keywordName: ").append(toIndentedString(keywordName)).append("\n");

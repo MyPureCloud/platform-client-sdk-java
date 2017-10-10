@@ -19,7 +19,7 @@ public class ContactListFilterPredicate  implements Serializable {
   private String column = null;
 
   /**
-   * Whether the contact column contains numeric or alphabetic data
+   * The type of data in the contact column.
    */
   public enum ColumnTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -54,7 +54,7 @@ public class ContactListFilterPredicate  implements Serializable {
   private ColumnTypeEnum columnType = null;
 
   /**
-   * Gets or Sets operator
+   * The operator for this ContactListFilterPredicate.
    */
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -103,14 +103,14 @@ public class ContactListFilterPredicate  implements Serializable {
 
   
   /**
-   * Contact List column that must match a contact list column in the ContactListFilter's contactList object
+   * Contact list column from the ContactListFilter's contactList.
    **/
   public ContactListFilterPredicate column(String column) {
     this.column = column;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contact List column that must match a contact list column in the ContactListFilter's contactList object")
+  @ApiModelProperty(example = "null", value = "Contact list column from the ContactListFilter's contactList.")
   @JsonProperty("column")
   public String getColumn() {
     return column;
@@ -121,14 +121,14 @@ public class ContactListFilterPredicate  implements Serializable {
 
   
   /**
-   * Whether the contact column contains numeric or alphabetic data
+   * The type of data in the contact column.
    **/
   public ContactListFilterPredicate columnType(ColumnTypeEnum columnType) {
     this.columnType = columnType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether the contact column contains numeric or alphabetic data")
+  @ApiModelProperty(example = "null", value = "The type of data in the contact column.")
   @JsonProperty("columnType")
   public ColumnTypeEnum getColumnType() {
     return columnType;
@@ -139,13 +139,14 @@ public class ContactListFilterPredicate  implements Serializable {
 
   
   /**
+   * The operator for this ContactListFilterPredicate.
    **/
   public ContactListFilterPredicate operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The operator for this ContactListFilterPredicate.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -156,14 +157,14 @@ public class ContactListFilterPredicate  implements Serializable {
 
   
   /**
-   * Contact List value to operate on. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+   * Value with which to compare the contact's data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
    **/
   public ContactListFilterPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Contact List value to operate on. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
+  @ApiModelProperty(example = "null", value = "Value with which to compare the contact's data. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -174,14 +175,14 @@ public class ContactListFilterPredicate  implements Serializable {
 
   
   /**
-   * Range is only required for ContactListFilterComparisonOperator's BETWEEN and IN
+   * A range of values. Required for operators BETWEEN and IN.
    **/
   public ContactListFilterPredicate range(ContactListFilterRange range) {
     this.range = range;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Range is only required for ContactListFilterComparisonOperator's BETWEEN and IN")
+  @ApiModelProperty(example = "null", value = "A range of values. Required for operators BETWEEN and IN.")
   @JsonProperty("range")
   public ContactListFilterRange getRange() {
     return range;

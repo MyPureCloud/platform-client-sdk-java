@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainLogicalInterface;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
+import com.mypurecloud.sdk.v2.model.EdgeMetrics;
 import com.mypurecloud.sdk.v2.model.DomainPhysicalInterface;
 import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.VmPairingInfo;
@@ -59,12 +60,14 @@ import com.mypurecloud.sdk.v2.model.PhoneBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
+import com.mypurecloud.sdk.v2.model.AsgInfoResponse;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
+import com.mypurecloud.sdk.v2.model.TrunkMetrics;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
@@ -77,6 +80,7 @@ import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAddressResponse;
 import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
+import com.mypurecloud.sdk.v2.model.CreateAsgRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeRequest;
@@ -104,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSetuppackageRequest;
@@ -134,6 +139,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesett
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinterfacesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhoneRequest;
@@ -145,6 +151,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesReques
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest;
@@ -153,11 +160,13 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutbound
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
@@ -178,6 +187,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneReboot
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteRebalanceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
@@ -2109,6 +2119,82 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the edge metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeMetrics> getTelephonyProvidersEdgeMetricsAsync(GetTelephonyProvidersEdgeMetricsRequest request, final AsyncApiCallback<EdgeMetrics> callback) {
+    try {
+      final SettableFuture<EdgeMetrics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeMetrics>() {}, new AsyncApiCallback<ApiResponse<EdgeMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeMetrics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the edge metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeMetrics>> getTelephonyProvidersEdgeMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeMetrics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeMetrics>() {}, new AsyncApiCallback<ApiResponse<EdgeMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeMetrics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeMetrics> response = (ApiResponse<EdgeMetrics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeMetrics> response = (ApiResponse<EdgeMetrics>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4402,6 +4488,82 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<EdgeMetrics>> getTelephonyProvidersEdgesMetricsAsync(GetTelephonyProvidersEdgesMetricsRequest request, final AsyncApiCallback<List<EdgeMetrics>> callback) {
+    try {
+      final SettableFuture<List<EdgeMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<EdgeMetrics>>() {}, new AsyncApiCallback<ApiResponse<List<EdgeMetrics>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<EdgeMetrics>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<EdgeMetrics>>> getTelephonyProvidersEdgesMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<EdgeMetrics>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<EdgeMetrics>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<EdgeMetrics>>() {}, new AsyncApiCallback<ApiResponse<List<EdgeMetrics>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<EdgeMetrics>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get outbound route
    * 
    * @param request the request object
@@ -5238,6 +5400,82 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsgInfoResponse> getTelephonyProvidersEdgesSiteAutoscalinggroupsAsync(GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request, final AsyncApiCallback<AsgInfoResponse> callback) {
+    try {
+      final SettableFuture<AsgInfoResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsgInfoResponse>() {}, new AsyncApiCallback<ApiResponse<AsgInfoResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsgInfoResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsgInfoResponse>> getTelephonyProvidersEdgesSiteAutoscalinggroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AsgInfoResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsgInfoResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsgInfoResponse>() {}, new AsyncApiCallback<ApiResponse<AsgInfoResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsgInfoResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a Number Plan by ID.
    * 
    * @param request the request object
@@ -5846,6 +6084,82 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
+   * Get the trunk metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkMetrics> getTelephonyProvidersEdgesTrunkMetricsAsync(GetTelephonyProvidersEdgesTrunkMetricsRequest request, final AsyncApiCallback<TrunkMetrics> callback) {
+    try {
+      final SettableFuture<TrunkMetrics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkMetrics>() {}, new AsyncApiCallback<ApiResponse<TrunkMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkMetrics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the trunk metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkMetrics>> getTelephonyProvidersEdgesTrunkMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrunkMetrics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkMetrics>() {}, new AsyncApiCallback<ApiResponse<TrunkMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkMetrics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkMetrics> response = (ApiResponse<TrunkMetrics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkMetrics> response = (ApiResponse<TrunkMetrics>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
    * @param request the request object
@@ -6213,6 +6527,82 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<TrunkMetrics>> getTelephonyProvidersEdgesTrunksMetricsAsync(GetTelephonyProvidersEdgesTrunksMetricsRequest request, final AsyncApiCallback<List<TrunkMetrics>> callback) {
+    try {
+      final SettableFuture<List<TrunkMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<TrunkMetrics>>() {}, new AsyncApiCallback<ApiResponse<List<TrunkMetrics>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<TrunkMetrics>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<TrunkMetrics>>> getTelephonyProvidersEdgesTrunksMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<TrunkMetrics>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<TrunkMetrics>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<TrunkMetrics>>() {}, new AsyncApiCallback<ApiResponse<List<TrunkMetrics>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<TrunkMetrics>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<TrunkMetrics>> response = (ApiResponse<List<TrunkMetrics>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<TrunkMetrics>> response = (ApiResponse<List<TrunkMetrics>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -7733,6 +8123,82 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<String> postTelephonyProvidersEdgesSiteAutoscalinggroupsAsync(PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request, final AsyncApiCallback<String> callback) {
+    try {
+      final SettableFuture<String> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<String>> postTelephonyProvidersEdgesSiteAutoscalinggroupsAsync(ApiRequest<CreateAsgRequest> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+    try {
+      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+        @Override
+        public void onCompleted(ApiResponse<String> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

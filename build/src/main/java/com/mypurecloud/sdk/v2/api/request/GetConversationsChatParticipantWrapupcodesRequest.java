@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
+import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;

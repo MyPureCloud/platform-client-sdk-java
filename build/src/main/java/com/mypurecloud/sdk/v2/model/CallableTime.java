@@ -22,14 +22,14 @@ public class CallableTime  implements Serializable {
 
   
   /**
-   * intervals for which it is acceptable to place outbound calls
+   * The time intervals for which it is acceptable to place outbound calls.
    **/
   public CallableTime timeSlots(List<CampaignTimeSlot> timeSlots) {
     this.timeSlots = timeSlots;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "intervals for which it is acceptable to place outbound calls")
+  @ApiModelProperty(example = "null", required = true, value = "The time intervals for which it is acceptable to place outbound calls.")
   @JsonProperty("timeSlots")
   public List<CampaignTimeSlot> getTimeSlots() {
     return timeSlots;
@@ -40,14 +40,14 @@ public class CallableTime  implements Serializable {
 
   
   /**
-   * time zone identifier to be applied to the time slots; for example Africa/Abidjan
+   * The time zone for the time slots; for example, Africa/Abidjan
    **/
   public CallableTime timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "time zone identifier to be applied to the time slots; for example Africa/Abidjan")
+  @ApiModelProperty(example = "Africa/Abidjan", required = true, value = "The time zone for the time slots; for example, Africa/Abidjan")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;

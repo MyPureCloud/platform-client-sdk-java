@@ -13,9 +13,9 @@ title: CampaignSchedule
 | **dateCreated** | [**Date**](Date.html) | Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **dateModified** | [**Date**](Date.html) | Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
-| **intervals** | [**List&lt;ScheduleInterval&gt;**](ScheduleInterval.html) | a list of start and end times |  |
-| **timeZone** | **String** | time zone identifier to be applied to the intervals; for example Africa/Abidjan |  |
-| **campaign** | [**UriReference**](UriReference.html) | identifier of the campaign to be scheduled |  |
+| **intervals** | [**List&lt;ScheduleInterval&gt;**](ScheduleInterval.html) | A list of intervals during which to run the associated Campaign. |  |
+| **timeZone** | **String** | The time zone for this CampaignSchedule. For example, Africa/Abidjan. |  |
+| **campaign** | [**UriReference**](UriReference.html) | The Campaign that this CampaignSchedule is for. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

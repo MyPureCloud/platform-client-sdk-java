@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainLogicalInterface;
 import com.mypurecloud.sdk.v2.model.LogicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJob;
+import com.mypurecloud.sdk.v2.model.EdgeMetrics;
 import com.mypurecloud.sdk.v2.model.DomainPhysicalInterface;
 import com.mypurecloud.sdk.v2.model.PhysicalInterfaceEntityListing;
 import com.mypurecloud.sdk.v2.model.VmPairingInfo;
@@ -56,12 +57,14 @@ import com.mypurecloud.sdk.v2.model.PhoneBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
+import com.mypurecloud.sdk.v2.model.AsgInfoResponse;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.SiteEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
+import com.mypurecloud.sdk.v2.model.TrunkMetrics;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
@@ -74,6 +77,7 @@ import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAddressResponse;
 import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
+import com.mypurecloud.sdk.v2.model.CreateAsgRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeRequest;
@@ -101,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinterfaceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgePhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeSetuppackageRequest;
@@ -131,6 +136,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinebasesett
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLinesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesLogicalinterfacesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhoneRequest;
@@ -142,6 +148,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesReques
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest;
@@ -150,11 +157,13 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteOutbound
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSitesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbasesettingsTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
@@ -175,6 +184,7 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneReboot
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteRebalanceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
@@ -2237,6 +2247,85 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeLogsJob> response = (ApiResponse<EdgeLogsJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the edge metrics.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeMetrics getTelephonyProvidersEdgeMetrics(String edgeId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeMetrics(createGetTelephonyProvidersEdgeMetricsRequest(edgeId));
+  }
+
+  /**
+   * Get the edge metrics.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeMetrics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeMetrics> getTelephonyProvidersEdgeMetricsWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeMetrics(createGetTelephonyProvidersEdgeMetricsRequest(edgeId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeMetricsRequest createGetTelephonyProvidersEdgeMetricsRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeMetricsRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .build();
+  }
+
+  /**
+   * Get the edge metrics.
+   * 
+   * @param request The request object
+   * @return EdgeMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeMetrics getTelephonyProvidersEdgeMetrics(GetTelephonyProvidersEdgeMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeMetrics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeMetrics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the edge metrics.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeMetrics> getTelephonyProvidersEdgeMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeMetrics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeMetrics> response = (ApiResponse<EdgeMetrics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeMetrics> response = (ApiResponse<EdgeMetrics>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4773,6 +4862,85 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param edgeIds Comma separated list of Edge Id&#39;s (required)
+   * @return List<EdgeMetrics>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<EdgeMetrics> getTelephonyProvidersEdgesMetrics(String edgeIds) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesMetrics(createGetTelephonyProvidersEdgesMetricsRequest(edgeIds));
+  }
+
+  /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param edgeIds Comma separated list of Edge Id&#39;s (required)
+   * @return List<EdgeMetrics>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<EdgeMetrics>> getTelephonyProvidersEdgesMetricsWithHttpInfo(String edgeIds) throws IOException {
+    return getTelephonyProvidersEdgesMetrics(createGetTelephonyProvidersEdgesMetricsRequest(edgeIds).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesMetricsRequest createGetTelephonyProvidersEdgesMetricsRequest(String edgeIds) {
+    return GetTelephonyProvidersEdgesMetricsRequest.builder()
+            .withEdgeIds(edgeIds)
+    
+            .build();
+  }
+
+  /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param request The request object
+   * @return List<EdgeMetrics>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<EdgeMetrics> getTelephonyProvidersEdgesMetrics(GetTelephonyProvidersEdgesMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<EdgeMetrics>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<EdgeMetrics>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the metrics for a list of edges.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<EdgeMetrics>> getTelephonyProvidersEdgesMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<EdgeMetrics>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<EdgeMetrics>> response = (ApiResponse<List<EdgeMetrics>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get outbound route
    * 
    * @param outboundRouteId Outbound route ID (required)
@@ -5734,6 +5902,85 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param siteId Site id associated with the asg (required)
+   * @return AsgInfoResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsgInfoResponse getTelephonyProvidersEdgesSiteAutoscalinggroups(String siteId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesSiteAutoscalinggroups(createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId));
+  }
+
+  /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param siteId Site id associated with the asg (required)
+   * @return AsgInfoResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsgInfoResponse> getTelephonyProvidersEdgesSiteAutoscalinggroupsWithHttpInfo(String siteId) throws IOException {
+    return getTelephonyProvidersEdgesSiteAutoscalinggroups(createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(String siteId) {
+    return GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest.builder()
+            .withSiteId(siteId)
+    
+            .build();
+  }
+
+  /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param request The request object
+   * @return AsgInfoResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsgInfoResponse getTelephonyProvidersEdgesSiteAutoscalinggroups(GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsgInfoResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsgInfoResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the basic information about an asg in a specified site
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsgInfoResponse> getTelephonyProvidersEdgesSiteAutoscalinggroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsgInfoResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a Number Plan by ID.
    * 
    * @param siteId Site ID (required)
@@ -6422,6 +6669,85 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
+   * Get the trunk metrics.
+   * 
+   * @param trunkId Trunk Id (required)
+   * @return TrunkMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(String trunkId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesTrunkMetrics(createGetTelephonyProvidersEdgesTrunkMetricsRequest(trunkId));
+  }
+
+  /**
+   * Get the trunk metrics.
+   * 
+   * @param trunkId Trunk Id (required)
+   * @return TrunkMetrics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkMetrics> getTelephonyProvidersEdgesTrunkMetricsWithHttpInfo(String trunkId) throws IOException {
+    return getTelephonyProvidersEdgesTrunkMetrics(createGetTelephonyProvidersEdgesTrunkMetricsRequest(trunkId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesTrunkMetricsRequest createGetTelephonyProvidersEdgesTrunkMetricsRequest(String trunkId) {
+    return GetTelephonyProvidersEdgesTrunkMetricsRequest.builder()
+            .withTrunkId(trunkId)
+    
+            .build();
+  }
+
+  /**
+   * Get the trunk metrics.
+   * 
+   * @param request The request object
+   * @return TrunkMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(GetTelephonyProvidersEdgesTrunkMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkMetrics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkMetrics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the trunk metrics.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkMetrics> getTelephonyProvidersEdgesTrunkMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkMetrics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkMetrics> response = (ApiResponse<TrunkMetrics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkMetrics> response = (ApiResponse<TrunkMetrics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a Trunk Base Settings object by ID
    * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
    * @param trunkBaseSettingsId Trunk Base ID (required)
@@ -6879,6 +7205,85 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkEntityListing> response = (ApiResponse<TrunkEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param trunkIds Comma separated list of Trunk Id&#39;s (required)
+   * @return List<TrunkMetrics>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<TrunkMetrics> getTelephonyProvidersEdgesTrunksMetrics(String trunkIds) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesTrunksMetrics(createGetTelephonyProvidersEdgesTrunksMetricsRequest(trunkIds));
+  }
+
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param trunkIds Comma separated list of Trunk Id&#39;s (required)
+   * @return List<TrunkMetrics>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<TrunkMetrics>> getTelephonyProvidersEdgesTrunksMetricsWithHttpInfo(String trunkIds) throws IOException {
+    return getTelephonyProvidersEdgesTrunksMetrics(createGetTelephonyProvidersEdgesTrunksMetricsRequest(trunkIds).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesTrunksMetricsRequest createGetTelephonyProvidersEdgesTrunksMetricsRequest(String trunkIds) {
+    return GetTelephonyProvidersEdgesTrunksMetricsRequest.builder()
+            .withTrunkIds(trunkIds)
+    
+            .build();
+  }
+
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param request The request object
+   * @return List<TrunkMetrics>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<TrunkMetrics> getTelephonyProvidersEdgesTrunksMetrics(GetTelephonyProvidersEdgesTrunksMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<TrunkMetrics>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<TrunkMetrics>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the metrics for a list of trunks.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<TrunkMetrics>> getTelephonyProvidersEdgesTrunksMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<TrunkMetrics>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<TrunkMetrics>> response = (ApiResponse<List<TrunkMetrics>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<TrunkMetrics>> response = (ApiResponse<List<TrunkMetrics>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8478,6 +8883,89 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param siteId Site that will be associated with the asg (required)
+   * @param body CreateAsgRequest (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postTelephonyProvidersEdgesSiteAutoscalinggroups(String siteId, CreateAsgRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgesSiteAutoscalinggroups(createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId, body));
+  }
+
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param siteId Site that will be associated with the asg (required)
+   * @param body CreateAsgRequest (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postTelephonyProvidersEdgesSiteAutoscalinggroupsWithHttpInfo(String siteId, CreateAsgRequest body) throws IOException {
+    return postTelephonyProvidersEdgesSiteAutoscalinggroups(createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(String siteId, CreateAsgRequest body) {
+    return PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest.builder()
+            .withSiteId(siteId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postTelephonyProvidersEdgesSiteAutoscalinggroups(PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates an ASG for the specified site
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postTelephonyProvidersEdgesSiteAutoscalinggroups(ApiRequest<CreateAsgRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

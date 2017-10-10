@@ -18,14 +18,14 @@ public class PhoneNumberStatus  implements Serializable {
 
   
   /**
-   * false if the phone number is not callable
+   * Indicates whether or not a phone number is callable.
    **/
   public PhoneNumberStatus callable(Boolean callable) {
     this.callable = callable;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "false if the phone number is not callable")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not a phone number is callable.")
   @JsonProperty("callable")
   public Boolean getCallable() {
     return callable;

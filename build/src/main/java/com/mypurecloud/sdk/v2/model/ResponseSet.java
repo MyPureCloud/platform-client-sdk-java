@@ -36,13 +36,14 @@ public class ResponseSet  implements Serializable {
 
   
   /**
+   * The name of the ResponseSet.
    **/
   public ResponseSet name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the ResponseSet.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -85,14 +86,14 @@ public class ResponseSet  implements Serializable {
 
   
   /**
-   * Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}
+   * Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}.
    **/
   public ResponseSet responses(Map<String, Reaction> responses) {
     this.responses = responses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}")
+  @ApiModelProperty(example = "null", required = true, value = "Map of disposition identifiers to reactions. For example: {\"disposition.classification.callable.person\": {\"reactionType\": \"transfer\"}}.")
   @JsonProperty("responses")
   public Map<String, Reaction> getResponses() {
     return responses;

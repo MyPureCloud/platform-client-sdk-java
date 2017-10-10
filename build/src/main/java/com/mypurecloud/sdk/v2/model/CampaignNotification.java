@@ -71,6 +71,7 @@ public class CampaignNotification  implements Serializable {
   private DialingModeEnum dialingMode = null;
   private CampaignNotificationUriReference script = null;
   private CampaignNotificationUriReference edgeGroup = null;
+  private CampaignNotificationUriReference site = null;
 
   /**
    * Gets or Sets campaignStatus
@@ -298,6 +299,23 @@ public class CampaignNotification  implements Serializable {
   }
   public void setEdgeGroup(CampaignNotificationUriReference edgeGroup) {
     this.edgeGroup = edgeGroup;
+  }
+
+  
+  /**
+   **/
+  public CampaignNotification site(CampaignNotificationUriReference site) {
+    this.site = site;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("site")
+  public CampaignNotificationUriReference getSite() {
+    return site;
+  }
+  public void setSite(CampaignNotificationUriReference site) {
+    this.site = site;
   }
 
   
@@ -678,6 +696,7 @@ public class CampaignNotification  implements Serializable {
         Objects.equals(this.dialingMode, campaignNotification.dialingMode) &&
         Objects.equals(this.script, campaignNotification.script) &&
         Objects.equals(this.edgeGroup, campaignNotification.edgeGroup) &&
+        Objects.equals(this.site, campaignNotification.site) &&
         Objects.equals(this.campaignStatus, campaignNotification.campaignStatus) &&
         Objects.equals(this.phoneColumns, campaignNotification.phoneColumns) &&
         Objects.equals(this.abandonRate, campaignNotification.abandonRate) &&
@@ -703,7 +722,7 @@ public class CampaignNotification  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, additionalProperties);
   }
 
   @Override
@@ -721,6 +740,7 @@ public class CampaignNotification  implements Serializable {
     sb.append("    dialingMode: ").append(toIndentedString(dialingMode)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    edgeGroup: ").append(toIndentedString(edgeGroup)).append("\n");
+    sb.append("    site: ").append(toIndentedString(site)).append("\n");
     sb.append("    campaignStatus: ").append(toIndentedString(campaignStatus)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
     sb.append("    abandonRate: ").append(toIndentedString(abandonRate)).append("\n");

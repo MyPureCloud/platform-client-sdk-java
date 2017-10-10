@@ -69,6 +69,21 @@ public class GetQualityCalibrationRequest {
 	}
 
 	
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
+	}
+
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
+	}
+
+	public GetQualityCalibrationRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,16 +110,13 @@ public class GetQualityCalibrationRequest {
             throw new IllegalStateException("Missing the required parameter 'calibrationId' when building request for GetQualityCalibrationRequest.");
         }
         
-        // verify the required parameter 'calibratorId' is set
-        if (this.calibratorId == null) {
-            throw new IllegalStateException("Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/calibrations/{calibrationId}")
                 .withPathParameter("calibrationId", calibrationId)
         
                 .withQueryParameters("calibratorId", "", calibratorId)
+        
+                .withQueryParameters("conversationId", "", conversationId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -118,9 +130,9 @@ public class GetQualityCalibrationRequest {
 	}
 
 	
-	public static Builder builder(String calibrationId, String calibratorId) {
+	public static Builder builder(String calibrationId) {
 	    return new Builder()
-	            .withRequiredParams(calibrationId, calibratorId);
+	            .withRequiredParams(calibrationId);
 	}
 	
 
@@ -142,11 +154,15 @@ public class GetQualityCalibrationRequest {
 			return this;
 		}
 		
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
+			return this;
+		}
+		
 
 		
-		public Builder withRequiredParams(String calibrationId, String calibratorId) {
+		public Builder withRequiredParams(String calibrationId) {
 			request.setCalibrationId(calibrationId);
-						request.setCalibratorId(calibratorId);
 			
 			return this;
 		}
@@ -158,11 +174,6 @@ public class GetQualityCalibrationRequest {
             // verify the required parameter 'calibrationId' is set
             if (request.calibrationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'calibrationId' when building request for GetQualityCalibrationRequest.");
-            }
-            
-            // verify the required parameter 'calibratorId' is set
-            if (request.calibratorId == null) {
-                throw new IllegalStateException("Missing the required parameter 'calibratorId' when building request for GetQualityCalibrationRequest.");
             }
             
 			return request;

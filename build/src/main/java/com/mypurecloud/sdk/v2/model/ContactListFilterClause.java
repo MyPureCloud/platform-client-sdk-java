@@ -20,7 +20,7 @@ public class ContactListFilterClause  implements Serializable {
   
 
   /**
-   * The filter type tells the api how to compare between predicates
+   * How to join predicates together.
    */
   public enum FilterTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -57,14 +57,14 @@ public class ContactListFilterClause  implements Serializable {
 
   
   /**
-   * The filter type tells the api how to compare between predicates
+   * How to join predicates together.
    **/
   public ContactListFilterClause filterType(FilterTypeEnum filterType) {
     this.filterType = filterType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The filter type tells the api how to compare between predicates")
+  @ApiModelProperty(example = "null", value = "How to join predicates together.")
   @JsonProperty("filterType")
   public FilterTypeEnum getFilterType() {
     return filterType;
@@ -75,13 +75,14 @@ public class ContactListFilterClause  implements Serializable {
 
   
   /**
+   * Conditions to filter the contacts by.
    **/
   public ContactListFilterClause predicates(List<ContactListFilterPredicate> predicates) {
     this.predicates = predicates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Conditions to filter the contacts by.")
   @JsonProperty("predicates")
   public List<ContactListFilterPredicate> getPredicates() {
     return predicates;

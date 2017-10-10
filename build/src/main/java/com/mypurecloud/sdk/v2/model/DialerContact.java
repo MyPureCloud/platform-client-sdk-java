@@ -54,14 +54,14 @@ public class DialerContact  implements Serializable {
 
   
   /**
-   * Identifier of the contact list containing this contact
+   * The identifier of the contact list containing this contact.
    **/
   public DialerContact contactListId(String contactListId) {
     this.contactListId = contactListId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Identifier of the contact list containing this contact")
+  @ApiModelProperty(example = "null", required = true, value = "The identifier of the contact list containing this contact.")
   @JsonProperty("contactListId")
   public String getContactListId() {
     return contactListId;
@@ -72,14 +72,14 @@ public class DialerContact  implements Serializable {
 
   
   /**
-   * An ordered map of the contact's data attributes and values
+   * An ordered map of the contact's columns and corresponding values.
    **/
   public DialerContact data(Map<String, Object> data) {
     this.data = data;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ordered map of the contact's data attributes and values")
+  @ApiModelProperty(example = "null", required = true, value = "An ordered map of the contact's columns and corresponding values.")
   @JsonProperty("data")
   public Map<String, Object> getData() {
     return data;
@@ -90,14 +90,14 @@ public class DialerContact  implements Serializable {
 
   
   /**
-   * A map of call records for the contact phone columns
+   * A map of call records for the contact phone columns.
    **/
   public DialerContact callRecords(Map<String, CallRecord> callRecords) {
     this.callRecords = callRecords;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A map of call records for the contact phone columns")
+  @ApiModelProperty(example = "null", value = "A map of call records for the contact phone columns.")
   @JsonProperty("callRecords")
   public Map<String, CallRecord> getCallRecords() {
     return callRecords;
@@ -108,14 +108,14 @@ public class DialerContact  implements Serializable {
 
   
   /**
-   * false if the contact is not to be called
+   * Indicates whether or not the contact can be called.
    **/
   public DialerContact callable(Boolean callable) {
     this.callable = callable;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "false if the contact is not to be called")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not the contact can be called.")
   @JsonProperty("callable")
   public Boolean getCallable() {
     return callable;
@@ -126,14 +126,14 @@ public class DialerContact  implements Serializable {
 
   
   /**
-   * A map of statuses for the contact phone columns
+   * A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.
    **/
   public DialerContact phoneNumberStatus(Map<String, PhoneNumberStatus> phoneNumberStatus) {
     this.phoneNumberStatus = phoneNumberStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A map of statuses for the contact phone columns")
+  @ApiModelProperty(example = "null", value = "A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not.")
   @JsonProperty("phoneNumberStatus")
   public Map<String, PhoneNumberStatus> getPhoneNumberStatus() {
     return phoneNumberStatus;

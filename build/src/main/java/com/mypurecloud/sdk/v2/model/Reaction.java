@@ -19,7 +19,7 @@ public class Reaction  implements Serializable {
   private String name = null;
 
   /**
-   * Gets or Sets reactionType
+   * The reaction to take for a given call analysis result.
    */
   public enum ReactionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -57,13 +57,14 @@ public class Reaction  implements Serializable {
 
   
   /**
+   * Parameter for this reaction. For transfer_flow, this would be the outbound flow id.
    **/
   public Reaction data(String data) {
     this.data = data;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Parameter for this reaction. For transfer_flow, this would be the outbound flow id.")
   @JsonProperty("data")
   public String getData() {
     return data;
@@ -74,13 +75,14 @@ public class Reaction  implements Serializable {
 
   
   /**
+   * Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.
    **/
   public Reaction name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Name of the parameter for this reaction. For transfer_flow, this would be the outbound flow name.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -91,13 +93,14 @@ public class Reaction  implements Serializable {
 
   
   /**
+   * The reaction to take for a given call analysis result.
    **/
   public Reaction reactionType(ReactionTypeEnum reactionType) {
     this.reactionType = reactionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The reaction to take for a given call analysis result.")
   @JsonProperty("reactionType")
   public ReactionTypeEnum getReactionType() {
     return reactionType;

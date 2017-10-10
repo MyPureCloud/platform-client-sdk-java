@@ -17,12 +17,12 @@ title: CallHistoryParticipant
 | **direction** | [**DirectionEnum**](#DirectionEnum) | The participant&#39;s direction.  Values can be: &#39;inbound&#39; or &#39;outbound&#39; |  [optional] |
 | **ani** | **String** | The call ANI. |  [optional] |
 | **dnis** | **String** | The call DNIS. |  [optional] |
-| **user** | [**UriReference**](UriReference.html) | The PureCloud user for this participant. |  [optional] |
-| **queue** | [**UriReference**](UriReference.html) | The PureCloud queue for this participant. |  [optional] |
-| **group** | [**UriReference**](UriReference.html) | The group involved in the group ring call. |  [optional] |
+| **user** | [**User**](User.html) | The PureCloud user for this participant. |  [optional] |
+| **queue** | [**Queue**](Queue.html) | The PureCloud queue for this participant. |  [optional] |
+| **group** | [**Group**](Group.html) | The group involved in the group ring call. |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) | The reason the participant was disconnected from the conversation. |  [optional] |
-| **externalContact** | [**UriReference**](UriReference.html) | The PureCloud external contact |  [optional] |
-| **externalOrganization** | [**UriReference**](UriReference.html) | The PureCloud external organization |  [optional] |
+| **externalContact** | [**ExternalContact**](ExternalContact.html) | The PureCloud external contact |  [optional] |
+| **externalOrganization** | [**ExternalOrganization**](ExternalOrganization.html) | The PureCloud external organization |  [optional] |
 {: class="table table-striped"}
 
 

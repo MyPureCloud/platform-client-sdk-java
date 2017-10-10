@@ -31,7 +31,7 @@ public class Campaign  implements Serializable {
   private UriReference queue = null;
 
   /**
-   * dialing mode of the campaign
+   * The strategy this Campaign will use for dialing.
    */
   public enum DialingModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -71,7 +71,7 @@ public class Campaign  implements Serializable {
   private UriReference edgeGroup = null;
 
   /**
-   * status of the campaign; can be set to 'on' or 'off'
+   * The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
    */
   public enum CampaignStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -119,6 +119,7 @@ public class Campaign  implements Serializable {
   private List<UriReference> ruleSets = new ArrayList<UriReference>();
   private Boolean skipPreviewDisabled = null;
   private Long previewTimeOutSeconds = null;
+  private Boolean alwaysRunning = null;
   private ContactSort contactSort = null;
   private List<ContactSort> contactSorts = new ArrayList<ContactSort>();
   private Integer noAnswerTimeout = null;
@@ -136,13 +137,14 @@ public class Campaign  implements Serializable {
 
   
   /**
+   * The name of the Campaign.
    **/
   public Campaign name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the Campaign.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -185,14 +187,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifier of the contact list for the campaign
+   * The ContactList for this Campaign to dial.
    **/
   public Campaign contactList(UriReference contactList) {
     this.contactList = contactList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the contact list for the campaign")
+  @ApiModelProperty(example = "null", required = true, value = "The ContactList for this Campaign to dial.")
   @JsonProperty("contactList")
   public UriReference getContactList() {
     return contactList;
@@ -203,14 +205,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifier of the agent assignment queue, required for all dialing modes other than agentless
+   * The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
    **/
   public Campaign queue(UriReference queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the agent assignment queue, required for all dialing modes other than agentless")
+  @ApiModelProperty(example = "null", value = "The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.")
   @JsonProperty("queue")
   public UriReference getQueue() {
     return queue;
@@ -221,14 +223,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * dialing mode of the campaign
+   * The strategy this Campaign will use for dialing.
    **/
   public Campaign dialingMode(DialingModeEnum dialingMode) {
     this.dialingMode = dialingMode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "dialing mode of the campaign")
+  @ApiModelProperty(example = "null", required = true, value = "The strategy this Campaign will use for dialing.")
   @JsonProperty("dialingMode")
   public DialingModeEnum getDialingMode() {
     return dialingMode;
@@ -239,14 +241,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifier of the campaign script, required for all dialing modes other than agentless
+   * The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
    **/
   public Campaign script(UriReference script) {
     this.script = script;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the campaign script, required for all dialing modes other than agentless")
+  @ApiModelProperty(example = "null", value = "The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.")
   @JsonProperty("script")
   public UriReference getScript() {
     return script;
@@ -257,14 +259,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifier of the edge group, required for all dialing modes other than preview
+   * The EdgeGroup that will place the calls. Required for all dialing modes except preview.
    **/
   public Campaign edgeGroup(UriReference edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "identifier of the edge group, required for all dialing modes other than preview")
+  @ApiModelProperty(example = "null", value = "The EdgeGroup that will place the calls. Required for all dialing modes except preview.")
   @JsonProperty("edgeGroup")
   public UriReference getEdgeGroup() {
     return edgeGroup;
@@ -275,14 +277,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * status of the campaign; can be set to 'on' or 'off'
+   * The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
    **/
   public Campaign campaignStatus(CampaignStatusEnum campaignStatus) {
     this.campaignStatus = campaignStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "status of the campaign; can be set to 'on' or 'off'")
+  @ApiModelProperty(example = "null", value = "The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.")
   @JsonProperty("campaignStatus")
   public CampaignStatusEnum getCampaignStatus() {
     return campaignStatus;
@@ -293,14 +295,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * the contact list phone columns to be called for the campaign
+   * The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
    **/
   public Campaign phoneColumns(List<PhoneColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the contact list phone columns to be called for the campaign")
+  @ApiModelProperty(example = "null", required = true, value = "The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.")
   @JsonProperty("phoneColumns")
   public List<PhoneColumn> getPhoneColumns() {
     return phoneColumns;
@@ -311,14 +313,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * the targeted abandon rate percentage
+   * The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
    **/
   public Campaign abandonRate(Double abandonRate) {
     this.abandonRate = abandonRate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the targeted abandon rate percentage")
+  @ApiModelProperty(example = "null", value = "The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.")
   @JsonProperty("abandonRate")
   public Double getAbandonRate() {
     return abandonRate;
@@ -329,14 +331,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifiers of the do not call lists
+   * DncLists for this Campaign to check before placing a call.
    **/
   public Campaign dncLists(List<UriReference> dncLists) {
     this.dncLists = dncLists;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "identifiers of the do not call lists")
+  @ApiModelProperty(example = "null", value = "DncLists for this Campaign to check before placing a call.")
   @JsonProperty("dncLists")
   public List<UriReference> getDncLists() {
     return dncLists;
@@ -347,14 +349,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * the identifier of the callable time set
+   * The callable time set for this campaign to check before placing a call.
    **/
   public Campaign callableTimeSet(UriReference callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the identifier of the callable time set")
+  @ApiModelProperty(example = "null", value = "The callable time set for this campaign to check before placing a call.")
   @JsonProperty("callableTimeSet")
   public UriReference getCallableTimeSet() {
     return callableTimeSet;
@@ -365,14 +367,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * the identifier of the call analysis response set, required for all dialing modes other than preview
+   * The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
    **/
   public Campaign callAnalysisResponseSet(UriReference callAnalysisResponseSet) {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the identifier of the call analysis response set, required for all dialing modes other than preview")
+  @ApiModelProperty(example = "null", value = "The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.")
   @JsonProperty("callAnalysisResponseSet")
   public UriReference getCallAnalysisResponseSet() {
     return callAnalysisResponseSet;
@@ -383,14 +385,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * a list of current error conditions associated with the campaign
+   * A list of current error conditions associated with the campaign.
    **/
   public Campaign errors(List<RestErrorDetail> errors) {
     this.errors = errors;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "a list of current error conditions associated with the campaign")
+  @ApiModelProperty(example = "null", value = "A list of current error conditions associated with the campaign.")
   @JsonProperty("errors")
   public List<RestErrorDetail> getErrors() {
     return errors;
@@ -401,14 +403,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * caller id name to be displayed on the outbound call
+   * The caller id name to be displayed on the outbound call.
    **/
   public Campaign callerName(String callerName) {
     this.callerName = callerName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "caller id name to be displayed on the outbound call")
+  @ApiModelProperty(example = "null", required = true, value = "The caller id name to be displayed on the outbound call.")
   @JsonProperty("callerName")
   public String getCallerName() {
     return callerName;
@@ -419,14 +421,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * caller id phone number to be displayed on the outbound call
+   * The caller id phone number to be displayed on the outbound call.
    **/
   public Campaign callerAddress(String callerAddress) {
     this.callerAddress = callerAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "(555) 555-5555", value = "caller id phone number to be displayed on the outbound call")
+  @ApiModelProperty(example = "(555) 555-5555", required = true, value = "The caller id phone number to be displayed on the outbound call.")
   @JsonProperty("callerAddress")
   public String getCallerAddress() {
     return callerAddress;
@@ -437,14 +439,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * for agentless campaigns, the number of outbound lines to be concurrently dialed
+   * The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
    **/
   public Campaign outboundLineCount(Integer outboundLineCount) {
     this.outboundLineCount = outboundLineCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "for agentless campaigns, the number of outbound lines to be concurrently dialed")
+  @ApiModelProperty(example = "null", value = "The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.")
   @JsonProperty("outboundLineCount")
   public Integer getOutboundLineCount() {
     return outboundLineCount;
@@ -455,14 +457,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * identifiers of the rule sets
+   * Rule sets to be applied while this campaign is dialing.
    **/
   public Campaign ruleSets(List<UriReference> ruleSets) {
     this.ruleSets = ruleSets;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "identifiers of the rule sets")
+  @ApiModelProperty(example = "null", value = "Rule sets to be applied while this campaign is dialing.")
   @JsonProperty("ruleSets")
   public List<UriReference> getRuleSets() {
     return ruleSets;
@@ -473,14 +475,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * for preview campaigns, indicator of whether the agent can skip a preview without placing a call
+   * Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
    **/
   public Campaign skipPreviewDisabled(Boolean skipPreviewDisabled) {
     this.skipPreviewDisabled = skipPreviewDisabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "for preview campaigns, indicator of whether the agent can skip a preview without placing a call")
+  @ApiModelProperty(example = "null", value = "Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.")
   @JsonProperty("skipPreviewDisabled")
   public Boolean getSkipPreviewDisabled() {
     return skipPreviewDisabled;
@@ -491,14 +493,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls
+   * The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
    **/
   public Campaign previewTimeOutSeconds(Long previewTimeOutSeconds) {
     this.previewTimeOutSeconds = previewTimeOutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "for preview campaigns, number of seconds before a call will be automatically placed. A value of 0 indicates no automatic placement of calls")
+  @ApiModelProperty(example = "null", value = "The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.")
   @JsonProperty("previewTimeOutSeconds")
   public Long getPreviewTimeOutSeconds() {
     return previewTimeOutSeconds;
@@ -509,14 +511,32 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * information determining the order in which the contacts will be dialed
+   * Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
+   **/
+  public Campaign alwaysRunning(Boolean alwaysRunning) {
+    this.alwaysRunning = alwaysRunning;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.")
+  @JsonProperty("alwaysRunning")
+  public Boolean getAlwaysRunning() {
+    return alwaysRunning;
+  }
+  public void setAlwaysRunning(Boolean alwaysRunning) {
+    this.alwaysRunning = alwaysRunning;
+  }
+
+  
+  /**
+   * The order in which to sort contacts for dialing, based on a column.
    **/
   public Campaign contactSort(ContactSort contactSort) {
     this.contactSort = contactSort;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "information determining the order in which the contacts will be dialed")
+  @ApiModelProperty(example = "null", value = "The order in which to sort contacts for dialing, based on a column.")
   @JsonProperty("contactSort")
   public ContactSort getContactSort() {
     return contactSort;
@@ -527,14 +547,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * column prioritized information determining the order in which the contacts will be dialed
+   * The order in which to sort contacts for dialing, based on up to four columns.
    **/
   public Campaign contactSorts(List<ContactSort> contactSorts) {
     this.contactSorts = contactSorts;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "column prioritized information determining the order in which the contacts will be dialed")
+  @ApiModelProperty(example = "null", value = "The order in which to sort contacts for dialing, based on up to four columns.")
   @JsonProperty("contactSorts")
   public List<ContactSort> getContactSorts() {
     return contactSorts;
@@ -545,14 +565,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds
+   * How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns.
    **/
   public Campaign noAnswerTimeout(Integer noAnswerTimeout) {
     this.noAnswerTimeout = noAnswerTimeout;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "for non-preview campaigns, how long to wait before dispositioning as 'no-answer', default 30 seconds")
+  @ApiModelProperty(example = "null", value = "How long to wait before dispositioning a call as 'no-answer'. Default 30 seconds. Only applicable to non-preview campaigns.")
   @JsonProperty("noAnswerTimeout")
   public Integer getNoAnswerTimeout() {
     return noAnswerTimeout;
@@ -563,14 +583,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * The language the edge will use to analyse the call
+   * The language the edge will use to analyze the call.
    **/
   public Campaign callAnalysisLanguage(String callAnalysisLanguage) {
     this.callAnalysisLanguage = callAnalysisLanguage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The language the edge will use to analyse the call")
+  @ApiModelProperty(example = "null", value = "The language the edge will use to analyze the call.")
   @JsonProperty("callAnalysisLanguage")
   public String getCallAnalysisLanguage() {
     return callAnalysisLanguage;
@@ -581,14 +601,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * The priority of this campaign relative to other campaigns
+   * The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
    **/
   public Campaign priority(Integer priority) {
     this.priority = priority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The priority of this campaign relative to other campaigns")
+  @ApiModelProperty(example = "null", value = "The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -599,14 +619,14 @@ public class Campaign  implements Serializable {
 
   
   /**
-   * Filter defining a subset of contacts from the contact list to be dialed
+   * Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
    **/
   public Campaign contactListFilters(List<UriReference> contactListFilters) {
     this.contactListFilters = contactListFilters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Filter defining a subset of contacts from the contact list to be dialed")
+  @ApiModelProperty(example = "null", value = "Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.")
   @JsonProperty("contactListFilters")
   public List<UriReference> getContactListFilters() {
     return contactListFilters;
@@ -656,6 +676,7 @@ public class Campaign  implements Serializable {
         Objects.equals(this.ruleSets, campaign.ruleSets) &&
         Objects.equals(this.skipPreviewDisabled, campaign.skipPreviewDisabled) &&
         Objects.equals(this.previewTimeOutSeconds, campaign.previewTimeOutSeconds) &&
+        Objects.equals(this.alwaysRunning, campaign.alwaysRunning) &&
         Objects.equals(this.contactSort, campaign.contactSort) &&
         Objects.equals(this.contactSorts, campaign.contactSorts) &&
         Objects.equals(this.noAnswerTimeout, campaign.noAnswerTimeout) &&
@@ -667,7 +688,7 @@ public class Campaign  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, errors, callerName, callerAddress, outboundLineCount, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, alwaysRunning, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, selfUri);
   }
 
   @Override
@@ -698,6 +719,7 @@ public class Campaign  implements Serializable {
     sb.append("    ruleSets: ").append(toIndentedString(ruleSets)).append("\n");
     sb.append("    skipPreviewDisabled: ").append(toIndentedString(skipPreviewDisabled)).append("\n");
     sb.append("    previewTimeOutSeconds: ").append(toIndentedString(previewTimeOutSeconds)).append("\n");
+    sb.append("    alwaysRunning: ").append(toIndentedString(alwaysRunning)).append("\n");
     sb.append("    contactSort: ").append(toIndentedString(contactSort)).append("\n");
     sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    noAnswerTimeout: ").append(toIndentedString(noAnswerTimeout)).append("\n");

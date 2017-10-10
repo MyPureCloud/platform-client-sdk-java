@@ -19,14 +19,14 @@ public class PhoneColumn  implements Serializable {
 
   
   /**
-   * name of the phone column
+   * The name of the phone column.
    **/
   public PhoneColumn columnName(String columnName) {
     this.columnName = columnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "name of the phone column")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the phone column.")
   @JsonProperty("columnName")
   public String getColumnName() {
     return columnName;
@@ -37,14 +37,14 @@ public class PhoneColumn  implements Serializable {
 
   
   /**
-   * type of the phone column, for example, 'cell' or 'home'
+   * The type of the phone column. For example, 'cell' or 'home'.
    **/
   public PhoneColumn type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "type of the phone column, for example, 'cell' or 'home'")
+  @ApiModelProperty(example = "null", required = true, value = "The type of the phone column. For example, 'cell' or 'home'.")
   @JsonProperty("type")
   public String getType() {
     return type;

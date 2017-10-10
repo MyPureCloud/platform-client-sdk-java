@@ -20,14 +20,14 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
   
   /**
-   * name of the phone column
+   * The name of the phone column.
    **/
   public ContactPhoneNumberColumn columnName(String columnName) {
     this.columnName = columnName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "name of the phone column")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the phone column.")
   @JsonProperty("columnName")
   public String getColumnName() {
     return columnName;
@@ -38,14 +38,14 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
   
   /**
-   * type of the phone column, for example, 'cell' or 'home'
+   * Indicates the type of the phone column. For example, 'cell' or 'home'.
    **/
   public ContactPhoneNumberColumn type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "type of the phone column, for example, 'cell' or 'home'")
+  @ApiModelProperty(example = "null", required = true, value = "Indicates the type of the phone column. For example, 'cell' or 'home'.")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -56,14 +56,14 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
   
   /**
-   * name of the column indicating the timezone to be considered for determining callable times
+   * A column that indicates the timezone to use for a given contact when checking callable times.
    **/
   public ContactPhoneNumberColumn callableTimeColumn(String callableTimeColumn) {
     this.callableTimeColumn = callableTimeColumn;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "name of the column indicating the timezone to be considered for determining callable times")
+  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking callable times.")
   @JsonProperty("callableTimeColumn")
   public String getCallableTimeColumn() {
     return callableTimeColumn;

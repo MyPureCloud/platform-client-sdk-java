@@ -13,6 +13,10 @@ title: Annotation
 | **type** | **String** |  |  [optional] |
 | **location** | **Long** | Offset of annotation in milliseconds. |  [optional] |
 | **durationMs** | **Long** | Duration of annotation in milliseconds. |  [optional] |
+| **absoluteLocation** | **Long** | Offset of annotation (milliseconds) from start of recording. |  [optional] |
+| **absoluteDurationMs** | **Long** | Duration of annotation (milliseconds). |  [optional] |
+| **recordingLocation** | **Long** | Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts |  [optional] |
+| **recordingDurationMs** | **Long** | Duration of annotation (milliseconds), adjusted for any recording cuts. |  [optional] |
 | **user** | [**User**](User.html) | User that created this annotation (if any). |  [optional] |
 | **description** | **String** | Text of annotation. |  [optional] |
 | **keywordName** | **String** | The word or phrase which is being looked for with speech recognition. |  [optional] |

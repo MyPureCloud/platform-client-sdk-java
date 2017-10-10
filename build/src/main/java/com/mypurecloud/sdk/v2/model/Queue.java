@@ -251,10 +251,21 @@ public class Queue  implements Serializable {
   }
 
   
+  /**
+   * Indicates if the resource is active, inactive, or deleted.
+   **/
+  public Queue state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
   }
 
   

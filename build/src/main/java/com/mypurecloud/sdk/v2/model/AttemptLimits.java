@@ -30,7 +30,7 @@ public class AttemptLimits  implements Serializable {
   private String timeZoneId = null;
 
   /**
-   * After how long the number of attempts will be set back to 0
+   * After how long the number of attempts will be set back to 0. Defaults to NEVER.
    */
   public enum ResetPeriodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -124,13 +124,14 @@ public class AttemptLimits  implements Serializable {
 
   
   /**
+   * The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.
    **/
   public AttemptLimits maxAttemptsPerContact(Integer maxAttemptsPerContact) {
     this.maxAttemptsPerContact = maxAttemptsPerContact;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The maximum number of times a contact can be called within the resetPeriod. Required if maxAttemptsPerNumber is not defined.")
   @JsonProperty("maxAttemptsPerContact")
   public Integer getMaxAttemptsPerContact() {
     return maxAttemptsPerContact;
@@ -141,13 +142,14 @@ public class AttemptLimits  implements Serializable {
 
   
   /**
+   * The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.
    **/
   public AttemptLimits maxAttemptsPerNumber(Integer maxAttemptsPerNumber) {
     this.maxAttemptsPerNumber = maxAttemptsPerNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The maximum number of times a phone number can be called within the resetPeriod. Required if maxAttemptsPerContact is not defined.")
   @JsonProperty("maxAttemptsPerNumber")
   public Integer getMaxAttemptsPerNumber() {
     return maxAttemptsPerNumber;
@@ -158,14 +160,14 @@ public class AttemptLimits  implements Serializable {
 
   
   /**
-   * The timezone is necessary to define when \"today\" starts and ends
+   * If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.
    **/
   public AttemptLimits timeZoneId(String timeZoneId) {
     this.timeZoneId = timeZoneId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timezone is necessary to define when \"today\" starts and ends")
+  @ApiModelProperty(example = "null", value = "If the resetPeriod is TODAY, this specifies the timezone in which TODAY occurs. Required if the resetPeriod is TODAY.")
   @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;
@@ -176,14 +178,14 @@ public class AttemptLimits  implements Serializable {
 
   
   /**
-   * After how long the number of attempts will be set back to 0
+   * After how long the number of attempts will be set back to 0. Defaults to NEVER.
    **/
   public AttemptLimits resetPeriod(ResetPeriodEnum resetPeriod) {
     this.resetPeriod = resetPeriod;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "After how long the number of attempts will be set back to 0")
+  @ApiModelProperty(example = "null", value = "After how long the number of attempts will be set back to 0. Defaults to NEVER.")
   @JsonProperty("resetPeriod")
   public ResetPeriodEnum getResetPeriod() {
     return resetPeriod;
@@ -194,14 +196,14 @@ public class AttemptLimits  implements Serializable {
 
   
   /**
-   * Configuration for recall attempts
+   * Configuration for recall attempts.
    **/
   public AttemptLimits recallEntries(Map<String, RecallEntry> recallEntries) {
     this.recallEntries = recallEntries;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Configuration for recall attempts")
+  @ApiModelProperty(example = "null", value = "Configuration for recall attempts.")
   @JsonProperty("recallEntries")
   public Map<String, RecallEntry> getRecallEntries() {
     return recallEntries;

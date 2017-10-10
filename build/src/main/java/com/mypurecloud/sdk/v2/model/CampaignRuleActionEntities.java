@@ -23,13 +23,14 @@ public class CampaignRuleActionEntities  implements Serializable {
 
   
   /**
+   * The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
    **/
   public CampaignRuleActionEntities campaigns(List<UriReference> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.")
   @JsonProperty("campaigns")
   public List<UriReference> getCampaigns() {
     return campaigns;
@@ -40,13 +41,14 @@ public class CampaignRuleActionEntities  implements Serializable {
 
   
   /**
+   * The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
    **/
   public CampaignRuleActionEntities sequences(List<UriReference> sequences) {
     this.sequences = sequences;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.")
   @JsonProperty("sequences")
   public List<UriReference> getSequences() {
     return sequences;
@@ -57,13 +59,14 @@ public class CampaignRuleActionEntities  implements Serializable {
 
   
   /**
+   * If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.
    **/
   public CampaignRuleActionEntities useTriggeringEntity(Boolean useTriggeringEntity) {
     this.useTriggeringEntity = useTriggeringEntity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "If true, the CampaignRuleAction will apply to the same entity that triggered the CampaignRuleCondition.")
   @JsonProperty("useTriggeringEntity")
   public Boolean getUseTriggeringEntity() {
     return useTriggeringEntity;

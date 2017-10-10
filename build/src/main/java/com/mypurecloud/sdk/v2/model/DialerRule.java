@@ -24,7 +24,7 @@ public class DialerRule  implements Serializable {
   private Integer order = null;
 
   /**
-   * The category of the rule
+   * The category of the rule.
    */
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -61,7 +61,7 @@ public class DialerRule  implements Serializable {
   private List<DialerAction> actions = new ArrayList<DialerAction>();
 
   
-  @ApiModelProperty(example = "null", value = "The identifier of the rule")
+  @ApiModelProperty(example = "null", value = "The identifier of the rule.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -69,14 +69,14 @@ public class DialerRule  implements Serializable {
 
   
   /**
-   * The name of the rule
+   * The name of the rule.
    **/
   public DialerRule name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the rule")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the rule.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -87,14 +87,14 @@ public class DialerRule  implements Serializable {
 
   
   /**
-   * The ranked order of the rule; rules are processed from lowest number to highest
+   * The ranked order of the rule. Rules are processed from lowest number to highest.
    **/
   public DialerRule order(Integer order) {
     this.order = order;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ranked order of the rule; rules are processed from lowest number to highest")
+  @ApiModelProperty(example = "null", value = "The ranked order of the rule. Rules are processed from lowest number to highest.")
   @JsonProperty("order")
   public Integer getOrder() {
     return order;
@@ -105,14 +105,14 @@ public class DialerRule  implements Serializable {
 
   
   /**
-   * The category of the rule
+   * The category of the rule.
    **/
   public DialerRule category(CategoryEnum category) {
     this.category = category;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The category of the rule")
+  @ApiModelProperty(example = "null", required = true, value = "The category of the rule.")
   @JsonProperty("category")
   public CategoryEnum getCategory() {
     return category;
@@ -123,14 +123,14 @@ public class DialerRule  implements Serializable {
 
   
   /**
-   * The list of rule conditions; all must evaluate to true to trigger the rule actions
+   * A list of Conditions. All of the Conditions must evaluate to true to trigger the actions.
    **/
   public DialerRule conditions(List<Condition> conditions) {
     this.conditions = conditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of rule conditions; all must evaluate to true to trigger the rule actions")
+  @ApiModelProperty(example = "null", required = true, value = "A list of Conditions. All of the Conditions must evaluate to true to trigger the actions.")
   @JsonProperty("conditions")
   public List<Condition> getConditions() {
     return conditions;
@@ -141,14 +141,14 @@ public class DialerRule  implements Serializable {
 
   
   /**
-   * The list of rule actions to be taken if the conditions are true
+   * The list of actions to be taken if the conditions are true.
    **/
   public DialerRule actions(List<DialerAction> actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list of rule actions to be taken if the conditions are true")
+  @ApiModelProperty(example = "null", value = "The list of actions to be taken if the conditions are true.")
   @JsonProperty("actions")
   public List<DialerAction> getActions() {
     return actions;

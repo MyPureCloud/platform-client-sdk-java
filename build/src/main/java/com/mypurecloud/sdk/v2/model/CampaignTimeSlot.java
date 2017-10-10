@@ -20,14 +20,14 @@ public class CampaignTimeSlot  implements Serializable {
 
   
   /**
-   * interval start time as an ISO-8601 string. For example: HH:mm:ss
+   * The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss
    **/
   public CampaignTimeSlot startTime(String startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "08:00:00", value = "interval start time as an ISO-8601 string. For example: HH:mm:ss")
+  @ApiModelProperty(example = "08:00:00", required = true, value = "The start time of the interval as an ISO-8601 string, i.e. HH:mm:ss")
   @JsonProperty("startTime")
   public String getStartTime() {
     return startTime;
@@ -38,14 +38,14 @@ public class CampaignTimeSlot  implements Serializable {
 
   
   /**
-   * interval stop time as an ISO-8601 string. For example: HH:mm:ss
+   * The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss
    **/
   public CampaignTimeSlot stopTime(String stopTime) {
     this.stopTime = stopTime;
     return this;
   }
   
-  @ApiModelProperty(example = "16:59:59", value = "interval stop time as an ISO-8601 string. For example: HH:mm:ss")
+  @ApiModelProperty(example = "08:00:00", required = true, value = "The end time of the interval as an ISO-8601 string, i.e. HH:mm:ss")
   @JsonProperty("stopTime")
   public String getStopTime() {
     return stopTime;
@@ -56,14 +56,14 @@ public class CampaignTimeSlot  implements Serializable {
 
   
   /**
-   * must be within [1-7], representing Monday through Sunday
+   * The day of the interval. Valid values: [1-7], representing Monday through Sunday
    **/
   public CampaignTimeSlot day(Integer day) {
     this.day = day;
     return this;
   }
   
-  @ApiModelProperty(example = "1", required = true, value = "must be within [1-7], representing Monday through Sunday")
+  @ApiModelProperty(example = "1", required = true, value = "The day of the interval. Valid values: [1-7], representing Monday through Sunday")
   @JsonProperty("day")
   public Integer getDay() {
     return day;

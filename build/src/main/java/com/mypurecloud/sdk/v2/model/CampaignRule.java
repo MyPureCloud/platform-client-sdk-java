@@ -41,13 +41,14 @@ public class CampaignRule  implements Serializable {
 
   
   /**
+   * The name of the CampaignRule.
    **/
   public CampaignRule name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the CampaignRule.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -90,14 +91,14 @@ public class CampaignRule  implements Serializable {
 
   
   /**
-   * the list of entities the rule monitors
+   * The list of entities that this CampaignRule monitors.
    **/
   public CampaignRule campaignRuleEntities(CampaignRuleEntities campaignRuleEntities) {
     this.campaignRuleEntities = campaignRuleEntities;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the list of entities the rule monitors")
+  @ApiModelProperty(example = "null", required = true, value = "The list of entities that this CampaignRule monitors.")
   @JsonProperty("campaignRuleEntities")
   public CampaignRuleEntities getCampaignRuleEntities() {
     return campaignRuleEntities;
@@ -108,14 +109,14 @@ public class CampaignRule  implements Serializable {
 
   
   /**
-   * the list of conditions the are evaluated
+   * The list of conditions that are evaluated on the entities.
    **/
   public CampaignRule campaignRuleConditions(List<CampaignRuleCondition> campaignRuleConditions) {
     this.campaignRuleConditions = campaignRuleConditions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the list of conditions the are evaluated")
+  @ApiModelProperty(example = "null", required = true, value = "The list of conditions that are evaluated on the entities.")
   @JsonProperty("campaignRuleConditions")
   public List<CampaignRuleCondition> getCampaignRuleConditions() {
     return campaignRuleConditions;
@@ -126,14 +127,14 @@ public class CampaignRule  implements Serializable {
 
   
   /**
-   * the list of actions that are executed if the conditions are satisfied
+   * The list of actions that are executed if the conditions are satisfied.
    **/
   public CampaignRule campaignRuleActions(List<CampaignRuleAction> campaignRuleActions) {
     this.campaignRuleActions = campaignRuleActions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "the list of actions that are executed if the conditions are satisfied")
+  @ApiModelProperty(example = "null", required = true, value = "The list of actions that are executed if the conditions are satisfied.")
   @JsonProperty("campaignRuleActions")
   public List<CampaignRuleAction> getCampaignRuleActions() {
     return campaignRuleActions;
@@ -161,13 +162,14 @@ public class CampaignRule  implements Serializable {
 
   
   /**
+   * Whether or not this CampaignRule is currently enabled. Required on updates.
    **/
   public CampaignRule enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not this CampaignRule is currently enabled. Required on updates.")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;

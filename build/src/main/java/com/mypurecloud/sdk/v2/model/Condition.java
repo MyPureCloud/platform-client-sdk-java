@@ -19,7 +19,7 @@ public class Condition  implements Serializable {
   
 
   /**
-   * The type of the condition
+   * The type of the condition.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -61,7 +61,7 @@ public class Condition  implements Serializable {
   private String value = null;
 
   /**
-   * Determines the type of the value associated with the condition
+   * The type of the value associated with this Condition.
    */
   public enum ValueTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -98,7 +98,7 @@ public class Condition  implements Serializable {
   private ValueTypeEnum valueType = null;
 
   /**
-   * An operation type for condition evaluation
+   * An operation with which to evaluate the Condition.
    */
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -141,9 +141,10 @@ public class Condition  implements Serializable {
   }
   private OperatorEnum operator = null;
   private List<String> codes = new ArrayList<String>();
+  private String property = null;
 
   /**
-   * Determines the type of the property associated with the condition
+   * The type of the property associated with this Condition.
    */
   public enum PropertyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -178,18 +179,17 @@ public class Condition  implements Serializable {
     }
   }
   private PropertyTypeEnum propertyType = null;
-  private String property = null;
 
   
   /**
-   * The type of the condition
+   * The type of the condition.
    **/
   public Condition type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of the condition")
+  @ApiModelProperty(example = "null", value = "The type of the condition.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -200,14 +200,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * Indicates whether to evaluate for the opposite of the stated condition; default is false
+   * If true, inverts the result of evaluating this Condition. Default is false.
    **/
   public Condition inverted(Boolean inverted) {
     this.inverted = inverted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether to evaluate for the opposite of the stated condition; default is false")
+  @ApiModelProperty(example = "null", value = "If true, inverts the result of evaluating this Condition. Default is false.")
   @JsonProperty("inverted")
   public Boolean getInverted() {
     return inverted;
@@ -218,14 +218,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * An attribute name associated with the condition (applies only to certain rule conditions)
+   * An attribute name associated with this Condition. Required for a contactAttributeCondition.
    **/
   public Condition attributeName(String attributeName) {
     this.attributeName = attributeName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An attribute name associated with the condition (applies only to certain rule conditions)")
+  @ApiModelProperty(example = "null", value = "An attribute name associated with this Condition. Required for a contactAttributeCondition.")
   @JsonProperty("attributeName")
   public String getAttributeName() {
     return attributeName;
@@ -236,14 +236,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+   * A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
    **/
   public Condition value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A value associated with the condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
+  @ApiModelProperty(example = "null", value = "A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -254,14 +254,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * Determines the type of the value associated with the condition
+   * The type of the value associated with this Condition.
    **/
   public Condition valueType(ValueTypeEnum valueType) {
     this.valueType = valueType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Determines the type of the value associated with the condition")
+  @ApiModelProperty(example = "null", value = "The type of the value associated with this Condition.")
   @JsonProperty("valueType")
   public ValueTypeEnum getValueType() {
     return valueType;
@@ -272,14 +272,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * An operation type for condition evaluation
+   * An operation with which to evaluate the Condition.
    **/
   public Condition operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An operation type for condition evaluation")
+  @ApiModelProperty(example = "null", value = "An operation with which to evaluate the Condition.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -290,14 +290,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')
+   * List of wrap-up code identifiers. Required for a wrapupCondition.
    **/
   public Condition codes(List<String> codes) {
     this.codes = codes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of wrap-up code identifiers (used only in conditions of type 'wrapupCondition')")
+  @ApiModelProperty(example = "null", value = "List of wrap-up code identifiers. Required for a wrapupCondition.")
   @JsonProperty("codes")
   public List<String> getCodes() {
     return codes;
@@ -308,38 +308,38 @@ public class Condition  implements Serializable {
 
   
   /**
-   * Determines the type of the property associated with the condition
-   **/
-  public Condition propertyType(PropertyTypeEnum propertyType) {
-    this.propertyType = propertyType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Determines the type of the property associated with the condition")
-  @JsonProperty("propertyType")
-  public PropertyTypeEnum getPropertyType() {
-    return propertyType;
-  }
-  public void setPropertyType(PropertyTypeEnum propertyType) {
-    this.propertyType = propertyType;
-  }
-
-  
-  /**
-   * A value associated with the property type of this condition
+   * A value associated with the property type of this Condition. Required for a contactPropertyCondition.
    **/
   public Condition property(String property) {
     this.property = property;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A value associated with the property type of this condition")
+  @ApiModelProperty(example = "null", value = "A value associated with the property type of this Condition. Required for a contactPropertyCondition.")
   @JsonProperty("property")
   public String getProperty() {
     return property;
   }
   public void setProperty(String property) {
     this.property = property;
+  }
+
+  
+  /**
+   * The type of the property associated with this Condition.
+   **/
+  public Condition propertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the property associated with this Condition.")
+  @JsonProperty("propertyType")
+  public PropertyTypeEnum getPropertyType() {
+    return propertyType;
+  }
+  public void setPropertyType(PropertyTypeEnum propertyType) {
+    this.propertyType = propertyType;
   }
 
   
@@ -360,13 +360,13 @@ public class Condition  implements Serializable {
         Objects.equals(this.valueType, condition.valueType) &&
         Objects.equals(this.operator, condition.operator) &&
         Objects.equals(this.codes, condition.codes) &&
-        Objects.equals(this.propertyType, condition.propertyType) &&
-        Objects.equals(this.property, condition.property);
+        Objects.equals(this.property, condition.property) &&
+        Objects.equals(this.propertyType, condition.propertyType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, property, propertyType);
   }
 
   @Override
@@ -381,8 +381,8 @@ public class Condition  implements Serializable {
     sb.append("    valueType: ").append(toIndentedString(valueType)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
-    sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
+    sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

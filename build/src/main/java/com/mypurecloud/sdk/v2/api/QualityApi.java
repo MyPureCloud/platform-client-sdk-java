@@ -603,41 +603,45 @@ public class QualityApi {
 
   
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param calibrationId Calibration ID (required)
-   * @param calibratorId calibratorId (required)
+   * @param calibratorId calibratorId (optional)
+   * @param conversationId conversationId (optional)
    * @return Calibration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Calibration getQualityCalibration(String calibrationId, String calibratorId) throws IOException, ApiException {
-    return  getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId));
+  public Calibration getQualityCalibration(String calibrationId, String calibratorId, String conversationId) throws IOException, ApiException {
+    return  getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId, conversationId));
   }
 
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param calibrationId Calibration ID (required)
-   * @param calibratorId calibratorId (required)
+   * @param calibratorId calibratorId (optional)
+   * @param conversationId conversationId (optional)
    * @return Calibration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Calibration> getQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId) throws IOException {
-    return getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId).withHttpInfo());
+  public ApiResponse<Calibration> getQualityCalibrationWithHttpInfo(String calibrationId, String calibratorId, String conversationId) throws IOException {
+    return getQualityCalibration(createGetQualityCalibrationRequest(calibrationId, calibratorId, conversationId).withHttpInfo());
   }
 
-  private GetQualityCalibrationRequest createGetQualityCalibrationRequest(String calibrationId, String calibratorId) {
+  private GetQualityCalibrationRequest createGetQualityCalibrationRequest(String calibrationId, String calibratorId, String conversationId) {
     return GetQualityCalibrationRequest.builder()
             .withCalibrationId(calibrationId)
     
             .withCalibratorId(calibratorId)
     
+            .withConversationId(conversationId)
+    
             .build();
   }
 
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param request The request object
    * @return Calibration
@@ -656,7 +660,7 @@ public class QualityApi {
   }
 
   /**
-   * Get a calibration by id.
+   * Get a calibration by id.  Requires either calibrator id or conversation id
    * 
    * @param request The request object
    * @return the response

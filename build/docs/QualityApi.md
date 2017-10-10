@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | Delete a keywordSet by id. |
 | [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | Delete keyword sets |
 | [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | Gets a list of Agent Activities |
-| [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | Get a calibration by id. |
+| [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | Get a calibration by id.  Requires either calibrator id or conversation id |
 | [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | Get the list of calibrations |
 | [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | Get audits for conversation or recording |
 | [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | Get an evaluation |
@@ -375,9 +375,9 @@ try {
 
 # **getQualityCalibration**
 
-> [Calibration](Calibration.html) getQualityCalibration(calibrationId, calibratorId)
+> [Calibration](Calibration.html) getQualityCalibration(calibrationId, calibratorId, conversationId)
 
-Get a calibration by id.
+Get a calibration by id.  Requires either calibrator id or conversation id
 
 
 
@@ -402,8 +402,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 QualityApi apiInstance = new QualityApi();
 String calibrationId = "calibrationId_example"; // String | Calibration ID
 String calibratorId = "calibratorId_example"; // String | calibratorId
+String conversationId = "conversationId_example"; // String | conversationId
 try {
-    Calibration result = apiInstance.getQualityCalibration(calibrationId, calibratorId);
+    Calibration result = apiInstance.getQualityCalibration(calibrationId, calibratorId, conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityCalibration");
@@ -417,7 +418,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **calibrationId** | **String**| Calibration ID | |
-| **calibratorId** | **String**| calibratorId | |
+| **calibratorId** | **String**| calibratorId | [optional] |
+| **conversationId** | **String**| conversationId | [optional] |
 {: class="table table-striped"}
 
 ### Return type

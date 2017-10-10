@@ -19,14 +19,14 @@ public class ScheduleInterval  implements Serializable {
 
   
   /**
-   * scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ScheduleInterval start(String start) {
     this.start = start;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The scheduled start time as an ISO-8601 string, i.e yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("start")
   public String getStart() {
     return start;
@@ -37,14 +37,14 @@ public class ScheduleInterval  implements Serializable {
 
   
   /**
-   * scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ScheduleInterval end(String end) {
     this.end = end;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The scheduled end time as an ISO-8601 string, i.e. yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("end")
   public String getEnd() {
     return end;

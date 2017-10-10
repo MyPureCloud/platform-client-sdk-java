@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
 | [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
+| [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | Sends DTMF to the participant |
 | [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
@@ -923,7 +924,7 @@ This endpoint does not require any parameters.
 
 # **getConversationsCallsHistory**
 
-> [CallHistoryConversationEntityListing](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(pageSize, pageNumber, interval)
+> [CallHistoryConversationEntityListing](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(pageSize, pageNumber, interval, expand)
 
 Get call history
 
@@ -948,11 +949,12 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ConversationsApi apiInstance = new ConversationsApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size, maximum 50
 Integer pageNumber = 1; // Integer | Page number
 String interval = "interval_example"; // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
 try {
-    CallHistoryConversationEntityListing result = apiInstance.getConversationsCallsHistory(pageSize, pageNumber, interval);
+    CallHistoryConversationEntityListing result = apiInstance.getConversationsCallsHistory(pageSize, pageNumber, interval, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallsHistory");
@@ -965,9 +967,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size, maximum 50 | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: externalorganization, externalcontact, user, queue, group |
 {: class="table table-striped"}
 
 ### Return type
@@ -3250,6 +3253,60 @@ try {
 | **conversationId** | **String**| conversation ID | |
 | **participantId** | **String**| participant ID | |
 | **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="postConversationParticipantDigits"></a>
+
+# **postConversationParticipantDigits**
+
+> Void postConversationParticipantDigits(conversationId, participantId, body)
+
+Sends DTMF to the participant
+
+
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+Digits body = new Digits(); // Digits | Digits
+try {
+    apiInstance.postConversationParticipantDigits(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantDigits");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | |
+| **participantId** | **String**| participant ID | |
+| **body** | [**Digits**](Digits.html)| Digits | [optional] |
 {: class="table table-striped"}
 
 ### Return type

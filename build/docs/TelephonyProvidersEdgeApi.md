@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgeLogicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterface) | Get an edge logical interface |
 | [**getTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogicalinterfaces) | Get edge logical interfaces. |
 | [**getTelephonyProvidersEdgeLogsJob**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeLogsJob) | Get an Edge logs job. |
+| [**getTelephonyProvidersEdgeMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeMetrics) | Get the edge metrics. |
 | [**getTelephonyProvidersEdgePhysicalinterface**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgePhysicalinterface) | Get edge physical interface. |
 | [**getTelephonyProvidersEdgePhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgePhysicalinterfaces) | Retrieve a list of all configured physical interfaces from a specific edge. |
 | [**getTelephonyProvidersEdgeSetuppackage**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgeSetuppackage) | Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge. |
@@ -62,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesLines**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLines) | Get a list of Lines |
 | [**getTelephonyProvidersEdgesLinesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLinesTemplate) | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance |
 | [**getTelephonyProvidersEdgesLogicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesLogicalinterfaces) | Get edge logical interfaces. |
+| [**getTelephonyProvidersEdgesMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesMetrics) | Get the metrics for a list of edges. |
 | [**getTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroute) | Get outbound route |
 | [**getTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesOutboundroutes) | Get outbound routes |
 | [**getTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhone) | Get a Phone by ID |
@@ -73,6 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesPhonesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonesTemplate) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance |
 | [**getTelephonyProvidersEdgesPhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhysicalinterfaces) | Get physical interfaces for edges. |
 | [**getTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSite) | Get a Site by ID. |
+| [**getTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteAutoscalinggroups) | Gets the basic information about an asg in a specified site |
 | [**getTelephonyProvidersEdgesSiteNumberplan**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplan) | Get a Number Plan by ID. |
 | [**getTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplans) | Get the list of Number Plans for this Site. |
 | [**getTelephonyProvidersEdgesSiteNumberplansClassifications**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplansClassifications) | Get a list of Classifications for this Site |
@@ -81,11 +84,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSites) | Get the list of Sites. |
 | [**getTelephonyProvidersEdgesTimezones**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTimezones) | Get a list of Edge-compatible time zones |
 | [**getTelephonyProvidersEdgesTrunk**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunk) | Get a Trunk by ID |
+| [**getTelephonyProvidersEdgesTrunkMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkMetrics) | Get the trunk metrics. |
 | [**getTelephonyProvidersEdgesTrunkbasesetting**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesetting) | Get a Trunk Base Settings object by ID |
 | [**getTelephonyProvidersEdgesTrunkbasesettings**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettings) | Get Trunk Base Settings listing |
 | [**getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases) | Get a list of available makes and models to create a new Trunk Base Settings |
 | [**getTelephonyProvidersEdgesTrunkbasesettingsTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkbasesettingsTemplate) | Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance |
 | [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | Get the list of available trunks. |
+| [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | Get the metrics for a list of trunks. |
 | [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | Get Counts of trunks that have recording disabled or enabled |
 | [**postTelephonyProvidersEdgeLogicalinterfaces**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogicalinterfaces) | Create an edge logical interface. |
 | [**postTelephonyProvidersEdgeLogsJobUpload**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeLogsJobUpload) | Request that the specified fileIds be uploaded from the Edge. |
@@ -106,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonebasesettings) | Create a new Phone Base Settings object |
 | [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | Create a new Phone |
 | [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonesReboot) | Reboot Multiple Phones |
+| [**postTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteAutoscalinggroups) | Creates an ASG for the specified site |
 | [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteOutboundroutes) | Create outbound route |
 | [**postTelephonyProvidersEdgesSiteRebalance**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteRebalance) | Triggers the rebalance operation. |
 | [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | Create a Site. |
@@ -1436,6 +1442,57 @@ try {
 ### Return type
 
 [**EdgeLogsJob**](EdgeLogsJob.html)
+
+<a name="getTelephonyProvidersEdgeMetrics"></a>
+
+# **getTelephonyProvidersEdgeMetrics**
+
+> [EdgeMetrics](EdgeMetrics.html) getTelephonyProvidersEdgeMetrics(edgeId)
+
+Get the edge metrics.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/{edgeId}/metrics  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String edgeId = "edgeId_example"; // String | Edge Id
+try {
+    EdgeMetrics result = apiInstance.getTelephonyProvidersEdgeMetrics(edgeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgeMetrics");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **edgeId** | **String**| Edge Id | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EdgeMetrics**](EdgeMetrics.html)
 
 <a name="getTelephonyProvidersEdgePhysicalinterface"></a>
 
@@ -3041,6 +3098,57 @@ try {
 
 [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
 
+<a name="getTelephonyProvidersEdgesMetrics"></a>
+
+# **getTelephonyProvidersEdgesMetrics**
+
+> [List&lt;EdgeMetrics&gt;](EdgeMetrics.html) getTelephonyProvidersEdgesMetrics(edgeIds)
+
+Get the metrics for a list of edges.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/metrics  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+try {
+    List<EdgeMetrics> result = apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesMetrics");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;EdgeMetrics&gt;**](EdgeMetrics.html)
+
 <a name="getTelephonyProvidersEdgesOutboundroute"></a>
 
 # **getTelephonyProvidersEdgesOutboundroute**
@@ -3648,6 +3756,57 @@ try {
 
 [**Site**](Site.html)
 
+<a name="getTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
+
+# **getTelephonyProvidersEdgesSiteAutoscalinggroups**
+
+> [AsgInfoResponse](AsgInfoResponse.html) getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
+
+Gets the basic information about an asg in a specified site
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String siteId = "siteId_example"; // String | Site id associated with the asg
+try {
+    AsgInfoResponse result = apiInstance.getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteAutoscalinggroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **siteId** | **String**| Site id associated with the asg | |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsgInfoResponse**](AsgInfoResponse.html)
+
 <a name="getTelephonyProvidersEdgesSiteNumberplan"></a>
 
 # **getTelephonyProvidersEdgesSiteNumberplan**
@@ -4084,6 +4243,57 @@ try {
 
 [**Trunk**](Trunk.html)
 
+<a name="getTelephonyProvidersEdgesTrunkMetrics"></a>
+
+# **getTelephonyProvidersEdgesTrunkMetrics**
+
+> [TrunkMetrics](TrunkMetrics.html) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+
+Get the trunk metrics.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String trunkId = "trunkId_example"; // String | Trunk Id
+try {
+    TrunkMetrics result = apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunkMetrics");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trunkId** | **String**| Trunk Id | |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrunkMetrics**](TrunkMetrics.html)
+
 <a name="getTelephonyProvidersEdgesTrunkbasesetting"></a>
 
 # **getTelephonyProvidersEdgesTrunkbasesetting**
@@ -4372,6 +4582,57 @@ try {
 ### Return type
 
 [**TrunkEntityListing**](TrunkEntityListing.html)
+
+<a name="getTelephonyProvidersEdgesTrunksMetrics"></a>
+
+# **getTelephonyProvidersEdgesTrunksMetrics**
+
+> [List&lt;TrunkMetrics&gt;](TrunkMetrics.html) getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+
+Get the metrics for a list of trunks.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/trunks/metrics  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String trunkIds = "trunkIds_example"; // String | Comma separated list of Trunk Id's
+try {
+    List<TrunkMetrics> result = apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunksMetrics");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trunkIds** | **String**| Comma separated list of Trunk Id&#39;s | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;TrunkMetrics&gt;**](TrunkMetrics.html)
 
 <a name="getTelephonyProvidersEdgesTrunkswithrecording"></a>
 
@@ -5403,6 +5664,59 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
+
+# **postTelephonyProvidersEdgesSiteAutoscalinggroups**
+
+> String postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
+
+Creates an ASG for the specified site
+
+
+
+Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String siteId = "siteId_example"; // String | Site that will be associated with the asg
+CreateAsgRequest body = new CreateAsgRequest(); // CreateAsgRequest | CreateAsgRequest
+try {
+    String result = apiInstance.postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSiteAutoscalinggroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **siteId** | **String**| Site that will be associated with the asg | |
+| **body** | [**CreateAsgRequest**](CreateAsgRequest.html)| CreateAsgRequest | |
+{: class="table table-striped"}
+
+### Return type
+
+**String**
 
 <a name="postTelephonyProvidersEdgesSiteOutboundroutes"></a>
 

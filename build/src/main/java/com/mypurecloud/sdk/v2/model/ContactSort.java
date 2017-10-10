@@ -18,7 +18,7 @@ public class ContactSort  implements Serializable {
   private String fieldName = null;
 
   /**
-   * The sort direction
+   * The direction in which to sort contacts.
    */
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -72,14 +72,14 @@ public class ContactSort  implements Serializable {
 
   
   /**
-   * The sort direction
+   * The direction in which to sort contacts.
    **/
   public ContactSort direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The sort direction")
+  @ApiModelProperty(example = "null", value = "The direction in which to sort contacts.")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;
@@ -90,14 +90,14 @@ public class ContactSort  implements Serializable {
 
   
   /**
-   * Whether that column contains numeric data
+   * Whether or not the column contains numeric data.
    **/
   public ContactSort numeric(Boolean numeric) {
     this.numeric = numeric;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether that column contains numeric data")
+  @ApiModelProperty(example = "null", value = "Whether or not the column contains numeric data.")
   @JsonProperty("numeric")
   public Boolean getNumeric() {
     return numeric;

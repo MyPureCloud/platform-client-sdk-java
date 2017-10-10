@@ -9,8 +9,8 @@ title: CampaignRuleCondition
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
-| **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters.html) |  |  [optional] |
-| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum) |  |  [optional] |
+| **parameters** | [**CampaignRuleParameters**](CampaignRuleParameters.html) | The parameters for the CampaignRuleCondition. |  |
+| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum) | The type of condition to evaluate. |  |
 {: class="table table-striped"}
 
 

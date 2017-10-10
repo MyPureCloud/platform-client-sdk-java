@@ -3429,12 +3429,14 @@ public class ArchitectApi {
    * @param secure Secure (optional)
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
+   * @param publishedAfter Published after (optional)
+   * @param publishedBefore Published before (optional)
    * @return FlowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException, ApiException {
-    return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas));
+  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) throws IOException, ApiException {
+    return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore));
   }
 
   /**
@@ -3455,14 +3457,16 @@ public class ArchitectApi {
    * @param secure Secure (optional)
    * @param deleted Include deleted (optional, default to false)
    * @param includeSchemas Include variable schemas (optional, default to false)
+   * @param publishedAfter Published after (optional)
+   * @param publishedBefore Published before (optional)
    * @return FlowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) throws IOException {
-    return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas).withHttpInfo());
+  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) throws IOException {
+    return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore).withHttpInfo());
   }
 
-  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas) {
+  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) {
     return GetFlowsRequest.builder()
             .withType(type)
     
@@ -3493,6 +3497,10 @@ public class ArchitectApi {
             .withDeleted(deleted)
     
             .withIncludeSchemas(includeSchemas)
+    
+            .withPublishedAfter(publishedAfter)
+    
+            .withPublishedBefore(publishedBefore)
     
             .build();
   }
