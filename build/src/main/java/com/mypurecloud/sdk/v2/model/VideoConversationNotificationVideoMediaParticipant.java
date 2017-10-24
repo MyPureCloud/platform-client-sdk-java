@@ -165,7 +165,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private VideoConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private VideoConversationNotificationErrorInfo errorInfo = null;
   private VideoConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

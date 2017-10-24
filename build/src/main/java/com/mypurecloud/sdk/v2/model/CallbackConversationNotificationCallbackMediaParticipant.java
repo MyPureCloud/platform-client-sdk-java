@@ -168,7 +168,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private CallbackConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private CallbackConversationNotificationErrorInfo errorInfo = null;
   private CallbackConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

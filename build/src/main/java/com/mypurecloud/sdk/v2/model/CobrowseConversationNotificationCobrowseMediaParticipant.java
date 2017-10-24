@@ -166,7 +166,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private CobrowseConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private CobrowseConversationNotificationErrorInfo errorInfo = null;
   private CobrowseConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

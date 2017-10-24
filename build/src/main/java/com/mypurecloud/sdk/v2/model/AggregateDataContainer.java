@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class AggregateDataContainer  implements Serializable {
   
-  private Map<String, String> group = new HashMap<String, String>();
+  private Map<String, String> group = null;
   private List<StatisticalResponse> data = new ArrayList<StatisticalResponse>();
 
   

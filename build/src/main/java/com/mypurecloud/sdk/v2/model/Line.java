@@ -67,7 +67,7 @@ public class Line  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private UriReference edgeGroup = null;
   private UriReference template = null;
   private UriReference site = null;

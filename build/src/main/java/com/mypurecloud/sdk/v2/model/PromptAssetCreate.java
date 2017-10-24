@@ -26,7 +26,7 @@ public class PromptAssetCreate  implements Serializable {
   private String uploadStatus = null;
   private String uploadUri = null;
   private Boolean languageDefault = null;
-  private Map<String, List<String>> tags = new HashMap<String, List<String>>();
+  private Map<String, List<String>> tags = null;
   private Double durationSeconds = null;
   private String selfUri = null;
 

@@ -21,7 +21,7 @@ public class AvailableTopic  implements Serializable {
   private String description = null;
   private String id = null;
   private List<String> requiresPermissions = new ArrayList<String>();
-  private Map<String, Object> schema = new HashMap<String, Object>();
+  private Map<String, Object> schema = null;
 
   
   /**

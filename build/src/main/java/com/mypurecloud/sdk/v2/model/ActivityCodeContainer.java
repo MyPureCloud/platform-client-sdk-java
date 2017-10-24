@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class ActivityCodeContainer  implements Serializable {
   
-  private Map<String, ActivityCode> activityCodes = new HashMap<String, ActivityCode>();
+  private Map<String, ActivityCode> activityCodes = null;
 
   
   /**

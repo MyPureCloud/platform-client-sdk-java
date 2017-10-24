@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 public class FlowNotificationNotificationErrorMessageParams  implements Serializable {
   
-  private Map<String, String> additionalProperties = new HashMap<String, String>();
+  private Map<String, String> additionalProperties = null;
 
   
   /**

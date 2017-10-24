@@ -21,7 +21,7 @@ public class ConversationNotificationErrorInfo  implements Serializable {
   private String code = null;
   private String message = null;
   private String messageWithParams = null;
-  private Map<String, String> messageParams = new HashMap<String, String>();
+  private Map<String, String> messageParams = null;
   private String contextId = null;
   private String uri = null;
   private Object additionalProperties = null;

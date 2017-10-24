@@ -22,10 +22,10 @@ public class DialerContact  implements Serializable {
   private String id = null;
   private String name = null;
   private String contactListId = null;
-  private Map<String, Object> data = new HashMap<String, Object>();
-  private Map<String, CallRecord> callRecords = new HashMap<String, CallRecord>();
+  private Map<String, Object> data = null;
+  private Map<String, CallRecord> callRecords = null;
   private Boolean callable = null;
-  private Map<String, PhoneNumberStatus> phoneNumberStatus = new HashMap<String, PhoneNumberStatus>();
+  private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private String selfUri = null;
 
   

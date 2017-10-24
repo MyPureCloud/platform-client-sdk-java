@@ -25,7 +25,7 @@ public class UserStation  implements Serializable {
   private User associatedUser = null;
   private Date associatedDate = null;
   private User defaultUser = null;
-  private Map<String, String> providerInfo = new HashMap<String, String>();
+  private Map<String, String> providerInfo = null;
 
   
   @ApiModelProperty(example = "null", value = "A globally unique identifier for this station")

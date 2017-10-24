@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class PresenceQueryResponse  implements Serializable {
   
-  private Map<String, List<String>> systemToOrganizationMappings = new HashMap<String, List<String>>();
+  private Map<String, List<String>> systemToOrganizationMappings = null;
   private List<AggregateDataContainer> results = new ArrayList<AggregateDataContainer>();
 
   

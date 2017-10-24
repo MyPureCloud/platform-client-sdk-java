@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 public class ResponseConfig  implements Serializable {
   
-  private Map<String, String> translationMap = new HashMap<String, String>();
+  private Map<String, String> translationMap = null;
   private String successTemplate = null;
   private String successTemplateUri = null;
 

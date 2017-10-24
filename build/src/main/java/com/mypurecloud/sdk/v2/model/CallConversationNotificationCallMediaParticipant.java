@@ -166,7 +166,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private CallConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private CallConversationNotificationErrorInfo errorInfo = null;
   private CallConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

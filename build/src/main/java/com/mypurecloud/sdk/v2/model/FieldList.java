@@ -22,7 +22,7 @@ public class FieldList  implements Serializable {
   private String instructionText = null;
   private String key = null;
   private List<String> labelKeys = new ArrayList<String>();
-  private Map<String, Object> params = new HashMap<String, Object>();
+  private Map<String, Object> params = null;
   private Boolean repeatable = null;
   private String state = null;
   private String type = null;

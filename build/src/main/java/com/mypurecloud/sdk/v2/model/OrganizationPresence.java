@@ -21,7 +21,7 @@ public class OrganizationPresence  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Map<String, String> languageLabels = new HashMap<String, String>();
+  private Map<String, String> languageLabels = null;
   private String systemPresence = null;
   private Boolean deactivated = null;
   private Boolean primary = null;

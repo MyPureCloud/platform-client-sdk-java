@@ -92,7 +92,7 @@ public class ParticipantBasic  implements Serializable {
   private Boolean wrapupSkipped = null;
   private Wrapup wrapup = null;
   private String monitoredParticipantId = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private List<CallBasic> calls = new ArrayList<CallBasic>();
   private List<CallbackBasic> callbacks = new ArrayList<CallbackBasic>();
   private List<ConversationChat> chats = new ArrayList<ConversationChat>();

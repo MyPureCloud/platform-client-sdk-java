@@ -165,7 +165,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private ScreenShareConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private ScreenShareConversationNotificationErrorInfo errorInfo = null;
   private ScreenShareConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

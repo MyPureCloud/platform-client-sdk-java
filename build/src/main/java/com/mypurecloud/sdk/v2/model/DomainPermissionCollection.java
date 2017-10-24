@@ -20,7 +20,7 @@ public class DomainPermissionCollection  implements Serializable {
   private String id = null;
   private String name = null;
   private String domain = null;
-  private Map<String, List<DomainPermission>> permissionMap = new HashMap<String, List<DomainPermission>>();
+  private Map<String, List<DomainPermission>> permissionMap = null;
   private String selfUri = null;
 
   

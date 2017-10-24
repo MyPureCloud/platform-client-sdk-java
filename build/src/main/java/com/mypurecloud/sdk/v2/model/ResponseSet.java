@@ -24,7 +24,7 @@ public class ResponseSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private Map<String, Reaction> responses = new HashMap<String, Reaction>();
+  private Map<String, Reaction> responses = null;
   private String selfUri = null;
 
   

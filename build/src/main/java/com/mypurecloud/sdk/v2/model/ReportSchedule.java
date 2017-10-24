@@ -33,7 +33,7 @@ public class ReportSchedule  implements Serializable {
   private String locale = null;
   private Boolean enabled = null;
   private String reportId = null;
-  private Map<String, Object> parameters = new HashMap<String, Object>();
+  private Map<String, Object> parameters = null;
   private ReportRunEntry lastRun = null;
   private String selfUri = null;
 

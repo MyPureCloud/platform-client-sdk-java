@@ -162,7 +162,7 @@ public class CallMediaParticipant  implements Serializable {
   private String wrapupPrompt = null;
   private UriReference user = null;
   private UriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private ErrorBody errorInfo = null;
   private UriReference script = null;
   private Integer wrapupTimeoutMs = null;

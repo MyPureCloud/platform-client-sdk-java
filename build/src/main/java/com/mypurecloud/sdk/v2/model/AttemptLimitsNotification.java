@@ -63,7 +63,7 @@ public class AttemptLimitsNotification  implements Serializable {
     }
   }
   private ResetPeriodEnum resetPeriod = null;
-  private Map<String, AttemptLimitsNotificationRecallEntries> recallEntries = new HashMap<String, AttemptLimitsNotificationRecallEntries>();
+  private Map<String, AttemptLimitsNotificationRecallEntries> recallEntries = null;
   private Boolean breadthFirstRecalls = null;
   private Object additionalProperties = null;
 

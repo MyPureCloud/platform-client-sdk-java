@@ -165,7 +165,7 @@ public class EmailConversationNotificationEmailMediaParticipant  implements Seri
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private EmailConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private EmailConversationNotificationErrorInfo errorInfo = null;
   private EmailConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

@@ -64,7 +64,7 @@ public class SystemPromptAsset  implements Serializable {
   private UploadStatusEnum uploadStatus = null;
   private Boolean hasDefault = null;
   private Boolean languageDefault = null;
-  private Map<String, List<String>> tags = new HashMap<String, List<String>>();
+  private Map<String, List<String>> tags = null;
   private String selfUri = null;
 
   

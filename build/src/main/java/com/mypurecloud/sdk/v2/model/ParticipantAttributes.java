@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 public class ParticipantAttributes  implements Serializable {
   
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
 
   
   /**

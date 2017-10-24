@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class UserScheduleContainer  implements Serializable {
   
   private String managementUnitTimeZone = null;
-  private Map<String, UserSchedule> userSchedules = new HashMap<String, UserSchedule>();
+  private Map<String, UserSchedule> userSchedules = null;
 
   
   /**

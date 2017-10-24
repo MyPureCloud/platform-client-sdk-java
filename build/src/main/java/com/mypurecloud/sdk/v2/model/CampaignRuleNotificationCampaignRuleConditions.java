@@ -19,7 +19,7 @@ import java.io.Serializable;
 public class CampaignRuleNotificationCampaignRuleConditions  implements Serializable {
   
   private String id = null;
-  private Map<String, String> parameters = new HashMap<String, String>();
+  private Map<String, String> parameters = null;
 
   /**
    * Gets or Sets conditionType

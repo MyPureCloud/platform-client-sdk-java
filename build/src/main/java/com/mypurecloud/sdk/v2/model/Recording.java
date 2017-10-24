@@ -76,7 +76,7 @@ public class Recording  implements Serializable {
   }
   private FileStateEnum fileState = null;
   private Date restoreExpirationTime = null;
-  private Map<String, MediaResult> mediaUris = new HashMap<String, MediaResult>();
+  private Map<String, MediaResult> mediaUris = null;
   private Long estimatedTranscodeTimeMs = null;
   private Long actualTranscodeTimeMs = null;
   private Date archiveDate = null;

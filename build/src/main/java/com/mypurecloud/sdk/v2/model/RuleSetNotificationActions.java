@@ -20,7 +20,7 @@ public class RuleSetNotificationActions  implements Serializable {
   private String type = null;
   private String actionTypeName = null;
   private String updateOption = null;
-  private Map<String, String> properties = new HashMap<String, String>();
+  private Map<String, String> properties = null;
   private Object additionalProperties = null;
 
   

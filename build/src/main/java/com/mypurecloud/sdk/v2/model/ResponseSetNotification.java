@@ -24,7 +24,7 @@ public class ResponseSetNotification  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private Map<String, ResponseSetNotificationResponses> responses = new HashMap<String, ResponseSetNotificationResponses>();
+  private Map<String, ResponseSetNotificationResponses> responses = null;
   private Object additionalProperties = null;
 
   

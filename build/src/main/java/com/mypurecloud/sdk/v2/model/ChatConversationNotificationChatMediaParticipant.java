@@ -165,7 +165,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private ChatConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private ChatConversationNotificationErrorInfo errorInfo = null;
   private ChatConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

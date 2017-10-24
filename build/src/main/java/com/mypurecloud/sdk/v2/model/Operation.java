@@ -27,7 +27,7 @@ public class Operation  implements Serializable {
   private String errorMessage = null;
   private String errorCode = null;
   private List<Detail> errorDetails = new ArrayList<Detail>();
-  private Map<String, String> errorMessageParams = new HashMap<String, String>();
+  private Map<String, String> errorMessageParams = null;
 
   /**
    * Action name

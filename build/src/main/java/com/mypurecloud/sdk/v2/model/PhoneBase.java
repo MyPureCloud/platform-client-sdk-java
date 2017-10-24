@@ -71,7 +71,7 @@ public class PhoneBase  implements Serializable {
   private String createdByApp = null;
   private UriReference phoneMetaBase = null;
   private List<LineBase> lines = new ArrayList<LineBase>();
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
   private String selfUri = null;
 

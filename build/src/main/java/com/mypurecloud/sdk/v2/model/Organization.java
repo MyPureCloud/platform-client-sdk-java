@@ -66,7 +66,7 @@ public class Organization  implements Serializable {
   private String supportURI = null;
   private Boolean voicemailEnabled = null;
   private String selfUri = null;
-  private Map<String, Boolean> features = new HashMap<String, Boolean>();
+  private Map<String, Boolean> features = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")

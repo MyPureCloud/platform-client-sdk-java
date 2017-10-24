@@ -68,7 +68,7 @@ public class Endpoint  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private Integer count = null;
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private UriReference schema = null;
   private Boolean enabled = null;
   private UriReference site = null;

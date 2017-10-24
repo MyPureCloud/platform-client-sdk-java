@@ -23,8 +23,8 @@ public class Page  implements Serializable {
   private String versionId = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
-  private Map<String, Object> rootContainer = new HashMap<String, Object>();
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> rootContainer = null;
+  private Map<String, Object> properties = null;
   private String selfUri = null;
 
   

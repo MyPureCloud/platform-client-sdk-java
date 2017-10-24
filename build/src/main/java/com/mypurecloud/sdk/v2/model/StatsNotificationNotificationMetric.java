@@ -20,7 +20,7 @@ public class StatsNotificationNotificationMetric  implements Serializable {
   
   private String metric = null;
   private String qualifier = null;
-  private Map<String, BigDecimal> stats = new HashMap<String, BigDecimal>();
+  private Map<String, BigDecimal> stats = null;
 
   
   /**

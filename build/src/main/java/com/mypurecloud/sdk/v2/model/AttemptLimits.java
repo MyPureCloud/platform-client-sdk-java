@@ -63,7 +63,7 @@ public class AttemptLimits  implements Serializable {
     }
   }
   private ResetPeriodEnum resetPeriod = null;
-  private Map<String, RecallEntry> recallEntries = new HashMap<String, RecallEntry>();
+  private Map<String, RecallEntry> recallEntries = null;
   private String selfUri = null;
 
   

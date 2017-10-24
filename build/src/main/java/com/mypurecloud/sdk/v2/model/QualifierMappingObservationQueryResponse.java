@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class QualifierMappingObservationQueryResponse  implements Serializable {
   
-  private Map<String, List<String>> systemToOrganizationMappings = new HashMap<String, List<String>>();
+  private Map<String, List<String>> systemToOrganizationMappings = null;
   private List<ObservationDataContainer> results = new ArrayList<ObservationDataContainer>();
 
   

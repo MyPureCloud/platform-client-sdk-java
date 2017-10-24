@@ -21,7 +21,7 @@ public class ErrorDetails  implements Serializable {
   private Integer status = null;
   private String message = null;
   private String messageWithParams = null;
-  private Map<String, String> messageParams = new HashMap<String, String>();
+  private Map<String, String> messageParams = null;
   private String code = null;
   private String contextId = null;
   private ErrorDetails nested = null;

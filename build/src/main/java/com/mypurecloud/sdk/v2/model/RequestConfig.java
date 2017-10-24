@@ -22,7 +22,7 @@ public class RequestConfig  implements Serializable {
   private String requestTemplate = null;
   private String requestTemplateUri = null;
   private String requestType = null;
-  private Map<String, String> headers = new HashMap<String, String>();
+  private Map<String, String> headers = null;
 
   
   /**

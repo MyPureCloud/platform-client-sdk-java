@@ -20,7 +20,7 @@ public class Location  implements Serializable {
   
   private String id = null;
   private String floorplanId = null;
-  private Map<String, Double> coordinates = new HashMap<String, Double>();
+  private Map<String, Double> coordinates = null;
   private String notes = null;
   private LocationDefinition locationDefinition = null;
 

@@ -23,6 +23,7 @@ title: ConversationNotificationEmails
 | **connectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **messageId** | **String** |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 
@@ -63,6 +64,17 @@ title: ConversationNotificationEmails
 | OTHER | &quot;OTHER&quot; |
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
+
+
+<a name="DirectionEnum"></a>
+
+## Enum: DirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| OUTBOUND | &quot;OUTBOUND&quot; |
+| INBOUND | &quot;INBOUND&quot; |
 {: class="table table-striped"}
 
 

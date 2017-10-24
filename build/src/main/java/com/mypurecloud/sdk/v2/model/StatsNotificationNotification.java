@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class StatsNotificationNotification  implements Serializable {
   
-  private Map<String, String> group = new HashMap<String, String>();
+  private Map<String, String> group = null;
   private List<StatsNotificationNotificationData> data = new ArrayList<StatsNotificationNotificationData>();
 
   

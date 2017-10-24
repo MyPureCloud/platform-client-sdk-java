@@ -71,7 +71,7 @@ public class UserQueue  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private Map<String, MediaSetting> mediaSettings = new HashMap<String, MediaSetting>();
+  private Map<String, MediaSetting> mediaSettings = null;
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
 
@@ -113,7 +113,7 @@ public class UserQueue  implements Serializable {
   private UriReference queueFlow = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
-  private Map<String, Script> defaultScripts = new HashMap<String, Script>();
+  private Map<String, Script> defaultScripts = null;
   private QueueEmailAddress outboundEmailAddress = null;
   private Boolean joined = null;
   private Integer memberCount = null;

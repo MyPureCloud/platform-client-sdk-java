@@ -26,7 +26,7 @@ public class ErrorBody  implements Serializable {
   private String entityName = null;
   private String message = null;
   private String messageWithParams = null;
-  private Map<String, String> messageParams = new HashMap<String, String>();
+  private Map<String, String> messageParams = null;
   private String contextId = null;
   private List<Detail> details = new ArrayList<Detail>();
   private List<ErrorBody> errors = new ArrayList<ErrorBody>();

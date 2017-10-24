@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 public class Utilization  implements Serializable {
   
-  private Map<String, OrgMediaUtilization> utilization = new HashMap<String, OrgMediaUtilization>();
+  private Map<String, OrgMediaUtilization> utilization = null;
 
   
   /**

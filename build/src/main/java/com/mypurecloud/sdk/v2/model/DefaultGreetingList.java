@@ -60,7 +60,7 @@ public class DefaultGreetingList  implements Serializable {
     }
   }
   private OwnerTypeEnum ownerType = null;
-  private Map<String, Greeting> greetings = new HashMap<String, Greeting>();
+  private Map<String, Greeting> greetings = null;
   private Date createdDate = null;
   private String createdBy = null;
   private Date modifiedDate = null;

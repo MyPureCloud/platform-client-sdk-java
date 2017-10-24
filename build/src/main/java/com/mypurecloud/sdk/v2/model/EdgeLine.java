@@ -70,7 +70,7 @@ public class EdgeLine  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private UriReference schema = null;
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private Edge edge = null;
   private EdgeGroup edgeGroup = null;
 

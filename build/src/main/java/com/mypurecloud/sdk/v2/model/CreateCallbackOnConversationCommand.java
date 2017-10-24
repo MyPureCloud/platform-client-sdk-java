@@ -27,7 +27,7 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
   private List<String> callbackNumbers = new ArrayList<String>();
   private Date callbackScheduledTime = null;
   private String countryCode = null;
-  private Map<String, String> data = new HashMap<String, String>();
+  private Map<String, String> data = null;
 
   
   /**

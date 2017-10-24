@@ -80,7 +80,7 @@ public class Phone  implements Serializable {
   private PhoneStatus status = null;
   private PhoneStatus secondaryStatus = null;
   private UserAgentInfo userAgentInfo = null;
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
   private UriReference webRtcUser = null;
   private Edge primaryEdge = null;

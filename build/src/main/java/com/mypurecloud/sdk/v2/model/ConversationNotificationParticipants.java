@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.ConversationNotificationCalls;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationChats;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationCobrowsesessions;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationEmails;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationMessages1;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationScreenshares;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationSocialExpressions;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationVideos;
@@ -85,12 +86,13 @@ public class ConversationNotificationParticipants  implements Serializable {
     }
   }
   private ScreenRecordingStateEnum screenRecordingState = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private List<ConversationNotificationCalls> calls = new ArrayList<ConversationNotificationCalls>();
   private List<ConversationNotificationCallbacks> callbacks = new ArrayList<ConversationNotificationCallbacks>();
   private List<ConversationNotificationChats> chats = new ArrayList<ConversationNotificationChats>();
   private List<ConversationNotificationCobrowsesessions> cobrowsesessions = new ArrayList<ConversationNotificationCobrowsesessions>();
   private List<ConversationNotificationEmails> emails = new ArrayList<ConversationNotificationEmails>();
+  private List<ConversationNotificationMessages1> messages = new ArrayList<ConversationNotificationMessages1>();
   private List<ConversationNotificationScreenshares> screenshares = new ArrayList<ConversationNotificationScreenshares>();
   private List<ConversationNotificationSocialExpressions> socialExpressions = new ArrayList<ConversationNotificationSocialExpressions>();
   private List<ConversationNotificationVideos> videos = new ArrayList<ConversationNotificationVideos>();
@@ -524,6 +526,23 @@ public class ConversationNotificationParticipants  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationParticipants messages(List<ConversationNotificationMessages1> messages) {
+    this.messages = messages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messages")
+  public List<ConversationNotificationMessages1> getMessages() {
+    return messages;
+  }
+  public void setMessages(List<ConversationNotificationMessages1> messages) {
+    this.messages = messages;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationParticipants screenshares(List<ConversationNotificationScreenshares> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -625,6 +644,7 @@ public class ConversationNotificationParticipants  implements Serializable {
         Objects.equals(this.chats, conversationNotificationParticipants.chats) &&
         Objects.equals(this.cobrowsesessions, conversationNotificationParticipants.cobrowsesessions) &&
         Objects.equals(this.emails, conversationNotificationParticipants.emails) &&
+        Objects.equals(this.messages, conversationNotificationParticipants.messages) &&
         Objects.equals(this.screenshares, conversationNotificationParticipants.screenshares) &&
         Objects.equals(this.socialExpressions, conversationNotificationParticipants.socialExpressions) &&
         Objects.equals(this.videos, conversationNotificationParticipants.videos) &&
@@ -633,7 +653,7 @@ public class ConversationNotificationParticipants  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -666,6 +686,7 @@ public class ConversationNotificationParticipants  implements Serializable {
     sb.append("    chats: ").append(toIndentedString(chats)).append("\n");
     sb.append("    cobrowsesessions: ").append(toIndentedString(cobrowsesessions)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
+    sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");

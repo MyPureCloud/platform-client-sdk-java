@@ -67,7 +67,7 @@ public class LineBase  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private UriReference lineMetaBase = null;
-  private Map<String, Object> properties = new HashMap<String, Object>();
+  private Map<String, Object> properties = null;
   private String selfUri = null;
 
   

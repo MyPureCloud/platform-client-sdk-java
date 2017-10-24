@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class CampaignRuleNotificationCampaignRuleAction  implements Serializable {
   
   private String id = null;
-  private Map<String, String> parameters = new HashMap<String, String>();
+  private Map<String, String> parameters = null;
 
   /**
    * Gets or Sets actionType

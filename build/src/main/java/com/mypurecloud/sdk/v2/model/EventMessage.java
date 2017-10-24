@@ -81,7 +81,7 @@ public class EventMessage  implements Serializable {
   private CodeEnum code = null;
   private String message = null;
   private String messageWithParams = null;
-  private Map<String, Object> messageParams = new HashMap<String, Object>();
+  private Map<String, Object> messageParams = null;
   private String documentationUri = null;
   private List<String> resourceURIs = new ArrayList<String>();
 

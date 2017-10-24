@@ -19,7 +19,7 @@ public class LicenseOrganization  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Map<String, List<AddressableEntityUser>> licenses = new HashMap<String, List<AddressableEntityUser>>();
+  private Map<String, List<AddressableEntityUser>> licenses = null;
   private String selfUri = null;
 
   

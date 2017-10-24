@@ -165,7 +165,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
   private String wrapupPrompt = null;
   private DocumentDataV2NotificationCreatedBy user = null;
   private SocialConversationNotificationUriReference queue = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private SocialConversationNotificationErrorInfo errorInfo = null;
   private SocialConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;

@@ -24,7 +24,7 @@ public class InboundMessageRequest  implements Serializable {
   private List<String> skillIds = new ArrayList<String>();
   private String languageId = null;
   private Integer priority = null;
-  private Map<String, String> attributes = new HashMap<String, String>();
+  private Map<String, String> attributes = null;
   private String toAddress = null;
   private String toName = null;
   private String fromAddress = null;

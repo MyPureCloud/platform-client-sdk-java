@@ -59,7 +59,7 @@ public class WrapUpCodeMapping  implements Serializable {
     }
   }
   private List<DefaultSetEnum> defaultSet = new ArrayList<DefaultSetEnum>();
-  private Map<String, List<String>> mapping = new HashMap<String, List<String>>();
+  private Map<String, List<String>> mapping = null;
   private String selfUri = null;
 
   
