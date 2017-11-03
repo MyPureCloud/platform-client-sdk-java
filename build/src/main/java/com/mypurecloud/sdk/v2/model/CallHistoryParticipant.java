@@ -12,7 +12,9 @@ import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -116,6 +118,8 @@ public class CallHistoryParticipant  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private ExternalContact externalContact = null;
   private ExternalOrganization externalOrganization = null;
+  private Boolean didInteract = null;
+  private List<Long> sipResponseCodes = new ArrayList<Long>();
 
   
   /**
@@ -388,6 +392,42 @@ public class CallHistoryParticipant  implements Serializable {
   }
 
   
+  /**
+   * Indicates whether the contact ever connected
+   **/
+  public CallHistoryParticipant didInteract(Boolean didInteract) {
+    this.didInteract = didInteract;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the contact ever connected")
+  @JsonProperty("didInteract")
+  public Boolean getDidInteract() {
+    return didInteract;
+  }
+  public void setDidInteract(Boolean didInteract) {
+    this.didInteract = didInteract;
+  }
+
+  
+  /**
+   * Indicates SIP Response codes associated with the participant
+   **/
+  public CallHistoryParticipant sipResponseCodes(List<Long> sipResponseCodes) {
+    this.sipResponseCodes = sipResponseCodes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates SIP Response codes associated with the participant")
+  @JsonProperty("sipResponseCodes")
+  public List<Long> getSipResponseCodes() {
+    return sipResponseCodes;
+  }
+  public void setSipResponseCodes(List<Long> sipResponseCodes) {
+    this.sipResponseCodes = sipResponseCodes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -412,12 +452,14 @@ public class CallHistoryParticipant  implements Serializable {
         Objects.equals(this.group, callHistoryParticipant.group) &&
         Objects.equals(this.disconnectType, callHistoryParticipant.disconnectType) &&
         Objects.equals(this.externalContact, callHistoryParticipant.externalContact) &&
-        Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization);
+        Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization) &&
+        Objects.equals(this.didInteract, callHistoryParticipant.didInteract) &&
+        Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization);
+    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization, didInteract, sipResponseCodes);
   }
 
   @Override
@@ -440,6 +482,8 @@ public class CallHistoryParticipant  implements Serializable {
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
+    sb.append("    didInteract: ").append(toIndentedString(didInteract)).append("\n");
+    sb.append("    sipResponseCodes: ").append(toIndentedString(sipResponseCodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

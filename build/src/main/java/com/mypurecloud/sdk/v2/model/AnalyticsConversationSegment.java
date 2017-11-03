@@ -46,7 +46,8 @@ public class AnalyticsConversationSegment  implements Serializable {
     FORWARDTRANSFER("forwardTransfer"),
     TIMEOUT("timeout"),
     NOANSWERTRANSFER("noAnswerTransfer"),
-    NOTAVAILABLETRANSFER("notAvailableTransfer");
+    NOTAVAILABLETRANSFER("notAvailableTransfer"),
+    UNCALLABLE("uncallable");
 
     private String value;
 

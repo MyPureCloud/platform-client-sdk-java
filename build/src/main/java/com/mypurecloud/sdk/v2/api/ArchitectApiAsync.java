@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
@@ -37,7 +38,6 @@ import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
 import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -65,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedr
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptsRequest;
@@ -73,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
@@ -85,10 +87,12 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
@@ -1723,6 +1727,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Get generated prompt history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoryListing> getArchitectPromptHistoryHistoryIdAsync(GetArchitectPromptHistoryHistoryIdRequest request, final AsyncApiCallback<HistoryListing> callback) {
+    try {
+      final SettableFuture<HistoryListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoryListing>> getArchitectPromptHistoryHistoryIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoryListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoryListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get specified user prompt resource
    * 
    * @param request the request object
@@ -2318,6 +2398,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SystemPrompt> response = (ApiResponse<SystemPrompt>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get generated prompt history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<HistoryListing> getArchitectSystempromptHistoryHistoryIdAsync(GetArchitectSystempromptHistoryHistoryIdRequest request, final AsyncApiCallback<HistoryListing> callback) {
+    try {
+      final SettableFuture<HistoryListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<HistoryListing>> getArchitectSystempromptHistoryHistoryIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<HistoryListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<HistoryListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<HistoryListing>() {}, new AsyncApiCallback<ApiResponse<HistoryListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<HistoryListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3243,6 +3399,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Operation> postArchitectPromptHistoryAsync(PostArchitectPromptHistoryRequest request, final AsyncApiCallback<Operation> callback) {
+    try {
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Operation>> postArchitectPromptHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a new user prompt resource
    * 
    * @param request the request object
@@ -3534,6 +3766,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Operation> postArchitectSystempromptHistoryAsync(PostArchitectSystempromptHistoryRequest request, final AsyncApiCallback<Operation> callback) {
+    try {
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Operation>> postArchitectSystempromptHistoryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

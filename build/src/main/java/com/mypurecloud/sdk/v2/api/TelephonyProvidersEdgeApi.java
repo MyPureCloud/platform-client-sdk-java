@@ -121,7 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolReque
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgeversionreportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEndpointRequest;
@@ -196,7 +196,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesCertificatea
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEndpointRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionpoolRequest;
@@ -3597,8 +3597,8 @@ public class TelephonyProvidersEdgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId));
+  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(String edgegroupId, String edgetrunkbaseId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(edgegroupId, edgetrunkbaseId));
   }
 
   /**
@@ -3609,12 +3609,12 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws IOException {
-    return getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId).withHttpInfo());
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbaseWithHttpInfo(String edgegroupId, String edgetrunkbaseId) throws IOException {
+    return getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(edgegroupId, edgetrunkbaseId).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId) {
-    return GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
+  private GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest createGetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(String edgegroupId, String edgetrunkbaseId) {
+    return GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest.builder()
             .withEdgegroupId(edgegroupId)
     
             .withEdgetrunkbaseId(edgetrunkbaseId)
@@ -3630,7 +3630,7 @@ public class TelephonyProvidersEdgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
+  public EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest request) throws IOException, ApiException {
     try {
       ApiResponse<EdgeTrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
       return response.getBody();
@@ -3648,7 +3648,7 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EdgeTrunkBase>() {});
     }
@@ -9887,8 +9887,8 @@ public class TelephonyProvidersEdgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
-    return  putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId, body));
+  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException, ApiException {
+    return  putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(edgegroupId, edgetrunkbaseId, body));
   }
 
   /**
@@ -9900,12 +9900,12 @@ public class TelephonyProvidersEdgeApi {
    * @return EdgeTrunkBase
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException {
-    return putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(edgegroupId, edgetrunkbaseId, body).withHttpInfo());
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbaseWithHttpInfo(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) throws IOException {
+    return putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(edgegroupId, edgetrunkbaseId, body).withHttpInfo());
   }
 
-  private PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
-    return PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest.builder()
+  private PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest createPutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest(String edgegroupId, String edgetrunkbaseId, EdgeTrunkBase body) {
+    return PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest.builder()
             .withEdgegroupId(edgegroupId)
     
             .withEdgetrunkbaseId(edgetrunkbaseId)
@@ -9923,7 +9923,7 @@ public class TelephonyProvidersEdgeApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request) throws IOException, ApiException {
+  public EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest request) throws IOException, ApiException {
     try {
       ApiResponse<EdgeTrunkBase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeTrunkBase>() {});
       return response.getBody();
@@ -9941,7 +9941,7 @@ public class TelephonyProvidersEdgeApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(ApiRequest<EdgeTrunkBase> request) throws IOException {
+  public ApiResponse<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(ApiRequest<EdgeTrunkBase> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EdgeTrunkBase>() {});
     }

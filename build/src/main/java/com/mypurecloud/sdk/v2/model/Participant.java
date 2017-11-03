@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.Cobrowsesession;
 import com.mypurecloud.sdk.v2.model.ConversationChat;
 import com.mypurecloud.sdk.v2.model.Email;
 import com.mypurecloud.sdk.v2.model.Evaluation;
+import com.mypurecloud.sdk.v2.model.Message;
 import com.mypurecloud.sdk.v2.model.Screenshare;
 import com.mypurecloud.sdk.v2.model.SocialExpression;
 import com.mypurecloud.sdk.v2.model.Video;
@@ -98,6 +99,7 @@ public class Participant  implements Serializable {
   private List<ConversationChat> chats = new ArrayList<ConversationChat>();
   private List<Cobrowsesession> cobrowsesessions = new ArrayList<Cobrowsesession>();
   private List<Email> emails = new ArrayList<Email>();
+  private List<Message> messages = new ArrayList<Message>();
   private List<Screenshare> screenshares = new ArrayList<Screenshare>();
   private List<SocialExpression> socialExpressions = new ArrayList<SocialExpression>();
   private List<Video> videos = new ArrayList<Video>();
@@ -715,6 +717,23 @@ public class Participant  implements Serializable {
   
   /**
    **/
+  public Participant messages(List<Message> messages) {
+    this.messages = messages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messages")
+  public List<Message> getMessages() {
+    return messages;
+  }
+  public void setMessages(List<Message> messages) {
+    this.messages = messages;
+  }
+
+  
+  /**
+   **/
   public Participant screenshares(List<Screenshare> screenshares) {
     this.screenshares = screenshares;
     return this;
@@ -841,6 +860,7 @@ public class Participant  implements Serializable {
         Objects.equals(this.chats, participant.chats) &&
         Objects.equals(this.cobrowsesessions, participant.cobrowsesessions) &&
         Objects.equals(this.emails, participant.emails) &&
+        Objects.equals(this.messages, participant.messages) &&
         Objects.equals(this.screenshares, participant.screenshares) &&
         Objects.equals(this.socialExpressions, participant.socialExpressions) &&
         Objects.equals(this.videos, participant.videos) &&
@@ -850,7 +870,7 @@ public class Participant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, screenshares, socialExpressions, videos, evaluations, screenRecordingState);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState);
   }
 
   @Override
@@ -890,6 +910,7 @@ public class Participant  implements Serializable {
     sb.append("    chats: ").append(toIndentedString(chats)).append("\n");
     sb.append("    cobrowsesessions: ").append(toIndentedString(cobrowsesessions)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
+    sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    screenshares: ").append(toIndentedString(screenshares)).append("\n");
     sb.append("    socialExpressions: ").append(toIndentedString(socialExpressions)).append("\n");
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");

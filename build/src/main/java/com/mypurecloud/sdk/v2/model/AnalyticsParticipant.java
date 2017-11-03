@@ -39,7 +39,9 @@ public class AnalyticsParticipant  implements Serializable {
     STATION("station"),
     GROUP("group"),
     CUSTOMER("customer"),
-    EXTERNAL("external");
+    EXTERNAL("external"),
+    FAX("fax"),
+    WORKFLOW("workflow");
 
     private String value;
 

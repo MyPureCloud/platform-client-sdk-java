@@ -38,6 +38,8 @@ title: AnalyticsParticipant
 | GROUP | &quot;group&quot; |
 | CUSTOMER | &quot;customer&quot; |
 | EXTERNAL | &quot;external&quot; |
+| FAX | &quot;fax&quot; |
+| WORKFLOW | &quot;workflow&quot; |
 {: class="table table-striped"}
 
 

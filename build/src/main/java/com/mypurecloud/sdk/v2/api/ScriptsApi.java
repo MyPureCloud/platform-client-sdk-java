@@ -129,12 +129,13 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Page
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Page getScriptPage(String scriptId, String pageId) throws IOException, ApiException {
-    return  getScriptPage(createGetScriptPageRequest(scriptId, pageId));
+  public Page getScriptPage(String scriptId, String pageId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptPage(createGetScriptPageRequest(scriptId, pageId, scriptDataVersion));
   }
 
   /**
@@ -142,18 +143,21 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Page
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId) throws IOException {
-    return getScriptPage(createGetScriptPageRequest(scriptId, pageId).withHttpInfo());
+  public ApiResponse<Page> getScriptPageWithHttpInfo(String scriptId, String pageId, String scriptDataVersion) throws IOException {
+    return getScriptPage(createGetScriptPageRequest(scriptId, pageId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptPageRequest createGetScriptPageRequest(String scriptId, String pageId) {
+  private GetScriptPageRequest createGetScriptPageRequest(String scriptId, String pageId, String scriptDataVersion) {
     return GetScriptPageRequest.builder()
             .withScriptId(scriptId)
     
             .withPageId(pageId)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -211,28 +215,32 @@ public class ScriptsApi {
    * Get the list of pages
    * 
    * @param scriptId Script ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Page> getScriptPages(String scriptId) throws IOException, ApiException {
-    return  getScriptPages(createGetScriptPagesRequest(scriptId));
+  public List<Page> getScriptPages(String scriptId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptPages(createGetScriptPagesRequest(scriptId, scriptDataVersion));
   }
 
   /**
    * Get the list of pages
    * 
    * @param scriptId Script ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId) throws IOException {
-    return getScriptPages(createGetScriptPagesRequest(scriptId).withHttpInfo());
+  public ApiResponse<List<Page>> getScriptPagesWithHttpInfo(String scriptId, String scriptDataVersion) throws IOException {
+    return getScriptPages(createGetScriptPagesRequest(scriptId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptPagesRequest createGetScriptPagesRequest(String scriptId) {
+  private GetScriptPagesRequest createGetScriptPagesRequest(String scriptId, String scriptDataVersion) {
     return GetScriptPagesRequest.builder()
             .withScriptId(scriptId)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -297,12 +305,13 @@ public class ScriptsApi {
    * @param flowId Secure flow id filter (optional)
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return ScriptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder));
+  public ScriptEntityListing getScripts(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) throws IOException, ApiException {
+    return  getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion));
   }
 
   /**
@@ -316,14 +325,15 @@ public class ScriptsApi {
    * @param flowId Secure flow id filter (optional)
    * @param sortBy SortBy (optional)
    * @param sortOrder SortOrder (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return ScriptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) throws IOException {
-    return getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ScriptEntityListing> getScriptsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) throws IOException {
+    return getScripts(createGetScriptsRequest(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder) {
+  private GetScriptsRequest createGetScriptsRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String sortBy, String sortOrder, String scriptDataVersion) {
     return GetScriptsRequest.builder()
             .withPageSize(pageSize)
     
@@ -340,6 +350,8 @@ public class ScriptsApi {
             .withSortBy(sortBy)
     
             .withSortOrder(sortOrder)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -396,38 +408,44 @@ public class ScriptsApi {
   /**
    * Get the published scripts.
    * 
+   * @param scriptId Script ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand (optional)
    * @param name Name filter (optional)
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return ScriptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException, ApiException {
-    return  getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId));
+  public ScriptEntityListing getScriptsPublished(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublished(createGetScriptsPublishedRequest(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion));
   }
 
   /**
    * Get the published scripts.
    * 
+   * @param scriptId Script ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand (optional)
    * @param name Name filter (optional)
    * @param feature Feature filter (optional)
    * @param flowId Secure flow id filter (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return ScriptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) throws IOException {
-    return getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId).withHttpInfo());
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException {
+    return getScriptsPublished(createGetScriptsPublishedRequest(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId) {
+  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) {
     return GetScriptsPublishedRequest.builder()
+            .withScriptId(scriptId)
+    
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
@@ -439,6 +457,8 @@ public class ScriptsApi {
             .withFeature(feature)
     
             .withFlowId(flowId)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -496,28 +516,32 @@ public class ScriptsApi {
    * Get the published script.
    * 
    * @param scriptId Script ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Script
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Script getScriptsPublishedScriptId(String scriptId) throws IOException, ApiException {
-    return  getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId));
+  public Script getScriptsPublishedScriptId(String scriptId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId, scriptDataVersion));
   }
 
   /**
    * Get the published script.
    * 
    * @param scriptId Script ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Script
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId) throws IOException {
-    return getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId).withHttpInfo());
+  public ApiResponse<Script> getScriptsPublishedScriptIdWithHttpInfo(String scriptId, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedScriptId(createGetScriptsPublishedScriptIdRequest(scriptId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedScriptIdRequest createGetScriptsPublishedScriptIdRequest(String scriptId) {
+  private GetScriptsPublishedScriptIdRequest createGetScriptsPublishedScriptIdRequest(String scriptId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdRequest.builder()
             .withScriptId(scriptId)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -576,12 +600,13 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Page
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Page getScriptsPublishedScriptIdPage(String scriptId, String pageId) throws IOException, ApiException {
-    return  getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId));
+  public Page getScriptsPublishedScriptIdPage(String scriptId, String pageId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId, scriptDataVersion));
   }
 
   /**
@@ -589,18 +614,21 @@ public class ScriptsApi {
    * 
    * @param scriptId Script ID (required)
    * @param pageId Page ID (required)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Page
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId) throws IOException {
-    return getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId).withHttpInfo());
+  public ApiResponse<Page> getScriptsPublishedScriptIdPageWithHttpInfo(String scriptId, String pageId, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedScriptIdPage(createGetScriptsPublishedScriptIdPageRequest(scriptId, pageId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedScriptIdPageRequest createGetScriptsPublishedScriptIdPageRequest(String scriptId, String pageId) {
+  private GetScriptsPublishedScriptIdPageRequest createGetScriptsPublishedScriptIdPageRequest(String scriptId, String pageId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdPageRequest.builder()
             .withScriptId(scriptId)
     
             .withPageId(pageId)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -658,28 +686,36 @@ public class ScriptsApi {
    * Get the list of published pages
    * 
    * @param scriptId Script ID (required)
+   * @param foo  (optional, default to 25)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Page> getScriptsPublishedScriptIdPages(String scriptId) throws IOException, ApiException {
-    return  getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId));
+  public List<Page> getScriptsPublishedScriptIdPages(String scriptId, Integer foo, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, foo, scriptDataVersion));
   }
 
   /**
    * Get the list of published pages
    * 
    * @param scriptId Script ID (required)
+   * @param foo  (optional, default to 25)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId) throws IOException {
-    return getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId).withHttpInfo());
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId, Integer foo, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, foo, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId) {
+  private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId, Integer foo, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdPagesRequest.builder()
             .withScriptId(scriptId)
+    
+            .withFoo(foo)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }
@@ -740,12 +776,13 @@ public class ScriptsApi {
    * @param input input (optional)
    * @param output output (optional)
    * @param type type (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Object getScriptsPublishedScriptIdVariables(String scriptId, String input, String output, String type) throws IOException, ApiException {
-    return  getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type));
+  public Object getScriptsPublishedScriptIdVariables(String scriptId, String input, String output, String type, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type, scriptDataVersion));
   }
 
   /**
@@ -755,14 +792,15 @@ public class ScriptsApi {
    * @param input input (optional)
    * @param output output (optional)
    * @param type type (optional)
+   * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return Object
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type) throws IOException {
-    return getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type).withHttpInfo());
+  public ApiResponse<Object> getScriptsPublishedScriptIdVariablesWithHttpInfo(String scriptId, String input, String output, String type, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedScriptIdVariables(createGetScriptsPublishedScriptIdVariablesRequest(scriptId, input, output, type, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedScriptIdVariablesRequest createGetScriptsPublishedScriptIdVariablesRequest(String scriptId, String input, String output, String type) {
+  private GetScriptsPublishedScriptIdVariablesRequest createGetScriptsPublishedScriptIdVariablesRequest(String scriptId, String input, String output, String type, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdVariablesRequest.builder()
             .withScriptId(scriptId)
     
@@ -771,6 +809,8 @@ public class ScriptsApi {
             .withOutput(output)
     
             .withType(type)
+    
+            .withScriptDataVersion(scriptDataVersion)
     
             .build();
   }

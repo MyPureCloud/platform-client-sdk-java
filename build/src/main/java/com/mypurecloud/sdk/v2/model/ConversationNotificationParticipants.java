@@ -58,7 +58,8 @@ public class ConversationNotificationParticipants  implements Serializable {
     ACTIVE("ACTIVE"),
     PAUSED("PAUSED"),
     STOPPED("STOPPED"),
-    ERROR("ERROR");
+    ERROR("ERROR"),
+    TIMEOUT("TIMEOUT");
 
     private String value;
 

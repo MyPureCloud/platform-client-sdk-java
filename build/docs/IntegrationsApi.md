@@ -507,7 +507,7 @@ try {
 
 # **getIntegrationsActions**
 
-> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(category, secure, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Retrieves all actions associated with filters passed in via query param.
 
@@ -534,6 +534,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
 String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+String includeAuthActions = "includeAuthActions_example"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
@@ -541,7 +542,7 @@ List<Object> expand = null; // List<Object> | variable name requested by expand 
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActions(category, secure, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    ActionEntityListing result = apiInstance.getIntegrationsActions(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActions");
@@ -556,6 +557,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **category** | **String**| Filter by category name | [optional] |
 | **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false |
+| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional]<br />**Values**: true, false |
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
@@ -635,7 +637,7 @@ try {
 
 # **getIntegrationsActionsDrafts**
 
-> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(category, secure, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+> [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
@@ -662,6 +664,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
 String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+String includeAuthActions = "includeAuthActions_example"; // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
@@ -669,7 +672,7 @@ List<Object> expand = null; // List<Object> | variable name requested by expand 
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
-    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(category, secure, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    ActionEntityListing result = apiInstance.getIntegrationsActionsDrafts(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsDrafts");
@@ -684,6 +687,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **category** | **String**| Filter by category name | [optional] |
 | **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false |
+| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional]<br />**Values**: true, false |
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |

@@ -40,6 +40,36 @@ public class GetScriptsPublishedScriptIdPagesRequest {
 	}
 
 	
+	private Integer foo;
+	public Integer getFoo() {
+		return this.foo;
+	}
+
+	public void setFoo(Integer foo) {
+		this.foo = foo;
+	}
+
+	public GetScriptsPublishedScriptIdPagesRequest withFoo(Integer foo) {
+	    this.setFoo(foo);
+	    return this;
+	}
+
+	
+	private String scriptDataVersion;
+	public String getScriptDataVersion() {
+		return this.scriptDataVersion;
+	}
+
+	public void setScriptDataVersion(String scriptDataVersion) {
+		this.scriptDataVersion = scriptDataVersion;
+	}
+
+	public GetScriptsPublishedScriptIdPagesRequest withScriptDataVersion(String scriptDataVersion) {
+	    this.setScriptDataVersion(scriptDataVersion);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,6 +100,10 @@ public class GetScriptsPublishedScriptIdPagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published/{scriptId}/pages")
                 .withPathParameter("scriptId", scriptId)
         
+                .withQueryParameters("foo", "", foo)
+        
+                .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,6 +132,16 @@ public class GetScriptsPublishedScriptIdPagesRequest {
 		
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
+			return this;
+		}
+		
+		public Builder withFoo(Integer foo) {
+			request.setFoo(foo);
+			return this;
+		}
+		
+		public Builder withScriptDataVersion(String scriptDataVersion) {
+			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
 		

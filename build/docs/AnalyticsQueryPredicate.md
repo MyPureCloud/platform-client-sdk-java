@@ -51,6 +51,7 @@ title: AnalyticsQueryPredicate
 | INTERACTIONTYPE | &quot;interactionType&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
+| REQUESTEDROUTINGUSERIDS | &quot;requestedRoutingUserIds&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | PARTICIPANTTYPE | &quot;participantType&quot; |
 | SEGMENTTYPE | &quot;segmentType&quot; |
@@ -60,6 +61,8 @@ title: AnalyticsQueryPredicate
 | SEGMENTEND | &quot;segmentEnd&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
+| CONVERTEDFROM | &quot;convertedFrom&quot; |
+| CONVERTEDTO | &quot;convertedTo&quot; |
 | STATIONID | &quot;stationId&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |
@@ -80,6 +83,8 @@ title: AnalyticsQueryPredicate
 | ROOMID | &quot;roomId&quot; |
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
+| ADDRESSSELF | &quot;addressSelf&quot; |
+| ADDRESSOTHER | &quot;addressOther&quot; |
 | SUBJECT | &quot;subject&quot; |
 | PEERID | &quot;peerId&quot; |
 | SCRIPTID | &quot;scriptId&quot; |
@@ -137,6 +142,8 @@ title: AnalyticsQueryPredicate
 | TSYSTEMPRESENCE | &quot;tSystemPresence&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
+| TVOICEMAIL | &quot;tVoicemail&quot; |
+| NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; |
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |

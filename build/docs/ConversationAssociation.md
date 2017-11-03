@@ -27,6 +27,7 @@ title: ConversationAssociation
 | CHAT | &quot;CHAT&quot; |
 | COBROWSE | &quot;COBROWSE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
+| MESSAGE | &quot;MESSAGE&quot; |
 | SOCIAL_EXPRESSION | &quot;SOCIAL_EXPRESSION&quot; |
 | VIDEO | &quot;VIDEO&quot; |
 | SCREENSHARE | &quot;SCREENSHARE&quot; |

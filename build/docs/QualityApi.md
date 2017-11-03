@@ -658,7 +658,7 @@ String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user i
 String queueId = "queueId_example"; // String | queue id
 String startTime = "startTime_example"; // String | start time of the evaluation query
 String endTime = "endTime_example"; // String | end time of the evaluation query
-List<Object> evaluationState = null; // List<Object> | evaluation state options: Pending, InProgress, Finished
+List<Object> evaluationState = null; // List<Object> | 
 Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
@@ -689,7 +689,7 @@ try {
 | **queueId** | **String**| queue id | [optional] |
 | **startTime** | **String**| start time of the evaluation query | [optional] |
 | **endTime** | **String**| end time of the evaluation query | [optional] |
-| **evaluationState** | [**List&lt;Object&gt;**](Object.html)| evaluation state options: Pending, InProgress, Finished | [optional] |
+| **evaluationState** | [**List&lt;Object&gt;**](Object.html)|  | [optional] |
 | **isReleased** | **Boolean**| the evaluation has been released | [optional] |
 | **agentHasRead** | **Boolean**| agent has the evaluation | [optional] |
 | **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] |

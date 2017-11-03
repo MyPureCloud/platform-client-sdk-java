@@ -53,6 +53,7 @@ title: ConversationNotificationParticipant
 | PAUSED | &quot;PAUSED&quot; |
 | STOPPED | &quot;STOPPED&quot; |
 | ERROR | &quot;ERROR&quot; |
+| TIMEOUT | &quot;TIMEOUT&quot; |
 {: class="table table-striped"}
 
 

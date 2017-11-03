@@ -73,7 +73,7 @@ try {
 
 # **getScriptPage**
 
-> [Page](Page.html) getScriptPage(scriptId, pageId)
+> [Page](Page.html) getScriptPage(scriptId, pageId, scriptDataVersion)
 
 Get a page
 
@@ -100,8 +100,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
 String pageId = "pageId_example"; // String | Page ID
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    Page result = apiInstance.getScriptPage(scriptId, pageId);
+    Page result = apiInstance.getScriptPage(scriptId, pageId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptPage");
@@ -116,6 +117,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
 | **pageId** | **String**| Page ID | |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -126,7 +128,7 @@ try {
 
 # **getScriptPages**
 
-> [List&lt;Page&gt;](Page.html) getScriptPages(scriptId)
+> [List&lt;Page&gt;](Page.html) getScriptPages(scriptId, scriptDataVersion)
 
 Get the list of pages
 
@@ -152,8 +154,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    List<Page> result = apiInstance.getScriptPages(scriptId);
+    List<Page> result = apiInstance.getScriptPages(scriptId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptPages");
@@ -167,6 +170,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -177,7 +181,7 @@ try {
 
 # **getScripts**
 
-> [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder)
+> [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)
 
 Get the list of scripts
 
@@ -210,8 +214,9 @@ String feature = "feature_example"; // String | Feature filter
 String flowId = "flowId_example"; // String | Secure flow id filter
 String sortBy = "sortBy_example"; // String | SortBy
 String sortOrder = "sortOrder_example"; // String | SortOrder
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    ScriptEntityListing result = apiInstance.getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder);
+    ScriptEntityListing result = apiInstance.getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScripts");
@@ -232,6 +237,7 @@ try {
 | **flowId** | **String**| Secure flow id filter | [optional] |
 | **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate |
 | **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -242,7 +248,7 @@ try {
 
 # **getScriptsPublished**
 
-> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId)
+> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)
 
 Get the published scripts.
 
@@ -267,14 +273,16 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ScriptsApi apiInstance = new ScriptsApi();
+String scriptId = "scriptId_example"; // String | Script ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand
 String name = "name_example"; // String | Name filter
 String feature = "feature_example"; // String | Feature filter
 String flowId = "flowId_example"; // String | Secure flow id filter
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    ScriptEntityListing result = apiInstance.getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId);
+    ScriptEntityListing result = apiInstance.getScriptsPublished(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublished");
@@ -287,12 +295,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **scriptId** | **String**| Script ID | |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **expand** | **String**| Expand | [optional] |
 | **name** | **String**| Name filter | [optional] |
 | **feature** | **String**| Feature filter | [optional] |
 | **flowId** | **String**| Secure flow id filter | [optional] |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -303,7 +313,7 @@ try {
 
 # **getScriptsPublishedScriptId**
 
-> [Script](Script.html) getScriptsPublishedScriptId(scriptId)
+> [Script](Script.html) getScriptsPublishedScriptId(scriptId, scriptDataVersion)
 
 Get the published script.
 
@@ -329,8 +339,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    Script result = apiInstance.getScriptsPublishedScriptId(scriptId);
+    Script result = apiInstance.getScriptsPublishedScriptId(scriptId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublishedScriptId");
@@ -344,6 +355,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -354,7 +366,7 @@ try {
 
 # **getScriptsPublishedScriptIdPage**
 
-> [Page](Page.html) getScriptsPublishedScriptIdPage(scriptId, pageId)
+> [Page](Page.html) getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion)
 
 Get the published page.
 
@@ -381,8 +393,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
 String pageId = "pageId_example"; // String | Page ID
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    Page result = apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId);
+    Page result = apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublishedScriptIdPage");
@@ -397,6 +410,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
 | **pageId** | **String**| Page ID | |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -407,7 +421,7 @@ try {
 
 # **getScriptsPublishedScriptIdPages**
 
-> [List&lt;Page&gt;](Page.html) getScriptsPublishedScriptIdPages(scriptId)
+> [List&lt;Page&gt;](Page.html) getScriptsPublishedScriptIdPages(scriptId, foo, scriptDataVersion)
 
 Get the list of published pages
 
@@ -433,8 +447,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
+Integer foo = 25; // Integer | 
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    List<Page> result = apiInstance.getScriptsPublishedScriptIdPages(scriptId);
+    List<Page> result = apiInstance.getScriptsPublishedScriptIdPages(scriptId, foo, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublishedScriptIdPages");
@@ -448,6 +464,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
+| **foo** | **Integer**|  | [optional] [default to 25] |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -458,7 +476,7 @@ try {
 
 # **getScriptsPublishedScriptIdVariables**
 
-> Object getScriptsPublishedScriptIdVariables(scriptId, input, output, type)
+> Object getScriptsPublishedScriptIdVariables(scriptId, input, output, type, scriptDataVersion)
 
 Get the published variables
 
@@ -487,8 +505,9 @@ String scriptId = "scriptId_example"; // String | Script ID
 String input = "input_example"; // String | input
 String output = "output_example"; // String | output
 String type = "type_example"; // String | type
+String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    Object result = apiInstance.getScriptsPublishedScriptIdVariables(scriptId, input, output, type);
+    Object result = apiInstance.getScriptsPublishedScriptIdVariables(scriptId, input, output, type, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublishedScriptIdVariables");
@@ -505,6 +524,7 @@ try {
 | **input** | **String**| input | [optional] |
 | **output** | **String**| output | [optional] |
 | **type** | **String**| type | [optional] |
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
 ### Return type

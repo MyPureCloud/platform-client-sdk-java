@@ -48,7 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDidpools) | Get a listing of DID Pools |
 | [**getTelephonyProvidersEdgesDids**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDids) | Get a listing of DIDs |
 | [**getTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroup) | Get edge group. |
-| [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis) | Gets the edge trunk base associated with the edge group |
+| [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Gets the edge trunk base associated with the edge group |
 | [**getTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroups) | Get the list of edge groups. |
 | [**getTelephonyProvidersEdgesEdgeversionreport**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgeversionreport) | Get the edge version report. |
 | [**getTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoint) | Get endpoint |
@@ -123,7 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDid) | Update a DID by ID. |
 | [**putTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDidpool) | Update a DID Pool by ID. |
 | [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroup) | Update an edge group. |
-| [**putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis) | Update the edge trunk base associated with the edge group |
+| [**putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Update the edge trunk base associated with the edge group |
 | [**putTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEndpoint) | Update endpoint |
 | [**putTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtension) | Update an extension by ID. |
 | [**putTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtensionpool) | Update an extension pool by ID |
@@ -2291,11 +2291,11 @@ try {
 
 [**EdgeGroup**](EdgeGroup.html)
 
-<a name="getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
+<a name="getTelephonyProvidersEdgesEdgegroupEdgetrunkbase"></a>
 
-# **getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**
+# **getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
 
-> [EdgeTrunkBase](EdgeTrunkBase.html) getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId)
+> [EdgeTrunkBase](EdgeTrunkBase.html) getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 Gets the edge trunk base associated with the edge group
 
@@ -2323,10 +2323,10 @@ TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 String edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 String edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 try {
-    EdgeTrunkBase result = apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId);
+    EdgeTrunkBase result = apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase");
     e.printStackTrace();
 }
 ~~~
@@ -6298,11 +6298,11 @@ try {
 
 [**EdgeGroup**](EdgeGroup.html)
 
-<a name="putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis"></a>
+<a name="putTelephonyProvidersEdgesEdgegroupEdgetrunkbase"></a>
 
-# **putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis**
+# **putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
 
-> [EdgeTrunkBase](EdgeTrunkBase.html) putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body)
+> [EdgeTrunkBase](EdgeTrunkBase.html) putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
 
 Update the edge trunk base associated with the edge group
 
@@ -6331,10 +6331,10 @@ String edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 String edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 EdgeTrunkBase body = new EdgeTrunkBase(); // EdgeTrunkBase | EdgeTrunkBase
 try {
-    EdgeTrunkBase result = apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis(edgegroupId, edgetrunkbaseId, body);
+    EdgeTrunkBase result = apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesEdgegroupEdgetrunkbasis");
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase");
     e.printStackTrace();
 }
 ~~~

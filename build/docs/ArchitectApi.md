@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
 | [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
+| [**getArchitectPromptHistoryHistoryId**](ArchitectApi.html#getArchitectPromptHistoryHistoryId) | Get generated prompt history |
 | [**getArchitectPromptResource**](ArchitectApi.html#getArchitectPromptResource) | Get specified user prompt resource |
 | [**getArchitectPromptResources**](ArchitectApi.html#getArchitectPromptResources) | Get a pageable list of user prompt resources |
 | [**getArchitectPrompts**](ArchitectApi.html#getArchitectPrompts) | Get a pageable list of user prompts |
@@ -36,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectSchedulegroups**](ArchitectApi.html#getArchitectSchedulegroups) | Get a list of schedule groups. |
 | [**getArchitectSchedules**](ArchitectApi.html#getArchitectSchedules) | Get a list of schedules. |
 | [**getArchitectSystemprompt**](ArchitectApi.html#getArchitectSystemprompt) | Get a system prompt |
+| [**getArchitectSystempromptHistoryHistoryId**](ArchitectApi.html#getArchitectSystempromptHistoryHistoryId) | Get generated prompt history |
 | [**getArchitectSystempromptResource**](ArchitectApi.html#getArchitectSystempromptResource) | Get a system prompt resource. |
 | [**getArchitectSystempromptResources**](ArchitectApi.html#getArchitectSystempromptResources) | Get system prompt resources. |
 | [**getArchitectSystemprompts**](ArchitectApi.html#getArchitectSystemprompts) | Get System Prompts |
@@ -48,10 +50,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
+| [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | Generate prompt history |
 | [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
 | [**postArchitectPrompts**](ArchitectApi.html#postArchitectPrompts) | Create a new user prompt |
 | [**postArchitectSchedulegroups**](ArchitectApi.html#postArchitectSchedulegroups) | Creates a new schedule group |
 | [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | Create a new schedule. |
+| [**postArchitectSystempromptHistory**](ArchitectApi.html#postArchitectSystempromptHistory) | Generate system prompt history |
 | [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | Create system prompt resource override. |
 | [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | Create flow version |
 | [**postFlows**](ArchitectApi.html#postFlows) | Create flow |
@@ -1204,6 +1208,69 @@ try {
 
 [**Prompt**](Prompt.html)
 
+<a name="getArchitectPromptHistoryHistoryId"></a>
+
+# **getArchitectPromptHistoryHistoryId**
+
+> [HistoryListing](HistoryListing.html) getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
+
+Get generated prompt history
+
+
+
+Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | Prompt ID
+String historyId = "historyId_example"; // String | History request ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortOrder = "desc"; // String | Sort order
+String sortBy = "timestamp"; // String | Sort by
+List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
+try {
+    HistoryListing result = apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectPromptHistoryHistoryId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| Prompt ID | |
+| **historyId** | **String**| History request ID | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortOrder** | **String**| Sort order | [optional] [default to desc] |
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
+
 <a name="getArchitectPromptResource"></a>
 
 # **getArchitectPromptResource**
@@ -1642,6 +1709,69 @@ try {
 
 [**SystemPrompt**](SystemPrompt.html)
 
+<a name="getArchitectSystempromptHistoryHistoryId"></a>
+
+# **getArchitectSystempromptHistoryHistoryId**
+
+> [HistoryListing](HistoryListing.html) getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
+
+Get generated prompt history
+
+
+
+Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | promptId
+String historyId = "historyId_example"; // String | History request ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortOrder = "desc"; // String | Sort order
+String sortBy = "timestamp"; // String | Sort by
+List<String> action = Arrays.asList("action_example"); // List<String> | Flow actions to include (omit to include all)
+try {
+    HistoryListing result = apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectSystempromptHistoryHistoryId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| promptId | |
+| **historyId** | **String**| History request ID | |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortOrder** | **String**| Sort order | [optional] [default to desc] |
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
+| **action** | [**List&lt;String&gt;**](String.html)| Flow actions to include (omit to include all) | [optional]<br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+{: class="table table-striped"}
+
+### Return type
+
+[**HistoryListing**](HistoryListing.html)
+
 <a name="getArchitectSystempromptResource"></a>
 
 # **getArchitectSystempromptResource**
@@ -1900,7 +2030,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
-String historyId = "historyId_example"; // String | History ID (generated history)
+String historyId = "historyId_example"; // String | History request ID
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortOrder = "desc"; // String | Sort order
@@ -1921,7 +2051,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | |
-| **historyId** | **String**| History ID (generated history) | |
+| **historyId** | **String**| History request ID | |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortOrder** | **String**| Sort order | [optional] [default to desc] |
@@ -2333,6 +2463,57 @@ try {
 
 [**IVR**](IVR.html)
 
+<a name="postArchitectPromptHistory"></a>
+
+# **postArchitectPromptHistory**
+
+> [Operation](Operation.html) postArchitectPromptHistory(promptId)
+
+Generate prompt history
+
+Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+
+Wraps POST /api/v2/architect/prompts/{promptId}/history  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | Prompt ID
+try {
+    Operation result = apiInstance.postArchitectPromptHistory(promptId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectPromptHistory");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| Prompt ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
+
 <a name="postArchitectPromptResources"></a>
 
 # **postArchitectPromptResources**
@@ -2538,6 +2719,57 @@ try {
 ### Return type
 
 [**Schedule**](Schedule.html)
+
+<a name="postArchitectSystempromptHistory"></a>
+
+# **postArchitectSystempromptHistory**
+
+> [Operation](Operation.html) postArchitectSystempromptHistory(promptId)
+
+Generate system prompt history
+
+Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+
+Wraps POST /api/v2/architect/systemprompts/{promptId}/history  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | promptId
+try {
+    Operation result = apiInstance.postArchitectSystempromptHistory(promptId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectSystempromptHistory");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| promptId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Operation**](Operation.html)
 
 <a name="postArchitectSystempromptResources"></a>
 

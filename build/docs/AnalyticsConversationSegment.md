@@ -57,6 +57,7 @@ title: AnalyticsConversationSegment
 | TIMEOUT | &quot;timeout&quot; |
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; |
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; |
+| UNCALLABLE | &quot;uncallable&quot; |
 
 
 <a name="SegmentTypeEnum"></a>

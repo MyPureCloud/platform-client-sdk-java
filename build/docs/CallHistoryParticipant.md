@@ -23,6 +23,8 @@ title: CallHistoryParticipant
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) | The reason the participant was disconnected from the conversation. |  [optional] |
 | **externalContact** | [**ExternalContact**](ExternalContact.html) | The PureCloud external contact |  [optional] |
 | **externalOrganization** | [**ExternalOrganization**](ExternalOrganization.html) | The PureCloud external organization |  [optional] |
+| **didInteract** | **Boolean** | Indicates whether the contact ever connected |  [optional] |
+| **sipResponseCodes** | **List&lt;Long&gt;** | Indicates SIP Response codes associated with the participant |  [optional] |
 {: class="table table-striped"}
 
 

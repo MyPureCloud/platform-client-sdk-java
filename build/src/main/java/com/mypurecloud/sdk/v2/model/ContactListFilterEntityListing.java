@@ -24,9 +24,9 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
-  private String lastUri = null;
   private String previousUri = null;
   private String nextUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -134,23 +134,6 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
   
   /**
    **/
-  public ContactListFilterEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
   public ContactListFilterEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -180,6 +163,23 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+  
+  /**
+   **/
+  public ContactListFilterEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -216,15 +216,15 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
         Objects.equals(this.total, contactListFilterEntityListing.total) &&
         Objects.equals(this.selfUri, contactListFilterEntityListing.selfUri) &&
         Objects.equals(this.firstUri, contactListFilterEntityListing.firstUri) &&
-        Objects.equals(this.lastUri, contactListFilterEntityListing.lastUri) &&
         Objects.equals(this.previousUri, contactListFilterEntityListing.previousUri) &&
         Objects.equals(this.nextUri, contactListFilterEntityListing.nextUri) &&
+        Objects.equals(this.lastUri, contactListFilterEntityListing.lastUri) &&
         Objects.equals(this.pageCount, contactListFilterEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, lastUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class ContactListFilterEntityListing  implements Serializable, PagedResou
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -124,7 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolReque
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgeversionreportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEndpointRequest;
@@ -199,7 +199,7 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesCertificatea
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest;
+import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEndpointRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionpoolRequest;
@@ -3354,7 +3354,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, final AsyncApiCallback<EdgeTrunkBase> callback) {
+  public Future<EdgeTrunkBase> getTelephonyProvidersEdgesEdgegroupEdgetrunkbaseAsync(GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest request, final AsyncApiCallback<EdgeTrunkBase> callback) {
     try {
       final SettableFuture<EdgeTrunkBase> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3388,7 +3388,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EdgeTrunkBase>> getTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
+  public Future<ApiResponse<EdgeTrunkBase>> getTelephonyProvidersEdgesEdgegroupEdgetrunkbaseAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
     try {
       final SettableFuture<ApiResponse<EdgeTrunkBase>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9054,7 +9054,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbasisRequest request, final AsyncApiCallback<EdgeTrunkBase> callback) {
+  public Future<EdgeTrunkBase> putTelephonyProvidersEdgesEdgegroupEdgetrunkbaseAsync(PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest request, final AsyncApiCallback<EdgeTrunkBase> callback) {
     try {
       final SettableFuture<EdgeTrunkBase> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -9088,7 +9088,7 @@ public class TelephonyProvidersEdgeApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EdgeTrunkBase>> putTelephonyProvidersEdgesEdgegroupEdgetrunkbasisAsync(ApiRequest<EdgeTrunkBase> request, final AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
+  public Future<ApiResponse<EdgeTrunkBase>> putTelephonyProvidersEdgesEdgegroupEdgetrunkbaseAsync(ApiRequest<EdgeTrunkBase> request, final AsyncApiCallback<ApiResponse<EdgeTrunkBase>> callback) {
     try {
       final SettableFuture<ApiResponse<EdgeTrunkBase>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

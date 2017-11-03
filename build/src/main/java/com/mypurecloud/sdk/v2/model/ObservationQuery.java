@@ -44,6 +44,8 @@ public class ObservationQuery  implements Serializable {
     TSYSTEMPRESENCE("tSystemPresence"),
     TUSERRESPONSETIME("tUserResponseTime"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
+    TVOICEMAIL("tVoicemail"),
+    NSTATETRANSITIONERROR("nStateTransitionError"),
     NOFFERED("nOffered"),
     NOVERSLA("nOverSla"),
     NTRANSFERRED("nTransferred"),

@@ -62,6 +62,21 @@ public class GetIntegrationsActionsRequest {
 	}
 
 	
+	private String includeAuthActions;
+	public String getIncludeAuthActions() {
+		return this.includeAuthActions;
+	}
+
+	public void setIncludeAuthActions(String includeAuthActions) {
+		this.includeAuthActions = includeAuthActions;
+	}
+
+	public GetIntegrationsActionsRequest withIncludeAuthActions(String includeAuthActions) {
+	    this.setIncludeAuthActions(includeAuthActions);
+	    return this;
+	}
+
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -179,6 +194,8 @@ public class GetIntegrationsActionsRequest {
         
                 .withQueryParameters("secure", "", secure)
         
+                .withQueryParameters("includeAuthActions", "", includeAuthActions)
+        
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
@@ -219,6 +236,11 @@ public class GetIntegrationsActionsRequest {
 		
 		public Builder withSecure(String secure) {
 			request.setSecure(secure);
+			return this;
+		}
+		
+		public Builder withIncludeAuthActions(String includeAuthActions) {
+			request.setIncludeAuthActions(includeAuthActions);
 			return this;
 		}
 		

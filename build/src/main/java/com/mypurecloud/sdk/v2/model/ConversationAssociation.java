@@ -29,6 +29,7 @@ public class ConversationAssociation  implements Serializable {
     CHAT("CHAT"),
     COBROWSE("COBROWSE"),
     EMAIL("EMAIL"),
+    MESSAGE("MESSAGE"),
     SOCIAL_EXPRESSION("SOCIAL_EXPRESSION"),
     VIDEO("VIDEO"),
     SCREENSHARE("SCREENSHARE");

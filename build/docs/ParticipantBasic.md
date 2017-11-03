@@ -40,6 +40,7 @@ title: ParticipantBasic
 | **chats** | [**List&lt;ConversationChat&gt;**](ConversationChat.html) |  |  [optional] |
 | **cobrowsesessions** | [**List&lt;Cobrowsesession&gt;**](Cobrowsesession.html) |  |  [optional] |
 | **emails** | [**List&lt;Email&gt;**](Email.html) |  |  [optional] |
+| **messages** | [**List&lt;Message&gt;**](Message.html) |  |  [optional] |
 | **screenshares** | [**List&lt;Screenshare&gt;**](Screenshare.html) |  |  [optional] |
 | **socialExpressions** | [**List&lt;SocialExpression&gt;**](SocialExpression.html) |  |  [optional] |
 | **videos** | [**List&lt;Video&gt;**](Video.html) |  |  [optional] |

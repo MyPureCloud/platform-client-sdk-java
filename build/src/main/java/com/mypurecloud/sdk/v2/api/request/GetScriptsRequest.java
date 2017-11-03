@@ -145,6 +145,21 @@ public class GetScriptsRequest {
 	}
 
 	
+	private String scriptDataVersion;
+	public String getScriptDataVersion() {
+		return this.scriptDataVersion;
+	}
+
+	public void setScriptDataVersion(String scriptDataVersion) {
+		this.scriptDataVersion = scriptDataVersion;
+	}
+
+	public GetScriptsRequest withScriptDataVersion(String scriptDataVersion) {
+	    this.setScriptDataVersion(scriptDataVersion);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -183,6 +198,8 @@ public class GetScriptsRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -242,6 +259,11 @@ public class GetScriptsRequest {
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+		
+		public Builder withScriptDataVersion(String scriptDataVersion) {
+			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
 		

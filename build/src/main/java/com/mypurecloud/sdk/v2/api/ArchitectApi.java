@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
+import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
 import com.mypurecloud.sdk.v2.model.PromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
@@ -34,7 +35,6 @@ import com.mypurecloud.sdk.v2.model.SystemPromptAsset;
 import com.mypurecloud.sdk.v2.model.SystemPromptAssetEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPromptEntityListing;
 import com.mypurecloud.sdk.v2.model.Flow;
-import com.mypurecloud.sdk.v2.model.HistoryListing;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
@@ -62,6 +62,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedr
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptsRequest;
@@ -70,6 +71,7 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptHistoryHistoryIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectSystempromptsRequest;
@@ -82,10 +84,12 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
@@ -1905,6 +1909,109 @@ public class ArchitectApi {
 
   
   /**
+   * Get generated prompt history
+   * 
+   * @param promptId Prompt ID (required)
+   * @param historyId History request ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getArchitectPromptHistoryHistoryId(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException, ApiException {
+    return  getArchitectPromptHistoryHistoryId(createGetArchitectPromptHistoryHistoryIdRequest(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action));
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param promptId Prompt ID (required)
+   * @param historyId History request ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
+   * @return HistoryListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getArchitectPromptHistoryHistoryIdWithHttpInfo(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException {
+    return getArchitectPromptHistoryHistoryId(createGetArchitectPromptHistoryHistoryIdRequest(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action).withHttpInfo());
+  }
+
+  private GetArchitectPromptHistoryHistoryIdRequest createGetArchitectPromptHistoryHistoryIdRequest(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
+    return GetArchitectPromptHistoryHistoryIdRequest.builder()
+            .withPromptId(promptId)
+    
+            .withHistoryId(historyId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortOrder(sortOrder)
+    
+            .withSortBy(sortBy)
+    
+            .withAction(action)
+    
+            .build();
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request The request object
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getArchitectPromptHistoryHistoryId(GetArchitectPromptHistoryHistoryIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoryListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoryListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getArchitectPromptHistoryHistoryId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoryListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get specified user prompt resource
    * 
    * @param promptId Prompt ID (required)
@@ -2597,6 +2704,109 @@ public class ArchitectApi {
 
   
   /**
+   * Get generated prompt history
+   * 
+   * @param promptId promptId (required)
+   * @param historyId History request ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getArchitectSystempromptHistoryHistoryId(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException, ApiException {
+    return  getArchitectSystempromptHistoryHistoryId(createGetArchitectSystempromptHistoryHistoryIdRequest(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action));
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param promptId promptId (required)
+   * @param historyId History request ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Sort order (optional, default to desc)
+   * @param sortBy Sort by (optional, default to timestamp)
+   * @param action Flow actions to include (omit to include all) (optional)
+   * @return HistoryListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getArchitectSystempromptHistoryHistoryIdWithHttpInfo(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) throws IOException {
+    return getArchitectSystempromptHistoryHistoryId(createGetArchitectSystempromptHistoryHistoryIdRequest(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action).withHttpInfo());
+  }
+
+  private GetArchitectSystempromptHistoryHistoryIdRequest createGetArchitectSystempromptHistoryHistoryIdRequest(String promptId, String historyId, Integer pageNumber, Integer pageSize, String sortOrder, String sortBy, List<String> action) {
+    return GetArchitectSystempromptHistoryHistoryIdRequest.builder()
+            .withPromptId(promptId)
+    
+            .withHistoryId(historyId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortOrder(sortOrder)
+    
+            .withSortBy(sortBy)
+    
+            .withAction(action)
+    
+            .build();
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request The request object
+   * @return HistoryListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public HistoryListing getArchitectSystempromptHistoryHistoryId(GetArchitectSystempromptHistoryHistoryIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<HistoryListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<HistoryListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get generated prompt history
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<HistoryListing> getArchitectSystempromptHistoryHistoryId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<HistoryListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<HistoryListing> response = (ApiResponse<HistoryListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a system prompt resource.
    * 
    * @param promptId Prompt ID (required)
@@ -2964,7 +3174,7 @@ public class ArchitectApi {
    * Get generated flow history
    * 
    * @param flowId Flow ID (required)
-   * @param historyId History ID (generated history) (required)
+   * @param historyId History request ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Sort order (optional, default to desc)
@@ -2982,7 +3192,7 @@ public class ArchitectApi {
    * Get generated flow history
    * 
    * @param flowId Flow ID (required)
-   * @param historyId History ID (generated history) (required)
+   * @param historyId History request ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortOrder Sort order (optional, default to desc)
@@ -3706,6 +3916,85 @@ public class ArchitectApi {
 
   
   /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param promptId Prompt ID (required)
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postArchitectPromptHistory(String promptId) throws IOException, ApiException {
+    return  postArchitectPromptHistory(createPostArchitectPromptHistoryRequest(promptId));
+  }
+
+  /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param promptId Prompt ID (required)
+   * @return Operation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postArchitectPromptHistoryWithHttpInfo(String promptId) throws IOException {
+    return postArchitectPromptHistory(createPostArchitectPromptHistoryRequest(promptId).withHttpInfo());
+  }
+
+  private PostArchitectPromptHistoryRequest createPostArchitectPromptHistoryRequest(String promptId) {
+    return PostArchitectPromptHistoryRequest.builder()
+            .withPromptId(promptId)
+    
+            .build();
+  }
+
+  /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postArchitectPromptHistory(PostArchitectPromptHistoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate prompt history
+   * Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postArchitectPromptHistory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a new user prompt resource
    * 
    * @param promptId Prompt ID (required)
@@ -4020,6 +4309,85 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Schedule> response = (ApiResponse<Schedule>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param promptId promptId (required)
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postArchitectSystempromptHistory(String promptId) throws IOException, ApiException {
+    return  postArchitectSystempromptHistory(createPostArchitectSystempromptHistoryRequest(promptId));
+  }
+
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param promptId promptId (required)
+   * @return Operation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postArchitectSystempromptHistoryWithHttpInfo(String promptId) throws IOException {
+    return postArchitectSystempromptHistory(createPostArchitectSystempromptHistoryRequest(promptId).withHttpInfo());
+  }
+
+  private PostArchitectSystempromptHistoryRequest createPostArchitectSystempromptHistoryRequest(String promptId) {
+    return PostArchitectSystempromptHistoryRequest.builder()
+            .withPromptId(promptId)
+    
+            .build();
+  }
+
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postArchitectSystempromptHistory(PostArchitectSystempromptHistoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate system prompt history
+   * Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postArchitectSystempromptHistory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

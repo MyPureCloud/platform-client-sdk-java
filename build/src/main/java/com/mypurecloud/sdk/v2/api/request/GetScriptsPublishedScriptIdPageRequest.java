@@ -55,6 +55,21 @@ public class GetScriptsPublishedScriptIdPageRequest {
 	}
 
 	
+	private String scriptDataVersion;
+	public String getScriptDataVersion() {
+		return this.scriptDataVersion;
+	}
+
+	public void setScriptDataVersion(String scriptDataVersion) {
+		this.scriptDataVersion = scriptDataVersion;
+	}
+
+	public GetScriptsPublishedScriptIdPageRequest withScriptDataVersion(String scriptDataVersion) {
+	    this.setScriptDataVersion(scriptDataVersion);
+	    return this;
+	}
+
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -92,6 +107,8 @@ public class GetScriptsPublishedScriptIdPageRequest {
         
                 .withPathParameter("pageId", pageId)
         
+                .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -125,6 +142,11 @@ public class GetScriptsPublishedScriptIdPageRequest {
 		
 		public Builder withPageId(String pageId) {
 			request.setPageId(pageId);
+			return this;
+		}
+		
+		public Builder withScriptDataVersion(String scriptDataVersion) {
+			request.setScriptDataVersion(scriptDataVersion);
 			return this;
 		}
 		

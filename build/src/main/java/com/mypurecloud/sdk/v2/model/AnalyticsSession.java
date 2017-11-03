@@ -31,7 +31,8 @@ public class AnalyticsSession  implements Serializable {
     CALLBACK("callback"),
     COBROWSE("cobrowse"),
     VIDEO("video"),
-    SCREENSHARE("screenshare");
+    SCREENSHARE("screenshare"),
+    MESSAGE("message");
 
     private String value;
 
@@ -62,6 +63,8 @@ public class AnalyticsSession  implements Serializable {
   private String sessionId = null;
   private String addressOther = null;
   private String addressSelf = null;
+  private String addressFrom = null;
+  private String addressTo = null;
   private String ani = null;
 
   /**
@@ -152,6 +155,7 @@ public class AnalyticsSession  implements Serializable {
   private List<String> callbackNumbers = new ArrayList<String>();
   private Date callbackScheduledTime = null;
   private String scriptId = null;
+  private String peerId = null;
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
   private String cobrowseRole = null;
@@ -232,6 +236,40 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setAddressSelf(String addressSelf) {
     this.addressSelf = addressSelf;
+  }
+
+  
+  /**
+   **/
+  public AnalyticsSession addressFrom(String addressFrom) {
+    this.addressFrom = addressFrom;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("addressFrom")
+  public String getAddressFrom() {
+    return addressFrom;
+  }
+  public void setAddressFrom(String addressFrom) {
+    this.addressFrom = addressFrom;
+  }
+
+  
+  /**
+   **/
+  public AnalyticsSession addressTo(String addressTo) {
+    this.addressTo = addressTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("addressTo")
+  public String getAddressTo() {
+    return addressTo;
+  }
+  public void setAddressTo(String addressTo) {
+    this.addressTo = addressTo;
   }
 
   
@@ -540,6 +578,24 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * A unique identifier for a peer
+   **/
+  public AnalyticsSession peerId(String peerId) {
+    this.peerId = peerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A unique identifier for a peer")
+  @JsonProperty("peerId")
+  public String getPeerId() {
+    return peerId;
+  }
+  public void setPeerId(String peerId) {
+    this.peerId = peerId;
+  }
+
+  
+  /**
    * (Dialer) Whether the agent can skip the dialer contact
    **/
   public AnalyticsSession skipEnabled(Boolean skipEnabled) {
@@ -750,6 +806,8 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.sessionId, analyticsSession.sessionId) &&
         Objects.equals(this.addressOther, analyticsSession.addressOther) &&
         Objects.equals(this.addressSelf, analyticsSession.addressSelf) &&
+        Objects.equals(this.addressFrom, analyticsSession.addressFrom) &&
+        Objects.equals(this.addressTo, analyticsSession.addressTo) &&
         Objects.equals(this.ani, analyticsSession.ani) &&
         Objects.equals(this.direction, analyticsSession.direction) &&
         Objects.equals(this.dnis, analyticsSession.dnis) &&
@@ -767,6 +825,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
         Objects.equals(this.callbackScheduledTime, analyticsSession.callbackScheduledTime) &&
         Objects.equals(this.scriptId, analyticsSession.scriptId) &&
+        Objects.equals(this.peerId, analyticsSession.peerId) &&
         Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
         Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
         Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
@@ -782,7 +841,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments);
   }
 
   @Override
@@ -794,6 +853,8 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    addressOther: ").append(toIndentedString(addressOther)).append("\n");
     sb.append("    addressSelf: ").append(toIndentedString(addressSelf)).append("\n");
+    sb.append("    addressFrom: ").append(toIndentedString(addressFrom)).append("\n");
+    sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
@@ -811,6 +872,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");

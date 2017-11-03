@@ -42,6 +42,8 @@ title: AggregateMetricData
 | TSYSTEMPRESENCE | &quot;tSystemPresence&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
+| TVOICEMAIL | &quot;tVoicemail&quot; |
+| NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; |
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
