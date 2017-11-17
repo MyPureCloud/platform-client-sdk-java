@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -96,8 +95,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -111,8 +109,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -126,8 +123,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private Date startTime;
 	public Date getStartTime() {
@@ -141,8 +137,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withStartTime(Date startTime) {
 	    this.setStartTime(startTime);
 	    return this;
-	}
-
+	} 
 	
 	private Date endTime;
 	public Date getEndTime() {
@@ -156,8 +151,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withEndTime(Date endTime) {
 	    this.setEndTime(endTime);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -171,8 +165,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> permission;
 	public List<Object> getPermission() {
@@ -186,8 +179,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withPermission(List<Object> permission) {
 	    this.setPermission(permission);
 	    return this;
-	}
-
+	} 
 	
 	private String group;
 	public String getGroup() {
@@ -201,8 +193,7 @@ public class GetQualityEvaluatorsActivityRequest {
 	public GetQualityEvaluatorsActivityRequest withGroup(String group) {
 	    this.setGroup(group);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -327,7 +318,6 @@ public class GetQualityEvaluatorsActivityRequest {
 		
 
 		
-
 
 		public GetQualityEvaluatorsActivityRequest build() {
             

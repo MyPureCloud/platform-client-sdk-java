@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> objectType;
 	public List<String> getObjectType() {
@@ -77,8 +78,63 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withObjectType(List<String> objectType) {
 	    this.setObjectType(objectType);
 	    return this;
-	}
+	} 
 
+	public enum objectTypeValues { 
+		ACDLANGUAGE("ACDLANGUAGE"), 
+		ACDSKILL("ACDSKILL"), 
+		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
+		BRIDGEACTION("BRIDGEACTION"), 
+		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
+		CONTACTLIST("CONTACTLIST"), 
+		DATAACTION("DATAACTION"), 
+		EMAILROUTE("EMAILROUTE"), 
+		GROUP("GROUP"), 
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
+		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
+		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		LANGUAGE("LANGUAGE"), 
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
+		QUEUE("QUEUE"), 
+		RESPONSE("RESPONSE"), 
+		SCHEDULE("SCHEDULE"), 
+		SCHEDULEGROUP("SCHEDULEGROUP"), 
+		SECUREACTION("SECUREACTION"), 
+		SECURECALLFLOW("SECURECALLFLOW"), 
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
+		SYSTEMPROMPT("SYSTEMPROMPT"), 
+		USER("USER"), 
+		USERPROMPT("USERPROMPT"), 
+		VOICEXML("VOICEXML"), 
+		WORKFLOW("WORKFLOW");
+
+		private String value;
+
+		objectTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static objectTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (objectTypeValues value : objectTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return objectTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String flowFilter;
 	public String getFlowFilter() {
@@ -92,8 +148,37 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withFlowFilter(String flowFilter) {
 	    this.setFlowFilter(flowFilter);
 	    return this;
-	}
+	} 
 
+	public enum flowFilterValues { 
+		CHECKEDIN("checkedIn"), 
+		PUBLISHED("published");
+
+		private String value;
+
+		flowFilterValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static flowFilterValues fromString(String key) {
+			if (key == null) return null;
+
+			for (flowFilterValues value : flowFilterValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return flowFilterValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Boolean consumedResources;
 	public Boolean getConsumedResources() {
@@ -107,8 +192,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withConsumedResources(Boolean consumedResources) {
 	    this.setConsumedResources(consumedResources);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> consumedResourceType;
 	public List<String> getConsumedResourceType() {
@@ -122,8 +206,63 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withConsumedResourceType(List<String> consumedResourceType) {
 	    this.setConsumedResourceType(consumedResourceType);
 	    return this;
-	}
+	} 
 
+	public enum consumedResourceTypeValues { 
+		ACDLANGUAGE("ACDLANGUAGE"), 
+		ACDSKILL("ACDSKILL"), 
+		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
+		BRIDGEACTION("BRIDGEACTION"), 
+		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
+		CONTACTLIST("CONTACTLIST"), 
+		DATAACTION("DATAACTION"), 
+		EMAILROUTE("EMAILROUTE"), 
+		GROUP("GROUP"), 
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
+		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
+		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		LANGUAGE("LANGUAGE"), 
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
+		QUEUE("QUEUE"), 
+		RESPONSE("RESPONSE"), 
+		SCHEDULE("SCHEDULE"), 
+		SCHEDULEGROUP("SCHEDULEGROUP"), 
+		SECUREACTION("SECUREACTION"), 
+		SECURECALLFLOW("SECURECALLFLOW"), 
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
+		SYSTEMPROMPT("SYSTEMPROMPT"), 
+		USER("USER"), 
+		USERPROMPT("USERPROMPT"), 
+		VOICEXML("VOICEXML"), 
+		WORKFLOW("WORKFLOW");
+
+		private String value;
+
+		consumedResourceTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static consumedResourceTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (consumedResourceTypeValues value : consumedResourceTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return consumedResourceTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -137,8 +276,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -152,8 +290,7 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 	public GetArchitectDependencytrackingDeletedresourceconsumersRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -222,10 +359,24 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 			request.setObjectType(objectType);
 			return this;
 		}
+
+		public Builder withObjectTypeEnumValues(List<objectTypeValues> objectType) {
+		    List<String> stringList = new ArrayList<>();
+	      for (objectTypeValues e : objectType) {
+	        stringList.add(e.toString());
+	      }
+	      request.setObjectType(stringList);
+		    return this;
+		}
 		
 		public Builder withFlowFilter(String flowFilter) {
 			request.setFlowFilter(flowFilter);
 			return this;
+		}
+
+		public Builder withFlowFilter(flowFilterValues flowFilter) {
+		    request.setFlowFilter(flowFilter.toString());
+		    return this;
 		}
 		
 		public Builder withConsumedResources(Boolean consumedResources) {
@@ -236,6 +387,15 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		public Builder withConsumedResourceType(List<String> consumedResourceType) {
 			request.setConsumedResourceType(consumedResourceType);
 			return this;
+		}
+
+		public Builder withConsumedResourceTypeEnumValues(List<consumedResourceTypeValues> consumedResourceType) {
+		    List<String> stringList = new ArrayList<>();
+	      for (consumedResourceTypeValues e : consumedResourceType) {
+	        stringList.add(e.toString());
+	      }
+	      request.setConsumedResourceType(stringList);
+		    return this;
 		}
 		
 		public Builder withPageNumber(Integer pageNumber) {
@@ -250,7 +410,6 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		
 
 		
-
 
 		public GetArchitectDependencytrackingDeletedresourceconsumersRequest build() {
             

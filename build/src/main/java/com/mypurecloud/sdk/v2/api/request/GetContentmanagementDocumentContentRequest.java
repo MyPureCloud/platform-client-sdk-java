@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class GetContentmanagementDocumentContentRequest {
 	public GetContentmanagementDocumentContentRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private String disposition;
 	public String getDisposition() {
@@ -78,8 +79,37 @@ public class GetContentmanagementDocumentContentRequest {
 	public GetContentmanagementDocumentContentRequest withDisposition(String disposition) {
 	    this.setDisposition(disposition);
 	    return this;
-	}
+	} 
 
+	public enum dispositionValues { 
+		ATTACHMENT("attachment"), 
+		INLINE("inline");
+
+		private String value;
+
+		dispositionValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dispositionValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dispositionValues value : dispositionValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dispositionValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String contentType;
 	public String getContentType() {
@@ -93,8 +123,7 @@ public class GetContentmanagementDocumentContentRequest {
 	public GetContentmanagementDocumentContentRequest withContentType(String contentType) {
 	    this.setContentType(contentType);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -165,6 +194,11 @@ public class GetContentmanagementDocumentContentRequest {
 			request.setDisposition(disposition);
 			return this;
 		}
+
+		public Builder withDisposition(dispositionValues disposition) {
+		    request.setDisposition(disposition.toString());
+		    return this;
+		}
 		
 		public Builder withContentType(String contentType) {
 			request.setContentType(contentType);
@@ -179,7 +213,6 @@ public class GetContentmanagementDocumentContentRequest {
 			return this;
 		}
 		
-
 
 		public GetContentmanagementDocumentContentRequest build() {
             

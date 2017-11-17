@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -66,8 +67,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -81,8 +81,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -96,8 +95,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -111,8 +109,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -126,8 +123,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -141,8 +137,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String recordingId;
 	public String getRecordingId() {
@@ -156,8 +151,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withRecordingId(String recordingId) {
 	    this.setRecordingId(recordingId);
 	    return this;
-	}
-
+	} 
 	
 	private String entityType;
 	public String getEntityType() {
@@ -171,8 +165,7 @@ public class GetQualityConversationAuditsRequest {
 	public GetQualityConversationAuditsRequest withEntityType(String entityType) {
 	    this.setEntityType(entityType);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -299,7 +292,6 @@ public class GetQualityConversationAuditsRequest {
 			return this;
 		}
 		
-
 
 		public GetQualityConversationAuditsRequest build() {
             

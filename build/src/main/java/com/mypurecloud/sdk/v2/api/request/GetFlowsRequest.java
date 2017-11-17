@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,44 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withType(String type) {
 	    this.setType(type);
 	    return this;
-	}
+	} 
 
+	public enum typeValues { 
+		INBOUNDCALL("inboundcall"), 
+		INBOUNDEMAIL("inboundemail"), 
+		INBOUNDSHORTMESSAGE("inboundshortmessage"), 
+		OUTBOUNDCALL("outboundcall"), 
+		INQUEUECALL("inqueuecall"), 
+		SPEECH("speech"), 
+		SECURECALL("securecall"), 
+		SURVEYINVITE("surveyinvite"), 
+		WORKFLOW("workflow");
+
+		private String value;
+
+		typeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static typeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (typeValues value : typeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return typeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -77,8 +115,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -92,8 +129,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -107,8 +143,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -122,8 +157,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> id;
 	public List<String> getId() {
@@ -137,8 +171,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withId(List<String> id) {
 	    this.setId(id);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -152,8 +185,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String description;
 	public String getDescription() {
@@ -167,8 +199,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withDescription(String description) {
 	    this.setDescription(description);
 	    return this;
-	}
-
+	} 
 	
 	private String nameOrDescription;
 	public String getNameOrDescription() {
@@ -182,8 +213,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withNameOrDescription(String nameOrDescription) {
 	    this.setNameOrDescription(nameOrDescription);
 	    return this;
-	}
-
+	} 
 	
 	private String publishVersionId;
 	public String getPublishVersionId() {
@@ -197,8 +227,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withPublishVersionId(String publishVersionId) {
 	    this.setPublishVersionId(publishVersionId);
 	    return this;
-	}
-
+	} 
 	
 	private String editableBy;
 	public String getEditableBy() {
@@ -212,8 +241,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withEditableBy(String editableBy) {
 	    this.setEditableBy(editableBy);
 	    return this;
-	}
-
+	} 
 	
 	private String lockedBy;
 	public String getLockedBy() {
@@ -227,8 +255,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withLockedBy(String lockedBy) {
 	    this.setLockedBy(lockedBy);
 	    return this;
-	}
-
+	} 
 	
 	private String secure;
 	public String getSecure() {
@@ -242,8 +269,38 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withSecure(String secure) {
 	    this.setSecure(secure);
 	    return this;
-	}
+	} 
 
+	public enum secureValues { 
+		ANY("any"), 
+		CHECKEDIN("checkedin"), 
+		PUBLISHED("published");
+
+		private String value;
+
+		secureValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static secureValues fromString(String key) {
+			if (key == null) return null;
+
+			for (secureValues value : secureValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return secureValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Boolean deleted;
 	public Boolean getDeleted() {
@@ -257,8 +314,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withDeleted(Boolean deleted) {
 	    this.setDeleted(deleted);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean includeSchemas;
 	public Boolean getIncludeSchemas() {
@@ -272,8 +328,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withIncludeSchemas(Boolean includeSchemas) {
 	    this.setIncludeSchemas(includeSchemas);
 	    return this;
-	}
-
+	} 
 	
 	private String publishedAfter;
 	public String getPublishedAfter() {
@@ -287,8 +342,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withPublishedAfter(String publishedAfter) {
 	    this.setPublishedAfter(publishedAfter);
 	    return this;
-	}
-
+	} 
 	
 	private String publishedBefore;
 	public String getPublishedBefore() {
@@ -302,8 +356,7 @@ public class GetFlowsRequest {
 	public GetFlowsRequest withPublishedBefore(String publishedBefore) {
 	    this.setPublishedBefore(publishedBefore);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -397,6 +450,11 @@ public class GetFlowsRequest {
 			request.setType(type);
 			return this;
 		}
+
+		public Builder withType(typeValues type) {
+		    request.setType(type.toString());
+		    return this;
+		}
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
@@ -457,6 +515,11 @@ public class GetFlowsRequest {
 			request.setSecure(secure);
 			return this;
 		}
+
+		public Builder withSecure(secureValues secure) {
+		    request.setSecure(secure.toString());
+		    return this;
+		}
 		
 		public Builder withDeleted(Boolean deleted) {
 			request.setDeleted(deleted);
@@ -486,7 +549,6 @@ public class GetFlowsRequest {
 			return this;
 		}
 		
-
 
 		public GetFlowsRequest build() {
             

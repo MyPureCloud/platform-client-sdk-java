@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class GetUserFavoritesRequest {
 	public GetUserFavoritesRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -76,8 +77,7 @@ public class GetUserFavoritesRequest {
 	public GetUserFavoritesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -91,8 +91,7 @@ public class GetUserFavoritesRequest {
 	public GetUserFavoritesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -106,8 +105,7 @@ public class GetUserFavoritesRequest {
 	public GetUserFavoritesRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -121,8 +119,45 @@ public class GetUserFavoritesRequest {
 	public GetUserFavoritesRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ROUTINGSTATUS("routingStatus"), 
+		PRESENCE("presence"), 
+		CONVERSATIONSUMMARY("conversationSummary"), 
+		OUTOFOFFICE("outOfOffice"), 
+		GEOLOCATION("geolocation"), 
+		STATION("station"), 
+		AUTHORIZATION("authorization"), 
+		PROFILESKILLS("profileSkills"), 
+		LOCATIONS("locations"), 
+		GROUPS("groups");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -212,6 +247,15 @@ public class GetUserFavoritesRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 
 		
@@ -221,7 +265,6 @@ public class GetUserFavoritesRequest {
 			return this;
 		}
 		
-
 
 		public GetUserFavoritesRequest build() {
             

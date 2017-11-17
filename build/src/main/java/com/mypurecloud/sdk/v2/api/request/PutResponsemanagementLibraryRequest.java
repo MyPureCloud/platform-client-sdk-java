@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -40,8 +42,7 @@ public class PutResponsemanagementLibraryRequest {
 	public PutResponsemanagementLibraryRequest withLibraryId(String libraryId) {
 	    this.setLibraryId(libraryId);
 	    return this;
-	}
-
+	} 
 	
 	private Library body;
 	public Library getBody() {
@@ -55,8 +56,7 @@ public class PutResponsemanagementLibraryRequest {
 	public PutResponsemanagementLibraryRequest withBody(Library body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -140,7 +140,6 @@ public class PutResponsemanagementLibraryRequest {
 			return this;
 		}
 		
-
 
 		public PutResponsemanagementLibraryRequest build() {
             

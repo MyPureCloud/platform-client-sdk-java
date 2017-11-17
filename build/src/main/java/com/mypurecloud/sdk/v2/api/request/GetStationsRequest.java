@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -36,8 +38,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -51,8 +52,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -66,8 +66,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -81,8 +80,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String userSelectable;
 	public String getUserSelectable() {
@@ -96,8 +94,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withUserSelectable(String userSelectable) {
 	    this.setUserSelectable(userSelectable);
 	    return this;
-	}
-
+	} 
 	
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
@@ -111,8 +108,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withWebRtcUserId(String webRtcUserId) {
 	    this.setWebRtcUserId(webRtcUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String id;
 	public String getId() {
@@ -126,8 +122,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withId(String id) {
 	    this.setId(id);
 	    return this;
-	}
-
+	} 
 	
 	private String lineAppearanceId;
 	public String getLineAppearanceId() {
@@ -141,8 +136,7 @@ public class GetStationsRequest {
 	public GetStationsRequest withLineAppearanceId(String lineAppearanceId) {
 	    this.setLineAppearanceId(lineAppearanceId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -246,7 +240,6 @@ public class GetStationsRequest {
 		
 
 		
-
 
 		public GetStationsRequest build() {
             

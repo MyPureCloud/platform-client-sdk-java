@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -49,8 +51,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	public GetWorkforcemanagementManagementunitUserTimeoffrequestRequest withMuId(String muId) {
 	    this.setMuId(muId);
 	    return this;
-	}
-
+	} 
 	
 	private String userId;
 	public String getUserId() {
@@ -64,8 +65,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	public GetWorkforcemanagementManagementunitUserTimeoffrequestRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private String timeOffRequestId;
 	public String getTimeOffRequestId() {
@@ -79,8 +79,7 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	public GetWorkforcemanagementManagementunitUserTimeoffrequestRequest withTimeOffRequestId(String timeOffRequestId) {
 	    this.setTimeOffRequestId(timeOffRequestId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -177,7 +176,6 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 			return this;
 		}
 		
-
 
 		public GetWorkforcemanagementManagementunitUserTimeoffrequestRequest build() {
             

@@ -29,6 +29,7 @@ title: AggregateMetricData
 | TABANDON | &quot;tAbandon&quot; |
 | TIVR | &quot;tIvr&quot; |
 | TANSWERED | &quot;tAnswered&quot; |
+| TFLOWOUT | &quot;tFlowOut&quot; |
 | TACD | &quot;tAcd&quot; |
 | TTALK | &quot;tTalk&quot; |
 | THELD | &quot;tHeld&quot; |

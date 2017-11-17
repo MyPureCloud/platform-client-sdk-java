@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean recordingEnabled;
 	public Boolean getRecordingEnabled() {
@@ -161,8 +159,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withRecordingEnabled(Boolean recordingEnabled) {
 	    this.setRecordingEnabled(recordingEnabled);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean ignoreHidden;
 	public Boolean getIgnoreHidden() {
@@ -176,8 +173,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withIgnoreHidden(Boolean ignoreHidden) {
 	    this.setIgnoreHidden(ignoreHidden);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean managed;
 	public Boolean getManaged() {
@@ -191,8 +187,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withManaged(Boolean managed) {
 	    this.setManaged(managed);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -206,8 +201,36 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		PROPERTIES("properties");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String name;
 	public String getName() {
@@ -221,8 +244,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 	public GetTelephonyProvidersEdgesTrunkbasesettingsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -325,6 +347,15 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 		public Builder withName(String name) {
 			request.setName(name);
@@ -333,7 +364,6 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsRequest {
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesTrunkbasesettingsRequest build() {
             

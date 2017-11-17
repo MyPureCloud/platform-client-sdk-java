@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class PostContentmanagementQueryRequest {
 	public PostContentmanagementQueryRequest withBody(QueryRequest body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -78,8 +79,37 @@ public class PostContentmanagementQueryRequest {
 	public PostContentmanagementQueryRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ACL("acl"), 
+		WORKSPACE("workspace");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -148,6 +178,11 @@ public class PostContentmanagementQueryRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
 		
 
 		
@@ -157,7 +192,6 @@ public class PostContentmanagementQueryRequest {
 			return this;
 		}
 		
-
 
 		public PostContentmanagementQueryRequest build() {
             

@@ -2189,12 +2189,14 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return PromptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription));
+  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder));
   }
 
   /**
@@ -2205,14 +2207,16 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return PromptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) throws IOException {
-    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription).withHttpInfo());
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException {
+    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription) {
+  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -2223,6 +2227,10 @@ public class ArchitectApi {
             .withDescription(description)
     
             .withNameOrDescription(nameOrDescription)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }

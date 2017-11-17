@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -38,8 +40,48 @@ public class PatchOrganizationsFeatureRequest {
 	public PatchOrganizationsFeatureRequest withFeatureName(String featureName) {
 	    this.setFeatureName(featureName);
 	    return this;
-	}
+	} 
 
+	public enum featureNameValues { 
+		REALTIMECIC("realtimeCIC"), 
+		PURECLOUD("purecloud"), 
+		HIPAA("hipaa"), 
+		UCENABLED("ucEnabled"), 
+		PCI("pci"), 
+		PURECLOUDVOICE("purecloudVoice"), 
+		XMPPFEDERATION("xmppFederation"), 
+		CHAT("chat"), 
+		INFORMALPHOTOS("informalPhotos"), 
+		DIRECTORY("directory"), 
+		CONTACTCENTER("contactCenter"), 
+		UNIFIEDCOMMUNICATIONS("unifiedCommunications"), 
+		CUSTSERV("custserv");
+
+		private String value;
+
+		featureNameValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static featureNameValues fromString(String key) {
+			if (key == null) return null;
+
+			for (featureNameValues value : featureNameValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return featureNameValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private FeatureState enabled;
 	public FeatureState getEnabled() {
@@ -53,8 +95,7 @@ public class PatchOrganizationsFeatureRequest {
 	public PatchOrganizationsFeatureRequest withEnabled(FeatureState enabled) {
 	    this.setEnabled(enabled);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -123,6 +164,11 @@ public class PatchOrganizationsFeatureRequest {
 			request.setFeatureName(featureName);
 			return this;
 		}
+
+		public Builder withFeatureName(featureNameValues featureName) {
+		    request.setFeatureName(featureName.toString());
+		    return this;
+		}
 		
 		public Builder withEnabled(FeatureState enabled) {
 			request.setEnabled(enabled);
@@ -138,7 +184,6 @@ public class PatchOrganizationsFeatureRequest {
 			return this;
 		}
 		
-
 
 		public PatchOrganizationsFeatureRequest build() {
             

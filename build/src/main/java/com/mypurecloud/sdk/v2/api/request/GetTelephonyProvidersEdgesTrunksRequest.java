@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private String edgeId;
 	public String getEdgeId() {
@@ -161,8 +159,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withEdgeId(String edgeId) {
 	    this.setEdgeId(edgeId);
 	    return this;
-	}
-
+	} 
 	
 	private String trunkBaseId;
 	public String getTrunkBaseId() {
@@ -176,8 +173,7 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withTrunkBaseId(String trunkBaseId) {
 	    this.setTrunkBaseId(trunkBaseId);
 	    return this;
-	}
-
+	} 
 	
 	private String trunkType;
 	public String getTrunkType() {
@@ -191,8 +187,38 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 	public GetTelephonyProvidersEdgesTrunksRequest withTrunkType(String trunkType) {
 	    this.setTrunkType(trunkType);
 	    return this;
-	}
+	} 
 
+	public enum trunkTypeValues { 
+		EXTERNAL("EXTERNAL"), 
+		PHONE("PHONE"), 
+		EDGE("EDGE");
+
+		private String value;
+
+		trunkTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static trunkTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (trunkTypeValues value : trunkTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return trunkTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -286,10 +312,14 @@ public class GetTelephonyProvidersEdgesTrunksRequest {
 			request.setTrunkType(trunkType);
 			return this;
 		}
+
+		public Builder withTrunkType(trunkTypeValues trunkType) {
+		    request.setTrunkType(trunkType.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesTrunksRequest build() {
             

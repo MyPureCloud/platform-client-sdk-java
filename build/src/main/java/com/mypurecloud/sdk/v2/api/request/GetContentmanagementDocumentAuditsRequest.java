@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -78,8 +79,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -93,8 +93,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String transactionFilter;
 	public String getTransactionFilter() {
@@ -108,8 +107,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withTransactionFilter(String transactionFilter) {
 	    this.setTransactionFilter(transactionFilter);
 	    return this;
-	}
-
+	} 
 	
 	private String level;
 	public String getLevel() {
@@ -123,8 +121,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withLevel(String level) {
 	    this.setLevel(level);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -138,8 +135,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -153,8 +149,7 @@ public class GetContentmanagementDocumentAuditsRequest {
 	public GetContentmanagementDocumentAuditsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -267,7 +262,6 @@ public class GetContentmanagementDocumentAuditsRequest {
 			return this;
 		}
 		
-
 
 		public GetContentmanagementDocumentAuditsRequest build() {
             

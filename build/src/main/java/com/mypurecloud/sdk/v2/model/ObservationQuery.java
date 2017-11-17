@@ -31,6 +31,7 @@ public class ObservationQuery  implements Serializable {
     TABANDON("tAbandon"),
     TIVR("tIvr"),
     TANSWERED("tAnswered"),
+    TFLOWOUT("tFlowOut"),
     TACD("tAcd"),
     TTALK("tTalk"),
     THELD("tHeld"),

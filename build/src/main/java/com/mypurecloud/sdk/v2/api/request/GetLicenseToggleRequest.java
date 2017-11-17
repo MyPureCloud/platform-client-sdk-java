@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -40,8 +42,7 @@ public class GetLicenseToggleRequest {
 	public GetLicenseToggleRequest withFeatureName(String featureName) {
 	    this.setFeatureName(featureName);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -112,7 +113,6 @@ public class GetLicenseToggleRequest {
 			return this;
 		}
 		
-
 
 		public GetLicenseToggleRequest build() {
             

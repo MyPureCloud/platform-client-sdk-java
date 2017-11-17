@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,7 @@ public class GetVoicemailGroupMessagesRequest {
 	public GetVoicemailGroupMessagesRequest withGroupId(String groupId) {
 	    this.setGroupId(groupId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -59,8 +60,7 @@ public class GetVoicemailGroupMessagesRequest {
 	public GetVoicemailGroupMessagesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -74,8 +74,7 @@ public class GetVoicemailGroupMessagesRequest {
 	public GetVoicemailGroupMessagesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -160,7 +159,6 @@ public class GetVoicemailGroupMessagesRequest {
 			return this;
 		}
 		
-
 
 		public GetVoicemailGroupMessagesRequest build() {
             

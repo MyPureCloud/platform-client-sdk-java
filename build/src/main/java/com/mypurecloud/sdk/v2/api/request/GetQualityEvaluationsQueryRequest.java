@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -96,8 +95,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -111,8 +109,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -126,8 +123,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String conversationId;
 	public String getConversationId() {
@@ -141,8 +137,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private String agentUserId;
 	public String getAgentUserId() {
@@ -156,8 +151,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withAgentUserId(String agentUserId) {
 	    this.setAgentUserId(agentUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String evaluatorUserId;
 	public String getEvaluatorUserId() {
@@ -171,8 +165,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withEvaluatorUserId(String evaluatorUserId) {
 	    this.setEvaluatorUserId(evaluatorUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String queueId;
 	public String getQueueId() {
@@ -186,8 +179,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withQueueId(String queueId) {
 	    this.setQueueId(queueId);
 	    return this;
-	}
-
+	} 
 	
 	private String startTime;
 	public String getStartTime() {
@@ -201,8 +193,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withStartTime(String startTime) {
 	    this.setStartTime(startTime);
 	    return this;
-	}
-
+	} 
 	
 	private String endTime;
 	public String getEndTime() {
@@ -216,8 +207,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withEndTime(String endTime) {
 	    this.setEndTime(endTime);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> evaluationState;
 	public List<Object> getEvaluationState() {
@@ -231,8 +221,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withEvaluationState(List<Object> evaluationState) {
 	    this.setEvaluationState(evaluationState);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean isReleased;
 	public Boolean getIsReleased() {
@@ -246,8 +235,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withIsReleased(Boolean isReleased) {
 	    this.setIsReleased(isReleased);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean agentHasRead;
 	public Boolean getAgentHasRead() {
@@ -261,8 +249,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withAgentHasRead(Boolean agentHasRead) {
 	    this.setAgentHasRead(agentHasRead);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean expandAnswerTotalScores;
 	public Boolean getExpandAnswerTotalScores() {
@@ -276,8 +263,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withExpandAnswerTotalScores(Boolean expandAnswerTotalScores) {
 	    this.setExpandAnswerTotalScores(expandAnswerTotalScores);
 	    return this;
-	}
-
+	} 
 	
 	private Integer maximum;
 	public Integer getMaximum() {
@@ -291,8 +277,7 @@ public class GetQualityEvaluationsQueryRequest {
 	public GetQualityEvaluationsQueryRequest withMaximum(Integer maximum) {
 	    this.setMaximum(maximum);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -459,7 +444,6 @@ public class GetQualityEvaluationsQueryRequest {
 		
 
 		
-
 
 		public GetQualityEvaluationsQueryRequest build() {
             

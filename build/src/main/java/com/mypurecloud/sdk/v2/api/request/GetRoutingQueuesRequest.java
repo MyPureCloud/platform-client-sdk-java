@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingQueuesRequest {
 	public GetRoutingQueuesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -72,8 +73,7 @@ public class GetRoutingQueuesRequest {
 	public GetRoutingQueuesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -87,8 +87,7 @@ public class GetRoutingQueuesRequest {
 	public GetRoutingQueuesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -102,8 +101,7 @@ public class GetRoutingQueuesRequest {
 	public GetRoutingQueuesRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean active;
 	public Boolean getActive() {
@@ -117,8 +115,7 @@ public class GetRoutingQueuesRequest {
 	public GetRoutingQueuesRequest withActive(Boolean active) {
 	    this.setActive(active);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -201,7 +198,6 @@ public class GetRoutingQueuesRequest {
 		
 
 		
-
 
 		public GetRoutingQueuesRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingLanguagesRequest {
 	public GetRoutingLanguagesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -72,8 +73,7 @@ public class GetRoutingLanguagesRequest {
 	public GetRoutingLanguagesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -87,8 +87,37 @@ public class GetRoutingLanguagesRequest {
 	public GetRoutingLanguagesRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
+	} 
 
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String name;
 	public String getName() {
@@ -102,8 +131,7 @@ public class GetRoutingLanguagesRequest {
 	public GetRoutingLanguagesRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -171,6 +199,11 @@ public class GetRoutingLanguagesRequest {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
 		
 		public Builder withName(String name) {
 			request.setName(name);
@@ -179,7 +212,6 @@ public class GetRoutingLanguagesRequest {
 		
 
 		
-
 
 		public GetRoutingLanguagesRequest build() {
             

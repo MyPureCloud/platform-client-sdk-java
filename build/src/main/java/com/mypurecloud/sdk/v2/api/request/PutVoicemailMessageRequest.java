@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,7 @@ public class PutVoicemailMessageRequest {
 	public PutVoicemailMessageRequest withMessageId(String messageId) {
 	    this.setMessageId(messageId);
 	    return this;
-	}
-
+	} 
 	
 	private VoicemailMessage body;
 	public VoicemailMessage getBody() {
@@ -59,8 +60,7 @@ public class PutVoicemailMessageRequest {
 	public PutVoicemailMessageRequest withBody(VoicemailMessage body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -144,7 +144,6 @@ public class PutVoicemailMessageRequest {
 			return this;
 		}
 		
-
 
 		public PutVoicemailMessageRequest build() {
             

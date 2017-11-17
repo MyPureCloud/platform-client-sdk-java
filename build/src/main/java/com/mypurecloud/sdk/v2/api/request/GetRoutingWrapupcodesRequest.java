@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingWrapupcodesRequest {
 	public GetRoutingWrapupcodesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -72,8 +73,7 @@ public class GetRoutingWrapupcodesRequest {
 	public GetRoutingWrapupcodesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -87,8 +87,7 @@ public class GetRoutingWrapupcodesRequest {
 	public GetRoutingWrapupcodesRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -102,8 +101,7 @@ public class GetRoutingWrapupcodesRequest {
 	public GetRoutingWrapupcodesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -179,7 +177,6 @@ public class GetRoutingWrapupcodesRequest {
 		
 
 		
-
 
 		public GetRoutingWrapupcodesRequest build() {
             

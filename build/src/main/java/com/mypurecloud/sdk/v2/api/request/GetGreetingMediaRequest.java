@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -39,8 +41,7 @@ public class GetGreetingMediaRequest {
 	public GetGreetingMediaRequest withGreetingId(String greetingId) {
 	    this.setGreetingId(greetingId);
 	    return this;
-	}
-
+	} 
 	
 	private String formatId;
 	public String getFormatId() {
@@ -54,8 +55,42 @@ public class GetGreetingMediaRequest {
 	public GetGreetingMediaRequest withFormatId(String formatId) {
 	    this.setFormatId(formatId);
 	    return this;
-	}
+	} 
 
+	public enum formatIdValues { 
+		WAV("WAV"), 
+		WEBM("WEBM"), 
+		WAV_ULAW("WAV_ULAW"), 
+		OGG_VORBIS("OGG_VORBIS"), 
+		OGG_OPUS("OGG_OPUS"), 
+		MP3("MP3"), 
+		NONE("NONE");
+
+		private String value;
+
+		formatIdValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static formatIdValues fromString(String key) {
+			if (key == null) return null;
+
+			for (formatIdValues value : formatIdValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return formatIdValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -124,6 +159,11 @@ public class GetGreetingMediaRequest {
 			request.setFormatId(formatId);
 			return this;
 		}
+
+		public Builder withFormatId(formatIdValues formatId) {
+		    request.setFormatId(formatId.toString());
+		    return this;
+		}
 		
 
 		
@@ -133,7 +173,6 @@ public class GetGreetingMediaRequest {
 			return this;
 		}
 		
-
 
 		public GetGreetingMediaRequest build() {
             

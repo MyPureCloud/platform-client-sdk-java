@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class PutTelephonyProvidersEdgesOutboundrouteRequest {
 	public PutTelephonyProvidersEdgesOutboundrouteRequest withOutboundRouteId(String outboundRouteId) {
 	    this.setOutboundRouteId(outboundRouteId);
 	    return this;
-	}
-
+	} 
 	
 	private OutboundRoute body;
 	public OutboundRoute getBody() {
@@ -116,8 +117,7 @@ public class PutTelephonyProvidersEdgesOutboundrouteRequest {
 	public PutTelephonyProvidersEdgesOutboundrouteRequest withBody(OutboundRoute body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -201,7 +201,6 @@ public class PutTelephonyProvidersEdgesOutboundrouteRequest {
 			return this;
 		}
 		
-
 
 		public PutTelephonyProvidersEdgesOutboundrouteRequest build() {
             

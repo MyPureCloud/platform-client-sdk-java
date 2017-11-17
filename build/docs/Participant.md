@@ -74,6 +74,7 @@ title: Participant
 | PAUSED | &quot;paused&quot; |
 | STOPPED | &quot;stopped&quot; |
 | ERROR | &quot;error&quot; |
+| TIMEOUT | &quot;timeout&quot; |
 {: class="table table-striped"}
 
 

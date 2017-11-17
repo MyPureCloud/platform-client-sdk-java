@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class PostContentmanagementDocumentRequest {
 	public PostContentmanagementDocumentRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private DocumentUpdate body;
 	public DocumentUpdate getBody() {
@@ -78,8 +79,7 @@ public class PostContentmanagementDocumentRequest {
 	public PostContentmanagementDocumentRequest withBody(DocumentUpdate body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -93,8 +93,36 @@ public class PostContentmanagementDocumentRequest {
 	public PostContentmanagementDocumentRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ACL("acl");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Boolean override;
 	public Boolean getOverride() {
@@ -108,8 +136,7 @@ public class PostContentmanagementDocumentRequest {
 	public PostContentmanagementDocumentRequest withOverride(Boolean override) {
 	    this.setOverride(override);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -192,6 +219,11 @@ public class PostContentmanagementDocumentRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
 		
 		public Builder withOverride(Boolean override) {
 			request.setOverride(override);
@@ -207,7 +239,6 @@ public class PostContentmanagementDocumentRequest {
 			return this;
 		}
 		
-
 
 		public PostContentmanagementDocumentRequest build() {
             

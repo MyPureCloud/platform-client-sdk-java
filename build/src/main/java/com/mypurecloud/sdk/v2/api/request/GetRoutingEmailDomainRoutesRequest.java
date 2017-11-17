@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	public GetRoutingEmailDomainRoutesRequest withDomainName(String domainName) {
 	    this.setDomainName(domainName);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -72,8 +73,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	public GetRoutingEmailDomainRoutesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -87,8 +87,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	public GetRoutingEmailDomainRoutesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String pattern;
 	public String getPattern() {
@@ -102,8 +101,7 @@ public class GetRoutingEmailDomainRoutesRequest {
 	public GetRoutingEmailDomainRoutesRequest withPattern(String pattern) {
 	    this.setPattern(pattern);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -195,7 +193,6 @@ public class GetRoutingEmailDomainRoutesRequest {
 			return this;
 		}
 		
-
 
 		public GetRoutingEmailDomainRoutesRequest build() {
             

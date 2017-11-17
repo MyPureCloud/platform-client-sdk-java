@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -161,8 +159,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String locationId;
 	public String getLocationId() {
@@ -176,8 +173,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withLocationId(String locationId) {
 	    this.setLocationId(locationId);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean managed;
 	public Boolean getManaged() {
@@ -191,8 +187,7 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 	public GetTelephonyProvidersEdgesSitesRequest withManaged(Boolean managed) {
 	    this.setManaged(managed);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -289,7 +284,6 @@ public class GetTelephonyProvidersEdgesSitesRequest {
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesSitesRequest build() {
             

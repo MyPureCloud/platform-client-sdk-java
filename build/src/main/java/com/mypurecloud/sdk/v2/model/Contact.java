@@ -157,14 +157,14 @@ public class Contact  implements Serializable {
 
   
   /**
-   * Use extension instead of address for setting internal extensions
+   * Use internal extension instead of address. Mutually exclusive with the address field.
    **/
   public Contact extension(String extension) {
     this.extension = extension;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Use extension instead of address for setting internal extensions")
+  @ApiModelProperty(example = "null", value = "Use internal extension instead of address. Mutually exclusive with the address field.")
   @JsonProperty("extension")
   public String getExtension() {
     return extension;

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class PostRoutingQueueUsersRequest {
 	public PostRoutingQueueUsersRequest withQueueId(String queueId) {
 	    this.setQueueId(queueId);
 	    return this;
-	}
-
+	} 
 	
 	private List<QueueMember> body;
 	public List<QueueMember> getBody() {
@@ -72,8 +73,7 @@ public class PostRoutingQueueUsersRequest {
 	public PostRoutingQueueUsersRequest withBody(List<QueueMember> body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean delete;
 	public Boolean getDelete() {
@@ -87,8 +87,7 @@ public class PostRoutingQueueUsersRequest {
 	public PostRoutingQueueUsersRequest withDelete(Boolean delete) {
 	    this.setDelete(delete);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -179,7 +178,6 @@ public class PostRoutingQueueUsersRequest {
 			return this;
 		}
 		
-
 
 		public PostRoutingQueueUsersRequest build() {
             

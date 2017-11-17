@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,7 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 	public GetExternalcontactsOrganizationRelationshipsRequest withExternalOrganizationId(String externalOrganizationId) {
 	    this.setExternalOrganizationId(externalOrganizationId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -59,8 +60,7 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 	public GetExternalcontactsOrganizationRelationshipsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -74,8 +74,7 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 	public GetExternalcontactsOrganizationRelationshipsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -89,8 +88,36 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 	public GetExternalcontactsOrganizationRelationshipsRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		EXTERNALDATASOURCES("externalDataSources");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -104,8 +131,7 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 	public GetExternalcontactsOrganizationRelationshipsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -190,6 +216,11 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
@@ -204,7 +235,6 @@ public class GetExternalcontactsOrganizationRelationshipsRequest {
 			return this;
 		}
 		
-
 
 		public GetExternalcontactsOrganizationRelationshipsRequest build() {
             

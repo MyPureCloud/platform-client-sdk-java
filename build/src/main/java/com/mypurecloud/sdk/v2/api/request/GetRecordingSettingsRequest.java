@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetRecordingSettingsRequest {
 	public GetRecordingSettingsRequest withCreateDefault(Boolean createDefault) {
 	    this.setCreateDefault(createDefault);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -107,7 +108,6 @@ public class GetRecordingSettingsRequest {
 		
 
 		
-
 
 		public GetRecordingSettingsRequest build() {
             

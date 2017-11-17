@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetFlowVersionConfigurationRequest {
 	public GetFlowVersionConfigurationRequest withFlowId(String flowId) {
 	    this.setFlowId(flowId);
 	    return this;
-	}
-
+	} 
 	
 	private String versionId;
 	public String getVersionId() {
@@ -77,8 +78,7 @@ public class GetFlowVersionConfigurationRequest {
 	public GetFlowVersionConfigurationRequest withVersionId(String versionId) {
 	    this.setVersionId(versionId);
 	    return this;
-	}
-
+	} 
 	
 	private String deleted;
 	public String getDeleted() {
@@ -92,8 +92,7 @@ public class GetFlowVersionConfigurationRequest {
 	public GetFlowVersionConfigurationRequest withDeleted(String deleted) {
 	    this.setDeleted(deleted);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -184,7 +183,6 @@ public class GetFlowVersionConfigurationRequest {
 			return this;
 		}
 		
-
 
 		public GetFlowVersionConfigurationRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class DeleteContentmanagementDocumentRequest {
 	public DeleteContentmanagementDocumentRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean override;
 	public Boolean getOverride() {
@@ -78,8 +79,7 @@ public class DeleteContentmanagementDocumentRequest {
 	public DeleteContentmanagementDocumentRequest withOverride(Boolean override) {
 	    this.setOverride(override);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -157,7 +157,6 @@ public class DeleteContentmanagementDocumentRequest {
 			return this;
 		}
 		
-
 
 		public DeleteContentmanagementDocumentRequest build() {
             

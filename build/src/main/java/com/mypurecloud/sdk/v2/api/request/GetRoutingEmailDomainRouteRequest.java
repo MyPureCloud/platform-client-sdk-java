@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingEmailDomainRouteRequest {
 	public GetRoutingEmailDomainRouteRequest withDomainName(String domainName) {
 	    this.setDomainName(domainName);
 	    return this;
-	}
-
+	} 
 	
 	private String routeId;
 	public String getRouteId() {
@@ -72,8 +73,7 @@ public class GetRoutingEmailDomainRouteRequest {
 	public GetRoutingEmailDomainRouteRequest withRouteId(String routeId) {
 	    this.setRouteId(routeId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -157,7 +157,6 @@ public class GetRoutingEmailDomainRouteRequest {
 			return this;
 		}
 		
-
 
 		public GetRoutingEmailDomainRouteRequest build() {
             

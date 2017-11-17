@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class PostContentmanagementDocumentContentRequest {
 	public PostContentmanagementDocumentContentRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private ReplaceRequest body;
 	public ReplaceRequest getBody() {
@@ -78,8 +79,7 @@ public class PostContentmanagementDocumentContentRequest {
 	public PostContentmanagementDocumentContentRequest withBody(ReplaceRequest body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean override;
 	public Boolean getOverride() {
@@ -93,8 +93,7 @@ public class PostContentmanagementDocumentContentRequest {
 	public PostContentmanagementDocumentContentRequest withOverride(Boolean override) {
 	    this.setOverride(override);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -185,7 +184,6 @@ public class PostContentmanagementDocumentContentRequest {
 			return this;
 		}
 		
-
 
 		public PostContentmanagementDocumentContentRequest build() {
             

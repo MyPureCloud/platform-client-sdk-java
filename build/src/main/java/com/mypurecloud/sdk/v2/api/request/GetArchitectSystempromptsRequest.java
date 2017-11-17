@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -77,8 +78,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -92,8 +92,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -107,8 +106,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -122,8 +120,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String description;
 	public String getDescription() {
@@ -137,8 +134,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withDescription(String description) {
 	    this.setDescription(description);
 	    return this;
-	}
-
+	} 
 	
 	private String nameOrDescription;
 	public String getNameOrDescription() {
@@ -152,8 +148,7 @@ public class GetArchitectSystempromptsRequest {
 	public GetArchitectSystempromptsRequest withNameOrDescription(String nameOrDescription) {
 	    this.setNameOrDescription(nameOrDescription);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -250,7 +245,6 @@ public class GetArchitectSystempromptsRequest {
 		
 
 		
-
 
 		public GetArchitectSystempromptsRequest build() {
             

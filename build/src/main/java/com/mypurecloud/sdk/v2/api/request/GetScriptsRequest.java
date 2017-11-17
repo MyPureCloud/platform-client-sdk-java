@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -37,8 +39,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -52,8 +53,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -67,8 +67,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -82,8 +81,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String feature;
 	public String getFeature() {
@@ -97,8 +95,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withFeature(String feature) {
 	    this.setFeature(feature);
 	    return this;
-	}
-
+	} 
 	
 	private String flowId;
 	public String getFlowId() {
@@ -112,8 +109,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withFlowId(String flowId) {
 	    this.setFlowId(flowId);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -127,8 +123,37 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
+	} 
 
+	public enum sortByValues { 
+		MODIFIEDDATE("modifiedDate"), 
+		CREATEDDATE("createdDate");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -142,8 +167,37 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
+	} 
 
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
@@ -157,8 +211,7 @@ public class GetScriptsRequest {
 	public GetScriptsRequest withScriptDataVersion(String scriptDataVersion) {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -256,10 +309,20 @@ public class GetScriptsRequest {
 			request.setSortBy(sortBy);
 			return this;
 		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
 		}
 		
 		public Builder withScriptDataVersion(String scriptDataVersion) {
@@ -269,7 +332,6 @@ public class GetScriptsRequest {
 		
 
 		
-
 
 		public GetScriptsRequest build() {
             

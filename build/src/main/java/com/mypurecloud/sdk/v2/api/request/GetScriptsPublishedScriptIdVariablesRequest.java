@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -37,8 +39,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	public GetScriptsPublishedScriptIdVariablesRequest withScriptId(String scriptId) {
 	    this.setScriptId(scriptId);
 	    return this;
-	}
-
+	} 
 	
 	private String input;
 	public String getInput() {
@@ -52,8 +53,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	public GetScriptsPublishedScriptIdVariablesRequest withInput(String input) {
 	    this.setInput(input);
 	    return this;
-	}
-
+	} 
 	
 	private String output;
 	public String getOutput() {
@@ -67,8 +67,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	public GetScriptsPublishedScriptIdVariablesRequest withOutput(String output) {
 	    this.setOutput(output);
 	    return this;
-	}
-
+	} 
 	
 	private String type;
 	public String getType() {
@@ -82,8 +81,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	public GetScriptsPublishedScriptIdVariablesRequest withType(String type) {
 	    this.setType(type);
 	    return this;
-	}
-
+	} 
 	
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
@@ -97,8 +95,7 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 	public GetScriptsPublishedScriptIdVariablesRequest withScriptDataVersion(String scriptDataVersion) {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -197,7 +194,6 @@ public class GetScriptsPublishedScriptIdVariablesRequest {
 			return this;
 		}
 		
-
 
 		public GetScriptsPublishedScriptIdVariablesRequest build() {
             

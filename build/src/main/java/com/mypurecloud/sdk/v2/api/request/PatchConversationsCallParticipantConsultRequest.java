@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -78,8 +80,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	public PatchConversationsCallParticipantConsultRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private String participantId;
 	public String getParticipantId() {
@@ -93,8 +94,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	public PatchConversationsCallParticipantConsultRequest withParticipantId(String participantId) {
 	    this.setParticipantId(participantId);
 	    return this;
-	}
-
+	} 
 	
 	private ConsultTransferUpdate body;
 	public ConsultTransferUpdate getBody() {
@@ -108,8 +108,7 @@ public class PatchConversationsCallParticipantConsultRequest {
 	public PatchConversationsCallParticipantConsultRequest withBody(ConsultTransferUpdate body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -206,7 +205,6 @@ public class PatchConversationsCallParticipantConsultRequest {
 			return this;
 		}
 		
-
 
 		public PatchConversationsCallParticipantConsultRequest build() {
             

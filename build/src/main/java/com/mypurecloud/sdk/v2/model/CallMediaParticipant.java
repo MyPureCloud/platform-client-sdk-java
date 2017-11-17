@@ -218,6 +218,7 @@ public class CallMediaParticipant  implements Serializable {
   private FaxStatus faxStatus = null;
   private String monitoredParticipantId = null;
   private String consultParticipantId = null;
+  private String uuiData = null;
 
   
   /**
@@ -886,6 +887,24 @@ public class CallMediaParticipant  implements Serializable {
   }
 
   
+  /**
+   * User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.
+   **/
+  public CallMediaParticipant uuiData(String uuiData) {
+    this.uuiData = uuiData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567.")
+  @JsonProperty("uuiData")
+  public String getUuiData() {
+    return uuiData;
+  }
+  public void setUuiData(String uuiData) {
+    this.uuiData = uuiData;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -932,12 +951,13 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.documentId, callMediaParticipant.documentId) &&
         Objects.equals(this.faxStatus, callMediaParticipant.faxStatus) &&
         Objects.equals(this.monitoredParticipantId, callMediaParticipant.monitoredParticipantId) &&
-        Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId);
+        Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
+        Objects.equals(this.uuiData, callMediaParticipant.uuiData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
   }
 
   @Override
@@ -982,6 +1002,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
+    sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

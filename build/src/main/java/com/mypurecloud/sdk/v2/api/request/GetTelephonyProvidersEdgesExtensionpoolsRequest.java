@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesExtensionpoolsRequest {
 	public GetTelephonyProvidersEdgesExtensionpoolsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesExtensionpoolsRequest {
 	public GetTelephonyProvidersEdgesExtensionpoolsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesExtensionpoolsRequest {
 	public GetTelephonyProvidersEdgesExtensionpoolsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String number;
 	public String getNumber() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesExtensionpoolsRequest {
 	public GetTelephonyProvidersEdgesExtensionpoolsRequest withNumber(String number) {
 	    this.setNumber(number);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -223,7 +221,6 @@ public class GetTelephonyProvidersEdgesExtensionpoolsRequest {
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesExtensionpoolsRequest build() {
             

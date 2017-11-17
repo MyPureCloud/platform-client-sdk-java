@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -53,8 +55,7 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 	public GetAnalyticsReportingScheduleHistoryRunIdRequest withRunId(String runId) {
 	    this.setRunId(runId);
 	    return this;
-	}
-
+	} 
 	
 	private String scheduleId;
 	public String getScheduleId() {
@@ -68,8 +69,7 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 	public GetAnalyticsReportingScheduleHistoryRunIdRequest withScheduleId(String scheduleId) {
 	    this.setScheduleId(scheduleId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -153,7 +153,6 @@ public class GetAnalyticsReportingScheduleHistoryRunIdRequest {
 			return this;
 		}
 		
-
 
 		public GetAnalyticsReportingScheduleHistoryRunIdRequest build() {
             

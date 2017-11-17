@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -161,8 +159,37 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		PROPERTIES("properties"), 
+		LINES("lines");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String name;
 	public String getName() {
@@ -176,8 +203,7 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 	public GetTelephonyProvidersEdgesPhonebasesettingsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -259,6 +285,15 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 		public Builder withName(String name) {
 			request.setName(name);
@@ -267,7 +302,6 @@ public class GetTelephonyProvidersEdgesPhonebasesettingsRequest {
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesPhonebasesettingsRequest build() {
             

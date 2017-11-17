@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	public PutExternalcontactsOrganizationNoteRequest withExternalOrganizationId(String externalOrganizationId) {
 	    this.setExternalOrganizationId(externalOrganizationId);
 	    return this;
-	}
-
+	} 
 	
 	private String noteId;
 	public String getNoteId() {
@@ -59,8 +60,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	public PutExternalcontactsOrganizationNoteRequest withNoteId(String noteId) {
 	    this.setNoteId(noteId);
 	    return this;
-	}
-
+	} 
 	
 	private Note body;
 	public Note getBody() {
@@ -74,8 +74,7 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	public PutExternalcontactsOrganizationNoteRequest withBody(Note body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -166,7 +165,6 @@ public class PutExternalcontactsOrganizationNoteRequest {
 			return this;
 		}
 		
-
 
 		public PutExternalcontactsOrganizationNoteRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -78,8 +80,7 @@ public class DeleteConversationParticipantCodeRequest {
 	public DeleteConversationParticipantCodeRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private String participantId;
 	public String getParticipantId() {
@@ -93,8 +94,7 @@ public class DeleteConversationParticipantCodeRequest {
 	public DeleteConversationParticipantCodeRequest withParticipantId(String participantId) {
 	    this.setParticipantId(participantId);
 	    return this;
-	}
-
+	} 
 	
 	private String addCommunicationCode;
 	public String getAddCommunicationCode() {
@@ -108,8 +108,7 @@ public class DeleteConversationParticipantCodeRequest {
 	public DeleteConversationParticipantCodeRequest withAddCommunicationCode(String addCommunicationCode) {
 	    this.setAddCommunicationCode(addCommunicationCode);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -206,7 +205,6 @@ public class DeleteConversationParticipantCodeRequest {
 			return this;
 		}
 		
-
 
 		public DeleteConversationParticipantCodeRequest build() {
             

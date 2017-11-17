@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -36,8 +38,7 @@ public class DeleteMobiledeviceRequest {
 	public DeleteMobiledeviceRequest withDeviceId(String deviceId) {
 	    this.setDeviceId(deviceId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -108,7 +109,6 @@ public class DeleteMobiledeviceRequest {
 			return this;
 		}
 		
-
 
 		public DeleteMobiledeviceRequest build() {
             

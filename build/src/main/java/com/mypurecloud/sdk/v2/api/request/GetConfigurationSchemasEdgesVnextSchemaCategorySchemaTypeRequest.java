@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest withSchemaCategory(String schemaCategory) {
 	    this.setSchemaCategory(schemaCategory);
 	    return this;
-	}
-
+	} 
 	
 	private String schemaType;
 	public String getSchemaType() {
@@ -116,8 +117,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest withSchemaType(String schemaType) {
 	    this.setSchemaType(schemaType);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -131,8 +131,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -146,8 +145,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -245,7 +243,6 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest {
 			return this;
 		}
 		
-
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeRequest build() {
             

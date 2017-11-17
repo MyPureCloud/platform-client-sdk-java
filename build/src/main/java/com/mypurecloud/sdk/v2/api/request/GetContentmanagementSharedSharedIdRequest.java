@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	public GetContentmanagementSharedSharedIdRequest withSharedId(String sharedId) {
 	    this.setSharedId(sharedId);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean redirect;
 	public Boolean getRedirect() {
@@ -78,8 +79,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	public GetContentmanagementSharedSharedIdRequest withRedirect(Boolean redirect) {
 	    this.setRedirect(redirect);
 	    return this;
-	}
-
+	} 
 	
 	private String disposition;
 	public String getDisposition() {
@@ -93,8 +93,38 @@ public class GetContentmanagementSharedSharedIdRequest {
 	public GetContentmanagementSharedSharedIdRequest withDisposition(String disposition) {
 	    this.setDisposition(disposition);
 	    return this;
-	}
+	} 
 
+	public enum dispositionValues { 
+		ATTACHMENT("attachment"), 
+		INLINE("inline"), 
+		NONE("none");
+
+		private String value;
+
+		dispositionValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dispositionValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dispositionValues value : dispositionValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dispositionValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String contentType;
 	public String getContentType() {
@@ -108,8 +138,7 @@ public class GetContentmanagementSharedSharedIdRequest {
 	public GetContentmanagementSharedSharedIdRequest withContentType(String contentType) {
 	    this.setContentType(contentType);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -123,8 +152,36 @@ public class GetContentmanagementSharedSharedIdRequest {
 	public GetContentmanagementSharedSharedIdRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		DOCUMENT_ACL("document.acl");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -204,6 +261,11 @@ public class GetContentmanagementSharedSharedIdRequest {
 			request.setDisposition(disposition);
 			return this;
 		}
+
+		public Builder withDisposition(dispositionValues disposition) {
+		    request.setDisposition(disposition.toString());
+		    return this;
+		}
 		
 		public Builder withContentType(String contentType) {
 			request.setContentType(contentType);
@@ -214,6 +276,11 @@ public class GetContentmanagementSharedSharedIdRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
 		
 
 		
@@ -223,7 +290,6 @@ public class GetContentmanagementSharedSharedIdRequest {
 			return this;
 		}
 		
-
 
 		public GetContentmanagementSharedSharedIdRequest build() {
             

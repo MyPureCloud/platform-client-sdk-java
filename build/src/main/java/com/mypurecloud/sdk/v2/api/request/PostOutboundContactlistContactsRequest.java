@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -74,8 +76,7 @@ public class PostOutboundContactlistContactsRequest {
 	public PostOutboundContactlistContactsRequest withContactListId(String contactListId) {
 	    this.setContactListId(contactListId);
 	    return this;
-	}
-
+	} 
 	
 	private List<DialerContact> body;
 	public List<DialerContact> getBody() {
@@ -89,8 +90,7 @@ public class PostOutboundContactlistContactsRequest {
 	public PostOutboundContactlistContactsRequest withBody(List<DialerContact> body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean priority;
 	public Boolean getPriority() {
@@ -104,8 +104,7 @@ public class PostOutboundContactlistContactsRequest {
 	public PostOutboundContactlistContactsRequest withPriority(Boolean priority) {
 	    this.setPriority(priority);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean clearSystemData;
 	public Boolean getClearSystemData() {
@@ -119,8 +118,7 @@ public class PostOutboundContactlistContactsRequest {
 	public PostOutboundContactlistContactsRequest withClearSystemData(Boolean clearSystemData) {
 	    this.setClearSystemData(clearSystemData);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -218,7 +216,6 @@ public class PostOutboundContactlistContactsRequest {
 			return this;
 		}
 		
-
 
 		public PostOutboundContactlistContactsRequest build() {
             

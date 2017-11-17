@@ -1383,7 +1383,7 @@ try {
 
 # **getArchitectPrompts**
 
-> [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription)
+> [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder)
 
 Get a pageable list of user prompts
 
@@ -1413,8 +1413,10 @@ Integer pageSize = 25; // Integer | Page size
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
 try {
-    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription);
+    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectPrompts");
@@ -1432,6 +1434,8 @@ try {
 | **name** | **String**| Name | [optional] |
 | **description** | **String**| Description | [optional] |
 | **nameOrDescription** | **String**| Name or description | [optional] |
+| **sortBy** | **String**| Sort by | [optional] [default to id] |
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type

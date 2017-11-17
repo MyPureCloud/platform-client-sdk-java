@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class GetUserQueuesRequest {
 	public GetUserQueuesRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -76,8 +77,7 @@ public class GetUserQueuesRequest {
 	public GetUserQueuesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -91,8 +91,7 @@ public class GetUserQueuesRequest {
 	public GetUserQueuesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean joined;
 	public Boolean getJoined() {
@@ -106,8 +105,7 @@ public class GetUserQueuesRequest {
 	public GetUserQueuesRequest withJoined(Boolean joined) {
 	    this.setJoined(joined);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -199,7 +197,6 @@ public class GetUserQueuesRequest {
 			return this;
 		}
 		
-
 
 		public GetUserQueuesRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -42,8 +44,7 @@ public class PatchAuthorizationRoleRequest {
 	public PatchAuthorizationRoleRequest withRoleId(String roleId) {
 	    this.setRoleId(roleId);
 	    return this;
-	}
-
+	} 
 	
 	private DomainOrganizationRole body;
 	public DomainOrganizationRole getBody() {
@@ -57,8 +58,7 @@ public class PatchAuthorizationRoleRequest {
 	public PatchAuthorizationRoleRequest withBody(DomainOrganizationRole body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -142,7 +142,6 @@ public class PatchAuthorizationRoleRequest {
 			return this;
 		}
 		
-
 
 		public PatchAuthorizationRoleRequest build() {
             

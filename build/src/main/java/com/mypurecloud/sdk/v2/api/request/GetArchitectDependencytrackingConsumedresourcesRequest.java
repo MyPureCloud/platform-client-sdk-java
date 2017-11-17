@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	public GetArchitectDependencytrackingConsumedresourcesRequest withId(String id) {
 	    this.setId(id);
 	    return this;
-	}
-
+	} 
 	
 	private String version;
 	public String getVersion() {
@@ -77,8 +78,7 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	public GetArchitectDependencytrackingConsumedresourcesRequest withVersion(String version) {
 	    this.setVersion(version);
 	    return this;
-	}
-
+	} 
 	
 	private String objectType;
 	public String getObjectType() {
@@ -92,8 +92,63 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	public GetArchitectDependencytrackingConsumedresourcesRequest withObjectType(String objectType) {
 	    this.setObjectType(objectType);
 	    return this;
-	}
+	} 
 
+	public enum objectTypeValues { 
+		ACDLANGUAGE("ACDLANGUAGE"), 
+		ACDSKILL("ACDSKILL"), 
+		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
+		BRIDGEACTION("BRIDGEACTION"), 
+		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
+		CONTACTLIST("CONTACTLIST"), 
+		DATAACTION("DATAACTION"), 
+		EMAILROUTE("EMAILROUTE"), 
+		GROUP("GROUP"), 
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
+		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
+		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		LANGUAGE("LANGUAGE"), 
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
+		QUEUE("QUEUE"), 
+		RESPONSE("RESPONSE"), 
+		SCHEDULE("SCHEDULE"), 
+		SCHEDULEGROUP("SCHEDULEGROUP"), 
+		SECUREACTION("SECUREACTION"), 
+		SECURECALLFLOW("SECURECALLFLOW"), 
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
+		SYSTEMPROMPT("SYSTEMPROMPT"), 
+		USER("USER"), 
+		USERPROMPT("USERPROMPT"), 
+		VOICEXML("VOICEXML"), 
+		WORKFLOW("WORKFLOW");
+
+		private String value;
+
+		objectTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static objectTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (objectTypeValues value : objectTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return objectTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> resourceType;
 	public List<String> getResourceType() {
@@ -107,8 +162,63 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	public GetArchitectDependencytrackingConsumedresourcesRequest withResourceType(List<String> resourceType) {
 	    this.setResourceType(resourceType);
 	    return this;
-	}
+	} 
 
+	public enum resourceTypeValues { 
+		ACDLANGUAGE("ACDLANGUAGE"), 
+		ACDSKILL("ACDSKILL"), 
+		ACDWRAPUPCODE("ACDWRAPUPCODE"), 
+		BRIDGEACTION("BRIDGEACTION"), 
+		COMPOSERSCRIPT("COMPOSERSCRIPT"), 
+		CONTACTLIST("CONTACTLIST"), 
+		DATAACTION("DATAACTION"), 
+		EMAILROUTE("EMAILROUTE"), 
+		GROUP("GROUP"), 
+		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
+		INBOUNDEMAILFLOW("INBOUNDEMAILFLOW"), 
+		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
+		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
+		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		LANGUAGE("LANGUAGE"), 
+		OUTBOUNDCALLFLOW("OUTBOUNDCALLFLOW"), 
+		QUEUE("QUEUE"), 
+		RESPONSE("RESPONSE"), 
+		SCHEDULE("SCHEDULE"), 
+		SCHEDULEGROUP("SCHEDULEGROUP"), 
+		SECUREACTION("SECUREACTION"), 
+		SECURECALLFLOW("SECURECALLFLOW"), 
+		SURVEYINVITEFLOW("SURVEYINVITEFLOW"), 
+		SYSTEMPROMPT("SYSTEMPROMPT"), 
+		USER("USER"), 
+		USERPROMPT("USERPROMPT"), 
+		VOICEXML("VOICEXML"), 
+		WORKFLOW("WORKFLOW");
+
+		private String value;
+
+		resourceTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static resourceTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (resourceTypeValues value : resourceTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return resourceTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -196,10 +306,24 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 			request.setObjectType(objectType);
 			return this;
 		}
+
+		public Builder withObjectType(objectTypeValues objectType) {
+		    request.setObjectType(objectType.toString());
+		    return this;
+		}
 		
 		public Builder withResourceType(List<String> resourceType) {
 			request.setResourceType(resourceType);
 			return this;
+		}
+
+		public Builder withResourceTypeEnumValues(List<resourceTypeValues> resourceType) {
+		    List<String> stringList = new ArrayList<>();
+	      for (resourceTypeValues e : resourceType) {
+	        stringList.add(e.toString());
+	      }
+	      request.setResourceType(stringList);
+		    return this;
 		}
 		
 
@@ -212,7 +336,6 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 			return this;
 		}
 		
-
 
 		public GetArchitectDependencytrackingConsumedresourcesRequest build() {
             

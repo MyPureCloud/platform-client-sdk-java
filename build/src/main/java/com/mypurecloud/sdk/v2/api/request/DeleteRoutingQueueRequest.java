@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class DeleteRoutingQueueRequest {
 	public DeleteRoutingQueueRequest withQueueId(String queueId) {
 	    this.setQueueId(queueId);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean forceDelete;
 	public Boolean getForceDelete() {
@@ -72,8 +73,7 @@ public class DeleteRoutingQueueRequest {
 	public DeleteRoutingQueueRequest withForceDelete(Boolean forceDelete) {
 	    this.setForceDelete(forceDelete);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -151,7 +151,6 @@ public class DeleteRoutingQueueRequest {
 			return this;
 		}
 		
-
 
 		public DeleteRoutingQueueRequest build() {
             

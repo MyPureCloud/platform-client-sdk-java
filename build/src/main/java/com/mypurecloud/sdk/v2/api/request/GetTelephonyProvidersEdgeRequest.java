@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgeRequest {
 	public GetTelephonyProvidersEdgeRequest withEdgeId(String edgeId) {
 	    this.setEdgeId(edgeId);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -116,8 +117,36 @@ public class GetTelephonyProvidersEdgeRequest {
 	public GetTelephonyProvidersEdgeRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		SITE("site");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -186,6 +215,15 @@ public class GetTelephonyProvidersEdgeRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 
 		
@@ -195,7 +233,6 @@ public class GetTelephonyProvidersEdgeRequest {
 			return this;
 		}
 		
-
 
 		public GetTelephonyProvidersEdgeRequest build() {
             

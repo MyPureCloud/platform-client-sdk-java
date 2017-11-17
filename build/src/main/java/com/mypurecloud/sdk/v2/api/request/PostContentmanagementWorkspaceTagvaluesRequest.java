@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 	public PostContentmanagementWorkspaceTagvaluesRequest withWorkspaceId(String workspaceId) {
 	    this.setWorkspaceId(workspaceId);
 	    return this;
-	}
-
+	} 
 	
 	private TagValue body;
 	public TagValue getBody() {
@@ -78,8 +79,7 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 	public PostContentmanagementWorkspaceTagvaluesRequest withBody(TagValue body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -163,7 +163,6 @@ public class PostContentmanagementWorkspaceTagvaluesRequest {
 			return this;
 		}
 		
-
 
 		public PostContentmanagementWorkspaceTagvaluesRequest build() {
             

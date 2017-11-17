@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,37 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withSecure(String secure) {
 	    this.setSecure(secure);
 	    return this;
-	}
+	} 
 
+	public enum secureValues { 
+		TRUE("true"), 
+		FALSE("false");
+
+		private String value;
+
+		secureValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static secureValues fromString(String key) {
+			if (key == null) return null;
+
+			for (secureValues value : secureValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return secureValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -59,8 +90,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -74,8 +104,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -89,8 +118,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -104,8 +132,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -119,8 +146,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -134,8 +160,7 @@ public class GetIntegrationsActionsCategoriesRequest {
 	public GetIntegrationsActionsCategoriesRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -199,6 +224,11 @@ public class GetIntegrationsActionsCategoriesRequest {
 			request.setSecure(secure);
 			return this;
 		}
+
+		public Builder withSecure(secureValues secure) {
+		    request.setSecure(secure.toString());
+		    return this;
+		}
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
@@ -232,7 +262,6 @@ public class GetIntegrationsActionsCategoriesRequest {
 		
 
 		
-
 
 		public GetIntegrationsActionsCategoriesRequest build() {
             

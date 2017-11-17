@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withPromptId(String promptId) {
 	    this.setPromptId(promptId);
 	    return this;
-	}
-
+	} 
 	
 	private String historyId;
 	public String getHistoryId() {
@@ -77,8 +78,7 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withHistoryId(String historyId) {
 	    this.setHistoryId(historyId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -92,8 +92,7 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -107,8 +106,7 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -122,8 +120,7 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -137,8 +134,38 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
+	} 
 
+	public enum sortByValues { 
+		ACTION("action"), 
+		TIMESTAMP("timestamp"), 
+		USER("user");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> action;
 	public List<String> getAction() {
@@ -152,8 +179,44 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 	public GetArchitectSystempromptHistoryHistoryIdRequest withAction(List<String> action) {
 	    this.setAction(action);
 	    return this;
-	}
+	} 
 
+	public enum actionValues { 
+		CHECKIN("checkin"), 
+		CHECKOUT("checkout"), 
+		CREATE("create"), 
+		DEACTIVATE("deactivate"), 
+		DEBUG("debug"), 
+		DELETE("delete"), 
+		PUBLISH("publish"), 
+		REVERT("revert"), 
+		SAVE("save");
+
+		private String value;
+
+		actionValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static actionValues fromString(String key) {
+			if (key == null) return null;
+
+			for (actionValues value : actionValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return actionValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -257,10 +320,24 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 			request.setSortBy(sortBy);
 			return this;
 		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
 		
 		public Builder withAction(List<String> action) {
 			request.setAction(action);
 			return this;
+		}
+
+		public Builder withActionEnumValues(List<actionValues> action) {
+		    List<String> stringList = new ArrayList<>();
+	      for (actionValues e : action) {
+	        stringList.add(e.toString());
+	      }
+	      request.setAction(stringList);
+		    return this;
 		}
 		
 
@@ -272,7 +349,6 @@ public class GetArchitectSystempromptHistoryHistoryIdRequest {
 			return this;
 		}
 		
-
 
 		public GetArchitectSystempromptHistoryHistoryIdRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -36,8 +38,7 @@ public class GetBillingReportsBillableusageRequest {
 	public GetBillingReportsBillableusageRequest withStartDate(Date startDate) {
 	    this.setStartDate(startDate);
 	    return this;
-	}
-
+	} 
 	
 	private Date endDate;
 	public Date getEndDate() {
@@ -51,8 +52,7 @@ public class GetBillingReportsBillableusageRequest {
 	public GetBillingReportsBillableusageRequest withEndDate(Date endDate) {
 	    this.setEndDate(endDate);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -136,7 +136,6 @@ public class GetBillingReportsBillableusageRequest {
 			return this;
 		}
 		
-
 
 		public GetBillingReportsBillableusageRequest build() {
             

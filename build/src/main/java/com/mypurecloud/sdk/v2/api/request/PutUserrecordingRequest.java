@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -38,8 +40,7 @@ public class PutUserrecordingRequest {
 	public PutUserrecordingRequest withRecordingId(String recordingId) {
 	    this.setRecordingId(recordingId);
 	    return this;
-	}
-
+	} 
 	
 	private UserRecording body;
 	public UserRecording getBody() {
@@ -53,8 +54,7 @@ public class PutUserrecordingRequest {
 	public PutUserrecordingRequest withBody(UserRecording body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -68,8 +68,36 @@ public class PutUserrecordingRequest {
 	public PutUserrecordingRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		CONVERSATION("conversation");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -150,6 +178,15 @@ public class PutUserrecordingRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 
 		
@@ -160,7 +197,6 @@ public class PutUserrecordingRequest {
 			return this;
 		}
 		
-
 
 		public PutUserrecordingRequest build() {
             

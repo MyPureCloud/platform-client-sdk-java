@@ -114,7 +114,8 @@ public class ParticipantBasic  implements Serializable {
     ACTIVE("active"),
     PAUSED("paused"),
     STOPPED("stopped"),
-    ERROR("error");
+    ERROR("error"),
+    TIMEOUT("timeout");
 
     private String value;
 

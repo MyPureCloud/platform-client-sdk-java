@@ -56,14 +56,14 @@ public class AnalyticsView  implements Serializable {
 
   
   /**
-   * Target metric name
+   * CallTarget metric name
    **/
   public AnalyticsView target(String target) {
     this.target = target;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Target metric name")
+  @ApiModelProperty(example = "null", required = true, value = "CallTarget metric name")
   @JsonProperty("target")
   public String getTarget() {
     return target;

@@ -12,7 +12,7 @@ title: Contact
 | **display** | **String** | Formatted version of the address property |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **extension** | **String** | Use extension instead of address for setting internal extensions |  [optional] |
+| **extension** | **String** | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
 {: class="table table-striped"}
 
 

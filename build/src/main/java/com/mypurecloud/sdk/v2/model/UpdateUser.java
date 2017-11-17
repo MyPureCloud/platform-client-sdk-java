@@ -152,13 +152,14 @@ public class UpdateUser  implements Serializable {
 
   
   /**
+   * The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.
    **/
   public UpdateUser primaryContactInfo(List<Contact> primaryContactInfo) {
     this.primaryContactInfo = primaryContactInfo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
@@ -169,14 +170,14 @@ public class UpdateUser  implements Serializable {
 
   
   /**
-   * Email addresses and phone numbers for this user
+   * Email address, phone number, and/or extension for this user. One entry is allowed per media type
    **/
   public UpdateUser addresses(List<Contact> addresses) {
     this.addresses = addresses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Email addresses and phone numbers for this user")
+  @ApiModelProperty(example = "null", value = "Email address, phone number, and/or extension for this user. One entry is allowed per media type")
   @JsonProperty("addresses")
   public List<Contact> getAddresses() {
     return addresses;

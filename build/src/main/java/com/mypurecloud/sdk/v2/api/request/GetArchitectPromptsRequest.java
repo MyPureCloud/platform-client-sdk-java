@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectPromptsRequest {
 	public GetArchitectPromptsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -77,8 +78,7 @@ public class GetArchitectPromptsRequest {
 	public GetArchitectPromptsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -92,8 +92,7 @@ public class GetArchitectPromptsRequest {
 	public GetArchitectPromptsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String description;
 	public String getDescription() {
@@ -107,8 +106,7 @@ public class GetArchitectPromptsRequest {
 	public GetArchitectPromptsRequest withDescription(String description) {
 	    this.setDescription(description);
 	    return this;
-	}
-
+	} 
 	
 	private String nameOrDescription;
 	public String getNameOrDescription() {
@@ -122,8 +120,35 @@ public class GetArchitectPromptsRequest {
 	public GetArchitectPromptsRequest withNameOrDescription(String nameOrDescription) {
 	    this.setNameOrDescription(nameOrDescription);
 	    return this;
+	} 
+	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
 	}
 
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetArchitectPromptsRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
+	    return this;
+	} 
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetArchitectPromptsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -157,6 +182,10 @@ public class GetArchitectPromptsRequest {
                 .withQueryParameters("description", "", description)
         
                 .withQueryParameters("nameOrDescription", "", nameOrDescription)
+        
+                .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -204,9 +233,18 @@ public class GetArchitectPromptsRequest {
 			return this;
 		}
 		
-
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
+			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
 		
 
+		
 
 		public GetArchitectPromptsRequest build() {
             

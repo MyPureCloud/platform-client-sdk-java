@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -38,8 +40,7 @@ public class GetPresencedefinitionsRequest {
 	public GetPresencedefinitionsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -53,8 +54,7 @@ public class GetPresencedefinitionsRequest {
 	public GetPresencedefinitionsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String deleted;
 	public String getDeleted() {
@@ -68,8 +68,7 @@ public class GetPresencedefinitionsRequest {
 	public GetPresencedefinitionsRequest withDeleted(String deleted) {
 	    this.setDeleted(deleted);
 	    return this;
-	}
-
+	} 
 	
 	private String localeCode;
 	public String getLocaleCode() {
@@ -83,8 +82,7 @@ public class GetPresencedefinitionsRequest {
 	public GetPresencedefinitionsRequest withLocaleCode(String localeCode) {
 	    this.setLocaleCode(localeCode);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -160,7 +158,6 @@ public class GetPresencedefinitionsRequest {
 		
 
 		
-
 
 		public GetPresencedefinitionsRequest build() {
             

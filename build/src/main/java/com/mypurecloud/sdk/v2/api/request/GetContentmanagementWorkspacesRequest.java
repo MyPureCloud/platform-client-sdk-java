@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class GetContentmanagementWorkspacesRequest {
 	public GetContentmanagementWorkspacesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -78,8 +79,7 @@ public class GetContentmanagementWorkspacesRequest {
 	public GetContentmanagementWorkspacesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> access;
 	public List<String> getAccess() {
@@ -93,8 +93,56 @@ public class GetContentmanagementWorkspacesRequest {
 	public GetContentmanagementWorkspacesRequest withAccess(List<String> access) {
 	    this.setAccess(access);
 	    return this;
-	}
+	} 
 
+	public enum accessValues { 
+		CONTENT("content"), 
+		ADMIN("admin"), 
+		DOCUMENT_CREATE("document:create"), 
+		DOCUMENT_VIEWCONTENT("document:viewContent"), 
+		DOCUMENT_VIEWMETADATA("document:viewMetadata"), 
+		DOCUMENT_DOWNLOAD("document:download"), 
+		DOCUMENT_DELETE("document:delete"), 
+		DOCUMENT_UPDATE("document:update"), 
+		DOCUMENT_SHARE("document:share"), 
+		DOCUMENT_SHAREVIEW("document:shareView"), 
+		DOCUMENT_EMAIL("document:email"), 
+		DOCUMENT_PRINT("document:print"), 
+		DOCUMENT_AUDITVIEW("document:auditView"), 
+		DOCUMENT_REPLACE("document:replace"), 
+		DOCUMENT_TAG("document:tag"), 
+		TAG_CREATE("tag:create"), 
+		TAG_VIEW("tag:view"), 
+		TAG_UPDATE("tag:update"), 
+		TAG_APPLY("tag:apply"), 
+		TAG_REMOVE("tag:remove"), 
+		TAG_DELETE("tag:delete");
+
+		private String value;
+
+		accessValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static accessValues fromString(String key) {
+			if (key == null) return null;
+
+			for (accessValues value : accessValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return accessValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -108,8 +156,37 @@ public class GetContentmanagementWorkspacesRequest {
 	public GetContentmanagementWorkspacesRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		SUMMARY("summary"), 
+		ACL("acl");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -177,15 +254,32 @@ public class GetContentmanagementWorkspacesRequest {
 			request.setAccess(access);
 			return this;
 		}
+
+		public Builder withAccessEnumValues(List<accessValues> access) {
+		    List<String> stringList = new ArrayList<>();
+	      for (accessValues e : access) {
+	        stringList.add(e.toString());
+	      }
+	      request.setAccess(stringList);
+		    return this;
+		}
 		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 
 		
-
 
 		public GetContentmanagementWorkspacesRequest build() {
             

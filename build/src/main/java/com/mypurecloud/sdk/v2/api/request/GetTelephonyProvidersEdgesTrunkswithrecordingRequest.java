@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,38 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 	public GetTelephonyProvidersEdgesTrunkswithrecordingRequest withTrunkType(String trunkType) {
 	    this.setTrunkType(trunkType);
 	    return this;
-	}
+	} 
 
+	public enum trunkTypeValues { 
+		EXTERNAL("EXTERNAL"), 
+		PHONE("PHONE"), 
+		EDGE("EDGE");
+
+		private String value;
+
+		trunkTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static trunkTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (trunkTypeValues value : trunkTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return trunkTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -154,10 +186,14 @@ public class GetTelephonyProvidersEdgesTrunkswithrecordingRequest {
 			request.setTrunkType(trunkType);
 			return this;
 		}
+
+		public Builder withTrunkType(trunkTypeValues trunkType) {
+		    request.setTrunkType(trunkType.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesTrunkswithrecordingRequest build() {
             

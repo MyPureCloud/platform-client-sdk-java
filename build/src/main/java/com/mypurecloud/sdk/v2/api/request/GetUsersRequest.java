@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class GetUsersRequest {
 	public GetUsersRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -76,8 +77,7 @@ public class GetUsersRequest {
 	public GetUsersRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> id;
 	public List<String> getId() {
@@ -91,8 +91,7 @@ public class GetUsersRequest {
 	public GetUsersRequest withId(List<String> id) {
 	    this.setId(id);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -106,8 +105,37 @@ public class GetUsersRequest {
 	public GetUsersRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
+	} 
 
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -121,8 +149,45 @@ public class GetUsersRequest {
 	public GetUsersRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ROUTINGSTATUS("routingStatus"), 
+		PRESENCE("presence"), 
+		CONVERSATIONSUMMARY("conversationSummary"), 
+		OUTOFOFFICE("outOfOffice"), 
+		GEOLOCATION("geolocation"), 
+		STATION("station"), 
+		AUTHORIZATION("authorization"), 
+		PROFILESKILLS("profileSkills"), 
+		LOCATIONS("locations"), 
+		GROUPS("groups");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String state;
 	public String getState() {
@@ -136,8 +201,38 @@ public class GetUsersRequest {
 	public GetUsersRequest withState(String state) {
 	    this.setState(state);
 	    return this;
-	}
+	} 
 
+	public enum stateValues { 
+		ACTIVE("active"), 
+		INACTIVE("inactive"), 
+		DELETED("deleted");
+
+		private String value;
+
+		stateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static stateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (stateValues value : stateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return stateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -214,20 +309,38 @@ public class GetUsersRequest {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
 		
 		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
+		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
 		}
 		
 		public Builder withState(String state) {
 			request.setState(state);
 			return this;
 		}
+
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetUsersRequest build() {
             

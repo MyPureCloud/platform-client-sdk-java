@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withCalibratorId(String calibratorId) {
 	    this.setCalibratorId(calibratorId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -66,8 +67,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -81,8 +81,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -96,8 +95,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -111,8 +109,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -126,8 +123,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -141,8 +137,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String conversationId;
 	public String getConversationId() {
@@ -156,8 +151,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private Date startTime;
 	public Date getStartTime() {
@@ -171,8 +165,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withStartTime(Date startTime) {
 	    this.setStartTime(startTime);
 	    return this;
-	}
-
+	} 
 	
 	private Date endTime;
 	public Date getEndTime() {
@@ -186,8 +179,7 @@ public class GetQualityCalibrationsRequest {
 	public GetQualityCalibrationsRequest withEndTime(Date endTime) {
 	    this.setEndTime(endTime);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -321,7 +313,6 @@ public class GetQualityCalibrationsRequest {
 			return this;
 		}
 		
-
 
 		public GetQualityCalibrationsRequest build() {
             

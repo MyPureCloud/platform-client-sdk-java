@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -74,8 +76,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withIncludeImportStatus(Boolean includeImportStatus) {
 	    this.setIncludeImportStatus(includeImportStatus);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean includeSize;
 	public Boolean getIncludeSize() {
@@ -89,8 +90,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withIncludeSize(Boolean includeSize) {
 	    this.setIncludeSize(includeSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -104,8 +104,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -119,8 +118,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String filterType;
 	public String getFilterType() {
@@ -134,8 +132,45 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withFilterType(String filterType) {
 	    this.setFilterType(filterType);
 	    return this;
-	}
+	} 
 
+	public enum filterTypeValues { 
+		EQUALS("Equals"), 
+		REGEX("RegEx"), 
+		CONTAINS("Contains"), 
+		PREFIX("Prefix"), 
+		LESSTHAN("LessThan"), 
+		LESSTHANEQUALTO("LessThanEqualTo"), 
+		GREATERTHAN("GreaterThan"), 
+		GREATERTHANEQUALTO("GreaterThanEqualTo"), 
+		BEGINSWITH("BeginsWith"), 
+		ENDSWITH("EndsWith");
+
+		private String value;
+
+		filterTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static filterTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (filterTypeValues value : filterTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return filterTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String name;
 	public String getName() {
@@ -149,8 +184,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -164,8 +198,7 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -179,8 +212,37 @@ public class GetOutboundDnclistsRequest {
 	public GetOutboundDnclistsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
+	} 
 
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -266,6 +328,11 @@ public class GetOutboundDnclistsRequest {
 			request.setFilterType(filterType);
 			return this;
 		}
+
+		public Builder withFilterType(filterTypeValues filterType) {
+		    request.setFilterType(filterType.toString());
+		    return this;
+		}
 		
 		public Builder withName(String name) {
 			request.setName(name);
@@ -281,10 +348,14 @@ public class GetOutboundDnclistsRequest {
 			request.setSortOrder(sortOrder);
 			return this;
 		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetOutboundDnclistsRequest build() {
             

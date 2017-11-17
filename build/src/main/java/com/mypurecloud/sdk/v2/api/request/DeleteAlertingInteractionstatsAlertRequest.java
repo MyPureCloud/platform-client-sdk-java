@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -41,8 +43,7 @@ public class DeleteAlertingInteractionstatsAlertRequest {
 	public DeleteAlertingInteractionstatsAlertRequest withAlertId(String alertId) {
 	    this.setAlertId(alertId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -113,7 +114,6 @@ public class DeleteAlertingInteractionstatsAlertRequest {
 			return this;
 		}
 		
-
 
 		public DeleteAlertingInteractionstatsAlertRequest build() {
             

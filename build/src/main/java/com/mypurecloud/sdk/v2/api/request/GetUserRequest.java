@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class GetUserRequest {
 	public GetUserRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -76,8 +77,45 @@ public class GetUserRequest {
 	public GetUserRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ROUTINGSTATUS("routingStatus"), 
+		PRESENCE("presence"), 
+		CONVERSATIONSUMMARY("conversationSummary"), 
+		OUTOFOFFICE("outOfOffice"), 
+		GEOLOCATION("geolocation"), 
+		STATION("station"), 
+		AUTHORIZATION("authorization"), 
+		PROFILESKILLS("profileSkills"), 
+		LOCATIONS("locations"), 
+		GROUPS("groups");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String state;
 	public String getState() {
@@ -91,8 +129,37 @@ public class GetUserRequest {
 	public GetUserRequest withState(String state) {
 	    this.setState(state);
 	    return this;
-	}
+	} 
 
+	public enum stateValues { 
+		ACTIVE("active"), 
+		DELETED("deleted");
+
+		private String value;
+
+		stateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static stateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (stateValues value : stateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return stateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -163,10 +230,24 @@ public class GetUserRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 		public Builder withState(String state) {
 			request.setState(state);
 			return this;
+		}
+
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+		    return this;
 		}
 		
 
@@ -177,7 +258,6 @@ public class GetUserRequest {
 			return this;
 		}
 		
-
 
 		public GetUserRequest build() {
             

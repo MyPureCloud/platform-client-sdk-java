@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -96,8 +95,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -111,8 +109,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -126,8 +123,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -141,8 +137,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean enabled;
 	public Boolean getEnabled() {
@@ -156,8 +151,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withEnabled(Boolean enabled) {
 	    this.setEnabled(enabled);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean summary;
 	public Boolean getSummary() {
@@ -171,8 +165,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withSummary(Boolean summary) {
 	    this.setSummary(summary);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean hasErrors;
 	public Boolean getHasErrors() {
@@ -186,8 +179,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	public GetRecordingMediaretentionpoliciesRequest withHasErrors(Boolean hasErrors) {
 	    this.setHasErrors(hasErrors);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -305,7 +297,6 @@ public class GetRecordingMediaretentionpoliciesRequest {
 		
 
 		
-
 
 		public GetRecordingMediaretentionpoliciesRequest build() {
             

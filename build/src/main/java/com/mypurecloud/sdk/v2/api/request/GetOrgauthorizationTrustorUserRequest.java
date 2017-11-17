@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -48,8 +50,7 @@ public class GetOrgauthorizationTrustorUserRequest {
 	public GetOrgauthorizationTrustorUserRequest withTrustorOrgId(String trustorOrgId) {
 	    this.setTrustorOrgId(trustorOrgId);
 	    return this;
-	}
-
+	} 
 	
 	private String trusteeUserId;
 	public String getTrusteeUserId() {
@@ -63,8 +64,7 @@ public class GetOrgauthorizationTrustorUserRequest {
 	public GetOrgauthorizationTrustorUserRequest withTrusteeUserId(String trusteeUserId) {
 	    this.setTrusteeUserId(trusteeUserId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -148,7 +148,6 @@ public class GetOrgauthorizationTrustorUserRequest {
 			return this;
 		}
 		
-
 
 		public GetOrgauthorizationTrustorUserRequest build() {
             

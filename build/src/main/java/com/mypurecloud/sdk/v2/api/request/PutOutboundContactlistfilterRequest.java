@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -74,8 +76,7 @@ public class PutOutboundContactlistfilterRequest {
 	public PutOutboundContactlistfilterRequest withContactListFilterId(String contactListFilterId) {
 	    this.setContactListFilterId(contactListFilterId);
 	    return this;
-	}
-
+	} 
 	
 	private ContactListFilter body;
 	public ContactListFilter getBody() {
@@ -89,8 +90,7 @@ public class PutOutboundContactlistfilterRequest {
 	public PutOutboundContactlistfilterRequest withBody(ContactListFilter body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -174,7 +174,6 @@ public class PutOutboundContactlistfilterRequest {
 			return this;
 		}
 		
-
 
 		public PutOutboundContactlistfilterRequest build() {
             

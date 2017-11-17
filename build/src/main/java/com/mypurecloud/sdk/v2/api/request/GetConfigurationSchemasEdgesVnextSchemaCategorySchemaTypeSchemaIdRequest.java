@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest withSchemaCategory(String schemaCategory) {
 	    this.setSchemaCategory(schemaCategory);
 	    return this;
-	}
-
+	} 
 	
 	private String schemaType;
 	public String getSchemaType() {
@@ -116,8 +117,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest withSchemaType(String schemaType) {
 	    this.setSchemaType(schemaType);
 	    return this;
-	}
-
+	} 
 	
 	private String schemaId;
 	public String getSchemaId() {
@@ -131,8 +131,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest withSchemaId(String schemaId) {
 	    this.setSchemaId(schemaId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -229,7 +228,6 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRe
 			return this;
 		}
 		
-
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest build() {
             

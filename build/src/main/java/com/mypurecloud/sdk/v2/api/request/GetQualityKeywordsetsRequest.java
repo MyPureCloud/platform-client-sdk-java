@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -96,8 +95,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -111,8 +109,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -126,8 +123,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -141,8 +137,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String queueId;
 	public String getQueueId() {
@@ -156,8 +151,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withQueueId(String queueId) {
 	    this.setQueueId(queueId);
 	    return this;
-	}
-
+	} 
 	
 	private String agentId;
 	public String getAgentId() {
@@ -171,8 +165,7 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withAgentId(String agentId) {
 	    this.setAgentId(agentId);
 	    return this;
-	}
-
+	} 
 	
 	private String operator;
 	public String getOperator() {
@@ -186,8 +179,37 @@ public class GetQualityKeywordsetsRequest {
 	public GetQualityKeywordsetsRequest withOperator(String operator) {
 	    this.setOperator(operator);
 	    return this;
-	}
+	} 
 
+	public enum operatorValues { 
+		AND("AND"), 
+		OR("OR");
+
+		private String value;
+
+		operatorValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static operatorValues fromString(String key) {
+			if (key == null) return null;
+
+			for (operatorValues value : operatorValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return operatorValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -302,10 +324,14 @@ public class GetQualityKeywordsetsRequest {
 			request.setOperator(operator);
 			return this;
 		}
+
+		public Builder withOperator(operatorValues operator) {
+		    request.setOperator(operator.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetQualityKeywordsetsRequest build() {
             

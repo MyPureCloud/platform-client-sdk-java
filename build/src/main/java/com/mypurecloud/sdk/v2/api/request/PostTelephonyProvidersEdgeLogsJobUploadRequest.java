@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	public PostTelephonyProvidersEdgeLogsJobUploadRequest withEdgeId(String edgeId) {
 	    this.setEdgeId(edgeId);
 	    return this;
-	}
-
+	} 
 	
 	private String jobId;
 	public String getJobId() {
@@ -116,8 +117,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	public PostTelephonyProvidersEdgeLogsJobUploadRequest withJobId(String jobId) {
 	    this.setJobId(jobId);
 	    return this;
-	}
-
+	} 
 	
 	private EdgeLogsJobUploadRequest body;
 	public EdgeLogsJobUploadRequest getBody() {
@@ -131,8 +131,7 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 	public PostTelephonyProvidersEdgeLogsJobUploadRequest withBody(EdgeLogsJobUploadRequest body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -229,7 +228,6 @@ public class PostTelephonyProvidersEdgeLogsJobUploadRequest {
 			return this;
 		}
 		
-
 
 		public PostTelephonyProvidersEdgeLogsJobUploadRequest build() {
             

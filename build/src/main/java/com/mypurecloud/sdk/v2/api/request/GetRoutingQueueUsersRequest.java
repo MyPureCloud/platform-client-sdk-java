@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -57,8 +59,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withQueueId(String queueId) {
 	    this.setQueueId(queueId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -72,8 +73,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -87,8 +87,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -102,8 +101,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -117,8 +115,60 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ROUTINGSTATUS("routingStatus"), 
+		PRESENCE("presence"), 
+		CONVERSATIONSUMMARY("conversationSummary"), 
+		OUTOFOFFICE("outOfOffice"), 
+		GEOLOCATION("geolocation"), 
+		STATION("station"), 
+		AUTHORIZATION("authorization"), 
+		PROFILESKILLS("profileSkills"), 
+		LOCATIONS("locations"), 
+		GROUPS("groups"), 
+		DATE("date"), 
+		GEOLOCATIONSETTINGS("geolocationsettings"), 
+		ORGANIZATION("organization"), 
+		PRESENCEDEFINITIONS("presencedefinitions"), 
+		LOCATIONDEFINITIONS("locationdefinitions"), 
+		ORGAUTHORIZATION("orgauthorization"), 
+		FAVORITES("favorites"), 
+		SUPERIORS("superiors"), 
+		DIRECTREPORTS("directreports"), 
+		ADJACENTS("adjacents"), 
+		ROUTINGSKILLS("routingskills"), 
+		ROUTINGLANGUAGES("routinglanguages"), 
+		FIELDCONFIGS("fieldconfigs"), 
+		TOKEN("token"), 
+		TRUSTORS("trustors");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Boolean joined;
 	public Boolean getJoined() {
@@ -132,8 +182,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withJoined(Boolean joined) {
 	    this.setJoined(joined);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -147,8 +196,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> profileSkills;
 	public List<String> getProfileSkills() {
@@ -162,8 +210,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withProfileSkills(List<String> profileSkills) {
 	    this.setProfileSkills(profileSkills);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> skills;
 	public List<String> getSkills() {
@@ -177,8 +224,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withSkills(List<String> skills) {
 	    this.setSkills(skills);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> languages;
 	public List<String> getLanguages() {
@@ -192,8 +238,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withLanguages(List<String> languages) {
 	    this.setLanguages(languages);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> routingStatus;
 	public List<String> getRoutingStatus() {
@@ -207,8 +252,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withRoutingStatus(List<String> routingStatus) {
 	    this.setRoutingStatus(routingStatus);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> presence;
 	public List<String> getPresence() {
@@ -222,8 +266,7 @@ public class GetRoutingQueueUsersRequest {
 	public GetRoutingQueueUsersRequest withPresence(List<String> presence) {
 	    this.setPresence(presence);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -327,6 +370,15 @@ public class GetRoutingQueueUsersRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 		public Builder withJoined(Boolean joined) {
 			request.setJoined(joined);
@@ -371,7 +423,6 @@ public class GetRoutingQueueUsersRequest {
 			return this;
 		}
 		
-
 
 		public GetRoutingQueueUsersRequest build() {
             

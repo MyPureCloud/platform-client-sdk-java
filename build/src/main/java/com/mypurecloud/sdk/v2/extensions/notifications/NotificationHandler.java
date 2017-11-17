@@ -75,7 +75,12 @@ public class NotificationHandler extends Object {
         this.setWebSocketListener(builder.webSocketListener);
 
         // Initialize web socket
-        this.webSocket = new WebSocketFactory()
+        WebSocketFactory factory = new WebSocketFactory();
+
+        if (builder.proxyHost != null)
+            factory.getProxySettings().setServer(builder.proxyHost);
+
+        this.webSocket = factory
                 .createSocket(this.channel.getConnectUri())
                 .addListener(new WebSocketAdapter() {
                     @Override
@@ -160,6 +165,7 @@ public class NotificationHandler extends Object {
         private ApiClient apiClient;
         private NotificationsApi notificationsApi;
         private ObjectMapper objectMapper;
+        private String proxyHost;
 
         public static Builder standard() {
             Builder builder = new Builder();
@@ -170,6 +176,7 @@ public class NotificationHandler extends Object {
             builder.apiClient = null;
             builder.notificationsApi = null;
             builder.objectMapper = null;
+            builder.proxyHost = null;
             return builder;
         }
 
@@ -210,6 +217,11 @@ public class NotificationHandler extends Object {
 
         public Builder withObjectMapper(ObjectMapper objectMapper) {
             this.objectMapper = objectMapper;
+            return this;
+        }
+
+        public Builder withProxyHost(String proxyHost) {
+            this.proxyHost = proxyHost;
             return this;
         }
 

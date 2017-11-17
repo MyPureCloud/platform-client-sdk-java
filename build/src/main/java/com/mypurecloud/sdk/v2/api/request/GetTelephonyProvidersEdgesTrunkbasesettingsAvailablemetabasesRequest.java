@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,38 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesReques
 	public GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest withType(String type) {
 	    this.setType(type);
 	    return this;
-	}
+	} 
 
+	public enum typeValues { 
+		EXTERNAL("EXTERNAL"), 
+		PHONE("PHONE"), 
+		EDGE("EDGE");
+
+		private String value;
+
+		typeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static typeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (typeValues value : typeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return typeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -116,8 +148,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesReques
 	public GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -131,8 +162,7 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesReques
 	public GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -188,6 +218,11 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesReques
 			request.setType(type);
 			return this;
 		}
+
+		public Builder withType(typeValues type) {
+		    request.setType(type.toString());
+		    return this;
+		}
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
@@ -201,7 +236,6 @@ public class GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesReques
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabasesRequest build() {
             

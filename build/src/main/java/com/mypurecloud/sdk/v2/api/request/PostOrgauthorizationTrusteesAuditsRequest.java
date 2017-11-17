@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -48,8 +50,7 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 	public PostOrgauthorizationTrusteesAuditsRequest withBody(TrusteeAuditQueryRequest body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -63,8 +64,7 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 	public PostOrgauthorizationTrusteesAuditsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -78,8 +78,7 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 	public PostOrgauthorizationTrusteesAuditsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -93,8 +92,7 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 	public PostOrgauthorizationTrusteesAuditsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -108,8 +106,7 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 	public PostOrgauthorizationTrusteesAuditsRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -208,7 +205,6 @@ public class PostOrgauthorizationTrusteesAuditsRequest {
 			return this;
 		}
 		
-
 
 		public PostOrgauthorizationTrusteesAuditsRequest build() {
             

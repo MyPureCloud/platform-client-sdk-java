@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	public PostConversationRecordingAnnotationsRequest withConversationId(String conversationId) {
 	    this.setConversationId(conversationId);
 	    return this;
-	}
-
+	} 
 	
 	private String recordingId;
 	public String getRecordingId() {
@@ -66,8 +67,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	public PostConversationRecordingAnnotationsRequest withRecordingId(String recordingId) {
 	    this.setRecordingId(recordingId);
 	    return this;
-	}
-
+	} 
 	
 	private Annotation body;
 	public Annotation getBody() {
@@ -81,8 +81,7 @@ public class PostConversationRecordingAnnotationsRequest {
 	public PostConversationRecordingAnnotationsRequest withBody(Annotation body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -179,7 +178,6 @@ public class PostConversationRecordingAnnotationsRequest {
 			return this;
 		}
 		
-
 
 		public PostConversationRecordingAnnotationsRequest build() {
             

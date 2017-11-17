@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class GetUserDirectreportsRequest {
 	public GetUserDirectreportsRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -76,8 +77,45 @@ public class GetUserDirectreportsRequest {
 	public GetUserDirectreportsRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		ROUTINGSTATUS("routingStatus"), 
+		PRESENCE("presence"), 
+		CONVERSATIONSUMMARY("conversationSummary"), 
+		OUTOFOFFICE("outOfOffice"), 
+		GEOLOCATION("geolocation"), 
+		STATION("station"), 
+		AUTHORIZATION("authorization"), 
+		PROFILESKILLS("profileSkills"), 
+		LOCATIONS("locations"), 
+		GROUPS("groups");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -146,6 +184,15 @@ public class GetUserDirectreportsRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 
 		
@@ -155,7 +202,6 @@ public class GetUserDirectreportsRequest {
 			return this;
 		}
 		
-
 
 		public GetUserDirectreportsRequest build() {
             

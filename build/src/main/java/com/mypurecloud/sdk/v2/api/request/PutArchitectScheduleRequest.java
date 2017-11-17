@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class PutArchitectScheduleRequest {
 	public PutArchitectScheduleRequest withScheduleId(String scheduleId) {
 	    this.setScheduleId(scheduleId);
 	    return this;
-	}
-
+	} 
 	
 	private Schedule body;
 	public Schedule getBody() {
@@ -77,8 +78,7 @@ public class PutArchitectScheduleRequest {
 	public PutArchitectScheduleRequest withBody(Schedule body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -156,7 +156,6 @@ public class PutArchitectScheduleRequest {
 			return this;
 		}
 		
-
 
 		public PutArchitectScheduleRequest build() {
             

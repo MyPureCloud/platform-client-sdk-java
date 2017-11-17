@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withSchemaCategory(String schemaCategory) {
 	    this.setSchemaCategory(schemaCategory);
 	    return this;
-	}
-
+	} 
 	
 	private String schemaType;
 	public String getSchemaType() {
@@ -116,8 +117,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withSchemaType(String schemaType) {
 	    this.setSchemaType(schemaType);
 	    return this;
-	}
-
+	} 
 	
 	private String schemaId;
 	public String getSchemaId() {
@@ -131,8 +131,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withSchemaId(String schemaId) {
 	    this.setSchemaId(schemaId);
 	    return this;
-	}
-
+	} 
 	
 	private String extensionType;
 	public String getExtensionType() {
@@ -146,8 +145,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withExtensionType(String extensionType) {
 	    this.setExtensionType(extensionType);
 	    return this;
-	}
-
+	} 
 	
 	private String metadataId;
 	public String getMetadataId() {
@@ -161,8 +159,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withMetadataId(String metadataId) {
 	    this.setMetadataId(metadataId);
 	    return this;
-	}
-
+	} 
 	
 	private String type;
 	public String getType() {
@@ -176,8 +173,7 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 	public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest withType(String type) {
 	    this.setType(type);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -307,7 +303,6 @@ public class GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdEx
 			return this;
 		}
 		
-
 
 		public GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest build() {
             

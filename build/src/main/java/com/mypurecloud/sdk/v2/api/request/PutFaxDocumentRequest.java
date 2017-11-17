@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -38,8 +40,7 @@ public class PutFaxDocumentRequest {
 	public PutFaxDocumentRequest withDocumentId(String documentId) {
 	    this.setDocumentId(documentId);
 	    return this;
-	}
-
+	} 
 	
 	private FaxDocument body;
 	public FaxDocument getBody() {
@@ -53,8 +54,7 @@ public class PutFaxDocumentRequest {
 	public PutFaxDocumentRequest withBody(FaxDocument body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -138,7 +138,6 @@ public class PutFaxDocumentRequest {
 			return this;
 		}
 		
-
 
 		public PutFaxDocumentRequest build() {
             

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	public GetArchitectSystempromptResourcesRequest withPromptId(String promptId) {
 	    this.setPromptId(promptId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -77,8 +78,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	public GetArchitectSystempromptResourcesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -92,8 +92,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	public GetArchitectSystempromptResourcesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -107,8 +106,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	public GetArchitectSystempromptResourcesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -122,8 +120,7 @@ public class GetArchitectSystempromptResourcesRequest {
 	public GetArchitectSystempromptResourcesRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -222,7 +219,6 @@ public class GetArchitectSystempromptResourcesRequest {
 			return this;
 		}
 		
-
 
 		public GetArchitectSystempromptResourcesRequest build() {
             

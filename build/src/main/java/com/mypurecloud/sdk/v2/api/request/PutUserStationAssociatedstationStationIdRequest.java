@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,7 @@ public class PutUserStationAssociatedstationStationIdRequest {
 	public PutUserStationAssociatedstationStationIdRequest withUserId(String userId) {
 	    this.setUserId(userId);
 	    return this;
-	}
-
+	} 
 	
 	private String stationId;
 	public String getStationId() {
@@ -76,8 +77,7 @@ public class PutUserStationAssociatedstationStationIdRequest {
 	public PutUserStationAssociatedstationStationIdRequest withStationId(String stationId) {
 	    this.setStationId(stationId);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -161,7 +161,6 @@ public class PutUserStationAssociatedstationStationIdRequest {
 			return this;
 		}
 		
-
 
 		public PutUserStationAssociatedstationStationIdRequest build() {
             

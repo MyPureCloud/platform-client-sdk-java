@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -62,8 +64,7 @@ public class PutArchitectPromptResourceRequest {
 	public PutArchitectPromptResourceRequest withPromptId(String promptId) {
 	    this.setPromptId(promptId);
 	    return this;
-	}
-
+	} 
 	
 	private String languageCode;
 	public String getLanguageCode() {
@@ -77,8 +78,7 @@ public class PutArchitectPromptResourceRequest {
 	public PutArchitectPromptResourceRequest withLanguageCode(String languageCode) {
 	    this.setLanguageCode(languageCode);
 	    return this;
-	}
-
+	} 
 	
 	private PromptAsset body;
 	public PromptAsset getBody() {
@@ -92,8 +92,7 @@ public class PutArchitectPromptResourceRequest {
 	public PutArchitectPromptResourceRequest withBody(PromptAsset body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -184,7 +183,6 @@ public class PutArchitectPromptResourceRequest {
 			return this;
 		}
 		
-
 
 		public PutArchitectPromptResourceRequest build() {
             

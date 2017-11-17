@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -37,8 +39,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withScriptId(String scriptId) {
 	    this.setScriptId(scriptId);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -52,8 +53,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -67,8 +67,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -82,8 +81,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -97,8 +95,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private String feature;
 	public String getFeature() {
@@ -112,8 +109,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withFeature(String feature) {
 	    this.setFeature(feature);
 	    return this;
-	}
-
+	} 
 	
 	private String flowId;
 	public String getFlowId() {
@@ -127,8 +123,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withFlowId(String flowId) {
 	    this.setFlowId(flowId);
 	    return this;
-	}
-
+	} 
 	
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
@@ -142,8 +137,7 @@ public class GetScriptsPublishedRequest {
 	public GetScriptsPublishedRequest withScriptDataVersion(String scriptDataVersion) {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -263,7 +257,6 @@ public class GetScriptsPublishedRequest {
 			return this;
 		}
 		
-
 
 		public GetScriptsPublishedRequest build() {
             

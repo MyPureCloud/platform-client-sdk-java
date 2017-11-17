@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -61,8 +63,39 @@ public class GetFieldconfigRequest {
 	public GetFieldconfigRequest withType(String type) {
 	    this.setType(type);
 	    return this;
-	}
+	} 
 
+	public enum typeValues { 
+		PERSON("person"), 
+		GROUP("group"), 
+		ORG("org"), 
+		EXTERNALCONTACT("externalContact");
+
+		private String value;
+
+		typeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static typeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (typeValues value : typeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return typeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -124,6 +157,11 @@ public class GetFieldconfigRequest {
 			request.setType(type);
 			return this;
 		}
+
+		public Builder withType(typeValues type) {
+		    request.setType(type.toString());
+		    return this;
+		}
 		
 
 		
@@ -133,7 +171,6 @@ public class GetFieldconfigRequest {
 			return this;
 		}
 		
-
 
 		public GetFieldconfigRequest build() {
             

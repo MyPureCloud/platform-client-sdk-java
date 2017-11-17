@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -44,8 +46,7 @@ public class GetIntegrationsActionTemplateRequest {
 	public GetIntegrationsActionTemplateRequest withActionId(String actionId) {
 	    this.setActionId(actionId);
 	    return this;
-	}
-
+	} 
 	
 	private String fileName;
 	public String getFileName() {
@@ -59,8 +60,7 @@ public class GetIntegrationsActionTemplateRequest {
 	public GetIntegrationsActionTemplateRequest withFileName(String fileName) {
 	    this.setFileName(fileName);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -144,7 +144,6 @@ public class GetIntegrationsActionTemplateRequest {
 			return this;
 		}
 		
-
 
 		public GetIntegrationsActionTemplateRequest build() {
             

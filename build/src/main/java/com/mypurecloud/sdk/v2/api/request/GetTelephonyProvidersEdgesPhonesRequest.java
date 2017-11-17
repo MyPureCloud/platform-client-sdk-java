@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -101,8 +103,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageSize;
 	public Integer getPageSize() {
@@ -116,8 +117,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -131,8 +131,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -146,8 +145,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withSortOrder(String sortOrder) {
 	    this.setSortOrder(sortOrder);
 	    return this;
-	}
-
+	} 
 	
 	private String siteId;
 	public String getSiteId() {
@@ -161,8 +159,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withSiteId(String siteId) {
 	    this.setSiteId(siteId);
 	    return this;
-	}
-
+	} 
 	
 	private String webRtcUserId;
 	public String getWebRtcUserId() {
@@ -176,8 +173,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withWebRtcUserId(String webRtcUserId) {
 	    this.setWebRtcUserId(webRtcUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String phoneBaseSettingsId;
 	public String getPhoneBaseSettingsId() {
@@ -191,8 +187,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withPhoneBaseSettingsId(String phoneBaseSettingsId) {
 	    this.setPhoneBaseSettingsId(phoneBaseSettingsId);
 	    return this;
-	}
-
+	} 
 	
 	private String linesLoggedInUserId;
 	public String getLinesLoggedInUserId() {
@@ -206,8 +201,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withLinesLoggedInUserId(String linesLoggedInUserId) {
 	    this.setLinesLoggedInUserId(linesLoggedInUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String linesDefaultForUserId;
 	public String getLinesDefaultForUserId() {
@@ -221,8 +215,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withLinesDefaultForUserId(String linesDefaultForUserId) {
 	    this.setLinesDefaultForUserId(linesDefaultForUserId);
 	    return this;
-	}
-
+	} 
 	
 	private String phoneHardwareId;
 	public String getPhoneHardwareId() {
@@ -236,8 +229,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withPhoneHardwareId(String phoneHardwareId) {
 	    this.setPhoneHardwareId(phoneHardwareId);
 	    return this;
-	}
-
+	} 
 	
 	private String linesId;
 	public String getLinesId() {
@@ -251,8 +243,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withLinesId(String linesId) {
 	    this.setLinesId(linesId);
 	    return this;
-	}
-
+	} 
 	
 	private String linesName;
 	public String getLinesName() {
@@ -266,8 +257,7 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withLinesName(String linesName) {
 	    this.setLinesName(linesName);
 	    return this;
-	}
-
+	} 
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -281,8 +271,42 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
+	} 
 
+	public enum expandValues { 
+		PROPERTIES("properties"), 
+		SITE("site"), 
+		STATUS("status"), 
+		STATUS_PRIMARYEDGESSTATUS("status.primaryEdgesStatus"), 
+		STATUS_SECONDARYEDGESSTATUS("status.secondaryEdgesStatus"), 
+		PHONEBASESETTINGS("phoneBaseSettings"), 
+		LINES("lines");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> fields;
 	public List<String> getFields() {
@@ -296,8 +320,39 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	public GetTelephonyProvidersEdgesPhonesRequest withFields(List<String> fields) {
 	    this.setFields(fields);
 	    return this;
-	}
+	} 
 
+	public enum fieldsValues { 
+		WEBRTCUSER("webRtcUser"), 
+		PROPERTIES_("properties.*"), 
+		LINES_LOGGEDINUSER("lines.loggedInUser"), 
+		LINES_DEFAULTFORUSER("lines.defaultForUser");
+
+		private String value;
+
+		fieldsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static fieldsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (fieldsValues value : fieldsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return fieldsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -435,15 +490,32 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
+		}
 		
 		public Builder withFields(List<String> fields) {
 			request.setFields(fields);
 			return this;
 		}
+
+		public Builder withFieldsEnumValues(List<fieldsValues> fields) {
+		    List<String> stringList = new ArrayList<>();
+	      for (fieldsValues e : fields) {
+	        stringList.add(e.toString());
+	      }
+	      request.setFields(stringList);
+		    return this;
+		}
 		
 
 		
-
 
 		public GetTelephonyProvidersEdgesPhonesRequest build() {
             

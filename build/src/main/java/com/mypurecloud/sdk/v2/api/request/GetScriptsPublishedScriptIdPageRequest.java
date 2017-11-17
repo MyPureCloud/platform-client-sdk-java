@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -37,8 +39,7 @@ public class GetScriptsPublishedScriptIdPageRequest {
 	public GetScriptsPublishedScriptIdPageRequest withScriptId(String scriptId) {
 	    this.setScriptId(scriptId);
 	    return this;
-	}
-
+	} 
 	
 	private String pageId;
 	public String getPageId() {
@@ -52,8 +53,7 @@ public class GetScriptsPublishedScriptIdPageRequest {
 	public GetScriptsPublishedScriptIdPageRequest withPageId(String pageId) {
 	    this.setPageId(pageId);
 	    return this;
-	}
-
+	} 
 	
 	private String scriptDataVersion;
 	public String getScriptDataVersion() {
@@ -67,8 +67,7 @@ public class GetScriptsPublishedScriptIdPageRequest {
 	public GetScriptsPublishedScriptIdPageRequest withScriptDataVersion(String scriptDataVersion) {
 	    this.setScriptDataVersion(scriptDataVersion);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -159,7 +158,6 @@ public class GetScriptsPublishedScriptIdPageRequest {
 			return this;
 		}
 		
-
 
 		public GetScriptsPublishedScriptIdPageRequest build() {
             

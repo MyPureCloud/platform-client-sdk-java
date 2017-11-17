@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -96,8 +95,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -111,8 +109,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private String expand;
 	public String getExpand() {
@@ -126,8 +123,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withExpand(String expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String name;
 	public String getName() {
@@ -141,8 +137,7 @@ public class GetQualityFormsRequest {
 	public GetQualityFormsRequest withName(String name) {
 	    this.setName(name);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -239,7 +234,6 @@ public class GetQualityFormsRequest {
 		
 
 		
-
 
 		public GetQualityFormsRequest build() {
             

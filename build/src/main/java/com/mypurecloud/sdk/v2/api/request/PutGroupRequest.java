@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -43,8 +45,7 @@ public class PutGroupRequest {
 	public PutGroupRequest withGroupId(String groupId) {
 	    this.setGroupId(groupId);
 	    return this;
-	}
-
+	} 
 	
 	private GroupUpdate body;
 	public GroupUpdate getBody() {
@@ -58,8 +59,7 @@ public class PutGroupRequest {
 	public PutGroupRequest withBody(GroupUpdate body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -137,7 +137,6 @@ public class PutGroupRequest {
 			return this;
 		}
 		
-
 
 		public PutGroupRequest build() {
             

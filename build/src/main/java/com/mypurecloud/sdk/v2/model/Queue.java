@@ -111,6 +111,8 @@ public class Queue  implements Serializable {
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
   private UriReference queueFlow = null;
+  private UriReference whisperAudio = null;
+  private Boolean autoAnswerOnly = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -396,6 +398,42 @@ public class Queue  implements Serializable {
 
   
   /**
+   * The prompt used for whisper audio on the queue, if configured.
+   **/
+  public Queue whisperAudio(UriReference whisperAudio) {
+    this.whisperAudio = whisperAudio;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The prompt used for whisper audio on the queue, if configured.")
+  @JsonProperty("whisperAudio")
+  public UriReference getWhisperAudio() {
+    return whisperAudio;
+  }
+  public void setWhisperAudio(UriReference whisperAudio) {
+    this.whisperAudio = whisperAudio;
+  }
+
+  
+  /**
+   * Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+   **/
+  public Queue autoAnswerOnly(Boolean autoAnswerOnly) {
+    this.autoAnswerOnly = autoAnswerOnly;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.")
+  @JsonProperty("autoAnswerOnly")
+  public Boolean getAutoAnswerOnly() {
+    return autoAnswerOnly;
+  }
+  public void setAutoAnswerOnly(Boolean autoAnswerOnly) {
+    this.autoAnswerOnly = autoAnswerOnly;
+  }
+
+  
+  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public Queue callingPartyName(String callingPartyName) {
@@ -516,6 +554,8 @@ public class Queue  implements Serializable {
         Objects.equals(this.acwSettings, queue.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, queue.skillEvaluationMethod) &&
         Objects.equals(this.queueFlow, queue.queueFlow) &&
+        Objects.equals(this.whisperAudio, queue.whisperAudio) &&
+        Objects.equals(this.autoAnswerOnly, queue.autoAnswerOnly) &&
         Objects.equals(this.callingPartyName, queue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, queue.callingPartyNumber) &&
         Objects.equals(this.defaultScripts, queue.defaultScripts) &&
@@ -526,7 +566,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperAudio, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
   }
 
   @Override
@@ -550,6 +590,8 @@ public class Queue  implements Serializable {
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
+    sb.append("    whisperAudio: ").append(toIndentedString(whisperAudio)).append("\n");
+    sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

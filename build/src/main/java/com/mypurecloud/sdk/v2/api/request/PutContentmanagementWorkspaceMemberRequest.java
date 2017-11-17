@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -63,8 +65,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	public PutContentmanagementWorkspaceMemberRequest withWorkspaceId(String workspaceId) {
 	    this.setWorkspaceId(workspaceId);
 	    return this;
-	}
-
+	} 
 	
 	private String memberId;
 	public String getMemberId() {
@@ -78,8 +79,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	public PutContentmanagementWorkspaceMemberRequest withMemberId(String memberId) {
 	    this.setMemberId(memberId);
 	    return this;
-	}
-
+	} 
 	
 	private WorkspaceMember body;
 	public WorkspaceMember getBody() {
@@ -93,8 +93,7 @@ public class PutContentmanagementWorkspaceMemberRequest {
 	public PutContentmanagementWorkspaceMemberRequest withBody(WorkspaceMember body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -191,7 +190,6 @@ public class PutContentmanagementWorkspaceMemberRequest {
 			return this;
 		}
 		
-
 
 		public PutContentmanagementWorkspaceMemberRequest build() {
             

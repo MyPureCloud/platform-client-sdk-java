@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
-	}
-
+	} 
 	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
@@ -66,8 +67,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
 	    return this;
-	}
-
+	} 
 	
 	private String sortBy;
 	public String getSortBy() {
@@ -81,8 +81,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
 	    return this;
-	}
-
+	} 
 	
 	private List<Object> expand;
 	public List<Object> getExpand() {
@@ -96,8 +95,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
-	}
-
+	} 
 	
 	private String nextPage;
 	public String getNextPage() {
@@ -111,8 +109,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withNextPage(String nextPage) {
 	    this.setNextPage(nextPage);
 	    return this;
-	}
-
+	} 
 	
 	private String previousPage;
 	public String getPreviousPage() {
@@ -126,8 +123,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withPreviousPage(String previousPage) {
 	    this.setPreviousPage(previousPage);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean hasConversation;
 	public Boolean getHasConversation() {
@@ -141,8 +137,7 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withHasConversation(Boolean hasConversation) {
 	    this.setHasConversation(hasConversation);
 	    return this;
-	}
-
+	} 
 	
 	private String media;
 	public String getMedia() {
@@ -156,8 +151,37 @@ public class GetOrphanrecordingsRequest {
 	public GetOrphanrecordingsRequest withMedia(String media) {
 	    this.setMedia(media);
 	    return this;
-	}
+	} 
 
+	public enum mediaValues { 
+		CALL("Call"), 
+		SCREEN("Screen");
+
+		private String value;
+
+		mediaValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static mediaValues fromString(String key) {
+			if (key == null) return null;
+
+			for (mediaValues value : mediaValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return mediaValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -258,10 +282,14 @@ public class GetOrphanrecordingsRequest {
 			request.setMedia(media);
 			return this;
 		}
+
+		public Builder withMedia(mediaValues media) {
+		    request.setMedia(media.toString());
+		    return this;
+		}
 		
 
 		
-
 
 		public GetOrphanrecordingsRequest build() {
             

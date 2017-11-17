@@ -26,7 +26,8 @@ public class IntradayQueue  implements Serializable {
     VOICE("Voice"),
     CHAT("Chat"),
     EMAIL("Email"),
-    CALLBACK("Callback");
+    CALLBACK("Callback"),
+    MESSAGE("Message");
 
     private String value;
 

@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -74,8 +76,7 @@ public class GetOutboundDnclistRequest {
 	public GetOutboundDnclistRequest withDncListId(String dncListId) {
 	    this.setDncListId(dncListId);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean includeImportStatus;
 	public Boolean getIncludeImportStatus() {
@@ -89,8 +90,7 @@ public class GetOutboundDnclistRequest {
 	public GetOutboundDnclistRequest withIncludeImportStatus(Boolean includeImportStatus) {
 	    this.setIncludeImportStatus(includeImportStatus);
 	    return this;
-	}
-
+	} 
 	
 	private Boolean includeSize;
 	public Boolean getIncludeSize() {
@@ -104,8 +104,7 @@ public class GetOutboundDnclistRequest {
 	public GetOutboundDnclistRequest withIncludeSize(Boolean includeSize) {
 	    this.setIncludeSize(includeSize);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -190,7 +189,6 @@ public class GetOutboundDnclistRequest {
 			return this;
 		}
 		
-
 
 		public GetOutboundDnclistRequest build() {
             

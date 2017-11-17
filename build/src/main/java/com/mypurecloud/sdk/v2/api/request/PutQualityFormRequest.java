@@ -1,5 +1,7 @@
 package com.mypurecloud.sdk.v2.api.request;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.mypurecloud.sdk.v2.ApiRequest;
@@ -51,8 +53,7 @@ public class PutQualityFormRequest {
 	public PutQualityFormRequest withFormId(String formId) {
 	    this.setFormId(formId);
 	    return this;
-	}
-
+	} 
 	
 	private EvaluationForm body;
 	public EvaluationForm getBody() {
@@ -66,8 +67,7 @@ public class PutQualityFormRequest {
 	public PutQualityFormRequest withBody(EvaluationForm body) {
 	    this.setBody(body);
 	    return this;
-	}
-
+	} 
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -151,7 +151,6 @@ public class PutQualityFormRequest {
 			return this;
 		}
 		
-
 
 		public PutQualityFormRequest build() {
             
