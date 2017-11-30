@@ -111,7 +111,7 @@ public class Queue  implements Serializable {
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
   private UriReference queueFlow = null;
-  private UriReference whisperAudio = null;
+  private UriReference whisper = null;
   private Boolean autoAnswerOnly = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
@@ -400,18 +400,18 @@ public class Queue  implements Serializable {
   /**
    * The prompt used for whisper audio on the queue, if configured.
    **/
-  public Queue whisperAudio(UriReference whisperAudio) {
-    this.whisperAudio = whisperAudio;
+  public Queue whisper(UriReference whisper) {
+    this.whisper = whisper;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The prompt used for whisper audio on the queue, if configured.")
-  @JsonProperty("whisperAudio")
-  public UriReference getWhisperAudio() {
-    return whisperAudio;
+  @JsonProperty("whisper")
+  public UriReference getWhisper() {
+    return whisper;
   }
-  public void setWhisperAudio(UriReference whisperAudio) {
-    this.whisperAudio = whisperAudio;
+  public void setWhisper(UriReference whisper) {
+    this.whisper = whisper;
   }
 
   
@@ -554,7 +554,7 @@ public class Queue  implements Serializable {
         Objects.equals(this.acwSettings, queue.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, queue.skillEvaluationMethod) &&
         Objects.equals(this.queueFlow, queue.queueFlow) &&
-        Objects.equals(this.whisperAudio, queue.whisperAudio) &&
+        Objects.equals(this.whisper, queue.whisper) &&
         Objects.equals(this.autoAnswerOnly, queue.autoAnswerOnly) &&
         Objects.equals(this.callingPartyName, queue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, queue.callingPartyNumber) &&
@@ -566,7 +566,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperAudio, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisper, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
   }
 
   @Override
@@ -590,7 +590,7 @@ public class Queue  implements Serializable {
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
-    sb.append("    whisperAudio: ").append(toIndentedString(whisperAudio)).append("\n");
+    sb.append("    whisper: ").append(toIndentedString(whisper)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");

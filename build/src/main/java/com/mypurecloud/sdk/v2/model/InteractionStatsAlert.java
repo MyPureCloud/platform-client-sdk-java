@@ -109,7 +109,8 @@ public class InteractionStatsAlert  implements Serializable {
     VOICE("voice"),
     CHAT("chat"),
     EMAIL("email"),
-    CALLBACK("callback");
+    CALLBACK("callback"),
+    MESSAGE("message");
 
     private String value;
 

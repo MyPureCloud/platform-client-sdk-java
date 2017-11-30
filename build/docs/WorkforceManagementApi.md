@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user by id |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | Mark a time off request for the current user as read or unread |
+| [**postWorkforcemanagementAgentsManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementAgentsManagementunits) | Get the management units to which the agents belong |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | Get intraday data for the given date for the requested queueIds |
 | [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Get user schedules within the given time range |
@@ -545,6 +546,57 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postWorkforcemanagementAgentsManagementunits"></a>
+
+# **postWorkforcemanagementAgentsManagementunits**
+
+> [List&lt;AgentManagementUnitReference&gt;](AgentManagementUnitReference.html) postWorkforcemanagementAgentsManagementunits(body)
+
+Get the management units to which the agents belong
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents/managementunits  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+List<String> body = Arrays.asList(new List<String>()); // List<String> | body
+try {
+    List<AgentManagementUnitReference> result = apiInstance.postWorkforcemanagementAgentsManagementunits(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentsManagementunits");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **List&lt;String&gt;**| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;AgentManagementUnitReference&gt;**](AgentManagementUnitReference.html)
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 

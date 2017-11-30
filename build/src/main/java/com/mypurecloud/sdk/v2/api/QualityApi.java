@@ -1022,12 +1022,13 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; (optional)
    * @return EvaluationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) throws IOException, ApiException {
-    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum));
+  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
+    return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
   }
 
   /**
@@ -1050,14 +1051,15 @@ public class QualityApi {
    * @param agentHasRead agent has the evaluation (optional)
    * @param expandAnswerTotalScores get the total scores for evaluations (optional)
    * @param maximum maximum (optional)
+   * @param sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; (optional)
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) throws IOException {
-    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum).withHttpInfo());
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
+    return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
   }
 
-  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum) {
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
     
@@ -1092,6 +1094,8 @@ public class QualityApi {
             .withExpandAnswerTotalScores(expandAnswerTotalScores)
     
             .withMaximum(maximum)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }

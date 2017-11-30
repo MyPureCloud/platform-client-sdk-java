@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScriptsPublishedScriptIdPage**](ScriptsApi.html#getScriptsPublishedScriptIdPage) | Get the published page. |
 | [**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | Get the list of published pages |
 | [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | Get the published variables |
+| [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | Get the upload status of an imported script |
 {: class="table table-striped"}
 
 <a name="getScript"></a>
@@ -530,4 +531,57 @@ try {
 ### Return type
 
 **Object**
+
+<a name="getScriptsUploadStatus"></a>
+
+# **getScriptsUploadStatus**
+
+> [ImportScriptStatusResponse](ImportScriptStatusResponse.html) getScriptsUploadStatus(uploadId, longPoll)
+
+Get the upload status of an imported script
+
+
+
+Wraps GET /api/v2/scripts/uploads/{uploadId}/status  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ScriptsApi apiInstance = new ScriptsApi();
+String uploadId = "uploadId_example"; // String | Upload ID
+Boolean longPoll = false; // Boolean | Enable longPolling endpoint
+try {
+    ImportScriptStatusResponse result = apiInstance.getScriptsUploadStatus(uploadId, longPoll);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#getScriptsUploadStatus");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uploadId** | **String**| Upload ID | |
+| **longPoll** | **Boolean**| Enable longPolling endpoint | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportScriptStatusResponse**](ImportScriptStatusResponse.html)
 

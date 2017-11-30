@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.SecureSession;
+import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversation;
@@ -46,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
@@ -65,6 +68,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCons
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
@@ -122,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
@@ -529,6 +535,158 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SecureSession> getConversationParticipantSecureivrsessionAsync(GetConversationParticipantSecureivrsessionRequest request, final AsyncApiCallback<SecureSession> callback) {
+    try {
+      final SettableFuture<SecureSession> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SecureSession>() {}, new AsyncApiCallback<ApiResponse<SecureSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSession> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SecureSession>> getConversationParticipantSecureivrsessionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SecureSession>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SecureSession>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SecureSession>() {}, new AsyncApiCallback<ApiResponse<SecureSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSession> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SecureSessionEntityListing> getConversationParticipantSecureivrsessionsAsync(GetConversationParticipantSecureivrsessionsRequest request, final AsyncApiCallback<SecureSessionEntityListing> callback) {
+    try {
+      final SettableFuture<SecureSessionEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SecureSessionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SecureSessionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSessionEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SecureSessionEntityListing>> getConversationParticipantSecureivrsessionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SecureSessionEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SecureSessionEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SecureSessionEntityListing>() {}, new AsyncApiCallback<ApiResponse<SecureSessionEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSessionEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSessionEntityListing> response = (ApiResponse<SecureSessionEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSessionEntityListing> response = (ApiResponse<SecureSessionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4861,6 +5019,82 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SecureSession> postConversationParticipantSecureivrsessionsAsync(PostConversationParticipantSecureivrsessionsRequest request, final AsyncApiCallback<SecureSession> callback) {
+    try {
+      final SettableFuture<SecureSession> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SecureSession>() {}, new AsyncApiCallback<ApiResponse<SecureSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSession> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SecureSession>> postConversationParticipantSecureivrsessionsAsync(ApiRequest<CreateSecureSession> request, final AsyncApiCallback<ApiResponse<SecureSession>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SecureSession>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SecureSession>() {}, new AsyncApiCallback<ApiResponse<SecureSession>>() {
+        @Override
+        public void onCompleted(ApiResponse<SecureSession> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

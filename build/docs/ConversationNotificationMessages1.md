@@ -22,6 +22,9 @@ title: ConversationNotificationMessages1
 | **fromAddress** | [**ConversationNotificationAddress**](ConversationNotificationAddress.html) |  |  [optional] |
 | **messages** | [**List&lt;ConversationNotificationMessages&gt;**](ConversationNotificationMessages.html) |  |  [optional] |
 | **messagesTranscriptUri** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+| **recipientCountry** | **String** |  |  [optional] |
+| **recipientType** | **String** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 
@@ -61,6 +64,16 @@ title: ConversationNotificationMessages1
 | OTHER | &quot;OTHER&quot; |
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SMS | &quot;SMS&quot; |
 {: class="table table-striped"}
 
 

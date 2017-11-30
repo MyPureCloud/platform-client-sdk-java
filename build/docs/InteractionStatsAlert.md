@@ -69,6 +69,7 @@ title: InteractionStatsAlert
 | CHAT | &quot;chat&quot; |
 | EMAIL | &quot;email&quot; |
 | CALLBACK | &quot;callback&quot; |
+| MESSAGE | &quot;message&quot; |
 
 
 <a name="NumericRangeEnum"></a>

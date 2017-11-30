@@ -65,6 +65,40 @@ public class AnalyticsSession  implements Serializable {
   private String addressSelf = null;
   private String addressFrom = null;
   private String addressTo = null;
+
+  /**
+   * Message type for messaging services such as sms
+   */
+  public enum MessageTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("sms");
+
+    private String value;
+
+    MessageTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessageTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessageTypeEnum value : MessageTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessageTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessageTypeEnum messageType = null;
   private String ani = null;
 
   /**
@@ -270,6 +304,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setAddressTo(String addressTo) {
     this.addressTo = addressTo;
+  }
+
+  
+  /**
+   * Message type for messaging services such as sms
+   **/
+  public AnalyticsSession messageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Message type for messaging services such as sms")
+  @JsonProperty("messageType")
+  public MessageTypeEnum getMessageType() {
+    return messageType;
+  }
+  public void setMessageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
   }
 
   
@@ -808,6 +860,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.addressSelf, analyticsSession.addressSelf) &&
         Objects.equals(this.addressFrom, analyticsSession.addressFrom) &&
         Objects.equals(this.addressTo, analyticsSession.addressTo) &&
+        Objects.equals(this.messageType, analyticsSession.messageType) &&
         Objects.equals(this.ani, analyticsSession.ani) &&
         Objects.equals(this.direction, analyticsSession.direction) &&
         Objects.equals(this.dnis, analyticsSession.dnis) &&
@@ -841,7 +894,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments);
   }
 
   @Override
@@ -855,6 +908,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    addressSelf: ").append(toIndentedString(addressSelf)).append("\n");
     sb.append("    addressFrom: ").append(toIndentedString(addressFrom)).append("\n");
     sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
+    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");

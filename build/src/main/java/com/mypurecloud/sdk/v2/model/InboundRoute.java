@@ -27,6 +27,7 @@ public class InboundRoute  implements Serializable {
   private String fromName = null;
   private String fromEmail = null;
   private UriReference flow = null;
+  private UriReference replyRoute = null;
   private String selfUri = null;
 
   
@@ -198,6 +199,24 @@ public class InboundRoute  implements Serializable {
   }
 
   
+  /**
+   * The route to use for email replies.
+   **/
+  public InboundRoute replyRoute(UriReference replyRoute) {
+    this.replyRoute = replyRoute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The route to use for email replies.")
+  @JsonProperty("replyRoute")
+  public UriReference getReplyRoute() {
+    return replyRoute;
+  }
+  public void setReplyRoute(UriReference replyRoute) {
+    this.replyRoute = replyRoute;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -225,12 +244,13 @@ public class InboundRoute  implements Serializable {
         Objects.equals(this.fromName, inboundRoute.fromName) &&
         Objects.equals(this.fromEmail, inboundRoute.fromEmail) &&
         Objects.equals(this.flow, inboundRoute.flow) &&
+        Objects.equals(this.replyRoute, inboundRoute.replyRoute) &&
         Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyRoute, selfUri);
   }
 
   @Override
@@ -248,6 +268,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
     sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
+    sb.append("    replyRoute: ").append(toIndentedString(replyRoute)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -86,6 +86,7 @@ title: AnalyticsQueryPredicate
 | ADDRESSSELF | &quot;addressSelf&quot; |
 | ADDRESSOTHER | &quot;addressOther&quot; |
 | SUBJECT | &quot;subject&quot; |
+| MESSAGETYPE | &quot;messageType&quot; |
 | PEERID | &quot;peerId&quot; |
 | SCRIPTID | &quot;scriptId&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |

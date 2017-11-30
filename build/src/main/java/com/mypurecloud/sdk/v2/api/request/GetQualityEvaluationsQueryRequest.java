@@ -279,6 +279,20 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetQualityEvaluationsQueryRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -335,6 +349,8 @@ public class GetQualityEvaluationsQueryRequest {
                 .withQueryParameters("expandAnswerTotalScores", "", expandAnswerTotalScores)
         
                 .withQueryParameters("maximum", "", maximum)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -439,6 +455,11 @@ public class GetQualityEvaluationsQueryRequest {
 		
 		public Builder withMaximum(Integer maximum) {
 			request.setMaximum(maximum);
+			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
 			return this;
 		}
 		

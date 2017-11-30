@@ -20,6 +20,7 @@ public class UserConversationSummaryNotification  implements Serializable {
   private UserConversationSummaryNotificationCall call = null;
   private UserConversationSummaryNotificationMediaSummary callback = null;
   private UserConversationSummaryNotificationMediaSummary email = null;
+  private UserConversationSummaryNotificationMediaSummary message = null;
   private UserConversationSummaryNotificationMediaSummary chat = null;
   private UserConversationSummaryNotificationMediaSummary socialExpression = null;
   private UserConversationSummaryNotificationMediaSummary video = null;
@@ -95,6 +96,23 @@ public class UserConversationSummaryNotification  implements Serializable {
   
   /**
    **/
+  public UserConversationSummaryNotification message(UserConversationSummaryNotificationMediaSummary message) {
+    this.message = message;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("message")
+  public UserConversationSummaryNotificationMediaSummary getMessage() {
+    return message;
+  }
+  public void setMessage(UserConversationSummaryNotificationMediaSummary message) {
+    this.message = message;
+  }
+
+  
+  /**
+   **/
   public UserConversationSummaryNotification chat(UserConversationSummaryNotificationMediaSummary chat) {
     this.chat = chat;
     return this;
@@ -158,6 +176,7 @@ public class UserConversationSummaryNotification  implements Serializable {
         Objects.equals(this.call, userConversationSummaryNotification.call) &&
         Objects.equals(this.callback, userConversationSummaryNotification.callback) &&
         Objects.equals(this.email, userConversationSummaryNotification.email) &&
+        Objects.equals(this.message, userConversationSummaryNotification.message) &&
         Objects.equals(this.chat, userConversationSummaryNotification.chat) &&
         Objects.equals(this.socialExpression, userConversationSummaryNotification.socialExpression) &&
         Objects.equals(this.video, userConversationSummaryNotification.video);
@@ -165,7 +184,7 @@ public class UserConversationSummaryNotification  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, call, callback, email, chat, socialExpression, video);
+    return Objects.hash(userId, call, callback, email, message, chat, socialExpression, video);
   }
 
   @Override
@@ -177,6 +196,7 @@ public class UserConversationSummaryNotification  implements Serializable {
     sb.append("    call: ").append(toIndentedString(call)).append("\n");
     sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    chat: ").append(toIndentedString(chat)).append("\n");
     sb.append("    socialExpression: ").append(toIndentedString(socialExpression)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");

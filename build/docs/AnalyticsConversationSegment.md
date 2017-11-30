@@ -78,6 +78,11 @@ title: AnalyticsConversationSegment
 | WRAPUP | &quot;wrapup&quot; |
 | VOICEMAIL | &quot;voicemail&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
+| CONTACTING | &quot;contacting&quot; |
+| TRANSMITTING | &quot;transmitting&quot; |
+| CONVERTING | &quot;converting&quot; |
+| UPLOADING | &quot;uploading&quot; |
+| SHARING | &quot;sharing&quot; |
 {: class="table table-striped"}
 
 

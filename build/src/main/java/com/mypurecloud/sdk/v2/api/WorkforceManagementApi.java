@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
@@ -38,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
@@ -872,6 +874,85 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param body body (optional)
+   * @return List<AgentManagementUnitReference>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AgentManagementUnitReference> postWorkforcemanagementAgentsManagementunits(List<String> body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentsManagementunits(createPostWorkforcemanagementAgentsManagementunitsRequest(body));
+  }
+
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param body body (optional)
+   * @return List<AgentManagementUnitReference>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AgentManagementUnitReference>> postWorkforcemanagementAgentsManagementunitsWithHttpInfo(List<String> body) throws IOException {
+    return postWorkforcemanagementAgentsManagementunits(createPostWorkforcemanagementAgentsManagementunitsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsManagementunitsRequest createPostWorkforcemanagementAgentsManagementunitsRequest(List<String> body) {
+    return PostWorkforcemanagementAgentsManagementunitsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param request The request object
+   * @return List<AgentManagementUnitReference>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AgentManagementUnitReference> postWorkforcemanagementAgentsManagementunits(PostWorkforcemanagementAgentsManagementunitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<AgentManagementUnitReference>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<AgentManagementUnitReference>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AgentManagementUnitReference>> postWorkforcemanagementAgentsManagementunits(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<AgentManagementUnitReference>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

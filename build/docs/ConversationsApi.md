@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getConversation**](ConversationsApi.html#getConversation) | Get conversation |
+| [**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
+| [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
 | [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversations**](ConversationsApi.html#getConversations) | Get conversations |
@@ -69,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | Create a new callback for the specified participant on the conversation. |
 | [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | Sends DTMF to the participant |
 | [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
@@ -348,6 +351,114 @@ try {
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="getConversationParticipantSecureivrsession"></a>
+
+# **getConversationParticipantSecureivrsession**
+
+> [SecureSession](SecureSession.html) getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+
+Fetch info on a secure session
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+String secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
+try {
+    SecureSession result = apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationParticipantSecureivrsession");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | |
+| **participantId** | **String**| participant ID | |
+| **secureSessionId** | **String**| secure IVR session ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSession**](SecureSession.html)
+
+<a name="getConversationParticipantSecureivrsessions"></a>
+
+# **getConversationParticipantSecureivrsessions**
+
+> [SecureSessionEntityListing](SecureSessionEntityListing.html) getConversationParticipantSecureivrsessions(conversationId, participantId)
+
+Get a list of secure sessions for this participant.
+
+
+
+Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+try {
+    SecureSessionEntityListing result = apiInstance.getConversationParticipantSecureivrsessions(conversationId, participantId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationParticipantSecureivrsessions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | |
+| **participantId** | **String**| participant ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSessionEntityListing**](SecureSessionEntityListing.html)
 
 <a name="getConversationParticipantWrapup"></a>
 
@@ -3366,6 +3477,61 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postConversationParticipantSecureivrsessions"></a>
+
+# **postConversationParticipantSecureivrsessions**
+
+> [SecureSession](SecureSession.html) postConversationParticipantSecureivrsessions(conversationId, participantId, body)
+
+Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+
+
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+CreateSecureSession body = new CreateSecureSession(); // CreateSecureSession | 
+try {
+    SecureSession result = apiInstance.postConversationParticipantSecureivrsessions(conversationId, participantId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationParticipantSecureivrsessions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | |
+| **participantId** | **String**| participant ID | |
+| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SecureSession**](SecureSession.html)
 
 <a name="postConversationsCall"></a>
 

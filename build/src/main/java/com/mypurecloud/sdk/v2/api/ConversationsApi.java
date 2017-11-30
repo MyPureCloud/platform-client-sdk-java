@@ -13,6 +13,8 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.SecureSession;
+import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversation;
@@ -43,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
+import com.mypurecloud.sdk.v2.model.CreateSecureSession;
 import com.mypurecloud.sdk.v2.model.CallCommand;
 import com.mypurecloud.sdk.v2.model.ConsultTransfer;
 import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
@@ -62,6 +65,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCons
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsRequest;
@@ -119,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
@@ -554,6 +560,176 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param secureSessionId secure IVR session ID (required)
+   * @return SecureSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSession getConversationParticipantSecureivrsession(String conversationId, String participantId, String secureSessionId) throws IOException, ApiException {
+    return  getConversationParticipantSecureivrsession(createGetConversationParticipantSecureivrsessionRequest(conversationId, participantId, secureSessionId));
+  }
+
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param secureSessionId secure IVR session ID (required)
+   * @return SecureSession
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSession> getConversationParticipantSecureivrsessionWithHttpInfo(String conversationId, String participantId, String secureSessionId) throws IOException {
+    return getConversationParticipantSecureivrsession(createGetConversationParticipantSecureivrsessionRequest(conversationId, participantId, secureSessionId).withHttpInfo());
+  }
+
+  private GetConversationParticipantSecureivrsessionRequest createGetConversationParticipantSecureivrsessionRequest(String conversationId, String participantId, String secureSessionId) {
+    return GetConversationParticipantSecureivrsessionRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withSecureSessionId(secureSessionId)
+    
+            .build();
+  }
+
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param request The request object
+   * @return SecureSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSession getConversationParticipantSecureivrsession(GetConversationParticipantSecureivrsessionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SecureSession> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SecureSession>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch info on a secure session
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSession> getConversationParticipantSecureivrsession(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SecureSession>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @return SecureSessionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSessionEntityListing getConversationParticipantSecureivrsessions(String conversationId, String participantId) throws IOException, ApiException {
+    return  getConversationParticipantSecureivrsessions(createGetConversationParticipantSecureivrsessionsRequest(conversationId, participantId));
+  }
+
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @return SecureSessionEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSessionEntityListing> getConversationParticipantSecureivrsessionsWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return getConversationParticipantSecureivrsessions(createGetConversationParticipantSecureivrsessionsRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private GetConversationParticipantSecureivrsessionsRequest createGetConversationParticipantSecureivrsessionsRequest(String conversationId, String participantId) {
+    return GetConversationParticipantSecureivrsessionsRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param request The request object
+   * @return SecureSessionEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSessionEntityListing getConversationParticipantSecureivrsessions(GetConversationParticipantSecureivrsessionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SecureSessionEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SecureSessionEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of secure sessions for this participant.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSessionEntityListing> getConversationParticipantSecureivrsessions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SecureSessionEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSessionEntityListing> response = (ApiResponse<SecureSessionEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSessionEntityListing> response = (ApiResponse<SecureSessionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5288,6 +5464,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body  (optional)
+   * @return SecureSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSession postConversationParticipantSecureivrsessions(String conversationId, String participantId, CreateSecureSession body) throws IOException, ApiException {
+    return  postConversationParticipantSecureivrsessions(createPostConversationParticipantSecureivrsessionsRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @param body  (optional)
+   * @return SecureSession
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSession> postConversationParticipantSecureivrsessionsWithHttpInfo(String conversationId, String participantId, CreateSecureSession body) throws IOException {
+    return postConversationParticipantSecureivrsessions(createPostConversationParticipantSecureivrsessionsRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationParticipantSecureivrsessionsRequest createPostConversationParticipantSecureivrsessionsRequest(String conversationId, String participantId, CreateSecureSession body) {
+    return PostConversationParticipantSecureivrsessionsRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param request The request object
+   * @return SecureSession
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SecureSession postConversationParticipantSecureivrsessions(PostConversationParticipantSecureivrsessionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SecureSession> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SecureSession>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SecureSession> postConversationParticipantSecureivrsessions(ApiRequest<CreateSecureSession> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SecureSession>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SecureSession> response = (ApiResponse<SecureSession>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -29,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;

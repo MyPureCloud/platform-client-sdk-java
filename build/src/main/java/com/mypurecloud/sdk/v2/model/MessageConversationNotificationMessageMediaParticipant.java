@@ -180,6 +180,42 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
   private String screenRecordingState = null;
   private List<MessageConversationNotificationMessages> messages = new ArrayList<MessageConversationNotificationMessages>();
 
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("SMS");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private String recipientCountry = null;
+  private String recipientType = null;
+
   
   /**
    **/
@@ -657,6 +693,57 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
   }
 
   
+  /**
+   **/
+  public MessageConversationNotificationMessageMediaParticipant type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationMessageMediaParticipant recipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientCountry")
+  public String getRecipientCountry() {
+    return recipientCountry;
+  }
+  public void setRecipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationMessageMediaParticipant recipientType(String recipientType) {
+    this.recipientType = recipientType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientType")
+  public String getRecipientType() {
+    return recipientType;
+  }
+  public void setRecipientType(String recipientType) {
+    this.recipientType = recipientType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -694,12 +781,15 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
         Objects.equals(this.wrapup, messageConversationNotificationMessageMediaParticipant.wrapup) &&
         Objects.equals(this.peer, messageConversationNotificationMessageMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, messageConversationNotificationMessageMediaParticipant.screenRecordingState) &&
-        Objects.equals(this.messages, messageConversationNotificationMessageMediaParticipant.messages);
+        Objects.equals(this.messages, messageConversationNotificationMessageMediaParticipant.messages) &&
+        Objects.equals(this.type, messageConversationNotificationMessageMediaParticipant.type) &&
+        Objects.equals(this.recipientCountry, messageConversationNotificationMessageMediaParticipant.recipientCountry) &&
+        Objects.equals(this.recipientType, messageConversationNotificationMessageMediaParticipant.recipientType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, messages);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -735,6 +825,9 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
+    sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

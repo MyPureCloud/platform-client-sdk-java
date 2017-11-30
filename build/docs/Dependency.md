@@ -41,6 +41,8 @@ title: Dependency
 | INQUEUECALLFLOW | &quot;INQUEUECALLFLOW&quot; |
 | IVRCONFIGURATION | &quot;IVRCONFIGURATION&quot; |
 | LANGUAGE | &quot;LANGUAGE&quot; |
+| LEXBOT | &quot;LEXBOT&quot; |
+| LEXBOTALIAS | &quot;LEXBOTALIAS&quot; |
 | OUTBOUNDCALLFLOW | &quot;OUTBOUNDCALLFLOW&quot; |
 | QUEUE | &quot;QUEUE&quot; |
 | RESPONSE | &quot;RESPONSE&quot; |

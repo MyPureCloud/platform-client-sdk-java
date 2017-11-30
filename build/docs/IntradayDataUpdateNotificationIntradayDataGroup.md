@@ -29,6 +29,7 @@ title: IntradayDataUpdateNotificationIntradayDataGroup
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | CALLBACK | &quot;CALLBACK&quot; |
+| MESSAGE | &quot;MESSAGE&quot; |
 {: class="table table-striped"}
 
 

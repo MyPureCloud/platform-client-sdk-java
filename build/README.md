@@ -124,6 +124,38 @@ UserMe me = usersApi.getUsersMe(Collections.singletonList("presence"));
 System.out.println("Hello " + me.getName());
 ~~~
 
+
+#### Getting extended info
+
+The Java SDK has the ability to return extended information about the response in addition to the response body. There are varieties of each API method call that are suffixed with _WithHttpInfo_. E.g. The `UsersApi` has a method `getUsersMe(...)` as well as `getUsersMeWithHttpInfo(...)`. Additionally, the request builder classes (e.g. `GetUsersMeRequest`) has a method `withHttpInfo()` that can be used to transform the request into an `ApiRequest` object that will return the extended information.
+
+The extended responses will be of type [ApiResponse<T>](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/build/src/main/java/com/mypurecloud/sdk/v2/ApiResponse.java). This interface provides methods to get the exception (can be null), get the HTTP status code, get the reason phrase associated with the status code, get all headers, get a specific header, get the correlation ID header, and get the response body as a raw string or as a typed object.
+
+Examples:
+
+~~~ java
+// Using the WithHttpInfo method
+ApiResponse<UserMe> meWithHttpInfo = usersApi.getUsersMeWithHttpInfo(new ArrayList<String>());
+System.out.println(meWithHttpInfo.getHeaders());
+System.out.println(meWithHttpInfo.getCorrelationId());
+System.out.println(meWithHttpInfo.getBody().getName());
+~~~
+
+~~~ java
+// Using the request builder
+ApiRequest<Void> getUsersMeRequestWithHttpInfo = GetUsersMeRequest.builder()
+        .withExpand(new ArrayList<String>())
+        .build()
+        .withHttpInfo();
+
+// Execute request
+ApiResponse<UserMe> meWithHttpInfo = usersApi.getUsersMe(getUsersMeRequestWithHttpInfo);
+System.out.println(meWithHttpInfo.getHeaders());
+System.out.println(meWithHttpInfo.getCorrelationId());
+System.out.println(meWithHttpInfo.getBody().getName());
+~~~
+
+
 ## NotificationHandler Helper Class
 
 The Java SDK includes a helper class, `NotificationHandler`, to assist in managing PureCloud notifications. The class will create a single notification channel, or use an existing one, and provides methods to add and remove subscriptions and raises an event with a deserialized notification object whenever one is received.

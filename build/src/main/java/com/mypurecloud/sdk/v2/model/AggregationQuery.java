@@ -74,6 +74,7 @@ public class AggregationQuery  implements Serializable {
     ADDRESSSELF("addressSelf"),
     ADDRESSOTHER("addressOther"),
     SUBJECT("subject"),
+    MESSAGETYPE("messageType"),
     PEERID("peerId"),
     SCRIPTID("scriptId"),
     EVALUATIONID("evaluationId"),

@@ -151,6 +151,42 @@ public class Message  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+
+  /**
+   * Indicates the type of message platform from which the message originated.
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("sms");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private String recipientCountry = null;
+  private String recipientType = null;
   private String scriptId = null;
   private String peerId = null;
   private Address toAddress = null;
@@ -374,6 +410,60 @@ public class Message  implements Serializable {
 
   
   /**
+   * Indicates the type of message platform from which the message originated.
+   **/
+  public Message type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the type of message platform from which the message originated.")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
+   * Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.
+   **/
+  public Message recipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format.")
+  @JsonProperty("recipientCountry")
+  public String getRecipientCountry() {
+    return recipientCountry;
+  }
+  public void setRecipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+  }
+
+  
+  /**
+   * The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.
+   **/
+  public Message recipientType(String recipientType) {
+    this.recipientType = recipientType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type.")
+  @JsonProperty("recipientType")
+  public String getRecipientType() {
+    return recipientType;
+  }
+  public void setRecipientType(String recipientType) {
+    this.recipientType = recipientType;
+  }
+
+  
+  /**
    * The UUID of the script to use.
    **/
   public Message scriptId(String scriptId) {
@@ -485,6 +575,9 @@ public class Message  implements Serializable {
         Objects.equals(this.connectedTime, message.connectedTime) &&
         Objects.equals(this.disconnectedTime, message.disconnectedTime) &&
         Objects.equals(this.provider, message.provider) &&
+        Objects.equals(this.type, message.type) &&
+        Objects.equals(this.recipientCountry, message.recipientCountry) &&
+        Objects.equals(this.recipientType, message.recipientType) &&
         Objects.equals(this.scriptId, message.scriptId) &&
         Objects.equals(this.peerId, message.peerId) &&
         Objects.equals(this.toAddress, message.toAddress) &&
@@ -494,7 +587,7 @@ public class Message  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId, toAddress, fromAddress, messages);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages);
   }
 
   @Override
@@ -514,6 +607,9 @@ public class Message  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
+    sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");

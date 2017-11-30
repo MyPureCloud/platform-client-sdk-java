@@ -14,6 +14,7 @@ title: AnalyticsSession
 | **addressSelf** | **String** |  |  [optional] |
 | **addressFrom** | **String** |  |  [optional] |
 | **addressTo** | **String** |  |  [optional] |
+| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum) | Message type for messaging services such as sms |  [optional] |
 | **ani** | **String** | Automatic Number Identification (caller&#39;s number) |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum) | Direction |  [optional] |
 | **dnis** | **String** | Automatic Number Identification (caller&#39;s number) |  [optional] |
@@ -61,6 +62,16 @@ title: AnalyticsSession
 | VIDEO | &quot;video&quot; |
 | SCREENSHARE | &quot;screenshare&quot; |
 | MESSAGE | &quot;message&quot; |
+
+
+<a name="MessageTypeEnum"></a>
+
+## Enum: MessageTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SMS | &quot;sms&quot; |
 
 
 <a name="DirectionEnum"></a>

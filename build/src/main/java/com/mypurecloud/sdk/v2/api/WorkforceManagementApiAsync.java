@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
@@ -41,6 +42,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
@@ -814,6 +816,82 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<AgentManagementUnitReference>> postWorkforcemanagementAgentsManagementunitsAsync(PostWorkforcemanagementAgentsManagementunitsRequest request, final AsyncApiCallback<List<AgentManagementUnitReference>> callback) {
+    try {
+      final SettableFuture<List<AgentManagementUnitReference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AgentManagementUnitReference>>() {}, new AsyncApiCallback<ApiResponse<List<AgentManagementUnitReference>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AgentManagementUnitReference>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the management units to which the agents belong
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<AgentManagementUnitReference>>> postWorkforcemanagementAgentsManagementunitsAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<AgentManagementUnitReference>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<AgentManagementUnitReference>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<AgentManagementUnitReference>>() {}, new AsyncApiCallback<ApiResponse<List<AgentManagementUnitReference>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AgentManagementUnitReference>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -21,6 +21,8 @@ title: CreateEmailRequest
 | **fromName** | **String** | The name of the sender of the email. |  [optional] |
 | **subject** | **String** | The subject of the email |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum) | Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue. |  [optional] |
+| **htmlBody** | **String** | An HTML body content of the email. |  [optional] |
+| **textBody** | **String** | A text body content of the email. |  [optional] |
 {: class="table table-striped"}
 
 

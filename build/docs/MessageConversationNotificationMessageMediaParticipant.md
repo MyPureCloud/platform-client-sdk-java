@@ -36,6 +36,9 @@ title: MessageConversationNotificationMessageMediaParticipant
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
 | **messages** | [**List&lt;MessageConversationNotificationMessages&gt;**](MessageConversationNotificationMessages.html) |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+| **recipientCountry** | **String** |  |  [optional] |
+| **recipientType** | **String** |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -94,6 +97,16 @@ title: MessageConversationNotificationMessageMediaParticipant
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SMS | &quot;SMS&quot; |
 {: class="table table-striped"}
 
 

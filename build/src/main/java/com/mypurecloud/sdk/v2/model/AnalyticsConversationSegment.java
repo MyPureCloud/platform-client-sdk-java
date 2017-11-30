@@ -91,7 +91,12 @@ public class AnalyticsConversationSegment  implements Serializable {
     DIALING("dialing"),
     WRAPUP("wrapup"),
     VOICEMAIL("voicemail"),
-    SCHEDULED("scheduled");
+    SCHEDULED("scheduled"),
+    CONTACTING("contacting"),
+    TRANSMITTING("transmitting"),
+    CONVERTING("converting"),
+    UPLOADING("uploading"),
+    SHARING("sharing");
 
     private String value;
 

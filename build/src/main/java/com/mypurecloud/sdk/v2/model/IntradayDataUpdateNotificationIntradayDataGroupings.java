@@ -32,7 +32,8 @@ public class IntradayDataUpdateNotificationIntradayDataGroupings  implements Ser
     VOICE("VOICE"),
     CHAT("CHAT"),
     EMAIL("EMAIL"),
-    CALLBACK("CALLBACK");
+    CALLBACK("CALLBACK"),
+    MESSAGE("MESSAGE");
 
     private String value;
 

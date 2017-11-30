@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 
 public class GetScriptsPublishedScriptIdPageRequest {
     

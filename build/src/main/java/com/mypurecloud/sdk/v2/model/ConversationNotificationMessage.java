@@ -117,6 +117,42 @@ public class ConversationNotificationMessage  implements Serializable {
   private ConversationNotificationAddress fromAddress = null;
   private List<ConversationNotificationMessages> messages = new ArrayList<ConversationNotificationMessages>();
   private String messagesTranscriptUri = null;
+
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("SMS");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private String recipientCountry = null;
+  private String recipientType = null;
   private Object additionalProperties = null;
 
   
@@ -360,6 +396,57 @@ public class ConversationNotificationMessage  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationMessage type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
+   **/
+  public ConversationNotificationMessage recipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientCountry")
+  public String getRecipientCountry() {
+    return recipientCountry;
+  }
+  public void setRecipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+  }
+
+  
+  /**
+   **/
+  public ConversationNotificationMessage recipientType(String recipientType) {
+    this.recipientType = recipientType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientType")
+  public String getRecipientType() {
+    return recipientType;
+  }
+  public void setRecipientType(String recipientType) {
+    this.recipientType = recipientType;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -399,12 +486,15 @@ public class ConversationNotificationMessage  implements Serializable {
         Objects.equals(this.fromAddress, conversationNotificationMessage.fromAddress) &&
         Objects.equals(this.messages, conversationNotificationMessage.messages) &&
         Objects.equals(this.messagesTranscriptUri, conversationNotificationMessage.messagesTranscriptUri) &&
+        Objects.equals(this.type, conversationNotificationMessage.type) &&
+        Objects.equals(this.recipientCountry, conversationNotificationMessage.recipientCountry) &&
+        Objects.equals(this.recipientType, conversationNotificationMessage.recipientType) &&
         Objects.equals(this.additionalProperties, conversationNotificationMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, additionalProperties);
+    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, additionalProperties);
   }
 
   @Override
@@ -426,6 +516,9 @@ public class ConversationNotificationMessage  implements Serializable {
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    messagesTranscriptUri: ").append(toIndentedString(messagesTranscriptUri)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
+    sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

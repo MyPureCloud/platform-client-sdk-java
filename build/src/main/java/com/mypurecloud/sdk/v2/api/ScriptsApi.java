@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
+import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
@@ -25,6 +26,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -859,6 +861,89 @@ public class ScriptsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Object> response = (ApiResponse<Object>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the upload status of an imported script
+   * 
+   * @param uploadId Upload ID (required)
+   * @param longPoll Enable longPolling endpoint (optional, default to false)
+   * @return ImportScriptStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportScriptStatusResponse getScriptsUploadStatus(String uploadId, Boolean longPoll) throws IOException, ApiException {
+    return  getScriptsUploadStatus(createGetScriptsUploadStatusRequest(uploadId, longPoll));
+  }
+
+  /**
+   * Get the upload status of an imported script
+   * 
+   * @param uploadId Upload ID (required)
+   * @param longPoll Enable longPolling endpoint (optional, default to false)
+   * @return ImportScriptStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportScriptStatusResponse> getScriptsUploadStatusWithHttpInfo(String uploadId, Boolean longPoll) throws IOException {
+    return getScriptsUploadStatus(createGetScriptsUploadStatusRequest(uploadId, longPoll).withHttpInfo());
+  }
+
+  private GetScriptsUploadStatusRequest createGetScriptsUploadStatusRequest(String uploadId, Boolean longPoll) {
+    return GetScriptsUploadStatusRequest.builder()
+            .withUploadId(uploadId)
+    
+            .withLongPoll(longPoll)
+    
+            .build();
+  }
+
+  /**
+   * Get the upload status of an imported script
+   * 
+   * @param request The request object
+   * @return ImportScriptStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ImportScriptStatusResponse getScriptsUploadStatus(GetScriptsUploadStatusRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ImportScriptStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ImportScriptStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the upload status of an imported script
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ImportScriptStatusResponse> getScriptsUploadStatus(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ImportScriptStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportScriptStatusResponse> response = (ApiResponse<ImportScriptStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ImportScriptStatusResponse> response = (ApiResponse<ImportScriptStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

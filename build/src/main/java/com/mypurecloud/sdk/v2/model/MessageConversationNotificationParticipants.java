@@ -180,6 +180,42 @@ public class MessageConversationNotificationParticipants  implements Serializabl
   private String screenRecordingState = null;
   private List<MessageConversationNotificationMessages> messages = new ArrayList<MessageConversationNotificationMessages>();
 
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("SMS");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private String recipientCountry = null;
+  private String recipientType = null;
+
   
   /**
    **/
@@ -657,6 +693,57 @@ public class MessageConversationNotificationParticipants  implements Serializabl
   }
 
   
+  /**
+   **/
+  public MessageConversationNotificationParticipants type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationParticipants recipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientCountry")
+  public String getRecipientCountry() {
+    return recipientCountry;
+  }
+  public void setRecipientCountry(String recipientCountry) {
+    this.recipientCountry = recipientCountry;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationParticipants recipientType(String recipientType) {
+    this.recipientType = recipientType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("recipientType")
+  public String getRecipientType() {
+    return recipientType;
+  }
+  public void setRecipientType(String recipientType) {
+    this.recipientType = recipientType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -694,12 +781,15 @@ public class MessageConversationNotificationParticipants  implements Serializabl
         Objects.equals(this.wrapup, messageConversationNotificationParticipants.wrapup) &&
         Objects.equals(this.peer, messageConversationNotificationParticipants.peer) &&
         Objects.equals(this.screenRecordingState, messageConversationNotificationParticipants.screenRecordingState) &&
-        Objects.equals(this.messages, messageConversationNotificationParticipants.messages);
+        Objects.equals(this.messages, messageConversationNotificationParticipants.messages) &&
+        Objects.equals(this.type, messageConversationNotificationParticipants.type) &&
+        Objects.equals(this.recipientCountry, messageConversationNotificationParticipants.recipientCountry) &&
+        Objects.equals(this.recipientType, messageConversationNotificationParticipants.recipientType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, messages);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -735,6 +825,9 @@ public class MessageConversationNotificationParticipants  implements Serializabl
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
+    sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

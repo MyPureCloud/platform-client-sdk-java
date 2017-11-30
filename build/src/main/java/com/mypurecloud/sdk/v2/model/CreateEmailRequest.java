@@ -66,6 +66,8 @@ public class CreateEmailRequest  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+  private String htmlBody = null;
+  private String textBody = null;
 
   
   /**
@@ -302,6 +304,42 @@ public class CreateEmailRequest  implements Serializable {
   }
 
   
+  /**
+   * An HTML body content of the email.
+   **/
+  public CreateEmailRequest htmlBody(String htmlBody) {
+    this.htmlBody = htmlBody;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An HTML body content of the email.")
+  @JsonProperty("htmlBody")
+  public String getHtmlBody() {
+    return htmlBody;
+  }
+  public void setHtmlBody(String htmlBody) {
+    this.htmlBody = htmlBody;
+  }
+
+  
+  /**
+   * A text body content of the email.
+   **/
+  public CreateEmailRequest textBody(String textBody) {
+    this.textBody = textBody;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A text body content of the email.")
+  @JsonProperty("textBody")
+  public String getTextBody() {
+    return textBody;
+  }
+  public void setTextBody(String textBody) {
+    this.textBody = textBody;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -324,12 +362,14 @@ public class CreateEmailRequest  implements Serializable {
         Objects.equals(this.fromAddress, createEmailRequest.fromAddress) &&
         Objects.equals(this.fromName, createEmailRequest.fromName) &&
         Objects.equals(this.subject, createEmailRequest.subject) &&
-        Objects.equals(this.direction, createEmailRequest.direction);
+        Objects.equals(this.direction, createEmailRequest.direction) &&
+        Objects.equals(this.htmlBody, createEmailRequest.htmlBody) &&
+        Objects.equals(this.textBody, createEmailRequest.textBody);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction);
+    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody);
   }
 
   @Override
@@ -350,6 +390,8 @@ public class CreateEmailRequest  implements Serializable {
     sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
+    sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("}");
     return sb.toString();
   }

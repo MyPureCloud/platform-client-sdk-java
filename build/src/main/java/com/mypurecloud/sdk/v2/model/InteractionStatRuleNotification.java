@@ -111,7 +111,7 @@ public class InteractionStatRuleNotification  implements Serializable {
     CHAT("chat"),
     EMAIL("email"),
     CALLBACK("callback"),
-    SMS("sms");
+    MESSAGE("message");
 
     private String value;
 

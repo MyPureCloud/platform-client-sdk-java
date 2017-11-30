@@ -621,7 +621,7 @@ try {
 
 # **getQualityEvaluationsQuery**
 
-> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum)
+> [EvaluationEntityListing](EvaluationEntityListing.html) getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)
 
 Queries Evaluations and returns a paged list
 
@@ -663,8 +663,9 @@ Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
 Integer maximum = 56; // Integer | maximum
+String sortOrder = "sortOrder_example"; // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 try {
-    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum);
+    EvaluationEntityListing result = apiInstance.getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityEvaluationsQuery");
@@ -694,6 +695,7 @@ try {
 | **agentHasRead** | **Boolean**| agent has the evaluation | [optional] |
 | **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] |
 | **maximum** | **Integer**| maximum | [optional] |
+| **sortOrder** | **String**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional] |
 {: class="table table-striped"}
 
 ### Return type
