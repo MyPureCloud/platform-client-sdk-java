@@ -1878,7 +1878,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-List<WrapupCode> body = Arrays.asList(new WrapupCode()); // List<WrapupCode> | List of wrapup codes
+List<Entity> body = Arrays.asList(new Entity()); // List<Entity> | List of wrapup codes
 try {
     List<WrapupCode> result = apiInstance.postRoutingQueueWrapupcodes(queueId, body);
     System.out.println(result);
@@ -1894,7 +1894,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | |
-| **body** | [**List&lt;WrapupCode&gt;**](WrapupCode.html)| List of wrapup codes | |
+| **body** | [**List&lt;Entity&gt;**](Entity.html)| List of wrapup codes | |
 {: class="table table-striped"}
 
 ### Return type

@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
@@ -30,6 +31,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGroupProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupMembersRequest;
@@ -425,6 +427,82 @@ public class GroupsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get group profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GroupProfile> getGroupProfileAsync(GetGroupProfileRequest request, final AsyncApiCallback<GroupProfile> callback) {
+    try {
+      final SettableFuture<GroupProfile> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GroupProfile>() {}, new AsyncApiCallback<ApiResponse<GroupProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupProfile> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get group profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GroupProfile>> getGroupProfileAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GroupProfile>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GroupProfile>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GroupProfile>() {}, new AsyncApiCallback<ApiResponse<GroupProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<GroupProfile> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupProfile> response = (ApiResponse<GroupProfile>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GroupProfile> response = (ApiResponse<GroupProfile>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -19,6 +19,7 @@ public class UserConversationSummary  implements Serializable {
   private MediaSummary call = null;
   private MediaSummary callback = null;
   private MediaSummary email = null;
+  private MediaSummary message = null;
   private MediaSummary chat = null;
   private MediaSummary socialExpression = null;
   private MediaSummary video = null;
@@ -94,6 +95,23 @@ public class UserConversationSummary  implements Serializable {
   
   /**
    **/
+  public UserConversationSummary message(MediaSummary message) {
+    this.message = message;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("message")
+  public MediaSummary getMessage() {
+    return message;
+  }
+  public void setMessage(MediaSummary message) {
+    this.message = message;
+  }
+
+  
+  /**
+   **/
   public UserConversationSummary chat(MediaSummary chat) {
     this.chat = chat;
     return this;
@@ -157,6 +175,7 @@ public class UserConversationSummary  implements Serializable {
         Objects.equals(this.call, userConversationSummary.call) &&
         Objects.equals(this.callback, userConversationSummary.callback) &&
         Objects.equals(this.email, userConversationSummary.email) &&
+        Objects.equals(this.message, userConversationSummary.message) &&
         Objects.equals(this.chat, userConversationSummary.chat) &&
         Objects.equals(this.socialExpression, userConversationSummary.socialExpression) &&
         Objects.equals(this.video, userConversationSummary.video);
@@ -164,7 +183,7 @@ public class UserConversationSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, call, callback, email, chat, socialExpression, video);
+    return Objects.hash(userId, call, callback, email, message, chat, socialExpression, video);
   }
 
   @Override
@@ -176,6 +195,7 @@ public class UserConversationSummary  implements Serializable {
     sb.append("    call: ").append(toIndentedString(call)).append("\n");
     sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    chat: ").append(toIndentedString(chat)).append("\n");
     sb.append("    socialExpression: ").append(toIndentedString(socialExpression)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");

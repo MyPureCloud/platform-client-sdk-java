@@ -344,7 +344,7 @@ try {
 
 # **getWorkforcemanagementManagementunits**
 
-> [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunits(pageSize, pageNumber)
+> [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunits(pageSize, pageNumber, expand)
 
 Get management units
 
@@ -369,10 +369,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-Integer pageSize = 25; // Integer | 
+Integer pageSize = 56; // Integer | 
 Integer pageNumber = 1; // Integer | 
+String expand = "expand_example"; // String | 
 try {
-    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber);
+    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunits");
@@ -385,8 +386,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**|  | [optional] [default to 25] |
+| **pageSize** | **Integer**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] [default to 1] |
+| **expand** | **String**|  | [optional]<br />**Values**: details |
 {: class="table table-striped"}
 
 ### Return type

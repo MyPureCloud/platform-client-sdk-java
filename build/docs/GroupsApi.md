@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFieldconfig**](GroupsApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getGroup**](GroupsApi.html#getGroup) | Get group |
 | [**getGroupMembers**](GroupsApi.html#getGroupMembers) | Get group members |
+| [**getGroupProfile**](GroupsApi.html#getGroupProfile) | Get group profile |
 | [**getGroups**](GroupsApi.html#getGroups) | Get a group list |
 | [**getGroupsSearch**](GroupsApi.html#getGroupsSearch) | Search groups using the q64 value returned from a previous search |
 | [**postGroupMembers**](GroupsApi.html#postGroupMembers) | Add members |
@@ -283,6 +284,57 @@ try {
 ### Return type
 
 [**UserEntityListing**](UserEntityListing.html)
+
+<a name="getGroupProfile"></a>
+
+# **getGroupProfile**
+
+> [GroupProfile](GroupProfile.html) getGroupProfile(groupId)
+
+Get group profile
+
+
+
+Wraps GET /api/v2/groups/{groupId}/profile  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.GroupsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+GroupsApi apiInstance = new GroupsApi();
+String groupId = "groupId_example"; // String | groupId
+try {
+    GroupProfile result = apiInstance.getGroupProfile(groupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GroupsApi#getGroupProfile");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| groupId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**GroupProfile**](GroupProfile.html)
 
 <a name="getGroups"></a>
 

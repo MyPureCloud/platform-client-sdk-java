@@ -13,12 +13,14 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
+import com.mypurecloud.sdk.v2.model.UserProfile;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
@@ -46,6 +48,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
+import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
@@ -53,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserDirectreportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserFavoritesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserOutofofficeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserProfileskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
@@ -564,6 +568,109 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FieldConfig> response = (ApiResponse<FieldConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a user profile listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
+   * @param jid jid (optional)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @param expand Which fields, if any, to expand (optional)
+   * @param state Only list users of this state (optional, default to active)
+   * @return UserProfileEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
+    return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, state));
+  }
+
+  /**
+   * Get a user profile listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
+   * @param jid jid (optional)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @param expand Which fields, if any, to expand (optional)
+   * @param state Only list users of this state (optional, default to active)
+   * @return UserProfileEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) throws IOException {
+    return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, state).withHttpInfo());
+  }
+
+  private GetProfilesUsersRequest createGetProfilesUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) {
+    return GetProfilesUsersRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withId(id)
+    
+            .withJid(jid)
+    
+            .withSortOrder(sortOrder)
+    
+            .withExpand(expand)
+    
+            .withState(state)
+    
+            .build();
+  }
+
+  /**
+   * Get a user profile listing
+   * 
+   * @param request The request object
+   * @return UserProfileEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfileEntityListing getProfilesUsers(GetProfilesUsersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserProfileEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserProfileEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user profile listing
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfileEntityListing> getProfilesUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserProfileEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfileEntityListing> response = (ApiResponse<UserProfileEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfileEntityListing> response = (ApiResponse<UserProfileEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1153,6 +1260,89 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OutOfOffice> response = (ApiResponse<OutOfOffice>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get user profile
+   * 
+   * @param userId userId (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return UserProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfile getUserProfile(String userId, List<String> expand) throws IOException, ApiException {
+    return  getUserProfile(createGetUserProfileRequest(userId, expand));
+  }
+
+  /**
+   * Get user profile
+   * 
+   * @param userId userId (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return UserProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfile> getUserProfileWithHttpInfo(String userId, List<String> expand) throws IOException {
+    return getUserProfile(createGetUserProfileRequest(userId, expand).withHttpInfo());
+  }
+
+  private GetUserProfileRequest createGetUserProfileRequest(String userId, List<String> expand) {
+    return GetUserProfileRequest.builder()
+            .withUserId(userId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get user profile
+   * 
+   * @param request The request object
+   * @return UserProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserProfile getUserProfile(GetUserProfileRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get user profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserProfile> getUserProfile(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfile> response = (ApiResponse<UserProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserProfile> response = (ApiResponse<UserProfile>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

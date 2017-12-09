@@ -561,33 +561,37 @@ public class WorkforceManagementApi {
   /**
    * Get management units
    * 
-   * @param pageSize  (optional, default to 25)
+   * @param pageSize  (optional)
    * @param pageNumber  (optional, default to 1)
+   * @param expand  (optional)
    * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitListing getWorkforcemanagementManagementunits(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber));
+  public ManagementUnitListing getWorkforcemanagementManagementunits(Integer pageSize, Integer pageNumber, String expand) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand));
   }
 
   /**
    * Get management units
    * 
-   * @param pageSize  (optional, default to 25)
+   * @param pageSize  (optional)
    * @param pageNumber  (optional, default to 1)
+   * @param expand  (optional)
    * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand) throws IOException {
+    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber) {
+  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber, String expand) {
     return GetWorkforcemanagementManagementunitsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
     
             .build();
   }

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.OrgOAuthClient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,25 +16,25 @@ import java.io.Serializable;
 
 public class TokenInfo  implements Serializable {
   
-  private Entity organization = null;
-  private Entity homeOrganization = null;
+  private NamedEntity organization = null;
+  private NamedEntity homeOrganization = null;
   private OrgOAuthClient oAuthClient = null;
 
   
   /**
    * The current organization
    **/
-  public TokenInfo organization(Entity organization) {
+  public TokenInfo organization(NamedEntity organization) {
     this.organization = organization;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The current organization")
   @JsonProperty("organization")
-  public Entity getOrganization() {
+  public NamedEntity getOrganization() {
     return organization;
   }
-  public void setOrganization(Entity organization) {
+  public void setOrganization(NamedEntity organization) {
     this.organization = organization;
   }
 
@@ -42,17 +42,17 @@ public class TokenInfo  implements Serializable {
   /**
    * The token's home organization
    **/
-  public TokenInfo homeOrganization(Entity homeOrganization) {
+  public TokenInfo homeOrganization(NamedEntity homeOrganization) {
     this.homeOrganization = homeOrganization;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The token's home organization")
   @JsonProperty("homeOrganization")
-  public Entity getHomeOrganization() {
+  public NamedEntity getHomeOrganization() {
     return homeOrganization;
   }
-  public void setHomeOrganization(Entity homeOrganization) {
+  public void setHomeOrganization(NamedEntity homeOrganization) {
     this.homeOrganization = homeOrganization;
   }
 

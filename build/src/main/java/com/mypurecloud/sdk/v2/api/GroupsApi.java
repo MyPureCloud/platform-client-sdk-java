@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
+import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
@@ -27,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupMembersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGroupProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupMembersRequest;
@@ -460,6 +462,85 @@ public class GroupsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get group profile
+   * 
+   * @param groupId groupId (required)
+   * @return GroupProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GroupProfile getGroupProfile(String groupId) throws IOException, ApiException {
+    return  getGroupProfile(createGetGroupProfileRequest(groupId));
+  }
+
+  /**
+   * Get group profile
+   * 
+   * @param groupId groupId (required)
+   * @return GroupProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GroupProfile> getGroupProfileWithHttpInfo(String groupId) throws IOException {
+    return getGroupProfile(createGetGroupProfileRequest(groupId).withHttpInfo());
+  }
+
+  private GetGroupProfileRequest createGetGroupProfileRequest(String groupId) {
+    return GetGroupProfileRequest.builder()
+            .withGroupId(groupId)
+    
+            .build();
+  }
+
+  /**
+   * Get group profile
+   * 
+   * @param request The request object
+   * @return GroupProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GroupProfile getGroupProfile(GetGroupProfileRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GroupProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GroupProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get group profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GroupProfile> getGroupProfile(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GroupProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupProfile> response = (ApiResponse<GroupProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupProfile> response = (ApiResponse<GroupProfile>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

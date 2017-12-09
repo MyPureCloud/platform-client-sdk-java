@@ -15,30 +15,12 @@ import java.io.Serializable;
 public class Entity  implements Serializable {
   
   private String id = null;
-  private String name = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   **/
-  public Entity name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
   
@@ -52,13 +34,12 @@ public class Entity  implements Serializable {
       return false;
     }
     Entity entity = (Entity) o;
-    return Objects.equals(this.id, entity.id) &&
-        Objects.equals(this.name, entity.name);
+    return Objects.equals(this.id, entity.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id);
   }
 
   @Override
@@ -67,7 +48,6 @@ public class Entity  implements Serializable {
     sb.append("class Entity {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

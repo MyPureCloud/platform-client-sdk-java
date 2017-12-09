@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +28,7 @@ public class InboundRoute  implements Serializable {
   private String fromName = null;
   private String fromEmail = null;
   private UriReference flow = null;
-  private UriReference replyRoute = null;
+  private QueueEmailAddress replyEmailAddress = null;
   private String selfUri = null;
 
   
@@ -202,18 +203,18 @@ public class InboundRoute  implements Serializable {
   /**
    * The route to use for email replies.
    **/
-  public InboundRoute replyRoute(UriReference replyRoute) {
-    this.replyRoute = replyRoute;
+  public InboundRoute replyEmailAddress(QueueEmailAddress replyEmailAddress) {
+    this.replyEmailAddress = replyEmailAddress;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The route to use for email replies.")
-  @JsonProperty("replyRoute")
-  public UriReference getReplyRoute() {
-    return replyRoute;
+  @JsonProperty("replyEmailAddress")
+  public QueueEmailAddress getReplyEmailAddress() {
+    return replyEmailAddress;
   }
-  public void setReplyRoute(UriReference replyRoute) {
-    this.replyRoute = replyRoute;
+  public void setReplyEmailAddress(QueueEmailAddress replyEmailAddress) {
+    this.replyEmailAddress = replyEmailAddress;
   }
 
   
@@ -244,13 +245,13 @@ public class InboundRoute  implements Serializable {
         Objects.equals(this.fromName, inboundRoute.fromName) &&
         Objects.equals(this.fromEmail, inboundRoute.fromEmail) &&
         Objects.equals(this.flow, inboundRoute.flow) &&
-        Objects.equals(this.replyRoute, inboundRoute.replyRoute) &&
+        Objects.equals(this.replyEmailAddress, inboundRoute.replyEmailAddress) &&
         Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyRoute, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, selfUri);
   }
 
   @Override
@@ -268,7 +269,7 @@ public class InboundRoute  implements Serializable {
     sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
     sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
-    sb.append("    replyRoute: ").append(toIndentedString(replyRoute)).append("\n");
+    sb.append("    replyEmailAddress: ").append(toIndentedString(replyEmailAddress)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

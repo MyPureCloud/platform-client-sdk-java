@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -62,7 +62,7 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
-  private Entity organization = null;
+  private NamedEntity organization = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -183,17 +183,17 @@ public class OrgOAuthClient  implements Serializable {
   /**
    * The  oauth client's organization.
    **/
-  public OrgOAuthClient organization(Entity organization) {
+  public OrgOAuthClient organization(NamedEntity organization) {
     this.organization = organization;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The  oauth client's organization.")
   @JsonProperty("organization")
-  public Entity getOrganization() {
+  public NamedEntity getOrganization() {
     return organization;
   }
-  public void setOrganization(Entity organization) {
+  public void setOrganization(NamedEntity organization) {
     this.organization = organization;
   }
 

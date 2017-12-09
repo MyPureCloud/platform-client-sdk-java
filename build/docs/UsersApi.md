@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
 | [**getFieldconfig**](UsersApi.html#getFieldconfig) | Fetch field config for an entity type |
+| [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | Get a user profile listing |
 | [**getUser**](UsersApi.html#getUser) | Get user. |
 | [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | Get adjacents |
 | [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | Get a user&#39;s CallForwarding |
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserFavorites**](UsersApi.html#getUserFavorites) | Get favorites |
 | [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | Get a user&#39;s Geolocation |
 | [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | Get a OutOfOffice |
+| [**getUserProfile**](UsersApi.html#getUserProfile) | Get user profile |
 | [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | List profile skills for a user |
 | [**getUserQueues**](UsersApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoles**](UsersApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
@@ -355,6 +357,69 @@ try {
 ### Return type
 
 [**FieldConfig**](FieldConfig.html)
+
+<a name="getProfilesUsers"></a>
+
+# **getProfilesUsers**
+
+> [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, state)
+
+Get a user profile listing
+
+
+
+Wraps GET /api/v2/profiles/users  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> jid = Arrays.asList("jid_example"); // List<String> | jid
+String sortOrder = "ASC"; // String | Ascending or descending sort order
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String state = "active"; // String | Only list users of this state
+try {
+    UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, state);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getProfilesUsers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
+| **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] |
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
+| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfileEntityListing**](UserProfileEntityListing.html)
 
 <a name="getUser"></a>
 
@@ -730,6 +795,59 @@ try {
 ### Return type
 
 [**OutOfOffice**](OutOfOffice.html)
+
+<a name="getUserProfile"></a>
+
+# **getUserProfile**
+
+> [UserProfile](UserProfile.html) getUserProfile(userId, expand)
+
+Get user profile
+
+
+
+Wraps GET /api/v2/users/{userId}/profile  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | userId
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+try {
+    UserProfile result = apiInstance.getUserProfile(userId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserProfile");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| userId | |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfile**](UserProfile.html)
 
 <a name="getUserProfileskills"></a>
 

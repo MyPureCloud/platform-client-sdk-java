@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallMediaPolicy;
 import com.mypurecloud.sdk.v2.model.ChatMediaPolicy;
 import com.mypurecloud.sdk.v2.model.EmailMediaPolicy;
+import com.mypurecloud.sdk.v2.model.MessageMediaPolicy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -20,6 +21,7 @@ public class MediaPolicies  implements Serializable {
   private CallMediaPolicy callPolicy = null;
   private ChatMediaPolicy chatPolicy = null;
   private EmailMediaPolicy emailPolicy = null;
+  private MessageMediaPolicy messagePolicy = null;
 
   
   /**
@@ -76,6 +78,24 @@ public class MediaPolicies  implements Serializable {
   }
 
   
+  /**
+   * Conditions and actions for messages
+   **/
+  public MediaPolicies messagePolicy(MessageMediaPolicy messagePolicy) {
+    this.messagePolicy = messagePolicy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Conditions and actions for messages")
+  @JsonProperty("messagePolicy")
+  public MessageMediaPolicy getMessagePolicy() {
+    return messagePolicy;
+  }
+  public void setMessagePolicy(MessageMediaPolicy messagePolicy) {
+    this.messagePolicy = messagePolicy;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,12 +108,13 @@ public class MediaPolicies  implements Serializable {
     MediaPolicies mediaPolicies = (MediaPolicies) o;
     return Objects.equals(this.callPolicy, mediaPolicies.callPolicy) &&
         Objects.equals(this.chatPolicy, mediaPolicies.chatPolicy) &&
-        Objects.equals(this.emailPolicy, mediaPolicies.emailPolicy);
+        Objects.equals(this.emailPolicy, mediaPolicies.emailPolicy) &&
+        Objects.equals(this.messagePolicy, mediaPolicies.messagePolicy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callPolicy, chatPolicy, emailPolicy);
+    return Objects.hash(callPolicy, chatPolicy, emailPolicy, messagePolicy);
   }
 
   @Override
@@ -104,6 +125,7 @@ public class MediaPolicies  implements Serializable {
     sb.append("    callPolicy: ").append(toIndentedString(callPolicy)).append("\n");
     sb.append("    chatPolicy: ").append(toIndentedString(chatPolicy)).append("\n");
     sb.append("    emailPolicy: ").append(toIndentedString(emailPolicy)).append("\n");
+    sb.append("    messagePolicy: ").append(toIndentedString(messagePolicy)).append("\n");
     sb.append("}");
     return sb.toString();
   }

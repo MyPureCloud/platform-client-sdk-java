@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.Entity;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
@@ -61,16 +62,16 @@ public class PostRoutingQueueWrapupcodesRequest {
 	    return this;
 	} 
 	
-	private List<WrapupCode> body;
-	public List<WrapupCode> getBody() {
+	private List<Entity> body;
+	public List<Entity> getBody() {
 		return this.body;
 	}
 
-	public void setBody(List<WrapupCode> body) {
+	public void setBody(List<Entity> body) {
 		this.body = body;
 	}
 
-	public PostRoutingQueueWrapupcodesRequest withBody(List<WrapupCode> body) {
+	public PostRoutingQueueWrapupcodesRequest withBody(List<Entity> body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -94,7 +95,7 @@ public class PostRoutingQueueWrapupcodesRequest {
         return this;
     }
 
-    public ApiRequest<List<WrapupCode>> withHttpInfo() {
+    public ApiRequest<List<Entity>> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
@@ -124,7 +125,7 @@ public class PostRoutingQueueWrapupcodesRequest {
 	}
 
 	
-	public static Builder builder(String queueId, List<WrapupCode> body) {
+	public static Builder builder(String queueId, List<Entity> body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
@@ -143,14 +144,14 @@ public class PostRoutingQueueWrapupcodesRequest {
 			return this;
 		}
 		
-		public Builder withBody(List<WrapupCode> body) {
+		public Builder withBody(List<Entity> body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String queueId, List<WrapupCode> body) {
+		public Builder withRequiredParams(String queueId, List<Entity> body) {
 			request.setQueueId(queueId);
 						request.setBody(body);
 			
