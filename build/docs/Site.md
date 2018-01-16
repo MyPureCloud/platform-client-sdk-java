@@ -28,6 +28,7 @@ title: Site
 | **edgeAutoUpdateConfig** | [**EdgeAutoUpdateConfig**](EdgeAutoUpdateConfig.html) | Recurrance rule, time zone, and start/end settings for automatic edge updates for this site |  [optional] |
 | **location** | [**LocationDefinition**](LocationDefinition.html) | Location |  |
 | **managed** | **Boolean** |  |  [optional] |
+| **ntpSettings** | [**NTPSettings**](NTPSettings.html) | Network Time Protocol settings for the site |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

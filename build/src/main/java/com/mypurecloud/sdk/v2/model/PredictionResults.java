@@ -27,7 +27,8 @@ public class PredictionResults  implements Serializable {
     CHAT("CHAT"),
     EMAIL("EMAIL"),
     SOCIALEXPRESSION("SOCIALEXPRESSION"),
-    VIDEOCOMM("VIDEOCOMM");
+    VIDEOCOMM("VIDEOCOMM"),
+    MESSAGE("MESSAGE");
 
     private String value;
 

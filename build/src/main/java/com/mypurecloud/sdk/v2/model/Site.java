@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Contact;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeAutoUpdateConfig;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
+import com.mypurecloud.sdk.v2.model.NTPSettings;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -78,6 +79,7 @@ public class Site  implements Serializable {
   private EdgeAutoUpdateConfig edgeAutoUpdateConfig = null;
   private LocationDefinition location = null;
   private Boolean managed = null;
+  private NTPSettings ntpSettings = null;
   private String selfUri = null;
 
   
@@ -412,6 +414,24 @@ public class Site  implements Serializable {
   }
 
   
+  /**
+   * Network Time Protocol settings for the site
+   **/
+  public Site ntpSettings(NTPSettings ntpSettings) {
+    this.ntpSettings = ntpSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Network Time Protocol settings for the site")
+  @JsonProperty("ntpSettings")
+  public NTPSettings getNtpSettings() {
+    return ntpSettings;
+  }
+  public void setNtpSettings(NTPSettings ntpSettings) {
+    this.ntpSettings = ntpSettings;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -449,12 +469,13 @@ public class Site  implements Serializable {
         Objects.equals(this.edgeAutoUpdateConfig, site.edgeAutoUpdateConfig) &&
         Objects.equals(this.location, site.location) &&
         Objects.equals(this.managed, site.managed) &&
+        Objects.equals(this.ntpSettings, site.ntpSettings) &&
         Objects.equals(this.selfUri, site.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, location, managed, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, location, managed, ntpSettings, selfUri);
   }
 
   @Override
@@ -482,6 +503,7 @@ public class Site  implements Serializable {
     sb.append("    edgeAutoUpdateConfig: ").append(toIndentedString(edgeAutoUpdateConfig)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
+    sb.append("    ntpSettings: ").append(toIndentedString(ntpSettings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

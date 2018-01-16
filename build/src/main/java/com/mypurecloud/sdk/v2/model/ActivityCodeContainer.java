@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -20,6 +21,7 @@ import java.io.Serializable;
 public class ActivityCodeContainer  implements Serializable {
   
   private Map<String, ActivityCode> activityCodes = null;
+  private WfmVersionedEntityMetadata metadata = null;
 
   
   /**
@@ -40,6 +42,24 @@ public class ActivityCodeContainer  implements Serializable {
   }
 
   
+  /**
+   * Version metadata for the associated management unit's list of activity codes
+   **/
+  public ActivityCodeContainer metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the associated management unit's list of activity codes")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -50,12 +70,13 @@ public class ActivityCodeContainer  implements Serializable {
       return false;
     }
     ActivityCodeContainer activityCodeContainer = (ActivityCodeContainer) o;
-    return Objects.equals(this.activityCodes, activityCodeContainer.activityCodes);
+    return Objects.equals(this.activityCodes, activityCodeContainer.activityCodes) &&
+        Objects.equals(this.metadata, activityCodeContainer.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodes);
+    return Objects.hash(activityCodes, metadata);
   }
 
   @Override
@@ -64,6 +85,7 @@ public class ActivityCodeContainer  implements Serializable {
     sb.append("class ActivityCodeContainer {\n");
     
     sb.append("    activityCodes: ").append(toIndentedString(activityCodes)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

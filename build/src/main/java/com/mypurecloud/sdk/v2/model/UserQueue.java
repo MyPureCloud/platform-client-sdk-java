@@ -29,13 +29,14 @@ public class UserQueue  implements Serializable {
   private String name = null;
   private String description = null;
   private Integer version = null;
+  private UriReference division = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String modifiedBy = null;
   private String createdBy = null;
 
   /**
-   * Indicates if the resource is active, inactive, or deleted.
+   * Indicates if the queue is active, inactive, or deleted.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -147,14 +148,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The resource's description.
+   * The queue description.
    **/
   public UserQueue description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The resource's description.")
+  @ApiModelProperty(example = "null", value = "The queue description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -165,14 +166,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The current version of the resource.
+   * The current version of the queue.
    **/
   public UserQueue version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The current version of the resource.")
+  @ApiModelProperty(example = "null", value = "The current version of the queue.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -183,14 +184,32 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The division to which this queue belongs.
+   **/
+  public UserQueue division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this queue belongs.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
+   * The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public UserQueue dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -201,14 +220,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public UserQueue dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -219,14 +238,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The ID of the user that last modified the resource.
+   * The ID of the user that last modified the queue.
    **/
   public UserQueue modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the resource.")
+  @ApiModelProperty(example = "null", value = "The ID of the user that last modified the queue.")
   @JsonProperty("modifiedBy")
   public String getModifiedBy() {
     return modifiedBy;
@@ -237,14 +256,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The ID of the user that created the resource.
+   * The ID of the user that created the queue.
    **/
   public UserQueue createdBy(String createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the user that created the resource.")
+  @ApiModelProperty(example = "null", value = "The ID of the user that created the queue.")
   @JsonProperty("createdBy")
   public String getCreatedBy() {
     return createdBy;
@@ -255,14 +274,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * Indicates if the resource is active, inactive, or deleted.
+   * Indicates if the queue is active, inactive, or deleted.
    **/
   public UserQueue state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates if the resource is active, inactive, or deleted.")
+  @ApiModelProperty(example = "null", value = "Indicates if the queue is active, inactive, or deleted.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -273,14 +292,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The application that last modified the resource.
+   * The application that last modified the queue.
    **/
   public UserQueue modifiedByApp(String modifiedByApp) {
     this.modifiedByApp = modifiedByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The application that last modified the resource.")
+  @ApiModelProperty(example = "null", value = "The application that last modified the queue.")
   @JsonProperty("modifiedByApp")
   public String getModifiedByApp() {
     return modifiedByApp;
@@ -291,14 +310,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The application that created the resource.
+   * The application that created the queue.
    **/
   public UserQueue createdByApp(String createdByApp) {
     this.createdByApp = createdByApp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The application that created the resource.")
+  @ApiModelProperty(example = "null", value = "The application that created the queue.")
   @JsonProperty("createdByApp")
   public String getCreatedByApp() {
     return createdByApp;
@@ -399,14 +418,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * The prompt used for whisper audio on the queue, if configured.
+   * ID of the whisper configured for this queue, if any.
    **/
   public UserQueue whisper(UriReference whisper) {
     this.whisper = whisper;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The prompt used for whisper audio on the queue, if configured.")
+  @ApiModelProperty(example = "null", value = "ID of the whisper configured for this queue, if any.")
   @JsonProperty("whisper")
   public UriReference getWhisper() {
     return whisper;
@@ -417,14 +436,14 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.
+   * Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
    **/
   public UserQueue autoAnswerOnly(Boolean autoAnswerOnly) {
     this.autoAnswerOnly = autoAnswerOnly;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies whether the configured whisper audio should play for all ACD calls, or only for those which are auto-answered.")
+  @ApiModelProperty(example = "null", value = "Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.")
   @JsonProperty("autoAnswerOnly")
   public Boolean getAutoAnswerOnly() {
     return autoAnswerOnly;
@@ -560,6 +579,7 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.name, userQueue.name) &&
         Objects.equals(this.description, userQueue.description) &&
         Objects.equals(this.version, userQueue.version) &&
+        Objects.equals(this.division, userQueue.division) &&
         Objects.equals(this.dateCreated, userQueue.dateCreated) &&
         Objects.equals(this.dateModified, userQueue.dateModified) &&
         Objects.equals(this.modifiedBy, userQueue.modifiedBy) &&
@@ -585,7 +605,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisper, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
+    return Objects.hash(id, name, description, version, division, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisper, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
   }
 
   @Override
@@ -597,6 +617,7 @@ public class UserQueue  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

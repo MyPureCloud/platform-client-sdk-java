@@ -8,10 +8,9 @@ import com.mypurecloud.sdk.v2.model.AdherenceSettings;
 import com.mypurecloud.sdk.v2.model.SchedulingSettings;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastingSettings;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestSettings;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -25,9 +24,7 @@ public class ManagementUnitSettings  implements Serializable {
   private ShortTermForecastingSettings shortTermForecasting = null;
   private TimeOffRequestSettings timeOff = null;
   private SchedulingSettings scheduling = null;
-  private Integer version = null;
-  private Date dateModified = null;
-  private User modifiedBy = null;
+  private WfmVersionedEntityMetadata metadata = null;
 
   
   /**
@@ -103,56 +100,20 @@ public class ManagementUnitSettings  implements Serializable {
 
   
   /**
-   * The version of the underlying entity
+   * Version info metadata for the associated management unit
    **/
-  public ManagementUnitSettings version(Integer version) {
-    this.version = version;
+  public ManagementUnitSettings metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The version of the underlying entity")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
+  @ApiModelProperty(example = "null", required = true, value = "Version info metadata for the associated management unit")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
   }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  
-  /**
-   * The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-   **/
-  public ManagementUnitSettings dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
-  @JsonProperty("dateModified")
-  public Date getDateModified() {
-    return dateModified;
-  }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  
-  /**
-   * The user who last modified this entity
-   **/
-  public ManagementUnitSettings modifiedBy(User modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The user who last modified this entity")
-  @JsonProperty("modifiedBy")
-  public User getModifiedBy() {
-    return modifiedBy;
-  }
-  public void setModifiedBy(User modifiedBy) {
-    this.modifiedBy = modifiedBy;
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
   }
 
   
@@ -170,14 +131,12 @@ public class ManagementUnitSettings  implements Serializable {
         Objects.equals(this.shortTermForecasting, managementUnitSettings.shortTermForecasting) &&
         Objects.equals(this.timeOff, managementUnitSettings.timeOff) &&
         Objects.equals(this.scheduling, managementUnitSettings.scheduling) &&
-        Objects.equals(this.version, managementUnitSettings.version) &&
-        Objects.equals(this.dateModified, managementUnitSettings.dateModified) &&
-        Objects.equals(this.modifiedBy, managementUnitSettings.modifiedBy);
+        Objects.equals(this.metadata, managementUnitSettings.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adherence, shortTermForecasting, timeOff, scheduling, version, dateModified, modifiedBy);
+    return Objects.hash(adherence, shortTermForecasting, timeOff, scheduling, metadata);
   }
 
   @Override
@@ -189,9 +148,7 @@ public class ManagementUnitSettings  implements Serializable {
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
     sb.append("    timeOff: ").append(toIndentedString(timeOff)).append("\n");
     sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
-    sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

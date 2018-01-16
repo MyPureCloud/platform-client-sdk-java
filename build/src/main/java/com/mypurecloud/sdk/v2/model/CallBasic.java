@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.DisconnectReason;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
@@ -204,6 +205,8 @@ public class CallBasic  implements Serializable {
   private String scriptId = null;
   private String peerId = null;
   private String uuiData = null;
+  private Address self = null;
+  private Address other = null;
 
   
   /**
@@ -601,6 +604,42 @@ public class CallBasic  implements Serializable {
   }
 
   
+  /**
+   * Address and name data for a call endpoint.
+   **/
+  public CallBasic self(Address self) {
+    this.self = self;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
+  @JsonProperty("self")
+  public Address getSelf() {
+    return self;
+  }
+  public void setSelf(Address self) {
+    this.self = self;
+  }
+
+  
+  /**
+   * Address and name data for a call endpoint.
+   **/
+  public CallBasic other(Address other) {
+    this.other = other;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
+  @JsonProperty("other")
+  public Address getOther() {
+    return other;
+  }
+  public void setOther(Address other) {
+    this.other = other;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -632,12 +671,14 @@ public class CallBasic  implements Serializable {
         Objects.equals(this.provider, callBasic.provider) &&
         Objects.equals(this.scriptId, callBasic.scriptId) &&
         Objects.equals(this.peerId, callBasic.peerId) &&
-        Objects.equals(this.uuiData, callBasic.uuiData);
+        Objects.equals(this.uuiData, callBasic.uuiData) &&
+        Objects.equals(this.self, callBasic.self) &&
+        Objects.equals(this.other, callBasic.other);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other);
   }
 
   @Override
@@ -667,6 +708,8 @@ public class CallBasic  implements Serializable {
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    other: ").append(toIndentedString(other)).append("\n");
     sb.append("}");
     return sb.toString();
   }

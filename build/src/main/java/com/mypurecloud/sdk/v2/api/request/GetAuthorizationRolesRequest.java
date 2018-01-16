@@ -172,6 +172,20 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetAuthorizationRolesRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -214,6 +228,8 @@ public class GetAuthorizationRolesRequest {
                 .withQueryParameters("defaultRoleId", "multi", defaultRoleId)
         
                 .withQueryParameters("userCount", "", userCount)
+        
+                .withQueryParameters("id", "multi", id)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -283,6 +299,11 @@ public class GetAuthorizationRolesRequest {
 		
 		public Builder withUserCount(Boolean userCount) {
 			request.setUserCount(userCount);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

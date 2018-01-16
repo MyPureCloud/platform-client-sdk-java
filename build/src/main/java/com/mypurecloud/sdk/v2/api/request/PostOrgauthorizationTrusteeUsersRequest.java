@@ -30,7 +30,7 @@ import com.mypurecloud.sdk.v2.model.TrustEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustUserCreate;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
@@ -52,16 +52,16 @@ public class PostOrgauthorizationTrusteeUsersRequest {
 	    return this;
 	} 
 	
-	private TrustUserCreate body;
-	public TrustUserCreate getBody() {
+	private TrustMemberCreate body;
+	public TrustMemberCreate getBody() {
 		return this.body;
 	}
 
-	public void setBody(TrustUserCreate body) {
+	public void setBody(TrustMemberCreate body) {
 		this.body = body;
 	}
 
-	public PostOrgauthorizationTrusteeUsersRequest withBody(TrustUserCreate body) {
+	public PostOrgauthorizationTrusteeUsersRequest withBody(TrustMemberCreate body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -85,7 +85,7 @@ public class PostOrgauthorizationTrusteeUsersRequest {
         return this;
     }
 
-    public ApiRequest<TrustUserCreate> withHttpInfo() {
+    public ApiRequest<TrustMemberCreate> withHttpInfo() {
         
         // verify the required parameter 'trusteeOrgId' is set
         if (this.trusteeOrgId == null) {
@@ -115,7 +115,7 @@ public class PostOrgauthorizationTrusteeUsersRequest {
 	}
 
 	
-	public static Builder builder(String trusteeOrgId, TrustUserCreate body) {
+	public static Builder builder(String trusteeOrgId, TrustMemberCreate body) {
 	    return new Builder()
 	            .withRequiredParams(trusteeOrgId, body);
 	}
@@ -134,14 +134,14 @@ public class PostOrgauthorizationTrusteeUsersRequest {
 			return this;
 		}
 		
-		public Builder withBody(TrustUserCreate body) {
+		public Builder withBody(TrustMemberCreate body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String trusteeOrgId, TrustUserCreate body) {
+		public Builder withRequiredParams(String trusteeOrgId, TrustMemberCreate body) {
 			request.setTrusteeOrgId(trusteeOrgId);
 						request.setBody(body);
 			

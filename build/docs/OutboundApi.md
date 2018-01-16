@@ -70,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | Create a campaign. |
 | [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
 | [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | Add contacts to a contact list. |
+| [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
 | [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
 | [**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | Create Contact List Filter |
 | [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
@@ -3440,6 +3441,59 @@ try {
 | **body** | [**List&lt;DialerContact&gt;**](DialerContact.html)| Contact | |
 | **priority** | **Boolean**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional] |
 | **clearSystemData** | **Boolean**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;DialerContact&gt;**](DialerContact.html)
+
+<a name="postOutboundContactlistContactsBulk"></a>
+
+# **postOutboundContactlistContactsBulk**
+
+> [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContactsBulk(contactListId, body)
+
+Get contacts from a contact list.
+
+
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contact List ID
+List<String> body = Arrays.asList(new List<String>()); // List<String> | ContactIds to get.
+try {
+    List<DialerContact> result = apiInstance.postOutboundContactlistContactsBulk(contactListId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistContactsBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contact List ID | |
+| **body** | **List&lt;String&gt;**| ContactIds to get. | |
 {: class="table table-striped"}
 
 ### Return type

@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
@@ -24,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
@@ -43,6 +46,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -54,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -1192,6 +1197,85 @@ public class RecordingApi {
 
   
   /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param jobId jobId (required)
+   * @return BatchDownloadJobStatusResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchDownloadJobStatusResult getRecordingBatchrequest(String jobId) throws IOException, ApiException {
+    return  getRecordingBatchrequest(createGetRecordingBatchrequestRequest(jobId));
+  }
+
+  /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param jobId jobId (required)
+   * @return BatchDownloadJobStatusResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchDownloadJobStatusResult> getRecordingBatchrequestWithHttpInfo(String jobId) throws IOException {
+    return getRecordingBatchrequest(createGetRecordingBatchrequestRequest(jobId).withHttpInfo());
+  }
+
+  private GetRecordingBatchrequestRequest createGetRecordingBatchrequestRequest(String jobId) {
+    return GetRecordingBatchrequestRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param request The request object
+   * @return BatchDownloadJobStatusResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchDownloadJobStatusResult getRecordingBatchrequest(GetRecordingBatchrequestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BatchDownloadJobStatusResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BatchDownloadJobStatusResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchDownloadJobStatusResult> getRecordingBatchrequest(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BatchDownloadJobStatusResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchDownloadJobStatusResult> response = (ApiResponse<BatchDownloadJobStatusResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchDownloadJobStatusResult> response = (ApiResponse<BatchDownloadJobStatusResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param settingsId Settings Id (required)
@@ -2104,6 +2188,85 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Submit a batch download request
+   * 
+   * @param body Job submission criteria (required)
+   * @return BatchDownloadJobSubmissionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchDownloadJobSubmissionResult postRecordingBatchrequests(BatchDownloadJobSubmission body) throws IOException, ApiException {
+    return  postRecordingBatchrequests(createPostRecordingBatchrequestsRequest(body));
+  }
+
+  /**
+   * Submit a batch download request
+   * 
+   * @param body Job submission criteria (required)
+   * @return BatchDownloadJobSubmissionResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchDownloadJobSubmissionResult> postRecordingBatchrequestsWithHttpInfo(BatchDownloadJobSubmission body) throws IOException {
+    return postRecordingBatchrequests(createPostRecordingBatchrequestsRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingBatchrequestsRequest createPostRecordingBatchrequestsRequest(BatchDownloadJobSubmission body) {
+    return PostRecordingBatchrequestsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Submit a batch download request
+   * 
+   * @param request The request object
+   * @return BatchDownloadJobSubmissionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BatchDownloadJobSubmissionResult postRecordingBatchrequests(PostRecordingBatchrequestsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BatchDownloadJobSubmissionResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BatchDownloadJobSubmissionResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Submit a batch download request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BatchDownloadJobSubmissionResult> postRecordingBatchrequests(ApiRequest<BatchDownloadJobSubmission> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BatchDownloadJobSubmissionResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

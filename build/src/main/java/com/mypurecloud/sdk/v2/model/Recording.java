@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.ChatMessage;
 import com.mypurecloud.sdk.v2.model.MediaResult;
 import com.mypurecloud.sdk.v2.model.RecordingEmailMessage;
+import com.mypurecloud.sdk.v2.model.RecordingMessagingMessage;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -35,6 +36,7 @@ public class Recording  implements Serializable {
   private List<Annotation> annotations = new ArrayList<Annotation>();
   private List<ChatMessage> transcript = new ArrayList<ChatMessage>();
   private List<RecordingEmailMessage> emailTranscript = new ArrayList<RecordingEmailMessage>();
+  private List<RecordingMessagingMessage> messagingTranscript = new ArrayList<RecordingMessagingMessage>();
 
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
@@ -287,6 +289,24 @@ public class Recording  implements Serializable {
 
   
   /**
+   * Represents a messaging transcript
+   **/
+  public Recording messagingTranscript(List<RecordingMessagingMessage> messagingTranscript) {
+    this.messagingTranscript = messagingTranscript;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents a messaging transcript")
+  @JsonProperty("messagingTranscript")
+  public List<RecordingMessagingMessage> getMessagingTranscript() {
+    return messagingTranscript;
+  }
+  public void setMessagingTranscript(List<RecordingMessagingMessage> messagingTranscript) {
+    this.messagingTranscript = messagingTranscript;
+  }
+
+  
+  /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    **/
   public Recording fileState(FileStateEnum fileState) {
@@ -527,6 +547,7 @@ public class Recording  implements Serializable {
         Objects.equals(this.annotations, recording.annotations) &&
         Objects.equals(this.transcript, recording.transcript) &&
         Objects.equals(this.emailTranscript, recording.emailTranscript) &&
+        Objects.equals(this.messagingTranscript, recording.messagingTranscript) &&
         Objects.equals(this.fileState, recording.fileState) &&
         Objects.equals(this.restoreExpirationTime, recording.restoreExpirationTime) &&
         Objects.equals(this.mediaUris, recording.mediaUris) &&
@@ -544,7 +565,7 @@ public class Recording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
   }
 
   @Override
@@ -562,6 +583,7 @@ public class Recording  implements Serializable {
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
     sb.append("    transcript: ").append(toIndentedString(transcript)).append("\n");
     sb.append("    emailTranscript: ").append(toIndentedString(emailTranscript)).append("\n");
+    sb.append("    messagingTranscript: ").append(toIndentedString(messagingTranscript)).append("\n");
     sb.append("    fileState: ").append(toIndentedString(fileState)).append("\n");
     sb.append("    restoreExpirationTime: ").append(toIndentedString(restoreExpirationTime)).append("\n");
     sb.append("    mediaUris: ").append(toIndentedString(mediaUris)).append("\n");

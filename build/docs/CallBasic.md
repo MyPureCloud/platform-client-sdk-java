@@ -30,6 +30,8 @@ title: CallBasic
 | **scriptId** | **String** | The UUID of the script to use. |  [optional] |
 | **peerId** | **String** | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **uuiData** | **String** | User to User Information (UUI) data managed by SIP session application. |  [optional] |
+| **self** | [**Address**](Address.html) | Address and name data for a call endpoint. |  [optional] |
+| **other** | [**Address**](Address.html) | Address and name data for a call endpoint. |  [optional] |
 {: class="table table-striped"}
 
 

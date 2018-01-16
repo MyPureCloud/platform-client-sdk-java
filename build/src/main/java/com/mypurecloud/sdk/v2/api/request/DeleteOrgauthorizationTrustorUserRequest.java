@@ -30,7 +30,7 @@ import com.mypurecloud.sdk.v2.model.TrustEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustUserCreate;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;

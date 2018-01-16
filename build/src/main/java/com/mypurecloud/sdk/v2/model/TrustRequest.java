@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
 import com.mypurecloud.sdk.v2.model.Organization;
+import com.mypurecloud.sdk.v2.model.TrustGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class TrustRequest  implements Serializable {
   private Date dateCreated = null;
   private Organization trustee = null;
   private List<OrgUser> users = new ArrayList<OrgUser>();
+  private List<TrustGroup> groups = new ArrayList<TrustGroup>();
   private String selfUri = null;
 
   
@@ -85,13 +87,31 @@ public class TrustRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of trustee users that are requesting access.")
+  @ApiModelProperty(example = "null", value = "The list of trustee users that are requesting access.")
   @JsonProperty("users")
   public List<OrgUser> getUsers() {
     return users;
   }
   public void setUsers(List<OrgUser> users) {
     this.users = users;
+  }
+
+  
+  /**
+   * The list of trustee groups that are requesting access.
+   **/
+  public TrustRequest groups(List<TrustGroup> groups) {
+    this.groups = groups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of trustee groups that are requesting access.")
+  @JsonProperty("groups")
+  public List<TrustGroup> getGroups() {
+    return groups;
+  }
+  public void setGroups(List<TrustGroup> groups) {
+    this.groups = groups;
   }
 
   
@@ -117,12 +137,13 @@ public class TrustRequest  implements Serializable {
         Objects.equals(this.dateCreated, trustRequest.dateCreated) &&
         Objects.equals(this.trustee, trustRequest.trustee) &&
         Objects.equals(this.users, trustRequest.users) &&
+        Objects.equals(this.groups, trustRequest.groups) &&
         Objects.equals(this.selfUri, trustRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdBy, dateCreated, trustee, users, selfUri);
+    return Objects.hash(id, createdBy, dateCreated, trustee, users, groups, selfUri);
   }
 
   @Override
@@ -135,6 +156,7 @@ public class TrustRequest  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    trustee: ").append(toIndentedString(trustee)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

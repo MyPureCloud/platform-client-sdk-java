@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | Get a list of UserScheduleAdherence records for the requested users |
-| [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | Get activity codes corresponding to a management unit |
+| [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | Get activity codes |
 | [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | Get intraday queues for the given date |
 | [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | Get a time off request by id |
 | [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | Get a list of time off requests for any user |
@@ -17,7 +17,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user by id |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | Mark a time off request for the current user as read or unread |
+| [**postWorkforcemanagementAgents**](WorkforceManagementApi.html#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementAgentsManagementunits) | Get the management units to which the agents belong |
+| [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | Create a new activity code |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | Get intraday data for the given date for the requested queueIds |
 | [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Get user schedules within the given time range |
@@ -81,7 +83,7 @@ try {
 
 > [ActivityCodeContainer](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(muId)
 
-Get activity codes corresponding to a management unit
+Get activity codes
 
 
 
@@ -549,6 +551,57 @@ try {
 
 null (empty response body)
 
+<a name="postWorkforcemanagementAgents"></a>
+
+# **postWorkforcemanagementAgents**
+
+> [MoveAgentsResponse](MoveAgentsResponse.html) postWorkforcemanagementAgents(body)
+
+Move agents in and out of management unit
+
+
+
+Wraps POST /api/v2/workforcemanagement/agents  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+MoveAgentsRequest body = new MoveAgentsRequest(); // MoveAgentsRequest | body
+try {
+    MoveAgentsResponse result = apiInstance.postWorkforcemanagementAgents(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgents");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MoveAgentsResponse**](MoveAgentsResponse.html)
+
 <a name="postWorkforcemanagementAgentsManagementunits"></a>
 
 # **postWorkforcemanagementAgentsManagementunits**
@@ -599,6 +652,59 @@ try {
 ### Return type
 
 [**List&lt;AgentManagementUnitReference&gt;**](AgentManagementUnitReference.html)
+
+<a name="postWorkforcemanagementManagementunitActivitycodes"></a>
+
+# **postWorkforcemanagementManagementunitActivitycodes**
+
+> [ActivityCode](ActivityCode.html) postWorkforcemanagementManagementunitActivitycodes(muId, body)
+
+Create a new activity code
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/activitycodes  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+CreateActivityCodeRequest body = new CreateActivityCodeRequest(); // CreateActivityCodeRequest | body
+try {
+    ActivityCode result = apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitActivitycodes");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityCode**](ActivityCode.html)
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 

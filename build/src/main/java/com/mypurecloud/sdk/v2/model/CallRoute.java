@@ -18,7 +18,6 @@ import java.io.Serializable;
 public class CallRoute  implements Serializable {
   
   private List<CallTarget> targets = new ArrayList<CallTarget>();
-  private Long timeoutMilliseconds = null;
 
   
   /**
@@ -39,24 +38,6 @@ public class CallRoute  implements Serializable {
   }
 
   
-  /**
-   * The amount of time until the call times out
-   **/
-  public CallRoute timeoutMilliseconds(Long timeoutMilliseconds) {
-    this.timeoutMilliseconds = timeoutMilliseconds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The amount of time until the call times out")
-  @JsonProperty("timeoutMilliseconds")
-  public Long getTimeoutMilliseconds() {
-    return timeoutMilliseconds;
-  }
-  public void setTimeoutMilliseconds(Long timeoutMilliseconds) {
-    this.timeoutMilliseconds = timeoutMilliseconds;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,13 +48,12 @@ public class CallRoute  implements Serializable {
       return false;
     }
     CallRoute callRoute = (CallRoute) o;
-    return Objects.equals(this.targets, callRoute.targets) &&
-        Objects.equals(this.timeoutMilliseconds, callRoute.timeoutMilliseconds);
+    return Objects.equals(this.targets, callRoute.targets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(targets, timeoutMilliseconds);
+    return Objects.hash(targets);
   }
 
   @Override
@@ -82,7 +62,6 @@ public class CallRoute  implements Serializable {
     sb.append("class CallRoute {\n");
     
     sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
-    sb.append("    timeoutMilliseconds: ").append(toIndentedString(timeoutMilliseconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

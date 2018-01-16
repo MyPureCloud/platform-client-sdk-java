@@ -116,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
@@ -5388,6 +5389,89 @@ public class OutboundApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<DialerContact>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body ContactIds to get. (required)
+   * @return List<DialerContact>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<DialerContact> postOutboundContactlistContactsBulk(String contactListId, List<String> body) throws IOException, ApiException {
+    return  postOutboundContactlistContactsBulk(createPostOutboundContactlistContactsBulkRequest(contactListId, body));
+  }
+
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @param body ContactIds to get. (required)
+   * @return List<DialerContact>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsBulkWithHttpInfo(String contactListId, List<String> body) throws IOException {
+    return postOutboundContactlistContactsBulk(createPostOutboundContactlistContactsBulkRequest(contactListId, body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistContactsBulkRequest createPostOutboundContactlistContactsBulkRequest(String contactListId, List<String> body) {
+    return PostOutboundContactlistContactsBulkRequest.builder()
+            .withContactListId(contactListId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param request The request object
+   * @return List<DialerContact>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<DialerContact> postOutboundContactlistContactsBulk(PostOutboundContactlistContactsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<DialerContact>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsBulk(ApiRequest<List<String>> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<List<DialerContact>>() {});
     }

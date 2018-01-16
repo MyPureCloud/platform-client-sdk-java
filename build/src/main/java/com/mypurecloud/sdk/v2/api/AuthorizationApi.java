@@ -543,12 +543,13 @@ public class AuthorizationApi {
    * @param permission  (optional)
    * @param defaultRoleId  (optional)
    * @param userCount  (optional, default to true)
+   * @param id id (optional)
    * @return OrganizationRoleEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount) throws IOException, ApiException {
-    return  getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount));
+  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) throws IOException, ApiException {
+    return  getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id));
   }
 
   /**
@@ -564,14 +565,15 @@ public class AuthorizationApi {
    * @param permission  (optional)
    * @param defaultRoleId  (optional)
    * @param userCount  (optional, default to true)
+   * @param id id (optional)
    * @return OrganizationRoleEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount) throws IOException {
-    return getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount).withHttpInfo());
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) throws IOException {
+    return getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id).withHttpInfo());
   }
 
-  private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount) {
+  private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) {
     return GetAuthorizationRolesRequest.builder()
             .withPageSize(pageSize)
     
@@ -592,6 +594,8 @@ public class AuthorizationApi {
             .withDefaultRoleId(defaultRoleId)
     
             .withUserCount(userCount)
+    
+            .withId(id)
     
             .build();
   }

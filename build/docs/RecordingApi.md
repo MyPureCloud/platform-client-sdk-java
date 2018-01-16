@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | Gets a single orphan recording |
 | [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
 | [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | Gets all orphan recordings |
+| [**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
 | [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data |
 | [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
@@ -31,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | Update a screen recording session |
 | [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | Create annotation |
+| [**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | Submit a batch download request |
 | [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local recording key |
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
@@ -748,6 +750,57 @@ try {
 
 [**OrphanRecordingListing**](OrphanRecordingListing.html)
 
+<a name="getRecordingBatchrequest"></a>
+
+# **getRecordingBatchrequest**
+
+> [BatchDownloadJobStatusResult](BatchDownloadJobStatusResult.html) getRecordingBatchrequest(jobId)
+
+Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+
+
+
+Wraps GET /api/v2/recording/batchrequests/{jobId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RecordingApi apiInstance = new RecordingApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    BatchDownloadJobStatusResult result = apiInstance.getRecordingBatchrequest(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingBatchrequest");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
+
 <a name="getRecordingLocalkeysSetting"></a>
 
 # **getRecordingLocalkeysSetting**
@@ -1329,6 +1382,57 @@ try {
 ### Return type
 
 [**Annotation**](Annotation.html)
+
+<a name="postRecordingBatchrequests"></a>
+
+# **postRecordingBatchrequests**
+
+> [BatchDownloadJobSubmissionResult](BatchDownloadJobSubmissionResult.html) postRecordingBatchrequests(body)
+
+Submit a batch download request
+
+
+
+Wraps POST /api/v2/recording/batchrequests  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RecordingApi apiInstance = new RecordingApi();
+BatchDownloadJobSubmission body = new BatchDownloadJobSubmission(); // BatchDownloadJobSubmission | Job submission criteria
+try {
+    BatchDownloadJobSubmissionResult result = apiInstance.postRecordingBatchrequests(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingBatchrequests");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission.html)| Job submission criteria | |
+{: class="table table-striped"}
+
+### Return type
+
+[**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
 
 <a name="postRecordingLocalkeys"></a>
 

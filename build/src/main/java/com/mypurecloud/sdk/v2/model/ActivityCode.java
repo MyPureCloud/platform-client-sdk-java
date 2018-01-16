@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,12 +17,13 @@ import java.io.Serializable;
 
 public class ActivityCode  implements Serializable {
   
+  private String id = null;
   private String name = null;
   private Boolean isActive = null;
   private Boolean isDefault = null;
 
   /**
-   * The activity code's category
+   * The activity code's category.
    */
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -64,18 +66,27 @@ public class ActivityCode  implements Serializable {
   private Integer lengthInMinutes = null;
   private Boolean countsAsPaidTime = null;
   private Boolean countsAsWorkTime = null;
-  private Boolean isAgentTimeOffSelectable = null;
+  private Boolean agentTimeOffSelectable = null;
+  private WfmVersionedEntityMetadata metadata = null;
+  private String selfUri = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
 
   
   /**
-   * The activity code's name
+   * The name of the activity code. Default activity codes will be created with an empty name
    **/
   public ActivityCode name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The activity code's name")
+  @ApiModelProperty(example = "null", value = "The name of the activity code. Default activity codes will be created with an empty name")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -86,14 +97,14 @@ public class ActivityCode  implements Serializable {
 
   
   /**
-   * Whether this activity code is active or only used for historical schedules
+   * Whether this activity code is active or has been deleted
    **/
   public ActivityCode isActive(Boolean isActive) {
     this.isActive = isActive;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether this activity code is active or only used for historical schedules")
+  @ApiModelProperty(example = "null", value = "Whether this activity code is active or has been deleted")
   @JsonProperty("isActive")
   public Boolean getIsActive() {
     return isActive;
@@ -122,14 +133,14 @@ public class ActivityCode  implements Serializable {
 
   
   /**
-   * The activity code's category
+   * The activity code's category.
    **/
   public ActivityCode category(CategoryEnum category) {
     this.category = category;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The activity code's category")
+  @ApiModelProperty(example = "null", value = "The activity code's category.")
   @JsonProperty("category")
   public CategoryEnum getCategory() {
     return category;
@@ -176,14 +187,14 @@ public class ActivityCode  implements Serializable {
 
   
   /**
-   * Indicates whether or not the activity should be counted as work time
+   * Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints
    **/
   public ActivityCode countsAsWorkTime(Boolean countsAsWorkTime) {
     this.countsAsWorkTime = countsAsWorkTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Indicates whether or not the activity should be counted as work time")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not the activity should be counted as contiguous work time for calculating daily constraints")
   @JsonProperty("countsAsWorkTime")
   public Boolean getCountsAsWorkTime() {
     return countsAsWorkTime;
@@ -194,20 +205,45 @@ public class ActivityCode  implements Serializable {
 
   
   /**
-   * Whether an agent can select this activity code when creating or editing a time off request
+   * Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off.
    **/
-  public ActivityCode isAgentTimeOffSelectable(Boolean isAgentTimeOffSelectable) {
-    this.isAgentTimeOffSelectable = isAgentTimeOffSelectable;
+  public ActivityCode agentTimeOffSelectable(Boolean agentTimeOffSelectable) {
+    this.agentTimeOffSelectable = agentTimeOffSelectable;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether an agent can select this activity code when creating or editing a time off request")
-  @JsonProperty("isAgentTimeOffSelectable")
-  public Boolean getIsAgentTimeOffSelectable() {
-    return isAgentTimeOffSelectable;
+  @ApiModelProperty(example = "null", value = "Whether an agent can select this activity code when creating or editing a time off request. Null if the activity's category is not time off.")
+  @JsonProperty("agentTimeOffSelectable")
+  public Boolean getAgentTimeOffSelectable() {
+    return agentTimeOffSelectable;
   }
-  public void setIsAgentTimeOffSelectable(Boolean isAgentTimeOffSelectable) {
-    this.isAgentTimeOffSelectable = isAgentTimeOffSelectable;
+  public void setAgentTimeOffSelectable(Boolean agentTimeOffSelectable) {
+    this.agentTimeOffSelectable = agentTimeOffSelectable;
+  }
+
+  
+  /**
+   * Version metadata for the associated management unit's list of activity codes
+   **/
+  public ActivityCode metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the associated management unit's list of activity codes")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -221,19 +257,22 @@ public class ActivityCode  implements Serializable {
       return false;
     }
     ActivityCode activityCode = (ActivityCode) o;
-    return Objects.equals(this.name, activityCode.name) &&
+    return Objects.equals(this.id, activityCode.id) &&
+        Objects.equals(this.name, activityCode.name) &&
         Objects.equals(this.isActive, activityCode.isActive) &&
         Objects.equals(this.isDefault, activityCode.isDefault) &&
         Objects.equals(this.category, activityCode.category) &&
         Objects.equals(this.lengthInMinutes, activityCode.lengthInMinutes) &&
         Objects.equals(this.countsAsPaidTime, activityCode.countsAsPaidTime) &&
         Objects.equals(this.countsAsWorkTime, activityCode.countsAsWorkTime) &&
-        Objects.equals(this.isAgentTimeOffSelectable, activityCode.isAgentTimeOffSelectable);
+        Objects.equals(this.agentTimeOffSelectable, activityCode.agentTimeOffSelectable) &&
+        Objects.equals(this.metadata, activityCode.metadata) &&
+        Objects.equals(this.selfUri, activityCode.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, isActive, isDefault, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, isAgentTimeOffSelectable);
+    return Objects.hash(id, name, isActive, isDefault, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, metadata, selfUri);
   }
 
   @Override
@@ -241,6 +280,7 @@ public class ActivityCode  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActivityCode {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
@@ -248,7 +288,9 @@ public class ActivityCode  implements Serializable {
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    countsAsWorkTime: ").append(toIndentedString(countsAsWorkTime)).append("\n");
-    sb.append("    isAgentTimeOffSelectable: ").append(toIndentedString(isAgentTimeOffSelectable)).append("\n");
+    sb.append("    agentTimeOffSelectable: ").append(toIndentedString(agentTimeOffSelectable)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -18,6 +18,7 @@ public class OutOfOfficeNotification  implements Serializable {
   
   private DocumentDataV2NotificationWorkspace user = null;
   private Boolean active = null;
+  private Boolean indefinite = null;
   private Date startDate = null;
   private Date endDate = null;
 
@@ -53,6 +54,23 @@ public class OutOfOfficeNotification  implements Serializable {
   }
   public void setActive(Boolean active) {
     this.active = active;
+  }
+
+  
+  /**
+   **/
+  public OutOfOfficeNotification indefinite(Boolean indefinite) {
+    this.indefinite = indefinite;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("indefinite")
+  public Boolean getIndefinite() {
+    return indefinite;
+  }
+  public void setIndefinite(Boolean indefinite) {
+    this.indefinite = indefinite;
   }
 
   
@@ -102,13 +120,14 @@ public class OutOfOfficeNotification  implements Serializable {
     OutOfOfficeNotification outOfOfficeNotification = (OutOfOfficeNotification) o;
     return Objects.equals(this.user, outOfOfficeNotification.user) &&
         Objects.equals(this.active, outOfOfficeNotification.active) &&
+        Objects.equals(this.indefinite, outOfOfficeNotification.indefinite) &&
         Objects.equals(this.startDate, outOfOfficeNotification.startDate) &&
         Objects.equals(this.endDate, outOfOfficeNotification.endDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, active, startDate, endDate);
+    return Objects.hash(user, active, indefinite, startDate, endDate);
   }
 
   @Override
@@ -118,6 +137,7 @@ public class OutOfOfficeNotification  implements Serializable {
     
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    indefinite: ").append(toIndentedString(indefinite)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("}");

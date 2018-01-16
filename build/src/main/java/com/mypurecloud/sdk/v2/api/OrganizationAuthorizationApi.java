@@ -20,7 +20,7 @@ import com.mypurecloud.sdk.v2.model.TrustEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustUserCreate;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
@@ -1376,7 +1376,7 @@ public class OrganizationAuthorizationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TrustUser postOrgauthorizationTrusteeUsers(String trusteeOrgId, TrustUserCreate body) throws IOException, ApiException {
+  public TrustUser postOrgauthorizationTrusteeUsers(String trusteeOrgId, TrustMemberCreate body) throws IOException, ApiException {
     return  postOrgauthorizationTrusteeUsers(createPostOrgauthorizationTrusteeUsersRequest(trusteeOrgId, body));
   }
 
@@ -1388,11 +1388,11 @@ public class OrganizationAuthorizationApi {
    * @return TrustUser
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrustUser> postOrgauthorizationTrusteeUsersWithHttpInfo(String trusteeOrgId, TrustUserCreate body) throws IOException {
+  public ApiResponse<TrustUser> postOrgauthorizationTrusteeUsersWithHttpInfo(String trusteeOrgId, TrustMemberCreate body) throws IOException {
     return postOrgauthorizationTrusteeUsers(createPostOrgauthorizationTrusteeUsersRequest(trusteeOrgId, body).withHttpInfo());
   }
 
-  private PostOrgauthorizationTrusteeUsersRequest createPostOrgauthorizationTrusteeUsersRequest(String trusteeOrgId, TrustUserCreate body) {
+  private PostOrgauthorizationTrusteeUsersRequest createPostOrgauthorizationTrusteeUsersRequest(String trusteeOrgId, TrustMemberCreate body) {
     return PostOrgauthorizationTrusteeUsersRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
     
@@ -1427,7 +1427,7 @@ public class OrganizationAuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrustUser> postOrgauthorizationTrusteeUsers(ApiRequest<TrustUserCreate> request) throws IOException {
+  public ApiResponse<TrustUser> postOrgauthorizationTrusteeUsers(ApiRequest<TrustMemberCreate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<TrustUser>() {});
     }

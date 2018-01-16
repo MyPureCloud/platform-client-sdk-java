@@ -19,7 +19,11 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
+import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.ActivityCode;
+import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
@@ -39,7 +43,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
@@ -144,7 +150,7 @@ public class WorkforceManagementApi {
 
   
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
@@ -156,7 +162,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
@@ -174,7 +180,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param request The request object
    * @return ActivityCodeContainer
@@ -193,7 +199,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param request The request object
    * @return the response
@@ -884,6 +890,85 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Move agents in and out of management unit
+   * 
+   * @param body body (optional)
+   * @return MoveAgentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MoveAgentsResponse postWorkforcemanagementAgents(MoveAgentsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgents(createPostWorkforcemanagementAgentsRequest(body));
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param body body (optional)
+   * @return MoveAgentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MoveAgentsResponse> postWorkforcemanagementAgentsWithHttpInfo(MoveAgentsRequest body) throws IOException {
+    return postWorkforcemanagementAgents(createPostWorkforcemanagementAgentsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentsRequest createPostWorkforcemanagementAgentsRequest(MoveAgentsRequest body) {
+    return PostWorkforcemanagementAgentsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param request The request object
+   * @return MoveAgentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MoveAgentsResponse postWorkforcemanagementAgents(PostWorkforcemanagementAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MoveAgentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MoveAgentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MoveAgentsResponse> postWorkforcemanagementAgents(ApiRequest<MoveAgentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MoveAgentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the management units to which the agents belong
    * 
    * @param body body (optional)
@@ -957,6 +1042,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new activity code
+   * 
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return ActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityCode postWorkforcemanagementManagementunitActivitycodes(String muId, CreateActivityCodeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitActivitycodes(createPostWorkforcemanagementManagementunitActivitycodesRequest(muId, body));
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return ActivityCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityCode> postWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId, CreateActivityCodeRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitActivitycodes(createPostWorkforcemanagementManagementunitActivitycodesRequest(muId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitActivitycodesRequest createPostWorkforcemanagementManagementunitActivitycodesRequest(String muId, CreateActivityCodeRequest body) {
+    return PostWorkforcemanagementManagementunitActivitycodesRequest.builder()
+            .withMuId(muId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param request The request object
+   * @return ActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityCode postWorkforcemanagementManagementunitActivitycodes(PostWorkforcemanagementManagementunitActivitycodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityCode> postWorkforcemanagementManagementunitActivitycodes(ApiRequest<CreateActivityCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityCode> response = (ApiResponse<ActivityCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityCode> response = (ApiResponse<ActivityCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

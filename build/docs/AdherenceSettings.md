@@ -13,7 +13,7 @@ title: AdherenceSettings
 | **adherenceExceptionThresholdSeconds** | **Integer** | The threshold in seconds for which agents should not be penalized for being momentarily out of adherence |  [optional] |
 | **nonOnQueueActivitiesEquivalent** | **Boolean** | Whether to treat all non-on-queue activities as equivalent for adherence purposes |  [optional] |
 | **trackOnQueueActivity** | **Boolean** | Whether to track on-queue activities |  [optional] |
-| **ignoredActivityCategories** | **List&lt;String&gt;** | Activity categories that should be ignored for adherence purposes |  [optional] |
+| **ignoredActivityCategories** | [**IgnoredActivityCategories**](IgnoredActivityCategories.html) | Activity categories that should be ignored for adherence purposes |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

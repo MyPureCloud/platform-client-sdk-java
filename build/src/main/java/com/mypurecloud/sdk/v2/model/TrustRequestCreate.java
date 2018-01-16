@@ -17,23 +17,42 @@ import java.io.Serializable;
 public class TrustRequestCreate  implements Serializable {
   
   private List<String> userIds = new ArrayList<String>();
+  private List<String> groupIds = new ArrayList<String>();
 
   
   /**
-   * The list of trustee users that are requesting access.
+   * The list of trustee users that are requesting access. If no users are specified, at least one group is required.
    **/
   public TrustRequestCreate userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of trustee users that are requesting access.")
+  @ApiModelProperty(example = "null", value = "The list of trustee users that are requesting access. If no users are specified, at least one group is required.")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
   }
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
+  }
+
+  
+  /**
+   * The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.
+   **/
+  public TrustRequestCreate groupIds(List<String> groupIds) {
+    this.groupIds = groupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of trustee groups that are requesting access. If no groups are specified, at least one user is required.")
+  @JsonProperty("groupIds")
+  public List<String> getGroupIds() {
+    return groupIds;
+  }
+  public void setGroupIds(List<String> groupIds) {
+    this.groupIds = groupIds;
   }
 
   
@@ -47,12 +66,13 @@ public class TrustRequestCreate  implements Serializable {
       return false;
     }
     TrustRequestCreate trustRequestCreate = (TrustRequestCreate) o;
-    return Objects.equals(this.userIds, trustRequestCreate.userIds);
+    return Objects.equals(this.userIds, trustRequestCreate.userIds) &&
+        Objects.equals(this.groupIds, trustRequestCreate.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userIds);
+    return Objects.hash(userIds, groupIds);
   }
 
   @Override
@@ -61,6 +81,7 @@ public class TrustRequestCreate  implements Serializable {
     sb.append("class TrustRequestCreate {\n");
     
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

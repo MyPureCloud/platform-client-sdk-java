@@ -22,7 +22,11 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
+import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
+import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
 import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
+import com.mypurecloud.sdk.v2.model.ActivityCode;
+import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
@@ -42,7 +46,9 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsR
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
@@ -145,7 +151,7 @@ public class WorkforceManagementApiAsync {
 
   
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -179,7 +185,7 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Get activity codes corresponding to a management unit
+   * Get activity codes
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -829,6 +835,82 @@ public class WorkforceManagementApiAsync {
 
   
   /**
+   * Move agents in and out of management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MoveAgentsResponse> postWorkforcemanagementAgentsAsync(PostWorkforcemanagementAgentsRequest request, final AsyncApiCallback<MoveAgentsResponse> callback) {
+    try {
+      final SettableFuture<MoveAgentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MoveAgentsResponse>() {}, new AsyncApiCallback<ApiResponse<MoveAgentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MoveAgentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Move agents in and out of management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MoveAgentsResponse>> postWorkforcemanagementAgentsAsync(ApiRequest<MoveAgentsRequest> request, final AsyncApiCallback<ApiResponse<MoveAgentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MoveAgentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MoveAgentsResponse>() {}, new AsyncApiCallback<ApiResponse<MoveAgentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<MoveAgentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MoveAgentsResponse> response = (ApiResponse<MoveAgentsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the management units to which the agents belong
    * 
    * @param request the request object
@@ -892,6 +974,82 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<AgentManagementUnitReference>> response = (ApiResponse<List<AgentManagementUnitReference>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a new activity code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityCode> postWorkforcemanagementManagementunitActivitycodesAsync(PostWorkforcemanagementManagementunitActivitycodesRequest request, final AsyncApiCallback<ActivityCode> callback) {
+    try {
+      final SettableFuture<ActivityCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityCode>() {}, new AsyncApiCallback<ApiResponse<ActivityCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityCode> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityCode>> postWorkforcemanagementManagementunitActivitycodesAsync(ApiRequest<CreateActivityCodeRequest> request, final AsyncApiCallback<ApiResponse<ActivityCode>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityCode>() {}, new AsyncApiCallback<ApiResponse<ActivityCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityCode> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityCode> response = (ApiResponse<ActivityCode>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityCode> response = (ApiResponse<ActivityCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

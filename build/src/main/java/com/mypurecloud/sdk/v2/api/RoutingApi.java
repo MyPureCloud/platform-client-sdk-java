@@ -31,7 +31,7 @@ import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
@@ -2925,7 +2925,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<WrapupCode> postRoutingQueueWrapupcodes(String queueId, List<Entity> body) throws IOException, ApiException {
+  public List<WrapupCode> postRoutingQueueWrapupcodes(String queueId, List<WrapUpCodeReference> body) throws IOException, ApiException {
     return  postRoutingQueueWrapupcodes(createPostRoutingQueueWrapupcodesRequest(queueId, body));
   }
 
@@ -2937,11 +2937,11 @@ public class RoutingApi {
    * @return List<WrapupCode>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodesWithHttpInfo(String queueId, List<Entity> body) throws IOException {
+  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodesWithHttpInfo(String queueId, List<WrapUpCodeReference> body) throws IOException {
     return postRoutingQueueWrapupcodes(createPostRoutingQueueWrapupcodesRequest(queueId, body).withHttpInfo());
   }
 
-  private PostRoutingQueueWrapupcodesRequest createPostRoutingQueueWrapupcodesRequest(String queueId, List<Entity> body) {
+  private PostRoutingQueueWrapupcodesRequest createPostRoutingQueueWrapupcodesRequest(String queueId, List<WrapUpCodeReference> body) {
     return PostRoutingQueueWrapupcodesRequest.builder()
             .withQueueId(queueId)
     
@@ -2976,7 +2976,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodes(ApiRequest<List<Entity>> request) throws IOException {
+  public ApiResponse<List<WrapupCode>> postRoutingQueueWrapupcodes(ApiRequest<List<WrapUpCodeReference>> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
     }

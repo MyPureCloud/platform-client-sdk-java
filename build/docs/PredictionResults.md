@@ -28,6 +28,7 @@ title: PredictionResults
 | EMAIL | &quot;EMAIL&quot; |
 | SOCIALEXPRESSION | &quot;SOCIALEXPRESSION&quot; |
 | VIDEOCOMM | &quot;VIDEOCOMM&quot; |
+| MESSAGE | &quot;MESSAGE&quot; |
 
 
 <a name="FormulaEnum"></a>

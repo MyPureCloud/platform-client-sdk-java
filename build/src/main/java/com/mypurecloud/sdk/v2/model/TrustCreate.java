@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.TrustUserCreate;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -19,7 +19,8 @@ public class TrustCreate  implements Serializable {
   
   private String pairingId = null;
   private Boolean enabled = null;
-  private List<TrustUserCreate> users = new ArrayList<TrustUserCreate>();
+  private List<TrustMemberCreate> users = new ArrayList<TrustMemberCreate>();
+  private List<TrustMemberCreate> groups = new ArrayList<TrustMemberCreate>();
 
   
   /**
@@ -59,20 +60,38 @@ public class TrustCreate  implements Serializable {
 
   
   /**
-   * The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor.
+   * The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.
    **/
-  public TrustCreate users(List<TrustUserCreate> users) {
+  public TrustCreate users(List<TrustMemberCreate> users) {
     this.users = users;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor.")
+  @ApiModelProperty(example = "null", value = "The list of users and their roles to which access will be granted. The users are from the trustee and the roles are from the trustor. If no users are specified, at least one group is required.")
   @JsonProperty("users")
-  public List<TrustUserCreate> getUsers() {
+  public List<TrustMemberCreate> getUsers() {
     return users;
   }
-  public void setUsers(List<TrustUserCreate> users) {
+  public void setUsers(List<TrustMemberCreate> users) {
     this.users = users;
+  }
+
+  
+  /**
+   * The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.
+   **/
+  public TrustCreate groups(List<TrustMemberCreate> groups) {
+    this.groups = groups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of groups and their roles to which access will be granted. The groups are from the trustee and the roles are from the trustor. If no groups are specified, at least one user is required.")
+  @JsonProperty("groups")
+  public List<TrustMemberCreate> getGroups() {
+    return groups;
+  }
+  public void setGroups(List<TrustMemberCreate> groups) {
+    this.groups = groups;
   }
 
   
@@ -88,12 +107,13 @@ public class TrustCreate  implements Serializable {
     TrustCreate trustCreate = (TrustCreate) o;
     return Objects.equals(this.pairingId, trustCreate.pairingId) &&
         Objects.equals(this.enabled, trustCreate.enabled) &&
-        Objects.equals(this.users, trustCreate.users);
+        Objects.equals(this.users, trustCreate.users) &&
+        Objects.equals(this.groups, trustCreate.groups);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pairingId, enabled, users);
+    return Objects.hash(pairingId, enabled, users, groups);
   }
 
   @Override
@@ -104,6 +124,7 @@ public class TrustCreate  implements Serializable {
     sb.append("    pairingId: ").append(toIndentedString(pairingId)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("}");
     return sb.toString();
   }

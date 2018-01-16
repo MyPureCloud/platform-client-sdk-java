@@ -41,6 +41,7 @@ public class ExternalContact  implements Serializable {
   private Date createDate = null;
   private ExternalOrganization externalOrganization = null;
   private Boolean surveyOptOut = null;
+  private String externalSystemUrl = null;
   private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
@@ -363,6 +364,23 @@ public class ExternalContact  implements Serializable {
 
   
   /**
+   **/
+  public ExternalContact externalSystemUrl(String externalSystemUrl) {
+    this.externalSystemUrl = externalSystemUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalSystemUrl")
+  public String getExternalSystemUrl() {
+    return externalSystemUrl;
+  }
+  public void setExternalSystemUrl(String externalSystemUrl) {
+    this.externalSystemUrl = externalSystemUrl;
+  }
+
+  
+  /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
   public ExternalContact externalDataSources(List<ExternalDataSource> externalDataSources) {
@@ -416,13 +434,14 @@ public class ExternalContact  implements Serializable {
         Objects.equals(this.createDate, externalContact.createDate) &&
         Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
         Objects.equals(this.surveyOptOut, externalContact.surveyOptOut) &&
+        Objects.equals(this.externalSystemUrl, externalContact.externalSystemUrl) &&
         Objects.equals(this.externalDataSources, externalContact.externalDataSources) &&
         Objects.equals(this.selfUri, externalContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, modifyDate, createDate, externalOrganization, surveyOptOut, externalDataSources, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
   }
 
   @Override
@@ -449,6 +468,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    surveyOptOut: ").append(toIndentedString(surveyOptOut)).append("\n");
+    sb.append("    externalSystemUrl: ").append(toIndentedString(externalSystemUrl)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -897,7 +897,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
 String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-TrustUserCreate body = new TrustUserCreate(); // TrustUserCreate | Trust
+TrustMemberCreate body = new TrustMemberCreate(); // TrustMemberCreate | Trust
 try {
     TrustUser result = apiInstance.postOrgauthorizationTrusteeUsers(trusteeOrgId, body);
     System.out.println(result);
@@ -913,7 +913,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **body** | [**TrustUserCreate**](TrustUserCreate.html)| Trust | |
+| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust | |
 {: class="table table-striped"}
 
 ### Return type

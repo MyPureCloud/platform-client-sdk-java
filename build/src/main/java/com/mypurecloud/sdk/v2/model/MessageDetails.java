@@ -5,9 +5,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.MessageMedia;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -57,6 +60,7 @@ public class MessageDetails  implements Serializable {
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private Date messageTime = null;
+  private List<MessageMedia> media = new ArrayList<MessageMedia>();
 
   
   /**
@@ -149,6 +153,24 @@ public class MessageDetails  implements Serializable {
   }
 
   
+  /**
+   * The media (images, files, etc) associated with this message, if any
+   **/
+  public MessageDetails media(List<MessageMedia> media) {
+    this.media = media;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The media (images, files, etc) associated with this message, if any")
+  @JsonProperty("media")
+  public List<MessageMedia> getMedia() {
+    return media;
+  }
+  public void setMedia(List<MessageMedia> media) {
+    this.media = media;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,12 +185,13 @@ public class MessageDetails  implements Serializable {
         Objects.equals(this.messageURI, messageDetails.messageURI) &&
         Objects.equals(this.messageStatus, messageDetails.messageStatus) &&
         Objects.equals(this.messageSegmentCount, messageDetails.messageSegmentCount) &&
-        Objects.equals(this.messageTime, messageDetails.messageTime);
+        Objects.equals(this.messageTime, messageDetails.messageTime) &&
+        Objects.equals(this.media, messageDetails.media);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime);
+    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media);
   }
 
   @Override
@@ -181,6 +204,7 @@ public class MessageDetails  implements Serializable {
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("}");
     return sb.toString();
   }

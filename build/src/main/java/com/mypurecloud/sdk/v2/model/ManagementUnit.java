@@ -6,7 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.UserReference;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -65,7 +66,8 @@ public class ManagementUnit  implements Serializable {
   private ManagementUnitSettings settings = null;
   private Integer version = null;
   private Date dateModified = null;
-  private User modifiedBy = null;
+  private UserReference modifiedBy = null;
+  private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
   
@@ -148,14 +150,14 @@ public class ManagementUnit  implements Serializable {
 
   
   /**
-   * The version of the underlying entity
+   * The version of the underlying entity.  Deprecated, use metadata field instead
    **/
   public ManagementUnit version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The version of the underlying entity")
+  @ApiModelProperty(example = "null", required = true, value = "The version of the underlying entity.  Deprecated, use metadata field instead")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -165,39 +167,46 @@ public class ManagementUnit  implements Serializable {
   }
 
   
-  /**
-   * The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-   **/
-  public ManagementUnit dateModified(Date dateModified) {
-    this.dateModified = dateModified;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
   }
-  public void setDateModified(Date dateModified) {
-    this.dateModified = dateModified;
-  }
 
   
   /**
-   * The user who last modified this entity
+   * The user who last modified this entity.  Deprecated, use metadata field instead
    **/
-  public ManagementUnit modifiedBy(User modifiedBy) {
+  public ManagementUnit modifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user who last modified this entity")
+  @ApiModelProperty(example = "null", value = "The user who last modified this entity.  Deprecated, use metadata field instead")
   @JsonProperty("modifiedBy")
-  public User getModifiedBy() {
+  public UserReference getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(User modifiedBy) {
+  public void setModifiedBy(UserReference modifiedBy) {
     this.modifiedBy = modifiedBy;
+  }
+
+  
+  /**
+   * Version info metadata for this management unit
+   **/
+  public ManagementUnit metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version info metadata for this management unit")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
   }
 
   
@@ -226,12 +235,13 @@ public class ManagementUnit  implements Serializable {
         Objects.equals(this.version, managementUnit.version) &&
         Objects.equals(this.dateModified, managementUnit.dateModified) &&
         Objects.equals(this.modifiedBy, managementUnit.modifiedBy) &&
+        Objects.equals(this.metadata, managementUnit.metadata) &&
         Objects.equals(this.selfUri, managementUnit.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startDayOfWeek, timeZone, settings, version, dateModified, modifiedBy, selfUri);
+    return Objects.hash(id, name, startDayOfWeek, timeZone, settings, version, dateModified, modifiedBy, metadata, selfUri);
   }
 
   @Override
@@ -247,6 +257,7 @@ public class ManagementUnit  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

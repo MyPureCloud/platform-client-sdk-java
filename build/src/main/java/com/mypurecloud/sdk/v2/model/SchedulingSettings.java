@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ShrinkageOverrides;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,6 +18,7 @@ public class SchedulingSettings  implements Serializable {
   
   private Integer maxOccupancyPercentForDeferredWork = null;
   private Double defaultShrinkagePercent = null;
+  private ShrinkageOverrides shrinkageOverrides = null;
 
   
   /**
@@ -55,6 +57,24 @@ public class SchedulingSettings  implements Serializable {
   }
 
   
+  /**
+   * Shrinkage overrides for scheduling
+   **/
+  public SchedulingSettings shrinkageOverrides(ShrinkageOverrides shrinkageOverrides) {
+    this.shrinkageOverrides = shrinkageOverrides;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Shrinkage overrides for scheduling")
+  @JsonProperty("shrinkageOverrides")
+  public ShrinkageOverrides getShrinkageOverrides() {
+    return shrinkageOverrides;
+  }
+  public void setShrinkageOverrides(ShrinkageOverrides shrinkageOverrides) {
+    this.shrinkageOverrides = shrinkageOverrides;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -66,12 +86,13 @@ public class SchedulingSettings  implements Serializable {
     }
     SchedulingSettings schedulingSettings = (SchedulingSettings) o;
     return Objects.equals(this.maxOccupancyPercentForDeferredWork, schedulingSettings.maxOccupancyPercentForDeferredWork) &&
-        Objects.equals(this.defaultShrinkagePercent, schedulingSettings.defaultShrinkagePercent);
+        Objects.equals(this.defaultShrinkagePercent, schedulingSettings.defaultShrinkagePercent) &&
+        Objects.equals(this.shrinkageOverrides, schedulingSettings.shrinkageOverrides);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent);
+    return Objects.hash(maxOccupancyPercentForDeferredWork, defaultShrinkagePercent, shrinkageOverrides);
   }
 
   @Override
@@ -81,6 +102,7 @@ public class SchedulingSettings  implements Serializable {
     
     sb.append("    maxOccupancyPercentForDeferredWork: ").append(toIndentedString(maxOccupancyPercentForDeferredWork)).append("\n");
     sb.append("    defaultShrinkagePercent: ").append(toIndentedString(defaultShrinkagePercent)).append("\n");
+    sb.append("    shrinkageOverrides: ").append(toIndentedString(shrinkageOverrides)).append("\n");
     sb.append("}");
     return sb.toString();
   }

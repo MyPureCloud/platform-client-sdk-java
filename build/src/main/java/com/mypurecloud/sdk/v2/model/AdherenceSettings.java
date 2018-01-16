@@ -4,10 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.IgnoredActivityCategories;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -22,47 +21,7 @@ public class AdherenceSettings  implements Serializable {
   private Integer adherenceExceptionThresholdSeconds = null;
   private Boolean nonOnQueueActivitiesEquivalent = null;
   private Boolean trackOnQueueActivity = null;
-
-  /**
-   * Gets or Sets ignoredActivityCategories
-   */
-  public enum IgnoredActivityCategoriesEnum {
-    ONQUEUEWORK("OnQueueWork"),
-    BREAK("Break"),
-    MEAL("Meal"),
-    MEETING("Meeting"),
-    OFFQUEUEWORK("OffQueueWork"),
-    TIMEOFF("TimeOff"),
-    TRAINING("Training"),
-    UNAVAILABLE("Unavailable"),
-    UNSCHEDULED("Unscheduled");
-
-    private String value;
-
-    IgnoredActivityCategoriesEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static IgnoredActivityCategoriesEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (IgnoredActivityCategoriesEnum value : IgnoredActivityCategoriesEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return IgnoredActivityCategoriesEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private List<IgnoredActivityCategoriesEnum> ignoredActivityCategories = new ArrayList<IgnoredActivityCategoriesEnum>();
+  private IgnoredActivityCategories ignoredActivityCategories = null;
 
   
   /**
@@ -158,17 +117,17 @@ public class AdherenceSettings  implements Serializable {
   /**
    * Activity categories that should be ignored for adherence purposes
    **/
-  public AdherenceSettings ignoredActivityCategories(List<IgnoredActivityCategoriesEnum> ignoredActivityCategories) {
+  public AdherenceSettings ignoredActivityCategories(IgnoredActivityCategories ignoredActivityCategories) {
     this.ignoredActivityCategories = ignoredActivityCategories;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Activity categories that should be ignored for adherence purposes")
   @JsonProperty("ignoredActivityCategories")
-  public List<IgnoredActivityCategoriesEnum> getIgnoredActivityCategories() {
+  public IgnoredActivityCategories getIgnoredActivityCategories() {
     return ignoredActivityCategories;
   }
-  public void setIgnoredActivityCategories(List<IgnoredActivityCategoriesEnum> ignoredActivityCategories) {
+  public void setIgnoredActivityCategories(IgnoredActivityCategories ignoredActivityCategories) {
     this.ignoredActivityCategories = ignoredActivityCategories;
   }
 

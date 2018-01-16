@@ -13,9 +13,10 @@ title: ManagementUnit
 | **startDayOfWeek** | [**StartDayOfWeekEnum**](#StartDayOfWeekEnum) | Start day of week for scheduling and forecasting purposes |  [optional] |
 | **timeZone** | **String** | The time zone for the management unit in standard Olson Format (See https://en.wikipedia.org/wiki/Tz_database) |  [optional] |
 | **settings** | [**ManagementUnitSettings**](ManagementUnitSettings.html) | The configuration settings for this management unit |  [optional] |
-| **version** | **Integer** | The version of the underlying entity |  |
-| **dateModified** | [**Date**](Date.html) | The date and time at which this entity was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **modifiedBy** | [**User**](User.html) | The user who last modified this entity |  [optional] |
+| **version** | **Integer** | The version of the underlying entity.  Deprecated, use metadata field instead |  |
+| **dateModified** | [**Date**](Date.html) | The date and time at which this entity was last modified.  Deprecated, use metadata field instead. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **modifiedBy** | [**UserReference**](UserReference.html) | The user who last modified this entity.  Deprecated, use metadata field instead |  [optional] |
+| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version info metadata for this management unit |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

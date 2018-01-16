@@ -34,6 +34,7 @@ title: Dependency
 | CONTACTLIST | &quot;CONTACTLIST&quot; |
 | DATAACTION | &quot;DATAACTION&quot; |
 | EMAILROUTE | &quot;EMAILROUTE&quot; |
+| EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
 | GROUP | &quot;GROUP&quot; |
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; |
 | INBOUNDEMAILFLOW | &quot;INBOUNDEMAILFLOW&quot; |

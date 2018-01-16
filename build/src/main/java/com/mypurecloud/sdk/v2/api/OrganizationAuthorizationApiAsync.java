@@ -23,7 +23,7 @@ import com.mypurecloud.sdk.v2.model.TrustEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
-import com.mypurecloud.sdk.v2.model.TrustUserCreate;
+import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
@@ -1331,7 +1331,7 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<TrustUser>> postOrgauthorizationTrusteeUsersAsync(ApiRequest<TrustUserCreate> request, final AsyncApiCallback<ApiResponse<TrustUser>> callback) {
+  public Future<ApiResponse<TrustUser>> postOrgauthorizationTrusteeUsersAsync(ApiRequest<TrustMemberCreate> request, final AsyncApiCallback<ApiResponse<TrustUser>> callback) {
     try {
       final SettableFuture<ApiResponse<TrustUser>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

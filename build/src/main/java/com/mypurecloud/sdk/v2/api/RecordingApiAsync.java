@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
@@ -27,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
+import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
@@ -46,6 +49,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -57,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -1078,6 +1083,82 @@ public class RecordingApiAsync {
 
   
   /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BatchDownloadJobStatusResult> getRecordingBatchrequestAsync(GetRecordingBatchrequestRequest request, final AsyncApiCallback<BatchDownloadJobStatusResult> callback) {
+    try {
+      final SettableFuture<BatchDownloadJobStatusResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BatchDownloadJobStatusResult>() {}, new AsyncApiCallback<ApiResponse<BatchDownloadJobStatusResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<BatchDownloadJobStatusResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BatchDownloadJobStatusResult>> getRecordingBatchrequestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BatchDownloadJobStatusResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BatchDownloadJobStatusResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BatchDownloadJobStatusResult>() {}, new AsyncApiCallback<ApiResponse<BatchDownloadJobStatusResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<BatchDownloadJobStatusResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BatchDownloadJobStatusResult> response = (ApiResponse<BatchDownloadJobStatusResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BatchDownloadJobStatusResult> response = (ApiResponse<BatchDownloadJobStatusResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param request the request object
@@ -1901,6 +1982,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Annotation> response = (ApiResponse<Annotation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Submit a batch download request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BatchDownloadJobSubmissionResult> postRecordingBatchrequestsAsync(PostRecordingBatchrequestsRequest request, final AsyncApiCallback<BatchDownloadJobSubmissionResult> callback) {
+    try {
+      final SettableFuture<BatchDownloadJobSubmissionResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BatchDownloadJobSubmissionResult>() {}, new AsyncApiCallback<ApiResponse<BatchDownloadJobSubmissionResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<BatchDownloadJobSubmissionResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Submit a batch download request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BatchDownloadJobSubmissionResult>> postRecordingBatchrequestsAsync(ApiRequest<BatchDownloadJobSubmission> request, final AsyncApiCallback<ApiResponse<BatchDownloadJobSubmissionResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BatchDownloadJobSubmissionResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BatchDownloadJobSubmissionResult>() {}, new AsyncApiCallback<ApiResponse<BatchDownloadJobSubmissionResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<BatchDownloadJobSubmissionResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

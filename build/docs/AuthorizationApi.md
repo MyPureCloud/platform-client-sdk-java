@@ -334,7 +334,7 @@ try {
 
 # **getAuthorizationRoles**
 
-> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount)
+> [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)
 
 Retrieve a list of all roles defined for the organization
 
@@ -369,8 +369,9 @@ String name = "name_example"; // String |
 List<Object> permission = null; // List<Object> | 
 List<Object> defaultRoleId = null; // List<Object> | 
 Boolean userCount = true; // Boolean | 
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 try {
-    OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount);
+    OrganizationRoleEntityListing result = apiInstance.getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationRoles");
@@ -393,6 +394,7 @@ try {
 | **permission** | [**List&lt;Object&gt;**](Object.html)|  | [optional] |
 | **defaultRoleId** | [**List&lt;Object&gt;**](Object.html)|  | [optional] |
 | **userCount** | **Boolean**|  | [optional] [default to true] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 {: class="table table-striped"}
 
 ### Return type

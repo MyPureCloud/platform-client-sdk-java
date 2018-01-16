@@ -119,6 +119,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
@@ -4919,6 +4920,82 @@ public class OutboundApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsAsync(ApiRequest<List<DialerContact>> request, final AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<DialerContact>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<DialerContact>>() {}, new AsyncApiCallback<ApiResponse<List<DialerContact>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<DialerContact>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<DialerContact>> response = (ApiResponse<List<DialerContact>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<DialerContact>> postOutboundContactlistContactsBulkAsync(PostOutboundContactlistContactsBulkRequest request, final AsyncApiCallback<List<DialerContact>> callback) {
+    try {
+      final SettableFuture<List<DialerContact>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<DialerContact>>() {}, new AsyncApiCallback<ApiResponse<List<DialerContact>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<DialerContact>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get contacts from a contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<DialerContact>>> postOutboundContactlistContactsBulkAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<DialerContact>>> callback) {
     try {
       final SettableFuture<ApiResponse<List<DialerContact>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
