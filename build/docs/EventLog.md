@@ -45,6 +45,7 @@ title: EventLog
 | CALL_RULE | &quot;CALL_RULE&quot; |
 | CAMPAIGN | &quot;CAMPAIGN&quot; |
 | CAMPAIGN_RULE | &quot;CAMPAIGN_RULE&quot; |
+| CONTACT | &quot;CONTACT&quot; |
 | CONTACT_LIST_FILTER | &quot;CONTACT_LIST_FILTER&quot; |
 | DNC_LIST | &quot;DNC_LIST&quot; |
 | ENTITY_LIMIT | &quot;ENTITY_LIMIT&quot; |

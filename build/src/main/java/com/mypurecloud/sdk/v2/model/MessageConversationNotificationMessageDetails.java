@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationMedia;
 import com.mypurecloud.sdk.v2.model.MessageConversationNotificationUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -57,6 +60,7 @@ public class MessageConversationNotificationMessageDetails  implements Serializa
     }
   }
   private MessageStatusEnum messageStatus = null;
+  private List<ConversationNotificationMedia> media = new ArrayList<ConversationNotificationMedia>();
 
   
   /**
@@ -127,6 +131,23 @@ public class MessageConversationNotificationMessageDetails  implements Serializa
   }
 
   
+  /**
+   **/
+  public MessageConversationNotificationMessageDetails media(List<ConversationNotificationMedia> media) {
+    this.media = media;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("media")
+  public List<ConversationNotificationMedia> getMedia() {
+    return media;
+  }
+  public void setMedia(List<ConversationNotificationMedia> media) {
+    this.media = media;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +161,13 @@ public class MessageConversationNotificationMessageDetails  implements Serializa
     return Objects.equals(this.message, messageConversationNotificationMessageDetails.message) &&
         Objects.equals(this.messageTime, messageConversationNotificationMessageDetails.messageTime) &&
         Objects.equals(this.messageSegmentCount, messageConversationNotificationMessageDetails.messageSegmentCount) &&
-        Objects.equals(this.messageStatus, messageConversationNotificationMessageDetails.messageStatus);
+        Objects.equals(this.messageStatus, messageConversationNotificationMessageDetails.messageStatus) &&
+        Objects.equals(this.media, messageConversationNotificationMessageDetails.media);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus);
+    return Objects.hash(message, messageTime, messageSegmentCount, messageStatus, media);
   }
 
   @Override
@@ -157,6 +179,7 @@ public class MessageConversationNotificationMessageDetails  implements Serializa
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("}");
     return sb.toString();
   }

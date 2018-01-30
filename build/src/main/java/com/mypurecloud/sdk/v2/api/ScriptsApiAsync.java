@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
+import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
@@ -30,6 +32,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScriptExportRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -799,6 +802,82 @@ public class ScriptsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ImportScriptStatusResponse> response = (ApiResponse<ImportScriptStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Export a script via download service.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ExportScriptResponse> postScriptExportAsync(PostScriptExportRequest request, final AsyncApiCallback<ExportScriptResponse> callback) {
+    try {
+      final SettableFuture<ExportScriptResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExportScriptResponse>() {}, new AsyncApiCallback<ApiResponse<ExportScriptResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExportScriptResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Export a script via download service.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ExportScriptResponse>> postScriptExportAsync(ApiRequest<ExportScriptRequest> request, final AsyncApiCallback<ApiResponse<ExportScriptResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ExportScriptResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ExportScriptResponse>() {}, new AsyncApiCallback<ApiResponse<ExportScriptResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ExportScriptResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -15,6 +15,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
+import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetScriptRequest;
@@ -27,6 +29,7 @@ import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPageRequest
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdPagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsPublishedScriptIdVariablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScriptsUploadStatusRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScriptExportRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -688,34 +691,30 @@ public class ScriptsApi {
    * Get the list of published pages
    * 
    * @param scriptId Script ID (required)
-   * @param foo  (optional, default to 25)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Page> getScriptsPublishedScriptIdPages(String scriptId, Integer foo, String scriptDataVersion) throws IOException, ApiException {
-    return  getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, foo, scriptDataVersion));
+  public List<Page> getScriptsPublishedScriptIdPages(String scriptId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, scriptDataVersion));
   }
 
   /**
    * Get the list of published pages
    * 
    * @param scriptId Script ID (required)
-   * @param foo  (optional, default to 25)
    * @param scriptDataVersion Advanced usage - controls the data version of the script (optional)
    * @return List<Page>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId, Integer foo, String scriptDataVersion) throws IOException {
-    return getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, foo, scriptDataVersion).withHttpInfo());
+  public ApiResponse<List<Page>> getScriptsPublishedScriptIdPagesWithHttpInfo(String scriptId, String scriptDataVersion) throws IOException {
+    return getScriptsPublishedScriptIdPages(createGetScriptsPublishedScriptIdPagesRequest(scriptId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId, Integer foo, String scriptDataVersion) {
+  private GetScriptsPublishedScriptIdPagesRequest createGetScriptsPublishedScriptIdPagesRequest(String scriptId, String scriptDataVersion) {
     return GetScriptsPublishedScriptIdPagesRequest.builder()
             .withScriptId(scriptId)
-    
-            .withFoo(foo)
     
             .withScriptDataVersion(scriptDataVersion)
     
@@ -944,6 +943,89 @@ public class ScriptsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ImportScriptStatusResponse> response = (ApiResponse<ImportScriptStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Export a script via download service.
+   * 
+   * @param scriptId Script ID (required)
+   * @param body  (optional)
+   * @return ExportScriptResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExportScriptResponse postScriptExport(String scriptId, ExportScriptRequest body) throws IOException, ApiException {
+    return  postScriptExport(createPostScriptExportRequest(scriptId, body));
+  }
+
+  /**
+   * Export a script via download service.
+   * 
+   * @param scriptId Script ID (required)
+   * @param body  (optional)
+   * @return ExportScriptResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExportScriptResponse> postScriptExportWithHttpInfo(String scriptId, ExportScriptRequest body) throws IOException {
+    return postScriptExport(createPostScriptExportRequest(scriptId, body).withHttpInfo());
+  }
+
+  private PostScriptExportRequest createPostScriptExportRequest(String scriptId, ExportScriptRequest body) {
+    return PostScriptExportRequest.builder()
+            .withScriptId(scriptId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Export a script via download service.
+   * 
+   * @param request The request object
+   * @return ExportScriptResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ExportScriptResponse postScriptExport(PostScriptExportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ExportScriptResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ExportScriptResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Export a script via download service.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ExportScriptResponse> postScriptExport(ApiRequest<ExportScriptRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ExportScriptResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ExportScriptResponse> response = (ApiResponse<ExportScriptResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

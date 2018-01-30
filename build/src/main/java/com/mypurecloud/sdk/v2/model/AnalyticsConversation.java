@@ -24,6 +24,7 @@ public class AnalyticsConversation  implements Serializable {
   private Date conversationEnd = null;
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
+  private List<String> divisionIds = new ArrayList<String>();
 
   
   /**
@@ -99,20 +100,38 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Evaluations tied to this conersation
+   * Evaluations tied to this conversation
    **/
   public AnalyticsConversation evaluations(List<AnalyticsEvaluation> evaluations) {
     this.evaluations = evaluations;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Evaluations tied to this conersation")
+  @ApiModelProperty(example = "null", value = "Evaluations tied to this conversation")
   @JsonProperty("evaluations")
   public List<AnalyticsEvaluation> getEvaluations() {
     return evaluations;
   }
   public void setEvaluations(List<AnalyticsEvaluation> evaluations) {
     this.evaluations = evaluations;
+  }
+
+  
+  /**
+   * Identifiers of divisions associated with this conversation
+   **/
+  public AnalyticsConversation divisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers of divisions associated with this conversation")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
+  }
+  public void setDivisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
   }
 
   
@@ -130,12 +149,13 @@ public class AnalyticsConversation  implements Serializable {
         Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
         Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
         Objects.equals(this.participants, analyticsConversation.participants) &&
-        Objects.equals(this.evaluations, analyticsConversation.evaluations);
+        Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
+        Objects.equals(this.divisionIds, analyticsConversation.divisionIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, participants, evaluations);
+    return Objects.hash(conversationId, conversationStart, conversationEnd, participants, evaluations, divisionIds);
   }
 
   @Override
@@ -148,6 +168,7 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Page;
 import com.mypurecloud.sdk.v2.model.ScriptEntityListing;
 import com.mypurecloud.sdk.v2.model.ImportScriptStatusResponse;
+import com.mypurecloud.sdk.v2.model.ExportScriptRequest;
+import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 
 public class GetScriptsPublishedScriptIdPagesRequest {
     
@@ -39,20 +41,6 @@ public class GetScriptsPublishedScriptIdPagesRequest {
 
 	public GetScriptsPublishedScriptIdPagesRequest withScriptId(String scriptId) {
 	    this.setScriptId(scriptId);
-	    return this;
-	} 
-	
-	private Integer foo;
-	public Integer getFoo() {
-		return this.foo;
-	}
-
-	public void setFoo(Integer foo) {
-		this.foo = foo;
-	}
-
-	public GetScriptsPublishedScriptIdPagesRequest withFoo(Integer foo) {
-	    this.setFoo(foo);
 	    return this;
 	} 
 	
@@ -100,8 +88,6 @@ public class GetScriptsPublishedScriptIdPagesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published/{scriptId}/pages")
                 .withPathParameter("scriptId", scriptId)
         
-                .withQueryParameters("foo", "", foo)
-        
                 .withQueryParameters("scriptDataVersion", "", scriptDataVersion)
         
                 .withCustomHeaders(customHeaders)
@@ -132,11 +118,6 @@ public class GetScriptsPublishedScriptIdPagesRequest {
 		
 		public Builder withScriptId(String scriptId) {
 			request.setScriptId(scriptId);
-			return this;
-		}
-		
-		public Builder withFoo(Integer foo) {
-			request.setFoo(foo);
 			return this;
 		}
 		

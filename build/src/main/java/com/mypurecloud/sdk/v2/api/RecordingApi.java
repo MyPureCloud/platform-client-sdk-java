@@ -837,7 +837,7 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
-   * @param formatId The desired media format (optional, default to WEBM)
+   * @param formatId The desired media format. Possible values: NONE, MP3, WAV, or WEBM (optional, default to WEBM)
    * @return List<Recording>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -851,7 +851,7 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (optional, default to 5000)
-   * @param formatId The desired media format (optional, default to WEBM)
+   * @param formatId The desired media format. Possible values: NONE, MP3, WAV, or WEBM (optional, default to WEBM)
    * @return List<Recording>
    * @throws IOException if the request fails to be processed
    */
@@ -2194,7 +2194,7 @@ public class RecordingApi {
 
   
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param body Job submission criteria (required)
    * @return BatchDownloadJobSubmissionResult
@@ -2206,7 +2206,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param body Job submission criteria (required)
    * @return BatchDownloadJobSubmissionResult
@@ -2224,7 +2224,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param request The request object
    * @return BatchDownloadJobSubmissionResult
@@ -2243,7 +2243,7 @@ public class RecordingApi {
   }
 
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param request The request object
    * @return the response

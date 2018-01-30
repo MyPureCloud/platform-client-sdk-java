@@ -112,7 +112,7 @@ public class UserQueue  implements Serializable {
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
   private UriReference queueFlow = null;
-  private UriReference whisper = null;
+  private UriReference whisperPrompt = null;
   private Boolean autoAnswerOnly = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
@@ -418,20 +418,20 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * ID of the whisper configured for this queue, if any.
+   * The prompt used for whisper on the queue, if configured.
    **/
-  public UserQueue whisper(UriReference whisper) {
-    this.whisper = whisper;
+  public UserQueue whisperPrompt(UriReference whisperPrompt) {
+    this.whisperPrompt = whisperPrompt;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ID of the whisper configured for this queue, if any.")
-  @JsonProperty("whisper")
-  public UriReference getWhisper() {
-    return whisper;
+  @ApiModelProperty(example = "null", value = "The prompt used for whisper on the queue, if configured.")
+  @JsonProperty("whisperPrompt")
+  public UriReference getWhisperPrompt() {
+    return whisperPrompt;
   }
-  public void setWhisper(UriReference whisper) {
-    this.whisper = whisper;
+  public void setWhisperPrompt(UriReference whisperPrompt) {
+    this.whisperPrompt = whisperPrompt;
   }
 
   
@@ -592,7 +592,7 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.acwSettings, userQueue.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
         Objects.equals(this.queueFlow, userQueue.queueFlow) &&
-        Objects.equals(this.whisper, userQueue.whisper) &&
+        Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
         Objects.equals(this.autoAnswerOnly, userQueue.autoAnswerOnly) &&
         Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
@@ -605,7 +605,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, division, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisper, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
+    return Objects.hash(id, name, description, version, division, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
   }
 
   @Override
@@ -630,7 +630,7 @@ public class UserQueue  implements Serializable {
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
-    sb.append("    whisper: ").append(toIndentedString(whisper)).append("\n");
+    sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");

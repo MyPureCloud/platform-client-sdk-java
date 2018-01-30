@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | Get the list of published pages |
 | [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | Get the published variables |
 | [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | Get the upload status of an imported script |
+| [**postScriptExport**](ScriptsApi.html#postScriptExport) | Export a script via download service. |
 {: class="table table-striped"}
 
 <a name="getScript"></a>
@@ -422,7 +423,7 @@ try {
 
 # **getScriptsPublishedScriptIdPages**
 
-> [List&lt;Page&gt;](Page.html) getScriptsPublishedScriptIdPages(scriptId, foo, scriptDataVersion)
+> [List&lt;Page&gt;](Page.html) getScriptsPublishedScriptIdPages(scriptId, scriptDataVersion)
 
 Get the list of published pages
 
@@ -448,10 +449,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ScriptsApi apiInstance = new ScriptsApi();
 String scriptId = "scriptId_example"; // String | Script ID
-Integer foo = 25; // Integer | 
 String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    List<Page> result = apiInstance.getScriptsPublishedScriptIdPages(scriptId, foo, scriptDataVersion);
+    List<Page> result = apiInstance.getScriptsPublishedScriptIdPages(scriptId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublishedScriptIdPages");
@@ -465,7 +465,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scriptId** | **String**| Script ID | |
-| **foo** | **Integer**|  | [optional] [default to 25] |
 | **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
 {: class="table table-striped"}
 
@@ -584,4 +583,57 @@ try {
 ### Return type
 
 [**ImportScriptStatusResponse**](ImportScriptStatusResponse.html)
+
+<a name="postScriptExport"></a>
+
+# **postScriptExport**
+
+> [ExportScriptResponse](ExportScriptResponse.html) postScriptExport(scriptId, body)
+
+Export a script via download service.
+
+
+
+Wraps POST /api/v2/scripts/{scriptId}/export  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ScriptsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ScriptsApi apiInstance = new ScriptsApi();
+String scriptId = "scriptId_example"; // String | Script ID
+ExportScriptRequest body = new ExportScriptRequest(); // ExportScriptRequest | 
+try {
+    ExportScriptResponse result = apiInstance.postScriptExport(scriptId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ScriptsApi#postScriptExport");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scriptId** | **String**| Script ID | |
+| **body** | [**ExportScriptRequest**](ExportScriptRequest.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExportScriptResponse**](ExportScriptResponse.html)
 

@@ -25,7 +25,7 @@ title: CreateQueueRequest
 | **acwSettings** | [**AcwSettings**](AcwSettings.html) | The ACW settings for the queue. |  |
 | **skillEvaluationMethod** | [**SkillEvaluationMethodEnum**](#SkillEvaluationMethodEnum) | The skill evaluation method to use when routing conversations. |  |
 | **queueFlow** | [**UriReference**](UriReference.html) | The in-queue flow to use for conversations waiting in queue. |  [optional] |
-| **whisper** | [**UriReference**](UriReference.html) | ID of the whisper configured for this queue, if any. |  [optional] |
+| **whisperPrompt** | [**UriReference**](UriReference.html) | The prompt used for whisper on the queue, if configured. |  [optional] |
 | **autoAnswerOnly** | **Boolean** | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. |  [optional] |
 | **callingPartyName** | **String** | The name to use for caller identification for outbound calls from this queue. |  [optional] |
 | **callingPartyNumber** | **String** | The phone number to use for caller identification for outbound calls from this queue. |  [optional] |

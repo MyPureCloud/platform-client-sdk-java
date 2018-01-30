@@ -21,14 +21,14 @@ public class BatchDownloadJobSubmission  implements Serializable {
 
   
   /**
-   * List of items requested
+   * List of up to 100 items requested
    **/
   public BatchDownloadJobSubmission batchDownloadRequestList(List<BatchDownloadRequest> batchDownloadRequestList) {
     this.batchDownloadRequestList = batchDownloadRequestList;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of items requested")
+  @ApiModelProperty(example = "null", required = true, value = "List of up to 100 items requested")
   @JsonProperty("batchDownloadRequestList")
   public List<BatchDownloadRequest> getBatchDownloadRequestList() {
     return batchDownloadRequestList;

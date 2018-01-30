@@ -83,6 +83,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     CONVERTEDFROM("convertedFrom"),
     CONVERTEDTO("convertedTo"),
+    DIVISIONID("divisionId"),
     STATIONID("stationId"),
     EDGEID("edgeId"),
     DNIS("dnis"),

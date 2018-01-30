@@ -12,6 +12,7 @@ title: MessageConversationNotificationMessageDetails
 | **messageTime** | [**Date**](Date.html) |  |  [optional] |
 | **messageSegmentCount** | **Integer** |  |  [optional] |
 | **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
+| **media** | [**List&lt;ConversationNotificationMedia&gt;**](ConversationNotificationMedia.html) |  |  [optional] |
 {: class="table table-striped"}
 
 

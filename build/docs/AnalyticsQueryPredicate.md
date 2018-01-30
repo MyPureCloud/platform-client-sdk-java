@@ -63,6 +63,7 @@ title: AnalyticsQueryPredicate
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
+| DIVISIONID | &quot;divisionId&quot; |
 | STATIONID | &quot;stationId&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |

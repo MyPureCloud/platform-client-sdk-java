@@ -1995,7 +1995,7 @@ public class RecordingApiAsync {
 
   
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2029,7 +2029,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Submit a batch download request
+   * Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
