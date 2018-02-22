@@ -120,6 +120,20 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	} 
 	
+	private Boolean doNotQueue;
+	public Boolean getDoNotQueue() {
+		return this.doNotQueue;
+	}
+
+	public void setDoNotQueue(Boolean doNotQueue) {
+		this.doNotQueue = doNotQueue;
+	}
+
+	public PostOutboundContactlistContactsRequest withDoNotQueue(Boolean doNotQueue) {
+	    this.setDoNotQueue(doNotQueue);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -158,6 +172,8 @@ public class PostOutboundContactlistContactsRequest {
                 .withQueryParameters("priority", "", priority)
         
                 .withQueryParameters("clearSystemData", "", clearSystemData)
+        
+                .withQueryParameters("doNotQueue", "", doNotQueue)
         
                 .withBody(body)
         
@@ -204,6 +220,11 @@ public class PostOutboundContactlistContactsRequest {
 		
 		public Builder withClearSystemData(Boolean clearSystemData) {
 			request.setClearSystemData(clearSystemData);
+			return this;
+		}
+		
+		public Builder withDoNotQueue(Boolean doNotQueue) {
+			request.setDoNotQueue(doNotQueue);
 			return this;
 		}
 		

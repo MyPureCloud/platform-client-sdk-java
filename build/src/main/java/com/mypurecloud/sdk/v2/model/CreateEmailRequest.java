@@ -33,7 +33,7 @@ public class CreateEmailRequest  implements Serializable {
   private String subject = null;
 
   /**
-   * Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.
+   * Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
    */
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -71,14 +71,14 @@ public class CreateEmailRequest  implements Serializable {
 
   
   /**
-   * The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId
+   * The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
    **/
   public CreateEmailRequest queueId(String queueId) {
     this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the queue to use for routing the chat conversation. This field is mutually exclusive with flowId")
+  @ApiModelProperty(example = "null", value = "The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId")
   @JsonProperty("queueId")
   public String getQueueId() {
     return queueId;
@@ -89,14 +89,14 @@ public class CreateEmailRequest  implements Serializable {
 
   
   /**
-   * The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId
+   * The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
    **/
   public CreateEmailRequest flowId(String flowId) {
     this.flowId = flowId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the flow to use for routing chat conversation. This field is mutually exclusive with queueId")
+  @ApiModelProperty(example = "null", value = "The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId")
   @JsonProperty("flowId")
   public String getFlowId() {
     return flowId;
@@ -107,14 +107,14 @@ public class CreateEmailRequest  implements Serializable {
 
   
   /**
-   * The name of the provider that is sourcing the web chat.
+   * The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails.
    **/
   public CreateEmailRequest provider(String provider) {
     this.provider = provider;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the provider that is sourcing the web chat.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the provider that is sourcing the emails. The Provider \"PureCloud Email\" is reserved for native emails.")
   @JsonProperty("provider")
   public String getProvider() {
     return provider;
@@ -287,14 +287,14 @@ public class CreateEmailRequest  implements Serializable {
 
   
   /**
-   * Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.
+   * Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
    **/
   public CreateEmailRequest direction(DirectionEnum direction) {
     this.direction = direction;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specify INBOUND to create an inbound email conversation to route to a queue, or OUTBOUND to send an email on behalf of a queue.")
+  @ApiModelProperty(example = "null", value = "Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.")
   @JsonProperty("direction")
   public DirectionEnum getDirection() {
     return direction;

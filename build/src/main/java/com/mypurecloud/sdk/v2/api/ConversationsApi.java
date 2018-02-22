@@ -6463,7 +6463,7 @@ public class ConversationsApi {
 
   
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param conversationId conversationId (required)
    * @param body Send external email reply (required)
@@ -6476,7 +6476,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param conversationId conversationId (required)
    * @param body Send external email reply (required)
@@ -6497,7 +6497,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param request The request object
    * @return EmailConversation
@@ -6516,7 +6516,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param request The request object
    * @return the response
@@ -6714,7 +6714,7 @@ public class ConversationsApi {
   
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param body Create email request (required)
    * @return EmailConversation
    * @throws ApiException if the request fails on the server
@@ -6726,7 +6726,7 @@ public class ConversationsApi {
 
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param body Create email request (required)
    * @return EmailConversation
    * @throws IOException if the request fails to be processed
@@ -6744,7 +6744,7 @@ public class ConversationsApi {
 
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param request The request object
    * @return EmailConversation
    * @throws ApiException if the request fails on the server
@@ -6763,7 +6763,7 @@ public class ConversationsApi {
 
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

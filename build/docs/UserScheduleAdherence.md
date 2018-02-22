@@ -105,6 +105,7 @@ title: UserScheduleAdherence
 | OUTOFADHERENCE | &quot;OutOfAdherence&quot; |
 | UNSCHEDULED | &quot;Unscheduled&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
+| IGNORED | &quot;Ignored&quot; |
 
 
 <a name="ImpactEnum"></a>

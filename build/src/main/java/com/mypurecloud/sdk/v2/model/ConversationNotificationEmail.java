@@ -27,7 +27,8 @@ public class ConversationNotificationEmail  implements Serializable {
     ALERTING("ALERTING"),
     CONNECTED("CONNECTED"),
     DISCONNECTED("DISCONNECTED"),
-    NONE("NONE");
+    NONE("NONE"),
+    TRANSMITTING("TRANSMITTING");
 
     private String value;
 

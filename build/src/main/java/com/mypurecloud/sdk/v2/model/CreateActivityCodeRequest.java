@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,7 +17,48 @@ import java.io.Serializable;
 public class CreateActivityCodeRequest  implements Serializable {
   
   private String name = null;
-  private String category = null;
+
+  /**
+   * The activity code's category
+   */
+  public enum CategoryEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ONQUEUEWORK("OnQueueWork"),
+    BREAK("Break"),
+    MEAL("Meal"),
+    MEETING("Meeting"),
+    OFFQUEUEWORK("OffQueueWork"),
+    TIMEOFF("TimeOff"),
+    TRAINING("Training"),
+    UNAVAILABLE("Unavailable"),
+    UNSCHEDULED("Unscheduled");
+
+    private String value;
+
+    CategoryEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CategoryEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CategoryEnum value : CategoryEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CategoryEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CategoryEnum category = null;
   private Integer lengthInMinutes = null;
   private Boolean countsAsPaidTime = null;
   private Boolean countsAsWorkTime = null;
@@ -44,17 +86,17 @@ public class CreateActivityCodeRequest  implements Serializable {
   /**
    * The activity code's category
    **/
-  public CreateActivityCodeRequest category(String category) {
+  public CreateActivityCodeRequest category(CategoryEnum category) {
     this.category = category;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The activity code's category")
   @JsonProperty("category")
-  public String getCategory() {
+  public CategoryEnum getCategory() {
     return category;
   }
-  public void setCategory(String category) {
+  public void setCategory(CategoryEnum category) {
     this.category = category;
   }
 

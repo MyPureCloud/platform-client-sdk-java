@@ -197,7 +197,8 @@ public class UserScheduleAdherence  implements Serializable {
     INADHERENCE("InAdherence"),
     OUTOFADHERENCE("OutOfAdherence"),
     UNSCHEDULED("Unscheduled"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    IGNORED("Ignored");
 
     private String value;
 

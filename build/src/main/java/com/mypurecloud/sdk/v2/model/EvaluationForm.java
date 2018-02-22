@@ -21,7 +21,6 @@ public class EvaluationForm  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String type = null;
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
@@ -52,24 +51,6 @@ public class EvaluationForm  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  
-  /**
-   * The form type (evaluation)
-   **/
-  public EvaluationForm type(String type) {
-    this.type = type;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The form type (evaluation)")
-  @JsonProperty("type")
-  public String getType() {
-    return type;
-  }
-  public void setType(String type) {
-    this.type = type;
   }
 
   
@@ -179,7 +160,6 @@ public class EvaluationForm  implements Serializable {
     EvaluationForm evaluationForm = (EvaluationForm) o;
     return Objects.equals(this.id, evaluationForm.id) &&
         Objects.equals(this.name, evaluationForm.name) &&
-        Objects.equals(this.type, evaluationForm.type) &&
         Objects.equals(this.modifiedDate, evaluationForm.modifiedDate) &&
         Objects.equals(this.published, evaluationForm.published) &&
         Objects.equals(this.contextId, evaluationForm.contextId) &&
@@ -190,7 +170,7 @@ public class EvaluationForm  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, modifiedDate, published, contextId, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, contextId, questionGroups, publishedVersions, selfUri);
   }
 
   @Override
@@ -200,7 +180,6 @@ public class EvaluationForm  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

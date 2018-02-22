@@ -24,6 +24,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
@@ -31,11 +33,14 @@ import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.PublishForm;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
@@ -48,21 +53,38 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
 
 import java.io.IOException;
@@ -279,6 +301,158 @@ public class QualityApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteQualityFormAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteQualityFormsEvaluationAsync(DeleteQualityFormsEvaluationRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteQualityFormsEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteQualityFormsSurveyAsync(DeleteQualityFormsSurveyRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteQualityFormsSurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1226,6 +1400,462 @@ public class QualityApiAsync {
 
   
   /**
+   * Get an evaluation form
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationForm> getQualityFormsEvaluationAsync(GetQualityFormsEvaluationRequest request, final AsyncApiCallback<EvaluationForm> callback) {
+    try {
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an evaluation form
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationForm>> getQualityFormsEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationFormEntityListing> getQualityFormsEvaluationVersionsAsync(GetQualityFormsEvaluationVersionsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
+    try {
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsEvaluationVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationFormEntityListing> getQualityFormsEvaluationsAsync(GetQualityFormsEvaluationsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
+    try {
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityFormsEvaluationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a survey form
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> getQualityFormsSurveyAsync(GetQualityFormsSurveyRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a survey form
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> getQualityFormsSurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormEntityListing> getQualityFormsSurveyVersionsAsync(GetQualityFormsSurveyVersionsRequest request, final AsyncApiCallback<SurveyFormEntityListing> callback) {
+    try {
+      final SettableFuture<SurveyFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormEntityListing>> getQualityFormsSurveyVersionsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the list of survey forms
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormEntityListing> getQualityFormsSurveysAsync(GetQualityFormsSurveysRequest request, final AsyncApiCallback<SurveyFormEntityListing> callback) {
+    try {
+      final SettableFuture<SurveyFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of survey forms
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormEntityListing>> getQualityFormsSurveysAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a keywordSet by id.
    * 
    * @param request the request object
@@ -1517,6 +2147,386 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationForm> getQualityPublishedformsEvaluationAsync(GetQualityPublishedformsEvaluationRequest request, final AsyncApiCallback<EvaluationForm> callback) {
+    try {
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationForm>> getQualityPublishedformsEvaluationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationFormEntityListing> getQualityPublishedformsEvaluationsAsync(GetQualityPublishedformsEvaluationsRequest request, final AsyncApiCallback<EvaluationFormEntityListing> callback) {
+    try {
+      final SettableFuture<EvaluationFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationFormEntityListing>> getQualityPublishedformsEvaluationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<EvaluationFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> getQualityPublishedformsSurveyAsync(GetQualityPublishedformsSurveyRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> getQualityPublishedformsSurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the published survey forms.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormEntityListing> getQualityPublishedformsSurveysAsync(GetQualityPublishedformsSurveysRequest request, final AsyncApiCallback<SurveyFormEntityListing> callback) {
+    try {
+      final SettableFuture<SurveyFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the published survey forms.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormEntityListing>> getQualityPublishedformsSurveysAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> patchQualityFormsSurveyAsync(PatchQualityFormsSurveyRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> patchQualityFormsSurveyAsync(ApiRequest<SurveyForm> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1910,6 +2920,158 @@ public class QualityApiAsync {
 
   
   /**
+   * Create an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationForm> postQualityFormsEvaluationsAsync(PostQualityFormsEvaluationsRequest request, final AsyncApiCallback<EvaluationForm> callback) {
+    try {
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationForm>> postQualityFormsEvaluationsAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> postQualityFormsSurveysAsync(PostQualityFormsSurveysRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> postQualityFormsSurveysAsync(ApiRequest<SurveyForm> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a Keyword Set
    * 
    * @param request the request object
@@ -2049,6 +3211,158 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationForm> postQualityPublishedformsEvaluationsAsync(PostQualityPublishedformsEvaluationsRequest request, final AsyncApiCallback<EvaluationForm> callback) {
+    try {
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsEvaluationsAsync(ApiRequest<PublishForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Publish a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> postQualityPublishedformsSurveysAsync(PostQualityPublishedformsSurveysRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Publish a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> postQualityPublishedformsSurveysAsync(ApiRequest<PublishForm> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2353,6 +3667,158 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EvaluationForm> putQualityFormsEvaluationAsync(PutQualityFormsEvaluationRequest request, final AsyncApiCallback<EvaluationForm> callback) {
+    try {
+      final SettableFuture<EvaluationForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an evaluation form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EvaluationForm>> putQualityFormsEvaluationAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationForm>() {}, new AsyncApiCallback<ApiResponse<EvaluationForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<EvaluationForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyForm> putQualityFormsSurveyAsync(PutQualityFormsSurveyRequest request, final AsyncApiCallback<SurveyForm> callback) {
+    try {
+      final SettableFuture<SurveyForm> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a survey form.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyForm>> putQualityFormsSurveyAsync(ApiRequest<SurveyForm> request, final AsyncApiCallback<ApiResponse<SurveyForm>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyForm>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyForm>() {}, new AsyncApiCallback<ApiResponse<SurveyForm>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyForm> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

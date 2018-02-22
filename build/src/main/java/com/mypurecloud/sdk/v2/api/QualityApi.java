@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
+import com.mypurecloud.sdk.v2.model.SurveyForm;
+import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
@@ -28,11 +30,14 @@ import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
+import com.mypurecloud.sdk.v2.model.PublishForm;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
@@ -45,21 +50,38 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
 
 import java.io.IOException;
@@ -305,6 +327,158 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteQualityForm(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityFormsEvaluation(String formId) throws IOException, ApiException {
+     deleteQualityFormsEvaluation(createDeleteQualityFormsEvaluationRequest(formId));
+  }
+
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityFormsEvaluationWithHttpInfo(String formId) throws IOException {
+    return deleteQualityFormsEvaluation(createDeleteQualityFormsEvaluationRequest(formId).withHttpInfo());
+  }
+
+  private DeleteQualityFormsEvaluationRequest createDeleteQualityFormsEvaluationRequest(String formId) {
+    return DeleteQualityFormsEvaluationRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityFormsEvaluation(DeleteQualityFormsEvaluationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an evaluation form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityFormsEvaluation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityFormsSurvey(String formId) throws IOException, ApiException {
+     deleteQualityFormsSurvey(createDeleteQualityFormsSurveyRequest(formId));
+  }
+
+  /**
+   * Delete a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityFormsSurveyWithHttpInfo(String formId) throws IOException {
+    return deleteQualityFormsSurvey(createDeleteQualityFormsSurveyRequest(formId).withHttpInfo());
+  }
+
+  private DeleteQualityFormsSurveyRequest createDeleteQualityFormsSurveyRequest(String formId) {
+    return DeleteQualityFormsSurveyRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a survey form.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteQualityFormsSurvey(DeleteQualityFormsSurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a survey form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteQualityFormsSurvey(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1538,6 +1712,544 @@ public class QualityApi {
 
   
   /**
+   * Get an evaluation form
+   * 
+   * @param formId Form ID (required)
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm getQualityFormsEvaluation(String formId) throws IOException, ApiException {
+    return  getQualityFormsEvaluation(createGetQualityFormsEvaluationRequest(formId));
+  }
+
+  /**
+   * Get an evaluation form
+   * 
+   * @param formId Form ID (required)
+   * @return EvaluationForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> getQualityFormsEvaluationWithHttpInfo(String formId) throws IOException {
+    return getQualityFormsEvaluation(createGetQualityFormsEvaluationRequest(formId).withHttpInfo());
+  }
+
+  private GetQualityFormsEvaluationRequest createGetQualityFormsEvaluationRequest(String formId) {
+    return GetQualityFormsEvaluationRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Get an evaluation form
+   * 
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm getQualityFormsEvaluation(GetQualityFormsEvaluationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an evaluation form
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> getQualityFormsEvaluation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param formId Form ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityFormsEvaluationVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber));
+  }
+
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param formId Form ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return EvaluationFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetQualityFormsEvaluationVersionsRequest createGetQualityFormsEvaluationVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
+    return GetQualityFormsEvaluationVersionsRequest.builder()
+            .withFormId(formId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityFormsEvaluationVersions(GetQualityFormsEvaluationVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the revisions for a specific evaluation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param expand Expand (optional)
+   * @param name Name (optional)
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityFormsEvaluations(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
+    return  getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
+  }
+
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param expand Expand (optional)
+   * @param name Name (optional)
+   * @return EvaluationFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
+    return getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  }
+
+  private GetQualityFormsEvaluationsRequest createGetQualityFormsEvaluationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+    return GetQualityFormsEvaluationsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withNextPage(nextPage)
+    
+            .withPreviousPage(previousPage)
+    
+            .withExpand(expand)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityFormsEvaluations(GetQualityFormsEvaluationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of evaluation forms
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a survey form
+   * 
+   * @param formId Form ID (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm getQualityFormsSurvey(String formId) throws IOException, ApiException {
+    return  getQualityFormsSurvey(createGetQualityFormsSurveyRequest(formId));
+  }
+
+  /**
+   * Get a survey form
+   * 
+   * @param formId Form ID (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> getQualityFormsSurveyWithHttpInfo(String formId) throws IOException {
+    return getQualityFormsSurvey(createGetQualityFormsSurveyRequest(formId).withHttpInfo());
+  }
+
+  private GetQualityFormsSurveyRequest createGetQualityFormsSurveyRequest(String formId) {
+    return GetQualityFormsSurveyRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Get a survey form
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm getQualityFormsSurvey(GetQualityFormsSurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a survey form
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> getQualityFormsSurvey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param formId Form ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveyVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getQualityFormsSurveyVersions(createGetQualityFormsSurveyVersionsRequest(formId, pageSize, pageNumber));
+  }
+
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param formId Form ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SurveyFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveyVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getQualityFormsSurveyVersions(createGetQualityFormsSurveyVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetQualityFormsSurveyVersionsRequest createGetQualityFormsSurveyVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
+    return GetQualityFormsSurveyVersionsRequest.builder()
+            .withFormId(formId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param request The request object
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveyVersions(GetQualityFormsSurveyVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the revisions for a specific survey.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveyVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of survey forms
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param expand Expand (optional)
+   * @param name Name (optional)
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveys(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
+    return  getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
+  }
+
+  /**
+   * Get the list of survey forms
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param expand Expand (optional)
+   * @param name Name (optional)
+   * @return SurveyFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
+    return getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  }
+
+  private GetQualityFormsSurveysRequest createGetQualityFormsSurveysRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+    return GetQualityFormsSurveysRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withNextPage(nextPage)
+    
+            .withPreviousPage(previousPage)
+    
+            .withExpand(expand)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of survey forms
+   * 
+   * @param request The request object
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveys(GetQualityFormsSurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of survey forms
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a keywordSet by id.
    * 
    * @param keywordSetId KeywordSet ID (required)
@@ -1892,6 +2604,421 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm getQualityPublishedformsEvaluation(String formId) throws IOException, ApiException {
+    return  getQualityPublishedformsEvaluation(createGetQualityPublishedformsEvaluationRequest(formId));
+  }
+
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @return EvaluationForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> getQualityPublishedformsEvaluationWithHttpInfo(String formId) throws IOException {
+    return getQualityPublishedformsEvaluation(createGetQualityPublishedformsEvaluationRequest(formId).withHttpInfo());
+  }
+
+  private GetQualityPublishedformsEvaluationRequest createGetQualityPublishedformsEvaluationRequest(String formId) {
+    return GetQualityPublishedformsEvaluationRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm getQualityPublishedformsEvaluation(GetQualityPublishedformsEvaluationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the most recent published version of an evaluation form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> getQualityPublishedformsEvaluation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (optional)
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityPublishedformsEvaluations(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
+    return  getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name));
+  }
+
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (optional)
+   * @return EvaluationFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
+    return getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name).withHttpInfo());
+  }
+
+  private GetQualityPublishedformsEvaluationsRequest createGetQualityPublishedformsEvaluationsRequest(Integer pageSize, Integer pageNumber, String name) {
+    return GetQualityPublishedformsEvaluationsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param request The request object
+   * @return EvaluationFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationFormEntityListing getQualityPublishedformsEvaluations(GetQualityPublishedformsEvaluationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the published evaluation forms.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsEvaluations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationFormEntityListing> response = (ApiResponse<EvaluationFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm getQualityPublishedformsSurvey(String formId) throws IOException, ApiException {
+    return  getQualityPublishedformsSurvey(createGetQualityPublishedformsSurveyRequest(formId));
+  }
+
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> getQualityPublishedformsSurveyWithHttpInfo(String formId) throws IOException {
+    return getQualityPublishedformsSurvey(createGetQualityPublishedformsSurveyRequest(formId).withHttpInfo());
+  }
+
+  private GetQualityPublishedformsSurveyRequest createGetQualityPublishedformsSurveyRequest(String formId) {
+    return GetQualityPublishedformsSurveyRequest.builder()
+            .withFormId(formId)
+    
+            .build();
+  }
+
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm getQualityPublishedformsSurvey(GetQualityPublishedformsSurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the most recent published version of a survey form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> getQualityPublishedformsSurvey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the published survey forms.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (optional)
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityPublishedformsSurveys(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
+    return  getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name));
+  }
+
+  /**
+   * Get the published survey forms.
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param name Name (optional)
+   * @return SurveyFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityPublishedformsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
+    return getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name).withHttpInfo());
+  }
+
+  private GetQualityPublishedformsSurveysRequest createGetQualityPublishedformsSurveysRequest(Integer pageSize, Integer pageNumber, String name) {
+    return GetQualityPublishedformsSurveysRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get the published survey forms.
+   * 
+   * @param request The request object
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityPublishedformsSurveys(GetQualityPublishedformsSurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the published survey forms.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityPublishedformsSurveys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm patchQualityFormsSurvey(String formId, SurveyForm body) throws IOException, ApiException {
+    return  patchQualityFormsSurvey(createPatchQualityFormsSurveyRequest(formId, body));
+  }
+
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> patchQualityFormsSurveyWithHttpInfo(String formId, SurveyForm body) throws IOException {
+    return patchQualityFormsSurvey(createPatchQualityFormsSurveyRequest(formId, body).withHttpInfo());
+  }
+
+  private PatchQualityFormsSurveyRequest createPatchQualityFormsSurveyRequest(String formId, SurveyForm body) {
+    return PatchQualityFormsSurveyRequest.builder()
+            .withFormId(formId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm patchQualityFormsSurvey(PatchQualityFormsSurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> patchQualityFormsSurvey(ApiRequest<SurveyForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2305,6 +3432,164 @@ public class QualityApi {
 
   
   /**
+   * Create an evaluation form.
+   * 
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm postQualityFormsEvaluations(EvaluationForm body) throws IOException, ApiException {
+    return  postQualityFormsEvaluations(createPostQualityFormsEvaluationsRequest(body));
+  }
+
+  /**
+   * Create an evaluation form.
+   * 
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> postQualityFormsEvaluationsWithHttpInfo(EvaluationForm body) throws IOException {
+    return postQualityFormsEvaluations(createPostQualityFormsEvaluationsRequest(body).withHttpInfo());
+  }
+
+  private PostQualityFormsEvaluationsRequest createPostQualityFormsEvaluationsRequest(EvaluationForm body) {
+    return PostQualityFormsEvaluationsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create an evaluation form.
+   * 
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm postQualityFormsEvaluations(PostQualityFormsEvaluationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an evaluation form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> postQualityFormsEvaluations(ApiRequest<EvaluationForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a survey form.
+   * 
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm postQualityFormsSurveys(SurveyForm body) throws IOException, ApiException {
+    return  postQualityFormsSurveys(createPostQualityFormsSurveysRequest(body));
+  }
+
+  /**
+   * Create a survey form.
+   * 
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> postQualityFormsSurveysWithHttpInfo(SurveyForm body) throws IOException {
+    return postQualityFormsSurveys(createPostQualityFormsSurveysRequest(body).withHttpInfo());
+  }
+
+  private PostQualityFormsSurveysRequest createPostQualityFormsSurveysRequest(SurveyForm body) {
+    return PostQualityFormsSurveysRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a survey form.
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm postQualityFormsSurveys(PostQualityFormsSurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a survey form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> postQualityFormsSurveys(ApiRequest<SurveyForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a Keyword Set
    * 
    * @param body keywordSet (required)
@@ -2461,6 +3746,164 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm postQualityPublishedformsEvaluations(PublishForm body) throws IOException, ApiException {
+    return  postQualityPublishedformsEvaluations(createPostQualityPublishedformsEvaluationsRequest(body));
+  }
+
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> postQualityPublishedformsEvaluationsWithHttpInfo(PublishForm body) throws IOException {
+    return postQualityPublishedformsEvaluations(createPostQualityPublishedformsEvaluationsRequest(body).withHttpInfo());
+  }
+
+  private PostQualityPublishedformsEvaluationsRequest createPostQualityPublishedformsEvaluationsRequest(PublishForm body) {
+    return PostQualityPublishedformsEvaluationsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm postQualityPublishedformsEvaluations(PostQualityPublishedformsEvaluationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Publish an evaluation form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> postQualityPublishedformsEvaluations(ApiRequest<PublishForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Publish a survey form.
+   * 
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm postQualityPublishedformsSurveys(PublishForm body) throws IOException, ApiException {
+    return  postQualityPublishedformsSurveys(createPostQualityPublishedformsSurveysRequest(body));
+  }
+
+  /**
+   * Publish a survey form.
+   * 
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> postQualityPublishedformsSurveysWithHttpInfo(PublishForm body) throws IOException {
+    return postQualityPublishedformsSurveys(createPostQualityPublishedformsSurveysRequest(body).withHttpInfo());
+  }
+
+  private PostQualityPublishedformsSurveysRequest createPostQualityPublishedformsSurveysRequest(PublishForm body) {
+    return PostQualityPublishedformsSurveysRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Publish a survey form.
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm postQualityPublishedformsSurveys(PostQualityPublishedformsSurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Publish a survey form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> postQualityPublishedformsSurveys(ApiRequest<PublishForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2797,6 +4240,172 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm putQualityFormsEvaluation(String formId, EvaluationForm body) throws IOException, ApiException {
+    return  putQualityFormsEvaluation(createPutQualityFormsEvaluationRequest(formId, body));
+  }
+
+  /**
+   * Update an evaluation form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Evaluation form (required)
+   * @return EvaluationForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> putQualityFormsEvaluationWithHttpInfo(String formId, EvaluationForm body) throws IOException {
+    return putQualityFormsEvaluation(createPutQualityFormsEvaluationRequest(formId, body).withHttpInfo());
+  }
+
+  private PutQualityFormsEvaluationRequest createPutQualityFormsEvaluationRequest(String formId, EvaluationForm body) {
+    return PutQualityFormsEvaluationRequest.builder()
+            .withFormId(formId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an evaluation form.
+   * 
+   * @param request The request object
+   * @return EvaluationForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EvaluationForm putQualityFormsEvaluation(PutQualityFormsEvaluationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EvaluationForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EvaluationForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an evaluation form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EvaluationForm> putQualityFormsEvaluation(ApiRequest<EvaluationForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EvaluationForm> response = (ApiResponse<EvaluationForm>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm putQualityFormsSurvey(String formId, SurveyForm body) throws IOException, ApiException {
+    return  putQualityFormsSurvey(createPutQualityFormsSurveyRequest(formId, body));
+  }
+
+  /**
+   * Update a survey form.
+   * 
+   * @param formId Form ID (required)
+   * @param body Survey form (required)
+   * @return SurveyForm
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> putQualityFormsSurveyWithHttpInfo(String formId, SurveyForm body) throws IOException {
+    return putQualityFormsSurvey(createPutQualityFormsSurveyRequest(formId, body).withHttpInfo());
+  }
+
+  private PutQualityFormsSurveyRequest createPutQualityFormsSurveyRequest(String formId, SurveyForm body) {
+    return PutQualityFormsSurveyRequest.builder()
+            .withFormId(formId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a survey form.
+   * 
+   * @param request The request object
+   * @return SurveyForm
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyForm putQualityFormsSurvey(PutQualityFormsSurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyForm> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyForm>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a survey form.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyForm> putQualityFormsSurvey(ApiRequest<SurveyForm> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyForm>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -40,6 +40,7 @@ title: Email
 | CONNECTED | &quot;connected&quot; |
 | DISCONNECTED | &quot;disconnected&quot; |
 | NONE | &quot;none&quot; |
+| TRANSMITTING | &quot;transmitting&quot; |
 
 
 <a name="DirectionEnum"></a>

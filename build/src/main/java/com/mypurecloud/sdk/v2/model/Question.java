@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnswerOption;
 import com.mypurecloud.sdk.v2.model.VisibilityCondition;
 import io.swagger.annotations.ApiModel;
@@ -21,15 +22,51 @@ public class Question  implements Serializable {
   private String id = null;
   private String text = null;
   private String helpText = null;
-  private String type = null;
-  private Double weight = null;
-  private Boolean naRequired = null;
-  private Boolean commentsRequired = null;
-  private Boolean isKill = null;
-  private Boolean isCritical = null;
+
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    MULTIPLECHOICEQUESTION("multipleChoiceQuestion"),
+    FREETEXTQUESTION("freeTextQuestion"),
+    NPSQUESTION("npsQuestion"),
+    READONLYTEXTBLOCKQUESTION("readOnlyTextBlockQuestion");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
   private Boolean naEnabled = null;
+  private Boolean commentsRequired = null;
   private VisibilityCondition visibilityCondition = null;
   private List<AnswerOption> answerOptions = new ArrayList<AnswerOption>();
+  private Integer maxResponseCharacters = null;
+  private String explanationPrompt = null;
+  private Boolean isKill = null;
+  private Boolean isCritical = null;
 
   
   /**
@@ -85,52 +122,35 @@ public class Question  implements Serializable {
   
   /**
    **/
-  public Question type(String type) {
+  public Question type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("type")
-  public String getType() {
+  public TypeEnum getType() {
     return type;
   }
-  public void setType(String type) {
+  public void setType(TypeEnum type) {
     this.type = type;
   }
 
   
   /**
    **/
-  public Question weight(Double weight) {
-    this.weight = weight;
+  public Question naEnabled(Boolean naEnabled) {
+    this.naEnabled = naEnabled;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("weight")
-  public Double getWeight() {
-    return weight;
+  @JsonProperty("naEnabled")
+  public Boolean getNaEnabled() {
+    return naEnabled;
   }
-  public void setWeight(Double weight) {
-    this.weight = weight;
-  }
-
-  
-  /**
-   **/
-  public Question naRequired(Boolean naRequired) {
-    this.naRequired = naRequired;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("naRequired")
-  public Boolean getNaRequired() {
-    return naRequired;
-  }
-  public void setNaRequired(Boolean naRequired) {
-    this.naRequired = naRequired;
+  public void setNaEnabled(Boolean naEnabled) {
+    this.naEnabled = naEnabled;
   }
 
   
@@ -148,6 +168,77 @@ public class Question  implements Serializable {
   }
   public void setCommentsRequired(Boolean commentsRequired) {
     this.commentsRequired = commentsRequired;
+  }
+
+  
+  /**
+   **/
+  public Question visibilityCondition(VisibilityCondition visibilityCondition) {
+    this.visibilityCondition = visibilityCondition;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("visibilityCondition")
+  public VisibilityCondition getVisibilityCondition() {
+    return visibilityCondition;
+  }
+  public void setVisibilityCondition(VisibilityCondition visibilityCondition) {
+    this.visibilityCondition = visibilityCondition;
+  }
+
+  
+  /**
+   * Options from which to choose an answer for this question. Only used by Multiple Choice type questions.
+   **/
+  public Question answerOptions(List<AnswerOption> answerOptions) {
+    this.answerOptions = answerOptions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Options from which to choose an answer for this question. Only used by Multiple Choice type questions.")
+  @JsonProperty("answerOptions")
+  public List<AnswerOption> getAnswerOptions() {
+    return answerOptions;
+  }
+  public void setAnswerOptions(List<AnswerOption> answerOptions) {
+    this.answerOptions = answerOptions;
+  }
+
+  
+  /**
+   * How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.
+   **/
+  public Question maxResponseCharacters(Integer maxResponseCharacters) {
+    this.maxResponseCharacters = maxResponseCharacters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How many characters are allowed in the text response to this question. Used by NPS and Free Text question types.")
+  @JsonProperty("maxResponseCharacters")
+  public Integer getMaxResponseCharacters() {
+    return maxResponseCharacters;
+  }
+  public void setMaxResponseCharacters(Integer maxResponseCharacters) {
+    this.maxResponseCharacters = maxResponseCharacters;
+  }
+
+  
+  /**
+   * Prompt for details explaining the chosen NPS score. Used by NPS questions.
+   **/
+  public Question explanationPrompt(String explanationPrompt) {
+    this.explanationPrompt = explanationPrompt;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Prompt for details explaining the chosen NPS score. Used by NPS questions.")
+  @JsonProperty("explanationPrompt")
+  public String getExplanationPrompt() {
+    return explanationPrompt;
+  }
+  public void setExplanationPrompt(String explanationPrompt) {
+    this.explanationPrompt = explanationPrompt;
   }
 
   
@@ -185,57 +276,6 @@ public class Question  implements Serializable {
   }
 
   
-  /**
-   **/
-  public Question naEnabled(Boolean naEnabled) {
-    this.naEnabled = naEnabled;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("naEnabled")
-  public Boolean getNaEnabled() {
-    return naEnabled;
-  }
-  public void setNaEnabled(Boolean naEnabled) {
-    this.naEnabled = naEnabled;
-  }
-
-  
-  /**
-   **/
-  public Question visibilityCondition(VisibilityCondition visibilityCondition) {
-    this.visibilityCondition = visibilityCondition;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("visibilityCondition")
-  public VisibilityCondition getVisibilityCondition() {
-    return visibilityCondition;
-  }
-  public void setVisibilityCondition(VisibilityCondition visibilityCondition) {
-    this.visibilityCondition = visibilityCondition;
-  }
-
-  
-  /**
-   **/
-  public Question answerOptions(List<AnswerOption> answerOptions) {
-    this.answerOptions = answerOptions;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("answerOptions")
-  public List<AnswerOption> getAnswerOptions() {
-    return answerOptions;
-  }
-  public void setAnswerOptions(List<AnswerOption> answerOptions) {
-    this.answerOptions = answerOptions;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -250,19 +290,19 @@ public class Question  implements Serializable {
         Objects.equals(this.text, question.text) &&
         Objects.equals(this.helpText, question.helpText) &&
         Objects.equals(this.type, question.type) &&
-        Objects.equals(this.weight, question.weight) &&
-        Objects.equals(this.naRequired, question.naRequired) &&
-        Objects.equals(this.commentsRequired, question.commentsRequired) &&
-        Objects.equals(this.isKill, question.isKill) &&
-        Objects.equals(this.isCritical, question.isCritical) &&
         Objects.equals(this.naEnabled, question.naEnabled) &&
+        Objects.equals(this.commentsRequired, question.commentsRequired) &&
         Objects.equals(this.visibilityCondition, question.visibilityCondition) &&
-        Objects.equals(this.answerOptions, question.answerOptions);
+        Objects.equals(this.answerOptions, question.answerOptions) &&
+        Objects.equals(this.maxResponseCharacters, question.maxResponseCharacters) &&
+        Objects.equals(this.explanationPrompt, question.explanationPrompt) &&
+        Objects.equals(this.isKill, question.isKill) &&
+        Objects.equals(this.isCritical, question.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, helpText, type, weight, naRequired, commentsRequired, isKill, isCritical, naEnabled, visibilityCondition, answerOptions);
+    return Objects.hash(id, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, maxResponseCharacters, explanationPrompt, isKill, isCritical);
   }
 
   @Override
@@ -274,14 +314,14 @@ public class Question  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    sb.append("    naRequired: ").append(toIndentedString(naRequired)).append("\n");
-    sb.append("    commentsRequired: ").append(toIndentedString(commentsRequired)).append("\n");
-    sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
-    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("    naEnabled: ").append(toIndentedString(naEnabled)).append("\n");
+    sb.append("    commentsRequired: ").append(toIndentedString(commentsRequired)).append("\n");
     sb.append("    visibilityCondition: ").append(toIndentedString(visibilityCondition)).append("\n");
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
+    sb.append("    maxResponseCharacters: ").append(toIndentedString(maxResponseCharacters)).append("\n");
+    sb.append("    explanationPrompt: ").append(toIndentedString(explanationPrompt)).append("\n");
+    sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
+    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");
     return sb.toString();
   }

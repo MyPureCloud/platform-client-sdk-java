@@ -5325,14 +5325,15 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
-   * @param priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. (optional)
-   * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
+   * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
+   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter. (optional)
    * @return List<DialerContact>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException, ApiException {
-    return  postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData));
+  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException, ApiException {
+    return  postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData, doNotQueue));
   }
 
   /**
@@ -5340,16 +5341,17 @@ public class OutboundApi {
    * 
    * @param contactListId Contact List ID (required)
    * @param body Contact (required)
-   * @param priority Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. (optional)
-   * @param clearSystemData Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. (optional)
+   * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
+   * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter. (optional)
    * @return List<DialerContact>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) throws IOException {
-    return postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData).withHttpInfo());
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException {
+    return postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData, doNotQueue).withHttpInfo());
   }
 
-  private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData) {
+  private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) {
     return PostOutboundContactlistContactsRequest.builder()
             .withContactListId(contactListId)
     
@@ -5358,6 +5360,8 @@ public class OutboundApi {
             .withPriority(priority)
     
             .withClearSystemData(clearSystemData)
+    
+            .withDoNotQueue(doNotQueue)
     
             .build();
   }

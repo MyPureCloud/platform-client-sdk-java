@@ -5944,7 +5944,7 @@ public class ConversationsApiAsync {
 
   
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5978,7 +5978,7 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based.This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+   * Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -6173,7 +6173,7 @@ public class ConversationsApiAsync {
   
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6207,7 +6207,7 @@ public class ConversationsApiAsync {
 
   /**
    * Create an email conversation
-   * 
+   * If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

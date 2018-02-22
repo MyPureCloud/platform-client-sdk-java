@@ -23,6 +23,12 @@ public class AgentActivity  implements Serializable {
   private User agent = null;
   private Integer numEvaluations = null;
   private Integer averageEvaluationScore = null;
+  private Integer numCriticalEvaluations = null;
+  private Float averageCriticalScore = null;
+  private Float highestEvaluationScore = null;
+  private Float lowestEvaluationScore = null;
+  private Float highestCriticalScore = null;
+  private Float lowestCriticalScore = null;
   private List<AgentEvaluatorActivity> agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
   private String selfUri = null;
 
@@ -104,6 +110,108 @@ public class AgentActivity  implements Serializable {
   
   /**
    **/
+  public AgentActivity numCriticalEvaluations(Integer numCriticalEvaluations) {
+    this.numCriticalEvaluations = numCriticalEvaluations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numCriticalEvaluations")
+  public Integer getNumCriticalEvaluations() {
+    return numCriticalEvaluations;
+  }
+  public void setNumCriticalEvaluations(Integer numCriticalEvaluations) {
+    this.numCriticalEvaluations = numCriticalEvaluations;
+  }
+
+  
+  /**
+   **/
+  public AgentActivity averageCriticalScore(Float averageCriticalScore) {
+    this.averageCriticalScore = averageCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("averageCriticalScore")
+  public Float getAverageCriticalScore() {
+    return averageCriticalScore;
+  }
+  public void setAverageCriticalScore(Float averageCriticalScore) {
+    this.averageCriticalScore = averageCriticalScore;
+  }
+
+  
+  /**
+   **/
+  public AgentActivity highestEvaluationScore(Float highestEvaluationScore) {
+    this.highestEvaluationScore = highestEvaluationScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("highestEvaluationScore")
+  public Float getHighestEvaluationScore() {
+    return highestEvaluationScore;
+  }
+  public void setHighestEvaluationScore(Float highestEvaluationScore) {
+    this.highestEvaluationScore = highestEvaluationScore;
+  }
+
+  
+  /**
+   **/
+  public AgentActivity lowestEvaluationScore(Float lowestEvaluationScore) {
+    this.lowestEvaluationScore = lowestEvaluationScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lowestEvaluationScore")
+  public Float getLowestEvaluationScore() {
+    return lowestEvaluationScore;
+  }
+  public void setLowestEvaluationScore(Float lowestEvaluationScore) {
+    this.lowestEvaluationScore = lowestEvaluationScore;
+  }
+
+  
+  /**
+   **/
+  public AgentActivity highestCriticalScore(Float highestCriticalScore) {
+    this.highestCriticalScore = highestCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("highestCriticalScore")
+  public Float getHighestCriticalScore() {
+    return highestCriticalScore;
+  }
+  public void setHighestCriticalScore(Float highestCriticalScore) {
+    this.highestCriticalScore = highestCriticalScore;
+  }
+
+  
+  /**
+   **/
+  public AgentActivity lowestCriticalScore(Float lowestCriticalScore) {
+    this.lowestCriticalScore = lowestCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lowestCriticalScore")
+  public Float getLowestCriticalScore() {
+    return lowestCriticalScore;
+  }
+  public void setLowestCriticalScore(Float lowestCriticalScore) {
+    this.lowestCriticalScore = lowestCriticalScore;
+  }
+
+  
+  /**
+   **/
   public AgentActivity agentEvaluatorActivityList(List<AgentEvaluatorActivity> agentEvaluatorActivityList) {
     this.agentEvaluatorActivityList = agentEvaluatorActivityList;
     return this;
@@ -141,13 +249,19 @@ public class AgentActivity  implements Serializable {
         Objects.equals(this.agent, agentActivity.agent) &&
         Objects.equals(this.numEvaluations, agentActivity.numEvaluations) &&
         Objects.equals(this.averageEvaluationScore, agentActivity.averageEvaluationScore) &&
+        Objects.equals(this.numCriticalEvaluations, agentActivity.numCriticalEvaluations) &&
+        Objects.equals(this.averageCriticalScore, agentActivity.averageCriticalScore) &&
+        Objects.equals(this.highestEvaluationScore, agentActivity.highestEvaluationScore) &&
+        Objects.equals(this.lowestEvaluationScore, agentActivity.lowestEvaluationScore) &&
+        Objects.equals(this.highestCriticalScore, agentActivity.highestCriticalScore) &&
+        Objects.equals(this.lowestCriticalScore, agentActivity.lowestCriticalScore) &&
         Objects.equals(this.agentEvaluatorActivityList, agentActivity.agentEvaluatorActivityList) &&
         Objects.equals(this.selfUri, agentActivity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, agent, numEvaluations, averageEvaluationScore, agentEvaluatorActivityList, selfUri);
+    return Objects.hash(id, name, agent, numEvaluations, averageEvaluationScore, numCriticalEvaluations, averageCriticalScore, highestEvaluationScore, lowestEvaluationScore, highestCriticalScore, lowestCriticalScore, agentEvaluatorActivityList, selfUri);
   }
 
   @Override
@@ -160,6 +274,12 @@ public class AgentActivity  implements Serializable {
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
     sb.append("    numEvaluations: ").append(toIndentedString(numEvaluations)).append("\n");
     sb.append("    averageEvaluationScore: ").append(toIndentedString(averageEvaluationScore)).append("\n");
+    sb.append("    numCriticalEvaluations: ").append(toIndentedString(numCriticalEvaluations)).append("\n");
+    sb.append("    averageCriticalScore: ").append(toIndentedString(averageCriticalScore)).append("\n");
+    sb.append("    highestEvaluationScore: ").append(toIndentedString(highestEvaluationScore)).append("\n");
+    sb.append("    lowestEvaluationScore: ").append(toIndentedString(lowestEvaluationScore)).append("\n");
+    sb.append("    highestCriticalScore: ").append(toIndentedString(highestCriticalScore)).append("\n");
+    sb.append("    lowestCriticalScore: ").append(toIndentedString(lowestCriticalScore)).append("\n");
     sb.append("    agentEvaluatorActivityList: ").append(toIndentedString(agentEvaluatorActivityList)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

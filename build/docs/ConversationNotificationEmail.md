@@ -39,6 +39,7 @@ title: ConversationNotificationEmail
 | CONNECTED | &quot;CONNECTED&quot; |
 | DISCONNECTED | &quot;DISCONNECTED&quot; |
 | NONE | &quot;NONE&quot; |
+| TRANSMITTING | &quot;TRANSMITTING&quot; |
 
 
 <a name="DisconnectTypeEnum"></a>

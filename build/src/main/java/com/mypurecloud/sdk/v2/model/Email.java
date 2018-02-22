@@ -29,7 +29,8 @@ public class Email  implements Serializable {
     ALERTING("alerting"),
     CONNECTED("connected"),
     DISCONNECTED("disconnected"),
-    NONE("none");
+    NONE("none"),
+    TRANSMITTING("transmitting");
 
     private String value;
 

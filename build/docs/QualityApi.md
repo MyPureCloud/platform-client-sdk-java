@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteQualityCalibration**](QualityApi.html#deleteQualityCalibration) | Delete a calibration by id. |
 | [**deleteQualityConversationEvaluation**](QualityApi.html#deleteQualityConversationEvaluation) | Delete an evaluation |
 | [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | Delete an evaluation form. |
+| [**deleteQualityFormsEvaluation**](QualityApi.html#deleteQualityFormsEvaluation) | Delete an evaluation form. |
+| [**deleteQualityFormsSurvey**](QualityApi.html#deleteQualityFormsSurvey) | Delete a survey form. |
 | [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | Delete a keywordSet by id. |
 | [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | Delete keyword sets |
 | [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | Gets a list of Agent Activities |
@@ -22,21 +24,38 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityForm**](QualityApi.html#getQualityForm) | Get an evaluation form |
 | [**getQualityFormVersions**](QualityApi.html#getQualityFormVersions) | Gets all the revisions for a specific evaluation. |
 | [**getQualityForms**](QualityApi.html#getQualityForms) | Get the list of evaluation forms |
+| [**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | Get an evaluation form |
+| [**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | Gets all the revisions for a specific evaluation. |
+| [**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | Get the list of evaluation forms |
+| [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | Get a survey form |
+| [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
+| [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
 | [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | Get a keywordSet by id. |
 | [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | Get the list of keyword sets |
 | [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
 | [**getQualityPublishedforms**](QualityApi.html#getQualityPublishedforms) | Get the published evaluation forms. |
+| [**getQualityPublishedformsEvaluation**](QualityApi.html#getQualityPublishedformsEvaluation) | Get the most recent published version of an evaluation form. |
+| [**getQualityPublishedformsEvaluations**](QualityApi.html#getQualityPublishedformsEvaluations) | Get the published evaluation forms. |
+| [**getQualityPublishedformsSurvey**](QualityApi.html#getQualityPublishedformsSurvey) | Get the most recent published version of a survey form. |
+| [**getQualityPublishedformsSurveys**](QualityApi.html#getQualityPublishedformsSurveys) | Get the published survey forms. |
+| [**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form. |
 | [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | Create a calibration |
 | [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | Create an evaluation |
 | [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | Score evaluation |
 | [**postQualityForms**](QualityApi.html#postQualityForms) | Create an evaluation form. |
+| [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | Create an evaluation form. |
+| [**postQualityFormsSurveys**](QualityApi.html#postQualityFormsSurveys) | Create a survey form. |
 | [**postQualityKeywordsets**](QualityApi.html#postQualityKeywordsets) | Create a Keyword Set |
 | [**postQualityPublishedforms**](QualityApi.html#postQualityPublishedforms) | Publish an evaluation form. |
+| [**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | Publish an evaluation form. |
+| [**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | Publish a survey form. |
 | [**postQualitySpotability**](QualityApi.html#postQualitySpotability) | Retrieve the spotability statistic |
 | [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex |
 | [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | Update an evaluation |
 | [**putQualityForm**](QualityApi.html#putQualityForm) | Update an evaluation form. |
+| [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | Update an evaluation form. |
+| [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | Update a survey form. |
 | [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | Update a keywordSet to the specified keywordSet via PUT. |
 {: class="table table-striped"}
 
@@ -182,6 +201,106 @@ try {
     apiInstance.deleteQualityForm(formId);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#deleteQualityForm");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteQualityFormsEvaluation"></a>
+
+# **deleteQualityFormsEvaluation**
+
+> Void deleteQualityFormsEvaluation(formId)
+
+Delete an evaluation form.
+
+
+
+Wraps DELETE /api/v2/quality/forms/evaluations/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    apiInstance.deleteQualityFormsEvaluation(formId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityFormsEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteQualityFormsSurvey"></a>
+
+# **deleteQualityFormsSurvey**
+
+> Void deleteQualityFormsSurvey(formId)
+
+Delete a survey form.
+
+
+
+Wraps DELETE /api/v2/quality/forms/surveys/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    apiInstance.deleteQualityFormsSurvey(formId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#deleteQualityFormsSurvey");
     e.printStackTrace();
 }
 ~~~
@@ -942,6 +1061,344 @@ try {
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
 
+<a name="getQualityFormsEvaluation"></a>
+
+# **getQualityFormsEvaluation**
+
+> [EvaluationForm](EvaluationForm.html) getQualityFormsEvaluation(formId)
+
+Get an evaluation form
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    EvaluationForm result = apiInstance.getQualityFormsEvaluation(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="getQualityFormsEvaluationVersions"></a>
+
+# **getQualityFormsEvaluationVersions**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber)
+
+Gets all the revisions for a specific evaluation.
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations/{formId}/versions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluationVersions(formId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationVersions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityFormsEvaluations"></a>
+
+# **getQualityFormsEvaluations**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+
+Get the list of evaluation forms
+
+
+
+Wraps GET /api/v2/quality/forms/evaluations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsEvaluations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **expand** | **String**| Expand | [optional] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityFormsSurvey"></a>
+
+# **getQualityFormsSurvey**
+
+> [SurveyForm](SurveyForm.html) getQualityFormsSurvey(formId)
+
+Get a survey form
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    SurveyForm result = apiInstance.getQualityFormsSurvey(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsSurvey");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
+<a name="getQualityFormsSurveyVersions"></a>
+
+# **getQualityFormsSurveyVersions**
+
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveyVersions(formId, pageSize, pageNumber)
+
+Gets all the revisions for a specific survey.
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/{formId}/versions  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveyVersions(formId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsSurveyVersions");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="getQualityFormsSurveys"></a>
+
+# **getQualityFormsSurveys**
+
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+
+Get the list of survey forms
+
+
+
+Wraps GET /api/v2/quality/forms/surveys  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String expand = "expand_example"; // String | Expand
+String name = "name_example"; // String | Name
+try {
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsSurveys");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+| **expand** | **String**| Expand | [optional] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
 <a name="getQualityKeywordset"></a>
 
 # **getQualityKeywordset**
@@ -1167,6 +1624,271 @@ try {
 ### Return type
 
 [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityPublishedformsEvaluation"></a>
+
+# **getQualityPublishedformsEvaluation**
+
+> [EvaluationForm](EvaluationForm.html) getQualityPublishedformsEvaluation(formId)
+
+Get the most recent published version of an evaluation form.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/evaluations/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    EvaluationForm result = apiInstance.getQualityPublishedformsEvaluation(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="getQualityPublishedformsEvaluations"></a>
+
+# **getQualityPublishedformsEvaluations**
+
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name)
+
+Get the published evaluation forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/evaluations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+try {
+    EvaluationFormEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+
+<a name="getQualityPublishedformsSurvey"></a>
+
+# **getQualityPublishedformsSurvey**
+
+> [SurveyForm](SurveyForm.html) getQualityPublishedformsSurvey(formId)
+
+Get the most recent published version of a survey form.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/surveys/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+try {
+    SurveyForm result = apiInstance.getQualityPublishedformsSurvey(formId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsSurvey");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
+<a name="getQualityPublishedformsSurveys"></a>
+
+# **getQualityPublishedformsSurveys**
+
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityPublishedformsSurveys(pageSize, pageNumber, name)
+
+Get the published survey forms.
+
+
+
+Wraps GET /api/v2/quality/publishedforms/surveys  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String name = "name_example"; // String | Name
+try {
+    SurveyFormEntityListing result = apiInstance.getQualityPublishedformsSurveys(pageSize, pageNumber, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityPublishedformsSurveys");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="patchQualityFormsSurvey"></a>
+
+# **patchQualityFormsSurvey**
+
+> [SurveyForm](SurveyForm.html) patchQualityFormsSurvey(formId, body)
+
+Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
+
+
+
+Wraps PATCH /api/v2/quality/forms/surveys/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+SurveyForm body = new SurveyForm(); // SurveyForm | Survey form
+try {
+    SurveyForm result = apiInstance.patchQualityFormsSurvey(formId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#patchQualityFormsSurvey");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
@@ -1429,6 +2151,108 @@ try {
 
 [**EvaluationForm**](EvaluationForm.html)
 
+<a name="postQualityFormsEvaluations"></a>
+
+# **postQualityFormsEvaluations**
+
+> [EvaluationForm](EvaluationForm.html) postQualityFormsEvaluations(body)
+
+Create an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/forms/evaluations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.postQualityFormsEvaluations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityFormsEvaluations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="postQualityFormsSurveys"></a>
+
+# **postQualityFormsSurveys**
+
+> [SurveyForm](SurveyForm.html) postQualityFormsSurveys(body)
+
+Create a survey form.
+
+
+
+Wraps POST /api/v2/quality/forms/surveys  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+SurveyForm body = new SurveyForm(); // SurveyForm | Survey form
+try {
+    SurveyForm result = apiInstance.postQualityFormsSurveys(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityFormsSurveys");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
+
 <a name="postQualityKeywordsets"></a>
 
 # **postQualityKeywordsets**
@@ -1532,6 +2356,108 @@ try {
 ### Return type
 
 [**EvaluationForm**](EvaluationForm.html)
+
+<a name="postQualityPublishedformsEvaluations"></a>
+
+# **postQualityPublishedformsEvaluations**
+
+> [EvaluationForm](EvaluationForm.html) postQualityPublishedformsEvaluations(body)
+
+Publish an evaluation form.
+
+
+
+Wraps POST /api/v2/quality/publishedforms/evaluations  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+PublishForm body = new PublishForm(); // PublishForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.postQualityPublishedformsEvaluations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityPublishedformsEvaluations");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**PublishForm**](PublishForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="postQualityPublishedformsSurveys"></a>
+
+# **postQualityPublishedformsSurveys**
+
+> [SurveyForm](SurveyForm.html) postQualityPublishedformsSurveys(body)
+
+Publish a survey form.
+
+
+
+Wraps POST /api/v2/quality/publishedforms/surveys  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+PublishForm body = new PublishForm(); // PublishForm | Survey form
+try {
+    SurveyForm result = apiInstance.postQualityPublishedformsSurveys(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityPublishedformsSurveys");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**PublishForm**](PublishForm.html)| Survey form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="postQualitySpotability"></a>
 
@@ -1746,6 +2672,112 @@ try {
 ### Return type
 
 [**EvaluationForm**](EvaluationForm.html)
+
+<a name="putQualityFormsEvaluation"></a>
+
+# **putQualityFormsEvaluation**
+
+> [EvaluationForm](EvaluationForm.html) putQualityFormsEvaluation(formId, body)
+
+Update an evaluation form.
+
+
+
+Wraps PUT /api/v2/quality/forms/evaluations/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+try {
+    EvaluationForm result = apiInstance.putQualityFormsEvaluation(formId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityFormsEvaluation");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationForm**](EvaluationForm.html)
+
+<a name="putQualityFormsSurvey"></a>
+
+# **putQualityFormsSurvey**
+
+> [SurveyForm](SurveyForm.html) putQualityFormsSurvey(formId, body)
+
+Update a survey form.
+
+
+
+Wraps PUT /api/v2/quality/forms/surveys/{formId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+String formId = "formId_example"; // String | Form ID
+SurveyForm body = new SurveyForm(); // SurveyForm | Survey form
+try {
+    SurveyForm result = apiInstance.putQualityFormsSurvey(formId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#putQualityFormsSurvey");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **formId** | **String**| Form ID | |
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyForm**](SurveyForm.html)
 
 <a name="putQualityKeywordset"></a>
 

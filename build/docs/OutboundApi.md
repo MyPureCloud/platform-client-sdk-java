@@ -3394,7 +3394,7 @@ try {
 
 # **postOutboundContactlistContacts**
 
-> [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData)
+> [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)
 
 Add contacts to a contact list.
 
@@ -3421,10 +3421,11 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
 List<DialerContact> body = Arrays.asList(new DialerContact()); // List<DialerContact> | Contact
-Boolean priority = true; // Boolean | Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue.
-Boolean clearSystemData = true; // Boolean | Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won't.
+Boolean priority = true; // Boolean | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
+Boolean clearSystemData = true; // Boolean | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
+Boolean doNotQueue = true; // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the 'priority' parameter.
 try {
-    List<DialerContact> result = apiInstance.postOutboundContactlistContacts(contactListId, body, priority, clearSystemData);
+    List<DialerContact> result = apiInstance.postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistContacts");
@@ -3439,8 +3440,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactListId** | **String**| Contact List ID | |
 | **body** | [**List&lt;DialerContact&gt;**](DialerContact.html)| Contact | |
-| **priority** | **Boolean**| Contact priority.  True means the contact(s) will be dialed next, false means the contact will go to the end of the contact queue. | [optional] |
-| **clearSystemData** | **Boolean**| Clear system data.  True means the system data stored on the contact will be cleared if the contact already exists (attempts, callable status, etc), false means it won&#39;t. | [optional] |
+| **priority** | **Boolean**| Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional] |
+| **clearSystemData** | **Boolean**| Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. | [optional] |
+| **doNotQueue** | **Boolean**| Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed; False means that updated contacts will be requeued, according to the &#39;priority&#39; parameter. | [optional] |
 {: class="table table-striped"}
 
 ### Return type

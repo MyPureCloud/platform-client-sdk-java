@@ -10,7 +10,6 @@ title: EvaluationForm
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The evaluation form name |  |
-| **type** | **String** | The form type (evaluation) |  |
 | **modifiedDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **published** | **Boolean** |  |  [optional] |
 | **contextId** | **String** |  |  [optional] |
