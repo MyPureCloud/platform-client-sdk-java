@@ -14,6 +14,7 @@ title: PolicyActions
 | **assignEvaluations** | [**List&lt;EvaluationAssignment&gt;**](EvaluationAssignment.html) |  |  [optional] |
 | **assignMeteredEvaluations** | [**List&lt;MeteredEvaluationAssignment&gt;**](MeteredEvaluationAssignment.html) |  |  [optional] |
 | **assignCalibrations** | [**List&lt;CalibrationAssignment&gt;**](CalibrationAssignment.html) |  |  [optional] |
+| **assignSurveys** | [**List&lt;SurveyAssignment&gt;**](SurveyAssignment.html) |  |  [optional] |
 | **retentionDuration** | [**RetentionDuration**](RetentionDuration.html) |  |  [optional] |
 | **initiateScreenRecording** | [**InitiateScreenRecording**](InitiateScreenRecording.html) |  |  [optional] |
 | **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription.html) |  |  [optional] |

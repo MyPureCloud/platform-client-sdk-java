@@ -22,7 +22,6 @@ import com.mypurecloud.sdk.v2.api.request.GetWebchatDeploymentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebchatDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebchatSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebchatDeploymentsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostWebchatSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebchatDeploymentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebchatSettingsRequest;
 
@@ -496,85 +495,6 @@ public class WebChatApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WebChatDeployment> response = (ApiResponse<WebChatDeployment>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param body webChatSettings (required)
-   * @return WebChatSettings
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public WebChatSettings postWebchatSettings(WebChatSettings body) throws IOException, ApiException {
-    return  postWebchatSettings(createPostWebchatSettingsRequest(body));
-  }
-
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param body webChatSettings (required)
-   * @return WebChatSettings
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<WebChatSettings> postWebchatSettingsWithHttpInfo(WebChatSettings body) throws IOException {
-    return postWebchatSettings(createPostWebchatSettingsRequest(body).withHttpInfo());
-  }
-
-  private PostWebchatSettingsRequest createPostWebchatSettingsRequest(WebChatSettings body) {
-    return PostWebchatSettingsRequest.builder()
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param request The request object
-   * @return WebChatSettings
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public WebChatSettings postWebchatSettings(PostWebchatSettingsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<WebChatSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebChatSettings>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<WebChatSettings> postWebchatSettings(ApiRequest<WebChatSettings> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<WebChatSettings>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<WebChatSettings> response = (ApiResponse<WebChatSettings>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<WebChatSettings> response = (ApiResponse<WebChatSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

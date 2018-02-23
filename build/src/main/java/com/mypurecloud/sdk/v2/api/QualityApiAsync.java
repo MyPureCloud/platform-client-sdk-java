@@ -3188,7 +3188,7 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<EvaluationForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
+  public Future<ApiResponse<EvaluationForm>> postQualityPublishedformsAsync(ApiRequest<PublishForm> request, final AsyncApiCallback<ApiResponse<EvaluationForm>> callback) {
     try {
       final SettableFuture<ApiResponse<EvaluationForm>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

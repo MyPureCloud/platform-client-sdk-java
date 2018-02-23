@@ -36,9 +36,11 @@ import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 
@@ -76,8 +78,10 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryReque
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
@@ -2931,6 +2935,86 @@ public class UsersApi {
 
   
   /**
+   * Change a users password
+   * 
+   * @param userId User ID (required)
+   * @param body Password (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUserPassword(String userId, ChangePasswordRequest body) throws IOException, ApiException {
+     postUserPassword(createPostUserPasswordRequest(userId, body));
+  }
+
+  /**
+   * Change a users password
+   * 
+   * @param userId User ID (required)
+   * @param body Password (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUserPasswordWithHttpInfo(String userId, ChangePasswordRequest body) throws IOException {
+    return postUserPassword(createPostUserPasswordRequest(userId, body).withHttpInfo());
+  }
+
+  private PostUserPasswordRequest createPostUserPasswordRequest(String userId, ChangePasswordRequest body) {
+    return PostUserPasswordRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Change a users password
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUserPassword(PostUserPasswordRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Change a users password
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUserPassword(ApiRequest<ChangePasswordRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Add routing skill to user
    * 
    * @param userId User ID (required)
@@ -3087,6 +3171,82 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Change your password
+   * 
+   * @param body Password (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUsersMePassword(ChangeMyPasswordRequest body) throws IOException, ApiException {
+     postUsersMePassword(createPostUsersMePasswordRequest(body));
+  }
+
+  /**
+   * Change your password
+   * 
+   * @param body Password (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUsersMePasswordWithHttpInfo(ChangeMyPasswordRequest body) throws IOException {
+    return postUsersMePassword(createPostUsersMePasswordRequest(body).withHttpInfo());
+  }
+
+  private PostUsersMePasswordRequest createPostUsersMePasswordRequest(ChangeMyPasswordRequest body) {
+    return PostUsersMePasswordRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Change your password
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postUsersMePassword(PostUsersMePasswordRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Change your password
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postUsersMePassword(ApiRequest<ChangeMyPasswordRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

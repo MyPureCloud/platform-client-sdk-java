@@ -19,6 +19,7 @@ title: Metabase
 | **state** | [**StateEnum**](#StateEnum) | Indicates if the resource is active, inactive, or deleted. |  [optional] |
 | **modifiedByApp** | **String** | The application that last modified the resource. |  [optional] |
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -33,6 +34,22 @@ title: Metabase
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EXTERNAL | &quot;EXTERNAL&quot; |
+| EXTERNAL_PCV | &quot;EXTERNAL_PCV&quot; |
+| EXTERNAL_PCV_AWS | &quot;EXTERNAL_PCV_AWS&quot; |
+| EXTERNAL_BYOC_CARRIER | &quot;EXTERNAL_BYOC_CARRIER&quot; |
+| EXTERNAL_BYOC_PBX | &quot;EXTERNAL_BYOC_PBX&quot; |
+| STATION | &quot;STATION&quot; |
+| TIE | &quot;TIE&quot; |
 {: class="table table-striped"}
 
 

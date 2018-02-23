@@ -20,6 +20,8 @@ title: ContactListNotification
 | **previewModeAcceptedValues** | **List&lt;String&gt;** |  |  [optional] |
 | **size** | **Integer** |  |  [optional] |
 | **attemptLimits** | [**DocumentDataV2NotificationCreatedBy**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
+| **automaticTimeZoneMapping** | **Boolean** |  |  [optional] |
+| **zipCodeColumnName** | **String** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

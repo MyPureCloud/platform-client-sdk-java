@@ -16,6 +16,9 @@ title: CallHistoryConversation
 | **missedCall** | **Boolean** | Did the user not answer this conversation |  [optional] |
 | **startTime** | [**Date**](Date.html) | The time the user joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **wasConference** | **Boolean** | Was this conversation a conference |  [optional] |
+| **wasCallback** | **Boolean** | Was this conversation a callback |  [optional] |
+| **hadScreenShare** | **Boolean** | Did this conversation have a screen share session |  [optional] |
+| **hadCobrowse** | **Boolean** | Did this conversation have a cobrowse session |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

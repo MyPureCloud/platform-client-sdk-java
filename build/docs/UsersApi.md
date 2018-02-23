@@ -41,8 +41,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
+| [**postUserPassword**](UsersApi.html#postUserPassword) | Change a users password |
 | [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**postUsers**](UsersApi.html#postUsers) | Create user |
+| [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
 | [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | Update a user&#39;s CallForwarding |
 | [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | Update an OutOfOffice |
@@ -1859,6 +1861,58 @@ try {
 
 null (empty response body)
 
+<a name="postUserPassword"></a>
+
+# **postUserPassword**
+
+> Void postUserPassword(userId, body)
+
+Change a users password
+
+
+
+Wraps POST /api/v2/users/{userId}/password  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+ChangePasswordRequest body = new ChangePasswordRequest(); // ChangePasswordRequest | Password
+try {
+    apiInstance.postUserPassword(userId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUserPassword");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**ChangePasswordRequest**](ChangePasswordRequest.html)| Password | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
 <a name="postUserRoutingskills"></a>
 
 # **postUserRoutingskills**
@@ -1962,6 +2016,56 @@ try {
 ### Return type
 
 [**User**](User.html)
+
+<a name="postUsersMePassword"></a>
+
+# **postUsersMePassword**
+
+> Void postUsersMePassword(body)
+
+Change your password
+
+
+
+Wraps POST /api/v2/users/me/password  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+ChangeMyPasswordRequest body = new ChangeMyPasswordRequest(); // ChangeMyPasswordRequest | Password
+try {
+    apiInstance.postUsersMePassword(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersMePassword");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest.html)| Password | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postUsersSearch"></a>
 

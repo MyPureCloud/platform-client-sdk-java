@@ -37,6 +37,7 @@ public class ExternalOrganization  implements Serializable {
   private List<String> websites = new ArrayList<String>();
   private List<Ticker> tickers = new ArrayList<Ticker>();
   private TwitterId twitterId = null;
+  private String externalSystemUrl = null;
   private Date modifyDate = null;
   private Date createDate = null;
   private Trustor trustor = null;
@@ -285,6 +286,24 @@ public class ExternalOrganization  implements Serializable {
 
   
   /**
+   * Identifies an external system-of-record resource that may have more detailed information on the organization
+   **/
+  public ExternalOrganization externalSystemUrl(String externalSystemUrl) {
+    this.externalSystemUrl = externalSystemUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifies an external system-of-record resource that may have more detailed information on the organization")
+  @JsonProperty("externalSystemUrl")
+  public String getExternalSystemUrl() {
+    return externalSystemUrl;
+  }
+  public void setExternalSystemUrl(String externalSystemUrl) {
+    this.externalSystemUrl = externalSystemUrl;
+  }
+
+  
+  /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ExternalOrganization modifyDate(Date modifyDate) {
@@ -386,6 +405,7 @@ public class ExternalOrganization  implements Serializable {
         Objects.equals(this.websites, externalOrganization.websites) &&
         Objects.equals(this.tickers, externalOrganization.tickers) &&
         Objects.equals(this.twitterId, externalOrganization.twitterId) &&
+        Objects.equals(this.externalSystemUrl, externalOrganization.externalSystemUrl) &&
         Objects.equals(this.modifyDate, externalOrganization.modifyDate) &&
         Objects.equals(this.createDate, externalOrganization.createDate) &&
         Objects.equals(this.trustor, externalOrganization.trustor) &&
@@ -395,7 +415,7 @@ public class ExternalOrganization  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, modifyDate, createDate, trustor, externalDataSources, selfUri);
+    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, externalDataSources, selfUri);
   }
 
   @Override
@@ -417,6 +437,7 @@ public class ExternalOrganization  implements Serializable {
     sb.append("    websites: ").append(toIndentedString(websites)).append("\n");
     sb.append("    tickers: ").append(toIndentedString(tickers)).append("\n");
     sb.append("    twitterId: ").append(toIndentedString(twitterId)).append("\n");
+    sb.append("    externalSystemUrl: ").append(toIndentedString(externalSystemUrl)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    trustor: ").append(toIndentedString(trustor)).append("\n");

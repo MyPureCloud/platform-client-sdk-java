@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.InitiateScreenRecording;
 import com.mypurecloud.sdk.v2.model.MediaTranscription;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.RetentionDuration;
+import com.mypurecloud.sdk.v2.model.SurveyAssignment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class PolicyActions  implements Serializable {
   private List<EvaluationAssignment> assignEvaluations = new ArrayList<EvaluationAssignment>();
   private List<MeteredEvaluationAssignment> assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
   private List<CalibrationAssignment> assignCalibrations = new ArrayList<CalibrationAssignment>();
+  private List<SurveyAssignment> assignSurveys = new ArrayList<SurveyAssignment>();
   private RetentionDuration retentionDuration = null;
   private InitiateScreenRecording initiateScreenRecording = null;
   private List<MediaTranscription> mediaTranscriptions = new ArrayList<MediaTranscription>();
@@ -140,6 +142,23 @@ public class PolicyActions  implements Serializable {
   
   /**
    **/
+  public PolicyActions assignSurveys(List<SurveyAssignment> assignSurveys) {
+    this.assignSurveys = assignSurveys;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assignSurveys")
+  public List<SurveyAssignment> getAssignSurveys() {
+    return assignSurveys;
+  }
+  public void setAssignSurveys(List<SurveyAssignment> assignSurveys) {
+    this.assignSurveys = assignSurveys;
+  }
+
+  
+  /**
+   **/
   public PolicyActions retentionDuration(RetentionDuration retentionDuration) {
     this.retentionDuration = retentionDuration;
     return this;
@@ -205,6 +224,7 @@ public class PolicyActions  implements Serializable {
         Objects.equals(this.assignEvaluations, policyActions.assignEvaluations) &&
         Objects.equals(this.assignMeteredEvaluations, policyActions.assignMeteredEvaluations) &&
         Objects.equals(this.assignCalibrations, policyActions.assignCalibrations) &&
+        Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
         Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
         Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
         Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions);
@@ -212,7 +232,7 @@ public class PolicyActions  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignCalibrations, retentionDuration, initiateScreenRecording, mediaTranscriptions);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions);
   }
 
   @Override
@@ -226,6 +246,7 @@ public class PolicyActions  implements Serializable {
     sb.append("    assignEvaluations: ").append(toIndentedString(assignEvaluations)).append("\n");
     sb.append("    assignMeteredEvaluations: ").append(toIndentedString(assignMeteredEvaluations)).append("\n");
     sb.append("    assignCalibrations: ").append(toIndentedString(assignCalibrations)).append("\n");
+    sb.append("    assignSurveys: ").append(toIndentedString(assignSurveys)).append("\n");
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
     sb.append("    initiateScreenRecording: ").append(toIndentedString(initiateScreenRecording)).append("\n");
     sb.append("    mediaTranscriptions: ").append(toIndentedString(mediaTranscriptions)).append("\n");

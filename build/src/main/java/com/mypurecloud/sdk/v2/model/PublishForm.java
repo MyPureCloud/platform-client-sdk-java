@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class PublishForm  implements Serializable {
   
   private Boolean published = null;
-  private String contextId = null;
+  private String id = null;
 
   
   /**
@@ -37,20 +37,20 @@ public class PublishForm  implements Serializable {
 
   
   /**
-   * Unique Id for all versions of this form
+   * Unique Id for this version of this form
    **/
-  public PublishForm contextId(String contextId) {
-    this.contextId = contextId;
+  public PublishForm id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Unique Id for all versions of this form")
-  @JsonProperty("contextId")
-  public String getContextId() {
-    return contextId;
+  @ApiModelProperty(example = "null", required = true, value = "Unique Id for this version of this form")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setContextId(String contextId) {
-    this.contextId = contextId;
+  public void setId(String id) {
+    this.id = id;
   }
 
   
@@ -65,12 +65,12 @@ public class PublishForm  implements Serializable {
     }
     PublishForm publishForm = (PublishForm) o;
     return Objects.equals(this.published, publishForm.published) &&
-        Objects.equals(this.contextId, publishForm.contextId);
+        Objects.equals(this.id, publishForm.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(published, contextId);
+    return Objects.hash(published, id);
   }
 
   @Override
@@ -79,7 +79,7 @@ public class PublishForm  implements Serializable {
     sb.append("class PublishForm {\n");
     
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
-    sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

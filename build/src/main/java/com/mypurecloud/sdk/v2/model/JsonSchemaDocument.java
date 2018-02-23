@@ -26,6 +26,7 @@ public class JsonSchemaDocument  implements Serializable {
   private String type = null;
   private List<String> required = new ArrayList<String>();
   private Map<String, Object> properties = null;
+  private Object additionalProperties = null;
 
   
   /**
@@ -147,6 +148,23 @@ public class JsonSchemaDocument  implements Serializable {
   }
 
   
+  /**
+   **/
+  public JsonSchemaDocument additionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Object getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -163,12 +181,13 @@ public class JsonSchemaDocument  implements Serializable {
         Objects.equals(this.description, jsonSchemaDocument.description) &&
         Objects.equals(this.type, jsonSchemaDocument.type) &&
         Objects.equals(this.required, jsonSchemaDocument.required) &&
-        Objects.equals(this.properties, jsonSchemaDocument.properties);
+        Objects.equals(this.properties, jsonSchemaDocument.properties) &&
+        Objects.equals(this.additionalProperties, jsonSchemaDocument.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schema, title, description, type, required, properties);
+    return Objects.hash(id, schema, title, description, type, required, properties, additionalProperties);
   }
 
   @Override
@@ -183,6 +202,7 @@ public class JsonSchemaDocument  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

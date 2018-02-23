@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteArchitectSystempromptResource**](ArchitectApi.html#deleteArchitectSystempromptResource) | Delete a system prompt resource override. |
 | [**deleteFlow**](ArchitectApi.html#deleteFlow) | Delete flow |
 | [**deleteFlows**](ArchitectApi.html#deleteFlows) | Batch-delete a list of flows |
+| [**deleteFlowsDatatable**](ArchitectApi.html#deleteFlowsDatatable) | deletes a specific datatable by id |
+| [**deleteFlowsDatatableRow**](ArchitectApi.html#deleteFlowsDatatableRow) | Delete a row entry |
 | [**getArchitectDependencytracking**](ArchitectApi.html#getArchitectDependencytracking) | Get Dependency Tracking objects that have a given display name |
 | [**getArchitectDependencytrackingBuild**](ArchitectApi.html#getArchitectDependencytrackingBuild) | Get Dependency Tracking build status for an organization |
 | [**getArchitectDependencytrackingConsumedresources**](ArchitectApi.html#getArchitectDependencytrackingConsumedresources) | Get resources that are consumed by a given Dependency Tracking object |
@@ -48,6 +50,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
+| [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by datatableId |
+| [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
+| [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable |
+| [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
 | [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | Generate prompt history |
@@ -65,6 +71,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
 | [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
 | [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
+| [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry |
+| [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
 | [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
 | [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | Update specified user prompt |
 | [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | Update specified user prompt resource |
@@ -72,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | Updates a schedule group by ID |
 | [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | Updates a system prompt resource override. |
 | [**putFlow**](ArchitectApi.html#putFlow) | Update flow |
+| [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | Updates a specific datatable by datatableId |
+| [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | Update a row entry |
 {: class="table table-striped"}
 
 <a name="deleteArchitectIvr"></a>
@@ -531,6 +541,108 @@ try {
 ### Return type
 
 [**Operation**](Operation.html)
+
+<a name="deleteFlowsDatatable"></a>
+
+# **deleteFlowsDatatable**
+
+> Void deleteFlowsDatatable(datatableId)
+
+deletes a specific datatable by id
+
+deletes an entire datatable (including schema and data) with a given datatableId)
+
+Wraps DELETE /api/v2/flows/datatables/{datatableId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+try {
+    apiInstance.deleteFlowsDatatable(datatableId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteFlowsDatatable");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteFlowsDatatableRow"></a>
+
+# **deleteFlowsDatatableRow**
+
+> Void deleteFlowsDatatableRow(datatableId, rowId)
+
+Delete a row entry
+
+Deletes a row with a given rowId.
+
+Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String rowId = "rowId_example"; // String | the key for the row
+try {
+    apiInstance.deleteFlowsDatatableRow(datatableId, rowId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteFlowsDatatableRow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **rowId** | **String**| the key for the row | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="getArchitectDependencytracking"></a>
 
@@ -2370,6 +2482,218 @@ try {
 
 [**FlowEntityListing**](FlowEntityListing.html)
 
+<a name="getFlowsDatatable"></a>
+
+# **getFlowsDatatable**
+
+> [JsonSchemaDocument](JsonSchemaDocument.html) getFlowsDatatable(datatableId, showbrief)
+
+Returns a specific datatable by datatableId
+
+Given a datableid returns the schema associated with it.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+Boolean showbrief = true; // Boolean | If true returns a shortened version of the schema including the name, id and description]
+try {
+    JsonSchemaDocument result = apiInstance.getFlowsDatatable(datatableId, showbrief);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatable");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **showbrief** | **Boolean**| If true returns a shortened version of the schema including the name, id and description] | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonSchemaDocument**](JsonSchemaDocument.html)
+
+<a name="getFlowsDatatableRow"></a>
+
+# **getFlowsDatatableRow**
+
+> [Map&lt;String, Object&gt;](Map.html) getFlowsDatatableRow(datatableId, rowId, showbrief)
+
+Returns a specific row for the datatable
+
+Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String rowId = "rowId_example"; // String | The key for the row
+Boolean showbrief = true; // Boolean | if true returns just the key field for the row
+try {
+    Map<String, Object> result = apiInstance.getFlowsDatatableRow(datatableId, rowId, showbrief);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableRow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **rowId** | **String**| The key for the row | |
+| **showbrief** | **Boolean**| if true returns just the key field for the row | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Map&lt;String, Object&gt;**](Map.html)
+
+<a name="getFlowsDatatableRows"></a>
+
+# **getFlowsDatatableRows**
+
+> [List&lt;Map&lt;String, Object&gt;&gt;](Map.html) getFlowsDatatableRows(datatableId, showbrief)
+
+Returns the rows for the datatable
+
+Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/rows  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+Boolean showbrief = true; // Boolean | If true returns just the key value of the row
+try {
+    List<Map<String, Object>> result = apiInstance.getFlowsDatatableRows(datatableId, showbrief);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableRows");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **showbrief** | **Boolean**| If true returns just the key value of the row | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;Map&lt;String, Object&gt;&gt;**](Map.html)
+
+<a name="getFlowsDatatables"></a>
+
+# **getFlowsDatatables**
+
+> [List&lt;JsonSchemaDocument&gt;](JsonSchemaDocument.html) getFlowsDatatables(showbrief)
+
+Retrieve a list of datatables for the org
+
+Returns a metadata list of the datatables associated with this org, including ID, name and description.
+
+Wraps GET /api/v2/flows/datatables  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Boolean showbrief = true; // Boolean | If true, returns a shortened version of the schema including the name, id and description
+try {
+    List<JsonSchemaDocument> result = apiInstance.getFlowsDatatables(showbrief);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatables");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **showbrief** | **Boolean**| If true, returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;JsonSchemaDocument&gt;**](JsonSchemaDocument.html)
+
 <a name="postArchitectDependencytrackingBuild"></a>
 
 # **postArchitectDependencytrackingBuild**
@@ -3240,6 +3564,110 @@ try {
 
 [**Flow**](Flow.html)
 
+<a name="postFlowsDatatableRows"></a>
+
+# **postFlowsDatatableRows**
+
+> [Map&lt;String, Object&gt;](Map.html) postFlowsDatatableRows(datatableId, dataTableRow)
+
+Create a new row entry
+
+Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+
+Wraps POST /api/v2/flows/datatables/{datatableId}/rows  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+Object dataTableRow = null; // Object | 
+try {
+    Map<String, Object> result = apiInstance.postFlowsDatatableRows(datatableId, dataTableRow);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsDatatableRows");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **dataTableRow** | **Object**|  | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Map&lt;String, Object&gt;**](Map.html)
+
+<a name="postFlowsDatatables"></a>
+
+# **postFlowsDatatables**
+
+> [JsonSchemaDocument](JsonSchemaDocument.html) postFlowsDatatables(body)
+
+Create a new datatable with the specified json-schema definition
+
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+
+Wraps POST /api/v2/flows/datatables  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+JsonSchemaDocument body = new JsonSchemaDocument(); // JsonSchemaDocument | datatable json-schema
+try {
+    JsonSchemaDocument result = apiInstance.postFlowsDatatables(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsDatatables");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema | |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonSchemaDocument**](JsonSchemaDocument.html)
+
 <a name="putArchitectIvr"></a>
 
 # **putArchitectIvr**
@@ -3614,4 +4042,114 @@ try {
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="putFlowsDatatable"></a>
+
+# **putFlowsDatatable**
+
+> [JsonSchemaDocument](JsonSchemaDocument.html) putFlowsDatatable(datatableId, showbrief, body)
+
+Updates a specific datatable by datatableId
+
+Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+
+Wraps PUT /api/v2/flows/datatables/{datatableId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+Boolean showbrief = true; // Boolean | If true returns a shortened version of the schema including the name, id and description
+JsonSchemaDocument body = new JsonSchemaDocument(); // JsonSchemaDocument | datatable json-schema
+try {
+    JsonSchemaDocument result = apiInstance.putFlowsDatatable(datatableId, showbrief, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putFlowsDatatable");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **showbrief** | **Boolean**| If true returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonSchemaDocument**](JsonSchemaDocument.html)
+
+<a name="putFlowsDatatableRow"></a>
+
+# **putFlowsDatatableRow**
+
+> [Map&lt;String, Object&gt;](Map.html) putFlowsDatatableRow(datatableId, rowId, body)
+
+Update a row entry
+
+Updates a row with the given to the new values.
+
+Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String rowId = "rowId_example"; // String | the key for the row
+Object body = null; // Object | datatable row
+try {
+    Map<String, Object> result = apiInstance.putFlowsDatatableRow(datatableId, rowId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putFlowsDatatableRow");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | |
+| **rowId** | **String**| the key for the row | |
+| **body** | **Object**| datatable row | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Map&lt;String, Object&gt;**](Map.html)
 

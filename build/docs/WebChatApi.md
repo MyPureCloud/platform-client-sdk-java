@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWebchatDeployments**](WebChatApi.html#getWebchatDeployments) | List WebChat deployments |
 | [**getWebchatSettings**](WebChatApi.html#getWebchatSettings) | Get WebChat deployment settings |
 | [**postWebchatDeployments**](WebChatApi.html#postWebchatDeployments) | Create WebChat deployment |
-| [**postWebchatSettings**](WebChatApi.html#postWebchatSettings) | Create WebChat deployment settings |
 | [**putWebchatDeployment**](WebChatApi.html#putWebchatDeployment) | Update a WebChat deployment |
 | [**putWebchatSettings**](WebChatApi.html#putWebchatSettings) | Update WebChat deployment settings |
 {: class="table table-striped"}
@@ -309,57 +308,6 @@ try {
 ### Return type
 
 [**WebChatDeployment**](WebChatDeployment.html)
-
-<a name="postWebchatSettings"></a>
-
-# **postWebchatSettings**
-
-> [WebChatSettings](WebChatSettings.html) postWebchatSettings(body)
-
-Create WebChat deployment settings
-
-
-
-Wraps POST /api/v2/webchat/settings  
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.WebChatApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-WebChatApi apiInstance = new WebChatApi();
-WebChatSettings body = new WebChatSettings(); // WebChatSettings | webChatSettings
-try {
-    WebChatSettings result = apiInstance.postWebchatSettings(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling WebChatApi#postWebchatSettings");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WebChatSettings**](WebChatSettings.html)| webChatSettings | |
-{: class="table table-striped"}
-
-### Return type
-
-[**WebChatSettings**](WebChatSettings.html)
 
 <a name="putWebchatDeployment"></a>
 

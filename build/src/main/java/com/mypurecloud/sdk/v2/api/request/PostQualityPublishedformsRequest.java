@@ -44,16 +44,16 @@ import com.mypurecloud.sdk.v2.model.PublishForm;
 
 public class PostQualityPublishedformsRequest {
     
-	private EvaluationForm body;
-	public EvaluationForm getBody() {
+	private PublishForm body;
+	public PublishForm getBody() {
 		return this.body;
 	}
 
-	public void setBody(EvaluationForm body) {
+	public void setBody(PublishForm body) {
 		this.body = body;
 	}
 
-	public PostQualityPublishedformsRequest withBody(EvaluationForm body) {
+	public PostQualityPublishedformsRequest withBody(PublishForm body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -77,7 +77,7 @@ public class PostQualityPublishedformsRequest {
         return this;
     }
 
-    public ApiRequest<EvaluationForm> withHttpInfo() {
+    public ApiRequest<PublishForm> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -100,7 +100,7 @@ public class PostQualityPublishedformsRequest {
 	}
 
 	
-	public static Builder builder(EvaluationForm body) {
+	public static Builder builder(PublishForm body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -114,14 +114,14 @@ public class PostQualityPublishedformsRequest {
 		}
 
 		
-		public Builder withBody(EvaluationForm body) {
+		public Builder withBody(PublishForm body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(EvaluationForm body) {
+		public Builder withRequiredParams(PublishForm body) {
 			request.setBody(body);
 			
 			return this;

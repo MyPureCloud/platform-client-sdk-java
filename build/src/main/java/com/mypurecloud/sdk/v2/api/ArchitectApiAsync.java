@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -53,6 +54,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingConsumedresourcesRequest;
@@ -85,6 +88,10 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
@@ -102,6 +109,8 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
@@ -109,6 +118,8 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSchedulegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -802,6 +813,158 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * deletes a specific datatable by id
+   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteFlowsDatatableAsync(DeleteFlowsDatatableRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * deletes a specific datatable by id
+   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteFlowsDatatableAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete a row entry
+   * Deletes a row with a given rowId.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteFlowsDatatableRowAsync(DeleteFlowsDatatableRowRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a row entry
+   * Deletes a row with a given rowId.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteFlowsDatatableRowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3247,6 +3410,310 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Returns a specific datatable by datatableId
+   * Given a datableid returns the schema associated with it.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSchemaDocument> getFlowsDatatableAsync(GetFlowsDatatableRequest request, final AsyncApiCallback<JsonSchemaDocument> callback) {
+    try {
+      final SettableFuture<JsonSchemaDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a specific datatable by datatableId
+   * Given a datableid returns the schema associated with it.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSchemaDocument>> getFlowsDatatableAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JsonSchemaDocument>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSchemaDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns a specific row for the datatable
+   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Map<String, Object>> getFlowsDatatableRowAsync(GetFlowsDatatableRowRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
+    try {
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a specific row for the datatable
+   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Map<String, Object>>> getFlowsDatatableRowAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns the rows for the datatable
+   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<Map<String, Object>>> getFlowsDatatableRowsAsync(GetFlowsDatatableRowsRequest request, final AsyncApiCallback<List<Map<String, Object>>> callback) {
+    try {
+      final SettableFuture<List<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Map<String, Object>>>() {}, new AsyncApiCallback<ApiResponse<List<Map<String, Object>>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Map<String, Object>>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the rows for the datatable
+   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<Map<String, Object>>>> getFlowsDatatableRowsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Map<String, Object>>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<Map<String, Object>>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Map<String, Object>>>() {}, new AsyncApiCallback<ApiResponse<List<Map<String, Object>>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Map<String, Object>>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Map<String, Object>>> response = (ApiResponse<List<Map<String, Object>>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Map<String, Object>>> response = (ApiResponse<List<Map<String, Object>>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<JsonSchemaDocument>> getFlowsDatatablesAsync(GetFlowsDatatablesRequest request, final AsyncApiCallback<List<JsonSchemaDocument>> callback) {
+    try {
+      final SettableFuture<List<JsonSchemaDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<JsonSchemaDocument>>() {}, new AsyncApiCallback<ApiResponse<List<JsonSchemaDocument>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<JsonSchemaDocument>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<JsonSchemaDocument>>> getFlowsDatatablesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<JsonSchemaDocument>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<JsonSchemaDocument>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<JsonSchemaDocument>>() {}, new AsyncApiCallback<ApiResponse<List<JsonSchemaDocument>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<JsonSchemaDocument>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<JsonSchemaDocument>> response = (ApiResponse<List<JsonSchemaDocument>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<JsonSchemaDocument>> response = (ApiResponse<List<JsonSchemaDocument>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request the request object
@@ -4539,6 +5006,158 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Create a new row entry
+   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Map<String, Object>> postFlowsDatatableRowsAsync(PostFlowsDatatableRowsRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
+    try {
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new row entry
+   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Map<String, Object>>> postFlowsDatatableRowsAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a new datatable with the specified json-schema definition
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSchemaDocument> postFlowsDatatablesAsync(PostFlowsDatatablesRequest request, final AsyncApiCallback<JsonSchemaDocument> callback) {
+    try {
+      final SettableFuture<JsonSchemaDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new datatable with the specified json-schema definition
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSchemaDocument>> postFlowsDatatablesAsync(ApiRequest<JsonSchemaDocument> request, final AsyncApiCallback<ApiResponse<JsonSchemaDocument>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSchemaDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update an IVR Config.
    * 
    * @param request the request object
@@ -5058,6 +5677,158 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Updates a specific datatable by datatableId
+   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSchemaDocument> putFlowsDatatableAsync(PutFlowsDatatableRequest request, final AsyncApiCallback<JsonSchemaDocument> callback) {
+    try {
+      final SettableFuture<JsonSchemaDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a specific datatable by datatableId
+   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSchemaDocument>> putFlowsDatatableAsync(ApiRequest<JsonSchemaDocument> request, final AsyncApiCallback<ApiResponse<JsonSchemaDocument>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSchemaDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a row entry
+   * Updates a row with the given to the new values.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Map<String, Object>> putFlowsDatatableRowAsync(PutFlowsDatatableRowRequest request, final AsyncApiCallback<Map<String, Object>> callback) {
+    try {
+      final SettableFuture<Map<String, Object>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a row entry
+   * Updates a row with the given to the new values.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Map<String, Object>>> putFlowsDatatableRowAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<Map<String, Object>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Map<String, Object>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Map<String, Object>>() {}, new AsyncApiCallback<ApiResponse<Map<String, Object>>>() {
+        @Override
+        public void onCompleted(ApiResponse<Map<String, Object>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

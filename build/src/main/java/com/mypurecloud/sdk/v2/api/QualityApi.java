@@ -3675,27 +3675,27 @@ public class QualityApi {
   /**
    * Publish an evaluation form.
    * 
-   * @param body Evaluation form (required)
+   * @param body Publish request containing id of form to publish (required)
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationForm postQualityPublishedforms(EvaluationForm body) throws IOException, ApiException {
+  public EvaluationForm postQualityPublishedforms(PublishForm body) throws IOException, ApiException {
     return  postQualityPublishedforms(createPostQualityPublishedformsRequest(body));
   }
 
   /**
    * Publish an evaluation form.
    * 
-   * @param body Evaluation form (required)
+   * @param body Publish request containing id of form to publish (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityPublishedformsWithHttpInfo(EvaluationForm body) throws IOException {
+  public ApiResponse<EvaluationForm> postQualityPublishedformsWithHttpInfo(PublishForm body) throws IOException {
     return postQualityPublishedforms(createPostQualityPublishedformsRequest(body).withHttpInfo());
   }
 
-  private PostQualityPublishedformsRequest createPostQualityPublishedformsRequest(EvaluationForm body) {
+  private PostQualityPublishedformsRequest createPostQualityPublishedformsRequest(PublishForm body) {
     return PostQualityPublishedformsRequest.builder()
             .withBody(body)
     
@@ -3728,7 +3728,7 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationForm> postQualityPublishedforms(ApiRequest<EvaluationForm> request) throws IOException {
+  public ApiResponse<EvaluationForm> postQualityPublishedforms(ApiRequest<PublishForm> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EvaluationForm>() {});
     }
@@ -3754,7 +3754,7 @@ public class QualityApi {
   /**
    * Publish an evaluation form.
    * 
-   * @param body Evaluation form (required)
+   * @param body Publish request containing id of form to publish (required)
    * @return EvaluationForm
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3766,7 +3766,7 @@ public class QualityApi {
   /**
    * Publish an evaluation form.
    * 
-   * @param body Evaluation form (required)
+   * @param body Publish request containing id of form to publish (required)
    * @return EvaluationForm
    * @throws IOException if the request fails to be processed
    */

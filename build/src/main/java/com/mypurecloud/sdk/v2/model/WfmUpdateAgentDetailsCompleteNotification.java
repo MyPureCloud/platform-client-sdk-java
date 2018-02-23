@@ -17,31 +17,31 @@ public class WfmUpdateAgentDetailsCompleteNotification  implements Serializable 
   
 
   /**
-   * Gets or Sets result
+   * Gets or Sets status
    */
-  public enum ResultEnum {
+  public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PROCESSING("Processing"),
-    ERROR("Error"),
-    COMPLETE("Complete");
+    COMPLETE("Complete"),
+    ERROR("Error");
 
     private String value;
 
-    ResultEnum(String value) {
+    StatusEnum(String value) {
       this.value = value;
     }
 
     @JsonCreator
-    public static ResultEnum fromString(String key) {
+    public static StatusEnum fromString(String key) {
       if (key == null) return null;
 
-      for (ResultEnum value : ResultEnum.values()) {
+      for (StatusEnum value : StatusEnum.values()) {
         if (key.equalsIgnoreCase(value.toString())) {
           return value;
         }
       }
 
-      return ResultEnum.values()[0];
+      return StatusEnum.values()[0];
     }
 
     @Override
@@ -50,23 +50,23 @@ public class WfmUpdateAgentDetailsCompleteNotification  implements Serializable 
       return String.valueOf(value);
     }
   }
-  private ResultEnum result = null;
+  private StatusEnum status = null;
 
   
   /**
    **/
-  public WfmUpdateAgentDetailsCompleteNotification result(ResultEnum result) {
-    this.result = result;
+  public WfmUpdateAgentDetailsCompleteNotification status(StatusEnum status) {
+    this.status = status;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("result")
-  public ResultEnum getResult() {
-    return result;
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
   }
-  public void setResult(ResultEnum result) {
-    this.result = result;
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
   
@@ -80,12 +80,12 @@ public class WfmUpdateAgentDetailsCompleteNotification  implements Serializable 
       return false;
     }
     WfmUpdateAgentDetailsCompleteNotification wfmUpdateAgentDetailsCompleteNotification = (WfmUpdateAgentDetailsCompleteNotification) o;
-    return Objects.equals(this.result, wfmUpdateAgentDetailsCompleteNotification.result);
+    return Objects.equals(this.status, wfmUpdateAgentDetailsCompleteNotification.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result);
+    return Objects.hash(status);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class WfmUpdateAgentDetailsCompleteNotification  implements Serializable 
     StringBuilder sb = new StringBuilder();
     sb.append("class WfmUpdateAgentDetailsCompleteNotification {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

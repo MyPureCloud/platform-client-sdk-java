@@ -8,20 +8,20 @@ title: WfmUpdateAgentDetailsCompleteNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **result** | [**ResultEnum**](#ResultEnum) |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 {: class="table table-striped"}
 
 
-<a name="ResultEnum"></a>
+<a name="StatusEnum"></a>
 
-## Enum: ResultEnum
+## Enum: StatusEnum
 
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PROCESSING | &quot;Processing&quot; |
-| ERROR | &quot;Error&quot; |
 | COMPLETE | &quot;Complete&quot; |
+| ERROR | &quot;Error&quot; |
 {: class="table table-striped"}
 
 

@@ -2335,7 +2335,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 QualityApi apiInstance = new QualityApi();
-EvaluationForm body = new EvaluationForm(); // EvaluationForm | Evaluation form
+PublishForm body = new PublishForm(); // PublishForm | Publish request containing id of form to publish
 try {
     EvaluationForm result = apiInstance.postQualityPublishedforms(body);
     System.out.println(result);
@@ -2350,7 +2350,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | |
 {: class="table table-striped"}
 
 ### Return type
@@ -2386,7 +2386,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 QualityApi apiInstance = new QualityApi();
-PublishForm body = new PublishForm(); // PublishForm | Evaluation form
+PublishForm body = new PublishForm(); // PublishForm | Publish request containing id of form to publish
 try {
     EvaluationForm result = apiInstance.postQualityPublishedformsEvaluations(body);
     System.out.println(result);
@@ -2401,7 +2401,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PublishForm**](PublishForm.html)| Evaluation form | |
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | |
 {: class="table table-striped"}
 
 ### Return type

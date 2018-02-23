@@ -9,7 +9,7 @@ title: PublishForm
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **published** | **Boolean** | Is this form published |  |
-| **contextId** | **String** | Unique Id for all versions of this form |  |
+| **id** | **String** | Unique Id for this version of this form |  |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

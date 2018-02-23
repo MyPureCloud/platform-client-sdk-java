@@ -61,6 +61,9 @@ public class CallHistoryConversation  implements Serializable {
   private Boolean missedCall = null;
   private Date startTime = null;
   private Boolean wasConference = null;
+  private Boolean wasCallback = null;
+  private Boolean hadScreenShare = null;
+  private Boolean hadCobrowse = null;
   private String selfUri = null;
 
   
@@ -196,6 +199,60 @@ public class CallHistoryConversation  implements Serializable {
   }
 
   
+  /**
+   * Was this conversation a callback
+   **/
+  public CallHistoryConversation wasCallback(Boolean wasCallback) {
+    this.wasCallback = wasCallback;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Was this conversation a callback")
+  @JsonProperty("wasCallback")
+  public Boolean getWasCallback() {
+    return wasCallback;
+  }
+  public void setWasCallback(Boolean wasCallback) {
+    this.wasCallback = wasCallback;
+  }
+
+  
+  /**
+   * Did this conversation have a screen share session
+   **/
+  public CallHistoryConversation hadScreenShare(Boolean hadScreenShare) {
+    this.hadScreenShare = hadScreenShare;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Did this conversation have a screen share session")
+  @JsonProperty("hadScreenShare")
+  public Boolean getHadScreenShare() {
+    return hadScreenShare;
+  }
+  public void setHadScreenShare(Boolean hadScreenShare) {
+    this.hadScreenShare = hadScreenShare;
+  }
+
+  
+  /**
+   * Did this conversation have a cobrowse session
+   **/
+  public CallHistoryConversation hadCobrowse(Boolean hadCobrowse) {
+    this.hadCobrowse = hadCobrowse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Did this conversation have a cobrowse session")
+  @JsonProperty("hadCobrowse")
+  public Boolean getHadCobrowse() {
+    return hadCobrowse;
+  }
+  public void setHadCobrowse(Boolean hadCobrowse) {
+    this.hadCobrowse = hadCobrowse;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -221,12 +278,15 @@ public class CallHistoryConversation  implements Serializable {
         Objects.equals(this.missedCall, callHistoryConversation.missedCall) &&
         Objects.equals(this.startTime, callHistoryConversation.startTime) &&
         Objects.equals(this.wasConference, callHistoryConversation.wasConference) &&
+        Objects.equals(this.wasCallback, callHistoryConversation.wasCallback) &&
+        Objects.equals(this.hadScreenShare, callHistoryConversation.hadScreenShare) &&
+        Objects.equals(this.hadCobrowse, callHistoryConversation.hadCobrowse) &&
         Objects.equals(this.selfUri, callHistoryConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, direction, wentToVoicemail, missedCall, startTime, wasConference, selfUri);
+    return Objects.hash(id, name, participants, direction, wentToVoicemail, missedCall, startTime, wasConference, wasCallback, hadScreenShare, hadCobrowse, selfUri);
   }
 
   @Override
@@ -242,6 +302,9 @@ public class CallHistoryConversation  implements Serializable {
     sb.append("    missedCall: ").append(toIndentedString(missedCall)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    wasConference: ").append(toIndentedString(wasConference)).append("\n");
+    sb.append("    wasCallback: ").append(toIndentedString(wasCallback)).append("\n");
+    sb.append("    hadScreenShare: ").append(toIndentedString(hadScreenShare)).append("\n");
+    sb.append("    hadCobrowse: ").append(toIndentedString(hadCobrowse)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

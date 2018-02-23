@@ -62,6 +62,46 @@ public class Metabase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
+
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EXTERNAL("EXTERNAL"),
+    EXTERNAL_PCV("EXTERNAL_PCV"),
+    EXTERNAL_PCV_AWS("EXTERNAL_PCV_AWS"),
+    EXTERNAL_BYOC_CARRIER("EXTERNAL_BYOC_CARRIER"),
+    EXTERNAL_BYOC_PBX("EXTERNAL_BYOC_PBX"),
+    STATION("STATION"),
+    TIE("TIE");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
   private String selfUri = null;
 
   
@@ -240,6 +280,23 @@ public class Metabase  implements Serializable {
   }
 
   
+  /**
+   **/
+  public Metabase type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -268,12 +325,13 @@ public class Metabase  implements Serializable {
         Objects.equals(this.state, metabase.state) &&
         Objects.equals(this.modifiedByApp, metabase.modifiedByApp) &&
         Objects.equals(this.createdByApp, metabase.createdByApp) &&
+        Objects.equals(this.type, metabase.type) &&
         Objects.equals(this.selfUri, metabase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, type, selfUri);
   }
 
   @Override
@@ -292,6 +350,7 @@ public class Metabase  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    modifiedByApp: ").append(toIndentedString(modifiedByApp)).append("\n");
     sb.append("    createdByApp: ").append(toIndentedString(createdByApp)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

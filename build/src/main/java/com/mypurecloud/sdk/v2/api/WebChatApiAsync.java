@@ -25,7 +25,6 @@ import com.mypurecloud.sdk.v2.api.request.GetWebchatDeploymentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebchatDeploymentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWebchatSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWebchatDeploymentsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostWebchatSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebchatDeploymentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWebchatSettingsRequest;
 
@@ -493,82 +492,6 @@ public class WebChatApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WebChatDeployment> response = (ApiResponse<WebChatDeployment>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<WebChatSettings> postWebchatSettingsAsync(PostWebchatSettingsRequest request, final AsyncApiCallback<WebChatSettings> callback) {
-    try {
-      final SettableFuture<WebChatSettings> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebChatSettings>() {}, new AsyncApiCallback<ApiResponse<WebChatSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<WebChatSettings> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create WebChat deployment settings
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<WebChatSettings>> postWebchatSettingsAsync(ApiRequest<WebChatSettings> request, final AsyncApiCallback<ApiResponse<WebChatSettings>> callback) {
-    try {
-      final SettableFuture<ApiResponse<WebChatSettings>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WebChatSettings>() {}, new AsyncApiCallback<ApiResponse<WebChatSettings>>() {
-        @Override
-        public void onCompleted(ApiResponse<WebChatSettings> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<WebChatSettings> response = (ApiResponse<WebChatSettings>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<WebChatSettings> response = (ApiResponse<WebChatSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
