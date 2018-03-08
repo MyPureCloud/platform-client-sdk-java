@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | Delete an organization role. |
 | [**deleteUserRoles**](AuthorizationApi.html#deleteUserRoles) | Removes all the roles from the user. |
+| [**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
 | [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | Get all permissions. |
 | [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | Get the list of enabled products |
 | [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | Get a single organization role. |
@@ -125,6 +126,53 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getAuthorizationDivisionsLimit"></a>
+
+# **getAuthorizationDivisionsLimit**
+
+> Integer getAuthorizationDivisionsLimit()
+
+Returns the maximum allowed number of divisions.
+
+
+
+Wraps GET /api/v2/authorization/divisions/limit  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+try {
+    Integer result = apiInstance.getAuthorizationDivisionsLimit();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationDivisionsLimit");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+**Integer**
 
 <a name="getAuthorizationPermissions"></a>
 

@@ -123,7 +123,12 @@ public class ConversationNotificationMessages1  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("SMS");
+    SMS("SMS"),
+    TWITTER("TWITTER"),
+    FACEBOOK("FACEBOOK"),
+    LINE("LINE"),
+    VIBER("VIBER"),
+    WECHAT("WECHAT");
 
     private String value;
 

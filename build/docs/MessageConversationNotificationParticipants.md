@@ -107,6 +107,11 @@ title: MessageConversationNotificationParticipants
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;SMS&quot; |
+| TWITTER | &quot;TWITTER&quot; |
+| FACEBOOK | &quot;FACEBOOK&quot; |
+| LINE | &quot;LINE&quot; |
+| VIBER | &quot;VIBER&quot; |
+| WECHAT | &quot;WECHAT&quot; |
 {: class="table table-striped"}
 
 

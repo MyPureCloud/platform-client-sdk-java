@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
-import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteNotificationMoveAgentResults;
+import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteNotificationResults;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class WfmMoveAgentsCompleteNotification  implements Serializable {
   
   private DocumentDataV2NotificationWorkspace requestingUser = null;
   private DocumentDataV2NotificationWorkspace destinationManagementUnit = null;
-  private List<WfmMoveAgentsCompleteNotificationMoveAgentResults> moveAgentResults = new ArrayList<WfmMoveAgentsCompleteNotificationMoveAgentResults>();
+  private List<WfmMoveAgentsCompleteNotificationResults> results = new ArrayList<WfmMoveAgentsCompleteNotificationResults>();
 
   
   /**
@@ -59,18 +59,18 @@ public class WfmMoveAgentsCompleteNotification  implements Serializable {
   
   /**
    **/
-  public WfmMoveAgentsCompleteNotification moveAgentResults(List<WfmMoveAgentsCompleteNotificationMoveAgentResults> moveAgentResults) {
-    this.moveAgentResults = moveAgentResults;
+  public WfmMoveAgentsCompleteNotification results(List<WfmMoveAgentsCompleteNotificationResults> results) {
+    this.results = results;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("moveAgentResults")
-  public List<WfmMoveAgentsCompleteNotificationMoveAgentResults> getMoveAgentResults() {
-    return moveAgentResults;
+  @JsonProperty("results")
+  public List<WfmMoveAgentsCompleteNotificationResults> getResults() {
+    return results;
   }
-  public void setMoveAgentResults(List<WfmMoveAgentsCompleteNotificationMoveAgentResults> moveAgentResults) {
-    this.moveAgentResults = moveAgentResults;
+  public void setResults(List<WfmMoveAgentsCompleteNotificationResults> results) {
+    this.results = results;
   }
 
   
@@ -86,12 +86,12 @@ public class WfmMoveAgentsCompleteNotification  implements Serializable {
     WfmMoveAgentsCompleteNotification wfmMoveAgentsCompleteNotification = (WfmMoveAgentsCompleteNotification) o;
     return Objects.equals(this.requestingUser, wfmMoveAgentsCompleteNotification.requestingUser) &&
         Objects.equals(this.destinationManagementUnit, wfmMoveAgentsCompleteNotification.destinationManagementUnit) &&
-        Objects.equals(this.moveAgentResults, wfmMoveAgentsCompleteNotification.moveAgentResults);
+        Objects.equals(this.results, wfmMoveAgentsCompleteNotification.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestingUser, destinationManagementUnit, moveAgentResults);
+    return Objects.hash(requestingUser, destinationManagementUnit, results);
   }
 
   @Override
@@ -101,7 +101,7 @@ public class WfmMoveAgentsCompleteNotification  implements Serializable {
     
     sb.append("    requestingUser: ").append(toIndentedString(requestingUser)).append("\n");
     sb.append("    destinationManagementUnit: ").append(toIndentedString(destinationManagementUnit)).append("\n");
-    sb.append("    moveAgentResults: ").append(toIndentedString(moveAgentResults)).append("\n");
+    sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();
   }

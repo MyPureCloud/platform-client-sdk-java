@@ -33,6 +33,7 @@ title: Dependency
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; |
 | CONTACTLIST | &quot;CONTACTLIST&quot; |
 | DATAACTION | &quot;DATAACTION&quot; |
+| DATATABLE | &quot;DATATABLE&quot; |
 | EMAILROUTE | &quot;EMAILROUTE&quot; |
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
 | GROUP | &quot;GROUP&quot; |

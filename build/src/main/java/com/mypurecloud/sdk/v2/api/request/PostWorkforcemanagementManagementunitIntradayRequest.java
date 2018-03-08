@@ -28,10 +28,6 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.MoveAgentsRequest;
-import com.mypurecloud.sdk.v2.model.MoveAgentsResponse;
-import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
@@ -40,7 +36,6 @@ import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 
 public class PostWorkforcemanagementManagementunitIntradayRequest {
     

@@ -9,13 +9,13 @@ title: WfmMoveAgentsCompleteNotificationWfmMoveAgentData
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **user** | [**WfmMoveAgentsCompleteNotificationUser**](WfmMoveAgentsCompleteNotificationUser.html) |  |  [optional] |
-| **moveAgentResult** | [**MoveAgentResultEnum**](#MoveAgentResultEnum) |  |  [optional] |
+| **result** | [**ResultEnum**](#ResultEnum) |  |  [optional] |
 {: class="table table-striped"}
 
 
-<a name="MoveAgentResultEnum"></a>
+<a name="ResultEnum"></a>
 
-## Enum: MoveAgentResultEnum
+## Enum: ResultEnum
 
 | Name | Value |
 | ---- | ----- |

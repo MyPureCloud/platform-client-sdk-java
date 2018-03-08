@@ -8,12 +8,16 @@ title: JsonNode
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **array** | **Boolean** |  |  [optional] |
+| **_null** | **Boolean** |  |  [optional] |
 | **nodeType** | [**NodeTypeEnum**](#NodeTypeEnum) |  |  [optional] |
 | **_float** | **Boolean** |  |  [optional] |
 | **object** | **Boolean** |  |  [optional] |
 | **_boolean** | **Boolean** |  |  [optional] |
 | **number** | **Boolean** |  |  [optional] |
 | **valueNode** | **Boolean** |  |  [optional] |
+| **containerNode** | **Boolean** |  |  [optional] |
+| **missingNode** | **Boolean** |  |  [optional] |
 | **pojo** | **Boolean** |  |  [optional] |
 | **integralNumber** | **Boolean** |  |  [optional] |
 | **floatingPointNumber** | **Boolean** |  |  [optional] |
@@ -25,10 +29,6 @@ title: JsonNode
 | **bigInteger** | **Boolean** |  |  [optional] |
 | **textual** | **Boolean** |  |  [optional] |
 | **binary** | **Boolean** |  |  [optional] |
-| **containerNode** | **Boolean** |  |  [optional] |
-| **missingNode** | **Boolean** |  |  [optional] |
-| **array** | **Boolean** |  |  [optional] |
-| **_null** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
@@ -205,6 +206,81 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns the maximum allowed number of divisions.
+   * 
+   * @return Integer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Integer getAuthorizationDivisionsLimit() throws IOException, ApiException {
+    return  getAuthorizationDivisionsLimit(createGetAuthorizationDivisionsLimitRequest());
+  }
+
+  /**
+   * Returns the maximum allowed number of divisions.
+   * 
+   * @return Integer
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Integer> getAuthorizationDivisionsLimitWithHttpInfo() throws IOException {
+    return getAuthorizationDivisionsLimit(createGetAuthorizationDivisionsLimitRequest().withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionsLimitRequest createGetAuthorizationDivisionsLimitRequest() {
+    return GetAuthorizationDivisionsLimitRequest.builder()
+            .build();
+  }
+
+  /**
+   * Returns the maximum allowed number of divisions.
+   * 
+   * @param request The request object
+   * @return Integer
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Integer getAuthorizationDivisionsLimit(GetAuthorizationDivisionsLimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Integer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Integer>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the maximum allowed number of divisions.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Integer> getAuthorizationDivisionsLimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Integer>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

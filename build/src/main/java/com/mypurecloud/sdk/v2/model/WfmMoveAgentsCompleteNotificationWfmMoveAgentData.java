@@ -19,9 +19,9 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
   private WfmMoveAgentsCompleteNotificationUser user = null;
 
   /**
-   * Gets or Sets moveAgentResult
+   * Gets or Sets result
    */
-  public enum MoveAgentResultEnum {
+  public enum ResultEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MOVESUCCESSFUL("MoveSuccessful"),
     NOTHINGTODO("NothingToDo"),
@@ -32,21 +32,21 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
 
     private String value;
 
-    MoveAgentResultEnum(String value) {
+    ResultEnum(String value) {
       this.value = value;
     }
 
     @JsonCreator
-    public static MoveAgentResultEnum fromString(String key) {
+    public static ResultEnum fromString(String key) {
       if (key == null) return null;
 
-      for (MoveAgentResultEnum value : MoveAgentResultEnum.values()) {
+      for (ResultEnum value : ResultEnum.values()) {
         if (key.equalsIgnoreCase(value.toString())) {
           return value;
         }
       }
 
-      return MoveAgentResultEnum.values()[0];
+      return ResultEnum.values()[0];
     }
 
     @Override
@@ -55,7 +55,7 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
       return String.valueOf(value);
     }
   }
-  private MoveAgentResultEnum moveAgentResult = null;
+  private ResultEnum result = null;
 
   
   /**
@@ -77,18 +77,18 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
   
   /**
    **/
-  public WfmMoveAgentsCompleteNotificationWfmMoveAgentData moveAgentResult(MoveAgentResultEnum moveAgentResult) {
-    this.moveAgentResult = moveAgentResult;
+  public WfmMoveAgentsCompleteNotificationWfmMoveAgentData result(ResultEnum result) {
+    this.result = result;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("moveAgentResult")
-  public MoveAgentResultEnum getMoveAgentResult() {
-    return moveAgentResult;
+  @JsonProperty("result")
+  public ResultEnum getResult() {
+    return result;
   }
-  public void setMoveAgentResult(MoveAgentResultEnum moveAgentResult) {
-    this.moveAgentResult = moveAgentResult;
+  public void setResult(ResultEnum result) {
+    this.result = result;
   }
 
   
@@ -103,12 +103,12 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
     }
     WfmMoveAgentsCompleteNotificationWfmMoveAgentData wfmMoveAgentsCompleteNotificationWfmMoveAgentData = (WfmMoveAgentsCompleteNotificationWfmMoveAgentData) o;
     return Objects.equals(this.user, wfmMoveAgentsCompleteNotificationWfmMoveAgentData.user) &&
-        Objects.equals(this.moveAgentResult, wfmMoveAgentsCompleteNotificationWfmMoveAgentData.moveAgentResult);
+        Objects.equals(this.result, wfmMoveAgentsCompleteNotificationWfmMoveAgentData.result);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, moveAgentResult);
+    return Objects.hash(user, result);
   }
 
   @Override
@@ -117,7 +117,7 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
     sb.append("class WfmMoveAgentsCompleteNotificationWfmMoveAgentData {\n");
     
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    moveAgentResult: ").append(toIndentedString(moveAgentResult)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }

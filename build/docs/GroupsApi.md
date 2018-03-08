@@ -289,7 +289,7 @@ try {
 
 # **getGroupProfile**
 
-> [GroupProfile](GroupProfile.html) getGroupProfile(groupId)
+> [GroupProfile](GroupProfile.html) getGroupProfile(groupId, fields)
 
 Get group profile
 
@@ -315,8 +315,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | groupId
+String fields = "fields_example"; // String | Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
 try {
-    GroupProfile result = apiInstance.getGroupProfile(groupId);
+    GroupProfile result = apiInstance.getGroupProfile(groupId, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#getGroupProfile");
@@ -330,6 +331,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **groupId** | **String**| groupId | |
+| **fields** | **String**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional] |
 {: class="table table-striped"}
 
 ### Return type

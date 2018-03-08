@@ -48,6 +48,20 @@ public class GetGroupProfileRequest {
 	    return this;
 	} 
 	
+	private String fields;
+	public String getFields() {
+		return this.fields;
+	}
+
+	public void setFields(String fields) {
+		this.fields = fields;
+	}
+
+	public GetGroupProfileRequest withFields(String fields) {
+	    this.setFields(fields);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -78,6 +92,8 @@ public class GetGroupProfileRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/groups/{groupId}/profile")
                 .withPathParameter("groupId", groupId)
         
+                .withQueryParameters("fields", "", fields)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -106,6 +122,11 @@ public class GetGroupProfileRequest {
 		
 		public Builder withGroupId(String groupId) {
 			request.setGroupId(groupId);
+			return this;
+		}
+		
+		public Builder withFields(String fields) {
+			request.setFields(fields);
 			return this;
 		}
 		

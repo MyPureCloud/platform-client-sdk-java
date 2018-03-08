@@ -471,28 +471,32 @@ public class GroupsApi {
    * Get group profile
    * 
    * @param groupId groupId (required)
+   * @param fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
    * @return GroupProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GroupProfile getGroupProfile(String groupId) throws IOException, ApiException {
-    return  getGroupProfile(createGetGroupProfileRequest(groupId));
+  public GroupProfile getGroupProfile(String groupId, String fields) throws IOException, ApiException {
+    return  getGroupProfile(createGetGroupProfileRequest(groupId, fields));
   }
 
   /**
    * Get group profile
    * 
    * @param groupId groupId (required)
+   * @param fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
    * @return GroupProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupProfile> getGroupProfileWithHttpInfo(String groupId) throws IOException {
-    return getGroupProfile(createGetGroupProfileRequest(groupId).withHttpInfo());
+  public ApiResponse<GroupProfile> getGroupProfileWithHttpInfo(String groupId, String fields) throws IOException {
+    return getGroupProfile(createGetGroupProfileRequest(groupId, fields).withHttpInfo());
   }
 
-  private GetGroupProfileRequest createGetGroupProfileRequest(String groupId) {
+  private GetGroupProfileRequest createGetGroupProfileRequest(String groupId, String fields) {
     return GetGroupProfileRequest.builder()
             .withGroupId(groupId)
+    
+            .withFields(fields)
     
             .build();
   }
