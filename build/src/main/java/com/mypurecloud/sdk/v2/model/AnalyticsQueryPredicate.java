@@ -219,6 +219,8 @@ public class AnalyticsQueryPredicate  implements Serializable {
     NOFFERED("nOffered"),
     NOVERSLA("nOverSla"),
     NTRANSFERRED("nTransferred"),
+    TNOTRESPONDING("tNotResponding"),
+    NOUTBOUND("nOutbound"),
     NOUTBOUNDATTEMPTED("nOutboundAttempted"),
     NOUTBOUNDCONNECTED("nOutboundConnected"),
     NOUTBOUNDABANDONED("nOutboundAbandoned"),

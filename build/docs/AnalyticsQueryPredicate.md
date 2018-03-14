@@ -150,6 +150,8 @@ title: AnalyticsQueryPredicate
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
+| TNOTRESPONDING | &quot;tNotResponding&quot; |
+| NOUTBOUND | &quot;nOutbound&quot; |
 | NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; |
 | NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; |
 | NOUTBOUNDABANDONED | &quot;nOutboundAbandoned&quot; |
