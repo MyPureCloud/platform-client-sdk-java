@@ -48,21 +48,23 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PostFlowsDatatablesRequest {
     
-	private JsonSchemaDocument body;
-	public JsonSchemaDocument getBody() {
+	private DataTable body;
+	public DataTable getBody() {
 		return this.body;
 	}
 
-	public void setBody(JsonSchemaDocument body) {
+	public void setBody(DataTable body) {
 		this.body = body;
 	}
 
-	public PostFlowsDatatablesRequest withBody(JsonSchemaDocument body) {
+	public PostFlowsDatatablesRequest withBody(DataTable body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -86,7 +88,7 @@ public class PostFlowsDatatablesRequest {
         return this;
     }
 
-    public ApiRequest<JsonSchemaDocument> withHttpInfo() {
+    public ApiRequest<DataTable> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -109,7 +111,7 @@ public class PostFlowsDatatablesRequest {
 	}
 
 	
-	public static Builder builder(JsonSchemaDocument body) {
+	public static Builder builder(DataTable body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -123,14 +125,14 @@ public class PostFlowsDatatablesRequest {
 		}
 
 		
-		public Builder withBody(JsonSchemaDocument body) {
+		public Builder withBody(DataTable body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(JsonSchemaDocument body) {
+		public Builder withRequiredParams(DataTable body) {
 			request.setBody(body);
 			
 			return this;

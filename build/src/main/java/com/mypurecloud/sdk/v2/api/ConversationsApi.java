@@ -32,6 +32,9 @@ import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessageConversation;
+import com.mypurecloud.sdk.v2.model.MessageData;
+import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
@@ -57,6 +60,8 @@ import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
+import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
@@ -95,6 +100,11 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailMessagesDraftRequ
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
@@ -118,6 +128,10 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsEmailParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
@@ -141,6 +155,9 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 
@@ -906,7 +923,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get conversations
+   * Get active conversations for the logged in user
    * 
    * @param communicationType Call or Chat communication filtering (optional)
    * @return ConversationEntityListing
@@ -918,7 +935,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get conversations
+   * Get active conversations for the logged in user
    * 
    * @param communicationType Call or Chat communication filtering (optional)
    * @return ConversationEntityListing
@@ -936,7 +953,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get conversations
+   * Get active conversations for the logged in user
    * 
    * @param request The request object
    * @return ConversationEntityListing
@@ -955,7 +972,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get conversations
+   * Get active conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -1483,7 +1500,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get callback conversations
+   * Get active callback conversations for the logged in user
    * 
    * @return CallbackConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -1494,7 +1511,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get callback conversations
+   * Get active callback conversations for the logged in user
    * 
    * @return CallbackConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -1509,7 +1526,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get callback conversations
+   * Get active callback conversations for the logged in user
    * 
    * @param request The request object
    * @return CallbackConversationEntityListing
@@ -1528,7 +1545,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get callback conversations
+   * Get active callback conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -1558,7 +1575,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get recent conversations
+   * Get active call conversations for the logged in user
    * 
    * @return CallConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -1569,7 +1586,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent conversations
+   * Get active call conversations for the logged in user
    * 
    * @return CallConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -1584,7 +1601,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent conversations
+   * Get active call conversations for the logged in user
    * 
    * @param request The request object
    * @return CallConversationEntityListing
@@ -1603,7 +1620,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent conversations
+   * Get active call conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -2048,7 +2065,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get recent chat conversations
+   * Get active chat conversations for the logged in user
    * 
    * @return ChatConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -2059,7 +2076,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent chat conversations
+   * Get active chat conversations for the logged in user
    * 
    * @return ChatConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -2074,7 +2091,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent chat conversations
+   * Get active chat conversations for the logged in user
    * 
    * @param request The request object
    * @return ChatConversationEntityListing
@@ -2093,7 +2110,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent chat conversations
+   * Get active chat conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -2372,7 +2389,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get recent cobrowse conversations
+   * Get active cobrowse conversations for the logged in user
    * 
    * @return CobrowseConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -2383,7 +2400,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent cobrowse conversations
+   * Get active cobrowse conversations for the logged in user
    * 
    * @return CobrowseConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -2398,7 +2415,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent cobrowse conversations
+   * Get active cobrowse conversations for the logged in user
    * 
    * @param request The request object
    * @return CobrowseConversationEntityListing
@@ -2417,7 +2434,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent cobrowse conversations
+   * Get active cobrowse conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -2937,7 +2954,7 @@ public class ConversationsApi {
 
   
   /**
-   * Get recent email conversations
+   * Get active email conversations for the logged in user
    * 
    * @return EmailConversationEntityListing
    * @throws ApiException if the request fails on the server
@@ -2948,7 +2965,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent email conversations
+   * Get active email conversations for the logged in user
    * 
    * @return EmailConversationEntityListing
    * @throws IOException if the request fails to be processed
@@ -2963,7 +2980,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent email conversations
+   * Get active email conversations for the logged in user
    * 
    * @param request The request object
    * @return EmailConversationEntityListing
@@ -2982,7 +2999,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get recent email conversations
+   * Get active email conversations for the logged in user
    * 
    * @param request The request object
    * @return the response
@@ -3006,6 +3023,413 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailConversationEntityListing> response = (ApiResponse<EmailConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get message conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return MessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversation getConversationsMessage(String conversationId) throws IOException, ApiException {
+    return  getConversationsMessage(createGetConversationsMessageRequest(conversationId));
+  }
+
+  /**
+   * Get message conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return MessageConversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversation> getConversationsMessageWithHttpInfo(String conversationId) throws IOException {
+    return getConversationsMessage(createGetConversationsMessageRequest(conversationId).withHttpInfo());
+  }
+
+  private GetConversationsMessageRequest createGetConversationsMessageRequest(String conversationId) {
+    return GetConversationsMessageRequest.builder()
+            .withConversationId(conversationId)
+    
+            .build();
+  }
+
+  /**
+   * Get message conversation
+   * 
+   * @param request The request object
+   * @return MessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversation getConversationsMessage(GetConversationsMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get message conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversation> getConversationsMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get message
+   * 
+   * @param conversationId conversationId (required)
+   * @param messageId messageId (required)
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData getConversationsMessageMessage(String conversationId, String messageId) throws IOException, ApiException {
+    return  getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId));
+  }
+
+  /**
+   * Get message
+   * 
+   * @param conversationId conversationId (required)
+   * @param messageId messageId (required)
+   * @return MessageData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> getConversationsMessageMessageWithHttpInfo(String conversationId, String messageId) throws IOException {
+    return getConversationsMessageMessage(createGetConversationsMessageMessageRequest(conversationId, messageId).withHttpInfo());
+  }
+
+  private GetConversationsMessageMessageRequest createGetConversationsMessageMessageRequest(String conversationId, String messageId) {
+    return GetConversationsMessageMessageRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withMessageId(messageId)
+    
+            .build();
+  }
+
+  /**
+   * Get message
+   * 
+   * @param request The request object
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData getConversationsMessageMessage(GetConversationsMessageMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get message
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> getConversationsMessageMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the wrap-up for this conversation participant. 
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Wrapup getConversationsMessageParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+    return  getConversationsMessageParticipantWrapup(createGetConversationsMessageParticipantWrapupRequest(conversationId, participantId, provisional));
+  }
+
+  /**
+   * Get the wrap-up for this conversation participant. 
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
+   * @return Wrapup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Wrapup> getConversationsMessageParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+    return getConversationsMessageParticipantWrapup(createGetConversationsMessageParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
+  }
+
+  private GetConversationsMessageParticipantWrapupRequest createGetConversationsMessageParticipantWrapupRequest(String conversationId, String participantId, Boolean provisional) {
+    return GetConversationsMessageParticipantWrapupRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withProvisional(provisional)
+    
+            .build();
+  }
+
+  /**
+   * Get the wrap-up for this conversation participant. 
+   * 
+   * @param request The request object
+   * @return Wrapup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Wrapup getConversationsMessageParticipantWrapup(GetConversationsMessageParticipantWrapupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the wrap-up for this conversation participant. 
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Wrapup> getConversationsMessageParticipantWrapup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get list of wrapup codes for this conversation participant
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<WrapupCode> getConversationsMessageParticipantWrapupcodes(String conversationId, String participantId) throws IOException, ApiException {
+    return  getConversationsMessageParticipantWrapupcodes(createGetConversationsMessageParticipantWrapupcodesRequest(conversationId, participantId));
+  }
+
+  /**
+   * Get list of wrapup codes for this conversation participant
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @return List<WrapupCode>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<WrapupCode>> getConversationsMessageParticipantWrapupcodesWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return getConversationsMessageParticipantWrapupcodes(createGetConversationsMessageParticipantWrapupcodesRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private GetConversationsMessageParticipantWrapupcodesRequest createGetConversationsMessageParticipantWrapupcodesRequest(String conversationId, String participantId) {
+    return GetConversationsMessageParticipantWrapupcodesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .build();
+  }
+
+  /**
+   * Get list of wrapup codes for this conversation participant
+   * 
+   * @param request The request object
+   * @return List<WrapupCode>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<WrapupCode> getConversationsMessageParticipantWrapupcodes(GetConversationsMessageParticipantWrapupcodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<WrapupCode>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<WrapupCode>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of wrapup codes for this conversation participant
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<WrapupCode>> getConversationsMessageParticipantWrapupcodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<WrapupCode>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<WrapupCode>> response = (ApiResponse<List<WrapupCode>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get active message conversations for the logged in user
+   * 
+   * @return MessageConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversationEntityListing getConversationsMessages() throws IOException, ApiException {
+    return  getConversationsMessages(createGetConversationsMessagesRequest());
+  }
+
+  /**
+   * Get active message conversations for the logged in user
+   * 
+   * @return MessageConversationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversationEntityListing> getConversationsMessagesWithHttpInfo() throws IOException {
+    return getConversationsMessages(createGetConversationsMessagesRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagesRequest createGetConversationsMessagesRequest() {
+    return GetConversationsMessagesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get active message conversations for the logged in user
+   * 
+   * @param request The request object
+   * @return MessageConversationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversationEntityListing getConversationsMessages(GetConversationsMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageConversationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageConversationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get active message conversations for the logged in user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversationEntityListing> getConversationsMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageConversationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4977,6 +5401,348 @@ public class ConversationsApi {
 
   
   /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Conversation (required)
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Conversation patchConversationsMessage(String conversationId, Conversation body) throws IOException, ApiException {
+    return  patchConversationsMessage(createPatchConversationsMessageRequest(conversationId, body));
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Conversation (required)
+   * @return Conversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Conversation> patchConversationsMessageWithHttpInfo(String conversationId, Conversation body) throws IOException {
+    return patchConversationsMessage(createPatchConversationsMessageRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessageRequest createPatchConversationsMessageRequest(String conversationId, Conversation body) {
+    return PatchConversationsMessageRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param request The request object
+   * @return Conversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Conversation patchConversationsMessage(PatchConversationsMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Conversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Conversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a conversation by disconnecting all of the participants
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Conversation> patchConversationsMessage(ApiRequest<Conversation> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Conversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update conversation participant
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipant(String conversationId, String participantId, MediaParticipantRequest body) throws IOException, ApiException {
+     patchConversationsMessageParticipant(createPatchConversationsMessageParticipantRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Update conversation participant
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipantWithHttpInfo(String conversationId, String participantId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsMessageParticipant(createPatchConversationsMessageParticipantRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessageParticipantRequest createPatchConversationsMessageParticipantRequest(String conversationId, String participantId, MediaParticipantRequest body) {
+    return PatchConversationsMessageParticipantRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update conversation participant
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipant(PatchConversationsMessageParticipantRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update conversation participant
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipant(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the attributes on a conversation participant.
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param body  (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipantAttributes(String conversationId, String participantId, ParticipantAttributes body) throws IOException, ApiException {
+     patchConversationsMessageParticipantAttributes(createPatchConversationsMessageParticipantAttributesRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Update the attributes on a conversation participant.
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param body  (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipantAttributesWithHttpInfo(String conversationId, String participantId, ParticipantAttributes body) throws IOException {
+    return patchConversationsMessageParticipantAttributes(createPatchConversationsMessageParticipantAttributesRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessageParticipantAttributesRequest createPatchConversationsMessageParticipantAttributesRequest(String conversationId, String participantId, ParticipantAttributes body) {
+    return PatchConversationsMessageParticipantAttributesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the attributes on a conversation participant.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchConversationsMessageParticipantAttributes(PatchConversationsMessageParticipantAttributesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update the attributes on a conversation participant.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchConversationsMessageParticipantAttributes(ApiRequest<ParticipantAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update conversation participant&#39;s communication by disconnecting it.
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body Participant (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty patchConversationsMessageParticipantCommunication(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException, ApiException {
+    return  patchConversationsMessageParticipantCommunication(createPatchConversationsMessageParticipantCommunicationRequest(conversationId, participantId, communicationId, body));
+  }
+
+  /**
+   * Update conversation participant&#39;s communication by disconnecting it.
+   * 
+   * @param conversationId  conversationId (required)
+   * @param participantId participantId (required)
+   * @param communicationId communicationId (required)
+   * @param body Participant (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> patchConversationsMessageParticipantCommunicationWithHttpInfo(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) throws IOException {
+    return patchConversationsMessageParticipantCommunication(createPatchConversationsMessageParticipantCommunicationRequest(conversationId, participantId, communicationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessageParticipantCommunicationRequest createPatchConversationsMessageParticipantCommunicationRequest(String conversationId, String participantId, String communicationId, MediaParticipantRequest body) {
+    return PatchConversationsMessageParticipantCommunicationRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withCommunicationId(communicationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update conversation participant&#39;s communication by disconnecting it.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty patchConversationsMessageParticipantCommunication(PatchConversationsMessageParticipantCommunicationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update conversation participant&#39;s communication by disconnecting it.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> patchConversationsMessageParticipantCommunication(ApiRequest<MediaParticipantRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Index conversation properties
    * 
    * @param conversationId conversationId (required)
@@ -6865,6 +7631,260 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FaxSendResponse> response = (ApiResponse<FaxSendResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Send message
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData postConversationsMessageCommunicationMessages(String conversationId, String communicationId, AdditionalMessage body) throws IOException, ApiException {
+    return  postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * Send message
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return MessageData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> postConversationsMessageCommunicationMessagesWithHttpInfo(String conversationId, String communicationId, AdditionalMessage body) throws IOException {
+    return postConversationsMessageCommunicationMessages(createPostConversationsMessageCommunicationMessagesRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageCommunicationMessagesRequest createPostConversationsMessageCommunicationMessagesRequest(String conversationId, String communicationId, AdditionalMessage body) {
+    return PostConversationsMessageCommunicationMessagesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withCommunicationId(communicationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Send message
+   * 
+   * @param request The request object
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData postConversationsMessageCommunicationMessages(PostConversationsMessageCommunicationMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send message
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> postConversationsMessageCommunicationMessages(ApiRequest<AdditionalMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get messages in batch
+   * 
+   * @param conversationId conversationId (required)
+   * @param body messageIds (optional)
+   * @return TextMessageListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TextMessageListing postConversationsMessageMessagesBulk(String conversationId, List<String> body) throws IOException, ApiException {
+    return  postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, body));
+  }
+
+  /**
+   * Get messages in batch
+   * 
+   * @param conversationId conversationId (required)
+   * @param body messageIds (optional)
+   * @return TextMessageListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TextMessageListing> postConversationsMessageMessagesBulkWithHttpInfo(String conversationId, List<String> body) throws IOException {
+    return postConversationsMessageMessagesBulk(createPostConversationsMessageMessagesBulkRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageMessagesBulkRequest createPostConversationsMessageMessagesBulkRequest(String conversationId, List<String> body) {
+    return PostConversationsMessageMessagesBulkRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get messages in batch
+   * 
+   * @param request The request object
+   * @return TextMessageListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TextMessageListing postConversationsMessageMessagesBulk(PostConversationsMessageMessagesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TextMessageListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TextMessageListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get messages in batch
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TextMessageListing> postConversationsMessageMessagesBulk(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TextMessageListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TextMessageListing> response = (ApiResponse<TextMessageListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TextMessageListing> response = (ApiResponse<TextMessageListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Replace this participant with the specified user and/or address
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Transfer request (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageParticipantReplace(String conversationId, String participantId, TransferRequest body) throws IOException, ApiException {
+     postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body));
+  }
+
+  /**
+   * Replace this participant with the specified user and/or address
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @param body Transfer request (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageParticipantReplaceWithHttpInfo(String conversationId, String participantId, TransferRequest body) throws IOException {
+    return postConversationsMessageParticipantReplace(createPostConversationsMessageParticipantReplaceRequest(conversationId, participantId, body).withHttpInfo());
+  }
+
+  private PostConversationsMessageParticipantReplaceRequest createPostConversationsMessageParticipantReplaceRequest(String conversationId, String participantId, TransferRequest body) {
+    return PostConversationsMessageParticipantReplaceRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Replace this participant with the specified user and/or address
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageParticipantReplace(PostConversationsMessageParticipantReplaceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace this participant with the specified user and/or address
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

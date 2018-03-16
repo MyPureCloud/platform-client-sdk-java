@@ -48,7 +48,9 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class PutFlowsDatatableRequest {
@@ -67,30 +69,59 @@ public class PutFlowsDatatableRequest {
 	    return this;
 	} 
 	
-	private Boolean showbrief;
-	public Boolean getShowbrief() {
-		return this.showbrief;
+	private String expand;
+	public String getExpand() {
+		return this.expand;
 	}
 
-	public void setShowbrief(Boolean showbrief) {
-		this.showbrief = showbrief;
+	public void setExpand(String expand) {
+		this.expand = expand;
 	}
 
-	public PutFlowsDatatableRequest withShowbrief(Boolean showbrief) {
-	    this.setShowbrief(showbrief);
+	public PutFlowsDatatableRequest withExpand(String expand) {
+	    this.setExpand(expand);
 	    return this;
 	} 
+
+	public enum expandValues { 
+		SCHEMA("schema");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
-	private JsonSchemaDocument body;
-	public JsonSchemaDocument getBody() {
+	private DataTable body;
+	public DataTable getBody() {
 		return this.body;
 	}
 
-	public void setBody(JsonSchemaDocument body) {
+	public void setBody(DataTable body) {
 		this.body = body;
 	}
 
-	public PutFlowsDatatableRequest withBody(JsonSchemaDocument body) {
+	public PutFlowsDatatableRequest withBody(DataTable body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -114,7 +145,7 @@ public class PutFlowsDatatableRequest {
         return this;
     }
 
-    public ApiRequest<JsonSchemaDocument> withHttpInfo() {
+    public ApiRequest<DataTable> withHttpInfo() {
         
         // verify the required parameter 'datatableId' is set
         if (this.datatableId == null) {
@@ -125,7 +156,7 @@ public class PutFlowsDatatableRequest {
         return ApiRequestBuilder.create("PUT", "/api/v2/flows/datatables/{datatableId}")
                 .withPathParameter("datatableId", datatableId)
         
-                .withQueryParameters("showbrief", "", showbrief)
+                .withQueryParameters("expand", "", expand)
         
                 .withBody(body)
         
@@ -160,12 +191,17 @@ public class PutFlowsDatatableRequest {
 			return this;
 		}
 		
-		public Builder withShowbrief(Boolean showbrief) {
-			request.setShowbrief(showbrief);
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
 		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
 		
-		public Builder withBody(JsonSchemaDocument body) {
+		public Builder withBody(DataTable body) {
 			request.setBody(body);
 			return this;
 		}

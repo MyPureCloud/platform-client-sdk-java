@@ -50,6 +50,7 @@ public class ObservationQuery  implements Serializable {
     NOFFERED("nOffered"),
     NOVERSLA("nOverSla"),
     NTRANSFERRED("nTransferred"),
+    TALERT("tAlert"),
     TNOTRESPONDING("tNotResponding"),
     NOUTBOUND("nOutbound"),
     NOUTBOUNDATTEMPTED("nOutboundAttempted"),

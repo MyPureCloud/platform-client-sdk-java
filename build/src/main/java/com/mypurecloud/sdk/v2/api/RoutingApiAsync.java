@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
@@ -27,6 +29,9 @@ import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
@@ -36,6 +41,8 @@ import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
@@ -46,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -55,6 +63,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
@@ -63,6 +73,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
@@ -77,10 +90,14 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
@@ -527,6 +544,82 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingSkillAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingSmsPhonenumberAsync(DeleteRoutingSmsPhonenumberRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingSmsPhonenumberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1246,6 +1339,158 @@ public class RoutingApiAsync {
 
   
   /**
+   * Get a recipient
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Recipient> getRoutingMessageRecipientAsync(GetRoutingMessageRecipientRequest request, final AsyncApiCallback<Recipient> callback) {
+    try {
+      final SettableFuture<Recipient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recipient>() {}, new AsyncApiCallback<ApiResponse<Recipient>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recipient> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a recipient
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Recipient>> getRoutingMessageRecipientAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recipient>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Recipient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recipient>() {}, new AsyncApiCallback<ApiResponse<Recipient>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recipient> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get recipients
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecipientListing> getRoutingMessageRecipientsAsync(GetRoutingMessageRecipientsRequest request, final AsyncApiCallback<RecipientListing> callback) {
+    try {
+      final SettableFuture<RecipientListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecipientListing>() {}, new AsyncApiCallback<ApiResponse<RecipientListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecipientListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get recipients
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecipientListing>> getRoutingMessageRecipientsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecipientListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecipientListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecipientListing>() {}, new AsyncApiCallback<ApiResponse<RecipientListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecipientListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecipientListing> response = (ApiResponse<RecipientListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecipientListing> response = (ApiResponse<RecipientListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get details about this queue.
    * 
    * @param request the request object
@@ -1841,6 +2086,234 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SkillEntityListing> response = (ApiResponse<SkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SMSAvailablePhoneNumberEntityListing> getRoutingSmsAvailablephonenumbersAsync(GetRoutingSmsAvailablephonenumbersRequest request, final AsyncApiCallback<SMSAvailablePhoneNumberEntityListing> callback) {
+    try {
+      final SettableFuture<SMSAvailablePhoneNumberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SMSAvailablePhoneNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SMSAvailablePhoneNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SMSAvailablePhoneNumberEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SMSAvailablePhoneNumberEntityListing>> getRoutingSmsAvailablephonenumbersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SMSAvailablePhoneNumberEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SMSAvailablePhoneNumberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SMSAvailablePhoneNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SMSAvailablePhoneNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SMSAvailablePhoneNumberEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumber> getRoutingSmsPhonenumberAsync(GetRoutingSmsPhonenumberRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumber> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumber>> getRoutingSmsPhonenumberAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersAsync(GetRoutingSmsPhonenumbersRequest request, final AsyncApiCallback<SmsPhoneNumberEntityListing> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumberEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumberEntityListing>> getRoutingSmsPhonenumbersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumberEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumberEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2918,6 +3391,158 @@ public class RoutingApiAsync {
 
   
   /**
+   * Provision an Address for SMS
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumber> postRoutingSmsAddressesAsync(PostRoutingSmsAddressesRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumber> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Provision an Address for SMS
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumber>> postRoutingSmsAddressesAsync(ApiRequest<SmsAddressProvision> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumber> postRoutingSmsPhonenumbersAsync(PostRoutingSmsPhonenumbersRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumber> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumber>> postRoutingSmsPhonenumbersAsync(ApiRequest<SmsPhoneNumberProvision> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a wrap-up code
    * 
    * @param request the request object
@@ -3146,6 +3771,82 @@ public class RoutingApiAsync {
 
   
   /**
+   * Update a recipient
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Recipient> putRoutingMessageRecipientAsync(PutRoutingMessageRecipientRequest request, final AsyncApiCallback<Recipient> callback) {
+    try {
+      final SettableFuture<Recipient> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recipient>() {}, new AsyncApiCallback<ApiResponse<Recipient>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recipient> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a recipient
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Recipient>> putRoutingMessageRecipientAsync(ApiRequest<Recipient> request, final AsyncApiCallback<ApiResponse<Recipient>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Recipient>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Recipient>() {}, new AsyncApiCallback<ApiResponse<Recipient>>() {
+        @Override
+        public void onCompleted(ApiResponse<Recipient> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update a queue
    * 
    * @param request the request object
@@ -3209,6 +3910,82 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SmsPhoneNumber> putRoutingSmsPhonenumberAsync(PutRoutingSmsPhonenumberRequest request, final AsyncApiCallback<SmsPhoneNumber> callback) {
+    try {
+      final SettableFuture<SmsPhoneNumber> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SmsPhoneNumber>> putRoutingSmsPhonenumberAsync(ApiRequest<SmsPhoneNumber> request, final AsyncApiCallback<ApiResponse<SmsPhoneNumber>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SmsPhoneNumber>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SmsPhoneNumber>() {}, new AsyncApiCallback<ApiResponse<SmsPhoneNumber>>() {
+        @Override
+        public void onCompleted(ApiResponse<SmsPhoneNumber> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

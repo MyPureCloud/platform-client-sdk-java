@@ -14,6 +14,7 @@ title: AnalyticsParticipant
 | **purpose** | [**PurposeEnum**](#PurposeEnum) | The participant&#39;s purpose |  [optional] |
 | **externalContactId** | **String** | External Contact Identifier |  [optional] |
 | **externalOrganizationId** | **String** | External Organization Identifier |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | Reason for which participant flagged conversation |  [optional] |
 | **sessions** | [**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html) | List of sessions associated to this participant |  [optional] |
 {: class="table table-striped"}
 
@@ -40,6 +41,16 @@ title: AnalyticsParticipant
 | EXTERNAL | &quot;external&quot; |
 | FAX | &quot;fax&quot; |
 | WORKFLOW | &quot;workflow&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

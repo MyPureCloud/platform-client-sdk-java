@@ -64,6 +64,7 @@ title: AnalyticsQueryPredicate
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
+| FLAGGEDREASON | &quot;flaggedReason&quot; |
 | STATIONID | &quot;stationId&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |
@@ -150,6 +151,7 @@ title: AnalyticsQueryPredicate
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
+| TALERT | &quot;tAlert&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | NOUTBOUND | &quot;nOutbound&quot; |
 | NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; |

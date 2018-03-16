@@ -24,6 +24,7 @@ title: ConversationNotificationEmail
 | **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
 | **messageId** | **String** |  |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
+| **draftAttachments** | [**List&lt;ConversationNotificationDraftAttachments&gt;**](ConversationNotificationDraftAttachments.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

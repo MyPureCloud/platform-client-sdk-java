@@ -71,6 +71,40 @@ public class AnalyticsParticipant  implements Serializable {
   private PurposeEnum purpose = null;
   private String externalContactId = null;
   private String externalOrganizationId = null;
+
+  /**
+   * Reason for which participant flagged conversation
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
 
   
@@ -183,6 +217,24 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * Reason for which participant flagged conversation
+   **/
+  public AnalyticsParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reason for which participant flagged conversation")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
    * List of sessions associated to this participant
    **/
   public AnalyticsParticipant sessions(List<AnalyticsSession> sessions) {
@@ -216,12 +268,13 @@ public class AnalyticsParticipant  implements Serializable {
         Objects.equals(this.purpose, analyticsParticipant.purpose) &&
         Objects.equals(this.externalContactId, analyticsParticipant.externalContactId) &&
         Objects.equals(this.externalOrganizationId, analyticsParticipant.externalOrganizationId) &&
+        Objects.equals(this.flaggedReason, analyticsParticipant.flaggedReason) &&
         Objects.equals(this.sessions, analyticsParticipant.sessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, sessions);
+    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions);
   }
 
   @Override
@@ -235,6 +288,7 @@ public class AnalyticsParticipant  implements Serializable {
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("}");
     return sb.toString();

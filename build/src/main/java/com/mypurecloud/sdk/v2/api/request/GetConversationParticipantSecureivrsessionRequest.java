@@ -42,6 +42,9 @@ import com.mypurecloud.sdk.v2.model.EmailConversation;
 import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessageConversation;
+import com.mypurecloud.sdk.v2.model.MessageData;
+import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
@@ -67,6 +70,8 @@ import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
+import com.mypurecloud.sdk.v2.model.AdditionalMessage;
+import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 public class GetConversationParticipantSecureivrsessionRequest {

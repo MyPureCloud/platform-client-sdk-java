@@ -1,0 +1,418 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.MessageMedia;
+import com.mypurecloud.sdk.v2.model.User;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * MessageData
+ */
+
+public class MessageData  implements Serializable {
+  
+  private String id = null;
+  private String name = null;
+  private String providerMessageId = null;
+  private Date timestamp = null;
+  private String fromAddress = null;
+  private String toAddress = null;
+
+  /**
+   * The direction of the message.
+   */
+  public enum DirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    DirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DirectionEnum value : DirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DirectionEnum direction = null;
+
+  /**
+   * Type of text messenger.
+   */
+  public enum MessengerTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("sms"),
+    FACEBOOK("facebook"),
+    TWITTER("twitter"),
+    LINE("line");
+
+    private String value;
+
+    MessengerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessengerTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessengerTypeEnum value : MessengerTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessengerTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessengerTypeEnum messengerType = null;
+  private String textBody = null;
+
+  /**
+   * The status of the message.
+   */
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    QUEUED("queued"),
+    SENT("sent"),
+    FAILED("failed"),
+    RECEIVED("received");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
+  private List<MessageMedia> media = new ArrayList<MessageMedia>();
+  private User createdBy = null;
+  private String selfUri = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  
+  /**
+   **/
+  public MessageData name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * The unique identifier of the message from provider
+   **/
+  public MessageData providerMessageId(String providerMessageId) {
+    this.providerMessageId = providerMessageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The unique identifier of the message from provider")
+  @JsonProperty("providerMessageId")
+  public String getProviderMessageId() {
+    return providerMessageId;
+  }
+  public void setProviderMessageId(String providerMessageId) {
+    this.providerMessageId = providerMessageId;
+  }
+
+  
+  /**
+   * The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public MessageData timestamp(Date timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("timestamp")
+  public Date getTimestamp() {
+    return timestamp;
+  }
+  public void setTimestamp(Date timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  
+  /**
+   * The sender of the text message.
+   **/
+  public MessageData fromAddress(String fromAddress) {
+    this.fromAddress = fromAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sender of the text message.")
+  @JsonProperty("fromAddress")
+  public String getFromAddress() {
+    return fromAddress;
+  }
+  public void setFromAddress(String fromAddress) {
+    this.fromAddress = fromAddress;
+  }
+
+  
+  /**
+   * The recipient of the text message.
+   **/
+  public MessageData toAddress(String toAddress) {
+    this.toAddress = toAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recipient of the text message.")
+  @JsonProperty("toAddress")
+  public String getToAddress() {
+    return toAddress;
+  }
+  public void setToAddress(String toAddress) {
+    this.toAddress = toAddress;
+  }
+
+  
+  /**
+   * The direction of the message.
+   **/
+  public MessageData direction(DirectionEnum direction) {
+    this.direction = direction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The direction of the message.")
+  @JsonProperty("direction")
+  public DirectionEnum getDirection() {
+    return direction;
+  }
+  public void setDirection(DirectionEnum direction) {
+    this.direction = direction;
+  }
+
+  
+  /**
+   * Type of text messenger.
+   **/
+  public MessageData messengerType(MessengerTypeEnum messengerType) {
+    this.messengerType = messengerType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of text messenger.")
+  @JsonProperty("messengerType")
+  public MessengerTypeEnum getMessengerType() {
+    return messengerType;
+  }
+  public void setMessengerType(MessengerTypeEnum messengerType) {
+    this.messengerType = messengerType;
+  }
+
+  
+  /**
+   * The body of the text message.
+   **/
+  public MessageData textBody(String textBody) {
+    this.textBody = textBody;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The body of the text message.")
+  @JsonProperty("textBody")
+  public String getTextBody() {
+    return textBody;
+  }
+  public void setTextBody(String textBody) {
+    this.textBody = textBody;
+  }
+
+  
+  /**
+   * The status of the message.
+   **/
+  public MessageData status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The status of the message.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+  
+  /**
+   * The media details associated to a message.
+   **/
+  public MessageData media(List<MessageMedia> media) {
+    this.media = media;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The media details associated to a message.")
+  @JsonProperty("media")
+  public List<MessageMedia> getMedia() {
+    return media;
+  }
+  public void setMedia(List<MessageMedia> media) {
+    this.media = media;
+  }
+
+  
+  /**
+   * User who sent this message.
+   **/
+  public MessageData createdBy(User createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User who sent this message.")
+  @JsonProperty("createdBy")
+  public User getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(User createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    MessageData messageData = (MessageData) o;
+    return Objects.equals(this.id, messageData.id) &&
+        Objects.equals(this.name, messageData.name) &&
+        Objects.equals(this.providerMessageId, messageData.providerMessageId) &&
+        Objects.equals(this.timestamp, messageData.timestamp) &&
+        Objects.equals(this.fromAddress, messageData.fromAddress) &&
+        Objects.equals(this.toAddress, messageData.toAddress) &&
+        Objects.equals(this.direction, messageData.direction) &&
+        Objects.equals(this.messengerType, messageData.messengerType) &&
+        Objects.equals(this.textBody, messageData.textBody) &&
+        Objects.equals(this.status, messageData.status) &&
+        Objects.equals(this.media, messageData.media) &&
+        Objects.equals(this.createdBy, messageData.createdBy) &&
+        Objects.equals(this.selfUri, messageData.selfUri);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, createdBy, selfUri);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class MessageData {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    providerMessageId: ").append(toIndentedString(providerMessageId)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
+    sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
+    sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
+    sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

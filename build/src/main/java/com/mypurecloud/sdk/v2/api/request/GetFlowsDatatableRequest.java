@@ -48,7 +48,9 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsDatatableRequest {
@@ -67,19 +69,48 @@ public class GetFlowsDatatableRequest {
 	    return this;
 	} 
 	
-	private Boolean showbrief;
-	public Boolean getShowbrief() {
-		return this.showbrief;
+	private String expand;
+	public String getExpand() {
+		return this.expand;
 	}
 
-	public void setShowbrief(Boolean showbrief) {
-		this.showbrief = showbrief;
+	public void setExpand(String expand) {
+		this.expand = expand;
 	}
 
-	public GetFlowsDatatableRequest withShowbrief(Boolean showbrief) {
-	    this.setShowbrief(showbrief);
+	public GetFlowsDatatableRequest withExpand(String expand) {
+	    this.setExpand(expand);
 	    return this;
 	} 
+
+	public enum expandValues { 
+		SCHEMA("schema");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -111,7 +142,7 @@ public class GetFlowsDatatableRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/flows/datatables/{datatableId}")
                 .withPathParameter("datatableId", datatableId)
         
-                .withQueryParameters("showbrief", "", showbrief)
+                .withQueryParameters("expand", "", expand)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -144,9 +175,14 @@ public class GetFlowsDatatableRequest {
 			return this;
 		}
 		
-		public Builder withShowbrief(Boolean showbrief) {
-			request.setShowbrief(showbrief);
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
 			return this;
+		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
 		}
 		
 

@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
@@ -24,6 +26,9 @@ import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
@@ -33,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 
@@ -43,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -52,6 +60,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
@@ -60,6 +70,9 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
@@ -74,10 +87,14 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingSkillsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsAddressesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
@@ -551,6 +568,82 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingSkill(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
+     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId));
+  }
+
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
+    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
+  }
+
+  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId) {
+    return DeleteRoutingSmsPhonenumberRequest.builder()
+            .withAddressId(addressId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSmsPhonenumber(DeleteRoutingSmsPhonenumberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSmsPhonenumber(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1296,6 +1389,168 @@ public class RoutingApi {
 
   
   /**
+   * Get a recipient
+   * 
+   * @param recipientId Recipient ID (required)
+   * @return Recipient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recipient getRoutingMessageRecipient(String recipientId) throws IOException, ApiException {
+    return  getRoutingMessageRecipient(createGetRoutingMessageRecipientRequest(recipientId));
+  }
+
+  /**
+   * Get a recipient
+   * 
+   * @param recipientId Recipient ID (required)
+   * @return Recipient
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recipient> getRoutingMessageRecipientWithHttpInfo(String recipientId) throws IOException {
+    return getRoutingMessageRecipient(createGetRoutingMessageRecipientRequest(recipientId).withHttpInfo());
+  }
+
+  private GetRoutingMessageRecipientRequest createGetRoutingMessageRecipientRequest(String recipientId) {
+    return GetRoutingMessageRecipientRequest.builder()
+            .withRecipientId(recipientId)
+    
+            .build();
+  }
+
+  /**
+   * Get a recipient
+   * 
+   * @param request The request object
+   * @return Recipient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recipient getRoutingMessageRecipient(GetRoutingMessageRecipientRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Recipient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recipient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a recipient
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recipient> getRoutingMessageRecipient(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recipient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get recipients
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return RecipientListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecipientListing getRoutingMessageRecipients(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get recipients
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return RecipientListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecipientListing> getRoutingMessageRecipientsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(Integer pageSize, Integer pageNumber) {
+    return GetRoutingMessageRecipientsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get recipients
+   * 
+   * @param request The request object
+   * @return RecipientListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecipientListing getRoutingMessageRecipients(GetRoutingMessageRecipientsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecipientListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecipientListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get recipients
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecipientListing> getRoutingMessageRecipients(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecipientListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecipientListing> response = (ApiResponse<RecipientListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecipientListing> response = (ApiResponse<RecipientListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get details about this queue.
    * 
    * @param queueId Queue ID (required)
@@ -1998,6 +2253,283 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SkillEntityListing> response = (ApiResponse<SkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param countryCode The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned (required)
+   * @param phoneNumberType Type of available phone numbers searched (required)
+   * @param region Region/province/state that can be used to restrict the numbers returned (optional)
+   * @param city City that can be used to restrict the numbers returned (optional)
+   * @param areaCode Area code that can be used to restrict the numbers returned (optional)
+   * @param pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. (optional)
+   * @param addressRequirement This indicates whether the phone number requires to have an Address registered. (optional)
+   * @return SMSAvailablePhoneNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SMSAvailablePhoneNumberEntityListing getRoutingSmsAvailablephonenumbers(String countryCode, String phoneNumberType, String region, String city, String areaCode, String pattern, String addressRequirement) throws IOException, ApiException {
+    return  getRoutingSmsAvailablephonenumbers(createGetRoutingSmsAvailablephonenumbersRequest(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement));
+  }
+
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param countryCode The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned (required)
+   * @param phoneNumberType Type of available phone numbers searched (required)
+   * @param region Region/province/state that can be used to restrict the numbers returned (optional)
+   * @param city City that can be used to restrict the numbers returned (optional)
+   * @param areaCode Area code that can be used to restrict the numbers returned (optional)
+   * @param pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. (optional)
+   * @param addressRequirement This indicates whether the phone number requires to have an Address registered. (optional)
+   * @return SMSAvailablePhoneNumberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SMSAvailablePhoneNumberEntityListing> getRoutingSmsAvailablephonenumbersWithHttpInfo(String countryCode, String phoneNumberType, String region, String city, String areaCode, String pattern, String addressRequirement) throws IOException {
+    return getRoutingSmsAvailablephonenumbers(createGetRoutingSmsAvailablephonenumbersRequest(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement).withHttpInfo());
+  }
+
+  private GetRoutingSmsAvailablephonenumbersRequest createGetRoutingSmsAvailablephonenumbersRequest(String countryCode, String phoneNumberType, String region, String city, String areaCode, String pattern, String addressRequirement) {
+    return GetRoutingSmsAvailablephonenumbersRequest.builder()
+            .withCountryCode(countryCode)
+    
+            .withPhoneNumberType(phoneNumberType)
+    
+            .withRegion(region)
+    
+            .withCity(city)
+    
+            .withAreaCode(areaCode)
+    
+            .withPattern(pattern)
+    
+            .withAddressRequirement(addressRequirement)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param request The request object
+   * @return SMSAvailablePhoneNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SMSAvailablePhoneNumberEntityListing getRoutingSmsAvailablephonenumbers(GetRoutingSmsAvailablephonenumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SMSAvailablePhoneNumberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SMSAvailablePhoneNumberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of available phone numbers for SMS provisioning.
+   * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SMSAvailablePhoneNumberEntityListing> getRoutingSmsAvailablephonenumbers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SMSAvailablePhoneNumberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SMSAvailablePhoneNumberEntityListing> response = (ApiResponse<SMSAvailablePhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber getRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId));
+  }
+
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
+    return getRoutingSmsPhonenumber(createGetRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
+  }
+
+  private GetRoutingSmsPhonenumberRequest createGetRoutingSmsPhonenumberRequest(String addressId) {
+    return GetRoutingSmsPhonenumberRequest.builder()
+            .withAddressId(addressId)
+    
+            .build();
+  }
+
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber getRoutingSmsPhonenumber(GetRoutingSmsPhonenumberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> getRoutingSmsPhonenumber(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
+   * @param phoneNumberType Filter on phone number type (optional)
+   * @param phoneNumberStatus Filter on phone number status (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SmsPhoneNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. (optional)
+   * @param phoneNumberType Filter on phone number type (optional)
+   * @param phoneNumberStatus Filter on phone number status (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SmsPhoneNumberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbersWithHttpInfo(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingSmsPhonenumbers(createGetRoutingSmsPhonenumbersRequest(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRoutingSmsPhonenumbersRequest createGetRoutingSmsPhonenumbersRequest(String phoneNumber, String phoneNumberType, String phoneNumberStatus, Integer pageSize, Integer pageNumber) {
+    return GetRoutingSmsPhonenumbersRequest.builder()
+            .withPhoneNumber(phoneNumber)
+    
+            .withPhoneNumberType(phoneNumberType)
+    
+            .withPhoneNumberStatus(phoneNumberStatus)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumberEntityListing getRoutingSmsPhonenumbers(GetRoutingSmsPhonenumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of provisioned phone numbers.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumberEntityListing> getRoutingSmsPhonenumbers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3158,6 +3690,164 @@ public class RoutingApi {
 
   
   /**
+   * Provision an Address for SMS
+   * 
+   * @param body SmsAddress (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsAddresses(SmsAddressProvision body) throws IOException, ApiException {
+    return  postRoutingSmsAddresses(createPostRoutingSmsAddressesRequest(body));
+  }
+
+  /**
+   * Provision an Address for SMS
+   * 
+   * @param body SmsAddress (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsAddressesWithHttpInfo(SmsAddressProvision body) throws IOException {
+    return postRoutingSmsAddresses(createPostRoutingSmsAddressesRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSmsAddressesRequest createPostRoutingSmsAddressesRequest(SmsAddressProvision body) {
+    return PostRoutingSmsAddressesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Provision an Address for SMS
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsAddresses(PostRoutingSmsAddressesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Provision an Address for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsAddresses(ApiRequest<SmsAddressProvision> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbers(SmsPhoneNumberProvision body) throws IOException, ApiException {
+    return  postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body));
+  }
+
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersWithHttpInfo(SmsPhoneNumberProvision body) throws IOException {
+    return postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body) {
+    return PostRoutingSmsPhonenumbersRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber postRoutingSmsPhonenumbers(PostRoutingSmsPhonenumbersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Provision a phone number for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbers(ApiRequest<SmsPhoneNumberProvision> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a wrap-up code
    * 
    * @param body WrapupCode (required)
@@ -3407,6 +4097,89 @@ public class RoutingApi {
 
   
   /**
+   * Update a recipient
+   * 
+   * @param recipientId Recipient ID (required)
+   * @param body Recipient (required)
+   * @return Recipient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recipient putRoutingMessageRecipient(String recipientId, Recipient body) throws IOException, ApiException {
+    return  putRoutingMessageRecipient(createPutRoutingMessageRecipientRequest(recipientId, body));
+  }
+
+  /**
+   * Update a recipient
+   * 
+   * @param recipientId Recipient ID (required)
+   * @param body Recipient (required)
+   * @return Recipient
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recipient> putRoutingMessageRecipientWithHttpInfo(String recipientId, Recipient body) throws IOException {
+    return putRoutingMessageRecipient(createPutRoutingMessageRecipientRequest(recipientId, body).withHttpInfo());
+  }
+
+  private PutRoutingMessageRecipientRequest createPutRoutingMessageRecipientRequest(String recipientId, Recipient body) {
+    return PutRoutingMessageRecipientRequest.builder()
+            .withRecipientId(recipientId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a recipient
+   * 
+   * @param request The request object
+   * @return Recipient
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Recipient putRoutingMessageRecipient(PutRoutingMessageRecipientRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Recipient> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recipient>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a recipient
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Recipient> putRoutingMessageRecipient(ApiRequest<Recipient> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Recipient>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Recipient> response = (ApiResponse<Recipient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a queue
    * 
    * @param queueId Queue ID (required)
@@ -3484,6 +4257,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body) throws IOException, ApiException {
+    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body));
+  }
+
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param addressId Address ID (required)
+   * @param body SmsPhoneNumber (required)
+   * @return SmsPhoneNumber
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body) throws IOException {
+    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body).withHttpInfo());
+  }
+
+  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body) {
+    return PutRoutingSmsPhonenumberRequest.builder()
+            .withAddressId(addressId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @return SmsPhoneNumber
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsPhoneNumber putRoutingSmsPhonenumber(PutRoutingSmsPhonenumberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a phone number provisioned for SMS.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumber(ApiRequest<SmsPhoneNumber> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

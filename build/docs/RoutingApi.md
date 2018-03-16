@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | Delete queue member |
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
+| [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete utilization settings and revert to system defaults. |
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | Remove routing skill from user |
@@ -22,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | Get domains |
 | [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | Get email setup |
 | [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | Get the list of supported languages. |
+| [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
+| [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
 | [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
@@ -30,6 +33,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
+| [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
+| [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
+| [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
 | [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the utilization settings. |
 | [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
@@ -44,10 +50,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
 | [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create queue |
 | [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
+| [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
+| [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
 | [**postRoutingWrapupcodes**](RoutingApi.html#postRoutingWrapupcodes) | Create a wrap-up code |
 | [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
+| [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
+| [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the utilization settings. |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
@@ -355,6 +365,56 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **skillId** | **String**| Skill ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingSmsPhonenumber"></a>
+
+# **deleteRoutingSmsPhonenumber**
+
+> Void deleteRoutingSmsPhonenumber(addressId)
+
+Delete a phone number provisioned for SMS.
+
+
+
+Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    apiInstance.deleteRoutingSmsPhonenumber(addressId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingSmsPhonenumber");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | |
 {: class="table table-striped"}
 
 ### Return type
@@ -821,6 +881,110 @@ try {
 
 [**LanguageEntityListing**](LanguageEntityListing.html)
 
+<a name="getRoutingMessageRecipient"></a>
+
+# **getRoutingMessageRecipient**
+
+> [Recipient](Recipient.html) getRoutingMessageRecipient(recipientId)
+
+Get a recipient
+
+
+
+Wraps GET /api/v2/routing/message/recipients/{recipientId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String recipientId = "recipientId_example"; // String | Recipient ID
+try {
+    Recipient result = apiInstance.getRoutingMessageRecipient(recipientId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingMessageRecipient");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **recipientId** | **String**| Recipient ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Recipient**](Recipient.html)
+
+<a name="getRoutingMessageRecipients"></a>
+
+# **getRoutingMessageRecipients**
+
+> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(pageSize, pageNumber)
+
+Get recipients
+
+
+
+Wraps GET /api/v2/routing/message/recipients  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    RecipientListing result = apiInstance.getRoutingMessageRecipients(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingMessageRecipients");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**RecipientListing**](RecipientListing.html)
+
 <a name="getRoutingQueue"></a>
 
 # **getRoutingQueue**
@@ -1266,6 +1430,179 @@ try {
 ### Return type
 
 [**SkillEntityListing**](SkillEntityListing.html)
+
+<a name="getRoutingSmsAvailablephonenumbers"></a>
+
+# **getRoutingSmsAvailablephonenumbers**
+
+> [SMSAvailablePhoneNumberEntityListing](SMSAvailablePhoneNumberEntityListing.html) getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement)
+
+Get a list of available phone numbers for SMS provisioning.
+
+This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
+
+Wraps GET /api/v2/routing/sms/availablephonenumbers  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
+String phoneNumberType = "phoneNumberType_example"; // String | Type of available phone numbers searched
+String region = "region_example"; // String | Region/province/state that can be used to restrict the numbers returned
+String city = "city_example"; // String | City that can be used to restrict the numbers returned
+String areaCode = "areaCode_example"; // String | Area code that can be used to restrict the numbers returned
+String pattern = "pattern_example"; // String | A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
+String addressRequirement = "addressRequirement_example"; // String | This indicates whether the phone number requires to have an Address registered.
+try {
+    SMSAvailablePhoneNumberEntityListing result = apiInstance.getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, region, city, areaCode, pattern, addressRequirement);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsAvailablephonenumbers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **countryCode** | **String**| The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned | |
+| **phoneNumberType** | **String**| Type of available phone numbers searched |<br />**Values**: local, mobile, tollfree |
+| **region** | **String**| Region/province/state that can be used to restrict the numbers returned | [optional] |
+| **city** | **String**| City that can be used to restrict the numbers returned | [optional] |
+| **areaCode** | **String**| Area code that can be used to restrict the numbers returned | [optional] |
+| **pattern** | **String**| A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. | [optional] |
+| **addressRequirement** | **String**| This indicates whether the phone number requires to have an Address registered. | [optional]<br />**Values**: none, any, local, foreign |
+{: class="table table-striped"}
+
+### Return type
+
+[**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html)
+
+<a name="getRoutingSmsPhonenumber"></a>
+
+# **getRoutingSmsPhonenumber**
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) getRoutingSmsPhonenumber(addressId)
+
+Get a phone number provisioned for SMS.
+
+
+
+Wraps GET /api/v2/routing/sms/phonenumbers/{addressId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    SmsPhoneNumber result = apiInstance.getRoutingSmsPhonenumber(addressId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumber");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="getRoutingSmsPhonenumbers"></a>
+
+# **getRoutingSmsPhonenumbers**
+
+> [SmsPhoneNumberEntityListing](SmsPhoneNumberEntityListing.html) getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber)
+
+Get a list of provisioned phone numbers.
+
+
+
+Wraps GET /api/v2/routing/sms/phonenumbers  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String phoneNumber = "phoneNumber_example"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
+String phoneNumberType = "phoneNumberType_example"; // String | Filter on phone number type
+String phoneNumberStatus = "phoneNumberStatus_example"; // String | Filter on phone number status
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    SmsPhoneNumberEntityListing result = apiInstance.getRoutingSmsPhonenumbers(phoneNumber, phoneNumberType, phoneNumberStatus, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsPhonenumbers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] |
+| **phoneNumberType** | **String**| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree |
+| **phoneNumberStatus** | **String**| Filter on phone number status | [optional]<br />**Values**: active, invalid, porting |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
 
 <a name="getRoutingUtilization"></a>
 
@@ -2003,6 +2340,108 @@ try {
 
 [**RoutingSkill**](RoutingSkill.html)
 
+<a name="postRoutingSmsAddresses"></a>
+
+# **postRoutingSmsAddresses**
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsAddresses(body)
+
+Provision an Address for SMS
+
+
+
+Wraps POST /api/v2/routing/sms/addresses  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+SmsAddressProvision body = new SmsAddressProvision(); // SmsAddressProvision | SmsAddress
+try {
+    SmsPhoneNumber result = apiInstance.postRoutingSmsAddresses(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSmsAddresses");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SmsAddressProvision**](SmsAddressProvision.html)| SmsAddress | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="postRoutingSmsPhonenumbers"></a>
+
+# **postRoutingSmsPhonenumbers**
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsPhonenumbers(body)
+
+Provision a phone number for SMS
+
+
+
+Wraps POST /api/v2/routing/sms/phonenumbers  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+SmsPhoneNumberProvision body = new SmsPhoneNumberProvision(); // SmsPhoneNumberProvision | SmsPhoneNumber
+try {
+    SmsPhoneNumber result = apiInstance.postRoutingSmsPhonenumbers(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingSmsPhonenumbers");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
 <a name="postRoutingWrapupcodes"></a>
 
 # **postRoutingWrapupcodes**
@@ -2162,6 +2601,59 @@ try {
 
 [**InboundRoute**](InboundRoute.html)
 
+<a name="putRoutingMessageRecipient"></a>
+
+# **putRoutingMessageRecipient**
+
+> [Recipient](Recipient.html) putRoutingMessageRecipient(recipientId, body)
+
+Update a recipient
+
+
+
+Wraps PUT /api/v2/routing/message/recipients/{recipientId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String recipientId = "recipientId_example"; // String | Recipient ID
+Recipient body = new Recipient(); // Recipient | Recipient
+try {
+    Recipient result = apiInstance.putRoutingMessageRecipient(recipientId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingMessageRecipient");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **recipientId** | **String**| Recipient ID | |
+| **body** | [**Recipient**](Recipient.html)| Recipient | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Recipient**](Recipient.html)
+
 <a name="putRoutingQueue"></a>
 
 # **putRoutingQueue**
@@ -2214,6 +2706,59 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="putRoutingSmsPhonenumber"></a>
+
+# **putRoutingSmsPhonenumber**
+
+> [SmsPhoneNumber](SmsPhoneNumber.html) putRoutingSmsPhonenumber(addressId, body)
+
+Update a phone number provisioned for SMS.
+
+
+
+Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+SmsPhoneNumber body = new SmsPhoneNumber(); // SmsPhoneNumber | SmsPhoneNumber
+try {
+    SmsPhoneNumber result = apiInstance.putRoutingSmsPhonenumber(addressId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingSmsPhonenumber");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | |
+| **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
 
 <a name="putRoutingUtilization"></a>
 

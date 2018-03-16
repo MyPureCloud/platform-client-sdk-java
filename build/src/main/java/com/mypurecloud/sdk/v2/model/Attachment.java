@@ -22,13 +22,14 @@ public class Attachment  implements Serializable {
 
   
   /**
+   * The unique identifier for the attachment.
    **/
   public Attachment attachmentId(String attachmentId) {
     this.attachmentId = attachmentId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The unique identifier for the attachment.")
   @JsonProperty("attachmentId")
   public String getAttachmentId() {
     return attachmentId;
@@ -39,13 +40,14 @@ public class Attachment  implements Serializable {
 
   
   /**
+   * The name of the attachment.
    **/
   public Attachment name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the attachment.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -56,13 +58,14 @@ public class Attachment  implements Serializable {
 
   
   /**
+   * The content uri of the attachment. If set, this is commonly a public api download location.
    **/
   public Attachment contentUri(String contentUri) {
     this.contentUri = contentUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The content uri of the attachment. If set, this is commonly a public api download location.")
   @JsonProperty("contentUri")
   public String getContentUri() {
     return contentUri;
@@ -73,13 +76,14 @@ public class Attachment  implements Serializable {
 
   
   /**
+   * The type of file the attachment is.
    **/
   public Attachment contentType(String contentType) {
     this.contentType = contentType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The type of file the attachment is.")
   @JsonProperty("contentType")
   public String getContentType() {
     return contentType;
@@ -90,13 +94,14 @@ public class Attachment  implements Serializable {
 
   
   /**
+   * The length of the attachment file.
    **/
   public Attachment contentLength(Integer contentLength) {
     this.contentLength = contentLength;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The length of the attachment file.")
   @JsonProperty("contentLength")
   public Integer getContentLength() {
     return contentLength;

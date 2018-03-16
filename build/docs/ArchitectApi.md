@@ -50,7 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowVersionConfiguration**](ArchitectApi.html#getFlowVersionConfiguration) | Create flow version configuration |
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
-| [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by datatableId |
+| [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
@@ -80,7 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putArchitectSchedulegroup**](ArchitectApi.html#putArchitectSchedulegroup) | Updates a schedule group by ID |
 | [**putArchitectSystempromptResource**](ArchitectApi.html#putArchitectSystempromptResource) | Updates a system prompt resource override. |
 | [**putFlow**](ArchitectApi.html#putFlow) | Update flow |
-| [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | Updates a specific datatable by datatableId |
+| [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | Updates a specific datatable by id |
 | [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | Update a row entry |
 {: class="table table-striped"}
 
@@ -550,7 +550,7 @@ try {
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given datatableId)
+deletes an entire datatable (including schema and data) with a given id)
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}  
 
@@ -2486,9 +2486,9 @@ try {
 
 # **getFlowsDatatable**
 
-> [JsonSchemaDocument](JsonSchemaDocument.html) getFlowsDatatable(datatableId, showbrief)
+> [DataTable](DataTable.html) getFlowsDatatable(datatableId, expand)
 
-Returns a specific datatable by datatableId
+Returns a specific datatable by id
 
 Given a datableid returns the schema associated with it.
 
@@ -2512,9 +2512,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
-Boolean showbrief = true; // Boolean | If true returns a shortened version of the schema including the name, id and description]
+String expand = "expand_example"; // String | Expand instructions for the result
 try {
-    JsonSchemaDocument result = apiInstance.getFlowsDatatable(datatableId, showbrief);
+    DataTable result = apiInstance.getFlowsDatatable(datatableId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatable");
@@ -2528,12 +2528,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | |
-| **showbrief** | **Boolean**| If true returns a shortened version of the schema including the name, id and description] | [optional] [default to true] |
+| **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="getFlowsDatatableRow"></a>
 
@@ -2594,7 +2594,7 @@ try {
 
 # **getFlowsDatatableRows**
 
-> [List&lt;Map&lt;String, Object&gt;&gt;](Map.html) getFlowsDatatableRows(datatableId, showbrief)
+> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageSize, pageNumber, showbrief)
 
 Returns the rows for the datatable
 
@@ -2620,9 +2620,11 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
 Boolean showbrief = true; // Boolean | If true returns just the key value of the row
 try {
-    List<Map<String, Object>> result = apiInstance.getFlowsDatatableRows(datatableId, showbrief);
+    DataTableRowEntityListing result = apiInstance.getFlowsDatatableRows(datatableId, pageSize, pageNumber, showbrief);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatableRows");
@@ -2636,18 +2638,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **showbrief** | **Boolean**| If true returns just the key value of the row | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**List&lt;Map&lt;String, Object&gt;&gt;**](Map.html)
+[**DataTableRowEntityListing**](DataTableRowEntityListing.html)
 
 <a name="getFlowsDatatables"></a>
 
 # **getFlowsDatatables**
 
-> [List&lt;JsonSchemaDocument&gt;](JsonSchemaDocument.html) getFlowsDatatables(showbrief)
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageSize, pageNumber, sortBy, sortOrder)
 
 Retrieve a list of datatables for the org
 
@@ -2672,9 +2676,13 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
-Boolean showbrief = true; // Boolean | If true, returns a shortened version of the schema including the name, id and description
+String expand = "expand_example"; // String | Expand instructions for the result
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "id"; // String | Sort by
+String sortOrder = "ascending"; // String | Sort order
 try {
-    List<JsonSchemaDocument> result = apiInstance.getFlowsDatatables(showbrief);
+    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageSize, pageNumber, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatables");
@@ -2687,12 +2695,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **showbrief** | **Boolean**| If true, returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
+| **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name |
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
 
-[**List&lt;JsonSchemaDocument&gt;**](JsonSchemaDocument.html)
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
@@ -3621,7 +3633,7 @@ try {
 
 # **postFlowsDatatables**
 
-> [JsonSchemaDocument](JsonSchemaDocument.html) postFlowsDatatables(body)
+> [DataTable](DataTable.html) postFlowsDatatables(body)
 
 Create a new datatable with the specified json-schema definition
 
@@ -3646,9 +3658,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
-JsonSchemaDocument body = new JsonSchemaDocument(); // JsonSchemaDocument | datatable json-schema
+DataTable body = new DataTable(); // DataTable | datatable json-schema
 try {
-    JsonSchemaDocument result = apiInstance.postFlowsDatatables(body);
+    DataTable result = apiInstance.postFlowsDatatables(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#postFlowsDatatables");
@@ -3661,12 +3673,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema | |
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema | |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="putArchitectIvr"></a>
 
@@ -4047,11 +4059,11 @@ try {
 
 # **putFlowsDatatable**
 
-> [JsonSchemaDocument](JsonSchemaDocument.html) putFlowsDatatable(datatableId, showbrief, body)
+> [DataTable](DataTable.html) putFlowsDatatable(datatableId, expand, body)
 
-Updates a specific datatable by datatableId
+Updates a specific datatable by id
 
-Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}  
 
@@ -4073,10 +4085,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
-Boolean showbrief = true; // Boolean | If true returns a shortened version of the schema including the name, id and description
-JsonSchemaDocument body = new JsonSchemaDocument(); // JsonSchemaDocument | datatable json-schema
+String expand = "expand_example"; // String | Expand instructions for the result
+DataTable body = new DataTable(); // DataTable | datatable json-schema
 try {
-    JsonSchemaDocument result = apiInstance.putFlowsDatatable(datatableId, showbrief, body);
+    DataTable result = apiInstance.putFlowsDatatable(datatableId, expand, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#putFlowsDatatable");
@@ -4090,13 +4102,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | |
-| **showbrief** | **Boolean**| If true returns a shortened version of the schema including the name, id and description | [optional] [default to true] |
-| **body** | [**JsonSchemaDocument**](JsonSchemaDocument.html)| datatable json-schema | [optional] |
+| **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema |
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema | [optional] |
 {: class="table table-striped"}
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**DataTable**](DataTable.html)
 
 <a name="putFlowsDatatableRow"></a>
 

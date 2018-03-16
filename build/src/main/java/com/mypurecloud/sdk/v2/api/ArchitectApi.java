@@ -38,7 +38,9 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -841,7 +843,7 @@ public class ArchitectApi {
   
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * deletes an entire datatable (including schema and data) with a given id)
    * @param datatableId id of datatable (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -852,7 +854,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * deletes an entire datatable (including schema and data) with a given id)
    * @param datatableId id of datatable (required)
    * @throws IOException if the request fails to be processed
    */
@@ -869,7 +871,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * deletes an entire datatable (including schema and data) with a given id)
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -887,7 +889,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given datatableId)
+   * deletes an entire datatable (including schema and data) with a given id)
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3940,50 +3942,50 @@ public class ArchitectApi {
 
   
   /**
-   * Returns a specific datatable by datatableId
+   * Returns a specific datatable by id
    * Given a datableid returns the schema associated with it.
    * @param datatableId id of datatable (required)
-   * @param showbrief If true returns a shortened version of the schema including the name, id and description] (optional, default to true)
-   * @return JsonSchemaDocument
+   * @param expand Expand instructions for the result (optional)
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument getFlowsDatatable(String datatableId, Boolean showbrief) throws IOException, ApiException {
-    return  getFlowsDatatable(createGetFlowsDatatableRequest(datatableId, showbrief));
+  public DataTable getFlowsDatatable(String datatableId, String expand) throws IOException, ApiException {
+    return  getFlowsDatatable(createGetFlowsDatatableRequest(datatableId, expand));
   }
 
   /**
-   * Returns a specific datatable by datatableId
+   * Returns a specific datatable by id
    * Given a datableid returns the schema associated with it.
    * @param datatableId id of datatable (required)
-   * @param showbrief If true returns a shortened version of the schema including the name, id and description] (optional, default to true)
-   * @return JsonSchemaDocument
+   * @param expand Expand instructions for the result (optional)
+   * @return DataTable
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> getFlowsDatatableWithHttpInfo(String datatableId, Boolean showbrief) throws IOException {
-    return getFlowsDatatable(createGetFlowsDatatableRequest(datatableId, showbrief).withHttpInfo());
+  public ApiResponse<DataTable> getFlowsDatatableWithHttpInfo(String datatableId, String expand) throws IOException {
+    return getFlowsDatatable(createGetFlowsDatatableRequest(datatableId, expand).withHttpInfo());
   }
 
-  private GetFlowsDatatableRequest createGetFlowsDatatableRequest(String datatableId, Boolean showbrief) {
+  private GetFlowsDatatableRequest createGetFlowsDatatableRequest(String datatableId, String expand) {
     return GetFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
     
-            .withShowbrief(showbrief)
+            .withExpand(expand)
     
             .build();
   }
 
   /**
-   * Returns a specific datatable by datatableId
+   * Returns a specific datatable by id
    * Given a datableid returns the schema associated with it.
    * @param request The request object
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument getFlowsDatatable(GetFlowsDatatableRequest request) throws IOException, ApiException {
+  public DataTable getFlowsDatatable(GetFlowsDatatableRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<JsonSchemaDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {});
+      ApiResponse<DataTable> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTable>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3993,19 +3995,19 @@ public class ArchitectApi {
   }
 
   /**
-   * Returns a specific datatable by datatableId
+   * Returns a specific datatable by id
    * Given a datableid returns the schema associated with it.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> getFlowsDatatable(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataTable> getFlowsDatatable(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<JsonSchemaDocument>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTable>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4016,7 +4018,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4113,30 +4115,38 @@ public class ArchitectApi {
    * Returns the rows for the datatable
    * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
    * @param datatableId id of datatable (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
-   * @return List<Map<String, Object>>
+   * @return DataTableRowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Map<String, Object>> getFlowsDatatableRows(String datatableId, Boolean showbrief) throws IOException, ApiException {
-    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, showbrief));
+  public DataTableRowEntityListing getFlowsDatatableRows(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) throws IOException, ApiException {
+    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageSize, pageNumber, showbrief));
   }
 
   /**
    * Returns the rows for the datatable
    * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
    * @param datatableId id of datatable (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
-   * @return List<Map<String, Object>>
+   * @return DataTableRowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Map<String, Object>>> getFlowsDatatableRowsWithHttpInfo(String datatableId, Boolean showbrief) throws IOException {
-    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, showbrief).withHttpInfo());
+  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRowsWithHttpInfo(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) throws IOException {
+    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageSize, pageNumber, showbrief).withHttpInfo());
   }
 
-  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Boolean showbrief) {
+  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) {
     return GetFlowsDatatableRowsRequest.builder()
             .withDatatableId(datatableId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
     
             .withShowbrief(showbrief)
     
@@ -4147,13 +4157,13 @@ public class ArchitectApi {
    * Returns the rows for the datatable
    * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
    * @param request The request object
-   * @return List<Map<String, Object>>
+   * @return DataTableRowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Map<String, Object>> getFlowsDatatableRows(GetFlowsDatatableRowsRequest request) throws IOException, ApiException {
+  public DataTableRowEntityListing getFlowsDatatableRows(GetFlowsDatatableRowsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<Map<String, Object>>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Map<String, Object>>>() {});
+      ApiResponse<DataTableRowEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableRowEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4169,13 +4179,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Map<String, Object>>> getFlowsDatatableRows(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRows(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<Map<String, Object>>>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTableRowEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<Map<String, Object>>> response = (ApiResponse<List<Map<String, Object>>>)(ApiResponse<?>)exception;
+      ApiResponse<DataTableRowEntityListing> response = (ApiResponse<DataTableRowEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4186,7 +4196,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<Map<String, Object>>> response = (ApiResponse<List<Map<String, Object>>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTableRowEntityListing> response = (ApiResponse<DataTableRowEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4195,29 +4205,45 @@ public class ArchitectApi {
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including ID, name and description.
-   * @param showbrief If true, returns a shortened version of the schema including the name, id and description (optional, default to true)
-   * @return List<JsonSchemaDocument>
+   * @param expand Expand instructions for the result (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<JsonSchemaDocument> getFlowsDatatables(Boolean showbrief) throws IOException, ApiException {
-    return  getFlowsDatatables(createGetFlowsDatatablesRequest(showbrief));
+  public DataTablesDomainEntityListing getFlowsDatatables(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageSize, pageNumber, sortBy, sortOrder));
   }
 
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including ID, name and description.
-   * @param showbrief If true, returns a shortened version of the schema including the name, id and description (optional, default to true)
-   * @return List<JsonSchemaDocument>
+   * @param expand Expand instructions for the result (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @return DataTablesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<JsonSchemaDocument>> getFlowsDatatablesWithHttpInfo(Boolean showbrief) throws IOException {
-    return getFlowsDatatables(createGetFlowsDatatablesRequest(showbrief).withHttpInfo());
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesWithHttpInfo(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+    return getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(Boolean showbrief) {
+  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
     return GetFlowsDatatablesRequest.builder()
-            .withShowbrief(showbrief)
+            .withExpand(expand)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }
@@ -4226,13 +4252,13 @@ public class ArchitectApi {
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including ID, name and description.
    * @param request The request object
-   * @return List<JsonSchemaDocument>
+   * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<JsonSchemaDocument> getFlowsDatatables(GetFlowsDatatablesRequest request) throws IOException, ApiException {
+  public DataTablesDomainEntityListing getFlowsDatatables(GetFlowsDatatablesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<JsonSchemaDocument>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<JsonSchemaDocument>>() {});
+      ApiResponse<DataTablesDomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTablesDomainEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4248,13 +4274,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<JsonSchemaDocument>> getFlowsDatatables(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatables(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<JsonSchemaDocument>>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTablesDomainEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<JsonSchemaDocument>> response = (ApiResponse<List<JsonSchemaDocument>>)(ApiResponse<?>)exception;
+      ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4265,7 +4291,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<JsonSchemaDocument>> response = (ApiResponse<List<JsonSchemaDocument>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5710,11 +5736,11 @@ public class ArchitectApi {
    * Create a new datatable with the specified json-schema definition
    * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument postFlowsDatatables(JsonSchemaDocument body) throws IOException, ApiException {
+  public DataTable postFlowsDatatables(DataTable body) throws IOException, ApiException {
     return  postFlowsDatatables(createPostFlowsDatatablesRequest(body));
   }
 
@@ -5722,14 +5748,14 @@ public class ArchitectApi {
    * Create a new datatable with the specified json-schema definition
    * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> postFlowsDatatablesWithHttpInfo(JsonSchemaDocument body) throws IOException {
+  public ApiResponse<DataTable> postFlowsDatatablesWithHttpInfo(DataTable body) throws IOException {
     return postFlowsDatatables(createPostFlowsDatatablesRequest(body).withHttpInfo());
   }
 
-  private PostFlowsDatatablesRequest createPostFlowsDatatablesRequest(JsonSchemaDocument body) {
+  private PostFlowsDatatablesRequest createPostFlowsDatatablesRequest(DataTable body) {
     return PostFlowsDatatablesRequest.builder()
             .withBody(body)
     
@@ -5740,13 +5766,13 @@ public class ArchitectApi {
    * Create a new datatable with the specified json-schema definition
    * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
    * @param request The request object
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument postFlowsDatatables(PostFlowsDatatablesRequest request) throws IOException, ApiException {
+  public DataTable postFlowsDatatables(PostFlowsDatatablesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<JsonSchemaDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {});
+      ApiResponse<DataTable> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTable>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5762,13 +5788,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> postFlowsDatatables(ApiRequest<JsonSchemaDocument> request) throws IOException {
+  public ApiResponse<DataTable> postFlowsDatatables(ApiRequest<DataTable> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<JsonSchemaDocument>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTable>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5779,7 +5805,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6375,37 +6401,37 @@ public class ArchitectApi {
 
   
   /**
-   * Updates a specific datatable by datatableId
-   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * Updates a specific datatable by id
+   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
-   * @param showbrief If true returns a shortened version of the schema including the name, id and description (optional, default to true)
+   * @param expand Expand instructions for the result (optional)
    * @param body datatable json-schema (optional)
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument putFlowsDatatable(String datatableId, Boolean showbrief, JsonSchemaDocument body) throws IOException, ApiException {
-    return  putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, showbrief, body));
+  public DataTable putFlowsDatatable(String datatableId, String expand, DataTable body) throws IOException, ApiException {
+    return  putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, expand, body));
   }
 
   /**
-   * Updates a specific datatable by datatableId
-   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * Updates a specific datatable by id
+   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
-   * @param showbrief If true returns a shortened version of the schema including the name, id and description (optional, default to true)
+   * @param expand Expand instructions for the result (optional)
    * @param body datatable json-schema (optional)
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> putFlowsDatatableWithHttpInfo(String datatableId, Boolean showbrief, JsonSchemaDocument body) throws IOException {
-    return putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, showbrief, body).withHttpInfo());
+  public ApiResponse<DataTable> putFlowsDatatableWithHttpInfo(String datatableId, String expand, DataTable body) throws IOException {
+    return putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, expand, body).withHttpInfo());
   }
 
-  private PutFlowsDatatableRequest createPutFlowsDatatableRequest(String datatableId, Boolean showbrief, JsonSchemaDocument body) {
+  private PutFlowsDatatableRequest createPutFlowsDatatableRequest(String datatableId, String expand, DataTable body) {
     return PutFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
     
-            .withShowbrief(showbrief)
+            .withExpand(expand)
     
             .withBody(body)
     
@@ -6413,16 +6439,16 @@ public class ArchitectApi {
   }
 
   /**
-   * Updates a specific datatable by datatableId
-   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * Updates a specific datatable by id
+   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
    * @param request The request object
-   * @return JsonSchemaDocument
+   * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public JsonSchemaDocument putFlowsDatatable(PutFlowsDatatableRequest request) throws IOException, ApiException {
+  public DataTable putFlowsDatatable(PutFlowsDatatableRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<JsonSchemaDocument> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {});
+      ApiResponse<DataTable> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTable>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -6432,19 +6458,19 @@ public class ArchitectApi {
   }
 
   /**
-   * Updates a specific datatable by datatableId
-   * Updates a schema for a datatable with the given datatableId - updates are additive only, no changes or removals of existing fields.
+   * Updates a specific datatable by id
+   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<JsonSchemaDocument> putFlowsDatatable(ApiRequest<JsonSchemaDocument> request) throws IOException {
+  public ApiResponse<DataTable> putFlowsDatatable(ApiRequest<DataTable> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<JsonSchemaDocument>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTable>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -6455,7 +6481,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

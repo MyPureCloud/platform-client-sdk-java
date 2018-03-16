@@ -16,32 +16,37 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
 | [**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversations**](ConversationsApi.html#getConversations) | Get conversations |
+| [**getConversations**](ConversationsApi.html#getConversations) | Get active conversations for the logged in user |
 | [**getConversationsCall**](ConversationsApi.html#getConversationsCall) | Get call conversation |
 | [**getConversationsCallParticipantWrapup**](ConversationsApi.html#getConversationsCallParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCallParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsCallback**](ConversationsApi.html#getConversationsCallback) | Get callback conversation |
 | [**getConversationsCallbackParticipantWrapup**](ConversationsApi.html#getConversationsCallbackParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallbackParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | Get callback conversations |
-| [**getConversationsCalls**](ConversationsApi.html#getConversationsCalls) | Get recent conversations |
+| [**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | Get active callback conversations for the logged in user |
+| [**getConversationsCalls**](ConversationsApi.html#getConversationsCalls) | Get active call conversations for the logged in user |
 | [**getConversationsCallsHistory**](ConversationsApi.html#getConversationsCallsHistory) | Get call history |
 | [**getConversationsCallsMaximumconferenceparties**](ConversationsApi.html#getConversationsCallsMaximumconferenceparties) | Get the maximum number of participants that this user can have on a conference |
 | [**getConversationsChat**](ConversationsApi.html#getConversationsChat) | Get chat conversation |
 | [**getConversationsChatParticipantWrapup**](ConversationsApi.html#getConversationsChatParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsChatParticipantWrapupcodes**](ConversationsApi.html#getConversationsChatParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsChats**](ConversationsApi.html#getConversationsChats) | Get recent chat conversations |
+| [**getConversationsChats**](ConversationsApi.html#getConversationsChats) | Get active chat conversations for the logged in user |
 | [**getConversationsCobrowsesession**](ConversationsApi.html#getConversationsCobrowsesession) | Get cobrowse conversation |
 | [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | Get recent cobrowse conversations |
+| [**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | Get active cobrowse conversations for the logged in user |
 | [**getConversationsEmail**](ConversationsApi.html#getConversationsEmail) | Get email conversation |
 | [**getConversationsEmailMessage**](ConversationsApi.html#getConversationsEmailMessage) | Get conversation message |
 | [**getConversationsEmailMessages**](ConversationsApi.html#getConversationsEmailMessages) | Get conversation messages |
 | [**getConversationsEmailMessagesDraft**](ConversationsApi.html#getConversationsEmailMessagesDraft) | Get conversation draft reply |
 | [**getConversationsEmailParticipantWrapup**](ConversationsApi.html#getConversationsEmailParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
-| [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get recent email conversations |
+| [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get active email conversations for the logged in user |
+| [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | Get message conversation |
+| [**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | Get message |
+| [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
+| [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
+| [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | Get active message conversations for the logged in user |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
@@ -65,6 +70,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | Update conversation participant |
 | [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | Update conversation participant&#39;s communication by disconnecting it. |
+| [**patchConversationsMessage**](ConversationsApi.html#patchConversationsMessage) | Update a conversation by disconnecting all of the participants |
+| [**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | Update conversation participant |
+| [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | Update the attributes on a conversation participant. |
+| [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | Update conversation participant&#39;s communication by disconnecting it. |
 | [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
@@ -88,6 +97,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
 | [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | Create Fax Conversation |
+| [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | Send message |
+| [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
+| [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 {: class="table table-striped"}
@@ -574,7 +586,7 @@ try {
 
 > [ConversationEntityListing](ConversationEntityListing.html) getConversations(communicationType)
 
-Get conversations
+Get active conversations for the logged in user
 
 
 
@@ -943,7 +955,7 @@ try {
 
 > [CallbackConversationEntityListing](CallbackConversationEntityListing.html) getConversationsCallbacks()
 
-Get callback conversations
+Get active callback conversations for the logged in user
 
 
 
@@ -990,7 +1002,7 @@ This endpoint does not require any parameters.
 
 > [CallConversationEntityListing](CallConversationEntityListing.html) getConversationsCalls()
 
-Get recent conversations
+Get active call conversations for the logged in user
 
 
 
@@ -1300,7 +1312,7 @@ try {
 
 > [ChatConversationEntityListing](ChatConversationEntityListing.html) getConversationsChats()
 
-Get recent chat conversations
+Get active chat conversations for the logged in user
 
 
 
@@ -1506,7 +1518,7 @@ try {
 
 > [CobrowseConversationEntityListing](CobrowseConversationEntityListing.html) getConversationsCobrowsesessions()
 
-Get recent cobrowse conversations
+Get active cobrowse conversations for the logged in user
 
 
 
@@ -1867,7 +1879,7 @@ try {
 
 > [EmailConversationEntityListing](EmailConversationEntityListing.html) getConversationsEmails()
 
-Get recent email conversations
+Get active email conversations for the logged in user
 
 
 
@@ -1907,6 +1919,265 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmailConversationEntityListing**](EmailConversationEntityListing.html)
+
+<a name="getConversationsMessage"></a>
+
+# **getConversationsMessage**
+
+> [MessageConversation](MessageConversation.html) getConversationsMessage(conversationId)
+
+Get message conversation
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+try {
+    MessageConversation result = apiInstance.getConversationsMessage(conversationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageConversation**](MessageConversation.html)
+
+<a name="getConversationsMessageMessage"></a>
+
+# **getConversationsMessageMessage**
+
+> [MessageData](MessageData.html) getConversationsMessageMessage(conversationId, messageId)
+
+Get message
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String messageId = "messageId_example"; // String | messageId
+try {
+    MessageData result = apiInstance.getConversationsMessageMessage(conversationId, messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **messageId** | **String**| messageId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
+<a name="getConversationsMessageParticipantWrapup"></a>
+
+# **getConversationsMessageParticipantWrapup**
+
+> [Wrapup](Wrapup.html) getConversationsMessageParticipantWrapup(conversationId, participantId, provisional)
+
+Get the wrap-up for this conversation participant. 
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
+try {
+    Wrapup result = apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, provisional);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageParticipantWrapup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **participantId** | **String**| participantId | |
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Wrapup**](Wrapup.html)
+
+<a name="getConversationsMessageParticipantWrapupcodes"></a>
+
+# **getConversationsMessageParticipantWrapupcodes**
+
+> [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+
+Get list of wrapup codes for this conversation participant
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String |  conversationId
+String participantId = "participantId_example"; // String | participantId
+try {
+    List<WrapupCode> result = apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageParticipantWrapupcodes");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**|  conversationId | |
+| **participantId** | **String**| participantId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;WrapupCode&gt;**](WrapupCode.html)
+
+<a name="getConversationsMessages"></a>
+
+# **getConversationsMessages**
+
+> [MessageConversationEntityListing](MessageConversationEntityListing.html) getConversationsMessages()
+
+Get active message conversations for the logged in user
+
+
+
+Wraps GET /api/v2/conversations/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    MessageConversationEntityListing result = apiInstance.getConversationsMessages();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageConversationEntityListing**](MessageConversationEntityListing.html)
 
 <a name="patchConversationParticipant"></a>
 
@@ -3161,6 +3432,224 @@ try {
 
 [**Empty**](Empty.html)
 
+<a name="patchConversationsMessage"></a>
+
+# **patchConversationsMessage**
+
+> [Conversation](Conversation.html) patchConversationsMessage(conversationId, body)
+
+Update a conversation by disconnecting all of the participants
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+Conversation body = new Conversation(); // Conversation | Conversation
+try {
+    Conversation result = apiInstance.patchConversationsMessage(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **body** | [**Conversation**](Conversation.html)| Conversation | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Conversation**](Conversation.html)
+
+<a name="patchConversationsMessageParticipant"></a>
+
+# **patchConversationsMessageParticipant**
+
+> Void patchConversationsMessageParticipant(conversationId, participantId, body)
+
+Update conversation participant
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String |  conversationId
+String participantId = "participantId_example"; // String | participantId
+MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | 
+try {
+    apiInstance.patchConversationsMessageParticipant(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessageParticipant");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**|  conversationId | |
+| **participantId** | **String**| participantId | |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="patchConversationsMessageParticipantAttributes"></a>
+
+# **patchConversationsMessageParticipantAttributes**
+
+> Void patchConversationsMessageParticipantAttributes(conversationId, participantId, body)
+
+Update the attributes on a conversation participant.
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String |  conversationId
+String participantId = "participantId_example"; // String | participantId
+ParticipantAttributes body = new ParticipantAttributes(); // ParticipantAttributes | 
+try {
+    apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessageParticipantAttributes");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**|  conversationId | |
+| **participantId** | **String**| participantId | |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="patchConversationsMessageParticipantCommunication"></a>
+
+# **patchConversationsMessageParticipantCommunication**
+
+> [Empty](Empty.html) patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+
+Update conversation participant&#39;s communication by disconnecting it.
+
+
+
+Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String |  conversationId
+String participantId = "participantId_example"; // String | participantId
+String communicationId = "communicationId_example"; // String | communicationId
+MediaParticipantRequest body = new MediaParticipantRequest(); // MediaParticipantRequest | Participant
+try {
+    Empty result = apiInstance.patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessageParticipantCommunication");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**|  conversationId | |
+| **participantId** | **String**| participantId | |
+| **communicationId** | **String**| communicationId | |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
+{: class="table table-striped"}
+
+### Return type
+
+[**Empty**](Empty.html)
+
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
 # **postAnalyticsConversationDetailsProperties**
@@ -4376,6 +4865,168 @@ try {
 ### Return type
 
 [**FaxSendResponse**](FaxSendResponse.html)
+
+<a name="postConversationsMessageCommunicationMessages"></a>
+
+# **postConversationsMessageCommunicationMessages**
+
+> [MessageData](MessageData.html) postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+
+Send message
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+AdditionalMessage body = new AdditionalMessage(); // AdditionalMessage | Message
+try {
+    MessageData result = apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **communicationId** | **String**| communicationId | |
+| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
+<a name="postConversationsMessageMessagesBulk"></a>
+
+# **postConversationsMessageMessagesBulk**
+
+> [TextMessageListing](TextMessageListing.html) postConversationsMessageMessagesBulk(conversationId, body)
+
+Get messages in batch
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+List<String> body = Arrays.asList(new List<String>()); // List<String> | messageIds
+try {
+    TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageMessagesBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **body** | **List&lt;String&gt;**| messageIds | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TextMessageListing**](TextMessageListing.html)
+
+<a name="postConversationsMessageParticipantReplace"></a>
+
+# **postConversationsMessageParticipantReplace**
+
+> Void postConversationsMessageParticipantReplace(conversationId, participantId, body)
+
+Replace this participant with the specified user and/or address
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+TransferRequest body = new TransferRequest(); // TransferRequest | Transfer request
+try {
+    apiInstance.postConversationsMessageParticipantReplace(conversationId, participantId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageParticipantReplace");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **participantId** | **String**| participantId | |
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

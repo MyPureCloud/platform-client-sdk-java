@@ -48,7 +48,9 @@ import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
-import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
+import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsDatatableRowsRequest {
@@ -64,6 +66,34 @@ public class GetFlowsDatatableRowsRequest {
 
 	public GetFlowsDatatableRowsRequest withDatatableId(String datatableId) {
 	    this.setDatatableId(datatableId);
+	    return this;
+	} 
+	
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetFlowsDatatableRowsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+	
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetFlowsDatatableRowsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
 	
@@ -111,6 +141,10 @@ public class GetFlowsDatatableRowsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/flows/datatables/{datatableId}/rows")
                 .withPathParameter("datatableId", datatableId)
         
+                .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
                 .withQueryParameters("showbrief", "", showbrief)
         
                 .withCustomHeaders(customHeaders)
@@ -141,6 +175,16 @@ public class GetFlowsDatatableRowsRequest {
 		
 		public Builder withDatatableId(String datatableId) {
 			request.setDatatableId(datatableId);
+			return this;
+		}
+		
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
 			return this;
 		}
 		
