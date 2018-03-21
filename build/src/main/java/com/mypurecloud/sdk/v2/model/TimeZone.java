@@ -14,57 +14,77 @@ import java.io.Serializable;
 
 public class TimeZone  implements Serializable {
   
+  private String displayName = null;
   private String id = null;
-  private String name = null;
-  private Long offset = null;
-  private String selfUri = null;
+  private Integer dstsavings = null;
+  private Integer rawOffset = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   **/
+  public TimeZone displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
+  }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
+  
+  /**
+   **/
+  public TimeZone id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-
-  
-  /**
-   **/
-  public TimeZone name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
+  public void setId(String id) {
+    this.id = id;
   }
 
   
   /**
    **/
-  public TimeZone offset(Long offset) {
-    this.offset = offset;
+  public TimeZone dstsavings(Integer dstsavings) {
+    this.dstsavings = dstsavings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("offset")
-  public Long getOffset() {
-    return offset;
+  @JsonProperty("dstsavings")
+  public Integer getDstsavings() {
+    return dstsavings;
   }
-  public void setOffset(Long offset) {
-    this.offset = offset;
+  public void setDstsavings(Integer dstsavings) {
+    this.dstsavings = dstsavings;
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  /**
+   **/
+  public TimeZone rawOffset(Integer rawOffset) {
+    this.rawOffset = rawOffset;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("rawOffset")
+  public Integer getRawOffset() {
+    return rawOffset;
+  }
+  public void setRawOffset(Integer rawOffset) {
+    this.rawOffset = rawOffset;
   }
 
   
@@ -78,15 +98,15 @@ public class TimeZone  implements Serializable {
       return false;
     }
     TimeZone timeZone = (TimeZone) o;
-    return Objects.equals(this.id, timeZone.id) &&
-        Objects.equals(this.name, timeZone.name) &&
-        Objects.equals(this.offset, timeZone.offset) &&
-        Objects.equals(this.selfUri, timeZone.selfUri);
+    return Objects.equals(this.displayName, timeZone.displayName) &&
+        Objects.equals(this.id, timeZone.id) &&
+        Objects.equals(this.dstsavings, timeZone.dstsavings) &&
+        Objects.equals(this.rawOffset, timeZone.rawOffset);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, offset, selfUri);
+    return Objects.hash(displayName, id, dstsavings, rawOffset);
   }
 
   @Override
@@ -94,10 +114,10 @@ public class TimeZone  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeZone {\n");
     
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    dstsavings: ").append(toIndentedString(dstsavings)).append("\n");
+    sb.append("    rawOffset: ").append(toIndentedString(rawOffset)).append("\n");
     sb.append("}");
     return sb.toString();
   }

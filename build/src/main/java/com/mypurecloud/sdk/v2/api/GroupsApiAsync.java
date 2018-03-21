@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupCreate;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
@@ -784,7 +785,7 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<Group> request, final AsyncApiCallback<ApiResponse<Group>> callback) {
+  public Future<ApiResponse<Group>> postGroupsAsync(ApiRequest<GroupCreate> request, final AsyncApiCallback<ApiResponse<Group>> callback) {
     try {
       final SettableFuture<ApiResponse<Group>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

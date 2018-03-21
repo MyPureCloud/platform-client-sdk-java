@@ -4115,38 +4115,38 @@ public class ArchitectApi {
    * Returns the rows for the datatable
    * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
    * @param datatableId id of datatable (required)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
    * @return DataTableRowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataTableRowEntityListing getFlowsDatatableRows(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) throws IOException, ApiException {
-    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageSize, pageNumber, showbrief));
+  public DataTableRowEntityListing getFlowsDatatableRows(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) throws IOException, ApiException {
+    return  getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief));
   }
 
   /**
    * Returns the rows for the datatable
    * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
    * @param datatableId id of datatable (required)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @param showbrief If true returns just the key value of the row (optional, default to true)
    * @return DataTableRowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRowsWithHttpInfo(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) throws IOException {
-    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageSize, pageNumber, showbrief).withHttpInfo());
+  public ApiResponse<DataTableRowEntityListing> getFlowsDatatableRowsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) throws IOException {
+    return getFlowsDatatableRows(createGetFlowsDatatableRowsRequest(datatableId, pageNumber, pageSize, showbrief).withHttpInfo());
   }
 
-  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageSize, Integer pageNumber, Boolean showbrief) {
+  private GetFlowsDatatableRowsRequest createGetFlowsDatatableRowsRequest(String datatableId, Integer pageNumber, Integer pageSize, Boolean showbrief) {
     return GetFlowsDatatableRowsRequest.builder()
             .withDatatableId(datatableId)
     
-            .withPageSize(pageSize)
-    
             .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
     
             .withShowbrief(showbrief)
     
@@ -4206,40 +4206,40 @@ public class ArchitectApi {
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including ID, name and description.
    * @param expand Expand instructions for the result (optional)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataTablesDomainEntityListing getFlowsDatatables(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageSize, pageNumber, sortBy, sortOrder));
+  public DataTablesDomainEntityListing getFlowsDatatables(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder));
   }
 
   /**
    * Retrieve a list of datatables for the org
    * Returns a metadata list of the datatables associated with this org, including ID, name and description.
    * @param expand Expand instructions for the result (optional)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @return DataTablesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesWithHttpInfo(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
-    return getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesWithHttpInfo(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) throws IOException {
+    return getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
     return GetFlowsDatatablesRequest.builder()
             .withExpand(expand)
     
-            .withPageSize(pageSize)
-    
             .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
     
             .withSortBy(sortBy)
     

@@ -158,6 +158,20 @@ public class GetOutboundCampaignsRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetOutboundCampaignsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private String contactListId;
 	public String getContactListId() {
 		return this.contactListId;
@@ -317,6 +331,8 @@ public class GetOutboundCampaignsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("contactListId", "", contactListId)
         
                 .withQueryParameters("dncListId", "", dncListId)
@@ -374,6 +390,11 @@ public class GetOutboundCampaignsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

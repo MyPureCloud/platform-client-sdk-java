@@ -2503,6 +2503,7 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param contactListId Contact List ID (optional)
    * @param dncListId DNC list ID (optional)
    * @param distributionQueueId Distribution queue ID (optional)
@@ -2514,8 +2515,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder));
+  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder));
   }
 
   /**
@@ -2525,6 +2526,7 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param contactListId Contact List ID (optional)
    * @param dncListId DNC list ID (optional)
    * @param distributionQueueId Distribution queue ID (optional)
@@ -2535,11 +2537,11 @@ public class OutboundApi {
    * @return CampaignEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) {
+  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) {
     return GetOutboundCampaignsRequest.builder()
             .withPageSize(pageSize)
     
@@ -2548,6 +2550,8 @@ public class OutboundApi {
             .withFilterType(filterType)
     
             .withName(name)
+    
+            .withId(id)
     
             .withContactListId(contactListId)
     
@@ -3138,14 +3142,15 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
   }
 
   /**
@@ -3157,16 +3162,17 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundContactlistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -3179,6 +3185,8 @@ public class OutboundApi {
             .withFilterType(filterType)
     
             .withName(name)
+    
+            .withId(id)
     
             .withSortBy(sortBy)
     

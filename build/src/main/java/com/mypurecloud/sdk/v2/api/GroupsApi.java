@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupCreate;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
@@ -815,7 +816,7 @@ public class GroupsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Group postGroups(Group body) throws IOException, ApiException {
+  public Group postGroups(GroupCreate body) throws IOException, ApiException {
     return  postGroups(createPostGroupsRequest(body));
   }
 
@@ -826,11 +827,11 @@ public class GroupsApi {
    * @return Group
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> postGroupsWithHttpInfo(Group body) throws IOException {
+  public ApiResponse<Group> postGroupsWithHttpInfo(GroupCreate body) throws IOException {
     return postGroups(createPostGroupsRequest(body).withHttpInfo());
   }
 
-  private PostGroupsRequest createPostGroupsRequest(Group body) {
+  private PostGroupsRequest createPostGroupsRequest(GroupCreate body) {
     return PostGroupsRequest.builder()
             .withBody(body)
     
@@ -863,7 +864,7 @@ public class GroupsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Group> postGroups(ApiRequest<Group> request) throws IOException {
+  public ApiResponse<Group> postGroups(ApiRequest<GroupCreate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Group>() {});
     }

@@ -1610,7 +1610,7 @@ try {
 
 # **getOutboundCampaigns**
 
-> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder)
+> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder)
 
 Query a list of dialer campaigns.
 
@@ -1639,6 +1639,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 String contactListId = "contactListId_example"; // String | Contact List ID
 String dncListId = "dncListId_example"; // String | DNC list ID
 String distributionQueueId = "distributionQueueId_example"; // String | Distribution queue ID
@@ -1647,7 +1648,7 @@ String callAnalysisResponseSetId = "callAnalysisResponseSetId_example"; // Strin
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder);
+    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaigns");
@@ -1664,6 +1665,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **contactListId** | **String**| Contact List ID | [optional] |
 | **dncListId** | **String**| DNC list ID | [optional] |
 | **distributionQueueId** | **String**| Distribution queue ID | [optional] |
@@ -2007,7 +2009,7 @@ try {
 
 # **getOutboundContactlists**
 
-> [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
 
 Query a list of contact lists.
 
@@ -2038,10 +2040,11 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlists");
@@ -2060,6 +2063,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **sortBy** | **String**| Sort by | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

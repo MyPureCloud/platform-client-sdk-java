@@ -29,21 +29,22 @@ import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
+import com.mypurecloud.sdk.v2.model.GroupCreate;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupUpdate;
 
 public class PostGroupsRequest {
     
-	private Group body;
-	public Group getBody() {
+	private GroupCreate body;
+	public GroupCreate getBody() {
 		return this.body;
 	}
 
-	public void setBody(Group body) {
+	public void setBody(GroupCreate body) {
 		this.body = body;
 	}
 
-	public PostGroupsRequest withBody(Group body) {
+	public PostGroupsRequest withBody(GroupCreate body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -67,7 +68,7 @@ public class PostGroupsRequest {
         return this;
     }
 
-    public ApiRequest<Group> withHttpInfo() {
+    public ApiRequest<GroupCreate> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -90,7 +91,7 @@ public class PostGroupsRequest {
 	}
 
 	
-	public static Builder builder(Group body) {
+	public static Builder builder(GroupCreate body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -104,14 +105,14 @@ public class PostGroupsRequest {
 		}
 
 		
-		public Builder withBody(Group body) {
+		public Builder withBody(GroupCreate body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(Group body) {
+		public Builder withRequiredParams(GroupCreate body) {
 			request.setBody(body);
 			
 			return this;

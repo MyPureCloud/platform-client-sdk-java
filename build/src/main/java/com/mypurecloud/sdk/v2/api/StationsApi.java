@@ -13,11 +13,14 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Station;
 import com.mypurecloud.sdk.v2.model.StationEntityListing;
+import com.mypurecloud.sdk.v2.model.StationSettings;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteStationAssociateduserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetStationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetStationsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchStationsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -295,6 +298,160 @@ public class StationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<StationEntityListing> response = (ApiResponse<StationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get an organization&#39;s StationSettings
+   * 
+   * @return StationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StationSettings getStationsSettings() throws IOException, ApiException {
+    return  getStationsSettings(createGetStationsSettingsRequest());
+  }
+
+  /**
+   * Get an organization&#39;s StationSettings
+   * 
+   * @return StationSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StationSettings> getStationsSettingsWithHttpInfo() throws IOException {
+    return getStationsSettings(createGetStationsSettingsRequest().withHttpInfo());
+  }
+
+  private GetStationsSettingsRequest createGetStationsSettingsRequest() {
+    return GetStationsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get an organization&#39;s StationSettings
+   * 
+   * @param request The request object
+   * @return StationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StationSettings getStationsSettings(GetStationsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StationSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StationSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an organization&#39;s StationSettings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StationSettings> getStationsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StationSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Patch an organization&#39;s StationSettings
+   * 
+   * @param body Station settings (required)
+   * @return StationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StationSettings patchStationsSettings(StationSettings body) throws IOException, ApiException {
+    return  patchStationsSettings(createPatchStationsSettingsRequest(body));
+  }
+
+  /**
+   * Patch an organization&#39;s StationSettings
+   * 
+   * @param body Station settings (required)
+   * @return StationSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StationSettings> patchStationsSettingsWithHttpInfo(StationSettings body) throws IOException {
+    return patchStationsSettings(createPatchStationsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchStationsSettingsRequest createPatchStationsSettingsRequest(StationSettings body) {
+    return PatchStationsSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Patch an organization&#39;s StationSettings
+   * 
+   * @param request The request object
+   * @return StationSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public StationSettings patchStationsSettings(PatchStationsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<StationSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<StationSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch an organization&#39;s StationSettings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<StationSettings> patchStationsSettings(ApiRequest<StationSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<StationSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<StationSettings> response = (ApiResponse<StationSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

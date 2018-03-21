@@ -530,7 +530,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 GroupsApi apiInstance = new GroupsApi();
-Group body = new Group(); // Group | Group
+GroupCreate body = new GroupCreate(); // GroupCreate | Group
 try {
     Group result = apiInstance.postGroups(body);
     System.out.println(result);
@@ -545,7 +545,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Group**](Group.html)| Group | |
+| **body** | [**GroupCreate**](GroupCreate.html)| Group | |
 {: class="table table-striped"}
 
 ### Return type

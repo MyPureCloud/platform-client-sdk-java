@@ -65,8 +65,8 @@ public class Question  implements Serializable {
   private List<AnswerOption> answerOptions = new ArrayList<AnswerOption>();
   private Integer maxResponseCharacters = null;
   private String explanationPrompt = null;
-  private Boolean isCritical = null;
   private Boolean isKill = null;
+  private Boolean isCritical = null;
 
   
   /**
@@ -244,23 +244,6 @@ public class Question  implements Serializable {
   
   /**
    **/
-  public Question isCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("isCritical")
-  public Boolean getIsCritical() {
-    return isCritical;
-  }
-  public void setIsCritical(Boolean isCritical) {
-    this.isCritical = isCritical;
-  }
-
-  
-  /**
-   **/
   public Question isKill(Boolean isKill) {
     this.isKill = isKill;
     return this;
@@ -273,6 +256,23 @@ public class Question  implements Serializable {
   }
   public void setIsKill(Boolean isKill) {
     this.isKill = isKill;
+  }
+
+  
+  /**
+   **/
+  public Question isCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isCritical")
+  public Boolean getIsCritical() {
+    return isCritical;
+  }
+  public void setIsCritical(Boolean isCritical) {
+    this.isCritical = isCritical;
   }
 
   
@@ -296,13 +296,13 @@ public class Question  implements Serializable {
         Objects.equals(this.answerOptions, question.answerOptions) &&
         Objects.equals(this.maxResponseCharacters, question.maxResponseCharacters) &&
         Objects.equals(this.explanationPrompt, question.explanationPrompt) &&
-        Objects.equals(this.isCritical, question.isCritical) &&
-        Objects.equals(this.isKill, question.isKill);
+        Objects.equals(this.isKill, question.isKill) &&
+        Objects.equals(this.isCritical, question.isCritical);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, maxResponseCharacters, explanationPrompt, isCritical, isKill);
+    return Objects.hash(id, text, helpText, type, naEnabled, commentsRequired, visibilityCondition, answerOptions, maxResponseCharacters, explanationPrompt, isKill, isCritical);
   }
 
   @Override
@@ -320,8 +320,8 @@ public class Question  implements Serializable {
     sb.append("    answerOptions: ").append(toIndentedString(answerOptions)).append("\n");
     sb.append("    maxResponseCharacters: ").append(toIndentedString(maxResponseCharacters)).append("\n");
     sb.append("    explanationPrompt: ").append(toIndentedString(explanationPrompt)).append("\n");
-    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("    isKill: ").append(toIndentedString(isKill)).append("\n");
+    sb.append("    isCritical: ").append(toIndentedString(isCritical)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -69,7 +69,7 @@ public class GroupUpdate  implements Serializable {
   public enum VisibilityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PUBLIC("public"),
-    OWNERS("owners"),
+    OWNERIDS("ownerIds"),
     MEMBERS("members");
 
     private String value;
@@ -98,6 +98,7 @@ public class GroupUpdate  implements Serializable {
     }
   }
   private VisibilityEnum visibility = null;
+  private List<String> ownerIds = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -249,6 +250,24 @@ public class GroupUpdate  implements Serializable {
   }
 
   
+  /**
+   * Owners of the group
+   **/
+  public GroupUpdate ownerIds(List<String> ownerIds) {
+    this.ownerIds = ownerIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Owners of the group")
+  @JsonProperty("ownerIds")
+  public List<String> getOwnerIds() {
+    return ownerIds;
+  }
+  public void setOwnerIds(List<String> ownerIds) {
+    this.ownerIds = ownerIds;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -275,12 +294,13 @@ public class GroupUpdate  implements Serializable {
         Objects.equals(this.addresses, groupUpdate.addresses) &&
         Objects.equals(this.rulesVisible, groupUpdate.rulesVisible) &&
         Objects.equals(this.visibility, groupUpdate.visibility) &&
+        Objects.equals(this.ownerIds, groupUpdate.ownerIds) &&
         Objects.equals(this.selfUri, groupUpdate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, state, version, images, addresses, rulesVisible, visibility, selfUri);
+    return Objects.hash(id, name, description, state, version, images, addresses, rulesVisible, visibility, ownerIds, selfUri);
   }
 
   @Override
@@ -297,6 +317,7 @@ public class GroupUpdate  implements Serializable {
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    rulesVisible: ").append(toIndentedString(rulesVisible)).append("\n");
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+    sb.append("    ownerIds: ").append(toIndentedString(ownerIds)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

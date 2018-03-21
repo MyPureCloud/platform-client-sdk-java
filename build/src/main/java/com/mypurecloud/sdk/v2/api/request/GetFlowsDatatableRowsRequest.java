@@ -69,20 +69,6 @@ public class GetFlowsDatatableRowsRequest {
 	    return this;
 	} 
 	
-	private Integer pageSize;
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public GetFlowsDatatableRowsRequest withPageSize(Integer pageSize) {
-	    this.setPageSize(pageSize);
-	    return this;
-	} 
-	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -94,6 +80,20 @@ public class GetFlowsDatatableRowsRequest {
 
 	public GetFlowsDatatableRowsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetFlowsDatatableRowsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
 	    return this;
 	} 
 	
@@ -141,9 +141,9 @@ public class GetFlowsDatatableRowsRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/flows/datatables/{datatableId}/rows")
                 .withPathParameter("datatableId", datatableId)
         
-                .withQueryParameters("pageSize", "", pageSize)
-        
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("showbrief", "", showbrief)
         
@@ -178,13 +178,13 @@ public class GetFlowsDatatableRowsRequest {
 			return this;
 		}
 		
-		public Builder withPageSize(Integer pageSize) {
-			request.setPageSize(pageSize);
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
 			return this;
 		}
 		
-		public Builder withPageNumber(Integer pageNumber) {
-			request.setPageNumber(pageNumber);
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 		

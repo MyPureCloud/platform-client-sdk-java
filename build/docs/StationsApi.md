@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteStationAssociateduser**](StationsApi.html#deleteStationAssociateduser) | Unassigns the user assigned to this station |
 | [**getStation**](StationsApi.html#getStation) | Get station. |
 | [**getStations**](StationsApi.html#getStations) | Get the list of available stations. |
+| [**getStationsSettings**](StationsApi.html#getStationsSettings) | Get an organization&#39;s StationSettings |
+| [**patchStationsSettings**](StationsApi.html#patchStationsSettings) | Patch an organization&#39;s StationSettings |
 {: class="table table-striped"}
 
 <a name="deleteStationAssociateduser"></a>
@@ -177,4 +179,102 @@ try {
 ### Return type
 
 [**StationEntityListing**](StationEntityListing.html)
+
+<a name="getStationsSettings"></a>
+
+# **getStationsSettings**
+
+> [StationSettings](StationSettings.html) getStationsSettings()
+
+Get an organization&#39;s StationSettings
+
+
+
+Wraps GET /api/v2/stations/settings  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.StationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+StationsApi apiInstance = new StationsApi();
+try {
+    StationSettings result = apiInstance.getStationsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling StationsApi#getStationsSettings");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**StationSettings**](StationSettings.html)
+
+<a name="patchStationsSettings"></a>
+
+# **patchStationsSettings**
+
+> [StationSettings](StationSettings.html) patchStationsSettings(body)
+
+Patch an organization&#39;s StationSettings
+
+
+
+Wraps PATCH /api/v2/stations/settings  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.StationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+StationsApi apiInstance = new StationsApi();
+StationSettings body = new StationSettings(); // StationSettings | Station settings
+try {
+    StationSettings result = apiInstance.patchStationsSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling StationsApi#patchStationsSettings");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**StationSettings**](StationSettings.html)| Station settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**StationSettings**](StationSettings.html)
 

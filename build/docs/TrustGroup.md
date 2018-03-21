@@ -20,6 +20,7 @@ title: TrustGroup
 | **addresses** | [**List&lt;GroupContact&gt;**](GroupContact.html) |  |  [optional] |
 | **rulesVisible** | **Boolean** | Are membership rules visible to the person requesting to view the group |  |
 | **visibility** | [**VisibilityEnum**](#VisibilityEnum) | Who can view this group |  |
+| **owners** | [**List&lt;User&gt;**](User.html) | Owners of the group |  [optional] |
 | **dateCreated** | [**Date**](Date.html) | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **createdBy** | [**OrgUser**](OrgUser.html) | The user that added trusted group. |  [optional] |
 {: class="table table-striped"}

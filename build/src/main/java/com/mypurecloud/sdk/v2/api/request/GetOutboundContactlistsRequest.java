@@ -186,6 +186,20 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetOutboundContactlistsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -279,6 +293,8 @@ public class GetOutboundContactlistsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
@@ -336,6 +352,11 @@ public class GetOutboundContactlistsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

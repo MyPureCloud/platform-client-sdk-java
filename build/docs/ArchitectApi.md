@@ -2594,7 +2594,7 @@ try {
 
 # **getFlowsDatatableRows**
 
-> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageSize, pageNumber, showbrief)
+> [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief)
 
 Returns the rows for the datatable
 
@@ -2620,11 +2620,11 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
-Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
 Boolean showbrief = true; // Boolean | If true returns just the key value of the row
 try {
-    DataTableRowEntityListing result = apiInstance.getFlowsDatatableRows(datatableId, pageSize, pageNumber, showbrief);
+    DataTableRowEntityListing result = apiInstance.getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatableRows");
@@ -2638,8 +2638,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **showbrief** | **Boolean**| If true returns just the key value of the row | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -2651,7 +2651,7 @@ try {
 
 # **getFlowsDatatables**
 
-> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageSize, pageNumber, sortBy, sortOrder)
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder)
 
 Retrieve a list of datatables for the org
 
@@ -2677,12 +2677,12 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String expand = "expand_example"; // String | Expand instructions for the result
-Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
 try {
-    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageSize, pageNumber, sortBy, sortOrder);
+    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatables");
@@ -2696,8 +2696,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name |
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

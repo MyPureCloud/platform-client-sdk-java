@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
+import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportSchedule;
@@ -25,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
+import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -34,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsReportingScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportIdMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportformatsRequest;
@@ -48,6 +52,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQu
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
@@ -224,6 +229,81 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all view export requests for a user
+   * 
+   * @return ReportingExportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportJobListing getAnalyticsReportingExports() throws IOException, ApiException {
+    return  getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest());
+  }
+
+  /**
+   * Get all view export requests for a user
+   * 
+   * @return ReportingExportJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportJobListing> getAnalyticsReportingExportsWithHttpInfo() throws IOException {
+    return getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsReportingExportsRequest createGetAnalyticsReportingExportsRequest() {
+    return GetAnalyticsReportingExportsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get all view export requests for a user
+   * 
+   * @param request The request object
+   * @return ReportingExportJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportJobListing getAnalyticsReportingExports(GetAnalyticsReportingExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReportingExportJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportingExportJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all view export requests for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportJobListing> getAnalyticsReportingExports(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReportingExportJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportJobListing> response = (ApiResponse<ReportingExportJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportJobListing> response = (ApiResponse<ReportingExportJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1354,6 +1434,85 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<QualifierMappingObservationQueryResponse> response = (ApiResponse<QualifierMappingObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Generate a view export request
+   * 
+   * @param body ReportingExportJobRequest (required)
+   * @return ReportingExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportJobResponse postAnalyticsReportingExports(ReportingExportJobRequest body) throws IOException, ApiException {
+    return  postAnalyticsReportingExports(createPostAnalyticsReportingExportsRequest(body));
+  }
+
+  /**
+   * Generate a view export request
+   * 
+   * @param body ReportingExportJobRequest (required)
+   * @return ReportingExportJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportJobResponse> postAnalyticsReportingExportsWithHttpInfo(ReportingExportJobRequest body) throws IOException {
+    return postAnalyticsReportingExports(createPostAnalyticsReportingExportsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsReportingExportsRequest createPostAnalyticsReportingExportsRequest(ReportingExportJobRequest body) {
+    return PostAnalyticsReportingExportsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Generate a view export request
+   * 
+   * @param request The request object
+   * @return ReportingExportJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportJobResponse postAnalyticsReportingExports(PostAnalyticsReportingExportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReportingExportJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportingExportJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate a view export request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportJobResponse> postAnalyticsReportingExports(ApiRequest<ReportingExportJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReportingExportJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportJobResponse> response = (ApiResponse<ReportingExportJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportJobResponse> response = (ApiResponse<ReportingExportJobResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

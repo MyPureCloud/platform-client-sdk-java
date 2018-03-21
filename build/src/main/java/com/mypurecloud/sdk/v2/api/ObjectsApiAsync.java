@@ -14,9 +14,11 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.AuthzTypedObject;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -102,6 +104,82 @@ public class ObjectsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<AuthzTypedObject>> postAuthorizationDivisionObjectAsync(PostAuthorizationDivisionObjectRequest request, final AsyncApiCallback<List<AuthzTypedObject>> callback) {
+    try {
+      final SettableFuture<List<AuthzTypedObject>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AuthzTypedObject>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzTypedObject>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<AuthzTypedObject>>> postAuthorizationDivisionObjectAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<AuthzTypedObject>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<AuthzTypedObject>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzTypedObject>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzTypedObject>> response = (ApiResponse<List<AuthzTypedObject>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzTypedObject>> response = (ApiResponse<List<AuthzTypedObject>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
