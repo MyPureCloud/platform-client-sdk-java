@@ -22,7 +22,7 @@ title: AnalyticsSession
 | **outboundContactId** | **String** | (Dialer) Unique identifier of the contact |  [optional] |
 | **outboundContactListId** | **String** | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
 | **dispositionAnalyzer** | **String** | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
-| **dispositionName** | [**DispositionNameEnum**](#DispositionNameEnum) | (Dialer) Result of the analysis (for example disposition.classification.callable.machine)  |  [optional] |
+| **dispositionName** | **String** | (Dialer) Result of the analysis |  [optional] |
 | **edgeId** | **String** | Unique identifier of the edge device |  [optional] |
 | **remoteNameDisplayable** | **String** |  |  [optional] |
 | **roomId** | **String** | Unique identifier for the room |  [optional] |
@@ -84,22 +84,6 @@ title: AnalyticsSession
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
-
-
-<a name="DispositionNameEnum"></a>
-
-## Enum: DispositionNameEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DISCONNECT | &quot;disconnect&quot; |
-| PERSON | &quot;person&quot; |
-| BUSY | &quot;busy&quot; |
-| MACHINE | &quot;machine&quot; |
-| NOANSWER | &quot;noanswer&quot; |
-| FAX | &quot;fax&quot; |
-| SIT | &quot;sit&quot; |
 {: class="table table-striped"}
 
 

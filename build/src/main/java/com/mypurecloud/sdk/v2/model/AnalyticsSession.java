@@ -141,46 +141,7 @@ public class AnalyticsSession  implements Serializable {
   private String outboundContactId = null;
   private String outboundContactListId = null;
   private String dispositionAnalyzer = null;
-
-  /**
-   * (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
-   */
-  public enum DispositionNameEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DISCONNECT("disconnect"),
-    PERSON("person"),
-    BUSY("busy"),
-    MACHINE("machine"),
-    NOANSWER("noanswer"),
-    FAX("fax"),
-    SIT("sit");
-
-    private String value;
-
-    DispositionNameEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static DispositionNameEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (DispositionNameEnum value : DispositionNameEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return DispositionNameEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private DispositionNameEnum dispositionName = null;
+  private String dispositionName = null;
   private String edgeId = null;
   private String remoteNameDisplayable = null;
   private String roomId = null;
@@ -454,19 +415,19 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * (Dialer) Result of the analysis (for example disposition.classification.callable.machine) 
+   * (Dialer) Result of the analysis
    **/
-  public AnalyticsSession dispositionName(DispositionNameEnum dispositionName) {
+  public AnalyticsSession dispositionName(String dispositionName) {
     this.dispositionName = dispositionName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "(Dialer) Result of the analysis (for example disposition.classification.callable.machine) ")
+  @ApiModelProperty(example = "disposition.classification.callable.machine", value = "(Dialer) Result of the analysis")
   @JsonProperty("dispositionName")
-  public DispositionNameEnum getDispositionName() {
+  public String getDispositionName() {
     return dispositionName;
   }
-  public void setDispositionName(DispositionNameEnum dispositionName) {
+  public void setDispositionName(String dispositionName) {
     this.dispositionName = dispositionName;
   }
 

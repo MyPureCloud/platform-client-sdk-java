@@ -7,7 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -116,6 +118,7 @@ public class Video  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
+  private List<String> msids = new ArrayList<String>();
 
   
   /**
@@ -334,6 +337,24 @@ public class Video  implements Serializable {
   }
 
   
+  /**
+   * List of media stream ids
+   **/
+  public Video msids(List<String> msids) {
+    this.msids = msids;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of media stream ids")
+  @JsonProperty("msids")
+  public List<String> getMsids() {
+    return msids;
+  }
+  public void setMsids(List<String> msids) {
+    this.msids = msids;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -355,12 +376,13 @@ public class Video  implements Serializable {
         Objects.equals(this.connectedTime, video.connectedTime) &&
         Objects.equals(this.disconnectedTime, video.disconnectedTime) &&
         Objects.equals(this.provider, video.provider) &&
-        Objects.equals(this.peerId, video.peerId);
+        Objects.equals(this.peerId, video.peerId) &&
+        Objects.equals(this.msids, video.msids);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId, msids);
   }
 
   @Override
@@ -380,6 +402,7 @@ public class Video  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("}");
     return sb.toString();
   }

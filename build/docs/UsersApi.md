@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | Fetch the routing status of a user |
 | [**getUserStation**](UsersApi.html#getUserStation) | Get station information for user |
 | [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | Get superiors |
+| [**getUserTrustors**](UsersApi.html#getUserTrustors) | List the organizations that have authorized/trusted the user. |
 | [**getUsers**](UsersApi.html#getUsers) | Get the list of available users. |
 | [**getUsersMe**](UsersApi.html#getUsersMe) | Get current user details. |
 | [**getUsersSearch**](UsersApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
@@ -1221,6 +1222,61 @@ try {
 ### Return type
 
 [**List&lt;User&gt;**](User.html)
+
+<a name="getUserTrustors"></a>
+
+# **getUserTrustors**
+
+> [TrustorEntityListing](TrustorEntityListing.html) getUserTrustors(userId, pageSize, pageNumber)
+
+List the organizations that have authorized/trusted the user.
+
+
+
+Wraps GET /api/v2/users/{userId}/trustors  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    TrustorEntityListing result = apiInstance.getUserTrustors(userId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserTrustors");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrustorEntityListing**](TrustorEntityListing.html)
 
 <a name="getUsers"></a>
 

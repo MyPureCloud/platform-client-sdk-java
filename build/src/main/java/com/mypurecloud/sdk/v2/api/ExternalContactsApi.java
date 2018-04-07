@@ -711,8 +711,8 @@ public class ExternalContactsApi {
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -727,8 +727,8 @@ public class ExternalContactsApi {
    * List notes for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -805,8 +805,8 @@ public class ExternalContactsApi {
   /**
    * Search for external contacts
    * 
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -821,8 +821,8 @@ public class ExternalContactsApi {
   /**
    * Search for external contacts
    * 
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -988,8 +988,8 @@ public class ExternalContactsApi {
    * Search for external contacts in an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -1005,8 +1005,8 @@ public class ExternalContactsApi {
    * Search for external contacts in an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q User supplied search keywords (no special syntax is currently supported) (optional)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -1174,8 +1174,8 @@ public class ExternalContactsApi {
    * List notes for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -1190,8 +1190,8 @@ public class ExternalContactsApi {
    * List notes for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param sortOrder Sort order (optional)
    * @param expand which fields, if any, to expand (optional)
    * @return NoteListing
@@ -1269,8 +1269,8 @@ public class ExternalContactsApi {
    * Fetch a relationship for an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
@@ -1285,8 +1285,8 @@ public class ExternalContactsApi {
    * Fetch a relationship for an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param expand which fields, if any, to expand (optional)
    * @param sortOrder Sort order (optional)
    * @return RelationshipListing
@@ -1363,8 +1363,8 @@ public class ExternalContactsApi {
   /**
    * Search for external organizations
    * 
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q Search query (optional)
    * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)
@@ -1381,8 +1381,8 @@ public class ExternalContactsApi {
   /**
    * Search for external organizations
    * 
-   * @param pageSize Page size (optional, default to 20)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 20)
+   * @param pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (optional, default to 1)
    * @param q Search query (optional)
    * @param trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested (optional)
    * @param sortOrder Sort order (optional)

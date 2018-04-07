@@ -29,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.EmergencyGroup;
+import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
@@ -183,36 +185,6 @@ public class GetFlowsDatatablesRequest {
 	    this.setSortOrder(sortOrder);
 	    return this;
 	} 
-
-	public enum sortOrderValues { 
-		ASCENDING("ascending"), 
-		DESCENDING("descending");
-
-		private String value;
-
-		sortOrderValues(String value) {
-		  this.value = value;
-		}
-
-		@JsonCreator
-		public static sortOrderValues fromString(String key) {
-			if (key == null) return null;
-
-			for (sortOrderValues value : sortOrderValues.values()) {
-				if (key.equalsIgnoreCase(value.toString())) {
-					return value;
-				}
-			}
-
-			return sortOrderValues.values()[0];
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -301,11 +273,6 @@ public class GetFlowsDatatablesRequest {
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
-		}
-
-		public Builder withSortOrder(sortOrderValues sortOrder) {
-		    request.setSortOrder(sortOrder.toString());
-		    return this;
 		}
 		
 

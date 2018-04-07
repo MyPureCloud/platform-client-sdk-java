@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteArchitectEmergencygroup**](ArchitectApi.html#deleteArchitectEmergencygroup) | Deletes a emergency group by ID |
 | [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | Delete an IVR Config. |
 | [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
@@ -27,6 +28,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getArchitectDependencytrackingType**](ArchitectApi.html#getArchitectDependencytrackingType) | Get a Dependency Tracking type. |
 | [**getArchitectDependencytrackingTypes**](ArchitectApi.html#getArchitectDependencytrackingTypes) | Get Dependency Tracking types. |
 | [**getArchitectDependencytrackingUpdatedresourceconsumers**](ArchitectApi.html#getArchitectDependencytrackingUpdatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources |
+| [**getArchitectEmergencygroup**](ArchitectApi.html#getArchitectEmergencygroup) | Gets a emergency group by ID |
+| [**getArchitectEmergencygroups**](ArchitectApi.html#getArchitectEmergencygroups) | Get a list of emergency groups. |
 | [**getArchitectIvr**](ArchitectApi.html#getArchitectIvr) | Get an IVR config. |
 | [**getArchitectIvrs**](ArchitectApi.html#getArchitectIvrs) | Get IVR configs. |
 | [**getArchitectPrompt**](ArchitectApi.html#getArchitectPrompt) | Get specified user prompt |
@@ -55,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
+| [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
 | [**postArchitectPromptHistory**](ArchitectApi.html#postArchitectPromptHistory) | Generate prompt history |
 | [**postArchitectPromptResources**](ArchitectApi.html#postArchitectPromptResources) | Create a new user prompt resource |
@@ -73,6 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
 | [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
+| [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | Updates a emergency group by ID |
 | [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
 | [**putArchitectPrompt**](ArchitectApi.html#putArchitectPrompt) | Update specified user prompt |
 | [**putArchitectPromptResource**](ArchitectApi.html#putArchitectPromptResource) | Update specified user prompt resource |
@@ -83,6 +88,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putFlowsDatatable**](ArchitectApi.html#putFlowsDatatable) | Updates a specific datatable by id |
 | [**putFlowsDatatableRow**](ArchitectApi.html#putFlowsDatatableRow) | Update a row entry |
 {: class="table table-striped"}
+
+<a name="deleteArchitectEmergencygroup"></a>
+
+# **deleteArchitectEmergencygroup**
+
+> Void deleteArchitectEmergencygroup(emergencyGroupId)
+
+Deletes a emergency group by ID
+
+
+
+Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+try {
+    apiInstance.deleteArchitectEmergencygroup(emergencyGroupId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectEmergencygroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emergencyGroupId** | **String**| Emergency group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteArchitectIvr"></a>
 
@@ -546,7 +601,7 @@ try {
 
 # **deleteFlowsDatatable**
 
-> Void deleteFlowsDatatable(datatableId)
+> Void deleteFlowsDatatable(datatableId, force)
 
 deletes a specific datatable by id
 
@@ -572,8 +627,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
+Boolean force = false; // Boolean | force delete, even if in use
 try {
-    apiInstance.deleteFlowsDatatable(datatableId);
+    apiInstance.deleteFlowsDatatable(datatableId, force);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#deleteFlowsDatatable");
     e.printStackTrace();
@@ -586,6 +642,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | |
+| **force** | **Boolean**| force delete, even if in use | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1158,6 +1215,116 @@ try {
 ### Return type
 
 [**DependencyObjectEntityListing**](DependencyObjectEntityListing.html)
+
+<a name="getArchitectEmergencygroup"></a>
+
+# **getArchitectEmergencygroup**
+
+> [EmergencyGroup](EmergencyGroup.html) getArchitectEmergencygroup(emergencyGroupId)
+
+Gets a emergency group by ID
+
+
+
+Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+try {
+    EmergencyGroup result = apiInstance.getArchitectEmergencygroup(emergencyGroupId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectEmergencygroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emergencyGroupId** | **String**| Emergency group ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
+
+<a name="getArchitectEmergencygroups"></a>
+
+# **getArchitectEmergencygroups**
+
+> [EmergencyGroupListing](EmergencyGroupListing.html) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
+
+Get a list of emergency groups.
+
+
+
+Wraps GET /api/v2/architect/emergencygroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "name"; // String | Sort by
+String sortOrder = "ASC"; // String | Sort order
+String name = "name_example"; // String | Name of the Emergency Group to filter by.
+try {
+    EmergencyGroupListing result = apiInstance.getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getArchitectEmergencygroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
+| **name** | **String**| Name of the Emergency Group to filter by. | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroupListing**](EmergencyGroupListing.html)
 
 <a name="getArchitectIvr"></a>
 
@@ -2699,7 +2866,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name |
-| **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2751,6 +2918,57 @@ This endpoint does not require any parameters.
 ### Return type
 
 null (empty response body)
+
+<a name="postArchitectEmergencygroups"></a>
+
+# **postArchitectEmergencygroups**
+
+> [EmergencyGroup](EmergencyGroup.html) postArchitectEmergencygroups(body)
+
+Creates a new emergency group
+
+
+
+Wraps POST /api/v2/architect/emergencygroups  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+EmergencyGroup body = new EmergencyGroup(); // EmergencyGroup | 
+try {
+    EmergencyGroup result = apiInstance.postArchitectEmergencygroups(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postArchitectEmergencygroups");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
 
 <a name="postArchitectIvrs"></a>
 
@@ -3679,6 +3897,59 @@ try {
 ### Return type
 
 [**DataTable**](DataTable.html)
+
+<a name="putArchitectEmergencygroup"></a>
+
+# **putArchitectEmergencygroup**
+
+> [EmergencyGroup](EmergencyGroup.html) putArchitectEmergencygroup(emergencyGroupId, body)
+
+Updates a emergency group by ID
+
+
+
+Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+EmergencyGroup body = new EmergencyGroup(); // EmergencyGroup | 
+try {
+    EmergencyGroup result = apiInstance.putArchitectEmergencygroup(emergencyGroupId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#putArchitectEmergencygroup");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **emergencyGroupId** | **String**| Emergency group ID | |
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroup**](EmergencyGroup.html)
 
 <a name="putArchitectIvr"></a>
 

@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.EmergencyGroup;
+import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
@@ -44,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceRequest;
@@ -64,6 +67,8 @@ import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingObjectRe
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingUpdatedresourceconsumersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectPromptRequest;
@@ -92,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
+import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectPromptResourcesRequest;
@@ -110,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptResourceRequest;
@@ -136,6 +143,82 @@ public class ArchitectApi {
 
   public ArchitectApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Deletes a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectEmergencygroup(String emergencyGroupId) throws IOException, ApiException {
+     deleteArchitectEmergencygroup(createDeleteArchitectEmergencygroupRequest(emergencyGroupId));
+  }
+
+  /**
+   * Deletes a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectEmergencygroupWithHttpInfo(String emergencyGroupId) throws IOException {
+    return deleteArchitectEmergencygroup(createDeleteArchitectEmergencygroupRequest(emergencyGroupId).withHttpInfo());
+  }
+
+  private DeleteArchitectEmergencygroupRequest createDeleteArchitectEmergencygroupRequest(String emergencyGroupId) {
+    return DeleteArchitectEmergencygroupRequest.builder()
+            .withEmergencyGroupId(emergencyGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes a emergency group by ID
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectEmergencygroup(DeleteArchitectEmergencygroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a emergency group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectEmergencygroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -845,26 +928,30 @@ public class ArchitectApi {
    * deletes a specific datatable by id
    * deletes an entire datatable (including schema and data) with a given id)
    * @param datatableId id of datatable (required)
+   * @param force force delete, even if in use (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteFlowsDatatable(String datatableId) throws IOException, ApiException {
-     deleteFlowsDatatable(createDeleteFlowsDatatableRequest(datatableId));
+  public void deleteFlowsDatatable(String datatableId, Boolean force) throws IOException, ApiException {
+     deleteFlowsDatatable(createDeleteFlowsDatatableRequest(datatableId, force));
   }
 
   /**
    * deletes a specific datatable by id
    * deletes an entire datatable (including schema and data) with a given id)
    * @param datatableId id of datatable (required)
+   * @param force force delete, even if in use (optional, default to false)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteFlowsDatatableWithHttpInfo(String datatableId) throws IOException {
-    return deleteFlowsDatatable(createDeleteFlowsDatatableRequest(datatableId).withHttpInfo());
+  public ApiResponse<Void> deleteFlowsDatatableWithHttpInfo(String datatableId, Boolean force) throws IOException {
+    return deleteFlowsDatatable(createDeleteFlowsDatatableRequest(datatableId, force).withHttpInfo());
   }
 
-  private DeleteFlowsDatatableRequest createDeleteFlowsDatatableRequest(String datatableId) {
+  private DeleteFlowsDatatableRequest createDeleteFlowsDatatableRequest(String datatableId, Boolean force) {
     return DeleteFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
+    
+            .withForce(force)
     
             .build();
   }
@@ -1819,6 +1906,180 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DependencyObjectEntityListing> response = (ApiResponse<DependencyObjectEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup getArchitectEmergencygroup(String emergencyGroupId) throws IOException, ApiException {
+    return  getArchitectEmergencygroup(createGetArchitectEmergencygroupRequest(emergencyGroupId));
+  }
+
+  /**
+   * Gets a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @return EmergencyGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> getArchitectEmergencygroupWithHttpInfo(String emergencyGroupId) throws IOException {
+    return getArchitectEmergencygroup(createGetArchitectEmergencygroupRequest(emergencyGroupId).withHttpInfo());
+  }
+
+  private GetArchitectEmergencygroupRequest createGetArchitectEmergencygroupRequest(String emergencyGroupId) {
+    return GetArchitectEmergencygroupRequest.builder()
+            .withEmergencyGroupId(emergencyGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a emergency group by ID
+   * 
+   * @param request The request object
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup getArchitectEmergencygroup(GetArchitectEmergencygroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmergencyGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmergencyGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a emergency group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> getArchitectEmergencygroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmergencyGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of emergency groups.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Emergency Group to filter by. (optional)
+   * @return EmergencyGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroupListing getArchitectEmergencygroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
+    return  getArchitectEmergencygroups(createGetArchitectEmergencygroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name));
+  }
+
+  /**
+   * Get a list of emergency groups.
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ASC)
+   * @param name Name of the Emergency Group to filter by. (optional)
+   * @return EmergencyGroupListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroupListing> getArchitectEmergencygroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
+    return getArchitectEmergencygroups(createGetArchitectEmergencygroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
+  }
+
+  private GetArchitectEmergencygroupsRequest createGetArchitectEmergencygroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
+    return GetArchitectEmergencygroupsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of emergency groups.
+   * 
+   * @param request The request object
+   * @return EmergencyGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroupListing getArchitectEmergencygroups(GetArchitectEmergencygroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmergencyGroupListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmergencyGroupListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of emergency groups.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroupListing> getArchitectEmergencygroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmergencyGroupListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroupListing> response = (ApiResponse<EmergencyGroupListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroupListing> response = (ApiResponse<EmergencyGroupListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4370,6 +4631,85 @@ public class ArchitectApi {
 
   
   /**
+   * Creates a new emergency group
+   * 
+   * @param body  (optional)
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup postArchitectEmergencygroups(EmergencyGroup body) throws IOException, ApiException {
+    return  postArchitectEmergencygroups(createPostArchitectEmergencygroupsRequest(body));
+  }
+
+  /**
+   * Creates a new emergency group
+   * 
+   * @param body  (optional)
+   * @return EmergencyGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> postArchitectEmergencygroupsWithHttpInfo(EmergencyGroup body) throws IOException {
+    return postArchitectEmergencygroups(createPostArchitectEmergencygroupsRequest(body).withHttpInfo());
+  }
+
+  private PostArchitectEmergencygroupsRequest createPostArchitectEmergencygroupsRequest(EmergencyGroup body) {
+    return PostArchitectEmergencygroupsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a new emergency group
+   * 
+   * @param request The request object
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup postArchitectEmergencygroups(PostArchitectEmergencygroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmergencyGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmergencyGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new emergency group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> postArchitectEmergencygroups(ApiRequest<EmergencyGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmergencyGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create IVR config.
    * 
    * @param body  (optional)
@@ -5806,6 +6146,89 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @param body  (optional)
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup putArchitectEmergencygroup(String emergencyGroupId, EmergencyGroup body) throws IOException, ApiException {
+    return  putArchitectEmergencygroup(createPutArchitectEmergencygroupRequest(emergencyGroupId, body));
+  }
+
+  /**
+   * Updates a emergency group by ID
+   * 
+   * @param emergencyGroupId Emergency group ID (required)
+   * @param body  (optional)
+   * @return EmergencyGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> putArchitectEmergencygroupWithHttpInfo(String emergencyGroupId, EmergencyGroup body) throws IOException {
+    return putArchitectEmergencygroup(createPutArchitectEmergencygroupRequest(emergencyGroupId, body).withHttpInfo());
+  }
+
+  private PutArchitectEmergencygroupRequest createPutArchitectEmergencygroupRequest(String emergencyGroupId, EmergencyGroup body) {
+    return PutArchitectEmergencygroupRequest.builder()
+            .withEmergencyGroupId(emergencyGroupId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a emergency group by ID
+   * 
+   * @param request The request object
+   * @return EmergencyGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmergencyGroup putArchitectEmergencygroup(PutArchitectEmergencygroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmergencyGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmergencyGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a emergency group by ID
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmergencyGroup> putArchitectEmergencygroup(ApiRequest<EmergencyGroup> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmergencyGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmergencyGroup> response = (ApiResponse<EmergencyGroup>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

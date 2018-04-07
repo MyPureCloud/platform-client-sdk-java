@@ -29,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.ConsumingResourcesEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyObject;
 import com.mypurecloud.sdk.v2.model.DependencyType;
 import com.mypurecloud.sdk.v2.model.DependencyTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.EmergencyGroup;
+import com.mypurecloud.sdk.v2.model.EmergencyGroupListing;
 import com.mypurecloud.sdk.v2.model.IVR;
 import com.mypurecloud.sdk.v2.model.IVREntityListing;
 import com.mypurecloud.sdk.v2.model.Prompt;
@@ -69,6 +71,20 @@ public class DeleteFlowsDatatableRequest {
 	    return this;
 	} 
 	
+	private Boolean force;
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+	}
+
+	public DeleteFlowsDatatableRequest withForce(Boolean force) {
+	    this.setForce(force);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -99,6 +115,8 @@ public class DeleteFlowsDatatableRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/flows/datatables/{datatableId}")
                 .withPathParameter("datatableId", datatableId)
         
+                .withQueryParameters("force", "", force)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -127,6 +145,11 @@ public class DeleteFlowsDatatableRequest {
 		
 		public Builder withDatatableId(String datatableId) {
 			request.setDatatableId(datatableId);
+			return this;
+		}
+		
+		public Builder withForce(Boolean force) {
+			request.setForce(force);
 			return this;
 		}
 		

@@ -69,6 +69,7 @@ public class IVR  implements Serializable {
   private List<String> dnis = new ArrayList<String>();
   private UriReference openHoursFlow = null;
   private UriReference closedHoursFlow = null;
+  private UriReference holidayHoursFlow = null;
   private UriReference scheduleGroup = null;
   private String selfUri = null;
 
@@ -304,6 +305,24 @@ public class IVR  implements Serializable {
 
   
   /**
+   * The Architect flow to execute during an organization's holiday hours.
+   **/
+  public IVR holidayHoursFlow(UriReference holidayHoursFlow) {
+    this.holidayHoursFlow = holidayHoursFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Architect flow to execute during an organization's holiday hours.")
+  @JsonProperty("holidayHoursFlow")
+  public UriReference getHolidayHoursFlow() {
+    return holidayHoursFlow;
+  }
+  public void setHolidayHoursFlow(UriReference holidayHoursFlow) {
+    this.holidayHoursFlow = holidayHoursFlow;
+  }
+
+  
+  /**
    * The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
    **/
   public IVR scheduleGroup(UriReference scheduleGroup) {
@@ -352,13 +371,14 @@ public class IVR  implements Serializable {
         Objects.equals(this.dnis, IVR.dnis) &&
         Objects.equals(this.openHoursFlow, IVR.openHoursFlow) &&
         Objects.equals(this.closedHoursFlow, IVR.closedHoursFlow) &&
+        Objects.equals(this.holidayHoursFlow, IVR.holidayHoursFlow) &&
         Objects.equals(this.scheduleGroup, IVR.scheduleGroup) &&
         Objects.equals(this.selfUri, IVR.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, dnis, openHoursFlow, closedHoursFlow, scheduleGroup, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, dnis, openHoursFlow, closedHoursFlow, holidayHoursFlow, scheduleGroup, selfUri);
   }
 
   @Override
@@ -380,6 +400,7 @@ public class IVR  implements Serializable {
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    openHoursFlow: ").append(toIndentedString(openHoursFlow)).append("\n");
     sb.append("    closedHoursFlow: ").append(toIndentedString(closedHoursFlow)).append("\n");
+    sb.append("    holidayHoursFlow: ").append(toIndentedString(holidayHoursFlow)).append("\n");
     sb.append("    scheduleGroup: ").append(toIndentedString(scheduleGroup)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

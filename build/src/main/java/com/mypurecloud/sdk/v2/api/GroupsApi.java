@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupProfile;
 import com.mypurecloud.sdk.v2.model.GroupEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
+import com.mypurecloud.sdk.v2.model.GroupProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.GroupMembersUpdate;
 import com.mypurecloud.sdk.v2.model.GroupCreate;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
@@ -28,10 +29,12 @@ import com.mypurecloud.sdk.v2.api.request.DeleteGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGroupIndividualsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetProfilesGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
@@ -374,7 +377,86 @@ public class GroupsApi {
 
   
   /**
-   * Get group members
+   * Get all individuals associated with the group
+   * 
+   * @param groupId Group ID (required)
+   * @return List<UserEntityListing>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserEntityListing> getGroupIndividuals(String groupId) throws IOException, ApiException {
+    return  getGroupIndividuals(createGetGroupIndividualsRequest(groupId));
+  }
+
+  /**
+   * Get all individuals associated with the group
+   * 
+   * @param groupId Group ID (required)
+   * @return List<UserEntityListing>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserEntityListing>> getGroupIndividualsWithHttpInfo(String groupId) throws IOException {
+    return getGroupIndividuals(createGetGroupIndividualsRequest(groupId).withHttpInfo());
+  }
+
+  private GetGroupIndividualsRequest createGetGroupIndividualsRequest(String groupId) {
+    return GetGroupIndividualsRequest.builder()
+            .withGroupId(groupId)
+    
+            .build();
+  }
+
+  /**
+   * Get all individuals associated with the group
+   * 
+   * @param request The request object
+   * @return List<UserEntityListing>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserEntityListing> getGroupIndividuals(GetGroupIndividualsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UserEntityListing>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserEntityListing>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all individuals associated with the group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserEntityListing>> getGroupIndividuals(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UserEntityListing>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get group members, includes individuals, owners, and dynamically included people
    * 
    * @param groupId Group ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -390,7 +472,7 @@ public class GroupsApi {
   }
 
   /**
-   * Get group members
+   * Get group members, includes individuals, owners, and dynamically included people
    * 
    * @param groupId Group ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -420,7 +502,7 @@ public class GroupsApi {
   }
 
   /**
-   * Get group members
+   * Get group members, includes individuals, owners, and dynamically included people
    * 
    * @param request The request object
    * @return UserEntityListing
@@ -439,7 +521,7 @@ public class GroupsApi {
   }
 
   /**
-   * Get group members
+   * Get group members, includes individuals, owners, and dynamically included people
    * 
    * @param request The request object
    * @return the response
@@ -720,6 +802,97 @@ public class GroupsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GroupsSearchResponse> response = (ApiResponse<GroupsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get group profile listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @return GroupProfileEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GroupProfileEntityListing getProfilesGroups(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException, ApiException {
+    return  getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, sortOrder));
+  }
+
+  /**
+   * Get group profile listing
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @return GroupProfileEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GroupProfileEntityListing> getProfilesGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException {
+    return getProfilesGroups(createGetProfilesGroupsRequest(pageSize, pageNumber, id, sortOrder).withHttpInfo());
+  }
+
+  private GetProfilesGroupsRequest createGetProfilesGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
+    return GetProfilesGroupsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withId(id)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get group profile listing
+   * 
+   * @param request The request object
+   * @return GroupProfileEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GroupProfileEntityListing getProfilesGroups(GetProfilesGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GroupProfileEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GroupProfileEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get group profile listing
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GroupProfileEntityListing> getProfilesGroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GroupProfileEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupProfileEntityListing> response = (ApiResponse<GroupProfileEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GroupProfileEntityListing> response = (ApiResponse<GroupProfileEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

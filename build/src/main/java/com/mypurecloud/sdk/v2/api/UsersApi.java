@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
+import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
@@ -66,6 +67,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
@@ -1928,6 +1930,93 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<User>> response = (ApiResponse<List<User>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * List the organizations that have authorized/trusted the user.
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustorEntityListing getUserTrustors(String userId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getUserTrustors(createGetUserTrustorsRequest(userId, pageSize, pageNumber));
+  }
+
+  /**
+   * List the organizations that have authorized/trusted the user.
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TrustorEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustorEntityListing> getUserTrustorsWithHttpInfo(String userId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getUserTrustors(createGetUserTrustorsRequest(userId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetUserTrustorsRequest createGetUserTrustorsRequest(String userId, Integer pageSize, Integer pageNumber) {
+    return GetUserTrustorsRequest.builder()
+            .withUserId(userId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * List the organizations that have authorized/trusted the user.
+   * 
+   * @param request The request object
+   * @return TrustorEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrustorEntityListing getUserTrustors(GetUserTrustorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrustorEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrustorEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List the organizations that have authorized/trusted the user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrustorEntityListing> getUserTrustors(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrustorEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustorEntityListing> response = (ApiResponse<TrustorEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrustorEntityListing> response = (ApiResponse<TrustorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

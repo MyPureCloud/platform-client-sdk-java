@@ -69,6 +69,7 @@ public class ScheduleGroup  implements Serializable {
   private String timeZone = null;
   private List<UriReference> openSchedules = new ArrayList<UriReference>();
   private List<UriReference> closedSchedules = new ArrayList<UriReference>();
+  private List<UriReference> holidaySchedules = new ArrayList<UriReference>();
   private String selfUri = null;
 
   
@@ -302,6 +303,24 @@ public class ScheduleGroup  implements Serializable {
   }
 
   
+  /**
+   * The schedules defining the hours an organization is closed for the holidays.
+   **/
+  public ScheduleGroup holidaySchedules(List<UriReference> holidaySchedules) {
+    this.holidaySchedules = holidaySchedules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schedules defining the hours an organization is closed for the holidays.")
+  @JsonProperty("holidaySchedules")
+  public List<UriReference> getHolidaySchedules() {
+    return holidaySchedules;
+  }
+  public void setHolidaySchedules(List<UriReference> holidaySchedules) {
+    this.holidaySchedules = holidaySchedules;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -333,12 +352,13 @@ public class ScheduleGroup  implements Serializable {
         Objects.equals(this.timeZone, scheduleGroup.timeZone) &&
         Objects.equals(this.openSchedules, scheduleGroup.openSchedules) &&
         Objects.equals(this.closedSchedules, scheduleGroup.closedSchedules) &&
+        Objects.equals(this.holidaySchedules, scheduleGroup.holidaySchedules) &&
         Objects.equals(this.selfUri, scheduleGroup.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, timeZone, openSchedules, closedSchedules, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, timeZone, openSchedules, closedSchedules, holidaySchedules, selfUri);
   }
 
   @Override
@@ -360,6 +380,7 @@ public class ScheduleGroup  implements Serializable {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    openSchedules: ").append(toIndentedString(openSchedules)).append("\n");
     sb.append("    closedSchedules: ").append(toIndentedString(closedSchedules)).append("\n");
+    sb.append("    holidaySchedules: ").append(toIndentedString(holidaySchedules)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

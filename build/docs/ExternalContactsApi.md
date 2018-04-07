@@ -481,8 +481,8 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact Id
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String sortOrder = "sortOrder_example"; // String | Sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
 try {
@@ -500,8 +500,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] |
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -539,8 +539,8 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | Sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
@@ -558,8 +558,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
@@ -654,8 +654,8 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | User supplied search keywords (no special syntax is currently supported)
 String sortOrder = "sortOrder_example"; // String | Sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
@@ -674,8 +674,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
@@ -770,8 +770,8 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String sortOrder = "sortOrder_example"; // String | Sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | which fields, if any, to expand
 try {
@@ -789,8 +789,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] |
 | **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -829,8 +829,8 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String expand = "expand_example"; // String | which fields, if any, to expand
 String sortOrder = "sortOrder_example"; // String | Sort order
 try {
@@ -848,8 +848,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
 | **sortOrder** | **String**| Sort order | [optional] |
 {: class="table table-striped"}
@@ -887,8 +887,8 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
-Integer pageSize = 20; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 20; // Integer | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+Integer pageNumber = 1; // Integer | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
 String q = "q_example"; // String | Search query
 List<String> trustorId = Arrays.asList("trustorId_example"); // List<String> | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
 String sortOrder = "sortOrder_example"; // String | Sort order
@@ -908,8 +908,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
 | **q** | **String**| Search query | [optional] |
 | **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] |
