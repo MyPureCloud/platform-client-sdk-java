@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteUser**](UsersApi.html#deleteUser) | Delete user |
 | [**deleteUserRoles**](UsersApi.html#deleteUserRoles) | Removes all the roles from the user. |
+| [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
@@ -25,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | List profile skills for a user |
 | [**getUserQueues**](UsersApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoles**](UsersApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
+| [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | List routing skills for user |
 | [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | Fetch the routing status of a user |
 | [**getUserStation**](UsersApi.html#getUserStation) | Get station information for user |
@@ -38,11 +40,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | Patch a user&#39;s Geolocation |
 | [**patchUserQueue**](UsersApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](UsersApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
+| [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
 | [**postUserPassword**](UsersApi.html#postUserPassword) | Change a users password |
+| [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | Add routing language to user |
 | [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**postUsers**](UsersApi.html#postUsers) | Create user |
 | [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
@@ -152,6 +156,58 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteUserRoutinglanguage"></a>
+
+# **deleteUserRoutinglanguage**
+
+> Void deleteUserRoutinglanguage(userId, languageId)
+
+Remove routing language from user
+
+
+
+Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String languageId = "languageId_example"; // String | languageId
+try {
+    apiInstance.deleteUserRoutinglanguage(userId, languageId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteUserRoutinglanguage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **languageId** | **String**| languageId | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1011,6 +1067,63 @@ try {
 
 [**UserAuthorization**](UserAuthorization.html)
 
+<a name="getUserRoutinglanguages"></a>
+
+# **getUserRoutinglanguages**
+
+> [UserLanguageEntityListing](UserLanguageEntityListing.html) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
+
+List routing language for user
+
+
+
+Wraps GET /api/v2/users/{userId}/routinglanguages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "ASC"; // String | Ascending or descending sort order
+try {
+    UserLanguageEntityListing result = apiInstance.getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserRoutinglanguages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
 <a name="getUserRoutingskills"></a>
 
 # **getUserRoutingskills**
@@ -1712,6 +1825,61 @@ try {
 
 [**UserQueueEntityListing**](UserQueueEntityListing.html)
 
+<a name="patchUserRoutinglanguage"></a>
+
+# **patchUserRoutinglanguage**
+
+> [UserRoutingLanguage](UserRoutingLanguage.html) patchUserRoutinglanguage(userId, languageId, body)
+
+Update routing language proficiency or state.
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String languageId = "languageId_example"; // String | languageId
+UserRoutingLanguage body = new UserRoutingLanguage(); // UserRoutingLanguage | Language
+try {
+    UserRoutingLanguage result = apiInstance.patchUserRoutinglanguage(userId, languageId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUserRoutinglanguage");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **languageId** | **String**| languageId | |
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
+
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
 # **postAnalyticsUsersAggregatesQuery**
@@ -1968,6 +2136,59 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postUserRoutinglanguages"></a>
+
+# **postUserRoutinglanguages**
+
+> [UserRoutingLanguage](UserRoutingLanguage.html) postUserRoutinglanguages(userId, body)
+
+Add routing language to user
+
+
+
+Wraps POST /api/v2/users/{userId}/routinglanguages  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+UserRoutingLanguagePost body = new UserRoutingLanguagePost(); // UserRoutingLanguagePost | Language
+try {
+    UserRoutingLanguage result = apiInstance.postUserRoutinglanguages(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUserRoutinglanguages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserRoutingLanguage**](UserRoutingLanguage.html)
 
 <a name="postUserRoutingskills"></a>
 

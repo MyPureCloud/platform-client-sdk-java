@@ -13,11 +13,11 @@ title: JsonNode
 | **_boolean** | **Boolean** |  |  [optional] |
 | **number** | **Boolean** |  |  [optional] |
 | **_float** | **Boolean** |  |  [optional] |
-| **floatingPointNumber** | **Boolean** |  |  [optional] |
 | **containerNode** | **Boolean** |  |  [optional] |
 | **missingNode** | **Boolean** |  |  [optional] |
 | **pojo** | **Boolean** |  |  [optional] |
 | **integralNumber** | **Boolean** |  |  [optional] |
+| **floatingPointNumber** | **Boolean** |  |  [optional] |
 | **_short** | **Boolean** |  |  [optional] |
 | **_int** | **Boolean** |  |  [optional] |
 | **_long** | **Boolean** |  |  [optional] |

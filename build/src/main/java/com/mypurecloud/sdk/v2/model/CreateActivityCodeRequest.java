@@ -109,7 +109,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The default length of the activity in minutes")
+  @ApiModelProperty(example = "null", value = "The default length of the activity in minutes")
   @JsonProperty("lengthInMinutes")
   public Integer getLengthInMinutes() {
     return lengthInMinutes;
@@ -127,7 +127,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether an agent is paid while performing this activity")
+  @ApiModelProperty(example = "null", value = "Whether an agent is paid while performing this activity")
   @JsonProperty("countsAsPaidTime")
   public Boolean getCountsAsPaidTime() {
     return countsAsPaidTime;
@@ -145,7 +145,7 @@ public class CreateActivityCodeRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Indicates whether or not the activity should be counted as work time")
+  @ApiModelProperty(example = "null", value = "Indicates whether or not the activity should be counted as work time")
   @JsonProperty("countsAsWorkTime")
   public Boolean getCountsAsWorkTime() {
     return countsAsWorkTime;

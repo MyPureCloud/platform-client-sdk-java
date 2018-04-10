@@ -151,7 +151,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String date = "date_example"; // String | ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23
 try {
     WfmIntradayQueueListing result = apiInstance.getWorkforcemanagementManagementunitIntradayQueues(muId, date);
@@ -167,7 +167,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **date** | **String**| ISO-8601 date string with no time or timezone component, interpreted in the configured management unit time zone, e.g. 2017-01-23 | |
 {: class="table table-striped"}
 
@@ -204,7 +204,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 try {
@@ -221,7 +221,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **userId** | **String**| The userId to whom the Time Off Request applies. | |
 | **timeOffRequestId** | **String**| Time Off Request Id | |
 {: class="table table-striped"}
@@ -259,7 +259,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
@@ -276,7 +276,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **userId** | **String**| The userId to whom the Time Off Request applies. | |
 | **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -314,7 +314,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitUsers(muId);
     System.out.println(result);
@@ -329,7 +329,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 {: class="table table-striped"}
 
 ### Return type
@@ -473,7 +473,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 WfmHistoricalAdherenceQuery body = new WfmHistoricalAdherenceQuery(); // WfmHistoricalAdherenceQuery | body
 try {
     WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, body);
@@ -489,7 +489,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional] |
 {: class="table table-striped"}
 
@@ -526,7 +526,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 IntradayQueryDataCommand body = new IntradayQueryDataCommand(); // IntradayQueryDataCommand | body
 try {
     IntradayResponse result = apiInstance.postWorkforcemanagementManagementunitIntraday(muId, body);
@@ -542,7 +542,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional] |
 {: class="table table-striped"}
 
@@ -579,7 +579,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 UserListScheduleRequestBody body = new UserListScheduleRequestBody(); // UserListScheduleRequestBody | body
 try {
     UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, body);
@@ -595,7 +595,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional] |
 {: class="table table-striped"}
 

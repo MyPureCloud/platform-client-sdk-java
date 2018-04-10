@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.UserProfile;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
@@ -31,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -38,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
@@ -47,6 +50,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
@@ -63,6 +67,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserProfileskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
@@ -76,11 +81,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
@@ -246,6 +253,86 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Remove routing language from user
+   * 
+   * @param userId User ID (required)
+   * @param languageId languageId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserRoutinglanguage(String userId, String languageId) throws IOException, ApiException {
+     deleteUserRoutinglanguage(createDeleteUserRoutinglanguageRequest(userId, languageId));
+  }
+
+  /**
+   * Remove routing language from user
+   * 
+   * @param userId User ID (required)
+   * @param languageId languageId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserRoutinglanguageWithHttpInfo(String userId, String languageId) throws IOException {
+    return deleteUserRoutinglanguage(createDeleteUserRoutinglanguageRequest(userId, languageId).withHttpInfo());
+  }
+
+  private DeleteUserRoutinglanguageRequest createDeleteUserRoutinglanguageRequest(String userId, String languageId) {
+    return DeleteUserRoutinglanguageRequest.builder()
+            .withUserId(userId)
+    
+            .withLanguageId(languageId)
+    
+            .build();
+  }
+
+  /**
+   * Remove routing language from user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteUserRoutinglanguage(DeleteUserRoutinglanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove routing language from user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteUserRoutinglanguage(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1604,6 +1691,97 @@ public class UsersApi {
 
   
   /**
+   * List routing language for user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @return UserLanguageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLanguageEntityListing getUserRoutinglanguages(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+    return  getUserRoutinglanguages(createGetUserRoutinglanguagesRequest(userId, pageSize, pageNumber, sortOrder));
+  }
+
+  /**
+   * List routing language for user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Ascending or descending sort order (optional, default to ASC)
+   * @return UserLanguageEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLanguageEntityListing> getUserRoutinglanguagesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getUserRoutinglanguages(createGetUserRoutinglanguagesRequest(userId, pageSize, pageNumber, sortOrder).withHttpInfo());
+  }
+
+  private GetUserRoutinglanguagesRequest createGetUserRoutinglanguagesRequest(String userId, Integer pageSize, Integer pageNumber, String sortOrder) {
+    return GetUserRoutinglanguagesRequest.builder()
+            .withUserId(userId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * List routing language for user
+   * 
+   * @param request The request object
+   * @return UserLanguageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLanguageEntityListing getUserRoutinglanguages(GetUserRoutinglanguagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserLanguageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserLanguageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List routing language for user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLanguageEntityListing> getUserRoutinglanguages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserLanguageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * List routing skills for user
    * 
    * @param userId User ID (required)
@@ -2707,6 +2885,93 @@ public class UsersApi {
 
   
   /**
+   * Update routing language proficiency or state.
+   * 
+   * @param userId User ID (required)
+   * @param languageId languageId (required)
+   * @param body Language (required)
+   * @return UserRoutingLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserRoutingLanguage patchUserRoutinglanguage(String userId, String languageId, UserRoutingLanguage body) throws IOException, ApiException {
+    return  patchUserRoutinglanguage(createPatchUserRoutinglanguageRequest(userId, languageId, body));
+  }
+
+  /**
+   * Update routing language proficiency or state.
+   * 
+   * @param userId User ID (required)
+   * @param languageId languageId (required)
+   * @param body Language (required)
+   * @return UserRoutingLanguage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserRoutingLanguage> patchUserRoutinglanguageWithHttpInfo(String userId, String languageId, UserRoutingLanguage body) throws IOException {
+    return patchUserRoutinglanguage(createPatchUserRoutinglanguageRequest(userId, languageId, body).withHttpInfo());
+  }
+
+  private PatchUserRoutinglanguageRequest createPatchUserRoutinglanguageRequest(String userId, String languageId, UserRoutingLanguage body) {
+    return PatchUserRoutinglanguageRequest.builder()
+            .withUserId(userId)
+    
+            .withLanguageId(languageId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update routing language proficiency or state.
+   * 
+   * @param request The request object
+   * @return UserRoutingLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserRoutingLanguage patchUserRoutinglanguage(PatchUserRoutinglanguageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserRoutingLanguage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRoutingLanguage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update routing language proficiency or state.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserRoutingLanguage> patchUserRoutinglanguage(ApiRequest<UserRoutingLanguage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRoutingLanguage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Query for user aggregates
    * 
    * @param body query (required)
@@ -3098,6 +3363,89 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Add routing language to user
+   * 
+   * @param userId User ID (required)
+   * @param body Language (required)
+   * @return UserRoutingLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserRoutingLanguage postUserRoutinglanguages(String userId, UserRoutingLanguagePost body) throws IOException, ApiException {
+    return  postUserRoutinglanguages(createPostUserRoutinglanguagesRequest(userId, body));
+  }
+
+  /**
+   * Add routing language to user
+   * 
+   * @param userId User ID (required)
+   * @param body Language (required)
+   * @return UserRoutingLanguage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserRoutingLanguage> postUserRoutinglanguagesWithHttpInfo(String userId, UserRoutingLanguagePost body) throws IOException {
+    return postUserRoutinglanguages(createPostUserRoutinglanguagesRequest(userId, body).withHttpInfo());
+  }
+
+  private PostUserRoutinglanguagesRequest createPostUserRoutinglanguagesRequest(String userId, UserRoutingLanguagePost body) {
+    return PostUserRoutinglanguagesRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Add routing language to user
+   * 
+   * @param request The request object
+   * @return UserRoutingLanguage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserRoutingLanguage postUserRoutinglanguages(PostUserRoutinglanguagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserRoutingLanguage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserRoutingLanguage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add routing language to user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserRoutingLanguage> postUserRoutinglanguages(ApiRequest<UserRoutingLanguagePost> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserRoutingLanguage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
