@@ -35,6 +35,7 @@ title: CallConversationNotificationCallMediaParticipant
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
 | **muted** | **Boolean** |  |  [optional] |
 | **confined** | **Boolean** |  |  [optional] |
 | **recording** | **Boolean** |  |  [optional] |
@@ -104,6 +105,16 @@ title: CallConversationNotificationCallMediaParticipant
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 
 
 <a name="RecordingStateEnum"></a>

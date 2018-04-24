@@ -1,0 +1,18 @@
+---
+title: MessageInfo
+---
+## MessageInfo
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **localizableMessageCode** | **String** |  |  [optional] |
+| **message** | **String** |  |  [optional] |
+| **messageWithParams** | **String** |  |  [optional] |
+| **messageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
+{: class="table table-striped"}
+{: class="table table-striped"}
+
+

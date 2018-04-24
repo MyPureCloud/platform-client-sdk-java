@@ -34,6 +34,7 @@ title: MessageMediaParticipant
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **toAddress** | [**Address**](Address.html) | Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended. |  [optional] |
 | **fromAddress** | [**Address**](Address.html) | Address for the participant on the sending side of the message conversation. If the address is a phone number, E.164 format is recommended. |  [optional] |
 | **messages** | [**List&lt;MessageDetails&gt;**](MessageDetails.html) | Message instance details on the communication. |  [optional] |
@@ -97,6 +98,16 @@ title: MessageMediaParticipant
 | SPAM | &quot;spam&quot; |
 
 
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
+
+
 <a name="TypeEnum"></a>
 
 ## Enum: TypeEnum
@@ -105,6 +116,9 @@ title: MessageMediaParticipant
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;sms&quot; |
+| TWITTER | &quot;twitter&quot; |
+| FACEBOOK | &quot;facebook&quot; |
+| LINE | &quot;line&quot; |
 {: class="table table-striped"}
 
 

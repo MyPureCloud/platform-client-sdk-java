@@ -20,12 +20,12 @@ title: IntradayDataUpdateNotificationMetrics
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| HISTORICAL_QUEUE_DATA | &quot;HISTORICAL_QUEUE_DATA&quot; |
-| HISTORICAL_AGENT_DATA | &quot;HISTORICAL_AGENT_DATA&quot; |
-| FORECAST_DATA | &quot;FORECAST_DATA&quot; |
-| SCHEDULE_DATA | &quot;SCHEDULE_DATA&quot; |
-| PERFORMANCE_PREDICTION_AGENT_DATA | &quot;PERFORMANCE_PREDICTION_AGENT_DATA&quot; |
-| PERFORMANCE_PREDICTION_QUEUE_DATA | &quot;PERFORMANCE_PREDICTION_QUEUE_DATA&quot; |
+| HISTORICALQUEUEDATA | &quot;HistoricalQueueData&quot; |
+| HISTORICALAGENTDATA | &quot;HistoricalAgentData&quot; |
+| FORECASTDATA | &quot;ForecastData&quot; |
+| SCHEDULEDATA | &quot;ScheduleData&quot; |
+| PERFORMANCEPREDICTIONAGENTDATA | &quot;PerformancePredictionAgentData&quot; |
+| PERFORMANCEPREDICTIONQUEUEDATA | &quot;PerformancePredictionQueueData&quot; |
 {: class="table table-striped"}
 
 

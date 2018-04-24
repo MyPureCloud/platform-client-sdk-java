@@ -174,6 +174,40 @@ public class MessageMediaParticipant  implements Serializable {
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
+
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private Address toAddress = null;
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
@@ -183,7 +217,10 @@ public class MessageMediaParticipant  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("sms");
+    SMS("sms"),
+    TWITTER("twitter"),
+    FACEBOOK("facebook"),
+    LINE("line");
 
     private String value;
 
@@ -684,6 +721,24 @@ public class MessageMediaParticipant  implements Serializable {
 
   
   /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public MessageMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
   public MessageMediaParticipant toAddress(Address toAddress) {
@@ -827,6 +882,7 @@ public class MessageMediaParticipant  implements Serializable {
         Objects.equals(this.externalOrganization, messageMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, messageMediaParticipant.wrapup) &&
         Objects.equals(this.peer, messageMediaParticipant.peer) &&
+        Objects.equals(this.flaggedReason, messageMediaParticipant.flaggedReason) &&
         Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
         Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
         Objects.equals(this.messages, messageMediaParticipant.messages) &&
@@ -837,7 +893,7 @@ public class MessageMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -871,6 +927,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

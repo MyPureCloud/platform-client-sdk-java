@@ -20,14 +20,12 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.AuthzTypedObject;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
@@ -35,7 +33,6 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRigh
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationRoleRequest;
-import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleComparedefaultRightRoleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesDefaultRequest;
@@ -205,82 +202,6 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Returns the maximum allowed number of divisions.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Integer> getAuthorizationDivisionsLimitAsync(GetAuthorizationDivisionsLimitRequest request, final AsyncApiCallback<Integer> callback) {
-    try {
-      final SettableFuture<Integer> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Integer>() {}, new AsyncApiCallback<ApiResponse<Integer>>() {
-        @Override
-        public void onCompleted(ApiResponse<Integer> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Returns the maximum allowed number of divisions.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Integer>> getAuthorizationDivisionsLimitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Integer>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Integer>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Integer>() {}, new AsyncApiCallback<ApiResponse<Integer>>() {
-        @Override
-        public void onCompleted(ApiResponse<Integer> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Integer> response = (ApiResponse<Integer>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -813,82 +734,6 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DomainOrganizationRole> response = (ApiResponse<DomainOrganizationRole>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<List<AuthzTypedObject>> postAuthorizationDivisionObjectAsync(PostAuthorizationDivisionObjectRequest request, final AsyncApiCallback<List<AuthzTypedObject>> callback) {
-    try {
-      final SettableFuture<List<AuthzTypedObject>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AuthzTypedObject>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<AuthzTypedObject>> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Set the division of a list of objects. The objects must all be of the same type: CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, QUEUE, USER
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<List<AuthzTypedObject>>> postAuthorizationDivisionObjectAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>> callback) {
-    try {
-      final SettableFuture<ApiResponse<List<AuthzTypedObject>>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<AuthzTypedObject>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzTypedObject>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<AuthzTypedObject>> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<AuthzTypedObject>> response = (ApiResponse<List<AuthzTypedObject>>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<AuthzTypedObject>> response = (ApiResponse<List<AuthzTypedObject>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -171,6 +171,40 @@ public class ChatMediaParticipant  implements Serializable {
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
+
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String roomId = null;
 
   
@@ -643,6 +677,24 @@ public class ChatMediaParticipant  implements Serializable {
 
   
   /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public ChatMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
    * The ID of the chat room.
    **/
   public ChatMediaParticipant roomId(String roomId) {
@@ -696,12 +748,13 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.externalOrganization, chatMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, chatMediaParticipant.wrapup) &&
         Objects.equals(this.peer, chatMediaParticipant.peer) &&
+        Objects.equals(this.flaggedReason, chatMediaParticipant.flaggedReason) &&
         Objects.equals(this.roomId, chatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, roomId);
   }
 
   @Override
@@ -735,6 +788,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

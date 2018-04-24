@@ -176,6 +176,40 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -642,6 +676,23 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
   
   /**
    **/
+  public ScreenShareConversationNotificationScreenShareMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public ScreenShareConversationNotificationScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -728,6 +779,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
         Objects.equals(this.wrapup, screenShareConversationNotificationScreenShareMediaParticipant.wrapup) &&
         Objects.equals(this.peer, screenShareConversationNotificationScreenShareMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, screenShareConversationNotificationScreenShareMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, screenShareConversationNotificationScreenShareMediaParticipant.flaggedReason) &&
         Objects.equals(this.context, screenShareConversationNotificationScreenShareMediaParticipant.context) &&
         Objects.equals(this.peerCount, screenShareConversationNotificationScreenShareMediaParticipant.peerCount) &&
         Objects.equals(this.sharing, screenShareConversationNotificationScreenShareMediaParticipant.sharing);
@@ -735,7 +787,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, context, peerCount, sharing);
   }
 
   @Override
@@ -770,6 +822,7 @@ public class ScreenShareConversationNotificationScreenShareMediaParticipant  imp
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

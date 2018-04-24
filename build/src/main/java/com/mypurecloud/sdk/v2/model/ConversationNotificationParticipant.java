@@ -87,6 +87,7 @@ public class ConversationNotificationParticipant  implements Serializable {
     }
   }
   private ScreenRecordingStateEnum screenRecordingState = null;
+  private String flaggedReason = null;
   private Map<String, String> attributes = null;
   private List<ConversationNotificationCalls> calls = new ArrayList<ConversationNotificationCalls>();
   private List<ConversationNotificationCallbacks> callbacks = new ArrayList<ConversationNotificationCallbacks>();
@@ -425,6 +426,23 @@ public class ConversationNotificationParticipant  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationParticipant flaggedReason(String flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public String getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(String flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationParticipant attributes(Map<String, String> attributes) {
     this.attributes = attributes;
     return this;
@@ -639,6 +657,7 @@ public class ConversationNotificationParticipant  implements Serializable {
         Objects.equals(this.wrapup, conversationNotificationParticipant.wrapup) &&
         Objects.equals(this.monitoredParticipantId, conversationNotificationParticipant.monitoredParticipantId) &&
         Objects.equals(this.screenRecordingState, conversationNotificationParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, conversationNotificationParticipant.flaggedReason) &&
         Objects.equals(this.attributes, conversationNotificationParticipant.attributes) &&
         Objects.equals(this.calls, conversationNotificationParticipant.calls) &&
         Objects.equals(this.callbacks, conversationNotificationParticipant.callbacks) &&
@@ -654,7 +673,7 @@ public class ConversationNotificationParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -681,6 +700,7 @@ public class ConversationNotificationParticipant  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    callbacks: ").append(toIndentedString(callbacks)).append("\n");

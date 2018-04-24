@@ -18,6 +18,8 @@ import java.io.Serializable;
 public class CreateCallRequest  implements Serializable {
   
   private String phoneNumber = null;
+  private String callerId = null;
+  private String callerIdName = null;
   private String callFromQueueId = null;
   private String callQueueId = null;
   private String callUserId = null;
@@ -43,6 +45,42 @@ public class CreateCallRequest  implements Serializable {
   }
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
+  }
+
+  
+  /**
+   * The caller id phone number for this outbound call.
+   **/
+  public CreateCallRequest callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The caller id phone number for this outbound call.")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+  
+  /**
+   * The caller id name for this outbound call.
+   **/
+  public CreateCallRequest callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The caller id name for this outbound call.")
+  @JsonProperty("callerIdName")
+  public String getCallerIdName() {
+    return callerIdName;
+  }
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
   }
 
   
@@ -201,6 +239,8 @@ public class CreateCallRequest  implements Serializable {
     }
     CreateCallRequest createCallRequest = (CreateCallRequest) o;
     return Objects.equals(this.phoneNumber, createCallRequest.phoneNumber) &&
+        Objects.equals(this.callerId, createCallRequest.callerId) &&
+        Objects.equals(this.callerIdName, createCallRequest.callerIdName) &&
         Objects.equals(this.callFromQueueId, createCallRequest.callFromQueueId) &&
         Objects.equals(this.callQueueId, createCallRequest.callQueueId) &&
         Objects.equals(this.callUserId, createCallRequest.callUserId) &&
@@ -213,7 +253,7 @@ public class CreateCallRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants);
+    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants);
   }
 
   @Override
@@ -222,6 +262,8 @@ public class CreateCallRequest  implements Serializable {
     sb.append("class CreateCallRequest {\n");
     
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("    callFromQueueId: ").append(toIndentedString(callFromQueueId)).append("\n");
     sb.append("    callQueueId: ").append(toIndentedString(callQueueId)).append("\n");
     sb.append("    callUserId: ").append(toIndentedString(callUserId)).append("\n");

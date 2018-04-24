@@ -1,0 +1,244 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.IntegrationConfigurationInfo;
+import com.mypurecloud.sdk.v2.model.IntegrationStatusInfo;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import java.io.Serializable;
+/**
+ * Details for an Integration
+ */
+@ApiModel(description = "Details for an Integration")
+
+public class Integration  implements Serializable {
+  
+  private String id = null;
+  private String name = null;
+  private IntegrationType integrationType = null;
+  private String notes = null;
+
+  /**
+   * Configured state of the integration.
+   */
+  public enum IntendedStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ENABLED("ENABLED"),
+    DISABLED("DISABLED"),
+    DELETED("DELETED");
+
+    private String value;
+
+    IntendedStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static IntendedStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (IntendedStateEnum value : IntendedStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return IntendedStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private IntendedStateEnum intendedState = null;
+  private IntegrationConfigurationInfo config = null;
+  private IntegrationStatusInfo reportedState = null;
+  private Map<String, String> attributes = null;
+  private String selfUri = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The name of the integration, used to distinguish this integration from others of the same type.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+
+  
+  /**
+   * Type of the integration
+   **/
+  public Integration integrationType(IntegrationType integrationType) {
+    this.integrationType = integrationType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the integration")
+  @JsonProperty("integrationType")
+  public IntegrationType getIntegrationType() {
+    return integrationType;
+  }
+  public void setIntegrationType(IntegrationType integrationType) {
+    this.integrationType = integrationType;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Notes about the integration.")
+  @JsonProperty("notes")
+  public String getNotes() {
+    return notes;
+  }
+
+  
+  /**
+   * Configured state of the integration.
+   **/
+  public Integration intendedState(IntendedStateEnum intendedState) {
+    this.intendedState = intendedState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Configured state of the integration.")
+  @JsonProperty("intendedState")
+  public IntendedStateEnum getIntendedState() {
+    return intendedState;
+  }
+  public void setIntendedState(IntendedStateEnum intendedState) {
+    this.intendedState = intendedState;
+  }
+
+  
+  /**
+   * Configuration information for the integration.
+   **/
+  public Integration config(IntegrationConfigurationInfo config) {
+    this.config = config;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration information for the integration.")
+  @JsonProperty("config")
+  public IntegrationConfigurationInfo getConfig() {
+    return config;
+  }
+  public void setConfig(IntegrationConfigurationInfo config) {
+    this.config = config;
+  }
+
+  
+  /**
+   * Last reported status of the integration.
+   **/
+  public Integration reportedState(IntegrationStatusInfo reportedState) {
+    this.reportedState = reportedState;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Last reported status of the integration.")
+  @JsonProperty("reportedState")
+  public IntegrationStatusInfo getReportedState() {
+    return reportedState;
+  }
+  public void setReportedState(IntegrationStatusInfo reportedState) {
+    this.reportedState = reportedState;
+  }
+
+  
+  /**
+   * Read-only attributes for the integration.
+   **/
+  public Integration attributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Read-only attributes for the integration.")
+  @JsonProperty("attributes")
+  public Map<String, String> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Integration integration = (Integration) o;
+    return Objects.equals(this.id, integration.id) &&
+        Objects.equals(this.name, integration.name) &&
+        Objects.equals(this.integrationType, integration.integrationType) &&
+        Objects.equals(this.notes, integration.notes) &&
+        Objects.equals(this.intendedState, integration.intendedState) &&
+        Objects.equals(this.config, integration.config) &&
+        Objects.equals(this.reportedState, integration.reportedState) &&
+        Objects.equals(this.attributes, integration.attributes) &&
+        Objects.equals(this.selfUri, integration.selfUri);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, integrationType, notes, intendedState, config, reportedState, attributes, selfUri);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class Integration {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    integrationType: ").append(toIndentedString(integrationType)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    intendedState: ").append(toIndentedString(intendedState)).append("\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    sb.append("    reportedState: ").append(toIndentedString(reportedState)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

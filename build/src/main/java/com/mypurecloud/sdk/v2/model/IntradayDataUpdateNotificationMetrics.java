@@ -21,12 +21,12 @@ public class IntradayDataUpdateNotificationMetrics  implements Serializable {
    */
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    HISTORICAL_QUEUE_DATA("HISTORICAL_QUEUE_DATA"),
-    HISTORICAL_AGENT_DATA("HISTORICAL_AGENT_DATA"),
-    FORECAST_DATA("FORECAST_DATA"),
-    SCHEDULE_DATA("SCHEDULE_DATA"),
-    PERFORMANCE_PREDICTION_AGENT_DATA("PERFORMANCE_PREDICTION_AGENT_DATA"),
-    PERFORMANCE_PREDICTION_QUEUE_DATA("PERFORMANCE_PREDICTION_QUEUE_DATA");
+    HISTORICALQUEUEDATA("HistoricalQueueData"),
+    HISTORICALAGENTDATA("HistoricalAgentData"),
+    FORECASTDATA("ForecastData"),
+    SCHEDULEDATA("ScheduleData"),
+    PERFORMANCEPREDICTIONAGENTDATA("PerformancePredictionAgentData"),
+    PERFORMANCEPREDICTIONQUEUEDATA("PerformancePredictionQueueData");
 
     private String value;
 

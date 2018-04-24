@@ -20,17 +20,32 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
+import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
+import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 public class PostIntegrationsActionDraftPublishRequest {
     

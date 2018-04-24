@@ -176,6 +176,40 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
@@ -643,6 +677,23 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
   
   /**
    **/
+  public SocialConversationNotificationSocialMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public SocialConversationNotificationSocialMediaParticipant socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
@@ -746,6 +797,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
         Objects.equals(this.wrapup, socialConversationNotificationSocialMediaParticipant.wrapup) &&
         Objects.equals(this.peer, socialConversationNotificationSocialMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, socialConversationNotificationSocialMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, socialConversationNotificationSocialMediaParticipant.flaggedReason) &&
         Objects.equals(this.socialMediaId, socialConversationNotificationSocialMediaParticipant.socialMediaId) &&
         Objects.equals(this.socialMediaHub, socialConversationNotificationSocialMediaParticipant.socialMediaHub) &&
         Objects.equals(this.socialUserName, socialConversationNotificationSocialMediaParticipant.socialUserName) &&
@@ -754,7 +806,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -789,6 +841,7 @@ public class SocialConversationNotificationSocialMediaParticipant  implements Se
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");
     sb.append("    socialUserName: ").append(toIndentedString(socialUserName)).append("\n");

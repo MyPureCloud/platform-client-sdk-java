@@ -35,11 +35,13 @@ title: VideoConversationNotificationVideoMediaParticipant
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
 | **audioMuted** | **Boolean** |  |  [optional] |
 | **videoMuted** | **Boolean** |  |  [optional] |
 | **sharingScreen** | **Boolean** |  |  [optional] |
 | **peerCount** | **Integer** |  |  [optional] |
 | **context** | **String** |  |  [optional] |
+| **msids** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -98,6 +100,16 @@ title: VideoConversationNotificationVideoMediaParticipant
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

@@ -25,8 +25,8 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
   private String selfUri = null;
   private String firstUri = null;
   private String previousUri = null;
-  private String nextUri = null;
   private String lastUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   
@@ -151,23 +151,6 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
   
   /**
    **/
-  public TextMessageListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public TextMessageListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -180,6 +163,23 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public TextMessageListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -217,14 +217,14 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
         Objects.equals(this.selfUri, textMessageListing.selfUri) &&
         Objects.equals(this.firstUri, textMessageListing.firstUri) &&
         Objects.equals(this.previousUri, textMessageListing.previousUri) &&
-        Objects.equals(this.nextUri, textMessageListing.nextUri) &&
         Objects.equals(this.lastUri, textMessageListing.lastUri) &&
+        Objects.equals(this.nextUri, textMessageListing.nextUri) &&
         Objects.equals(this.pageCount, textMessageListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, lastUri, nextUri, pageCount);
   }
 
   @Override
@@ -239,8 +239,8 @@ public class TextMessageListing  implements Serializable, PagedResource<MessageD
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

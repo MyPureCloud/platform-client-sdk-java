@@ -35,6 +35,7 @@ title: ChatConversationNotificationParticipants
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
 {: class="table table-striped"}
 
@@ -94,6 +95,16 @@ title: ChatConversationNotificationParticipants
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

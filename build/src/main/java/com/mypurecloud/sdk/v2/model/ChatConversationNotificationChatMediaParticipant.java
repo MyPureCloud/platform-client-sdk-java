@@ -176,6 +176,40 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String roomId = null;
 
   
@@ -640,6 +674,23 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
   
   /**
    **/
+  public ChatConversationNotificationChatMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public ChatConversationNotificationChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -692,12 +743,13 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
         Objects.equals(this.wrapup, chatConversationNotificationChatMediaParticipant.wrapup) &&
         Objects.equals(this.peer, chatConversationNotificationChatMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, chatConversationNotificationChatMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, chatConversationNotificationChatMediaParticipant.flaggedReason) &&
         Objects.equals(this.roomId, chatConversationNotificationChatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, roomId);
   }
 
   @Override
@@ -732,6 +784,7 @@ public class ChatConversationNotificationChatMediaParticipant  implements Serial
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

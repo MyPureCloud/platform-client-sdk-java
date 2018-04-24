@@ -5,13 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DataColumn;
 import com.mypurecloud.sdk.v2.model.TimeZone;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -57,7 +54,6 @@ public class ReportingExportJobRequest  implements Serializable {
   }
   private ExportFormatEnum exportFormat = null;
   private String interval = null;
-  private List<DataColumn> dataColumns = new ArrayList<DataColumn>();
   private String period = null;
 
   /**
@@ -107,6 +103,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private ViewTypeEnum viewType = null;
   private ViewFilter filter = null;
   private Boolean read = null;
+  private String locale = null;
 
   
   /**
@@ -182,24 +179,6 @@ public class ReportingExportJobRequest  implements Serializable {
 
   
   /**
-   * The data columns included in the export
-   **/
-  public ReportingExportJobRequest dataColumns(List<DataColumn> dataColumns) {
-    this.dataColumns = dataColumns;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The data columns included in the export")
-  @JsonProperty("dataColumns")
-  public List<DataColumn> getDataColumns() {
-    return dataColumns;
-  }
-  public void setDataColumns(List<DataColumn> dataColumns) {
-    this.dataColumns = dataColumns;
-  }
-
-  
-  /**
    * The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
    **/
   public ReportingExportJobRequest period(String period) {
@@ -271,6 +250,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
   
+  /**
+   * The locale use for localization of the exported data, i.e. en-us, es-mx  
+   **/
+  public ReportingExportJobRequest locale(String locale) {
+    this.locale = locale;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The locale use for localization of the exported data, i.e. en-us, es-mx  ")
+  @JsonProperty("locale")
+  public String getLocale() {
+    return locale;
+  }
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -285,16 +282,16 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.timeZone, reportingExportJobRequest.timeZone) &&
         Objects.equals(this.exportFormat, reportingExportJobRequest.exportFormat) &&
         Objects.equals(this.interval, reportingExportJobRequest.interval) &&
-        Objects.equals(this.dataColumns, reportingExportJobRequest.dataColumns) &&
         Objects.equals(this.period, reportingExportJobRequest.period) &&
         Objects.equals(this.viewType, reportingExportJobRequest.viewType) &&
         Objects.equals(this.filter, reportingExportJobRequest.filter) &&
-        Objects.equals(this.read, reportingExportJobRequest.read);
+        Objects.equals(this.read, reportingExportJobRequest.read) &&
+        Objects.equals(this.locale, reportingExportJobRequest.locale);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, dataColumns, period, viewType, filter, read);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale);
   }
 
   @Override
@@ -306,11 +303,11 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    exportFormat: ").append(toIndentedString(exportFormat)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
-    sb.append("    dataColumns: ").append(toIndentedString(dataColumns)).append("\n");
     sb.append("    period: ").append(toIndentedString(period)).append("\n");
     sb.append("    viewType: ").append(toIndentedString(viewType)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }

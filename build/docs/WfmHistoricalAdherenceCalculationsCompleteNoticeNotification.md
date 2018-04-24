@@ -21,9 +21,9 @@ title: WfmHistoricalAdherenceCalculationsCompleteNoticeNotification
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| COMPLETE | &quot;COMPLETE&quot; |
-| ERROR | &quot;ERROR&quot; |
-| PROCESSING | &quot;PROCESSING&quot; |
+| PROCESSING | &quot;Processing&quot; |
+| COMPLETE | &quot;Complete&quot; |
+| ERROR | &quot;Error&quot; |
 {: class="table table-striped"}
 
 

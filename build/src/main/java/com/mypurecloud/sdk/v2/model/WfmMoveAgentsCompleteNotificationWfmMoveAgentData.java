@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteNotificationUser;
+import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteNotificationUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Serializable {
   
-  private WfmMoveAgentsCompleteNotificationUser user = null;
+  private WfmMoveAgentsCompleteNotificationUserReference user = null;
 
   /**
    * Gets or Sets result
@@ -60,17 +60,17 @@ public class WfmMoveAgentsCompleteNotificationWfmMoveAgentData  implements Seria
   
   /**
    **/
-  public WfmMoveAgentsCompleteNotificationWfmMoveAgentData user(WfmMoveAgentsCompleteNotificationUser user) {
+  public WfmMoveAgentsCompleteNotificationWfmMoveAgentData user(WfmMoveAgentsCompleteNotificationUserReference user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public WfmMoveAgentsCompleteNotificationUser getUser() {
+  public WfmMoveAgentsCompleteNotificationUserReference getUser() {
     return user;
   }
-  public void setUser(WfmMoveAgentsCompleteNotificationUser user) {
+  public void setUser(WfmMoveAgentsCompleteNotificationUserReference user) {
     this.user = user;
   }
 

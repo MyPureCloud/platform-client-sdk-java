@@ -34,6 +34,7 @@ title: CallbackMediaParticipant
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **outboundPreview** | [**DialerPreview**](DialerPreview.html) | The outbound preview associated with this callback. |  [optional] |
 | **voicemail** | [**Voicemail**](Voicemail.html) | The voicemail associated with this callback. |  [optional] |
 | **callbackNumbers** | **List&lt;String&gt;** | The list of phone number to use for this callback. |  [optional] |
@@ -97,6 +98,16 @@ title: CallbackMediaParticipant
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

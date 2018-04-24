@@ -15,9 +15,10 @@ title: UserScheduleAdherenceUpdateNotification
 | **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum) |  |  [optional] |
 | **actualActivityCategory** | **String** |  |  [optional] |
 | **isOutOfOffice** | **Boolean** |  |  [optional] |
-| **adherenceState** | **String** |  |  [optional] |
+| **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum) |  |  [optional] |
 | **impact** | **String** |  |  [optional] |
-| **adherenceChangeTime** | **String** |  |  [optional] |
+| **adherenceChangeTime** | [**IntradayDataUpdateNotificationStartDate**](IntradayDataUpdateNotificationStartDate.html) |  |  [optional] |
+| **presenceUpdateTime** | [**UserScheduleAdherenceUpdateNotificationDateTime**](UserScheduleAdherenceUpdateNotificationDateTime.html) |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -35,6 +36,20 @@ title: UserScheduleAdherenceUpdateNotification
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
 | COMMUNICATING | &quot;COMMUNICATING&quot; |
 | OFFLINE | &quot;OFFLINE&quot; |
+
+
+<a name="AdherenceStateEnum"></a>
+
+## Enum: AdherenceStateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| INADHERENCE | &quot;InAdherence&quot; |
+| OUTOFADHERENCE | &quot;OutOfAdherence&quot; |
+| UNSCHEDULED | &quot;Unscheduled&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
+| IGNORED | &quot;Ignored&quot; |
 {: class="table table-striped"}
 
 

@@ -13,21 +13,41 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.Integration;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IntegrationConfiguration;
+import com.mypurecloud.sdk.v2.model.IntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.Action;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
+import com.mypurecloud.sdk.v2.model.Credential;
+import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
+import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
+import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.IntegrationType;
+import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
+import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.PublishDraftInput;
 import com.mypurecloud.sdk.v2.model.TestExecutionResult;
 import com.mypurecloud.sdk.v2.model.PostActionInput;
+import com.mypurecloud.sdk.v2.model.CredentialInfo;
+import com.mypurecloud.sdk.v2.model.UserActionCategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteIntegrationsCredentialRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationConfigCurrentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionDraftSchemaRequest;
@@ -38,8 +58,19 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogEventIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionDraftTestRequest;
@@ -47,6 +78,10 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionExecuteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionTestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWorkforcemanagementVendorconnectionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,6 +100,82 @@ public class IntegrationsApiAsync {
 
   public IntegrationsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Integration> deleteIntegrationAsync(DeleteIntegrationRequest request, final AsyncApiCallback<Integration> callback) {
+    try {
+      final SettableFuture<Integration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Integration>> deleteIntegrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Integration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Integration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   
@@ -208,6 +319,310 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteIntegrationsCredentialAsync(DeleteIntegrationsCredentialRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteIntegrationsCredentialAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Integration> getIntegrationAsync(GetIntegrationRequest request, final AsyncApiCallback<Integration> callback) {
+    try {
+      final SettableFuture<Integration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Integration>> getIntegrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Integration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Integration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get integration configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationConfiguration> getIntegrationConfigCurrentAsync(GetIntegrationConfigCurrentRequest request, final AsyncApiCallback<IntegrationConfiguration> callback) {
+    try {
+      final SettableFuture<IntegrationConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationConfiguration>() {}, new AsyncApiCallback<ApiResponse<IntegrationConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get integration configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationConfiguration>> getIntegrationConfigCurrentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationConfiguration>() {}, new AsyncApiCallback<ApiResponse<IntegrationConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationEntityListing> getIntegrationsAsync(GetIntegrationsRequest request, final AsyncApiCallback<IntegrationEntityListing> callback) {
+    try {
+      final SettableFuture<IntegrationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List integrations
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationEntityListing>> getIntegrationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEntityListing> response = (ApiResponse<IntegrationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEntityListing> response = (ApiResponse<IntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -981,6 +1396,766 @@ public class IntegrationsApiAsync {
 
   
   /**
+   * List permitted client app integrations for the logged in user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ClientAppEntityListing> getIntegrationsClientappsAsync(GetIntegrationsClientappsRequest request, final AsyncApiCallback<ClientAppEntityListing> callback) {
+    try {
+      final SettableFuture<ClientAppEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClientAppEntityListing>() {}, new AsyncApiCallback<ApiResponse<ClientAppEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClientAppEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List permitted client app integrations for the logged in user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ClientAppEntityListing>> getIntegrationsClientappsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClientAppEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ClientAppEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ClientAppEntityListing>() {}, new AsyncApiCallback<ApiResponse<ClientAppEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ClientAppEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClientAppEntityListing> response = (ApiResponse<ClientAppEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ClientAppEntityListing> response = (ApiResponse<ClientAppEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a single credential with sensitive fields redacted
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Credential> getIntegrationsCredentialAsync(GetIntegrationsCredentialRequest request, final AsyncApiCallback<Credential> callback) {
+    try {
+      final SettableFuture<Credential> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Credential>() {}, new AsyncApiCallback<ApiResponse<Credential>>() {
+        @Override
+        public void onCompleted(ApiResponse<Credential> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single credential with sensitive fields redacted
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Credential>> getIntegrationsCredentialAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Credential>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Credential>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Credential>() {}, new AsyncApiCallback<ApiResponse<Credential>>() {
+        @Override
+        public void onCompleted(ApiResponse<Credential> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Credential> response = (ApiResponse<Credential>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Credential> response = (ApiResponse<Credential>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List multiple sets of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CredentialInfoListing> getIntegrationsCredentialsAsync(GetIntegrationsCredentialsRequest request, final AsyncApiCallback<CredentialInfoListing> callback) {
+    try {
+      final SettableFuture<CredentialInfoListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialInfoListing>() {}, new AsyncApiCallback<ApiResponse<CredentialInfoListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfoListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List multiple sets of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CredentialInfoListing>> getIntegrationsCredentialsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CredentialInfoListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CredentialInfoListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CredentialInfoListing>() {}, new AsyncApiCallback<ApiResponse<CredentialInfoListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfoListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfoListing> response = (ApiResponse<CredentialInfoListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfoListing> response = (ApiResponse<CredentialInfoListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List all credential types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CredentialTypeListing> getIntegrationsCredentialsTypesAsync(GetIntegrationsCredentialsTypesRequest request, final AsyncApiCallback<CredentialTypeListing> callback) {
+    try {
+      final SettableFuture<CredentialTypeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialTypeListing>() {}, new AsyncApiCallback<ApiResponse<CredentialTypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialTypeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List all credential types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CredentialTypeListing>> getIntegrationsCredentialsTypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CredentialTypeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CredentialTypeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CredentialTypeListing>() {}, new AsyncApiCallback<ApiResponse<CredentialTypeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialTypeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialTypeListing> response = (ApiResponse<CredentialTypeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List all events
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationEventEntityListing> getIntegrationsEventlogAsync(GetIntegrationsEventlogRequest request, final AsyncApiCallback<IntegrationEventEntityListing> callback) {
+    try {
+      final SettableFuture<IntegrationEventEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEventEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List all events
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationEventEntityListing>> getIntegrationsEventlogAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationEventEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationEventEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationEventEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationEventEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEventEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEventEntityListing> response = (ApiResponse<IntegrationEventEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEventEntityListing> response = (ApiResponse<IntegrationEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a single event
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationEvent> getIntegrationsEventlogEventIdAsync(GetIntegrationsEventlogEventIdRequest request, final AsyncApiCallback<IntegrationEvent> callback) {
+    try {
+      final SettableFuture<IntegrationEvent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationEvent>() {}, new AsyncApiCallback<ApiResponse<IntegrationEvent>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEvent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a single event
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationEvent>> getIntegrationsEventlogEventIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationEvent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationEvent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationEvent>() {}, new AsyncApiCallback<ApiResponse<IntegrationEvent>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationEvent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEvent> response = (ApiResponse<IntegrationEvent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationEvent> response = (ApiResponse<IntegrationEvent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get integration type.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationType> getIntegrationsTypeAsync(GetIntegrationsTypeRequest request, final AsyncApiCallback<IntegrationType> callback) {
+    try {
+      final SettableFuture<IntegrationType> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationType>() {}, new AsyncApiCallback<ApiResponse<IntegrationType>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationType> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get integration type.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationType>> getIntegrationsTypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationType>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationType>() {}, new AsyncApiCallback<ApiResponse<IntegrationType>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationType> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationType> response = (ApiResponse<IntegrationType>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationType> response = (ApiResponse<IntegrationType>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get properties config schema for an integration type.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSchemaDocument> getIntegrationsTypeConfigschemaAsync(GetIntegrationsTypeConfigschemaRequest request, final AsyncApiCallback<JsonSchemaDocument> callback) {
+    try {
+      final SettableFuture<JsonSchemaDocument> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get properties config schema for an integration type.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSchemaDocument>> getIntegrationsTypeConfigschemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<JsonSchemaDocument>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSchemaDocument>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSchemaDocument>() {}, new AsyncApiCallback<ApiResponse<JsonSchemaDocument>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSchemaDocument> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSchemaDocument> response = (ApiResponse<JsonSchemaDocument>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List integration types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationTypeEntityListing> getIntegrationsTypesAsync(GetIntegrationsTypesRequest request, final AsyncApiCallback<IntegrationTypeEntityListing> callback) {
+    try {
+      final SettableFuture<IntegrationTypeEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationTypeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationTypeEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List integration types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationTypeEntityListing>> getIntegrationsTypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IntegrationTypeEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationTypeEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationTypeEntityListing>() {}, new AsyncApiCallback<ApiResponse<IntegrationTypeEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationTypeEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update an integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Integration> patchIntegrationAsync(PatchIntegrationRequest request, final AsyncApiCallback<Integration> callback) {
+    try {
+      final SettableFuture<Integration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Integration>> patchIntegrationAsync(ApiRequest<Integration> request, final AsyncApiCallback<ApiResponse<Integration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Integration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Patch an Action
    * 
    * @param request the request object
@@ -1120,6 +2295,82 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Action> response = (ApiResponse<Action>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create an integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Integration> postIntegrationsAsync(PostIntegrationsRequest request, final AsyncApiCallback<Integration> callback) {
+    try {
+      final SettableFuture<Integration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an integration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Integration>> postIntegrationsAsync(ApiRequest<CreateIntegrationRequest> request, final AsyncApiCallback<ApiResponse<Integration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Integration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Integration>() {}, new AsyncApiCallback<ApiResponse<Integration>>() {
+        @Override
+        public void onCompleted(ApiResponse<Integration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Integration> response = (ApiResponse<Integration>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1652,6 +2903,310 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Action> response = (ApiResponse<Action>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CredentialInfo> postIntegrationsCredentialsAsync(PostIntegrationsCredentialsRequest request, final AsyncApiCallback<CredentialInfo> callback) {
+    try {
+      final SettableFuture<CredentialInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialInfo>() {}, new AsyncApiCallback<ApiResponse<CredentialInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CredentialInfo>> postIntegrationsCredentialsAsync(ApiRequest<Credential> request, final AsyncApiCallback<ApiResponse<CredentialInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CredentialInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CredentialInfo>() {}, new AsyncApiCallback<ApiResponse<CredentialInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Add a vendor connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserActionCategoryEntityListing> postIntegrationsWorkforcemanagementVendorconnectionAsync(PostIntegrationsWorkforcemanagementVendorconnectionRequest request, final AsyncApiCallback<UserActionCategoryEntityListing> callback) {
+    try {
+      final SettableFuture<UserActionCategoryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserActionCategoryEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserActionCategoryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserActionCategoryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a vendor connection
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserActionCategoryEntityListing>> postIntegrationsWorkforcemanagementVendorconnectionAsync(ApiRequest<VendorConnectionRequest> request, final AsyncApiCallback<ApiResponse<UserActionCategoryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserActionCategoryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserActionCategoryEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserActionCategoryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserActionCategoryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserActionCategoryEntityListing> response = (ApiResponse<UserActionCategoryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserActionCategoryEntityListing> response = (ApiResponse<UserActionCategoryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update integration configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IntegrationConfiguration> putIntegrationConfigCurrentAsync(PutIntegrationConfigCurrentRequest request, final AsyncApiCallback<IntegrationConfiguration> callback) {
+    try {
+      final SettableFuture<IntegrationConfiguration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IntegrationConfiguration>() {}, new AsyncApiCallback<ApiResponse<IntegrationConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationConfiguration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update integration configuration.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IntegrationConfiguration>> putIntegrationConfigCurrentAsync(ApiRequest<IntegrationConfiguration> request, final AsyncApiCallback<ApiResponse<IntegrationConfiguration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IntegrationConfiguration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IntegrationConfiguration>() {}, new AsyncApiCallback<ApiResponse<IntegrationConfiguration>>() {
+        @Override
+        public void onCompleted(ApiResponse<IntegrationConfiguration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CredentialInfo> putIntegrationsCredentialAsync(PutIntegrationsCredentialRequest request, final AsyncApiCallback<CredentialInfo> callback) {
+    try {
+      final SettableFuture<CredentialInfo> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CredentialInfo>() {}, new AsyncApiCallback<ApiResponse<CredentialInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfo> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a set of credentials
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CredentialInfo>> putIntegrationsCredentialAsync(ApiRequest<Credential> request, final AsyncApiCallback<ApiResponse<CredentialInfo>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CredentialInfo>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CredentialInfo>() {}, new AsyncApiCallback<ApiResponse<CredentialInfo>>() {
+        @Override
+        public void onCompleted(ApiResponse<CredentialInfo> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

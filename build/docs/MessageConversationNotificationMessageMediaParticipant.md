@@ -35,6 +35,7 @@ title: MessageConversationNotificationMessageMediaParticipant
 | **wrapup** | [**ConversationNotificationWrapup**](ConversationNotificationWrapup.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
 | **messages** | [**List&lt;MessageConversationNotificationMessages&gt;**](MessageConversationNotificationMessages.html) |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **recipientCountry** | **String** |  |  [optional] |
@@ -97,6 +98,16 @@ title: MessageConversationNotificationMessageMediaParticipant
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 
 
 <a name="TypeEnum"></a>

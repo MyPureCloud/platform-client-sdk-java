@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.PagedResource;
-import com.mypurecloud.sdk.v2.model.TimeZone;
+import com.mypurecloud.sdk.v2.model.RegionTimeZone;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -16,33 +16,33 @@ import java.io.Serializable;
  * TimeZoneEntityListing
  */
 
-public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZone> {
+public class TimeZoneEntityListing  implements Serializable, PagedResource<RegionTimeZone> {
   
-  private List<TimeZone> entities = new ArrayList<TimeZone>();
+  private List<RegionTimeZone> entities = new ArrayList<RegionTimeZone>();
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
   private String previousUri = null;
-  private String nextUri = null;
   private String lastUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   
   /**
    **/
-  public TimeZoneEntityListing entities(List<TimeZone> entities) {
+  public TimeZoneEntityListing entities(List<RegionTimeZone> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<TimeZone> getEntities() {
+  public List<RegionTimeZone> getEntities() {
     return entities;
   }
-  public void setEntities(List<TimeZone> entities) {
+  public void setEntities(List<RegionTimeZone> entities) {
     this.entities = entities;
   }
 
@@ -151,23 +151,6 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
   
   /**
    **/
-  public TimeZoneEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public TimeZoneEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -180,6 +163,23 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public TimeZoneEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -217,14 +217,14 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
         Objects.equals(this.selfUri, timeZoneEntityListing.selfUri) &&
         Objects.equals(this.firstUri, timeZoneEntityListing.firstUri) &&
         Objects.equals(this.previousUri, timeZoneEntityListing.previousUri) &&
-        Objects.equals(this.nextUri, timeZoneEntityListing.nextUri) &&
         Objects.equals(this.lastUri, timeZoneEntityListing.lastUri) &&
+        Objects.equals(this.nextUri, timeZoneEntityListing.nextUri) &&
         Objects.equals(this.pageCount, timeZoneEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, lastUri, nextUri, pageCount);
   }
 
   @Override
@@ -239,8 +239,8 @@ public class TimeZoneEntityListing  implements Serializable, PagedResource<TimeZ
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

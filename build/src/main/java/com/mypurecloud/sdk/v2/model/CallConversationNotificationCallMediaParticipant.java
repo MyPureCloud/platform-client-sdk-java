@@ -177,6 +177,40 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -686,6 +720,23 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
   
   /**
    **/
+  public CallConversationNotificationCallMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public CallConversationNotificationCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -908,6 +959,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
         Objects.equals(this.wrapup, callConversationNotificationCallMediaParticipant.wrapup) &&
         Objects.equals(this.peer, callConversationNotificationCallMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, callConversationNotificationCallMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, callConversationNotificationCallMediaParticipant.flaggedReason) &&
         Objects.equals(this.muted, callConversationNotificationCallMediaParticipant.muted) &&
         Objects.equals(this.confined, callConversationNotificationCallMediaParticipant.confined) &&
         Objects.equals(this.recording, callConversationNotificationCallMediaParticipant.recording) &&
@@ -923,7 +975,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -958,6 +1010,7 @@ public class CallConversationNotificationCallMediaParticipant  implements Serial
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

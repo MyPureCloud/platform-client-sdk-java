@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -263,7 +264,8 @@ public class UserScheduleAdherence  implements Serializable {
     }
   }
   private ImpactEnum impact = null;
-  private String timeOfAdherenceChange = null;
+  private Date timeOfAdherenceChange = null;
+  private Date presenceUpdateTime = null;
   private String selfUri = null;
 
   
@@ -385,8 +387,15 @@ public class UserScheduleAdherence  implements Serializable {
   
   @ApiModelProperty(example = "null", value = "Time when the user entered the current adherenceState in ISO-8601 format")
   @JsonProperty("timeOfAdherenceChange")
-  public String getTimeOfAdherenceChange() {
+  public Date getTimeOfAdherenceChange() {
     return timeOfAdherenceChange;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("presenceUpdateTime")
+  public Date getPresenceUpdateTime() {
+    return presenceUpdateTime;
   }
 
   
@@ -420,12 +429,13 @@ public class UserScheduleAdherence  implements Serializable {
         Objects.equals(this.adherenceState, userScheduleAdherence.adherenceState) &&
         Objects.equals(this.impact, userScheduleAdherence.impact) &&
         Objects.equals(this.timeOfAdherenceChange, userScheduleAdherence.timeOfAdherenceChange) &&
+        Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
         Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, selfUri);
+    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, selfUri);
   }
 
   @Override
@@ -446,6 +456,7 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    adherenceState: ").append(toIndentedString(adherenceState)).append("\n");
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    timeOfAdherenceChange: ").append(toIndentedString(timeOfAdherenceChange)).append("\n");
+    sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

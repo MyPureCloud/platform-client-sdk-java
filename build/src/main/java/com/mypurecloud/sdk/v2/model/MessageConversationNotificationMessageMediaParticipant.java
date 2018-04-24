@@ -178,6 +178,40 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private List<MessageConversationNotificationMessages> messages = new ArrayList<MessageConversationNotificationMessages>();
 
   /**
@@ -683,6 +717,23 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
   
   /**
    **/
+  public MessageConversationNotificationMessageMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public MessageConversationNotificationMessageMediaParticipant messages(List<MessageConversationNotificationMessages> messages) {
     this.messages = messages;
     return this;
@@ -786,6 +837,7 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
         Objects.equals(this.wrapup, messageConversationNotificationMessageMediaParticipant.wrapup) &&
         Objects.equals(this.peer, messageConversationNotificationMessageMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, messageConversationNotificationMessageMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, messageConversationNotificationMessageMediaParticipant.flaggedReason) &&
         Objects.equals(this.messages, messageConversationNotificationMessageMediaParticipant.messages) &&
         Objects.equals(this.type, messageConversationNotificationMessageMediaParticipant.type) &&
         Objects.equals(this.recipientCountry, messageConversationNotificationMessageMediaParticipant.recipientCountry) &&
@@ -794,7 +846,7 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -829,6 +881,7 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

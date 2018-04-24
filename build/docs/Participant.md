@@ -46,6 +46,7 @@ title: Participant
 | **videos** | [**List&lt;Video&gt;**](Video.html) |  |  [optional] |
 | **evaluations** | [**List&lt;Evaluation&gt;**](Evaluation.html) |  |  [optional] |
 | **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum) | The current screen recording state for this participant. |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -75,6 +76,16 @@ title: Participant
 | STOPPED | &quot;stopped&quot; |
 | ERROR | &quot;error&quot; |
 | TIMEOUT | &quot;timeout&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

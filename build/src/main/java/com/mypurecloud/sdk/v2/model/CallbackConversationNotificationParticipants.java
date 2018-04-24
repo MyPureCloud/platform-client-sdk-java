@@ -179,6 +179,40 @@ public class CallbackConversationNotificationParticipants  implements Serializab
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private ConversationNotificationDialerPreview outboundPreview = null;
   private ConversationNotificationVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -650,6 +684,23 @@ public class CallbackConversationNotificationParticipants  implements Serializab
   
   /**
    **/
+  public CallbackConversationNotificationParticipants flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public CallbackConversationNotificationParticipants outboundPreview(ConversationNotificationDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -821,6 +872,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
         Objects.equals(this.wrapup, callbackConversationNotificationParticipants.wrapup) &&
         Objects.equals(this.peer, callbackConversationNotificationParticipants.peer) &&
         Objects.equals(this.screenRecordingState, callbackConversationNotificationParticipants.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, callbackConversationNotificationParticipants.flaggedReason) &&
         Objects.equals(this.outboundPreview, callbackConversationNotificationParticipants.outboundPreview) &&
         Objects.equals(this.voicemail, callbackConversationNotificationParticipants.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackConversationNotificationParticipants.callbackNumbers) &&
@@ -833,7 +885,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -868,6 +920,7 @@ public class CallbackConversationNotificationParticipants  implements Serializab
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

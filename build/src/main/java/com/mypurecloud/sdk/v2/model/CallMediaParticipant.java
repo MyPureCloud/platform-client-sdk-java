@@ -172,6 +172,40 @@ public class CallMediaParticipant  implements Serializable {
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
+
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -690,6 +724,24 @@ public class CallMediaParticipant  implements Serializable {
 
   
   /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public CallMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
    * Value is true when the call is muted.
    **/
   public CallMediaParticipant muted(Boolean muted) {
@@ -941,6 +993,7 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.externalOrganization, callMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, callMediaParticipant.wrapup) &&
         Objects.equals(this.peer, callMediaParticipant.peer) &&
+        Objects.equals(this.flaggedReason, callMediaParticipant.flaggedReason) &&
         Objects.equals(this.muted, callMediaParticipant.muted) &&
         Objects.equals(this.confined, callMediaParticipant.confined) &&
         Objects.equals(this.recording, callMediaParticipant.recording) &&
@@ -957,7 +1010,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
   }
 
   @Override
@@ -991,6 +1044,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

@@ -8,7 +8,7 @@ title: WfmMoveAgentsCompleteNotificationResults
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | [**WfmMoveAgentsCompleteNotificationUser**](WfmMoveAgentsCompleteNotificationUser.html) |  |  [optional] |
+| **user** | [**WfmMoveAgentsCompleteNotificationUserReference**](WfmMoveAgentsCompleteNotificationUserReference.html) |  |  [optional] |
 | **result** | [**ResultEnum**](#ResultEnum) |  |  [optional] |
 {: class="table table-striped"}
 

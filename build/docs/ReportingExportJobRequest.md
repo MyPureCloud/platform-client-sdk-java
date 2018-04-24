@@ -12,11 +12,11 @@ title: ReportingExportJobRequest
 | **timeZone** | [**TimeZone**](TimeZone.html) | The requested timezone of the exported data |  |
 | **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum) | The requested format of the exported data |  |
 | **interval** | **String** | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
-| **dataColumns** | [**List&lt;DataColumn&gt;**](DataColumn.html) | The data columns included in the export |  |
 | **period** | **String** | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  [optional] |
 | **viewType** | [**ViewTypeEnum**](#ViewTypeEnum) | The type of view export job to be created |  |
 | **filter** | [**ViewFilter**](ViewFilter.html) | Filters to apply to create the view |  |
 | **read** | **Boolean** | Indicates if the request has been marked as read |  [optional] |
+| **locale** | **String** | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
 {: class="table table-striped"}
 
 

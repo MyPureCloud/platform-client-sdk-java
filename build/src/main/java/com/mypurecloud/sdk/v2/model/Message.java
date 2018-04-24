@@ -157,7 +157,10 @@ public class Message  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("sms");
+    SMS("sms"),
+    TWITTER("twitter"),
+    FACEBOOK("facebook"),
+    LINE("line");
 
     private String value;
 

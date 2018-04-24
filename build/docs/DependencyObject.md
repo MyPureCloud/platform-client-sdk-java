@@ -49,6 +49,7 @@ title: DependencyObject
 | LEXBOTALIAS | &quot;LEXBOTALIAS&quot; |
 | OUTBOUNDCALLFLOW | &quot;OUTBOUNDCALLFLOW&quot; |
 | QUEUE | &quot;QUEUE&quot; |
+| RECORDINGPOLICY | &quot;RECORDINGPOLICY&quot; |
 | RESPONSE | &quot;RESPONSE&quot; |
 | SCHEDULE | &quot;SCHEDULE&quot; |
 | SCHEDULEGROUP | &quot;SCHEDULEGROUP&quot; |

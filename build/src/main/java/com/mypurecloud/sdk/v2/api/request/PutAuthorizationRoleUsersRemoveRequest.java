@@ -27,7 +27,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
-import com.mypurecloud.sdk.v2.model.AuthzTypedObject;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 

@@ -144,6 +144,40 @@ public class Participant  implements Serializable {
   }
   private ScreenRecordingStateEnum screenRecordingState = null;
 
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
+
   
   /**
    * A globally unique identifier for this conversation.
@@ -819,6 +853,24 @@ public class Participant  implements Serializable {
   }
 
   
+  /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public Participant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -866,12 +918,13 @@ public class Participant  implements Serializable {
         Objects.equals(this.socialExpressions, participant.socialExpressions) &&
         Objects.equals(this.videos, participant.videos) &&
         Objects.equals(this.evaluations, participant.evaluations) &&
-        Objects.equals(this.screenRecordingState, participant.screenRecordingState);
+        Objects.equals(this.screenRecordingState, participant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, participant.flaggedReason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
   }
 
   @Override
@@ -917,6 +970,7 @@ public class Participant  implements Serializable {
     sb.append("    videos: ").append(toIndentedString(videos)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -6,6 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
+import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationStartDate;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceUpdateNotificationDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -62,9 +64,47 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
   private RoutingStatusEnum routingStatus = null;
   private String actualActivityCategory = null;
   private Boolean isOutOfOffice = null;
-  private String adherenceState = null;
+
+  /**
+   * Gets or Sets adherenceState
+   */
+  public enum AdherenceStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INADHERENCE("InAdherence"),
+    OUTOFADHERENCE("OutOfAdherence"),
+    UNSCHEDULED("Unscheduled"),
+    UNKNOWN("Unknown"),
+    IGNORED("Ignored");
+
+    private String value;
+
+    AdherenceStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AdherenceStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AdherenceStateEnum value : AdherenceStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AdherenceStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AdherenceStateEnum adherenceState = null;
   private String impact = null;
-  private String adherenceChangeTime = null;
+  private IntradayDataUpdateNotificationStartDate adherenceChangeTime = null;
+  private UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime = null;
 
   
   /**
@@ -188,17 +228,17 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotification adherenceState(String adherenceState) {
+  public UserScheduleAdherenceUpdateNotification adherenceState(AdherenceStateEnum adherenceState) {
     this.adherenceState = adherenceState;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("adherenceState")
-  public String getAdherenceState() {
+  public AdherenceStateEnum getAdherenceState() {
     return adherenceState;
   }
-  public void setAdherenceState(String adherenceState) {
+  public void setAdherenceState(AdherenceStateEnum adherenceState) {
     this.adherenceState = adherenceState;
   }
 
@@ -222,18 +262,35 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotification adherenceChangeTime(String adherenceChangeTime) {
+  public UserScheduleAdherenceUpdateNotification adherenceChangeTime(IntradayDataUpdateNotificationStartDate adherenceChangeTime) {
     this.adherenceChangeTime = adherenceChangeTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("adherenceChangeTime")
-  public String getAdherenceChangeTime() {
+  public IntradayDataUpdateNotificationStartDate getAdherenceChangeTime() {
     return adherenceChangeTime;
   }
-  public void setAdherenceChangeTime(String adherenceChangeTime) {
+  public void setAdherenceChangeTime(IntradayDataUpdateNotificationStartDate adherenceChangeTime) {
     this.adherenceChangeTime = adherenceChangeTime;
+  }
+
+  
+  /**
+   **/
+  public UserScheduleAdherenceUpdateNotification presenceUpdateTime(UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime) {
+    this.presenceUpdateTime = presenceUpdateTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("presenceUpdateTime")
+  public UserScheduleAdherenceUpdateNotificationDateTime getPresenceUpdateTime() {
+    return presenceUpdateTime;
+  }
+  public void setPresenceUpdateTime(UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime) {
+    this.presenceUpdateTime = presenceUpdateTime;
   }
 
   
@@ -256,12 +313,13 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
         Objects.equals(this.isOutOfOffice, userScheduleAdherenceUpdateNotification.isOutOfOffice) &&
         Objects.equals(this.adherenceState, userScheduleAdherenceUpdateNotification.adherenceState) &&
         Objects.equals(this.impact, userScheduleAdherenceUpdateNotification.impact) &&
-        Objects.equals(this.adherenceChangeTime, userScheduleAdherenceUpdateNotification.adherenceChangeTime);
+        Objects.equals(this.adherenceChangeTime, userScheduleAdherenceUpdateNotification.adherenceChangeTime) &&
+        Objects.equals(this.presenceUpdateTime, userScheduleAdherenceUpdateNotification.presenceUpdateTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime);
+    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime);
   }
 
   @Override
@@ -279,6 +337,7 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
     sb.append("    adherenceState: ").append(toIndentedString(adherenceState)).append("\n");
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    adherenceChangeTime: ").append(toIndentedString(adherenceChangeTime)).append("\n");
+    sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

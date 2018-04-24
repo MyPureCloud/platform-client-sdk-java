@@ -87,6 +87,9 @@ title: Message
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;sms&quot; |
+| TWITTER | &quot;twitter&quot; |
+| FACEBOOK | &quot;facebook&quot; |
+| LINE | &quot;line&quot; |
 {: class="table table-striped"}
 
 

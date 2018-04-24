@@ -29,11 +29,11 @@ public class IntradayDataUpdateNotificationIntradayDataGroup  implements Seriali
    */
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    VOICE("VOICE"),
-    CHAT("CHAT"),
-    EMAIL("EMAIL"),
-    CALLBACK("CALLBACK"),
-    MESSAGE("MESSAGE");
+    VOICE("Voice"),
+    CHAT("Chat"),
+    EMAIL("Email"),
+    CALLBACK("Callback"),
+    MESSAGE("Message");
 
     private String value;
 

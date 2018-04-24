@@ -34,6 +34,7 @@ title: CallMediaParticipant
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **muted** | **Boolean** | Value is true when the call is muted. |  [optional] |
 | **confined** | **Boolean** | Value is true when the call is confined. |  [optional] |
 | **recording** | **Boolean** | Value is true when the call is being recorded. |  [optional] |
@@ -101,6 +102,16 @@ title: CallMediaParticipant
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 
 
 <a name="RecordingStateEnum"></a>

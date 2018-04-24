@@ -23,9 +23,9 @@ public class WfmHistoricalAdherenceCalculationsCompleteNoticeNotification  imple
    */
   public enum QueryStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    COMPLETE("COMPLETE"),
-    ERROR("ERROR"),
-    PROCESSING("PROCESSING");
+    PROCESSING("Processing"),
+    COMPLETE("Complete"),
+    ERROR("Error");
 
     private String value;
 

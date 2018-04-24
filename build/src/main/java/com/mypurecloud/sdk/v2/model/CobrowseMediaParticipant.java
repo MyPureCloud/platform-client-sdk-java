@@ -172,6 +172,40 @@ public class CobrowseMediaParticipant  implements Serializable {
   private UriReference externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
+
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private List<String> controlling = new ArrayList<String>();
@@ -648,6 +682,24 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   
   /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public CobrowseMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
    * The co-browse session ID.
    **/
   public CobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -773,6 +825,7 @@ public class CobrowseMediaParticipant  implements Serializable {
         Objects.equals(this.externalOrganization, cobrowseMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, cobrowseMediaParticipant.wrapup) &&
         Objects.equals(this.peer, cobrowseMediaParticipant.peer) &&
+        Objects.equals(this.flaggedReason, cobrowseMediaParticipant.flaggedReason) &&
         Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
@@ -782,7 +835,7 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
   }
 
   @Override
@@ -816,6 +869,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");

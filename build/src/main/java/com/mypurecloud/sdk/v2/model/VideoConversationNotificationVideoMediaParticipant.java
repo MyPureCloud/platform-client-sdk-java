@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.VideoConversationNotificationErrorInfo;
 import com.mypurecloud.sdk.v2.model.VideoConversationNotificationUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -176,11 +177,46 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   private ConversationNotificationWrapup wrapup = null;
   private String peer = null;
   private String screenRecordingState = null;
+
+  /**
+   * Gets or Sets flaggedReason
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
   private Integer peerCount = null;
   private String context = null;
+  private List<String> msids = new ArrayList<String>();
 
   
   /**
@@ -644,6 +680,23 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   
   /**
    **/
+  public VideoConversationNotificationVideoMediaParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
+  /**
+   **/
   public VideoConversationNotificationVideoMediaParticipant audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -727,6 +780,23 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   }
 
   
+  /**
+   **/
+  public VideoConversationNotificationVideoMediaParticipant msids(List<String> msids) {
+    this.msids = msids;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("msids")
+  public List<String> getMsids() {
+    return msids;
+  }
+  public void setMsids(List<String> msids) {
+    this.msids = msids;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -764,16 +834,18 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
         Objects.equals(this.wrapup, videoConversationNotificationVideoMediaParticipant.wrapup) &&
         Objects.equals(this.peer, videoConversationNotificationVideoMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, videoConversationNotificationVideoMediaParticipant.screenRecordingState) &&
+        Objects.equals(this.flaggedReason, videoConversationNotificationVideoMediaParticipant.flaggedReason) &&
         Objects.equals(this.audioMuted, videoConversationNotificationVideoMediaParticipant.audioMuted) &&
         Objects.equals(this.videoMuted, videoConversationNotificationVideoMediaParticipant.videoMuted) &&
         Objects.equals(this.sharingScreen, videoConversationNotificationVideoMediaParticipant.sharingScreen) &&
         Objects.equals(this.peerCount, videoConversationNotificationVideoMediaParticipant.peerCount) &&
-        Objects.equals(this.context, videoConversationNotificationVideoMediaParticipant.context);
+        Objects.equals(this.context, videoConversationNotificationVideoMediaParticipant.context) &&
+        Objects.equals(this.msids, videoConversationNotificationVideoMediaParticipant.msids);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, audioMuted, videoMuted, sharingScreen, peerCount, context);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -808,11 +880,13 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("}");
     return sb.toString();
   }

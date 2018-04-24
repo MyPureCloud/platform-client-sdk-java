@@ -5,14 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.DataColumn;
 import com.mypurecloud.sdk.v2.model.TimeZone;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -96,7 +93,6 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   private ExportFormatEnum exportFormat = null;
   private String interval = null;
-  private List<DataColumn> dataColumns = new ArrayList<DataColumn>();
   private String downloadUrl = null;
 
   /**
@@ -191,6 +187,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private Boolean read = null;
   private Date createdDateTime = null;
   private Date modifiedDateTime = null;
+  private String locale = null;
   private String selfUri = null;
 
   
@@ -287,24 +284,6 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   public void setInterval(String interval) {
     this.interval = interval;
-  }
-
-  
-  /**
-   * The data columns included in the export
-   **/
-  public ReportingExportJobResponse dataColumns(List<DataColumn> dataColumns) {
-    this.dataColumns = dataColumns;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The data columns included in the export")
-  @JsonProperty("dataColumns")
-  public List<DataColumn> getDataColumns() {
-    return dataColumns;
-  }
-  public void setDataColumns(List<DataColumn> dataColumns) {
-    this.dataColumns = dataColumns;
   }
 
   
@@ -452,6 +431,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * The locale use for localization of the exported data, i.e. en-us, es-mx  
+   **/
+  public ReportingExportJobResponse locale(String locale) {
+    this.locale = locale;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The locale use for localization of the exported data, i.e. en-us, es-mx  ")
+  @JsonProperty("locale")
+  public String getLocale() {
+    return locale;
+  }
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -475,7 +472,6 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.timeZone, reportingExportJobResponse.timeZone) &&
         Objects.equals(this.exportFormat, reportingExportJobResponse.exportFormat) &&
         Objects.equals(this.interval, reportingExportJobResponse.interval) &&
-        Objects.equals(this.dataColumns, reportingExportJobResponse.dataColumns) &&
         Objects.equals(this.downloadUrl, reportingExportJobResponse.downloadUrl) &&
         Objects.equals(this.viewType, reportingExportJobResponse.viewType) &&
         Objects.equals(this.exportErrorMessagesType, reportingExportJobResponse.exportErrorMessagesType) &&
@@ -484,12 +480,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.read, reportingExportJobResponse.read) &&
         Objects.equals(this.createdDateTime, reportingExportJobResponse.createdDateTime) &&
         Objects.equals(this.modifiedDateTime, reportingExportJobResponse.modifiedDateTime) &&
+        Objects.equals(this.locale, reportingExportJobResponse.locale) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, dataColumns, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, selfUri);
   }
 
   @Override
@@ -503,7 +500,6 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    exportFormat: ").append(toIndentedString(exportFormat)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
-    sb.append("    dataColumns: ").append(toIndentedString(dataColumns)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("    viewType: ").append(toIndentedString(viewType)).append("\n");
     sb.append("    exportErrorMessagesType: ").append(toIndentedString(exportErrorMessagesType)).append("\n");
@@ -512,6 +508,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
