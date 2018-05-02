@@ -103,7 +103,7 @@ public class ViewFilter  implements Serializable {
   private List<String> outboundContactListIds = new ArrayList<String>();
   private List<String> contactIds = new ArrayList<String>();
   private List<String> aniList = new ArrayList<String>();
-  private NumericRange durationMilliseconds = null;
+  private List<NumericRange> durationsMilliseconds = new ArrayList<NumericRange>();
   private NumericRange evaluationScore = null;
   private NumericRange evaluationCriticalScore = null;
   private List<String> evaluationFormIds = new ArrayList<String>();
@@ -366,20 +366,20 @@ public class ViewFilter  implements Serializable {
 
   
   /**
-   * The duration is used to filter the view
+   * The durations in milliseconds used to filter the view
    **/
-  public ViewFilter durationMilliseconds(NumericRange durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
+  public ViewFilter durationsMilliseconds(List<NumericRange> durationsMilliseconds) {
+    this.durationsMilliseconds = durationsMilliseconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The duration is used to filter the view")
-  @JsonProperty("durationMilliseconds")
-  public NumericRange getDurationMilliseconds() {
-    return durationMilliseconds;
+  @ApiModelProperty(example = "null", value = "The durations in milliseconds used to filter the view")
+  @JsonProperty("durationsMilliseconds")
+  public List<NumericRange> getDurationsMilliseconds() {
+    return durationsMilliseconds;
   }
-  public void setDurationMilliseconds(NumericRange durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
+  public void setDurationsMilliseconds(List<NumericRange> durationsMilliseconds) {
+    this.durationsMilliseconds = durationsMilliseconds;
   }
 
   
@@ -533,7 +533,7 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.outboundContactListIds, viewFilter.outboundContactListIds) &&
         Objects.equals(this.contactIds, viewFilter.contactIds) &&
         Objects.equals(this.aniList, viewFilter.aniList) &&
-        Objects.equals(this.durationMilliseconds, viewFilter.durationMilliseconds) &&
+        Objects.equals(this.durationsMilliseconds, viewFilter.durationsMilliseconds) &&
         Objects.equals(this.evaluationScore, viewFilter.evaluationScore) &&
         Objects.equals(this.evaluationCriticalScore, viewFilter.evaluationCriticalScore) &&
         Objects.equals(this.evaluationFormIds, viewFilter.evaluationFormIds) &&
@@ -545,7 +545,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, languageIds, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned);
+    return Objects.hash(mediaTypes, queueIds, skillIds, languageIds, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned);
   }
 
   @Override
@@ -567,7 +567,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    outboundContactListIds: ").append(toIndentedString(outboundContactListIds)).append("\n");
     sb.append("    contactIds: ").append(toIndentedString(contactIds)).append("\n");
     sb.append("    aniList: ").append(toIndentedString(aniList)).append("\n");
-    sb.append("    durationMilliseconds: ").append(toIndentedString(durationMilliseconds)).append("\n");
+    sb.append("    durationsMilliseconds: ").append(toIndentedString(durationsMilliseconds)).append("\n");
     sb.append("    evaluationScore: ").append(toIndentedString(evaluationScore)).append("\n");
     sb.append("    evaluationCriticalScore: ").append(toIndentedString(evaluationCriticalScore)).append("\n");
     sb.append("    evaluationFormIds: ").append(toIndentedString(evaluationFormIds)).append("\n");

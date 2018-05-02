@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.Entity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -72,16 +73,16 @@ public class PostRoutingQueueUsersRequest {
 	    return this;
 	} 
 	
-	private List<QueueMember> body;
-	public List<QueueMember> getBody() {
+	private List<Entity> body;
+	public List<Entity> getBody() {
 		return this.body;
 	}
 
-	public void setBody(List<QueueMember> body) {
+	public void setBody(List<Entity> body) {
 		this.body = body;
 	}
 
-	public PostRoutingQueueUsersRequest withBody(List<QueueMember> body) {
+	public PostRoutingQueueUsersRequest withBody(List<Entity> body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -119,7 +120,7 @@ public class PostRoutingQueueUsersRequest {
         return this;
     }
 
-    public ApiRequest<List<QueueMember>> withHttpInfo() {
+    public ApiRequest<List<Entity>> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
@@ -151,7 +152,7 @@ public class PostRoutingQueueUsersRequest {
 	}
 
 	
-	public static Builder builder(String queueId, List<QueueMember> body) {
+	public static Builder builder(String queueId, List<Entity> body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
@@ -170,7 +171,7 @@ public class PostRoutingQueueUsersRequest {
 			return this;
 		}
 		
-		public Builder withBody(List<QueueMember> body) {
+		public Builder withBody(List<Entity> body) {
 			request.setBody(body);
 			return this;
 		}
@@ -182,7 +183,7 @@ public class PostRoutingQueueUsersRequest {
 		
 
 		
-		public Builder withRequiredParams(String queueId, List<QueueMember> body) {
+		public Builder withRequiredParams(String queueId, List<Entity> body) {
 			request.setQueueId(queueId);
 						request.setBody(body);
 			

@@ -14,44 +14,10 @@ import java.io.Serializable;
 
 public class TimeZone  implements Serializable {
   
-  private String displayName = null;
-  private String id = null;
   private Integer dstsavings = null;
   private Integer rawOffset = null;
-
-  
-  /**
-   **/
-  public TimeZone displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
-
-  
-  /**
-   **/
-  public TimeZone id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
+  private String id = null;
+  private String displayName = null;
 
   
   /**
@@ -88,6 +54,40 @@ public class TimeZone  implements Serializable {
   }
 
   
+  /**
+   **/
+  public TimeZone id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   **/
+  public TimeZone displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
+  }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -98,15 +98,15 @@ public class TimeZone  implements Serializable {
       return false;
     }
     TimeZone timeZone = (TimeZone) o;
-    return Objects.equals(this.displayName, timeZone.displayName) &&
+    return Objects.equals(this.dstsavings, timeZone.dstsavings) &&
+        Objects.equals(this.rawOffset, timeZone.rawOffset) &&
         Objects.equals(this.id, timeZone.id) &&
-        Objects.equals(this.dstsavings, timeZone.dstsavings) &&
-        Objects.equals(this.rawOffset, timeZone.rawOffset);
+        Objects.equals(this.displayName, timeZone.displayName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, id, dstsavings, rawOffset);
+    return Objects.hash(dstsavings, rawOffset, id, displayName);
   }
 
   @Override
@@ -114,10 +114,10 @@ public class TimeZone  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeZone {\n");
     
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    dstsavings: ").append(toIndentedString(dstsavings)).append("\n");
     sb.append("    rawOffset: ").append(toIndentedString(rawOffset)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

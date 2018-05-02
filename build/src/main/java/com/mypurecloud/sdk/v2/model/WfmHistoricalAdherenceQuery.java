@@ -44,14 +44,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * End of the date range to query in ISO-8601 format
+   * End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time
    **/
   public WfmHistoricalAdherenceQuery endDate(Date endDate) {
     this.endDate = endDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "End of the date range to query in ISO-8601 format")
+  @ApiModelProperty(example = "null", value = "End of the date range to query in ISO-8601 format. If it is not set, end date will be set to current time")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;
@@ -62,14 +62,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The time zone to use for returned results in olson format (See https://www.ibm.com/developerworks/aix/library/au-aix-posix/)
+   * The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
    **/
   public WfmHistoricalAdherenceQuery timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time zone to use for returned results in olson format (See https://www.ibm.com/developerworks/aix/library/au-aix-posix/)")
+  @ApiModelProperty(example = "null", value = "The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -80,14 +80,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The userIds to report on
+   * The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
    **/
   public WfmHistoricalAdherenceQuery userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The userIds to report on")
+  @ApiModelProperty(example = "null", value = "The userIds to report on. If it is not set, adherence will be computed for all the users in management unit")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
@@ -98,13 +98,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
+   * Whether user exceptions should be returned as part of the results
    **/
   public WfmHistoricalAdherenceQuery includeExceptions(Boolean includeExceptions) {
     this.includeExceptions = includeExceptions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether user exceptions should be returned as part of the results")
   @JsonProperty("includeExceptions")
   public Boolean getIncludeExceptions() {
     return includeExceptions;
