@@ -18,14 +18,14 @@ public class Digits  implements Serializable {
 
   
   /**
-   * A string representing the DTMF tones to play. Valid DTMF values: 1234567890#*ABCD
+   * A string representing the digits pressed on phone.
    **/
   public Digits digits(String digits) {
     this.digits = digits;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A string representing the DTMF tones to play. Valid DTMF values: 1234567890#*ABCD")
+  @ApiModelProperty(example = "null", value = "A string representing the digits pressed on phone.")
   @JsonProperty("digits")
   public String getDigits() {
     return digits;

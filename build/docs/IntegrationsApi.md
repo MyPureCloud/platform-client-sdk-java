@@ -284,7 +284,7 @@ String integrationId = "integrationId_example"; // String | Integration Id
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -305,7 +305,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -397,7 +397,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -417,7 +417,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -834,7 +834,7 @@ String includeAuthActions = "includeAuthActions_example"; // String | Whether or
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -857,7 +857,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -899,7 +899,7 @@ String secure = "secure_example"; // String | Filter to only include/exclude Act
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -920,7 +920,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -964,7 +964,7 @@ String includeAuthActions = "includeAuthActions_example"; // String | Whether or
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -987,7 +987,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -1028,7 +1028,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1048,7 +1048,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -1454,7 +1454,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1474,7 +1474,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}
@@ -1517,7 +1517,7 @@ Integration body = new Integration(); // Integration | Integration Update
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 try {
@@ -1539,7 +1539,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
 | **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
 | **nextPage** | **String**| next page token | [optional] |
 | **previousPage** | **String**| Previous page token | [optional] |
 {: class="table table-striped"}

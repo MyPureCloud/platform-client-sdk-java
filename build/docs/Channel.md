@@ -9,7 +9,7 @@ title: Channel
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **connectUri** | **String** |  |  [optional] |
-| **id** | **String** | The channel identifier. |  [optional] |
+| **id** | **String** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

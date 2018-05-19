@@ -32,6 +32,8 @@ public class ContactList  implements Serializable {
   private List<String> previewModeAcceptedValues = new ArrayList<String>();
   private Long size = null;
   private UriReference attemptLimits = null;
+  private Boolean automaticTimeZoneMapping = null;
+  private String zipCodeColumnName = null;
   private String selfUri = null;
 
   
@@ -189,20 +191,56 @@ public class ContactList  implements Serializable {
 
   
   /**
-   * AttemptLimits for this ContactList
+   * AttemptLimits for this ContactList.
    **/
   public ContactList attemptLimits(UriReference attemptLimits) {
     this.attemptLimits = attemptLimits;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "AttemptLimits for this ContactList")
+  @ApiModelProperty(example = "null", value = "AttemptLimits for this ContactList.")
   @JsonProperty("attemptLimits")
   public UriReference getAttemptLimits() {
     return attemptLimits;
   }
   public void setAttemptLimits(UriReference attemptLimits) {
     this.attemptLimits = attemptLimits;
+  }
+
+  
+  /**
+   * Indicates if automatic time zone mapping is to be used for this ContactList.
+   **/
+  public ContactList automaticTimeZoneMapping(Boolean automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if automatic time zone mapping is to be used for this ContactList.")
+  @JsonProperty("automaticTimeZoneMapping")
+  public Boolean getAutomaticTimeZoneMapping() {
+    return automaticTimeZoneMapping;
+  }
+  public void setAutomaticTimeZoneMapping(Boolean automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+  }
+
+  
+  /**
+   * The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true.
+   **/
+  public ContactList zipCodeColumnName(String zipCodeColumnName) {
+    this.zipCodeColumnName = zipCodeColumnName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true.")
+  @JsonProperty("zipCodeColumnName")
+  public String getZipCodeColumnName() {
+    return zipCodeColumnName;
+  }
+  public void setZipCodeColumnName(String zipCodeColumnName) {
+    this.zipCodeColumnName = zipCodeColumnName;
   }
 
   
@@ -235,12 +273,14 @@ public class ContactList  implements Serializable {
         Objects.equals(this.previewModeAcceptedValues, contactList.previewModeAcceptedValues) &&
         Objects.equals(this.size, contactList.size) &&
         Objects.equals(this.attemptLimits, contactList.attemptLimits) &&
+        Objects.equals(this.automaticTimeZoneMapping, contactList.automaticTimeZoneMapping) &&
+        Objects.equals(this.zipCodeColumnName, contactList.zipCodeColumnName) &&
         Objects.equals(this.selfUri, contactList.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
   }
 
   @Override
@@ -260,6 +300,8 @@ public class ContactList  implements Serializable {
     sb.append("    previewModeAcceptedValues: ").append(toIndentedString(previewModeAcceptedValues)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    attemptLimits: ").append(toIndentedString(attemptLimits)).append("\n");
+    sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
+    sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

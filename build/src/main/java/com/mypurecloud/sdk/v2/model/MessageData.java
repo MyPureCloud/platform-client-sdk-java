@@ -70,7 +70,10 @@ public class MessageData  implements Serializable {
     SMS("sms"),
     FACEBOOK("facebook"),
     TWITTER("twitter"),
-    LINE("line");
+    LINE("line"),
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao");
 
     private String value;
 

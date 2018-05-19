@@ -380,11 +380,11 @@ public class GroupsApi {
    * Get all individuals associated with the group
    * 
    * @param groupId Group ID (required)
-   * @return List<UserEntityListing>
+   * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<UserEntityListing> getGroupIndividuals(String groupId) throws IOException, ApiException {
+  public UserEntityListing getGroupIndividuals(String groupId) throws IOException, ApiException {
     return  getGroupIndividuals(createGetGroupIndividualsRequest(groupId));
   }
 
@@ -392,10 +392,10 @@ public class GroupsApi {
    * Get all individuals associated with the group
    * 
    * @param groupId Group ID (required)
-   * @return List<UserEntityListing>
+   * @return UserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserEntityListing>> getGroupIndividualsWithHttpInfo(String groupId) throws IOException {
+  public ApiResponse<UserEntityListing> getGroupIndividualsWithHttpInfo(String groupId) throws IOException {
     return getGroupIndividuals(createGetGroupIndividualsRequest(groupId).withHttpInfo());
   }
 
@@ -410,13 +410,13 @@ public class GroupsApi {
    * Get all individuals associated with the group
    * 
    * @param request The request object
-   * @return List<UserEntityListing>
+   * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<UserEntityListing> getGroupIndividuals(GetGroupIndividualsRequest request) throws IOException, ApiException {
+  public UserEntityListing getGroupIndividuals(GetGroupIndividualsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<UserEntityListing>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserEntityListing>>() {});
+      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -432,13 +432,13 @@ public class GroupsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<UserEntityListing>> getGroupIndividuals(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<UserEntityListing> getGroupIndividuals(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<UserEntityListing>>() {});
+      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)exception;
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -449,7 +449,7 @@ public class GroupsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

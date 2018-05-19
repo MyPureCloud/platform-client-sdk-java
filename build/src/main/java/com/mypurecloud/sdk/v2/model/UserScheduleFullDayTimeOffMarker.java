@@ -20,17 +20,18 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
   private Boolean isPaid = null;
   private Integer lengthInMinutes = null;
   private String description = null;
+  private Boolean delete = null;
 
   
   /**
-   * The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format
+   * The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.
    **/
   public UserScheduleFullDayTimeOffMarker managementUnitDate(String managementUnitDate) {
     this.managementUnitDate = managementUnitDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format")
+  @ApiModelProperty(example = "null", value = "The date associated with the time off request that this marker corresponds to.  Date only, in ISO-8601 format.")
   @JsonProperty("managementUnitDate")
   public String getManagementUnitDate() {
     return managementUnitDate;
@@ -112,6 +113,24 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
   }
 
   
+  /**
+   * If marked true for updating an existing full day time off marker, it will be deleted
+   **/
+  public UserScheduleFullDayTimeOffMarker delete(Boolean delete) {
+    this.delete = delete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If marked true for updating an existing full day time off marker, it will be deleted")
+  @JsonProperty("delete")
+  public Boolean getDelete() {
+    return delete;
+  }
+  public void setDelete(Boolean delete) {
+    this.delete = delete;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +145,13 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
         Objects.equals(this.activityCodeId, userScheduleFullDayTimeOffMarker.activityCodeId) &&
         Objects.equals(this.isPaid, userScheduleFullDayTimeOffMarker.isPaid) &&
         Objects.equals(this.lengthInMinutes, userScheduleFullDayTimeOffMarker.lengthInMinutes) &&
-        Objects.equals(this.description, userScheduleFullDayTimeOffMarker.description);
+        Objects.equals(this.description, userScheduleFullDayTimeOffMarker.description) &&
+        Objects.equals(this.delete, userScheduleFullDayTimeOffMarker.delete);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managementUnitDate, activityCodeId, isPaid, lengthInMinutes, description);
+    return Objects.hash(managementUnitDate, activityCodeId, isPaid, lengthInMinutes, description, delete);
   }
 
   @Override
@@ -144,6 +164,7 @@ public class UserScheduleFullDayTimeOffMarker  implements Serializable {
     sb.append("    isPaid: ").append(toIndentedString(isPaid)).append("\n");
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
     sb.append("}");
     return sb.toString();
   }

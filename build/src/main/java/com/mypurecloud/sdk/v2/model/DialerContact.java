@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
+import com.mypurecloud.sdk.v2.model.ContactColumnTimeZone;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,6 +27,7 @@ public class DialerContact  implements Serializable {
   private Map<String, CallRecord> callRecords = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
+  private Map<String, ContactColumnTimeZone> contactColumnTimeZones = null;
   private String selfUri = null;
 
   
@@ -143,6 +145,24 @@ public class DialerContact  implements Serializable {
   }
 
   
+  /**
+   * Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip
+   **/
+  public DialerContact contactColumnTimeZones(Map<String, ContactColumnTimeZone> contactColumnTimeZones) {
+    this.contactColumnTimeZones = contactColumnTimeZones;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip")
+  @JsonProperty("contactColumnTimeZones")
+  public Map<String, ContactColumnTimeZone> getContactColumnTimeZones() {
+    return contactColumnTimeZones;
+  }
+  public void setContactColumnTimeZones(Map<String, ContactColumnTimeZone> contactColumnTimeZones) {
+    this.contactColumnTimeZones = contactColumnTimeZones;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -167,12 +187,13 @@ public class DialerContact  implements Serializable {
         Objects.equals(this.callRecords, dialerContact.callRecords) &&
         Objects.equals(this.callable, dialerContact.callable) &&
         Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
+        Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
         Objects.equals(this.selfUri, dialerContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, callable, phoneNumberStatus, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, callable, phoneNumberStatus, contactColumnTimeZones, selfUri);
   }
 
   @Override
@@ -187,6 +208,7 @@ public class DialerContact  implements Serializable {
     sb.append("    callRecords: ").append(toIndentedString(callRecords)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
+    sb.append("    contactColumnTimeZones: ").append(toIndentedString(contactColumnTimeZones)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

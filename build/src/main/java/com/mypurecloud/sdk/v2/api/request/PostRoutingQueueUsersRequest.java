@@ -48,7 +48,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -73,16 +73,16 @@ public class PostRoutingQueueUsersRequest {
 	    return this;
 	} 
 	
-	private List<Entity> body;
-	public List<Entity> getBody() {
+	private List<WritableEntity> body;
+	public List<WritableEntity> getBody() {
 		return this.body;
 	}
 
-	public void setBody(List<Entity> body) {
+	public void setBody(List<WritableEntity> body) {
 		this.body = body;
 	}
 
-	public PostRoutingQueueUsersRequest withBody(List<Entity> body) {
+	public PostRoutingQueueUsersRequest withBody(List<WritableEntity> body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -120,7 +120,7 @@ public class PostRoutingQueueUsersRequest {
         return this;
     }
 
-    public ApiRequest<List<Entity>> withHttpInfo() {
+    public ApiRequest<List<WritableEntity>> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
@@ -152,7 +152,7 @@ public class PostRoutingQueueUsersRequest {
 	}
 
 	
-	public static Builder builder(String queueId, List<Entity> body) {
+	public static Builder builder(String queueId, List<WritableEntity> body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
@@ -171,7 +171,7 @@ public class PostRoutingQueueUsersRequest {
 			return this;
 		}
 		
-		public Builder withBody(List<Entity> body) {
+		public Builder withBody(List<WritableEntity> body) {
 			request.setBody(body);
 			return this;
 		}
@@ -183,7 +183,7 @@ public class PostRoutingQueueUsersRequest {
 		
 
 		
-		public Builder withRequiredParams(String queueId, List<Entity> body) {
+		public Builder withRequiredParams(String queueId, List<WritableEntity> body) {
 			request.setQueueId(queueId);
 						request.setBody(body);
 			

@@ -112,6 +112,42 @@ public class ViewFilter  implements Serializable {
   private Boolean transferred = null;
   private Boolean abandoned = null;
 
+  /**
+   * Gets or Sets messageTypes
+   */
+  public enum MessageTypesEnum {
+    SMS("sms"),
+    TWITTER("twitter"),
+    LINE("line"),
+    FACEBOOK("facebook");
+
+    private String value;
+
+    MessageTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessageTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessageTypesEnum value : MessageTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessageTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<MessageTypesEnum> messageTypes = new ArrayList<MessageTypesEnum>();
+
   
   /**
    * The media types are used to filter the view
@@ -509,6 +545,24 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The message media types used to filter the view
+   **/
+  public ViewFilter messageTypes(List<MessageTypesEnum> messageTypes) {
+    this.messageTypes = messageTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The message media types used to filter the view")
+  @JsonProperty("messageTypes")
+  public List<MessageTypesEnum> getMessageTypes() {
+    return messageTypes;
+  }
+  public void setMessageTypes(List<MessageTypesEnum> messageTypes) {
+    this.messageTypes = messageTypes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -540,12 +594,13 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.evaluatedAgentIds, viewFilter.evaluatedAgentIds) &&
         Objects.equals(this.evaluatorIds, viewFilter.evaluatorIds) &&
         Objects.equals(this.transferred, viewFilter.transferred) &&
-        Objects.equals(this.abandoned, viewFilter.abandoned);
+        Objects.equals(this.abandoned, viewFilter.abandoned) &&
+        Objects.equals(this.messageTypes, viewFilter.messageTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, languageIds, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned);
+    return Objects.hash(mediaTypes, queueIds, skillIds, languageIds, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes);
   }
 
   @Override
@@ -575,6 +630,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    evaluatorIds: ").append(toIndentedString(evaluatorIds)).append("\n");
     sb.append("    transferred: ").append(toIndentedString(transferred)).append("\n");
     sb.append("    abandoned: ").append(toIndentedString(abandoned)).append("\n");
+    sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

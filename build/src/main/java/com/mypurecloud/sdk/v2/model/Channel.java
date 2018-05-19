@@ -35,10 +35,20 @@ public class Channel  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The channel identifier.")
+  /**
+   **/
+  public Channel id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
   

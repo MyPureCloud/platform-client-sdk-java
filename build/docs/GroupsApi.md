@@ -232,7 +232,7 @@ try {
 
 # **getGroupIndividuals**
 
-> [List&lt;UserEntityListing&gt;](UserEntityListing.html) getGroupIndividuals(groupId)
+> [UserEntityListing](UserEntityListing.html) getGroupIndividuals(groupId)
 
 Get all individuals associated with the group
 
@@ -259,7 +259,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 GroupsApi apiInstance = new GroupsApi();
 String groupId = "groupId_example"; // String | Group ID
 try {
-    List<UserEntityListing> result = apiInstance.getGroupIndividuals(groupId);
+    UserEntityListing result = apiInstance.getGroupIndividuals(groupId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#getGroupIndividuals");
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**List&lt;UserEntityListing&gt;**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing.html)
 
 <a name="getGroupMembers"></a>
 

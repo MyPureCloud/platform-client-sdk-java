@@ -22,6 +22,7 @@ public class UserScheduleActivity  implements Serializable {
   private String description = null;
   private Boolean countsAsPaidTime = null;
   private Boolean isDstFallback = null;
+  private String timeOffRequestId = null;
 
   
   /**
@@ -132,6 +133,24 @@ public class UserScheduleActivity  implements Serializable {
   }
 
   
+  /**
+   * Time off request id of this activity
+   **/
+  public UserScheduleActivity timeOffRequestId(String timeOffRequestId) {
+    this.timeOffRequestId = timeOffRequestId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time off request id of this activity")
+  @JsonProperty("timeOffRequestId")
+  public String getTimeOffRequestId() {
+    return timeOffRequestId;
+  }
+  public void setTimeOffRequestId(String timeOffRequestId) {
+    this.timeOffRequestId = timeOffRequestId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,12 +166,13 @@ public class UserScheduleActivity  implements Serializable {
         Objects.equals(this.lengthInMinutes, userScheduleActivity.lengthInMinutes) &&
         Objects.equals(this.description, userScheduleActivity.description) &&
         Objects.equals(this.countsAsPaidTime, userScheduleActivity.countsAsPaidTime) &&
-        Objects.equals(this.isDstFallback, userScheduleActivity.isDstFallback);
+        Objects.equals(this.isDstFallback, userScheduleActivity.isDstFallback) &&
+        Objects.equals(this.timeOffRequestId, userScheduleActivity.timeOffRequestId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, startDate, lengthInMinutes, description, countsAsPaidTime, isDstFallback);
+    return Objects.hash(activityCodeId, startDate, lengthInMinutes, description, countsAsPaidTime, isDstFallback, timeOffRequestId);
   }
 
   @Override
@@ -166,6 +186,7 @@ public class UserScheduleActivity  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    isDstFallback: ").append(toIndentedString(isDstFallback)).append("\n");
+    sb.append("    timeOffRequestId: ").append(toIndentedString(timeOffRequestId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

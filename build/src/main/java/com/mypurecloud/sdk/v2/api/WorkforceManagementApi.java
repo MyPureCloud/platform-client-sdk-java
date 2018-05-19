@@ -14,10 +14,11 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
-import com.mypurecloud.sdk.v2.model.TimeOffRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
@@ -35,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUs
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitIntradayRequest;
@@ -141,7 +143,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -153,7 +155,7 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws IOException if the request fails to be processed
    */
@@ -301,29 +303,29 @@ public class WorkforceManagementApi {
 
   
   /**
-   * Get a time off request by id
+   * Get a time off request
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
-   * @return TimeOffRequest
+   * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
+  public TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId));
   }
 
   /**
-   * Get a time off request by id
+   * Get a time off request
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
-   * @return TimeOffRequest
+   * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException {
+  public ApiResponse<TimeOffRequestResponse> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException {
     return getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId).withHttpInfo());
   }
 
@@ -339,16 +341,16 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get a time off request by id
+   * Get a time off request
    * 
    * @param request The request object
-   * @return TimeOffRequest
+   * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequest getWorkforcemanagementManagementunitUserTimeoffrequest(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws IOException, ApiException {
+  public TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(GetWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<TimeOffRequest> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequest>() {});
+      ApiResponse<TimeOffRequestResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequestResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -358,19 +360,19 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get a time off request by id
+   * Get a time off request
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequest> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<TimeOffRequestResponse> getWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<TimeOffRequest>() {});
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequestResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)exception;
+      ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -381,16 +383,16 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<TimeOffRequest> response = (ApiResponse<TimeOffRequest>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
 
   
   /**
-   * Get a list of time off requests for any user
+   * Get a list of time off requests for a given user
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -402,9 +404,9 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get a list of time off requests for any user
+   * Get a list of time off requests for a given user
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
@@ -426,7 +428,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get a list of time off requests for any user
+   * Get a list of time off requests for a given user
    * 
    * @param request The request object
    * @return TimeOffRequestList
@@ -445,7 +447,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get a list of time off requests for any user
+   * Get a list of time off requests for a given user
    * 
    * @param request The request object
    * @return the response
@@ -641,9 +643,100 @@ public class WorkforceManagementApi {
 
   
   /**
-   * Create a new activity code
+   * Update a time off request
    * 
    * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param userId The id of the user the requested time off request belongs to (required)
+   * @param timeOffRequestId The id of the time off request to update (required)
+   * @param body body (optional)
+   * @return TimeOffRequestResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId, body));
+  }
+
+  /**
+   * Update a time off request
+   * 
+   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param userId The id of the user the requested time off request belongs to (required)
+   * @param timeOffRequestId The id of the time off request to update (required)
+   * @param body body (optional)
+   * @return TimeOffRequestResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffRequestResponse> patchWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException {
+    return patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
+    return PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
+            .withMuId(muId)
+    
+            .withUserId(userId)
+    
+            .withTimeOffRequestId(timeOffRequestId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a time off request
+   * 
+   * @param request The request object
+   * @return TimeOffRequestResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffRequestResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffRequestResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a time off request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffRequestResponse> patchWorkforcemanagementManagementunitUserTimeoffrequest(ApiRequest<AdminTimeOffRequestPatch> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffRequestResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new activity code
+   * 
+   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ActivityCode
    * @throws ApiException if the request fails on the server
@@ -656,7 +749,7 @@ public class WorkforceManagementApi {
   /**
    * Create a new activity code
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ActivityCode
    * @throws IOException if the request fails to be processed
@@ -890,7 +983,7 @@ public class WorkforceManagementApi {
 
   
   /**
-   * Get user schedules within the given time range
+   * Query published schedules for given given time range for set of users
    * 
    * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
@@ -903,7 +996,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get user schedules within the given time range
+   * Query published schedules for given given time range for set of users
    * 
    * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
@@ -924,7 +1017,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get user schedules within the given time range
+   * Query published schedules for given given time range for set of users
    * 
    * @param request The request object
    * @return UserScheduleContainer
@@ -943,7 +1036,7 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Get user schedules within the given time range
+   * Query published schedules for given given time range for set of users
    * 
    * @param request The request object
    * @return the response

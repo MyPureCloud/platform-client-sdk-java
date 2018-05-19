@@ -13,6 +13,7 @@ title: DomainPermission
 | **action** | **String** |  |  [optional] |
 | **label** | **String** |  |  [optional] |
 | **allowsConditions** | **Boolean** |  |  [optional] |
+| **divisionAware** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

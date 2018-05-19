@@ -121,6 +121,40 @@ public class CallHistoryParticipant  implements Serializable {
   private Boolean didInteract = null;
   private List<Long> sipResponseCodes = new ArrayList<Long>();
 
+  /**
+   * The reason specifying why participant flagged the conversation.
+   */
+  public enum FlaggedReasonEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENERAL("general");
+
+    private String value;
+
+    FlaggedReasonEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlaggedReasonEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlaggedReasonEnum value : FlaggedReasonEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlaggedReasonEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FlaggedReasonEnum flaggedReason = null;
+
   
   /**
    * The unique participant ID.
@@ -428,6 +462,24 @@ public class CallHistoryParticipant  implements Serializable {
   }
 
   
+  /**
+   * The reason specifying why participant flagged the conversation.
+   **/
+  public CallHistoryParticipant flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reason specifying why participant flagged the conversation.")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -454,12 +506,13 @@ public class CallHistoryParticipant  implements Serializable {
         Objects.equals(this.externalContact, callHistoryParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization) &&
         Objects.equals(this.didInteract, callHistoryParticipant.didInteract) &&
-        Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes);
+        Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes) &&
+        Objects.equals(this.flaggedReason, callHistoryParticipant.flaggedReason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization, didInteract, sipResponseCodes);
+    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization, didInteract, sipResponseCodes, flaggedReason);
   }
 
   @Override
@@ -484,6 +537,7 @@ public class CallHistoryParticipant  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    didInteract: ").append(toIndentedString(didInteract)).append("\n");
     sb.append("    sipResponseCodes: ").append(toIndentedString(sipResponseCodes)).append("\n");
+    sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("}");
     return sb.toString();
   }

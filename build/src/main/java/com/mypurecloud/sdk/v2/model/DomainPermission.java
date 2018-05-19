@@ -19,6 +19,7 @@ public class DomainPermission  implements Serializable {
   private String action = null;
   private String label = null;
   private Boolean allowsConditions = null;
+  private Boolean divisionAware = null;
 
   
   /**
@@ -106,6 +107,23 @@ public class DomainPermission  implements Serializable {
   }
 
   
+  /**
+   **/
+  public DomainPermission divisionAware(Boolean divisionAware) {
+    this.divisionAware = divisionAware;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("divisionAware")
+  public Boolean getDivisionAware() {
+    return divisionAware;
+  }
+  public void setDivisionAware(Boolean divisionAware) {
+    this.divisionAware = divisionAware;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,12 +138,13 @@ public class DomainPermission  implements Serializable {
         Objects.equals(this.entityType, domainPermission.entityType) &&
         Objects.equals(this.action, domainPermission.action) &&
         Objects.equals(this.label, domainPermission.label) &&
-        Objects.equals(this.allowsConditions, domainPermission.allowsConditions);
+        Objects.equals(this.allowsConditions, domainPermission.allowsConditions) &&
+        Objects.equals(this.divisionAware, domainPermission.divisionAware);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domain, entityType, action, label, allowsConditions);
+    return Objects.hash(domain, entityType, action, label, allowsConditions, divisionAware);
   }
 
   @Override
@@ -138,6 +157,7 @@ public class DomainPermission  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    allowsConditions: ").append(toIndentedString(allowsConditions)).append("\n");
+    sb.append("    divisionAware: ").append(toIndentedString(divisionAware)).append("\n");
     sb.append("}");
     return sb.toString();
   }

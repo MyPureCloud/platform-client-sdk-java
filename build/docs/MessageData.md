@@ -46,6 +46,9 @@ title: MessageData
 | FACEBOOK | &quot;facebook&quot; |
 | TWITTER | &quot;twitter&quot; |
 | LINE | &quot;line&quot; |
+| WHATSAPP | &quot;whatsapp&quot; |
+| TELEGRAM | &quot;telegram&quot; |
+| KAKAO | &quot;kakao&quot; |
 
 
 <a name="StatusEnum"></a>

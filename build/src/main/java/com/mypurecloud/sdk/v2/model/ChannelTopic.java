@@ -19,14 +19,13 @@ public class ChannelTopic  implements Serializable {
 
   
   /**
-   * Topic id for subscription
    **/
   public ChannelTopic id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Topic id for subscription")
+  @ApiModelProperty(example = "null", value = "")
   @JsonProperty("id")
   public String getId() {
     return id;

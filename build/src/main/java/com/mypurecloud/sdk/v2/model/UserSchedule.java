@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleFullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.UserScheduleShift;
+import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,6 +22,9 @@ public class UserSchedule  implements Serializable {
   
   private List<UserScheduleShift> shifts = new ArrayList<UserScheduleShift>();
   private List<UserScheduleFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<UserScheduleFullDayTimeOffMarker>();
+  private Boolean delete = null;
+  private WfmVersionedEntityMetadata metadata = null;
+  private String workPlanId = null;
 
   
   /**
@@ -59,6 +63,49 @@ public class UserSchedule  implements Serializable {
   }
 
   
+  /**
+   * If marked true for updating an existing user schedule, it will be deleted
+   **/
+  public UserSchedule delete(Boolean delete) {
+    this.delete = delete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If marked true for updating an existing user schedule, it will be deleted")
+  @JsonProperty("delete")
+  public Boolean getDelete() {
+    return delete;
+  }
+  public void setDelete(Boolean delete) {
+    this.delete = delete;
+  }
+
+  
+  /**
+   * Version metadata for this schedule
+   **/
+  public UserSchedule metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for this schedule")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "ID of the work plan associated with the user during schedule creation")
+  @JsonProperty("workPlanId")
+  public String getWorkPlanId() {
+    return workPlanId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,12 +117,15 @@ public class UserSchedule  implements Serializable {
     }
     UserSchedule userSchedule = (UserSchedule) o;
     return Objects.equals(this.shifts, userSchedule.shifts) &&
-        Objects.equals(this.fullDayTimeOffMarkers, userSchedule.fullDayTimeOffMarkers);
+        Objects.equals(this.fullDayTimeOffMarkers, userSchedule.fullDayTimeOffMarkers) &&
+        Objects.equals(this.delete, userSchedule.delete) &&
+        Objects.equals(this.metadata, userSchedule.metadata) &&
+        Objects.equals(this.workPlanId, userSchedule.workPlanId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shifts, fullDayTimeOffMarkers);
+    return Objects.hash(shifts, fullDayTimeOffMarkers, delete, metadata, workPlanId);
   }
 
   @Override
@@ -85,6 +135,9 @@ public class UserSchedule  implements Serializable {
     
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    fullDayTimeOffMarkers: ").append(toIndentedString(fullDayTimeOffMarkers)).append("\n");
+    sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    workPlanId: ").append(toIndentedString(workPlanId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

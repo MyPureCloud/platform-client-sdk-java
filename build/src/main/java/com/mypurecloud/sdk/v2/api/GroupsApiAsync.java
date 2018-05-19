@@ -374,13 +374,13 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<UserEntityListing>> getGroupIndividualsAsync(GetGroupIndividualsRequest request, final AsyncApiCallback<List<UserEntityListing>> callback) {
+  public Future<UserEntityListing> getGroupIndividualsAsync(GetGroupIndividualsRequest request, final AsyncApiCallback<UserEntityListing> callback) {
     try {
-      final SettableFuture<List<UserEntityListing>> future = SettableFuture.create();
+      final SettableFuture<UserEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserEntityListing>>() {}, new AsyncApiCallback<ApiResponse<List<UserEntityListing>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<UserEntityListing>> response) {
+        public void onCompleted(ApiResponse<UserEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -408,13 +408,13 @@ public class GroupsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<UserEntityListing>>> getGroupIndividualsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<UserEntityListing>>> callback) {
+  public Future<ApiResponse<UserEntityListing>> getGroupIndividualsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<UserEntityListing>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<UserEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<UserEntityListing>>() {}, new AsyncApiCallback<ApiResponse<List<UserEntityListing>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<UserEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<UserEntityListing>> response) {
+        public void onCompleted(ApiResponse<UserEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -422,7 +422,7 @@ public class GroupsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)exception;
+            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -430,7 +430,7 @@ public class GroupsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<UserEntityListing>> response = (ApiResponse<List<UserEntityListing>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

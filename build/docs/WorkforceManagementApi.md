@@ -10,14 +10,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | Get a list of UserScheduleAdherence records for the requested users |
 | [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | Get activity codes |
 | [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | Get intraday queues for the given date |
-| [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | Get a time off request by id |
-| [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | Get a list of time off requests for any user |
+| [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | Get a time off request |
+| [**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | Get a list of time off requests for a given user |
 | [**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | Get agents in the management unit |
 | [**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | Get management units |
+| [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | Update a time off request |
 | [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | Create a new activity code |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | Get intraday data for the given date for the requested queueIds |
-| [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Get user schedules within the given time range |
+| [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Query published schedules for given given time range for set of users |
 {: class="table table-striped"}
 
 <a name="getWorkforcemanagementAdherence"></a>
@@ -100,7 +101,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     ActivityCodeContainer result = apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId);
     System.out.println(result);
@@ -115,7 +116,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 {: class="table table-striped"}
 
 ### Return type
@@ -179,9 +180,9 @@ try {
 
 # **getWorkforcemanagementManagementunitUserTimeoffrequest**
 
-> [TimeOffRequest](TimeOffRequest.html) getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+> [TimeOffRequestResponse](TimeOffRequestResponse.html) getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
 
-Get a time off request by id
+Get a time off request
 
 
 
@@ -204,11 +205,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 try {
-    TimeOffRequest result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId);
+    TimeOffRequestResponse result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequest");
@@ -221,14 +222,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **userId** | **String**| The userId to whom the Time Off Request applies. | |
 | **timeOffRequestId** | **String**| Time Off Request Id | |
 {: class="table table-striped"}
 
 ### Return type
 
-[**TimeOffRequest**](TimeOffRequest.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
@@ -236,7 +237,7 @@ try {
 
 > [TimeOffRequestList](TimeOffRequestList.html) getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, recentlyReviewed)
 
-Get a list of time off requests for any user
+Get a list of time off requests for a given user
 
 
 
@@ -259,7 +260,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
@@ -276,7 +277,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **userId** | **String**| The userId to whom the Time Off Request applies. | |
 | **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -391,6 +392,63 @@ try {
 
 [**ManagementUnitListing**](ManagementUnitListing.html)
 
+<a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
+
+# **patchWorkforcemanagementManagementunitUserTimeoffrequest**
+
+> [TimeOffRequestResponse](TimeOffRequestResponse.html) patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, body)
+
+Update a time off request
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String userId = "userId_example"; // String | The id of the user the requested time off request belongs to
+String timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
+AdminTimeOffRequestPatch body = new AdminTimeOffRequestPatch(); // AdminTimeOffRequestPatch | body
+try {
+    TimeOffRequestResponse result = apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitUserTimeoffrequest");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **userId** | **String**| The id of the user the requested time off request belongs to | |
+| **timeOffRequestId** | **String**| The id of the time off request to update | |
+| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+
 <a name="postWorkforcemanagementManagementunitActivitycodes"></a>
 
 # **postWorkforcemanagementManagementunitActivitycodes**
@@ -420,7 +478,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 CreateActivityCodeRequest body = new CreateActivityCodeRequest(); // CreateActivityCodeRequest | body
 try {
     ActivityCode result = apiInstance.postWorkforcemanagementManagementunitActivitycodes(muId, body);
@@ -436,7 +494,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
 | **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional] |
 {: class="table table-striped"}
 
@@ -556,7 +614,7 @@ try {
 
 > [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(muId, body)
 
-Get user schedules within the given time range
+Query published schedules for given given time range for set of users
 
 
 

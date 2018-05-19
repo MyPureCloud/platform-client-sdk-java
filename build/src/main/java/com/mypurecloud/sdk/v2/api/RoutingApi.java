@@ -38,7 +38,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
@@ -3637,7 +3637,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String postRoutingQueueUsers(String queueId, List<Entity> body, Boolean delete) throws IOException, ApiException {
+  public String postRoutingQueueUsers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
     return  postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete));
   }
 
@@ -3650,11 +3650,11 @@ public class RoutingApi {
    * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueUsersWithHttpInfo(String queueId, List<Entity> body, Boolean delete) throws IOException {
+  public ApiResponse<String> postRoutingQueueUsersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
     return postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete).withHttpInfo());
   }
 
-  private PostRoutingQueueUsersRequest createPostRoutingQueueUsersRequest(String queueId, List<Entity> body, Boolean delete) {
+  private PostRoutingQueueUsersRequest createPostRoutingQueueUsersRequest(String queueId, List<WritableEntity> body, Boolean delete) {
     return PostRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
     
@@ -3691,7 +3691,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueUsers(ApiRequest<List<Entity>> request) throws IOException {
+  public ApiResponse<String> postRoutingQueueUsers(ApiRequest<List<WritableEntity>> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<String>() {});
     }

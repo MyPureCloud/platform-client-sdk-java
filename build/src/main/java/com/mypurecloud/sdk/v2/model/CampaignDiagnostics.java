@@ -23,6 +23,7 @@ public class CampaignDiagnostics  implements Serializable {
   private QueueUtilizationDiagnostic queueUtilizationDiagnostic = null;
   private List<RuleSetDiagnostic> ruleSetDiagnostics = new ArrayList<RuleSetDiagnostic>();
   private Integer outstandingInteractionsCount = null;
+  private Integer scheduledInteractionsCount = null;
 
   
   /**
@@ -86,6 +87,13 @@ public class CampaignDiagnostics  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Current number of scheduled interactions on the campaign")
+  @JsonProperty("scheduledInteractionsCount")
+  public Integer getScheduledInteractionsCount() {
+    return scheduledInteractionsCount;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,12 +107,13 @@ public class CampaignDiagnostics  implements Serializable {
     return Objects.equals(this.callableContacts, campaignDiagnostics.callableContacts) &&
         Objects.equals(this.queueUtilizationDiagnostic, campaignDiagnostics.queueUtilizationDiagnostic) &&
         Objects.equals(this.ruleSetDiagnostics, campaignDiagnostics.ruleSetDiagnostics) &&
-        Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount);
+        Objects.equals(this.outstandingInteractionsCount, campaignDiagnostics.outstandingInteractionsCount) &&
+        Objects.equals(this.scheduledInteractionsCount, campaignDiagnostics.scheduledInteractionsCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount);
+    return Objects.hash(callableContacts, queueUtilizationDiagnostic, ruleSetDiagnostics, outstandingInteractionsCount, scheduledInteractionsCount);
   }
 
   @Override
@@ -116,6 +125,7 @@ public class CampaignDiagnostics  implements Serializable {
     sb.append("    queueUtilizationDiagnostic: ").append(toIndentedString(queueUtilizationDiagnostic)).append("\n");
     sb.append("    ruleSetDiagnostics: ").append(toIndentedString(ruleSetDiagnostics)).append("\n");
     sb.append("    outstandingInteractionsCount: ").append(toIndentedString(outstandingInteractionsCount)).append("\n");
+    sb.append("    scheduledInteractionsCount: ").append(toIndentedString(scheduledInteractionsCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

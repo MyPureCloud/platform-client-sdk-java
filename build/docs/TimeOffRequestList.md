@@ -10,7 +10,7 @@ title: TimeOffRequestList
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
-| **timeOffRequests** | [**List&lt;TimeOffRequest&gt;**](TimeOffRequest.html) |  |  [optional] |
+| **timeOffRequests** | [**List&lt;TimeOffRequestResponse&gt;**](TimeOffRequestResponse.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

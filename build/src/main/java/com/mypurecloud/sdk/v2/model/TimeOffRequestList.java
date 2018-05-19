@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.TimeOffRequest;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class TimeOffRequestList  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private List<TimeOffRequest> timeOffRequests = new ArrayList<TimeOffRequest>();
+  private List<TimeOffRequestResponse> timeOffRequests = new ArrayList<TimeOffRequestResponse>();
   private String selfUri = null;
 
   
@@ -49,17 +49,17 @@ public class TimeOffRequestList  implements Serializable {
   
   /**
    **/
-  public TimeOffRequestList timeOffRequests(List<TimeOffRequest> timeOffRequests) {
+  public TimeOffRequestList timeOffRequests(List<TimeOffRequestResponse> timeOffRequests) {
     this.timeOffRequests = timeOffRequests;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("timeOffRequests")
-  public List<TimeOffRequest> getTimeOffRequests() {
+  public List<TimeOffRequestResponse> getTimeOffRequests() {
     return timeOffRequests;
   }
-  public void setTimeOffRequests(List<TimeOffRequest> timeOffRequests) {
+  public void setTimeOffRequests(List<TimeOffRequestResponse> timeOffRequests) {
     this.timeOffRequests = timeOffRequests;
   }
 

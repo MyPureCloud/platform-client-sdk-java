@@ -672,7 +672,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) throws IOException, ApiException {
+  public AgentActivityEntityListing getQualityAgentsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) throws IOException, ApiException {
     return  getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group));
   }
 
@@ -694,11 +694,11 @@ public class QualityApi {
    * @return AgentActivityEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) throws IOException {
+  public ApiResponse<AgentActivityEntityListing> getQualityAgentsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) throws IOException {
     return getQualityAgentsActivity(createGetQualityAgentsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, agentUserId, evaluatorUserId, name, group).withHttpInfo());
   }
 
-  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<Object> agentUserId, String evaluatorUserId, String name, String group) {
+  private GetQualityAgentsActivityRequest createGetQualityAgentsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, List<String> agentUserId, String evaluatorUserId, String name, String group) {
     return GetQualityAgentsActivityRequest.builder()
             .withPageSize(pageSize)
     
@@ -880,7 +880,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CalibrationEntityListing getQualityCalibrations(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException, ApiException {
+  public CalibrationEntityListing getQualityCalibrations(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException, ApiException {
     return  getQualityCalibrations(createGetQualityCalibrationsRequest(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime));
   }
 
@@ -900,11 +900,11 @@ public class QualityApi {
    * @return CalibrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CalibrationEntityListing> getQualityCalibrationsWithHttpInfo(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException {
+  public ApiResponse<CalibrationEntityListing> getQualityCalibrationsWithHttpInfo(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) throws IOException {
     return getQualityCalibrations(createGetQualityCalibrationsRequest(calibratorId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, startTime, endTime).withHttpInfo());
   }
 
-  private GetQualityCalibrationsRequest createGetQualityCalibrationsRequest(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) {
+  private GetQualityCalibrationsRequest createGetQualityCalibrationsRequest(String calibratorId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, Date startTime, Date endTime) {
     return GetQualityCalibrationsRequest.builder()
             .withCalibratorId(calibratorId)
     
@@ -994,7 +994,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QualityAuditPage getQualityConversationAudits(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException, ApiException {
+  public QualityAuditPage getQualityConversationAudits(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException, ApiException {
     return  getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType));
   }
 
@@ -1013,11 +1013,11 @@ public class QualityApi {
    * @return QualityAuditPage
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QualityAuditPage> getQualityConversationAuditsWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException {
+  public ApiResponse<QualityAuditPage> getQualityConversationAuditsWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException {
     return getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType).withHttpInfo());
   }
 
-  private GetQualityConversationAuditsRequest createGetQualityConversationAuditsRequest(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String recordingId, String entityType) {
+  private GetQualityConversationAuditsRequest createGetQualityConversationAuditsRequest(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) {
     return GetQualityConversationAuditsRequest.builder()
             .withConversationId(conversationId)
     
@@ -1201,7 +1201,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
+  public EvaluationEntityListing getQualityEvaluationsQuery(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException, ApiException {
     return  getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder));
   }
 
@@ -1229,11 +1229,11 @@ public class QualityApi {
    * @return EvaluationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
+  public ApiResponse<EvaluationEntityListing> getQualityEvaluationsQueryWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) throws IOException {
     return getQualityEvaluationsQuery(createGetQualityEvaluationsQueryRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder).withHttpInfo());
   }
 
-  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<Object> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
+  private GetQualityEvaluationsQueryRequest createGetQualityEvaluationsQueryRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String conversationId, String agentUserId, String evaluatorUserId, String queueId, String startTime, String endTime, List<String> evaluationState, Boolean isReleased, Boolean agentHasRead, Boolean expandAnswerTotalScores, Integer maximum, String sortOrder) {
     return GetQualityEvaluationsQueryRequest.builder()
             .withPageSize(pageSize)
     
@@ -1341,7 +1341,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluatorActivityEntityListing getQualityEvaluatorsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) throws IOException, ApiException {
+  public EvaluatorActivityEntityListing getQualityEvaluatorsActivity(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<String> permission, String group) throws IOException, ApiException {
     return  getQualityEvaluatorsActivity(createGetQualityEvaluatorsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group));
   }
 
@@ -1362,11 +1362,11 @@ public class QualityApi {
    * @return EvaluatorActivityEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) throws IOException {
+  public ApiResponse<EvaluatorActivityEntityListing> getQualityEvaluatorsActivityWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<String> permission, String group) throws IOException {
     return getQualityEvaluatorsActivity(createGetQualityEvaluatorsActivityRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group).withHttpInfo());
   }
 
-  private GetQualityEvaluatorsActivityRequest createGetQualityEvaluatorsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<Object> permission, String group) {
+  private GetQualityEvaluatorsActivityRequest createGetQualityEvaluatorsActivityRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Date startTime, Date endTime, String name, List<String> permission, String group) {
     return GetQualityEvaluatorsActivityRequest.builder()
             .withPageSize(pageSize)
     
@@ -2345,7 +2345,7 @@ public class QualityApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KeywordSetEntityListing getQualityKeywordsets(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException, ApiException {
+  public KeywordSetEntityListing getQualityKeywordsets(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException, ApiException {
     return  getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator));
   }
 
@@ -2365,11 +2365,11 @@ public class QualityApi {
    * @return KeywordSetEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException {
+  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException {
     return getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator).withHttpInfo());
   }
 
-  private GetQualityKeywordsetsRequest createGetQualityKeywordsetsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) {
+  private GetQualityKeywordsetsRequest createGetQualityKeywordsetsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) {
     return GetQualityKeywordsetsRequest.builder()
             .withPageSize(pageSize)
     

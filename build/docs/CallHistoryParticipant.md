@@ -25,6 +25,7 @@ title: CallHistoryParticipant
 | **externalOrganization** | [**ExternalOrganization**](ExternalOrganization.html) | The PureCloud external organization |  [optional] |
 | **didInteract** | **Boolean** | Indicates whether the contact ever connected |  [optional] |
 | **sipResponseCodes** | **List&lt;Long&gt;** | Indicates SIP Response codes associated with the participant |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -60,6 +61,16 @@ title: CallHistoryParticipant
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
+
+
+<a name="FlaggedReasonEnum"></a>
+
+## Enum: FlaggedReasonEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

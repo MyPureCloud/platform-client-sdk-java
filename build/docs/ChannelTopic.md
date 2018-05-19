@@ -8,7 +8,7 @@ title: ChannelTopic
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | Topic id for subscription |  [optional] |
+| **id** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}

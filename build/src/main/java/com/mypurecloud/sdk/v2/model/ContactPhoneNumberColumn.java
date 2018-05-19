@@ -56,14 +56,14 @@ public class ContactPhoneNumberColumn  implements Serializable {
 
   
   /**
-   * A column that indicates the timezone to use for a given contact when checking callable times.
+   * A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.
    **/
   public ContactPhoneNumberColumn callableTimeColumn(String callableTimeColumn) {
     this.callableTimeColumn = callableTimeColumn;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking callable times.")
+  @ApiModelProperty(example = "null", value = "A column that indicates the timezone to use for a given contact when checking callable times. Not allowed if 'automaticTimeZoneMapping' is set to true.")
   @JsonProperty("callableTimeColumn")
   public String getCallableTimeColumn() {
     return callableTimeColumn;

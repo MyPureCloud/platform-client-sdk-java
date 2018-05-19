@@ -160,7 +160,10 @@ public class Message  implements Serializable {
     SMS("sms"),
     TWITTER("twitter"),
     FACEBOOK("facebook"),
-    LINE("line");
+    LINE("line"),
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao");
 
     private String value;
 

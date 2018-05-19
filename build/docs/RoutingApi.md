@@ -2328,7 +2328,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-List<Entity> body = Arrays.asList(new Entity()); // List<Entity> | Queue Members
+List<WritableEntity> body = Arrays.asList(new WritableEntity()); // List<WritableEntity> | Queue Members
 Boolean delete = false; // Boolean | True to delete queue members
 try {
     String result = apiInstance.postRoutingQueueUsers(queueId, body, delete);
@@ -2345,7 +2345,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | |
-| **body** | [**List&lt;Entity&gt;**](Entity.html)| Queue Members | |
+| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | |
 | **delete** | **Boolean**| True to delete queue members | [optional] [default to false] |
 {: class="table table-striped"}
 

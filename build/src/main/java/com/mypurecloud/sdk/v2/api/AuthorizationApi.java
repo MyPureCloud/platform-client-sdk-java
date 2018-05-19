@@ -548,7 +548,7 @@ public class AuthorizationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) throws IOException, ApiException {
+  public OrganizationRoleEntityListing getAuthorizationRoles(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, List<String> permission, List<String> defaultRoleId, Boolean userCount, List<String> id) throws IOException, ApiException {
     return  getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id));
   }
 
@@ -569,11 +569,11 @@ public class AuthorizationApi {
    * @return OrganizationRoleEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) throws IOException {
+  public ApiResponse<OrganizationRoleEntityListing> getAuthorizationRolesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, List<String> permission, List<String> defaultRoleId, Boolean userCount, List<String> id) throws IOException {
     return getAuthorizationRoles(createGetAuthorizationRolesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id).withHttpInfo());
   }
 
-  private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, List<Object> permission, List<Object> defaultRoleId, Boolean userCount, List<String> id) {
+  private GetAuthorizationRolesRequest createGetAuthorizationRolesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, List<String> permission, List<String> defaultRoleId, Boolean userCount, List<String> id) {
     return GetAuthorizationRolesRequest.builder()
             .withPageSize(pageSize)
     

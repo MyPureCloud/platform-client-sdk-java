@@ -9,7 +9,7 @@ title: AvailableTopic
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **description** | **String** |  |  [optional] |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** |  |  [optional] |
 | **requiresPermissions** | **List&lt;String&gt;** |  |  [optional] |
 | **schema** | **Map&lt;String, Object&gt;** |  |  [optional] |
 {: class="table table-striped"}

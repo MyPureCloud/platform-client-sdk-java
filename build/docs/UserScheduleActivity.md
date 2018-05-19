@@ -14,6 +14,7 @@ title: UserScheduleActivity
 | **description** | **String** | Description for this activity |  [optional] |
 | **countsAsPaidTime** | **Boolean** | Whether this activity is paid |  [optional] |
 | **isDstFallback** | **Boolean** | Whether this activity spans a DST fallback |  [optional] |
+| **timeOffRequestId** | **String** | Time off request id of this activity |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

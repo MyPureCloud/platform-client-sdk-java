@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -22,6 +23,42 @@ public class OutboundSettings  implements Serializable {
   private Integer version = null;
   private Integer maxCallsPerAgent = null;
   private Double maxLineUtilization = null;
+  private Double abandonSeconds = null;
+
+  /**
+   * The denominator to be used in determining the compliance abandon rate
+   */
+  public enum ComplianceAbandonRateDenominatorEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALL_CALLS("ALL_CALLS"),
+    CALLS_THAT_REACHED_QUEUE("CALLS_THAT_REACHED_QUEUE");
+
+    private String value;
+
+    ComplianceAbandonRateDenominatorEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ComplianceAbandonRateDenominatorEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ComplianceAbandonRateDenominatorEnum value : ComplianceAbandonRateDenominatorEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ComplianceAbandonRateDenominatorEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
   private String selfUri = null;
 
   
@@ -117,6 +154,42 @@ public class OutboundSettings  implements Serializable {
   }
 
   
+  /**
+   * The number of seconds used to determine if a call is abandoned
+   **/
+  public OutboundSettings abandonSeconds(Double abandonSeconds) {
+    this.abandonSeconds = abandonSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of seconds used to determine if a call is abandoned")
+  @JsonProperty("abandonSeconds")
+  public Double getAbandonSeconds() {
+    return abandonSeconds;
+  }
+  public void setAbandonSeconds(Double abandonSeconds) {
+    this.abandonSeconds = abandonSeconds;
+  }
+
+  
+  /**
+   * The denominator to be used in determining the compliance abandon rate
+   **/
+  public OutboundSettings complianceAbandonRateDenominator(ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator) {
+    this.complianceAbandonRateDenominator = complianceAbandonRateDenominator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The denominator to be used in determining the compliance abandon rate")
+  @JsonProperty("complianceAbandonRateDenominator")
+  public ComplianceAbandonRateDenominatorEnum getComplianceAbandonRateDenominator() {
+    return complianceAbandonRateDenominator;
+  }
+  public void setComplianceAbandonRateDenominator(ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator) {
+    this.complianceAbandonRateDenominator = complianceAbandonRateDenominator;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -141,12 +214,14 @@ public class OutboundSettings  implements Serializable {
         Objects.equals(this.version, outboundSettings.version) &&
         Objects.equals(this.maxCallsPerAgent, outboundSettings.maxCallsPerAgent) &&
         Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
+        Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
+        Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
         Objects.equals(this.selfUri, outboundSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, selfUri);
   }
 
   @Override
@@ -161,6 +236,8 @@ public class OutboundSettings  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
+    sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
+    sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

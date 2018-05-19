@@ -86,16 +86,16 @@ public class GetRecordingMediaretentionpoliciesRequest {
 	    return this;
 	} 
 	
-	private List<Object> expand;
-	public List<Object> getExpand() {
+	private List<String> expand;
+	public List<String> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<Object> expand) {
+	public void setExpand(List<String> expand) {
 		this.expand = expand;
 	}
 
-	public GetRecordingMediaretentionpoliciesRequest withExpand(List<Object> expand) {
+	public GetRecordingMediaretentionpoliciesRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -263,7 +263,7 @@ public class GetRecordingMediaretentionpoliciesRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<Object> expand) {
+		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}

@@ -364,14 +364,14 @@ public class ExternalContact  implements Serializable {
 
   
   /**
-   * Identifies an external system-of-record resource that may have more detailed information on the contact
+   * A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
    **/
   public ExternalContact externalSystemUrl(String externalSystemUrl) {
     this.externalSystemUrl = externalSystemUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Identifies an external system-of-record resource that may have more detailed information on the contact")
+  @ApiModelProperty(example = "null", value = "A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.")
   @JsonProperty("externalSystemUrl")
   public String getExternalSystemUrl() {
     return externalSystemUrl;
