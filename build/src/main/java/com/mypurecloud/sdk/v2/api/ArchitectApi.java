@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -96,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -4553,6 +4555,121 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param type Type (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param publishVersionId Publish version ID (optional)
+   * @param publishedAfter Published after (optional)
+   * @param publishedBefore Published before (optional)
+   * @return FlowDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowDivisionViewEntityListing getFlowsDivisionviews(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) throws IOException, ApiException {
+    return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore));
+  }
+
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param type Type (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param publishVersionId Publish version ID (optional)
+   * @param publishedAfter Published after (optional)
+   * @param publishedBefore Published before (optional)
+   * @return FlowDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) throws IOException {
+    return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore).withHttpInfo());
+  }
+
+  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) {
+    return GetFlowsDivisionviewsRequest.builder()
+            .withType(type)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withPublishVersionId(publishVersionId)
+    
+            .withPublishedAfter(publishedAfter)
+    
+            .withPublishedBefore(publishedBefore)
+    
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param request The request object
+   * @return FlowDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowDivisionViewEntityListing getFlowsDivisionviews(GetFlowsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowDivisionViewEntityListing> response = (ApiResponse<FlowDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowDivisionViewEntityListing> response = (ApiResponse<FlowDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

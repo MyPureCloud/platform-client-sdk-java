@@ -27,9 +27,9 @@ public class CreateQueueRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private UriReference division = null;
   private String description = null;
   private Integer version = null;
-  private UriReference division = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String modifiedBy = null;
@@ -148,6 +148,24 @@ public class CreateQueueRequest  implements Serializable {
 
   
   /**
+   * The division to which this entity belongs.
+   **/
+  public CreateQueueRequest division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
    * The queue description.
    **/
   public CreateQueueRequest description(String description) {
@@ -180,24 +198,6 @@ public class CreateQueueRequest  implements Serializable {
   }
   public void setVersion(Integer version) {
     this.version = version;
-  }
-
-  
-  /**
-   * The division to which this queue belongs.
-   **/
-  public CreateQueueRequest division(UriReference division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The division to which this queue belongs.")
-  @JsonProperty("division")
-  public UriReference getDivision() {
-    return division;
-  }
-  public void setDivision(UriReference division) {
-    this.division = division;
   }
 
   
@@ -578,9 +578,9 @@ public class CreateQueueRequest  implements Serializable {
     CreateQueueRequest createQueueRequest = (CreateQueueRequest) o;
     return Objects.equals(this.id, createQueueRequest.id) &&
         Objects.equals(this.name, createQueueRequest.name) &&
+        Objects.equals(this.division, createQueueRequest.division) &&
         Objects.equals(this.description, createQueueRequest.description) &&
         Objects.equals(this.version, createQueueRequest.version) &&
-        Objects.equals(this.division, createQueueRequest.division) &&
         Objects.equals(this.dateCreated, createQueueRequest.dateCreated) &&
         Objects.equals(this.dateModified, createQueueRequest.dateModified) &&
         Objects.equals(this.modifiedBy, createQueueRequest.modifiedBy) &&
@@ -606,7 +606,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, division, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, sourceQueueId, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, sourceQueueId, memberCount, selfUri);
   }
 
   @Override
@@ -616,9 +616,9 @@ public class CreateQueueRequest  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

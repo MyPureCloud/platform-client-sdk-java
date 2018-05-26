@@ -53,6 +53,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class DeleteArchitectSchedulegroupRequest {

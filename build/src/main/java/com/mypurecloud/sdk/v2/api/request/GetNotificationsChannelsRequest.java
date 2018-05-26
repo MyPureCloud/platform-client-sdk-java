@@ -29,6 +29,50 @@ import com.mypurecloud.sdk.v2.model.Channel;
 
 public class GetNotificationsChannelsRequest {
     
+	private String includechannels;
+	public String getIncludechannels() {
+		return this.includechannels;
+	}
+
+	public void setIncludechannels(String includechannels) {
+		this.includechannels = includechannels;
+	}
+
+	public GetNotificationsChannelsRequest withIncludechannels(String includechannels) {
+	    this.setIncludechannels(includechannels);
+	    return this;
+	} 
+
+	public enum includechannelsValues { 
+		TOKEN("token"), 
+		OAUTHCLIENT("oauthclient");
+
+		private String value;
+
+		includechannelsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static includechannelsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (includechannelsValues value : includechannelsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return includechannelsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -52,6 +96,8 @@ public class GetNotificationsChannelsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/notifications/channels")
+                .withQueryParameters("includechannels", "", includechannels)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -72,6 +118,16 @@ public class GetNotificationsChannelsRequest {
 			request = new GetNotificationsChannelsRequest();
 		}
 
+		
+		public Builder withIncludechannels(String includechannels) {
+			request.setIncludechannels(includechannels);
+			return this;
+		}
+
+		public Builder withIncludechannels(includechannelsValues includechannels) {
+		    request.setIncludechannels(includechannels.toString());
+		    return this;
+		}
 		
 
 		

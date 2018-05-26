@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -99,6 +100,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -3938,6 +3940,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowDivisionViewEntityListing> getFlowsDivisionviewsAsync(GetFlowsDivisionviewsRequest request, final AsyncApiCallback<FlowDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<FlowDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow information objects filterable by query parameters.
+   * This returns a simplified version of /flow consisting of name and type.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowDivisionViewEntityListing>> getFlowsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowDivisionViewEntityListing> response = (ApiResponse<FlowDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowDivisionViewEntityListing> response = (ApiResponse<FlowDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

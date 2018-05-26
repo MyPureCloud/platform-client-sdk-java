@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
+| [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
@@ -2872,6 +2873,75 @@ try {
 ### Return type
 
 [**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+
+<a name="getFlowsDivisionviews"></a>
+
+# **getFlowsDivisionviews**
+
+> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore)
+
+Get a pageable list of basic flow information objects filterable by query parameters.
+
+This returns a simplified version of /flow consisting of name and type.
+
+Wraps GET /api/v2/flows/divisionviews  
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ArchitectApi apiInstance = new ArchitectApi();
+String type = "type_example"; // String | Type
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+List<String> id = Arrays.asList("id_example"); // List<String> | ID
+String name = "name_example"; // String | Name
+String publishVersionId = "publishVersionId_example"; // String | Publish version ID
+String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
+String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
+try {
+    FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDivisionviews");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **String**| Type |<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **sortBy** | **String**| Sort by | [optional] [default to id] |
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] |
+| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] |
+| **name** | **String**| Name | [optional] |
+| **publishVersionId** | **String**| Publish version ID | [optional] |
+| **publishedAfter** | **String**| Published after | [optional] |
+| **publishedBefore** | **String**| Published before | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html)
 
 <a name="postArchitectDependencytrackingBuild"></a>
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -16,6 +17,7 @@ public class Channel  implements Serializable {
   
   private String connectUri = null;
   private String id = null;
+  private Date expires = null;
 
   
   /**
@@ -52,6 +54,24 @@ public class Channel  implements Serializable {
   }
 
   
+  /**
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Channel expires(Date expires) {
+    this.expires = expires;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("expires")
+  public Date getExpires() {
+    return expires;
+  }
+  public void setExpires(Date expires) {
+    this.expires = expires;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -63,12 +83,13 @@ public class Channel  implements Serializable {
     }
     Channel channel = (Channel) o;
     return Objects.equals(this.connectUri, channel.connectUri) &&
-        Objects.equals(this.id, channel.id);
+        Objects.equals(this.id, channel.id) &&
+        Objects.equals(this.expires, channel.expires);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(connectUri, id);
+    return Objects.hash(connectUri, id, expires);
   }
 
   @Override
@@ -78,6 +99,7 @@ public class Channel  implements Serializable {
     
     sb.append("    connectUri: ").append(toIndentedString(connectUri)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    expires: ").append(toIndentedString(expires)).append("\n");
     sb.append("}");
     return sb.toString();
   }

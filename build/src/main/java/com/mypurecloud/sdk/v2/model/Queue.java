@@ -27,9 +27,9 @@ public class Queue  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private UriReference division = null;
   private String description = null;
   private Integer version = null;
-  private UriReference division = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String modifiedBy = null;
@@ -147,6 +147,24 @@ public class Queue  implements Serializable {
 
   
   /**
+   * The division to which this entity belongs.
+   **/
+  public Queue division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
    * The queue description.
    **/
   public Queue description(String description) {
@@ -179,24 +197,6 @@ public class Queue  implements Serializable {
   }
   public void setVersion(Integer version) {
     this.version = version;
-  }
-
-  
-  /**
-   * The division to which this queue belongs.
-   **/
-  public Queue division(UriReference division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The division to which this queue belongs.")
-  @JsonProperty("division")
-  public UriReference getDivision() {
-    return division;
-  }
-  public void setDivision(UriReference division) {
-    this.division = division;
   }
 
   
@@ -559,9 +559,9 @@ public class Queue  implements Serializable {
     Queue queue = (Queue) o;
     return Objects.equals(this.id, queue.id) &&
         Objects.equals(this.name, queue.name) &&
+        Objects.equals(this.division, queue.division) &&
         Objects.equals(this.description, queue.description) &&
         Objects.equals(this.version, queue.version) &&
-        Objects.equals(this.division, queue.division) &&
         Objects.equals(this.dateCreated, queue.dateCreated) &&
         Objects.equals(this.dateModified, queue.dateModified) &&
         Objects.equals(this.modifiedBy, queue.modifiedBy) &&
@@ -586,7 +586,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, division, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
   }
 
   @Override
@@ -596,9 +596,9 @@ public class Queue  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

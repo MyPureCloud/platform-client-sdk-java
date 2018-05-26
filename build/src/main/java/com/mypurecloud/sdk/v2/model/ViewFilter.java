@@ -59,7 +59,9 @@ public class ViewFilter  implements Serializable {
   private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
   private List<String> queueIds = new ArrayList<String>();
   private List<String> skillIds = new ArrayList<String>();
+  private List<String> skillGroups = new ArrayList<String>();
   private List<String> languageIds = new ArrayList<String>();
+  private List<String> languageGroups = new ArrayList<String>();
 
   /**
    * Gets or Sets directions
@@ -204,6 +206,24 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * The skill groups used to filter the view
+   **/
+  public ViewFilter skillGroups(List<String> skillGroups) {
+    this.skillGroups = skillGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The skill groups used to filter the view")
+  @JsonProperty("skillGroups")
+  public List<String> getSkillGroups() {
+    return skillGroups;
+  }
+  public void setSkillGroups(List<String> skillGroups) {
+    this.skillGroups = skillGroups;
+  }
+
+  
+  /**
    * The language ids are used to filter the view
    **/
   public ViewFilter languageIds(List<String> languageIds) {
@@ -218,6 +238,24 @@ public class ViewFilter  implements Serializable {
   }
   public void setLanguageIds(List<String> languageIds) {
     this.languageIds = languageIds;
+  }
+
+  
+  /**
+   * The language groups used to filter the view
+   **/
+  public ViewFilter languageGroups(List<String> languageGroups) {
+    this.languageGroups = languageGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The language groups used to filter the view")
+  @JsonProperty("languageGroups")
+  public List<String> getLanguageGroups() {
+    return languageGroups;
+  }
+  public void setLanguageGroups(List<String> languageGroups) {
+    this.languageGroups = languageGroups;
   }
 
   
@@ -576,7 +614,9 @@ public class ViewFilter  implements Serializable {
     return Objects.equals(this.mediaTypes, viewFilter.mediaTypes) &&
         Objects.equals(this.queueIds, viewFilter.queueIds) &&
         Objects.equals(this.skillIds, viewFilter.skillIds) &&
+        Objects.equals(this.skillGroups, viewFilter.skillGroups) &&
         Objects.equals(this.languageIds, viewFilter.languageIds) &&
+        Objects.equals(this.languageGroups, viewFilter.languageGroups) &&
         Objects.equals(this.directions, viewFilter.directions) &&
         Objects.equals(this.wrapUpCodes, viewFilter.wrapUpCodes) &&
         Objects.equals(this.dnisList, viewFilter.dnisList) &&
@@ -600,7 +640,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, languageIds, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes);
   }
 
   @Override
@@ -611,7 +651,9 @@ public class ViewFilter  implements Serializable {
     sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
     sb.append("    queueIds: ").append(toIndentedString(queueIds)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
+    sb.append("    skillGroups: ").append(toIndentedString(skillGroups)).append("\n");
     sb.append("    languageIds: ").append(toIndentedString(languageIds)).append("\n");
+    sb.append("    languageGroups: ").append(toIndentedString(languageGroups)).append("\n");
     sb.append("    directions: ").append(toIndentedString(directions)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    dnisList: ").append(toIndentedString(dnisList)).append("\n");

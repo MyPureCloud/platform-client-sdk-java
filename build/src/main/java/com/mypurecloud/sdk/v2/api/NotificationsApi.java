@@ -282,26 +282,30 @@ public class NotificationsApi {
   /**
    * The list of existing channels
    * 
+   * @param includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
    * @return ChannelEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ChannelEntityListing getNotificationsChannels() throws IOException, ApiException {
-    return  getNotificationsChannels(createGetNotificationsChannelsRequest());
+  public ChannelEntityListing getNotificationsChannels(String includechannels) throws IOException, ApiException {
+    return  getNotificationsChannels(createGetNotificationsChannelsRequest(includechannels));
   }
 
   /**
    * The list of existing channels
    * 
+   * @param includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (optional, default to token)
    * @return ChannelEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo() throws IOException {
-    return getNotificationsChannels(createGetNotificationsChannelsRequest().withHttpInfo());
+  public ApiResponse<ChannelEntityListing> getNotificationsChannelsWithHttpInfo(String includechannels) throws IOException {
+    return getNotificationsChannels(createGetNotificationsChannelsRequest(includechannels).withHttpInfo());
   }
 
-  private GetNotificationsChannelsRequest createGetNotificationsChannelsRequest() {
+  private GetNotificationsChannelsRequest createGetNotificationsChannelsRequest(String includechannels) {
     return GetNotificationsChannelsRequest.builder()
+            .withIncludechannels(includechannels)
+    
             .build();
   }
 
@@ -439,7 +443,7 @@ public class NotificationsApi {
   
   /**
    * Create a new channel
-   * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+   * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
    * @return Channel
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -450,7 +454,7 @@ public class NotificationsApi {
 
   /**
    * Create a new channel
-   * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+   * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
    * @return Channel
    * @throws IOException if the request fails to be processed
    */
@@ -465,7 +469,7 @@ public class NotificationsApi {
 
   /**
    * Create a new channel
-   * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+   * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
    * @param request The request object
    * @return Channel
    * @throws ApiException if the request fails on the server
@@ -484,7 +488,7 @@ public class NotificationsApi {
 
   /**
    * Create a new channel
-   * There is a limit of 5 channels. Creating a 6th channel will remove the channel with oldest last used date.
+   * There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
