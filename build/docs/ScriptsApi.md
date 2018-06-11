@@ -24,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getScript**
 
+
+
 > [Script](Script.html) getScript(scriptId)
 
 Get a script
@@ -31,6 +33,10 @@ Get a script
 
 
 Wraps GET /api/v2/scripts/{scriptId}  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -75,6 +81,8 @@ try {
 
 # **getScriptPage**
 
+
+
 > [Page](Page.html) getScriptPage(scriptId, pageId, scriptDataVersion)
 
 Get a page
@@ -82,6 +90,10 @@ Get a page
 
 
 Wraps GET /api/v2/scripts/{scriptId}/pages/{pageId}  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -130,6 +142,8 @@ try {
 
 # **getScriptPages**
 
+
+
 > [List&lt;Page&gt;](Page.html) getScriptPages(scriptId, scriptDataVersion)
 
 Get the list of pages
@@ -137,6 +151,10 @@ Get the list of pages
 
 
 Wraps GET /api/v2/scripts/{scriptId}/pages  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -183,6 +201,8 @@ try {
 
 # **getScripts**
 
+
+
 > [ScriptEntityListing](ScriptEntityListing.html) getScripts(pageSize, pageNumber, expand, name, feature, flowId, sortBy, sortOrder, scriptDataVersion)
 
 Get the list of scripts
@@ -190,6 +210,10 @@ Get the list of scripts
 
 
 Wraps GET /api/v2/scripts  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -250,6 +274,8 @@ try {
 
 # **getScriptsPublished**
 
+
+
 > [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)
 
 Get the published scripts.
@@ -257,6 +283,10 @@ Get the published scripts.
 
 
 Wraps GET /api/v2/scripts/published  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -315,6 +345,8 @@ try {
 
 # **getScriptsPublishedScriptId**
 
+
+
 > [Script](Script.html) getScriptsPublishedScriptId(scriptId, scriptDataVersion)
 
 Get the published script.
@@ -322,6 +354,10 @@ Get the published script.
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -368,6 +404,8 @@ try {
 
 # **getScriptsPublishedScriptIdPage**
 
+
+
 > [Page](Page.html) getScriptsPublishedScriptIdPage(scriptId, pageId, scriptDataVersion)
 
 Get the published page.
@@ -375,6 +413,10 @@ Get the published page.
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages/{pageId}  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -423,6 +465,8 @@ try {
 
 # **getScriptsPublishedScriptIdPages**
 
+
+
 > [List&lt;Page&gt;](Page.html) getScriptsPublishedScriptIdPages(scriptId, scriptDataVersion)
 
 Get the list of published pages
@@ -430,6 +474,10 @@ Get the list of published pages
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -476,6 +524,8 @@ try {
 
 # **getScriptsPublishedScriptIdVariables**
 
+
+
 > Object getScriptsPublishedScriptIdVariables(scriptId, input, output, type, scriptDataVersion)
 
 Get the published variables
@@ -483,6 +533,10 @@ Get the published variables
 
 
 Wraps GET /api/v2/scripts/published/{scriptId}/variables  
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:view
 
 ### Example
 
@@ -535,6 +589,8 @@ try {
 
 # **getScriptsUploadStatus**
 
+
+
 > [ImportScriptStatusResponse](ImportScriptStatusResponse.html) getScriptsUploadStatus(uploadId, longPoll)
 
 Get the upload status of an imported script
@@ -542,6 +598,10 @@ Get the upload status of an imported script
 
 
 Wraps GET /api/v2/scripts/uploads/{uploadId}/status  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 
@@ -588,6 +648,8 @@ try {
 
 # **postScriptExport**
 
+
+
 > [ExportScriptResponse](ExportScriptResponse.html) postScriptExport(scriptId, body)
 
 Export a script via download service.
@@ -595,6 +657,10 @@ Export a script via download service.
 
 
 Wraps POST /api/v2/scripts/{scriptId}/export  
+
+Requires ANY permissions: 
+
+* scripter:script:view
 
 ### Example
 

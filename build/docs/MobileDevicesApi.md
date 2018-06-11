@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteMobiledevice**
 
+
+
 > Void deleteMobiledevice(deviceId)
 
 Delete device
@@ -25,6 +27,10 @@ Delete device
 
 
 Wraps DELETE /api/v2/mobiledevices/{deviceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -68,6 +74,8 @@ null (empty response body)
 
 # **getMobiledevice**
 
+
+
 > [UserDevice](UserDevice.html) getMobiledevice(deviceId)
 
 Get device
@@ -75,6 +83,10 @@ Get device
 
 
 Wraps GET /api/v2/mobiledevices/{deviceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -119,6 +131,8 @@ try {
 
 # **getMobiledevices**
 
+
+
 > [DirectoryUserDevicesListing](DirectoryUserDevicesListing.html) getMobiledevices(pageSize, pageNumber, sortOrder)
 
 Get a list of all devices.
@@ -126,6 +140,10 @@ Get a list of all devices.
 
 
 Wraps GET /api/v2/mobiledevices  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -174,6 +192,8 @@ try {
 
 # **postMobiledevices**
 
+
+
 > [UserDevice](UserDevice.html) postMobiledevices(body)
 
 Create User device
@@ -181,6 +201,10 @@ Create User device
 
 
 Wraps POST /api/v2/mobiledevices  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -225,6 +249,8 @@ try {
 
 # **putMobiledevice**
 
+
+
 > [UserDevice](UserDevice.html) putMobiledevice(deviceId, body)
 
 Update device
@@ -232,6 +258,10 @@ Update device
 
 
 Wraps PUT /api/v2/mobiledevices/{deviceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

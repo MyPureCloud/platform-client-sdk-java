@@ -1633,7 +1633,7 @@ public class ExternalContactsApi {
    * Create a note for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return Note
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1646,7 +1646,7 @@ public class ExternalContactsApi {
    * Create a note for an external contact
    * 
    * @param contactId ExternalContact Id (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return Note
    * @throws IOException if the request fails to be processed
    */
@@ -1715,7 +1715,7 @@ public class ExternalContactsApi {
   /**
    * Create an external contact
    * 
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1727,7 +1727,7 @@ public class ExternalContactsApi {
   /**
    * Create an external contact
    * 
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -1795,7 +1795,7 @@ public class ExternalContactsApi {
    * Create a note for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return Note
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1808,7 +1808,7 @@ public class ExternalContactsApi {
    * Create a note for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return Note
    * @throws IOException if the request fails to be processed
    */
@@ -1877,7 +1877,7 @@ public class ExternalContactsApi {
   /**
    * Create an external organization
    * 
-   * @param body ExternalOrganization (optional)
+   * @param body ExternalOrganization (required)
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1889,7 +1889,7 @@ public class ExternalContactsApi {
   /**
    * Create an external organization
    * 
-   * @param body ExternalOrganization (optional)
+   * @param body ExternalOrganization (required)
    * @return ExternalOrganization
    * @throws IOException if the request fails to be processed
    */
@@ -1956,7 +1956,7 @@ public class ExternalContactsApi {
   /**
    * Create a relationship
    * 
-   * @param body Relationship (optional)
+   * @param body Relationship (required)
    * @return Relationship
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1968,7 +1968,7 @@ public class ExternalContactsApi {
   /**
    * Create a relationship
    * 
-   * @param body Relationship (optional)
+   * @param body Relationship (required)
    * @return Relationship
    * @throws IOException if the request fails to be processed
    */
@@ -2036,7 +2036,7 @@ public class ExternalContactsApi {
    * Update an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return ExternalContact
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2049,7 +2049,7 @@ public class ExternalContactsApi {
    * Update an external contact
    * 
    * @param contactId ExternalContact ID (required)
-   * @param body ExternalContact (optional)
+   * @param body ExternalContact (required)
    * @return ExternalContact
    * @throws IOException if the request fails to be processed
    */
@@ -2120,7 +2120,7 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
-   * @param body Note (optional)
+   * @param body Note (required)
    * @return Note
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2134,7 +2134,7 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
-   * @param body Note (optional)
+   * @param body Note (required)
    * @return Note
    * @throws IOException if the request fails to be processed
    */
@@ -2206,7 +2206,7 @@ public class ExternalContactsApi {
    * Associate an external contact with a conversation
    * 
    * @param conversationId Conversation ID (required)
-   * @param body ConversationAssociation (optional)
+   * @param body ConversationAssociation (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -2218,7 +2218,7 @@ public class ExternalContactsApi {
    * Associate an external contact with a conversation
    * 
    * @param conversationId Conversation ID (required)
-   * @param body ConversationAssociation (optional)
+   * @param body ConversationAssociation (required)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException {
@@ -2286,7 +2286,7 @@ public class ExternalContactsApi {
    * Update an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param body ExternalOrganization (optional)
+   * @param body ExternalOrganization (required)
    * @return ExternalOrganization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2299,7 +2299,7 @@ public class ExternalContactsApi {
    * Update an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
-   * @param body ExternalOrganization (optional)
+   * @param body ExternalOrganization (required)
    * @return ExternalOrganization
    * @throws IOException if the request fails to be processed
    */
@@ -2370,7 +2370,7 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
-   * @param body Note (optional)
+   * @param body Note (required)
    * @return Note
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2384,7 +2384,7 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
-   * @param body Note (optional)
+   * @param body Note (required)
    * @return Note
    * @throws IOException if the request fails to be processed
    */
@@ -2453,7 +2453,7 @@ public class ExternalContactsApi {
 
   
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param externalOrganizationId External Organization ID (required)
    * @param trustorId Trustor ID (required)
@@ -2466,7 +2466,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param externalOrganizationId External Organization ID (required)
    * @param trustorId Trustor ID (required)
@@ -2487,7 +2487,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param request The request object
    * @return ExternalOrganization
@@ -2506,7 +2506,7 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param request The request object
    * @return the response
@@ -2539,7 +2539,7 @@ public class ExternalContactsApi {
    * Update a relationship
    * 
    * @param relationshipId Relationship Id (required)
-   * @param body Relationship (optional)
+   * @param body Relationship (required)
    * @return Relationship
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2552,7 +2552,7 @@ public class ExternalContactsApi {
    * Update a relationship
    * 
    * @param relationshipId Relationship Id (required)
-   * @param body Relationship (optional)
+   * @param body Relationship (required)
    * @return Relationship
    * @throws IOException if the request fails to be processed
    */

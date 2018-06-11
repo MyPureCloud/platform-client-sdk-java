@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteStationAssociateduser**
 
+
+
 > Void deleteStationAssociateduser(stationId)
 
 Unassigns the user assigned to this station
@@ -25,6 +27,10 @@ Unassigns the user assigned to this station
 
 
 Wraps DELETE /api/v2/stations/{stationId}/associateduser  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -68,6 +74,8 @@ null (empty response body)
 
 # **getStation**
 
+
+
 > [Station](Station.html) getStation(stationId)
 
 Get station.
@@ -75,6 +83,10 @@ Get station.
 
 
 Wraps GET /api/v2/stations/{stationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -119,6 +131,8 @@ try {
 
 # **getStations**
 
+
+
 > [StationEntityListing](StationEntityListing.html) getStations(pageSize, pageNumber, sortBy, name, userSelectable, webRtcUserId, id, lineAppearanceId)
 
 Get the list of available stations.
@@ -126,6 +140,10 @@ Get the list of available stations.
 
 
 Wraps GET /api/v2/stations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -184,6 +202,8 @@ try {
 
 # **getStationsSettings**
 
+
+
 > [StationSettings](StationSettings.html) getStationsSettings()
 
 Get an organization&#39;s StationSettings
@@ -191,6 +211,10 @@ Get an organization&#39;s StationSettings
 
 
 Wraps GET /api/v2/stations/settings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -231,6 +255,8 @@ This endpoint does not require any parameters.
 
 # **patchStationsSettings**
 
+
+
 > [StationSettings](StationSettings.html) patchStationsSettings(body)
 
 Patch an organization&#39;s StationSettings
@@ -238,6 +264,10 @@ Patch an organization&#39;s StationSettings
 
 
 Wraps PATCH /api/v2/stations/settings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 

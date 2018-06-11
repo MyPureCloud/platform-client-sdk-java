@@ -88,6 +88,11 @@ public class PutExternalcontactsContactRequest {
             throw new IllegalStateException("Missing the required parameter 'contactId' when building request for PutExternalcontactsContactRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsContactRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/externalcontacts/contacts/{contactId}")
                 .withPathParameter("contactId", contactId)
@@ -106,9 +111,9 @@ public class PutExternalcontactsContactRequest {
 	}
 
 	
-	public static Builder builder(String contactId) {
+	public static Builder builder(String contactId, ExternalContact body) {
 	    return new Builder()
-	            .withRequiredParams(contactId);
+	            .withRequiredParams(contactId, body);
 	}
 	
 
@@ -132,8 +137,9 @@ public class PutExternalcontactsContactRequest {
 		
 
 		
-		public Builder withRequiredParams(String contactId) {
+		public Builder withRequiredParams(String contactId, ExternalContact body) {
 			request.setContactId(contactId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -144,6 +150,11 @@ public class PutExternalcontactsContactRequest {
             // verify the required parameter 'contactId' is set
             if (request.contactId == null) {
                 throw new IllegalStateException("Missing the required parameter 'contactId' when building request for PutExternalcontactsContactRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsContactRequest.");
             }
             
 			return request;

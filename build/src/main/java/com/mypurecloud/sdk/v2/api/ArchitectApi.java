@@ -4081,12 +4081,13 @@ public class ArchitectApi {
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) throws IOException, ApiException {
-    return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore));
+  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
+    return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId));
   }
 
   /**
@@ -4109,14 +4110,15 @@ public class ArchitectApi {
    * @param includeSchemas Include variable schemas (optional, default to false)
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) throws IOException {
-    return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore).withHttpInfo());
+  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
+    return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId).withHttpInfo());
   }
 
-  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore) {
+  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) {
     return GetFlowsRequest.builder()
             .withType(type)
     
@@ -4151,6 +4153,8 @@ public class ArchitectApi {
             .withPublishedAfter(publishedAfter)
     
             .withPublishedBefore(publishedBefore)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }
@@ -4573,12 +4577,13 @@ public class ArchitectApi {
    * @param publishVersionId Publish version ID (optional)
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowDivisionViewEntityListing getFlowsDivisionviews(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) throws IOException, ApiException {
-    return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore));
+  public FlowDivisionViewEntityListing getFlowsDivisionviews(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
+    return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId));
   }
 
   /**
@@ -4594,14 +4599,15 @@ public class ArchitectApi {
    * @param publishVersionId Publish version ID (optional)
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowDivisionViewEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) throws IOException {
-    return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore).withHttpInfo());
+  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
+    return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId).withHttpInfo());
   }
 
-  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore) {
+  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) {
     return GetFlowsDivisionviewsRequest.builder()
             .withType(type)
     
@@ -4622,6 +4628,8 @@ public class ArchitectApi {
             .withPublishedAfter(publishedAfter)
     
             .withPublishedBefore(publishedBefore)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }

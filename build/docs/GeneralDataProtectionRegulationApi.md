@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getGdprRequest**
 
+
+
 > [GDPRRequest](GDPRRequest.html) getGdprRequest(requestId)
 
 Get an existing GDPR request
@@ -24,6 +26,10 @@ Get an existing GDPR request
 
 
 Wraps GET /api/v2/gdpr/requests/{requestId}  
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -68,6 +74,8 @@ try {
 
 # **getGdprRequests**
 
+
+
 > [GDPRRequestEntityListing](GDPRRequestEntityListing.html) getGdprRequests(pageSize, pageNumber)
 
 Get all GDPR requests
@@ -75,6 +83,10 @@ Get all GDPR requests
 
 
 Wraps GET /api/v2/gdpr/requests  
+
+Requires ANY permissions: 
+
+* gdpr:request:view
 
 ### Example
 
@@ -121,6 +133,8 @@ try {
 
 # **getGdprSubjects**
 
+
+
 > [GDPRSubjectEntityListing](GDPRSubjectEntityListing.html) getGdprSubjects(searchType, searchValue)
 
 Get GDPR subjects
@@ -128,6 +142,10 @@ Get GDPR subjects
 
 
 Wraps GET /api/v2/gdpr/subjects  
+
+Requires ANY permissions: 
+
+* gdpr:subject:view
 
 ### Example
 
@@ -174,6 +192,8 @@ try {
 
 # **postGdprRequests**
 
+
+
 > [GDPRRequest](GDPRRequest.html) postGdprRequests(body, deleteConfirmed)
 
 Submit a new GDPR request
@@ -181,6 +201,10 @@ Submit a new GDPR request
 
 
 Wraps POST /api/v2/gdpr/requests  
+
+Requires ANY permissions: 
+
+* gdpr:request:add
 
 ### Example
 

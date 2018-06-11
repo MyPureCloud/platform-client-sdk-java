@@ -23,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteLanguage**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > Void deleteLanguage(languageId)
 
 Delete Language (Deprecated)
@@ -30,6 +32,10 @@ Delete Language (Deprecated)
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
 Wraps DELETE /api/v2/languages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -73,6 +79,8 @@ null (empty response body)
 
 # **deleteRoutingLanguage**
 
+
+
 > Void deleteRoutingLanguage(languageId)
 
 Delete Language
@@ -80,6 +88,10 @@ Delete Language
 
 
 Wraps DELETE /api/v2/routing/languages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -123,6 +135,8 @@ null (empty response body)
 
 # **getLanguage**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [Language](Language.html) getLanguage(languageId)
 
 Get language (Deprecated)
@@ -130,6 +144,10 @@ Get language (Deprecated)
 This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
 
 Wraps GET /api/v2/languages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -174,6 +192,8 @@ try {
 
 # **getLanguages**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [LanguageEntityListing](LanguageEntityListing.html) getLanguages(pageSize, pageNumber, sortOrder, name)
 
 Get the list of supported languages. (Deprecated)
@@ -181,6 +201,10 @@ Get the list of supported languages. (Deprecated)
 This endpoint is deprecated. It has been moved to /routing/languages
 
 Wraps GET /api/v2/languages  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -231,6 +255,8 @@ try {
 
 # **getLanguagesTranslations**
 
+
+
 > [AvailableTranslations](AvailableTranslations.html) getLanguagesTranslations()
 
 Get all available languages for translation
@@ -238,6 +264,10 @@ Get all available languages for translation
 
 
 Wraps GET /api/v2/languages/translations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -278,6 +308,8 @@ This endpoint does not require any parameters.
 
 # **getLanguagesTranslationsBuiltin**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsBuiltin(language)
 
 Get the builtin translation for a language
@@ -285,6 +317,10 @@ Get the builtin translation for a language
 
 
 Wraps GET /api/v2/languages/translations/builtin  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -329,6 +365,8 @@ try {
 
 # **getLanguagesTranslationsOrganization**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsOrganization(language)
 
 Get effective translation for an organization by language
@@ -336,6 +374,10 @@ Get effective translation for an organization by language
 
 
 Wraps GET /api/v2/languages/translations/organization  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -380,6 +422,8 @@ try {
 
 # **getLanguagesTranslationsUser**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) getLanguagesTranslationsUser(userId)
 
 Get effective language translation for a user
@@ -387,6 +431,10 @@ Get effective language translation for a user
 
 
 Wraps GET /api/v2/languages/translations/users/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -431,6 +479,8 @@ try {
 
 # **getRoutingLanguage**
 
+
+
 > [Language](Language.html) getRoutingLanguage(languageId)
 
 Get language
@@ -438,6 +488,10 @@ Get language
 
 
 Wraps GET /api/v2/routing/languages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 
@@ -482,6 +536,8 @@ try {
 
 # **postLanguages**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [Language](Language.html) postLanguages(body)
 
 Create Language (Deprecated)
@@ -489,6 +545,10 @@ Create Language (Deprecated)
 This endpoint is deprecated. It has been moved to /routing/languages
 
 Wraps POST /api/v2/languages  
+
+Requires ANY permissions: 
+
+* routing:skill:manage
 
 ### Example
 

@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getDate**
 
+
+
 > [ServerDate](ServerDate.html) getDate()
 
 Get the current system date/time
@@ -23,6 +25,10 @@ Get the current system date/time
 
 
 Wraps GET /api/v2/date  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -63,6 +69,8 @@ This endpoint does not require any parameters.
 
 # **getTimezones**
 
+
+
 > [TimeZoneEntityListing](TimeZoneEntityListing.html) getTimezones(pageSize, pageNumber)
 
 Get time zones list
@@ -70,6 +78,10 @@ Get time zones list
 
 
 Wraps GET /api/v2/timezones  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -116,6 +128,8 @@ try {
 
 # **postCertificateDetails**
 
+
+
 > [ParsedCertificate](ParsedCertificate.html) postCertificateDetails(body)
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
@@ -123,6 +137,10 @@ Returns the information about an X509 PEM encoded certificate or certificate cha
 
 
 Wraps POST /api/v2/certificate/details  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

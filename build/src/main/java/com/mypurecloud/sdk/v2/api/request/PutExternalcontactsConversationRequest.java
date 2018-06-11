@@ -88,6 +88,11 @@ public class PutExternalcontactsConversationRequest {
             throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsConversationRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/externalcontacts/conversations/{conversationId}")
                 .withPathParameter("conversationId", conversationId)
@@ -106,9 +111,9 @@ public class PutExternalcontactsConversationRequest {
 	}
 
 	
-	public static Builder builder(String conversationId) {
+	public static Builder builder(String conversationId, ConversationAssociation body) {
 	    return new Builder()
-	            .withRequiredParams(conversationId);
+	            .withRequiredParams(conversationId, body);
 	}
 	
 
@@ -132,8 +137,9 @@ public class PutExternalcontactsConversationRequest {
 		
 
 		
-		public Builder withRequiredParams(String conversationId) {
+		public Builder withRequiredParams(String conversationId, ConversationAssociation body) {
 			request.setConversationId(conversationId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -144,6 +150,11 @@ public class PutExternalcontactsConversationRequest {
             // verify the required parameter 'conversationId' is set
             if (request.conversationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsConversationRequest.");
             }
             
 			return request;

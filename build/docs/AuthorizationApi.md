@@ -30,6 +30,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteAuthorizationRole**
 
+
+
 > Void deleteAuthorizationRole(roleId)
 
 Delete an organization role.
@@ -37,6 +39,10 @@ Delete an organization role.
 
 
 Wraps DELETE /api/v2/authorization/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:delete
 
 ### Example
 
@@ -80,6 +86,8 @@ null (empty response body)
 
 # **deleteUserRoles**
 
+
+
 > Void deleteUserRoles(userId)
 
 Removes all the roles from the user.
@@ -87,6 +95,10 @@ Removes all the roles from the user.
 
 
 Wraps DELETE /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -130,6 +142,8 @@ null (empty response body)
 
 # **getAuthorizationPermissions**
 
+
+
 > [PermissionCollectionEntityListing](PermissionCollectionEntityListing.html) getAuthorizationPermissions(pageSize, pageNumber)
 
 Get all permissions.
@@ -137,6 +151,10 @@ Get all permissions.
 Retrieve a list of all permission defined in the system.
 
 Wraps GET /api/v2/authorization/permissions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -183,6 +201,8 @@ try {
 
 # **getAuthorizationProducts**
 
+
+
 > [OrganizationProductEntityListing](OrganizationProductEntityListing.html) getAuthorizationProducts()
 
 Get the list of enabled products
@@ -190,6 +210,10 @@ Get the list of enabled products
 Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
 
 Wraps GET /api/v2/authorization/products  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -230,6 +254,8 @@ This endpoint does not require any parameters.
 
 # **getAuthorizationRole**
 
+
+
 > [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId)
 
 Get a single organization role.
@@ -237,6 +263,10 @@ Get a single organization role.
 Get the organization role specified by its ID.
 
 Wraps GET /api/v2/authorization/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -281,6 +311,8 @@ try {
 
 # **getAuthorizationRoleComparedefaultRightRoleId**
 
+
+
 > [DomainOrgRoleDifference](DomainOrgRoleDifference.html) getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 Get an org role to default role comparison comparison
@@ -288,6 +320,10 @@ Get an org role to default role comparison comparison
 Compares any organization role to a default role id and show differences
 
 Wraps GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}  
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -334,6 +370,8 @@ try {
 
 # **getAuthorizationRoles**
 
+
+
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) getAuthorizationRoles(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, permission, defaultRoleId, userCount, id)
 
 Retrieve a list of all roles defined for the organization
@@ -341,6 +379,10 @@ Retrieve a list of all roles defined for the organization
 
 
 Wraps GET /api/v2/authorization/roles  
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -405,6 +447,8 @@ try {
 
 # **getUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) getUserRoles(userId)
 
 Returns a listing of roles and permissions for a user.
@@ -412,6 +456,10 @@ Returns a listing of roles and permissions for a user.
 
 
 Wraps GET /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -456,6 +504,8 @@ try {
 
 # **patchAuthorizationRole**
 
+
+
 > [DomainOrganizationRole](DomainOrganizationRole.html) patchAuthorizationRole(roleId, body)
 
 Patch Organization Role for needsUpdate Field
@@ -463,6 +513,10 @@ Patch Organization Role for needsUpdate Field
 Patch Organization Role for needsUpdate Field
 
 Wraps PATCH /api/v2/authorization/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -509,6 +563,8 @@ try {
 
 # **postAuthorizationRoleComparedefaultRightRoleId**
 
+
+
 > [DomainOrgRoleDifference](DomainOrgRoleDifference.html) postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
 Get an unsaved org role to default role comparison
@@ -516,6 +572,10 @@ Get an unsaved org role to default role comparison
 Allows users to compare their existing roles in an unsaved state to its default role
 
 Wraps POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}  
+
+Requires ANY permissions: 
+
+* authorization:role:view
 
 ### Example
 
@@ -564,6 +624,8 @@ try {
 
 # **postAuthorizationRoles**
 
+
+
 > [DomainOrganizationRole](DomainOrganizationRole.html) postAuthorizationRoles(body)
 
 Create an organization role.
@@ -571,6 +633,10 @@ Create an organization role.
 
 
 Wraps POST /api/v2/authorization/roles  
+
+Requires ANY permissions: 
+
+* authorization:role:add
 
 ### Example
 
@@ -615,6 +681,8 @@ try {
 
 # **postAuthorizationRolesDefault**
 
+
+
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) postAuthorizationRolesDefault(force)
 
 Restores all default roles
@@ -622,6 +690,10 @@ Restores all default roles
 This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
 
 Wraps POST /api/v2/authorization/roles/default  
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -666,6 +738,8 @@ try {
 
 # **putAuthorizationRole**
 
+
+
 > [DomainOrganizationRole](DomainOrganizationRole.html) putAuthorizationRole(roleId, body)
 
 Update an organization role.
@@ -673,6 +747,10 @@ Update an organization role.
 Update
 
 Wraps PUT /api/v2/authorization/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:role:edit
 
 ### Example
 
@@ -719,6 +797,8 @@ try {
 
 # **putAuthorizationRoleUsersAdd**
 
+
+
 > List&lt;String&gt; putAuthorizationRoleUsersAdd(roleId, body)
 
 Sets the users for the role
@@ -726,6 +806,10 @@ Sets the users for the role
 
 
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/add  
+
+Requires ANY permissions: 
+
+* authorization:grant:add
 
 ### Example
 
@@ -772,6 +856,8 @@ try {
 
 # **putAuthorizationRoleUsersRemove**
 
+
+
 > List&lt;String&gt; putAuthorizationRoleUsersRemove(roleId, body)
 
 Removes the users from the role
@@ -779,6 +865,10 @@ Removes the users from the role
 
 
 Wraps PUT /api/v2/authorization/roles/{roleId}/users/remove  
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
 
 ### Example
 
@@ -825,6 +915,8 @@ try {
 
 # **putAuthorizationRolesDefault**
 
+
+
 > [OrganizationRoleEntityListing](OrganizationRoleEntityListing.html) putAuthorizationRolesDefault(body)
 
 Restore specified default roles
@@ -832,6 +924,10 @@ Restore specified default roles
 
 
 Wraps PUT /api/v2/authorization/roles/default  
+
+Requires ANY permissions: 
+
+* authorization:role:edit
 
 ### Example
 
@@ -876,6 +972,8 @@ try {
 
 # **putUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) putUserRoles(userId, body)
 
 Sets the user&#39;s roles
@@ -883,6 +981,10 @@ Sets the user&#39;s roles
 
 
 Wraps PUT /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 

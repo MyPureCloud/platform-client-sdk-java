@@ -69,6 +69,11 @@ public class PostExternalcontactsRelationshipsRequest {
 
     public ApiRequest<Relationship> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostExternalcontactsRelationshipsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/externalcontacts/relationships")
                 .withBody(body)
@@ -84,6 +89,11 @@ public class PostExternalcontactsRelationshipsRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(Relationship body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 	
 
 	public static class Builder {
@@ -101,8 +111,19 @@ public class PostExternalcontactsRelationshipsRequest {
 		
 
 		
+		public Builder withRequiredParams(Relationship body) {
+			request.setBody(body);
+			
+			return this;
+		}
+		
 
 		public PostExternalcontactsRelationshipsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostExternalcontactsRelationshipsRequest.");
+            }
             
 			return request;
 		}

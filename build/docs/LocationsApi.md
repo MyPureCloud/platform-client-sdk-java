@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getLocation**
 
+
+
 > [LocationDefinition](LocationDefinition.html) getLocation(locationId)
 
 Get Location by ID.
@@ -24,6 +26,10 @@ Get Location by ID.
 
 
 Wraps GET /api/v2/locations/{locationId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -68,6 +74,8 @@ try {
 
 # **getLocations**
 
+
+
 > [LocationEntityListing](LocationEntityListing.html) getLocations(pageSize, pageNumber, sortOrder)
 
 Get a list of all locations.
@@ -75,6 +83,10 @@ Get a list of all locations.
 
 
 Wraps GET /api/v2/locations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -123,6 +135,8 @@ try {
 
 # **getLocationsSearch**
 
+
+
 > [LocationsSearchResponse](LocationsSearchResponse.html) getLocationsSearch(q64, expand)
 
 Search locations using the q64 value returned from a previous search
@@ -130,6 +144,10 @@ Search locations using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/locations/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -176,6 +194,8 @@ try {
 
 # **postLocationsSearch**
 
+
+
 > [LocationsSearchResponse](LocationsSearchResponse.html) postLocationsSearch(body)
 
 Search locations
@@ -183,6 +203,10 @@ Search locations
 
 
 Wraps POST /api/v2/locations/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

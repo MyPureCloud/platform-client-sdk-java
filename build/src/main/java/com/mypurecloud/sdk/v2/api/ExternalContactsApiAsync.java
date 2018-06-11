@@ -2206,7 +2206,7 @@ public class ExternalContactsApiAsync {
 
   
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2240,7 +2240,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Links a Trustor with an Extenral Organization
+   * Links a Trustor with an External Organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

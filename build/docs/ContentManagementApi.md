@@ -51,6 +51,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteContentmanagementDocument**
 
+
+
 > Void deleteContentmanagementDocument(documentId, override)
 
 Delete a document.
@@ -58,6 +60,10 @@ Delete a document.
 
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -103,6 +109,8 @@ null (empty response body)
 
 # **deleteContentmanagementShare**
 
+
+
 > Void deleteContentmanagementShare(shareId)
 
 Deletes an existing share.
@@ -110,6 +118,10 @@ Deletes an existing share.
 This revokes sharing rights specified in the share record
 
 Wraps DELETE /api/v2/contentmanagement/shares/{shareId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -153,6 +165,8 @@ null (empty response body)
 
 # **deleteContentmanagementStatusStatusId**
 
+
+
 > Void deleteContentmanagementStatusStatusId(statusId)
 
 Cancel the command for this status
@@ -160,6 +174,10 @@ Cancel the command for this status
 
 
 Wraps DELETE /api/v2/contentmanagement/status/{statusId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -203,6 +221,8 @@ null (empty response body)
 
 # **deleteContentmanagementWorkspace**
 
+
+
 > Void deleteContentmanagementWorkspace(workspaceId, moveChildrenToWorkspaceId)
 
 Delete a workspace
@@ -210,6 +230,10 @@ Delete a workspace
 
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -255,6 +279,8 @@ null (empty response body)
 
 # **deleteContentmanagementWorkspaceMember**
 
+
+
 > Void deleteContentmanagementWorkspaceMember(workspaceId, memberId)
 
 Delete a member from a workspace
@@ -262,6 +288,10 @@ Delete a member from a workspace
 
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -307,6 +337,8 @@ null (empty response body)
 
 # **deleteContentmanagementWorkspaceTagvalue**
 
+
+
 > Void deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId)
 
 Delete workspace tag
@@ -314,6 +346,10 @@ Delete workspace tag
 Delete a tag from a workspace. Will remove this tag from all documents.
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -359,6 +395,8 @@ null (empty response body)
 
 # **getContentmanagementDocument**
 
+
+
 > [Document](Document.html) getContentmanagementDocument(documentId, expand)
 
 Get a document.
@@ -366,6 +404,10 @@ Get a document.
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -412,6 +454,8 @@ try {
 
 # **getContentmanagementDocumentAudits**
 
+
+
 > [DocumentAuditEntityListing](DocumentAuditEntityListing.html) getContentmanagementDocumentAudits(documentId, pageSize, pageNumber, transactionFilter, level, sortBy, sortOrder)
 
 Get a list of audits for a document.
@@ -419,6 +463,10 @@ Get a list of audits for a document.
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -475,6 +523,8 @@ try {
 
 # **getContentmanagementDocumentContent**
 
+
+
 > [DownloadResponse](DownloadResponse.html) getContentmanagementDocumentContent(documentId, disposition, contentType)
 
 Download a document.
@@ -482,6 +532,10 @@ Download a document.
 
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -530,6 +584,8 @@ try {
 
 # **getContentmanagementDocuments**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [DocumentEntityListing](DocumentEntityListing.html) getContentmanagementDocuments(workspaceId, name, expand, pageSize, pageNumber, sortBy, sortOrder)
 
 Get a list of documents.
@@ -537,6 +593,10 @@ Get a list of documents.
 
 
 Wraps GET /api/v2/contentmanagement/documents  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -593,6 +653,8 @@ try {
 
 # **getContentmanagementQuery**
 
+
+
 > [QueryResults](QueryResults.html) getContentmanagementQuery(queryPhrase, pageSize, pageNumber, sortBy, sortOrder, expand)
 
 Query content
@@ -600,6 +662,10 @@ Query content
 
 
 Wraps GET /api/v2/contentmanagement/query  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -654,6 +720,8 @@ try {
 
 # **getContentmanagementSecurityprofile**
 
+
+
 > [SecurityProfile](SecurityProfile.html) getContentmanagementSecurityprofile(securityProfileId)
 
 Get a Security Profile
@@ -661,6 +729,10 @@ Get a Security Profile
 
 
 Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -705,6 +777,8 @@ try {
 
 # **getContentmanagementSecurityprofiles**
 
+
+
 > [SecurityProfileEntityListing](SecurityProfileEntityListing.html) getContentmanagementSecurityprofiles()
 
 Get a List of Security Profiles
@@ -712,6 +786,10 @@ Get a List of Security Profiles
 
 
 Wraps GET /api/v2/contentmanagement/securityprofiles  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -752,6 +830,8 @@ This endpoint does not require any parameters.
 
 # **getContentmanagementShare**
 
+
+
 > [Share](Share.html) getContentmanagementShare(shareId, expand)
 
 Retrieve details about an existing share.
@@ -759,6 +839,10 @@ Retrieve details about an existing share.
 
 
 Wraps GET /api/v2/contentmanagement/shares/{shareId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -805,6 +889,8 @@ try {
 
 # **getContentmanagementSharedSharedId**
 
+
+
 > [SharedResponse](SharedResponse.html) getContentmanagementSharedSharedId(sharedId, redirect, disposition, contentType, expand)
 
 Get shared documents. Securely download a shared document.
@@ -812,6 +898,10 @@ Get shared documents. Securely download a shared document.
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 
 Wraps GET /api/v2/contentmanagement/shared/{sharedId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -864,6 +954,8 @@ try {
 
 # **getContentmanagementShares**
 
+
+
 > [ShareEntityListing](ShareEntityListing.html) getContentmanagementShares(entityId, expand, pageSize, pageNumber)
 
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
@@ -871,6 +963,10 @@ Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 Failing to specify a filter will return 400.
 
 Wraps GET /api/v2/contentmanagement/shares  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -921,6 +1017,8 @@ try {
 
 # **getContentmanagementStatus**
 
+
+
 > [CommandStatusEntityListing](CommandStatusEntityListing.html) getContentmanagementStatus(pageSize, pageNumber)
 
 Get a list of statuses for pending operations
@@ -928,6 +1026,10 @@ Get a list of statuses for pending operations
 
 
 Wraps GET /api/v2/contentmanagement/status  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -974,6 +1076,8 @@ try {
 
 # **getContentmanagementStatusStatusId**
 
+
+
 > [CommandStatus](CommandStatus.html) getContentmanagementStatusStatusId(statusId)
 
 Get a status.
@@ -981,6 +1085,10 @@ Get a status.
 
 
 Wraps GET /api/v2/contentmanagement/status/{statusId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1025,6 +1133,8 @@ try {
 
 # **getContentmanagementUsage**
 
+
+
 > [Usage](Usage.html) getContentmanagementUsage()
 
 Get usage details.
@@ -1032,6 +1142,10 @@ Get usage details.
 
 
 Wraps GET /api/v2/contentmanagement/usage  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1072,6 +1186,8 @@ This endpoint does not require any parameters.
 
 # **getContentmanagementWorkspace**
 
+
+
 > [Workspace](Workspace.html) getContentmanagementWorkspace(workspaceId, expand)
 
 Get a workspace.
@@ -1079,6 +1195,10 @@ Get a workspace.
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1125,6 +1245,8 @@ try {
 
 # **getContentmanagementWorkspaceDocuments**
 
+
+
 > [DocumentEntityListing](DocumentEntityListing.html) getContentmanagementWorkspaceDocuments(workspaceId, expand, pageSize, pageNumber, sortBy, sortOrder)
 
 Get a list of documents.
@@ -1132,6 +1254,10 @@ Get a list of documents.
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1186,6 +1312,8 @@ try {
 
 # **getContentmanagementWorkspaceMember**
 
+
+
 > [WorkspaceMember](WorkspaceMember.html) getContentmanagementWorkspaceMember(workspaceId, memberId, expand)
 
 Get a workspace member
@@ -1193,6 +1321,10 @@ Get a workspace member
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1241,6 +1373,8 @@ try {
 
 # **getContentmanagementWorkspaceMembers**
 
+
+
 > [WorkspaceMemberEntityListing](WorkspaceMemberEntityListing.html) getContentmanagementWorkspaceMembers(workspaceId, pageSize, pageNumber, expand)
 
 Get a list workspace members
@@ -1248,6 +1382,10 @@ Get a list workspace members
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1298,6 +1436,8 @@ try {
 
 # **getContentmanagementWorkspaceTagvalue**
 
+
+
 > [TagValue](TagValue.html) getContentmanagementWorkspaceTagvalue(workspaceId, tagId, expand)
 
 Get a workspace tag
@@ -1305,6 +1445,10 @@ Get a workspace tag
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1353,6 +1497,8 @@ try {
 
 # **getContentmanagementWorkspaceTagvalues**
 
+
+
 > [TagValueEntityListing](TagValueEntityListing.html) getContentmanagementWorkspaceTagvalues(workspaceId, value, pageSize, pageNumber, expand)
 
 Get a list of workspace tags
@@ -1360,6 +1506,10 @@ Get a list of workspace tags
 
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1412,6 +1562,8 @@ try {
 
 # **getContentmanagementWorkspaces**
 
+
+
 > [WorkspaceEntityListing](WorkspaceEntityListing.html) getContentmanagementWorkspaces(pageSize, pageNumber, access, expand)
 
 Get a list of workspaces.
@@ -1419,6 +1571,10 @@ Get a list of workspaces.
 Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
 
 Wraps GET /api/v2/contentmanagement/workspaces  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1469,6 +1625,8 @@ try {
 
 # **postContentmanagementAuditquery**
 
+
+
 > [QueryResults](QueryResults.html) postContentmanagementAuditquery(body)
 
 Query audits
@@ -1476,6 +1634,10 @@ Query audits
 
 
 Wraps POST /api/v2/contentmanagement/auditquery  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1520,6 +1682,8 @@ try {
 
 # **postContentmanagementDocument**
 
+
+
 > [Document](Document.html) postContentmanagementDocument(documentId, body, expand, override)
 
 Update a document.
@@ -1527,6 +1691,10 @@ Update a document.
 
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1577,6 +1745,8 @@ try {
 
 # **postContentmanagementDocumentContent**
 
+
+
 > [ReplaceResponse](ReplaceResponse.html) postContentmanagementDocumentContent(documentId, body, override)
 
 Replace the contents of a document.
@@ -1584,6 +1754,10 @@ Replace the contents of a document.
 
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1632,6 +1806,8 @@ try {
 
 # **postContentmanagementDocuments**
 
+
+
 > [Document](Document.html) postContentmanagementDocuments(body, copySource, moveSource, override)
 
 Add a document.
@@ -1639,6 +1815,10 @@ Add a document.
 
 
 Wraps POST /api/v2/contentmanagement/documents  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1689,6 +1869,8 @@ try {
 
 # **postContentmanagementQuery**
 
+
+
 > [QueryResults](QueryResults.html) postContentmanagementQuery(body, expand)
 
 Query content
@@ -1696,6 +1878,10 @@ Query content
 
 
 Wraps POST /api/v2/contentmanagement/query  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1742,6 +1928,8 @@ try {
 
 # **postContentmanagementShares**
 
+
+
 > [CreateShareResponse](CreateShareResponse.html) postContentmanagementShares(body)
 
 Creates a new share or updates an existing share if the entity has already been shared
@@ -1749,6 +1937,10 @@ Creates a new share or updates an existing share if the entity has already been 
 
 
 Wraps POST /api/v2/contentmanagement/shares  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1793,6 +1985,8 @@ try {
 
 # **postContentmanagementWorkspaceTagvalues**
 
+
+
 > [TagValue](TagValue.html) postContentmanagementWorkspaceTagvalues(workspaceId, body)
 
 Create a workspace tag
@@ -1800,6 +1994,10 @@ Create a workspace tag
 
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1846,6 +2044,8 @@ try {
 
 # **postContentmanagementWorkspaceTagvaluesQuery**
 
+
+
 > [TagValueEntityListing](TagValueEntityListing.html) postContentmanagementWorkspaceTagvaluesQuery(workspaceId, body, expand)
 
 Perform a prefix query on tags in the workspace
@@ -1853,6 +2053,10 @@ Perform a prefix query on tags in the workspace
 
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1901,6 +2105,8 @@ try {
 
 # **postContentmanagementWorkspaces**
 
+
+
 > [Workspace](Workspace.html) postContentmanagementWorkspaces(body)
 
 Create a group workspace
@@ -1908,6 +2114,10 @@ Create a group workspace
 
 
 Wraps POST /api/v2/contentmanagement/workspaces  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1952,6 +2162,8 @@ try {
 
 # **putContentmanagementWorkspace**
 
+
+
 > [Workspace](Workspace.html) putContentmanagementWorkspace(workspaceId, body)
 
 Update a workspace
@@ -1959,6 +2171,10 @@ Update a workspace
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2005,6 +2221,8 @@ try {
 
 # **putContentmanagementWorkspaceMember**
 
+
+
 > [WorkspaceMember](WorkspaceMember.html) putContentmanagementWorkspaceMember(workspaceId, memberId, body)
 
 Add a member to a workspace
@@ -2012,6 +2230,10 @@ Add a member to a workspace
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2060,6 +2282,8 @@ try {
 
 # **putContentmanagementWorkspaceTagvalue**
 
+
+
 > [TagValue](TagValue.html) putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body)
 
 Update a workspace tag. Will update all documents with the new tag value.
@@ -2067,6 +2291,10 @@ Update a workspace tag. Will update all documents with the new tag value.
 
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

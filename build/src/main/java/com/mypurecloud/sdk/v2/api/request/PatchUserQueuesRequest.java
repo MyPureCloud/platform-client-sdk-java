@@ -87,6 +87,20 @@ public class PatchUserQueuesRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public PatchUserQueuesRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -121,6 +135,8 @@ public class PatchUserQueuesRequest {
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/users/{userId}/queues")
                 .withPathParameter("userId", userId)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withBody(body)
         
@@ -157,6 +173,11 @@ public class PatchUserQueuesRequest {
 		
 		public Builder withBody(List<UserQueue> body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

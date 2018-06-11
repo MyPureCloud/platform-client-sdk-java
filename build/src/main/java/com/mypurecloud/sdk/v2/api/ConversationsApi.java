@@ -15,10 +15,10 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
+import com.mypurecloud.sdk.v2.model.AssignedWrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversation;
-import com.mypurecloud.sdk.v2.model.Wrapup;
 import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
@@ -759,11 +759,11 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return WrapupCode
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCode getConversationParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationParticipantWrapup(createGetConversationParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -773,10 +773,10 @@ public class ConversationsApi {
    * @param conversationId conversation ID (required)
    * @param participantId participant ID (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return WrapupCode
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationParticipantWrapup(createGetConversationParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -795,13 +795,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return WrapupCode
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCode getConversationParticipantWrapup(GetConversationParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationParticipantWrapup(GetConversationParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<WrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WrapupCode>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -817,13 +817,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<WrapupCode>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -834,7 +834,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1087,11 +1087,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCallParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCallParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsCallParticipantWrapup(createGetConversationsCallParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -1101,10 +1101,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCallParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsCallParticipantWrapup(createGetConversationsCallParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -1123,13 +1123,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCallParticipantWrapup(GetConversationsCallParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCallParticipantWrapup(GetConversationsCallParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1145,13 +1145,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCallParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1162,7 +1162,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1336,11 +1336,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCallbackParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCallbackParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsCallbackParticipantWrapup(createGetConversationsCallbackParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -1350,10 +1350,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCallbackParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsCallbackParticipantWrapup(createGetConversationsCallbackParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -1372,13 +1372,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCallbackParticipantWrapup(GetConversationsCallbackParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCallbackParticipantWrapup(GetConversationsCallbackParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1394,13 +1394,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCallbackParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1411,7 +1411,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1901,11 +1901,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsChatParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsChatParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -1915,10 +1915,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsChatParticipantWrapup(createGetConversationsChatParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -1937,13 +1937,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsChatParticipantWrapup(GetConversationsChatParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1959,13 +1959,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsChatParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1976,7 +1976,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2225,11 +2225,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCobrowsesessionParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -2239,10 +2239,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsCobrowsesessionParticipantWrapup(createGetConversationsCobrowsesessionParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -2261,13 +2261,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(GetConversationsCobrowsesessionParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2283,13 +2283,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2300,7 +2300,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2790,11 +2790,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsEmailParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsEmailParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsEmailParticipantWrapup(createGetConversationsEmailParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -2804,10 +2804,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsEmailParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsEmailParticipantWrapup(createGetConversationsEmailParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -2826,13 +2826,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsEmailParticipantWrapup(GetConversationsEmailParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsEmailParticipantWrapup(GetConversationsEmailParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2848,13 +2848,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsEmailParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2865,7 +2865,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3197,11 +3197,11 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsMessageParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsMessageParticipantWrapup(String conversationId, String participantId, Boolean provisional) throws IOException, ApiException {
     return  getConversationsMessageParticipantWrapup(createGetConversationsMessageParticipantWrapupRequest(conversationId, participantId, provisional));
   }
 
@@ -3211,10 +3211,10 @@ public class ConversationsApi {
    * @param conversationId conversationId (required)
    * @param participantId participantId (required)
    * @param provisional Indicates if the wrap-up code is provisional. (optional, default to false)
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsMessageParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsMessageParticipantWrapupWithHttpInfo(String conversationId, String participantId, Boolean provisional) throws IOException {
     return getConversationsMessageParticipantWrapup(createGetConversationsMessageParticipantWrapupRequest(conversationId, participantId, provisional).withHttpInfo());
   }
 
@@ -3233,13 +3233,13 @@ public class ConversationsApi {
    * Get the wrap-up for this conversation participant. 
    * 
    * @param request The request object
-   * @return Wrapup
+   * @return AssignedWrapupCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Wrapup getConversationsMessageParticipantWrapup(GetConversationsMessageParticipantWrapupRequest request) throws IOException, ApiException {
+  public AssignedWrapupCode getConversationsMessageParticipantWrapup(GetConversationsMessageParticipantWrapupRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Wrapup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Wrapup>() {});
+      ApiResponse<AssignedWrapupCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3255,13 +3255,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Wrapup> getConversationsMessageParticipantWrapup(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AssignedWrapupCode> getConversationsMessageParticipantWrapup(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Wrapup>() {});
+      return pcapiClient.invoke(request, new TypeReference<AssignedWrapupCode>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3272,7 +3272,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

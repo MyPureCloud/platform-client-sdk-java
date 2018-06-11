@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteVoicemailMessage**
 
+
+
 > Void deleteVoicemailMessage(messageId)
 
 Delete a voicemail message.
@@ -44,6 +46,10 @@ Delete a voicemail message.
 A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
 Wraps DELETE /api/v2/voicemail/messages/{messageId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -87,6 +93,8 @@ null (empty response body)
 
 # **deleteVoicemailMessages**
 
+
+
 > Void deleteVoicemailMessages()
 
 Delete all voicemail messages
@@ -94,6 +102,10 @@ Delete all voicemail messages
 
 
 Wraps DELETE /api/v2/voicemail/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -133,6 +145,8 @@ null (empty response body)
 
 # **getVoicemailGroupMailbox**
 
+
+
 > [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailGroupMailbox(groupId)
 
 Get the group&#39;s mailbox information
@@ -140,6 +154,10 @@ Get the group&#39;s mailbox information
 
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -184,6 +202,8 @@ try {
 
 # **getVoicemailGroupMessages**
 
+
+
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailGroupMessages(groupId, pageSize, pageNumber)
 
 List voicemail messages
@@ -191,6 +211,10 @@ List voicemail messages
 
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -239,6 +263,8 @@ try {
 
 # **getVoicemailGroupPolicy**
 
+
+
 > [VoicemailGroupPolicy](VoicemailGroupPolicy.html) getVoicemailGroupPolicy(groupId)
 
 Get a group&#39;s voicemail policy
@@ -246,6 +272,10 @@ Get a group&#39;s voicemail policy
 
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/policy  
+
+Requires ANY permissions: 
+
+* directory:group:add* directory:group:edit* group_administration* group_creation
 
 ### Example
 
@@ -290,6 +320,8 @@ try {
 
 # **getVoicemailMailbox**
 
+
+
 > [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailMailbox()
 
 Get the current user&#39;s mailbox information
@@ -297,6 +329,10 @@ Get the current user&#39;s mailbox information
 
 
 Wraps GET /api/v2/voicemail/mailbox  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -337,6 +373,8 @@ This endpoint does not require any parameters.
 
 # **getVoicemailMeMailbox**
 
+
+
 > [VoicemailMailboxInfo](VoicemailMailboxInfo.html) getVoicemailMeMailbox()
 
 Get the current user&#39;s mailbox information
@@ -344,6 +382,10 @@ Get the current user&#39;s mailbox information
 
 
 Wraps GET /api/v2/voicemail/me/mailbox  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -384,6 +426,8 @@ This endpoint does not require any parameters.
 
 # **getVoicemailMeMessages**
 
+
+
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailMeMessages(pageSize, pageNumber)
 
 List voicemail messages
@@ -391,6 +435,10 @@ List voicemail messages
 
 
 Wraps GET /api/v2/voicemail/me/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -437,6 +485,8 @@ try {
 
 # **getVoicemailMePolicy**
 
+
+
 > [VoicemailUserPolicy](VoicemailUserPolicy.html) getVoicemailMePolicy()
 
 Get the current user&#39;s voicemail policy
@@ -444,6 +494,10 @@ Get the current user&#39;s voicemail policy
 
 
 Wraps GET /api/v2/voicemail/me/policy  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -484,6 +538,8 @@ This endpoint does not require any parameters.
 
 # **getVoicemailMessage**
 
+
+
 > [VoicemailMessage](VoicemailMessage.html) getVoicemailMessage(messageId, expand)
 
 Get a voicemail message
@@ -491,6 +547,10 @@ Get a voicemail message
 
 
 Wraps GET /api/v2/voicemail/messages/{messageId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -537,6 +597,8 @@ try {
 
 # **getVoicemailMessageMedia**
 
+
+
 > [VoicemailMediaInfo](VoicemailMediaInfo.html) getVoicemailMessageMedia(messageId, formatId)
 
 Get media playback URI for this voicemail message
@@ -544,6 +606,10 @@ Get media playback URI for this voicemail message
 
 
 Wraps GET /api/v2/voicemail/messages/{messageId}/media  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -590,6 +656,8 @@ try {
 
 # **getVoicemailMessages**
 
+
+
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailMessages(ids, expand)
 
 List voicemail messages
@@ -597,6 +665,10 @@ List voicemail messages
 
 
 Wraps GET /api/v2/voicemail/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -643,6 +715,8 @@ try {
 
 # **getVoicemailPolicy**
 
+
+
 > [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy.html) getVoicemailPolicy()
 
 Get a policy
@@ -650,6 +724,10 @@ Get a policy
 
 
 Wraps GET /api/v2/voicemail/policy  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -690,6 +768,8 @@ This endpoint does not require any parameters.
 
 # **getVoicemailQueueMessages**
 
+
+
 > [VoicemailMessageEntityListing](VoicemailMessageEntityListing.html) getVoicemailQueueMessages(queueId, pageSize, pageNumber)
 
 List voicemail messages
@@ -697,6 +777,10 @@ List voicemail messages
 
 
 Wraps GET /api/v2/voicemail/queues/{queueId}/messages  
+
+Requires ANY permissions: 
+
+* voicemail:acdVoicemail:view
 
 ### Example
 
@@ -745,6 +829,8 @@ try {
 
 # **getVoicemailSearch**
 
+
+
 > [VoicemailsSearchResponse](VoicemailsSearchResponse.html) getVoicemailSearch(q64, expand)
 
 Search voicemails using the q64 value returned from a previous search
@@ -752,6 +838,10 @@ Search voicemails using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/voicemail/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -798,6 +888,8 @@ try {
 
 # **getVoicemailUserpolicy**
 
+
+
 > [VoicemailUserPolicy](VoicemailUserPolicy.html) getVoicemailUserpolicy(userId)
 
 Get a user&#39;s voicemail policy
@@ -805,6 +897,10 @@ Get a user&#39;s voicemail policy
 
 
 Wraps GET /api/v2/voicemail/userpolicies/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -849,6 +945,8 @@ try {
 
 # **patchVoicemailGroupPolicy**
 
+
+
 > [VoicemailGroupPolicy](VoicemailGroupPolicy.html) patchVoicemailGroupPolicy(groupId, body)
 
 Update a group&#39;s voicemail policy
@@ -856,6 +954,10 @@ Update a group&#39;s voicemail policy
 
 
 Wraps PATCH /api/v2/voicemail/groups/{groupId}/policy  
+
+Requires ANY permissions: 
+
+* directory:group:add* directory:group:edit* group_administration* group_creation
 
 ### Example
 
@@ -902,6 +1004,8 @@ try {
 
 # **patchVoicemailMePolicy**
 
+
+
 > [VoicemailUserPolicy](VoicemailUserPolicy.html) patchVoicemailMePolicy(body)
 
 Update the current user&#39;s voicemail policy
@@ -909,6 +1013,10 @@ Update the current user&#39;s voicemail policy
 
 
 Wraps PATCH /api/v2/voicemail/me/policy  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -953,6 +1061,8 @@ try {
 
 # **patchVoicemailMessage**
 
+
+
 > [VoicemailMessage](VoicemailMessage.html) patchVoicemailMessage(messageId, body)
 
 Update a voicemail message
@@ -960,6 +1070,10 @@ Update a voicemail message
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
 Wraps PATCH /api/v2/voicemail/messages/{messageId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1006,6 +1120,8 @@ try {
 
 # **patchVoicemailUserpolicy**
 
+
+
 > [VoicemailUserPolicy](VoicemailUserPolicy.html) patchVoicemailUserpolicy(userId, body)
 
 Update a user&#39;s voicemail policy
@@ -1013,6 +1129,10 @@ Update a user&#39;s voicemail policy
 
 
 Wraps PATCH /api/v2/voicemail/userpolicies/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1059,6 +1179,8 @@ try {
 
 # **postVoicemailMessages**
 
+
+
 > [VoicemailMessage](VoicemailMessage.html) postVoicemailMessages(body)
 
 Copy a voicemail message to a user or group
@@ -1066,6 +1188,10 @@ Copy a voicemail message to a user or group
 
 
 Wraps POST /api/v2/voicemail/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1110,6 +1236,8 @@ try {
 
 # **postVoicemailSearch**
 
+
+
 > [VoicemailsSearchResponse](VoicemailsSearchResponse.html) postVoicemailSearch(body)
 
 Search voicemails
@@ -1117,6 +1245,10 @@ Search voicemails
 
 
 Wraps POST /api/v2/voicemail/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1161,6 +1293,8 @@ try {
 
 # **putVoicemailMessage**
 
+
+
 > [VoicemailMessage](VoicemailMessage.html) putVoicemailMessage(messageId, body)
 
 Update a voicemail message
@@ -1168,6 +1302,10 @@ Update a voicemail message
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
 Wraps PUT /api/v2/voicemail/messages/{messageId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1214,6 +1352,8 @@ try {
 
 # **putVoicemailPolicy**
 
+
+
 > [VoicemailOrganizationPolicy](VoicemailOrganizationPolicy.html) putVoicemailPolicy(body)
 
 Update a policy
@@ -1221,6 +1361,10 @@ Update a policy
 
 
 Wraps PUT /api/v2/voicemail/policy  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 

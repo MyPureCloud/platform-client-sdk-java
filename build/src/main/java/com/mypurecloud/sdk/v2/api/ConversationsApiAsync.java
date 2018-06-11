@@ -18,10 +18,10 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
+import com.mypurecloud.sdk.v2.model.AssignedWrapupCode;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.ConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversation;
-import com.mypurecloud.sdk.v2.model.Wrapup;
 import com.mypurecloud.sdk.v2.model.CallbackConversation;
 import com.mypurecloud.sdk.v2.model.CallbackConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
@@ -724,13 +724,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<WrapupCode> getConversationParticipantWrapupAsync(GetConversationParticipantWrapupRequest request, final AsyncApiCallback<WrapupCode> callback) {
+  public Future<AssignedWrapupCode> getConversationParticipantWrapupAsync(GetConversationParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<WrapupCode> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<WrapupCode> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -758,13 +758,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<WrapupCode>> getConversationParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WrapupCode>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<WrapupCode>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<WrapupCode>() {}, new AsyncApiCallback<ApiResponse<WrapupCode>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<WrapupCode> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -772,7 +772,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -780,7 +780,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<WrapupCode> response = (ApiResponse<WrapupCode>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1028,13 +1028,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCallParticipantWrapupAsync(GetConversationsCallParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsCallParticipantWrapupAsync(GetConversationsCallParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1062,13 +1062,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCallParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsCallParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1076,7 +1076,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1084,7 +1084,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1256,13 +1256,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCallbackParticipantWrapupAsync(GetConversationsCallbackParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsCallbackParticipantWrapupAsync(GetConversationsCallbackParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1290,13 +1290,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCallbackParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsCallbackParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1304,7 +1304,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1312,7 +1312,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1788,13 +1788,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsChatParticipantWrapupAsync(GetConversationsChatParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsChatParticipantWrapupAsync(GetConversationsChatParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1822,13 +1822,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsChatParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsChatParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1836,7 +1836,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1844,7 +1844,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2092,13 +2092,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsCobrowsesessionParticipantWrapupAsync(GetConversationsCobrowsesessionParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsCobrowsesessionParticipantWrapupAsync(GetConversationsCobrowsesessionParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2126,13 +2126,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsCobrowsesessionParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsCobrowsesessionParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2140,7 +2140,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2148,7 +2148,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2624,13 +2624,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsEmailParticipantWrapupAsync(GetConversationsEmailParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsEmailParticipantWrapupAsync(GetConversationsEmailParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2658,13 +2658,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsEmailParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsEmailParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2672,7 +2672,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2680,7 +2680,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3004,13 +3004,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Wrapup> getConversationsMessageParticipantWrapupAsync(GetConversationsMessageParticipantWrapupRequest request, final AsyncApiCallback<Wrapup> callback) {
+  public Future<AssignedWrapupCode> getConversationsMessageParticipantWrapupAsync(GetConversationsMessageParticipantWrapupRequest request, final AsyncApiCallback<AssignedWrapupCode> callback) {
     try {
-      final SettableFuture<Wrapup> future = SettableFuture.create();
+      final SettableFuture<AssignedWrapupCode> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3038,13 +3038,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Wrapup>> getConversationsMessageParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Wrapup>> callback) {
+  public Future<ApiResponse<AssignedWrapupCode>> getConversationsMessageParticipantWrapupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssignedWrapupCode>> callback) {
     try {
-      final SettableFuture<ApiResponse<Wrapup>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AssignedWrapupCode>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Wrapup>() {}, new AsyncApiCallback<ApiResponse<Wrapup>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AssignedWrapupCode>() {}, new AsyncApiCallback<ApiResponse<AssignedWrapupCode>>() {
         @Override
-        public void onCompleted(ApiResponse<Wrapup> response) {
+        public void onCompleted(ApiResponse<AssignedWrapupCode> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3052,7 +3052,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)exception;
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3060,7 +3060,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Wrapup> response = (ApiResponse<Wrapup>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AssignedWrapupCode> response = (ApiResponse<AssignedWrapupCode>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

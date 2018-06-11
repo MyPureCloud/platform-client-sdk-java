@@ -27,6 +27,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteGroup**
 
+
+
 > Void deleteGroup(groupId)
 
 Delete group
@@ -34,6 +36,10 @@ Delete group
 
 
 Wraps DELETE /api/v2/groups/{groupId}  
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 
@@ -77,6 +83,8 @@ null (empty response body)
 
 # **deleteGroupMembers**
 
+
+
 > [Empty](Empty.html) deleteGroupMembers(groupId, ids)
 
 Remove members
@@ -84,6 +92,10 @@ Remove members
 
 
 Wraps DELETE /api/v2/groups/{groupId}/members  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -130,6 +142,8 @@ try {
 
 # **getFieldconfig**
 
+
+
 > [FieldConfig](FieldConfig.html) getFieldconfig(type)
 
 Fetch field config for an entity type
@@ -137,6 +151,10 @@ Fetch field config for an entity type
 
 
 Wraps GET /api/v2/fieldconfig  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -181,6 +199,8 @@ try {
 
 # **getGroup**
 
+
+
 > [Group](Group.html) getGroup(groupId)
 
 Get group
@@ -188,6 +208,10 @@ Get group
 
 
 Wraps GET /api/v2/groups/{groupId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -232,6 +256,8 @@ try {
 
 # **getGroupIndividuals**
 
+
+
 > [UserEntityListing](UserEntityListing.html) getGroupIndividuals(groupId)
 
 Get all individuals associated with the group
@@ -239,6 +265,10 @@ Get all individuals associated with the group
 
 
 Wraps GET /api/v2/groups/{groupId}/individuals  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -283,6 +313,8 @@ try {
 
 # **getGroupMembers**
 
+
+
 > [UserEntityListing](UserEntityListing.html) getGroupMembers(groupId, pageSize, pageNumber, sortOrder, expand)
 
 Get group members, includes individuals, owners, and dynamically included people
@@ -290,6 +322,10 @@ Get group members, includes individuals, owners, and dynamically included people
 
 
 Wraps GET /api/v2/groups/{groupId}/members  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -342,6 +378,8 @@ try {
 
 # **getGroupProfile**
 
+
+
 > [GroupProfile](GroupProfile.html) getGroupProfile(groupId, fields)
 
 Get group profile
@@ -349,6 +387,10 @@ Get group profile
 
 
 Wraps GET /api/v2/groups/{groupId}/profile  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -395,6 +437,8 @@ try {
 
 # **getGroups**
 
+
+
 > [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, sortOrder)
 
 Get a group list
@@ -402,6 +446,10 @@ Get a group list
 
 
 Wraps GET /api/v2/groups  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -452,6 +500,8 @@ try {
 
 # **getGroupsSearch**
 
+
+
 > [GroupsSearchResponse](GroupsSearchResponse.html) getGroupsSearch(q64, expand)
 
 Search groups using the q64 value returned from a previous search
@@ -459,6 +509,10 @@ Search groups using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/groups/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -505,6 +559,8 @@ try {
 
 # **getProfilesGroups**
 
+
+
 > [GroupProfileEntityListing](GroupProfileEntityListing.html) getProfilesGroups(pageSize, pageNumber, id, sortOrder)
 
 Get group profile listing
@@ -512,6 +568,10 @@ Get group profile listing
 
 
 Wraps GET /api/v2/profiles/groups  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -562,6 +622,8 @@ try {
 
 # **postGroupMembers**
 
+
+
 > [Empty](Empty.html) postGroupMembers(groupId, body)
 
 Add members
@@ -569,6 +631,10 @@ Add members
 
 
 Wraps POST /api/v2/groups/{groupId}/members  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -615,6 +681,8 @@ try {
 
 # **postGroups**
 
+
+
 > [Group](Group.html) postGroups(body)
 
 Create a group
@@ -622,6 +690,10 @@ Create a group
 
 
 Wraps POST /api/v2/groups  
+
+Requires ANY permissions: 
+
+* group_administration* group_creation
 
 ### Example
 
@@ -666,6 +738,8 @@ try {
 
 # **postGroupsSearch**
 
+
+
 > [GroupsSearchResponse](GroupsSearchResponse.html) postGroupsSearch(body)
 
 Search groups
@@ -673,6 +747,10 @@ Search groups
 
 
 Wraps POST /api/v2/groups/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -717,6 +795,8 @@ try {
 
 # **putGroup**
 
+
+
 > [Group](Group.html) putGroup(groupId, body)
 
 Update group
@@ -724,6 +804,10 @@ Update group
 
 
 Wraps PUT /api/v2/groups/{groupId}  
+
+Requires ANY permissions: 
+
+* group_administration
 
 ### Example
 

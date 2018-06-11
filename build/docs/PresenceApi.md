@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deletePresencedefinition**
 
+
+
 > Void deletePresencedefinition(presenceId)
 
 Delete a Presence Definition
@@ -28,6 +30,10 @@ Delete a Presence Definition
 
 
 Wraps DELETE /api/v2/presencedefinitions/{presenceId}  
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:delete
 
 ### Example
 
@@ -71,6 +77,8 @@ null (empty response body)
 
 # **getPresencedefinition**
 
+
+
 > [OrganizationPresence](OrganizationPresence.html) getPresencedefinition(presenceId, localeCode)
 
 Get a Presence Definition
@@ -78,6 +86,10 @@ Get a Presence Definition
 
 
 Wraps GET /api/v2/presencedefinitions/{presenceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -124,6 +136,8 @@ try {
 
 # **getPresencedefinitions**
 
+
+
 > [OrganizationPresenceEntityListing](OrganizationPresenceEntityListing.html) getPresencedefinitions(pageNumber, pageSize, deleted, localeCode)
 
 Get an Organization&#39;s list of Presence Definitions
@@ -131,6 +145,10 @@ Get an Organization&#39;s list of Presence Definitions
 
 
 Wraps GET /api/v2/presencedefinitions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -181,6 +199,8 @@ try {
 
 # **getSystempresences**
 
+
+
 > [List&lt;SystemPresence&gt;](SystemPresence.html) getSystempresences()
 
 Get the list of SystemPresences
@@ -188,6 +208,10 @@ Get the list of SystemPresences
 
 
 Wraps GET /api/v2/systempresences  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -228,6 +252,8 @@ This endpoint does not require any parameters.
 
 # **getUserPresence**
 
+
+
 > [UserPresence](UserPresence.html) getUserPresence(userId, sourceId)
 
 Get a user&#39;s Presence
@@ -235,6 +261,10 @@ Get a user&#39;s Presence
 
 
 Wraps GET /api/v2/users/{userId}/presences/{sourceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -281,6 +311,8 @@ try {
 
 # **patchUserPresence**
 
+
+
 > [UserPresence](UserPresence.html) patchUserPresence(userId, sourceId, body)
 
 Patch a user&#39;s Presence
@@ -288,6 +320,10 @@ Patch a user&#39;s Presence
 The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -336,6 +372,8 @@ try {
 
 # **postPresencedefinitions**
 
+
+
 > [OrganizationPresence](OrganizationPresence.html) postPresencedefinitions(body)
 
 Create a Presence Definition
@@ -343,6 +381,10 @@ Create a Presence Definition
 
 
 Wraps POST /api/v2/presencedefinitions  
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:add
 
 ### Example
 
@@ -387,6 +429,8 @@ try {
 
 # **putPresencedefinition**
 
+
+
 > [OrganizationPresence](OrganizationPresence.html) putPresencedefinition(presenceId, body)
 
 Update a Presence Definition
@@ -394,6 +438,10 @@ Update a Presence Definition
 
 
 Wraps PUT /api/v2/presencedefinitions/{presenceId}  
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:edit
 
 ### Example
 

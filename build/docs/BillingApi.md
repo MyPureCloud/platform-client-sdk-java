@@ -14,6 +14,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getBillingReportsBillableusage**
 
+
+
 > [BillingUsageReport](BillingUsageReport.html) getBillingReportsBillableusage(startDate, endDate)
 
 Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
@@ -21,6 +23,10 @@ Get a report of the billable usages (e.g. licenses and devices utilized) for a g
 
 
 Wraps GET /api/v2/billing/reports/billableusage  
+
+Requires ANY permissions: 
+
+* billing:subscription:read* billing:subscription:view* billing:subscription:create* billing:subscription:add
 
 ### Example
 

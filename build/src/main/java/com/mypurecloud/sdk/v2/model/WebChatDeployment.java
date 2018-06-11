@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WebChatConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -20,6 +21,7 @@ public class WebChatDeployment  implements Serializable {
   private Boolean authenticationRequired = null;
   private String authenticationUrl = null;
   private Boolean disabled = null;
+  private WebChatConfig webChatConfig = null;
   private String selfUri = null;
 
   
@@ -82,14 +84,14 @@ public class WebChatDeployment  implements Serializable {
 
   
   /**
-   * URL for third party service authenticating webchat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
+   * URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples
    **/
   public WebChatDeployment authenticationUrl(String authenticationUrl) {
     this.authenticationUrl = authenticationUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "URL for third party service authenticating webchat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples")
+  @ApiModelProperty(example = "null", value = "URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples")
   @JsonProperty("authenticationUrl")
   public String getAuthenticationUrl() {
     return authenticationUrl;
@@ -116,6 +118,23 @@ public class WebChatDeployment  implements Serializable {
   }
 
   
+  /**
+   **/
+  public WebChatDeployment webChatConfig(WebChatConfig webChatConfig) {
+    this.webChatConfig = webChatConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("webChatConfig")
+  public WebChatConfig getWebChatConfig() {
+    return webChatConfig;
+  }
+  public void setWebChatConfig(WebChatConfig webChatConfig) {
+    this.webChatConfig = webChatConfig;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -139,12 +158,13 @@ public class WebChatDeployment  implements Serializable {
         Objects.equals(this.authenticationRequired, webChatDeployment.authenticationRequired) &&
         Objects.equals(this.authenticationUrl, webChatDeployment.authenticationUrl) &&
         Objects.equals(this.disabled, webChatDeployment.disabled) &&
+        Objects.equals(this.webChatConfig, webChatDeployment.webChatConfig) &&
         Objects.equals(this.selfUri, webChatDeployment.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, selfUri);
+    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, webChatConfig, selfUri);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class WebChatDeployment  implements Serializable {
     sb.append("    authenticationRequired: ").append(toIndentedString(authenticationRequired)).append("\n");
     sb.append("    authenticationUrl: ").append(toIndentedString(authenticationUrl)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    webChatConfig: ").append(toIndentedString(webChatConfig)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

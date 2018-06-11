@@ -94,6 +94,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteArchitectEmergencygroup**
 
+
+
 > Void deleteArchitectEmergencygroup(emergencyGroupId)
 
 Deletes a emergency group by ID
@@ -101,6 +103,10 @@ Deletes a emergency group by ID
 
 
 Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -144,6 +150,8 @@ null (empty response body)
 
 # **deleteArchitectIvr**
 
+
+
 > Void deleteArchitectIvr(ivrId)
 
 Delete an IVR Config.
@@ -151,6 +159,10 @@ Delete an IVR Config.
 
 
 Wraps DELETE /api/v2/architect/ivrs/{ivrId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -194,6 +206,8 @@ null (empty response body)
 
 # **deleteArchitectPrompt**
 
+
+
 > Void deleteArchitectPrompt(promptId, allResources)
 
 Delete specified user prompt
@@ -201,6 +215,10 @@ Delete specified user prompt
 
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -246,6 +264,8 @@ null (empty response body)
 
 # **deleteArchitectPromptResource**
 
+
+
 > Void deleteArchitectPromptResource(promptId, languageCode)
 
 Delete specified user prompt resource
@@ -253,6 +273,10 @@ Delete specified user prompt resource
 
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -298,6 +322,8 @@ null (empty response body)
 
 # **deleteArchitectPrompts**
 
+
+
 > [Operation](Operation.html) deleteArchitectPrompts(id)
 
 Batch-delete a list of prompts
@@ -305,6 +331,10 @@ Batch-delete a list of prompts
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps DELETE /api/v2/architect/prompts  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -349,6 +379,8 @@ try {
 
 # **deleteArchitectSchedule**
 
+
+
 > Void deleteArchitectSchedule(scheduleId)
 
 Delete a schedule by id
@@ -356,6 +388,10 @@ Delete a schedule by id
 
 
 Wraps DELETE /api/v2/architect/schedules/{scheduleId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -399,6 +435,8 @@ null (empty response body)
 
 # **deleteArchitectSchedulegroup**
 
+
+
 > Void deleteArchitectSchedulegroup(scheduleGroupId)
 
 Deletes a schedule group by ID
@@ -406,6 +444,10 @@ Deletes a schedule group by ID
 
 
 Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -449,6 +491,8 @@ null (empty response body)
 
 # **deleteArchitectSystempromptResource**
 
+
+
 > Void deleteArchitectSystempromptResource(promptId, languageCode)
 
 Delete a system prompt resource override.
@@ -456,6 +500,10 @@ Delete a system prompt resource override.
 
 
 Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -501,6 +549,8 @@ null (empty response body)
 
 # **deleteFlow**
 
+
+
 > Void deleteFlow(flowId)
 
 Delete flow
@@ -508,6 +558,10 @@ Delete flow
 
 
 Wraps DELETE /api/v2/flows/{flowId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -551,6 +605,8 @@ null (empty response body)
 
 # **deleteFlows**
 
+
+
 > [Operation](Operation.html) deleteFlows(id)
 
 Batch-delete a list of flows
@@ -558,6 +614,10 @@ Batch-delete a list of flows
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps DELETE /api/v2/flows  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -602,6 +662,8 @@ try {
 
 # **deleteFlowsDatatable**
 
+
+
 > Void deleteFlowsDatatable(datatableId, force)
 
 deletes a specific datatable by id
@@ -609,6 +671,10 @@ deletes a specific datatable by id
 deletes an entire datatable (including schema and data) with a given id)
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -654,6 +720,8 @@ null (empty response body)
 
 # **deleteFlowsDatatableRow**
 
+
+
 > Void deleteFlowsDatatableRow(datatableId, rowId)
 
 Delete a row entry
@@ -661,6 +729,10 @@ Delete a row entry
 Deletes a row with a given rowId.
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:delete
 
 ### Example
 
@@ -706,6 +778,8 @@ null (empty response body)
 
 # **getArchitectDependencytracking**
 
+
+
 > [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytracking(name, pageNumber, pageSize, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
 
 Get Dependency Tracking objects that have a given display name
@@ -713,6 +787,10 @@ Get Dependency Tracking objects that have a given display name
 
 
 Wraps GET /api/v2/architect/dependencytracking  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -771,6 +849,8 @@ try {
 
 # **getArchitectDependencytrackingBuild**
 
+
+
 > [DependencyStatus](DependencyStatus.html) getArchitectDependencytrackingBuild()
 
 Get Dependency Tracking build status for an organization
@@ -778,6 +858,10 @@ Get Dependency Tracking build status for an organization
 
 
 Wraps GET /api/v2/architect/dependencytracking/build  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -818,6 +902,8 @@ This endpoint does not require any parameters.
 
 # **getArchitectDependencytrackingConsumedresources**
 
+
+
 > [ConsumedResourcesEntityListing](ConsumedResourcesEntityListing.html) getArchitectDependencytrackingConsumedresources(id, version, objectType, resourceType)
 
 Get resources that are consumed by a given Dependency Tracking object
@@ -825,6 +911,10 @@ Get resources that are consumed by a given Dependency Tracking object
 
 
 Wraps GET /api/v2/architect/dependencytracking/consumedresources  
+
+Requires ANY permissions: 
+
+* admin* editor* readonly
 
 ### Example
 
@@ -875,6 +965,8 @@ try {
 
 # **getArchitectDependencytrackingConsumingresources**
 
+
+
 > [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType)
 
 Get resources that consume a given Dependency Tracking object
@@ -882,6 +974,10 @@ Get resources that consume a given Dependency Tracking object
 
 
 Wraps GET /api/v2/architect/dependencytracking/consumingresources  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -930,6 +1026,8 @@ try {
 
 # **getArchitectDependencytrackingDeletedresourceconsumers**
 
+
+
 > [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingDeletedresourceconsumers(name, objectType, flowFilter, consumedResources, consumedResourceType, pageNumber, pageSize)
 
 Get Dependency Tracking objects that consume deleted resources
@@ -937,6 +1035,10 @@ Get Dependency Tracking objects that consume deleted resources
 
 
 Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -993,6 +1095,8 @@ try {
 
 # **getArchitectDependencytrackingObject**
 
+
+
 > [DependencyObject](DependencyObject.html) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
 
 Get a Dependency Tracking object
@@ -1000,6 +1104,10 @@ Get a Dependency Tracking object
 
 
 Wraps GET /api/v2/architect/dependencytracking/object  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1056,6 +1164,8 @@ try {
 
 # **getArchitectDependencytrackingType**
 
+
+
 > [DependencyType](DependencyType.html) getArchitectDependencytrackingType(typeId)
 
 Get a Dependency Tracking type.
@@ -1063,6 +1173,10 @@ Get a Dependency Tracking type.
 
 
 Wraps GET /api/v2/architect/dependencytracking/types/{typeId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1107,6 +1221,8 @@ try {
 
 # **getArchitectDependencytrackingTypes**
 
+
+
 > [DependencyTypeEntityListing](DependencyTypeEntityListing.html) getArchitectDependencytrackingTypes(pageNumber, pageSize)
 
 Get Dependency Tracking types.
@@ -1114,6 +1230,10 @@ Get Dependency Tracking types.
 
 
 Wraps GET /api/v2/architect/dependencytracking/types  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1160,6 +1280,8 @@ try {
 
 # **getArchitectDependencytrackingUpdatedresourceconsumers**
 
+
+
 > [DependencyObjectEntityListing](DependencyObjectEntityListing.html) getArchitectDependencytrackingUpdatedresourceconsumers(name, objectType, consumedResources, consumedResourceType, pageNumber, pageSize)
 
 Get Dependency Tracking objects that depend on updated resources
@@ -1167,6 +1289,10 @@ Get Dependency Tracking objects that depend on updated resources
 
 
 Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1221,6 +1347,8 @@ try {
 
 # **getArchitectEmergencygroup**
 
+
+
 > [EmergencyGroup](EmergencyGroup.html) getArchitectEmergencygroup(emergencyGroupId)
 
 Gets a emergency group by ID
@@ -1228,6 +1356,10 @@ Gets a emergency group by ID
 
 
 Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1272,6 +1404,8 @@ try {
 
 # **getArchitectEmergencygroups**
 
+
+
 > [EmergencyGroupListing](EmergencyGroupListing.html) getArchitectEmergencygroups(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of emergency groups.
@@ -1279,6 +1413,10 @@ Get a list of emergency groups.
 
 
 Wraps GET /api/v2/architect/emergencygroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1331,6 +1469,8 @@ try {
 
 # **getArchitectIvr**
 
+
+
 > [IVR](IVR.html) getArchitectIvr(ivrId)
 
 Get an IVR config.
@@ -1338,6 +1478,10 @@ Get an IVR config.
 
 
 Wraps GET /api/v2/architect/ivrs/{ivrId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1382,6 +1526,8 @@ try {
 
 # **getArchitectIvrs**
 
+
+
 > [IVREntityListing](IVREntityListing.html) getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get IVR configs.
@@ -1389,6 +1535,10 @@ Get IVR configs.
 
 
 Wraps GET /api/v2/architect/ivrs  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1441,6 +1591,8 @@ try {
 
 # **getArchitectPrompt**
 
+
+
 > [Prompt](Prompt.html) getArchitectPrompt(promptId)
 
 Get specified user prompt
@@ -1448,6 +1600,10 @@ Get specified user prompt
 
 
 Wraps GET /api/v2/architect/prompts/{promptId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1492,6 +1648,8 @@ try {
 
 # **getArchitectPromptHistoryHistoryId**
 
+
+
 > [HistoryListing](HistoryListing.html) getArchitectPromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated prompt history
@@ -1499,6 +1657,10 @@ Get generated prompt history
 
 
 Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1555,6 +1717,8 @@ try {
 
 # **getArchitectPromptResource**
 
+
+
 > [PromptAsset](PromptAsset.html) getArchitectPromptResource(promptId, languageCode)
 
 Get specified user prompt resource
@@ -1562,6 +1726,10 @@ Get specified user prompt resource
 
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1608,6 +1776,8 @@ try {
 
 # **getArchitectPromptResources**
 
+
+
 > [PromptAssetEntityListing](PromptAssetEntityListing.html) getArchitectPromptResources(promptId, pageNumber, pageSize)
 
 Get a pageable list of user prompt resources
@@ -1615,6 +1785,10 @@ Get a pageable list of user prompt resources
 The returned list is pageable, and query parameters can be used for filtering.
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1663,6 +1837,8 @@ try {
 
 # **getArchitectPrompts**
 
+
+
 > [PromptEntityListing](PromptEntityListing.html) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder)
 
 Get a pageable list of user prompts
@@ -1670,6 +1846,10 @@ Get a pageable list of user prompts
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
 
 Wraps GET /api/v2/architect/prompts  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1726,6 +1906,8 @@ try {
 
 # **getArchitectSchedule**
 
+
+
 > [Schedule](Schedule.html) getArchitectSchedule(scheduleId)
 
 Get a schedule by ID
@@ -1733,6 +1915,10 @@ Get a schedule by ID
 
 
 Wraps GET /api/v2/architect/schedules/{scheduleId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1777,6 +1963,8 @@ try {
 
 # **getArchitectSchedulegroup**
 
+
+
 > [ScheduleGroup](ScheduleGroup.html) getArchitectSchedulegroup(scheduleGroupId)
 
 Gets a schedule group by ID
@@ -1784,6 +1972,10 @@ Gets a schedule group by ID
 
 
 Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1828,6 +2020,8 @@ try {
 
 # **getArchitectSchedulegroups**
 
+
+
 > [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of schedule groups.
@@ -1835,6 +2029,10 @@ Get a list of schedule groups.
 
 
 Wraps GET /api/v2/architect/schedulegroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1887,6 +2085,8 @@ try {
 
 # **getArchitectSchedules**
 
+
+
 > [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name)
 
 Get a list of schedules.
@@ -1894,6 +2094,10 @@ Get a list of schedules.
 
 
 Wraps GET /api/v2/architect/schedules  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1946,6 +2150,8 @@ try {
 
 # **getArchitectSystemprompt**
 
+
+
 > [SystemPrompt](SystemPrompt.html) getArchitectSystemprompt(promptId)
 
 Get a system prompt
@@ -1953,6 +2159,10 @@ Get a system prompt
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -1997,6 +2207,8 @@ try {
 
 # **getArchitectSystempromptHistoryHistoryId**
 
+
+
 > [HistoryListing](HistoryListing.html) getArchitectSystempromptHistoryHistoryId(promptId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated prompt history
@@ -2004,6 +2216,10 @@ Get generated prompt history
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2060,6 +2276,8 @@ try {
 
 # **getArchitectSystempromptResource**
 
+
+
 > [SystemPromptAsset](SystemPromptAsset.html) getArchitectSystempromptResource(promptId, languageCode)
 
 Get a system prompt resource.
@@ -2067,6 +2285,10 @@ Get a system prompt resource.
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2113,6 +2335,8 @@ try {
 
 # **getArchitectSystempromptResources**
 
+
+
 > [SystemPromptAssetEntityListing](SystemPromptAssetEntityListing.html) getArchitectSystempromptResources(promptId, pageNumber, pageSize, sortBy, sortOrder)
 
 Get system prompt resources.
@@ -2120,6 +2344,10 @@ Get system prompt resources.
 
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2172,6 +2400,8 @@ try {
 
 # **getArchitectSystemprompts**
 
+
+
 > [SystemPromptEntityListing](SystemPromptEntityListing.html) getArchitectSystemprompts(pageNumber, pageSize, sortBy, sortOrder, name, description, nameOrDescription)
 
 Get System Prompts
@@ -2179,6 +2409,10 @@ Get System Prompts
 
 
 Wraps GET /api/v2/architect/systemprompts  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2235,6 +2469,8 @@ try {
 
 # **getFlow**
 
+
+
 > [Flow](Flow.html) getFlow(flowId, deleted)
 
 Get flow
@@ -2242,6 +2478,10 @@ Get flow
 
 
 Wraps GET /api/v2/flows/{flowId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2288,6 +2528,8 @@ try {
 
 # **getFlowHistoryHistoryId**
 
+
+
 > [HistoryListing](HistoryListing.html) getFlowHistoryHistoryId(flowId, historyId, pageNumber, pageSize, sortOrder, sortBy, action)
 
 Get generated flow history
@@ -2295,6 +2537,10 @@ Get generated flow history
 
 
 Wraps GET /api/v2/flows/{flowId}/history/{historyId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2351,6 +2597,8 @@ try {
 
 # **getFlowLatestconfiguration**
 
+
+
 > Object getFlowLatestconfiguration(flowId, deleted)
 
 Get the latest configuration for flow
@@ -2358,6 +2606,10 @@ Get the latest configuration for flow
 
 
 Wraps GET /api/v2/flows/{flowId}/latestconfiguration  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2404,6 +2656,8 @@ try {
 
 # **getFlowVersion**
 
+
+
 > [FlowVersion](FlowVersion.html) getFlowVersion(flowId, versionId, deleted)
 
 Get flow version
@@ -2411,6 +2665,10 @@ Get flow version
 
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2459,6 +2717,8 @@ try {
 
 # **getFlowVersionConfiguration**
 
+
+
 > Object getFlowVersionConfiguration(flowId, versionId, deleted)
 
 Create flow version configuration
@@ -2466,6 +2726,10 @@ Create flow version configuration
 
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2514,6 +2778,8 @@ try {
 
 # **getFlowVersions**
 
+
+
 > [FlowVersionEntityListing](FlowVersionEntityListing.html) getFlowVersions(flowId, pageNumber, pageSize, deleted)
 
 Get flow version list
@@ -2521,6 +2787,10 @@ Get flow version list
 
 
 Wraps GET /api/v2/flows/{flowId}/versions  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2571,13 +2841,19 @@ try {
 
 # **getFlows**
 
-> [FlowEntityListing](FlowEntityListing.html) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore)
+
+
+> [FlowEntityListing](FlowEntityListing.html) getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId)
 
 Get a pageable list of flows, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
 
 Wraps GET /api/v2/flows  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -2613,8 +2889,9 @@ Boolean deleted = false; // Boolean | Include deleted
 Boolean includeSchemas = false; // Boolean | Include variable schemas
 String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
 String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
 try {
-    FlowEntityListing result = apiInstance.getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore);
+    FlowEntityListing result = apiInstance.getFlows(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlows");
@@ -2644,6 +2921,7 @@ try {
 | **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] |
 | **publishedAfter** | **String**| Published after | [optional] |
 | **publishedBefore** | **String**| Published before | [optional] |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2654,6 +2932,8 @@ try {
 
 # **getFlowsDatatable**
 
+
+
 > [DataTable](DataTable.html) getFlowsDatatable(datatableId, expand)
 
 Returns a specific datatable by id
@@ -2661,6 +2941,10 @@ Returns a specific datatable by id
 Given a datableid returns the schema associated with it.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2707,6 +2991,8 @@ try {
 
 # **getFlowsDatatableRow**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) getFlowsDatatableRow(datatableId, rowId, showbrief)
 
 Returns a specific row for the datatable
@@ -2714,6 +3000,10 @@ Returns a specific row for the datatable
 Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2762,6 +3052,8 @@ try {
 
 # **getFlowsDatatableRows**
 
+
+
 > [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief)
 
 Returns the rows for the datatable
@@ -2769,6 +3061,10 @@ Returns the rows for the datatable
 Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2819,6 +3115,8 @@ try {
 
 # **getFlowsDatatables**
 
+
+
 > [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder)
 
 Retrieve a list of datatables for the org
@@ -2826,6 +3124,10 @@ Retrieve a list of datatables for the org
 Returns a metadata list of the datatables associated with this org, including ID, name and description.
 
 Wraps GET /api/v2/flows/datatables  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
 
 ### Example
 
@@ -2878,13 +3180,19 @@ try {
 
 # **getFlowsDivisionviews**
 
-> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore)
+
+
+> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId)
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type.
 
 Wraps GET /api/v2/flows/divisionviews  
+
+Requires ANY permissions: 
+
+* architect:flow:search
 
 ### Example
 
@@ -2913,8 +3221,9 @@ String name = "name_example"; // String | Name
 String publishVersionId = "publishVersionId_example"; // String | Publish version ID
 String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
 String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
 try {
-    FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore);
+    FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDivisionviews");
@@ -2937,6 +3246,7 @@ try {
 | **publishVersionId** | **String**| Publish version ID | [optional] |
 | **publishedAfter** | **String**| Published after | [optional] |
 | **publishedBefore** | **String**| Published before | [optional] |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2947,6 +3257,8 @@ try {
 
 # **postArchitectDependencytrackingBuild**
 
+
+
 > Void postArchitectDependencytrackingBuild()
 
 Rebuild Dependency Tracking data for an organization
@@ -2954,6 +3266,10 @@ Rebuild Dependency Tracking data for an organization
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
 Wraps POST /api/v2/architect/dependencytracking/build  
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -2993,6 +3309,8 @@ null (empty response body)
 
 # **postArchitectEmergencygroups**
 
+
+
 > [EmergencyGroup](EmergencyGroup.html) postArchitectEmergencygroups(body)
 
 Creates a new emergency group
@@ -3000,6 +3318,10 @@ Creates a new emergency group
 
 
 Wraps POST /api/v2/architect/emergencygroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3044,6 +3366,8 @@ try {
 
 # **postArchitectIvrs**
 
+
+
 > [IVR](IVR.html) postArchitectIvrs(body)
 
 Create IVR config.
@@ -3051,6 +3375,10 @@ Create IVR config.
 
 
 Wraps POST /api/v2/architect/ivrs  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3095,6 +3423,8 @@ try {
 
 # **postArchitectPromptHistory**
 
+
+
 > [Operation](Operation.html) postArchitectPromptHistory(promptId)
 
 Generate prompt history
@@ -3102,6 +3432,10 @@ Generate prompt history
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
 Wraps POST /api/v2/architect/prompts/{promptId}/history  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3146,6 +3480,8 @@ try {
 
 # **postArchitectPromptResources**
 
+
+
 > [PromptAsset](PromptAsset.html) postArchitectPromptResources(promptId, body)
 
 Create a new user prompt resource
@@ -3153,6 +3489,10 @@ Create a new user prompt resource
 
 
 Wraps POST /api/v2/architect/prompts/{promptId}/resources  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3199,6 +3539,8 @@ try {
 
 # **postArchitectPrompts**
 
+
+
 > [Prompt](Prompt.html) postArchitectPrompts(body)
 
 Create a new user prompt
@@ -3206,6 +3548,10 @@ Create a new user prompt
 
 
 Wraps POST /api/v2/architect/prompts  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3250,6 +3596,8 @@ try {
 
 # **postArchitectSchedulegroups**
 
+
+
 > [ScheduleGroup](ScheduleGroup.html) postArchitectSchedulegroups(body)
 
 Creates a new schedule group
@@ -3257,6 +3605,10 @@ Creates a new schedule group
 
 
 Wraps POST /api/v2/architect/schedulegroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3301,6 +3653,8 @@ try {
 
 # **postArchitectSchedules**
 
+
+
 > [Schedule](Schedule.html) postArchitectSchedules(body)
 
 Create a new schedule.
@@ -3308,6 +3662,10 @@ Create a new schedule.
 
 
 Wraps POST /api/v2/architect/schedules  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3352,6 +3710,8 @@ try {
 
 # **postArchitectSystempromptHistory**
 
+
+
 > [Operation](Operation.html) postArchitectSystempromptHistory(promptId)
 
 Generate system prompt history
@@ -3359,6 +3719,10 @@ Generate system prompt history
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/history  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3403,6 +3767,8 @@ try {
 
 # **postArchitectSystempromptResources**
 
+
+
 > [SystemPromptAsset](SystemPromptAsset.html) postArchitectSystempromptResources(promptId, body)
 
 Create system prompt resource override.
@@ -3410,6 +3776,10 @@ Create system prompt resource override.
 
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/resources  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3456,6 +3826,8 @@ try {
 
 # **postFlowVersions**
 
+
+
 > [FlowVersion](FlowVersion.html) postFlowVersions(flowId, body)
 
 Create flow version
@@ -3463,6 +3835,10 @@ Create flow version
 
 
 Wraps POST /api/v2/flows/{flowId}/versions  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3509,6 +3885,8 @@ try {
 
 # **postFlows**
 
+
+
 > [Flow](Flow.html) postFlows(body)
 
 Create flow
@@ -3516,6 +3894,10 @@ Create flow
 
 
 Wraps POST /api/v2/flows  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor* architect:user:readonly
 
 ### Example
 
@@ -3560,6 +3942,8 @@ try {
 
 # **postFlowsActionsCheckin**
 
+
+
 > [Flow](Flow.html) postFlowsActionsCheckin(flow)
 
 Check-in flow
@@ -3567,6 +3951,10 @@ Check-in flow
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/checkin  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3611,6 +3999,8 @@ try {
 
 # **postFlowsActionsCheckout**
 
+
+
 > [Flow](Flow.html) postFlowsActionsCheckout(flow)
 
 Check-out flow
@@ -3618,6 +4008,10 @@ Check-out flow
 
 
 Wraps POST /api/v2/flows/actions/checkout  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3662,6 +4056,8 @@ try {
 
 # **postFlowsActionsDeactivate**
 
+
+
 > [Flow](Flow.html) postFlowsActionsDeactivate(flow)
 
 Deactivate flow
@@ -3669,6 +4065,10 @@ Deactivate flow
 
 
 Wraps POST /api/v2/flows/actions/deactivate  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3713,6 +4113,8 @@ try {
 
 # **postFlowsActionsPublish**
 
+
+
 > [Operation](Operation.html) postFlowsActionsPublish(flow, version)
 
 Publish flow
@@ -3720,6 +4122,10 @@ Publish flow
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
 Wraps POST /api/v2/flows/actions/publish  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3766,6 +4172,8 @@ try {
 
 # **postFlowsActionsRevert**
 
+
+
 > [Flow](Flow.html) postFlowsActionsRevert(flow)
 
 Revert flow
@@ -3773,6 +4181,10 @@ Revert flow
 
 
 Wraps POST /api/v2/flows/actions/revert  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -3817,6 +4229,8 @@ try {
 
 # **postFlowsActionsUnlock**
 
+
+
 > [Flow](Flow.html) postFlowsActionsUnlock(flow)
 
 Unlock flow
@@ -3824,6 +4238,10 @@ Unlock flow
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
 
 Wraps POST /api/v2/flows/actions/unlock  
+
+Requires ANY permissions: 
+
+* architect:user:admin
 
 ### Example
 
@@ -3868,6 +4286,8 @@ try {
 
 # **postFlowsDatatableRows**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) postFlowsDatatableRows(datatableId, dataTableRow)
 
 Create a new row entry
@@ -3875,6 +4295,10 @@ Create a new row entry
 Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows  
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3921,6 +4345,8 @@ try {
 
 # **postFlowsDatatables**
 
+
+
 > [DataTable](DataTable.html) postFlowsDatatables(body)
 
 Create a new datatable with the specified json-schema definition
@@ -3928,6 +4354,10 @@ Create a new datatable with the specified json-schema definition
 This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
 
 Wraps POST /api/v2/flows/datatables  
+
+Requires ANY permissions: 
+
+* architect:datatable:add
 
 ### Example
 
@@ -3972,6 +4402,8 @@ try {
 
 # **putArchitectEmergencygroup**
 
+
+
 > [EmergencyGroup](EmergencyGroup.html) putArchitectEmergencygroup(emergencyGroupId, body)
 
 Updates a emergency group by ID
@@ -3979,6 +4411,10 @@ Updates a emergency group by ID
 
 
 Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4025,6 +4461,8 @@ try {
 
 # **putArchitectIvr**
 
+
+
 > [IVR](IVR.html) putArchitectIvr(ivrId, body)
 
 Update an IVR Config.
@@ -4032,6 +4470,10 @@ Update an IVR Config.
 
 
 Wraps PUT /api/v2/architect/ivrs/{ivrId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4078,6 +4520,8 @@ try {
 
 # **putArchitectPrompt**
 
+
+
 > [Prompt](Prompt.html) putArchitectPrompt(promptId, body)
 
 Update specified user prompt
@@ -4085,6 +4529,10 @@ Update specified user prompt
 
 
 Wraps PUT /api/v2/architect/prompts/{promptId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4131,6 +4579,8 @@ try {
 
 # **putArchitectPromptResource**
 
+
+
 > [PromptAsset](PromptAsset.html) putArchitectPromptResource(promptId, languageCode, body)
 
 Update specified user prompt resource
@@ -4138,6 +4588,10 @@ Update specified user prompt resource
 
 
 Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4186,6 +4640,8 @@ try {
 
 # **putArchitectSchedule**
 
+
+
 > [Schedule](Schedule.html) putArchitectSchedule(scheduleId, body)
 
 Update schedule by ID
@@ -4193,6 +4649,10 @@ Update schedule by ID
 
 
 Wraps PUT /api/v2/architect/schedules/{scheduleId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4239,6 +4699,8 @@ try {
 
 # **putArchitectSchedulegroup**
 
+
+
 > [ScheduleGroup](ScheduleGroup.html) putArchitectSchedulegroup(scheduleGroupId, body)
 
 Updates a schedule group by ID
@@ -4246,6 +4708,10 @@ Updates a schedule group by ID
 
 
 Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4292,6 +4758,8 @@ try {
 
 # **putArchitectSystempromptResource**
 
+
+
 > [SystemPromptAsset](SystemPromptAsset.html) putArchitectSystempromptResource(promptId, languageCode, body)
 
 Updates a system prompt resource override.
@@ -4299,6 +4767,10 @@ Updates a system prompt resource override.
 
 
 Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4347,6 +4819,8 @@ try {
 
 # **putFlow**
 
+
+
 > [Flow](Flow.html) putFlow(flowId, body)
 
 Update flow
@@ -4354,6 +4828,10 @@ Update flow
 
 
 Wraps PUT /api/v2/flows/{flowId}  
+
+Requires ANY permissions: 
+
+* architect:user:admin* architect:user:editor
 
 ### Example
 
@@ -4400,6 +4878,8 @@ try {
 
 # **putFlowsDatatable**
 
+
+
 > [DataTable](DataTable.html) putFlowsDatatable(datatableId, expand, body)
 
 Updates a specific datatable by id
@@ -4407,6 +4887,10 @@ Updates a specific datatable by id
 Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 
@@ -4455,6 +4939,8 @@ try {
 
 # **putFlowsDatatableRow**
 
+
+
 > [Map&lt;String, Object&gt;](Map.html) putFlowsDatatableRow(datatableId, rowId, body)
 
 Update a row entry
@@ -4462,6 +4948,10 @@ Update a row entry
 Updates a row with the given to the new values.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
 
 ### Example
 

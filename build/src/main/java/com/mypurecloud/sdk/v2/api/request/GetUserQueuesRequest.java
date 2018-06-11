@@ -115,6 +115,20 @@ public class GetUserQueuesRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetUserQueuesRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -150,6 +164,8 @@ public class GetUserQueuesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("joined", "", joined)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -194,6 +210,11 @@ public class GetUserQueuesRequest {
 		
 		public Builder withJoined(Boolean joined) {
 			request.setJoined(joined);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

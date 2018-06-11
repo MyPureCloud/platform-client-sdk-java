@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
@@ -86,6 +87,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
@@ -2434,6 +2436,82 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CampaignDivisionViewListing> getOutboundCampaignsDivisionviewsAsync(GetOutboundCampaignsDivisionviewsRequest request, final AsyncApiCallback<CampaignDivisionViewListing> callback) {
+    try {
+      final SettableFuture<CampaignDivisionViewListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<CampaignDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignDivisionViewListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CampaignDivisionViewListing>> getOutboundCampaignsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignDivisionViewListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CampaignDivisionViewListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CampaignDivisionViewListing>() {}, new AsyncApiCallback<ApiResponse<CampaignDivisionViewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignDivisionViewListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignDivisionViewListing> response = (ApiResponse<CampaignDivisionViewListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignDivisionViewListing> response = (ApiResponse<CampaignDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

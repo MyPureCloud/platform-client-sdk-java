@@ -88,6 +88,11 @@ public class PutExternalcontactsOrganizationRequest {
             throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for PutExternalcontactsOrganizationRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsOrganizationRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}")
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
@@ -106,9 +111,9 @@ public class PutExternalcontactsOrganizationRequest {
 	}
 
 	
-	public static Builder builder(String externalOrganizationId) {
+	public static Builder builder(String externalOrganizationId, ExternalOrganization body) {
 	    return new Builder()
-	            .withRequiredParams(externalOrganizationId);
+	            .withRequiredParams(externalOrganizationId, body);
 	}
 	
 
@@ -132,8 +137,9 @@ public class PutExternalcontactsOrganizationRequest {
 		
 
 		
-		public Builder withRequiredParams(String externalOrganizationId) {
+		public Builder withRequiredParams(String externalOrganizationId, ExternalOrganization body) {
 			request.setExternalOrganizationId(externalOrganizationId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -144,6 +150,11 @@ public class PutExternalcontactsOrganizationRequest {
             // verify the required parameter 'externalOrganizationId' is set
             if (request.externalOrganizationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for PutExternalcontactsOrganizationRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsOrganizationRequest.");
             }
             
 			return request;

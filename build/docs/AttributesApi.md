@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteAttribute**
 
+
+
 > Void deleteAttribute(attributeId)
 
 Delete an existing Attribute.
@@ -26,6 +28,10 @@ Delete an existing Attribute.
 This will remove attribute.
 
 Wraps DELETE /api/v2/attributes/{attributeId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -69,6 +75,8 @@ null (empty response body)
 
 # **getAttribute**
 
+
+
 > [Attribute](Attribute.html) getAttribute(attributeId)
 
 Get details about an existing attribute.
@@ -76,6 +84,10 @@ Get details about an existing attribute.
 
 
 Wraps GET /api/v2/attributes/{attributeId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -120,6 +132,8 @@ try {
 
 # **getAttributes**
 
+
+
 > [AttributeEntityListing](AttributeEntityListing.html) getAttributes(pageNumber, pageSize)
 
 Gets a list of existing attributes.
@@ -127,6 +141,10 @@ Gets a list of existing attributes.
 
 
 Wraps GET /api/v2/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -173,6 +191,8 @@ try {
 
 # **postAttributes**
 
+
+
 > [Attribute](Attribute.html) postAttributes(body)
 
 Create an attribute.
@@ -180,6 +200,10 @@ Create an attribute.
 
 
 Wraps POST /api/v2/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -224,6 +248,8 @@ try {
 
 # **postAttributesQuery**
 
+
+
 > [AttributeEntityListing](AttributeEntityListing.html) postAttributesQuery(body)
 
 Query attributes
@@ -231,6 +257,10 @@ Query attributes
 
 
 Wraps POST /api/v2/attributes/query  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -275,6 +305,8 @@ try {
 
 # **putAttribute**
 
+
+
 > [Attribute](Attribute.html) putAttribute(attributeId, body)
 
 Update an existing attribute.
@@ -282,6 +314,10 @@ Update an existing attribute.
 Fields that can be updated: name, description. The most recent version is required for updates.
 
 Wraps PUT /api/v2/attributes/{attributeId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

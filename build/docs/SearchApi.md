@@ -27,6 +27,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getDocumentationSearch**
 
+
+
 > [DocumentationSearchResponse](DocumentationSearchResponse.html) getDocumentationSearch(q64)
 
 Search documentation using the q64 value returned from a previous search
@@ -34,6 +36,10 @@ Search documentation using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/documentation/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -78,6 +84,8 @@ try {
 
 # **getGroupsSearch**
 
+
+
 > [GroupsSearchResponse](GroupsSearchResponse.html) getGroupsSearch(q64, expand)
 
 Search groups using the q64 value returned from a previous search
@@ -85,6 +93,10 @@ Search groups using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/groups/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -131,6 +143,8 @@ try {
 
 # **getLocationsSearch**
 
+
+
 > [LocationsSearchResponse](LocationsSearchResponse.html) getLocationsSearch(q64, expand)
 
 Search locations using the q64 value returned from a previous search
@@ -138,6 +152,10 @@ Search locations using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/locations/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -184,6 +202,8 @@ try {
 
 # **getSearch**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearch(q64, expand, profile)
 
 Search using the q64 value returned from a previous search.
@@ -191,6 +211,10 @@ Search using the q64 value returned from a previous search.
 
 
 Wraps GET /api/v2/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -239,6 +263,8 @@ try {
 
 # **getSearchSuggest**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearchSuggest(q64, expand, profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
@@ -246,6 +272,10 @@ Suggest resources using the q64 value returned from a previous suggest query.
 
 
 Wraps GET /api/v2/search/suggest  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -294,6 +324,8 @@ try {
 
 # **getUsersSearch**
 
+
+
 > [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand)
 
 Search users using the q64 value returned from a previous search
@@ -301,6 +333,10 @@ Search users using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/users/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -347,6 +383,8 @@ try {
 
 # **getVoicemailSearch**
 
+
+
 > [VoicemailsSearchResponse](VoicemailsSearchResponse.html) getVoicemailSearch(q64, expand)
 
 Search voicemails using the q64 value returned from a previous search
@@ -354,6 +392,10 @@ Search voicemails using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/voicemail/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -400,6 +442,8 @@ try {
 
 # **postDocumentationSearch**
 
+
+
 > [DocumentationSearchResponse](DocumentationSearchResponse.html) postDocumentationSearch(body)
 
 Search documentation
@@ -407,6 +451,10 @@ Search documentation
 
 
 Wraps POST /api/v2/documentation/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -451,6 +499,8 @@ try {
 
 # **postGroupsSearch**
 
+
+
 > [GroupsSearchResponse](GroupsSearchResponse.html) postGroupsSearch(body)
 
 Search groups
@@ -458,6 +508,10 @@ Search groups
 
 
 Wraps POST /api/v2/groups/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -502,6 +556,8 @@ try {
 
 # **postLocationsSearch**
 
+
+
 > [LocationsSearchResponse](LocationsSearchResponse.html) postLocationsSearch(body)
 
 Search locations
@@ -509,6 +565,10 @@ Search locations
 
 
 Wraps POST /api/v2/locations/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -553,6 +613,8 @@ try {
 
 # **postSearch**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
 
 Search resources.
@@ -560,6 +622,10 @@ Search resources.
 
 
 Wraps POST /api/v2/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -606,6 +672,8 @@ try {
 
 # **postSearchSuggest**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearchSuggest(body, profile)
 
 Suggest resources.
@@ -613,6 +681,10 @@ Suggest resources.
 
 
 Wraps POST /api/v2/search/suggest  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -659,6 +731,8 @@ try {
 
 # **postUsersSearch**
 
+
+
 > [UsersSearchResponse](UsersSearchResponse.html) postUsersSearch(body)
 
 Search users
@@ -666,6 +740,10 @@ Search users
 
 
 Wraps POST /api/v2/users/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -710,6 +788,8 @@ try {
 
 # **postVoicemailSearch**
 
+
+
 > [VoicemailsSearchResponse](VoicemailsSearchResponse.html) postVoicemailSearch(body)
 
 Search voicemails
@@ -717,6 +797,10 @@ Search voicemails
 
 
 Wraps POST /api/v2/voicemail/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

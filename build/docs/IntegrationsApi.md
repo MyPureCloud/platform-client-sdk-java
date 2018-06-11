@@ -54,6 +54,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteIntegration**
 
+
+
 > [Integration](Integration.html) deleteIntegration(integrationId)
 
 Delete integration.
@@ -61,6 +63,10 @@ Delete integration.
 
 
 Wraps DELETE /api/v2/integrations/{integrationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -105,6 +111,8 @@ try {
 
 # **deleteIntegrationsAction**
 
+
+
 > Void deleteIntegrationsAction(actionId)
 
 Delete an Action
@@ -112,6 +120,10 @@ Delete an Action
 
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}  
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -155,6 +167,8 @@ null (empty response body)
 
 # **deleteIntegrationsActionDraft**
 
+
+
 > Void deleteIntegrationsActionDraft(actionId)
 
 Delete a Draft
@@ -162,6 +176,10 @@ Delete a Draft
 
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}/draft  
+
+Requires ANY permissions: 
+
+* integrations:action:delete
 
 ### Example
 
@@ -205,6 +223,8 @@ null (empty response body)
 
 # **deleteIntegrationsCredential**
 
+
+
 > Void deleteIntegrationsCredential(credentialId)
 
 Delete a set of credentials
@@ -212,6 +232,10 @@ Delete a set of credentials
 
 
 Wraps DELETE /api/v2/integrations/credentials/{credentialId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -255,6 +279,8 @@ null (empty response body)
 
 # **getIntegration**
 
+
+
 > [Integration](Integration.html) getIntegration(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Get integration.
@@ -262,6 +288,10 @@ Get integration.
 
 
 Wraps GET /api/v2/integrations/{integrationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -318,6 +348,8 @@ try {
 
 # **getIntegrationConfigCurrent**
 
+
+
 > [IntegrationConfiguration](IntegrationConfiguration.html) getIntegrationConfigCurrent(integrationId)
 
 Get integration configuration.
@@ -325,6 +357,10 @@ Get integration configuration.
 
 
 Wraps GET /api/v2/integrations/{integrationId}/config/current  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -369,6 +405,8 @@ try {
 
 # **getIntegrations**
 
+
+
 > [IntegrationEntityListing](IntegrationEntityListing.html) getIntegrations(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 List integrations
@@ -376,6 +414,10 @@ List integrations
 
 
 Wraps GET /api/v2/integrations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -430,6 +472,8 @@ try {
 
 # **getIntegrationsAction**
 
+
+
 > [Action](Action.html) getIntegrationsAction(actionId, expand, includeConfig)
 
 Retrieves a single Action matching id.
@@ -437,6 +481,10 @@ Retrieves a single Action matching id.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -485,6 +533,8 @@ try {
 
 # **getIntegrationsActionDraft**
 
+
+
 > [Action](Action.html) getIntegrationsActionDraft(actionId, expand, includeConfig)
 
 Retrieve a Draft
@@ -492,6 +542,10 @@ Retrieve a Draft
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -540,6 +594,8 @@ try {
 
 # **getIntegrationsActionDraftSchema**
 
+
+
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsActionDraftSchema(actionId, fileName)
 
 Retrieve schema for a Draft based on filename.
@@ -547,6 +603,10 @@ Retrieve schema for a Draft based on filename.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -593,6 +653,8 @@ try {
 
 # **getIntegrationsActionDraftTemplate**
 
+
+
 > String getIntegrationsActionDraftTemplate(actionId, fileName)
 
 Retrieve templates for a Draft based on filename.
@@ -600,6 +662,10 @@ Retrieve templates for a Draft based on filename.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -646,6 +712,8 @@ try {
 
 # **getIntegrationsActionDraftValidation**
 
+
+
 > [DraftValidationResult](DraftValidationResult.html) getIntegrationsActionDraftValidation(actionId)
 
 Validate current Draft configuration.
@@ -653,6 +721,10 @@ Validate current Draft configuration.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/validation  
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -697,6 +769,8 @@ try {
 
 # **getIntegrationsActionSchema**
 
+
+
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsActionSchema(actionId, fileName)
 
 Retrieve schema for an action based on filename.
@@ -704,6 +778,10 @@ Retrieve schema for an action based on filename.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -750,6 +828,8 @@ try {
 
 # **getIntegrationsActionTemplate**
 
+
+
 > String getIntegrationsActionTemplate(actionId, fileName)
 
 Retrieve text of templates for an action based on filename.
@@ -757,6 +837,10 @@ Retrieve text of templates for an action based on filename.
 
 
 Wraps GET /api/v2/integrations/actions/{actionId}/templates/{fileName}  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -803,6 +887,8 @@ try {
 
 # **getIntegrationsActions**
 
+
+
 > [ActionEntityListing](ActionEntityListing.html) getIntegrationsActions(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Retrieves all actions associated with filters passed in via query param.
@@ -810,6 +896,10 @@ Retrieves all actions associated with filters passed in via query param.
 
 
 Wraps GET /api/v2/integrations/actions  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -870,6 +960,8 @@ try {
 
 # **getIntegrationsActionsCategories**
 
+
+
 > [CategoryEntityListing](CategoryEntityListing.html) getIntegrationsActionsCategories(secure, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Retrieves all categories of available Actions
@@ -877,6 +969,10 @@ Retrieves all categories of available Actions
 
 
 Wraps GET /api/v2/integrations/actions/categories  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -933,6 +1029,8 @@ try {
 
 # **getIntegrationsActionsDrafts**
 
+
+
 > [ActionEntityListing](ActionEntityListing.html) getIntegrationsActionsDrafts(category, secure, includeAuthActions, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Retrieves all action drafts associated with the filters passed in via query param.
@@ -940,6 +1038,10 @@ Retrieves all action drafts associated with the filters passed in via query para
 
 
 Wraps GET /api/v2/integrations/actions/drafts  
+
+Requires ANY permissions: 
+
+* integrations:action:view* bridge:actions:view
 
 ### Example
 
@@ -1000,6 +1102,8 @@ try {
 
 # **getIntegrationsClientapps**
 
+
+
 > [ClientAppEntityListing](ClientAppEntityListing.html) getIntegrationsClientapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 List permitted client app integrations for the logged in user
@@ -1007,6 +1111,10 @@ List permitted client app integrations for the logged in user
 
 
 Wraps GET /api/v2/integrations/clientapps  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1061,6 +1169,8 @@ try {
 
 # **getIntegrationsCredential**
 
+
+
 > [Credential](Credential.html) getIntegrationsCredential(credentialId)
 
 Get a single credential with sensitive fields redacted
@@ -1068,6 +1178,10 @@ Get a single credential with sensitive fields redacted
 
 
 Wraps GET /api/v2/integrations/credentials/{credentialId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1112,6 +1226,8 @@ try {
 
 # **getIntegrationsCredentials**
 
+
+
 > [CredentialInfoListing](CredentialInfoListing.html) getIntegrationsCredentials(pageNumber, pageSize)
 
 List multiple sets of credentials
@@ -1119,6 +1235,10 @@ List multiple sets of credentials
 
 
 Wraps GET /api/v2/integrations/credentials  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1165,6 +1285,8 @@ try {
 
 # **getIntegrationsCredentialsTypes**
 
+
+
 > [CredentialTypeListing](CredentialTypeListing.html) getIntegrationsCredentialsTypes()
 
 List all credential types
@@ -1172,6 +1294,10 @@ List all credential types
 
 
 Wraps GET /api/v2/integrations/credentials/types  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1212,6 +1338,8 @@ This endpoint does not require any parameters.
 
 # **getIntegrationsEventlog**
 
+
+
 > [IntegrationEventEntityListing](IntegrationEventEntityListing.html) getIntegrationsEventlog(pageSize, pageNumber, sortBy, sortOrder, entityId)
 
 List all events
@@ -1219,6 +1347,10 @@ List all events
 
 
 Wraps GET /api/v2/integrations/eventlog  
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1271,6 +1403,8 @@ try {
 
 # **getIntegrationsEventlogEventId**
 
+
+
 > [IntegrationEvent](IntegrationEvent.html) getIntegrationsEventlogEventId(eventId)
 
 Get a single event
@@ -1278,6 +1412,10 @@ Get a single event
 
 
 Wraps GET /api/v2/integrations/eventlog/{eventId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view* bridge:notification:view
 
 ### Example
 
@@ -1322,6 +1460,8 @@ try {
 
 # **getIntegrationsType**
 
+
+
 > [IntegrationType](IntegrationType.html) getIntegrationsType(typeId)
 
 Get integration type.
@@ -1329,6 +1469,10 @@ Get integration type.
 
 
 Wraps GET /api/v2/integrations/types/{typeId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1373,6 +1517,8 @@ try {
 
 # **getIntegrationsTypeConfigschema**
 
+
+
 > [JsonSchemaDocument](JsonSchemaDocument.html) getIntegrationsTypeConfigschema(typeId, configType)
 
 Get properties config schema for an integration type.
@@ -1380,6 +1526,10 @@ Get properties config schema for an integration type.
 
 
 Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1426,6 +1576,8 @@ try {
 
 # **getIntegrationsTypes**
 
+
+
 > [IntegrationTypeEntityListing](IntegrationTypeEntityListing.html) getIntegrationsTypes(pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 List integration types
@@ -1433,6 +1585,10 @@ List integration types
 
 
 Wraps GET /api/v2/integrations/types  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1487,6 +1643,8 @@ try {
 
 # **patchIntegration**
 
+
+
 > [Integration](Integration.html) patchIntegration(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
 
 Update an integration.
@@ -1494,6 +1652,10 @@ Update an integration.
 
 
 Wraps PATCH /api/v2/integrations/{integrationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1552,6 +1714,8 @@ try {
 
 # **patchIntegrationsAction**
 
+
+
 > [Action](Action.html) patchIntegrationsAction(actionId, body)
 
 Patch an Action
@@ -1559,6 +1723,10 @@ Patch an Action
 
 
 Wraps PATCH /api/v2/integrations/actions/{actionId}  
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1605,6 +1773,8 @@ try {
 
 # **patchIntegrationsActionDraft**
 
+
+
 > [Action](Action.html) patchIntegrationsActionDraft(actionId, body)
 
 Update an existing Draft
@@ -1612,6 +1782,10 @@ Update an existing Draft
 
 
 Wraps PATCH /api/v2/integrations/actions/{actionId}/draft  
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1658,6 +1832,8 @@ try {
 
 # **postIntegrations**
 
+
+
 > [Integration](Integration.html) postIntegrations(body)
 
 Create an integration.
@@ -1665,6 +1841,10 @@ Create an integration.
 
 
 Wraps POST /api/v2/integrations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1709,6 +1889,8 @@ try {
 
 # **postIntegrationsActionDraft**
 
+
+
 > [Action](Action.html) postIntegrationsActionDraft(actionId)
 
 Create a new Draft from existing Action
@@ -1716,6 +1898,10 @@ Create a new Draft from existing Action
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft  
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1760,6 +1946,8 @@ try {
 
 # **postIntegrationsActionDraftPublish**
 
+
+
 > [Action](Action.html) postIntegrationsActionDraftPublish(actionId, body)
 
 Publish a Draft and make it the active Action configuration
@@ -1767,6 +1955,10 @@ Publish a Draft and make it the active Action configuration
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/publish  
+
+Requires ANY permissions: 
+
+* integrations:action:edit
 
 ### Example
 
@@ -1813,6 +2005,8 @@ try {
 
 # **postIntegrationsActionDraftTest**
 
+
+
 > [TestExecutionResult](TestExecutionResult.html) postIntegrationsActionDraftTest(actionId, body)
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -1820,6 +2014,10 @@ Test the execution of a draft. Responses will show execution steps broken out wi
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/test  
+
+Requires ANY permissions: 
+
+* integrations:action:execute
 
 ### Example
 
@@ -1866,6 +2064,8 @@ try {
 
 # **postIntegrationsActionExecute**
 
+
+
 > Object postIntegrationsActionExecute(actionId, body)
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -1873,6 +2073,10 @@ Execute Action and return response from 3rd party.  Responses will follow the sc
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/execute  
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1919,6 +2123,8 @@ try {
 
 # **postIntegrationsActionTest**
 
+
+
 > [TestExecutionResult](TestExecutionResult.html) postIntegrationsActionTest(actionId, body)
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -1926,6 +2132,10 @@ Test the execution of an action. Responses will show execution steps broken out 
 
 
 Wraps POST /api/v2/integrations/actions/{actionId}/test  
+
+Requires ANY permissions: 
+
+* integrations:action:execute* bridge:actions:execute
 
 ### Example
 
@@ -1972,6 +2182,8 @@ try {
 
 # **postIntegrationsActions**
 
+
+
 > [Action](Action.html) postIntegrationsActions(body)
 
 Create a new Action
@@ -1979,6 +2191,10 @@ Create a new Action
 
 
 Wraps POST /api/v2/integrations/actions  
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -2023,6 +2239,8 @@ try {
 
 # **postIntegrationsActionsDrafts**
 
+
+
 > [Action](Action.html) postIntegrationsActionsDrafts(body)
 
 Create a new Draft
@@ -2030,6 +2248,10 @@ Create a new Draft
 
 
 Wraps POST /api/v2/integrations/actions/drafts  
+
+Requires ANY permissions: 
+
+* integrations:action:add
 
 ### Example
 
@@ -2074,6 +2296,8 @@ try {
 
 # **postIntegrationsCredentials**
 
+
+
 > [CredentialInfo](CredentialInfo.html) postIntegrationsCredentials(body)
 
 Create a set of credentials
@@ -2081,6 +2305,10 @@ Create a set of credentials
 
 
 Wraps POST /api/v2/integrations/credentials  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2125,6 +2353,8 @@ try {
 
 # **postIntegrationsWorkforcemanagementVendorconnection**
 
+
+
 > [UserActionCategoryEntityListing](UserActionCategoryEntityListing.html) postIntegrationsWorkforcemanagementVendorconnection(body)
 
 Add a vendor connection
@@ -2132,6 +2362,10 @@ Add a vendor connection
 
 
 Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2176,6 +2410,8 @@ try {
 
 # **putIntegrationConfigCurrent**
 
+
+
 > [IntegrationConfiguration](IntegrationConfiguration.html) putIntegrationConfigCurrent(integrationId, body)
 
 Update integration configuration.
@@ -2183,6 +2419,10 @@ Update integration configuration.
 
 
 Wraps PUT /api/v2/integrations/{integrationId}/config/current  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2229,6 +2469,8 @@ try {
 
 # **putIntegrationsCredential**
 
+
+
 > [CredentialInfo](CredentialInfo.html) putIntegrationsCredential(credentialId, body)
 
 Update a set of credentials
@@ -2236,6 +2478,10 @@ Update a set of credentials
 
 
 Wraps PUT /api/v2/integrations/credentials/{credentialId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

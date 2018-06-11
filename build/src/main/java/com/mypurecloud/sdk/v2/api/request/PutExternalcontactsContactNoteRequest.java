@@ -107,6 +107,11 @@ public class PutExternalcontactsContactNoteRequest {
             throw new IllegalStateException("Missing the required parameter 'noteId' when building request for PutExternalcontactsContactNoteRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsContactNoteRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}")
                 .withPathParameter("contactId", contactId)
@@ -127,9 +132,9 @@ public class PutExternalcontactsContactNoteRequest {
 	}
 
 	
-	public static Builder builder(String contactId, String noteId) {
+	public static Builder builder(String contactId, String noteId, Note body) {
 	    return new Builder()
-	            .withRequiredParams(contactId, noteId);
+	            .withRequiredParams(contactId, noteId, body);
 	}
 	
 
@@ -158,9 +163,10 @@ public class PutExternalcontactsContactNoteRequest {
 		
 
 		
-		public Builder withRequiredParams(String contactId, String noteId) {
+		public Builder withRequiredParams(String contactId, String noteId, Note body) {
 			request.setContactId(contactId);
 						request.setNoteId(noteId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -176,6 +182,11 @@ public class PutExternalcontactsContactNoteRequest {
             // verify the required parameter 'noteId' is set
             if (request.noteId == null) {
                 throw new IllegalStateException("Missing the required parameter 'noteId' when building request for PutExternalcontactsContactNoteRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsContactNoteRequest.");
             }
             
 			return request;

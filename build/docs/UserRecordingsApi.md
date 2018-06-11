@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteUserrecording**
 
+
+
 > Void deleteUserrecording(recordingId)
 
 Delete a user recording.
@@ -26,6 +28,10 @@ Delete a user recording.
 
 
 Wraps DELETE /api/v2/userrecordings/{recordingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -69,6 +75,8 @@ null (empty response body)
 
 # **getUserrecording**
 
+
+
 > [UserRecording](UserRecording.html) getUserrecording(recordingId, expand)
 
 Get a user recording.
@@ -76,6 +84,10 @@ Get a user recording.
 
 
 Wraps GET /api/v2/userrecordings/{recordingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -122,6 +134,8 @@ try {
 
 # **getUserrecordingMedia**
 
+
+
 > [DownloadResponse](DownloadResponse.html) getUserrecordingMedia(recordingId, formatId)
 
 Download a user recording.
@@ -129,6 +143,10 @@ Download a user recording.
 
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -175,6 +193,8 @@ try {
 
 # **getUserrecordings**
 
+
+
 > [UserRecordingEntityListing](UserRecordingEntityListing.html) getUserrecordings(pageSize, pageNumber, expand)
 
 Get a list of user recordings.
@@ -182,6 +202,10 @@ Get a list of user recordings.
 
 
 Wraps GET /api/v2/userrecordings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -230,6 +254,8 @@ try {
 
 # **getUserrecordingsSummary**
 
+
+
 > [FaxSummary](FaxSummary.html) getUserrecordingsSummary()
 
 Get user recording summary
@@ -237,6 +263,10 @@ Get user recording summary
 
 
 Wraps GET /api/v2/userrecordings/summary  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -277,6 +307,8 @@ This endpoint does not require any parameters.
 
 # **putUserrecording**
 
+
+
 > [UserRecording](UserRecording.html) putUserrecording(recordingId, body, expand)
 
 Update a user recording.
@@ -284,6 +316,10 @@ Update a user recording.
 
 
 Wraps PUT /api/v2/userrecordings/{recordingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

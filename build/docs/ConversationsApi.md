@@ -109,6 +109,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteConversationParticipantCode**
 
+
+
 > Void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
 
 Delete a code used to add a communication to this participant
@@ -116,6 +118,10 @@ Delete a code used to add a communication to this participant
 
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -163,6 +169,8 @@ null (empty response body)
 
 # **deleteConversationsCallParticipantConsult**
 
+
+
 > Void deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 Cancel the transfer
@@ -170,6 +178,10 @@ Cancel the transfer
 
 
 Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -215,6 +227,8 @@ null (empty response body)
 
 # **deleteConversationsEmailMessagesDraftAttachment**
 
+
+
 > Void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 Delete attachment from draft
@@ -222,6 +236,10 @@ Delete attachment from draft
 
 
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -267,6 +285,8 @@ null (empty response body)
 
 # **getAnalyticsConversationDetails**
 
+
+
 > [AnalyticsConversation](AnalyticsConversation.html) getAnalyticsConversationDetails(conversationId)
 
 Get a conversation by id
@@ -274,6 +294,10 @@ Get a conversation by id
 
 
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -318,6 +342,8 @@ try {
 
 # **getConversation**
 
+
+
 > [Conversation](Conversation.html) getConversation(conversationId)
 
 Get conversation
@@ -325,6 +351,10 @@ Get conversation
 
 
 Wraps GET /api/v2/conversations/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:view
 
 ### Example
 
@@ -369,6 +399,8 @@ try {
 
 # **getConversationParticipantSecureivrsession**
 
+
+
 > [SecureSession](SecureSession.html) getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
 
 Fetch info on a secure session
@@ -376,6 +408,10 @@ Fetch info on a secure session
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -424,6 +460,8 @@ try {
 
 # **getConversationParticipantSecureivrsessions**
 
+
+
 > [SecureSessionEntityListing](SecureSessionEntityListing.html) getConversationParticipantSecureivrsessions(conversationId, participantId)
 
 Get a list of secure sessions for this participant.
@@ -431,6 +469,10 @@ Get a list of secure sessions for this participant.
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -477,13 +519,19 @@ try {
 
 # **getConversationParticipantWrapup**
 
-> [WrapupCode](WrapupCode.html) getConversationParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -506,7 +554,7 @@ String conversationId = "conversationId_example"; // String | conversation ID
 String participantId = "participantId_example"; // String | participant ID
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    WrapupCode result = apiInstance.getConversationParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationParticipantWrapup");
@@ -526,11 +574,13 @@ try {
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationParticipantWrapupcodes"></a>
 
 # **getConversationParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationParticipantWrapupcodes(conversationId, participantId)
 
@@ -539,6 +589,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -585,6 +639,8 @@ try {
 
 # **getConversations**
 
+
+
 > [ConversationEntityListing](ConversationEntityListing.html) getConversations(communicationType)
 
 Get active conversations for the logged in user
@@ -592,6 +648,10 @@ Get active conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -636,6 +696,8 @@ try {
 
 # **getConversationsCall**
 
+
+
 > [CallConversation](CallConversation.html) getConversationsCall(conversationId)
 
 Get call conversation
@@ -643,6 +705,10 @@ Get call conversation
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -687,13 +753,19 @@ try {
 
 # **getConversationsCallParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCallParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCallParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -716,7 +788,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallParticipantWrapup");
@@ -736,11 +808,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsCallParticipantWrapupcodes"></a>
 
 # **getConversationsCallParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
@@ -749,6 +823,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -795,6 +873,8 @@ try {
 
 # **getConversationsCallback**
 
+
+
 > [CallbackConversation](CallbackConversation.html) getConversationsCallback(conversationId)
 
 Get callback conversation
@@ -802,6 +882,10 @@ Get callback conversation
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -846,13 +930,19 @@ try {
 
 # **getConversationsCallbackParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -875,7 +965,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCallbackParticipantWrapup");
@@ -895,11 +985,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsCallbackParticipantWrapupcodes"></a>
 
 # **getConversationsCallbackParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
@@ -908,6 +1000,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -954,6 +1050,8 @@ try {
 
 # **getConversationsCallbacks**
 
+
+
 > [CallbackConversationEntityListing](CallbackConversationEntityListing.html) getConversationsCallbacks()
 
 Get active callback conversations for the logged in user
@@ -961,6 +1059,10 @@ Get active callback conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/callbacks  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1001,6 +1103,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsCalls**
 
+
+
 > [CallConversationEntityListing](CallConversationEntityListing.html) getConversationsCalls()
 
 Get active call conversations for the logged in user
@@ -1008,6 +1112,10 @@ Get active call conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/calls  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1048,6 +1156,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsCallsHistory**
 
+
+
 > [CallHistoryConversationEntityListing](CallHistoryConversationEntityListing.html) getConversationsCallsHistory(pageSize, pageNumber, interval, expand)
 
 Get call history
@@ -1055,6 +1165,10 @@ Get call history
 
 
 Wraps GET /api/v2/conversations/calls/history  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1105,6 +1219,8 @@ try {
 
 # **getConversationsCallsMaximumconferenceparties**
 
+
+
 > [MaxParticipants](MaxParticipants.html) getConversationsCallsMaximumconferenceparties()
 
 Get the maximum number of participants that this user can have on a conference
@@ -1112,6 +1228,10 @@ Get the maximum number of participants that this user can have on a conference
 
 
 Wraps GET /api/v2/conversations/calls/maximumconferenceparties  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1152,6 +1272,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsChat**
 
+
+
 > [ChatConversation](ChatConversation.html) getConversationsChat(conversationId)
 
 Get chat conversation
@@ -1159,6 +1281,10 @@ Get chat conversation
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1203,13 +1329,19 @@ try {
 
 # **getConversationsChatParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsChatParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsChatParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1232,7 +1364,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsChatParticipantWrapup");
@@ -1252,11 +1384,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsChatParticipantWrapupcodes"></a>
 
 # **getConversationsChatParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsChatParticipantWrapupcodes(conversationId, participantId)
 
@@ -1265,6 +1399,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1311,6 +1449,8 @@ try {
 
 # **getConversationsChats**
 
+
+
 > [ChatConversationEntityListing](ChatConversationEntityListing.html) getConversationsChats()
 
 Get active chat conversations for the logged in user
@@ -1318,6 +1458,10 @@ Get active chat conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/chats  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1358,6 +1502,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsCobrowsesession**
 
+
+
 > [CobrowseConversation](CobrowseConversation.html) getConversationsCobrowsesession(conversationId)
 
 Get cobrowse conversation
@@ -1365,6 +1511,10 @@ Get cobrowse conversation
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1409,13 +1559,19 @@ try {
 
 # **getConversationsCobrowsesessionParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1438,7 +1594,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsCobrowsesessionParticipantWrapup");
@@ -1458,11 +1614,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsCobrowsesessionParticipantWrapupcodes"></a>
 
 # **getConversationsCobrowsesessionParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
@@ -1471,6 +1629,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1517,6 +1679,8 @@ try {
 
 # **getConversationsCobrowsesessions**
 
+
+
 > [CobrowseConversationEntityListing](CobrowseConversationEntityListing.html) getConversationsCobrowsesessions()
 
 Get active cobrowse conversations for the logged in user
@@ -1524,6 +1688,10 @@ Get active cobrowse conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/cobrowsesessions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1564,6 +1732,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsEmail**
 
+
+
 > [EmailConversation](EmailConversation.html) getConversationsEmail(conversationId)
 
 Get email conversation
@@ -1571,6 +1741,10 @@ Get email conversation
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1615,6 +1789,8 @@ try {
 
 # **getConversationsEmailMessage**
 
+
+
 > [EmailMessage](EmailMessage.html) getConversationsEmailMessage(conversationId, messageId)
 
 Get conversation message
@@ -1622,6 +1798,10 @@ Get conversation message
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1668,6 +1848,8 @@ try {
 
 # **getConversationsEmailMessages**
 
+
+
 > [EmailMessageListing](EmailMessageListing.html) getConversationsEmailMessages(conversationId)
 
 Get conversation messages
@@ -1675,6 +1857,10 @@ Get conversation messages
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1719,6 +1905,8 @@ try {
 
 # **getConversationsEmailMessagesDraft**
 
+
+
 > [EmailMessage](EmailMessage.html) getConversationsEmailMessagesDraft(conversationId)
 
 Get conversation draft reply
@@ -1726,6 +1914,10 @@ Get conversation draft reply
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1770,13 +1962,19 @@ try {
 
 # **getConversationsEmailParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsEmailParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsEmailParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1799,7 +1997,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsEmailParticipantWrapup");
@@ -1819,11 +2017,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsEmailParticipantWrapupcodes"></a>
 
 # **getConversationsEmailParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
@@ -1832,6 +2032,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1878,6 +2082,8 @@ try {
 
 # **getConversationsEmails**
 
+
+
 > [EmailConversationEntityListing](EmailConversationEntityListing.html) getConversationsEmails()
 
 Get active email conversations for the logged in user
@@ -1885,6 +2091,10 @@ Get active email conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/emails  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1925,6 +2135,8 @@ This endpoint does not require any parameters.
 
 # **getConversationsMessage**
 
+
+
 > [MessageConversation](MessageConversation.html) getConversationsMessage(conversationId)
 
 Get message conversation
@@ -1932,6 +2144,10 @@ Get message conversation
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1976,6 +2192,8 @@ try {
 
 # **getConversationsMessageMessage**
 
+
+
 > [MessageData](MessageData.html) getConversationsMessageMessage(conversationId, messageId)
 
 Get message
@@ -1983,6 +2201,10 @@ Get message
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}  
+
+Requires ANY permissions: 
+
+* conversation:message:view
 
 ### Example
 
@@ -2029,13 +2251,19 @@ try {
 
 # **getConversationsMessageParticipantWrapup**
 
-> [Wrapup](Wrapup.html) getConversationsMessageParticipantWrapup(conversationId, participantId, provisional)
+
+
+> [AssignedWrapupCode](AssignedWrapupCode.html) getConversationsMessageParticipantWrapup(conversationId, participantId, provisional)
 
 Get the wrap-up for this conversation participant. 
 
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2058,7 +2286,7 @@ String conversationId = "conversationId_example"; // String | conversationId
 String participantId = "participantId_example"; // String | participantId
 Boolean provisional = false; // Boolean | Indicates if the wrap-up code is provisional.
 try {
-    Wrapup result = apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, provisional);
+    AssignedWrapupCode result = apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, provisional);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getConversationsMessageParticipantWrapup");
@@ -2078,11 +2306,13 @@ try {
 
 ### Return type
 
-[**Wrapup**](Wrapup.html)
+[**AssignedWrapupCode**](AssignedWrapupCode.html)
 
 <a name="getConversationsMessageParticipantWrapupcodes"></a>
 
 # **getConversationsMessageParticipantWrapupcodes**
+
+
 
 > [List&lt;WrapupCode&gt;](WrapupCode.html) getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
 
@@ -2091,6 +2321,10 @@ Get list of wrapup codes for this conversation participant
 
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2137,6 +2371,8 @@ try {
 
 # **getConversationsMessages**
 
+
+
 > [MessageConversationEntityListing](MessageConversationEntityListing.html) getConversationsMessages()
 
 Get active message conversations for the logged in user
@@ -2144,6 +2380,10 @@ Get active message conversations for the logged in user
 
 
 Wraps GET /api/v2/conversations/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2184,6 +2424,8 @@ This endpoint does not require any parameters.
 
 # **patchConversationParticipant**
 
+
+
 > Void patchConversationParticipant(conversationId, participantId, body)
 
 Update a participant.
@@ -2191,6 +2433,10 @@ Update a participant.
 Update conversation participant.
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2238,6 +2484,8 @@ null (empty response body)
 
 # **patchConversationParticipantAttributes**
 
+
+
 > Void patchConversationParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -2245,6 +2493,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2292,6 +2544,8 @@ null (empty response body)
 
 # **patchConversationsCall**
 
+
+
 > [Conversation](Conversation.html) patchConversationsCall(conversationId, body)
 
 Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -2299,6 +2553,10 @@ Update a conversation by setting it&#39;s recording state, merging in other conv
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2345,6 +2603,8 @@ try {
 
 # **patchConversationsCallParticipant**
 
+
+
 > Void patchConversationsCallParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -2352,6 +2612,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2399,6 +2663,8 @@ null (empty response body)
 
 # **patchConversationsCallParticipantAttributes**
 
+
+
 > Void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -2406,6 +2672,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2453,6 +2723,8 @@ null (empty response body)
 
 # **patchConversationsCallParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -2460,6 +2732,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2510,6 +2786,8 @@ try {
 
 # **patchConversationsCallParticipantConsult**
 
+
+
 > [ConsultTransferResponse](ConsultTransferResponse.html) patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Change who can speak
@@ -2517,6 +2795,10 @@ Change who can speak
 
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2565,6 +2847,8 @@ try {
 
 # **patchConversationsCallback**
 
+
+
 > [Conversation](Conversation.html) patchConversationsCallback(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -2572,6 +2856,10 @@ Update a conversation by disconnecting all of the participants
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2618,6 +2906,8 @@ try {
 
 # **patchConversationsCallbackParticipant**
 
+
+
 > Void patchConversationsCallbackParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -2625,6 +2915,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2672,6 +2966,8 @@ null (empty response body)
 
 # **patchConversationsCallbackParticipantAttributes**
 
+
+
 > Void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -2679,6 +2975,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2726,6 +3026,8 @@ null (empty response body)
 
 # **patchConversationsCallbackParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -2733,6 +3035,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2783,6 +3089,8 @@ try {
 
 # **patchConversationsChat**
 
+
+
 > [Conversation](Conversation.html) patchConversationsChat(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -2790,6 +3098,10 @@ Update a conversation by disconnecting all of the participants
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -2836,6 +3148,8 @@ try {
 
 # **patchConversationsChatParticipant**
 
+
+
 > Void patchConversationsChatParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -2843,6 +3157,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2890,6 +3208,8 @@ null (empty response body)
 
 # **patchConversationsChatParticipantAttributes**
 
+
+
 > Void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -2897,6 +3217,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2944,6 +3268,8 @@ null (empty response body)
 
 # **patchConversationsChatParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -2951,6 +3277,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3001,6 +3331,8 @@ try {
 
 # **patchConversationsCobrowsesession**
 
+
+
 > [Conversation](Conversation.html) patchConversationsCobrowsesession(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -3008,6 +3340,10 @@ Update a conversation by disconnecting all of the participants
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3054,6 +3390,8 @@ try {
 
 # **patchConversationsCobrowsesessionParticipant**
 
+
+
 > Void patchConversationsCobrowsesessionParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -3061,6 +3399,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3108,6 +3450,8 @@ null (empty response body)
 
 # **patchConversationsCobrowsesessionParticipantAttributes**
 
+
+
 > Void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -3115,6 +3459,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3162,6 +3510,8 @@ null (empty response body)
 
 # **patchConversationsCobrowsesessionParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -3169,6 +3519,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3219,6 +3573,8 @@ try {
 
 # **patchConversationsEmail**
 
+
+
 > [Conversation](Conversation.html) patchConversationsEmail(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -3226,6 +3582,10 @@ Update a conversation by disconnecting all of the participants
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3272,6 +3632,8 @@ try {
 
 # **patchConversationsEmailParticipant**
 
+
+
 > Void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -3279,6 +3641,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3326,6 +3692,8 @@ null (empty response body)
 
 # **patchConversationsEmailParticipantAttributes**
 
+
+
 > Void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -3333,6 +3701,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3380,6 +3752,8 @@ null (empty response body)
 
 # **patchConversationsEmailParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -3387,6 +3761,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3437,6 +3815,8 @@ try {
 
 # **patchConversationsMessage**
 
+
+
 > [Conversation](Conversation.html) patchConversationsMessage(conversationId, body)
 
 Update a conversation by disconnecting all of the participants
@@ -3444,6 +3824,10 @@ Update a conversation by disconnecting all of the participants
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3490,6 +3874,8 @@ try {
 
 # **patchConversationsMessageParticipant**
 
+
+
 > Void patchConversationsMessageParticipant(conversationId, participantId, body)
 
 Update conversation participant
@@ -3497,6 +3883,10 @@ Update conversation participant
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3544,6 +3934,8 @@ null (empty response body)
 
 # **patchConversationsMessageParticipantAttributes**
 
+
+
 > Void patchConversationsMessageParticipantAttributes(conversationId, participantId, body)
 
 Update the attributes on a conversation participant.
@@ -3551,6 +3943,10 @@ Update the attributes on a conversation participant.
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3598,6 +3994,8 @@ null (empty response body)
 
 # **patchConversationsMessageParticipantCommunication**
 
+
+
 > [Empty](Empty.html) patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
 
 Update conversation participant&#39;s communication by disconnecting it.
@@ -3605,6 +4003,10 @@ Update conversation participant&#39;s communication by disconnecting it.
 
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3655,6 +4057,8 @@ try {
 
 # **postAnalyticsConversationDetailsProperties**
 
+
+
 > [PropertyIndexRequest](PropertyIndexRequest.html) postAnalyticsConversationDetailsProperties(conversationId, body)
 
 Index conversation properties
@@ -3662,6 +4066,10 @@ Index conversation properties
 
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties  
+
+Requires ANY permissions: 
+
+* analytics:conversationProperties:index
 
 ### Example
 
@@ -3708,6 +4116,8 @@ try {
 
 # **postAnalyticsConversationsAggregatesQuery**
 
+
+
 > [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
@@ -3715,6 +4125,10 @@ Query for conversation aggregates
 
 
 Wraps POST /api/v2/analytics/conversations/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
 
 ### Example
 
@@ -3759,6 +4173,8 @@ try {
 
 # **postAnalyticsConversationsDetailsQuery**
 
+
+
 > [AnalyticsConversationQueryResponse](AnalyticsConversationQueryResponse.html) postAnalyticsConversationsDetailsQuery(body)
 
 Query for conversation details
@@ -3766,6 +4182,10 @@ Query for conversation details
 
 
 Wraps POST /api/v2/analytics/conversations/details/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -3810,6 +4230,8 @@ try {
 
 # **postConversationDisconnect**
 
+
+
 > String postConversationDisconnect(conversationId)
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resyncronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
@@ -3817,6 +4239,10 @@ Performs a full conversation teardown. Issues disconnect requests for any connec
 
 
 Wraps POST /api/v2/conversations/{conversationId}/disconnect  
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
 
 ### Example
 
@@ -3861,6 +4287,8 @@ try {
 
 # **postConversationParticipantCallbacks**
 
+
+
 > Void postConversationParticipantCallbacks(conversationId, participantId, body)
 
 Create a new callback for the specified participant on the conversation.
@@ -3868,6 +4296,10 @@ Create a new callback for the specified participant on the conversation.
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks  
+
+Requires ANY permissions: 
+
+* conversation:callback:create
 
 ### Example
 
@@ -3915,6 +4347,8 @@ null (empty response body)
 
 # **postConversationParticipantDigits**
 
+
+
 > Void postConversationParticipantDigits(conversationId, participantId, body)
 
 Sends DTMF to the participant
@@ -3922,6 +4356,10 @@ Sends DTMF to the participant
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3969,6 +4407,8 @@ null (empty response body)
 
 # **postConversationParticipantReplace**
 
+
+
 > Void postConversationParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -3976,6 +4416,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4023,6 +4467,8 @@ null (empty response body)
 
 # **postConversationParticipantSecureivrsessions**
 
+
+
 > [SecureSession](SecureSession.html) postConversationParticipantSecureivrsessions(conversationId, participantId, body)
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
@@ -4030,6 +4476,10 @@ Create secure IVR session. Only a participant in the conversation can invoke a s
 
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4078,6 +4528,8 @@ try {
 
 # **postConversationsCall**
 
+
+
 > [Conversation](Conversation.html) postConversationsCall(conversationId, body)
 
 Place a new call as part of a callback conversation.
@@ -4085,6 +4537,10 @@ Place a new call as part of a callback conversation.
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4131,6 +4587,8 @@ try {
 
 # **postConversationsCallParticipantConsult**
 
+
+
 > [ConsultTransferResponse](ConsultTransferResponse.html) postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 Initiate and update consult transfer
@@ -4138,6 +4596,10 @@ Initiate and update consult transfer
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4186,6 +4648,8 @@ try {
 
 # **postConversationsCallParticipantMonitor**
 
+
+
 > Void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 Listen in on the conversation from the point of view of a given participant.
@@ -4193,6 +4657,10 @@ Listen in on the conversation from the point of view of a given participant.
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor  
+
+Requires ANY permissions: 
+
+* conversation:call:monitor
 
 ### Example
 
@@ -4238,6 +4706,8 @@ null (empty response body)
 
 # **postConversationsCallParticipantReplace**
 
+
+
 > Void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -4245,6 +4715,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4292,6 +4766,8 @@ null (empty response body)
 
 # **postConversationsCallParticipants**
 
+
+
 > [Conversation](Conversation.html) postConversationsCallParticipants(conversationId, body)
 
 Add participants to a conversation
@@ -4299,6 +4775,10 @@ Add participants to a conversation
 
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4345,6 +4825,8 @@ try {
 
 # **postConversationsCallbackParticipantReplace**
 
+
+
 > Void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -4352,6 +4834,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4399,6 +4885,8 @@ null (empty response body)
 
 # **postConversationsCallbacks**
 
+
+
 > [CreateCallbackResponse](CreateCallbackResponse.html) postConversationsCallbacks(body)
 
 Create a Callback
@@ -4406,6 +4894,10 @@ Create a Callback
 
 
 Wraps POST /api/v2/conversations/callbacks  
+
+Requires ANY permissions: 
+
+* conversation:callback:create
 
 ### Example
 
@@ -4450,6 +4942,8 @@ try {
 
 # **postConversationsCalls**
 
+
+
 > [CreateCallResponse](CreateCallResponse.html) postConversationsCalls(body)
 
 Create a call conversation
@@ -4457,6 +4951,10 @@ Create a call conversation
 
 
 Wraps POST /api/v2/conversations/calls  
+
+Requires ANY permissions: 
+
+* conversation:conference:add
 
 ### Example
 
@@ -4501,6 +4999,8 @@ try {
 
 # **postConversationsChatParticipantReplace**
 
+
+
 > Void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -4508,6 +5008,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4555,6 +5059,8 @@ null (empty response body)
 
 # **postConversationsChats**
 
+
+
 > [ChatConversation](ChatConversation.html) postConversationsChats(body)
 
 Create a web chat conversation
@@ -4562,6 +5068,10 @@ Create a web chat conversation
 
 
 Wraps POST /api/v2/conversations/chats  
+
+Requires ANY permissions: 
+
+* conversation:webchat:create
 
 ### Example
 
@@ -4606,6 +5116,8 @@ try {
 
 # **postConversationsCobrowsesessionParticipantReplace**
 
+
+
 > Void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -4613,6 +5125,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4660,6 +5176,8 @@ null (empty response body)
 
 # **postConversationsEmailInboundmessages**
 
+
+
 > [EmailConversation](EmailConversation.html) postConversationsEmailInboundmessages(conversationId, body)
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -4667,6 +5185,10 @@ Send an email to an external conversation. An external conversation is one where
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4713,6 +5235,8 @@ try {
 
 # **postConversationsEmailMessages**
 
+
+
 > [EmailMessage](EmailMessage.html) postConversationsEmailMessages(conversationId, body)
 
 Send an email reply
@@ -4720,6 +5244,10 @@ Send an email reply
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4766,6 +5294,8 @@ try {
 
 # **postConversationsEmailParticipantReplace**
 
+
+
 > Void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -4773,6 +5303,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4820,6 +5354,8 @@ null (empty response body)
 
 # **postConversationsEmails**
 
+
+
 > [EmailConversation](EmailConversation.html) postConversationsEmails(body)
 
 Create an email conversation
@@ -4827,6 +5363,10 @@ Create an email conversation
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 
 Wraps POST /api/v2/conversations/emails  
+
+Requires ANY permissions: 
+
+* conversation:email:create
 
 ### Example
 
@@ -4871,6 +5411,8 @@ try {
 
 # **postConversationsFaxes**
 
+
+
 > [FaxSendResponse](FaxSendResponse.html) postConversationsFaxes(body)
 
 Create Fax Conversation
@@ -4878,6 +5420,10 @@ Create Fax Conversation
 
 
 Wraps POST /api/v2/conversations/faxes  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4922,6 +5468,8 @@ try {
 
 # **postConversationsMessageCommunicationMessages**
 
+
+
 > [MessageData](MessageData.html) postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
 
 Send message
@@ -4929,6 +5477,10 @@ Send message
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages  
+
+Requires ANY permissions: 
+
+* conversation:message:create
 
 ### Example
 
@@ -4977,6 +5529,8 @@ try {
 
 # **postConversationsMessageMessagesBulk**
 
+
+
 > [TextMessageListing](TextMessageListing.html) postConversationsMessageMessagesBulk(conversationId, body)
 
 Get messages in batch
@@ -4984,6 +5538,10 @@ Get messages in batch
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk  
+
+Requires ANY permissions: 
+
+* conversation:message:view
 
 ### Example
 
@@ -5030,6 +5588,8 @@ try {
 
 # **postConversationsMessageParticipantReplace**
 
+
+
 > Void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
 Replace this participant with the specified user and/or address
@@ -5037,6 +5597,10 @@ Replace this participant with the specified user and/or address
 
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -5084,6 +5648,8 @@ null (empty response body)
 
 # **putConversationsCallParticipantCommunicationUuidata**
 
+
+
 > [Empty](Empty.html) putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
 
 Set uuiData to be sent on future commands.
@@ -5091,6 +5657,10 @@ Set uuiData to be sent on future commands.
 
 
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -5141,6 +5711,8 @@ try {
 
 # **putConversationsEmailMessagesDraft**
 
+
+
 > [EmailMessage](EmailMessage.html) putConversationsEmailMessagesDraft(conversationId, body)
 
 Update conversation draft reply
@@ -5148,6 +5720,10 @@ Update conversation draft reply
 
 
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

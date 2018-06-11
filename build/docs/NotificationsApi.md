@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteNotificationsChannelSubscriptions**
 
+
+
 > Void deleteNotificationsChannelSubscriptions(channelId)
 
 Remove all subscriptions
@@ -27,6 +29,10 @@ Remove all subscriptions
 
 
 Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -70,6 +76,8 @@ null (empty response body)
 
 # **getNotificationsAvailabletopics**
 
+
+
 > [AvailableTopicEntityListing](AvailableTopicEntityListing.html) getNotificationsAvailabletopics(expand)
 
 Get available notification topics.
@@ -77,6 +85,10 @@ Get available notification topics.
 
 
 Wraps GET /api/v2/notifications/availabletopics  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -121,6 +133,8 @@ try {
 
 # **getNotificationsChannelSubscriptions**
 
+
+
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) getNotificationsChannelSubscriptions(channelId)
 
 The list of all subscriptions for this channel
@@ -128,6 +142,10 @@ The list of all subscriptions for this channel
 
 
 Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -172,6 +190,8 @@ try {
 
 # **getNotificationsChannels**
 
+
+
 > [ChannelEntityListing](ChannelEntityListing.html) getNotificationsChannels(includechannels)
 
 The list of existing channels
@@ -179,6 +199,10 @@ The list of existing channels
 
 
 Wraps GET /api/v2/notifications/channels  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -223,6 +247,8 @@ try {
 
 # **postNotificationsChannelSubscriptions**
 
+
+
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) postNotificationsChannelSubscriptions(channelId, body)
 
 Add a list of subscriptions to the existing list of subscriptions
@@ -230,6 +256,10 @@ Add a list of subscriptions to the existing list of subscriptions
 
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -276,6 +306,8 @@ try {
 
 # **postNotificationsChannels**
 
+
+
 > [Channel](Channel.html) postNotificationsChannels()
 
 Create a new channel
@@ -283,6 +315,10 @@ Create a new channel
 There is a limit of 5 channels per user/app combination. Creating a 6th channel will remove the channel with oldest last used date.
 
 Wraps POST /api/v2/notifications/channels  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -323,6 +359,8 @@ This endpoint does not require any parameters.
 
 # **putNotificationsChannelSubscriptions**
 
+
+
 > [ChannelTopicEntityListing](ChannelTopicEntityListing.html) putNotificationsChannelSubscriptions(channelId, body)
 
 Replace the current list of subscriptions with a new list.
@@ -330,6 +368,10 @@ Replace the current list of subscriptions with a new list.
 
 
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

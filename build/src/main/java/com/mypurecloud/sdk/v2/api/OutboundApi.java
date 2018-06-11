@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
@@ -83,6 +84,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
@@ -2614,6 +2616,105 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CampaignDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDivisionViewListing getOutboundCampaignsDivisionviews(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  }
+
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CampaignDivisionViewListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDivisionViewListing> getOutboundCampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundCampaignsDivisionviewsRequest createGetOutboundCampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+    return GetOutboundCampaignsDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withFilterType(filterType)
+    
+            .withName(name)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request The request object
+   * @return CampaignDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDivisionViewListing getOutboundCampaignsDivisionviews(GetOutboundCampaignsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignDivisionViewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignDivisionViewListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of basic Campaign information objects
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDivisionViewListing> getOutboundCampaignsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignDivisionViewListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDivisionViewListing> response = (ApiResponse<CampaignDivisionViewListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDivisionViewListing> response = (ApiResponse<CampaignDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

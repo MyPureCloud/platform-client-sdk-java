@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getSearch**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearch(q64, expand, profile)
 
 Search using the q64 value returned from a previous search.
@@ -24,6 +26,10 @@ Search using the q64 value returned from a previous search.
 
 
 Wraps GET /api/v2/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -72,6 +78,8 @@ try {
 
 # **getSearchSuggest**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) getSearchSuggest(q64, expand, profile)
 
 Suggest resources using the q64 value returned from a previous suggest query.
@@ -79,6 +87,10 @@ Suggest resources using the q64 value returned from a previous suggest query.
 
 
 Wraps GET /api/v2/search/suggest  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -127,6 +139,8 @@ try {
 
 # **postSearch**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearch(body, profile)
 
 Search resources.
@@ -134,6 +148,10 @@ Search resources.
 
 
 Wraps POST /api/v2/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -180,6 +198,8 @@ try {
 
 # **postSearchSuggest**
 
+
+
 > [JsonNodeSearchResponse](JsonNodeSearchResponse.html) postSearchSuggest(body, profile)
 
 Suggest resources.
@@ -187,6 +207,10 @@ Suggest resources.
 
 
 Wraps POST /api/v2/search/suggest  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

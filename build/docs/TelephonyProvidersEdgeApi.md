@@ -140,6 +140,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteTelephonyProvidersEdge**
 
+
+
 > Void deleteTelephonyProvidersEdge(edgeId)
 
 Delete a edge.
@@ -147,6 +149,10 @@ Delete a edge.
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -190,6 +196,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgeLogicalinterface**
 
+
+
 > Void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 Delete an edge logical interface
@@ -197,6 +205,10 @@ Delete an edge logical interface
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -242,6 +254,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgeSoftwareupdate**
 
+
+
 > Void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 Cancels any in-progress update for this edge.
@@ -249,6 +263,10 @@ Cancels any in-progress update for this edge.
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -292,6 +310,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesCertificateauthority**
 
+
+
 > Void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 Delete a certificate authority.
@@ -299,6 +319,10 @@ Delete a certificate authority.
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -342,6 +366,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesDidpool**
 
+
+
 > Void deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 Delete a DID Pool by ID.
@@ -349,6 +375,10 @@ Delete a DID Pool by ID.
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -392,6 +422,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesEdgegroup**
 
+
+
 > Void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 Delete an edge group.
@@ -399,6 +431,10 @@ Delete an edge group.
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -442,6 +478,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesEndpoint**
 
+
+
 > Void deleteTelephonyProvidersEdgesEndpoint(endpointId)
 
 Delete endpoint
@@ -449,6 +487,10 @@ Delete endpoint
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -492,6 +534,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesExtensionpool**
 
+
+
 > Void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Delete an extension pool by ID
@@ -499,6 +543,10 @@ Delete an extension pool by ID
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -542,6 +590,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesOutboundroute**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > Void deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 Delete Outbound Route
@@ -549,6 +599,10 @@ Delete Outbound Route
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -592,6 +646,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesPhone**
 
+
+
 > Void deleteTelephonyProvidersEdgesPhone(phoneId)
 
 Delete a Phone by ID
@@ -599,6 +655,10 @@ Delete a Phone by ID
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/phones/{phoneId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -642,6 +702,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesPhonebasesetting**
 
+
+
 > Void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Delete a Phone Base Settings by ID
@@ -649,6 +711,10 @@ Delete a Phone Base Settings by ID
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -692,6 +758,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesSite**
 
+
+
 > Void deleteTelephonyProvidersEdgesSite(siteId)
 
 Delete a Site by ID
@@ -699,6 +767,10 @@ Delete a Site by ID
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -742,6 +814,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesSiteOutboundroute**
 
+
+
 > Void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 Delete Outbound Route
@@ -749,6 +823,10 @@ Delete Outbound Route
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -794,6 +872,8 @@ null (empty response body)
 
 # **deleteTelephonyProvidersEdgesTrunkbasesetting**
 
+
+
 > Void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 Delete a Trunk Base Settings object by ID
@@ -801,6 +881,10 @@ Delete a Trunk Base Settings object by ID
 
 
 Wraps DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -844,6 +928,8 @@ null (empty response body)
 
 # **getConfigurationSchemasEdgesVnext**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [SchemaCategoryEntityListing](SchemaCategoryEntityListing.html) getConfigurationSchemasEdgesVnext(pageSize, pageNumber)
 
 Lists available schema categories (Deprecated)
@@ -851,6 +937,10 @@ Lists available schema categories (Deprecated)
 
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -897,6 +987,8 @@ try {
 
 # **getConfigurationSchemasEdgesVnextSchemaCategory**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [SchemaReferenceEntityListing](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategory(schemaCategory, pageSize, pageNumber)
 
 List schemas of a specific category (Deprecated)
@@ -904,6 +996,10 @@ List schemas of a specific category (Deprecated)
 
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -952,6 +1048,8 @@ try {
 
 # **getConfigurationSchemasEdgesVnextSchemaCategorySchemaType**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [SchemaReferenceEntityListing](SchemaReferenceEntityListing.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaType(schemaCategory, schemaType, pageSize, pageNumber)
 
 List schemas of a specific category (Deprecated)
@@ -959,6 +1057,10 @@ List schemas of a specific category (Deprecated)
 
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1009,6 +1111,8 @@ try {
 
 # **getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [Organization](Organization.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaId(schemaCategory, schemaType, schemaId)
 
 Get a json schema (Deprecated)
@@ -1016,6 +1120,10 @@ Get a json schema (Deprecated)
 
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1064,6 +1172,8 @@ try {
 
 # **getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [Organization](Organization.html) getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataId(schemaCategory, schemaType, schemaId, extensionType, metadataId, type)
 
 Get metadata for a schema (Deprecated)
@@ -1071,6 +1181,10 @@ Get metadata for a schema (Deprecated)
 
 
 Wraps GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1125,6 +1239,8 @@ try {
 
 # **getTelephonyProvidersEdge**
 
+
+
 > [Edge](Edge.html) getTelephonyProvidersEdge(edgeId, expand)
 
 Get edge.
@@ -1132,6 +1248,10 @@ Get edge.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1178,6 +1298,8 @@ try {
 
 # **getTelephonyProvidersEdgeLine**
 
+
+
 > [EdgeLine](EdgeLine.html) getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 Get line
@@ -1185,6 +1307,10 @@ Get line
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1231,6 +1357,8 @@ try {
 
 # **getTelephonyProvidersEdgeLines**
 
+
+
 > [EdgeLineEntityListing](EdgeLineEntityListing.html) getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber)
 
 Get the list of lines.
@@ -1238,6 +1366,10 @@ Get the list of lines.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/lines  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1286,6 +1418,8 @@ try {
 
 # **getTelephonyProvidersEdgeLogicalinterface**
 
+
+
 > [DomainLogicalInterface](DomainLogicalInterface.html) getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, expand)
 
 Get an edge logical interface
@@ -1293,6 +1427,10 @@ Get an edge logical interface
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1341,6 +1479,8 @@ try {
 
 # **getTelephonyProvidersEdgeLogicalinterfaces**
 
+
+
 > [LogicalInterfaceEntityListing](LogicalInterfaceEntityListing.html) getTelephonyProvidersEdgeLogicalinterfaces(edgeId, expand)
 
 Get edge logical interfaces.
@@ -1348,6 +1488,10 @@ Get edge logical interfaces.
 Retrieve a list of all configured logical interfaces from a specific edge.
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1394,6 +1538,8 @@ try {
 
 # **getTelephonyProvidersEdgeLogsJob**
 
+
+
 > [EdgeLogsJob](EdgeLogsJob.html) getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 Get an Edge logs job.
@@ -1401,6 +1547,10 @@ Get an Edge logs job.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1447,6 +1597,8 @@ try {
 
 # **getTelephonyProvidersEdgeMetrics**
 
+
+
 > [EdgeMetrics](EdgeMetrics.html) getTelephonyProvidersEdgeMetrics(edgeId)
 
 Get the edge metrics.
@@ -1454,6 +1606,10 @@ Get the edge metrics.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1498,6 +1654,8 @@ try {
 
 # **getTelephonyProvidersEdgePhysicalinterface**
 
+
+
 > [DomainPhysicalInterface](DomainPhysicalInterface.html) getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 Get edge physical interface.
@@ -1505,6 +1663,10 @@ Get edge physical interface.
 Retrieve a physical interface from a specific edge.
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1551,6 +1713,8 @@ try {
 
 # **getTelephonyProvidersEdgePhysicalinterfaces**
 
+
+
 > [PhysicalInterfaceEntityListing](PhysicalInterfaceEntityListing.html) getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 Retrieve a list of all configured physical interfaces from a specific edge.
@@ -1558,6 +1722,10 @@ Retrieve a list of all configured physical interfaces from a specific edge.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1602,6 +1770,8 @@ try {
 
 # **getTelephonyProvidersEdgeSetuppackage**
 
+
+
 > [VmPairingInfo](VmPairingInfo.html) getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
@@ -1609,6 +1779,10 @@ Get the setup package for a locally deployed edge device. This is needed to comp
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1653,6 +1827,8 @@ try {
 
 # **getTelephonyProvidersEdgeSoftwareupdate**
 
+
+
 > [DomainEdgeSoftwareUpdateDto](DomainEdgeSoftwareUpdateDto.html) getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 Gets software update status information about any edge.
@@ -1660,6 +1836,10 @@ Gets software update status information about any edge.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1704,6 +1884,8 @@ try {
 
 # **getTelephonyProvidersEdgeSoftwareversions**
 
+
+
 > [DomainEdgeSoftwareVersionDtoEntityListing](DomainEdgeSoftwareVersionDtoEntityListing.html) getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 Gets all the available software versions for this edge.
@@ -1711,6 +1893,10 @@ Gets all the available software versions for this edge.
 
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1755,6 +1941,8 @@ try {
 
 # **getTelephonyProvidersEdgeTrunks**
 
+
+
 > [TrunkEntityListing](TrunkEntityListing.html) getTelephonyProvidersEdgeTrunks(edgeId, pageNumber, pageSize, sortBy, sortOrder, trunkBaseId, trunkType)
 
 Get the list of available trunks for the given Edge.
@@ -1762,6 +1950,10 @@ Get the list of available trunks for the given Edge.
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/trunks  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1818,6 +2010,8 @@ try {
 
 # **getTelephonyProvidersEdges**
 
+
+
 > [EdgeEntityListing](EdgeEntityListing.html) getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed)
 
 Get the list of edges.
@@ -1825,6 +2019,10 @@ Get the list of edges.
 
 
 Wraps GET /api/v2/telephony/providers/edges  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1881,6 +2079,8 @@ try {
 
 # **getTelephonyProvidersEdgesAvailablelanguages**
 
+
+
 > [AvailableLanguageList](AvailableLanguageList.html) getTelephonyProvidersEdgesAvailablelanguages()
 
 Get the list of available languages.
@@ -1888,6 +2088,10 @@ Get the list of available languages.
 
 
 Wraps GET /api/v2/telephony/providers/edges/availablelanguages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1928,6 +2132,8 @@ This endpoint does not require any parameters.
 
 # **getTelephonyProvidersEdgesCertificateauthorities**
 
+
+
 > [CertificateAuthorityEntityListing](CertificateAuthorityEntityListing.html) getTelephonyProvidersEdgesCertificateauthorities()
 
 Get the list of certificate authorities.
@@ -1935,6 +2141,10 @@ Get the list of certificate authorities.
 
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -1975,6 +2185,8 @@ This endpoint does not require any parameters.
 
 # **getTelephonyProvidersEdgesCertificateauthority**
 
+
+
 > [DomainCertificateAuthority](DomainCertificateAuthority.html) getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 Get a certificate authority.
@@ -1982,6 +2194,10 @@ Get a certificate authority.
 
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2026,6 +2242,8 @@ try {
 
 # **getTelephonyProvidersEdgesDid**
 
+
+
 > [DID](DID.html) getTelephonyProvidersEdgesDid(didId)
 
 Get a DID by ID.
@@ -2033,6 +2251,10 @@ Get a DID by ID.
 
 
 Wraps GET /api/v2/telephony/providers/edges/dids/{didId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2077,6 +2299,8 @@ try {
 
 # **getTelephonyProvidersEdgesDidpool**
 
+
+
 > [DIDPool](DIDPool.html) getTelephonyProvidersEdgesDidpool(didPoolId)
 
 Get a DID Pool by ID.
@@ -2084,6 +2308,10 @@ Get a DID Pool by ID.
 
 
 Wraps GET /api/v2/telephony/providers/edges/didpools/{didPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2128,6 +2356,8 @@ try {
 
 # **getTelephonyProvidersEdgesDidpools**
 
+
+
 > [DIDPoolEntityListing](DIDPoolEntityListing.html) getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy)
 
 Get a listing of DID Pools
@@ -2135,6 +2365,10 @@ Get a listing of DID Pools
 
 
 Wraps GET /api/v2/telephony/providers/edges/didpools  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2183,6 +2417,8 @@ try {
 
 # **getTelephonyProvidersEdgesDids**
 
+
+
 > [DIDEntityListing](DIDEntityListing.html) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber)
 
 Get a listing of DIDs
@@ -2190,6 +2426,10 @@ Get a listing of DIDs
 
 
 Wraps GET /api/v2/telephony/providers/edges/dids  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2242,6 +2482,8 @@ try {
 
 # **getTelephonyProvidersEdgesEdgegroup**
 
+
+
 > [EdgeGroup](EdgeGroup.html) getTelephonyProvidersEdgesEdgegroup(edgeGroupId, expand)
 
 Get edge group.
@@ -2249,6 +2491,10 @@ Get edge group.
 
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2295,6 +2541,8 @@ try {
 
 # **getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
 
+
+
 > [EdgeTrunkBase](EdgeTrunkBase.html) getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 Gets the edge trunk base associated with the edge group
@@ -2302,6 +2550,10 @@ Gets the edge trunk base associated with the edge group
 
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2348,6 +2600,8 @@ try {
 
 # **getTelephonyProvidersEdgesEdgegroups**
 
+
+
 > [EdgeGroupEntityListing](EdgeGroupEntityListing.html) getTelephonyProvidersEdgesEdgegroups(pageSize, pageNumber, name, sortBy, managed)
 
 Get the list of edge groups.
@@ -2355,6 +2609,10 @@ Get the list of edge groups.
 
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2407,6 +2665,8 @@ try {
 
 # **getTelephonyProvidersEdgesEdgeversionreport**
 
+
+
 > [EdgeVersionReport](EdgeVersionReport.html) getTelephonyProvidersEdgesEdgeversionreport()
 
 Get the edge version report.
@@ -2414,6 +2674,10 @@ Get the edge version report.
 The report will not have consistent data about the edge version(s) until all edges have been reset.
 
 Wraps GET /api/v2/telephony/providers/edges/edgeversionreport  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2454,6 +2718,8 @@ This endpoint does not require any parameters.
 
 # **getTelephonyProvidersEdgesEndpoint**
 
+
+
 > [Endpoint](Endpoint.html) getTelephonyProvidersEdgesEndpoint(endpointId)
 
 Get endpoint
@@ -2461,6 +2727,10 @@ Get endpoint
 
 
 Wraps GET /api/v2/telephony/providers/edges/endpoints/{endpointId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2505,6 +2775,8 @@ try {
 
 # **getTelephonyProvidersEdgesEndpoints**
 
+
+
 > [EndpointEntityListing](EndpointEntityListing.html) getTelephonyProvidersEdgesEndpoints(pageSize, pageNumber, name, sortBy)
 
 Get endpoints
@@ -2512,6 +2784,10 @@ Get endpoints
 
 
 Wraps GET /api/v2/telephony/providers/edges/endpoints  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2562,6 +2838,8 @@ try {
 
 # **getTelephonyProvidersEdgesExtension**
 
+
+
 > [Extension](Extension.html) getTelephonyProvidersEdgesExtension(extensionId)
 
 Get an extension by ID.
@@ -2569,6 +2847,10 @@ Get an extension by ID.
 
 
 Wraps GET /api/v2/telephony/providers/edges/extensions/{extensionId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2613,6 +2895,8 @@ try {
 
 # **getTelephonyProvidersEdgesExtensionpool**
 
+
+
 > [ExtensionPool](ExtensionPool.html) getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 Get an extension pool by ID
@@ -2620,6 +2904,10 @@ Get an extension pool by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2664,6 +2952,8 @@ try {
 
 # **getTelephonyProvidersEdgesExtensionpools**
 
+
+
 > [ExtensionPoolEntityListing](ExtensionPoolEntityListing.html) getTelephonyProvidersEdgesExtensionpools(pageSize, pageNumber, sortBy, number)
 
 Get a listing of extension pools
@@ -2671,6 +2961,10 @@ Get a listing of extension pools
 
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2721,6 +3015,8 @@ try {
 
 # **getTelephonyProvidersEdgesExtensions**
 
+
+
 > [ExtensionEntityListing](ExtensionEntityListing.html) getTelephonyProvidersEdgesExtensions(pageSize, pageNumber, sortBy, sortOrder, number)
 
 Get a listing of extensions
@@ -2728,6 +3024,10 @@ Get a listing of extensions
 
 
 Wraps GET /api/v2/telephony/providers/edges/extensions  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2780,6 +3080,8 @@ try {
 
 # **getTelephonyProvidersEdgesLine**
 
+
+
 > [Line](Line.html) getTelephonyProvidersEdgesLine(lineId)
 
 Get a Line by ID
@@ -2787,6 +3089,10 @@ Get a Line by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/lines/{lineId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2831,6 +3137,8 @@ try {
 
 # **getTelephonyProvidersEdgesLinebasesetting**
 
+
+
 > [LineBase](LineBase.html) getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 Get a line base settings object by ID
@@ -2838,6 +3146,10 @@ Get a line base settings object by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2882,6 +3194,8 @@ try {
 
 # **getTelephonyProvidersEdgesLinebasesettings**
 
+
+
 > [LineBaseEntityListing](LineBaseEntityListing.html) getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder)
 
 Get a listing of line base settings objects
@@ -2889,6 +3203,10 @@ Get a listing of line base settings objects
 
 
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2939,6 +3257,8 @@ try {
 
 # **getTelephonyProvidersEdgesLines**
 
+
+
 > [LineEntityListing](LineEntityListing.html) getTelephonyProvidersEdgesLines(pageSize, pageNumber, name, sortBy, expand)
 
 Get a list of Lines
@@ -2946,6 +3266,10 @@ Get a list of Lines
 
 
 Wraps GET /api/v2/telephony/providers/edges/lines  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -2998,6 +3322,8 @@ try {
 
 # **getTelephonyProvidersEdgesLinesTemplate**
 
+
+
 > [Line](Line.html) getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
@@ -3005,6 +3331,10 @@ Get a Line instance template based on a Line Base Settings object. This object c
 
 
 Wraps GET /api/v2/telephony/providers/edges/lines/template  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3049,6 +3379,8 @@ try {
 
 # **getTelephonyProvidersEdgesLogicalinterfaces**
 
+
+
 > [LogicalInterfaceEntityListing](LogicalInterfaceEntityListing.html) getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, expand)
 
 Get edge logical interfaces.
@@ -3056,6 +3388,10 @@ Get edge logical interfaces.
 Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
 
 Wraps GET /api/v2/telephony/providers/edges/logicalinterfaces  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3102,6 +3438,8 @@ try {
 
 # **getTelephonyProvidersEdgesMetrics**
 
+
+
 > [List&lt;EdgeMetrics&gt;](EdgeMetrics.html) getTelephonyProvidersEdgesMetrics(edgeIds)
 
 Get the metrics for a list of edges.
@@ -3109,6 +3447,10 @@ Get the metrics for a list of edges.
 
 
 Wraps GET /api/v2/telephony/providers/edges/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3153,6 +3495,8 @@ try {
 
 # **getTelephonyProvidersEdgesOutboundroute**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [OutboundRoute](OutboundRoute.html) getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 
 Get outbound route
@@ -3160,6 +3504,10 @@ Get outbound route
 
 
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3204,6 +3552,8 @@ try {
 
 # **getTelephonyProvidersEdgesOutboundroutes**
 
+
+
 > [OutboundRouteEntityListing](OutboundRouteEntityListing.html) getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, sortBy)
 
 Get outbound routes
@@ -3211,6 +3561,10 @@ Get outbound routes
 
 
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3263,6 +3617,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhone**
 
+
+
 > [Phone](Phone.html) getTelephonyProvidersEdgesPhone(phoneId)
 
 Get a Phone by ID
@@ -3270,6 +3626,10 @@ Get a Phone by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/phones/{phoneId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3314,6 +3674,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhonebasesetting**
 
+
+
 > [PhoneBase](PhoneBase.html) getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 Get a Phone Base Settings object by ID
@@ -3321,6 +3683,10 @@ Get a Phone Base Settings object by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3365,6 +3731,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhonebasesettings**
 
+
+
 > [PhoneBaseEntityListing](PhoneBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettings(pageSize, pageNumber, sortBy, sortOrder, expand, name)
 
 Get a list of Phone Base Settings objects
@@ -3372,6 +3740,10 @@ Get a list of Phone Base Settings objects
 
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3426,6 +3798,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases**
 
+
+
 > [PhoneMetaBaseEntityListing](PhoneMetaBaseEntityListing.html) getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Phone Base Settings
@@ -3433,6 +3807,10 @@ Get a list of available makes and models to create a new Phone Base Settings
 
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3479,6 +3857,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhonebasesettingsTemplate**
 
+
+
 > [PhoneBase](PhoneBase.html) getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
@@ -3486,6 +3866,10 @@ Get a Phone Base Settings instance template from a given make and model. This ob
 
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/template  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3530,6 +3914,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhones**
 
+
+
 > [PhoneEntityListing](PhoneEntityListing.html) getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields)
 
 Get a list of Phone Instances
@@ -3537,6 +3923,10 @@ Get a list of Phone Instances
 
 
 Wraps GET /api/v2/telephony/providers/edges/phones  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3607,6 +3997,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhonesTemplate**
 
+
+
 > [Phone](Phone.html) getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
@@ -3614,6 +4006,10 @@ Get a Phone instance template based on a Phone Base Settings object. This object
 
 
 Wraps GET /api/v2/telephony/providers/edges/phones/template  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3658,6 +4054,8 @@ try {
 
 # **getTelephonyProvidersEdgesPhysicalinterfaces**
 
+
+
 > [PhysicalInterfaceEntityListing](PhysicalInterfaceEntityListing.html) getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 Get physical interfaces for edges.
@@ -3665,6 +4063,10 @@ Get physical interfaces for edges.
 Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
 
 Wraps GET /api/v2/telephony/providers/edges/physicalinterfaces  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3709,6 +4111,8 @@ try {
 
 # **getTelephonyProvidersEdgesSite**
 
+
+
 > [Site](Site.html) getTelephonyProvidersEdgesSite(siteId)
 
 Get a Site by ID.
@@ -3716,6 +4120,10 @@ Get a Site by ID.
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:sites:view
 
 ### Example
 
@@ -3760,6 +4168,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteAutoscalinggroups**
 
+
+
 > [AsgInfoResponse](AsgInfoResponse.html) getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
 
 Gets the basic information about an asg in a specified site
@@ -3767,6 +4177,10 @@ Gets the basic information about an asg in a specified site
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
+
+Requires ANY permissions: 
+
+* managed:all:all
 
 ### Example
 
@@ -3811,6 +4225,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteNumberplan**
 
+
+
 > [NumberPlan](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 Get a Number Plan by ID.
@@ -3818,6 +4234,10 @@ Get a Number Plan by ID.
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3864,6 +4284,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteNumberplans**
 
+
+
 > [List&lt;NumberPlan&gt;](NumberPlan.html) getTelephonyProvidersEdgesSiteNumberplans(siteId)
 
 Get the list of Number Plans for this Site.
@@ -3871,6 +4293,10 @@ Get the list of Number Plans for this Site.
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3915,6 +4341,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteNumberplansClassifications**
 
+
+
 > List&lt;String&gt; getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, classification)
 
 Get a list of Classifications for this Site
@@ -3922,6 +4350,10 @@ Get a list of Classifications for this Site
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -3968,6 +4400,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteOutboundroute**
 
+
+
 > [OutboundRouteBase](OutboundRouteBase.html) getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 Get an outbound route
@@ -3975,6 +4409,10 @@ Get an outbound route
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4021,6 +4459,8 @@ try {
 
 # **getTelephonyProvidersEdgesSiteOutboundroutes**
 
+
+
 > [OutboundRouteBaseEntityListing](OutboundRouteBaseEntityListing.html) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, sortBy)
 
 Get outbound routes
@@ -4028,6 +4468,10 @@ Get outbound routes
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4080,6 +4524,8 @@ try {
 
 # **getTelephonyProvidersEdgesSites**
 
+
+
 > [SiteEntityListing](SiteEntityListing.html) getTelephonyProvidersEdgesSites(pageSize, pageNumber, sortBy, sortOrder, name, locationId, managed)
 
 Get the list of Sites.
@@ -4087,6 +4533,10 @@ Get the list of Sites.
 
 
 Wraps GET /api/v2/telephony/providers/edges/sites  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4143,6 +4593,8 @@ try {
 
 # **getTelephonyProvidersEdgesTimezones**
 
+
+
 > [TimeZoneEntityListing](TimeZoneEntityListing.html) getTelephonyProvidersEdgesTimezones(pageSize, pageNumber)
 
 Get a list of Edge-compatible time zones
@@ -4150,6 +4602,10 @@ Get a list of Edge-compatible time zones
 
 
 Wraps GET /api/v2/telephony/providers/edges/timezones  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4196,6 +4652,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunk**
 
+
+
 > [Trunk](Trunk.html) getTelephonyProvidersEdgesTrunk(trunkId)
 
 Get a Trunk by ID
@@ -4203,6 +4661,10 @@ Get a Trunk by ID
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4247,6 +4709,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkMetrics**
 
+
+
 > [TrunkMetrics](TrunkMetrics.html) getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 Get the trunk metrics.
@@ -4254,6 +4718,10 @@ Get the trunk metrics.
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4298,6 +4766,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkbasesetting**
 
+
+
 > [TrunkBase](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, ignoreHidden)
 
 Get a Trunk Base Settings object by ID
@@ -4305,6 +4775,10 @@ Get a Trunk Base Settings object by ID
 Managed properties will not be returned unless the user is assigned the managed:all:all permission.
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4351,6 +4825,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkbasesettings**
 
+
+
 > [TrunkBaseEntityListing](TrunkBaseEntityListing.html) getTelephonyProvidersEdgesTrunkbasesettings(pageNumber, pageSize, sortBy, sortOrder, recordingEnabled, ignoreHidden, managed, expand, name)
 
 Get Trunk Base Settings listing
@@ -4358,6 +4834,10 @@ Get Trunk Base Settings listing
 Managed properties will not be returned unless the user is assigned the managed:all:all permission.
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4418,6 +4898,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases**
 
+
+
 > [TrunkMetabaseEntityListing](TrunkMetabaseEntityListing.html) getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(type, pageSize, pageNumber)
 
 Get a list of available makes and models to create a new Trunk Base Settings
@@ -4425,6 +4907,10 @@ Get a list of available makes and models to create a new Trunk Base Settings
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4473,6 +4959,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkbasesettingsTemplate**
 
+
+
 > [TrunkBase](TrunkBase.html) getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
@@ -4480,6 +4968,10 @@ Get a Trunk Base Settings instance template from a given make and model. This ob
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/template  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4524,6 +5016,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunks**
 
+
+
 > [TrunkEntityListing](TrunkEntityListing.html) getTelephonyProvidersEdgesTrunks(pageNumber, pageSize, sortBy, sortOrder, edgeId, trunkBaseId, trunkType)
 
 Get the list of available trunks.
@@ -4531,6 +5025,10 @@ Get the list of available trunks.
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
 Wraps GET /api/v2/telephony/providers/edges/trunks  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4587,6 +5085,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunksMetrics**
 
+
+
 > [List&lt;TrunkMetrics&gt;](TrunkMetrics.html) getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 Get the metrics for a list of trunks.
@@ -4594,6 +5094,10 @@ Get the metrics for a list of trunks.
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunks/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4638,6 +5142,8 @@ try {
 
 # **getTelephonyProvidersEdgesTrunkswithrecording**
 
+
+
 > [TrunkRecordingEnabledCount](TrunkRecordingEnabledCount.html) getTelephonyProvidersEdgesTrunkswithrecording(trunkType)
 
 Get Counts of trunks that have recording disabled or enabled
@@ -4645,6 +5151,10 @@ Get Counts of trunks that have recording disabled or enabled
 
 
 Wraps GET /api/v2/telephony/providers/edges/trunkswithrecording  
+
+Requires ANY permissions: 
+
+* recording:retentionPolicy:view* telephony:plugin:all
 
 ### Example
 
@@ -4689,6 +5199,8 @@ try {
 
 # **postTelephonyProvidersEdgeLogicalinterfaces**
 
+
+
 > [DomainLogicalInterface](DomainLogicalInterface.html) postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 Create an edge logical interface.
@@ -4696,6 +5208,10 @@ Create an edge logical interface.
 Create
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4742,6 +5258,8 @@ try {
 
 # **postTelephonyProvidersEdgeLogsJobUpload**
 
+
+
 > Void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 Request that the specified fileIds be uploaded from the Edge.
@@ -4749,6 +5267,10 @@ Request that the specified fileIds be uploaded from the Edge.
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4796,6 +5318,8 @@ null (empty response body)
 
 # **postTelephonyProvidersEdgeLogsJobs**
 
+
+
 > [EdgeLogsJobResponse](EdgeLogsJobResponse.html) postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 
 Create a job to upload a list of Edge logs.
@@ -4803,6 +5327,10 @@ Create a job to upload a list of Edge logs.
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4849,6 +5377,8 @@ try {
 
 # **postTelephonyProvidersEdgeReboot**
 
+
+
 > String postTelephonyProvidersEdgeReboot(edgeId, body)
 
 Reboot an Edge
@@ -4856,6 +5386,10 @@ Reboot an Edge
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/reboot  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -4902,6 +5436,8 @@ try {
 
 # **postTelephonyProvidersEdgeSoftwareupdate**
 
+
+
 > [DomainEdgeSoftwareUpdateDto](DomainEdgeSoftwareUpdateDto.html) postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 
 Starts a software update for this edge.
@@ -4909,6 +5445,10 @@ Starts a software update for this edge.
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4955,6 +5495,8 @@ try {
 
 # **postTelephonyProvidersEdgeStatuscode**
 
+
+
 > String postTelephonyProvidersEdgeStatuscode(edgeId, body)
 
 Take an Edge in or out of service
@@ -4962,6 +5504,10 @@ Take an Edge in or out of service
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/statuscode  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5008,6 +5554,8 @@ try {
 
 # **postTelephonyProvidersEdgeUnpair**
 
+
+
 > String postTelephonyProvidersEdgeUnpair(edgeId)
 
 Unpair an Edge
@@ -5015,6 +5563,10 @@ Unpair an Edge
 
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/unpair  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5059,6 +5611,8 @@ try {
 
 # **postTelephonyProvidersEdges**
 
+
+
 > [Edge](Edge.html) postTelephonyProvidersEdges(body)
 
 Create an edge.
@@ -5066,6 +5620,10 @@ Create an edge.
 
 
 Wraps POST /api/v2/telephony/providers/edges  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5110,6 +5668,8 @@ try {
 
 # **postTelephonyProvidersEdgesAddressvalidation**
 
+
+
 > [ValidateAddressResponse](ValidateAddressResponse.html) postTelephonyProvidersEdgesAddressvalidation(body)
 
 Validates a street address
@@ -5117,6 +5677,10 @@ Validates a street address
 
 
 Wraps POST /api/v2/telephony/providers/edges/addressvalidation  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -5161,6 +5725,8 @@ try {
 
 # **postTelephonyProvidersEdgesCertificateauthorities**
 
+
+
 > [DomainCertificateAuthority](DomainCertificateAuthority.html) postTelephonyProvidersEdgesCertificateauthorities(body)
 
 Create a certificate authority.
@@ -5168,6 +5734,10 @@ Create a certificate authority.
 
 
 Wraps POST /api/v2/telephony/providers/edges/certificateauthorities  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5212,6 +5782,8 @@ try {
 
 # **postTelephonyProvidersEdgesDidpools**
 
+
+
 > [DIDPool](DIDPool.html) postTelephonyProvidersEdgesDidpools(body)
 
 Create a new DID pool
@@ -5219,6 +5791,10 @@ Create a new DID pool
 
 
 Wraps POST /api/v2/telephony/providers/edges/didpools  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5263,6 +5839,8 @@ try {
 
 # **postTelephonyProvidersEdgesEdgegroups**
 
+
+
 > [EdgeGroup](EdgeGroup.html) postTelephonyProvidersEdgesEdgegroups(body)
 
 Create an edge group.
@@ -5270,6 +5848,10 @@ Create an edge group.
 
 
 Wraps POST /api/v2/telephony/providers/edges/edgegroups  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5314,6 +5896,8 @@ try {
 
 # **postTelephonyProvidersEdgesEndpoints**
 
+
+
 > [Endpoint](Endpoint.html) postTelephonyProvidersEdgesEndpoints(body)
 
 Create endpoint
@@ -5321,6 +5905,10 @@ Create endpoint
 
 
 Wraps POST /api/v2/telephony/providers/edges/endpoints  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5365,6 +5953,8 @@ try {
 
 # **postTelephonyProvidersEdgesExtensionpools**
 
+
+
 > [ExtensionPool](ExtensionPool.html) postTelephonyProvidersEdgesExtensionpools(body)
 
 Create a new extension pool
@@ -5372,6 +5962,10 @@ Create a new extension pool
 
 
 Wraps POST /api/v2/telephony/providers/edges/extensionpools  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5416,6 +6010,8 @@ try {
 
 # **postTelephonyProvidersEdgesOutboundroutes**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [OutboundRoute](OutboundRoute.html) postTelephonyProvidersEdgesOutboundroutes(body)
 
 Create outbound rule
@@ -5423,6 +6019,10 @@ Create outbound rule
 
 
 Wraps POST /api/v2/telephony/providers/edges/outboundroutes  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5467,6 +6067,8 @@ try {
 
 # **postTelephonyProvidersEdgesPhoneReboot**
 
+
+
 > Void postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 Reboot a Phone
@@ -5474,6 +6076,10 @@ Reboot a Phone
 
 
 Wraps POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5517,6 +6123,8 @@ null (empty response body)
 
 # **postTelephonyProvidersEdgesPhonebasesettings**
 
+
+
 > [PhoneBase](PhoneBase.html) postTelephonyProvidersEdgesPhonebasesettings(body)
 
 Create a new Phone Base Settings object
@@ -5524,6 +6132,10 @@ Create a new Phone Base Settings object
 
 
 Wraps POST /api/v2/telephony/providers/edges/phonebasesettings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5568,6 +6180,8 @@ try {
 
 # **postTelephonyProvidersEdgesPhones**
 
+
+
 > [Phone](Phone.html) postTelephonyProvidersEdgesPhones(body)
 
 Create a new Phone
@@ -5575,6 +6189,10 @@ Create a new Phone
 
 
 Wraps POST /api/v2/telephony/providers/edges/phones  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5619,6 +6237,8 @@ try {
 
 # **postTelephonyProvidersEdgesPhonesReboot**
 
+
+
 > Void postTelephonyProvidersEdgesPhonesReboot(body)
 
 Reboot Multiple Phones
@@ -5626,6 +6246,10 @@ Reboot Multiple Phones
 
 
 Wraps POST /api/v2/telephony/providers/edges/phones/reboot  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5669,6 +6293,8 @@ null (empty response body)
 
 # **postTelephonyProvidersEdgesSiteAutoscalinggroups**
 
+
+
 > String postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
 
 Creates an ASG for the specified site
@@ -5676,6 +6302,10 @@ Creates an ASG for the specified site
 
 
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
+
+Requires ANY permissions: 
+
+* managed:all:all
 
 ### Example
 
@@ -5722,6 +6352,8 @@ try {
 
 # **postTelephonyProvidersEdgesSiteOutboundroutes**
 
+
+
 > [OutboundRouteBase](OutboundRouteBase.html) postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 Create outbound route
@@ -5729,6 +6361,10 @@ Create outbound route
 
 
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5775,6 +6411,8 @@ try {
 
 # **postTelephonyProvidersEdgesSiteRebalance**
 
+
+
 > Void postTelephonyProvidersEdgesSiteRebalance(siteId)
 
 Triggers the rebalance operation.
@@ -5782,6 +6420,10 @@ Triggers the rebalance operation.
 
 
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5825,6 +6467,8 @@ null (empty response body)
 
 # **postTelephonyProvidersEdgesSites**
 
+
+
 > [Site](Site.html) postTelephonyProvidersEdgesSites(body)
 
 Create a Site.
@@ -5832,6 +6476,10 @@ Create a Site.
 
 
 Wraps POST /api/v2/telephony/providers/edges/sites  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5876,6 +6524,8 @@ try {
 
 # **postTelephonyProvidersEdgesTrunkbasesettings**
 
+
+
 > [TrunkBase](TrunkBase.html) postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 Create a Trunk Base Settings object
@@ -5883,6 +6533,10 @@ Create a Trunk Base Settings object
 
 
 Wraps POST /api/v2/telephony/providers/edges/trunkbasesettings  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5927,6 +6581,8 @@ try {
 
 # **putTelephonyProvidersEdge**
 
+
+
 > [Edge](Edge.html) putTelephonyProvidersEdge(edgeId, body)
 
 Update a edge.
@@ -5934,6 +6590,10 @@ Update a edge.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -5980,6 +6640,8 @@ try {
 
 # **putTelephonyProvidersEdgeLine**
 
+
+
 > [EdgeLine](EdgeLine.html) putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
 Update a line.
@@ -5987,6 +6649,10 @@ Update a line.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6035,6 +6701,8 @@ try {
 
 # **putTelephonyProvidersEdgeLogicalinterface**
 
+
+
 > [DomainLogicalInterface](DomainLogicalInterface.html) putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 Update an edge logical interface.
@@ -6042,6 +6710,10 @@ Update an edge logical interface.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6090,6 +6762,8 @@ try {
 
 # **putTelephonyProvidersEdgesCertificateauthority**
 
+
+
 > [DomainCertificateAuthority](DomainCertificateAuthority.html) putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 Update a certificate authority.
@@ -6097,6 +6771,10 @@ Update a certificate authority.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6143,6 +6821,8 @@ try {
 
 # **putTelephonyProvidersEdgesDid**
 
+
+
 > [DID](DID.html) putTelephonyProvidersEdgesDid(didId, body)
 
 Update a DID by ID.
@@ -6150,6 +6830,10 @@ Update a DID by ID.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/dids/{didId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6196,6 +6880,8 @@ try {
 
 # **putTelephonyProvidersEdgesDidpool**
 
+
+
 > [DIDPool](DIDPool.html) putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 Update a DID Pool by ID.
@@ -6203,6 +6889,10 @@ Update a DID Pool by ID.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6249,6 +6939,8 @@ try {
 
 # **putTelephonyProvidersEdgesEdgegroup**
 
+
+
 > [EdgeGroup](EdgeGroup.html) putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 Update an edge group.
@@ -6256,6 +6948,10 @@ Update an edge group.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6302,6 +6998,8 @@ try {
 
 # **putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**
 
+
+
 > [EdgeTrunkBase](EdgeTrunkBase.html) putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
 
 Update the edge trunk base associated with the edge group
@@ -6309,6 +7007,10 @@ Update the edge trunk base associated with the edge group
 
 
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6357,6 +7059,8 @@ try {
 
 # **putTelephonyProvidersEdgesEndpoint**
 
+
+
 > [Endpoint](Endpoint.html) putTelephonyProvidersEdgesEndpoint(endpointId, body)
 
 Update endpoint
@@ -6364,6 +7068,10 @@ Update endpoint
 
 
 Wraps PUT /api/v2/telephony/providers/edges/endpoints/{endpointId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6410,6 +7118,8 @@ try {
 
 # **putTelephonyProvidersEdgesExtension**
 
+
+
 > [Extension](Extension.html) putTelephonyProvidersEdgesExtension(extensionId, body)
 
 Update an extension by ID.
@@ -6417,6 +7127,10 @@ Update an extension by ID.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/extensions/{extensionId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6463,6 +7177,8 @@ try {
 
 # **putTelephonyProvidersEdgesExtensionpool**
 
+
+
 > [ExtensionPool](ExtensionPool.html) putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 Update an extension pool by ID
@@ -6470,6 +7186,10 @@ Update an extension pool by ID
 
 
 Wraps PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6516,6 +7236,8 @@ try {
 
 # **putTelephonyProvidersEdgesOutboundroute**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [OutboundRoute](OutboundRoute.html) putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 
 Update outbound route
@@ -6523,6 +7245,10 @@ Update outbound route
 
 
 Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6569,6 +7295,8 @@ try {
 
 # **putTelephonyProvidersEdgesPhone**
 
+
+
 > [Phone](Phone.html) putTelephonyProvidersEdgesPhone(phoneId, body)
 
 Update a Phone by ID
@@ -6576,6 +7304,10 @@ Update a Phone by ID
 
 
 Wraps PUT /api/v2/telephony/providers/edges/phones/{phoneId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6622,6 +7354,8 @@ try {
 
 # **putTelephonyProvidersEdgesPhonebasesetting**
 
+
+
 > [PhoneBase](PhoneBase.html) putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 Update a Phone Base Settings by ID
@@ -6629,6 +7363,10 @@ Update a Phone Base Settings by ID
 
 
 Wraps PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6675,6 +7413,8 @@ try {
 
 # **putTelephonyProvidersEdgesSite**
 
+
+
 > [Site](Site.html) putTelephonyProvidersEdgesSite(siteId, body)
 
 Update a Site by ID.
@@ -6682,6 +7422,10 @@ Update a Site by ID.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6728,6 +7472,8 @@ try {
 
 # **putTelephonyProvidersEdgesSiteNumberplans**
 
+
+
 > [List&lt;NumberPlan&gt;](NumberPlan.html) putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 Update the list of Number Plans.
@@ -6735,6 +7481,10 @@ Update the list of Number Plans.
 
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6781,6 +7531,8 @@ try {
 
 # **putTelephonyProvidersEdgesSiteOutboundroute**
 
+
+
 > [OutboundRouteBase](OutboundRouteBase.html) putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
 
 Update outbound route
@@ -6788,6 +7540,10 @@ Update outbound route
 
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 
@@ -6836,6 +7592,8 @@ try {
 
 # **putTelephonyProvidersEdgesTrunkbasesetting**
 
+
+
 > [TrunkBase](TrunkBase.html) putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
 
 Update a Trunk Base Settings object by ID
@@ -6843,6 +7601,10 @@ Update a Trunk Base Settings object by ID
 
 
 Wraps PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
 
 ### Example
 

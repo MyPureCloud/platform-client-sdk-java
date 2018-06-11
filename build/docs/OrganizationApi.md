@@ -17,6 +17,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getFieldconfig**
 
+
+
 > [FieldConfig](FieldConfig.html) getFieldconfig(type)
 
 Fetch field config for an entity type
@@ -24,6 +26,10 @@ Fetch field config for an entity type
 
 
 Wraps GET /api/v2/fieldconfig  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -68,6 +74,8 @@ try {
 
 # **getOrganizationsMe**
 
+
+
 > [Organization](Organization.html) getOrganizationsMe()
 
 Get organization.
@@ -75,6 +83,10 @@ Get organization.
 
 
 Wraps GET /api/v2/organizations/me  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -115,6 +127,8 @@ This endpoint does not require any parameters.
 
 # **patchOrganizationsFeature**
 
+
+
 > [OrganizationFeatures](OrganizationFeatures.html) patchOrganizationsFeature(featureName, enabled)
 
 Update organization
@@ -122,6 +136,10 @@ Update organization
 
 
 Wraps PATCH /api/v2/organizations/features/{featureName}  
+
+Requires ANY permissions: 
+
+* admin
 
 ### Example
 
@@ -168,6 +186,8 @@ try {
 
 # **putOrganizationsMe**
 
+
+
 > [Organization](Organization.html) putOrganizationsMe(body)
 
 Update organization.
@@ -175,6 +195,10 @@ Update organization.
 
 
 Wraps PUT /api/v2/organizations/me  
+
+Requires ANY permissions: 
+
+* admin
 
 ### Example
 

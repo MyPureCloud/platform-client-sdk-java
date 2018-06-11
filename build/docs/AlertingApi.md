@@ -24,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteAlertingInteractionstatsAlert**
 
+
+
 > Void deleteAlertingInteractionstatsAlert(alertId)
 
 Delete an interaction stats alert
@@ -31,6 +33,10 @@ Delete an interaction stats alert
 
 
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId}  
+
+Requires ANY permissions: 
+
+* alerting:alert:delete
 
 ### Example
 
@@ -74,6 +80,8 @@ null (empty response body)
 
 # **deleteAlertingInteractionstatsRule**
 
+
+
 > Void deleteAlertingInteractionstatsRule(ruleId)
 
 Delete an interaction stats rule.
@@ -81,6 +89,10 @@ Delete an interaction stats rule.
 
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* alerting:rule:delete
 
 ### Example
 
@@ -124,6 +136,8 @@ null (empty response body)
 
 # **getAlertingAlertsActive**
 
+
+
 > [ActiveAlertCount](ActiveAlertCount.html) getAlertingAlertsActive()
 
 Gets active alert count for a user.
@@ -131,6 +145,10 @@ Gets active alert count for a user.
 
 
 Wraps GET /api/v2/alerting/alerts/active  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -171,6 +189,8 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsAlert**
 
+
+
 > [InteractionStatsAlert](InteractionStatsAlert.html) getAlertingInteractionstatsAlert(alertId, expand)
 
 Get an interaction stats alert
@@ -178,6 +198,10 @@ Get an interaction stats alert
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId}  
+
+Requires ANY permissions: 
+
+* alerting:alert:view
 
 ### Example
 
@@ -224,6 +248,8 @@ try {
 
 # **getAlertingInteractionstatsAlerts**
 
+
+
 > [InteractionStatsAlertContainer](InteractionStatsAlertContainer.html) getAlertingInteractionstatsAlerts(expand)
 
 Get interaction stats alert list.
@@ -231,6 +257,10 @@ Get interaction stats alert list.
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts  
+
+Requires ANY permissions: 
+
+* alerting:alert:view
 
 ### Example
 
@@ -275,6 +305,8 @@ try {
 
 # **getAlertingInteractionstatsAlertsUnread**
 
+
+
 > [UnreadMetric](UnreadMetric.html) getAlertingInteractionstatsAlertsUnread()
 
 Gets user unread count of interaction stats alerts.
@@ -282,6 +314,10 @@ Gets user unread count of interaction stats alerts.
 
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -322,6 +358,8 @@ This endpoint does not require any parameters.
 
 # **getAlertingInteractionstatsRule**
 
+
+
 > [InteractionStatsRule](InteractionStatsRule.html) getAlertingInteractionstatsRule(ruleId, expand)
 
 Get an interaction stats rule.
@@ -329,6 +367,10 @@ Get an interaction stats rule.
 
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* alerting:rule:view
 
 ### Example
 
@@ -375,6 +417,8 @@ try {
 
 # **getAlertingInteractionstatsRules**
 
+
+
 > [InteractionStatsRuleContainer](InteractionStatsRuleContainer.html) getAlertingInteractionstatsRules(expand)
 
 Get an interaction stats rule list.
@@ -382,6 +426,10 @@ Get an interaction stats rule list.
 
 
 Wraps GET /api/v2/alerting/interactionstats/rules  
+
+Requires ANY permissions: 
+
+* alerting:rule:view
 
 ### Example
 
@@ -426,6 +474,8 @@ try {
 
 # **postAlertingInteractionstatsRules**
 
+
+
 > [InteractionStatsRule](InteractionStatsRule.html) postAlertingInteractionstatsRules(body, expand)
 
 Create an interaction stats rule.
@@ -433,6 +483,10 @@ Create an interaction stats rule.
 
 
 Wraps POST /api/v2/alerting/interactionstats/rules  
+
+Requires ANY permissions: 
+
+* alerting:rule:add
 
 ### Example
 
@@ -479,6 +533,8 @@ try {
 
 # **putAlertingInteractionstatsAlert**
 
+
+
 > [UnreadStatus](UnreadStatus.html) putAlertingInteractionstatsAlert(alertId, body, expand)
 
 Update an interaction stats alert read status
@@ -486,6 +542,10 @@ Update an interaction stats alert read status
 
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId}  
+
+Requires ANY permissions: 
+
+* alerting:alert:edit
 
 ### Example
 
@@ -534,6 +594,8 @@ try {
 
 # **putAlertingInteractionstatsRule**
 
+
+
 > [InteractionStatsRule](InteractionStatsRule.html) putAlertingInteractionstatsRule(ruleId, body, expand)
 
 Update an interaction stats rule
@@ -541,6 +603,10 @@ Update an interaction stats rule
 
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId}  
+
+Requires ANY permissions: 
+
+* alerting:rule:edit
 
 ### Example
 

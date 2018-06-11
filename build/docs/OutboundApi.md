@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
 | [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | Query Campaign Rule list |
 | [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | Query a list of dialer campaigns. |
+| [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
 | [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
 | [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
 | [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | Get the URI of a contact list export. |
@@ -102,6 +103,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteOutboundAttemptlimit**
 
+
+
 > Void deleteOutboundAttemptlimit(attemptLimitsId)
 
 Delete attempt limits
@@ -109,6 +112,10 @@ Delete attempt limits
 
 
 Wraps DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}  
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:delete
 
 ### Example
 
@@ -152,6 +159,8 @@ null (empty response body)
 
 # **deleteOutboundCallabletimeset**
 
+
+
 > Void deleteOutboundCallabletimeset(callableTimeSetId)
 
 Delete callable time set
@@ -159,6 +168,10 @@ Delete callable time set
 
 
 Wraps DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}  
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:delete
 
 ### Example
 
@@ -202,6 +215,8 @@ null (empty response body)
 
 # **deleteOutboundCallanalysisresponseset**
 
+
+
 > Void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 Delete a dialer call analysis response set.
@@ -209,6 +224,10 @@ Delete a dialer call analysis response set.
 
 
 Wraps DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
+
+Requires ANY permissions: 
+
+* outbound:responseSet:delete
 
 ### Example
 
@@ -252,6 +271,8 @@ null (empty response body)
 
 # **deleteOutboundCampaign**
 
+
+
 > [Campaign](Campaign.html) deleteOutboundCampaign(campaignId)
 
 Delete a campaign.
@@ -259,6 +280,10 @@ Delete a campaign.
 
 
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:campaign:delete
 
 ### Example
 
@@ -303,6 +328,8 @@ try {
 
 # **deleteOutboundCampaignProgress**
 
+
+
 > Void deleteOutboundCampaignProgress(campaignId)
 
 Reset campaign progress and recycle the campaign
@@ -310,6 +337,10 @@ Reset campaign progress and recycle the campaign
 
 
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId}/progress  
+
+Requires ANY permissions: 
+
+* outbound:campaign:edit
 
 ### Example
 
@@ -353,6 +384,8 @@ null (empty response body)
 
 # **deleteOutboundCampaignrule**
 
+
+
 > Void deleteOutboundCampaignrule(campaignRuleId)
 
 Delete Campaign Rule
@@ -360,6 +393,10 @@ Delete Campaign Rule
 
 
 Wraps DELETE /api/v2/outbound/campaignrules/{campaignRuleId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:delete
 
 ### Example
 
@@ -403,6 +440,8 @@ null (empty response body)
 
 # **deleteOutboundContactlist**
 
+
+
 > Void deleteOutboundContactlist(contactListId)
 
 Delete a contact list.
@@ -410,6 +449,10 @@ Delete a contact list.
 
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}  
+
+Requires ANY permissions: 
+
+* outbound:contactList:delete
 
 ### Example
 
@@ -453,6 +496,8 @@ null (empty response body)
 
 # **deleteOutboundContactlistContact**
 
+
+
 > Void deleteOutboundContactlistContact(contactListId, contactId)
 
 Delete a contact.
@@ -460,6 +505,10 @@ Delete a contact.
 
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
 
 ### Example
 
@@ -505,6 +554,8 @@ null (empty response body)
 
 # **deleteOutboundContactlistContacts**
 
+
+
 > Void deleteOutboundContactlistContacts(contactListId, contactIds)
 
 Delete contacts from a contact list.
@@ -512,6 +563,10 @@ Delete contacts from a contact list.
 
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts  
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
 
 ### Example
 
@@ -557,6 +612,8 @@ null (empty response body)
 
 # **deleteOutboundContactlistfilter**
 
+
+
 > Void deleteOutboundContactlistfilter(contactListFilterId)
 
 Delete Contact List Filter
@@ -564,6 +621,10 @@ Delete Contact List Filter
 
 
 Wraps DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:delete
 
 ### Example
 
@@ -607,6 +668,8 @@ null (empty response body)
 
 # **deleteOutboundContactlists**
 
+
+
 > Void deleteOutboundContactlists(id)
 
 Delete multiple contact lists.
@@ -614,6 +677,10 @@ Delete multiple contact lists.
 
 
 Wraps DELETE /api/v2/outbound/contactlists  
+
+Requires ANY permissions: 
+
+* outbound:contactList:delete
 
 ### Example
 
@@ -657,6 +724,8 @@ null (empty response body)
 
 # **deleteOutboundDnclist**
 
+
+
 > Void deleteOutboundDnclist(dncListId)
 
 Delete dialer DNC list
@@ -664,6 +733,10 @@ Delete dialer DNC list
 
 
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId}  
+
+Requires ANY permissions: 
+
+* outbound:dncList:delete
 
 ### Example
 
@@ -707,6 +780,8 @@ null (empty response body)
 
 # **deleteOutboundRuleset**
 
+
+
 > Void deleteOutboundRuleset(ruleSetId)
 
 Delete a Rule set.
@@ -714,6 +789,10 @@ Delete a Rule set.
 
 
 Wraps DELETE /api/v2/outbound/rulesets/{ruleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:delete
 
 ### Example
 
@@ -757,6 +836,8 @@ null (empty response body)
 
 # **deleteOutboundSchedulesCampaign**
 
+
+
 > Void deleteOutboundSchedulesCampaign(campaignId)
 
 Delete a dialer campaign schedule.
@@ -764,6 +845,10 @@ Delete a dialer campaign schedule.
 
 
 Wraps DELETE /api/v2/outbound/schedules/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:delete
 
 ### Example
 
@@ -807,6 +892,8 @@ null (empty response body)
 
 # **deleteOutboundSchedulesSequence**
 
+
+
 > Void deleteOutboundSchedulesSequence(sequenceId)
 
 Delete a dialer sequence schedule.
@@ -814,6 +901,10 @@ Delete a dialer sequence schedule.
 
 
 Wraps DELETE /api/v2/outbound/schedules/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:delete
 
 ### Example
 
@@ -857,6 +948,8 @@ null (empty response body)
 
 # **deleteOutboundSequence**
 
+
+
 > Void deleteOutboundSequence(sequenceId)
 
 Delete a dialer campaign sequence.
@@ -864,6 +957,10 @@ Delete a dialer campaign sequence.
 
 
 Wraps DELETE /api/v2/outbound/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:delete
 
 ### Example
 
@@ -907,6 +1004,8 @@ null (empty response body)
 
 # **getOutboundAttemptlimit**
 
+
+
 > [AttemptLimits](AttemptLimits.html) getOutboundAttemptlimit(attemptLimitsId)
 
 Get attempt limits
@@ -914,6 +1013,10 @@ Get attempt limits
 
 
 Wraps GET /api/v2/outbound/attemptlimits/{attemptLimitsId}  
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:view
 
 ### Example
 
@@ -958,6 +1061,8 @@ try {
 
 # **getOutboundAttemptlimits**
 
+
+
 > [AttemptLimitsEntityListing](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query attempt limits list
@@ -965,6 +1070,10 @@ Query attempt limits list
 
 
 Wraps GET /api/v2/outbound/attemptlimits  
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:view
 
 ### Example
 
@@ -1019,6 +1128,8 @@ try {
 
 # **getOutboundCallabletimeset**
 
+
+
 > [CallableTimeSet](CallableTimeSet.html) getOutboundCallabletimeset(callableTimeSetId)
 
 Get callable time set
@@ -1026,6 +1137,10 @@ Get callable time set
 
 
 Wraps GET /api/v2/outbound/callabletimesets/{callableTimeSetId}  
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:view
 
 ### Example
 
@@ -1070,6 +1185,8 @@ try {
 
 # **getOutboundCallabletimesets**
 
+
+
 > [CallableTimeSetEntityListing](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query callable time set list
@@ -1077,6 +1194,10 @@ Query callable time set list
 
 
 Wraps GET /api/v2/outbound/callabletimesets  
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:view
 
 ### Example
 
@@ -1131,6 +1252,8 @@ try {
 
 # **getOutboundCallanalysisresponseset**
 
+
+
 > [ResponseSet](ResponseSet.html) getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 Get a dialer call analysis response set.
@@ -1138,6 +1261,10 @@ Get a dialer call analysis response set.
 
 
 Wraps GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
+
+Requires ANY permissions: 
+
+* outbound:responseSet:view
 
 ### Example
 
@@ -1182,6 +1309,8 @@ try {
 
 # **getOutboundCallanalysisresponsesets**
 
+
+
 > [ResponseSetEntityListing](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer call analysis response sets.
@@ -1189,6 +1318,10 @@ Query a list of dialer call analysis response sets.
 
 
 Wraps GET /api/v2/outbound/callanalysisresponsesets  
+
+Requires ANY permissions: 
+
+* outbound:responseSet:view
 
 ### Example
 
@@ -1243,6 +1376,8 @@ try {
 
 # **getOutboundCampaign**
 
+
+
 > [Campaign](Campaign.html) getOutboundCampaign(campaignId)
 
 Get dialer campaign.
@@ -1250,6 +1385,10 @@ Get dialer campaign.
 
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1294,6 +1433,8 @@ try {
 
 # **getOutboundCampaignDiagnostics**
 
+
+
 > [CampaignDiagnostics](CampaignDiagnostics.html) getOutboundCampaignDiagnostics(campaignId)
 
 Get campaign diagnostics
@@ -1301,6 +1442,10 @@ Get campaign diagnostics
 
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/diagnostics  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1345,6 +1490,8 @@ try {
 
 # **getOutboundCampaignInteractions**
 
+
+
 > [CampaignInteractions](CampaignInteractions.html) getOutboundCampaignInteractions(campaignId)
 
 Get dialer campaign interactions.
@@ -1352,6 +1499,10 @@ Get dialer campaign interactions.
 
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/interactions  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1396,6 +1547,8 @@ try {
 
 # **getOutboundCampaignProgress**
 
+
+
 > [CampaignProgress](CampaignProgress.html) getOutboundCampaignProgress(campaignId)
 
 Get campaign progress
@@ -1403,6 +1556,10 @@ Get campaign progress
 
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/progress  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1447,6 +1604,8 @@ try {
 
 # **getOutboundCampaignStats**
 
+
+
 > [CampaignStats](CampaignStats.html) getOutboundCampaignStats(campaignId)
 
 Get statistics about a Dialer Campaign
@@ -1454,6 +1613,10 @@ Get statistics about a Dialer Campaign
 
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/stats  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1498,6 +1661,8 @@ try {
 
 # **getOutboundCampaignrule**
 
+
+
 > [CampaignRule](CampaignRule.html) getOutboundCampaignrule(campaignRuleId)
 
 Get Campaign Rule
@@ -1505,6 +1670,10 @@ Get Campaign Rule
 
 
 Wraps GET /api/v2/outbound/campaignrules/{campaignRuleId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:view
 
 ### Example
 
@@ -1549,6 +1718,8 @@ try {
 
 # **getOutboundCampaignrules**
 
+
+
 > [CampaignRuleEntityListing](CampaignRuleEntityListing.html) getOutboundCampaignrules(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query Campaign Rule list
@@ -1556,6 +1727,10 @@ Query Campaign Rule list
 
 
 Wraps GET /api/v2/outbound/campaignrules  
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:view
 
 ### Example
 
@@ -1610,6 +1785,8 @@ try {
 
 # **getOutboundCampaigns**
 
+
+
 > [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder)
 
 Query a list of dialer campaigns.
@@ -1617,6 +1794,10 @@ Query a list of dialer campaigns.
 
 
 Wraps GET /api/v2/outbound/campaigns  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -1679,9 +1860,78 @@ try {
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
 
+<a name="getOutboundCampaignsDivisionviews"></a>
+
+# **getOutboundCampaignsDivisionviews**
+
+
+
+> [CampaignDivisionViewListing](CampaignDivisionViewListing.html) getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+
+Query a list of basic Campaign information objects
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Wraps GET /api/v2/outbound/campaigns/divisionviews  
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    CampaignDivisionViewListing result = apiInstance.getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignsDivisionviews");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **String**| Name | [optional] |
+| **sortBy** | **String**| Sort by | [optional] |
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignDivisionViewListing**](CampaignDivisionViewListing.html)
+
 <a name="getOutboundContactlist"></a>
 
 # **getOutboundContactlist**
+
+
 
 > [ContactList](ContactList.html) getOutboundContactlist(contactListId, includeImportStatus, includeSize)
 
@@ -1690,6 +1940,10 @@ Get a dialer contact list.
 
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -1738,6 +1992,8 @@ try {
 
 # **getOutboundContactlistContact**
 
+
+
 > [DialerContact](DialerContact.html) getOutboundContactlistContact(contactListId, contactId)
 
 Get a contact.
@@ -1745,6 +2001,10 @@ Get a contact.
 
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -1791,6 +2051,8 @@ try {
 
 # **getOutboundContactlistExport**
 
+
+
 > [ExportUri](ExportUri.html) getOutboundContactlistExport(contactListId, download)
 
 Get the URI of a contact list export.
@@ -1798,6 +2060,10 @@ Get the URI of a contact list export.
 
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/export  
+
+Requires ALL permissions: 
+
+* outbound:contact:view* outbound:contactList:view
 
 ### Example
 
@@ -1844,6 +2110,8 @@ try {
 
 # **getOutboundContactlistImportstatus**
 
+
+
 > [ImportStatus](ImportStatus.html) getOutboundContactlistImportstatus(contactListId)
 
 Get dialer contactList import status.
@@ -1851,6 +2119,10 @@ Get dialer contactList import status.
 
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/importstatus  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -1895,6 +2167,8 @@ try {
 
 # **getOutboundContactlistfilter**
 
+
+
 > [ContactListFilter](ContactListFilter.html) getOutboundContactlistfilter(contactListFilterId)
 
 Get Contact list filter
@@ -1902,6 +2176,10 @@ Get Contact list filter
 
 
 Wraps GET /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
 
 ### Example
 
@@ -1946,6 +2224,8 @@ try {
 
 # **getOutboundContactlistfilters**
 
+
+
 > [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId)
 
 Query Contact list filters
@@ -1953,6 +2233,10 @@ Query Contact list filters
 
 
 Wraps GET /api/v2/outbound/contactlistfilters  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
 
 ### Example
 
@@ -2009,6 +2293,8 @@ try {
 
 # **getOutboundContactlists**
 
+
+
 > [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
 
 Query a list of contact lists.
@@ -2016,6 +2302,10 @@ Query a list of contact lists.
 
 
 Wraps GET /api/v2/outbound/contactlists  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
 
 ### Example
 
@@ -2076,6 +2366,8 @@ try {
 
 # **getOutboundDnclist**
 
+
+
 > [DncList](DncList.html) getOutboundDnclist(dncListId, includeImportStatus, includeSize)
 
 Get dialer DNC list
@@ -2083,6 +2375,10 @@ Get dialer DNC list
 
 
 Wraps GET /api/v2/outbound/dnclists/{dncListId}  
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2131,6 +2427,8 @@ try {
 
 # **getOutboundDnclistExport**
 
+
+
 > [ExportUri](ExportUri.html) getOutboundDnclistExport(dncListId, download)
 
 Get the URI of a DNC list export.
@@ -2138,6 +2436,10 @@ Get the URI of a DNC list export.
 
 
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/export  
+
+Requires ALL permissions: 
+
+* outbound:dnc:view* outbound:dncList:view
 
 ### Example
 
@@ -2184,6 +2486,8 @@ try {
 
 # **getOutboundDnclistImportstatus**
 
+
+
 > [ImportStatus](ImportStatus.html) getOutboundDnclistImportstatus(dncListId)
 
 Get dialer dncList import status.
@@ -2191,6 +2495,10 @@ Get dialer dncList import status.
 
 
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/importstatus  
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2235,6 +2543,8 @@ try {
 
 # **getOutboundDnclists**
 
+
+
 > [DncListEntityListing](DncListEntityListing.html) getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query dialer DNC lists
@@ -2242,6 +2552,10 @@ Query dialer DNC lists
 
 
 Wraps GET /api/v2/outbound/dnclists  
+
+Requires ANY permissions: 
+
+* outbound:dncList:view
 
 ### Example
 
@@ -2300,6 +2614,8 @@ try {
 
 # **getOutboundEvent**
 
+
+
 > [EventLog](EventLog.html) getOutboundEvent(eventId)
 
 Get Dialer Event
@@ -2307,6 +2623,10 @@ Get Dialer Event
 
 
 Wraps GET /api/v2/outbound/events/{eventId}  
+
+Requires ANY permissions: 
+
+* outbound:eventLog:view
 
 ### Example
 
@@ -2351,6 +2671,8 @@ try {
 
 # **getOutboundEvents**
 
+
+
 > [DialerEventEntityListing](DialerEventEntityListing.html) getOutboundEvents(pageSize, pageNumber, filterType, category, level, sortBy, sortOrder)
 
 Query Event Logs
@@ -2358,6 +2680,10 @@ Query Event Logs
 
 
 Wraps GET /api/v2/outbound/events  
+
+Requires ANY permissions: 
+
+* outbound:eventLog:view
 
 ### Example
 
@@ -2414,6 +2740,8 @@ try {
 
 # **getOutboundRuleset**
 
+
+
 > [RuleSet](RuleSet.html) getOutboundRuleset(ruleSetId)
 
 Get a Rule Set by ID.
@@ -2421,6 +2749,10 @@ Get a Rule Set by ID.
 
 
 Wraps GET /api/v2/outbound/rulesets/{ruleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:view
 
 ### Example
 
@@ -2465,6 +2797,8 @@ try {
 
 # **getOutboundRulesets**
 
+
+
 > [RuleSetEntityListing](RuleSetEntityListing.html) getOutboundRulesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query a list of Rule Sets.
@@ -2472,6 +2806,10 @@ Query a list of Rule Sets.
 
 
 Wraps GET /api/v2/outbound/rulesets  
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:view
 
 ### Example
 
@@ -2526,6 +2864,8 @@ try {
 
 # **getOutboundSchedulesCampaign**
 
+
+
 > [CampaignSchedule](CampaignSchedule.html) getOutboundSchedulesCampaign(campaignId)
 
 Get a dialer campaign schedule.
@@ -2533,6 +2873,10 @@ Get a dialer campaign schedule.
 
 
 Wraps GET /api/v2/outbound/schedules/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2577,6 +2921,8 @@ try {
 
 # **getOutboundSchedulesCampaigns**
 
+
+
 > [List&lt;CampaignSchedule&gt;](CampaignSchedule.html) getOutboundSchedulesCampaigns()
 
 Query for a list of dialer campaign schedules.
@@ -2584,6 +2930,10 @@ Query for a list of dialer campaign schedules.
 
 
 Wraps GET /api/v2/outbound/schedules/campaigns  
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2624,6 +2974,8 @@ This endpoint does not require any parameters.
 
 # **getOutboundSchedulesSequence**
 
+
+
 > [SequenceSchedule](SequenceSchedule.html) getOutboundSchedulesSequence(sequenceId)
 
 Get a dialer sequence schedule.
@@ -2631,6 +2983,10 @@ Get a dialer sequence schedule.
 
 
 Wraps GET /api/v2/outbound/schedules/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2675,6 +3031,8 @@ try {
 
 # **getOutboundSchedulesSequences**
 
+
+
 > [List&lt;SequenceSchedule&gt;](SequenceSchedule.html) getOutboundSchedulesSequences()
 
 Query for a list of dialer sequence schedules.
@@ -2682,6 +3040,10 @@ Query for a list of dialer sequence schedules.
 
 
 Wraps GET /api/v2/outbound/schedules/sequences  
+
+Requires ANY permissions: 
+
+* outbound:schedule:view
 
 ### Example
 
@@ -2722,6 +3084,8 @@ This endpoint does not require any parameters.
 
 # **getOutboundSequence**
 
+
+
 > [CampaignSequence](CampaignSequence.html) getOutboundSequence(sequenceId)
 
 Get a dialer campaign sequence.
@@ -2729,6 +3093,10 @@ Get a dialer campaign sequence.
 
 
 Wraps GET /api/v2/outbound/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:view
 
 ### Example
 
@@ -2773,6 +3141,8 @@ try {
 
 # **getOutboundSequences**
 
+
+
 > [CampaignSequenceEntityListing](CampaignSequenceEntityListing.html) getOutboundSequences(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer campaign sequences.
@@ -2780,6 +3150,10 @@ Query a list of dialer campaign sequences.
 
 
 Wraps GET /api/v2/outbound/sequences  
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:view
 
 ### Example
 
@@ -2834,6 +3208,8 @@ try {
 
 # **getOutboundSettings**
 
+
+
 > [OutboundSettings](OutboundSettings.html) getOutboundSettings()
 
 Get the outbound settings for this organization
@@ -2841,6 +3217,10 @@ Get the outbound settings for this organization
 
 
 Wraps GET /api/v2/outbound/settings  
+
+Requires ANY permissions: 
+
+* outbound:settings:view
 
 ### Example
 
@@ -2881,6 +3261,8 @@ This endpoint does not require any parameters.
 
 # **getOutboundWrapupcodemappings**
 
+
+
 > [WrapUpCodeMapping](WrapUpCodeMapping.html) getOutboundWrapupcodemappings()
 
 Get the Dialer wrap up code mapping.
@@ -2888,6 +3270,10 @@ Get the Dialer wrap up code mapping.
 
 
 Wraps GET /api/v2/outbound/wrapupcodemappings  
+
+Requires ANY permissions: 
+
+* outbound:wrapUpCodeMapping:view
 
 ### Example
 
@@ -2928,6 +3314,8 @@ This endpoint does not require any parameters.
 
 # **patchOutboundSettings**
 
+
+
 > Void patchOutboundSettings(body)
 
 Update the outbound settings for this organization
@@ -2935,6 +3323,10 @@ Update the outbound settings for this organization
 
 
 Wraps PATCH /api/v2/outbound/settings  
+
+Requires ANY permissions: 
+
+* outbound:settings:edit
 
 ### Example
 
@@ -2978,6 +3370,8 @@ null (empty response body)
 
 # **postOutboundAttemptlimits**
 
+
+
 > [AttemptLimits](AttemptLimits.html) postOutboundAttemptlimits(body)
 
 Create attempt limits
@@ -2985,6 +3379,10 @@ Create attempt limits
 
 
 Wraps POST /api/v2/outbound/attemptlimits  
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:add
 
 ### Example
 
@@ -3029,6 +3427,8 @@ try {
 
 # **postOutboundAudits**
 
+
+
 > [AuditSearchResult](AuditSearchResult.html) postOutboundAudits(body, pageSize, pageNumber, sortBy, sortOrder, facetsOnly)
 
 Retrieves audits for dialer.
@@ -3036,6 +3436,10 @@ Retrieves audits for dialer.
 
 
 Wraps POST /api/v2/outbound/audits  
+
+Requires ANY permissions: 
+
+* outbound:audit:view
 
 ### Example
 
@@ -3090,6 +3494,8 @@ try {
 
 # **postOutboundCallabletimesets**
 
+
+
 > [CallableTimeSet](CallableTimeSet.html) postOutboundCallabletimesets(body)
 
 Create callable time set
@@ -3097,6 +3503,10 @@ Create callable time set
 
 
 Wraps POST /api/v2/outbound/callabletimesets  
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:add
 
 ### Example
 
@@ -3141,6 +3551,8 @@ try {
 
 # **postOutboundCallanalysisresponsesets**
 
+
+
 > [ResponseSet](ResponseSet.html) postOutboundCallanalysisresponsesets(body)
 
 Create a dialer call analysis response set.
@@ -3148,6 +3560,10 @@ Create a dialer call analysis response set.
 
 
 Wraps POST /api/v2/outbound/callanalysisresponsesets  
+
+Requires ANY permissions: 
+
+* outbound:responseSet:add
 
 ### Example
 
@@ -3192,6 +3608,8 @@ try {
 
 # **postOutboundCampaignCallbackSchedule**
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 > [ContactCallbackRequest](ContactCallbackRequest.html) postOutboundCampaignCallbackSchedule(campaignId, body)
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
@@ -3199,6 +3617,10 @@ Schedule a Callback for a Dialer Campaign (Deprecated)
 This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
 
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -3245,6 +3667,8 @@ try {
 
 # **postOutboundCampaignrules**
 
+
+
 > [CampaignRule](CampaignRule.html) postOutboundCampaignrules(body)
 
 Create Campaign Rule
@@ -3252,6 +3676,10 @@ Create Campaign Rule
 
 
 Wraps POST /api/v2/outbound/campaignrules  
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:add
 
 ### Example
 
@@ -3296,6 +3724,8 @@ try {
 
 # **postOutboundCampaigns**
 
+
+
 > [Campaign](Campaign.html) postOutboundCampaigns(body)
 
 Create a campaign.
@@ -3303,6 +3733,10 @@ Create a campaign.
 
 
 Wraps POST /api/v2/outbound/campaigns  
+
+Requires ANY permissions: 
+
+* outbound:campaign:add
 
 ### Example
 
@@ -3347,6 +3781,8 @@ try {
 
 # **postOutboundCampaignsProgress**
 
+
+
 > [List&lt;CampaignProgress&gt;](CampaignProgress.html) postOutboundCampaignsProgress(body)
 
 Get progress for a list of campaigns
@@ -3354,6 +3790,10 @@ Get progress for a list of campaigns
 
 
 Wraps POST /api/v2/outbound/campaigns/progress  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
 
 ### Example
 
@@ -3398,6 +3838,8 @@ try {
 
 # **postOutboundContactlistContacts**
 
+
+
 > [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContacts(contactListId, body, priority, clearSystemData, doNotQueue)
 
 Add contacts to a contact list.
@@ -3405,6 +3847,10 @@ Add contacts to a contact list.
 
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts  
+
+Requires ANY permissions: 
+
+* outbound:contact:add
 
 ### Example
 
@@ -3457,6 +3903,8 @@ try {
 
 # **postOutboundContactlistContactsBulk**
 
+
+
 > [List&lt;DialerContact&gt;](DialerContact.html) postOutboundContactlistContactsBulk(contactListId, body)
 
 Get contacts from a contact list.
@@ -3464,6 +3912,10 @@ Get contacts from a contact list.
 
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk  
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -3510,6 +3962,8 @@ try {
 
 # **postOutboundContactlistExport**
 
+
+
 > [UriReference](UriReference.html) postOutboundContactlistExport(contactListId)
 
 Initiate the export of a contact list.
@@ -3517,6 +3971,10 @@ Initiate the export of a contact list.
 Returns 200 if received OK.
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/export  
+
+Requires ALL permissions: 
+
+* outbound:contact:view* outbound:contactList:view
 
 ### Example
 
@@ -3561,6 +4019,8 @@ try {
 
 # **postOutboundContactlistfilters**
 
+
+
 > [ContactListFilter](ContactListFilter.html) postOutboundContactlistfilters(body)
 
 Create Contact List Filter
@@ -3568,6 +4028,10 @@ Create Contact List Filter
 
 
 Wraps POST /api/v2/outbound/contactlistfilters  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:add
 
 ### Example
 
@@ -3612,6 +4076,8 @@ try {
 
 # **postOutboundContactlistfiltersPreview**
 
+
+
 > [FilterPreviewResponse](FilterPreviewResponse.html) postOutboundContactlistfiltersPreview(body)
 
 Get a preview of the output of a contact list filter
@@ -3619,6 +4085,10 @@ Get a preview of the output of a contact list filter
 
 
 Wraps POST /api/v2/outbound/contactlistfilters/preview  
+
+Requires ANY permissions: 
+
+* outbound:contact:view
 
 ### Example
 
@@ -3663,6 +4133,8 @@ try {
 
 # **postOutboundContactlists**
 
+
+
 > [ContactList](ContactList.html) postOutboundContactlists(body)
 
 Create a contact List.
@@ -3670,6 +4142,10 @@ Create a contact List.
 
 
 Wraps POST /api/v2/outbound/contactlists  
+
+Requires ANY permissions: 
+
+* outbound:contactList:add
 
 ### Example
 
@@ -3714,6 +4190,8 @@ try {
 
 # **postOutboundConversationDnc**
 
+
+
 > Void postOutboundConversationDnc(conversationId)
 
 Add phone numbers to a Dialer DNC list.
@@ -3721,6 +4199,10 @@ Add phone numbers to a Dialer DNC list.
 
 
 Wraps POST /api/v2/outbound/conversations/{conversationId}/dnc  
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
 
 ### Example
 
@@ -3764,6 +4246,8 @@ null (empty response body)
 
 # **postOutboundDnclistExport**
 
+
+
 > [UriReference](UriReference.html) postOutboundDnclistExport(dncListId)
 
 Initiate the export of a dnc list.
@@ -3771,6 +4255,10 @@ Initiate the export of a dnc list.
 Returns 200 if received OK.
 
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/export  
+
+Requires ALL permissions: 
+
+* outbound:dnc:view* outbound:dncList:view
 
 ### Example
 
@@ -3815,6 +4303,8 @@ try {
 
 # **postOutboundDnclistPhonenumbers**
 
+
+
 > Void postOutboundDnclistPhonenumbers(dncListId, body)
 
 Add phone numbers to a Dialer DNC list.
@@ -3822,6 +4312,10 @@ Add phone numbers to a Dialer DNC list.
 Only Internal DNC lists may be appended to
 
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers  
+
+Requires ANY permissions: 
+
+* outbound:dnc:add
 
 ### Example
 
@@ -3867,6 +4361,8 @@ null (empty response body)
 
 # **postOutboundDnclists**
 
+
+
 > [DncList](DncList.html) postOutboundDnclists(body)
 
 Create dialer DNC list
@@ -3874,6 +4370,10 @@ Create dialer DNC list
 
 
 Wraps POST /api/v2/outbound/dnclists  
+
+Requires ANY permissions: 
+
+* outbound:dncList:add
 
 ### Example
 
@@ -3918,6 +4418,8 @@ try {
 
 # **postOutboundRulesets**
 
+
+
 > [RuleSet](RuleSet.html) postOutboundRulesets(body)
 
 Create a Dialer Call Analysis Response Set.
@@ -3925,6 +4427,10 @@ Create a Dialer Call Analysis Response Set.
 
 
 Wraps POST /api/v2/outbound/rulesets  
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:add
 
 ### Example
 
@@ -3969,6 +4475,8 @@ try {
 
 # **postOutboundSequences**
 
+
+
 > [CampaignSequence](CampaignSequence.html) postOutboundSequences(body)
 
 Create a new campaign sequence.
@@ -3976,6 +4484,10 @@ Create a new campaign sequence.
 
 
 Wraps POST /api/v2/outbound/sequences  
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:add
 
 ### Example
 
@@ -4020,6 +4532,8 @@ try {
 
 # **putOutboundAttemptlimit**
 
+
+
 > [AttemptLimits](AttemptLimits.html) putOutboundAttemptlimit(attemptLimitsId, body)
 
 Update attempt limits
@@ -4027,6 +4541,10 @@ Update attempt limits
 
 
 Wraps PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}  
+
+Requires ANY permissions: 
+
+* outbound:attemptLimits:edit
 
 ### Example
 
@@ -4073,6 +4591,8 @@ try {
 
 # **putOutboundCallabletimeset**
 
+
+
 > [CallableTimeSet](CallableTimeSet.html) putOutboundCallabletimeset(callableTimeSetId, body)
 
 Update callable time set
@@ -4080,6 +4600,10 @@ Update callable time set
 
 
 Wraps PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}  
+
+Requires ANY permissions: 
+
+* outbound:callableTimeSet:edit
 
 ### Example
 
@@ -4126,6 +4650,8 @@ try {
 
 # **putOutboundCallanalysisresponseset**
 
+
+
 > [ResponseSet](ResponseSet.html) putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 Update a dialer call analysis response set.
@@ -4133,6 +4659,10 @@ Update a dialer call analysis response set.
 
 
 Wraps PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}  
+
+Requires ANY permissions: 
+
+* outbound:responseSet:edit
 
 ### Example
 
@@ -4179,6 +4709,8 @@ try {
 
 # **putOutboundCampaign**
 
+
+
 > [Campaign](Campaign.html) putOutboundCampaign(campaignId, body)
 
 Update a campaign.
@@ -4186,6 +4718,10 @@ Update a campaign.
 
 
 Wraps PUT /api/v2/outbound/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:campaign:edit
 
 ### Example
 
@@ -4232,6 +4768,8 @@ try {
 
 # **putOutboundCampaignAgent**
 
+
+
 > String putOutboundCampaignAgent(campaignId, userId, body)
 
 Send notification that an agent&#39;s state changed 
@@ -4239,6 +4777,10 @@ Send notification that an agent&#39;s state changed
 New agent state.
 
 Wraps PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -4287,6 +4829,8 @@ try {
 
 # **putOutboundCampaignrule**
 
+
+
 > [CampaignRule](CampaignRule.html) putOutboundCampaignrule(campaignRuleId, body)
 
 Update Campaign Rule
@@ -4294,6 +4838,10 @@ Update Campaign Rule
 
 
 Wraps PUT /api/v2/outbound/campaignrules/{campaignRuleId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignRule:edit
 
 ### Example
 
@@ -4340,6 +4888,8 @@ try {
 
 # **putOutboundContactlist**
 
+
+
 > [ContactList](ContactList.html) putOutboundContactlist(contactListId, body)
 
 Update a contact list.
@@ -4347,6 +4897,10 @@ Update a contact list.
 
 
 Wraps PUT /api/v2/outbound/contactlists/{contactListId}  
+
+Requires ANY permissions: 
+
+* outbound:contactList:edit
 
 ### Example
 
@@ -4393,6 +4947,8 @@ try {
 
 # **putOutboundContactlistContact**
 
+
+
 > [DialerContact](DialerContact.html) putOutboundContactlistContact(contactListId, contactId, body)
 
 Update a contact.
@@ -4400,6 +4956,10 @@ Update a contact.
 
 
 Wraps PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* outbound:contact:edit
 
 ### Example
 
@@ -4448,6 +5008,8 @@ try {
 
 # **putOutboundContactlistfilter**
 
+
+
 > [ContactListFilter](ContactListFilter.html) putOutboundContactlistfilter(contactListFilterId, body)
 
 Update Contact List Filter
@@ -4455,6 +5017,10 @@ Update Contact List Filter
 
 
 Wraps PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}  
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:edit
 
 ### Example
 
@@ -4501,6 +5067,8 @@ try {
 
 # **putOutboundDnclist**
 
+
+
 > [DncList](DncList.html) putOutboundDnclist(dncListId, body)
 
 Update dialer DNC list
@@ -4508,6 +5076,10 @@ Update dialer DNC list
 
 
 Wraps PUT /api/v2/outbound/dnclists/{dncListId}  
+
+Requires ANY permissions: 
+
+* outbound:dncList:edit
 
 ### Example
 
@@ -4554,6 +5126,8 @@ try {
 
 # **putOutboundRuleset**
 
+
+
 > [RuleSet](RuleSet.html) putOutboundRuleset(ruleSetId, body)
 
 Update a RuleSet.
@@ -4561,6 +5135,10 @@ Update a RuleSet.
 
 
 Wraps PUT /api/v2/outbound/rulesets/{ruleSetId}  
+
+Requires ANY permissions: 
+
+* outbound:ruleSet:edit
 
 ### Example
 
@@ -4607,6 +5185,8 @@ try {
 
 # **putOutboundSchedulesCampaign**
 
+
+
 > [CampaignSchedule](CampaignSchedule.html) putOutboundSchedulesCampaign(campaignId, body)
 
 Update a new campaign schedule.
@@ -4614,6 +5194,10 @@ Update a new campaign schedule.
 
 
 Wraps PUT /api/v2/outbound/schedules/campaigns/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:edit
 
 ### Example
 
@@ -4660,6 +5244,8 @@ try {
 
 # **putOutboundSchedulesSequence**
 
+
+
 > [SequenceSchedule](SequenceSchedule.html) putOutboundSchedulesSequence(sequenceId, body)
 
 Update a new sequence schedule.
@@ -4667,6 +5253,10 @@ Update a new sequence schedule.
 
 
 Wraps PUT /api/v2/outbound/schedules/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:schedule:edit
 
 ### Example
 
@@ -4713,6 +5303,8 @@ try {
 
 # **putOutboundSequence**
 
+
+
 > [CampaignSequence](CampaignSequence.html) putOutboundSequence(sequenceId, body)
 
 Update a new campaign sequence.
@@ -4720,6 +5312,10 @@ Update a new campaign sequence.
 
 
 Wraps PUT /api/v2/outbound/sequences/{sequenceId}  
+
+Requires ANY permissions: 
+
+* outbound:campaignSequence:edit
 
 ### Example
 
@@ -4766,6 +5362,8 @@ try {
 
 # **putOutboundWrapupcodemappings**
 
+
+
 > [WrapUpCodeMapping](WrapUpCodeMapping.html) putOutboundWrapupcodemappings(body)
 
 Update the Dialer wrap up code mapping.
@@ -4773,6 +5371,10 @@ Update the Dialer wrap up code mapping.
 
 
 Wraps PUT /api/v2/outbound/wrapupcodemappings  
+
+Requires ANY permissions: 
+
+* outbound:wrapUpCodeMapping:edit
 
 ### Example
 

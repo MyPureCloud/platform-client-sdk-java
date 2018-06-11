@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.Operation;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,8 +21,8 @@ public class Flow  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private UriReference division = null;
   private String description = null;
-  private AuthzDivision division = null;
 
   /**
    * Gets or Sets type
@@ -105,6 +105,24 @@ public class Flow  implements Serializable {
 
   
   /**
+   * The division to which this entity belongs.
+   **/
+  public Flow division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
    **/
   public Flow description(String description) {
     this.description = description;
@@ -118,23 +136,6 @@ public class Flow  implements Serializable {
   }
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  
-  /**
-   **/
-  public Flow division(AuthzDivision division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("division")
-  public AuthzDivision getDivision() {
-    return division;
-  }
-  public void setDivision(AuthzDivision division) {
-    this.division = division;
   }
 
   
@@ -363,8 +364,8 @@ public class Flow  implements Serializable {
     Flow flow = (Flow) o;
     return Objects.equals(this.id, flow.id) &&
         Objects.equals(this.name, flow.name) &&
-        Objects.equals(this.description, flow.description) &&
         Objects.equals(this.division, flow.division) &&
+        Objects.equals(this.description, flow.description) &&
         Objects.equals(this.type, flow.type) &&
         Objects.equals(this.lockedUser, flow.lockedUser) &&
         Objects.equals(this.active, flow.active) &&
@@ -382,7 +383,7 @@ public class Flow  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, division, type, lockedUser, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, publishedBy, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, publishedBy, currentOperation, selfUri);
   }
 
   @Override
@@ -392,8 +393,8 @@ public class Flow  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    lockedUser: ").append(toIndentedString(lockedUser)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");

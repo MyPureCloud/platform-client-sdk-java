@@ -36,6 +36,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteOrgauthorizationTrustee**
 
+
+
 > Void deleteOrgauthorizationTrustee(trusteeOrgId)
 
 Delete Org Trust
@@ -43,6 +45,10 @@ Delete Org Trust
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:delete
 
 ### Example
 
@@ -86,6 +92,8 @@ null (empty response body)
 
 # **deleteOrgauthorizationTrusteeUser**
 
+
+
 > Void deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 Delete Trustee User
@@ -93,6 +101,10 @@ Delete Trustee User
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete* admin* role_manager
 
 ### Example
 
@@ -138,6 +150,8 @@ null (empty response body)
 
 # **deleteOrgauthorizationTrusteeUserRoles**
 
+
+
 > Void deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 Delete Trustee User Roles
@@ -145,6 +159,10 @@ Delete Trustee User Roles
 
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete* admin* role_manager
 
 ### Example
 
@@ -190,6 +208,8 @@ null (empty response body)
 
 # **deleteOrgauthorizationTrustor**
 
+
+
 > Void deleteOrgauthorizationTrustor(trustorOrgId)
 
 Delete Org Trust
@@ -197,6 +217,10 @@ Delete Org Trust
 
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:delete
 
 ### Example
 
@@ -240,6 +264,8 @@ null (empty response body)
 
 # **deleteOrgauthorizationTrustorUser**
 
+
+
 > Void deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 Delete Trustee User
@@ -247,6 +273,10 @@ Delete Trustee User
 
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete
 
 ### Example
 
@@ -292,6 +322,8 @@ null (empty response body)
 
 # **getOrgauthorizationPairing**
 
+
+
 > [TrustRequest](TrustRequest.html) getOrgauthorizationPairing(pairingId)
 
 Get Pairing Info
@@ -299,6 +331,10 @@ Get Pairing Info
 
 
 Wraps GET /api/v2/orgauthorization/pairings/{pairingId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view* authorization:orgTrustor:view
 
 ### Example
 
@@ -343,6 +379,8 @@ try {
 
 # **getOrgauthorizationTrustee**
 
+
+
 > [Trustee](Trustee.html) getOrgauthorizationTrustee(trusteeOrgId)
 
 Get Org Trust
@@ -350,6 +388,10 @@ Get Org Trust
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
 
 ### Example
 
@@ -394,6 +436,8 @@ try {
 
 # **getOrgauthorizationTrusteeUser**
 
+
+
 > [TrustUser](TrustUser.html) getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId)
 
 Get Trustee User
@@ -401,6 +445,10 @@ Get Trustee User
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -447,6 +495,8 @@ try {
 
 # **getOrgauthorizationTrusteeUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId)
 
 Get Trustee User Roles
@@ -454,6 +504,10 @@ Get Trustee User Roles
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -500,6 +554,8 @@ try {
 
 # **getOrgauthorizationTrusteeUsers**
 
+
+
 > [TrustUserEntityListing](TrustUserEntityListing.html) getOrgauthorizationTrusteeUsers(trusteeOrgId, pageSize, pageNumber)
 
 The list of trustee users for this organization (i.e. users granted access to this organization).
@@ -507,6 +563,10 @@ The list of trustee users for this organization (i.e. users granted access to th
 
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -555,6 +615,8 @@ try {
 
 # **getOrgauthorizationTrustees**
 
+
+
 > [TrustEntityListing](TrustEntityListing.html) getOrgauthorizationTrustees(pageSize, pageNumber)
 
 The list of trustees for this organization (i.e. organizations granted access to this organization).
@@ -562,6 +624,10 @@ The list of trustees for this organization (i.e. organizations granted access to
 
 
 Wraps GET /api/v2/orgauthorization/trustees  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
 
 ### Example
 
@@ -608,6 +674,8 @@ try {
 
 # **getOrgauthorizationTrustor**
 
+
+
 > [Trustor](Trustor.html) getOrgauthorizationTrustor(trustorOrgId)
 
 Get Org Trust
@@ -615,6 +683,10 @@ Get Org Trust
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -659,6 +731,8 @@ try {
 
 # **getOrgauthorizationTrustorUser**
 
+
+
 > [TrustUser](TrustUser.html) getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 Get Trustee User
@@ -666,6 +740,10 @@ Get Trustee User
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -712,6 +790,8 @@ try {
 
 # **getOrgauthorizationTrustorUsers**
 
+
+
 > [TrustUserEntityListing](TrustUserEntityListing.html) getOrgauthorizationTrustorUsers(trustorOrgId, pageSize, pageNumber)
 
 The list of users in the trustor organization (i.e. users granted access).
@@ -719,6 +799,10 @@ The list of users in the trustor organization (i.e. users granted access).
 
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
 
 ### Example
 
@@ -767,6 +851,8 @@ try {
 
 # **getOrgauthorizationTrustors**
 
+
+
 > [TrustorEntityListing](TrustorEntityListing.html) getOrgauthorizationTrustors(pageSize, pageNumber)
 
 The list of organizations that have authorized/trusted your organization.
@@ -774,6 +860,10 @@ The list of organizations that have authorized/trusted your organization.
 
 
 Wraps GET /api/v2/orgauthorization/trustors  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -820,6 +910,8 @@ try {
 
 # **postOrgauthorizationPairings**
 
+
+
 > [TrustRequest](TrustRequest.html) postOrgauthorizationPairings(body)
 
 A pairing id is created by the trustee and given to the trustor to create a trust.
@@ -827,6 +919,10 @@ A pairing id is created by the trustee and given to the trustor to create a trus
 
 
 Wraps POST /api/v2/orgauthorization/pairings  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:add
 
 ### Example
 
@@ -871,6 +967,8 @@ try {
 
 # **postOrgauthorizationTrusteeUsers**
 
+
+
 > [TrustUser](TrustUser.html) postOrgauthorizationTrusteeUsers(trusteeOrgId, body)
 
 Add a user to the trust.
@@ -878,6 +976,10 @@ Add a user to the trust.
 
 
 Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users  
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add* admin* role_manager
 
 ### Example
 
@@ -924,6 +1026,8 @@ try {
 
 # **postOrgauthorizationTrustees**
 
+
+
 > [Trustee](Trustee.html) postOrgauthorizationTrustees(body)
 
 Create a new organization authorization trust. This is required to grant other organizations access to your organization.
@@ -931,6 +1035,10 @@ Create a new organization authorization trust. This is required to grant other o
 
 
 Wraps POST /api/v2/orgauthorization/trustees  
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add* authorization:orgTrusteeUser:add
 
 ### Example
 
@@ -975,6 +1083,8 @@ try {
 
 # **postOrgauthorizationTrusteesAudits**
 
+
+
 > [AuditQueryResponse](AuditQueryResponse.html) postOrgauthorizationTrusteesAudits(body, pageSize, pageNumber, sortBy, sortOrder)
 
 Get Org Trustee Audits
@@ -982,6 +1092,10 @@ Get Org Trustee Audits
 
 
 Wraps POST /api/v2/orgauthorization/trustees/audits  
+
+Requires ANY permissions: 
+
+* authorization:audit:view
 
 ### Example
 
@@ -1034,6 +1148,8 @@ try {
 
 # **postOrgauthorizationTrustorAudits**
 
+
+
 > [AuditQueryResponse](AuditQueryResponse.html) postOrgauthorizationTrustorAudits(body, pageSize, pageNumber, sortBy, sortOrder)
 
 Get Org Trustor Audits
@@ -1041,6 +1157,10 @@ Get Org Trustor Audits
 
 
 Wraps POST /api/v2/orgauthorization/trustor/audits  
+
+Requires ANY permissions: 
+
+* authorization:audit:view
 
 ### Example
 
@@ -1093,6 +1213,8 @@ try {
 
 # **putOrgauthorizationTrustee**
 
+
+
 > [Trustee](Trustee.html) putOrgauthorizationTrustee(trusteeOrgId, body)
 
 Update Org Trust
@@ -1100,6 +1222,10 @@ Update Org Trust
 
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:edit
 
 ### Example
 
@@ -1146,6 +1272,8 @@ try {
 
 # **putOrgauthorizationTrusteeUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body)
 
 Update Trustee User Roles
@@ -1153,6 +1281,10 @@ Update Trustee User Roles
 
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:edit* admin* role_manager
 
 ### Example
 
@@ -1201,6 +1333,8 @@ try {
 
 # **putOrgauthorizationTrustorUser**
 
+
+
 > [TrustUser](TrustUser.html) putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
 
 Add a Trustee user to the trust.
@@ -1208,6 +1342,10 @@ Add a Trustee user to the trust.
 
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}  
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add
 
 ### Example
 

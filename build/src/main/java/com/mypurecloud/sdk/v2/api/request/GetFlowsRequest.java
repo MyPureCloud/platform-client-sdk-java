@@ -364,6 +364,20 @@ public class GetFlowsRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetFlowsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -425,6 +439,8 @@ public class GetFlowsRequest {
                 .withQueryParameters("publishedAfter", "", publishedAfter)
         
                 .withQueryParameters("publishedBefore", "", publishedBefore)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -544,6 +560,11 @@ public class GetFlowsRequest {
 		
 		public Builder withPublishedBefore(String publishedBefore) {
 			request.setPublishedBefore(publishedBefore);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

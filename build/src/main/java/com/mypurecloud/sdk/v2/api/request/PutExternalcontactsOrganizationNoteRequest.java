@@ -107,6 +107,11 @@ public class PutExternalcontactsOrganizationNoteRequest {
             throw new IllegalStateException("Missing the required parameter 'noteId' when building request for PutExternalcontactsOrganizationNoteRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsOrganizationNoteRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}")
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
@@ -127,9 +132,9 @@ public class PutExternalcontactsOrganizationNoteRequest {
 	}
 
 	
-	public static Builder builder(String externalOrganizationId, String noteId) {
+	public static Builder builder(String externalOrganizationId, String noteId, Note body) {
 	    return new Builder()
-	            .withRequiredParams(externalOrganizationId, noteId);
+	            .withRequiredParams(externalOrganizationId, noteId, body);
 	}
 	
 
@@ -158,9 +163,10 @@ public class PutExternalcontactsOrganizationNoteRequest {
 		
 
 		
-		public Builder withRequiredParams(String externalOrganizationId, String noteId) {
+		public Builder withRequiredParams(String externalOrganizationId, String noteId, Note body) {
 			request.setExternalOrganizationId(externalOrganizationId);
 						request.setNoteId(noteId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -176,6 +182,11 @@ public class PutExternalcontactsOrganizationNoteRequest {
             // verify the required parameter 'noteId' is set
             if (request.noteId == null) {
                 throw new IllegalStateException("Missing the required parameter 'noteId' when building request for PutExternalcontactsOrganizationNoteRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsOrganizationNoteRequest.");
             }
             
 			return request;

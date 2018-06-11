@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteAnalyticsReportingSchedule**
 
+
+
 > Void deleteAnalyticsReportingSchedule(scheduleId)
 
 Delete a scheduled report job.
@@ -44,6 +46,10 @@ Delete a scheduled report job.
 
 
 Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -87,6 +93,8 @@ null (empty response body)
 
 # **getAnalyticsConversationDetails**
 
+
+
 > [AnalyticsConversation](AnalyticsConversation.html) getAnalyticsConversationDetails(conversationId)
 
 Get a conversation by id
@@ -94,6 +102,10 @@ Get a conversation by id
 
 
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -138,6 +150,8 @@ try {
 
 # **getAnalyticsReportingExports**
 
+
+
 > [ReportingExportJobListing](ReportingExportJobListing.html) getAnalyticsReportingExports()
 
 Get all view export requests for a user
@@ -145,6 +159,10 @@ Get all view export requests for a user
 
 
 Wraps GET /api/v2/analytics/reporting/exports  
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
 
 ### Example
 
@@ -185,6 +203,8 @@ This endpoint does not require any parameters.
 
 # **getAnalyticsReportingMetadata**
 
+
+
 > [ReportMetaDataEntityListing](ReportMetaDataEntityListing.html) getAnalyticsReportingMetadata(pageNumber, pageSize, locale)
 
 Get list of reporting metadata.
@@ -192,6 +212,10 @@ Get list of reporting metadata.
 
 
 Wraps GET /api/v2/analytics/reporting/metadata  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -240,6 +264,8 @@ try {
 
 # **getAnalyticsReportingReportIdMetadata**
 
+
+
 > [ReportMetaData](ReportMetaData.html) getAnalyticsReportingReportIdMetadata(reportId, locale)
 
 Get a reporting metadata.
@@ -247,6 +273,10 @@ Get a reporting metadata.
 
 
 Wraps GET /api/v2/analytics/reporting/{reportId}/metadata  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -293,6 +323,8 @@ try {
 
 # **getAnalyticsReportingReportformats**
 
+
+
 > List&lt;String&gt; getAnalyticsReportingReportformats()
 
 Get a list of report formats
@@ -300,6 +332,10 @@ Get a list of report formats
 Get a list of report formats.
 
 Wraps GET /api/v2/analytics/reporting/reportformats  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -340,6 +376,8 @@ This endpoint does not require any parameters.
 
 # **getAnalyticsReportingSchedule**
 
+
+
 > [ReportSchedule](ReportSchedule.html) getAnalyticsReportingSchedule(scheduleId)
 
 Get a scheduled report job.
@@ -347,6 +385,10 @@ Get a scheduled report job.
 
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -391,6 +433,8 @@ try {
 
 # **getAnalyticsReportingScheduleHistory**
 
+
+
 > [ReportRunEntryEntityDomainListing](ReportRunEntryEntityDomainListing.html) getAnalyticsReportingScheduleHistory(scheduleId, pageNumber, pageSize)
 
 Get list of completed scheduled report jobs.
@@ -398,6 +442,10 @@ Get list of completed scheduled report jobs.
 
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -446,6 +494,8 @@ try {
 
 # **getAnalyticsReportingScheduleHistoryLatest**
 
+
+
 > [ReportRunEntry](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 Get most recently completed scheduled report job.
@@ -453,6 +503,10 @@ Get most recently completed scheduled report job.
 
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -497,6 +551,8 @@ try {
 
 # **getAnalyticsReportingScheduleHistoryRunId**
 
+
+
 > [ReportRunEntry](ReportRunEntry.html) getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 
 A completed scheduled report job
@@ -504,6 +560,10 @@ A completed scheduled report job
 A completed scheduled report job.
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -550,6 +610,8 @@ try {
 
 # **getAnalyticsReportingSchedules**
 
+
+
 > [ReportScheduleEntityListing](ReportScheduleEntityListing.html) getAnalyticsReportingSchedules(pageNumber, pageSize)
 
 Get a list of scheduled report jobs
@@ -557,6 +619,10 @@ Get a list of scheduled report jobs
 Get a list of scheduled report jobs.
 
 Wraps GET /api/v2/analytics/reporting/schedules  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -603,6 +669,8 @@ try {
 
 # **getAnalyticsReportingTimeperiods**
 
+
+
 > List&lt;String&gt; getAnalyticsReportingTimeperiods()
 
 Get a list of report time periods.
@@ -610,6 +678,10 @@ Get a list of report time periods.
 
 
 Wraps GET /api/v2/analytics/reporting/timeperiods  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -650,6 +722,8 @@ This endpoint does not require any parameters.
 
 # **postAnalyticsConversationDetailsProperties**
 
+
+
 > [PropertyIndexRequest](PropertyIndexRequest.html) postAnalyticsConversationDetailsProperties(conversationId, body)
 
 Index conversation properties
@@ -657,6 +731,10 @@ Index conversation properties
 
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties  
+
+Requires ANY permissions: 
+
+* analytics:conversationProperties:index
 
 ### Example
 
@@ -703,6 +781,8 @@ try {
 
 # **postAnalyticsConversationsAggregatesQuery**
 
+
+
 > [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
@@ -710,6 +790,10 @@ Query for conversation aggregates
 
 
 Wraps POST /api/v2/analytics/conversations/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
 
 ### Example
 
@@ -754,6 +838,8 @@ try {
 
 # **postAnalyticsConversationsDetailsQuery**
 
+
+
 > [AnalyticsConversationQueryResponse](AnalyticsConversationQueryResponse.html) postAnalyticsConversationsDetailsQuery(body)
 
 Query for conversation details
@@ -761,6 +847,10 @@ Query for conversation details
 
 
 Wraps POST /api/v2/analytics/conversations/details/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
 
 ### Example
 
@@ -805,6 +895,8 @@ try {
 
 # **postAnalyticsEvaluationsAggregatesQuery**
 
+
+
 > [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
@@ -812,6 +904,10 @@ Query for evaluation aggregates
 
 
 Wraps POST /api/v2/analytics/evaluations/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
 
 ### Example
 
@@ -856,6 +952,8 @@ try {
 
 # **postAnalyticsQueuesObservationsQuery**
 
+
+
 > [QualifierMappingObservationQueryResponse](QualifierMappingObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
@@ -863,6 +961,10 @@ Query for queue observations
 
 
 Wraps POST /api/v2/analytics/queues/observations/query  
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
 
 ### Example
 
@@ -907,6 +1009,8 @@ try {
 
 # **postAnalyticsReportingExports**
 
+
+
 > [ReportingExportJobResponse](ReportingExportJobResponse.html) postAnalyticsReportingExports(body)
 
 Generate a view export request
@@ -914,6 +1018,10 @@ Generate a view export request
 
 
 Wraps POST /api/v2/analytics/reporting/exports  
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
 
 ### Example
 
@@ -958,6 +1066,8 @@ try {
 
 # **postAnalyticsReportingScheduleRunreport**
 
+
+
 > [RunNowResponse](RunNowResponse.html) postAnalyticsReportingScheduleRunreport(scheduleId)
 
 Place a scheduled report immediately into the reporting queue
@@ -965,6 +1075,10 @@ Place a scheduled report immediately into the reporting queue
 
 
 Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1009,6 +1123,8 @@ try {
 
 # **postAnalyticsReportingSchedules**
 
+
+
 > [ReportSchedule](ReportSchedule.html) postAnalyticsReportingSchedules(body)
 
 Create a scheduled report job
@@ -1016,6 +1132,10 @@ Create a scheduled report job
 Create a scheduled report job.
 
 Wraps POST /api/v2/analytics/reporting/schedules  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1060,6 +1180,8 @@ try {
 
 # **postAnalyticsUsersAggregatesQuery**
 
+
+
 > [PresenceQueryResponse](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
@@ -1067,6 +1189,10 @@ Query for user aggregates
 
 
 Wraps POST /api/v2/analytics/users/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
 
 ### Example
 
@@ -1111,6 +1237,8 @@ try {
 
 # **postAnalyticsUsersDetailsQuery**
 
+
+
 > [AnalyticsUserDetailsQueryResponse](AnalyticsUserDetailsQueryResponse.html) postAnalyticsUsersDetailsQuery(body)
 
 Query for user details
@@ -1118,6 +1246,10 @@ Query for user details
 
 
 Wraps POST /api/v2/analytics/users/details/query  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1162,6 +1294,8 @@ try {
 
 # **postAnalyticsUsersObservationsQuery**
 
+
+
 > [ObservationQueryResponse](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
 
 Query for user observations
@@ -1169,6 +1303,10 @@ Query for user observations
 
 
 Wraps POST /api/v2/analytics/users/observations/query  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1213,6 +1351,8 @@ try {
 
 # **putAnalyticsReportingSchedule**
 
+
+
 > [ReportSchedule](ReportSchedule.html) putAnalyticsReportingSchedule(scheduleId, body)
 
 Update a scheduled report job.
@@ -1220,6 +1360,10 @@ Update a scheduled report job.
 
 
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

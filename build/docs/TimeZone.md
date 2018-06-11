@@ -8,10 +8,10 @@ title: TimeZone
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **displayName** | **String** |  |  [optional] |
-| **id** | **String** |  |  [optional] |
 | **dstsavings** | **Integer** |  |  [optional] |
 | **rawOffset** | **Integer** |  |  [optional] |
+| **id** | **String** |  |  [optional] |
+| **displayName** | **String** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

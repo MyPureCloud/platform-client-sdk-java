@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteFaxDocument**
 
+
+
 > Void deleteFaxDocument(documentId)
 
 Delete a fax document.
@@ -26,6 +28,10 @@ Delete a fax document.
 
 
 Wraps DELETE /api/v2/fax/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -69,6 +75,8 @@ null (empty response body)
 
 # **getFaxDocument**
 
+
+
 > [FaxDocument](FaxDocument.html) getFaxDocument(documentId)
 
 Get a document.
@@ -76,6 +84,10 @@ Get a document.
 
 
 Wraps GET /api/v2/fax/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -120,6 +132,8 @@ try {
 
 # **getFaxDocumentContent**
 
+
+
 > [DownloadResponse](DownloadResponse.html) getFaxDocumentContent(documentId)
 
 Download a fax document.
@@ -127,6 +141,10 @@ Download a fax document.
 
 
 Wraps GET /api/v2/fax/documents/{documentId}/content  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -171,6 +189,8 @@ try {
 
 # **getFaxDocuments**
 
+
+
 > [FaxDocumentEntityListing](FaxDocumentEntityListing.html) getFaxDocuments(pageSize, pageNumber)
 
 Get a list of fax documents.
@@ -178,6 +198,10 @@ Get a list of fax documents.
 
 
 Wraps GET /api/v2/fax/documents  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -224,6 +248,8 @@ try {
 
 # **getFaxSummary**
 
+
+
 > [FaxSummary](FaxSummary.html) getFaxSummary()
 
 Get fax summary
@@ -231,6 +257,10 @@ Get fax summary
 
 
 Wraps GET /api/v2/fax/summary  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -271,6 +301,8 @@ This endpoint does not require any parameters.
 
 # **putFaxDocument**
 
+
+
 > [FaxDocument](FaxDocument.html) putFaxDocument(documentId, body)
 
 Update a fax document.
@@ -278,6 +310,10 @@ Update a fax document.
 
 
 Wraps PUT /api/v2/fax/documents/{documentId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

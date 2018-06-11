@@ -88,6 +88,11 @@ public class PostExternalcontactsOrganizationNotesRequest {
             throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for PostExternalcontactsOrganizationNotesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostExternalcontactsOrganizationNotesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes")
                 .withPathParameter("externalOrganizationId", externalOrganizationId)
@@ -106,9 +111,9 @@ public class PostExternalcontactsOrganizationNotesRequest {
 	}
 
 	
-	public static Builder builder(String externalOrganizationId) {
+	public static Builder builder(String externalOrganizationId, Note body) {
 	    return new Builder()
-	            .withRequiredParams(externalOrganizationId);
+	            .withRequiredParams(externalOrganizationId, body);
 	}
 	
 
@@ -132,8 +137,9 @@ public class PostExternalcontactsOrganizationNotesRequest {
 		
 
 		
-		public Builder withRequiredParams(String externalOrganizationId) {
+		public Builder withRequiredParams(String externalOrganizationId, Note body) {
 			request.setExternalOrganizationId(externalOrganizationId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -144,6 +150,11 @@ public class PostExternalcontactsOrganizationNotesRequest {
             // verify the required parameter 'externalOrganizationId' is set
             if (request.externalOrganizationId == null) {
                 throw new IllegalStateException("Missing the required parameter 'externalOrganizationId' when building request for PostExternalcontactsOrganizationNotesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostExternalcontactsOrganizationNotesRequest.");
             }
             
 			return request;

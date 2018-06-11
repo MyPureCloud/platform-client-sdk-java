@@ -1527,12 +1527,13 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param joined Is joined to the queue (optional, default to true)
+   * @param divisionId Division ID(s) (optional)
    * @return UserQueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException, ApiException {
-    return  getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined));
+  public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) throws IOException, ApiException {
+    return  getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined, divisionId));
   }
 
   /**
@@ -1542,14 +1543,15 @@ public class UsersApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param joined Is joined to the queue (optional, default to true)
+   * @param divisionId Division ID(s) (optional)
    * @return UserQueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined) throws IOException {
-    return getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined).withHttpInfo());
+  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) throws IOException {
+    return getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined, divisionId).withHttpInfo());
   }
 
-  private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined) {
+  private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) {
     return GetUserQueuesRequest.builder()
             .withUserId(userId)
     
@@ -1558,6 +1560,8 @@ public class UsersApi {
             .withPageNumber(pageNumber)
     
             .withJoined(joined)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }
@@ -2806,12 +2810,13 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param body User Queues (required)
+   * @param divisionId Division ID(s) (optional)
    * @return UserQueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body) throws IOException, ApiException {
-    return  patchUserQueues(createPatchUserQueuesRequest(userId, body));
+  public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body, List<String> divisionId) throws IOException, ApiException {
+    return  patchUserQueues(createPatchUserQueuesRequest(userId, body, divisionId));
   }
 
   /**
@@ -2819,18 +2824,21 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param body User Queues (required)
+   * @param divisionId Division ID(s) (optional)
    * @return UserQueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body) throws IOException {
-    return patchUserQueues(createPatchUserQueuesRequest(userId, body).withHttpInfo());
+  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body, List<String> divisionId) throws IOException {
+    return patchUserQueues(createPatchUserQueuesRequest(userId, body, divisionId).withHttpInfo());
   }
 
-  private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body) {
+  private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body, List<String> divisionId) {
     return PatchUserQueuesRequest.builder()
             .withUserId(userId)
     
             .withBody(body)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }

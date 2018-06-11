@@ -65,6 +65,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteUser**
 
+
+
 > [Empty](Empty.html) deleteUser(userId)
 
 Delete user
@@ -72,6 +74,10 @@ Delete user
 
 
 Wraps DELETE /api/v2/users/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -116,6 +122,8 @@ try {
 
 # **deleteUserRoles**
 
+
+
 > Void deleteUserRoles(userId)
 
 Removes all the roles from the user.
@@ -123,6 +131,10 @@ Removes all the roles from the user.
 
 
 Wraps DELETE /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:delete
 
 ### Example
 
@@ -166,6 +178,8 @@ null (empty response body)
 
 # **deleteUserRoutinglanguage**
 
+
+
 > Void deleteUserRoutinglanguage(userId, languageId)
 
 Remove routing language from user
@@ -173,6 +187,10 @@ Remove routing language from user
 
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -218,6 +236,8 @@ null (empty response body)
 
 # **deleteUserRoutingskill**
 
+
+
 > Void deleteUserRoutingskill(userId, skillId)
 
 Remove routing skill from user
@@ -225,6 +245,10 @@ Remove routing skill from user
 
 
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -270,6 +294,8 @@ null (empty response body)
 
 # **deleteUserStationAssociatedstation**
 
+
+
 > Void deleteUserStationAssociatedstation(userId)
 
 Clear associated station
@@ -277,6 +303,10 @@ Clear associated station
 
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -320,6 +350,8 @@ null (empty response body)
 
 # **deleteUserStationDefaultstation**
 
+
+
 > Void deleteUserStationDefaultstation(userId)
 
 Clear default station
@@ -327,6 +359,10 @@ Clear default station
 
 
 Wraps DELETE /api/v2/users/{userId}/station/defaultstation  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 
@@ -370,6 +406,8 @@ null (empty response body)
 
 # **getFieldconfig**
 
+
+
 > [FieldConfig](FieldConfig.html) getFieldconfig(type)
 
 Fetch field config for an entity type
@@ -377,6 +415,10 @@ Fetch field config for an entity type
 
 
 Wraps GET /api/v2/fieldconfig  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -421,6 +463,8 @@ try {
 
 # **getProfilesUsers**
 
+
+
 > [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, state)
 
 Get a user profile listing
@@ -428,6 +472,10 @@ Get a user profile listing
 
 
 Wraps GET /api/v2/profiles/users  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -484,6 +532,8 @@ try {
 
 # **getUser**
 
+
+
 > [User](User.html) getUser(userId, expand, state)
 
 Get user.
@@ -491,6 +541,10 @@ Get user.
 
 
 Wraps GET /api/v2/users/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -539,6 +593,8 @@ try {
 
 # **getUserAdjacents**
 
+
+
 > [Adjacents](Adjacents.html) getUserAdjacents(userId, expand)
 
 Get adjacents
@@ -546,6 +602,10 @@ Get adjacents
 
 
 Wraps GET /api/v2/users/{userId}/adjacents  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -592,6 +652,8 @@ try {
 
 # **getUserCallforwarding**
 
+
+
 > [CallForwarding](CallForwarding.html) getUserCallforwarding(userId)
 
 Get a user&#39;s CallForwarding
@@ -599,6 +661,10 @@ Get a user&#39;s CallForwarding
 
 
 Wraps GET /api/v2/users/{userId}/callforwarding  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -643,6 +709,8 @@ try {
 
 # **getUserDirectreports**
 
+
+
 > [List&lt;User&gt;](User.html) getUserDirectreports(userId, expand)
 
 Get direct reports
@@ -650,6 +718,10 @@ Get direct reports
 
 
 Wraps GET /api/v2/users/{userId}/directreports  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -696,6 +768,8 @@ try {
 
 # **getUserFavorites**
 
+
+
 > [UserEntityListing](UserEntityListing.html) getUserFavorites(userId, pageSize, pageNumber, sortOrder, expand)
 
 Get favorites
@@ -703,6 +777,10 @@ Get favorites
 
 
 Wraps GET /api/v2/users/{userId}/favorites  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -755,6 +833,8 @@ try {
 
 # **getUserGeolocation**
 
+
+
 > [Geolocation](Geolocation.html) getUserGeolocation(userId, clientId)
 
 Get a user&#39;s Geolocation
@@ -762,6 +842,10 @@ Get a user&#39;s Geolocation
 
 
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -808,6 +892,8 @@ try {
 
 # **getUserOutofoffice**
 
+
+
 > [OutOfOffice](OutOfOffice.html) getUserOutofoffice(userId)
 
 Get a OutOfOffice
@@ -815,6 +901,10 @@ Get a OutOfOffice
 
 
 Wraps GET /api/v2/users/{userId}/outofoffice  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -859,6 +949,8 @@ try {
 
 # **getUserProfile**
 
+
+
 > [UserProfile](UserProfile.html) getUserProfile(userId, expand)
 
 Get user profile
@@ -866,6 +958,10 @@ Get user profile
 
 
 Wraps GET /api/v2/users/{userId}/profile  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -912,6 +1008,8 @@ try {
 
 # **getUserProfileskills**
 
+
+
 > List&lt;String&gt; getUserProfileskills(userId)
 
 List profile skills for a user
@@ -919,6 +1017,10 @@ List profile skills for a user
 
 
 Wraps GET /api/v2/users/{userId}/profileskills  
+
+Requires ANY permissions: 
+
+* directory:userProfile:view
 
 ### Example
 
@@ -963,13 +1065,19 @@ try {
 
 # **getUserQueues**
 
-> [UserQueueEntityListing](UserQueueEntityListing.html) getUserQueues(userId, pageSize, pageNumber, joined)
+
+
+> [UserQueueEntityListing](UserQueueEntityListing.html) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
 
 Get queues for user
 
 
 
 Wraps GET /api/v2/users/{userId}/queues  
+
+Requires ANY permissions: 
+
+* routing:queue:view
 
 ### Example
 
@@ -992,8 +1100,9 @@ String userId = "userId_example"; // String | User ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean joined = true; // Boolean | Is joined to the queue
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 try {
-    UserQueueEntityListing result = apiInstance.getUserQueues(userId, pageSize, pageNumber, joined);
+    UserQueueEntityListing result = apiInstance.getUserQueues(userId, pageSize, pageNumber, joined, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUserQueues");
@@ -1010,6 +1119,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1020,6 +1130,8 @@ try {
 
 # **getUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) getUserRoles(userId)
 
 Returns a listing of roles and permissions for a user.
@@ -1027,6 +1139,10 @@ Returns a listing of roles and permissions for a user.
 
 
 Wraps GET /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* authorization:grant:view
 
 ### Example
 
@@ -1071,6 +1187,8 @@ try {
 
 # **getUserRoutinglanguages**
 
+
+
 > [UserLanguageEntityListing](UserLanguageEntityListing.html) getUserRoutinglanguages(userId, pageSize, pageNumber, sortOrder)
 
 List routing language for user
@@ -1078,6 +1196,10 @@ List routing language for user
 
 
 Wraps GET /api/v2/users/{userId}/routinglanguages  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1128,6 +1250,8 @@ try {
 
 # **getUserRoutingskills**
 
+
+
 > [UserSkillEntityListing](UserSkillEntityListing.html) getUserRoutingskills(userId, pageSize, pageNumber, sortOrder)
 
 List routing skills for user
@@ -1135,6 +1259,10 @@ List routing skills for user
 
 
 Wraps GET /api/v2/users/{userId}/routingskills  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1185,6 +1313,8 @@ try {
 
 # **getUserRoutingstatus**
 
+
+
 > [RoutingStatus](RoutingStatus.html) getUserRoutingstatus(userId)
 
 Fetch the routing status of a user
@@ -1192,6 +1322,10 @@ Fetch the routing status of a user
 
 
 Wraps GET /api/v2/users/{userId}/routingstatus  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1236,6 +1370,8 @@ try {
 
 # **getUserStation**
 
+
+
 > [UserStations](UserStations.html) getUserStation(userId)
 
 Get station information for user
@@ -1243,6 +1379,10 @@ Get station information for user
 
 
 Wraps GET /api/v2/users/{userId}/station  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1287,6 +1427,8 @@ try {
 
 # **getUserSuperiors**
 
+
+
 > [List&lt;User&gt;](User.html) getUserSuperiors(userId, expand)
 
 Get superiors
@@ -1294,6 +1436,10 @@ Get superiors
 
 
 Wraps GET /api/v2/users/{userId}/superiors  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1340,6 +1486,8 @@ try {
 
 # **getUserTrustors**
 
+
+
 > [TrustorEntityListing](TrustorEntityListing.html) getUserTrustors(userId, pageSize, pageNumber)
 
 List the organizations that have authorized/trusted the user.
@@ -1347,6 +1495,10 @@ List the organizations that have authorized/trusted the user.
 
 
 Wraps GET /api/v2/users/{userId}/trustors  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -1395,6 +1547,8 @@ try {
 
 # **getUsers**
 
+
+
 > [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, sortOrder, expand, state)
 
 Get the list of available users.
@@ -1402,6 +1556,10 @@ Get the list of available users.
 
 
 Wraps GET /api/v2/users  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1456,6 +1614,8 @@ try {
 
 # **getUsersMe**
 
+
+
 > [UserMe](UserMe.html) getUsersMe(expand)
 
 Get current user details.
@@ -1463,6 +1623,10 @@ Get current user details.
 This request is not valid when using the Client Credentials OAuth grant.
 
 Wraps GET /api/v2/users/me  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1507,6 +1671,8 @@ try {
 
 # **getUsersSearch**
 
+
+
 > [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand)
 
 Search users using the q64 value returned from a previous search
@@ -1514,6 +1680,10 @@ Search users using the q64 value returned from a previous search
 
 
 Wraps GET /api/v2/users/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1560,6 +1730,8 @@ try {
 
 # **patchUser**
 
+
+
 > [User](User.html) patchUser(userId, body)
 
 Update user
@@ -1567,6 +1739,10 @@ Update user
 
 
 Wraps PATCH /api/v2/users/{userId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1613,6 +1789,8 @@ try {
 
 # **patchUserCallforwarding**
 
+
+
 > [CallForwarding](CallForwarding.html) patchUserCallforwarding(userId, body)
 
 Patch a user&#39;s CallForwarding
@@ -1620,6 +1798,10 @@ Patch a user&#39;s CallForwarding
 
 
 Wraps PATCH /api/v2/users/{userId}/callforwarding  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1666,6 +1848,8 @@ try {
 
 # **patchUserGeolocation**
 
+
+
 > [Geolocation](Geolocation.html) patchUserGeolocation(userId, clientId, body)
 
 Patch a user&#39;s Geolocation
@@ -1673,6 +1857,10 @@ Patch a user&#39;s Geolocation
 The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -1721,6 +1909,8 @@ try {
 
 # **patchUserQueue**
 
+
+
 > [UserQueue](UserQueue.html) patchUserQueue(queueId, userId, body)
 
 Join or unjoin a queue for a user
@@ -1728,6 +1918,10 @@ Join or unjoin a queue for a user
 
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1776,13 +1970,19 @@ try {
 
 # **patchUserQueues**
 
-> [UserQueueEntityListing](UserQueueEntityListing.html) patchUserQueues(userId, body)
+
+
+> [UserQueueEntityListing](UserQueueEntityListing.html) patchUserQueues(userId, body, divisionId)
 
 Join or unjoin a set of queues for a user
 
 
 
 Wraps PATCH /api/v2/users/{userId}/queues  
+
+Requires ANY permissions: 
+
+* routing:queue:join
 
 ### Example
 
@@ -1803,8 +2003,9 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 List<UserQueue> body = Arrays.asList(new UserQueue()); // List<UserQueue> | User Queues
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 try {
-    UserQueueEntityListing result = apiInstance.patchUserQueues(userId, body);
+    UserQueueEntityListing result = apiInstance.patchUserQueues(userId, body, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#patchUserQueues");
@@ -1819,6 +2020,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
 | **body** | [**List&lt;UserQueue&gt;**](UserQueue.html)| User Queues | |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1829,6 +2031,8 @@ try {
 
 # **patchUserRoutinglanguage**
 
+
+
 > [UserRoutingLanguage](UserRoutingLanguage.html) patchUserRoutinglanguage(userId, languageId, body)
 
 Update routing language proficiency or state.
@@ -1836,6 +2040,10 @@ Update routing language proficiency or state.
 
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -1884,6 +2092,8 @@ try {
 
 # **postAnalyticsUsersAggregatesQuery**
 
+
+
 > [PresenceQueryResponse](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
@@ -1891,6 +2101,10 @@ Query for user aggregates
 
 
 Wraps POST /api/v2/analytics/users/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
 
 ### Example
 
@@ -1935,6 +2149,8 @@ try {
 
 # **postAnalyticsUsersDetailsQuery**
 
+
+
 > [AnalyticsUserDetailsQueryResponse](AnalyticsUserDetailsQueryResponse.html) postAnalyticsUsersDetailsQuery(body)
 
 Query for user details
@@ -1942,6 +2158,10 @@ Query for user details
 
 
 Wraps POST /api/v2/analytics/users/details/query  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -1986,6 +2206,8 @@ try {
 
 # **postAnalyticsUsersObservationsQuery**
 
+
+
 > [ObservationQueryResponse](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
 
 Query for user observations
@@ -1993,6 +2215,10 @@ Query for user observations
 
 
 Wraps POST /api/v2/analytics/users/observations/query  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
 
 ### Example
 
@@ -2037,6 +2263,8 @@ try {
 
 # **postUserInvite**
 
+
+
 > Void postUserInvite(userId, force)
 
 Send an activation email to the user
@@ -2044,6 +2272,10 @@ Send an activation email to the user
 
 
 Wraps POST /api/v2/users/{userId}/invite  
+
+Requires ANY permissions: 
+
+* directory:user:add* user_manager* user_administration
 
 ### Example
 
@@ -2089,6 +2321,8 @@ null (empty response body)
 
 # **postUserPassword**
 
+
+
 > Void postUserPassword(userId, body)
 
 Change a users password
@@ -2096,6 +2330,10 @@ Change a users password
 
 
 Wraps POST /api/v2/users/{userId}/password  
+
+Requires ANY permissions: 
+
+* user_administration* directory:userPassword:edit
 
 ### Example
 
@@ -2141,6 +2379,8 @@ null (empty response body)
 
 # **postUserRoutinglanguages**
 
+
+
 > [UserRoutingLanguage](UserRoutingLanguage.html) postUserRoutinglanguages(userId, body)
 
 Add routing language to user
@@ -2148,6 +2388,10 @@ Add routing language to user
 
 
 Wraps POST /api/v2/users/{userId}/routinglanguages  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2194,6 +2438,8 @@ try {
 
 # **postUserRoutingskills**
 
+
+
 > [UserRoutingSkill](UserRoutingSkill.html) postUserRoutingskills(userId, body)
 
 Add routing skill to user
@@ -2201,6 +2447,10 @@ Add routing skill to user
 
 
 Wraps POST /api/v2/users/{userId}/routingskills  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2247,6 +2497,8 @@ try {
 
 # **postUsers**
 
+
+
 > [User](User.html) postUsers(body)
 
 Create user
@@ -2254,6 +2506,10 @@ Create user
 
 
 Wraps POST /api/v2/users  
+
+Requires ANY permissions: 
+
+* directory:user:add
 
 ### Example
 
@@ -2298,6 +2554,8 @@ try {
 
 # **postUsersMePassword**
 
+
+
 > Void postUsersMePassword(body)
 
 Change your password
@@ -2305,6 +2563,10 @@ Change your password
 
 
 Wraps POST /api/v2/users/me/password  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2348,6 +2610,8 @@ null (empty response body)
 
 # **postUsersSearch**
 
+
+
 > [UsersSearchResponse](UsersSearchResponse.html) postUsersSearch(body)
 
 Search users
@@ -2355,6 +2619,10 @@ Search users
 
 
 Wraps POST /api/v2/users/search  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2399,6 +2667,8 @@ try {
 
 # **putUserCallforwarding**
 
+
+
 > [CallForwarding](CallForwarding.html) putUserCallforwarding(userId, body)
 
 Update a user&#39;s CallForwarding
@@ -2406,6 +2676,10 @@ Update a user&#39;s CallForwarding
 
 
 Wraps PUT /api/v2/users/{userId}/callforwarding  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2452,6 +2726,8 @@ try {
 
 # **putUserOutofoffice**
 
+
+
 > [OutOfOffice](OutOfOffice.html) putUserOutofoffice(userId, body)
 
 Update an OutOfOffice
@@ -2459,6 +2735,10 @@ Update an OutOfOffice
 
 
 Wraps PUT /api/v2/users/{userId}/outofoffice  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2505,6 +2785,8 @@ try {
 
 # **putUserProfileskills**
 
+
+
 > List&lt;String&gt; putUserProfileskills(userId, body)
 
 Update profile skills for a user
@@ -2512,6 +2794,10 @@ Update profile skills for a user
 
 
 Wraps PUT /api/v2/users/{userId}/profileskills  
+
+Requires ANY permissions: 
+
+* directory:userProfile:edit* admin* user_manager* user_administration
 
 ### Example
 
@@ -2558,6 +2844,8 @@ try {
 
 # **putUserRoles**
 
+
+
 > [UserAuthorization](UserAuthorization.html) putUserRoles(userId, body)
 
 Sets the user&#39;s roles
@@ -2565,6 +2853,10 @@ Sets the user&#39;s roles
 
 
 Wraps PUT /api/v2/users/{userId}/roles  
+
+Requires ANY permissions: 
+
+* admin* role_manager* authorization:grant:add
 
 ### Example
 
@@ -2611,6 +2903,8 @@ try {
 
 # **putUserRoutingskill**
 
+
+
 > [UserRoutingSkill](UserRoutingSkill.html) putUserRoutingskill(userId, skillId, body)
 
 Update routing skill proficiency or state.
@@ -2618,6 +2912,10 @@ Update routing skill proficiency or state.
 
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}  
+
+Requires ANY permissions: 
+
+* routing:skill:assign* admin
 
 ### Example
 
@@ -2666,6 +2964,8 @@ try {
 
 # **putUserRoutingstatus**
 
+
+
 > [RoutingStatus](RoutingStatus.html) putUserRoutingstatus(userId, body)
 
 Update the routing status of a user
@@ -2673,6 +2973,10 @@ Update the routing status of a user
 
 
 Wraps PUT /api/v2/users/{userId}/routingstatus  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2719,6 +3023,8 @@ try {
 
 # **putUserStationAssociatedstationStationId**
 
+
+
 > Void putUserStationAssociatedstationStationId(userId, stationId)
 
 Set associated station
@@ -2726,6 +3032,10 @@ Set associated station
 
 
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -2771,6 +3081,8 @@ null (empty response body)
 
 # **putUserStationDefaultstationStationId**
 
+
+
 > Void putUserStationDefaultstationStationId(userId, stationId)
 
 Set default station
@@ -2778,6 +3090,10 @@ Set default station
 
 
 Wraps PUT /api/v2/users/{userId}/station/defaultstation/{stationId}  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all* telephony:phone:assign
 
 ### Example
 

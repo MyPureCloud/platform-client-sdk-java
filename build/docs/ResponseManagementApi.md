@@ -24,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteResponsemanagementLibrary**
 
+
+
 > Void deleteResponsemanagementLibrary(libraryId)
 
 Delete an existing response library.
@@ -31,6 +33,10 @@ Delete an existing response library.
 This will remove any responses associated with the library.
 
 Wraps DELETE /api/v2/responsemanagement/libraries/{libraryId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -74,6 +80,8 @@ null (empty response body)
 
 # **deleteResponsemanagementResponse**
 
+
+
 > Void deleteResponsemanagementResponse(responseId)
 
 Delete an existing response.
@@ -81,6 +89,10 @@ Delete an existing response.
 This will remove the response from any libraries associated with it.
 
 Wraps DELETE /api/v2/responsemanagement/responses/{responseId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -124,6 +136,8 @@ null (empty response body)
 
 # **getResponsemanagementLibraries**
 
+
+
 > [LibraryEntityListing](LibraryEntityListing.html) getResponsemanagementLibraries(pageNumber, pageSize)
 
 Gets a list of existing response libraries.
@@ -131,6 +145,10 @@ Gets a list of existing response libraries.
 
 
 Wraps GET /api/v2/responsemanagement/libraries  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -177,6 +195,8 @@ try {
 
 # **getResponsemanagementLibrary**
 
+
+
 > [Library](Library.html) getResponsemanagementLibrary(libraryId)
 
 Get details about an existing response library.
@@ -184,6 +204,10 @@ Get details about an existing response library.
 
 
 Wraps GET /api/v2/responsemanagement/libraries/{libraryId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -228,6 +252,8 @@ try {
 
 # **getResponsemanagementResponse**
 
+
+
 > [Response](Response.html) getResponsemanagementResponse(responseId, expand)
 
 Get details about an existing response.
@@ -235,6 +261,10 @@ Get details about an existing response.
 
 
 Wraps GET /api/v2/responsemanagement/responses/{responseId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -281,6 +311,8 @@ try {
 
 # **getResponsemanagementResponses**
 
+
+
 > [ResponseEntityListing](ResponseEntityListing.html) getResponsemanagementResponses(libraryId, pageNumber, pageSize, expand)
 
 Gets a list of existing responses.
@@ -288,6 +320,10 @@ Gets a list of existing responses.
 
 
 Wraps GET /api/v2/responsemanagement/responses  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -338,6 +374,8 @@ try {
 
 # **postResponsemanagementLibraries**
 
+
+
 > [Library](Library.html) postResponsemanagementLibraries(body)
 
 Create a response library.
@@ -345,6 +383,10 @@ Create a response library.
 
 
 Wraps POST /api/v2/responsemanagement/libraries  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -389,6 +431,8 @@ try {
 
 # **postResponsemanagementResponses**
 
+
+
 > [Response](Response.html) postResponsemanagementResponses(body, expand)
 
 Create a response.
@@ -396,6 +440,10 @@ Create a response.
 
 
 Wraps POST /api/v2/responsemanagement/responses  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -442,6 +490,8 @@ try {
 
 # **postResponsemanagementResponsesQuery**
 
+
+
 > [ResponseQueryResults](ResponseQueryResults.html) postResponsemanagementResponsesQuery(body)
 
 Query responses
@@ -449,6 +499,10 @@ Query responses
 
 
 Wraps POST /api/v2/responsemanagement/responses/query  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -493,6 +547,8 @@ try {
 
 # **putResponsemanagementLibrary**
 
+
+
 > [Library](Library.html) putResponsemanagementLibrary(libraryId, body)
 
 Update an existing response library.
@@ -500,6 +556,10 @@ Update an existing response library.
 Fields that can be updated: name. The most recent version is required for updates.
 
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -546,6 +606,8 @@ try {
 
 # **putResponsemanagementResponse**
 
+
+
 > [Response](Response.html) putResponsemanagementResponse(responseId, body, expand)
 
 Update an existing response.
@@ -553,6 +615,10 @@ Update an existing response.
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
 
 Wraps PUT /api/v2/responsemanagement/responses/{responseId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

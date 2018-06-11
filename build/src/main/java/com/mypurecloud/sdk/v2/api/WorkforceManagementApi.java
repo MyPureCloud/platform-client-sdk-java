@@ -559,7 +559,7 @@ public class WorkforceManagementApi {
    * Get management units
    * 
    * @param pageSize  (optional)
-   * @param pageNumber  (optional, default to 1)
+   * @param pageNumber  (optional)
    * @param expand  (optional)
    * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
@@ -573,7 +573,7 @@ public class WorkforceManagementApi {
    * Get management units
    * 
    * @param pageSize  (optional)
-   * @param pageNumber  (optional, default to 1)
+   * @param pageNumber  (optional)
    * @param expand  (optional)
    * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed

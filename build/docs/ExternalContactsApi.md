@@ -35,13 +35,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate an external contact with a conversation |
 | [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
-| [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an Extenral Organization |
+| [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
 | [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | Update a relationship |
 {: class="table table-striped"}
 
 <a name="deleteExternalcontactsContact"></a>
 
 # **deleteExternalcontactsContact**
+
+
 
 > Void deleteExternalcontactsContact(contactId)
 
@@ -50,6 +52,10 @@ Delete an external contact
 
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:delete
 
 ### Example
 
@@ -93,6 +99,8 @@ null (empty response body)
 
 # **deleteExternalcontactsContactNote**
 
+
+
 > Void deleteExternalcontactsContactNote(contactId, noteId)
 
 Delete a note for an external contact
@@ -100,6 +108,10 @@ Delete a note for an external contact
 
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -145,6 +157,8 @@ null (empty response body)
 
 # **deleteExternalcontactsOrganization**
 
+
+
 > Void deleteExternalcontactsOrganization(externalOrganizationId)
 
 Delete an external organization
@@ -152,6 +166,10 @@ Delete an external organization
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:delete
 
 ### Example
 
@@ -195,6 +213,8 @@ null (empty response body)
 
 # **deleteExternalcontactsOrganizationNote**
 
+
+
 > Void deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 Delete a note for an external organization
@@ -202,6 +222,10 @@ Delete a note for an external organization
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -247,6 +271,8 @@ null (empty response body)
 
 # **deleteExternalcontactsOrganizationTrustor**
 
+
+
 > Void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 Unlink the Trustor for this External Organization
@@ -254,6 +280,10 @@ Unlink the Trustor for this External Organization
 
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -297,6 +327,8 @@ null (empty response body)
 
 # **deleteExternalcontactsRelationship**
 
+
+
 > Void deleteExternalcontactsRelationship(relationshipId)
 
 Delete a relationship
@@ -304,6 +336,10 @@ Delete a relationship
 
 
 Wraps DELETE /api/v2/externalcontacts/relationships/{relationshipId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -347,6 +383,8 @@ null (empty response body)
 
 # **getExternalcontactsContact**
 
+
+
 > [ExternalContact](ExternalContact.html) getExternalcontactsContact(contactId, expand)
 
 Fetch an external contact
@@ -354,6 +392,10 @@ Fetch an external contact
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -400,6 +442,8 @@ try {
 
 # **getExternalcontactsContactNote**
 
+
+
 > [Note](Note.html) getExternalcontactsContactNote(contactId, noteId, expand)
 
 Fetch a note for an external contact
@@ -407,6 +451,10 @@ Fetch a note for an external contact
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -455,6 +503,8 @@ try {
 
 # **getExternalcontactsContactNotes**
 
+
+
 > [NoteListing](NoteListing.html) getExternalcontactsContactNotes(contactId, pageSize, pageNumber, sortOrder, expand)
 
 List notes for an external contact
@@ -462,6 +512,10 @@ List notes for an external contact
 
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -514,6 +568,8 @@ try {
 
 # **getExternalcontactsContacts**
 
+
+
 > [ContactListing](ContactListing.html) getExternalcontactsContacts(pageSize, pageNumber, q, sortOrder, expand)
 
 Search for external contacts
@@ -521,6 +577,10 @@ Search for external contacts
 
 
 Wraps GET /api/v2/externalcontacts/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -573,6 +633,8 @@ try {
 
 # **getExternalcontactsOrganization**
 
+
+
 > [ExternalOrganization](ExternalOrganization.html) getExternalcontactsOrganization(externalOrganizationId, expand, includeTrustors)
 
 Fetch an external organization
@@ -580,6 +642,10 @@ Fetch an external organization
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -628,6 +694,8 @@ try {
 
 # **getExternalcontactsOrganizationContacts**
 
+
+
 > [ContactListing](ContactListing.html) getExternalcontactsOrganizationContacts(externalOrganizationId, pageSize, pageNumber, q, sortOrder, expand)
 
 Search for external contacts in an external organization
@@ -635,6 +703,10 @@ Search for external contacts in an external organization
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -689,6 +761,8 @@ try {
 
 # **getExternalcontactsOrganizationNote**
 
+
+
 > [Note](Note.html) getExternalcontactsOrganizationNote(externalOrganizationId, noteId, expand)
 
 Fetch a note for an external organization
@@ -696,6 +770,10 @@ Fetch a note for an external organization
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -744,6 +822,8 @@ try {
 
 # **getExternalcontactsOrganizationNotes**
 
+
+
 > [NoteListing](NoteListing.html) getExternalcontactsOrganizationNotes(externalOrganizationId, pageSize, pageNumber, sortOrder, expand)
 
 List notes for an external organization
@@ -751,6 +831,10 @@ List notes for an external organization
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -803,6 +887,8 @@ try {
 
 # **getExternalcontactsOrganizationRelationships**
 
+
+
 > [RelationshipListing](RelationshipListing.html) getExternalcontactsOrganizationRelationships(externalOrganizationId, pageSize, pageNumber, expand, sortOrder)
 
 Fetch a relationship for an external organization
@@ -810,6 +896,10 @@ Fetch a relationship for an external organization
 
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -862,6 +952,8 @@ try {
 
 # **getExternalcontactsOrganizations**
 
+
+
 > [ExternalOrganizationListing](ExternalOrganizationListing.html) getExternalcontactsOrganizations(pageSize, pageNumber, q, trustorId, sortOrder, expand, includeTrustors)
 
 Search for external organizations
@@ -869,6 +961,10 @@ Search for external organizations
 
 
 Wraps GET /api/v2/externalcontacts/organizations  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -925,6 +1021,8 @@ try {
 
 # **getExternalcontactsRelationship**
 
+
+
 > [Relationship](Relationship.html) getExternalcontactsRelationship(relationshipId, expand)
 
 Fetch a relationship
@@ -932,6 +1030,10 @@ Fetch a relationship
 
 
 Wraps GET /api/v2/externalcontacts/relationships/{relationshipId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
 
 ### Example
 
@@ -978,6 +1080,8 @@ try {
 
 # **getExternalcontactsReversewhitepageslookup**
 
+
+
 > [ReverseWhitepagesLookupResult](ReverseWhitepagesLookupResult.html) getExternalcontactsReversewhitepageslookup(lookupVal, expand)
 
 Lookup contacts and externalOrganizations based on an attribute
@@ -985,6 +1089,10 @@ Lookup contacts and externalOrganizations based on an attribute
 
 
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
 
 ### Example
 
@@ -1031,6 +1139,8 @@ try {
 
 # **postExternalcontactsContactNotes**
 
+
+
 > [Note](Note.html) postExternalcontactsContactNotes(contactId, body)
 
 Create a note for an external contact
@@ -1038,6 +1148,10 @@ Create a note for an external contact
 
 
 Wraps POST /api/v2/externalcontacts/contacts/{contactId}/notes  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1073,7 +1187,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional] |
+| **body** | [**Note**](Note.html)| ExternalContact | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1084,6 +1198,8 @@ try {
 
 # **postExternalcontactsContacts**
 
+
+
 > [ExternalContact](ExternalContact.html) postExternalcontactsContacts(body)
 
 Create an external contact
@@ -1091,6 +1207,10 @@ Create an external contact
 
 
 Wraps POST /api/v2/externalcontacts/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:add
 
 ### Example
 
@@ -1124,7 +1244,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional] |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1135,6 +1255,8 @@ try {
 
 # **postExternalcontactsOrganizationNotes**
 
+
+
 > [Note](Note.html) postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 
 Create a note for an external organization
@@ -1142,6 +1264,10 @@ Create a note for an external organization
 
 
 Wraps POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1177,7 +1303,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | [optional] |
+| **body** | [**Note**](Note.html)| ExternalContact | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1188,6 +1314,8 @@ try {
 
 # **postExternalcontactsOrganizations**
 
+
+
 > [ExternalOrganization](ExternalOrganization.html) postExternalcontactsOrganizations(body)
 
 Create an external organization
@@ -1195,6 +1323,10 @@ Create an external organization
 
 
 Wraps POST /api/v2/externalcontacts/organizations  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:add
 
 ### Example
 
@@ -1228,7 +1360,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional] |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1239,6 +1371,8 @@ try {
 
 # **postExternalcontactsRelationships**
 
+
+
 > [Relationship](Relationship.html) postExternalcontactsRelationships(body)
 
 Create a relationship
@@ -1246,6 +1380,10 @@ Create a relationship
 
 
 Wraps POST /api/v2/externalcontacts/relationships  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1279,7 +1417,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional] |
+| **body** | [**Relationship**](Relationship.html)| Relationship | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1290,6 +1428,8 @@ try {
 
 # **putExternalcontactsContact**
 
+
+
 > [ExternalContact](ExternalContact.html) putExternalcontactsContact(contactId, body)
 
 Update an external contact
@@ -1297,6 +1437,10 @@ Update an external contact
 
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1332,7 +1476,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact ID | |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | [optional] |
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1343,6 +1487,8 @@ try {
 
 # **putExternalcontactsContactNote**
 
+
+
 > [Note](Note.html) putExternalcontactsContactNote(contactId, noteId, body)
 
 Update a note for an external contact
@@ -1350,6 +1496,10 @@ Update a note for an external contact
 
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
 
 ### Example
 
@@ -1387,7 +1537,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **contactId** | **String**| ExternalContact Id | |
 | **noteId** | **String**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | [optional] |
+| **body** | [**Note**](Note.html)| Note | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1398,6 +1548,8 @@ try {
 
 # **putExternalcontactsConversation**
 
+
+
 > Void putExternalcontactsConversation(conversationId, body)
 
 Associate an external contact with a conversation
@@ -1405,6 +1557,10 @@ Associate an external contact with a conversation
 
 
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId}  
+
+Requires ANY permissions: 
+
+* externalContacts:conversation:associate
 
 ### Example
 
@@ -1439,7 +1595,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | [optional] |
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1450,6 +1606,8 @@ null (empty response body)
 
 # **putExternalcontactsOrganization**
 
+
+
 > [ExternalOrganization](ExternalOrganization.html) putExternalcontactsOrganization(externalOrganizationId, body)
 
 Update an external organization
@@ -1457,6 +1615,10 @@ Update an external organization
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1492,7 +1654,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization ID | |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | [optional] |
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1503,6 +1665,8 @@ try {
 
 # **putExternalcontactsOrganizationNote**
 
+
+
 > [Note](Note.html) putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
 
 Update a note for an external organization
@@ -1510,6 +1674,10 @@ Update a note for an external organization
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1547,7 +1715,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **externalOrganizationId** | **String**| External Organization Id | |
 | **noteId** | **String**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | [optional] |
+| **body** | [**Note**](Note.html)| Note | |
 {: class="table table-striped"}
 
 ### Return type
@@ -1558,13 +1726,19 @@ try {
 
 # **putExternalcontactsOrganizationTrustorTrustorId**
 
+
+
 > [ExternalOrganization](ExternalOrganization.html) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
-Links a Trustor with an Extenral Organization
+Links a Trustor with an External Organization
 
 
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1611,6 +1785,8 @@ try {
 
 # **putExternalcontactsRelationship**
 
+
+
 > [Relationship](Relationship.html) putExternalcontactsRelationship(relationshipId, body)
 
 Update a relationship
@@ -1618,6 +1794,10 @@ Update a relationship
 
 
 Wraps PUT /api/v2/externalcontacts/relationships/{relationshipId}  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
 
 ### Example
 
@@ -1653,7 +1833,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **relationshipId** | **String**| Relationship Id | |
-| **body** | [**Relationship**](Relationship.html)| Relationship | [optional] |
+| **body** | [**Relationship**](Relationship.html)| Relationship | |
 {: class="table table-striped"}
 
 ### Return type

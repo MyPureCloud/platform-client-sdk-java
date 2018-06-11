@@ -29,6 +29,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteGreeting**
 
+
+
 > Void deleteGreeting(greetingId)
 
 Deletes a Greeting with the given GreetingId
@@ -36,6 +38,10 @@ Deletes a Greeting with the given GreetingId
 
 
 Wraps DELETE /api/v2/greetings/{greetingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -79,6 +85,8 @@ null (empty response body)
 
 # **getGreeting**
 
+
+
 > [Greeting](Greeting.html) getGreeting(greetingId)
 
 Get a Greeting with the given GreetingId
@@ -86,6 +94,10 @@ Get a Greeting with the given GreetingId
 
 
 Wraps GET /api/v2/greetings/{greetingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -130,6 +142,8 @@ try {
 
 # **getGreetingMedia**
 
+
+
 > [GreetingMediaInfo](GreetingMediaInfo.html) getGreetingMedia(greetingId, formatId)
 
 Get media playback URI for this greeting
@@ -137,6 +151,10 @@ Get media playback URI for this greeting
 
 
 Wraps GET /api/v2/greetings/{greetingId}/media  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -183,6 +201,8 @@ try {
 
 # **getGreetings**
 
+
+
 > [DomainEntityListing](DomainEntityListing.html) getGreetings(pageSize, pageNumber)
 
 Gets an Organization&#39;s Greetings
@@ -190,6 +210,10 @@ Gets an Organization&#39;s Greetings
 
 
 Wraps GET /api/v2/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -236,6 +260,8 @@ try {
 
 # **getGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) getGreetingsDefaults()
 
 Get an Organization&#39;s DefaultGreetingList
@@ -243,6 +269,10 @@ Get an Organization&#39;s DefaultGreetingList
 
 
 Wraps GET /api/v2/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -283,6 +313,8 @@ This endpoint does not require any parameters.
 
 # **getGroupGreetings**
 
+
+
 > [GreetingListing](GreetingListing.html) getGroupGreetings(groupId, pageSize, pageNumber)
 
 Get a list of the Group&#39;s Greetings
@@ -290,6 +322,10 @@ Get a list of the Group&#39;s Greetings
 
 
 Wraps GET /api/v2/groups/{groupId}/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -338,6 +374,8 @@ try {
 
 # **getGroupGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) getGroupGreetingsDefaults(groupId)
 
 Grabs the list of Default Greetings given a Group&#39;s ID
@@ -345,6 +383,10 @@ Grabs the list of Default Greetings given a Group&#39;s ID
 
 
 Wraps GET /api/v2/groups/{groupId}/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -389,6 +431,8 @@ try {
 
 # **getUserGreetings**
 
+
+
 > [DomainEntityListing](DomainEntityListing.html) getUserGreetings(userId, pageSize, pageNumber)
 
 Get a list of the User&#39;s Greetings
@@ -396,6 +440,10 @@ Get a list of the User&#39;s Greetings
 
 
 Wraps GET /api/v2/users/{userId}/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -444,6 +492,8 @@ try {
 
 # **getUserGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) getUserGreetingsDefaults(userId)
 
 Grabs the list of Default Greetings given a User&#39;s ID
@@ -451,6 +501,10 @@ Grabs the list of Default Greetings given a User&#39;s ID
 
 
 Wraps GET /api/v2/users/{userId}/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -495,6 +549,8 @@ try {
 
 # **postGreetings**
 
+
+
 > [Greeting](Greeting.html) postGreetings(body)
 
 Create a Greeting for an Organization
@@ -502,6 +558,10 @@ Create a Greeting for an Organization
 
 
 Wraps POST /api/v2/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -546,6 +606,8 @@ try {
 
 # **postGroupGreetings**
 
+
+
 > [Greeting](Greeting.html) postGroupGreetings(groupId, body)
 
 Creates a Greeting for a Group
@@ -553,6 +615,10 @@ Creates a Greeting for a Group
 
 
 Wraps POST /api/v2/groups/{groupId}/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -599,6 +665,8 @@ try {
 
 # **postUserGreetings**
 
+
+
 > [Greeting](Greeting.html) postUserGreetings(userId, body)
 
 Creates a Greeting for a User
@@ -606,6 +674,10 @@ Creates a Greeting for a User
 
 
 Wraps POST /api/v2/users/{userId}/greetings  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -652,6 +724,8 @@ try {
 
 # **putGreeting**
 
+
+
 > [Greeting](Greeting.html) putGreeting(greetingId, body)
 
 Updates the Greeting with the given GreetingId
@@ -659,6 +733,10 @@ Updates the Greeting with the given GreetingId
 
 
 Wraps PUT /api/v2/greetings/{greetingId}  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -705,6 +783,8 @@ try {
 
 # **putGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) putGreetingsDefaults(body)
 
 Update an Organization&#39;s DefaultGreetingList
@@ -712,6 +792,10 @@ Update an Organization&#39;s DefaultGreetingList
 
 
 Wraps PUT /api/v2/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -756,6 +840,8 @@ try {
 
 # **putGroupGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) putGroupGreetingsDefaults(groupId, body)
 
 Updates the DefaultGreetingList of the specified Group
@@ -763,6 +849,10 @@ Updates the DefaultGreetingList of the specified Group
 
 
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 
@@ -809,6 +899,8 @@ try {
 
 # **putUserGreetingsDefaults**
 
+
+
 > [DefaultGreetingList](DefaultGreetingList.html) putUserGreetingsDefaults(userId, body)
 
 Updates the DefaultGreetingList of the specified User
@@ -816,6 +908,10 @@ Updates the DefaultGreetingList of the specified User
 
 
 Wraps PUT /api/v2/users/{userId}/greetings/defaults  
+
+Requires NO permissions: 
+
+
 
 ### Example
 

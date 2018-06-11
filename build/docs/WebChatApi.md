@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteWebchatDeployment**
 
+
+
 > Void deleteWebchatDeployment(deploymentId)
 
 Delete a WebChat deployment
@@ -28,6 +30,10 @@ Delete a WebChat deployment
 
 
 Wraps DELETE /api/v2/webchat/deployments/{deploymentId}  
+
+Requires ANY permissions: 
+
+* webchat:deployment:delete
 
 ### Example
 
@@ -71,6 +77,8 @@ null (empty response body)
 
 # **deleteWebchatSettings**
 
+
+
 > Void deleteWebchatSettings()
 
 Remove WebChat deployment settings
@@ -78,6 +86,10 @@ Remove WebChat deployment settings
 
 
 Wraps DELETE /api/v2/webchat/settings  
+
+Requires ANY permissions: 
+
+* webchat:deployment:delete
 
 ### Example
 
@@ -117,6 +129,8 @@ null (empty response body)
 
 # **getWebchatDeployment**
 
+
+
 > [WebChatDeployment](WebChatDeployment.html) getWebchatDeployment(deploymentId)
 
 Get a WebChat deployment
@@ -124,6 +138,10 @@ Get a WebChat deployment
 
 
 Wraps GET /api/v2/webchat/deployments/{deploymentId}  
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -168,6 +186,8 @@ try {
 
 # **getWebchatDeployments**
 
+
+
 > [WebChatDeploymentEntityListing](WebChatDeploymentEntityListing.html) getWebchatDeployments()
 
 List WebChat deployments
@@ -175,6 +195,10 @@ List WebChat deployments
 
 
 Wraps GET /api/v2/webchat/deployments  
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -215,6 +239,8 @@ This endpoint does not require any parameters.
 
 # **getWebchatSettings**
 
+
+
 > [WebChatSettings](WebChatSettings.html) getWebchatSettings()
 
 Get WebChat deployment settings
@@ -222,6 +248,10 @@ Get WebChat deployment settings
 
 
 Wraps GET /api/v2/webchat/settings  
+
+Requires ANY permissions: 
+
+* webchat:deployment:read
 
 ### Example
 
@@ -262,6 +292,8 @@ This endpoint does not require any parameters.
 
 # **postWebchatDeployments**
 
+
+
 > [WebChatDeployment](WebChatDeployment.html) postWebchatDeployments(body)
 
 Create WebChat deployment
@@ -269,6 +301,10 @@ Create WebChat deployment
 
 
 Wraps POST /api/v2/webchat/deployments  
+
+Requires ANY permissions: 
+
+* webchat:deployment:create
 
 ### Example
 
@@ -313,6 +349,8 @@ try {
 
 # **putWebchatDeployment**
 
+
+
 > [WebChatDeployment](WebChatDeployment.html) putWebchatDeployment(deploymentId, body)
 
 Update a WebChat deployment
@@ -320,6 +358,10 @@ Update a WebChat deployment
 
 
 Wraps PUT /api/v2/webchat/deployments/{deploymentId}  
+
+Requires ANY permissions: 
+
+* webchat:deployment:update
 
 ### Example
 
@@ -366,6 +408,8 @@ try {
 
 # **putWebchatSettings**
 
+
+
 > [WebChatSettings](WebChatSettings.html) putWebchatSettings(body)
 
 Update WebChat deployment settings
@@ -373,6 +417,10 @@ Update WebChat deployment settings
 
 
 Wraps PUT /api/v2/webchat/settings  
+
+Requires ANY permissions: 
+
+* webchat:deployment:update
 
 ### Example
 
