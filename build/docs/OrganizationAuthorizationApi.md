@@ -104,7 +104,9 @@ Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUser
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:delete* admin* role_manager
+* authorization:orgTrusteeUser:delete
+* admin
+* role_manager
 
 ### Example
 
@@ -162,7 +164,9 @@ Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUser
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:delete* admin* role_manager
+* authorization:orgTrusteeUser:delete
+* admin
+* role_manager
 
 ### Example
 
@@ -334,7 +338,8 @@ Wraps GET /api/v2/orgauthorization/pairings/{pairingId}
 
 Requires ANY permissions: 
 
-* authorization:orgTrustee:view* authorization:orgTrustor:view
+* authorization:orgTrustee:view
+* authorization:orgTrustor:view
 
 ### Example
 
@@ -979,7 +984,9 @@ Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users
 
 Requires ALL permissions: 
 
-* authorization:orgTrusteeUser:add* admin* role_manager
+* authorization:orgTrusteeUser:add
+* admin
+* role_manager
 
 ### Example
 
@@ -1038,7 +1045,8 @@ Wraps POST /api/v2/orgauthorization/trustees
 
 Requires ALL permissions: 
 
-* authorization:orgTrustee:add* authorization:orgTrusteeUser:add
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
 
 ### Example
 
@@ -1284,7 +1292,9 @@ Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}
 
 Requires ANY permissions: 
 
-* authorization:orgTrusteeUser:edit* admin* role_manager
+* authorization:orgTrusteeUser:edit
+* admin
+* role_manager
 
 ### Example
 

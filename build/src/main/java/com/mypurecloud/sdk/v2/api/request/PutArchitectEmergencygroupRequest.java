@@ -112,6 +112,11 @@ public class PutArchitectEmergencygroupRequest {
             throw new IllegalStateException("Missing the required parameter 'emergencyGroupId' when building request for PutArchitectEmergencygroupRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectEmergencygroupRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/emergencygroups/{emergencyGroupId}")
                 .withPathParameter("emergencyGroupId", emergencyGroupId)
@@ -130,9 +135,9 @@ public class PutArchitectEmergencygroupRequest {
 	}
 
 	
-	public static Builder builder(String emergencyGroupId) {
+	public static Builder builder(String emergencyGroupId, EmergencyGroup body) {
 	    return new Builder()
-	            .withRequiredParams(emergencyGroupId);
+	            .withRequiredParams(emergencyGroupId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PutArchitectEmergencygroupRequest {
 		
 
 		
-		public Builder withRequiredParams(String emergencyGroupId) {
+		public Builder withRequiredParams(String emergencyGroupId, EmergencyGroup body) {
 			request.setEmergencyGroupId(emergencyGroupId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PutArchitectEmergencygroupRequest {
             // verify the required parameter 'emergencyGroupId' is set
             if (request.emergencyGroupId == null) {
                 throw new IllegalStateException("Missing the required parameter 'emergencyGroupId' when building request for PutArchitectEmergencygroupRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectEmergencygroupRequest.");
             }
             
 			return request;

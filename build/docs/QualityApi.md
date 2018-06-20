@@ -76,7 +76,6 @@ Wraps DELETE /api/v2/quality/calibrations/{calibrationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -133,7 +132,6 @@ Delete an evaluation
 Wraps DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -364,7 +362,6 @@ Wraps DELETE /api/v2/quality/keywordsets/{keywordSetId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -420,7 +417,6 @@ Wraps DELETE /api/v2/quality/keywordsets
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -474,7 +470,6 @@ Including the number of evaluations and average evaluation score
 Wraps GET /api/v2/quality/agents/activity  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -555,7 +550,6 @@ Wraps GET /api/v2/quality/calibrations/{calibrationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -614,7 +608,6 @@ Get the list of calibrations
 Wraps GET /api/v2/quality/calibrations  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -691,7 +684,6 @@ Wraps GET /api/v2/quality/conversations/{conversationId}/audits
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -764,7 +756,6 @@ Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluation
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -823,7 +814,6 @@ Query params must include one of conversationId, evaluatorUserId, or agentUserId
 Wraps GET /api/v2/quality/evaluations/query  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -914,7 +904,6 @@ Get an evaluator activity
 Wraps GET /api/v2/quality/evaluators/activity  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1554,7 +1543,6 @@ Wraps GET /api/v2/quality/keywordsets/{keywordSetId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1609,7 +1597,6 @@ Get the list of keyword sets
 Wraps GET /api/v2/quality/keywordsets  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2156,7 +2143,6 @@ Wraps POST /api/v2/quality/calibrations
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2213,7 +2199,6 @@ Create an evaluation
 Wraps POST /api/v2/quality/conversations/{conversationId}/evaluations  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2274,7 +2259,6 @@ Score evaluation
 Wraps POST /api/v2/quality/evaluations/scoring  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2502,7 +2486,6 @@ Create a Keyword Set
 Wraps POST /api/v2/quality/keywordsets  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2734,7 +2717,6 @@ Wraps POST /api/v2/quality/spotability
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2789,7 +2771,6 @@ Update a calibration to the specified calibration via PUT.  Editable fields incl
 Wraps PUT /api/v2/quality/calibrations/{calibrationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2848,7 +2829,6 @@ Update an evaluation
 Wraps PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3088,7 +3068,6 @@ Update a keywordSet to the specified keywordSet via PUT.
 Wraps PUT /api/v2/quality/keywordsets/{keywordSetId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

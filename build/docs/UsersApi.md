@@ -78,7 +78,6 @@ Wraps DELETE /api/v2/users/{userId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -134,7 +133,9 @@ Wraps DELETE /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:delete
+* admin
+* role_manager
+* authorization:grant:delete
 
 ### Example
 
@@ -190,7 +191,8 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -248,7 +250,8 @@ Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -307,7 +310,6 @@ Wraps DELETE /api/v2/users/{userId}/station/associatedstation
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -362,7 +364,8 @@ Wraps DELETE /api/v2/users/{userId}/station/defaultstation
 
 Requires ANY permissions: 
 
-* telephony:plugin:all* telephony:phone:assign
+* telephony:plugin:all
+* telephony:phone:assign
 
 ### Example
 
@@ -419,7 +422,6 @@ Wraps GET /api/v2/fieldconfig
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -474,7 +476,6 @@ Get a user profile listing
 Wraps GET /api/v2/profiles/users  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -545,7 +546,6 @@ Wraps GET /api/v2/users/{userId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -606,7 +606,6 @@ Wraps GET /api/v2/users/{userId}/adjacents
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -665,7 +664,6 @@ Wraps GET /api/v2/users/{userId}/callforwarding
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -720,7 +718,6 @@ Get direct reports
 Wraps GET /api/v2/users/{userId}/directreports  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -779,7 +776,6 @@ Get favorites
 Wraps GET /api/v2/users/{userId}/favorites  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -846,7 +842,6 @@ Wraps GET /api/v2/users/{userId}/geolocations/{clientId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -905,7 +900,6 @@ Wraps GET /api/v2/users/{userId}/outofoffice
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -960,7 +954,6 @@ Get user profile
 Wraps GET /api/v2/users/{userId}/profile  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1200,7 +1193,6 @@ Wraps GET /api/v2/users/{userId}/routinglanguages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1261,7 +1253,6 @@ List routing skills for user
 Wraps GET /api/v2/users/{userId}/routingskills  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1326,7 +1317,6 @@ Wraps GET /api/v2/users/{userId}/routingstatus
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1383,7 +1373,6 @@ Wraps GET /api/v2/users/{userId}/station
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1438,7 +1427,6 @@ Get superiors
 Wraps GET /api/v2/users/{userId}/superiors  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1560,7 +1548,6 @@ Wraps GET /api/v2/users
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1627,7 +1614,6 @@ Wraps GET /api/v2/users/me
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1682,7 +1668,6 @@ Search users using the q64 value returned from a previous search
 Wraps GET /api/v2/users/search  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1743,7 +1728,6 @@ Wraps PATCH /api/v2/users/{userId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1802,7 +1786,6 @@ Wraps PATCH /api/v2/users/{userId}/callforwarding
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1859,7 +1842,6 @@ The geolocation object can be patched one of three ways. Option 1: Set the &#39;
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2043,7 +2025,8 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2275,7 +2258,9 @@ Wraps POST /api/v2/users/{userId}/invite
 
 Requires ANY permissions: 
 
-* directory:user:add* user_manager* user_administration
+* directory:user:add
+* user_manager
+* user_administration
 
 ### Example
 
@@ -2333,7 +2318,8 @@ Wraps POST /api/v2/users/{userId}/password
 
 Requires ANY permissions: 
 
-* user_administration* directory:userPassword:edit
+* user_administration
+* directory:userPassword:edit
 
 ### Example
 
@@ -2391,7 +2377,8 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2450,7 +2437,8 @@ Wraps POST /api/v2/users/{userId}/routingskills
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2567,7 +2555,6 @@ Wraps POST /api/v2/users/me/password
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2621,7 +2608,6 @@ Search users
 Wraps POST /api/v2/users/search  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2678,7 +2664,6 @@ Update a user&#39;s CallForwarding
 Wraps PUT /api/v2/users/{userId}/callforwarding  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2739,7 +2724,6 @@ Wraps PUT /api/v2/users/{userId}/outofoffice
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2797,7 +2781,10 @@ Wraps PUT /api/v2/users/{userId}/profileskills
 
 Requires ANY permissions: 
 
-* directory:userProfile:edit* admin* user_manager* user_administration
+* directory:userProfile:edit
+* admin
+* user_manager
+* user_administration
 
 ### Example
 
@@ -2856,7 +2843,9 @@ Wraps PUT /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -2915,7 +2904,8 @@ Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2977,7 +2967,6 @@ Wraps PUT /api/v2/users/{userId}/routingstatus
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3036,7 +3025,6 @@ Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3093,7 +3081,8 @@ Wraps PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
 
 Requires ANY permissions: 
 
-* telephony:plugin:all* telephony:phone:assign
+* telephony:plugin:all
+* telephony:phone:assign
 
 ### Example
 

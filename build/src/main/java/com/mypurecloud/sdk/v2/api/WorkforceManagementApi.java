@@ -561,12 +561,14 @@ public class WorkforceManagementApi {
    * @param pageSize  (optional)
    * @param pageNumber  (optional)
    * @param expand  (optional)
+   * @param feature  (optional)
+   * @param divisionId  (optional)
    * @return ManagementUnitListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitListing getWorkforcemanagementManagementunits(Integer pageSize, Integer pageNumber, String expand) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand));
+  public ManagementUnitListing getWorkforcemanagementManagementunits(Integer pageSize, Integer pageNumber, String expand, String feature, String divisionId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand, feature, divisionId));
   }
 
   /**
@@ -575,20 +577,26 @@ public class WorkforceManagementApi {
    * @param pageSize  (optional)
    * @param pageNumber  (optional)
    * @param expand  (optional)
+   * @param feature  (optional)
+   * @param divisionId  (optional)
    * @return ManagementUnitListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand) throws IOException {
-    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand).withHttpInfo());
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String feature, String divisionId) throws IOException {
+    return getWorkforcemanagementManagementunits(createGetWorkforcemanagementManagementunitsRequest(pageSize, pageNumber, expand, feature, divisionId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber, String expand) {
+  private GetWorkforcemanagementManagementunitsRequest createGetWorkforcemanagementManagementunitsRequest(Integer pageSize, Integer pageNumber, String expand, String feature, String divisionId) {
     return GetWorkforcemanagementManagementunitsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withExpand(expand)
+    
+            .withFeature(feature)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }

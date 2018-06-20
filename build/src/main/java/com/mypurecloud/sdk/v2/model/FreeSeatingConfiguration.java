@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -14,25 +15,60 @@ import java.io.Serializable;
 
 public class FreeSeatingConfiguration  implements Serializable {
   
-  private Boolean enabled = null;
+
+  /**
+   * The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.
+   */
+  public enum FreeSeatingStateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ON("ON"),
+    OFF("OFF"),
+    PARTIAL("PARTIAL");
+
+    private String value;
+
+    FreeSeatingStateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FreeSeatingStateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FreeSeatingStateEnum value : FreeSeatingStateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FreeSeatingStateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private FreeSeatingStateEnum freeSeatingState = null;
   private Integer ttlMinutes = null;
 
   
   /**
-   * Whether or not free-seating is enabled for the organization
+   * The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.
    **/
-  public FreeSeatingConfiguration enabled(Boolean enabled) {
-    this.enabled = enabled;
+  public FreeSeatingConfiguration freeSeatingState(FreeSeatingStateEnum freeSeatingState) {
+    this.freeSeatingState = freeSeatingState;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether or not free-seating is enabled for the organization")
-  @JsonProperty("enabled")
-  public Boolean getEnabled() {
-    return enabled;
+  @ApiModelProperty(example = "null", value = "The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.")
+  @JsonProperty("freeSeatingState")
+  public FreeSeatingStateEnum getFreeSeatingState() {
+    return freeSeatingState;
   }
-  public void setEnabled(Boolean enabled) {
-    this.enabled = enabled;
+  public void setFreeSeatingState(FreeSeatingStateEnum freeSeatingState) {
+    this.freeSeatingState = freeSeatingState;
   }
 
   
@@ -64,13 +100,13 @@ public class FreeSeatingConfiguration  implements Serializable {
       return false;
     }
     FreeSeatingConfiguration freeSeatingConfiguration = (FreeSeatingConfiguration) o;
-    return Objects.equals(this.enabled, freeSeatingConfiguration.enabled) &&
+    return Objects.equals(this.freeSeatingState, freeSeatingConfiguration.freeSeatingState) &&
         Objects.equals(this.ttlMinutes, freeSeatingConfiguration.ttlMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, ttlMinutes);
+    return Objects.hash(freeSeatingState, ttlMinutes);
   }
 
   @Override
@@ -78,7 +114,7 @@ public class FreeSeatingConfiguration  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FreeSeatingConfiguration {\n");
     
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    freeSeatingState: ").append(toIndentedString(freeSeatingState)).append("\n");
     sb.append("    ttlMinutes: ").append(toIndentedString(ttlMinutes)).append("\n");
     sb.append("}");
     return sb.toString();

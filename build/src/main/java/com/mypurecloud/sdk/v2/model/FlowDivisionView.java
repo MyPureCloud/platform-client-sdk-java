@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,6 +18,7 @@ public class FlowDivisionView  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
 
   /**
    * Gets or Sets type
@@ -88,6 +90,24 @@ public class FlowDivisionView  implements Serializable {
 
   
   /**
+   * The division to which this entity belongs.
+   **/
+  public FlowDivisionView division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
+  }
+
+  
+  /**
    **/
   public FlowDivisionView type(TypeEnum type) {
     this.type = type;
@@ -123,13 +143,14 @@ public class FlowDivisionView  implements Serializable {
     FlowDivisionView flowDivisionView = (FlowDivisionView) o;
     return Objects.equals(this.id, flowDivisionView.id) &&
         Objects.equals(this.name, flowDivisionView.name) &&
+        Objects.equals(this.division, flowDivisionView.division) &&
         Objects.equals(this.type, flowDivisionView.type) &&
         Objects.equals(this.selfUri, flowDivisionView.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, selfUri);
+    return Objects.hash(id, name, division, type, selfUri);
   }
 
   @Override
@@ -139,6 +160,7 @@ public class FlowDivisionView  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

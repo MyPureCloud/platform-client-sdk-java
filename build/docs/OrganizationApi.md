@@ -30,7 +30,6 @@ Wraps GET /api/v2/fieldconfig
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -85,7 +84,6 @@ Get organization.
 Wraps GET /api/v2/organizations/me  
 
 Requires NO permissions: 
-
 
 
 ### Example

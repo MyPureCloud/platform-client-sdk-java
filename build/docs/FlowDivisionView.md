@@ -10,6 +10,7 @@ title: FlowDivisionView
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The flow name |  |
+| **division** | [**Division**](Division.html) | The division to which this entity belongs. |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

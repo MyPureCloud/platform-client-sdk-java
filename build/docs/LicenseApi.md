@@ -33,7 +33,9 @@ Wraps GET /api/v2/license/definitions/{licenseId}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -90,7 +92,9 @@ Wraps GET /api/v2/license/definitions
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -143,7 +147,9 @@ Wraps GET /api/v2/license/organization
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -196,7 +202,9 @@ Wraps GET /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -253,7 +261,9 @@ Wraps GET /api/v2/license/users/{userId}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -310,7 +320,9 @@ Wraps POST /api/v2/license/organization
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -367,7 +379,9 @@ Wraps POST /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 
@@ -423,7 +437,6 @@ Fetch user licenses in a batch.
 Wraps POST /api/v2/license/users  
 
 Requires NO permissions: 
-
 
 
 ### Example

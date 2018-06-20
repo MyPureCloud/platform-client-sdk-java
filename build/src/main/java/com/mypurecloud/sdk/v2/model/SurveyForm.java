@@ -25,6 +25,8 @@ public class SurveyForm  implements Serializable {
   private Boolean published = null;
   private Boolean disabled = null;
   private String contextId = null;
+  private String headerImageId = null;
+  private String headerImageUrl = null;
   private String header = null;
   private String footer = null;
   private List<QuestionGroup> questionGroups = new ArrayList<QuestionGroup>();
@@ -99,12 +101,37 @@ public class SurveyForm  implements Serializable {
   /**
    * Id of the header image appearing at the top of the form.
    **/
+  public SurveyForm headerImageId(String headerImageId) {
+    this.headerImageId = headerImageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Id of the header image appearing at the top of the form.")
+  @JsonProperty("headerImageId")
+  public String getHeaderImageId() {
+    return headerImageId;
+  }
+  public void setHeaderImageId(String headerImageId) {
+    this.headerImageId = headerImageId;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Temporary URL for accessing header image")
+  @JsonProperty("headerImageUrl")
+  public String getHeaderImageUrl() {
+    return headerImageUrl;
+  }
+
+  
+  /**
+   * Markdown text for the top of the form.
+   **/
   public SurveyForm header(String header) {
     this.header = header;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Id of the header image appearing at the top of the form.")
+  @ApiModelProperty(example = "null", value = "Markdown text for the top of the form.")
   @JsonProperty("header")
   public String getHeader() {
     return header;
@@ -191,6 +218,8 @@ public class SurveyForm  implements Serializable {
         Objects.equals(this.published, surveyForm.published) &&
         Objects.equals(this.disabled, surveyForm.disabled) &&
         Objects.equals(this.contextId, surveyForm.contextId) &&
+        Objects.equals(this.headerImageId, surveyForm.headerImageId) &&
+        Objects.equals(this.headerImageUrl, surveyForm.headerImageUrl) &&
         Objects.equals(this.header, surveyForm.header) &&
         Objects.equals(this.footer, surveyForm.footer) &&
         Objects.equals(this.questionGroups, surveyForm.questionGroups) &&
@@ -200,7 +229,7 @@ public class SurveyForm  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, disabled, contextId, header, footer, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, disabled, contextId, headerImageId, headerImageUrl, header, footer, questionGroups, publishedVersions, selfUri);
   }
 
   @Override
@@ -214,6 +243,8 @@ public class SurveyForm  implements Serializable {
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
+    sb.append("    headerImageId: ").append(toIndentedString(headerImageId)).append("\n");
+    sb.append("    headerImageUrl: ").append(toIndentedString(headerImageUrl)).append("\n");
     sb.append("    header: ").append(toIndentedString(header)).append("\n");
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
     sb.append("    questionGroups: ").append(toIndentedString(questionGroups)).append("\n");

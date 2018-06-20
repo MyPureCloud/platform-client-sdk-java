@@ -218,7 +218,8 @@ Wraps DELETE /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -276,7 +277,8 @@ Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -334,7 +336,8 @@ Wraps DELETE /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -503,7 +506,8 @@ Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -561,7 +565,8 @@ Wraps DELETE /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -617,7 +622,8 @@ Wraps DELETE /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -790,7 +796,9 @@ Wraps GET /api/v2/architect/dependencytracking
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -861,7 +869,9 @@ Wraps GET /api/v2/architect/dependencytracking/build
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -914,7 +924,9 @@ Wraps GET /api/v2/architect/dependencytracking/consumedresources
 
 Requires ANY permissions: 
 
-* admin* editor* readonly
+* admin
+* editor
+* readonly
 
 ### Example
 
@@ -977,7 +989,9 @@ Wraps GET /api/v2/architect/dependencytracking/consumingresources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1038,7 +1052,9 @@ Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1107,7 +1123,9 @@ Wraps GET /api/v2/architect/dependencytracking/object
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1176,7 +1194,9 @@ Wraps GET /api/v2/architect/dependencytracking/types/{typeId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1233,7 +1253,9 @@ Wraps GET /api/v2/architect/dependencytracking/types
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1292,7 +1314,9 @@ Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1603,7 +1627,9 @@ Wraps GET /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1660,7 +1686,9 @@ Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1729,7 +1757,9 @@ Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1788,7 +1818,9 @@ Wraps GET /api/v2/architect/prompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -1849,7 +1881,9 @@ Wraps GET /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2162,7 +2196,9 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2219,7 +2255,9 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2288,7 +2326,9 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2347,7 +2387,9 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2412,7 +2454,9 @@ Wraps GET /api/v2/architect/systemprompts
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2481,7 +2525,9 @@ Wraps GET /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2540,7 +2586,9 @@ Wraps GET /api/v2/flows/{flowId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2609,7 +2657,9 @@ Wraps GET /api/v2/flows/{flowId}/latestconfiguration
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2668,7 +2718,9 @@ Wraps GET /api/v2/flows/{flowId}/versions/{versionId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2729,7 +2781,9 @@ Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2790,7 +2844,9 @@ Wraps GET /api/v2/flows/{flowId}/versions
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -2853,7 +2909,9 @@ Wraps GET /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -3355,7 +3413,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional] |
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3412,7 +3470,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**IVR**](IVR.html)|  | [optional] |
+| **body** | [**IVR**](IVR.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3435,7 +3493,9 @@ Wraps POST /api/v2/architect/prompts/{promptId}/history
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -3492,7 +3552,8 @@ Wraps POST /api/v2/architect/prompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -3528,7 +3589,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | |
-| **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | [optional] |
+| **body** | [**PromptAssetCreate**](PromptAssetCreate.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3551,7 +3612,8 @@ Wraps POST /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -3585,7 +3647,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Prompt**](Prompt.html)|  | [optional] |
+| **body** | [**Prompt**](Prompt.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3642,7 +3704,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional] |
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3699,7 +3761,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Schedule**](Schedule.html)|  | [optional] |
+| **body** | [**Schedule**](Schedule.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3722,7 +3784,9 @@ Wraps POST /api/v2/architect/systemprompts/{promptId}/history
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -3779,7 +3843,8 @@ Wraps POST /api/v2/architect/systemprompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -3815,7 +3880,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | |
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional] |
+| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3838,7 +3903,8 @@ Wraps POST /api/v2/flows/{flowId}/versions
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -3874,7 +3940,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | |
-| **body** | **Object**|  | [optional] |
+| **body** | **Object**|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3897,7 +3963,9 @@ Wraps POST /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor* architect:user:readonly
+* architect:user:admin
+* architect:user:editor
+* architect:user:readonly
 
 ### Example
 
@@ -3931,7 +3999,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Flow**](Flow.html)|  | [optional] |
+| **body** | [**Flow**](Flow.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -3954,7 +4022,8 @@ Wraps POST /api/v2/flows/actions/checkin
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4011,7 +4080,8 @@ Wraps POST /api/v2/flows/actions/checkout
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4068,7 +4138,8 @@ Wraps POST /api/v2/flows/actions/deactivate
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4125,7 +4196,8 @@ Wraps POST /api/v2/flows/actions/publish
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4184,7 +4256,8 @@ Wraps POST /api/v2/flows/actions/revert
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4450,7 +4523,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **emergencyGroupId** | **String**| Emergency group ID | |
-| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | [optional] |
+| **body** | [**EmergencyGroup**](EmergencyGroup.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4509,7 +4582,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ivrId** | **String**| IVR id | |
-| **body** | [**IVR**](IVR.html)|  | [optional] |
+| **body** | [**IVR**](IVR.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4532,7 +4605,8 @@ Wraps PUT /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4568,7 +4642,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | |
-| **body** | [**Prompt**](Prompt.html)|  | [optional] |
+| **body** | [**Prompt**](Prompt.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4591,7 +4665,8 @@ Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4629,7 +4704,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | |
 | **languageCode** | **String**| Language | |
-| **body** | [**PromptAsset**](PromptAsset.html)|  | [optional] |
+| **body** | [**PromptAsset**](PromptAsset.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4688,7 +4763,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scheduleId** | **String**| Schedule ID | |
-| **body** | [**Schedule**](Schedule.html)|  | [optional] |
+| **body** | [**Schedule**](Schedule.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4747,7 +4822,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **scheduleGroupId** | **String**| Schedule group ID | |
-| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | [optional] |
+| **body** | [**ScheduleGroup**](ScheduleGroup.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4770,7 +4845,8 @@ Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4808,7 +4884,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **promptId** | **String**| Prompt ID | |
 | **languageCode** | **String**| Language | |
-| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | [optional] |
+| **body** | [**SystemPromptAsset**](SystemPromptAsset.html)|  | |
 {: class="table table-striped"}
 
 ### Return type
@@ -4831,7 +4907,8 @@ Wraps PUT /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin* architect:user:editor
+* architect:user:admin
+* architect:user:editor
 
 ### Example
 
@@ -4867,7 +4944,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | |
-| **body** | [**Flow**](Flow.html)|  | [optional] |
+| **body** | [**Flow**](Flow.html)|  | |
 {: class="table table-striped"}
 
 ### Return type

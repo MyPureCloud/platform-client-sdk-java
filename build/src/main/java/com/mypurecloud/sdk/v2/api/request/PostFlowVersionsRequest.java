@@ -112,6 +112,11 @@ public class PostFlowVersionsRequest {
             throw new IllegalStateException("Missing the required parameter 'flowId' when building request for PostFlowVersionsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostFlowVersionsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows/{flowId}/versions")
                 .withPathParameter("flowId", flowId)
@@ -130,9 +135,9 @@ public class PostFlowVersionsRequest {
 	}
 
 	
-	public static Builder builder(String flowId) {
+	public static Builder builder(String flowId, Object body) {
 	    return new Builder()
-	            .withRequiredParams(flowId);
+	            .withRequiredParams(flowId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PostFlowVersionsRequest {
 		
 
 		
-		public Builder withRequiredParams(String flowId) {
+		public Builder withRequiredParams(String flowId, Object body) {
 			request.setFlowId(flowId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PostFlowVersionsRequest {
             // verify the required parameter 'flowId' is set
             if (request.flowId == null) {
                 throw new IllegalStateException("Missing the required parameter 'flowId' when building request for PostFlowVersionsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostFlowVersionsRequest.");
             }
             
 			return request;

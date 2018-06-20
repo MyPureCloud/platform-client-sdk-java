@@ -22,6 +22,7 @@ public class OutboundSettings  implements Serializable {
   private Date dateModified = null;
   private Integer version = null;
   private Integer maxCallsPerAgent = null;
+  private Integer maxConfigurableCallsPerAgent = null;
   private Double maxLineUtilization = null;
   private Double abandonSeconds = null;
 
@@ -136,6 +137,13 @@ public class OutboundSettings  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The maximum number of calls that can be configured to be placed per agent on any campaign")
+  @JsonProperty("maxConfigurableCallsPerAgent")
+  public Integer getMaxConfigurableCallsPerAgent() {
+    return maxConfigurableCallsPerAgent;
+  }
+
+  
   /**
    * The maximum percentage of lines that should be used for Outbound, expressed as a decimal in the range [0.0, 1.0]
    **/
@@ -213,6 +221,7 @@ public class OutboundSettings  implements Serializable {
         Objects.equals(this.dateModified, outboundSettings.dateModified) &&
         Objects.equals(this.version, outboundSettings.version) &&
         Objects.equals(this.maxCallsPerAgent, outboundSettings.maxCallsPerAgent) &&
+        Objects.equals(this.maxConfigurableCallsPerAgent, outboundSettings.maxConfigurableCallsPerAgent) &&
         Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
         Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
         Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
@@ -221,7 +230,7 @@ public class OutboundSettings  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, selfUri);
   }
 
   @Override
@@ -235,6 +244,7 @@ public class OutboundSettings  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    maxCallsPerAgent: ").append(toIndentedString(maxCallsPerAgent)).append("\n");
+    sb.append("    maxConfigurableCallsPerAgent: ").append(toIndentedString(maxConfigurableCallsPerAgent)).append("\n");
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");

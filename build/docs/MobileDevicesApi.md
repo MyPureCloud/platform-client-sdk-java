@@ -31,7 +31,6 @@ Wraps DELETE /api/v2/mobiledevices/{deviceId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -85,7 +84,6 @@ Get device
 Wraps GET /api/v2/mobiledevices/{deviceId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -142,7 +140,6 @@ Get a list of all devices.
 Wraps GET /api/v2/mobiledevices  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -205,7 +202,6 @@ Wraps POST /api/v2/mobiledevices
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -260,7 +256,6 @@ Update device
 Wraps PUT /api/v2/mobiledevices/{deviceId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

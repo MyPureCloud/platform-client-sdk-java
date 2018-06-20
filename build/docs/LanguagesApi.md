@@ -268,7 +268,6 @@ Wraps GET /api/v2/languages/translations
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -319,7 +318,6 @@ Get the builtin translation for a language
 Wraps GET /api/v2/languages/translations/builtin  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -378,7 +376,6 @@ Wraps GET /api/v2/languages/translations/organization
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -433,7 +430,6 @@ Get effective language translation for a user
 Wraps GET /api/v2/languages/translations/users/{userId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

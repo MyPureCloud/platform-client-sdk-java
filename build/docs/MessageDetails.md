@@ -14,6 +14,7 @@ title: MessageDetails
 | **messageSegmentCount** | **Integer** | The message segment count, greater than 1 if the message content was split into multiple parts for this message type, e.g. SMS character limits. |  [optional] |
 | **messageTime** | [**Date**](Date.html) | The time when the message was sent or received. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **media** | [**List&lt;MessageMedia&gt;**](MessageMedia.html) | The media (images, files, etc) associated with this message, if any |  [optional] |
+| **stickers** | [**List&lt;MessageSticker&gt;**](MessageSticker.html) | One or more stickers associated with this message, if any |  [optional] |
 {: class="table table-striped"}
 
 

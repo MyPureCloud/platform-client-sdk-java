@@ -93,6 +93,11 @@ public class PostArchitectEmergencygroupsRequest {
 
     public ApiRequest<EmergencyGroup> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectEmergencygroupsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/architect/emergencygroups")
                 .withBody(body)
@@ -108,6 +113,11 @@ public class PostArchitectEmergencygroupsRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(EmergencyGroup body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 	
 
 	public static class Builder {
@@ -125,8 +135,19 @@ public class PostArchitectEmergencygroupsRequest {
 		
 
 		
+		public Builder withRequiredParams(EmergencyGroup body) {
+			request.setBody(body);
+			
+			return this;
+		}
+		
 
 		public PostArchitectEmergencygroupsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectEmergencygroupsRequest.");
+            }
             
 			return request;
 		}

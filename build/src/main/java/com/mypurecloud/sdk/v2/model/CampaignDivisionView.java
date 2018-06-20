@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,7 +17,7 @@ public class CampaignDivisionView  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference division = null;
+  private Division division = null;
   private String selfUri = null;
 
   
@@ -48,17 +48,17 @@ public class CampaignDivisionView  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public CampaignDivisionView division(UriReference division) {
+  public CampaignDivisionView division(Division division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public Division getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(Division division) {
     this.division = division;
   }
 

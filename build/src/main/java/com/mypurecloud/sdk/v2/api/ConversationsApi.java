@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.EmailMessage;
 import com.mypurecloud.sdk.v2.model.EmailMessageListing;
 import com.mypurecloud.sdk.v2.model.EmailConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessageConversation;
+import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
@@ -101,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
@@ -157,6 +159,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantRepla
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
@@ -3103,6 +3106,93 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get media
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param mediaId mediaId (required)
+   * @return MessageMediaData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(String conversationId, String communicationId, String mediaId) throws IOException, ApiException {
+    return  getConversationsMessageCommunicationMessagesMediaMediaId(createGetConversationsMessageCommunicationMessagesMediaMediaIdRequest(conversationId, communicationId, mediaId));
+  }
+
+  /**
+   * Get media
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param mediaId mediaId (required)
+   * @return MessageMediaData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaData> getConversationsMessageCommunicationMessagesMediaMediaIdWithHttpInfo(String conversationId, String communicationId, String mediaId) throws IOException {
+    return getConversationsMessageCommunicationMessagesMediaMediaId(createGetConversationsMessageCommunicationMessagesMediaMediaIdRequest(conversationId, communicationId, mediaId).withHttpInfo());
+  }
+
+  private GetConversationsMessageCommunicationMessagesMediaMediaIdRequest createGetConversationsMessageCommunicationMessagesMediaMediaIdRequest(String conversationId, String communicationId, String mediaId) {
+    return GetConversationsMessageCommunicationMessagesMediaMediaIdRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withCommunicationId(communicationId)
+    
+            .withMediaId(mediaId)
+    
+            .build();
+  }
+
+  /**
+   * Get media
+   * 
+   * @param request The request object
+   * @return MessageMediaData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(GetConversationsMessageCommunicationMessagesMediaMediaIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageMediaData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageMediaData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get media
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaData> getConversationsMessageCommunicationMessagesMediaMediaId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageMediaData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7798,6 +7888,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create media
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return MessageMediaData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaData postConversationsMessageCommunicationMessagesMedia(String conversationId, String communicationId) throws IOException, ApiException {
+    return  postConversationsMessageCommunicationMessagesMedia(createPostConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Create media
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return MessageMediaData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaData> postConversationsMessageCommunicationMessagesMediaWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return postConversationsMessageCommunicationMessagesMedia(createPostConversationsMessageCommunicationMessagesMediaRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private PostConversationsMessageCommunicationMessagesMediaRequest createPostConversationsMessageCommunicationMessagesMediaRequest(String conversationId, String communicationId) {
+    return PostConversationsMessageCommunicationMessagesMediaRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withCommunicationId(communicationId)
+    
+            .build();
+  }
+
+  /**
+   * Create media
+   * 
+   * @param request The request object
+   * @return MessageMediaData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageMediaData postConversationsMessageCommunicationMessagesMedia(PostConversationsMessageCommunicationMessagesMediaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageMediaData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageMediaData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create media
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageMediaData> postConversationsMessageCommunicationMessagesMedia(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageMediaData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageMediaData> response = (ApiResponse<MessageMediaData>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

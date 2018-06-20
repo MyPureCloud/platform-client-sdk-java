@@ -37,7 +37,6 @@ Wraps DELETE /api/v2/responsemanagement/libraries/{libraryId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -93,7 +92,6 @@ Wraps DELETE /api/v2/responsemanagement/responses/{responseId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -147,7 +145,6 @@ Gets a list of existing response libraries.
 Wraps GET /api/v2/responsemanagement/libraries  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -208,7 +205,6 @@ Wraps GET /api/v2/responsemanagement/libraries/{libraryId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -263,7 +259,6 @@ Get details about an existing response.
 Wraps GET /api/v2/responsemanagement/responses/{responseId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -322,7 +317,6 @@ Gets a list of existing responses.
 Wraps GET /api/v2/responsemanagement/responses  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -387,7 +381,6 @@ Wraps POST /api/v2/responsemanagement/libraries
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -442,7 +435,6 @@ Create a response.
 Wraps POST /api/v2/responsemanagement/responses  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -503,7 +495,6 @@ Wraps POST /api/v2/responsemanagement/responses/query
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -558,7 +549,6 @@ Fields that can be updated: name. The most recent version is required for update
 Wraps PUT /api/v2/responsemanagement/libraries/{libraryId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -617,7 +607,6 @@ Fields that can be updated: name, libraries, and texts. The most recent version 
 Wraps PUT /api/v2/responsemanagement/responses/{responseId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

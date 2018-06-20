@@ -43,6 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get active email conversations for the logged in user |
 | [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | Get message conversation |
+| [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
 | [**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | Get message |
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
@@ -99,6 +100,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | Create an email conversation |
 | [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | Create Fax Conversation |
 | [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | Send message |
+| [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
@@ -120,7 +122,6 @@ Delete a code used to add a communication to this participant
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -182,7 +183,6 @@ Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -238,7 +238,6 @@ Delete attachment from draft
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -412,7 +411,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/se
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -473,7 +471,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/se
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -530,7 +527,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -593,7 +589,6 @@ Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wr
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -652,7 +647,6 @@ Wraps GET /api/v2/conversations
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -709,7 +703,6 @@ Wraps GET /api/v2/conversations/calls/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -764,7 +757,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -827,7 +819,6 @@ Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participant
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -886,7 +877,6 @@ Wraps GET /api/v2/conversations/callbacks/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -941,7 +931,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1004,7 +993,6 @@ Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{partici
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1063,7 +1051,6 @@ Wraps GET /api/v2/conversations/callbacks
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1116,7 +1103,6 @@ Wraps GET /api/v2/conversations/calls
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1167,7 +1153,6 @@ Get call history
 Wraps GET /api/v2/conversations/calls/history  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1232,7 +1217,6 @@ Wraps GET /api/v2/conversations/calls/maximumconferenceparties
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1283,7 +1267,6 @@ Get chat conversation
 Wraps GET /api/v2/conversations/chats/{conversationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1340,7 +1323,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1403,7 +1385,6 @@ Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participant
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1462,7 +1443,6 @@ Wraps GET /api/v2/conversations/chats
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1513,7 +1493,6 @@ Get cobrowse conversation
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1570,7 +1549,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1633,7 +1611,6 @@ Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1692,7 +1669,6 @@ Wraps GET /api/v2/conversations/cobrowsesessions
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1743,7 +1719,6 @@ Get email conversation
 Wraps GET /api/v2/conversations/emails/{conversationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1800,7 +1775,6 @@ Get conversation message
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1861,7 +1835,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1918,7 +1891,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1973,7 +1945,6 @@ Get the wrap-up for this conversation participant.
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2036,7 +2007,6 @@ Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2095,7 +2065,6 @@ Wraps GET /api/v2/conversations/emails
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2148,7 +2117,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2187,6 +2155,67 @@ try {
 ### Return type
 
 [**MessageConversation**](MessageConversation.html)
+
+<a name="getConversationsMessageCommunicationMessagesMediaMediaId"></a>
+
+# **getConversationsMessageCommunicationMessagesMediaMediaId**
+
+
+
+> [MessageMediaData](MessageMediaData.html) getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
+
+Get media
+
+
+
+Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}  
+
+Requires ANY permissions: 
+
+* conversation:message:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+String mediaId = "mediaId_example"; // String | mediaId
+try {
+    MessageMediaData result = apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageCommunicationMessagesMediaMediaId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **communicationId** | **String**| communicationId | |
+| **mediaId** | **String**| mediaId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageMediaData**](MessageMediaData.html)
 
 <a name="getConversationsMessageMessage"></a>
 
@@ -2264,7 +2293,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2325,7 +2353,6 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2384,7 +2411,6 @@ Wraps GET /api/v2/conversations/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2435,7 +2461,6 @@ Update conversation participant.
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2495,7 +2520,6 @@ Update the attributes on a conversation participant.
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2616,7 +2640,6 @@ Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2676,7 +2699,6 @@ Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2734,7 +2756,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2797,7 +2818,6 @@ Change who can speak
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2919,7 +2939,6 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2979,7 +2998,6 @@ Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{parti
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3037,7 +3055,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3161,7 +3178,6 @@ Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3221,7 +3237,6 @@ Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participa
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3279,7 +3294,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3403,7 +3417,6 @@ Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3463,7 +3476,6 @@ Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3521,7 +3533,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3645,7 +3656,6 @@ Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3705,7 +3715,6 @@ Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{particip
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3763,7 +3772,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -3887,7 +3895,6 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{partic
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -3947,7 +3954,6 @@ Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{partic
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4005,7 +4011,6 @@ Update conversation participant&#39;s communication by disconnecting it.
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4360,7 +4365,6 @@ Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/d
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4420,7 +4424,6 @@ Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/r
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4478,7 +4481,6 @@ Create secure IVR session. Only a participant in the conversation can invoke a s
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4541,7 +4543,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4598,7 +4599,6 @@ Initiate and update consult transfer
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -4719,7 +4719,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4779,7 +4778,6 @@ Wraps POST /api/v2/conversations/calls/{conversationId}/participants
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -4836,7 +4834,6 @@ Replace this participant with the specified user and/or address
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -5012,7 +5009,6 @@ Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participan
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -5129,7 +5125,6 @@ Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -5187,7 +5182,6 @@ Send an email to an external conversation. An external conversation is one where
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -5248,7 +5242,6 @@ Wraps POST /api/v2/conversations/emails/{conversationId}/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -5305,7 +5298,6 @@ Replace this participant with the specified user and/or address
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -5424,7 +5416,6 @@ Wraps POST /api/v2/conversations/faxes
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -5525,6 +5516,65 @@ try {
 
 [**MessageData**](MessageData.html)
 
+<a name="postConversationsMessageCommunicationMessagesMedia"></a>
+
+# **postConversationsMessageCommunicationMessagesMedia**
+
+
+
+> [MessageMediaData](MessageMediaData.html) postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
+
+Create media
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media  
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+try {
+    MessageMediaData result = apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationMessagesMedia");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | |
+| **communicationId** | **String**| communicationId | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageMediaData**](MessageMediaData.html)
+
 <a name="postConversationsMessageMessagesBulk"></a>
 
 # **postConversationsMessageMessagesBulk**
@@ -5601,7 +5651,6 @@ Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{partici
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -5659,7 +5708,6 @@ Set uuiData to be sent on future commands.
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -5722,7 +5770,6 @@ Update conversation draft reply
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft  
 
 Requires NO permissions: 
-
 
 
 ### Example

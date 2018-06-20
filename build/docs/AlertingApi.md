@@ -149,7 +149,6 @@ Wraps GET /api/v2/alerting/alerts/active
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -316,7 +315,6 @@ Gets user unread count of interaction stats alerts.
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread  
 
 Requires NO permissions: 
-
 
 
 ### Example

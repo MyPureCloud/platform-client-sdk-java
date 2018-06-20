@@ -32,7 +32,6 @@ Wraps DELETE /api/v2/attributes/{attributeId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -86,7 +85,6 @@ Get details about an existing attribute.
 Wraps GET /api/v2/attributes/{attributeId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -143,7 +141,6 @@ Gets a list of existing attributes.
 Wraps GET /api/v2/attributes  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -204,7 +201,6 @@ Wraps POST /api/v2/attributes
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -261,7 +257,6 @@ Wraps POST /api/v2/attributes/query
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -316,7 +311,6 @@ Fields that can be updated: name, description. The most recent version is requir
 Wraps PUT /api/v2/attributes/{attributeId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

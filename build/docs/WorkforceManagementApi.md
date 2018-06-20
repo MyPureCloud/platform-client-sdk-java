@@ -94,7 +94,21 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
 
 Requires ANY permissions: 
 
-* wfm:activityCode:administer* wfm:agent:administer* wfm:agentSchedule:view* wfm:historicalAdherence:view* wfm:intraday:view* wfm:managementUnit:administer* wfm:publishedSchedule:view* wfm:realtimeAdherence:view* wfm:schedule:administer* wfm:schedule:generate* wfm:serviceGoalGroup:administer* wfm:shortTermForecast:administer* wfm:agentTimeOffRequest:submit* wfm:timeOffRequest:administer* wfm:workPlan:administer
+* wfm:activityCode:administer
+* wfm:agent:administer
+* wfm:agentSchedule:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:administer
+* wfm:publishedSchedule:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:administer
+* wfm:schedule:generate
+* wfm:serviceGoalGroup:administer
+* wfm:shortTermForecast:administer
+* wfm:agentTimeOffRequest:submit
+* wfm:timeOffRequest:administer
+* wfm:workPlan:administer
 
 ### Example
 
@@ -333,6 +347,9 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users
 Requires ANY permissions: 
 
 * wfm:agent:administer
+* wfm:timeOffRequest:administer
+* wfm:realtimeAdherence:view
+* wfm:historicalAdherence:view
 
 ### Example
 
@@ -379,7 +396,7 @@ try {
 
 
 
-> [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunits(pageSize, pageNumber, expand)
+> [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId)
 
 Get management units
 
@@ -388,7 +405,6 @@ Get management units
 Wraps GET /api/v2/workforcemanagement/managementunits  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -411,8 +427,10 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 Integer pageSize = 56; // Integer | 
 Integer pageNumber = 56; // Integer | 
 String expand = "expand_example"; // String | 
+String feature = "feature_example"; // String | 
+String divisionId = "divisionId_example"; // String | 
 try {
-    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber, expand);
+    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunits(pageSize, pageNumber, expand, feature, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunits");
@@ -428,6 +446,8 @@ try {
 | **pageSize** | **Integer**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **expand** | **String**|  | [optional]<br />**Values**: details |
+| **feature** | **String**|  | [optional]<br />**Values**: Agents, ActivityCodes, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
+| **divisionId** | **String**|  | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -690,7 +710,8 @@ Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
 
 Requires ANY permissions: 
 
-* wfm:schedule:administer* wfm:publishedSchedule:view
+* wfm:schedule:administer
+* wfm:publishedSchedule:view
 
 ### Example
 

@@ -112,6 +112,11 @@ public class PutArchitectSchedulegroupRequest {
             throw new IllegalStateException("Missing the required parameter 'scheduleGroupId' when building request for PutArchitectSchedulegroupRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectSchedulegroupRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/schedulegroups/{scheduleGroupId}")
                 .withPathParameter("scheduleGroupId", scheduleGroupId)
@@ -130,9 +135,9 @@ public class PutArchitectSchedulegroupRequest {
 	}
 
 	
-	public static Builder builder(String scheduleGroupId) {
+	public static Builder builder(String scheduleGroupId, ScheduleGroup body) {
 	    return new Builder()
-	            .withRequiredParams(scheduleGroupId);
+	            .withRequiredParams(scheduleGroupId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PutArchitectSchedulegroupRequest {
 		
 
 		
-		public Builder withRequiredParams(String scheduleGroupId) {
+		public Builder withRequiredParams(String scheduleGroupId, ScheduleGroup body) {
 			request.setScheduleGroupId(scheduleGroupId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PutArchitectSchedulegroupRequest {
             // verify the required parameter 'scheduleGroupId' is set
             if (request.scheduleGroupId == null) {
                 throw new IllegalStateException("Missing the required parameter 'scheduleGroupId' when building request for PutArchitectSchedulegroupRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectSchedulegroupRequest.");
             }
             
 			return request;

@@ -93,6 +93,11 @@ public class PostFlowsRequest {
 
     public ApiRequest<Flow> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostFlowsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows")
                 .withBody(body)
@@ -108,6 +113,11 @@ public class PostFlowsRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(Flow body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 	
 
 	public static class Builder {
@@ -125,8 +135,19 @@ public class PostFlowsRequest {
 		
 
 		
+		public Builder withRequiredParams(Flow body) {
+			request.setBody(body);
+			
+			return this;
+		}
+		
 
 		public PostFlowsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostFlowsRequest.");
+            }
             
 			return request;
 		}

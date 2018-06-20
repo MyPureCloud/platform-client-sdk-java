@@ -4758,7 +4758,7 @@ public class ArchitectApi {
   /**
    * Creates a new emergency group
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return EmergencyGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4770,7 +4770,7 @@ public class ArchitectApi {
   /**
    * Creates a new emergency group
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return EmergencyGroup
    * @throws IOException if the request fails to be processed
    */
@@ -4837,7 +4837,7 @@ public class ArchitectApi {
   /**
    * Create IVR config.
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return IVR
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4849,7 +4849,7 @@ public class ArchitectApi {
   /**
    * Create IVR config.
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return IVR
    * @throws IOException if the request fails to be processed
    */
@@ -4996,7 +4996,7 @@ public class ArchitectApi {
    * Create a new user prompt resource
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return PromptAsset
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5009,7 +5009,7 @@ public class ArchitectApi {
    * Create a new user prompt resource
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return PromptAsset
    * @throws IOException if the request fails to be processed
    */
@@ -5078,7 +5078,7 @@ public class ArchitectApi {
   /**
    * Create a new user prompt
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Prompt
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5090,7 +5090,7 @@ public class ArchitectApi {
   /**
    * Create a new user prompt
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Prompt
    * @throws IOException if the request fails to be processed
    */
@@ -5157,7 +5157,7 @@ public class ArchitectApi {
   /**
    * Creates a new schedule group
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return ScheduleGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5169,7 +5169,7 @@ public class ArchitectApi {
   /**
    * Creates a new schedule group
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return ScheduleGroup
    * @throws IOException if the request fails to be processed
    */
@@ -5236,7 +5236,7 @@ public class ArchitectApi {
   /**
    * Create a new schedule.
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Schedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5248,7 +5248,7 @@ public class ArchitectApi {
   /**
    * Create a new schedule.
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Schedule
    * @throws IOException if the request fails to be processed
    */
@@ -5395,7 +5395,7 @@ public class ArchitectApi {
    * Create system prompt resource override.
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return SystemPromptAsset
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5408,7 +5408,7 @@ public class ArchitectApi {
    * Create system prompt resource override.
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return SystemPromptAsset
    * @throws IOException if the request fails to be processed
    */
@@ -5478,7 +5478,7 @@ public class ArchitectApi {
    * Create flow version
    * 
    * @param flowId Flow ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return FlowVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5491,7 +5491,7 @@ public class ArchitectApi {
    * Create flow version
    * 
    * @param flowId Flow ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return FlowVersion
    * @throws IOException if the request fails to be processed
    */
@@ -5560,7 +5560,7 @@ public class ArchitectApi {
   /**
    * Create flow
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Flow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -5572,7 +5572,7 @@ public class ArchitectApi {
   /**
    * Create flow
    * 
-   * @param body  (optional)
+   * @param body  (required)
    * @return Flow
    * @throws IOException if the request fails to be processed
    */
@@ -6280,7 +6280,7 @@ public class ArchitectApi {
    * Updates a emergency group by ID
    * 
    * @param emergencyGroupId Emergency group ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return EmergencyGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6293,7 +6293,7 @@ public class ArchitectApi {
    * Updates a emergency group by ID
    * 
    * @param emergencyGroupId Emergency group ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return EmergencyGroup
    * @throws IOException if the request fails to be processed
    */
@@ -6363,7 +6363,7 @@ public class ArchitectApi {
    * Update an IVR Config.
    * 
    * @param ivrId IVR id (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return IVR
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6376,7 +6376,7 @@ public class ArchitectApi {
    * Update an IVR Config.
    * 
    * @param ivrId IVR id (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return IVR
    * @throws IOException if the request fails to be processed
    */
@@ -6446,7 +6446,7 @@ public class ArchitectApi {
    * Update specified user prompt
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Prompt
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6459,7 +6459,7 @@ public class ArchitectApi {
    * Update specified user prompt
    * 
    * @param promptId Prompt ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Prompt
    * @throws IOException if the request fails to be processed
    */
@@ -6530,7 +6530,7 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return PromptAsset
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6544,7 +6544,7 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return PromptAsset
    * @throws IOException if the request fails to be processed
    */
@@ -6616,7 +6616,7 @@ public class ArchitectApi {
    * Update schedule by ID
    * 
    * @param scheduleId Schedule ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Schedule
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6629,7 +6629,7 @@ public class ArchitectApi {
    * Update schedule by ID
    * 
    * @param scheduleId Schedule ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Schedule
    * @throws IOException if the request fails to be processed
    */
@@ -6699,7 +6699,7 @@ public class ArchitectApi {
    * Updates a schedule group by ID
    * 
    * @param scheduleGroupId Schedule group ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return ScheduleGroup
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6712,7 +6712,7 @@ public class ArchitectApi {
    * Updates a schedule group by ID
    * 
    * @param scheduleGroupId Schedule group ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return ScheduleGroup
    * @throws IOException if the request fails to be processed
    */
@@ -6783,7 +6783,7 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return SystemPromptAsset
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6797,7 +6797,7 @@ public class ArchitectApi {
    * 
    * @param promptId Prompt ID (required)
    * @param languageCode Language (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return SystemPromptAsset
    * @throws IOException if the request fails to be processed
    */
@@ -6869,7 +6869,7 @@ public class ArchitectApi {
    * Update flow
    * 
    * @param flowId Flow ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Flow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6882,7 +6882,7 @@ public class ArchitectApi {
    * Update flow
    * 
    * @param flowId Flow ID (required)
-   * @param body  (optional)
+   * @param body  (required)
    * @return Flow
    * @throws IOException if the request fails to be processed
    */

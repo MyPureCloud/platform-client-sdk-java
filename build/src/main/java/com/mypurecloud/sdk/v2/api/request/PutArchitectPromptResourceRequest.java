@@ -131,6 +131,11 @@ public class PutArchitectPromptResourceRequest {
             throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for PutArchitectPromptResourceRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectPromptResourceRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/prompts/{promptId}/resources/{languageCode}")
                 .withPathParameter("promptId", promptId)
@@ -151,9 +156,9 @@ public class PutArchitectPromptResourceRequest {
 	}
 
 	
-	public static Builder builder(String promptId, String languageCode) {
+	public static Builder builder(String promptId, String languageCode, PromptAsset body) {
 	    return new Builder()
-	            .withRequiredParams(promptId, languageCode);
+	            .withRequiredParams(promptId, languageCode, body);
 	}
 	
 
@@ -182,9 +187,10 @@ public class PutArchitectPromptResourceRequest {
 		
 
 		
-		public Builder withRequiredParams(String promptId, String languageCode) {
+		public Builder withRequiredParams(String promptId, String languageCode, PromptAsset body) {
 			request.setPromptId(promptId);
 						request.setLanguageCode(languageCode);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -200,6 +206,11 @@ public class PutArchitectPromptResourceRequest {
             // verify the required parameter 'languageCode' is set
             if (request.languageCode == null) {
                 throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for PutArchitectPromptResourceRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectPromptResourceRequest.");
             }
             
 			return request;

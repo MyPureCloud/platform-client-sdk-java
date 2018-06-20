@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
+import com.mypurecloud.sdk.v2.model.MessageSticker;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -61,6 +62,7 @@ public class MessageDetails  implements Serializable {
   private Integer messageSegmentCount = null;
   private Date messageTime = null;
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
+  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
 
   
   /**
@@ -171,6 +173,24 @@ public class MessageDetails  implements Serializable {
   }
 
   
+  /**
+   * One or more stickers associated with this message, if any
+   **/
+  public MessageDetails stickers(List<MessageSticker> stickers) {
+    this.stickers = stickers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "One or more stickers associated with this message, if any")
+  @JsonProperty("stickers")
+  public List<MessageSticker> getStickers() {
+    return stickers;
+  }
+  public void setStickers(List<MessageSticker> stickers) {
+    this.stickers = stickers;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,12 +206,13 @@ public class MessageDetails  implements Serializable {
         Objects.equals(this.messageStatus, messageDetails.messageStatus) &&
         Objects.equals(this.messageSegmentCount, messageDetails.messageSegmentCount) &&
         Objects.equals(this.messageTime, messageDetails.messageTime) &&
-        Objects.equals(this.media, messageDetails.media);
+        Objects.equals(this.media, messageDetails.media) &&
+        Objects.equals(this.stickers, messageDetails.stickers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media);
+    return Objects.hash(messageId, messageURI, messageStatus, messageSegmentCount, messageTime, media, stickers);
   }
 
   @Override
@@ -205,6 +226,7 @@ public class MessageDetails  implements Serializable {
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    messageTime: ").append(toIndentedString(messageTime)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

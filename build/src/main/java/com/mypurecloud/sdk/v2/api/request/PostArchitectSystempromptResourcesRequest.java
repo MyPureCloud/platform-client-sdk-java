@@ -112,6 +112,11 @@ public class PostArchitectSystempromptResourcesRequest {
             throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PostArchitectSystempromptResourcesRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectSystempromptResourcesRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/architect/systemprompts/{promptId}/resources")
                 .withPathParameter("promptId", promptId)
@@ -130,9 +135,9 @@ public class PostArchitectSystempromptResourcesRequest {
 	}
 
 	
-	public static Builder builder(String promptId) {
+	public static Builder builder(String promptId, SystemPromptAsset body) {
 	    return new Builder()
-	            .withRequiredParams(promptId);
+	            .withRequiredParams(promptId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PostArchitectSystempromptResourcesRequest {
 		
 
 		
-		public Builder withRequiredParams(String promptId) {
+		public Builder withRequiredParams(String promptId, SystemPromptAsset body) {
 			request.setPromptId(promptId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PostArchitectSystempromptResourcesRequest {
             // verify the required parameter 'promptId' is set
             if (request.promptId == null) {
                 throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PostArchitectSystempromptResourcesRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectSystempromptResourcesRequest.");
             }
             
 			return request;

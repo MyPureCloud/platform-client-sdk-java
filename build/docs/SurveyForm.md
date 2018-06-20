@@ -14,7 +14,9 @@ title: SurveyForm
 | **published** | **Boolean** | Is this form published |  [optional] |
 | **disabled** | **Boolean** | Is this form disabled |  [optional] |
 | **contextId** | **String** | Unique Id for all versions of this form |  |
-| **header** | **String** | Id of the header image appearing at the top of the form. |  [optional] |
+| **headerImageId** | **String** | Id of the header image appearing at the top of the form. |  [optional] |
+| **headerImageUrl** | **String** | Temporary URL for accessing header image |  [optional] |
+| **header** | **String** | Markdown text for the top of the form. |  [optional] |
 | **footer** | **String** | Markdown text for the bottom of the form. |  [optional] |
 | **questionGroups** | [**List&lt;QuestionGroup&gt;**](QuestionGroup.html) | A list of question groups |  |
 | **publishedVersions** | [**DomainEntityListingSurveyForm**](DomainEntityListingSurveyForm.html) | List of published version of this form |  [optional] |

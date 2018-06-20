@@ -67,7 +67,6 @@ Wraps DELETE /api/v2/integrations/{integrationId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -236,7 +235,6 @@ Wraps DELETE /api/v2/integrations/credentials/{credentialId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -290,7 +288,6 @@ Get integration.
 Wraps GET /api/v2/integrations/{integrationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -361,7 +358,6 @@ Wraps GET /api/v2/integrations/{integrationId}/config/current
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -416,7 +412,6 @@ List integrations
 Wraps GET /api/v2/integrations  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -484,7 +479,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -545,7 +541,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}/draft
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -606,7 +603,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -665,7 +663,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -781,7 +780,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -840,7 +840,8 @@ Wraps GET /api/v2/integrations/actions/{actionId}/templates/{fileName}
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -899,7 +900,8 @@ Wraps GET /api/v2/integrations/actions
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -972,7 +974,8 @@ Wraps GET /api/v2/integrations/actions/categories
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -1041,7 +1044,8 @@ Wraps GET /api/v2/integrations/actions/drafts
 
 Requires ANY permissions: 
 
-* integrations:action:view* bridge:actions:view
+* integrations:action:view
+* bridge:actions:view
 
 ### Example
 
@@ -1115,7 +1119,6 @@ Wraps GET /api/v2/integrations/clientapps
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1182,7 +1185,6 @@ Wraps GET /api/v2/integrations/credentials/{credentialId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1237,7 +1239,6 @@ List multiple sets of credentials
 Wraps GET /api/v2/integrations/credentials  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1298,7 +1299,6 @@ Wraps GET /api/v2/integrations/credentials/types
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1350,7 +1350,8 @@ Wraps GET /api/v2/integrations/eventlog
 
 Requires ANY permissions: 
 
-* integrations:integration:view* bridge:notification:view
+* integrations:integration:view
+* bridge:notification:view
 
 ### Example
 
@@ -1415,7 +1416,8 @@ Wraps GET /api/v2/integrations/eventlog/{eventId}
 
 Requires ANY permissions: 
 
-* integrations:integration:view* bridge:notification:view
+* integrations:integration:view
+* bridge:notification:view
 
 ### Example
 
@@ -1471,7 +1473,6 @@ Get integration type.
 Wraps GET /api/v2/integrations/types/{typeId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1530,7 +1531,6 @@ Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1587,7 +1587,6 @@ List integration types
 Wraps GET /api/v2/integrations/types  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1654,7 +1653,6 @@ Update an integration.
 Wraps PATCH /api/v2/integrations/{integrationId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1843,7 +1841,6 @@ Create an integration.
 Wraps POST /api/v2/integrations  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2076,7 +2073,8 @@ Wraps POST /api/v2/integrations/actions/{actionId}/execute
 
 Requires ANY permissions: 
 
-* integrations:action:execute* bridge:actions:execute
+* integrations:action:execute
+* bridge:actions:execute
 
 ### Example
 
@@ -2135,7 +2133,8 @@ Wraps POST /api/v2/integrations/actions/{actionId}/test
 
 Requires ANY permissions: 
 
-* integrations:action:execute* bridge:actions:execute
+* integrations:action:execute
+* bridge:actions:execute
 
 ### Example
 
@@ -2309,7 +2308,6 @@ Wraps POST /api/v2/integrations/credentials
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2364,7 +2362,6 @@ Add a vendor connection
 Wraps POST /api/v2/integrations/workforcemanagement/vendorconnection  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2423,7 +2420,6 @@ Wraps PUT /api/v2/integrations/{integrationId}/config/current
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2480,7 +2476,6 @@ Update a set of credentials
 Wraps PUT /api/v2/integrations/credentials/{credentialId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

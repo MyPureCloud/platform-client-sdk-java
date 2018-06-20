@@ -112,6 +112,11 @@ public class PutArchitectPromptRequest {
             throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PutArchitectPromptRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectPromptRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/prompts/{promptId}")
                 .withPathParameter("promptId", promptId)
@@ -130,9 +135,9 @@ public class PutArchitectPromptRequest {
 	}
 
 	
-	public static Builder builder(String promptId) {
+	public static Builder builder(String promptId, Prompt body) {
 	    return new Builder()
-	            .withRequiredParams(promptId);
+	            .withRequiredParams(promptId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PutArchitectPromptRequest {
 		
 
 		
-		public Builder withRequiredParams(String promptId) {
+		public Builder withRequiredParams(String promptId, Prompt body) {
 			request.setPromptId(promptId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PutArchitectPromptRequest {
             // verify the required parameter 'promptId' is set
             if (request.promptId == null) {
                 throw new IllegalStateException("Missing the required parameter 'promptId' when building request for PutArchitectPromptRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectPromptRequest.");
             }
             
 			return request;

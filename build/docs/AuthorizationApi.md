@@ -42,7 +42,9 @@ Wraps DELETE /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:role:delete
+* admin
+* role_manager
+* authorization:role:delete
 
 ### Example
 
@@ -98,7 +100,9 @@ Wraps DELETE /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:delete
+* admin
+* role_manager
+* authorization:grant:delete
 
 ### Example
 
@@ -153,7 +157,6 @@ Retrieve a list of all permission defined in the system.
 Wraps GET /api/v2/authorization/permissions  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -212,7 +215,6 @@ Gets the list of enabled products. Some example product names are: collaborateFr
 Wraps GET /api/v2/authorization/products  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -516,7 +518,9 @@ Wraps PATCH /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:role:edit
+* admin
+* role_manager
+* authorization:role:edit
 
 ### Example
 
@@ -750,7 +754,9 @@ Wraps PUT /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:role:edit
+* admin
+* role_manager
+* authorization:role:edit
 
 ### Example
 
@@ -984,7 +990,9 @@ Wraps PUT /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin* role_manager* authorization:grant:add
+* admin
+* role_manager
+* authorization:grant:add
 
 ### Example
 

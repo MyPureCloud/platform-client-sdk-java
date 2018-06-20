@@ -10,7 +10,7 @@ title: Flow
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The flow name |  |
-| **division** | [**UriReference**](UriReference.html) | The division to which this entity belongs. |  [optional] |
+| **division** | [**Division**](Division.html) | The division to which this entity belongs. |  [optional] |
 | **description** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **lockedUser** | [**User**](User.html) |  |  [optional] |

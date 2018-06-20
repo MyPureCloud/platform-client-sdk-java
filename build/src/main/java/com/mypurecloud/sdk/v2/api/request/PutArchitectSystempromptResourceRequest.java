@@ -131,6 +131,11 @@ public class PutArchitectSystempromptResourceRequest {
             throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for PutArchitectSystempromptResourceRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectSystempromptResourceRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}")
                 .withPathParameter("promptId", promptId)
@@ -151,9 +156,9 @@ public class PutArchitectSystempromptResourceRequest {
 	}
 
 	
-	public static Builder builder(String promptId, String languageCode) {
+	public static Builder builder(String promptId, String languageCode, SystemPromptAsset body) {
 	    return new Builder()
-	            .withRequiredParams(promptId, languageCode);
+	            .withRequiredParams(promptId, languageCode, body);
 	}
 	
 
@@ -182,9 +187,10 @@ public class PutArchitectSystempromptResourceRequest {
 		
 
 		
-		public Builder withRequiredParams(String promptId, String languageCode) {
+		public Builder withRequiredParams(String promptId, String languageCode, SystemPromptAsset body) {
 			request.setPromptId(promptId);
 						request.setLanguageCode(languageCode);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -200,6 +206,11 @@ public class PutArchitectSystempromptResourceRequest {
             // verify the required parameter 'languageCode' is set
             if (request.languageCode == null) {
                 throw new IllegalStateException("Missing the required parameter 'languageCode' when building request for PutArchitectSystempromptResourceRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectSystempromptResourceRequest.");
             }
             
 			return request;

@@ -87,7 +87,6 @@ Wraps GET /api/v2/locations
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -148,7 +147,6 @@ Wraps GET /api/v2/locations/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -205,7 +203,6 @@ Search locations
 Wraps POST /api/v2/locations/search  
 
 Requires NO permissions: 
-
 
 
 ### Example

@@ -50,7 +50,6 @@ Wraps DELETE /api/v2/voicemail/messages/{messageId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -106,7 +105,6 @@ Wraps DELETE /api/v2/voicemail/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -156,7 +154,6 @@ Get the group&#39;s mailbox information
 Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -213,7 +210,6 @@ List voicemail messages
 Wraps GET /api/v2/voicemail/groups/{groupId}/messages  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -275,7 +271,10 @@ Wraps GET /api/v2/voicemail/groups/{groupId}/policy
 
 Requires ANY permissions: 
 
-* directory:group:add* directory:group:edit* group_administration* group_creation
+* directory:group:add
+* directory:group:edit
+* group_administration
+* group_creation
 
 ### Example
 
@@ -333,7 +332,6 @@ Wraps GET /api/v2/voicemail/mailbox
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -386,7 +384,6 @@ Wraps GET /api/v2/voicemail/me/mailbox
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -437,7 +434,6 @@ List voicemail messages
 Wraps GET /api/v2/voicemail/me/messages  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -498,7 +494,6 @@ Wraps GET /api/v2/voicemail/me/policy
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -549,7 +544,6 @@ Get a voicemail message
 Wraps GET /api/v2/voicemail/messages/{messageId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -610,7 +604,6 @@ Wraps GET /api/v2/voicemail/messages/{messageId}/media
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -667,7 +660,6 @@ List voicemail messages
 Wraps GET /api/v2/voicemail/messages  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -842,7 +834,6 @@ Wraps GET /api/v2/voicemail/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -901,7 +892,6 @@ Wraps GET /api/v2/voicemail/userpolicies/{userId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -957,7 +947,10 @@ Wraps PATCH /api/v2/voicemail/groups/{groupId}/policy
 
 Requires ANY permissions: 
 
-* directory:group:add* directory:group:edit* group_administration* group_creation
+* directory:group:add
+* directory:group:edit
+* group_administration
+* group_creation
 
 ### Example
 
@@ -1017,7 +1010,6 @@ Wraps PATCH /api/v2/voicemail/me/policy
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1072,7 +1064,6 @@ A user voicemail can only be modified by its associated user. A group voicemail 
 Wraps PATCH /api/v2/voicemail/messages/{messageId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -1133,7 +1124,6 @@ Wraps PATCH /api/v2/voicemail/userpolicies/{userId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1192,7 +1182,6 @@ Wraps POST /api/v2/voicemail/messages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1249,7 +1238,6 @@ Wraps POST /api/v2/voicemail/search
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -1304,7 +1292,6 @@ A user voicemail can only be modified by its associated user. A group voicemail 
 Wraps PUT /api/v2/voicemail/messages/{messageId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

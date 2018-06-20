@@ -112,6 +112,11 @@ public class PutArchitectScheduleRequest {
             throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for PutArchitectScheduleRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectScheduleRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/schedules/{scheduleId}")
                 .withPathParameter("scheduleId", scheduleId)
@@ -130,9 +135,9 @@ public class PutArchitectScheduleRequest {
 	}
 
 	
-	public static Builder builder(String scheduleId) {
+	public static Builder builder(String scheduleId, Schedule body) {
 	    return new Builder()
-	            .withRequiredParams(scheduleId);
+	            .withRequiredParams(scheduleId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PutArchitectScheduleRequest {
 		
 
 		
-		public Builder withRequiredParams(String scheduleId) {
+		public Builder withRequiredParams(String scheduleId, Schedule body) {
 			request.setScheduleId(scheduleId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PutArchitectScheduleRequest {
             // verify the required parameter 'scheduleId' is set
             if (request.scheduleId == null) {
                 throw new IllegalStateException("Missing the required parameter 'scheduleId' when building request for PutArchitectScheduleRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectScheduleRequest.");
             }
             
 			return request;

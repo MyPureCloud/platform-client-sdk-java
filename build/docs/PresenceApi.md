@@ -90,7 +90,6 @@ Wraps GET /api/v2/presencedefinitions/{presenceId}
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -147,7 +146,6 @@ Get an Organization&#39;s list of Presence Definitions
 Wraps GET /api/v2/presencedefinitions  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -212,7 +210,6 @@ Wraps GET /api/v2/systempresences
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -263,7 +260,6 @@ Get a user&#39;s Presence
 Wraps GET /api/v2/users/{userId}/presences/{sourceId}  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -322,7 +318,6 @@ The presence object can be patched one of three ways. Option 1: Set the &#39;pri
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId}  
 
 Requires NO permissions: 
-
 
 
 ### Example

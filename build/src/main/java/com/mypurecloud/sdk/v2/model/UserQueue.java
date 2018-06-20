@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.Script;
@@ -27,7 +28,7 @@ public class UserQueue  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference division = null;
+  private Division division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -150,17 +151,17 @@ public class UserQueue  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public UserQueue division(UriReference division) {
+  public UserQueue division(Division division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public Division getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(Division division) {
     this.division = division;
   }
 

@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | Get the members of this queue |
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
+| [**getRoutingQueuesSearch**](RoutingApi.html#getRoutingQueuesSearch) | Search for queues by name |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
@@ -591,7 +592,8 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -649,7 +651,8 @@ Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -1533,6 +1536,75 @@ try {
 
 [**QueueEntityListing**](QueueEntityListing.html)
 
+<a name="getRoutingQueuesSearch"></a>
+
+# **getRoutingQueuesSearch**
+
+
+
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesSearch(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
+
+Search for queues by name
+
+
+
+Wraps GET /api/v2/routing/queues/search  
+
+Requires ANY permissions: 
+
+* routing:queue:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | Queue ID(s)
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+try {
+    QueueEntityListing result = apiInstance.getRoutingQueuesSearch(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueuesSearch");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
+| **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**QueueEntityListing**](QueueEntityListing.html)
+
 <a name="getRoutingSkill"></a>
 
 # **getRoutingSkill**
@@ -1858,7 +1930,8 @@ Wraps GET /api/v2/routing/utilization
 
 Requires ANY permissions: 
 
-* routing:utilization:manage* routing:utilization:view
+* routing:utilization:manage
+* routing:utilization:view
 
 ### Example
 
@@ -2032,7 +2105,6 @@ Wraps GET /api/v2/users/{userId}/routinglanguages
 Requires NO permissions: 
 
 
-
 ### Example
 
 ~~~java
@@ -2093,7 +2165,6 @@ List routing skills for user
 Wraps GET /api/v2/users/{userId}/routingskills  
 
 Requires NO permissions: 
-
 
 
 ### Example
@@ -2277,7 +2348,8 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -2973,7 +3045,8 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -3032,7 +3105,8 @@ Wraps POST /api/v2/users/{userId}/routingskills
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 
@@ -3445,7 +3519,8 @@ Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Requires ANY permissions: 
 
-* routing:skill:assign* admin
+* routing:skill:assign
+* admin
 
 ### Example
 

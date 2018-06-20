@@ -112,6 +112,11 @@ public class PutArchitectIvrRequest {
             throw new IllegalStateException("Missing the required parameter 'ivrId' when building request for PutArchitectIvrRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectIvrRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/architect/ivrs/{ivrId}")
                 .withPathParameter("ivrId", ivrId)
@@ -130,9 +135,9 @@ public class PutArchitectIvrRequest {
 	}
 
 	
-	public static Builder builder(String ivrId) {
+	public static Builder builder(String ivrId, IVR body) {
 	    return new Builder()
-	            .withRequiredParams(ivrId);
+	            .withRequiredParams(ivrId, body);
 	}
 	
 
@@ -156,8 +161,9 @@ public class PutArchitectIvrRequest {
 		
 
 		
-		public Builder withRequiredParams(String ivrId) {
+		public Builder withRequiredParams(String ivrId, IVR body) {
 			request.setIvrId(ivrId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -168,6 +174,11 @@ public class PutArchitectIvrRequest {
             // verify the required parameter 'ivrId' is set
             if (request.ivrId == null) {
                 throw new IllegalStateException("Missing the required parameter 'ivrId' when building request for PutArchitectIvrRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutArchitectIvrRequest.");
             }
             
 			return request;

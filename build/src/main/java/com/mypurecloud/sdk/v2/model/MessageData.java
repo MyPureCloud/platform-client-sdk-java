@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
+import com.mypurecloud.sdk.v2.model.MessageSticker;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -140,6 +141,7 @@ public class MessageData  implements Serializable {
   }
   private StatusEnum status = null;
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
+  private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
   private User createdBy = null;
   private String selfUri = null;
 
@@ -331,6 +333,24 @@ public class MessageData  implements Serializable {
 
   
   /**
+   * The sticker details associated to a message.
+   **/
+  public MessageData stickers(List<MessageSticker> stickers) {
+    this.stickers = stickers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The sticker details associated to a message.")
+  @JsonProperty("stickers")
+  public List<MessageSticker> getStickers() {
+    return stickers;
+  }
+  public void setStickers(List<MessageSticker> stickers) {
+    this.stickers = stickers;
+  }
+
+  
+  /**
    * User who sent this message.
    **/
   public MessageData createdBy(User createdBy) {
@@ -376,13 +396,14 @@ public class MessageData  implements Serializable {
         Objects.equals(this.textBody, messageData.textBody) &&
         Objects.equals(this.status, messageData.status) &&
         Objects.equals(this.media, messageData.media) &&
+        Objects.equals(this.stickers, messageData.stickers) &&
         Objects.equals(this.createdBy, messageData.createdBy) &&
         Objects.equals(this.selfUri, messageData.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, createdBy, selfUri);
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, createdBy, selfUri);
   }
 
   @Override
@@ -401,6 +422,7 @@ public class MessageData  implements Serializable {
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

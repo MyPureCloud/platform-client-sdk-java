@@ -93,6 +93,11 @@ public class PostArchitectIvrsRequest {
 
     public ApiRequest<IVR> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectIvrsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/architect/ivrs")
                 .withBody(body)
@@ -108,6 +113,11 @@ public class PostArchitectIvrsRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(IVR body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 	
 
 	public static class Builder {
@@ -125,8 +135,19 @@ public class PostArchitectIvrsRequest {
 		
 
 		
+		public Builder withRequiredParams(IVR body) {
+			request.setBody(body);
+			
+			return this;
+		}
+		
 
 		public PostArchitectIvrsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostArchitectIvrsRequest.");
+            }
             
 			return request;
 		}

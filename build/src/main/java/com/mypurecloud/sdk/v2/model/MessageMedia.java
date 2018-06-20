@@ -16,6 +16,9 @@ public class MessageMedia  implements Serializable {
   
   private String url = null;
   private String mediaType = null;
+  private Integer contentLengthBytes = null;
+  private String name = null;
+  private String id = null;
 
   
   /**
@@ -54,6 +57,60 @@ public class MessageMedia  implements Serializable {
   }
 
   
+  /**
+   * The optional content length of the the media object, in bytes.
+   **/
+  public MessageMedia contentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The optional content length of the the media object, in bytes.")
+  @JsonProperty("contentLengthBytes")
+  public Integer getContentLengthBytes() {
+    return contentLengthBytes;
+  }
+  public void setContentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+  }
+
+  
+  /**
+   * The optional name of the the media object.
+   **/
+  public MessageMedia name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The optional name of the the media object.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * The optional id of the the media object.
+   **/
+  public MessageMedia id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The optional id of the the media object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -65,12 +122,15 @@ public class MessageMedia  implements Serializable {
     }
     MessageMedia messageMedia = (MessageMedia) o;
     return Objects.equals(this.url, messageMedia.url) &&
-        Objects.equals(this.mediaType, messageMedia.mediaType);
+        Objects.equals(this.mediaType, messageMedia.mediaType) &&
+        Objects.equals(this.contentLengthBytes, messageMedia.contentLengthBytes) &&
+        Objects.equals(this.name, messageMedia.name) &&
+        Objects.equals(this.id, messageMedia.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, mediaType);
+    return Objects.hash(url, mediaType, contentLengthBytes, name, id);
   }
 
   @Override
@@ -80,6 +140,9 @@ public class MessageMedia  implements Serializable {
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    contentLengthBytes: ").append(toIndentedString(contentLengthBytes)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

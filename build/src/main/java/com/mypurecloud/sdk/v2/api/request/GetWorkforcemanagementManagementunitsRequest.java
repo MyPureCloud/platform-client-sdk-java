@@ -111,6 +111,73 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		}
 	}
 	
+	private String feature;
+	public String getFeature() {
+		return this.feature;
+	}
+
+	public void setFeature(String feature) {
+		this.feature = feature;
+	}
+
+	public GetWorkforcemanagementManagementunitsRequest withFeature(String feature) {
+	    this.setFeature(feature);
+	    return this;
+	} 
+
+	public enum featureValues { 
+		AGENTS("Agents"), 
+		ACTIVITYCODES("ActivityCodes"), 
+		HISTORICALADHERENCE("HistoricalAdherence"), 
+		INTRADAYMONITORING("IntradayMonitoring"), 
+		MANAGEMENTUNITS("ManagementUnits"), 
+		REALTIMEADHERENCE("RealTimeAdherence"), 
+		SCHEDULES("Schedules"), 
+		SERVICEGOALGROUPS("ServiceGoalGroups"), 
+		SHORTTERMFORECASTS("ShortTermForecasts"), 
+		TIMEOFFREQUESTS("TimeOffRequests"), 
+		WORKPLANS("WorkPlans");
+
+		private String value;
+
+		featureValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static featureValues fromString(String key) {
+			if (key == null) return null;
+
+			for (featureValues value : featureValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return featureValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String divisionId;
+	public String getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetWorkforcemanagementManagementunitsRequest withDivisionId(String divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,6 +206,10 @@ public class GetWorkforcemanagementManagementunitsRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("expand", "", expand)
+        
+                .withQueryParameters("feature", "", feature)
+        
+                .withQueryParameters("divisionId", "", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -179,6 +250,21 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		public Builder withExpand(expandValues expand) {
 		    request.setExpand(expand.toString());
 		    return this;
+		}
+		
+		public Builder withFeature(String feature) {
+			request.setFeature(feature);
+			return this;
+		}
+
+		public Builder withFeature(featureValues feature) {
+		    request.setFeature(feature.toString());
+		    return this;
+		}
+		
+		public Builder withDivisionId(String divisionId) {
+			request.setDivisionId(divisionId);
+			return this;
 		}
 		
 
