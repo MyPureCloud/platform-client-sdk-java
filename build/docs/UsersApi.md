@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserQueue**](UsersApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](UsersApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
+| [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
@@ -2070,6 +2071,66 @@ try {
 ### Return type
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
+
+<a name="patchUsersBulk"></a>
+
+# **patchUsersBulk**
+
+
+
+> [UserEntityListing](UserEntityListing.html) patchUsersBulk(body)
+
+Update bulk acd autoanswer on users
+
+
+
+Wraps PATCH /api/v2/users/bulk  
+
+Requires ANY permissions: 
+
+* directory:user:add
+* user_manager
+* user_administration
+* directory:user:edit
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+List<PatchUser> body = Arrays.asList(new PatchUser()); // List<PatchUser> | Users
+try {
+    UserEntityListing result = apiInstance.patchUsersBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUsersBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;PatchUser&gt;**](PatchUser.html)| Users | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserEntityListing**](UserEntityListing.html)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 

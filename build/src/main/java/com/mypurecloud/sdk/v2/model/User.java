@@ -88,6 +88,7 @@ public class User  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private Boolean acdAutoAnswer = null;
   private String selfUri = null;
 
   
@@ -475,6 +476,24 @@ public class User  implements Serializable {
   }
 
   
+  /**
+   * acd auto answer
+   **/
+  public User acdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "acd auto answer")
+  @JsonProperty("acdAutoAnswer")
+  public Boolean getAcdAutoAnswer() {
+    return acdAutoAnswer;
+  }
+  public void setAcdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -515,12 +534,13 @@ public class User  implements Serializable {
         Objects.equals(this.profileSkills, user.profileSkills) &&
         Objects.equals(this.locations, user.locations) &&
         Objects.equals(this.groups, user.groups) &&
+        Objects.equals(this.acdAutoAnswer, user.acdAutoAnswer) &&
         Objects.equals(this.selfUri, user.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, selfUri);
   }
 
   @Override
@@ -551,6 +571,7 @@ public class User  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

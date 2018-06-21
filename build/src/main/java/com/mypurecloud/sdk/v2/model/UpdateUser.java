@@ -73,6 +73,7 @@ public class UpdateUser  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Boolean acdAutoAnswer = null;
   private String selfUri = null;
 
   
@@ -345,6 +346,24 @@ public class UpdateUser  implements Serializable {
   }
 
   
+  /**
+   * The value that denotes if acdAutoAnswer is set on the user
+   **/
+  public UpdateUser acdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The value that denotes if acdAutoAnswer is set on the user")
+  @JsonProperty("acdAutoAnswer")
+  public Boolean getAcdAutoAnswer() {
+    return acdAutoAnswer;
+  }
+  public void setAcdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -378,12 +397,13 @@ public class UpdateUser  implements Serializable {
         Objects.equals(this.locations, updateUser.locations) &&
         Objects.equals(this.groups, updateUser.groups) &&
         Objects.equals(this.state, updateUser.state) &&
+        Objects.equals(this.acdAutoAnswer, updateUser.acdAutoAnswer) &&
         Objects.equals(this.selfUri, updateUser.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, acdAutoAnswer, selfUri);
   }
 
   @Override
@@ -407,6 +427,7 @@ public class UpdateUser  implements Serializable {
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

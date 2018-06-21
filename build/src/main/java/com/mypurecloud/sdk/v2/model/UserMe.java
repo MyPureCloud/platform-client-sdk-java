@@ -99,6 +99,7 @@ public class UserMe  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private Boolean acdAutoAnswer = null;
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
@@ -501,6 +502,24 @@ public class UserMe  implements Serializable {
 
   
   /**
+   * acd auto answer
+   **/
+  public UserMe acdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "acd auto answer")
+  @JsonProperty("acdAutoAnswer")
+  public Boolean getAcdAutoAnswer() {
+    return acdAutoAnswer;
+  }
+  public void setAcdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+  }
+
+  
+  /**
    * The PureCloud system date time.
    **/
   public UserMe date(ServerDate date) {
@@ -792,6 +811,7 @@ public class UserMe  implements Serializable {
         Objects.equals(this.profileSkills, userMe.profileSkills) &&
         Objects.equals(this.locations, userMe.locations) &&
         Objects.equals(this.groups, userMe.groups) &&
+        Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
         Objects.equals(this.date, userMe.date) &&
         Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
         Objects.equals(this.organization, userMe.organization) &&
@@ -811,7 +831,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
   }
 
   @Override
@@ -842,6 +862,7 @@ public class UserMe  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");

@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.PatchUser;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
@@ -82,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUsersBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
@@ -2974,6 +2976,85 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update bulk acd autoanswer on users
+   * 
+   * @param body Users (required)
+   * @return UserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserEntityListing patchUsersBulk(List<PatchUser> body) throws IOException, ApiException {
+    return  patchUsersBulk(createPatchUsersBulkRequest(body));
+  }
+
+  /**
+   * Update bulk acd autoanswer on users
+   * 
+   * @param body Users (required)
+   * @return UserEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserEntityListing> patchUsersBulkWithHttpInfo(List<PatchUser> body) throws IOException {
+    return patchUsersBulk(createPatchUsersBulkRequest(body).withHttpInfo());
+  }
+
+  private PatchUsersBulkRequest createPatchUsersBulkRequest(List<PatchUser> body) {
+    return PatchUsersBulkRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update bulk acd autoanswer on users
+   * 
+   * @param request The request object
+   * @return UserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserEntityListing patchUsersBulk(PatchUsersBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update bulk acd autoanswer on users
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserEntityListing> patchUsersBulk(ApiRequest<List<PatchUser>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

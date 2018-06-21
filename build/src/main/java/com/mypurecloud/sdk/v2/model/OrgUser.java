@@ -89,6 +89,7 @@ public class OrgUser  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private Boolean acdAutoAnswer = null;
   private Organization organization = null;
 
   
@@ -477,6 +478,24 @@ public class OrgUser  implements Serializable {
 
   
   /**
+   * acd auto answer
+   **/
+  public OrgUser acdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "acd auto answer")
+  @JsonProperty("acdAutoAnswer")
+  public Boolean getAcdAutoAnswer() {
+    return acdAutoAnswer;
+  }
+  public void setAcdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+  }
+
+  
+  /**
    **/
   public OrgUser organization(Organization organization) {
     this.organization = organization;
@@ -526,12 +545,13 @@ public class OrgUser  implements Serializable {
         Objects.equals(this.profileSkills, orgUser.profileSkills) &&
         Objects.equals(this.locations, orgUser.locations) &&
         Objects.equals(this.groups, orgUser.groups) &&
+        Objects.equals(this.acdAutoAnswer, orgUser.acdAutoAnswer) &&
         Objects.equals(this.organization, orgUser.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, organization);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, organization);
   }
 
   @Override
@@ -562,6 +582,7 @@ public class OrgUser  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();

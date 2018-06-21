@@ -89,6 +89,7 @@ public class TrustUser  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private Boolean acdAutoAnswer = null;
   private TrustUserDetails trustUserDetails = null;
 
   
@@ -477,6 +478,24 @@ public class TrustUser  implements Serializable {
 
   
   /**
+   * acd auto answer
+   **/
+  public TrustUser acdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "acd auto answer")
+  @JsonProperty("acdAutoAnswer")
+  public Boolean getAcdAutoAnswer() {
+    return acdAutoAnswer;
+  }
+  public void setAcdAutoAnswer(Boolean acdAutoAnswer) {
+    this.acdAutoAnswer = acdAutoAnswer;
+  }
+
+  
+  /**
    **/
   public TrustUser trustUserDetails(TrustUserDetails trustUserDetails) {
     this.trustUserDetails = trustUserDetails;
@@ -526,12 +545,13 @@ public class TrustUser  implements Serializable {
         Objects.equals(this.profileSkills, trustUser.profileSkills) &&
         Objects.equals(this.locations, trustUser.locations) &&
         Objects.equals(this.groups, trustUser.groups) &&
+        Objects.equals(this.acdAutoAnswer, trustUser.acdAutoAnswer) &&
         Objects.equals(this.trustUserDetails, trustUser.trustUserDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, trustUserDetails);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, trustUserDetails);
   }
 
   @Override
@@ -562,6 +582,7 @@ public class TrustUser  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    trustUserDetails: ").append(toIndentedString(trustUserDetails)).append("\n");
     sb.append("}");
     return sb.toString();

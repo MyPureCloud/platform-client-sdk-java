@@ -31,6 +31,7 @@ title: TrustUser
 | **profileSkills** | **List&lt;String&gt;** | Skills possessed by the user |  [optional] |
 | **locations** | [**List&lt;Location&gt;**](Location.html) | The user placement at each site location. |  [optional] |
 | **groups** | [**List&lt;Group&gt;**](Group.html) | The groups the user is a member of |  [optional] |
+| **acdAutoAnswer** | **Boolean** | acd auto answer |  [optional] |
 | **trustUserDetails** | [**TrustUserDetails**](TrustUserDetails.html) |  |  [optional] |
 {: class="table table-striped"}
 
