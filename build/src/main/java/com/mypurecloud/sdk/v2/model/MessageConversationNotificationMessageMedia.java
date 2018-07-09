@@ -16,6 +16,9 @@ public class MessageConversationNotificationMessageMedia  implements Serializabl
   
   private String url = null;
   private String mediaType = null;
+  private Integer contentLengthBytes = null;
+  private String name = null;
+  private String id = null;
 
   
   /**
@@ -52,6 +55,57 @@ public class MessageConversationNotificationMessageMedia  implements Serializabl
   }
 
   
+  /**
+   **/
+  public MessageConversationNotificationMessageMedia contentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contentLengthBytes")
+  public Integer getContentLengthBytes() {
+    return contentLengthBytes;
+  }
+  public void setContentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationMessageMedia name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   **/
+  public MessageConversationNotificationMessageMedia id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -63,12 +117,15 @@ public class MessageConversationNotificationMessageMedia  implements Serializabl
     }
     MessageConversationNotificationMessageMedia messageConversationNotificationMessageMedia = (MessageConversationNotificationMessageMedia) o;
     return Objects.equals(this.url, messageConversationNotificationMessageMedia.url) &&
-        Objects.equals(this.mediaType, messageConversationNotificationMessageMedia.mediaType);
+        Objects.equals(this.mediaType, messageConversationNotificationMessageMedia.mediaType) &&
+        Objects.equals(this.contentLengthBytes, messageConversationNotificationMessageMedia.contentLengthBytes) &&
+        Objects.equals(this.name, messageConversationNotificationMessageMedia.name) &&
+        Objects.equals(this.id, messageConversationNotificationMessageMedia.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, mediaType);
+    return Objects.hash(url, mediaType, contentLengthBytes, name, id);
   }
 
   @Override
@@ -78,6 +135,9 @@ public class MessageConversationNotificationMessageMedia  implements Serializabl
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    contentLengthBytes: ").append(toIndentedString(contentLengthBytes)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

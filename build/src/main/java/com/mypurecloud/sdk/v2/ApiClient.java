@@ -1,7 +1,6 @@
 package com.mypurecloud.sdk.v2;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,20 +14,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+
+import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
 
 import com.mypurecloud.sdk.v2.auth.Authentication;
-import com.mypurecloud.sdk.v2.auth.HttpBasicAuth;
-import com.mypurecloud.sdk.v2.auth.ApiKeyAuth;
 import com.mypurecloud.sdk.v2.auth.OAuth;
-import com.mypurecloud.sdk.v2.ApiDateFormat;
 import com.mypurecloud.sdk.v2.connector.*;
+import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 
 
 public class ApiClient implements AutoCloseable {
@@ -146,6 +143,26 @@ public class ApiClient implements AutoCloseable {
             }
         }
         throw new RuntimeException("No OAuth2 authentication configured!");
+    }
+
+    /**
+     * Authorizes the SDK by completing a client credentials OAuth grant
+     * @param clientId The OAuth client's Client ID
+     * @param clientSecret The OAuth client's Client Secret
+     */
+    public ApiResponse<AuthResponse> authorizeClientCredentials(String clientId, String clientSecret) throws IOException, ApiException {
+        String encodedAuth = DatatypeConverter.printBase64Binary((clientId + ":" + clientSecret).getBytes("UTF-8"));
+        ApiRequest<Void> request = ApiRequestBuilder.create("POST", "/oauth/token")
+                .withCustomHeader("Authorization", "Basic " + encodedAuth)
+                .withCustomHeader("Content-Type", "application/x-www-form-urlencoded")
+                .withFormParameter("grant_type", "client_credentials")
+                .build();
+        
+        ApiResponse<AuthResponse> response = this.getAPIResponse(request, new TypeReference<AuthResponse>() {}, true);
+        
+        setAccessToken(response.getBody().getAccess_token());
+
+        return response;
     }
 
     /**
@@ -344,7 +361,7 @@ public class ApiClient implements AutoCloseable {
      * @param queryParams The query parameters
      * @return The full URL
      */
-    private String buildUrl(String path, Map<String, String> pathParams, List<Pair> queryParams) {
+    private String buildUrl(String path, Map<String, String> pathParams, List<Pair> queryParams, boolean isAuthRequest) {
         path = path.replaceAll("\\{format\\}", "json");
         if (pathParams != null && !pathParams.isEmpty()) {
             for (Map.Entry<String, String> entry : pathParams.entrySet()) {
@@ -353,7 +370,12 @@ public class ApiClient implements AutoCloseable {
         }
 
         final StringBuilder url = new StringBuilder();
-        url.append(basePath).append(path);
+        if (isAuthRequest) {
+            String[] parts = basePath.split("\\.", 2);
+            url.append("https://login.").append(parts[1]).append(path);
+        } else {
+            url.append(basePath).append(path);
+        }
 
         if (queryParams != null && !queryParams.isEmpty()) {
             // support (constant) query string in `path`, e.g. "/posts?draft=1"
@@ -375,7 +397,7 @@ public class ApiClient implements AutoCloseable {
         return url.toString();
     }
 
-    private ApiClientConnectorRequest prepareConnectorRequest(final ApiRequest<?> request) throws IOException {
+    private ApiClientConnectorRequest prepareConnectorRequest(final ApiRequest<?> request, boolean isAuthRequest) throws IOException {
         final String path = request.getPath();
         final List<Pair> queryParams = new ArrayList<>(request.getQueryParams());
 
@@ -407,7 +429,7 @@ public class ApiClient implements AutoCloseable {
         }
 
         updateParamsForAuth(request.getAuthNames(), queryParams, headers);
-        final String url = buildUrl(path, request.getPathParams(), queryParams);
+        final String url = buildUrl(path, request.getPathParams(), queryParams, isAuthRequest);
 
         final Object body = request.getBody();
         final Map<String, Object> formParams = request.getFormParams();
@@ -483,8 +505,8 @@ public class ApiClient implements AutoCloseable {
         }
     }
 
-    private <T> ApiResponse<T> getAPIResponse(ApiRequest<?> request, TypeReference<T> returnType) throws IOException, ApiException {
-        ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request);
+    private <T> ApiResponse<T> getAPIResponse(ApiRequest<?> request, TypeReference<T> returnType, boolean isAuthRequest) throws IOException, ApiException {
+        ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request, isAuthRequest);
         ApiClientConnectorResponse connectorResponse = null;
         try {
             connectorResponse = connector.invoke(connectorRequest);
@@ -505,7 +527,7 @@ public class ApiClient implements AutoCloseable {
     private <T> Future<ApiResponse<T>> getAPIResponseAsync(ApiRequest<?> request, final TypeReference<T> returnType, final AsyncApiCallback<ApiResponse<T>> callback) {
         final SettableFuture<ApiResponse<T>> future = SettableFuture.create();
         try {
-            ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request);
+            ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request, false);
             connector.invokeAsync(connectorRequest, new AsyncApiCallback<ApiClientConnectorResponse>() {
                 @Override
                 public void onCompleted(ApiClientConnectorResponse connectorResponse) {
@@ -567,7 +589,7 @@ public class ApiClient implements AutoCloseable {
     }
 
     public <T> ApiResponse<T> invoke(ApiRequest<?> request, TypeReference<T> returnType) throws ApiException, IOException {
-        return getAPIResponse(request, returnType);
+        return getAPIResponse(request, returnType, false);
     }
 
     public <T> Future<ApiResponse<T>> invokeAsync(ApiRequest<?> request, TypeReference<T> returnType, AsyncApiCallback<ApiResponse<T>> callback) {
@@ -653,7 +675,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "40.1.0");
+            withDefaultHeader("purecloud-sdk", "40.2.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

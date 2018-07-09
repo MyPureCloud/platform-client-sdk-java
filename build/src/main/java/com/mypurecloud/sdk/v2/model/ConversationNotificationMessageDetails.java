@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationNotificationMedia;
+import com.mypurecloud.sdk.v2.model.ConversationNotificationStickers;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -60,6 +61,7 @@ public class ConversationNotificationMessageDetails  implements Serializable {
   private MessageStatusEnum messageStatus = null;
   private Integer messageSegmentCount = null;
   private List<ConversationNotificationMedia> media = new ArrayList<ConversationNotificationMedia>();
+  private List<ConversationNotificationStickers> stickers = new ArrayList<ConversationNotificationStickers>();
 
   
   /**
@@ -147,6 +149,23 @@ public class ConversationNotificationMessageDetails  implements Serializable {
   }
 
   
+  /**
+   **/
+  public ConversationNotificationMessageDetails stickers(List<ConversationNotificationStickers> stickers) {
+    this.stickers = stickers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("stickers")
+  public List<ConversationNotificationStickers> getStickers() {
+    return stickers;
+  }
+  public void setStickers(List<ConversationNotificationStickers> stickers) {
+    this.stickers = stickers;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,12 +180,13 @@ public class ConversationNotificationMessageDetails  implements Serializable {
         Objects.equals(this.messageTime, conversationNotificationMessageDetails.messageTime) &&
         Objects.equals(this.messageStatus, conversationNotificationMessageDetails.messageStatus) &&
         Objects.equals(this.messageSegmentCount, conversationNotificationMessageDetails.messageSegmentCount) &&
-        Objects.equals(this.media, conversationNotificationMessageDetails.media);
+        Objects.equals(this.media, conversationNotificationMessageDetails.media) &&
+        Objects.equals(this.stickers, conversationNotificationMessageDetails.stickers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media);
+    return Objects.hash(messageId, messageTime, messageStatus, messageSegmentCount, media, stickers);
   }
 
   @Override
@@ -179,6 +199,7 @@ public class ConversationNotificationMessageDetails  implements Serializable {
     sb.append("    messageStatus: ").append(toIndentedString(messageStatus)).append("\n");
     sb.append("    messageSegmentCount: ").append(toIndentedString(messageSegmentCount)).append("\n");
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
+    sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

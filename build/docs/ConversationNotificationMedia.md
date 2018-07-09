@@ -10,6 +10,9 @@ title: ConversationNotificationMedia
 | ------------ | ------------- | ------------- | ------------- |
 | **url** | **String** |  |  [optional] |
 | **mediaType** | **String** |  |  [optional] |
+| **contentLengthBytes** | **Integer** |  |  [optional] |
+| **name** | **String** |  |  [optional] |
+| **id** | **String** |  |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

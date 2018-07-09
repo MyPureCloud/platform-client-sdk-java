@@ -123,6 +123,9 @@ title: MessageConversationNotificationParticipants
 | LINE | &quot;LINE&quot; |
 | VIBER | &quot;VIBER&quot; |
 | WECHAT | &quot;WECHAT&quot; |
+| WHATSAPP | &quot;WHATSAPP&quot; |
+| TELEGRAM | &quot;TELEGRAM&quot; |
+| KAKAO | &quot;KAKAO&quot; |
 {: class="table table-striped"}
 
 

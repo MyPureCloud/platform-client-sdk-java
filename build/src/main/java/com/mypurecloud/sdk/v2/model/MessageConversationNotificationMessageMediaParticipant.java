@@ -224,7 +224,10 @@ public class MessageConversationNotificationMessageMediaParticipant  implements 
     FACEBOOK("FACEBOOK"),
     LINE("LINE"),
     VIBER("VIBER"),
-    WECHAT("WECHAT");
+    WECHAT("WECHAT"),
+    WHATSAPP("WHATSAPP"),
+    TELEGRAM("TELEGRAM"),
+    KAKAO("KAKAO");
 
     private String value;
 

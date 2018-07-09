@@ -35,7 +35,20 @@ import com.mypurecloud.sdk.v2.model.UsersEntityListing;
 
 ### Authenticating
 
-The Java SDK does not currently contain helper methods to complete an OAuth flow. The consuming applicaiton must complete an OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance. For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
+The Java SDK contains a helper method toe execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
+
+~~~ java
+String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
+String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+
+ApiClient apiClient = ApiClient.Builder.standard().build();
+ApiResponse<AuthResponse> authResponse = apiClient.authorizeClientCredentials(clientId, clientSecret);
+
+// Don't actually do this, this logs your auth token to the console!
+System.out.println(authResponse.getBody().toString());
+~~~
+
+For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
 
 ### Building an ApiClient Instance
 
@@ -54,7 +67,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 #### Setting the access token
 
-Provide the access token to use for API requests:
+If not authorizing using the `authorizeClientCredentials(...)` helper, provide the access token to use for API requests:
 
 ~~~ java
 .withAccessToken("aisuefh89734hfkhsaldkh348jf")
@@ -169,8 +182,14 @@ The preferred way to create a `NotificationHandler` instance is to use its build
 ~~~ java
 NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         .withWebSocketListener(new MyWebSocketListener())
+        // Individually
         .withNotificationListener(new UserPresenceListener(me.getId()))
         .withNotificationListener(new ChannelMetadataListener())
+        // As a list
+        .withNotificationListeners(new ArrayList<NotificationListener<?>>()\{\{
+            add(new UserPresenceListener(me.getId());
+            add(new ChannelMetadataListener());
+        }})
         .withAutoConnect(false)
         .build();
 ~~~
@@ -180,8 +199,14 @@ Alternatively, the `NotificationHandler` instance can be constructed with the de
 ~~~ java
 NotificationHandler notificationHandler = new NotificationHandler();
 notificationHandler.setWebSocketListener(new MyWebSocketListener());
-notificationHandler.addSubscription(new PresenceListener(me.getId()));
+// Individually
+notificationHandler.addSubscription(new UserPresenceListener(me.getId()));
 notificationHandler.addSubscription(new ChannelMetadataListener());
+// As a list
+notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>()\{\{
+            add(new UserPresenceListener(me.getId());
+            add(new ChannelMetadataListener());
+        }});
 ~~~
 
 **Send a ping**
@@ -208,8 +233,9 @@ public class UserPresenceListener implements NotificationListener<UserPresenceNo
         return UserPresenceNotification.class;
     }
 
-    public void onEvent(NotificationEvent<UserPresenceNotification> event) {
-        System.out.println("system presence -> " + event.getEventBody().getPresenceDefinition().getSystemPresence());
+    @Override
+    public void onEvent(NotificationEvent<?> event) {
+        System.out.println("system presence -> " + ((UserPresenceNotification)event.getEventBody()).getPresenceDefinition().getSystemPresence());
     }
 
     public UserPresenceListener(String userId) {
@@ -230,8 +256,8 @@ public class ChannelMetadataListener implements NotificationListener<ChannelMeta
         return ChannelMetadataNotification.class;
     }
 
-    public void onEvent(NotificationEvent<ChannelMetadataNotification> notificationEvent) {
-        System.out.println("[channel.metadata] " + notificationEvent.getEventBody().getMessage());
+    public void onEvent(NotificationEvent<?> notificationEvent) {
+        System.out.println("[channel.metadata] " + ((ChannelMetadataNotification)notificationEvent.getEventBody()).getMessage());
     }
 }
 ~~~

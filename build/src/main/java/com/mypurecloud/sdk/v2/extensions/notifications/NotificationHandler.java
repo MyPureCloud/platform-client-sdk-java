@@ -67,9 +67,7 @@ public class NotificationHandler extends Object {
         }
 
         // Set notification listeners
-        for (NotificationListener<?> listener : builder.notificationListeners) {
-            this.addSubscription(listener);
-        }
+        this.addSubscriptions(builder.notificationListeners);
 
         // Set web socket listener
         this.setWebSocketListener(builder.webSocketListener);
@@ -241,15 +239,23 @@ public class NotificationHandler extends Object {
     }
 
     public <T> void addSubscription(NotificationListener<T> listener) throws IOException, ApiException {
-        // This condition exists because channels are automatically subscribed to channel.metadata when created
-        if (!"channel.metadata".equals(listener.getTopic())) {
-            ChannelTopic channelTopic = new ChannelTopic();
-            channelTopic.setId(listener.getTopic());
-            notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), Collections.singletonList(channelTopic));
+        addSubscriptions(Collections.<NotificationListener<?>>singletonList(listener));
+    }
+
+    public void addSubscriptions(List<NotificationListener<?>> listeners) throws IOException, ApiException {
+        List<ChannelTopic> topics = new LinkedList<ChannelTopic>();
+
+        for (NotificationListener<?> listener : listeners) {
+            typeMap.put(listener.getTopic(), listener);
+
+            if (!"channel.metadata".equals(listener.getTopic())) {
+                ChannelTopic channelTopic = new ChannelTopic();
+                channelTopic.setId(listener.getTopic());
+                topics.add(channelTopic);
+            }
         }
 
-        // Add listener to map and key by topic
-        typeMap.put(listener.getTopic(), listener);
+        notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics);
     }
 
     public void RemoveSubscription(String topic) throws IOException, ApiException {

@@ -39,6 +39,7 @@ title: CampaignNotification
 | **callAnalysisLanguage** | **String** |  |  [optional] |
 | **priority** | **Integer** |  |  [optional] |
 | **contactListFilters** | [**List&lt;CampaignNotificationUriReference&gt;**](CampaignNotificationUriReference.html) |  |  [optional] |
+| **division** | [**CampaignNotificationUriReference**](CampaignNotificationUriReference.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

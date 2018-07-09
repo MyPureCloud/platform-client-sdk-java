@@ -13,6 +13,7 @@ title: ConversationNotificationMessages
 | **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
 | **messageSegmentCount** | **Integer** |  |  [optional] |
 | **media** | [**List&lt;ConversationNotificationMedia&gt;**](ConversationNotificationMedia.html) |  |  [optional] |
+| **stickers** | [**List&lt;ConversationNotificationStickers&gt;**](ConversationNotificationStickers.html) |  |  [optional] |
 {: class="table table-striped"}
 
 

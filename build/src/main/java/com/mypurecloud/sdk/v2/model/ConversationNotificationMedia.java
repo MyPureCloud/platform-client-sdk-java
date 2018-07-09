@@ -16,6 +16,9 @@ public class ConversationNotificationMedia  implements Serializable {
   
   private String url = null;
   private String mediaType = null;
+  private Integer contentLengthBytes = null;
+  private String name = null;
+  private String id = null;
 
   
   /**
@@ -52,6 +55,57 @@ public class ConversationNotificationMedia  implements Serializable {
   }
 
   
+  /**
+   **/
+  public ConversationNotificationMedia contentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contentLengthBytes")
+  public Integer getContentLengthBytes() {
+    return contentLengthBytes;
+  }
+  public void setContentLengthBytes(Integer contentLengthBytes) {
+    this.contentLengthBytes = contentLengthBytes;
+  }
+
+  
+  /**
+   **/
+  public ConversationNotificationMedia name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   **/
+  public ConversationNotificationMedia id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -63,12 +117,15 @@ public class ConversationNotificationMedia  implements Serializable {
     }
     ConversationNotificationMedia conversationNotificationMedia = (ConversationNotificationMedia) o;
     return Objects.equals(this.url, conversationNotificationMedia.url) &&
-        Objects.equals(this.mediaType, conversationNotificationMedia.mediaType);
+        Objects.equals(this.mediaType, conversationNotificationMedia.mediaType) &&
+        Objects.equals(this.contentLengthBytes, conversationNotificationMedia.contentLengthBytes) &&
+        Objects.equals(this.name, conversationNotificationMedia.name) &&
+        Objects.equals(this.id, conversationNotificationMedia.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, mediaType);
+    return Objects.hash(url, mediaType, contentLengthBytes, name, id);
   }
 
   @Override
@@ -78,6 +135,9 @@ public class ConversationNotificationMedia  implements Serializable {
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    contentLengthBytes: ").append(toIndentedString(contentLengthBytes)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
