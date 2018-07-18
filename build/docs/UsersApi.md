@@ -2881,7 +2881,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **body** | **List&lt;String&gt;**| Skills | [optional] |
+| **body** | **List&lt;String&gt;**| Skills | |
 {: class="table table-striped"}
 
 ### Return type

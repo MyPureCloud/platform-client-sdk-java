@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.FieldConfigs;
 import com.mypurecloud.sdk.v2.model.Geolocation;
@@ -43,6 +44,7 @@ public class UserMe  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private Chat chat = null;
   private String department = null;
   private String email = null;
@@ -138,6 +140,24 @@ public class UserMe  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public UserMe division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -790,6 +810,7 @@ public class UserMe  implements Serializable {
     UserMe userMe = (UserMe) o;
     return Objects.equals(this.id, userMe.id) &&
         Objects.equals(this.name, userMe.name) &&
+        Objects.equals(this.division, userMe.division) &&
         Objects.equals(this.chat, userMe.chat) &&
         Objects.equals(this.department, userMe.department) &&
         Objects.equals(this.email, userMe.email) &&
@@ -831,7 +852,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
   }
 
   @Override
@@ -841,6 +862,7 @@ public class UserMe  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    chat: ").append(toIndentedString(chat)).append("\n");
     sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");

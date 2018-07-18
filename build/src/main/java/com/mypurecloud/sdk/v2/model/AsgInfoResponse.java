@@ -26,10 +26,21 @@ public class AsgInfoResponse  implements Serializable {
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The full id of the asg <orgId>-<siteId>-ASG-<asgVersion>
+   **/
+  public AsgInfoResponse id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The full id of the asg <orgId>-<siteId>-ASG-<asgVersion>")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
   
@@ -52,14 +63,14 @@ public class AsgInfoResponse  implements Serializable {
 
   
   /**
-   * The ami ami of the asg.
+   * The version of the asg, ex '003'
    **/
   public AsgInfoResponse ami(String ami) {
     this.ami = ami;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ami ami of the asg.")
+  @ApiModelProperty(example = "null", value = "The version of the asg, ex '003'")
   @JsonProperty("ami")
   public String getAmi() {
     return ami;

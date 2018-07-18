@@ -29,12 +29,14 @@ public class FlowNotificationNotificationArchitectOperation  implements Serializ
    */
   public enum ActionNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CREATE("CREATE"),
     CHECKIN("CHECKIN"),
     DEBUG("DEBUG"),
     DELETE("DELETE"),
     HISTORY("HISTORY"),
     PUBLISH("PUBLISH"),
     STATE_CHANGE("STATE_CHANGE"),
+    UPDATE("UPDATE"),
     VALIDATE("VALIDATE");
 
     private String value;

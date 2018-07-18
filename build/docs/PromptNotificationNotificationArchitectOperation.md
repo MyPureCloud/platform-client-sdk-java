@@ -27,12 +27,14 @@ title: PromptNotificationNotificationArchitectOperation
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CREATE | &quot;CREATE&quot; |
 | CHECKIN | &quot;CHECKIN&quot; |
 | DEBUG | &quot;DEBUG&quot; |
 | DELETE | &quot;DELETE&quot; |
 | HISTORY | &quot;HISTORY&quot; |
 | PUBLISH | &quot;PUBLISH&quot; |
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; |
+| UPDATE | &quot;UPDATE&quot; |
 | VALIDATE | &quot;VALIDATE&quot; |
 
 

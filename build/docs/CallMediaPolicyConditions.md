@@ -12,6 +12,7 @@ title: CallMediaPolicyConditions
 | **dateRanges** | **List&lt;String&gt;** |  |  [optional] |
 | **forQueues** | [**List&lt;Queue&gt;**](Queue.html) |  |  [optional] |
 | **wrapupCodes** | [**List&lt;WrapupCode&gt;**](WrapupCode.html) |  |  [optional] |
+| **languages** | [**List&lt;Language&gt;**](Language.html) |  |  [optional] |
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed.html) |  |  [optional] |
 | **directions** | **List&lt;String&gt;** |  |  [optional] |
 | **duration** | [**DurationCondition**](DurationCondition.html) |  |  [optional] |

@@ -37,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
 | [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | Query Campaign Rule list |
 | [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | Query a list of dialer campaigns. |
+| [**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | Get a basic Campaign information object |
 | [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
 | [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
 | [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
@@ -1787,7 +1788,7 @@ try {
 
 
 
-> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder)
+> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)
 
 Query a list of dialer campaigns.
 
@@ -1826,10 +1827,11 @@ String dncListId = "dncListId_example"; // String | DNC list ID
 String distributionQueueId = "distributionQueueId_example"; // String | Distribution queue ID
 String edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 String callAnalysisResponseSetId = "callAnalysisResponseSetId_example"; // String | Call analysis response set ID
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder);
+    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaigns");
@@ -1852,6 +1854,7 @@ try {
 | **distributionQueueId** | **String**| Distribution queue ID | [optional] |
 | **edgeGroupId** | **String**| Edge group ID | [optional] |
 | **callAnalysisResponseSetId** | **String**| Call analysis response set ID | [optional] |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
 | **sortBy** | **String**| Sort by | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
@@ -1860,13 +1863,70 @@ try {
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
 
+<a name="getOutboundCampaignsDivisionview"></a>
+
+# **getOutboundCampaignsDivisionview**
+
+
+
+> [CampaignDivisionView](CampaignDivisionView.html) getOutboundCampaignsDivisionview(campaignId)
+
+Get a basic Campaign information object
+
+This returns a simplified version of a Campaign, consisting of name and division.
+
+Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId}  
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+try {
+    CampaignDivisionView result = apiInstance.getOutboundCampaignsDivisionview(campaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignsDivisionview");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignDivisionView**](CampaignDivisionView.html)
+
 <a name="getOutboundCampaignsDivisionviews"></a>
 
 # **getOutboundCampaignsDivisionviews**
 
 
 
-> [CampaignDivisionViewListing](CampaignDivisionViewListing.html) getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [CampaignDivisionViewListing](CampaignDivisionViewListing.html) getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
 
 Query a list of basic Campaign information objects
 
@@ -1899,10 +1959,11 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignDivisionViewListing result = apiInstance.getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    CampaignDivisionViewListing result = apiInstance.getOutboundCampaignsDivisionviews(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignsDivisionviews");
@@ -1919,6 +1980,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **sortBy** | **String**| Sort by | [optional] |
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
 {: class="table table-striped"}

@@ -76,7 +76,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaitt
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
@@ -2032,13 +2032,13 @@ public class RoutingApiAsync {
 
   
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QueueEntityListing> getRoutingQueuesSearchAsync(GetRoutingQueuesSearchRequest request, final AsyncApiCallback<QueueEntityListing> callback) {
+  public Future<QueueEntityListing> getRoutingQueuesDivisionviewsAsync(GetRoutingQueuesDivisionviewsRequest request, final AsyncApiCallback<QueueEntityListing> callback) {
     try {
       final SettableFuture<QueueEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2066,13 +2066,13 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QueueEntityListing>> getRoutingQueuesSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueEntityListing>> callback) {
+  public Future<ApiResponse<QueueEntityListing>> getRoutingQueuesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QueueEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<QueueEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

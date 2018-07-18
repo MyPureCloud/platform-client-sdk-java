@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;

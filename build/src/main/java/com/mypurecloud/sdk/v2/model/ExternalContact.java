@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
+import com.mypurecloud.sdk.v2.model.FacebookId;
+import com.mypurecloud.sdk.v2.model.LineId;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.TwitterId;
 import io.swagger.annotations.ApiModel;
@@ -37,6 +39,8 @@ public class ExternalContact  implements Serializable {
   private String otherEmail = null;
   private ContactAddress address = null;
   private TwitterId twitterId = null;
+  private LineId lineId = null;
+  private FacebookId facebookId = null;
   private Date modifyDate = null;
   private Date createDate = null;
   private ExternalOrganization externalOrganization = null;
@@ -294,6 +298,40 @@ public class ExternalContact  implements Serializable {
 
   
   /**
+   **/
+  public ExternalContact lineId(LineId lineId) {
+    this.lineId = lineId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lineId")
+  public LineId getLineId() {
+    return lineId;
+  }
+  public void setLineId(LineId lineId) {
+    this.lineId = lineId;
+  }
+
+  
+  /**
+   **/
+  public ExternalContact facebookId(FacebookId facebookId) {
+    this.facebookId = facebookId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("facebookId")
+  public FacebookId getFacebookId() {
+    return facebookId;
+  }
+  public void setFacebookId(FacebookId facebookId) {
+    this.facebookId = facebookId;
+  }
+
+  
+  /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ExternalContact modifyDate(Date modifyDate) {
@@ -364,14 +402,14 @@ public class ExternalContact  implements Serializable {
 
   
   /**
-   * A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
+   * A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.
    **/
   public ExternalContact externalSystemUrl(String externalSystemUrl) {
     this.externalSystemUrl = externalSystemUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A string that identifies an external system-of-record resource that may have more detailed information on the organization. It should be a valid URL (including the HTTP protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.")
+  @ApiModelProperty(example = "null", value = "A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace.")
   @JsonProperty("externalSystemUrl")
   public String getExternalSystemUrl() {
     return externalSystemUrl;
@@ -431,6 +469,8 @@ public class ExternalContact  implements Serializable {
         Objects.equals(this.otherEmail, externalContact.otherEmail) &&
         Objects.equals(this.address, externalContact.address) &&
         Objects.equals(this.twitterId, externalContact.twitterId) &&
+        Objects.equals(this.lineId, externalContact.lineId) &&
+        Objects.equals(this.facebookId, externalContact.facebookId) &&
         Objects.equals(this.modifyDate, externalContact.modifyDate) &&
         Objects.equals(this.createDate, externalContact.createDate) &&
         Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
@@ -442,7 +482,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
   }
 
   @Override
@@ -465,6 +505,8 @@ public class ExternalContact  implements Serializable {
     sb.append("    otherEmail: ").append(toIndentedString(otherEmail)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    twitterId: ").append(toIndentedString(twitterId)).append("\n");
+    sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
+    sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

@@ -22,6 +22,7 @@ public class RecordingMessagingMessage  implements Serializable {
   private ExternalContact fromExternalContact = null;
   private String to = null;
   private Date timestamp = null;
+  private String id = null;
   private String messageText = null;
 
   
@@ -113,6 +114,23 @@ public class RecordingMessagingMessage  implements Serializable {
   
   /**
    **/
+  public RecordingMessagingMessage id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   **/
   public RecordingMessagingMessage messageText(String messageText) {
     this.messageText = messageText;
     return this;
@@ -143,12 +161,13 @@ public class RecordingMessagingMessage  implements Serializable {
         Objects.equals(this.fromExternalContact, recordingMessagingMessage.fromExternalContact) &&
         Objects.equals(this.to, recordingMessagingMessage.to) &&
         Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
+        Objects.equals(this.id, recordingMessagingMessage.id) &&
         Objects.equals(this.messageText, recordingMessagingMessage.messageText);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, messageText);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText);
   }
 
   @Override
@@ -161,6 +180,7 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    fromExternalContact: ").append(toIndentedString(fromExternalContact)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    messageText: ").append(toIndentedString(messageText)).append("\n");
     sb.append("}");
     return sb.toString();

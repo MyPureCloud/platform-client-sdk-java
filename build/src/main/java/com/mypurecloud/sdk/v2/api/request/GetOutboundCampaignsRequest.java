@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -243,6 +244,20 @@ public class GetOutboundCampaignsRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetOutboundCampaignsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -344,6 +359,8 @@ public class GetOutboundCampaignsRequest {
         
                 .withQueryParameters("callAnalysisResponseSetId", "", callAnalysisResponseSetId)
         
+                .withQueryParameters("divisionId", "multi", divisionId)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
@@ -421,6 +438,11 @@ public class GetOutboundCampaignsRequest {
 		
 		public Builder withCallAnalysisResponseSetId(String callAnalysisResponseSetId) {
 			request.setCallAnalysisResponseSetId(callAnalysisResponseSetId);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

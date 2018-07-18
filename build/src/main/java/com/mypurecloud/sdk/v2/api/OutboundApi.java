@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -84,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
@@ -2511,14 +2513,15 @@ public class OutboundApi {
    * @param distributionQueueId Distribution queue ID (optional)
    * @param edgeGroupId Edge group ID (optional)
    * @param callAnalysisResponseSetId Call analysis response set ID (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder));
+  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -2534,16 +2537,17 @@ public class OutboundApi {
    * @param distributionQueueId Distribution queue ID (optional)
    * @param edgeGroupId Edge group ID (optional)
    * @param callAnalysisResponseSetId Call analysis response set ID (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, String sortBy, String sortOrder) {
+  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundCampaignsRequest.builder()
             .withPageSize(pageSize)
     
@@ -2564,6 +2568,8 @@ public class OutboundApi {
             .withEdgeGroupId(edgeGroupId)
     
             .withCallAnalysisResponseSetId(callAnalysisResponseSetId)
+    
+            .withDivisionId(divisionId)
     
             .withSortBy(sortBy)
     
@@ -2622,20 +2628,100 @@ public class OutboundApi {
 
   
   /**
+   * Get a basic Campaign information object
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param campaignId Campaign ID (required)
+   * @return CampaignDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDivisionView getOutboundCampaignsDivisionview(String campaignId) throws IOException, ApiException {
+    return  getOutboundCampaignsDivisionview(createGetOutboundCampaignsDivisionviewRequest(campaignId));
+  }
+
+  /**
+   * Get a basic Campaign information object
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param campaignId Campaign ID (required)
+   * @return CampaignDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDivisionView> getOutboundCampaignsDivisionviewWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignsDivisionview(createGetOutboundCampaignsDivisionviewRequest(campaignId).withHttpInfo());
+  }
+
+  private GetOutboundCampaignsDivisionviewRequest createGetOutboundCampaignsDivisionviewRequest(String campaignId) {
+    return GetOutboundCampaignsDivisionviewRequest.builder()
+            .withCampaignId(campaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get a basic Campaign information object
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request The request object
+   * @return CampaignDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignDivisionView getOutboundCampaignsDivisionview(GetOutboundCampaignsDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a basic Campaign information object
+   * This returns a simplified version of a Campaign, consisting of name and division.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignDivisionView> getOutboundCampaignsDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDivisionView> response = (ApiResponse<CampaignDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignDivisionView> response = (ApiResponse<CampaignDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignDivisionViewListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignDivisionViewListing getOutboundCampaignsDivisionviews(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public CampaignDivisionViewListing getOutboundCampaignsDivisionviews(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
   }
 
   /**
@@ -2645,16 +2731,17 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return CampaignDivisionViewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignDivisionViewListing> getOutboundCampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignDivisionViewListing> getOutboundCampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaignsDivisionviews(createGetOutboundCampaignsDivisionviewsRequest(pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCampaignsDivisionviewsRequest createGetOutboundCampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundCampaignsDivisionviewsRequest createGetOutboundCampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundCampaignsDivisionviewsRequest.builder()
             .withPageSize(pageSize)
     
@@ -2663,6 +2750,8 @@ public class OutboundApi {
             .withFilterType(filterType)
     
             .withName(name)
+    
+            .withId(id)
     
             .withSortBy(sortBy)
     

@@ -149,6 +149,10 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<MessageTypesEnum> messageTypes = new ArrayList<MessageTypesEnum>();
+  private List<String> divisionIds = new ArrayList<String>();
+  private List<String> surveyFormIds = new ArrayList<String>();
+  private NumericRange surveyTotalScore = null;
+  private NumericRange surveyNpsScore = null;
 
   
   /**
@@ -601,6 +605,78 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The divison Ids used to filter the view
+   **/
+  public ViewFilter divisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The divison Ids used to filter the view")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
+  }
+  public void setDivisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+  }
+
+  
+  /**
+   * The survey form ids used to filter the view
+   **/
+  public ViewFilter surveyFormIds(List<String> surveyFormIds) {
+    this.surveyFormIds = surveyFormIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The survey form ids used to filter the view")
+  @JsonProperty("surveyFormIds")
+  public List<String> getSurveyFormIds() {
+    return surveyFormIds;
+  }
+  public void setSurveyFormIds(List<String> surveyFormIds) {
+    this.surveyFormIds = surveyFormIds;
+  }
+
+  
+  /**
+   * The survey total score used to filter the view
+   **/
+  public ViewFilter surveyTotalScore(NumericRange surveyTotalScore) {
+    this.surveyTotalScore = surveyTotalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The survey total score used to filter the view")
+  @JsonProperty("surveyTotalScore")
+  public NumericRange getSurveyTotalScore() {
+    return surveyTotalScore;
+  }
+  public void setSurveyTotalScore(NumericRange surveyTotalScore) {
+    this.surveyTotalScore = surveyTotalScore;
+  }
+
+  
+  /**
+   * The survey NPS score used to filter the view
+   **/
+  public ViewFilter surveyNpsScore(NumericRange surveyNpsScore) {
+    this.surveyNpsScore = surveyNpsScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The survey NPS score used to filter the view")
+  @JsonProperty("surveyNpsScore")
+  public NumericRange getSurveyNpsScore() {
+    return surveyNpsScore;
+  }
+  public void setSurveyNpsScore(NumericRange surveyNpsScore) {
+    this.surveyNpsScore = surveyNpsScore;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -635,12 +711,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.evaluatorIds, viewFilter.evaluatorIds) &&
         Objects.equals(this.transferred, viewFilter.transferred) &&
         Objects.equals(this.abandoned, viewFilter.abandoned) &&
-        Objects.equals(this.messageTypes, viewFilter.messageTypes);
+        Objects.equals(this.messageTypes, viewFilter.messageTypes) &&
+        Objects.equals(this.divisionIds, viewFilter.divisionIds) &&
+        Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
+        Objects.equals(this.surveyTotalScore, viewFilter.surveyTotalScore) &&
+        Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore);
   }
 
   @Override
@@ -673,6 +753,10 @@ public class ViewFilter  implements Serializable {
     sb.append("    transferred: ").append(toIndentedString(transferred)).append("\n");
     sb.append("    abandoned: ").append(toIndentedString(abandoned)).append("\n");
     sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    surveyFormIds: ").append(toIndentedString(surveyFormIds)).append("\n");
+    sb.append("    surveyTotalScore: ").append(toIndentedString(surveyTotalScore)).append("\n");
+    sb.append("    surveyNpsScore: ").append(toIndentedString(surveyNpsScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.SurveyFormUriReference;
+import com.mypurecloud.sdk.v2.model.PublishedSurveyFormReference;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -16,25 +16,27 @@ import java.io.Serializable;
 
 public class SurveyAssignment  implements Serializable {
   
-  private SurveyFormUriReference surveyForm = null;
+  private PublishedSurveyFormReference surveyForm = null;
   private UriReference flow = null;
   private String inviteTimeInterval = null;
+  private String sendingUser = null;
+  private String sendingDomain = null;
 
   
   /**
    * The survey form used for this survey.
    **/
-  public SurveyAssignment surveyForm(SurveyFormUriReference surveyForm) {
+  public SurveyAssignment surveyForm(PublishedSurveyFormReference surveyForm) {
     this.surveyForm = surveyForm;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The survey form used for this survey.")
   @JsonProperty("surveyForm")
-  public SurveyFormUriReference getSurveyForm() {
+  public PublishedSurveyFormReference getSurveyForm() {
     return surveyForm;
   }
-  public void setSurveyForm(SurveyFormUriReference surveyForm) {
+  public void setSurveyForm(PublishedSurveyFormReference surveyForm) {
     this.surveyForm = surveyForm;
   }
 
@@ -75,6 +77,42 @@ public class SurveyAssignment  implements Serializable {
   }
 
   
+  /**
+   * User together with sendingDomain used to send email, null to use no-reply
+   **/
+  public SurveyAssignment sendingUser(String sendingUser) {
+    this.sendingUser = sendingUser;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User together with sendingDomain used to send email, null to use no-reply")
+  @JsonProperty("sendingUser")
+  public String getSendingUser() {
+    return sendingUser;
+  }
+  public void setSendingUser(String sendingUser) {
+    this.sendingUser = sendingUser;
+  }
+
+  
+  /**
+   * Validated email domain, required
+   **/
+  public SurveyAssignment sendingDomain(String sendingDomain) {
+    this.sendingDomain = sendingDomain;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Validated email domain, required")
+  @JsonProperty("sendingDomain")
+  public String getSendingDomain() {
+    return sendingDomain;
+  }
+  public void setSendingDomain(String sendingDomain) {
+    this.sendingDomain = sendingDomain;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,12 +125,14 @@ public class SurveyAssignment  implements Serializable {
     SurveyAssignment surveyAssignment = (SurveyAssignment) o;
     return Objects.equals(this.surveyForm, surveyAssignment.surveyForm) &&
         Objects.equals(this.flow, surveyAssignment.flow) &&
-        Objects.equals(this.inviteTimeInterval, surveyAssignment.inviteTimeInterval);
+        Objects.equals(this.inviteTimeInterval, surveyAssignment.inviteTimeInterval) &&
+        Objects.equals(this.sendingUser, surveyAssignment.sendingUser) &&
+        Objects.equals(this.sendingDomain, surveyAssignment.sendingDomain);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyForm, flow, inviteTimeInterval);
+    return Objects.hash(surveyForm, flow, inviteTimeInterval, sendingUser, sendingDomain);
   }
 
   @Override
@@ -103,6 +143,8 @@ public class SurveyAssignment  implements Serializable {
     sb.append("    surveyForm: ").append(toIndentedString(surveyForm)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    inviteTimeInterval: ").append(toIndentedString(inviteTimeInterval)).append("\n");
+    sb.append("    sendingUser: ").append(toIndentedString(sendingUser)).append("\n");
+    sb.append("    sendingDomain: ").append(toIndentedString(sendingDomain)).append("\n");
     sb.append("}");
     return sb.toString();
   }

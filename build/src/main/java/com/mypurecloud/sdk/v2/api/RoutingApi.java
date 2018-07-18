@@ -73,7 +73,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaitt
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
-import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
@@ -2186,7 +2186,7 @@ public class RoutingApi {
 
   
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -2199,12 +2199,12 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueuesSearch(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
-    return  getRoutingQueuesSearch(createGetRoutingQueuesSearchRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId));
+  public QueueEntityListing getRoutingQueuesDivisionviews(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingQueuesDivisionviews(createGetRoutingQueuesDivisionviewsRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId));
   }
 
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
@@ -2216,12 +2216,12 @@ public class RoutingApi {
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesSearchWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException {
-    return getRoutingQueuesSearch(createGetRoutingQueuesSearchRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException {
+    return getRoutingQueuesDivisionviews(createGetRoutingQueuesDivisionviewsRequest(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId).withHttpInfo());
   }
 
-  private GetRoutingQueuesSearchRequest createGetRoutingQueuesSearchRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) {
-    return GetRoutingQueuesSearchRequest.builder()
+  private GetRoutingQueuesDivisionviewsRequest createGetRoutingQueuesDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, List<String> id, List<String> divisionId) {
+    return GetRoutingQueuesDivisionviewsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
@@ -2240,14 +2240,14 @@ public class RoutingApi {
   }
 
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request The request object
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueuesSearch(GetRoutingQueuesSearchRequest request) throws IOException, ApiException {
+  public QueueEntityListing getRoutingQueuesDivisionviews(GetRoutingQueuesDivisionviewsRequest request) throws IOException, ApiException {
     try {
       ApiResponse<QueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueEntityListing>() {});
       return response.getBody();
@@ -2259,13 +2259,13 @@ public class RoutingApi {
   }
 
   /**
-   * Search for queues by name
+   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesSearch(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviews(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<QueueEntityListing>() {});
     }

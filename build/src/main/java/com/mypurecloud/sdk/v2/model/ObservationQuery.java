@@ -39,6 +39,8 @@ public class ObservationQuery  implements Serializable {
     THELDCOMPLETE("tHeldComplete"),
     TACW("tAcw"),
     THANDLE("tHandle"),
+    TCONTACTING("tContacting"),
+    TDIALING("tDialing"),
     TWAIT("tWait"),
     TAGENTROUTINGSTATUS("tAgentRoutingStatus"),
     TORGANIZATIONPRESENCE("tOrganizationPresence"),

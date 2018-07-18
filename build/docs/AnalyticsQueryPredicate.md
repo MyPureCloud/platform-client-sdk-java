@@ -140,6 +140,8 @@ title: AnalyticsQueryPredicate
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TACW | &quot;tAcw&quot; |
 | THANDLE | &quot;tHandle&quot; |
+| TCONTACTING | &quot;tContacting&quot; |
+| TDIALING | &quot;tDialing&quot; |
 | TWAIT | &quot;tWait&quot; |
 | TAGENTROUTINGSTATUS | &quot;tAgentRoutingStatus&quot; |
 | TORGANIZATIONPRESENCE | &quot;tOrganizationPresence&quot; |

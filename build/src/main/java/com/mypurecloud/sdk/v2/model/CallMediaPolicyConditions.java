@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
+import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
 import com.mypurecloud.sdk.v2.model.User;
@@ -25,6 +26,7 @@ public class CallMediaPolicyConditions  implements Serializable {
   private List<String> dateRanges = new ArrayList<String>();
   private List<Queue> forQueues = new ArrayList<Queue>();
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
+  private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
 
   /**
@@ -133,6 +135,23 @@ public class CallMediaPolicyConditions  implements Serializable {
   
   /**
    **/
+  public CallMediaPolicyConditions languages(List<Language> languages) {
+    this.languages = languages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("languages")
+  public List<Language> getLanguages() {
+    return languages;
+  }
+  public void setLanguages(List<Language> languages) {
+    this.languages = languages;
+  }
+
+  
+  /**
+   **/
   public CallMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
     this.timeAllowed = timeAllowed;
     return this;
@@ -196,6 +215,7 @@ public class CallMediaPolicyConditions  implements Serializable {
         Objects.equals(this.dateRanges, callMediaPolicyConditions.dateRanges) &&
         Objects.equals(this.forQueues, callMediaPolicyConditions.forQueues) &&
         Objects.equals(this.wrapupCodes, callMediaPolicyConditions.wrapupCodes) &&
+        Objects.equals(this.languages, callMediaPolicyConditions.languages) &&
         Objects.equals(this.timeAllowed, callMediaPolicyConditions.timeAllowed) &&
         Objects.equals(this.directions, callMediaPolicyConditions.directions) &&
         Objects.equals(this.duration, callMediaPolicyConditions.duration);
@@ -203,7 +223,7 @@ public class CallMediaPolicyConditions  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, timeAllowed, directions, duration);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed, directions, duration);
   }
 
   @Override
@@ -215,6 +235,7 @@ public class CallMediaPolicyConditions  implements Serializable {
     sb.append("    dateRanges: ").append(toIndentedString(dateRanges)).append("\n");
     sb.append("    forQueues: ").append(toIndentedString(forQueues)).append("\n");
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
     sb.append("    directions: ").append(toIndentedString(directions)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");

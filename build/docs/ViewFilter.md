@@ -33,6 +33,10 @@ title: ViewFilter
 | **transferred** | **Boolean** | Indicates filtering for transfers |  [optional] |
 | **abandoned** | **Boolean** | Indicates filtering for abandons |  [optional] |
 | **messageTypes** | **List&lt;String&gt;** | The message media types used to filter the view |  [optional] |
+| **divisionIds** | **List&lt;String&gt;** | The divison Ids used to filter the view |  [optional] |
+| **surveyFormIds** | **List&lt;String&gt;** | The survey form ids used to filter the view |  [optional] |
+| **surveyTotalScore** | [**NumericRange**](NumericRange.html) | The survey total score used to filter the view |  [optional] |
+| **surveyNpsScore** | [**NumericRange**](NumericRange.html) | The survey NPS score used to filter the view |  [optional] |
 {: class="table table-striped"}
 {: class="table table-striped"}
 

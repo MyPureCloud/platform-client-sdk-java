@@ -32,7 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | Get the members of this queue |
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
-| [**getRoutingQueuesSearch**](RoutingApi.html#getRoutingQueuesSearch) | Search for queues by name |
+| [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
@@ -1536,19 +1536,19 @@ try {
 
 [**QueueEntityListing**](QueueEntityListing.html)
 
-<a name="getRoutingQueuesSearch"></a>
+<a name="getRoutingQueuesDivisionviews"></a>
 
-# **getRoutingQueuesSearch**
-
-
-
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesSearch(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
-
-Search for queues by name
+# **getRoutingQueuesDivisionviews**
 
 
 
-Wraps GET /api/v2/routing/queues/search  
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
+
+Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+
+
+
+Wraps GET /api/v2/routing/queues/divisionviews  
 
 Requires ANY permissions: 
 
@@ -1579,10 +1579,10 @@ String name = "name_example"; // String | Name
 List<String> id = Arrays.asList("id_example"); // List<String> | Queue ID(s)
 List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueuesSearch(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId);
+    QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling RoutingApi#getRoutingQueuesSearch");
+    System.err.println("Exception when calling RoutingApi#getRoutingQueuesDivisionviews");
     e.printStackTrace();
 }
 ~~~

@@ -4027,7 +4027,7 @@ public class UsersApi {
    * Update profile skills for a user
    * 
    * @param userId User ID (required)
-   * @param body Skills (optional)
+   * @param body Skills (required)
    * @return List<String>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4040,7 +4040,7 @@ public class UsersApi {
    * Update profile skills for a user
    * 
    * @param userId User ID (required)
-   * @param body Skills (optional)
+   * @param body Skills (required)
    * @return List<String>
    * @throws IOException if the request fails to be processed
    */

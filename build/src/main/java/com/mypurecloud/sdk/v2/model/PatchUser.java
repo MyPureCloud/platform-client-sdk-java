@@ -15,32 +15,25 @@ import java.io.Serializable;
 public class PatchUser  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private Boolean acdAutoAnswer = null;
   private String selfUri = null;
 
+  
+  /**
+   * The globally unique identifier for the object.
+   **/
+  public PatchUser id(String id) {
+    this.id = id;
+    return this;
+  }
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-
-  
-  /**
-   **/
-  public PatchUser name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
+  public void setId(String id) {
+    this.id = id;
   }
 
   
@@ -80,14 +73,13 @@ public class PatchUser  implements Serializable {
     }
     PatchUser patchUser = (PatchUser) o;
     return Objects.equals(this.id, patchUser.id) &&
-        Objects.equals(this.name, patchUser.name) &&
         Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer) &&
         Objects.equals(this.selfUri, patchUser.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, acdAutoAnswer, selfUri);
+    return Objects.hash(id, acdAutoAnswer, selfUri);
   }
 
   @Override
@@ -96,7 +88,6 @@ public class PatchUser  implements Serializable {
     sb.append("class PatchUser {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

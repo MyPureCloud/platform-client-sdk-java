@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OrgUser;
 import com.mypurecloud.sdk.v2.model.Organization;
+import com.mypurecloud.sdk.v2.model.TrusteeAuthorization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -22,6 +23,7 @@ public class Trustor  implements Serializable {
   private Date dateCreated = null;
   private OrgUser createdBy = null;
   private Organization organization = null;
+  private TrusteeAuthorization authorization = null;
   private String selfUri = null;
 
   
@@ -93,6 +95,24 @@ public class Trustor  implements Serializable {
   }
 
   
+  /**
+   * Authorization for the trustee user has in this trustor organization
+   **/
+  public Trustor authorization(TrusteeAuthorization authorization) {
+    this.authorization = authorization;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Authorization for the trustee user has in this trustor organization")
+  @JsonProperty("authorization")
+  public TrusteeAuthorization getAuthorization() {
+    return authorization;
+  }
+  public void setAuthorization(TrusteeAuthorization authorization) {
+    this.authorization = authorization;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -115,12 +135,13 @@ public class Trustor  implements Serializable {
         Objects.equals(this.dateCreated, trustor.dateCreated) &&
         Objects.equals(this.createdBy, trustor.createdBy) &&
         Objects.equals(this.organization, trustor.organization) &&
+        Objects.equals(this.authorization, trustor.authorization) &&
         Objects.equals(this.selfUri, trustor.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, enabled, dateCreated, createdBy, organization, selfUri);
+    return Objects.hash(id, enabled, dateCreated, createdBy, organization, authorization, selfUri);
   }
 
   @Override
@@ -133,6 +154,7 @@ public class Trustor  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
+    sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

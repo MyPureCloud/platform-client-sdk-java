@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.TimeAllowed;
 import com.mypurecloud.sdk.v2.model.User;
@@ -24,6 +25,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
   private List<String> dateRanges = new ArrayList<String>();
   private List<Queue> forQueues = new ArrayList<Queue>();
   private List<WrapupCode> wrapupCodes = new ArrayList<WrapupCode>();
+  private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
 
   
@@ -97,6 +99,23 @@ public class MessageMediaPolicyConditions  implements Serializable {
   
   /**
    **/
+  public MessageMediaPolicyConditions languages(List<Language> languages) {
+    this.languages = languages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("languages")
+  public List<Language> getLanguages() {
+    return languages;
+  }
+  public void setLanguages(List<Language> languages) {
+    this.languages = languages;
+  }
+
+  
+  /**
+   **/
   public MessageMediaPolicyConditions timeAllowed(TimeAllowed timeAllowed) {
     this.timeAllowed = timeAllowed;
     return this;
@@ -126,12 +145,13 @@ public class MessageMediaPolicyConditions  implements Serializable {
         Objects.equals(this.dateRanges, messageMediaPolicyConditions.dateRanges) &&
         Objects.equals(this.forQueues, messageMediaPolicyConditions.forQueues) &&
         Objects.equals(this.wrapupCodes, messageMediaPolicyConditions.wrapupCodes) &&
+        Objects.equals(this.languages, messageMediaPolicyConditions.languages) &&
         Objects.equals(this.timeAllowed, messageMediaPolicyConditions.timeAllowed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, timeAllowed);
+    return Objects.hash(forUsers, dateRanges, forQueues, wrapupCodes, languages, timeAllowed);
   }
 
   @Override
@@ -143,6 +163,7 @@ public class MessageMediaPolicyConditions  implements Serializable {
     sb.append("    dateRanges: ").append(toIndentedString(dateRanges)).append("\n");
     sb.append("    forQueues: ").append(toIndentedString(forQueues)).append("\n");
     sb.append("    wrapupCodes: ").append(toIndentedString(wrapupCodes)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    timeAllowed: ").append(toIndentedString(timeAllowed)).append("\n");
     sb.append("}");
     return sb.toString();

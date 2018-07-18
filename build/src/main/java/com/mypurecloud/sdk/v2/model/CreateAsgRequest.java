@@ -19,7 +19,7 @@ public class CreateAsgRequest  implements Serializable {
   private String edgeGroupId = null;
   private String externalTrunkBaseId = null;
   private String asgLogicalIAMInstanceProfile = null;
-  private Boolean asgAmi = null;
+  private String asgAmi = null;
 
   /**
    * Overrides the type of ASG being created.  By default we always create a 'standard' asg.
@@ -136,17 +136,17 @@ public class CreateAsgRequest  implements Serializable {
   /**
    * Overrides the default EDGE AMI used with the ASG
    **/
-  public CreateAsgRequest asgAmi(Boolean asgAmi) {
+  public CreateAsgRequest asgAmi(String asgAmi) {
     this.asgAmi = asgAmi;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Overrides the default EDGE AMI used with the ASG")
   @JsonProperty("asgAmi")
-  public Boolean getAsgAmi() {
+  public String getAsgAmi() {
     return asgAmi;
   }
-  public void setAsgAmi(Boolean asgAmi) {
+  public void setAsgAmi(String asgAmi) {
     this.asgAmi = asgAmi;
   }
 

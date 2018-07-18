@@ -161,7 +161,7 @@ Wraps GET /api/v2/analytics/reporting/exports
 
 Requires ANY permissions: 
 
-* analytics:conversationAggregate:view
+* analytics:dataExport:view
 
 ### Example
 
@@ -1011,7 +1011,7 @@ Wraps POST /api/v2/analytics/reporting/exports
 
 Requires ANY permissions: 
 
-* analytics:conversationAggregate:view
+* analytics:dataExport:add
 
 ### Example
 

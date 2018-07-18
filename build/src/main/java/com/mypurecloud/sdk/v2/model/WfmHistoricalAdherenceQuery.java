@@ -80,14 +80,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The userIds to report on. If it is not set, adherence will be computed for all the users in management unit
+   * The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
    **/
   public WfmHistoricalAdherenceQuery userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The userIds to report on. If it is not set, adherence will be computed for all the users in management unit")
+  @ApiModelProperty(example = "null", value = "The userIds to report on. If null or not set, adherence will be computed for all the users in management unit")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;

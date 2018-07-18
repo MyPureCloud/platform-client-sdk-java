@@ -114,6 +114,11 @@ public class PutUserProfileskillsRequest {
             throw new IllegalStateException("Missing the required parameter 'userId' when building request for PutUserProfileskillsRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutUserProfileskillsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/users/{userId}/profileskills")
                 .withPathParameter("userId", userId)
@@ -132,9 +137,9 @@ public class PutUserProfileskillsRequest {
 	}
 
 	
-	public static Builder builder(String userId) {
+	public static Builder builder(String userId, List<String> body) {
 	    return new Builder()
-	            .withRequiredParams(userId);
+	            .withRequiredParams(userId, body);
 	}
 	
 
@@ -158,8 +163,9 @@ public class PutUserProfileskillsRequest {
 		
 
 		
-		public Builder withRequiredParams(String userId) {
+		public Builder withRequiredParams(String userId, List<String> body) {
 			request.setUserId(userId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -170,6 +176,11 @@ public class PutUserProfileskillsRequest {
             // verify the required parameter 'userId' is set
             if (request.userId == null) {
                 throw new IllegalStateException("Missing the required parameter 'userId' when building request for PutUserProfileskillsRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutUserProfileskillsRequest.");
             }
             
 			return request;

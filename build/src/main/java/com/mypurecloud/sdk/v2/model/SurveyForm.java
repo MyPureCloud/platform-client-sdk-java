@@ -25,6 +25,7 @@ public class SurveyForm  implements Serializable {
   private Boolean published = null;
   private Boolean disabled = null;
   private String contextId = null;
+  private String language = null;
   private String headerImageId = null;
   private String headerImageUrl = null;
   private String header = null;
@@ -95,6 +96,24 @@ public class SurveyForm  implements Serializable {
   @JsonProperty("contextId")
   public String getContextId() {
     return contextId;
+  }
+
+  
+  /**
+   * Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW
+   **/
+  public SurveyForm language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
   }
 
   
@@ -218,6 +237,7 @@ public class SurveyForm  implements Serializable {
         Objects.equals(this.published, surveyForm.published) &&
         Objects.equals(this.disabled, surveyForm.disabled) &&
         Objects.equals(this.contextId, surveyForm.contextId) &&
+        Objects.equals(this.language, surveyForm.language) &&
         Objects.equals(this.headerImageId, surveyForm.headerImageId) &&
         Objects.equals(this.headerImageUrl, surveyForm.headerImageUrl) &&
         Objects.equals(this.header, surveyForm.header) &&
@@ -229,7 +249,7 @@ public class SurveyForm  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, modifiedDate, published, disabled, contextId, headerImageId, headerImageUrl, header, footer, questionGroups, publishedVersions, selfUri);
+    return Objects.hash(id, name, modifiedDate, published, disabled, contextId, language, headerImageId, headerImageUrl, header, footer, questionGroups, publishedVersions, selfUri);
   }
 
   @Override
@@ -243,6 +263,7 @@ public class SurveyForm  implements Serializable {
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    headerImageId: ").append(toIndentedString(headerImageId)).append("\n");
     sb.append("    headerImageUrl: ").append(toIndentedString(headerImageUrl)).append("\n");
     sb.append("    header: ").append(toIndentedString(header)).append("\n");

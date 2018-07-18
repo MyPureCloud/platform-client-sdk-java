@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
@@ -159,6 +160,20 @@ public class GetOutboundCampaignsDivisionviewsRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetOutboundCampaignsDivisionviewsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -248,6 +263,8 @@ public class GetOutboundCampaignsDivisionviewsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
@@ -295,6 +312,11 @@ public class GetOutboundCampaignsDivisionviewsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		
