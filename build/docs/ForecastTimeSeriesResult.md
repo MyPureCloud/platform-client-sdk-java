@@ -34,9 +34,9 @@ title: ForecastTimeSeriesResult
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AUTOREGRESSIVEINTEGRATEDMOVINGAVERAGE | &quot;AutoRegressiveIntegratedMovingAverage&quot; |
-| SIMPLEMOVINGAVERAGE | &quot;SimpleMovingAverage&quot; |
+| MOVINGAVERAGE | &quot;MovingAverage&quot; |
 | SINGLEEXPONENTIALSMOOTHING | &quot;SingleExponentialSmoothing&quot; |
-| SAMEVALUEFORECAST | &quot;SameValueForecast&quot; |
+| RANDOMWALK | &quot;RandomWalk&quot; |
 | DECOMPOSITIONUSINGADDITIVESEASONALITY | &quot;DecompositionUsingAdditiveSeasonality&quot; |
 | DECOMPOSITIONUSINGMULTIPLICATIVESEASONALITY | &quot;DecompositionUsingMultiplicativeSeasonality&quot; |
 | HOLTWINTERSADDITIVESEASONALITY | &quot;HoltWintersAdditiveSeasonality&quot; |
@@ -51,6 +51,8 @@ title: ForecastTimeSeriesResult
 | POINTESTIMATEUSINGDAMPEDLINEAREXPONENTIALSMOOTHING | &quot;PointEstimateUsingDampedLinearExponentialSmoothing&quot; |
 | POINTESTIMATEUSINGDOUBLEEXPONENTIALSMOOTHING | &quot;PointEstimateUsingDoubleExponentialSmoothing&quot; |
 | POINTESTIMATEUSINGLINEAREXPONENTIALSMOOTHING | &quot;PointEstimateUsingLinearExponentialSmoothing&quot; |
+| CURVEFIT | &quot;CurveFit&quot; |
+| MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
 | OTHER | &quot;Other&quot; |
 {: class="table table-striped"}
 

@@ -9,7 +9,9 @@ import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -62,6 +64,7 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
+  private List<String> scope = new ArrayList<String>();
   private NamedEntity organization = null;
 
   
@@ -181,6 +184,24 @@ public class OrgOAuthClient  implements Serializable {
 
   
   /**
+   * The scope requested by this client
+   **/
+  public OrgOAuthClient scope(List<String> scope) {
+    this.scope = scope;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The scope requested by this client")
+  @JsonProperty("scope")
+  public List<String> getScope() {
+    return scope;
+  }
+  public void setScope(List<String> scope) {
+    this.scope = scope;
+  }
+
+  
+  /**
    * The  oauth client's organization.
    **/
   public OrgOAuthClient organization(NamedEntity organization) {
@@ -215,12 +236,13 @@ public class OrgOAuthClient  implements Serializable {
         Objects.equals(this.createdBy, orgOAuthClient.createdBy) &&
         Objects.equals(this.modifiedBy, orgOAuthClient.modifiedBy) &&
         Objects.equals(this.authorizedGrantType, orgOAuthClient.authorizedGrantType) &&
+        Objects.equals(this.scope, orgOAuthClient.scope) &&
         Objects.equals(this.organization, orgOAuthClient.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, organization);
+    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, organization);
   }
 
   @Override
@@ -235,6 +257,7 @@ public class OrgOAuthClient  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();

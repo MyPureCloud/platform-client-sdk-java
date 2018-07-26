@@ -29,6 +29,7 @@ public class OAuthClientListing  implements Serializable {
   private Date dateModified = null;
   private UriReference createdBy = null;
   private UriReference modifiedBy = null;
+  private List<String> scope = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -218,6 +219,24 @@ public class OAuthClientListing  implements Serializable {
   }
 
   
+  /**
+   * The scope requested by this client
+   **/
+  public OAuthClientListing scope(List<String> scope) {
+    this.scope = scope;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The scope requested by this client")
+  @JsonProperty("scope")
+  public List<String> getScope() {
+    return scope;
+  }
+  public void setScope(List<String> scope) {
+    this.scope = scope;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -246,12 +265,13 @@ public class OAuthClientListing  implements Serializable {
         Objects.equals(this.dateModified, oAuthClientListing.dateModified) &&
         Objects.equals(this.createdBy, oAuthClientListing.createdBy) &&
         Objects.equals(this.modifiedBy, oAuthClientListing.modifiedBy) &&
+        Objects.equals(this.scope, oAuthClientListing.scope) &&
         Objects.equals(this.selfUri, oAuthClientListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, scope, selfUri);
   }
 
   @Override
@@ -270,6 +290,7 @@ public class OAuthClientListing  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

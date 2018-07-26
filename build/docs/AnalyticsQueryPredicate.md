@@ -97,6 +97,12 @@ title: AnalyticsQueryPredicate
 | FORMID | &quot;formId&quot; |
 | FORMNAME | &quot;formName&quot; |
 | EVENTTIME | &quot;eventTime&quot; |
+| SURVEYID | &quot;surveyId&quot; |
+| SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; |
+| SURVEYFORMID | &quot;surveyFormId&quot; |
+| SURVEYANSWERID | &quot;surveyAnswerId&quot; |
+| SURVEYQUESTIONID | &quot;surveyQuestionId&quot; |
+| SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; |
 | SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
 | ROUTINGSTATUS | &quot;routingStatus&quot; |
@@ -174,6 +180,21 @@ title: AnalyticsQueryPredicate
 | OOFFQUEUEUSERS | &quot;oOffQueueUsers&quot; |
 | OUSERPRESENCES | &quot;oUserPresences&quot; |
 | OUSERROUTINGSTATUSES | &quot;oUserRoutingStatuses&quot; |
+| NSURVEYSSENT | &quot;nSurveysSent&quot; |
+| NSURVEYSSTARTED | &quot;nSurveysStarted&quot; |
+| NSURVEYSABANDONED | &quot;nSurveysAbandoned&quot; |
+| NSURVEYSEXPIRED | &quot;nSurveysExpired&quot; |
+| NSURVEYSBOUNCED | &quot;nSurveysBounced&quot; |
+| NSURVEYRESPONSES | &quot;nSurveyResponses&quot; |
+| NSURVEYANSWERRESPONSES | &quot;nSurveyAnswerResponses&quot; |
+| OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; |
+| OSURVEYQUESTIONGROUPSCORE | &quot;oSurveyQuestionGroupScore&quot; |
+| NSURVEYQUESTIONGROUPRESPONSES | &quot;nSurveyQuestionGroupResponses&quot; |
+| OSURVEYQUESTIONSCORE | &quot;oSurveyQuestionScore&quot; |
+| NSURVEYQUESTIONRESPONSES | &quot;nSurveyQuestionResponses&quot; |
+| NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; |
+| NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
+| NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
 
 
 <a name="OperatorEnum"></a>

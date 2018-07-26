@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class IntradayDataUpdateNotificationStartDate  implements Serializable {
   
   private Integer iMillis = null;
+  private Boolean beforeNow = null;
   private Boolean afterNow = null;
   private Boolean equalNow = null;
-  private Boolean beforeNow = null;
 
   
   /**
@@ -34,6 +34,23 @@ public class IntradayDataUpdateNotificationStartDate  implements Serializable {
   }
   public void setIMillis(Integer iMillis) {
     this.iMillis = iMillis;
+  }
+
+  
+  /**
+   **/
+  public IntradayDataUpdateNotificationStartDate beforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("beforeNow")
+  public Boolean getBeforeNow() {
+    return beforeNow;
+  }
+  public void setBeforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
   }
 
   
@@ -71,23 +88,6 @@ public class IntradayDataUpdateNotificationStartDate  implements Serializable {
   }
 
   
-  /**
-   **/
-  public IntradayDataUpdateNotificationStartDate beforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("beforeNow")
-  public Boolean getBeforeNow() {
-    return beforeNow;
-  }
-  public void setBeforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,14 +99,14 @@ public class IntradayDataUpdateNotificationStartDate  implements Serializable {
     }
     IntradayDataUpdateNotificationStartDate intradayDataUpdateNotificationStartDate = (IntradayDataUpdateNotificationStartDate) o;
     return Objects.equals(this.iMillis, intradayDataUpdateNotificationStartDate.iMillis) &&
+        Objects.equals(this.beforeNow, intradayDataUpdateNotificationStartDate.beforeNow) &&
         Objects.equals(this.afterNow, intradayDataUpdateNotificationStartDate.afterNow) &&
-        Objects.equals(this.equalNow, intradayDataUpdateNotificationStartDate.equalNow) &&
-        Objects.equals(this.beforeNow, intradayDataUpdateNotificationStartDate.beforeNow);
+        Objects.equals(this.equalNow, intradayDataUpdateNotificationStartDate.equalNow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iMillis, afterNow, equalNow, beforeNow);
+    return Objects.hash(iMillis, beforeNow, afterNow, equalNow);
   }
 
   @Override
@@ -115,9 +115,9 @@ public class IntradayDataUpdateNotificationStartDate  implements Serializable {
     sb.append("class IntradayDataUpdateNotificationStartDate {\n");
     
     sb.append("    iMillis: ").append(toIndentedString(iMillis)).append("\n");
+    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
     sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
-    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

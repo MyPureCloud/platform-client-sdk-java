@@ -68,6 +68,7 @@ public class OAuthClient  implements Serializable {
     }
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
+  private List<String> scope = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -275,6 +276,24 @@ public class OAuthClient  implements Serializable {
   }
 
   
+  /**
+   * The scope requested by this client
+   **/
+  public OAuthClient scope(List<String> scope) {
+    this.scope = scope;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The scope requested by this client")
+  @JsonProperty("scope")
+  public List<String> getScope() {
+    return scope;
+  }
+  public void setScope(List<String> scope) {
+    this.scope = scope;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -304,12 +323,13 @@ public class OAuthClient  implements Serializable {
         Objects.equals(this.createdBy, oAuthClient.createdBy) &&
         Objects.equals(this.modifiedBy, oAuthClient.modifiedBy) &&
         Objects.equals(this.authorizedGrantType, oAuthClient.authorizedGrantType) &&
+        Objects.equals(this.scope, oAuthClient.scope) &&
         Objects.equals(this.selfUri, oAuthClient.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, selfUri);
   }
 
   @Override
@@ -329,6 +349,7 @@ public class OAuthClient  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

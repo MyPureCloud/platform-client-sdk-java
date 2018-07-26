@@ -72,7 +72,22 @@ public class ObservationQuery  implements Serializable {
     OONQUEUEUSERS("oOnQueueUsers"),
     OOFFQUEUEUSERS("oOffQueueUsers"),
     OUSERPRESENCES("oUserPresences"),
-    OUSERROUTINGSTATUSES("oUserRoutingStatuses");
+    OUSERROUTINGSTATUSES("oUserRoutingStatuses"),
+    NSURVEYSSENT("nSurveysSent"),
+    NSURVEYSSTARTED("nSurveysStarted"),
+    NSURVEYSABANDONED("nSurveysAbandoned"),
+    NSURVEYSEXPIRED("nSurveysExpired"),
+    NSURVEYSBOUNCED("nSurveysBounced"),
+    NSURVEYRESPONSES("nSurveyResponses"),
+    NSURVEYANSWERRESPONSES("nSurveyAnswerResponses"),
+    OSURVEYTOTALSCORE("oSurveyTotalScore"),
+    OSURVEYQUESTIONGROUPSCORE("oSurveyQuestionGroupScore"),
+    NSURVEYQUESTIONGROUPRESPONSES("nSurveyQuestionGroupResponses"),
+    OSURVEYQUESTIONSCORE("oSurveyQuestionScore"),
+    NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
+    NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
+    NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
+    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors");
 
     private String value;
 

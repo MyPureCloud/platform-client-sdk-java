@@ -993,9 +993,8 @@ Get the list of supported languages.
 
 Wraps GET /api/v2/routing/languages  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* routing:skill:manage
 
 ### Example
 
@@ -1619,9 +1618,8 @@ Get Routing Skill
 
 Wraps GET /api/v2/routing/skills/{skillId}  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* routing:skill:manage
 
 ### Example
 
@@ -1676,9 +1674,8 @@ Get the list of routing skills.
 
 Wraps GET /api/v2/routing/skills  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* routing:skill:manage
 
 ### Example
 

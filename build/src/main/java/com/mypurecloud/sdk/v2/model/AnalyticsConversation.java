@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AnalyticsEvaluation;
 import com.mypurecloud.sdk.v2.model.AnalyticsParticipant;
+import com.mypurecloud.sdk.v2.model.AnalyticsSurvey;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class AnalyticsConversation  implements Serializable {
   private Date conversationEnd = null;
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
+  private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
   private List<String> divisionIds = new ArrayList<String>();
 
   
@@ -118,6 +120,24 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
+   * Surveys tied to this conversation
+   **/
+  public AnalyticsConversation surveys(List<AnalyticsSurvey> surveys) {
+    this.surveys = surveys;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Surveys tied to this conversation")
+  @JsonProperty("surveys")
+  public List<AnalyticsSurvey> getSurveys() {
+    return surveys;
+  }
+  public void setSurveys(List<AnalyticsSurvey> surveys) {
+    this.surveys = surveys;
+  }
+
+  
+  /**
    * Identifiers of divisions associated with this conversation
    **/
   public AnalyticsConversation divisionIds(List<String> divisionIds) {
@@ -150,12 +170,13 @@ public class AnalyticsConversation  implements Serializable {
         Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
         Objects.equals(this.participants, analyticsConversation.participants) &&
         Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
+        Objects.equals(this.surveys, analyticsConversation.surveys) &&
         Objects.equals(this.divisionIds, analyticsConversation.divisionIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, participants, evaluations, divisionIds);
+    return Objects.hash(conversationId, conversationStart, conversationEnd, participants, evaluations, surveys, divisionIds);
   }
 
   @Override
@@ -168,6 +189,7 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
+    sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("}");
     return sb.toString();

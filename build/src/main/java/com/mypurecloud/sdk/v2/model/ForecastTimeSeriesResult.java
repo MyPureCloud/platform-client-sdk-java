@@ -59,9 +59,9 @@ public class ForecastTimeSeriesResult  implements Serializable {
   public enum ForecastingMethodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AUTOREGRESSIVEINTEGRATEDMOVINGAVERAGE("AutoRegressiveIntegratedMovingAverage"),
-    SIMPLEMOVINGAVERAGE("SimpleMovingAverage"),
+    MOVINGAVERAGE("MovingAverage"),
     SINGLEEXPONENTIALSMOOTHING("SingleExponentialSmoothing"),
-    SAMEVALUEFORECAST("SameValueForecast"),
+    RANDOMWALK("RandomWalk"),
     DECOMPOSITIONUSINGADDITIVESEASONALITY("DecompositionUsingAdditiveSeasonality"),
     DECOMPOSITIONUSINGMULTIPLICATIVESEASONALITY("DecompositionUsingMultiplicativeSeasonality"),
     HOLTWINTERSADDITIVESEASONALITY("HoltWintersAdditiveSeasonality"),
@@ -76,6 +76,8 @@ public class ForecastTimeSeriesResult  implements Serializable {
     POINTESTIMATEUSINGDAMPEDLINEAREXPONENTIALSMOOTHING("PointEstimateUsingDampedLinearExponentialSmoothing"),
     POINTESTIMATEUSINGDOUBLEEXPONENTIALSMOOTHING("PointEstimateUsingDoubleExponentialSmoothing"),
     POINTESTIMATEUSINGLINEAREXPONENTIALSMOOTHING("PointEstimateUsingLinearExponentialSmoothing"),
+    CURVEFIT("CurveFit"),
+    MULTILINEARREGRESSION("MultiLinearRegression"),
     OTHER("Other");
 
     private String value;
