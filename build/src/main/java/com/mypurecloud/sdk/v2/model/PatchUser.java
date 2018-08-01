@@ -16,7 +16,6 @@ public class PatchUser  implements Serializable {
   
   private String id = null;
   private Boolean acdAutoAnswer = null;
-  private String selfUri = null;
 
   
   /**
@@ -55,13 +54,6 @@ public class PatchUser  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,13 +65,12 @@ public class PatchUser  implements Serializable {
     }
     PatchUser patchUser = (PatchUser) o;
     return Objects.equals(this.id, patchUser.id) &&
-        Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer) &&
-        Objects.equals(this.selfUri, patchUser.selfUri);
+        Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, acdAutoAnswer, selfUri);
+    return Objects.hash(id, acdAutoAnswer);
   }
 
   @Override
@@ -89,7 +80,6 @@ public class PatchUser  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

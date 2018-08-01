@@ -146,6 +146,7 @@ public class GetRoutingQueueUsersRequest {
 		PRESENCEDEFINITIONS("presencedefinitions"), 
 		LOCATIONDEFINITIONS("locationdefinitions"), 
 		ORGAUTHORIZATION("orgauthorization"), 
+		ORGPRODUCTS("orgproducts"), 
 		FAVORITES("favorites"), 
 		SUPERIORS("superiors"), 
 		DIRECTREPORTS("directreports"), 

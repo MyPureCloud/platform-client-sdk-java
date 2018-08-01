@@ -76,8 +76,11 @@ Delete user
 
 Wraps DELETE /api/v2/users/{userId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:delete
+* user_manager
+* user_administration
 
 ### Example
 
@@ -1071,7 +1074,7 @@ Wraps GET /api/v2/users/{userId}/queues
 
 Requires ANY permissions: 
 
-* routing:queue:view
+* routing:queue:join
 
 ### Example
 
@@ -1647,7 +1650,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -1726,8 +1729,11 @@ Update user
 
 Wraps PATCH /api/v2/users/{userId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:edit
+* user_manager
+* user_administration
 
 ### Example
 

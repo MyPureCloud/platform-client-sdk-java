@@ -8,7 +8,6 @@ title: Platform API Client SDK - Java
 
 * **Documentation** https://developer.mypurecloud.com/api/rest/client-libraries/java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
-* **Example** https://github.com/MyPureCloud/platform-client-sdk-java-hello-world
 
 ## Install Using maven
 
@@ -46,6 +45,13 @@ ApiResponse<AuthResponse> authResponse = apiClient.authorizeClientCredentials(cl
 
 // Don't actually do this, this logs your auth token to the console!
 System.out.println(authResponse.getBody().toString());
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+// Create API instances and make authenticated API requests
+UsersApi apiInstance = new UsersApi();
+UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
 ~~~
 
 For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
@@ -63,6 +69,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 
 // Use the ApiClient instance
 Configuration.setDefaultApiClient(apiClient);
+
+// Create API instances and make authenticated API requests
+UsersApi apiInstance = new UsersApi();
+UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
 ~~~
 
 #### Setting the access token

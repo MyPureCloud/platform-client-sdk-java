@@ -63,11 +63,12 @@ public class JsonNode  implements Serializable {
   private Boolean _boolean = null;
   private Boolean number = null;
   private Boolean _float = null;
-  private Boolean floatingPointNumber = null;
   private Boolean valueNode = null;
   private Boolean containerNode = null;
   private Boolean missingNode = null;
+  private Boolean binary = null;
   private Boolean pojo = null;
+  private Boolean floatingPointNumber = null;
   private Boolean integralNumber = null;
   private Boolean _short = null;
   private Boolean _int = null;
@@ -76,7 +77,6 @@ public class JsonNode  implements Serializable {
   private Boolean bigDecimal = null;
   private Boolean bigInteger = null;
   private Boolean textual = null;
-  private Boolean binary = null;
 
   
   /**
@@ -200,23 +200,6 @@ public class JsonNode  implements Serializable {
   
   /**
    **/
-  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("floatingPointNumber")
-  public Boolean getFloatingPointNumber() {
-    return floatingPointNumber;
-  }
-  public void setFloatingPointNumber(Boolean floatingPointNumber) {
-    this.floatingPointNumber = floatingPointNumber;
-  }
-
-  
-  /**
-   **/
   public JsonNode valueNode(Boolean valueNode) {
     this.valueNode = valueNode;
     return this;
@@ -268,6 +251,23 @@ public class JsonNode  implements Serializable {
   
   /**
    **/
+  public JsonNode binary(Boolean binary) {
+    this.binary = binary;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("binary")
+  public Boolean getBinary() {
+    return binary;
+  }
+  public void setBinary(Boolean binary) {
+    this.binary = binary;
+  }
+
+  
+  /**
+   **/
   public JsonNode pojo(Boolean pojo) {
     this.pojo = pojo;
     return this;
@@ -280,6 +280,23 @@ public class JsonNode  implements Serializable {
   }
   public void setPojo(Boolean pojo) {
     this.pojo = pojo;
+  }
+
+  
+  /**
+   **/
+  public JsonNode floatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("floatingPointNumber")
+  public Boolean getFloatingPointNumber() {
+    return floatingPointNumber;
+  }
+  public void setFloatingPointNumber(Boolean floatingPointNumber) {
+    this.floatingPointNumber = floatingPointNumber;
   }
 
   
@@ -419,23 +436,6 @@ public class JsonNode  implements Serializable {
   }
 
   
-  /**
-   **/
-  public JsonNode binary(Boolean binary) {
-    this.binary = binary;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("binary")
-  public Boolean getBinary() {
-    return binary;
-  }
-  public void setBinary(Boolean binary) {
-    this.binary = binary;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -453,11 +453,12 @@ public class JsonNode  implements Serializable {
         Objects.equals(this._boolean, jsonNode._boolean) &&
         Objects.equals(this.number, jsonNode.number) &&
         Objects.equals(this._float, jsonNode._float) &&
-        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
         Objects.equals(this.valueNode, jsonNode.valueNode) &&
         Objects.equals(this.containerNode, jsonNode.containerNode) &&
         Objects.equals(this.missingNode, jsonNode.missingNode) &&
+        Objects.equals(this.binary, jsonNode.binary) &&
         Objects.equals(this.pojo, jsonNode.pojo) &&
+        Objects.equals(this.floatingPointNumber, jsonNode.floatingPointNumber) &&
         Objects.equals(this.integralNumber, jsonNode.integralNumber) &&
         Objects.equals(this._short, jsonNode._short) &&
         Objects.equals(this._int, jsonNode._int) &&
@@ -465,13 +466,12 @@ public class JsonNode  implements Serializable {
         Objects.equals(this._double, jsonNode._double) &&
         Objects.equals(this.bigDecimal, jsonNode.bigDecimal) &&
         Objects.equals(this.bigInteger, jsonNode.bigInteger) &&
-        Objects.equals(this.textual, jsonNode.textual) &&
-        Objects.equals(this.binary, jsonNode.binary);
+        Objects.equals(this.textual, jsonNode.textual);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(array, _null, nodeType, object, _boolean, number, _float, floatingPointNumber, valueNode, containerNode, missingNode, pojo, integralNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual, binary);
+    return Objects.hash(array, _null, nodeType, object, _boolean, number, _float, valueNode, containerNode, missingNode, binary, pojo, floatingPointNumber, integralNumber, _short, _int, _long, _double, bigDecimal, bigInteger, textual);
   }
 
   @Override
@@ -486,11 +486,12 @@ public class JsonNode  implements Serializable {
     sb.append("    _boolean: ").append(toIndentedString(_boolean)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    _float: ").append(toIndentedString(_float)).append("\n");
-    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
     sb.append("    valueNode: ").append(toIndentedString(valueNode)).append("\n");
     sb.append("    containerNode: ").append(toIndentedString(containerNode)).append("\n");
     sb.append("    missingNode: ").append(toIndentedString(missingNode)).append("\n");
+    sb.append("    binary: ").append(toIndentedString(binary)).append("\n");
     sb.append("    pojo: ").append(toIndentedString(pojo)).append("\n");
+    sb.append("    floatingPointNumber: ").append(toIndentedString(floatingPointNumber)).append("\n");
     sb.append("    integralNumber: ").append(toIndentedString(integralNumber)).append("\n");
     sb.append("    _short: ").append(toIndentedString(_short)).append("\n");
     sb.append("    _int: ").append(toIndentedString(_int)).append("\n");
@@ -499,7 +500,6 @@ public class JsonNode  implements Serializable {
     sb.append("    bigDecimal: ").append(toIndentedString(bigDecimal)).append("\n");
     sb.append("    bigInteger: ").append(toIndentedString(bigInteger)).append("\n");
     sb.append("    textual: ").append(toIndentedString(textual)).append("\n");
-    sb.append("    binary: ").append(toIndentedString(binary)).append("\n");
     sb.append("}");
     return sb.toString();
   }

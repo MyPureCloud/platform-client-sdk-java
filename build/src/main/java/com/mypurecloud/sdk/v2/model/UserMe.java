@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
 import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.DomainOrganizationProduct;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.FieldConfigs;
 import com.mypurecloud.sdk.v2.model.Geolocation;
@@ -116,6 +117,7 @@ public class UserMe  implements Serializable {
   private FieldConfigs fieldConfigs = null;
   private TokenInfo token = null;
   private List<Trustor> trustors = new ArrayList<Trustor>();
+  private List<DomainOrganizationProduct> orgProducts = new ArrayList<DomainOrganizationProduct>();
   private String selfUri = null;
 
   
@@ -791,6 +793,24 @@ public class UserMe  implements Serializable {
   }
 
   
+  /**
+   * Products enabled in this organization
+   **/
+  public UserMe orgProducts(List<DomainOrganizationProduct> orgProducts) {
+    this.orgProducts = orgProducts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Products enabled in this organization")
+  @JsonProperty("orgProducts")
+  public List<DomainOrganizationProduct> getOrgProducts() {
+    return orgProducts;
+  }
+  public void setOrgProducts(List<DomainOrganizationProduct> orgProducts) {
+    this.orgProducts = orgProducts;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -847,12 +867,13 @@ public class UserMe  implements Serializable {
         Objects.equals(this.fieldConfigs, userMe.fieldConfigs) &&
         Objects.equals(this.token, userMe.token) &&
         Objects.equals(this.trustors, userMe.trustors) &&
+        Objects.equals(this.orgProducts, userMe.orgProducts) &&
         Objects.equals(this.selfUri, userMe.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -899,6 +920,7 @@ public class UserMe  implements Serializable {
     sb.append("    fieldConfigs: ").append(toIndentedString(fieldConfigs)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    trustors: ").append(toIndentedString(trustors)).append("\n");
+    sb.append("    orgProducts: ").append(toIndentedString(orgProducts)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

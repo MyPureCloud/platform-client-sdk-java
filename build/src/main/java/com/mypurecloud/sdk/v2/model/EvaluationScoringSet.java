@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.QuestionGroupScore;
+import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroupScore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class EvaluationScoringSet  implements Serializable {
   
   private Float totalScore = null;
   private Float totalCriticalScore = null;
-  private List<QuestionGroupScore> questionGroupScores = new ArrayList<QuestionGroupScore>();
+  private List<EvaluationQuestionGroupScore> questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
   private String agentComments = null;
@@ -61,17 +61,17 @@ public class EvaluationScoringSet  implements Serializable {
   
   /**
    **/
-  public EvaluationScoringSet questionGroupScores(List<QuestionGroupScore> questionGroupScores) {
+  public EvaluationScoringSet questionGroupScores(List<EvaluationQuestionGroupScore> questionGroupScores) {
     this.questionGroupScores = questionGroupScores;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("questionGroupScores")
-  public List<QuestionGroupScore> getQuestionGroupScores() {
+  public List<EvaluationQuestionGroupScore> getQuestionGroupScores() {
     return questionGroupScores;
   }
-  public void setQuestionGroupScores(List<QuestionGroupScore> questionGroupScores) {
+  public void setQuestionGroupScores(List<EvaluationQuestionGroupScore> questionGroupScores) {
     this.questionGroupScores = questionGroupScores;
   }
 
