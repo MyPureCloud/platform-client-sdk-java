@@ -17,6 +17,6 @@ title: JsonSchemaDocument
 | **properties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

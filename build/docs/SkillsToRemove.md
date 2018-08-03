@@ -12,6 +12,6 @@ title: SkillsToRemove
 | **id** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -16,6 +16,6 @@ title: ResponseSetNotification
 | **responses** | [**Map&lt;String, ResponseSetNotificationResponses&gt;**](ResponseSetNotificationResponses.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

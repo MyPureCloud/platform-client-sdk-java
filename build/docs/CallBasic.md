@@ -53,6 +53,7 @@ title: CallBasic
 | UPLOADING | &quot;uploading&quot; |
 | TRANSMITTING | &quot;transmitting&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -64,6 +65,7 @@ title: CallBasic
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="RecordingStateEnum"></a>
@@ -76,6 +78,7 @@ title: CallBasic
 | NONE | &quot;none&quot; |
 | ACTIVE | &quot;active&quot; |
 | PAUSED | &quot;paused&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -102,5 +105,6 @@ title: CallBasic
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
+
 
 

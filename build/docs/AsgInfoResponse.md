@@ -15,6 +15,6 @@ title: AsgInfoResponse
 | **instanceInfo** | [**List&lt;InstanceInfo&gt;**](InstanceInfo.html) | List of instances and their information that live in the ASG. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

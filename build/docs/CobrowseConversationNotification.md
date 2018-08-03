@@ -13,6 +13,6 @@ title: CobrowseConversationNotification
 | **participants** | [**List&lt;CobrowseConversationNotificationParticipants&gt;**](CobrowseConversationNotificationParticipants.html) |  |  [optional] |
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

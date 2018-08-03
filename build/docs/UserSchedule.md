@@ -14,6 +14,6 @@ title: UserSchedule
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for this schedule |  |
 | **workPlanId** | **String** | ID of the work plan associated with the user during schedule creation |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

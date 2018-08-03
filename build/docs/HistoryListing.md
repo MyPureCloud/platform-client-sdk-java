@@ -39,6 +39,7 @@ title: HistoryListing
 | PUBLISH | &quot;PUBLISH&quot; |
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; |
 | VALIDATE | &quot;VALIDATE&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActionStatusEnum"></a>
@@ -56,5 +57,6 @@ title: HistoryListing
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
 {: class="table table-striped"}
+
 
 

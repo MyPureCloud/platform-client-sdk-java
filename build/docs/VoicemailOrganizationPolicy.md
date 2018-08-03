@@ -16,6 +16,6 @@ title: VoicemailOrganizationPolicy
 | **sendEmailNotifications** | **Boolean** | Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting. |  [optional] |
 | **modifiedDate** | [**Date**](Date.html) | The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

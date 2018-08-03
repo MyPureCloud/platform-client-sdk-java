@@ -13,6 +13,6 @@ title: DocumentUpload
 | **tags** | **List&lt;String&gt;** |  |  [optional] |
 | **tagIds** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: Category
 | ------------ | ------------- | ------------- | ------------- |
 | **name** | **String** | Category name |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

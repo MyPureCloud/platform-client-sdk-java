@@ -12,6 +12,6 @@ title: ResponseSubstitution
 | **description** | **String** | Response substitution description. |  [optional] |
 | **defaultValue** | **String** | Response substitution default value. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

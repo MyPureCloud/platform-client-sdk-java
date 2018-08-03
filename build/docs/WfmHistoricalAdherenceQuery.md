@@ -14,6 +14,6 @@ title: WfmHistoricalAdherenceQuery
 | **userIds** | **List&lt;String&gt;** | The userIds to report on. If null or not set, adherence will be computed for all the users in management unit |  [optional] |
 | **includeExceptions** | **Boolean** | Whether user exceptions should be returned as part of the results |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

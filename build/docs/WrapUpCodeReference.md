@@ -10,6 +10,6 @@ title: WrapUpCodeReference
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

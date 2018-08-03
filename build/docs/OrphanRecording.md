@@ -34,6 +34,7 @@ title: OrphanRecording
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | SCREEN_RECORDING | &quot;SCREEN_RECORDING&quot; |
+{: class="table table-striped"}
 
 
 <a name="MediaTypeEnum"></a>
@@ -47,6 +48,7 @@ title: OrphanRecording
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | SCREEN | &quot;SCREEN&quot; |
+{: class="table table-striped"}
 
 
 <a name="FileStateEnum"></a>
@@ -62,6 +64,7 @@ title: OrphanRecording
 | RESTORED | &quot;RESTORED&quot; |
 | RESTORING | &quot;RESTORING&quot; |
 | UPLOADING | &quot;UPLOADING&quot; |
+{: class="table table-striped"}
 
 
 <a name="OrphanStatusEnum"></a>
@@ -77,5 +80,6 @@ title: OrphanRecording
 | CONVERSATION_NOT_EVALUATED | &quot;CONVERSATION_NOT_EVALUATED&quot; |
 | EVALUATED | &quot;EVALUATED&quot; |
 {: class="table table-striped"}
+
 
 

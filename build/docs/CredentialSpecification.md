@@ -12,6 +12,6 @@ title: CredentialSpecification
 | **title** | **String** | Title describing the usage for this credential. |  [optional] |
 | **credentialTypes** | **List&lt;String&gt;** | List of acceptable credential types that can be provided for this credential. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

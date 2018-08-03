@@ -15,6 +15,6 @@ title: CallConversationNotificationWrapup
 | **endTime** | [**Date**](Date.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -14,6 +14,6 @@ title: IntradayQueryDataCommand
 | **queueIds** | **List&lt;String&gt;** | The queue IDs for which to fetch data.  Omitting or passing an empty list will return all available queues |  [optional] |
 | **intervalLengthMinutes** | **Integer** | The period/interval for which to aggregate the data.  Optional, defaults to 15 |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

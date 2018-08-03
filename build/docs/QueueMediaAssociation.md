@@ -13,6 +13,6 @@ title: QueueMediaAssociation
 | **id** | **String** | The reference ID for this QueueMediaAssociation |  [optional] |
 | **delete** | **Boolean** | If marked true on a PATCH, this QueueMediaAssociation will be permanently deleted |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

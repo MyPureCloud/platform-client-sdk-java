@@ -31,3 +31,4 @@ title: UserDetailsQuery
 {: class="table table-striped"}
 
 
+

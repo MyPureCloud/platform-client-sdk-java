@@ -39,6 +39,7 @@ title: EdgeLogsJobFile
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="UploadStatusEnum"></a>
@@ -53,5 +54,6 @@ title: EdgeLogsJobFile
 | UPLOADED | &quot;UPLOADED&quot; |
 | ERROR_ON_UPLOAD | &quot;ERROR_ON_UPLOAD&quot; |
 {: class="table table-striped"}
+
 
 

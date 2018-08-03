@@ -13,6 +13,6 @@ title: CalibrationAssignment
 | **evaluationForm** | [**EvaluationForm**](EvaluationForm.html) |  |  [optional] |
 | **expertEvaluator** | [**User**](User.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

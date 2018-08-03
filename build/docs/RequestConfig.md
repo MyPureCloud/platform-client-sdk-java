@@ -14,6 +14,6 @@ title: RequestConfig
 | **requestType** | **String** | HTTP method to use for request |  [optional] |
 | **headers** | **Map&lt;String, String&gt;** | Headers to include in request in (Header Name, Value) pairs. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

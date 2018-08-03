@@ -31,6 +31,7 @@ title: CommandStatus
 | ERROR | &quot;ERROR&quot; |
 | CANCELING | &quot;CANCELING&quot; |
 | CANCELED | &quot;CANCELED&quot; |
+{: class="table table-striped"}
 
 
 <a name="CommandTypeEnum"></a>
@@ -51,5 +52,6 @@ title: CommandStatus
 | CLEANUP | &quot;CLEANUP&quot; |
 | REPLACEDOCUMENT | &quot;REPLACEDOCUMENT&quot; |
 {: class="table table-striped"}
+
 
 

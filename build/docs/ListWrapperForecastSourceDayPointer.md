@@ -10,6 +10,6 @@ title: ListWrapperForecastSourceDayPointer
 | ------------ | ------------- | ------------- | ------------- |
 | **values** | [**List&lt;ForecastSourceDayPointer&gt;**](ForecastSourceDayPointer.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

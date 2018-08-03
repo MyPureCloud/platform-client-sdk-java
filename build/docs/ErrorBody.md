@@ -19,6 +19,6 @@ title: ErrorBody
 | **details** | [**List&lt;Detail&gt;**](Detail.html) |  |  [optional] |
 | **errors** | [**List&lt;ErrorBody&gt;**](ErrorBody.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

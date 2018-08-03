@@ -16,6 +16,6 @@ title: RecordingMessagingMessage
 | **id** | **String** |  |  [optional] |
 | **messageText** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: DomainCapabilities
 | **supportsMetric** | **Boolean** | True if metric configuration is supported. |  [optional] |
 | **pingEnabled** | **Boolean** | Set to true to enable this address family on this interface to respond to ping requests. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

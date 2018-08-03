@@ -10,6 +10,6 @@ title: Actions
 | ------------ | ------------- | ------------- | ------------- |
 | **skillsToRemove** | [**List&lt;SkillsToRemove&gt;**](SkillsToRemove.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

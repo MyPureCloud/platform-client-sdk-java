@@ -13,6 +13,6 @@ title: VideoConversationNotification
 | **participants** | [**List&lt;VideoConversationNotificationParticipants&gt;**](VideoConversationNotificationParticipants.html) |  |  [optional] |
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

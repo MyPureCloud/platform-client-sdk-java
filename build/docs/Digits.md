@@ -10,6 +10,6 @@ title: Digits
 | ------------ | ------------- | ------------- | ------------- |
 | **digits** | **String** | A string representing the digits pressed on phone. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

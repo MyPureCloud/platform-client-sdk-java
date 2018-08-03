@@ -29,6 +29,6 @@ title: VoicemailMessage
 | **deleteRetentionPolicy** | [**VoicemailRetentionPolicy**](VoicemailRetentionPolicy.html) | The retention policy for this voicemail when deleted is set to true |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

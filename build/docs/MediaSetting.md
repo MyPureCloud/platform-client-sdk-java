@@ -11,6 +11,6 @@ title: MediaSetting
 | **alertingTimeoutSeconds** | **Integer** |  |  [optional] |
 | **serviceLevel** | [**ServiceLevel**](ServiceLevel.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

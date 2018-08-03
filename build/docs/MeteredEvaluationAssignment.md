@@ -15,6 +15,6 @@ title: MeteredEvaluationAssignment
 | **assignToActiveUser** | **Boolean** |  |  [optional] |
 | **timeInterval** | [**TimeInterval**](TimeInterval.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

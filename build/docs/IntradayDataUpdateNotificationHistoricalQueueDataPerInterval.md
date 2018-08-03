@@ -17,6 +17,6 @@ title: IntradayDataUpdateNotificationHistoricalQueueDataPerInterval
 | **serviceLevelPercent** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 | **averageSpeedOfAnswerSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

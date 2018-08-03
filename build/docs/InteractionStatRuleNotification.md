@@ -34,6 +34,7 @@ title: InteractionStatRuleNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | USERID | &quot;userId&quot; |
+{: class="table table-striped"}
 
 
 <a name="MetricEnum"></a>
@@ -53,6 +54,7 @@ title: InteractionStatRuleNotification
 | TWAIT | &quot;tWait&quot; |
 | THELD | &quot;tHeld&quot; |
 | TACW | &quot;tAcw&quot; |
+{: class="table table-striped"}
 
 
 <a name="MediaTypeEnum"></a>
@@ -67,6 +69,7 @@ title: InteractionStatRuleNotification
 | EMAIL | &quot;email&quot; |
 | CALLBACK | &quot;callback&quot; |
 | MESSAGE | &quot;message&quot; |
+{: class="table table-striped"}
 
 
 <a name="NumericRangeEnum"></a>
@@ -82,6 +85,7 @@ title: InteractionStatRuleNotification
 | LTE | &quot;lte&quot; |
 | EQ | &quot;eq&quot; |
 | NE | &quot;ne&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatisticEnum"></a>
@@ -96,5 +100,6 @@ title: InteractionStatRuleNotification
 | RATIO | &quot;ratio&quot; |
 | MAX | &quot;max&quot; |
 {: class="table table-striped"}
+
 
 

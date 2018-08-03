@@ -25,6 +25,7 @@ title: ResourceConditionNode
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AND | &quot;AND&quot; |
 | OR | &quot;OR&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -41,5 +42,6 @@ title: ResourceConditionNode
 | LE | &quot;LE&quot; |
 | LT | &quot;LT&quot; |
 {: class="table table-striped"}
+
 
 

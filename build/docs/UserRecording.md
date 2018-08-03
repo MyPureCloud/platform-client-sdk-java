@@ -22,6 +22,6 @@ title: UserRecording
 | **read** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

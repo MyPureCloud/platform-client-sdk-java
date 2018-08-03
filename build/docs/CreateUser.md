@@ -15,6 +15,6 @@ title: CreateUser
 | **title** | **String** |  |  [optional] |
 | **password** | **String** | User&#39;s password |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

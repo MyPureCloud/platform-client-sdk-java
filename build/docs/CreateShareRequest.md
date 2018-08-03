@@ -24,6 +24,7 @@ title: CreateShareRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DOCUMENT | &quot;DOCUMENT&quot; |
+{: class="table table-striped"}
 
 
 <a name="MemberTypeEnum"></a>
@@ -37,5 +38,6 @@ title: CreateShareRequest
 | GROUP | &quot;GROUP&quot; |
 | PUBLIC | &quot;PUBLIC&quot; |
 {: class="table table-striped"}
+
 
 

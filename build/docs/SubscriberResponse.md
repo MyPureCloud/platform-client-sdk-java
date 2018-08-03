@@ -11,6 +11,6 @@ title: SubscriberResponse
 | **messageReturned** | **List&lt;String&gt;** | Suggested valid addresses |  [optional] |
 | **status** | **String** | http status |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

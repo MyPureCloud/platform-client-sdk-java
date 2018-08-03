@@ -27,3 +27,4 @@ title: WfmHistoricalAdherenceResponse
 {: class="table table-striped"}
 
 
+

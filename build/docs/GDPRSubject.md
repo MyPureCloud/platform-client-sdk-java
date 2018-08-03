@@ -16,6 +16,6 @@ title: GDPRSubject
 | **phoneNumbers** | **List&lt;String&gt;** |  |  [optional] |
 | **emailAddresses** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

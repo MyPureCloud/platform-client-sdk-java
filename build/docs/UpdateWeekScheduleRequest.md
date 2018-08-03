@@ -15,6 +15,6 @@ title: UpdateWeekScheduleRequest
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for this work plan |  |
 | **agentSchedulesVersion** | **Integer** | Version of agent schedules in the week schedule |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: UserScheduleFullDayTimeOffMarker
 | **description** | **String** | The description associated with the time off request that this marker corresponds to |  [optional] |
 | **delete** | **Boolean** | If marked true for updating an existing full day time off marker, it will be deleted |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

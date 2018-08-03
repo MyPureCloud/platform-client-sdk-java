@@ -17,6 +17,6 @@ title: StreetAddress
 | **NAM** | **String** |  |  [optional] |
 | **PC** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

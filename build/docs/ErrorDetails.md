@@ -17,6 +17,6 @@ title: ErrorDetails
 | **nested** | [**ErrorDetails**](ErrorDetails.html) |  |  [optional] |
 | **details** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

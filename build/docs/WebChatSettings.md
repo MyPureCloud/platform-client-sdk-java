@@ -10,6 +10,6 @@ title: WebChatSettings
 | ------------ | ------------- | ------------- | ------------- |
 | **requireDeployment** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

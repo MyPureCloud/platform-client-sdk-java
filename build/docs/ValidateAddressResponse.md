@@ -11,6 +11,6 @@ title: ValidateAddressResponse
 | **valid** | **Boolean** | Was the passed in address valid |  |
 | **response** | [**SubscriberResponse**](SubscriberResponse.html) | Subscriber schema |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

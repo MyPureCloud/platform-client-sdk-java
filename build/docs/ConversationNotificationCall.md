@@ -52,6 +52,7 @@ title: ConversationNotificationCall
 | CONVERTING | &quot;CONVERTING&quot; |
 | TRANSMITTING | &quot;TRANSMITTING&quot; |
 | NONE | &quot;NONE&quot; |
+{: class="table table-striped"}
 
 
 <a name="RecordingStateEnum"></a>
@@ -64,6 +65,7 @@ title: ConversationNotificationCall
 | NONE | &quot;NONE&quot; |
 | ACTIVE | &quot;ACTIVE&quot; |
 | PAUSED | &quot;PAUSED&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -89,6 +91,7 @@ title: ConversationNotificationCall
 | OTHER | &quot;OTHER&quot; |
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -101,5 +104,6 @@ title: ConversationNotificationCall
 | OUTBOUND | &quot;OUTBOUND&quot; |
 | INBOUND | &quot;INBOUND&quot; |
 {: class="table table-striped"}
+
 
 

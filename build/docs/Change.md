@@ -13,6 +13,6 @@ title: Change
 | **oldValues** | **List&lt;String&gt;** | The old values which were modified and/or removed by this action. |  [optional] |
 | **newValues** | **List&lt;String&gt;** | The new values which were modified and/or added by this action. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

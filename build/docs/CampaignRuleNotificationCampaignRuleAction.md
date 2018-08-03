@@ -32,3 +32,4 @@ title: CampaignRuleNotificationCampaignRuleAction
 {: class="table table-striped"}
 
 
+

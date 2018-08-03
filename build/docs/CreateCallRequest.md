@@ -20,6 +20,6 @@ title: CreateCallRequest
 | **conversationIds** | **List&lt;String&gt;** | The list of existing call conversations to merge into a new ad-hoc conference. |  [optional] |
 | **participants** | [**List&lt;Destination&gt;**](Destination.html) | The list of participants to call to create a new ad-hoc conference. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

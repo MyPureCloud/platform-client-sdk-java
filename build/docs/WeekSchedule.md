@@ -20,6 +20,6 @@ title: WeekSchedule
 | **agentSchedulesVersion** | **Integer** | Version of agent schedules in the week schedule |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

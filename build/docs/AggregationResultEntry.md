@@ -13,6 +13,6 @@ title: AggregationResultEntry
 | **gte** | [**BigDecimal**](BigDecimal.html) | For numericRange aggregations |  [optional] |
 | **lt** | [**BigDecimal**](BigDecimal.html) | For numericRange aggregations |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

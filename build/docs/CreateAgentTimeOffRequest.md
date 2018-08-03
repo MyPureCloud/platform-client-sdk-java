@@ -14,6 +14,6 @@ title: CreateAgentTimeOffRequest
 | **partialDayStartDateTimes** | [**List&lt;Date&gt;**](Date.html) | A set of start date-times in ISO-8601 format for partial day requests. |  [optional] |
 | **dailyDurationMinutes** | **Integer** | The daily duration of this time off request in minutes |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

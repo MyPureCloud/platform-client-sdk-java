@@ -17,6 +17,6 @@ title: CallMediaPolicyConditions
 | **directions** | **List&lt;String&gt;** |  |  [optional] |
 | **duration** | [**DurationCondition**](DurationCondition.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

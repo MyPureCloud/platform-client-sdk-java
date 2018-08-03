@@ -42,6 +42,7 @@ title: UserScheduleAdherence
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
 | UNSCHEDULED | &quot;Unscheduled&quot; |
+{: class="table table-striped"}
 
 
 <a name="SystemPresenceEnum"></a>
@@ -61,6 +62,7 @@ title: UserScheduleAdherence
 | TRAINING | &quot;Training&quot; |
 | MEETING | &quot;Meeting&quot; |
 | BREAK | &quot;Break&quot; |
+{: class="table table-striped"}
 
 
 <a name="RoutingStatusEnum"></a>
@@ -75,6 +77,7 @@ title: UserScheduleAdherence
 | INTERACTING | &quot;INTERACTING&quot; |
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
 | COMMUNICATING | &quot;COMMUNICATING&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActualActivityCategoryEnum"></a>
@@ -93,6 +96,7 @@ title: UserScheduleAdherence
 | TRAINING | &quot;Training&quot; |
 | UNAVAILABLE | &quot;Unavailable&quot; |
 | UNSCHEDULED | &quot;Unscheduled&quot; |
+{: class="table table-striped"}
 
 
 <a name="AdherenceStateEnum"></a>
@@ -107,6 +111,7 @@ title: UserScheduleAdherence
 | UNSCHEDULED | &quot;Unscheduled&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 | IGNORED | &quot;Ignored&quot; |
+{: class="table table-striped"}
 
 
 <a name="ImpactEnum"></a>
@@ -121,5 +126,6 @@ title: UserScheduleAdherence
 | NEUTRAL | &quot;Neutral&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
+
 
 

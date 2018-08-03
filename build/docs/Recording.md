@@ -49,6 +49,7 @@ title: Recording
 | RESTORING | &quot;RESTORING&quot; |
 | UPLOADING | &quot;UPLOADING&quot; |
 | ERROR | &quot;ERROR&quot; |
+{: class="table table-striped"}
 
 
 <a name="ArchiveMediumEnum"></a>
@@ -60,5 +61,6 @@ title: Recording
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; |
 {: class="table table-striped"}
+
 
 

@@ -12,6 +12,6 @@ title: ResponseConfig
 | **successTemplate** | **String** | Velocity template to build response to return from Action. |  [optional] |
 | **successTemplateUri** | **String** | URI to retrieve success template. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

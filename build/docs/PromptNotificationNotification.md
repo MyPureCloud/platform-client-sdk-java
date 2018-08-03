@@ -13,6 +13,6 @@ title: PromptNotificationNotification
 | **description** | **String** |  |  [optional] |
 | **currentOperation** | [**PromptNotificationNotificationCurrentOperation**](PromptNotificationNotificationCurrentOperation.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

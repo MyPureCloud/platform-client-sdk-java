@@ -13,6 +13,6 @@ title: Section
 | **key** | **String** |  |  [optional] |
 | **state** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

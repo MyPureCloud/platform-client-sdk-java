@@ -13,6 +13,6 @@ title: UserStations
 | **defaultStation** | [**UserStation**](UserStation.html) | Default station to be used if not associated with a station. |  [optional] |
 | **lastAssociatedStation** | [**UserStation**](UserStation.html) | Last associated station for this user. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

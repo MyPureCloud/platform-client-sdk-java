@@ -32,6 +32,7 @@ title: DataExportNotificationNotification
 | RUNNING | &quot;RUNNING&quot; |
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
+{: class="table table-striped"}
 
 
 <a name="ExportFormatEnum"></a>
@@ -42,6 +43,7 @@ title: DataExportNotificationNotification
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CSV | &quot;CSV&quot; |
+{: class="table table-striped"}
 
 
 <a name="ViewTypeEnum"></a>
@@ -85,6 +87,7 @@ title: DataExportNotificationNotification
 | ACW_INSIGHTS_VIEW | &quot;ACW_INSIGHTS_VIEW&quot; |
 | WAIT_INSIGHTS_VIEW | &quot;WAIT_INSIGHTS_VIEW&quot; |
 | AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW | &quot;AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW&quot; |
+{: class="table table-striped"}
 
 
 <a name="ExportErrorMessagesTypeEnum"></a>
@@ -103,5 +106,6 @@ title: DataExportNotificationNotification
 | FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE | &quot;FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE&quot; |
 | EXPORT_TYPE_NOT_IMPLEMENTED | &quot;EXPORT_TYPE_NOT_IMPLEMENTED&quot; |
 {: class="table table-striped"}
+
 
 

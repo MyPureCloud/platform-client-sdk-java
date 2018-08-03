@@ -38,6 +38,6 @@ title: ViewFilter
 | **surveyTotalScore** | [**NumericRange**](NumericRange.html) | The survey total score used to filter the view |  [optional] |
 | **surveyNpsScore** | [**NumericRange**](NumericRange.html) | The survey NPS score used to filter the view |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

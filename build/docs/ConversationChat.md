@@ -40,6 +40,7 @@ title: ConversationChat
 | DISCONNECTED | &quot;disconnected&quot; |
 | TERMINATED | &quot;terminated&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -51,6 +52,7 @@ title: ConversationChat
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -72,5 +74,6 @@ title: ConversationChat
 | OTHER | &quot;other&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
+
 
 

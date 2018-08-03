@@ -11,6 +11,6 @@ title: UserRoutingStatusNotification
 | **routingStatus** | [**AgentActivityNotificationRoutingStatus**](AgentActivityNotificationRoutingStatus.html) |  |  [optional] |
 | **errorInfo** | [**UserRoutingStatusNotificationErrorInfo**](UserRoutingStatusNotificationErrorInfo.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

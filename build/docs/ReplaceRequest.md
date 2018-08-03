@@ -12,6 +12,6 @@ title: ReplaceRequest
 | **name** | **String** |  |  [optional] |
 | **authToken** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

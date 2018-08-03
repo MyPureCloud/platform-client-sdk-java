@@ -13,6 +13,6 @@ title: ImportShortTermForecastRequest
 | **routeGroupList** | [**RouteGroupList**](RouteGroupList.html) | The raw data to import |  |
 | **partialUploadIds** | **List&lt;String&gt;** | IDs of partial uploads to include in this imported forecast.  Only relevant for large forecasts |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

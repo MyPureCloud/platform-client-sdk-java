@@ -17,6 +17,6 @@ title: ScheduleGenerationWarning
 | **noNeedDays** | **List&lt;String&gt;** | Days agent was scheduled but there was no need to meet. The scheduled days have no effect on service levels |  [optional] |
 | **shiftsTooCloseTogether** | **Boolean** | Whether the schedule did not meet the minimum time between shifts defined in the agent work plan |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

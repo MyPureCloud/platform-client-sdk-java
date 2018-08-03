@@ -16,6 +16,6 @@ title: UserScheduleActivity
 | **isDstFallback** | **Boolean** | Whether this activity spans a DST fallback |  [optional] |
 | **timeOffRequestId** | **String** | Time off request id of this activity |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

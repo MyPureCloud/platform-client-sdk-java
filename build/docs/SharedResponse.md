@@ -14,6 +14,6 @@ title: SharedResponse
 | **document** | [**Document**](Document.html) |  |  [optional] |
 | **share** | [**Share**](Share.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

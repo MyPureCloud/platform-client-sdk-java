@@ -18,6 +18,6 @@ title: GroupsSearchResponse
 | **types** | **List&lt;String&gt;** | Resource types the search was performed against |  |
 | **results** | [**List&lt;Group&gt;**](Group.html) | Search results |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

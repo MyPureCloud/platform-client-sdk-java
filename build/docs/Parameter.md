@@ -26,6 +26,7 @@ title: Parameter
 | STRING | &quot;STRING&quot; |
 | UUIDLIST | &quot;UUIDLIST&quot; |
 | STRINGLIST | &quot;STRINGLIST&quot; |
+{: class="table table-striped"}
 
 
 <a name="DomainEnum"></a>
@@ -42,5 +43,6 @@ title: Parameter
 | QMEVALFORMID | &quot;QMEVALFORMID&quot; |
 | UNKNOWN | &quot;UNKNOWN&quot; |
 {: class="table table-striped"}
+
 
 

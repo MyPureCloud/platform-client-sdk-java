@@ -12,6 +12,6 @@ title: EdgeMetricsDisk
 | **partitionName** | **String** | Disk partition name. |  [optional] |
 | **totalBytes** | **Double** | Total memory in bytes. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

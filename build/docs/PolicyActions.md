@@ -19,6 +19,6 @@ title: PolicyActions
 | **initiateScreenRecording** | [**InitiateScreenRecording**](InitiateScreenRecording.html) |  |  [optional] |
 | **mediaTranscriptions** | [**List&lt;MediaTranscription&gt;**](MediaTranscription.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

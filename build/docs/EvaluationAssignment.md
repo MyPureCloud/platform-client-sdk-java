@@ -11,6 +11,6 @@ title: EvaluationAssignment
 | **evaluationForm** | [**EvaluationForm**](EvaluationForm.html) |  |  [optional] |
 | **user** | [**User**](User.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -27,6 +27,7 @@ title: ContactListFilterNotificationPredicates
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NUMERIC | &quot;NUMERIC&quot; |
 | ALPHABETIC | &quot;ALPHABETIC&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -49,5 +50,6 @@ title: ContactListFilterNotificationPredicates
 | BETWEEN | &quot;BETWEEN&quot; |
 | IN | &quot;IN&quot; |
 {: class="table table-striped"}
+
 
 

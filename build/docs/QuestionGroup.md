@@ -19,6 +19,6 @@ title: QuestionGroup
 | **questions** | [**List&lt;Question&gt;**](Question.html) |  |  [optional] |
 | **visibilityCondition** | [**VisibilityCondition**](VisibilityCondition.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

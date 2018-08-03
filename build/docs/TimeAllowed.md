@@ -12,6 +12,6 @@ title: TimeAllowed
 | **timeZoneId** | **String** |  |  [optional] |
 | **empty** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

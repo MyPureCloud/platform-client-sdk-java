@@ -15,6 +15,6 @@ title: CallbackConversationNotificationDialerPreview
 | **phoneNumberColumns** | [**List&lt;CampaignNotificationPhoneColumns&gt;**](CampaignNotificationPhoneColumns.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

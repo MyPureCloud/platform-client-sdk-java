@@ -18,6 +18,6 @@ title: UsersSearchResponse
 | **types** | **List&lt;String&gt;** | Resource types the search was performed against |  |
 | **results** | [**List&lt;User&gt;**](User.html) | Search results |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

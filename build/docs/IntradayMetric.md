@@ -29,3 +29,4 @@ title: IntradayMetric
 {: class="table table-striped"}
 
 
+

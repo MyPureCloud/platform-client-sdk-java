@@ -23,6 +23,6 @@ title: IntegrationType
 | **userPermissions** | **List&lt;String&gt;** | List of permissions required to permit user access to the integration type. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

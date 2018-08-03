@@ -16,6 +16,6 @@ title: TrustorAuditQueryRequest
 | **facets** | [**List&lt;Facet&gt;**](Facet.html) | Facet information to be returned with the query results. |  [optional] |
 | **filters** | [**List&lt;Filter&gt;**](Filter.html) | Additional custom filters to be applied to the query. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

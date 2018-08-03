@@ -12,6 +12,6 @@ title: ImportScriptStatusResponse
 | **succeeded** | **Boolean** |  |  [optional] |
 | **message** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

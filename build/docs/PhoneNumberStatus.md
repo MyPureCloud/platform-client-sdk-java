@@ -10,6 +10,6 @@ title: PhoneNumberStatus
 | ------------ | ------------- | ------------- | ------------- |
 | **callable** | **Boolean** | Indicates whether or not a phone number is callable. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

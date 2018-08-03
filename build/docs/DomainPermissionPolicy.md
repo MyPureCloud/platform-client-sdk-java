@@ -17,6 +17,6 @@ title: DomainPermissionPolicy
 | **allowConditions** | **Boolean** |  |  [optional] |
 | **resourceConditionNode** | [**DomainResourceConditionNode**](DomainResourceConditionNode.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

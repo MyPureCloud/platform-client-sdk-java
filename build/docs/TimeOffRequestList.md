@@ -13,6 +13,6 @@ title: TimeOffRequestList
 | **timeOffRequests** | [**List&lt;TimeOffRequestResponse&gt;**](TimeOffRequestResponse.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

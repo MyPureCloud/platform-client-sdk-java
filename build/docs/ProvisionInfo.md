@@ -12,6 +12,6 @@ title: ProvisionInfo
 | **source** | **String** | The source of the provisioning |  [optional] |
 | **errorInfo** | **String** | The error information from the provision process, if any |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

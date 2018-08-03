@@ -14,6 +14,6 @@ title: DomainOrgRoleDifference
 | **userOrgRole** | [**DomainOrganizationRole**](DomainOrganizationRole.html) |  |  [optional] |
 | **roleFromDefault** | [**DomainOrganizationRole**](DomainOrganizationRole.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

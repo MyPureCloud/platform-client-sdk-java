@@ -11,6 +11,6 @@ title: StatsNotificationNotificationDatum
 | **interval** | **String** |  |  [optional] |
 | **metrics** | [**List&lt;StatsNotificationNotificationMetrics&gt;**](StatsNotificationNotificationMetrics.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

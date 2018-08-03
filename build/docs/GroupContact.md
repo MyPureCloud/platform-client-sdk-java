@@ -24,6 +24,7 @@ title: GroupContact
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GROUPRING | &quot;GROUPRING&quot; |
 | GROUPPHONE | &quot;GROUPPHONE&quot; |
+{: class="table table-striped"}
 
 
 <a name="MediaTypeEnum"></a>
@@ -35,5 +36,6 @@ title: GroupContact
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | PHONE | &quot;PHONE&quot; |
 {: class="table table-striped"}
+
 
 

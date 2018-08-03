@@ -13,6 +13,6 @@ title: UserRoutingSkillPost
 | **skillUri** | **String** | URI to the organization skill used by this user skill. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

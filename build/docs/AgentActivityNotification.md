@@ -15,6 +15,6 @@ title: AgentActivityNotification
 | **activeQueueIds** | **List&lt;String&gt;** |  |  [optional] |
 | **dateActiveQueuesChanged** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -17,6 +17,6 @@ title: WrapUpCodeMapping
 | **mapping** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.html) | A map from wrap-up code identifiers to a set of wrap-up flags. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

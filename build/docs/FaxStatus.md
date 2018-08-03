@@ -17,6 +17,6 @@ title: FaxStatus
 | **pageErrors** | **Long** | Number of page errors. |  [optional] |
 | **lineErrors** | **Long** | Number of line errors. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -33,6 +33,7 @@ title: Condition
 | PHONENUMBERTYPECONDITION | &quot;phoneNumberTypeCondition&quot; |
 | CALLANALYSISCONDITION | &quot;callAnalysisCondition&quot; |
 | CONTACTPROPERTYCONDITION | &quot;contactPropertyCondition&quot; |
+{: class="table table-striped"}
 
 
 <a name="ValueTypeEnum"></a>
@@ -46,6 +47,7 @@ title: Condition
 | NUMERIC | &quot;NUMERIC&quot; |
 | DATETIME | &quot;DATETIME&quot; |
 | PERIOD | &quot;PERIOD&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -66,6 +68,7 @@ title: Condition
 | BEFORE | &quot;BEFORE&quot; |
 | AFTER | &quot;AFTER&quot; |
 | IN | &quot;IN&quot; |
+{: class="table table-striped"}
 
 
 <a name="PropertyTypeEnum"></a>
@@ -80,5 +83,6 @@ title: Condition
 | LAST_WRAPUP_BY_COLUMN | &quot;LAST_WRAPUP_BY_COLUMN&quot; |
 | LAST_WRAPUP_OVERALL | &quot;LAST_WRAPUP_OVERALL&quot; |
 {: class="table table-striped"}
+
 
 

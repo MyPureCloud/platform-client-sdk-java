@@ -37,6 +37,7 @@ title: TrunkBase
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="TrunkTypeEnum"></a>
@@ -50,5 +51,6 @@ title: TrunkBase
 | PHONE | &quot;PHONE&quot; |
 | EDGE | &quot;EDGE&quot; |
 {: class="table table-striped"}
+
 
 

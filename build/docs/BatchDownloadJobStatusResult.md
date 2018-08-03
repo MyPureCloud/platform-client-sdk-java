@@ -17,6 +17,6 @@ title: BatchDownloadJobStatusResult
 | **results** | [**List&lt;BatchDownloadJobResult&gt;**](BatchDownloadJobResult.html) | Current set of results for the job |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -12,6 +12,6 @@ title: GreetingAudioFile
 | **sizeBytes** | **Long** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

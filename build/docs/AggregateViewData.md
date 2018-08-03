@@ -11,6 +11,6 @@ title: AggregateViewData
 | **name** | **String** |  |  [optional] |
 | **stats** | [**StatisticalSummary**](StatisticalSummary.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

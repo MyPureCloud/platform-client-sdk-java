@@ -11,6 +11,6 @@ title: MediaSummary
 | **contactCenter** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  |  [optional] |
 | **enterprise** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

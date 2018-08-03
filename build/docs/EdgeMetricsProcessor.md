@@ -14,6 +14,6 @@ title: EdgeMetricsProcessor
 | **privilegedTimePct** | **Double** | Percent time processor spent in privileged mode. |  [optional] |
 | **userTimePct** | **Double** | Percent time processor spent in user mode. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: ChannelTopicEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

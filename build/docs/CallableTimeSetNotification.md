@@ -16,6 +16,6 @@ title: CallableTimeSetNotification
 | **callableTimes** | [**List&lt;CallableTimeSetNotificationCallableTimes&gt;**](CallableTimeSetNotificationCallableTimes.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

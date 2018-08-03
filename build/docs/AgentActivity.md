@@ -22,6 +22,6 @@ title: AgentActivity
 | **agentEvaluatorActivityList** | [**List&lt;AgentEvaluatorActivity&gt;**](AgentEvaluatorActivity.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

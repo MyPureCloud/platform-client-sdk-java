@@ -25,6 +25,7 @@ title: WfmScheduleNotificationNotification
 | PROCESSING | &quot;Processing&quot; |
 | COMPLETE | &quot;Complete&quot; |
 | ERROR | &quot;Error&quot; |
+{: class="table table-striped"}
 
 
 <a name="EventTypeEnum"></a>
@@ -39,5 +40,6 @@ title: WfmScheduleNotificationNotification
 | COPY | &quot;Copy&quot; |
 | GENERATE | &quot;Generate&quot; |
 {: class="table table-striped"}
+
 
 

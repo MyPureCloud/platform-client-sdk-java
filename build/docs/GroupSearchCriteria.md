@@ -29,6 +29,7 @@ title: GroupSearchCriteria
 | AND | &quot;AND&quot; |
 | OR | &quot;OR&quot; |
 | NOT | &quot;NOT&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -47,5 +48,6 @@ title: GroupSearchCriteria
 | REQUIRED_FIELDS | &quot;REQUIRED_FIELDS&quot; |
 | MATCH_ALL | &quot;MATCH_ALL&quot; |
 {: class="table table-striped"}
+
 
 

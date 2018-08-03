@@ -14,6 +14,6 @@ title: CampaignDiagnostics
 | **outstandingInteractionsCount** | **Integer** | Current number of outstanding interactions on the campaign |  [optional] |
 | **scheduledInteractionsCount** | **Integer** | Current number of scheduled interactions on the campaign |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

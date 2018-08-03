@@ -26,6 +26,6 @@ title: FaxDataV2Notification
 | **receiverAddress** | **String** |  |  [optional] |
 | **read** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -28,6 +28,6 @@ title: WorkPlanShift
 | **id** | **String** | ID of the shift. This is required only for the case of updating an existing shift |  [optional] |
 | **delete** | **Boolean** | If marked true for updating an existing shift, the shift will be permanently deleted |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

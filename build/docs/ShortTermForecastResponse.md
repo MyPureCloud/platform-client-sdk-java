@@ -27,3 +27,4 @@ title: ShortTermForecastResponse
 {: class="table table-striped"}
 
 
+

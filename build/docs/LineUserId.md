@@ -10,6 +10,6 @@ title: LineUserId
 | ------------ | ------------- | ------------- | ------------- |
 | **userId** | **String** | The unique channel-specific userId for the user |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

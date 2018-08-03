@@ -15,6 +15,6 @@ title: AuditSearchResult
 | **facetInfo** | [**List&lt;FacetInfo&gt;**](FacetInfo.html) |  |  [optional] |
 | **auditMessages** | [**List&lt;AuditMessage&gt;**](AuditMessage.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

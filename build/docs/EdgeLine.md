@@ -41,6 +41,7 @@ title: EdgeLine
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="LineTypeEnum"></a>
@@ -55,5 +56,6 @@ title: EdgeLine
 | TRUNK | &quot;TRUNK&quot; |
 | STATION | &quot;STATION&quot; |
 {: class="table table-striped"}
+
 
 

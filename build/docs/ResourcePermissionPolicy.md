@@ -20,6 +20,6 @@ title: ResourcePermissionPolicy
 | **resourceCondition** | **String** |  |  [optional] |
 | **actionSet** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -14,6 +14,6 @@ title: OutOfOfficeNotification
 | **startDate** | [**Date**](Date.html) |  |  [optional] |
 | **endDate** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

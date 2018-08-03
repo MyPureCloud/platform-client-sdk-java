@@ -16,6 +16,6 @@ title: CertificateDetails
 | **signatureValid** | **Boolean** |  |  [optional] |
 | **valid** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

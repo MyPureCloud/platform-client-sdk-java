@@ -11,6 +11,6 @@ title: MessageMediaPolicy
 | **actions** | [**PolicyActions**](PolicyActions.html) | Actions applied when specified conditions are met |  [optional] |
 | **conditions** | [**MessageMediaPolicyConditions**](MessageMediaPolicyConditions.html) | Conditions for when actions should be applied |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

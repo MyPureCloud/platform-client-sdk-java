@@ -19,6 +19,6 @@ title: SocialConversationNotificationErrorBody
 | **details** | [**List&lt;CallbackConversationNotificationErrorInfoDetails&gt;**](CallbackConversationNotificationErrorInfoDetails.html) |  |  [optional] |
 | **errors** | [**List&lt;SocialConversationNotificationErrorBody&gt;**](SocialConversationNotificationErrorBody.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

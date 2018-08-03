@@ -20,6 +20,6 @@ title: CreateWorkPlanActivity
 | **countsAsPaidTime** | **Boolean** | Whether the activity is paid |  [optional] |
 | **countsAsContiguousWorkTime** | **Boolean** | Whether the activity duration is counted towards contiguous work time |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

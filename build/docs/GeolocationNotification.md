@@ -14,6 +14,6 @@ title: GeolocationNotification
 | **region** | **String** |  |  [optional] |
 | **city** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

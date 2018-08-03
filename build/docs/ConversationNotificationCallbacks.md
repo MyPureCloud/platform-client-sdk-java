@@ -48,6 +48,7 @@ title: ConversationNotificationCallbacks
 | SCHEDULED | &quot;SCHEDULED&quot; |
 | UPLOADING | &quot;UPLOADING&quot; |
 | NONE | &quot;NONE&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -59,6 +60,7 @@ title: ConversationNotificationCallbacks
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;INBOUND&quot; |
 | OUTBOUND | &quot;OUTBOUND&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -85,5 +87,6 @@ title: ConversationNotificationCallbacks
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
 {: class="table table-striped"}
+
 
 

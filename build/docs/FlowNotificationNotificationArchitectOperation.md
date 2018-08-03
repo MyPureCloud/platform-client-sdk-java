@@ -36,6 +36,7 @@ title: FlowNotificationNotificationArchitectOperation
 | STATE_CHANGE | &quot;STATE_CHANGE&quot; |
 | UPDATE | &quot;UPDATE&quot; |
 | VALIDATE | &quot;VALIDATE&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActionStatusEnum"></a>
@@ -53,5 +54,6 @@ title: FlowNotificationNotificationArchitectOperation
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
 {: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: WebChatConfig
 | ------------ | ------------- | ------------- | ------------- |
 | **webChatSkin** | **String** | css class to be applied to the web chat widget. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -18,6 +18,6 @@ title: ChatMessage
 | **type** | **String** |  |  [optional] |
 | **user** | [**ChatMessageUser**](ChatMessageUser.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

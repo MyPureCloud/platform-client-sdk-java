@@ -47,6 +47,7 @@ title: CallbackBasic
 | TERMINATED | &quot;terminated&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -58,6 +59,7 @@ title: CallbackBasic
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -84,5 +86,6 @@ title: CallbackBasic
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
+
 
 

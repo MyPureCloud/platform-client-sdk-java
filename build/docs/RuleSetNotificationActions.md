@@ -14,6 +14,6 @@ title: RuleSetNotificationActions
 | **properties** | **Map&lt;String, String&gt;** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

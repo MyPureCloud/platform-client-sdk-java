@@ -15,6 +15,6 @@ title: RouteGroup
 | **completedPerInterval** | **List&lt;Double&gt;** | Interactions completed per 15 minute interval |  [optional] |
 | **abandonedPerInterval** | **List&lt;Double&gt;** | Interactions abandoned per 15 minute interval |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

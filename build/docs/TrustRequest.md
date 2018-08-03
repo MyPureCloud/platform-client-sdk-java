@@ -16,6 +16,6 @@ title: TrustRequest
 | **groups** | [**List&lt;TrustGroup&gt;**](TrustGroup.html) | The list of trustee groups that are requesting access. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

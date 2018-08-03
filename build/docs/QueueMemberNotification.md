@@ -13,6 +13,6 @@ title: QueueMemberNotification
 | **joined** | **Boolean** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

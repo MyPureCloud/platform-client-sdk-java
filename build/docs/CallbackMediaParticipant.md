@@ -64,6 +64,7 @@ title: CallbackMediaParticipant
 | UPLOADING | &quot;uploading&quot; |
 | TRANSMITTING | &quot;transmitting&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -75,6 +76,7 @@ title: CallbackMediaParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -98,6 +100,7 @@ title: CallbackMediaParticipant
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
+{: class="table table-striped"}
 
 
 <a name="FlaggedReasonEnum"></a>
@@ -109,5 +112,6 @@ title: CallbackMediaParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
+
 
 

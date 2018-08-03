@@ -12,6 +12,6 @@ title: AttemptLimitsNotificationRecallEntries
 | **minutesBetweenAttempts** | **Integer** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: PostActionInput
 | **contract** | [**ActionContractInput**](ActionContractInput.html) | Action contract |  |
 | **secure** | **Boolean** | Indication of whether or not the action is designed to accept sensitive data |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

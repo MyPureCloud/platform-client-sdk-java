@@ -41,6 +41,7 @@ title: ConversationNotificationVideos
 | DISCONNECTED | &quot;DISCONNECTED&quot; |
 | TERMINATED | &quot;TERMINATED&quot; |
 | NONE | &quot;NONE&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -67,5 +68,6 @@ title: ConversationNotificationVideos
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
 {: class="table table-striped"}
+
 
 

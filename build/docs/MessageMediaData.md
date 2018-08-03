@@ -29,6 +29,7 @@ title: MessageMediaData
 | IMAGE_PNG | &quot;image/png&quot; |
 | IMAGE_JPEG | &quot;image/jpeg&quot; |
 | IMAGE_GIF | &quot;image/gif&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatusEnum"></a>
@@ -42,5 +43,6 @@ title: MessageMediaData
 | VALID | &quot;valid&quot; |
 | INVALID | &quot;invalid&quot; |
 {: class="table table-striped"}
+
 
 

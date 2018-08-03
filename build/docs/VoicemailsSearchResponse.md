@@ -18,6 +18,6 @@ title: VoicemailsSearchResponse
 | **types** | **List&lt;String&gt;** | Resource types the search was performed against |  |
 | **results** | [**List&lt;VoicemailMessage&gt;**](VoicemailMessage.html) | Search results |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

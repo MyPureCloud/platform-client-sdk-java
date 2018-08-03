@@ -10,6 +10,6 @@ title: GenerateShortTermForecastRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **description** | **String** | Description for the generated forecast.  Pass an empty string for no description |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

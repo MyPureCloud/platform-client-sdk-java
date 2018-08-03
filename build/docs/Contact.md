@@ -26,6 +26,7 @@ title: Contact
 | PHONE | &quot;PHONE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | SMS | &quot;SMS&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -44,5 +45,6 @@ title: Contact
 | MOBILE | &quot;MOBILE&quot; |
 | MAIN | &quot;MAIN&quot; |
 {: class="table table-striped"}
+
 
 

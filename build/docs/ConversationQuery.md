@@ -28,6 +28,7 @@ title: ConversationQuery
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ASC | &quot;asc&quot; |
 | DESC | &quot;desc&quot; |
+{: class="table table-striped"}
 
 
 <a name="OrderByEnum"></a>
@@ -42,5 +43,6 @@ title: ConversationQuery
 | SEGMENTSTART | &quot;segmentStart&quot; |
 | SEGMENTEND | &quot;segmentEnd&quot; |
 {: class="table table-striped"}
+
 
 

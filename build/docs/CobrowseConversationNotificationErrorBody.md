@@ -19,6 +19,6 @@ title: CobrowseConversationNotificationErrorBody
 | **details** | [**List&lt;CallbackConversationNotificationErrorInfoDetails&gt;**](CallbackConversationNotificationErrorInfoDetails.html) |  |  [optional] |
 | **errors** | [**List&lt;CobrowseConversationNotificationErrorBody&gt;**](CobrowseConversationNotificationErrorBody.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

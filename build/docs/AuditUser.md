@@ -12,6 +12,6 @@ title: AuditUser
 | **name** | **String** | The full username of the user who initiated the action of this AuditMessage. |  [optional] |
 | **display** | **String** | The display name of the user who initiated the action of this AuditMessage. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -17,6 +17,6 @@ title: EdgeMetrics
 | **subsystems** | [**List&lt;EdgeMetricsSubsystem&gt;**](EdgeMetricsSubsystem.html) |  |  [optional] |
 | **networks** | [**List&lt;EdgeMetricsNetwork&gt;**](EdgeMetricsNetwork.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -17,6 +17,6 @@ title: ContentQueryRequest
 | **attributeFilters** | [**List&lt;ContentAttributeFilterItem&gt;**](ContentAttributeFilterItem.html) |  |  [optional] |
 | **includeShares** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

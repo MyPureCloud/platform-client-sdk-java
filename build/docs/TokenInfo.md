@@ -12,6 +12,6 @@ title: TokenInfo
 | **homeOrganization** | [**NamedEntity**](NamedEntity.html) | The token&#39;s home organization |  [optional] |
 | **oAuthClient** | [**OrgOAuthClient**](OrgOAuthClient.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

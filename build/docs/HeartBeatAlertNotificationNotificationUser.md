@@ -11,6 +11,6 @@ title: HeartBeatAlertNotificationNotificationUser
 | **id** | **String** |  |  [optional] |
 | **displayName** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

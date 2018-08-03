@@ -18,6 +18,6 @@ title: RuleSetNotification
 | **rules** | [**List&lt;RuleSetNotificationRules&gt;**](RuleSetNotificationRules.html) |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

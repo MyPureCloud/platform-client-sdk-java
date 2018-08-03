@@ -10,6 +10,6 @@ title: WorkPlanReference
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The ID of the work plan |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -17,6 +17,6 @@ title: PolicyConditions
 | **wrapupCodes** | [**List&lt;WrapupCode&gt;**](WrapupCode.html) |  |  [optional] |
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

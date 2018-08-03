@@ -22,6 +22,6 @@ title: OAuthClientListing
 | **scope** | **List&lt;String&gt;** | The scope requested by this client |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

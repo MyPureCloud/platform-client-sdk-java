@@ -16,6 +16,6 @@ title: Trustor
 | **authorization** | [**TrusteeAuthorization**](TrusteeAuthorization.html) | Authorization for the trustee user has in this trustor organization |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

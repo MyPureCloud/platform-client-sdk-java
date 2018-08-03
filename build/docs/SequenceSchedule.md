@@ -18,6 +18,6 @@ title: SequenceSchedule
 | **sequence** | [**UriReference**](UriReference.html) | The CampaignSequence that this SequenceSchedule is for. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

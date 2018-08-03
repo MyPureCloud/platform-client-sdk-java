@@ -31,6 +31,7 @@ title: PhoneStatus
 | OPERATIONAL | &quot;OPERATIONAL&quot; |
 | DEGRADED | &quot;DEGRADED&quot; |
 | OFFLINE | &quot;OFFLINE&quot; |
+{: class="table table-striped"}
 
 
 <a name="EdgesStatusEnum"></a>
@@ -44,6 +45,7 @@ title: PhoneStatus
 | MIXED_SERVICE | &quot;MIXED_SERVICE&quot; |
 | OUT_OF_SERVICE | &quot;OUT_OF_SERVICE&quot; |
 | NO_EDGES | &quot;NO_EDGES&quot; |
+{: class="table table-striped"}
 
 
 <a name="PhoneAssignmentToEdgeTypeEnum"></a>
@@ -56,5 +58,6 @@ title: PhoneStatus
 | PRIMARY | &quot;PRIMARY&quot; |
 | SECONDARY | &quot;SECONDARY&quot; |
 {: class="table table-striped"}
+
 
 

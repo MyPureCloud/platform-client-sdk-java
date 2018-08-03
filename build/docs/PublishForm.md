@@ -11,6 +11,6 @@ title: PublishForm
 | **published** | **Boolean** | Is this form published |  |
 | **id** | **String** | Unique Id for this version of this form |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

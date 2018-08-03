@@ -12,6 +12,6 @@ title: DependencyTrackingBuildNotificationNotification
 | **user** | [**DependencyTrackingBuildNotificationNotificationUser**](DependencyTrackingBuildNotificationNotificationUser.html) |  |  [optional] |
 | **startTime** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -13,6 +13,6 @@ title: VoicemailUserPolicy
 | **pin** | **String** | The user&#39;s PIN to access their voicemail. This property is only used for updates and never provided otherwise to ensure security |  [optional] |
 | **modifiedDate** | [**Date**](Date.html) | The date the policy was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

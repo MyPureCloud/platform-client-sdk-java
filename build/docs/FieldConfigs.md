@@ -13,6 +13,6 @@ title: FieldConfigs
 | **group** | [**FieldConfig**](FieldConfig.html) |  |  [optional] |
 | **externalContact** | [**FieldConfig**](FieldConfig.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

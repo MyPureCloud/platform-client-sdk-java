@@ -10,6 +10,6 @@ title: FacebookScopedId
 | ------------ | ------------- | ------------- | ------------- |
 | **scopedId** | **String** | The unique page/app-specific scopedId for the user |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

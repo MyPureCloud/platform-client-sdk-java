@@ -15,6 +15,6 @@ title: UserRoutingStatusNotificationErrorInfo
 | **userParamsMessage** | **String** |  |  [optional] |
 | **userParams** | [**List&lt;UserRoutingStatusNotificationErrorInfoUserParams&gt;**](UserRoutingStatusNotificationErrorInfoUserParams.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -14,6 +14,6 @@ title: EdgeMetricsNetwork
 | **bandwidthBitsPerSec** | **Double** | Total bandwidth of the adapter in bits per second. |  [optional] |
 | **utilizationPct** | **Double** | Percent utilization of the network adapter. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

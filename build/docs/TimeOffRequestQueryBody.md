@@ -12,6 +12,6 @@ title: TimeOffRequestQueryBody
 | **statuses** | **List&lt;String&gt;** | The set of statuses to filter time off requests |  [optional] |
 | **dateRange** | [**DateRange**](DateRange.html) | The inclusive range of dates to filter time off requests |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

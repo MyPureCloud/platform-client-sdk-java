@@ -12,6 +12,6 @@ title: TimeSlot
 | **stopTime** | **String** | stop time in xx:xx:xx.xxx format |  [optional] |
 | **day** | **Integer** | Day for this time slot, Monday = 1 ... Sunday = 7 |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

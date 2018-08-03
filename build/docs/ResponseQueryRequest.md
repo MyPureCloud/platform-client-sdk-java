@@ -12,6 +12,6 @@ title: ResponseQueryRequest
 | **pageSize** | **Integer** | The maximum number of hits to return. Default: 25, Maximum: 500. |  [optional] |
 | **filters** | [**List&lt;ResponseFilter&gt;**](ResponseFilter.html) | Filter the query results. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

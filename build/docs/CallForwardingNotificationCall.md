@@ -10,6 +10,6 @@ title: CallForwardingNotificationCall
 | ------------ | ------------- | ------------- | ------------- |
 | **targets** | [**List&lt;CallForwardingNotificationTargets&gt;**](CallForwardingNotificationTargets.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

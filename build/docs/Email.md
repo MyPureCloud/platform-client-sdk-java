@@ -42,6 +42,7 @@ title: Email
 | DISCONNECTED | &quot;disconnected&quot; |
 | NONE | &quot;none&quot; |
 | TRANSMITTING | &quot;transmitting&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -53,6 +54,7 @@ title: Email
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -79,5 +81,6 @@ title: Email
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
+
 
 

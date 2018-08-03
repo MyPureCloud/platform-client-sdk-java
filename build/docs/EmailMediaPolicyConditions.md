@@ -15,6 +15,6 @@ title: EmailMediaPolicyConditions
 | **languages** | [**List&lt;Language&gt;**](Language.html) |  |  [optional] |
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

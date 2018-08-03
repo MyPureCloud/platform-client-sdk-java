@@ -14,6 +14,6 @@ title: CampaignProgress
 | **totalNumberOfContacts** | **Long** | Total number of contacts in the campaign |  [optional] |
 | **percentage** | **Long** | Percentage of contacts processed during the campaign |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -11,6 +11,6 @@ title: GreetingNotificationGreetingAudioFile
 | **durationMilliseconds** | **Integer** |  |  [optional] |
 | **sizeBytes** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

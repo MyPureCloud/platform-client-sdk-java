@@ -14,6 +14,6 @@ title: ChatMessageUser
 | **username** | **String** |  |  [optional] |
 | **images** | [**List&lt;UserImage&gt;**](UserImage.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

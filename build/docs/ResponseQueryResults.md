@@ -10,6 +10,6 @@ title: ResponseQueryResults
 | ------------ | ------------- | ------------- | ------------- |
 | **results** | [**ResponseEntityList**](ResponseEntityList.html) | Contains the query results |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

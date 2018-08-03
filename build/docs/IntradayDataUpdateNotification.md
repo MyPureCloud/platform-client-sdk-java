@@ -16,6 +16,6 @@ title: IntradayDataUpdateNotification
 | **queueIds** | **List&lt;String&gt;** |  |  [optional] |
 | **intradayDataGroupings** | [**List&lt;IntradayDataUpdateNotificationIntradayDataGroupings&gt;**](IntradayDataUpdateNotificationIntradayDataGroupings.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

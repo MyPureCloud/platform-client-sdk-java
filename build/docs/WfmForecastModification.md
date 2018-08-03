@@ -34,6 +34,7 @@ title: WfmForecastModification
 | SETVALUEOVERRANGE | &quot;SetValueOverRange&quot; |
 | CHANGEVALUEOVERRANGE | &quot;ChangeValueOverRange&quot; |
 | SETVALUESFORINTERVALSET | &quot;SetValuesForIntervalSet&quot; |
+{: class="table table-striped"}
 
 
 <a name="MetricEnum"></a>
@@ -48,5 +49,6 @@ title: WfmForecastModification
 | AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; |
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
 {: class="table table-striped"}
+
 
 

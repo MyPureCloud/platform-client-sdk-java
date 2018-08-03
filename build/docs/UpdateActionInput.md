@@ -13,6 +13,6 @@ title: UpdateActionInput
 | **config** | [**ActionConfig**](ActionConfig.html) | Configuration to support request and response processing |  [optional] |
 | **version** | **Integer** | Version of this action |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

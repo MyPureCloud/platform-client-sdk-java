@@ -10,6 +10,6 @@ title: LicenseBatchAssignmentRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **assignments** | [**List&lt;LicenseAssignmentRequest&gt;**](LicenseAssignmentRequest.html) | The list of license assignment updates to make. |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

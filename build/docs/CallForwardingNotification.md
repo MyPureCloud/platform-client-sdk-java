@@ -14,6 +14,6 @@ title: CallForwardingNotification
 | **voicemail** | **String** |  |  [optional] |
 | **modifiedDate** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

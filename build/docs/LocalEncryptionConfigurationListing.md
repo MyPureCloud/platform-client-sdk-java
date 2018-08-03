@@ -12,6 +12,6 @@ title: LocalEncryptionConfigurationListing
 | **entities** | [**List&lt;LocalEncryptionConfiguration&gt;**](LocalEncryptionConfiguration.html) |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -11,6 +11,6 @@ title: UserParam
 | **key** | **String** |  |  [optional] |
 | **value** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

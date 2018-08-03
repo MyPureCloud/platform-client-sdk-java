@@ -38,6 +38,7 @@ title: CallHistoryParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -61,6 +62,7 @@ title: CallHistoryParticipant
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
+{: class="table table-striped"}
 
 
 <a name="FlaggedReasonEnum"></a>
@@ -72,5 +74,6 @@ title: CallHistoryParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
+
 
 

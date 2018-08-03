@@ -21,6 +21,6 @@ title: InboundMessageRequest
 | **fromName** | **String** | The name of the sender of the email. |  [optional] |
 | **subject** | **String** | The subject of the email |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

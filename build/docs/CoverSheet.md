@@ -11,6 +11,6 @@ title: CoverSheet
 | **notes** | **String** | Text to be added to the coversheet |  [optional] |
 | **locale** | **String** | Locale, e.g. = en-US |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

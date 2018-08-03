@@ -12,6 +12,6 @@ title: GreetingMediaInfo
 | **mediaFileUri** | **String** |  |  [optional] |
 | **mediaImageUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

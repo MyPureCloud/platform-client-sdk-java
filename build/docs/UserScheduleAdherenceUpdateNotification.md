@@ -36,6 +36,7 @@ title: UserScheduleAdherenceUpdateNotification
 | NOT_RESPONDING | &quot;NOT_RESPONDING&quot; |
 | COMMUNICATING | &quot;COMMUNICATING&quot; |
 | OFFLINE | &quot;OFFLINE&quot; |
+{: class="table table-striped"}
 
 
 <a name="AdherenceStateEnum"></a>
@@ -51,5 +52,6 @@ title: UserScheduleAdherenceUpdateNotification
 | UNKNOWN | &quot;Unknown&quot; |
 | IGNORED | &quot;Ignored&quot; |
 {: class="table table-striped"}
+
 
 

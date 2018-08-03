@@ -11,6 +11,6 @@ title: GroupMembersUpdate
 | **memberIds** | **List&lt;String&gt;** | A list of the ids of the members to add. |  |
 | **version** | **Integer** | The current group version. |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

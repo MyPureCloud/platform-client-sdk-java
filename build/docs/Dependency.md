@@ -36,6 +36,7 @@ title: Dependency
 | DATATABLE | &quot;DATATABLE&quot; |
 | EMAILROUTE | &quot;EMAILROUTE&quot; |
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
+| FLOWOUTCOME | &quot;FLOWOUTCOME&quot; |
 | GROUP | &quot;GROUP&quot; |
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; |
 | INBOUNDEMAILFLOW | &quot;INBOUNDEMAILFLOW&quot; |
@@ -60,5 +61,6 @@ title: Dependency
 | VOICEXML | &quot;VOICEXML&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 {: class="table table-striped"}
+
 
 

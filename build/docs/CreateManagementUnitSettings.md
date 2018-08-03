@@ -13,6 +13,6 @@ title: CreateManagementUnitSettings
 | **timeOff** | [**TimeOffRequestSettings**](TimeOffRequestSettings.html) | Time off request settings for this management unit |  [optional] |
 | **scheduling** | [**SchedulingSettings**](SchedulingSettings.html) | Scheduling settings for this management unit |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

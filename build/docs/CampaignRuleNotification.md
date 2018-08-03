@@ -20,6 +20,6 @@ title: CampaignRuleNotification
 | **enabled** | **Boolean** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

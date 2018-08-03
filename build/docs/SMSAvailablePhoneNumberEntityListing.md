@@ -10,6 +10,6 @@ title: SMSAvailablePhoneNumberEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;SmsAvailablePhoneNumber&gt;**](SmsAvailablePhoneNumber.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

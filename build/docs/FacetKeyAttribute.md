@@ -12,6 +12,6 @@ title: FacetKeyAttribute
 | **name** | **String** |  |  [optional] |
 | **count** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

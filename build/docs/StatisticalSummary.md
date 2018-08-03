@@ -18,6 +18,6 @@ title: StatisticalSummary
 | **denominator** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 | **target** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

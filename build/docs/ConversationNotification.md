@@ -14,6 +14,6 @@ title: ConversationNotification
 | **recordingState** | **String** |  |  [optional] |
 | **address** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

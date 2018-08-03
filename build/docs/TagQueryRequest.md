@@ -12,6 +12,6 @@ title: TagQueryRequest
 | **pageNumber** | **Integer** |  |  [optional] |
 | **pageSize** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

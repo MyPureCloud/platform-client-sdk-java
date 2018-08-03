@@ -14,6 +14,6 @@ title: TrunkMetrics
 | **calls** | [**TrunkMetricsCalls**](TrunkMetricsCalls.html) |  |  [optional] |
 | **qos** | [**TrunkMetricsQoS**](TrunkMetricsQoS.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

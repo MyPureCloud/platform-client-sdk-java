@@ -33,6 +33,7 @@ title: Greeting
 | STATION | &quot;STATION&quot; |
 | VOICEMAIL | &quot;VOICEMAIL&quot; |
 | NAME | &quot;NAME&quot; |
+{: class="table table-striped"}
 
 
 <a name="OwnerTypeEnum"></a>
@@ -46,5 +47,6 @@ title: Greeting
 | ORGANIZATION | &quot;ORGANIZATION&quot; |
 | GROUP | &quot;GROUP&quot; |
 {: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: DomainPermission
 | **allowsConditions** | **Boolean** |  |  [optional] |
 | **divisionAware** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

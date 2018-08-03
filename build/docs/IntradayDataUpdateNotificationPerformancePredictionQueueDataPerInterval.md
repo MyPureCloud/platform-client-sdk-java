@@ -12,6 +12,6 @@ title: IntradayDataUpdateNotificationPerformancePredictionQueueDataPerInterval
 | **averageSpeedOfAnswerSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 | **numberOfInteractions** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

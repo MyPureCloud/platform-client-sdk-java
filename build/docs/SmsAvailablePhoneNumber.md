@@ -32,6 +32,7 @@ title: SmsAvailablePhoneNumber
 | MOBILE | &quot;mobile&quot; |
 | TOLLFREE | &quot;tollfree&quot; |
 | SHORTCODE | &quot;shortcode&quot; |
+{: class="table table-striped"}
 
 
 <a name="AddressRequirementEnum"></a>
@@ -46,5 +47,6 @@ title: SmsAvailablePhoneNumber
 | LOCAL | &quot;local&quot; |
 | FOREIGN | &quot;foreign&quot; |
 {: class="table table-striped"}
+
 
 

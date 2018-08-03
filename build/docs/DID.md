@@ -37,6 +37,7 @@ title: DID
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="OwnerTypeEnum"></a>
@@ -51,5 +52,6 @@ title: DID
 | IVR_CONFIG | &quot;IVR_CONFIG&quot; |
 | GROUP | &quot;GROUP&quot; |
 {: class="table table-striped"}
+
 
 

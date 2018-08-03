@@ -13,6 +13,6 @@ title: TrunkMetricsOptions
 | **optionStateTime** | [**Date**](Date.html) | ISO 8601 format UTC absolute date &amp; time of the last change of the option state. |  [optional] |
 | **errorInfo** | [**TrunkErrorInfo**](TrunkErrorInfo.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

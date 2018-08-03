@@ -29,6 +29,7 @@ title: AnalyticsQueryPredicate
 | DIMENSION | &quot;dimension&quot; |
 | PROPERTY | &quot;property&quot; |
 | METRIC | &quot;metric&quot; |
+{: class="table table-striped"}
 
 
 <a name="DimensionEnum"></a>
@@ -106,6 +107,7 @@ title: AnalyticsQueryPredicate
 | SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
 | ROUTINGSTATUS | &quot;routingStatus&quot; |
+{: class="table table-striped"}
 
 
 <a name="PropertyTypeEnum"></a>
@@ -121,6 +123,7 @@ title: AnalyticsQueryPredicate
 | DATE | &quot;date&quot; |
 | STRING | &quot;string&quot; |
 | UUID | &quot;uuid&quot; |
+{: class="table table-striped"}
 
 
 <a name="MetricEnum"></a>
@@ -195,6 +198,7 @@ title: AnalyticsQueryPredicate
 | NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; |
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -208,5 +212,6 @@ title: AnalyticsQueryPredicate
 | EXISTS | &quot;exists&quot; |
 | NOTEXISTS | &quot;notExists&quot; |
 {: class="table table-striped"}
+
 
 

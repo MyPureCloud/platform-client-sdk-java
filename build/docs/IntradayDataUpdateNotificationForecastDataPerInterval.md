@@ -12,6 +12,6 @@ title: IntradayDataUpdateNotificationForecastDataPerInterval
 | **averageTalkTimeSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 | **averageAfterCallWorkSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

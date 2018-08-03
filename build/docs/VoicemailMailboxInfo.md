@@ -15,6 +15,6 @@ title: VoicemailMailboxInfo
 | **createdDate** | [**Date**](Date.html) | The date of the oldest voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **modifiedDate** | [**Date**](Date.html) | The date of the most recent voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -27,6 +27,7 @@ title: CampaignRuleParameters
 | GREATERTHANEQUALTO | &quot;greaterThanEqualTo&quot; |
 | LESSTHAN | &quot;lessThan&quot; |
 | LESSTHANEQUALTO | &quot;lessThanEqualTo&quot; |
+{: class="table table-striped"}
 
 
 <a name="PriorityEnum"></a>
@@ -41,6 +42,7 @@ title: CampaignRuleParameters
 | _3 | &quot;3&quot; |
 | _4 | &quot;4&quot; |
 | _5 | &quot;5&quot; |
+{: class="table table-striped"}
 
 
 <a name="DialingModeEnum"></a>
@@ -56,5 +58,6 @@ title: CampaignRuleParameters
 | PREDICTIVE | &quot;predictive&quot; |
 | PROGRESSIVE | &quot;progressive&quot; |
 {: class="table table-striped"}
+
 
 

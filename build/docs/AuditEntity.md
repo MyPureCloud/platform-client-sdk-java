@@ -13,6 +13,6 @@ title: AuditEntity
 | **name** | **String** | The name of the entity the action of this AuditEntity targeted. |  [optional] |
 | **selfUri** | **String** | The selfUri for this entity. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

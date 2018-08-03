@@ -14,6 +14,6 @@ title: DialerPreview
 | **campaignId** | **String** | The campaignId associated with this preview data pop. |  [optional] |
 | **phoneNumberColumns** | [**List&lt;PhoneNumberColumn&gt;**](PhoneNumberColumn.html) | The phone number columns associated with this campaign |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

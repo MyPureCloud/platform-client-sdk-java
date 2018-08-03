@@ -61,6 +61,7 @@ title: Participant
 | OPTIONAL | &quot;optional&quot; |
 | TIMEOUT | &quot;timeout&quot; |
 | FORCEDTIMEOUT | &quot;forcedTimeout&quot; |
+{: class="table table-striped"}
 
 
 <a name="ScreenRecordingStateEnum"></a>
@@ -76,6 +77,7 @@ title: Participant
 | STOPPED | &quot;stopped&quot; |
 | ERROR | &quot;error&quot; |
 | TIMEOUT | &quot;timeout&quot; |
+{: class="table table-striped"}
 
 
 <a name="FlaggedReasonEnum"></a>
@@ -87,5 +89,6 @@ title: Participant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
+
 
 

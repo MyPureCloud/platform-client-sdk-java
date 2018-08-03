@@ -13,6 +13,6 @@ title: CampaignDivisionView
 | **division** | [**Division**](Division.html) | The division to which this entity belongs. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

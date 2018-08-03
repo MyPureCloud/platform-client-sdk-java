@@ -16,6 +16,6 @@ title: UserStation
 | **defaultUser** | [**User**](User.html) |  |  [optional] |
 | **providerInfo** | **Map&lt;String, String&gt;** | Provider-specific info for this station, e.g. { \&quot;edgeGroupId\&quot;: \&quot;ffe7b15c-a9cc-4f4c-88f5-781327819a49\&quot; } |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

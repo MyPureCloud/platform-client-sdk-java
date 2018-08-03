@@ -11,6 +11,6 @@ title: AggregationRange
 | **gte** | [**BigDecimal**](BigDecimal.html) | Greater than or equal to |  [optional] |
 | **lt** | [**BigDecimal**](BigDecimal.html) | Less than |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

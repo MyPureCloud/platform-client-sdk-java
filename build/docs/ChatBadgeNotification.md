@@ -12,6 +12,6 @@ title: ChatBadgeNotification
 | **unreadCount** | **Integer** |  |  [optional] |
 | **lastUnreadNotificationDate** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

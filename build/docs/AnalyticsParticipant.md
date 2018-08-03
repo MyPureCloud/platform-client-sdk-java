@@ -41,6 +41,7 @@ title: AnalyticsParticipant
 | EXTERNAL | &quot;external&quot; |
 | FAX | &quot;fax&quot; |
 | WORKFLOW | &quot;workflow&quot; |
+{: class="table table-striped"}
 
 
 <a name="FlaggedReasonEnum"></a>
@@ -52,5 +53,6 @@ title: AnalyticsParticipant
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
+
 
 

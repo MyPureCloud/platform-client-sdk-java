@@ -10,6 +10,6 @@ title: UnreadStatus
 | ------------ | ------------- | ------------- | ------------- |
 | **unread** | **Boolean** | Sets if the alert is read or unread. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

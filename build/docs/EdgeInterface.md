@@ -17,6 +17,6 @@ title: EdgeInterface
 | **lineTypes** | **List&lt;String&gt;** |  |  [optional] |
 | **addressFamilyId** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

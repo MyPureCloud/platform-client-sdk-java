@@ -29,6 +29,7 @@ title: SearchCriteria
 | AND | &quot;AND&quot; |
 | OR | &quot;OR&quot; |
 | NOT | &quot;NOT&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -54,5 +55,6 @@ title: SearchCriteria
 | QUERY_STRING | &quot;QUERY_STRING&quot; |
 | MATCH_ALL | &quot;MATCH_ALL&quot; |
 {: class="table table-striped"}
+
 
 

@@ -13,6 +13,6 @@ title: UserRoutingLanguagePost
 | **languageUri** | **String** | URI to the organization language used by this user langauge. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -14,6 +14,6 @@ title: EffectiveConfiguration
 | **notes** | **String** | Notes about the integration. |  |
 | **credentials** | [**Map&lt;String, CredentialInfo&gt;**](CredentialInfo.html) | Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

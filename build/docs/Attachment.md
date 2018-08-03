@@ -14,6 +14,6 @@ title: Attachment
 | **contentType** | **String** | The type of file the attachment is. |  [optional] |
 | **contentLength** | **Integer** | The length of the attachment file. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

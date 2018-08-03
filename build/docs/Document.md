@@ -52,6 +52,7 @@ title: Document
 | DOCUMENT | &quot;DOCUMENT&quot; |
 | FAX | &quot;FAX&quot; |
 | RECORDING | &quot;RECORDING&quot; |
+{: class="table table-striped"}
 
 
 <a name="UploadMethodEnum"></a>
@@ -63,6 +64,7 @@ title: Document
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SINGLE_PUT | &quot;SINGLE_PUT&quot; |
 | MULTIPART_POST | &quot;MULTIPART_POST&quot; |
+{: class="table table-striped"}
 
 
 <a name="SharingStatusEnum"></a>
@@ -76,5 +78,6 @@ title: Document
 | LIMITED | &quot;LIMITED&quot; |
 | PUBLIC | &quot;PUBLIC&quot; |
 {: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: ShortTermForecastListResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;ShortTermForecastListItemResponse&gt;**](ShortTermForecastListItemResponse.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

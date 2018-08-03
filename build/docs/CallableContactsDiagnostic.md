@@ -13,6 +13,6 @@ title: CallableContactsDiagnostic
 | **callableTimeSet** | [**UriReference**](UriReference.html) | Callable time sets for the campaign |  [optional] |
 | **ruleSets** | [**List&lt;UriReference&gt;**](UriReference.html) | Rule sets for the campaign |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

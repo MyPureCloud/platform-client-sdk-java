@@ -23,6 +23,6 @@ title: CreateWorkPlan
 | **shifts** | [**List&lt;CreateWorkPlanShift&gt;**](CreateWorkPlanShift.html) | Shifts in this work plan |  [optional] |
 | **agents** | [**List&lt;UserReference&gt;**](UserReference.html) | Agents in this work plan |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

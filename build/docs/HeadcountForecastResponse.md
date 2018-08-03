@@ -11,6 +11,6 @@ title: HeadcountForecastResponse
 | **required** | [**List&lt;HeadcountIntervalResponse&gt;**](HeadcountIntervalResponse.html) | Headcount information with shrinkage |  [optional] |
 | **requiredWithoutShrinkage** | [**List&lt;HeadcountIntervalResponse&gt;**](HeadcountIntervalResponse.html) | Headcount information without shrinkage |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

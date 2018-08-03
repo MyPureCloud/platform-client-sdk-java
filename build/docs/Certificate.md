@@ -10,6 +10,6 @@ title: Certificate
 | ------------ | ------------- | ------------- | ------------- |
 | **certificate** | **String** | The certificate to parse. |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

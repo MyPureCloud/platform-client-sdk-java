@@ -22,6 +22,6 @@ title: WorkPlanActivity
 | **id** | **String** | ID of the activity. This is required only for the case of updating an existing activity |  [optional] |
 | **delete** | **Boolean** | If marked true for updating an existing activity, the activity will be permanently deleted |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

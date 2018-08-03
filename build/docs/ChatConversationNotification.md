@@ -13,6 +13,6 @@ title: ChatConversationNotification
 | **participants** | [**List&lt;ChatConversationNotificationParticipants&gt;**](ChatConversationNotificationParticipants.html) |  |  [optional] |
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

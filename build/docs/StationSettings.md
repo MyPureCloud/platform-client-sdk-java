@@ -10,6 +10,6 @@ title: StationSettings
 | ------------ | ------------- | ------------- | ------------- |
 | **freeSeatingConfiguration** | [**FreeSeatingConfiguration**](FreeSeatingConfiguration.html) | Configuration options for free-seating |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

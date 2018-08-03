@@ -12,6 +12,6 @@ title: ConnectRate
 | **connects** | **Long** | Number of calls with a live voice detected |  [optional] |
 | **connectRatio** | **Double** | Ratio of connects to attempts |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

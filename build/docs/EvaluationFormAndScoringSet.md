@@ -11,6 +11,6 @@ title: EvaluationFormAndScoringSet
 | **evaluationForm** | [**EvaluationForm**](EvaluationForm.html) |  |  [optional] |
 | **answers** | [**EvaluationScoringSet**](EvaluationScoringSet.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

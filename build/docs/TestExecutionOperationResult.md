@@ -14,6 +14,6 @@ title: TestExecutionOperationResult
 | **result** | **Object** | The result of the operation |  [optional] |
 | **error** | [**ErrorBody**](ErrorBody.html) | Error that occurred during the operation |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

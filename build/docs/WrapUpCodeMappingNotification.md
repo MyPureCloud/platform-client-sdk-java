@@ -16,6 +16,6 @@ title: WrapUpCodeMappingNotification
 | **defaultSet** | **List&lt;String&gt;** |  |  [optional] |
 | **mapping** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

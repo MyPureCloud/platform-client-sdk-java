@@ -41,6 +41,7 @@ title: Message
 | ALERTING | &quot;alerting&quot; |
 | CONNECTED | &quot;connected&quot; |
 | DISCONNECTED | &quot;disconnected&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -52,6 +53,7 @@ title: Message
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -77,6 +79,7 @@ title: Message
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -94,5 +97,6 @@ title: Message
 | TELEGRAM | &quot;telegram&quot; |
 | KAKAO | &quot;kakao&quot; |
 {: class="table table-striped"}
+
 
 

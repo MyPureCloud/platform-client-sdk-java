@@ -16,6 +16,6 @@ title: LocationAddress
 | **street2** | **String** |  |  [optional] |
 | **zipcode** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

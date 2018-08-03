@@ -12,6 +12,6 @@ title: TrunkErrorInfoDetails
 | **message** | **String** |  |  [optional] |
 | **hostname** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

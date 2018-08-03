@@ -27,6 +27,7 @@ title: ContentFilterItem
 | DATE | &quot;DATE&quot; |
 | BOOLEAN | &quot;BOOLEAN&quot; |
 | LIST | &quot;LIST&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -46,5 +47,6 @@ title: ContentFilterItem
 | GREATERTHANEQUALS | &quot;GREATERTHANEQUALS&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 {: class="table table-striped"}
+
 
 

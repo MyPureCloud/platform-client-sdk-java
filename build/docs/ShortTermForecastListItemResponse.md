@@ -30,3 +30,4 @@ title: ShortTermForecastListItemResponse
 {: class="table table-striped"}
 
 
+

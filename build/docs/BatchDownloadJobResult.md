@@ -17,6 +17,6 @@ title: BatchDownloadJobResult
 | **errorMsg** | **String** | An error message, in case of failed processing will indicate the cause of the failure |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

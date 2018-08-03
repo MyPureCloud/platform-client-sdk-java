@@ -19,6 +19,6 @@ title: ScreenShareConversationNotificationErrorInfo
 | **details** | [**List&lt;CallbackConversationNotificationErrorInfoDetails&gt;**](CallbackConversationNotificationErrorInfoDetails.html) |  |  [optional] |
 | **errors** | [**List&lt;ScreenShareConversationNotificationErrorBody&gt;**](ScreenShareConversationNotificationErrorBody.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

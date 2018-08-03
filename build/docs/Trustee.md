@@ -15,6 +15,6 @@ title: Trustee
 | **organization** | [**Organization**](Organization.html) | Organization associated with this trust. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

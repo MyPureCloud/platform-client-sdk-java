@@ -10,6 +10,6 @@ title: ValidateAddressRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **address** | [**StreetAddress**](StreetAddress.html) | Address schema |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

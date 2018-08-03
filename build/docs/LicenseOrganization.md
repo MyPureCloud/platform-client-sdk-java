@@ -13,6 +13,6 @@ title: LicenseOrganization
 | **licenses** | [**Map&lt;String, List&lt;AddressableEntityUser&gt;&gt;**](List.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

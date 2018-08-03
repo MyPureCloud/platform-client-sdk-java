@@ -58,6 +58,7 @@ title: AnalyticsConversationSegment
 | NOANSWERTRANSFER | &quot;noAnswerTransfer&quot; |
 | NOTAVAILABLETRANSFER | &quot;notAvailableTransfer&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+{: class="table table-striped"}
 
 
 <a name="SegmentTypeEnum"></a>
@@ -84,5 +85,6 @@ title: AnalyticsConversationSegment
 | UPLOADING | &quot;uploading&quot; |
 | SHARING | &quot;sharing&quot; |
 {: class="table table-striped"}
+
 
 

@@ -37,3 +37,4 @@ title: EdgeLogsJob
 {: class="table table-striped"}
 
 
+

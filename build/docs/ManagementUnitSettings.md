@@ -14,6 +14,6 @@ title: ManagementUnitSettings
 | **scheduling** | [**SchedulingSettings**](SchedulingSettings.html) | Scheduling settings for this management unit |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version info metadata for the associated management unit |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

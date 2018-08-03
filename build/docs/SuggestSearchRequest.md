@@ -12,6 +12,6 @@ title: SuggestSearchRequest
 | **types** | **List&lt;String&gt;** | Resource domain type to search |  |
 | **query** | [**List&lt;SuggestSearchCriteria&gt;**](SuggestSearchCriteria.html) | Suggest query |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

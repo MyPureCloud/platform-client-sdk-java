@@ -15,6 +15,6 @@ title: UserScheduleShift
 | **delete** | **Boolean** | If marked true for updating this schedule shift, it will be deleted |  [optional] |
 | **manuallyEdited** | **Boolean** | Whether the shift was set as manually edited |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

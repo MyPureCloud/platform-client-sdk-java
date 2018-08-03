@@ -10,6 +10,6 @@ title: SchedulingRunListResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;SchedulingRunResponse&gt;**](SchedulingRunResponse.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

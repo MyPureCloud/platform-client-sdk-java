@@ -23,6 +23,6 @@ title: DocumentDataV2Notification
 | **lockInfo** | [**DocumentDataV2NotificationLockInfo**](DocumentDataV2NotificationLockInfo.html) |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

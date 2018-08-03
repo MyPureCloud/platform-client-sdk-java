@@ -26,6 +26,6 @@ title: CreateWorkPlanShift
 | **maximumContiguousWorkTimeMinutes** | **Integer** | Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime == true |  [optional] |
 | **activities** | [**List&lt;CreateWorkPlanActivity&gt;**](CreateWorkPlanActivity.html) | Activities configured for this shift |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: CampaignStats
 | **outstandingCalls** | **Integer** | Number of campaign calls currently ongoing |  [optional] |
 | **scheduledCalls** | **Integer** | Number of campaign calls currently scheduled |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

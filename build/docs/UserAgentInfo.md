@@ -12,6 +12,6 @@ title: UserAgentInfo
 | **manufacturer** | **String** | The manufacturer of the phone. |  [optional] |
 | **model** | **String** | The model of the phone. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

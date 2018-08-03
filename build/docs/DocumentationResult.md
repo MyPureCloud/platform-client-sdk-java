@@ -29,6 +29,6 @@ title: DocumentationResult
 | **serviceArea** | **List&lt;Integer&gt;** | The service area of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 | **videoCategories** | **List&lt;Integer&gt;** | The video categories of the documentation entity. Will be returned in responses for certain entities. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

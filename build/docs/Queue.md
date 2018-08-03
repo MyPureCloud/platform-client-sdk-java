@@ -46,6 +46,7 @@ title: Queue
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="SkillEvaluationMethodEnum"></a>
@@ -59,5 +60,6 @@ title: Queue
 | BEST | &quot;BEST&quot; |
 | ALL | &quot;ALL&quot; |
 {: class="table table-striped"}
+
 
 

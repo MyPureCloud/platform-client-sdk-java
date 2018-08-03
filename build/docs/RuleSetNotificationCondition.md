@@ -32,6 +32,7 @@ title: RuleSetNotificationCondition
 | NUMERIC | &quot;NUMERIC&quot; |
 | DATETIME | &quot;DATETIME&quot; |
 | PERIOD | &quot;PERIOD&quot; |
+{: class="table table-striped"}
 
 
 <a name="OperatorEnum"></a>
@@ -51,6 +52,7 @@ title: RuleSetNotificationCondition
 | ENDS_WITH | &quot;ENDS_WITH&quot; |
 | BEFORE | &quot;BEFORE&quot; |
 | AFTER | &quot;AFTER&quot; |
+{: class="table table-striped"}
 
 
 <a name="PropertyTypeEnum"></a>
@@ -65,5 +67,6 @@ title: RuleSetNotificationCondition
 | LAST_RESULT_BY_COLUMN | &quot;LAST_RESULT_BY_COLUMN&quot; |
 | LAST_RESULT_OVERALL | &quot;LAST_RESULT_OVERALL&quot; |
 {: class="table table-striped"}
+
 
 

@@ -36,6 +36,7 @@ title: DocumentAudit
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | USER | &quot;USER&quot; |
 | SYSTEM | &quot;SYSTEM&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatusEnum"></a>
@@ -47,6 +48,7 @@ title: DocumentAudit
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActionContextEnum"></a>
@@ -97,6 +99,7 @@ title: DocumentAudit
 | SHARE_ADD | &quot;SHARE_ADD&quot; |
 | SHARE_REMOVE | &quot;SHARE_REMOVE&quot; |
 | VERSION_CREATE | &quot;VERSION_CREATE&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActionEnum"></a>
@@ -148,5 +151,6 @@ title: DocumentAudit
 | SHARE_REMOVE | &quot;SHARE_REMOVE&quot; |
 | VERSION_CREATE | &quot;VERSION_CREATE&quot; |
 {: class="table table-striped"}
+
 
 

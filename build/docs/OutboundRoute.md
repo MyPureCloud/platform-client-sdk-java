@@ -39,6 +39,7 @@ title: OutboundRoute
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="DistributionEnum"></a>
@@ -51,5 +52,6 @@ title: OutboundRoute
 | SEQUENTIAL | &quot;SEQUENTIAL&quot; |
 | RANDOM | &quot;RANDOM&quot; |
 {: class="table table-striped"}
+
 
 

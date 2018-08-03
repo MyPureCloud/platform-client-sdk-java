@@ -15,6 +15,6 @@ title: ContactAddress
 | **postalCode** | **String** |  |  [optional] |
 | **countryCode** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

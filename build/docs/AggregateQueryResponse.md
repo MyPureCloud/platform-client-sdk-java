@@ -10,6 +10,6 @@ title: AggregateQueryResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **results** | [**List&lt;AggregateDataContainer&gt;**](AggregateDataContainer.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

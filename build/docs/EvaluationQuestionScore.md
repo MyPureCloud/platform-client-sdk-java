@@ -15,6 +15,6 @@ title: EvaluationQuestionScore
 | **failedKillQuestion** | **Boolean** |  |  [optional] |
 | **comments** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

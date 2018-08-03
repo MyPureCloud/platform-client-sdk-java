@@ -34,3 +34,4 @@ title: ShortTermForecast
 {: class="table table-striped"}
 
 
+

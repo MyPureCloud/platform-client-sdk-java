@@ -10,6 +10,6 @@ title: SetWrapperDayOfWeek
 | ------------ | ------------- | ------------- | ------------- |
 | **values** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

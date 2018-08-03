@@ -13,6 +13,6 @@ title: MessageConversationNotification
 | **participants** | [**List&lt;MessageConversationNotificationParticipants&gt;**](MessageConversationNotificationParticipants.html) |  |  [optional] |
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

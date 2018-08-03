@@ -11,6 +11,6 @@ title: TimeInterval
 | **days** | **Integer** |  |  [optional] |
 | **hours** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

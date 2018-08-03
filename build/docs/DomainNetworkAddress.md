@@ -26,6 +26,7 @@ title: DomainNetworkAddress
 | DNS | &quot;dns&quot; |
 | GATEWAY | &quot;gateway&quot; |
 | TDM | &quot;tdm&quot; |
+{: class="table table-striped"}
 
 
 <a name="FamilyEnum"></a>
@@ -38,5 +39,6 @@ title: DomainNetworkAddress
 | NUMBER_2 | 2 |
 | NUMBER_23 | 23 |
 {: class="table table-striped"}
+
 
 

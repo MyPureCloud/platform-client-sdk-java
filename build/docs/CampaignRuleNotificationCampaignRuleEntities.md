@@ -11,6 +11,6 @@ title: CampaignRuleNotificationCampaignRuleEntities
 | **campaigns** | [**List&lt;DocumentDataV2NotificationCreatedBy&gt;**](DocumentDataV2NotificationCreatedBy.html) |  |  [optional] |
 | **sequences** | [**List&lt;CampaignRuleNotificationUriReference&gt;**](CampaignRuleNotificationUriReference.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

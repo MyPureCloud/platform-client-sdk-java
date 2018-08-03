@@ -13,6 +13,6 @@ title: DocumentThumbnail
 | **height** | **Integer** |  |  [optional] |
 | **width** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

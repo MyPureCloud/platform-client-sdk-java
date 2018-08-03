@@ -14,6 +14,6 @@ title: CategoryEntityListing
 | **total** | **Long** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

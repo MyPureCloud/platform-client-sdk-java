@@ -13,6 +13,6 @@ title: TestExecutionResult
 | **finalResult** | **Object** | The final result of the test. This is the response that would be returned during normal action execution |  [optional] |
 | **success** | **Boolean** | Indicates whether or not the test was a success |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

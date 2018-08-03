@@ -38,6 +38,7 @@ title: ReportingExportJobResponse
 | RUNNING | &quot;RUNNING&quot; |
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
+{: class="table table-striped"}
 
 
 <a name="ExportFormatEnum"></a>
@@ -48,6 +49,7 @@ title: ReportingExportJobResponse
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CSV | &quot;CSV&quot; |
+{: class="table table-striped"}
 
 
 <a name="ViewTypeEnum"></a>
@@ -91,6 +93,7 @@ title: ReportingExportJobResponse
 | ACW_INSIGHTS_VIEW | &quot;ACW_INSIGHTS_VIEW&quot; |
 | WAIT_INSIGHTS_VIEW | &quot;WAIT_INSIGHTS_VIEW&quot; |
 | AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW | &quot;AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW&quot; |
+{: class="table table-striped"}
 
 
 <a name="ExportErrorMessagesTypeEnum"></a>
@@ -110,5 +113,6 @@ title: ReportingExportJobResponse
 | FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB | &quot;FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB&quot; |
 | EXPORT_TYPE_NOT_IMPLEMENTED | &quot;EXPORT_TYPE_NOT_IMPLEMENTED&quot; |
 {: class="table table-striped"}
+
 
 

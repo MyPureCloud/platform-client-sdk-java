@@ -10,6 +10,6 @@ title: ListWrapperShiftStartVariance
 | ------------ | ------------- | ------------- | ------------- |
 | **values** | [**List&lt;ShiftStartVariance&gt;**](ShiftStartVariance.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

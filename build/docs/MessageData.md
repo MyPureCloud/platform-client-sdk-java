@@ -34,6 +34,7 @@ title: MessageData
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="MessengerTypeEnum"></a>
@@ -50,6 +51,7 @@ title: MessageData
 | WHATSAPP | &quot;whatsapp&quot; |
 | TELEGRAM | &quot;telegram&quot; |
 | KAKAO | &quot;kakao&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatusEnum"></a>
@@ -64,5 +66,6 @@ title: MessageData
 | FAILED | &quot;failed&quot; |
 | RECEIVED | &quot;received&quot; |
 {: class="table table-striped"}
+
 
 

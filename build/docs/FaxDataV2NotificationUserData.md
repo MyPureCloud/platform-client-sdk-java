@@ -11,6 +11,6 @@ title: FaxDataV2NotificationUserData
 | **id** | **String** |  |  [optional] |
 | **name** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: SetUuiDataRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **uuiData** | **String** | The value of the uuiData to set. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

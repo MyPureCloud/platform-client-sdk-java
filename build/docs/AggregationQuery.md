@@ -17,6 +17,6 @@ title: AggregationQuery
 | **flattenMultivaluedDimensions** | **Boolean** | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) |  [optional] |
 | **views** | [**List&lt;AnalyticsView&gt;**](AnalyticsView.html) | Custom derived metric views |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

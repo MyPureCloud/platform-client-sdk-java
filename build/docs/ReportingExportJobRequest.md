@@ -28,6 +28,7 @@ title: ReportingExportJobRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CSV | &quot;CSV&quot; |
+{: class="table table-striped"}
 
 
 <a name="ViewTypeEnum"></a>
@@ -72,5 +73,6 @@ title: ReportingExportJobRequest
 | WAIT_INSIGHTS_VIEW | &quot;WAIT_INSIGHTS_VIEW&quot; |
 | AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW | &quot;AGENT_WRAP_UP_PERFORMANCE_INTERVAL_DETAIL_VIEW&quot; |
 {: class="table table-striped"}
+
 
 

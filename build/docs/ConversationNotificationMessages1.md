@@ -39,6 +39,7 @@ title: ConversationNotificationMessages1
 | ALERTING | &quot;ALERTING&quot; |
 | CONNECTED | &quot;CONNECTED&quot; |
 | DISCONNECTED | &quot;DISCONNECTED&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -64,6 +65,7 @@ title: ConversationNotificationMessages1
 | OTHER | &quot;OTHER&quot; |
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -83,5 +85,6 @@ title: ConversationNotificationMessages1
 | TELEGRAM | &quot;TELEGRAM&quot; |
 | KAKAO | &quot;KAKAO&quot; |
 {: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: BillingUsageReport
 | **usages** | [**List&lt;BillingUsage&gt;**](BillingUsage.html) | The usages for the given period. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

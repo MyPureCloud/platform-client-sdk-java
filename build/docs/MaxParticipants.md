@@ -10,6 +10,6 @@ title: MaxParticipants
 | ------------ | ------------- | ------------- | ------------- |
 | **maxParticipants** | **Integer** | The maximum number of participants that are allowed on a conversation. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

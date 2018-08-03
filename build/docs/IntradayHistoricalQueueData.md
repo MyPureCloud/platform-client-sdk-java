@@ -17,6 +17,6 @@ title: IntradayHistoricalQueueData
 | **serviceLevelPercent** | **Double** | Percent of interactions answered in X seconds, where X is the service level objective configured in the service goal group matching this intraday group |  [optional] |
 | **averageSpeedOfAnswerSeconds** | **Double** | The average time in seconds it takes to answer an interaction once the interaction becomes available to be routed |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

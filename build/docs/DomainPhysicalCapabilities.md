@@ -11,6 +11,6 @@ title: DomainPhysicalCapabilities
 | **vlan** | **Boolean** |  |  [optional] |
 | **team** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

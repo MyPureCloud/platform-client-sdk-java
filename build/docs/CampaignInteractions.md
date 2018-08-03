@@ -15,6 +15,6 @@ title: CampaignInteractions
 | **interactingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html) |  |  [optional] |
 | **scheduledInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

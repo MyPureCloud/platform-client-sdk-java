@@ -15,6 +15,6 @@ title: PhoneNumber
 | **e164** | **String** |  |  [optional] |
 | **countryCode** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

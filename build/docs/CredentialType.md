@@ -14,6 +14,6 @@ title: CredentialType
 | **displayOrder** | **List&lt;String&gt;** | Order in which properties should be displayed in the UI. |  [optional] |
 | **required** | **List&lt;String&gt;** | Properties that are required fields. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

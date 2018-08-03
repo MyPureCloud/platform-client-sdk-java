@@ -16,6 +16,6 @@ title: ChatMediaPolicyConditions
 | **timeAllowed** | [**TimeAllowed**](TimeAllowed.html) |  |  [optional] |
 | **duration** | [**DurationCondition**](DurationCondition.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

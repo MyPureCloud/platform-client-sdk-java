@@ -18,6 +18,6 @@ title: QueueUtilizationDiagnostic
 | **usersOnDifferentEdgeGroup** | **Integer** | The number of users whose station is homed to an edge different from the campaign |  [optional] |
 | **usersOnANonCampaignCall** | **Integer** | The number of users currently engaged in a communication that is not part of the campaign |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

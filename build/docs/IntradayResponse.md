@@ -32,3 +32,4 @@ title: IntradayResponse
 {: class="table table-striped"}
 
 
+

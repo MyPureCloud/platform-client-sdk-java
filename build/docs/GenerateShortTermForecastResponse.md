@@ -28,3 +28,4 @@ title: GenerateShortTermForecastResponse
 {: class="table table-striped"}
 
 
+

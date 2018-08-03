@@ -19,6 +19,6 @@ title: AnalyticsEvaluation
 | **getoTotalScore** | **Long** | The total evaluation for interactions |  [optional] |
 | **getoTotalCriticalScore** | **Long** | The score for critical evaluation questions |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

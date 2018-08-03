@@ -18,6 +18,6 @@ title: Action
 | **config** | [**ActionConfig**](ActionConfig.html) | Configuration to support request and response processing |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

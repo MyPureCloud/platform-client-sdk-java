@@ -41,6 +41,7 @@ title: Evaluation
 | PENDING | &quot;PENDING&quot; |
 | INPROGRESS | &quot;INPROGRESS&quot; |
 | FINISHED | &quot;FINISHED&quot; |
+{: class="table table-striped"}
 
 
 <a name="ResourceTypeEnum"></a>
@@ -52,5 +53,6 @@ title: Evaluation
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 {: class="table table-striped"}
+
 
 

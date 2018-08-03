@@ -14,6 +14,6 @@ title: TransferRequest
 | **queueId** | **String** | The queue ID of the transfer target. |  [optional] |
 | **voicemail** | **Boolean** | If true, transfer to the voicemail inbox of the participant that is being replaced. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

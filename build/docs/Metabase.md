@@ -34,6 +34,7 @@ title: Metabase
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -51,5 +52,6 @@ title: Metabase
 | STATION | &quot;STATION&quot; |
 | TIE | &quot;TIE&quot; |
 {: class="table table-striped"}
+
 
 

@@ -15,6 +15,6 @@ title: ContactListFilterNotificationRange
 | **inSet** | **List&lt;String&gt;** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

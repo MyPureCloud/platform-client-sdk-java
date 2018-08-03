@@ -12,6 +12,6 @@ title: EdgeMetricsSubsystem
 | **processName** | **String** | Name of the Edge process. |  [optional] |
 | **mediaSubsystem** | [**EdgeMetricsSubsystem**](EdgeMetricsSubsystem.html) | Subsystem for an Edge device. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

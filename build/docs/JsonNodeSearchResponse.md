@@ -19,6 +19,6 @@ title: JsonNodeSearchResponse
 | **results** | [**JsonNode**](JsonNode.html) | Search results |  |
 | **aggregations** | [**JsonNode**](JsonNode.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

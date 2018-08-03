@@ -17,6 +17,6 @@ title: CreateCallbackOnConversationCommand
 | **countryCode** | **String** | The country code to be associated with the callback numbers. |  [optional] |
 | **data** | **Map&lt;String, String&gt;** | A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; } |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

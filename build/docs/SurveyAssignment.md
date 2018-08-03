@@ -14,6 +14,6 @@ title: SurveyAssignment
 | **sendingUser** | **String** | User together with sendingDomain used to send email, null to use no-reply |  [optional] |
 | **sendingDomain** | **String** | Validated email domain, required |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

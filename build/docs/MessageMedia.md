@@ -14,6 +14,6 @@ title: MessageMedia
 | **name** | **String** | The optional name of the the media object. |  [optional] |
 | **id** | **String** | The optional id of the the media object. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

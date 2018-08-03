@@ -56,6 +56,7 @@ title: CampaignNotification
 | POWER | &quot;POWER&quot; |
 | PREDICTIVE | &quot;PREDICTIVE&quot; |
 | PROGRESSIVE | &quot;PROGRESSIVE&quot; |
+{: class="table table-striped"}
 
 
 <a name="CampaignStatusEnum"></a>
@@ -71,5 +72,6 @@ title: CampaignNotification
 | STOPPING | &quot;STOPPING&quot; |
 | INVALID | &quot;INVALID&quot; |
 {: class="table table-striped"}
+
 
 

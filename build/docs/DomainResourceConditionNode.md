@@ -29,6 +29,7 @@ title: DomainResourceConditionNode
 | GT | &quot;GT&quot; |
 | LE | &quot;LE&quot; |
 | LT | &quot;LT&quot; |
+{: class="table table-striped"}
 
 
 <a name="ConjunctionEnum"></a>
@@ -41,5 +42,6 @@ title: DomainResourceConditionNode
 | AND | &quot;AND&quot; |
 | OR | &quot;OR&quot; |
 {: class="table table-striped"}
+
 
 

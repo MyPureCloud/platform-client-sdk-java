@@ -35,6 +35,7 @@ title: SmsPhoneNumber
 | MOBILE | &quot;mobile&quot; |
 | TOLLFREE | &quot;tollfree&quot; |
 | SHORTCODE | &quot;shortcode&quot; |
+{: class="table table-striped"}
 
 
 <a name="PhoneNumberStatusEnum"></a>
@@ -48,5 +49,6 @@ title: SmsPhoneNumber
 | ACTIVE | &quot;active&quot; |
 | PORTING | &quot;porting&quot; |
 {: class="table table-striped"}
+
 
 

@@ -41,6 +41,7 @@ title: Cobrowsesession
 | TERMINATED | &quot;terminated&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -65,5 +66,6 @@ title: Cobrowsesession
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
 {: class="table table-striped"}
+
 
 

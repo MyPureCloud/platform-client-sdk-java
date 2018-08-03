@@ -13,6 +13,6 @@ title: DialerAuditRequest
 | **facets** | [**List&lt;AuditFacet&gt;**](AuditFacet.html) | The fields to facet on. |  [optional] |
 | **filters** | [**List&lt;AuditFilter&gt;**](AuditFilter.html) | The fields to filter on. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

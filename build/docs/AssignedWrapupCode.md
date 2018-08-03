@@ -14,6 +14,6 @@ title: AssignedWrapupCode
 | **durationSeconds** | **Integer** | The duration in seconds of the wrap-up segment. |  [optional] |
 | **endTime** | [**Date**](Date.html) | The timestamp when the wrap-up segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -11,6 +11,6 @@ title: TrunkMetricsCalls
 | **inboundCallCount** | **Integer** |  |  [optional] |
 | **outboundCallCount** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

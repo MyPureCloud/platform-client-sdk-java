@@ -12,6 +12,6 @@ title: MetaData
 | **pairingTrust** | **List&lt;String&gt;** |  |  [optional] |
 | **pairingUrl** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -55,6 +55,7 @@ title: Campaign
 | POWER | &quot;power&quot; |
 | PREDICTIVE | &quot;predictive&quot; |
 | PROGRESSIVE | &quot;progressive&quot; |
+{: class="table table-striped"}
 
 
 <a name="CampaignStatusEnum"></a>
@@ -70,5 +71,6 @@ title: Campaign
 | COMPLETE | &quot;complete&quot; |
 | INVALID | &quot;invalid&quot; |
 {: class="table table-striped"}
+
 
 

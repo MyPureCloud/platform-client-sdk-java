@@ -12,6 +12,6 @@ title: TrunkErrorInfo
 | **code** | **String** |  |  [optional] |
 | **details** | [**TrunkErrorInfoDetails**](TrunkErrorInfoDetails.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

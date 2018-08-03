@@ -12,6 +12,6 @@ title: AdditionalMessage
 | **mediaIds** | **List&lt;String&gt;** | The media ids associated with the text message. |  [optional] |
 | **stickerIds** | **List&lt;String&gt;** | The sticker ids associated with the text message. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

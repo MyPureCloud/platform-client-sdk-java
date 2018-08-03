@@ -13,6 +13,6 @@ title: ScreenShareConversationNotification
 | **participants** | [**List&lt;ScreenShareConversationNotificationParticipants&gt;**](ScreenShareConversationNotificationParticipants.html) |  |  [optional] |
 | **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

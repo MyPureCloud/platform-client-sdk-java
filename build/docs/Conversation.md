@@ -32,6 +32,7 @@ title: Conversation
 | ACTIVE | &quot;ACTIVE&quot; |
 | PAUSED | &quot;PAUSED&quot; |
 | NONE | &quot;NONE&quot; |
+{: class="table table-striped"}
 
 
 <a name="StateEnum"></a>
@@ -53,5 +54,6 @@ title: Conversation
 | TRANSMITTING | &quot;transmitting&quot; |
 | NONE | &quot;none&quot; |
 {: class="table table-striped"}
+
 
 

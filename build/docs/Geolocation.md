@@ -20,6 +20,6 @@ title: Geolocation
 | **locations** | [**List&lt;LocationDefinition&gt;**](LocationDefinition.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -16,6 +16,6 @@ title: CreateWebChatRequest
 | **attributes** | **Map&lt;String, String&gt;** | The list of attributes to associate with the customer participant. |  [optional] |
 | **customerName** | **String** | The name of the customer participating in the web chat. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

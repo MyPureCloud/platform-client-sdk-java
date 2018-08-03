@@ -29,6 +29,7 @@ title: PredictionResults
 | SOCIALEXPRESSION | &quot;SOCIALEXPRESSION&quot; |
 | VIDEOCOMM | &quot;VIDEOCOMM&quot; |
 | MESSAGE | &quot;MESSAGE&quot; |
+{: class="table table-striped"}
 
 
 <a name="FormulaEnum"></a>
@@ -43,5 +44,6 @@ title: PredictionResults
 | ABANDON | &quot;ABANDON&quot; |
 | PATIENCE_ABANDON | &quot;PATIENCE_ABANDON&quot; |
 {: class="table table-striped"}
+
 
 

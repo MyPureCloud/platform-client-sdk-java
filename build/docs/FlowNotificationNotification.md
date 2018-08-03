@@ -17,6 +17,6 @@ title: FlowNotificationNotification
 | **publishedVersion** | [**FlowNotificationNotificationFlowVersion**](FlowNotificationNotificationFlowVersion.html) |  |  [optional] |
 | **currentOperation** | [**PromptNotificationNotificationCurrentOperation**](PromptNotificationNotificationCurrentOperation.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -32,6 +32,7 @@ title: GroupUpdate
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="VisibilityEnum"></a>
@@ -45,5 +46,6 @@ title: GroupUpdate
 | OWNERIDS | &quot;ownerIds&quot; |
 | MEMBERS | &quot;members&quot; |
 {: class="table table-striped"}
+
 
 

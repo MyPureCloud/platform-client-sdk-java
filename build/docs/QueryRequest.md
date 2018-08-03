@@ -17,6 +17,6 @@ title: QueryRequest
 | **attributeFilters** | [**List&lt;AttributeFilterItem&gt;**](AttributeFilterItem.html) |  |  [optional] |
 | **includeShares** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

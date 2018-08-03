@@ -31,6 +31,6 @@ title: Annotation
 | **customerScoreModifier** | **String** | A modifier to the evaluation score when the phrase is spotted in the customer channel. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

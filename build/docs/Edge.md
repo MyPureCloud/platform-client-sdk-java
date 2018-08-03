@@ -62,6 +62,7 @@ title: Edge
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatusCodeEnum"></a>
@@ -82,6 +83,7 @@ title: Edge
 | RMA | &quot;RMA&quot; |
 | UNPAIRING | &quot;UNPAIRING&quot; |
 | UNPAIRED | &quot;UNPAIRED&quot; |
+{: class="table table-striped"}
 
 
 <a name="OnlineStatusEnum"></a>
@@ -93,6 +95,7 @@ title: Edge
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ONLINE | &quot;ONLINE&quot; |
 | OFFLINE | &quot;OFFLINE&quot; |
+{: class="table table-striped"}
 
 
 <a name="EdgeDeploymentTypeEnum"></a>
@@ -106,6 +109,7 @@ title: Edge
 | LDM | &quot;LDM&quot; |
 | CDM | &quot;CDM&quot; |
 | INVALID | &quot;INVALID&quot; |
+{: class="table table-striped"}
 
 
 <a name="CallDrainingStateEnum"></a>
@@ -121,5 +125,6 @@ title: Edge
 | TERMINATE | &quot;TERMINATE&quot; |
 | COMPLETE | &quot;COMPLETE&quot; |
 {: class="table table-striped"}
+
 
 

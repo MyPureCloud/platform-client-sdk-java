@@ -14,6 +14,6 @@ title: WfmHistoricalAdherenceQueryForUsers
 | **userIds** | **List&lt;String&gt;** | The userIds to report on |  |
 | **includeExceptions** | **Boolean** | Whether user exceptions should be returned as part of the results |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

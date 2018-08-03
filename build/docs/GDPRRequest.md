@@ -31,6 +31,7 @@ title: GDPRRequest
 | GDPR_EXPORT | &quot;GDPR_EXPORT&quot; |
 | GDPR_UPDATE | &quot;GDPR_UPDATE&quot; |
 | GDPR_DELETE | &quot;GDPR_DELETE&quot; |
+{: class="table table-striped"}
 
 
 <a name="StatusEnum"></a>
@@ -48,5 +49,6 @@ title: GDPRRequest
 | ERROR | &quot;ERROR&quot; |
 | FINALIZING | &quot;FINALIZING&quot; |
 {: class="table table-striped"}
+
 
 

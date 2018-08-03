@@ -11,6 +11,6 @@ title: ServiceLevel
 | **percentage** | **Double** |  |  [optional] |
 | **durationMs** | **Long** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: RecordingDataV2NotificationConversationData
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

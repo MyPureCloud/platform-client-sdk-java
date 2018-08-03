@@ -10,6 +10,6 @@ title: FlowNotificationNotificationErrorMessageParams
 | ------------ | ------------- | ------------- | ------------- |
 | **additionalProperties** | **Map&lt;String, String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -13,6 +13,6 @@ title: CreateSecureSession
 | **userData** | **String** | user data for the secure session |  |
 | **disconnect** | **Boolean** | if true, disconnect the agent after creating the session |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

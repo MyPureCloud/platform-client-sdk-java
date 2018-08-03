@@ -24,6 +24,7 @@ title: ForecastTimeSeriesResult
 | AVERAGETALKTIMESECONDS | &quot;AverageTalkTimeSeconds&quot; |
 | AVERAGEAFTERCALLWORKTIMESECONDS | &quot;AverageAfterCallWorkTimeSeconds&quot; |
 | AVERAGEHANDLETIMESECONDS | &quot;AverageHandleTimeSeconds&quot; |
+{: class="table table-striped"}
 
 
 <a name="ForecastingMethodEnum"></a>
@@ -55,5 +56,6 @@ title: ForecastTimeSeriesResult
 | MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
 | OTHER | &quot;Other&quot; |
 {: class="table table-striped"}
+
 
 

@@ -63,6 +63,7 @@ title: AnalyticsSession
 | VIDEO | &quot;video&quot; |
 | SCREENSHARE | &quot;screenshare&quot; |
 | MESSAGE | &quot;message&quot; |
+{: class="table table-striped"}
 
 
 <a name="MessageTypeEnum"></a>
@@ -73,6 +74,7 @@ title: AnalyticsSession
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;sms&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -85,5 +87,6 @@ title: AnalyticsSession
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
 {: class="table table-striped"}
+
 
 

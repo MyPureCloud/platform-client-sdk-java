@@ -14,6 +14,6 @@ title: ContactListFilterRange
 | **maxInclusive** | **Boolean** | Whether or not to include the maximum in the range. |  [optional] |
 | **inSet** | **List&lt;String&gt;** | A set of values that the contact data should be in. Required for the IN operator. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

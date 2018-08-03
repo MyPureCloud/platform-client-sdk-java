@@ -11,6 +11,6 @@ title: EdgeVersionReport
 | **oldestVersion** | [**EdgeVersionInformation**](EdgeVersionInformation.html) |  |  [optional] |
 | **newestVersion** | [**EdgeVersionInformation**](EdgeVersionInformation.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

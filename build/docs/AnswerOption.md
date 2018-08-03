@@ -12,6 +12,6 @@ title: AnswerOption
 | **text** | **String** |  |  [optional] |
 | **value** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

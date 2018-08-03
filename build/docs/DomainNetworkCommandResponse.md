@@ -13,6 +13,6 @@ title: DomainNetworkCommandResponse
 | **acknowledged** | **Boolean** |  |  [optional] |
 | **errorInfo** | [**ErrorDetails**](ErrorDetails.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

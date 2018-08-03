@@ -17,6 +17,6 @@ title: Page
 | **properties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

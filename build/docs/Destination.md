@@ -13,6 +13,6 @@ title: Destination
 | **userId** | **String** |  |  [optional] |
 | **queueId** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -13,6 +13,6 @@ title: QueryResult
 | **body** | [**DomainEntity**](DomainEntity.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

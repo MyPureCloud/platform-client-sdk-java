@@ -13,6 +13,6 @@ title: NumericRange
 | **lt** | [**BigDecimal**](BigDecimal.html) | Less than |  [optional] |
 | **lte** | [**BigDecimal**](BigDecimal.html) | Less than or equal to |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: AvailableTopicEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;AvailableTopic&gt;**](AvailableTopic.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

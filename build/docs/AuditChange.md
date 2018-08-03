@@ -13,6 +13,6 @@ title: AuditChange
 | **oldValues** | **List&lt;String&gt;** |  |  [optional] |
 | **newValues** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

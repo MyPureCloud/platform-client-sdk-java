@@ -17,6 +17,6 @@ title: UserConversationSummaryNotification
 | **socialExpression** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  |  [optional] |
 | **video** | [**UserConversationSummaryNotificationMediaSummary**](UserConversationSummaryNotificationMediaSummary.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

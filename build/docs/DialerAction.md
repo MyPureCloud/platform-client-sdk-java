@@ -24,6 +24,7 @@ title: DialerAction
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACTION | &quot;Action&quot; |
 | MODIFYCONTACTATTRIBUTE | &quot;modifyContactAttribute&quot; |
+{: class="table table-striped"}
 
 
 <a name="ActionTypeNameEnum"></a>
@@ -42,6 +43,7 @@ title: DialerAction
 | NUMBER_UNCALLABLE | &quot;NUMBER_UNCALLABLE&quot; |
 | SET_CALLER_ID | &quot;SET_CALLER_ID&quot; |
 | SET_SKILLS | &quot;SET_SKILLS&quot; |
+{: class="table table-striped"}
 
 
 <a name="UpdateOptionEnum"></a>
@@ -56,5 +58,6 @@ title: DialerAction
 | DECREMENT | &quot;DECREMENT&quot; |
 | CURRENT_TIME | &quot;CURRENT_TIME&quot; |
 {: class="table table-striped"}
+
 
 

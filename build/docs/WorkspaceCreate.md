@@ -12,6 +12,6 @@ title: WorkspaceCreate
 | **bucket** | **String** |  |  [optional] |
 | **description** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

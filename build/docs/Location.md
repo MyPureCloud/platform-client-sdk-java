@@ -14,6 +14,6 @@ title: Location
 | **notes** | **String** |  |  [optional] |
 | **locationDefinition** | [**LocationDefinition**](LocationDefinition.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

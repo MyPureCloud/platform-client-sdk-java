@@ -13,6 +13,6 @@ title: VmPairingInfo
 | **authToken** | **String** |  |  [optional] |
 | **orgId** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

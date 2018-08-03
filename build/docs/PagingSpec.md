@@ -11,6 +11,6 @@ title: PagingSpec
 | **pageSize** | **Integer** | How many results per page |  |
 | **pageNumber** | **Integer** | How many pages in |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

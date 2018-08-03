@@ -15,6 +15,6 @@ title: UpdateDraftInput
 | **secure** | **Boolean** | Indication of whether or not the action is designed to accept sensitive data |  [optional] |
 | **version** | **Integer** | Version of current Draft |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

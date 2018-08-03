@@ -21,6 +21,6 @@ title: InboundRoute
 | **replyEmailAddress** | [**QueueEmailAddress**](QueueEmailAddress.html) | The route to use for email replies. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

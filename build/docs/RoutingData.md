@@ -14,6 +14,6 @@ title: RoutingData
 | **skillIds** | **List&lt;String&gt;** | A list of skill identifiers to be considered in routing |  [optional] |
 | **preferredAgentIds** | **List&lt;String&gt;** | A list of agents to be preferred in routing |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

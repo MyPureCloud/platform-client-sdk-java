@@ -10,6 +10,6 @@ title: PublishDraftInput
 | ------------ | ------------- | ------------- | ------------- |
 | **version** | **Integer** | The current draft version. |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

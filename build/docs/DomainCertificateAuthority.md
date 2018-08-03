@@ -37,6 +37,7 @@ title: DomainCertificateAuthority
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -49,5 +50,6 @@ title: DomainCertificateAuthority
 | MANAGED | &quot;MANAGED&quot; |
 | REMOTE | &quot;REMOTE&quot; |
 {: class="table table-striped"}
+
 
 

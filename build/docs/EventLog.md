@@ -31,6 +31,7 @@ title: EventLog
 | INFO | &quot;INFO&quot; |
 | WARNING | &quot;WARNING&quot; |
 | ERROR | &quot;ERROR&quot; |
+{: class="table table-striped"}
 
 
 <a name="CategoryEnum"></a>
@@ -53,5 +54,6 @@ title: EventLog
 | ORGANIZATION_CONFIGURATION | &quot;ORGANIZATION_CONFIGURATION&quot; |
 | SCHEDULE | &quot;SCHEDULE&quot; |
 {: class="table table-striped"}
+
 
 

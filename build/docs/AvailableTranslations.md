@@ -11,6 +11,6 @@ title: AvailableTranslations
 | **orgSpecific** | **List&lt;String&gt;** |  |  [optional] |
 | **builtin** | **List&lt;String&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

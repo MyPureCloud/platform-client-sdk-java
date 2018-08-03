@@ -20,6 +20,6 @@ title: EvaluationQuestionGroupScore
 | **maxTotalCriticalScoreUnweighted** | **Float** |  |  [optional] |
 | **questionScores** | [**List&lt;EvaluationQuestionScore&gt;**](EvaluationQuestionScore.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

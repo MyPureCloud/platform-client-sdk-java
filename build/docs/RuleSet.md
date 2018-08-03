@@ -18,6 +18,6 @@ title: RuleSet
 | **rules** | [**List&lt;DialerRule&gt;**](DialerRule.html) | The list of rules. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

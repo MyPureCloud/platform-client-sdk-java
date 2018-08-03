@@ -21,6 +21,6 @@ title: VoicemailMessageNotification
 | **deleted** | **Boolean** |  |  [optional] |
 | **modifiedByUserId** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

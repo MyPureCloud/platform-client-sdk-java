@@ -12,6 +12,6 @@ title: UserRoutingStatusNotificationUserParam
 | **value** | **String** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

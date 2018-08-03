@@ -12,6 +12,6 @@ title: Permissions
 | **name** | **String** |  |  [optional] |
 | **ids** | **List&lt;String&gt;** | List of permission ids. |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

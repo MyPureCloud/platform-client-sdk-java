@@ -15,6 +15,6 @@ title: ConversationBasic
 | **selfUri** | **String** | The URI for this object |  [optional] |
 | **participants** | [**List&lt;ParticipantBasic&gt;**](ParticipantBasic.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: ActiveAlertCount
 | ------------ | ------------- | ------------- | ------------- |
 | **count** | **Integer** | The count of active alerts for a user. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

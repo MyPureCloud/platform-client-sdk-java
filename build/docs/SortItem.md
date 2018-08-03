@@ -11,6 +11,6 @@ title: SortItem
 | **name** | **String** |  |  [optional] |
 | **ascending** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

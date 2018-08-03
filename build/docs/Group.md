@@ -35,6 +35,7 @@ title: Group
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="TypeEnum"></a>
@@ -46,6 +47,7 @@ title: Group
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | OFFICIAL | &quot;official&quot; |
 | SOCIAL | &quot;social&quot; |
+{: class="table table-striped"}
 
 
 <a name="VisibilityEnum"></a>
@@ -59,5 +61,6 @@ title: Group
 | OWNERS | &quot;owners&quot; |
 | MEMBERS | &quot;members&quot; |
 {: class="table table-striped"}
+
 
 

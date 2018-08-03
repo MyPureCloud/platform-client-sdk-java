@@ -14,6 +14,6 @@ title: CobrowseConversation
 | **otherMediaUris** | **List&lt;String&gt;** | The list of other media channels involved in the conversation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

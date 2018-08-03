@@ -54,6 +54,7 @@ title: DomainLogicalInterface
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="InterfaceTypeEnum"></a>
@@ -65,6 +66,7 @@ title: DomainLogicalInterface
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DIAGNOSTIC | &quot;DIAGNOSTIC&quot; |
 | SYSTEM | &quot;SYSTEM&quot; |
+{: class="table table-striped"}
 
 
 <a name="CurrentStateEnum"></a>
@@ -81,5 +83,6 @@ title: DomainLogicalInterface
 | EXCEPTION | &quot;EXCEPTION&quot; |
 | DELETING | &quot;DELETING&quot; |
 {: class="table table-striped"}
+
 
 

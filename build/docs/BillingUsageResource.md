@@ -11,6 +11,6 @@ title: BillingUsageResource
 | **name** | **String** | Identifies the resource (e.g. license user, device). |  |
 | **date** | [**Date**](Date.html) | The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

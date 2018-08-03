@@ -10,6 +10,6 @@ title: WfmUserEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;User&gt;**](User.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

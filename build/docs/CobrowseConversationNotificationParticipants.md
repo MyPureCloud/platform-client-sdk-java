@@ -63,6 +63,7 @@ title: CobrowseConversationNotificationParticipants
 | TRANSMITTING | &quot;transmitting&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | NONE | &quot;none&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -74,6 +75,7 @@ title: CobrowseConversationNotificationParticipants
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -99,6 +101,7 @@ title: CobrowseConversationNotificationParticipants
 | OTHER | &quot;other&quot; |
 | SPAM | &quot;spam&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+{: class="table table-striped"}
 
 
 <a name="FlaggedReasonEnum"></a>
@@ -110,5 +113,6 @@ title: CobrowseConversationNotificationParticipants
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
+
 
 

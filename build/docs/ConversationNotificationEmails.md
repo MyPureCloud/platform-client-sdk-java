@@ -41,6 +41,7 @@ title: ConversationNotificationEmails
 | DISCONNECTED | &quot;DISCONNECTED&quot; |
 | NONE | &quot;NONE&quot; |
 | TRANSMITTING | &quot;TRANSMITTING&quot; |
+{: class="table table-striped"}
 
 
 <a name="DisconnectTypeEnum"></a>
@@ -66,6 +67,7 @@ title: ConversationNotificationEmails
 | OTHER | &quot;OTHER&quot; |
 | SPAM | &quot;SPAM&quot; |
 | UNCALLABLE | &quot;UNCALLABLE&quot; |
+{: class="table table-striped"}
 
 
 <a name="DirectionEnum"></a>
@@ -78,5 +80,6 @@ title: ConversationNotificationEmails
 | OUTBOUND | &quot;OUTBOUND&quot; |
 | INBOUND | &quot;INBOUND&quot; |
 {: class="table table-striped"}
+
 
 

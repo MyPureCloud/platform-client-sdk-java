@@ -17,6 +17,6 @@ title: CallConversationNotificationFaxStatus
 | **pageErrors** | **Integer** |  |  [optional] |
 | **lineErrors** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

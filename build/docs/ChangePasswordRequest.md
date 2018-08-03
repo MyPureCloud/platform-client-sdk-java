@@ -10,6 +10,6 @@ title: ChangePasswordRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **newPassword** | **String** | The new password |  |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

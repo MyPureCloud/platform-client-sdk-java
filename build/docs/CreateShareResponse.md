@@ -30,6 +30,7 @@ title: CreateShareResponse
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | DOCUMENT | &quot;DOCUMENT&quot; |
+{: class="table table-striped"}
 
 
 <a name="MemberTypeEnum"></a>
@@ -43,5 +44,6 @@ title: CreateShareResponse
 | GROUP | &quot;GROUP&quot; |
 | PUBLIC | &quot;PUBLIC&quot; |
 {: class="table table-striped"}
+
 
 

@@ -12,6 +12,6 @@ title: DownloadResponse
 | **imageUri** | **String** |  |  [optional] |
 | **thumbnails** | [**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -10,6 +10,6 @@ title: SecureSessionEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;SecureSession&gt;**](SecureSession.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

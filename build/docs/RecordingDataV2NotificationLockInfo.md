@@ -12,6 +12,6 @@ title: RecordingDataV2NotificationLockInfo
 | **dateCreated** | [**Date**](Date.html) |  |  [optional] |
 | **dateExpires** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

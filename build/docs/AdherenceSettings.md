@@ -15,6 +15,6 @@ title: AdherenceSettings
 | **trackOnQueueActivity** | **Boolean** | Whether to track on-queue activities |  [optional] |
 | **ignoredActivityCategories** | [**IgnoredActivityCategories**](IgnoredActivityCategories.html) | Activity categories that should be ignored for adherence purposes |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

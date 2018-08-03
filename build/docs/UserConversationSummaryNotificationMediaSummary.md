@@ -11,6 +11,6 @@ title: UserConversationSummaryNotificationMediaSummary
 | **contactCenter** | [**UserConversationSummaryNotificationCallContactCenter**](UserConversationSummaryNotificationCallContactCenter.html) |  |  [optional] |
 | **enterprise** | [**UserConversationSummaryNotificationMediaSummaryDetail**](UserConversationSummaryNotificationMediaSummaryDetail.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

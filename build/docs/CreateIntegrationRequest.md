@@ -13,6 +13,6 @@ title: CreateIntegrationRequest
 | **integrationType** | [**IntegrationType**](IntegrationType.html) | Type of the integration to create. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

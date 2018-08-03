@@ -27,3 +27,4 @@ title: ChatBadgeNotificationBadgeEntity
 {: class="table table-striped"}
 
 
+

@@ -10,6 +10,6 @@ title: TimeOffRequestEntityList
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | [**List&lt;TimeOffRequestResponse&gt;**](TimeOffRequestResponse.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

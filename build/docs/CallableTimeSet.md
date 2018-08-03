@@ -16,6 +16,6 @@ title: CallableTimeSet
 | **callableTimes** | [**List&lt;CallableTime&gt;**](CallableTime.html) | The list of CallableTimes for which it is acceptable to place outbound calls. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

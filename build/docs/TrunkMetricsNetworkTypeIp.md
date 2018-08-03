@@ -11,6 +11,6 @@ title: TrunkMetricsNetworkTypeIp
 | **address** | **String** | Assigned IP Address for the interface |  [optional] |
 | **errorInfo** | [**TrunkErrorInfo**](TrunkErrorInfo.html) | Information about the error. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

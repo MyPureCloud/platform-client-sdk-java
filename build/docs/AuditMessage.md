@@ -25,6 +25,6 @@ title: AuditMessage
 | **entity** | [**AuditEntity**](AuditEntity.html) |  |  [optional] |
 | **serviceContext** | [**ServiceContext**](ServiceContext.html) | The service-specific context associated with this AuditMessage. |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

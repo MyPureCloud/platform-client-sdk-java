@@ -16,6 +16,6 @@ title: UserExpands
 | **station** | [**UserStations**](UserStations.html) | Effective, default, and last station information |  [optional] |
 | **authorization** | [**UserAuthorization**](UserAuthorization.html) | Roles and permissions assigned to the user |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -19,6 +19,6 @@ title: CallConversationNotificationErrorInfo
 | **details** | [**List&lt;CallbackConversationNotificationErrorInfoDetails&gt;**](CallbackConversationNotificationErrorInfoDetails.html) |  |  [optional] |
 | **errors** | [**List&lt;CallConversationNotificationErrorBody&gt;**](CallConversationNotificationErrorBody.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

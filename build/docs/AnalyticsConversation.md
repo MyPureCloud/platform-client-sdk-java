@@ -16,6 +16,6 @@ title: AnalyticsConversation
 | **surveys** | [**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html) | Surveys tied to this conversation |  [optional] |
 | **divisionIds** | **List&lt;String&gt;** | Identifiers of divisions associated with this conversation |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

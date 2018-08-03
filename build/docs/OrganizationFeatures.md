@@ -22,6 +22,6 @@ title: OrganizationFeatures
 | **unifiedCommunications** | **Boolean** |  |  [optional] |
 | **custserv** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

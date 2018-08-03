@@ -18,6 +18,6 @@ title: FieldList
 | **type** | **String** |  |  [optional] |
 | **required** | **Boolean** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

@@ -12,6 +12,6 @@ title: Adjacents
 | **siblings** | [**List&lt;User&gt;**](User.html) |  |  [optional] |
 | **directReports** | [**List&lt;User&gt;**](User.html) |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

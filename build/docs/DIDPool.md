@@ -37,6 +37,7 @@ title: DIDPool
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
 
 
 <a name="ProviderEnum"></a>
@@ -49,5 +50,6 @@ title: DIDPool
 | PURE_CLOUD | &quot;PURE_CLOUD&quot; |
 | PURE_CLOUD_VOICE | &quot;PURE_CLOUD_VOICE&quot; |
 {: class="table table-striped"}
+
 
 

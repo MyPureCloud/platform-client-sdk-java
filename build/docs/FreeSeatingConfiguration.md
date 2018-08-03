@@ -26,3 +26,4 @@ title: FreeSeatingConfiguration
 {: class="table table-striped"}
 
 
+

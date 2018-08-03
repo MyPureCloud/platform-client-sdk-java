@@ -13,6 +13,6 @@ title: AvailableTopic
 | **requiresPermissions** | **List&lt;String&gt;** |  |  [optional] |
 | **schema** | **Map&lt;String, Object&gt;** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

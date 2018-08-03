@@ -14,6 +14,6 @@ title: Segment
 | **howEnded** | **String** | A description of the event that ended the segment. |  [optional] |
 | **disconnectType** | **String** | A description of the event that disconnected the segment |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

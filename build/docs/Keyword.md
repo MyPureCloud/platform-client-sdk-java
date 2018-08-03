@@ -22,6 +22,6 @@ title: Keyword
 | **marginOfError** | **Double** |  |  [optional] |
 | **pronunciation** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 

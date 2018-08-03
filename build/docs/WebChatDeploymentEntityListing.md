@@ -12,6 +12,6 @@ title: WebChatDeploymentEntityListing
 | **entities** | [**List&lt;WebChatDeployment&gt;**](WebChatDeployment.html) |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 {: class="table table-striped"}
-{: class="table table-striped"}
+
 
 
