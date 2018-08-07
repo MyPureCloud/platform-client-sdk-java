@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
@@ -3906,7 +3907,7 @@ public class RoutingApi {
 
   
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param body Queue (required)
    * @return Queue
@@ -3918,7 +3919,7 @@ public class RoutingApi {
   }
 
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param body Queue (required)
    * @return Queue
@@ -3936,7 +3937,7 @@ public class RoutingApi {
   }
 
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param request The request object
    * @return Queue
@@ -3955,7 +3956,7 @@ public class RoutingApi {
   }
 
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param request The request object
    * @return the response
@@ -4645,7 +4646,7 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Queue putRoutingQueue(String queueId, Queue body) throws IOException, ApiException {
+  public Queue putRoutingQueue(String queueId, QueueRequest body) throws IOException, ApiException {
     return  putRoutingQueue(createPutRoutingQueueRequest(queueId, body));
   }
 
@@ -4657,11 +4658,11 @@ public class RoutingApi {
    * @return Queue
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Queue> putRoutingQueueWithHttpInfo(String queueId, Queue body) throws IOException {
+  public ApiResponse<Queue> putRoutingQueueWithHttpInfo(String queueId, QueueRequest body) throws IOException {
     return putRoutingQueue(createPutRoutingQueueRequest(queueId, body).withHttpInfo());
   }
 
-  private PutRoutingQueueRequest createPutRoutingQueueRequest(String queueId, Queue body) {
+  private PutRoutingQueueRequest createPutRoutingQueueRequest(String queueId, QueueRequest body) {
     return PutRoutingQueueRequest.builder()
             .withQueueId(queueId)
     
@@ -4696,7 +4697,7 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Queue> putRoutingQueue(ApiRequest<Queue> request) throws IOException {
+  public ApiResponse<Queue> putRoutingQueue(ApiRequest<QueueRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Queue>() {});
     }

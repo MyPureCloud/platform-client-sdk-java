@@ -51,7 +51,9 @@ title: ForecastTimeSeriesResult
 | LINEARWEIGHTEDMOVINGAVERAGE | &quot;LinearWeightedMovingAverage&quot; |
 | POINTESTIMATEUSINGDAMPEDLINEAREXPONENTIALSMOOTHING | &quot;PointEstimateUsingDampedLinearExponentialSmoothing&quot; |
 | POINTESTIMATEUSINGDOUBLEEXPONENTIALSMOOTHING | &quot;PointEstimateUsingDoubleExponentialSmoothing&quot; |
+| POINTESTIMATEUSINGLATESTWEEK | &quot;PointEstimateUsingLatestWeek&quot; |
 | POINTESTIMATEUSINGLINEAREXPONENTIALSMOOTHING | &quot;PointEstimateUsingLinearExponentialSmoothing&quot; |
+| POINTESTIMATEUSINGWEIGHTEDAVERAGE | &quot;PointEstimateUsingWeightedAverage&quot; |
 | CURVEFIT | &quot;CurveFit&quot; |
 | MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
 | OTHER | &quot;Other&quot; |

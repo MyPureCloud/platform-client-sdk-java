@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
@@ -27,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRightRoleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleSubjectgrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationRoleRequest;
@@ -525,6 +527,109 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param roleId Role ID (required)
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @return SubjectDivisionGrantsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(String roleId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
+    return  getAuthorizationRoleSubjectgrants(createGetAuthorizationRoleSubjectgrantsRequest(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
+  }
+
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param roleId Role ID (required)
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @return SubjectDivisionGrantsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SubjectDivisionGrantsEntityListing> getAuthorizationRoleSubjectgrantsWithHttpInfo(String roleId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
+    return getAuthorizationRoleSubjectgrants(createGetAuthorizationRoleSubjectgrantsRequest(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
+  }
+
+  private GetAuthorizationRoleSubjectgrantsRequest createGetAuthorizationRoleSubjectgrantsRequest(String roleId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
+    return GetAuthorizationRoleSubjectgrantsRequest.builder()
+            .withRoleId(roleId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withExpand(expand)
+    
+            .withNextPage(nextPage)
+    
+            .withPreviousPage(previousPage)
+    
+            .build();
+  }
+
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param request The request object
+   * @return SubjectDivisionGrantsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(GetAuthorizationRoleSubjectgrantsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SubjectDivisionGrantsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SubjectDivisionGrantsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SubjectDivisionGrantsEntityListing> getAuthorizationRoleSubjectgrants(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SubjectDivisionGrantsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SubjectDivisionGrantsEntityListing> response = (ApiResponse<SubjectDivisionGrantsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SubjectDivisionGrantsEntityListing> response = (ApiResponse<SubjectDivisionGrantsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

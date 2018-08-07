@@ -52,7 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
 | [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | Bulk add or delete up to 100 queue members |
 | [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
-| [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create queue |
+| [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create a queue |
 | [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | Create Skill |
 | [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | Provision an Address for SMS |
 | [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | Provision a phone number for SMS |
@@ -2749,7 +2749,7 @@ try {
 
 > [Queue](Queue.html) postRoutingQueues(body)
 
-Create queue
+Create a queue
 
 
 
@@ -3302,7 +3302,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-Queue body = new Queue(); // Queue | Queue
+QueueRequest body = new QueueRequest(); // QueueRequest | Queue
 try {
     Queue result = apiInstance.putRoutingQueue(queueId, body);
     System.out.println(result);
@@ -3318,7 +3318,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | |
-| **body** | [**Queue**](Queue.html)| Queue | |
+| **body** | [**QueueRequest**](QueueRequest.html)| Queue | |
 {: class="table table-striped"}
 
 ### Return type

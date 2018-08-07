@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
+import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
@@ -30,6 +31,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleComparedefaultRightRoleIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleSubjectgrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationRoleRequest;
@@ -506,6 +508,82 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DomainOrgRoleDifference> response = (ApiResponse<DomainOrgRoleDifference>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SubjectDivisionGrantsEntityListing> getAuthorizationRoleSubjectgrantsAsync(GetAuthorizationRoleSubjectgrantsRequest request, final AsyncApiCallback<SubjectDivisionGrantsEntityListing> callback) {
+    try {
+      final SettableFuture<SubjectDivisionGrantsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SubjectDivisionGrantsEntityListing>() {}, new AsyncApiCallback<ApiResponse<SubjectDivisionGrantsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SubjectDivisionGrantsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the subjects&#39; granted divisions in the specified role.
+   * Includes the divisions for which the subject has a grant.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SubjectDivisionGrantsEntityListing>> getAuthorizationRoleSubjectgrantsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SubjectDivisionGrantsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SubjectDivisionGrantsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SubjectDivisionGrantsEntityListing>() {}, new AsyncApiCallback<ApiResponse<SubjectDivisionGrantsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SubjectDivisionGrantsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SubjectDivisionGrantsEntityListing> response = (ApiResponse<SubjectDivisionGrantsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SubjectDivisionGrantsEntityListing> response = (ApiResponse<SubjectDivisionGrantsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

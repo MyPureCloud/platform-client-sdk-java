@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class GetRoutingSmsPhonenumberRequest {
     

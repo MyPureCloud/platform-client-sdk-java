@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | Get the list of enabled products |
 | [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | Get a single organization role. |
 | [**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | Get an org role to default role comparison comparison |
+| [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | Get the subjects&#39; granted divisions in the specified role. |
 | [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
 | [**getUserRoles**](AuthorizationApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
 | [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
@@ -367,6 +368,75 @@ try {
 ### Return type
 
 [**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+
+<a name="getAuthorizationRoleSubjectgrants"></a>
+
+# **getAuthorizationRoleSubjectgrants**
+
+
+
+> [SubjectDivisionGrantsEntityListing](SubjectDivisionGrantsEntityListing.html) getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage)
+
+Get the subjects&#39; granted divisions in the specified role.
+
+Includes the divisions for which the subject has a grant.
+
+Wraps GET /api/v2/authorization/roles/{roleId}/subjectgrants  
+
+Requires ANY permissions: 
+
+* authorization:role:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String roleId = "roleId_example"; // String | Role ID
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+try {
+    SubjectDivisionGrantsEntityListing result = apiInstance.getAuthorizationRoleSubjectgrants(roleId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationRoleSubjectgrants");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **roleId** | **String**| Role ID | |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
+| **sortBy** | **String**| variable name requested to sort by | [optional] |
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
+| **nextPage** | **String**| next page token | [optional] |
+| **previousPage** | **String**| Previous page token | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing.html)
 
 <a name="getAuthorizationRoles"></a>
 

@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
@@ -3552,7 +3553,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3586,7 +3587,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Create queue
+   * Create a queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4276,7 +4277,7 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Queue>> putRoutingQueueAsync(ApiRequest<Queue> request, final AsyncApiCallback<ApiResponse<Queue>> callback) {
+  public Future<ApiResponse<Queue>> putRoutingQueueAsync(ApiRequest<QueueRequest> request, final AsyncApiCallback<ApiResponse<Queue>> callback) {
     try {
       final SettableFuture<ApiResponse<Queue>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

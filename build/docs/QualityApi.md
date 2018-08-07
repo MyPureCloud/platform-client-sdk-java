@@ -2026,7 +2026,7 @@ Wraps PATCH /api/v2/quality/forms/surveys/{formId}
 
 Requires ANY permissions: 
 
-* quality:surveyForm:edit
+* quality:surveyForm:disable
 
 ### Example
 

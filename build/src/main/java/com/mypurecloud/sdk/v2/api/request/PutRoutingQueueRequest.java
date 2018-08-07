@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class PutRoutingQueueRequest {
     
@@ -73,16 +74,16 @@ public class PutRoutingQueueRequest {
 	    return this;
 	} 
 	
-	private Queue body;
-	public Queue getBody() {
+	private QueueRequest body;
+	public QueueRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Queue body) {
+	public void setBody(QueueRequest body) {
 		this.body = body;
 	}
 
-	public PutRoutingQueueRequest withBody(Queue body) {
+	public PutRoutingQueueRequest withBody(QueueRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -106,7 +107,7 @@ public class PutRoutingQueueRequest {
         return this;
     }
 
-    public ApiRequest<Queue> withHttpInfo() {
+    public ApiRequest<QueueRequest> withHttpInfo() {
         
         // verify the required parameter 'queueId' is set
         if (this.queueId == null) {
@@ -136,7 +137,7 @@ public class PutRoutingQueueRequest {
 	}
 
 	
-	public static Builder builder(String queueId, Queue body) {
+	public static Builder builder(String queueId, QueueRequest body) {
 	    return new Builder()
 	            .withRequiredParams(queueId, body);
 	}
@@ -155,14 +156,14 @@ public class PutRoutingQueueRequest {
 			return this;
 		}
 		
-		public Builder withBody(Queue body) {
+		public Builder withBody(QueueRequest body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String queueId, Queue body) {
+		public Builder withRequiredParams(String queueId, QueueRequest body) {
 			request.setQueueId(queueId);
 						request.setBody(body);
 			

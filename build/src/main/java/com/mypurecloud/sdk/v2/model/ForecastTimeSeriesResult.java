@@ -75,7 +75,9 @@ public class ForecastTimeSeriesResult  implements Serializable {
     LINEARWEIGHTEDMOVINGAVERAGE("LinearWeightedMovingAverage"),
     POINTESTIMATEUSINGDAMPEDLINEAREXPONENTIALSMOOTHING("PointEstimateUsingDampedLinearExponentialSmoothing"),
     POINTESTIMATEUSINGDOUBLEEXPONENTIALSMOOTHING("PointEstimateUsingDoubleExponentialSmoothing"),
+    POINTESTIMATEUSINGLATESTWEEK("PointEstimateUsingLatestWeek"),
     POINTESTIMATEUSINGLINEAREXPONENTIALSMOOTHING("PointEstimateUsingLinearExponentialSmoothing"),
+    POINTESTIMATEUSINGWEIGHTEDAVERAGE("PointEstimateUsingWeightedAverage"),
     CURVEFIT("CurveFit"),
     MULTILINEARREGRESSION("MultiLinearRegression"),
     OTHER("Other");

@@ -10,7 +10,7 @@ title: CreateQueueRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
-| **division** | [**Division**](Division.html) | The division to which this entity belongs. |  [optional] |
+| **division** | [**WritableDivision**](WritableDivision.html) | The division to which this entity belongs. |  [optional] |
 | **description** | **String** | The queue description. |  [optional] |
 | **version** | **Integer** | The current version of the queue. |  [optional] |
 | **dateCreated** | [**Date**](Date.html) | The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |

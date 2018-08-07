@@ -114,7 +114,6 @@ public class UserQueue  implements Serializable {
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
   private UriReference queueFlow = null;
   private UriReference whisperPrompt = null;
-  private Boolean autoAnswerOnly = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -437,24 +436,6 @@ public class UserQueue  implements Serializable {
 
   
   /**
-   * Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
-   **/
-  public UserQueue autoAnswerOnly(Boolean autoAnswerOnly) {
-    this.autoAnswerOnly = autoAnswerOnly;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.")
-  @JsonProperty("autoAnswerOnly")
-  public Boolean getAutoAnswerOnly() {
-    return autoAnswerOnly;
-  }
-  public void setAutoAnswerOnly(Boolean autoAnswerOnly) {
-    this.autoAnswerOnly = autoAnswerOnly;
-  }
-
-  
-  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public UserQueue callingPartyName(String callingPartyName) {
@@ -594,7 +575,6 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
         Objects.equals(this.queueFlow, userQueue.queueFlow) &&
         Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
-        Objects.equals(this.autoAnswerOnly, userQueue.autoAnswerOnly) &&
         Objects.equals(this.callingPartyName, userQueue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, userQueue.callingPartyNumber) &&
         Objects.equals(this.defaultScripts, userQueue.defaultScripts) &&
@@ -606,7 +586,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, joined, memberCount, selfUri);
   }
 
   @Override
@@ -632,7 +612,6 @@ public class UserQueue  implements Serializable {
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
-    sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

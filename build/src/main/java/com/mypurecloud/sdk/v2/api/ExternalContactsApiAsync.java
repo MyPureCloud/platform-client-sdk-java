@@ -1370,7 +1370,7 @@ public class ExternalContactsApiAsync {
 
   
   /**
-   * Lookup contacts and externalOrganizations based on an attribute
+   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1404,7 +1404,7 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Lookup contacts and externalOrganizations based on an attribute
+   * Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
