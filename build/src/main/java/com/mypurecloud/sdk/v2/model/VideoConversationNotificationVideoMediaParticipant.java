@@ -171,6 +171,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   private VideoConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private VideoConversationNotificationUriReference externalContact = null;
   private VideoConversationNotificationUriReference externalOrganization = null;
@@ -578,6 +579,23 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
   
   /**
    **/
+  public VideoConversationNotificationVideoMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public VideoConversationNotificationVideoMediaParticipant provider(String provider) {
     this.provider = provider;
     return this;
@@ -828,6 +846,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
         Objects.equals(this.script, videoConversationNotificationVideoMediaParticipant.script) &&
         Objects.equals(this.wrapupTimeoutMs, videoConversationNotificationVideoMediaParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, videoConversationNotificationVideoMediaParticipant.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, videoConversationNotificationVideoMediaParticipant.alertingTimeoutMs) &&
         Objects.equals(this.provider, videoConversationNotificationVideoMediaParticipant.provider) &&
         Objects.equals(this.externalContact, videoConversationNotificationVideoMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, videoConversationNotificationVideoMediaParticipant.externalOrganization) &&
@@ -845,7 +864,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -874,6 +893,7 @@ public class VideoConversationNotificationVideoMediaParticipant  implements Seri
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

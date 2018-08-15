@@ -29,6 +29,7 @@ title: CallbackConversationNotificationCallbackMediaParticipant
 | **script** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**CallbackConversationNotificationUriReference**](CallbackConversationNotificationUriReference.html) |  |  [optional] |

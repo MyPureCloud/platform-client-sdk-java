@@ -188,17 +188,17 @@ public class GetOutboundCampaignsRequest {
 	    return this;
 	} 
 	
-	private String dncListId;
-	public String getDncListId() {
-		return this.dncListId;
+	private String dncListIds;
+	public String getDncListIds() {
+		return this.dncListIds;
 	}
 
-	public void setDncListId(String dncListId) {
-		this.dncListId = dncListId;
+	public void setDncListIds(String dncListIds) {
+		this.dncListIds = dncListIds;
 	}
 
-	public GetOutboundCampaignsRequest withDncListId(String dncListId) {
-	    this.setDncListId(dncListId);
+	public GetOutboundCampaignsRequest withDncListIds(String dncListIds) {
+	    this.setDncListIds(dncListIds);
 	    return this;
 	} 
 	
@@ -351,7 +351,7 @@ public class GetOutboundCampaignsRequest {
         
                 .withQueryParameters("contactListId", "", contactListId)
         
-                .withQueryParameters("dncListId", "", dncListId)
+                .withQueryParameters("dncListIds", "", dncListIds)
         
                 .withQueryParameters("distributionQueueId", "", distributionQueueId)
         
@@ -421,8 +421,8 @@ public class GetOutboundCampaignsRequest {
 			return this;
 		}
 		
-		public Builder withDncListId(String dncListId) {
-			request.setDncListId(dncListId);
+		public Builder withDncListIds(String dncListIds) {
+			request.setDncListIds(dncListIds);
 			return this;
 		}
 		

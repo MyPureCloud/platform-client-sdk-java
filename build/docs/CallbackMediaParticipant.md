@@ -29,6 +29,7 @@ title: CallbackMediaParticipant
 | **script** | [**UriReference**](UriReference.html) | The Engage script that should be used by this participant. |  [optional] |
 | **wrapupTimeoutMs** | **Integer** | The amount of time the participant has to complete wrap-up. |  [optional] |
 | **wrapupSkipped** | **Boolean** | Value is true when the participant has skipped wrap-up. |  [optional] |
+| **alertingTimeoutMs** | **Integer** | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
 | **provider** | **String** | The source provider for the communication. |  [optional] |
 | **externalContact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
 | **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |

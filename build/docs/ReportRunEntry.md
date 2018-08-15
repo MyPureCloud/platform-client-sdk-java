@@ -35,6 +35,7 @@ title: ReportRunEntry
 | FAILED | &quot;FAILED&quot; |
 | FAILED_TIMEOUT | &quot;FAILED_TIMEOUT&quot; |
 | FAILED_DATALIMIT | &quot;FAILED_DATALIMIT&quot; |
+| UNABLE_TO_COMPLETE | &quot;UNABLE_TO_COMPLETE&quot; |
 {: class="table table-striped"}
 
 

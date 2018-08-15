@@ -171,6 +171,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   private CobrowseConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private CobrowseConversationNotificationUriReference externalContact = null;
   private CobrowseConversationNotificationUriReference externalOrganization = null;
@@ -577,6 +578,23 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
   
   /**
    **/
+  public CobrowseConversationNotificationCobrowseMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public CobrowseConversationNotificationCobrowseMediaParticipant provider(String provider) {
     this.provider = provider;
     return this;
@@ -810,6 +828,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
         Objects.equals(this.script, cobrowseConversationNotificationCobrowseMediaParticipant.script) &&
         Objects.equals(this.wrapupTimeoutMs, cobrowseConversationNotificationCobrowseMediaParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, cobrowseConversationNotificationCobrowseMediaParticipant.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, cobrowseConversationNotificationCobrowseMediaParticipant.alertingTimeoutMs) &&
         Objects.equals(this.provider, cobrowseConversationNotificationCobrowseMediaParticipant.provider) &&
         Objects.equals(this.externalContact, cobrowseConversationNotificationCobrowseMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, cobrowseConversationNotificationCobrowseMediaParticipant.externalOrganization) &&
@@ -826,7 +845,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -855,6 +874,7 @@ public class CobrowseConversationNotificationCobrowseMediaParticipant  implement
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

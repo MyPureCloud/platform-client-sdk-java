@@ -16,8 +16,8 @@ title: DomainOrganizationRole
 | **permissionPolicies** | [**List&lt;DomainPermissionPolicy&gt;**](DomainPermissionPolicy.html) |  |  [optional] |
 | **userCount** | **Integer** |  |  [optional] |
 | **roleNeedsUpdate** | **Boolean** | Optional unless patch operation. |  [optional] |
-| **base** | **Boolean** |  |  [optional] |
 | **_default** | **Boolean** |  |  [optional] |
+| **base** | **Boolean** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

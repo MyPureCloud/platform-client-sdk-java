@@ -86,6 +86,12 @@ title: AggregateMetricData
 | NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; |
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
+| NFLOW | &quot;nFlow&quot; |
+| TFLOWHANGUP | &quot;tFlowHangUp&quot; |
+| TFLOWEXIT | &quot;tFlowExit&quot; |
+| TFLOW | &quot;tFlow&quot; |
+| TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
+| NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 {: class="table table-striped"}
 
 

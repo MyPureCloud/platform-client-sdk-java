@@ -29,6 +29,7 @@ title: MessageConversationNotificationMessageMediaParticipant
 | **script** | [**MessageConversationNotificationUriReference**](MessageConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**MessageConversationNotificationUriReference**](MessageConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**MessageConversationNotificationUriReference**](MessageConversationNotificationUriReference.html) |  |  [optional] |

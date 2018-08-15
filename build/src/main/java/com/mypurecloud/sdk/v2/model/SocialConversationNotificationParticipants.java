@@ -170,6 +170,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
   private SocialConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private SocialConversationNotificationUriReference externalContact = null;
   private SocialConversationNotificationUriReference externalOrganization = null;
@@ -575,6 +576,23 @@ public class SocialConversationNotificationParticipants  implements Serializable
   
   /**
    **/
+  public SocialConversationNotificationParticipants alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public SocialConversationNotificationParticipants provider(String provider) {
     this.provider = provider;
     return this;
@@ -791,6 +809,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
         Objects.equals(this.script, socialConversationNotificationParticipants.script) &&
         Objects.equals(this.wrapupTimeoutMs, socialConversationNotificationParticipants.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, socialConversationNotificationParticipants.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, socialConversationNotificationParticipants.alertingTimeoutMs) &&
         Objects.equals(this.provider, socialConversationNotificationParticipants.provider) &&
         Objects.equals(this.externalContact, socialConversationNotificationParticipants.externalContact) &&
         Objects.equals(this.externalOrganization, socialConversationNotificationParticipants.externalOrganization) &&
@@ -806,7 +825,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -835,6 +854,7 @@ public class SocialConversationNotificationParticipants  implements Serializable
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

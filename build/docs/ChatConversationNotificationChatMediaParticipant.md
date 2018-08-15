@@ -29,6 +29,7 @@ title: ChatConversationNotificationChatMediaParticipant
 | **script** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**ChatConversationNotificationUriReference**](ChatConversationNotificationUriReference.html) |  |  [optional] |

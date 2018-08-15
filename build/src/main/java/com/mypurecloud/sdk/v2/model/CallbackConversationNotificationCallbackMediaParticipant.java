@@ -173,6 +173,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   private CallbackConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private CallbackConversationNotificationUriReference externalContact = null;
   private CallbackConversationNotificationUriReference externalOrganization = null;
@@ -582,6 +583,23 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
   
   /**
    **/
+  public CallbackConversationNotificationCallbackMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public CallbackConversationNotificationCallbackMediaParticipant provider(String provider) {
     this.provider = provider;
     return this;
@@ -866,6 +884,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
         Objects.equals(this.script, callbackConversationNotificationCallbackMediaParticipant.script) &&
         Objects.equals(this.wrapupTimeoutMs, callbackConversationNotificationCallbackMediaParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, callbackConversationNotificationCallbackMediaParticipant.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, callbackConversationNotificationCallbackMediaParticipant.alertingTimeoutMs) &&
         Objects.equals(this.provider, callbackConversationNotificationCallbackMediaParticipant.provider) &&
         Objects.equals(this.externalContact, callbackConversationNotificationCallbackMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callbackConversationNotificationCallbackMediaParticipant.externalOrganization) &&
@@ -885,7 +904,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -914,6 +933,7 @@ public class CallbackConversationNotificationCallbackMediaParticipant  implement
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

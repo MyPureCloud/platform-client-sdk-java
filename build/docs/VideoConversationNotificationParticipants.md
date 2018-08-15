@@ -29,6 +29,7 @@ title: VideoConversationNotificationParticipants
 | **script** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**VideoConversationNotificationUriReference**](VideoConversationNotificationUriReference.html) |  |  [optional] |

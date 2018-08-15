@@ -107,6 +107,20 @@ title: AnalyticsQueryPredicate
 | SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
 | ROUTINGSTATUS | &quot;routingStatus&quot; |
+| FLOWID | &quot;flowId&quot; |
+| FLOWNAME | &quot;flowName&quot; |
+| FLOWVERSION | &quot;flowVersion&quot; |
+| FLOWTYPE | &quot;flowType&quot; |
+| EXITREASON | &quot;exitReason&quot; |
+| TRANSFERTYPE | &quot;transferType&quot; |
+| TRANSFERTARGETNAME | &quot;transferTargetName&quot; |
+| TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
+| ISSUEDCALLBACK | &quot;issuedCallback&quot; |
+| STARTINGLANGUAGE | &quot;startingLanguage&quot; |
+| ENDINGLANGUAGE | &quot;endingLanguage&quot; |
+| FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
+| FLOWOUTCOMEVALUE | &quot;flowOutcomeValue&quot; |
+| FLOWOUTCOME | &quot;flowOutcome&quot; |
 {: class="table table-striped"}
 
 
@@ -198,6 +212,12 @@ title: AnalyticsQueryPredicate
 | NSURVEYNPSRESPONSES | &quot;nSurveyNpsResponses&quot; |
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
+| NFLOW | &quot;nFlow&quot; |
+| TFLOWHANGUP | &quot;tFlowHangUp&quot; |
+| TFLOWEXIT | &quot;tFlowExit&quot; |
+| TFLOW | &quot;tFlow&quot; |
+| TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
+| NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 {: class="table table-striped"}
 
 

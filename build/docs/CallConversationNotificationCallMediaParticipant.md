@@ -29,6 +29,7 @@ title: CallConversationNotificationCallMediaParticipant
 | **script** | [**CallConversationNotificationUriReference**](CallConversationNotificationUriReference.html) |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapupSkipped** | **Boolean** |  |  [optional] |
+| **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **provider** | **String** |  |  [optional] |
 | **externalContact** | [**CallConversationNotificationUriReference**](CallConversationNotificationUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**CallConversationNotificationUriReference**](CallConversationNotificationUriReference.html) |  |  [optional] |

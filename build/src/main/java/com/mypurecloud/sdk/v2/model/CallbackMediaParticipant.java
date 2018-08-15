@@ -169,6 +169,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private UriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private UriReference externalContact = null;
   private UriReference externalOrganization = null;
@@ -597,6 +598,24 @@ public class CallbackMediaParticipant  implements Serializable {
 
   
   /**
+   * Specifies how long the agent has to answer an interaction before being marked as not responding.
+   **/
+  public CallbackMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
    * The source provider for the communication.
    **/
   public CallbackMediaParticipant provider(String provider) {
@@ -879,6 +898,7 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.script, callbackMediaParticipant.script) &&
         Objects.equals(this.wrapupTimeoutMs, callbackMediaParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, callbackMediaParticipant.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, callbackMediaParticipant.alertingTimeoutMs) &&
         Objects.equals(this.provider, callbackMediaParticipant.provider) &&
         Objects.equals(this.externalContact, callbackMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, callbackMediaParticipant.externalOrganization) &&
@@ -897,7 +917,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -926,6 +946,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

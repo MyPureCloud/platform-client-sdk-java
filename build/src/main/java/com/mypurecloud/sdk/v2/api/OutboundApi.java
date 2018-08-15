@@ -2509,7 +2509,7 @@ public class OutboundApi {
    * @param name Name (optional)
    * @param id id (optional)
    * @param contactListId Contact List ID (optional)
-   * @param dncListId DNC list ID (optional)
+   * @param dncListIds DNC list ID (optional)
    * @param distributionQueueId Distribution queue ID (optional)
    * @param edgeGroupId Edge group ID (optional)
    * @param callAnalysisResponseSetId Call analysis response set ID (optional)
@@ -2520,8 +2520,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder));
+  public CampaignEntityListing getOutboundCampaigns(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListIds, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -2533,7 +2533,7 @@ public class OutboundApi {
    * @param name Name (optional)
    * @param id id (optional)
    * @param contactListId Contact List ID (optional)
-   * @param dncListId DNC list ID (optional)
+   * @param dncListIds DNC list ID (optional)
    * @param distributionQueueId Distribution queue ID (optional)
    * @param edgeGroupId Edge group ID (optional)
    * @param callAnalysisResponseSetId Call analysis response set ID (optional)
@@ -2543,11 +2543,11 @@ public class OutboundApi {
    * @return CampaignEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignEntityListing> getOutboundCampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListIds, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaigns(createGetOutboundCampaignsRequest(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListId, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) {
+  private GetOutboundCampaignsRequest createGetOutboundCampaignsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String contactListId, String dncListIds, String distributionQueueId, String edgeGroupId, String callAnalysisResponseSetId, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundCampaignsRequest.builder()
             .withPageSize(pageSize)
     
@@ -2561,7 +2561,7 @@ public class OutboundApi {
     
             .withContactListId(contactListId)
     
-            .withDncListId(dncListId)
+            .withDncListIds(dncListIds)
     
             .withDistributionQueueId(distributionQueueId)
     

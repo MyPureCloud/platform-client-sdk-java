@@ -87,7 +87,13 @@ public class ObservationQuery  implements Serializable {
     NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
     NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
     NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
-    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors");
+    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
+    NFLOW("nFlow"),
+    TFLOWHANGUP("tFlowHangUp"),
+    TFLOWEXIT("tFlowExit"),
+    TFLOW("tFlow"),
+    TFLOWOUTCOME("tFlowOutcome"),
+    NFLOWOUTCOME("nFlowOutcome");
 
     private String value;
 

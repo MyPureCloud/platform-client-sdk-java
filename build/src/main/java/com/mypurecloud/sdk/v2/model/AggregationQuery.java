@@ -93,7 +93,21 @@ public class AggregationQuery  implements Serializable {
     SURVEYQUESTIONGROUPID("surveyQuestionGroupId"),
     SYSTEMPRESENCE("systemPresence"),
     ORGANIZATIONPRESENCEID("organizationPresenceId"),
-    ROUTINGSTATUS("routingStatus");
+    ROUTINGSTATUS("routingStatus"),
+    FLOWID("flowId"),
+    FLOWNAME("flowName"),
+    FLOWVERSION("flowVersion"),
+    FLOWTYPE("flowType"),
+    EXITREASON("exitReason"),
+    TRANSFERTYPE("transferType"),
+    TRANSFERTARGETNAME("transferTargetName"),
+    TRANSFERTARGETADDRESS("transferTargetAddress"),
+    ISSUEDCALLBACK("issuedCallback"),
+    STARTINGLANGUAGE("startingLanguage"),
+    ENDINGLANGUAGE("endingLanguage"),
+    FLOWOUTCOMEID("flowOutcomeId"),
+    FLOWOUTCOMEVALUE("flowOutcomeValue"),
+    FLOWOUTCOME("flowOutcome");
 
     private String value;
 
@@ -191,7 +205,13 @@ public class AggregationQuery  implements Serializable {
     NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
     NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
     NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
-    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors");
+    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
+    NFLOW("nFlow"),
+    TFLOWHANGUP("tFlowHangUp"),
+    TFLOWEXIT("tFlowExit"),
+    TFLOW("tFlow"),
+    TFLOWOUTCOME("tFlowOutcome"),
+    NFLOWOUTCOME("nFlowOutcome");
 
     private String value;
 

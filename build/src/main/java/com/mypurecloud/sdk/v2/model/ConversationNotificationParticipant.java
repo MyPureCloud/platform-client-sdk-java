@@ -47,6 +47,7 @@ public class ConversationNotificationParticipant  implements Serializable {
   private String wrapupPrompt = null;
   private Integer wrapupTimeoutMs = null;
   private ConversationNotificationWrapup wrapup = null;
+  private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
 
   /**
@@ -392,6 +393,23 @@ public class ConversationNotificationParticipant  implements Serializable {
   
   /**
    **/
+  public ConversationNotificationParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public ConversationNotificationParticipant monitoredParticipantId(String monitoredParticipantId) {
     this.monitoredParticipantId = monitoredParticipantId;
     return this;
@@ -655,6 +673,7 @@ public class ConversationNotificationParticipant  implements Serializable {
         Objects.equals(this.wrapupPrompt, conversationNotificationParticipant.wrapupPrompt) &&
         Objects.equals(this.wrapupTimeoutMs, conversationNotificationParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapup, conversationNotificationParticipant.wrapup) &&
+        Objects.equals(this.alertingTimeoutMs, conversationNotificationParticipant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, conversationNotificationParticipant.monitoredParticipantId) &&
         Objects.equals(this.screenRecordingState, conversationNotificationParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationNotificationParticipant.flaggedReason) &&
@@ -673,7 +692,7 @@ public class ConversationNotificationParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -698,6 +717,7 @@ public class ConversationNotificationParticipant  implements Serializable {
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

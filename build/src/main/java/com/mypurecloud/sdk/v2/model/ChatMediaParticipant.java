@@ -166,6 +166,7 @@ public class ChatMediaParticipant  implements Serializable {
   private UriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private UriReference externalContact = null;
   private UriReference externalOrganization = null;
@@ -587,6 +588,24 @@ public class ChatMediaParticipant  implements Serializable {
 
   
   /**
+   * Specifies how long the agent has to answer an interaction before being marked as not responding.
+   **/
+  public ChatMediaParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
    * The source provider for the communication.
    **/
   public ChatMediaParticipant provider(String provider) {
@@ -743,6 +762,7 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.script, chatMediaParticipant.script) &&
         Objects.equals(this.wrapupTimeoutMs, chatMediaParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, chatMediaParticipant.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, chatMediaParticipant.alertingTimeoutMs) &&
         Objects.equals(this.provider, chatMediaParticipant.provider) &&
         Objects.equals(this.externalContact, chatMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, chatMediaParticipant.externalOrganization) &&
@@ -754,7 +774,7 @@ public class ChatMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, roomId);
   }
 
   @Override
@@ -783,6 +803,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

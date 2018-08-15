@@ -1680,6 +1680,8 @@ Requires ANY permissions:
 
 * wfm:workPlan:administer
 * wfm:workPlan:view
+* wfm:schedule:administer
+* wfm:schedule:edit
 
 ### Example
 
@@ -2361,7 +2363,6 @@ Wraps PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
 
 Requires ANY permissions: 
 
-* wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 
 ### Example
@@ -3710,7 +3711,6 @@ Wraps POST /api/v2/workforcemanagement/timeoffrequests
 
 Requires ANY permissions: 
 
-* wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 
 ### Example

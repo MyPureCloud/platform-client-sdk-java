@@ -92,6 +92,7 @@ public class ParticipantBasic  implements Serializable {
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
   private Wrapup wrapup = null;
+  private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private Map<String, String> attributes = null;
   private List<CallBasic> calls = new ArrayList<CallBasic>();
@@ -630,6 +631,24 @@ public class ParticipantBasic  implements Serializable {
 
   
   /**
+   * Specifies how long the agent has to answer an interaction before being marked as not responding.
+   **/
+  public ParticipantBasic alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies how long the agent has to answer an interaction before being marked as not responding.")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
    * If this participant is a monitor, then this will be the id of the participant that is being monitored.
    **/
   public ParticipantBasic monitoredParticipantId(String monitoredParticipantId) {
@@ -906,6 +925,7 @@ public class ParticipantBasic  implements Serializable {
         Objects.equals(this.wrapupTimeoutMs, participantBasic.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, participantBasic.wrapupSkipped) &&
         Objects.equals(this.wrapup, participantBasic.wrapup) &&
+        Objects.equals(this.alertingTimeoutMs, participantBasic.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, participantBasic.monitoredParticipantId) &&
         Objects.equals(this.attributes, participantBasic.attributes) &&
         Objects.equals(this.calls, participantBasic.calls) &&
@@ -924,7 +944,7 @@ public class ParticipantBasic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
   }
 
   @Override
@@ -957,6 +977,7 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");

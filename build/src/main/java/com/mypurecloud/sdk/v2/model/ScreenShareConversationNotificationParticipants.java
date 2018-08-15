@@ -170,6 +170,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
   private ScreenShareConversationNotificationUriReference script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
+  private Integer alertingTimeoutMs = null;
   private String provider = null;
   private ScreenShareConversationNotificationUriReference externalContact = null;
   private ScreenShareConversationNotificationUriReference externalOrganization = null;
@@ -574,6 +575,23 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
   
   /**
    **/
+  public ScreenShareConversationNotificationParticipants alertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("alertingTimeoutMs")
+  public Integer getAlertingTimeoutMs() {
+    return alertingTimeoutMs;
+  }
+  public void setAlertingTimeoutMs(Integer alertingTimeoutMs) {
+    this.alertingTimeoutMs = alertingTimeoutMs;
+  }
+
+  
+  /**
+   **/
   public ScreenShareConversationNotificationParticipants provider(String provider) {
     this.provider = provider;
     return this;
@@ -773,6 +791,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
         Objects.equals(this.script, screenShareConversationNotificationParticipants.script) &&
         Objects.equals(this.wrapupTimeoutMs, screenShareConversationNotificationParticipants.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, screenShareConversationNotificationParticipants.wrapupSkipped) &&
+        Objects.equals(this.alertingTimeoutMs, screenShareConversationNotificationParticipants.alertingTimeoutMs) &&
         Objects.equals(this.provider, screenShareConversationNotificationParticipants.provider) &&
         Objects.equals(this.externalContact, screenShareConversationNotificationParticipants.externalContact) &&
         Objects.equals(this.externalOrganization, screenShareConversationNotificationParticipants.externalOrganization) &&
@@ -787,7 +806,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, context, peerCount, sharing);
   }
 
   @Override
@@ -816,6 +835,7 @@ public class ScreenShareConversationNotificationParticipants  implements Seriali
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
+    sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationSegment;
+import com.mypurecloud.sdk.v2.model.AnalyticsFlow;
 import com.mypurecloud.sdk.v2.model.AnalyticsSessionMetric;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -164,6 +165,7 @@ public class AnalyticsSession  implements Serializable {
   private String videoAddressSelf = null;
   private List<AnalyticsConversationSegment> segments = new ArrayList<AnalyticsConversationSegment>();
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
+  private AnalyticsFlow flow = null;
 
   
   /**
@@ -825,6 +827,24 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * IVR flow execution associated with this session
+   **/
+  public AnalyticsSession flow(AnalyticsFlow flow) {
+    this.flow = flow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IVR flow execution associated with this session")
+  @JsonProperty("flow")
+  public AnalyticsFlow getFlow() {
+    return flow;
+  }
+  public void setFlow(AnalyticsFlow flow) {
+    this.flow = flow;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -871,12 +891,13 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
         Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
         Objects.equals(this.segments, analyticsSession.segments) &&
-        Objects.equals(this.metrics, analyticsSession.metrics);
+        Objects.equals(this.metrics, analyticsSession.metrics) &&
+        Objects.equals(this.flow, analyticsSession.flow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow);
   }
 
   @Override
@@ -921,6 +942,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    videoAddressSelf: ").append(toIndentedString(videoAddressSelf)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
+    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

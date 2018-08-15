@@ -1788,7 +1788,7 @@ try {
 
 
 
-> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)
+> [CampaignEntityListing](CampaignEntityListing.html) getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder)
 
 Query a list of dialer campaigns.
 
@@ -1823,7 +1823,7 @@ String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 List<String> id = Arrays.asList("id_example"); // List<String> | id
 String contactListId = "contactListId_example"; // String | Contact List ID
-String dncListId = "dncListId_example"; // String | DNC list ID
+String dncListIds = "dncListIds_example"; // String | DNC list ID
 String distributionQueueId = "distributionQueueId_example"; // String | Distribution queue ID
 String edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 String callAnalysisResponseSetId = "callAnalysisResponseSetId_example"; // String | Call analysis response set ID
@@ -1831,7 +1831,7 @@ List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> |
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListId, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder);
+    CampaignEntityListing result = apiInstance.getOutboundCampaigns(pageSize, pageNumber, filterType, name, id, contactListId, dncListIds, distributionQueueId, edgeGroupId, callAnalysisResponseSetId, divisionId, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaigns");
@@ -1850,7 +1850,7 @@ try {
 | **name** | **String**| Name | [optional] |
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **contactListId** | **String**| Contact List ID | [optional] |
-| **dncListId** | **String**| DNC list ID | [optional] |
+| **dncListIds** | **String**| DNC list ID | [optional] |
 | **distributionQueueId** | **String**| Distribution queue ID | [optional] |
 | **edgeGroupId** | **String**| Edge group ID | [optional] |
 | **callAnalysisResponseSetId** | **String**| Call analysis response set ID | [optional] |
