@@ -57,7 +57,6 @@ import com.mypurecloud.sdk.v2.model.PhoneBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneMetaBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.PhoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Site;
-import com.mypurecloud.sdk.v2.model.AsgInfoResponse;
 import com.mypurecloud.sdk.v2.model.NumberPlan;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBase;
 import com.mypurecloud.sdk.v2.model.OutboundRouteBaseEntityListing;
@@ -77,7 +76,6 @@ import com.mypurecloud.sdk.v2.model.EdgeServiceStateRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAddressResponse;
 import com.mypurecloud.sdk.v2.model.ValidateAddressRequest;
 import com.mypurecloud.sdk.v2.model.PhonesReboot;
-import com.mypurecloud.sdk.v2.model.CreateAsgRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeRequest;
@@ -148,7 +146,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesReques
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhonesTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesPhysicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesSiteNumberplansClassificationsRequest;
@@ -184,7 +181,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneReboot
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonebasesettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhonesRebootRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSiteRebalanceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesSitesRequest;
@@ -5902,85 +5898,6 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
-   * Gets the basic information about an asg in a specified site
-   * 
-   * @param siteId Site id associated with the asg (required)
-   * @return AsgInfoResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public AsgInfoResponse getTelephonyProvidersEdgesSiteAutoscalinggroups(String siteId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesSiteAutoscalinggroups(createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId));
-  }
-
-  /**
-   * Gets the basic information about an asg in a specified site
-   * 
-   * @param siteId Site id associated with the asg (required)
-   * @return AsgInfoResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<AsgInfoResponse> getTelephonyProvidersEdgesSiteAutoscalinggroupsWithHttpInfo(String siteId) throws IOException {
-    return getTelephonyProvidersEdgesSiteAutoscalinggroups(createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest createGetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(String siteId) {
-    return GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest.builder()
-            .withSiteId(siteId)
-    
-            .build();
-  }
-
-  /**
-   * Gets the basic information about an asg in a specified site
-   * 
-   * @param request The request object
-   * @return AsgInfoResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public AsgInfoResponse getTelephonyProvidersEdgesSiteAutoscalinggroups(GetTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<AsgInfoResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsgInfoResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Gets the basic information about an asg in a specified site
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<AsgInfoResponse> getTelephonyProvidersEdgesSiteAutoscalinggroups(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<AsgInfoResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<AsgInfoResponse> response = (ApiResponse<AsgInfoResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Get a Number Plan by ID.
    * 
    * @param siteId Site ID (required)
@@ -8883,89 +8800,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Creates an ASG for the specified site
-   * 
-   * @param siteId Site that will be associated with the asg (required)
-   * @param body CreateAsgRequest (required)
-   * @return String
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public String postTelephonyProvidersEdgesSiteAutoscalinggroups(String siteId, CreateAsgRequest body) throws IOException, ApiException {
-    return  postTelephonyProvidersEdgesSiteAutoscalinggroups(createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId, body));
-  }
-
-  /**
-   * Creates an ASG for the specified site
-   * 
-   * @param siteId Site that will be associated with the asg (required)
-   * @param body CreateAsgRequest (required)
-   * @return String
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<String> postTelephonyProvidersEdgesSiteAutoscalinggroupsWithHttpInfo(String siteId, CreateAsgRequest body) throws IOException {
-    return postTelephonyProvidersEdgesSiteAutoscalinggroups(createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(siteId, body).withHttpInfo());
-  }
-
-  private PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest createPostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest(String siteId, CreateAsgRequest body) {
-    return PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest.builder()
-            .withSiteId(siteId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Creates an ASG for the specified site
-   * 
-   * @param request The request object
-   * @return String
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public String postTelephonyProvidersEdgesSiteAutoscalinggroups(PostTelephonyProvidersEdgesSiteAutoscalinggroupsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Creates an ASG for the specified site
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<String> postTelephonyProvidersEdgesSiteAutoscalinggroups(ApiRequest<CreateAsgRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -75,7 +75,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesPhonesTemplate**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhonesTemplate) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance |
 | [**getTelephonyProvidersEdgesPhysicalinterfaces**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesPhysicalinterfaces) | Get physical interfaces for edges. |
 | [**getTelephonyProvidersEdgesSite**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSite) | Get a Site by ID. |
-| [**getTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteAutoscalinggroups) | Gets the basic information about an asg in a specified site |
 | [**getTelephonyProvidersEdgesSiteNumberplan**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplan) | Get a Number Plan by ID. |
 | [**getTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplans) | Get the list of Number Plans for this Site. |
 | [**getTelephonyProvidersEdgesSiteNumberplansClassifications**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesSiteNumberplansClassifications) | Get a list of Classifications for this Site |
@@ -111,7 +110,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonebasesettings) | Create a new Phone Base Settings object |
 | [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhones) | Create a new Phone |
 | [**postTelephonyProvidersEdgesPhonesReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhonesReboot) | Reboot Multiple Phones |
-| [**postTelephonyProvidersEdgesSiteAutoscalinggroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteAutoscalinggroups) | Creates an ASG for the specified site |
 | [**postTelephonyProvidersEdgesSiteOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteOutboundroutes) | Create outbound route |
 | [**postTelephonyProvidersEdgesSiteRebalance**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSiteRebalance) | Triggers the rebalance operation. |
 | [**postTelephonyProvidersEdgesSites**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesSites) | Create a Site. |
@@ -4155,63 +4153,6 @@ try {
 
 [**Site**](Site.html)
 
-<a name="getTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
-
-# **getTelephonyProvidersEdgesSiteAutoscalinggroups**
-
-
-
-> [AsgInfoResponse](AsgInfoResponse.html) getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId)
-
-Gets the basic information about an asg in a specified site
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
-
-Requires ANY permissions: 
-
-* managed:all:all
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String siteId = "siteId_example"; // String | Site id associated with the asg
-try {
-    AsgInfoResponse result = apiInstance.getTelephonyProvidersEdgesSiteAutoscalinggroups(siteId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteAutoscalinggroups");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site id associated with the asg | |
-{: class="table table-striped"}
-
-### Return type
-
-[**AsgInfoResponse**](AsgInfoResponse.html)
-
 <a name="getTelephonyProvidersEdgesSiteNumberplan"></a>
 
 # **getTelephonyProvidersEdgesSiteNumberplan**
@@ -6276,65 +6217,6 @@ try {
 ### Return type
 
 null (empty response body)
-
-<a name="postTelephonyProvidersEdgesSiteAutoscalinggroups"></a>
-
-# **postTelephonyProvidersEdgesSiteAutoscalinggroups**
-
-
-
-> String postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body)
-
-Creates an ASG for the specified site
-
-
-
-Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/autoscalinggroups  
-
-Requires ANY permissions: 
-
-* managed:all:all
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String siteId = "siteId_example"; // String | Site that will be associated with the asg
-CreateAsgRequest body = new CreateAsgRequest(); // CreateAsgRequest | CreateAsgRequest
-try {
-    String result = apiInstance.postTelephonyProvidersEdgesSiteAutoscalinggroups(siteId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesSiteAutoscalinggroups");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site that will be associated with the asg | |
-| **body** | [**CreateAsgRequest**](CreateAsgRequest.html)| CreateAsgRequest | |
-{: class="table table-striped"}
-
-### Return type
-
-**String**
 
 <a name="postTelephonyProvidersEdgesSiteOutboundroutes"></a>
 
