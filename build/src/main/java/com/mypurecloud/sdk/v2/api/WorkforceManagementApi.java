@@ -97,6 +97,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWe
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitActivitycodeRequest;
@@ -2453,6 +2454,85 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get management units across divisions
+   * 
+   * @param divisionId The divisionIds to filter by. If omitted, will return all divisions (optional)
+   * @return ManagementUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(List<String> divisionId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitsDivisionviews(createGetWorkforcemanagementManagementunitsDivisionviewsRequest(divisionId));
+  }
+
+  /**
+   * Get management units across divisions
+   * 
+   * @param divisionId The divisionIds to filter by. If omitted, will return all divisions (optional)
+   * @return ManagementUnitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsDivisionviewsWithHttpInfo(List<String> divisionId) throws IOException {
+    return getWorkforcemanagementManagementunitsDivisionviews(createGetWorkforcemanagementManagementunitsDivisionviewsRequest(divisionId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitsDivisionviewsRequest createGetWorkforcemanagementManagementunitsDivisionviewsRequest(List<String> divisionId) {
+    return GetWorkforcemanagementManagementunitsDivisionviewsRequest.builder()
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get management units across divisions
+   * 
+   * @param request The request object
+   * @return ManagementUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(GetWorkforcemanagementManagementunitsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get management units across divisions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementManagementunitsDivisionviews(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ManagementUnitListing>() {});
     }

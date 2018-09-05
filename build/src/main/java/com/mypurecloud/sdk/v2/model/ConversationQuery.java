@@ -23,6 +23,7 @@ public class ConversationQuery  implements Serializable {
   private String interval = null;
   private List<AnalyticsQueryFilter> conversationFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> evaluationFilters = new ArrayList<AnalyticsQueryFilter>();
+  private List<AnalyticsQueryFilter> surveyFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> segmentFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryAggregation> aggregations = new ArrayList<AnalyticsQueryAggregation>();
   private PagingSpec paging = null;
@@ -155,6 +156,24 @@ public class ConversationQuery  implements Serializable {
 
   
   /**
+   * Filters that target quality management survey-level data
+   **/
+  public ConversationQuery surveyFilters(List<AnalyticsQueryFilter> surveyFilters) {
+    this.surveyFilters = surveyFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target quality management survey-level data")
+  @JsonProperty("surveyFilters")
+  public List<AnalyticsQueryFilter> getSurveyFilters() {
+    return surveyFilters;
+  }
+  public void setSurveyFilters(List<AnalyticsQueryFilter> surveyFilters) {
+    this.surveyFilters = surveyFilters;
+  }
+
+  
+  /**
    * Filters that target individual segments within a conversation
    **/
   public ConversationQuery segmentFilters(List<AnalyticsQueryFilter> segmentFilters) {
@@ -257,6 +276,7 @@ public class ConversationQuery  implements Serializable {
     return Objects.equals(this.interval, conversationQuery.interval) &&
         Objects.equals(this.conversationFilters, conversationQuery.conversationFilters) &&
         Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
+        Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
         Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
         Objects.equals(this.aggregations, conversationQuery.aggregations) &&
         Objects.equals(this.paging, conversationQuery.paging) &&
@@ -266,7 +286,7 @@ public class ConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, evaluationFilters, segmentFilters, aggregations, paging, order, orderBy);
+    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, segmentFilters, aggregations, paging, order, orderBy);
   }
 
   @Override
@@ -277,6 +297,7 @@ public class ConversationQuery  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    conversationFilters: ").append(toIndentedString(conversationFilters)).append("\n");
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
+    sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
     sb.append("    paging: ").append(toIndentedString(paging)).append("\n");

@@ -23,6 +23,7 @@ public class PromptAssetCreate  implements Serializable {
   private String language = null;
   private String mediaUri = null;
   private String ttsString = null;
+  private String text = null;
   private String uploadStatus = null;
   private String uploadUri = null;
   private Boolean languageDefault = null;
@@ -121,6 +122,23 @@ public class PromptAssetCreate  implements Serializable {
   }
   public void setTtsString(String ttsString) {
     this.ttsString = ttsString;
+  }
+
+  
+  /**
+   **/
+  public PromptAssetCreate text(String text) {
+    this.text = text;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("text")
+  public String getText() {
+    return text;
+  }
+  public void setText(String text) {
+    this.text = text;
   }
 
   
@@ -232,6 +250,7 @@ public class PromptAssetCreate  implements Serializable {
         Objects.equals(this.language, promptAssetCreate.language) &&
         Objects.equals(this.mediaUri, promptAssetCreate.mediaUri) &&
         Objects.equals(this.ttsString, promptAssetCreate.ttsString) &&
+        Objects.equals(this.text, promptAssetCreate.text) &&
         Objects.equals(this.uploadStatus, promptAssetCreate.uploadStatus) &&
         Objects.equals(this.uploadUri, promptAssetCreate.uploadUri) &&
         Objects.equals(this.languageDefault, promptAssetCreate.languageDefault) &&
@@ -242,7 +261,7 @@ public class PromptAssetCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, promptId, language, mediaUri, ttsString, uploadStatus, uploadUri, languageDefault, tags, durationSeconds, selfUri);
+    return Objects.hash(id, name, promptId, language, mediaUri, ttsString, text, uploadStatus, uploadUri, languageDefault, tags, durationSeconds, selfUri);
   }
 
   @Override
@@ -256,6 +275,7 @@ public class PromptAssetCreate  implements Serializable {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    mediaUri: ").append(toIndentedString(mediaUri)).append("\n");
     sb.append("    ttsString: ").append(toIndentedString(ttsString)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    uploadStatus: ").append(toIndentedString(uploadStatus)).append("\n");
     sb.append("    uploadUri: ").append(toIndentedString(uploadUri)).append("\n");
     sb.append("    languageDefault: ").append(toIndentedString(languageDefault)).append("\n");

@@ -73,7 +73,10 @@ public class AnalyticsSession  implements Serializable {
    */
   public enum MessageTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SMS("sms");
+    SMS("sms"),
+    FACEBOOK("facebook"),
+    TWITTER("twitter"),
+    LINE("line");
 
     private String value;
 

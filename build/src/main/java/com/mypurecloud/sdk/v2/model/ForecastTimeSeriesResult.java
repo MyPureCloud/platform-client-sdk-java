@@ -80,6 +80,7 @@ public class ForecastTimeSeriesResult  implements Serializable {
     POINTESTIMATEUSINGWEIGHTEDAVERAGE("PointEstimateUsingWeightedAverage"),
     CURVEFIT("CurveFit"),
     MULTILINEARREGRESSION("MultiLinearRegression"),
+    DYNAMICHARMONICREGRESSION("DynamicHarmonicRegression"),
     OTHER("Other");
 
     private String value;

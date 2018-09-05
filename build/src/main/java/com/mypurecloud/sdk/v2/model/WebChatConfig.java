@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -14,23 +15,57 @@ import java.io.Serializable;
 
 public class WebChatConfig  implements Serializable {
   
-  private String webChatSkin = null;
+
+  /**
+   * css class to be applied to the web chat widget.
+   */
+  public enum WebChatSkinEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BASIC("basic"),
+    MODERN_CARET_SKIN("modern-caret-skin");
+
+    private String value;
+
+    WebChatSkinEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static WebChatSkinEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (WebChatSkinEnum value : WebChatSkinEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return WebChatSkinEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private WebChatSkinEnum webChatSkin = null;
 
   
   /**
    * css class to be applied to the web chat widget.
    **/
-  public WebChatConfig webChatSkin(String webChatSkin) {
+  public WebChatConfig webChatSkin(WebChatSkinEnum webChatSkin) {
     this.webChatSkin = webChatSkin;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "css class to be applied to the web chat widget.")
   @JsonProperty("webChatSkin")
-  public String getWebChatSkin() {
+  public WebChatSkinEnum getWebChatSkin() {
     return webChatSkin;
   }
-  public void setWebChatSkin(String webChatSkin) {
+  public void setWebChatSkin(WebChatSkinEnum webChatSkin) {
     this.webChatSkin = webChatSkin;
   }
 

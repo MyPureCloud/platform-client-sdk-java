@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersPresencesBulkRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -697,6 +698,85 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update bulk user Presences
+   * 
+   * @param body List of User presences (required)
+   * @return List<UserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserPresence> putUsersPresencesBulk(List<UserPresence> body) throws IOException, ApiException {
+    return  putUsersPresencesBulk(createPutUsersPresencesBulkRequest(body));
+  }
+
+  /**
+   * Update bulk user Presences
+   * 
+   * @param body List of User presences (required)
+   * @return List<UserPresence>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserPresence>> putUsersPresencesBulkWithHttpInfo(List<UserPresence> body) throws IOException {
+    return putUsersPresencesBulk(createPutUsersPresencesBulkRequest(body).withHttpInfo());
+  }
+
+  private PutUsersPresencesBulkRequest createPutUsersPresencesBulkRequest(List<UserPresence> body) {
+    return PutUsersPresencesBulkRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update bulk user Presences
+   * 
+   * @param request The request object
+   * @return List<UserPresence>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<UserPresence> putUsersPresencesBulk(PutUsersPresencesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<UserPresence>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<UserPresence>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update bulk user Presences
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<UserPresence>> putUsersPresencesBulk(ApiRequest<List<UserPresence>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<UserPresence>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserPresence>> response = (ApiResponse<List<UserPresence>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<UserPresence>> response = (ApiResponse<List<UserPresence>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -46,8 +48,6 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 
@@ -91,6 +91,8 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
@@ -3084,6 +3086,158 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserRoutingLanguage> response = (ApiResponse<UserRoutingLanguage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserLanguageEntityListing> patchUserRoutinglanguagesBulkAsync(PatchUserRoutinglanguagesBulkRequest request, final AsyncApiCallback<UserLanguageEntityListing> callback) {
+    try {
+      final SettableFuture<UserLanguageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserLanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLanguageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLanguageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserLanguageEntityListing>> patchUserRoutinglanguagesBulkAsync(ApiRequest<List<UserRoutingLanguagePost>> request, final AsyncApiCallback<ApiResponse<UserLanguageEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserLanguageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserLanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLanguageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLanguageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserSkillEntityListing> patchUserRoutingskillsBulkAsync(PatchUserRoutingskillsBulkRequest request, final AsyncApiCallback<UserSkillEntityListing> callback) {
+    try {
+      final SettableFuture<UserSkillEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserSkillEntityListing>> patchUserRoutingskillsBulkAsync(ApiRequest<List<UserRoutingSkillPost>> request, final AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserSkillEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

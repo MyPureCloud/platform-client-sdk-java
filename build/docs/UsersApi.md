@@ -7,12 +7,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
 | [**deleteUser**](UsersApi.html#deleteUser) | Delete user |
 | [**deleteUserRoles**](UsersApi.html#deleteUserRoles) | Removes all the roles from the user. |
 | [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
+| [**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | Returns whether or not current user can perform the specified action(s). |
+| [**getAuthorizationDivisionspermittedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedSubjectId) | Returns whether or not specified user can perform the specified action(s). |
+| [**getAuthorizationSubject**](UsersApi.html#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
+| [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
 | [**getFieldconfig**](UsersApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | Get a user profile listing |
 | [**getUser**](UsersApi.html#getUser) | Get user. |
@@ -41,10 +46,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserQueue**](UsersApi.html#patchUserQueue) | Join or unjoin a queue for a user |
 | [**patchUserQueues**](UsersApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
+| [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
+| [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | Add bulk routing skills to user |
 | [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
+| [**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
 | [**postUserInvite**](UsersApi.html#postUserInvite) | Send an activation email to the user |
 | [**postUserPassword**](UsersApi.html#postUserPassword) | Change a users password |
 | [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | Add routing language to user |
@@ -61,6 +69,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | Set default station |
 {: class="table table-striped"}
+
+<a name="deleteAuthorizationSubjectDivisionRole"></a>
+
+# **deleteAuthorizationSubjectDivisionRole**
+
+
+
+> Void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+
+Delete a grant of a role in a division
+
+
+
+Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+String divisionId = "divisionId_example"; // String | the id of the division of the grant
+String roleId = "roleId_example"; // String | the id of the role of the grant
+try {
+    apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#deleteAuthorizationSubjectDivisionRole");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | |
+| **divisionId** | **String**| the id of the division of the grant | |
+| **roleId** | **String**| the id of the role of the grant | |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteUser"></a>
 
@@ -409,6 +477,233 @@ try {
 
 null (empty response body)
 
+<a name="getAuthorizationDivisionspermittedMe"></a>
+
+# **getAuthorizationDivisionspermittedMe**
+
+
+
+> [List&lt;AuthzDivision&gt;](AuthzDivision.html) getAuthorizationDivisionspermittedMe(permission, name)
+
+Returns whether or not current user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+String name = "name_example"; // String | Search term to filter by division name
+try {
+    List<AuthzDivision> result = apiInstance.getAuthorizationDivisionspermittedMe(permission, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAuthorizationDivisionspermittedMe");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
+| **name** | **String**| Search term to filter by division name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;AuthzDivision&gt;**](AuthzDivision.html)
+
+<a name="getAuthorizationDivisionspermittedSubjectId"></a>
+
+# **getAuthorizationDivisionspermittedSubjectId**
+
+
+
+> [List&lt;AuthzDivision&gt;](AuthzDivision.html) getAuthorizationDivisionspermittedSubjectId(subjectId, permission, name)
+
+Returns whether or not specified user can perform the specified action(s).
+
+
+
+Wraps GET /api/v2/authorization/divisionspermitted/{subjectId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+String permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
+String name = "name_example"; // String | Search term to filter by division name
+try {
+    List<AuthzDivision> result = apiInstance.getAuthorizationDivisionspermittedSubjectId(subjectId, permission, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAuthorizationDivisionspermittedSubjectId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | |
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
+| **name** | **String**| Search term to filter by division name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;AuthzDivision&gt;**](AuthzDivision.html)
+
+<a name="getAuthorizationSubject"></a>
+
+# **getAuthorizationSubject**
+
+
+
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubject(subjectId)
+
+Returns a listing of roles and permissions for a user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/{subjectId}  
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+try {
+    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAuthorizationSubject");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
+
+<a name="getAuthorizationSubjectsMe"></a>
+
+# **getAuthorizationSubjectsMe**
+
+
+
+> [AuthzSubject](AuthzSubject.html) getAuthorizationSubjectsMe()
+
+Returns a listing of roles and permissions for the currently authenticated user.
+
+
+
+Wraps GET /api/v2/authorization/subjects/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+try {
+    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAuthorizationSubjectsMe");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**AuthzSubject**](AuthzSubject.html)
+
 <a name="getFieldconfig"></a>
 
 # **getFieldconfig**
@@ -585,7 +880,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -644,7 +939,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -758,7 +1053,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -822,7 +1117,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -994,7 +1289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1467,7 +1762,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 {: class="table table-striped"}
 
 ### Return type
@@ -1593,7 +1888,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |
 {: class="table table-striped"}
 
@@ -1650,7 +1945,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
 {: class="table table-striped"}
 
 ### Return type
@@ -2078,6 +2373,126 @@ try {
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
 
+<a name="patchUserRoutinglanguagesBulk"></a>
+
+# **patchUserRoutinglanguagesBulk**
+
+
+
+> [UserLanguageEntityListing](UserLanguageEntityListing.html) patchUserRoutinglanguagesBulk(userId, body)
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk  
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+List<UserRoutingLanguagePost> body = Arrays.asList(new UserRoutingLanguagePost()); // List<UserRoutingLanguagePost> | Language
+try {
+    UserLanguageEntityListing result = apiInstance.patchUserRoutinglanguagesBulk(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUserRoutinglanguagesBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
+<a name="patchUserRoutingskillsBulk"></a>
+
+# **patchUserRoutingskillsBulk**
+
+
+
+> [UserSkillEntityListing](UserSkillEntityListing.html) patchUserRoutingskillsBulk(userId, body)
+
+Add bulk routing skills to user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+List<UserRoutingSkillPost> body = Arrays.asList(new UserRoutingSkillPost()); // List<UserRoutingSkillPost> | Skill
+try {
+    UserSkillEntityListing result = apiInstance.patchUserRoutingskillsBulk(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#patchUserRoutingskillsBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
+
 <a name="patchUsersBulk"></a>
 
 # **patchUsersBulk**
@@ -2308,6 +2723,68 @@ try {
 ### Return type
 
 [**ObservationQueryResponse**](ObservationQueryResponse.html)
+
+<a name="postAuthorizationSubjectDivisionRole"></a>
+
+# **postAuthorizationSubjectDivisionRole**
+
+
+
+> Void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType)
+
+Make a grant of a role in a division
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}  
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+UsersApi apiInstance = new UsersApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+String divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
+String roleId = "roleId_example"; // String | the id of the role to grant
+String subjectType = "PC_USER"; // String | what the type of the subject is, PC_GROUP or PC_USER
+try {
+    apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postAuthorizationSubjectDivisionRole");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | |
+| **divisionId** | **String**| the id of the division to which to make the grant | |
+| **roleId** | **String**| the id of the role to grant | |
+| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
+{: class="table table-striped"}
+
+### Return type
+
+null (empty response body)
 
 <a name="postUserInvite"></a>
 

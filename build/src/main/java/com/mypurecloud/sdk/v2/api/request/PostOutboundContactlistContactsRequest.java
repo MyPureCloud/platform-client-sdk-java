@@ -59,6 +59,7 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
@@ -80,16 +81,16 @@ public class PostOutboundContactlistContactsRequest {
 	    return this;
 	} 
 	
-	private List<DialerContact> body;
-	public List<DialerContact> getBody() {
+	private List<WritableDialerContact> body;
+	public List<WritableDialerContact> getBody() {
 		return this.body;
 	}
 
-	public void setBody(List<DialerContact> body) {
+	public void setBody(List<WritableDialerContact> body) {
 		this.body = body;
 	}
 
-	public PostOutboundContactlistContactsRequest withBody(List<DialerContact> body) {
+	public PostOutboundContactlistContactsRequest withBody(List<WritableDialerContact> body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -155,7 +156,7 @@ public class PostOutboundContactlistContactsRequest {
         return this;
     }
 
-    public ApiRequest<List<DialerContact>> withHttpInfo() {
+    public ApiRequest<List<WritableDialerContact>> withHttpInfo() {
         
         // verify the required parameter 'contactListId' is set
         if (this.contactListId == null) {
@@ -191,7 +192,7 @@ public class PostOutboundContactlistContactsRequest {
 	}
 
 	
-	public static Builder builder(String contactListId, List<DialerContact> body) {
+	public static Builder builder(String contactListId, List<WritableDialerContact> body) {
 	    return new Builder()
 	            .withRequiredParams(contactListId, body);
 	}
@@ -210,7 +211,7 @@ public class PostOutboundContactlistContactsRequest {
 			return this;
 		}
 		
-		public Builder withBody(List<DialerContact> body) {
+		public Builder withBody(List<WritableDialerContact> body) {
 			request.setBody(body);
 			return this;
 		}
@@ -232,7 +233,7 @@ public class PostOutboundContactlistContactsRequest {
 		
 
 		
-		public Builder withRequiredParams(String contactListId, List<DialerContact> body) {
+		public Builder withRequiredParams(String contactListId, List<WritableDialerContact> body) {
 			request.setContactListId(contactListId);
 						request.setBody(body);
 			

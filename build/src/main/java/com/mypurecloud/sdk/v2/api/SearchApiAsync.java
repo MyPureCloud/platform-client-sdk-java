@@ -14,12 +14,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
@@ -29,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
@@ -36,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
@@ -61,6 +65,82 @@ public class SearchApiAsync {
 
   public SearchApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GKNDocumentationSearchResponse> getDocumentationGknSearchAsync(GetDocumentationGknSearchRequest request, final AsyncApiCallback<GKNDocumentationSearchResponse> callback) {
+    try {
+      final SettableFuture<GKNDocumentationSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GKNDocumentationSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GKNDocumentationSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GKNDocumentationSearchResponse>> getDocumentationGknSearchAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GKNDocumentationSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GKNDocumentationSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GKNDocumentationSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   
@@ -584,6 +664,82 @@ public class SearchApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Search gkn documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GKNDocumentationSearchResponse> postDocumentationGknSearchAsync(PostDocumentationGknSearchRequest request, final AsyncApiCallback<GKNDocumentationSearchResponse> callback) {
+    try {
+      final SettableFuture<GKNDocumentationSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GKNDocumentationSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GKNDocumentationSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search gkn documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GKNDocumentationSearchResponse>> postDocumentationGknSearchAsync(ApiRequest<GKNDocumentationSearchRequest> request, final AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GKNDocumentationSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GKNDocumentationSearchResponse>() {}, new AsyncApiCallback<ApiResponse<GKNDocumentationSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GKNDocumentationSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

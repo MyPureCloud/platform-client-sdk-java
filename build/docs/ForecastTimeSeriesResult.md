@@ -56,6 +56,7 @@ title: ForecastTimeSeriesResult
 | POINTESTIMATEUSINGWEIGHTEDAVERAGE | &quot;PointEstimateUsingWeightedAverage&quot; |
 | CURVEFIT | &quot;CurveFit&quot; |
 | MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
+| DYNAMICHARMONICREGRESSION | &quot;DynamicHarmonicRegression&quot; |
 | OTHER | &quot;Other&quot; |
 {: class="table table-striped"}
 

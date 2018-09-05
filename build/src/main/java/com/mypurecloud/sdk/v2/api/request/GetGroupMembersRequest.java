@@ -146,7 +146,9 @@ public class GetGroupMembersRequest {
 		AUTHORIZATION("authorization"), 
 		PROFILESKILLS("profileSkills"), 
 		LOCATIONS("locations"), 
-		GROUPS("groups");
+		GROUPS("groups"), 
+		SKILLS("skills"), 
+		LANGUAGES("languages");
 
 		private String value;
 

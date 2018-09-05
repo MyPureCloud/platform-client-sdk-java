@@ -45,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -53,8 +55,6 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 
@@ -88,20 +88,6 @@ public class GetRoutingWrapupcodesRequest {
 	    return this;
 	} 
 	
-	private String name;
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public GetRoutingWrapupcodesRequest withName(String name) {
-	    this.setName(name);
-	    return this;
-	} 
-	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -113,6 +99,50 @@ public class GetRoutingWrapupcodesRequest {
 
 	public GetRoutingWrapupcodesRequest withSortBy(String sortBy) {
 	    this.setSortBy(sortBy);
+	    return this;
+	} 
+
+	public enum sortByValues { 
+		NAME("name"), 
+		ID("id");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetRoutingWrapupcodesRequest withName(String name) {
+	    this.setName(name);
 	    return this;
 	} 
 	
@@ -143,9 +173,9 @@ public class GetRoutingWrapupcodesRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withQueryParameters("name", "", name)
-        
                 .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("name", "", name)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -178,13 +208,18 @@ public class GetRoutingWrapupcodesRequest {
 			return this;
 		}
 		
-		public Builder withName(String name) {
-			request.setName(name);
-			return this;
-		}
-		
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
+			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

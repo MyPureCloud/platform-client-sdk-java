@@ -14,6 +14,7 @@ title: PromptAsset
 | **language** | **String** |  |  [optional] |
 | **mediaUri** | **String** |  |  [optional] |
 | **ttsString** | **String** |  |  [optional] |
+| **text** | **String** |  |  [optional] |
 | **uploadStatus** | **String** |  |  [optional] |
 | **uploadUri** | **String** |  |  [optional] |
 | **languageDefault** | **Boolean** |  |  [optional] |

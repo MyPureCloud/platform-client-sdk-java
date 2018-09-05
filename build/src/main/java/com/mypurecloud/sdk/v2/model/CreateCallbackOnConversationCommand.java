@@ -27,6 +27,7 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
   private List<String> callbackNumbers = new ArrayList<String>();
   private Date callbackScheduledTime = null;
   private String countryCode = null;
+  private Boolean validateCallbackNumbers = null;
   private Map<String, String> data = null;
 
   
@@ -157,6 +158,24 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
 
   
   /**
+   * Whether or not to validate the callback numbers for phone number format.
+   **/
+  public CreateCallbackOnConversationCommand validateCallbackNumbers(Boolean validateCallbackNumbers) {
+    this.validateCallbackNumbers = validateCallbackNumbers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not to validate the callback numbers for phone number format.")
+  @JsonProperty("validateCallbackNumbers")
+  public Boolean getValidateCallbackNumbers() {
+    return validateCallbackNumbers;
+  }
+  public void setValidateCallbackNumbers(Boolean validateCallbackNumbers) {
+    this.validateCallbackNumbers = validateCallbackNumbers;
+  }
+
+  
+  /**
    * A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \"notes\": \"ready to close the deal!\", \"customerPreferredName\": \"Doc\" }
    **/
   public CreateCallbackOnConversationCommand data(Map<String, String> data) {
@@ -191,12 +210,13 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
         Objects.equals(this.callbackNumbers, createCallbackOnConversationCommand.callbackNumbers) &&
         Objects.equals(this.callbackScheduledTime, createCallbackOnConversationCommand.callbackScheduledTime) &&
         Objects.equals(this.countryCode, createCallbackOnConversationCommand.countryCode) &&
+        Objects.equals(this.validateCallbackNumbers, createCallbackOnConversationCommand.validateCallbackNumbers) &&
         Objects.equals(this.data, createCallbackOnConversationCommand.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scriptId, queueId, routingData, callbackUserName, callbackNumbers, callbackScheduledTime, countryCode, data);
+    return Objects.hash(scriptId, queueId, routingData, callbackUserName, callbackNumbers, callbackScheduledTime, countryCode, validateCallbackNumbers, data);
   }
 
   @Override
@@ -211,6 +231,7 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    validateCallbackNumbers: ").append(toIndentedString(validateCallbackNumbers)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();

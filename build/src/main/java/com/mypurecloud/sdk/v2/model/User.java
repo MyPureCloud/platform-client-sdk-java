@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserConversationSummary;
 import com.mypurecloud.sdk.v2.model.UserImage;
 import com.mypurecloud.sdk.v2.model.UserPresence;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -90,6 +92,8 @@ public class User  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
+  private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String selfUri = null;
 
@@ -443,14 +447,14 @@ public class User  implements Serializable {
 
   
   /**
-   * Skills possessed by the user
+   * Profile skills possessed by the user
    **/
   public User profileSkills(List<String> profileSkills) {
     this.profileSkills = profileSkills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Skills possessed by the user")
+  @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
@@ -493,6 +497,42 @@ public class User  implements Serializable {
   }
   public void setGroups(List<Group> groups) {
     this.groups = groups;
+  }
+
+  
+  /**
+   * Routing (ACD) skills possessed by the user
+   **/
+  public User skills(List<UserRoutingSkill> skills) {
+    this.skills = skills;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
+  @JsonProperty("skills")
+  public List<UserRoutingSkill> getSkills() {
+    return skills;
+  }
+  public void setSkills(List<UserRoutingSkill> skills) {
+    this.skills = skills;
+  }
+
+  
+  /**
+   * Routing (ACD) languages possessed by the user
+   **/
+  public User languages(List<UserRoutingLanguage> languages) {
+    this.languages = languages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
+  @JsonProperty("languages")
+  public List<UserRoutingLanguage> getLanguages() {
+    return languages;
+  }
+  public void setLanguages(List<UserRoutingLanguage> languages) {
+    this.languages = languages;
   }
 
   
@@ -555,13 +595,15 @@ public class User  implements Serializable {
         Objects.equals(this.profileSkills, user.profileSkills) &&
         Objects.equals(this.locations, user.locations) &&
         Objects.equals(this.groups, user.groups) &&
+        Objects.equals(this.skills, user.skills) &&
+        Objects.equals(this.languages, user.languages) &&
         Objects.equals(this.acdAutoAnswer, user.acdAutoAnswer) &&
         Objects.equals(this.selfUri, user.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, selfUri);
   }
 
   @Override
@@ -593,6 +635,8 @@ public class User  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

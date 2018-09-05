@@ -35,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplan) | Get a work plan |
 | [**getWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplans) | Get work plans |
 | [**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | Get management units |
+| [**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitsDivisionviews) | Get management units across divisions |
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
 | [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | Update an activity code |
@@ -1847,6 +1848,63 @@ try {
 | **expand** | **String**|  | [optional]<br />**Values**: details |
 | **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
 | **divisionId** | **String**|  | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ManagementUnitListing**](ManagementUnitListing.html)
+
+<a name="getWorkforcemanagementManagementunitsDivisionviews"></a>
+
+# **getWorkforcemanagementManagementunitsDivisionviews**
+
+
+
+> [ManagementUnitListing](ManagementUnitListing.html) getWorkforcemanagementManagementunitsDivisionviews(divisionId)
+
+Get management units across divisions
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/divisionviews  
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | The divisionIds to filter by. If omitted, will return all divisions
+try {
+    ManagementUnitListing result = apiInstance.getWorkforcemanagementManagementunitsDivisionviews(divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitsDivisionviews");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| The divisionIds to filter by. If omitted, will return all divisions | [optional] |
 {: class="table table-striped"}
 
 ### Return type

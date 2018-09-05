@@ -45,6 +45,8 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -53,8 +55,6 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
 import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 
@@ -141,22 +141,8 @@ public class GetRoutingQueueUsersRequest {
 		PROFILESKILLS("profileSkills"), 
 		LOCATIONS("locations"), 
 		GROUPS("groups"), 
-		DATE("date"), 
-		GEOLOCATIONSETTINGS("geolocationsettings"), 
-		ORGANIZATION("organization"), 
-		PRESENCEDEFINITIONS("presencedefinitions"), 
-		LOCATIONDEFINITIONS("locationdefinitions"), 
-		ORGAUTHORIZATION("orgauthorization"), 
-		ORGPRODUCTS("orgproducts"), 
-		FAVORITES("favorites"), 
-		SUPERIORS("superiors"), 
-		DIRECTREPORTS("directreports"), 
-		ADJACENTS("adjacents"), 
-		ROUTINGSKILLS("routingskills"), 
-		ROUTINGLANGUAGES("routinglanguages"), 
-		FIELDCONFIGS("fieldconfigs"), 
-		TOKEN("token"), 
-		TRUSTORS("trustors");
+		SKILLS("skills"), 
+		LANGUAGES("languages");
 
 		private String value;
 

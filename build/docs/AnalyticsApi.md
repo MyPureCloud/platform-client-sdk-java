@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
+| [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
 | [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
 | [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | Generate a view export request |
 | [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | Place a scheduled report immediately into the reporting queue |
@@ -922,6 +923,63 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
+{: class="table table-striped"}
+
+### Return type
+
+[**AggregateQueryResponse**](AggregateQueryResponse.html)
+
+<a name="postAnalyticsFlowsAggregatesQuery"></a>
+
+# **postAnalyticsFlowsAggregatesQuery**
+
+
+
+> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
+
+Query for flow aggregates
+
+
+
+Wraps POST /api/v2/analytics/flows/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+try {
+    AggregateQueryResponse result = apiInstance.postAnalyticsFlowsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsFlowsAggregatesQuery");
     e.printStackTrace();
 }
 ~~~

@@ -131,13 +131,14 @@ public class QueueRequest  implements Serializable {
 
   
   /**
+   * The queue name
    **/
   public QueueRequest name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The queue name")
   @JsonProperty("name")
   public String getName() {
     return name;

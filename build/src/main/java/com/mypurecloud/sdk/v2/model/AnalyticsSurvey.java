@@ -25,6 +25,7 @@ public class AnalyticsSurvey  implements Serializable {
   private String queueId = null;
   private String status = null;
   private Date createdDate = null;
+  private Long getoSurveyTotalScore = null;
 
   
   /**
@@ -207,6 +208,24 @@ public class AnalyticsSurvey  implements Serializable {
   }
 
   
+  /**
+   * The total score for the survey
+   **/
+  public AnalyticsSurvey getoSurveyTotalScore(Long getoSurveyTotalScore) {
+    this.getoSurveyTotalScore = getoSurveyTotalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The total score for the survey")
+  @JsonProperty("getoSurveyTotalScore")
+  public Long getGetoSurveyTotalScore() {
+    return getoSurveyTotalScore;
+  }
+  public void setGetoSurveyTotalScore(Long getoSurveyTotalScore) {
+    this.getoSurveyTotalScore = getoSurveyTotalScore;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,12 +245,13 @@ public class AnalyticsSurvey  implements Serializable {
         Objects.equals(this.userId, analyticsSurvey.userId) &&
         Objects.equals(this.queueId, analyticsSurvey.queueId) &&
         Objects.equals(this.status, analyticsSurvey.status) &&
-        Objects.equals(this.createdDate, analyticsSurvey.createdDate);
+        Objects.equals(this.createdDate, analyticsSurvey.createdDate) &&
+        Objects.equals(this.getoSurveyTotalScore, analyticsSurvey.getoSurveyTotalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, participantId, externalContactId, customerAddress, userId, queueId, status, createdDate);
+    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, participantId, externalContactId, customerAddress, userId, queueId, status, createdDate, getoSurveyTotalScore);
   }
 
   @Override
@@ -249,6 +269,7 @@ public class AnalyticsSurvey  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
+    sb.append("    getoSurveyTotalScore: ").append(toIndentedString(getoSurveyTotalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

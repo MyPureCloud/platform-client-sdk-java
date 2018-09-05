@@ -46,6 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | Update the ring number of joined status for a User in a Queue |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | Join or unjoin a set of users for a queue |
 | [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
+| [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
+| [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Add bulk routing skills to user |
 | [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
 | [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
 | [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
@@ -1397,7 +1399,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
 | **joined** | **Boolean**| Filter by joined status | [optional] |
 | **name** | **String**| Filter by queue member name | [optional] |
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] |
@@ -2028,7 +2030,7 @@ try {
 
 
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, name, sortBy)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, name)
 
 Get list of wrapup codes.
 
@@ -2059,10 +2061,10 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-String name = "name_example"; // String | Name
 String sortBy = "name"; // String | Sort by
+String name = "name_example"; // String | Name
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, name, sortBy);
+    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodes");
@@ -2077,8 +2079,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id |
 | **name** | **String**| Name | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2390,6 +2392,126 @@ try {
 ### Return type
 
 [**UserRoutingLanguage**](UserRoutingLanguage.html)
+
+<a name="patchUserRoutinglanguagesBulk"></a>
+
+# **patchUserRoutinglanguagesBulk**
+
+
+
+> [UserLanguageEntityListing](UserLanguageEntityListing.html) patchUserRoutinglanguagesBulk(userId, body)
+
+Add bulk routing language to user. Max limit 50 languages
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk  
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+List<UserRoutingLanguagePost> body = Arrays.asList(new UserRoutingLanguagePost()); // List<UserRoutingLanguagePost> | Language
+try {
+    UserLanguageEntityListing result = apiInstance.patchUserRoutinglanguagesBulk(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchUserRoutinglanguagesBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+
+<a name="patchUserRoutingskillsBulk"></a>
+
+# **patchUserRoutingskillsBulk**
+
+
+
+> [UserSkillEntityListing](UserSkillEntityListing.html) patchUserRoutingskillsBulk(userId, body)
+
+Add bulk routing skills to user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+List<UserRoutingSkillPost> body = Arrays.asList(new UserRoutingSkillPost()); // List<UserRoutingSkillPost> | Skill
+try {
+    UserSkillEntityListing result = apiInstance.patchUserRoutingskillsBulk(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchUserRoutingskillsBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | |
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 

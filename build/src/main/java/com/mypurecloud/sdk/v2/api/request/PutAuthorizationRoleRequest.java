@@ -21,13 +21,18 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
 import com.mypurecloud.sdk.v2.model.DomainOrgRoleDifference;
 import com.mypurecloud.sdk.v2.model.SubjectDivisionGrantsEntityListing;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationRoleEntityListing;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
+import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 

@@ -13,8 +13,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.User;
@@ -36,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
@@ -44,20 +48,23 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
@@ -86,10 +93,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -123,6 +133,82 @@ public class UsersApiAsync {
 
   public UsersApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteAuthorizationSubjectDivisionRoleAsync(DeleteAuthorizationSubjectDivisionRoleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteAuthorizationSubjectDivisionRoleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   
@@ -570,6 +656,310 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<AuthzDivision>> getAuthorizationDivisionspermittedMeAsync(GetAuthorizationDivisionspermittedMeRequest request, final AsyncApiCallback<List<AuthzDivision>> callback) {
+    try {
+      final SettableFuture<List<AuthzDivision>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<AuthzDivision>>> getAuthorizationDivisionspermittedMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<AuthzDivision>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<AuthzDivision>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectIdAsync(GetAuthorizationDivisionspermittedSubjectIdRequest request, final AsyncApiCallback<List<AuthzDivision>> callback) {
+    try {
+      final SettableFuture<List<AuthzDivision>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<AuthzDivision>>> getAuthorizationDivisionspermittedSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<AuthzDivision>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<AuthzDivision>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzSubject> getAuthorizationSubjectAsync(GetAuthorizationSubjectRequest request, final AsyncApiCallback<AuthzSubject> callback) {
+    try {
+      final SettableFuture<AuthzSubject> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzSubject>() {}, new AsyncApiCallback<ApiResponse<AuthzSubject>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzSubject> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzSubject>> getAuthorizationSubjectAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthzSubject>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzSubject>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzSubject>() {}, new AsyncApiCallback<ApiResponse<AuthzSubject>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzSubject> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzSubject> getAuthorizationSubjectsMeAsync(GetAuthorizationSubjectsMeRequest request, final AsyncApiCallback<AuthzSubject> callback) {
+    try {
+      final SettableFuture<AuthzSubject> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzSubject>() {}, new AsyncApiCallback<ApiResponse<AuthzSubject>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzSubject> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzSubject>> getAuthorizationSubjectsMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthzSubject>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzSubject>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzSubject>() {}, new AsyncApiCallback<ApiResponse<AuthzSubject>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzSubject> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2711,6 +3101,158 @@ public class UsersApiAsync {
 
   
   /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserLanguageEntityListing> patchUserRoutinglanguagesBulkAsync(PatchUserRoutinglanguagesBulkRequest request, final AsyncApiCallback<UserLanguageEntityListing> callback) {
+    try {
+      final SettableFuture<UserLanguageEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserLanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLanguageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLanguageEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserLanguageEntityListing>> patchUserRoutinglanguagesBulkAsync(ApiRequest<List<UserRoutingLanguagePost>> request, final AsyncApiCallback<ApiResponse<UserLanguageEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserLanguageEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserLanguageEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLanguageEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLanguageEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserSkillEntityListing> patchUserRoutingskillsBulkAsync(PatchUserRoutingskillsBulkRequest request, final AsyncApiCallback<UserSkillEntityListing> callback) {
+    try {
+      final SettableFuture<UserSkillEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserSkillEntityListing>> patchUserRoutingskillsBulkAsync(ApiRequest<List<UserRoutingSkillPost>> request, final AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserSkillEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update bulk acd autoanswer on users
    * 
    * @param request the request object
@@ -3002,6 +3544,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ObservationQueryResponse> response = (ApiResponse<ObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postAuthorizationSubjectDivisionRoleAsync(PostAuthorizationSubjectDivisionRoleRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postAuthorizationSubjectDivisionRoleAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

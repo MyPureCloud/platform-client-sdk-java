@@ -10,8 +10,10 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.User;
@@ -33,6 +35,8 @@ import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
@@ -41,20 +45,23 @@ import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ObservationQuery;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
-import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
-import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
@@ -83,10 +90,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -119,6 +129,90 @@ public class UsersApi {
 
   public UsersApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param divisionId the id of the division of the grant (required)
+   * @param roleId the id of the role of the grant (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAuthorizationSubjectDivisionRole(String subjectId, String divisionId, String roleId) throws IOException, ApiException {
+     deleteAuthorizationSubjectDivisionRole(createDeleteAuthorizationSubjectDivisionRoleRequest(subjectId, divisionId, roleId));
+  }
+
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param divisionId the id of the division of the grant (required)
+   * @param roleId the id of the role of the grant (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAuthorizationSubjectDivisionRoleWithHttpInfo(String subjectId, String divisionId, String roleId) throws IOException {
+    return deleteAuthorizationSubjectDivisionRole(createDeleteAuthorizationSubjectDivisionRoleRequest(subjectId, divisionId, roleId).withHttpInfo());
+  }
+
+  private DeleteAuthorizationSubjectDivisionRoleRequest createDeleteAuthorizationSubjectDivisionRoleRequest(String subjectId, String divisionId, String roleId) {
+    return DeleteAuthorizationSubjectDivisionRoleRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withDivisionId(divisionId)
+    
+            .withRoleId(roleId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAuthorizationSubjectDivisionRole(DeleteAuthorizationSubjectDivisionRoleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a grant of a role in a division
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAuthorizationSubjectDivisionRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -584,6 +678,330 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param name Search term to filter by division name (optional)
+   * @return List<AuthzDivision>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AuthzDivision> getAuthorizationDivisionspermittedMe(String permission, String name) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedMe(createGetAuthorizationDivisionspermittedMeRequest(permission, name));
+  }
+
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param name Search term to filter by division name (optional)
+   * @return List<AuthzDivision>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedMeWithHttpInfo(String permission, String name) throws IOException {
+    return getAuthorizationDivisionspermittedMe(createGetAuthorizationDivisionspermittedMeRequest(permission, name).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedMeRequest createGetAuthorizationDivisionspermittedMeRequest(String permission, String name) {
+    return GetAuthorizationDivisionspermittedMeRequest.builder()
+            .withPermission(permission)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param request The request object
+   * @return List<AuthzDivision>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AuthzDivision> getAuthorizationDivisionspermittedMe(GetAuthorizationDivisionspermittedMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<AuthzDivision>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns whether or not current user can perform the specified action(s).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<AuthzDivision>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param name Search term to filter by division name (optional)
+   * @return List<AuthzDivision>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AuthzDivision> getAuthorizationDivisionspermittedSubjectId(String subjectId, String permission, String name) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedSubjectId(createGetAuthorizationDivisionspermittedSubjectIdRequest(subjectId, permission, name));
+  }
+
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param name Search term to filter by division name (optional)
+   * @return List<AuthzDivision>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectIdWithHttpInfo(String subjectId, String permission, String name) throws IOException {
+    return getAuthorizationDivisionspermittedSubjectId(createGetAuthorizationDivisionspermittedSubjectIdRequest(subjectId, permission, name).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedSubjectIdRequest createGetAuthorizationDivisionspermittedSubjectIdRequest(String subjectId, String permission, String name) {
+    return GetAuthorizationDivisionspermittedSubjectIdRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withPermission(permission)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param request The request object
+   * @return List<AuthzDivision>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<AuthzDivision> getAuthorizationDivisionspermittedSubjectId(GetAuthorizationDivisionspermittedSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<AuthzDivision>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns whether or not specified user can perform the specified action(s).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<AuthzDivision>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @return AuthzSubject
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzSubject getAuthorizationSubject(String subjectId) throws IOException, ApiException {
+    return  getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId));
+  }
+
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @return AuthzSubject
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectWithHttpInfo(String subjectId) throws IOException {
+    return getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId).withHttpInfo());
+  }
+
+  private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId) {
+    return GetAuthorizationSubjectRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .build();
+  }
+
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param request The request object
+   * @return AuthzSubject
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzSubject getAuthorizationSubject(GetAuthorizationSubjectRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzSubject> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzSubject>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a listing of roles and permissions for a user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzSubject> getAuthorizationSubject(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzSubject>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @return AuthzSubject
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzSubject getAuthorizationSubjectsMe() throws IOException, ApiException {
+    return  getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest());
+  }
+
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @return AuthzSubject
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMeWithHttpInfo() throws IOException {
+    return getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest().withHttpInfo());
+  }
+
+  private GetAuthorizationSubjectsMeRequest createGetAuthorizationSubjectsMeRequest() {
+    return GetAuthorizationSubjectsMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @param request The request object
+   * @return AuthzSubject
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzSubject getAuthorizationSubjectsMe(GetAuthorizationSubjectsMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzSubject> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzSubject>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a listing of roles and permissions for the currently authenticated user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzSubject>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2982,6 +3400,172 @@ public class UsersApi {
 
   
   /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param userId User ID (required)
+   * @param body Language (required)
+   * @return UserLanguageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLanguageEntityListing patchUserRoutinglanguagesBulk(String userId, List<UserRoutingLanguagePost> body) throws IOException, ApiException {
+    return  patchUserRoutinglanguagesBulk(createPatchUserRoutinglanguagesBulkRequest(userId, body));
+  }
+
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param userId User ID (required)
+   * @param body Language (required)
+   * @return UserLanguageEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLanguageEntityListing> patchUserRoutinglanguagesBulkWithHttpInfo(String userId, List<UserRoutingLanguagePost> body) throws IOException {
+    return patchUserRoutinglanguagesBulk(createPatchUserRoutinglanguagesBulkRequest(userId, body).withHttpInfo());
+  }
+
+  private PatchUserRoutinglanguagesBulkRequest createPatchUserRoutinglanguagesBulkRequest(String userId, List<UserRoutingLanguagePost> body) {
+    return PatchUserRoutinglanguagesBulkRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request The request object
+   * @return UserLanguageEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLanguageEntityListing patchUserRoutinglanguagesBulk(PatchUserRoutinglanguagesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserLanguageEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserLanguageEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add bulk routing language to user. Max limit 50 languages
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLanguageEntityListing> patchUserRoutinglanguagesBulk(ApiRequest<List<UserRoutingLanguagePost>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserLanguageEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLanguageEntityListing> response = (ApiResponse<UserLanguageEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param userId User ID (required)
+   * @param body Skill (required)
+   * @return UserSkillEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillEntityListing patchUserRoutingskillsBulk(String userId, List<UserRoutingSkillPost> body) throws IOException, ApiException {
+    return  patchUserRoutingskillsBulk(createPatchUserRoutingskillsBulkRequest(userId, body));
+  }
+
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param userId User ID (required)
+   * @param body Skill (required)
+   * @return UserSkillEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillEntityListing> patchUserRoutingskillsBulkWithHttpInfo(String userId, List<UserRoutingSkillPost> body) throws IOException {
+    return patchUserRoutingskillsBulk(createPatchUserRoutingskillsBulkRequest(userId, body).withHttpInfo());
+  }
+
+  private PatchUserRoutingskillsBulkRequest createPatchUserRoutingskillsBulkRequest(String userId, List<UserRoutingSkillPost> body) {
+    return PatchUserRoutingskillsBulkRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request The request object
+   * @return UserSkillEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillEntityListing patchUserRoutingskillsBulk(PatchUserRoutingskillsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserSkillEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add bulk routing skills to user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillEntityListing> patchUserRoutingskillsBulk(ApiRequest<List<UserRoutingSkillPost>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserSkillEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update bulk acd autoanswer on users
    * 
    * @param body Users (required)
@@ -3292,6 +3876,94 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ObservationQueryResponse> response = (ApiResponse<ObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param divisionId the id of the division to which to make the grant (required)
+   * @param roleId the id of the role to grant (required)
+   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectDivisionRole(String subjectId, String divisionId, String roleId, String subjectType) throws IOException, ApiException {
+     postAuthorizationSubjectDivisionRole(createPostAuthorizationSubjectDivisionRoleRequest(subjectId, divisionId, roleId, subjectType));
+  }
+
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param divisionId the id of the division to which to make the grant (required)
+   * @param roleId the id of the role to grant (required)
+   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectDivisionRoleWithHttpInfo(String subjectId, String divisionId, String roleId, String subjectType) throws IOException {
+    return postAuthorizationSubjectDivisionRole(createPostAuthorizationSubjectDivisionRoleRequest(subjectId, divisionId, roleId, subjectType).withHttpInfo());
+  }
+
+  private PostAuthorizationSubjectDivisionRoleRequest createPostAuthorizationSubjectDivisionRoleRequest(String subjectId, String divisionId, String roleId, String subjectType) {
+    return PostAuthorizationSubjectDivisionRoleRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withDivisionId(divisionId)
+    
+            .withRoleId(roleId)
+    
+            .withSubjectType(subjectType)
+    
+            .build();
+  }
+
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectDivisionRole(PostAuthorizationSubjectDivisionRoleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Make a grant of a role in a division
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectDivisionRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

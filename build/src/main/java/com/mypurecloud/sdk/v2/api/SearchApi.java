@@ -11,12 +11,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchResponse;
 import com.mypurecloud.sdk.v2.model.GroupsSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
+import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
@@ -26,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
@@ -33,6 +36,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
@@ -57,6 +61,85 @@ public class SearchApi {
 
   public SearchApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param q64 q64 (required)
+   * @return GKNDocumentationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GKNDocumentationSearchResponse getDocumentationGknSearch(String q64) throws IOException, ApiException {
+    return  getDocumentationGknSearch(createGetDocumentationGknSearchRequest(q64));
+  }
+
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param q64 q64 (required)
+   * @return GKNDocumentationSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GKNDocumentationSearchResponse> getDocumentationGknSearchWithHttpInfo(String q64) throws IOException {
+    return getDocumentationGknSearch(createGetDocumentationGknSearchRequest(q64).withHttpInfo());
+  }
+
+  private GetDocumentationGknSearchRequest createGetDocumentationGknSearchRequest(String q64) {
+    return GetDocumentationGknSearchRequest.builder()
+            .withQ64(q64)
+    
+            .build();
+  }
+
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param request The request object
+   * @return GKNDocumentationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GKNDocumentationSearchResponse getDocumentationGknSearch(GetDocumentationGknSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GKNDocumentationSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GKNDocumentationSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search gkn documentation using the q64 value returned from a previous search
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GKNDocumentationSearchResponse> getDocumentationGknSearch(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GKNDocumentationSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -640,6 +723,85 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Search gkn documentation
+   * 
+   * @param body Search request options (required)
+   * @return GKNDocumentationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GKNDocumentationSearchResponse postDocumentationGknSearch(GKNDocumentationSearchRequest body) throws IOException, ApiException {
+    return  postDocumentationGknSearch(createPostDocumentationGknSearchRequest(body));
+  }
+
+  /**
+   * Search gkn documentation
+   * 
+   * @param body Search request options (required)
+   * @return GKNDocumentationSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GKNDocumentationSearchResponse> postDocumentationGknSearchWithHttpInfo(GKNDocumentationSearchRequest body) throws IOException {
+    return postDocumentationGknSearch(createPostDocumentationGknSearchRequest(body).withHttpInfo());
+  }
+
+  private PostDocumentationGknSearchRequest createPostDocumentationGknSearchRequest(GKNDocumentationSearchRequest body) {
+    return PostDocumentationGknSearchRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Search gkn documentation
+   * 
+   * @param request The request object
+   * @return GKNDocumentationSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GKNDocumentationSearchResponse postDocumentationGknSearch(PostDocumentationGknSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GKNDocumentationSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GKNDocumentationSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search gkn documentation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GKNDocumentationSearchResponse> postDocumentationGknSearch(ApiRequest<GKNDocumentationSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GKNDocumentationSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GKNDocumentationSearchResponse> response = (ApiResponse<GKNDocumentationSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

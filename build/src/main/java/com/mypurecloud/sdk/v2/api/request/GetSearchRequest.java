@@ -66,6 +66,8 @@ public class GetSearchRequest {
 		PROFILESKILLS("profileSkills"), 
 		LOCATIONS("locations"), 
 		GROUPS("groups"), 
+		SKILLS("skills"), 
+		LANGUAGES("languages"), 
 		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"), 
 		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"), 
 		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"), 

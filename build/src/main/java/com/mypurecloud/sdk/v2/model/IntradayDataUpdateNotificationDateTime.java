@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class IntradayDataUpdateNotificationDateTime  implements Serializable {
   
   private Integer iMillis = null;
-  private Boolean beforeNow = null;
-  private Boolean equalNow = null;
   private Boolean afterNow = null;
+  private Boolean equalNow = null;
+  private Boolean beforeNow = null;
 
   
   /**
@@ -39,18 +39,18 @@ public class IntradayDataUpdateNotificationDateTime  implements Serializable {
   
   /**
    **/
-  public IntradayDataUpdateNotificationDateTime beforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
+  public IntradayDataUpdateNotificationDateTime afterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("beforeNow")
-  public Boolean getBeforeNow() {
-    return beforeNow;
+  @JsonProperty("afterNow")
+  public Boolean getAfterNow() {
+    return afterNow;
   }
-  public void setBeforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
+  public void setAfterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
   }
 
   
@@ -73,18 +73,18 @@ public class IntradayDataUpdateNotificationDateTime  implements Serializable {
   
   /**
    **/
-  public IntradayDataUpdateNotificationDateTime afterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
+  public IntradayDataUpdateNotificationDateTime beforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("afterNow")
-  public Boolean getAfterNow() {
-    return afterNow;
+  @JsonProperty("beforeNow")
+  public Boolean getBeforeNow() {
+    return beforeNow;
   }
-  public void setAfterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
+  public void setBeforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
   }
 
   
@@ -99,14 +99,14 @@ public class IntradayDataUpdateNotificationDateTime  implements Serializable {
     }
     IntradayDataUpdateNotificationDateTime intradayDataUpdateNotificationDateTime = (IntradayDataUpdateNotificationDateTime) o;
     return Objects.equals(this.iMillis, intradayDataUpdateNotificationDateTime.iMillis) &&
-        Objects.equals(this.beforeNow, intradayDataUpdateNotificationDateTime.beforeNow) &&
+        Objects.equals(this.afterNow, intradayDataUpdateNotificationDateTime.afterNow) &&
         Objects.equals(this.equalNow, intradayDataUpdateNotificationDateTime.equalNow) &&
-        Objects.equals(this.afterNow, intradayDataUpdateNotificationDateTime.afterNow);
+        Objects.equals(this.beforeNow, intradayDataUpdateNotificationDateTime.beforeNow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iMillis, beforeNow, equalNow, afterNow);
+    return Objects.hash(iMillis, afterNow, equalNow, beforeNow);
   }
 
   @Override
@@ -115,9 +115,9 @@ public class IntradayDataUpdateNotificationDateTime  implements Serializable {
     sb.append("class IntradayDataUpdateNotificationDateTime {\n");
     
     sb.append("    iMillis: ").append(toIndentedString(iMillis)).append("\n");
-    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
-    sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
     sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
+    sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
+    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

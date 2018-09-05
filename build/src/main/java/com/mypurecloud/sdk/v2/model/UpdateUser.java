@@ -275,14 +275,14 @@ public class UpdateUser  implements Serializable {
 
   
   /**
-   * Skills possessed by the user
+   * Profile skills possessed by the user
    **/
   public UpdateUser profileSkills(List<String> profileSkills) {
     this.profileSkills = profileSkills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Skills possessed by the user")
+  @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;

@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class UserScheduleAdherenceUpdateNotificationDateTime  implements Serializable {
   
   private Integer iMillis = null;
-  private Boolean beforeNow = null;
-  private Boolean equalNow = null;
   private Boolean afterNow = null;
+  private Boolean equalNow = null;
+  private Boolean beforeNow = null;
 
   
   /**
@@ -39,18 +39,18 @@ public class UserScheduleAdherenceUpdateNotificationDateTime  implements Seriali
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotificationDateTime beforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
+  public UserScheduleAdherenceUpdateNotificationDateTime afterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("beforeNow")
-  public Boolean getBeforeNow() {
-    return beforeNow;
+  @JsonProperty("afterNow")
+  public Boolean getAfterNow() {
+    return afterNow;
   }
-  public void setBeforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
+  public void setAfterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
   }
 
   
@@ -73,18 +73,18 @@ public class UserScheduleAdherenceUpdateNotificationDateTime  implements Seriali
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotificationDateTime afterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
+  public UserScheduleAdherenceUpdateNotificationDateTime beforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("afterNow")
-  public Boolean getAfterNow() {
-    return afterNow;
+  @JsonProperty("beforeNow")
+  public Boolean getBeforeNow() {
+    return beforeNow;
   }
-  public void setAfterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
+  public void setBeforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
   }
 
   
@@ -99,14 +99,14 @@ public class UserScheduleAdherenceUpdateNotificationDateTime  implements Seriali
     }
     UserScheduleAdherenceUpdateNotificationDateTime userScheduleAdherenceUpdateNotificationDateTime = (UserScheduleAdherenceUpdateNotificationDateTime) o;
     return Objects.equals(this.iMillis, userScheduleAdherenceUpdateNotificationDateTime.iMillis) &&
-        Objects.equals(this.beforeNow, userScheduleAdherenceUpdateNotificationDateTime.beforeNow) &&
+        Objects.equals(this.afterNow, userScheduleAdherenceUpdateNotificationDateTime.afterNow) &&
         Objects.equals(this.equalNow, userScheduleAdherenceUpdateNotificationDateTime.equalNow) &&
-        Objects.equals(this.afterNow, userScheduleAdherenceUpdateNotificationDateTime.afterNow);
+        Objects.equals(this.beforeNow, userScheduleAdherenceUpdateNotificationDateTime.beforeNow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iMillis, beforeNow, equalNow, afterNow);
+    return Objects.hash(iMillis, afterNow, equalNow, beforeNow);
   }
 
   @Override
@@ -115,9 +115,9 @@ public class UserScheduleAdherenceUpdateNotificationDateTime  implements Seriali
     sb.append("class UserScheduleAdherenceUpdateNotificationDateTime {\n");
     
     sb.append("    iMillis: ").append(toIndentedString(iMillis)).append("\n");
-    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
-    sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
     sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
+    sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
+    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,6 +14,7 @@ title: PromptAssetCreate
 | **language** | **String** | The prompt language. |  |
 | **mediaUri** | **String** |  |  [optional] |
 | **ttsString** | **String** |  |  [optional] |
+| **text** | **String** |  |  [optional] |
 | **uploadStatus** | **String** |  |  [optional] |
 | **uploadUri** | **String** |  |  [optional] |
 | **languageDefault** | **Boolean** |  |  [optional] |

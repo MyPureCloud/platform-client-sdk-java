@@ -15,6 +15,7 @@ title: SystemPromptAsset
 | **durationSeconds** | **Double** |  |  [optional] |
 | **mediaUri** | **String** |  |  [optional] |
 | **ttsString** | **String** |  |  [optional] |
+| **text** | **String** |  |  [optional] |
 | **uploadUri** | **String** |  |  [optional] |
 | **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum) |  |  [optional] |
 | **hasDefault** | **Boolean** |  |  [optional] |

@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user&#39;s Presence |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
+| [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
 {: class="table table-striped"}
 
 <a name="deletePresencedefinition"></a>
@@ -478,4 +479,61 @@ try {
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="putUsersPresencesBulk"></a>
+
+# **putUsersPresencesBulk**
+
+
+
+> [List&lt;UserPresence&gt;](UserPresence.html) putUsersPresencesBulk(body)
+
+Update bulk user Presences
+
+
+
+Wraps PUT /api/v2/users/presences/bulk  
+
+Requires ANY permissions: 
+
+* user_administration
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+PresenceApi apiInstance = new PresenceApi();
+List<UserPresence> body = Arrays.asList(new UserPresence()); // List<UserPresence> | List of User presences
+try {
+    List<UserPresence> result = apiInstance.putUsersPresencesBulk(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#putUsersPresencesBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**List&lt;UserPresence&gt;**](UserPresence.html)| List of User presences | |
+{: class="table table-striped"}
+
+### Return type
+
+[**List&lt;UserPresence&gt;**](UserPresence.html)
 

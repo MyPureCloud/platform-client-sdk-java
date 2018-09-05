@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsProper
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
@@ -1338,6 +1339,85 @@ public class AnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for flow aggregates
+   * 
+   * @param body query (required)
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregateQueryResponse postAnalyticsFlowsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsFlowsAggregatesQuery(createPostAnalyticsFlowsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for flow aggregates
+   * 
+   * @param body query (required)
+   * @return AggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregateQueryResponse> postAnalyticsFlowsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+    return postAnalyticsFlowsAggregatesQuery(createPostAnalyticsFlowsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsFlowsAggregatesQueryRequest createPostAnalyticsFlowsAggregatesQueryRequest(AggregationQuery body) {
+    return PostAnalyticsFlowsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for flow aggregates
+   * 
+   * @param request The request object
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregateQueryResponse postAnalyticsFlowsAggregatesQuery(PostAnalyticsFlowsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for flow aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregateQueryResponse> postAnalyticsFlowsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
     }

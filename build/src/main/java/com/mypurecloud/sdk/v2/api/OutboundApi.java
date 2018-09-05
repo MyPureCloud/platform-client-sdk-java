@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
+import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
@@ -5530,7 +5531,7 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException, ApiException {
+  public List<DialerContact> postOutboundContactlistContacts(String contactListId, List<WritableDialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException, ApiException {
     return  postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData, doNotQueue));
   }
 
@@ -5545,11 +5546,11 @@ public class OutboundApi {
    * @return List<DialerContact>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException {
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContactsWithHttpInfo(String contactListId, List<WritableDialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) throws IOException {
     return postOutboundContactlistContacts(createPostOutboundContactlistContactsRequest(contactListId, body, priority, clearSystemData, doNotQueue).withHttpInfo());
   }
 
-  private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<DialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) {
+  private PostOutboundContactlistContactsRequest createPostOutboundContactlistContactsRequest(String contactListId, List<WritableDialerContact> body, Boolean priority, Boolean clearSystemData, Boolean doNotQueue) {
     return PostOutboundContactlistContactsRequest.builder()
             .withContactListId(contactListId)
     
@@ -5590,7 +5591,7 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<DialerContact>> request) throws IOException {
+  public ApiResponse<List<DialerContact>> postOutboundContactlistContacts(ApiRequest<List<WritableDialerContact>> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<List<DialerContact>>() {});
     }

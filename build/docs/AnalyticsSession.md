@@ -75,6 +75,9 @@ title: AnalyticsSession
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SMS | &quot;sms&quot; |
+| FACEBOOK | &quot;facebook&quot; |
+| TWITTER | &quot;twitter&quot; |
+| LINE | &quot;line&quot; |
 {: class="table table-striped"}
 
 

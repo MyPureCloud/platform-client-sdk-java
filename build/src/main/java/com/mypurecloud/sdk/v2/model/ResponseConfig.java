@@ -19,6 +19,7 @@ import java.io.Serializable;
 public class ResponseConfig  implements Serializable {
   
   private Map<String, String> translationMap = null;
+  private Map<String, String> translationMapDefaults = null;
   private String successTemplate = null;
   private String successTemplateUri = null;
 
@@ -38,6 +39,24 @@ public class ResponseConfig  implements Serializable {
   }
   public void setTranslationMap(Map<String, String> translationMap) {
     this.translationMap = translationMap;
+  }
+
+  
+  /**
+   * Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key.
+   **/
+  public ResponseConfig translationMapDefaults(Map<String, String> translationMapDefaults) {
+    this.translationMapDefaults = translationMapDefaults;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Map 'attribute name' and 'default value' pairs used as fallback values if JSON path extraction fails for specified key.")
+  @JsonProperty("translationMapDefaults")
+  public Map<String, String> getTranslationMapDefaults() {
+    return translationMapDefaults;
+  }
+  public void setTranslationMapDefaults(Map<String, String> translationMapDefaults) {
+    this.translationMapDefaults = translationMapDefaults;
   }
 
   
@@ -88,13 +107,14 @@ public class ResponseConfig  implements Serializable {
     }
     ResponseConfig responseConfig = (ResponseConfig) o;
     return Objects.equals(this.translationMap, responseConfig.translationMap) &&
+        Objects.equals(this.translationMapDefaults, responseConfig.translationMapDefaults) &&
         Objects.equals(this.successTemplate, responseConfig.successTemplate) &&
         Objects.equals(this.successTemplateUri, responseConfig.successTemplateUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(translationMap, successTemplate, successTemplateUri);
+    return Objects.hash(translationMap, translationMapDefaults, successTemplate, successTemplateUri);
   }
 
   @Override
@@ -103,6 +123,7 @@ public class ResponseConfig  implements Serializable {
     sb.append("class ResponseConfig {\n");
     
     sb.append("    translationMap: ").append(toIndentedString(translationMap)).append("\n");
+    sb.append("    translationMapDefaults: ").append(toIndentedString(translationMapDefaults)).append("\n");
     sb.append("    successTemplate: ").append(toIndentedString(successTemplate)).append("\n");
     sb.append("    successTemplateUri: ").append(toIndentedString(successTemplateUri)).append("\n");
     sb.append("}");

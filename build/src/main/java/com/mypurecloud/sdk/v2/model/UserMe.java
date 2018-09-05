@@ -30,6 +30,8 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserConversationSummary;
 import com.mypurecloud.sdk.v2.model.UserImage;
 import com.mypurecloud.sdk.v2.model.UserPresence;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -102,6 +104,8 @@ public class UserMe  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
+  private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
@@ -470,14 +474,14 @@ public class UserMe  implements Serializable {
 
   
   /**
-   * Skills possessed by the user
+   * Profile skills possessed by the user
    **/
   public UserMe profileSkills(List<String> profileSkills) {
     this.profileSkills = profileSkills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Skills possessed by the user")
+  @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
@@ -520,6 +524,42 @@ public class UserMe  implements Serializable {
   }
   public void setGroups(List<Group> groups) {
     this.groups = groups;
+  }
+
+  
+  /**
+   * Routing (ACD) skills possessed by the user
+   **/
+  public UserMe skills(List<UserRoutingSkill> skills) {
+    this.skills = skills;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
+  @JsonProperty("skills")
+  public List<UserRoutingSkill> getSkills() {
+    return skills;
+  }
+  public void setSkills(List<UserRoutingSkill> skills) {
+    this.skills = skills;
+  }
+
+  
+  /**
+   * Routing (ACD) languages possessed by the user
+   **/
+  public UserMe languages(List<UserRoutingLanguage> languages) {
+    this.languages = languages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
+  @JsonProperty("languages")
+  public List<UserRoutingLanguage> getLanguages() {
+    return languages;
+  }
+  public void setLanguages(List<UserRoutingLanguage> languages) {
+    this.languages = languages;
   }
 
   
@@ -852,6 +892,8 @@ public class UserMe  implements Serializable {
         Objects.equals(this.profileSkills, userMe.profileSkills) &&
         Objects.equals(this.locations, userMe.locations) &&
         Objects.equals(this.groups, userMe.groups) &&
+        Objects.equals(this.skills, userMe.skills) &&
+        Objects.equals(this.languages, userMe.languages) &&
         Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
         Objects.equals(this.date, userMe.date) &&
         Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
@@ -873,7 +915,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -905,6 +947,8 @@ public class UserMe  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");

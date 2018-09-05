@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUsersPresencesBulkRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -645,6 +646,82 @@ public class PresenceApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrganizationPresence> response = (ApiResponse<OrganizationPresence>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update bulk user Presences
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UserPresence>> putUsersPresencesBulkAsync(PutUsersPresencesBulkRequest request, final AsyncApiCallback<List<UserPresence>> callback) {
+    try {
+      final SettableFuture<List<UserPresence>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserPresence>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update bulk user Presences
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UserPresence>>> putUsersPresencesBulkAsync(ApiRequest<List<UserPresence>> request, final AsyncApiCallback<ApiResponse<List<UserPresence>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UserPresence>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UserPresence>>() {}, new AsyncApiCallback<ApiResponse<List<UserPresence>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserPresence>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserPresence>> response = (ApiResponse<List<UserPresence>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserPresence>> response = (ApiResponse<List<UserPresence>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

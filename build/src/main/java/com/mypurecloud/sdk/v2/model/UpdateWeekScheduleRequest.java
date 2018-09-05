@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,42 @@ public class UpdateWeekScheduleRequest  implements Serializable {
   private List<String> partialUploadIds = new ArrayList<String>();
   private WfmVersionedEntityMetadata metadata = null;
   private Integer agentSchedulesVersion = null;
+
+  /**
+   * The condition to notify agents about schedule updates. Applicable to only published schedule
+   */
+  public enum AgentUpdateFilterEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ALL("All"),
+    SHIFTTIMECHANGE("ShiftTimeChange"),
+    NONE("None");
+
+    private String value;
+
+    AgentUpdateFilterEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AgentUpdateFilterEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AgentUpdateFilterEnum value : AgentUpdateFilterEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AgentUpdateFilterEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AgentUpdateFilterEnum agentUpdateFilter = null;
 
   
   /**
@@ -136,6 +173,24 @@ public class UpdateWeekScheduleRequest  implements Serializable {
   }
 
   
+  /**
+   * The condition to notify agents about schedule updates. Applicable to only published schedule
+   **/
+  public UpdateWeekScheduleRequest agentUpdateFilter(AgentUpdateFilterEnum agentUpdateFilter) {
+    this.agentUpdateFilter = agentUpdateFilter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The condition to notify agents about schedule updates. Applicable to only published schedule")
+  @JsonProperty("agentUpdateFilter")
+  public AgentUpdateFilterEnum getAgentUpdateFilter() {
+    return agentUpdateFilter;
+  }
+  public void setAgentUpdateFilter(AgentUpdateFilterEnum agentUpdateFilter) {
+    this.agentUpdateFilter = agentUpdateFilter;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,12 +206,13 @@ public class UpdateWeekScheduleRequest  implements Serializable {
         Objects.equals(this.userSchedules, updateWeekScheduleRequest.userSchedules) &&
         Objects.equals(this.partialUploadIds, updateWeekScheduleRequest.partialUploadIds) &&
         Objects.equals(this.metadata, updateWeekScheduleRequest.metadata) &&
-        Objects.equals(this.agentSchedulesVersion, updateWeekScheduleRequest.agentSchedulesVersion);
+        Objects.equals(this.agentSchedulesVersion, updateWeekScheduleRequest.agentSchedulesVersion) &&
+        Objects.equals(this.agentUpdateFilter, updateWeekScheduleRequest.agentUpdateFilter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, published, userSchedules, partialUploadIds, metadata, agentSchedulesVersion);
+    return Objects.hash(description, published, userSchedules, partialUploadIds, metadata, agentSchedulesVersion, agentUpdateFilter);
   }
 
   @Override
@@ -170,6 +226,7 @@ public class UpdateWeekScheduleRequest  implements Serializable {
     sb.append("    partialUploadIds: ").append(toIndentedString(partialUploadIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    agentSchedulesVersion: ").append(toIndentedString(agentSchedulesVersion)).append("\n");
+    sb.append("    agentUpdateFilter: ").append(toIndentedString(agentUpdateFilter)).append("\n");
     sb.append("}");
     return sb.toString();
   }
