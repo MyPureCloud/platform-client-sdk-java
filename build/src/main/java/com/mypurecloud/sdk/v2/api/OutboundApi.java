@@ -1476,7 +1476,7 @@ public class OutboundApi {
   /**
    * Query attempt limits list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -1493,7 +1493,7 @@ public class OutboundApi {
   /**
    * Query attempt limits list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -1654,7 +1654,7 @@ public class OutboundApi {
   /**
    * Query callable time set list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -1671,7 +1671,7 @@ public class OutboundApi {
   /**
    * Query callable time set list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -1832,7 +1832,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer call analysis response sets.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -1849,7 +1849,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer call analysis response sets.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2405,7 +2405,7 @@ public class OutboundApi {
   /**
    * Query Campaign Rule list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2422,7 +2422,7 @@ public class OutboundApi {
   /**
    * Query Campaign Rule list
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2504,7 +2504,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer campaigns.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2528,7 +2528,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer campaigns.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2710,7 +2710,7 @@ public class OutboundApi {
   /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -2728,7 +2728,7 @@ public class OutboundApi {
   /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3224,7 +3224,7 @@ public class OutboundApi {
   /**
    * Query Contact list filters
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3242,7 +3242,7 @@ public class OutboundApi {
   /**
    * Query Contact list filters
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3329,7 +3329,7 @@ public class OutboundApi {
    * 
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3349,7 +3349,7 @@ public class OutboundApi {
    * 
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3689,7 +3689,7 @@ public class OutboundApi {
    * 
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -3708,7 +3708,7 @@ public class OutboundApi {
    * 
    * @param includeImportStatus Import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -4055,7 +4055,7 @@ public class OutboundApi {
   /**
    * Query a list of Rule Sets.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -4072,7 +4072,7 @@ public class OutboundApi {
   /**
    * Query a list of Rule Sets.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -4541,7 +4541,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer campaign sequences.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
@@ -4558,7 +4558,7 @@ public class OutboundApi {
   /**
    * Query a list of dialer campaign sequences.
    * 
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)

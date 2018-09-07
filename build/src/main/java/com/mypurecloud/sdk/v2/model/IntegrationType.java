@@ -30,6 +30,7 @@ public class IntegrationType  implements Serializable {
   private String configPropertiesSchemaUri = null;
   private String configAdvancedSchemaUri = null;
   private String helpUri = null;
+  private String termsOfServiceUri = null;
   private Map<String, CredentialSpecification> credentials = null;
   private Boolean nonInstallable = null;
   private Integer maxInstances = null;
@@ -132,6 +133,13 @@ public class IntegrationType  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "URI of a page with terms and conditions for the integration type")
+  @JsonProperty("termsOfServiceUri")
+  public String getTermsOfServiceUri() {
+    return termsOfServiceUri;
+  }
+
+  
   /**
    * Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.
    **/
@@ -208,6 +216,7 @@ public class IntegrationType  implements Serializable {
         Objects.equals(this.configPropertiesSchemaUri, integrationType.configPropertiesSchemaUri) &&
         Objects.equals(this.configAdvancedSchemaUri, integrationType.configAdvancedSchemaUri) &&
         Objects.equals(this.helpUri, integrationType.helpUri) &&
+        Objects.equals(this.termsOfServiceUri, integrationType.termsOfServiceUri) &&
         Objects.equals(this.credentials, integrationType.credentials) &&
         Objects.equals(this.nonInstallable, integrationType.nonInstallable) &&
         Objects.equals(this.maxInstances, integrationType.maxInstances) &&
@@ -217,7 +226,7 @@ public class IntegrationType  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, credentials, nonInstallable, maxInstances, userPermissions, selfUri);
+    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, termsOfServiceUri, credentials, nonInstallable, maxInstances, userPermissions, selfUri);
   }
 
   @Override
@@ -234,6 +243,7 @@ public class IntegrationType  implements Serializable {
     sb.append("    configPropertiesSchemaUri: ").append(toIndentedString(configPropertiesSchemaUri)).append("\n");
     sb.append("    configAdvancedSchemaUri: ").append(toIndentedString(configAdvancedSchemaUri)).append("\n");
     sb.append("    helpUri: ").append(toIndentedString(helpUri)).append("\n");
+    sb.append("    termsOfServiceUri: ").append(toIndentedString(termsOfServiceUri)).append("\n");
     sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("    nonInstallable: ").append(toIndentedString(nonInstallable)).append("\n");
     sb.append("    maxInstances: ").append(toIndentedString(maxInstances)).append("\n");

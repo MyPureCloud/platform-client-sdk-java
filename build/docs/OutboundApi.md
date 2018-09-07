@@ -1093,7 +1093,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1113,7 +1113,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -1217,7 +1217,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1237,7 +1237,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -1341,7 +1341,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1361,7 +1361,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -1750,7 +1750,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1770,7 +1770,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -1817,7 +1817,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1844,7 +1844,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -1955,7 +1955,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -1976,7 +1976,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -2318,7 +2318,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -2339,7 +2339,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -2389,7 +2389,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Include import status
 Boolean includeSize = false; // Boolean | Include size
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -2412,7 +2412,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **includeImportStatus** | **Boolean**| Include import status | [optional] [default to false] |
 | **includeSize** | **Boolean**| Include size | [optional] [default to false] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -2640,7 +2640,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Import status
 Boolean includeSize = false; // Boolean | Include size
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -2662,7 +2662,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **includeImportStatus** | **Boolean**| Import status | [optional] [default to false] |
 | **includeSize** | **Boolean**| Include size | [optional] [default to false] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -2892,7 +2892,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -2912,7 +2912,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
@@ -3236,7 +3236,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 OutboundApi apiInstance = new OutboundApi();
-Integer pageSize = 25; // Integer | Page size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
@@ -3256,7 +3256,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **String**| Name | [optional] |
