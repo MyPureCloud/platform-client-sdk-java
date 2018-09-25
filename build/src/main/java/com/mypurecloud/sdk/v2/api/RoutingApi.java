@@ -1562,30 +1562,34 @@ public class RoutingApi {
   /**
    * Get recipients
    * 
+   * @param messengerType Messenger Type (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return RecipientListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RecipientListing getRoutingMessageRecipients(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(pageSize, pageNumber));
+  public RecipientListing getRoutingMessageRecipients(String messengerType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, pageSize, pageNumber));
   }
 
   /**
    * Get recipients
    * 
+   * @param messengerType Messenger Type (optional)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @return RecipientListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecipientListing> getRoutingMessageRecipientsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<RecipientListing> getRoutingMessageRecipientsWithHttpInfo(String messengerType, Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingMessageRecipients(createGetRoutingMessageRecipientsRequest(messengerType, pageSize, pageNumber).withHttpInfo());
   }
 
-  private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(Integer pageSize, Integer pageNumber) {
+  private GetRoutingMessageRecipientsRequest createGetRoutingMessageRecipientsRequest(String messengerType, Integer pageSize, Integer pageNumber) {
     return GetRoutingMessageRecipientsRequest.builder()
+            .withMessengerType(messengerType)
+    
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)

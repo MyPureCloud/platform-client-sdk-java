@@ -23,6 +23,7 @@ public class CreateUser  implements Serializable {
   private List<Contact> addresses = new ArrayList<Contact>();
   private String title = null;
   private String password = null;
+  private String divisionId = null;
 
   
   /**
@@ -131,6 +132,24 @@ public class CreateUser  implements Serializable {
   }
 
   
+  /**
+   * The division to which this user will belong
+   **/
+  public CreateUser divisionId(String divisionId) {
+    this.divisionId = divisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this user will belong")
+  @JsonProperty("divisionId")
+  public String getDivisionId() {
+    return divisionId;
+  }
+  public void setDivisionId(String divisionId) {
+    this.divisionId = divisionId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,12 +165,13 @@ public class CreateUser  implements Serializable {
         Objects.equals(this.email, createUser.email) &&
         Objects.equals(this.addresses, createUser.addresses) &&
         Objects.equals(this.title, createUser.title) &&
-        Objects.equals(this.password, createUser.password);
+        Objects.equals(this.password, createUser.password) &&
+        Objects.equals(this.divisionId, createUser.divisionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, department, email, addresses, title, password);
+    return Objects.hash(name, department, email, addresses, title, password, divisionId);
   }
 
   @Override
@@ -165,6 +185,7 @@ public class CreateUser  implements Serializable {
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

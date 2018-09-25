@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
+import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
@@ -162,6 +163,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationM
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationMessagesMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 
@@ -8138,6 +8140,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create an outbound messaging conversation.
+   * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+   * @param body Create outbound messaging conversation (required)
+   * @return MessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversation postConversationsMessages(CreateOutboundMessagingConversationRequest body) throws IOException, ApiException {
+    return  postConversationsMessages(createPostConversationsMessagesRequest(body));
+  }
+
+  /**
+   * Create an outbound messaging conversation.
+   * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+   * @param body Create outbound messaging conversation (required)
+   * @return MessageConversation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversation> postConversationsMessagesWithHttpInfo(CreateOutboundMessagingConversationRequest body) throws IOException {
+    return postConversationsMessages(createPostConversationsMessagesRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagesRequest createPostConversationsMessagesRequest(CreateOutboundMessagingConversationRequest body) {
+    return PostConversationsMessagesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create an outbound messaging conversation.
+   * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+   * @param request The request object
+   * @return MessageConversation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageConversation postConversationsMessages(PostConversationsMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageConversation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an outbound messaging conversation.
+   * If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageConversation> postConversationsMessages(ApiRequest<CreateOutboundMessagingConversationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageConversation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

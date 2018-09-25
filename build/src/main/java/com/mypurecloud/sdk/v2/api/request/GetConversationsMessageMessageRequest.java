@@ -73,6 +73,7 @@ import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
+import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 public class GetConversationsMessageMessageRequest {

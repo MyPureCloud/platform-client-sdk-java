@@ -24,9 +24,9 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
   private Long total = null;
   private String selfUri = null;
   private String firstUri = null;
+  private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
-  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -134,6 +134,23 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
   
   /**
    **/
+  public CampaignDivisionViewListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
   public CampaignDivisionViewListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -163,23 +180,6 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
-  public CampaignDivisionViewListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
   
@@ -216,15 +216,15 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
         Objects.equals(this.total, campaignDivisionViewListing.total) &&
         Objects.equals(this.selfUri, campaignDivisionViewListing.selfUri) &&
         Objects.equals(this.firstUri, campaignDivisionViewListing.firstUri) &&
+        Objects.equals(this.previousUri, campaignDivisionViewListing.previousUri) &&
         Objects.equals(this.nextUri, campaignDivisionViewListing.nextUri) &&
         Objects.equals(this.lastUri, campaignDivisionViewListing.lastUri) &&
-        Objects.equals(this.previousUri, campaignDivisionViewListing.previousUri) &&
         Objects.equals(this.pageCount, campaignDivisionViewListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class CampaignDivisionViewListing  implements Serializable, PagedResource
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

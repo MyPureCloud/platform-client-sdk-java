@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
+import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
+import com.mypurecloud.sdk.v2.model.RescheduleResult;
 import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
@@ -33,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
@@ -51,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestEntityList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestLookupList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.CopyWeekScheduleRequest;
+import com.mypurecloud.sdk.v2.model.RescheduleRequest;
 import com.mypurecloud.sdk.v2.model.ImportWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
@@ -82,6 +86,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAc
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitIntradayQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupsRequest;
@@ -101,6 +107,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
@@ -117,6 +124,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitT
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsFetchdetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekScheduleCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesPartialuploadRequest;
@@ -1198,6 +1206,172 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmIntradayQueueListing> response = (ApiResponse<WfmIntradayQueueListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @return SchedulingRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchedulingRunResponse getWorkforcemanagementManagementunitSchedulingRun(String managementUnitId, String runId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitSchedulingRun(createGetWorkforcemanagementManagementunitSchedulingRunRequest(managementUnitId, runId));
+  }
+
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @return SchedulingRunResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchedulingRunResponse> getWorkforcemanagementManagementunitSchedulingRunWithHttpInfo(String managementUnitId, String runId) throws IOException {
+    return getWorkforcemanagementManagementunitSchedulingRun(createGetWorkforcemanagementManagementunitSchedulingRunRequest(managementUnitId, runId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitSchedulingRunRequest createGetWorkforcemanagementManagementunitSchedulingRunRequest(String managementUnitId, String runId) {
+    return GetWorkforcemanagementManagementunitSchedulingRunRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withRunId(runId)
+    
+            .build();
+  }
+
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param request The request object
+   * @return SchedulingRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchedulingRunResponse getWorkforcemanagementManagementunitSchedulingRun(GetWorkforcemanagementManagementunitSchedulingRunRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchedulingRunResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchedulingRunResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchedulingRunResponse> getWorkforcemanagementManagementunitSchedulingRun(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchedulingRunResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchedulingRunResponse> response = (ApiResponse<SchedulingRunResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchedulingRunResponse> response = (ApiResponse<SchedulingRunResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @return RescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RescheduleResult getWorkforcemanagementManagementunitSchedulingRunResult(String managementUnitId, String runId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitSchedulingRunResult(createGetWorkforcemanagementManagementunitSchedulingRunResultRequest(managementUnitId, runId));
+  }
+
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @return RescheduleResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RescheduleResult> getWorkforcemanagementManagementunitSchedulingRunResultWithHttpInfo(String managementUnitId, String runId) throws IOException {
+    return getWorkforcemanagementManagementunitSchedulingRunResult(createGetWorkforcemanagementManagementunitSchedulingRunResultRequest(managementUnitId, runId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitSchedulingRunResultRequest createGetWorkforcemanagementManagementunitSchedulingRunResultRequest(String managementUnitId, String runId) {
+    return GetWorkforcemanagementManagementunitSchedulingRunResultRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withRunId(runId)
+    
+            .build();
+  }
+
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param request The request object
+   * @return RescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RescheduleResult getWorkforcemanagementManagementunitSchedulingRunResult(GetWorkforcemanagementManagementunitSchedulingRunResultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RescheduleResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RescheduleResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RescheduleResult> getWorkforcemanagementManagementunitSchedulingRunResult(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RescheduleResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2801,6 +2975,93 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @param body body (optional)
+   * @return RescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RescheduleResult patchWorkforcemanagementManagementunitSchedulingRun(String managementUnitId, String runId, UpdateSchedulingRunRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitSchedulingRun(createPatchWorkforcemanagementManagementunitSchedulingRunRequest(managementUnitId, runId, body));
+  }
+
+  /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param managementUnitId The ID of the management unit. (required)
+   * @param runId The ID of the schedule run (required)
+   * @param body body (optional)
+   * @return RescheduleResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RescheduleResult> patchWorkforcemanagementManagementunitSchedulingRunWithHttpInfo(String managementUnitId, String runId, UpdateSchedulingRunRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitSchedulingRun(createPatchWorkforcemanagementManagementunitSchedulingRunRequest(managementUnitId, runId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitSchedulingRunRequest createPatchWorkforcemanagementManagementunitSchedulingRunRequest(String managementUnitId, String runId, UpdateSchedulingRunRequest body) {
+    return PatchWorkforcemanagementManagementunitSchedulingRunRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withRunId(runId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param request The request object
+   * @return RescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RescheduleResult patchWorkforcemanagementManagementunitSchedulingRun(PatchWorkforcemanagementManagementunitSchedulingRunRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RescheduleResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RescheduleResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RescheduleResult> patchWorkforcemanagementManagementunitSchedulingRun(ApiRequest<UpdateSchedulingRunRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RescheduleResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a service goal group
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -4150,6 +4411,97 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<AsyncWeekScheduleResponse> postWorkforcemanagementManagementunitWeekScheduleCopy(ApiRequest<CopyWeekScheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncWeekScheduleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncWeekScheduleResponse> response = (ApiResponse<AsyncWeekScheduleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncWeekScheduleResponse> response = (ApiResponse<AsyncWeekScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
+   * @param scheduleId The ID of the schedule to re-optimize (required)
+   * @param body body (optional)
+   * @return AsyncWeekScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekScheduleReschedule(String managementUnitId, String weekId, String scheduleId, RescheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekScheduleReschedule(createPostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest(managementUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
+   * @param scheduleId The ID of the schedule to re-optimize (required)
+   * @param body body (optional)
+   * @return AsyncWeekScheduleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncWeekScheduleResponse> postWorkforcemanagementManagementunitWeekScheduleRescheduleWithHttpInfo(String managementUnitId, String weekId, String scheduleId, RescheduleRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekScheduleReschedule(createPostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest(managementUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest createPostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest(String managementUnitId, String weekId, String scheduleId, RescheduleRequest body) {
+    return PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param request The request object
+   * @return AsyncWeekScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncWeekScheduleResponse postWorkforcemanagementManagementunitWeekScheduleReschedule(PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncWeekScheduleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncWeekScheduleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncWeekScheduleResponse> postWorkforcemanagementManagementunitWeekScheduleReschedule(ApiRequest<RescheduleRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<AsyncWeekScheduleResponse>() {});
     }

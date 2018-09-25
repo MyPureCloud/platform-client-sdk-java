@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.HeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.HeadcountForecast;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastReference;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
 import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
@@ -31,7 +31,7 @@ public class WeekSchedule  implements Serializable {
   private ShortTermForecastReference shortTermForecast = null;
   private WfmVersionedEntityMetadata metadata = null;
   private Map<String, UserSchedule> userSchedules = null;
-  private HeadcountForecastResponse headcountForecast = null;
+  private HeadcountForecast headcountForecast = null;
   private Integer agentSchedulesVersion = null;
   private String selfUri = null;
 
@@ -172,17 +172,17 @@ public class WeekSchedule  implements Serializable {
   /**
    * Headcount information for the week schedule
    **/
-  public WeekSchedule headcountForecast(HeadcountForecastResponse headcountForecast) {
+  public WeekSchedule headcountForecast(HeadcountForecast headcountForecast) {
     this.headcountForecast = headcountForecast;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Headcount information for the week schedule")
   @JsonProperty("headcountForecast")
-  public HeadcountForecastResponse getHeadcountForecast() {
+  public HeadcountForecast getHeadcountForecast() {
     return headcountForecast;
   }
-  public void setHeadcountForecast(HeadcountForecastResponse headcountForecast) {
+  public void setHeadcountForecast(HeadcountForecast headcountForecast) {
     this.headcountForecast = headcountForecast;
   }
 

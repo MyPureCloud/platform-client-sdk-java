@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.HeadcountForecast;
+import com.mypurecloud.sdk.v2.model.ShortTermForecastReference;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +29,11 @@ public class UpdateWeekScheduleRequest  implements Serializable {
   private List<String> partialUploadIds = new ArrayList<String>();
   private WfmVersionedEntityMetadata metadata = null;
   private Integer agentSchedulesVersion = null;
+  private ShortTermForecastReference shortTermForecast = null;
+  private HeadcountForecast headcountForecast = null;
 
   /**
-   * The condition to notify agents about schedule updates. Applicable to only published schedule
+   * For a published schedule, this determines whether a notification will be shown to agents in the default PureCloud user interface.  The CPC notification will always be sent and the value specified here affects what data is returned in the 'updates' property.  In the default PureCloud UI, \"None\" means that agents will not be notified, \"ShiftTimesOnly\" means agents will only be notified for changes to shift start and end times,  and \"All\" means that agents will be notified for any change to a shift or activity (except for full day off activities).  When building a custom client, use this property to specify the level of detail you need. Defaults to \"ShiftTimesOnly\".
    */
   public enum AgentUpdateFilterEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -174,14 +178,50 @@ public class UpdateWeekScheduleRequest  implements Serializable {
 
   
   /**
-   * The condition to notify agents about schedule updates. Applicable to only published schedule
+   * Reference to optionally point the schedule at a new short term forecast
+   **/
+  public UpdateWeekScheduleRequest shortTermForecast(ShortTermForecastReference shortTermForecast) {
+    this.shortTermForecast = shortTermForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reference to optionally point the schedule at a new short term forecast")
+  @JsonProperty("shortTermForecast")
+  public ShortTermForecastReference getShortTermForecast() {
+    return shortTermForecast;
+  }
+  public void setShortTermForecast(ShortTermForecastReference shortTermForecast) {
+    this.shortTermForecast = shortTermForecast;
+  }
+
+  
+  /**
+   * The headcount forecast associated with the schedule.  If not null, existing values will be irrecoverably replaced
+   **/
+  public UpdateWeekScheduleRequest headcountForecast(HeadcountForecast headcountForecast) {
+    this.headcountForecast = headcountForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The headcount forecast associated with the schedule.  If not null, existing values will be irrecoverably replaced")
+  @JsonProperty("headcountForecast")
+  public HeadcountForecast getHeadcountForecast() {
+    return headcountForecast;
+  }
+  public void setHeadcountForecast(HeadcountForecast headcountForecast) {
+    this.headcountForecast = headcountForecast;
+  }
+
+  
+  /**
+   * For a published schedule, this determines whether a notification will be shown to agents in the default PureCloud user interface.  The CPC notification will always be sent and the value specified here affects what data is returned in the 'updates' property.  In the default PureCloud UI, \"None\" means that agents will not be notified, \"ShiftTimesOnly\" means agents will only be notified for changes to shift start and end times,  and \"All\" means that agents will be notified for any change to a shift or activity (except for full day off activities).  When building a custom client, use this property to specify the level of detail you need. Defaults to \"ShiftTimesOnly\".
    **/
   public UpdateWeekScheduleRequest agentUpdateFilter(AgentUpdateFilterEnum agentUpdateFilter) {
     this.agentUpdateFilter = agentUpdateFilter;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The condition to notify agents about schedule updates. Applicable to only published schedule")
+  @ApiModelProperty(example = "null", value = "For a published schedule, this determines whether a notification will be shown to agents in the default PureCloud user interface.  The CPC notification will always be sent and the value specified here affects what data is returned in the 'updates' property.  In the default PureCloud UI, \"None\" means that agents will not be notified, \"ShiftTimesOnly\" means agents will only be notified for changes to shift start and end times,  and \"All\" means that agents will be notified for any change to a shift or activity (except for full day off activities).  When building a custom client, use this property to specify the level of detail you need. Defaults to \"ShiftTimesOnly\".")
   @JsonProperty("agentUpdateFilter")
   public AgentUpdateFilterEnum getAgentUpdateFilter() {
     return agentUpdateFilter;
@@ -207,12 +247,14 @@ public class UpdateWeekScheduleRequest  implements Serializable {
         Objects.equals(this.partialUploadIds, updateWeekScheduleRequest.partialUploadIds) &&
         Objects.equals(this.metadata, updateWeekScheduleRequest.metadata) &&
         Objects.equals(this.agentSchedulesVersion, updateWeekScheduleRequest.agentSchedulesVersion) &&
+        Objects.equals(this.shortTermForecast, updateWeekScheduleRequest.shortTermForecast) &&
+        Objects.equals(this.headcountForecast, updateWeekScheduleRequest.headcountForecast) &&
         Objects.equals(this.agentUpdateFilter, updateWeekScheduleRequest.agentUpdateFilter);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, published, userSchedules, partialUploadIds, metadata, agentSchedulesVersion, agentUpdateFilter);
+    return Objects.hash(description, published, userSchedules, partialUploadIds, metadata, agentSchedulesVersion, shortTermForecast, headcountForecast, agentUpdateFilter);
   }
 
   @Override
@@ -226,6 +268,8 @@ public class UpdateWeekScheduleRequest  implements Serializable {
     sb.append("    partialUploadIds: ").append(toIndentedString(partialUploadIds)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    agentSchedulesVersion: ").append(toIndentedString(agentSchedulesVersion)).append("\n");
+    sb.append("    shortTermForecast: ").append(toIndentedString(shortTermForecast)).append("\n");
+    sb.append("    headcountForecast: ").append(toIndentedString(headcountForecast)).append("\n");
     sb.append("    agentUpdateFilter: ").append(toIndentedString(agentUpdateFilter)).append("\n");
     sb.append("}");
     return sb.toString();

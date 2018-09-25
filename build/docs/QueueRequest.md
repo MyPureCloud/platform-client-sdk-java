@@ -30,6 +30,7 @@ title: QueueRequest
 | **callingPartyName** | **String** | The name to use for caller identification for outbound calls from this queue. |  [optional] |
 | **callingPartyNumber** | **String** | The phone number to use for caller identification for outbound calls from this queue. |  [optional] |
 | **defaultScripts** | [**Map&lt;String, Script&gt;**](Script.html) | The default script Ids for the communication types. |  [optional] |
+| **outboundMessagingAddresses** | [**QueueMessagingAddresses**](QueueMessagingAddresses.html) | The messaging addresses for the queue. |  [optional] |
 | **outboundEmailAddress** | [**QueueEmailAddress**](QueueEmailAddress.html) |  |  [optional] |
 | **memberCount** | **Integer** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |

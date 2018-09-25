@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.Bullseye;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
+import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
@@ -118,6 +119,7 @@ public class Queue  implements Serializable {
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
+  private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
   private Integer memberCount = null;
   private String selfUri = null;
@@ -508,6 +510,24 @@ public class Queue  implements Serializable {
 
   
   /**
+   * The messaging addresses for the queue.
+   **/
+  public Queue outboundMessagingAddresses(QueueMessagingAddresses outboundMessagingAddresses) {
+    this.outboundMessagingAddresses = outboundMessagingAddresses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messaging addresses for the queue.")
+  @JsonProperty("outboundMessagingAddresses")
+  public QueueMessagingAddresses getOutboundMessagingAddresses() {
+    return outboundMessagingAddresses;
+  }
+  public void setOutboundMessagingAddresses(QueueMessagingAddresses outboundMessagingAddresses) {
+    this.outboundMessagingAddresses = outboundMessagingAddresses;
+  }
+
+  
+  /**
    **/
   public Queue outboundEmailAddress(QueueEmailAddress outboundEmailAddress) {
     this.outboundEmailAddress = outboundEmailAddress;
@@ -580,6 +600,7 @@ public class Queue  implements Serializable {
         Objects.equals(this.callingPartyName, queue.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, queue.callingPartyNumber) &&
         Objects.equals(this.defaultScripts, queue.defaultScripts) &&
+        Objects.equals(this.outboundMessagingAddresses, queue.outboundMessagingAddresses) &&
         Objects.equals(this.outboundEmailAddress, queue.outboundEmailAddress) &&
         Objects.equals(this.memberCount, queue.memberCount) &&
         Objects.equals(this.selfUri, queue.selfUri);
@@ -587,7 +608,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundEmailAddress, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, memberCount, selfUri);
   }
 
   @Override
@@ -617,6 +638,7 @@ public class Queue  implements Serializable {
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");
+    sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

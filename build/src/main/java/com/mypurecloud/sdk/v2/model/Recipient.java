@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Flow;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -24,6 +25,46 @@ public class Recipient  implements Serializable {
   private Date dateModified = null;
   private User createdBy = null;
   private User modifiedBy = null;
+
+  /**
+   * The messenger type for this recipient
+   */
+  public enum MessengerTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SMS("sms"),
+    FACEBOOK("facebook"),
+    TWITTER("twitter"),
+    LINE("line"),
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao");
+
+    private String value;
+
+    MessengerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessengerTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessengerTypeEnum value : MessengerTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessengerTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessengerTypeEnum messengerType = null;
   private String selfUri = null;
 
   
@@ -141,6 +182,24 @@ public class Recipient  implements Serializable {
   }
 
   
+  /**
+   * The messenger type for this recipient
+   **/
+  public Recipient messengerType(MessengerTypeEnum messengerType) {
+    this.messengerType = messengerType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messenger type for this recipient")
+  @JsonProperty("messengerType")
+  public MessengerTypeEnum getMessengerType() {
+    return messengerType;
+  }
+  public void setMessengerType(MessengerTypeEnum messengerType) {
+    this.messengerType = messengerType;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -165,12 +224,13 @@ public class Recipient  implements Serializable {
         Objects.equals(this.dateModified, recipient.dateModified) &&
         Objects.equals(this.createdBy, recipient.createdBy) &&
         Objects.equals(this.modifiedBy, recipient.modifiedBy) &&
+        Objects.equals(this.messengerType, recipient.messengerType) &&
         Objects.equals(this.selfUri, recipient.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, flow, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
+    return Objects.hash(id, name, flow, dateCreated, dateModified, createdBy, modifiedBy, messengerType, selfUri);
   }
 
   @Override
@@ -185,6 +245,7 @@ public class Recipient  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

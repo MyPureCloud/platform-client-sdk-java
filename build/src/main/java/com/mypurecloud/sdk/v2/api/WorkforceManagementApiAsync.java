@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
+import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
+import com.mypurecloud.sdk.v2.model.RescheduleResult;
 import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
@@ -36,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
@@ -54,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestEntityList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestLookupList;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.CopyWeekScheduleRequest;
+import com.mypurecloud.sdk.v2.model.RescheduleRequest;
 import com.mypurecloud.sdk.v2.model.ImportWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
@@ -85,6 +89,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAc
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitIntradayQueuesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupsRequest;
@@ -104,6 +110,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsD
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
@@ -120,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitT
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsFetchdetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekScheduleCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesPartialuploadRequest;
@@ -1129,6 +1137,158 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmIntradayQueueListing> response = (ApiResponse<WfmIntradayQueueListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SchedulingRunResponse> getWorkforcemanagementManagementunitSchedulingRunAsync(GetWorkforcemanagementManagementunitSchedulingRunRequest request, final AsyncApiCallback<SchedulingRunResponse> callback) {
+    try {
+      final SettableFuture<SchedulingRunResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SchedulingRunResponse>() {}, new AsyncApiCallback<ApiResponse<SchedulingRunResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchedulingRunResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the status for a specific scheduling run
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SchedulingRunResponse>> getWorkforcemanagementManagementunitSchedulingRunAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SchedulingRunResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SchedulingRunResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SchedulingRunResponse>() {}, new AsyncApiCallback<ApiResponse<SchedulingRunResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SchedulingRunResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchedulingRunResponse> response = (ApiResponse<SchedulingRunResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SchedulingRunResponse> response = (ApiResponse<SchedulingRunResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RescheduleResult> getWorkforcemanagementManagementunitSchedulingRunResultAsync(GetWorkforcemanagementManagementunitSchedulingRunResultRequest request, final AsyncApiCallback<RescheduleResult> callback) {
+    try {
+      final SettableFuture<RescheduleResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RescheduleResult>() {}, new AsyncApiCallback<ApiResponse<RescheduleResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<RescheduleResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the result of a specific scheduling run
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RescheduleResult>> getWorkforcemanagementManagementunitSchedulingRunResultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RescheduleResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RescheduleResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RescheduleResult>() {}, new AsyncApiCallback<ApiResponse<RescheduleResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<RescheduleResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2586,6 +2746,82 @@ public class WorkforceManagementApiAsync {
 
   
   /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RescheduleResult> patchWorkforcemanagementManagementunitSchedulingRunAsync(PatchWorkforcemanagementManagementunitSchedulingRunRequest request, final AsyncApiCallback<RescheduleResult> callback) {
+    try {
+      final SettableFuture<RescheduleResult> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RescheduleResult>() {}, new AsyncApiCallback<ApiResponse<RescheduleResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<RescheduleResult> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RescheduleResult>> patchWorkforcemanagementManagementunitSchedulingRunAsync(ApiRequest<UpdateSchedulingRunRequest> request, final AsyncApiCallback<ApiResponse<RescheduleResult>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RescheduleResult>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RescheduleResult>() {}, new AsyncApiCallback<ApiResponse<RescheduleResult>>() {
+        @Override
+        public void onCompleted(ApiResponse<RescheduleResult> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RescheduleResult> response = (ApiResponse<RescheduleResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update a service goal group
    * 
    * @param request the request object
@@ -3767,6 +4003,82 @@ public class WorkforceManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<AsyncWeekScheduleResponse>> postWorkforcemanagementManagementunitWeekScheduleCopyAsync(ApiRequest<CopyWeekScheduleRequest> request, final AsyncApiCallback<ApiResponse<AsyncWeekScheduleResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AsyncWeekScheduleResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AsyncWeekScheduleResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncWeekScheduleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncWeekScheduleResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncWeekScheduleResponse> response = (ApiResponse<AsyncWeekScheduleResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AsyncWeekScheduleResponse> response = (ApiResponse<AsyncWeekScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AsyncWeekScheduleResponse> postWorkforcemanagementManagementunitWeekScheduleRescheduleAsync(PostWorkforcemanagementManagementunitWeekScheduleRescheduleRequest request, final AsyncApiCallback<AsyncWeekScheduleResponse> callback) {
+    try {
+      final SettableFuture<AsyncWeekScheduleResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AsyncWeekScheduleResponse>() {}, new AsyncApiCallback<ApiResponse<AsyncWeekScheduleResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AsyncWeekScheduleResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AsyncWeekScheduleResponse>> postWorkforcemanagementManagementunitWeekScheduleRescheduleAsync(ApiRequest<RescheduleRequest> request, final AsyncApiCallback<ApiResponse<AsyncWeekScheduleResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<AsyncWeekScheduleResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

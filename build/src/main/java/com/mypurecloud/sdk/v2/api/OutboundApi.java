@@ -25,12 +25,12 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
-import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
 import com.mypurecloud.sdk.v2.model.DialerContact;
 import com.mypurecloud.sdk.v2.model.ExportUri;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
@@ -86,12 +86,12 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistTimezonemappingpreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
@@ -2629,85 +2629,6 @@ public class OutboundApi {
 
   
   /**
-   * Get a basic Campaign information object
-   * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param campaignId Campaign ID (required)
-   * @return CampaignDivisionView
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public CampaignDivisionView getOutboundCampaignsDivisionview(String campaignId) throws IOException, ApiException {
-    return  getOutboundCampaignsDivisionview(createGetOutboundCampaignsDivisionviewRequest(campaignId));
-  }
-
-  /**
-   * Get a basic Campaign information object
-   * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param campaignId Campaign ID (required)
-   * @return CampaignDivisionView
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<CampaignDivisionView> getOutboundCampaignsDivisionviewWithHttpInfo(String campaignId) throws IOException {
-    return getOutboundCampaignsDivisionview(createGetOutboundCampaignsDivisionviewRequest(campaignId).withHttpInfo());
-  }
-
-  private GetOutboundCampaignsDivisionviewRequest createGetOutboundCampaignsDivisionviewRequest(String campaignId) {
-    return GetOutboundCampaignsDivisionviewRequest.builder()
-            .withCampaignId(campaignId)
-    
-            .build();
-  }
-
-  /**
-   * Get a basic Campaign information object
-   * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param request The request object
-   * @return CampaignDivisionView
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public CampaignDivisionView getOutboundCampaignsDivisionview(GetOutboundCampaignsDivisionviewRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<CampaignDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignDivisionView>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a basic Campaign information object
-   * This returns a simplified version of a Campaign, consisting of name and division.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<CampaignDivisionView> getOutboundCampaignsDivisionview(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<CampaignDivisionView>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<CampaignDivisionView> response = (ApiResponse<CampaignDivisionView>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<CampaignDivisionView> response = (ApiResponse<CampaignDivisionView>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Query a list of basic Campaign information objects
    * This returns a simplified version of a Campaign, consisting of name and division.
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
@@ -3137,6 +3058,85 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ImportStatus> response = (ApiResponse<ImportStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Preview the result of applying Automatic Time Zone Mapping to a contact list
+   * 
+   * @param contactListId ContactList ID (required)
+   * @return TimeZoneMappingPreview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(String contactListId) throws IOException, ApiException {
+    return  getOutboundContactlistTimezonemappingpreview(createGetOutboundContactlistTimezonemappingpreviewRequest(contactListId));
+  }
+
+  /**
+   * Preview the result of applying Automatic Time Zone Mapping to a contact list
+   * 
+   * @param contactListId ContactList ID (required)
+   * @return TimeZoneMappingPreview
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeZoneMappingPreview> getOutboundContactlistTimezonemappingpreviewWithHttpInfo(String contactListId) throws IOException {
+    return getOutboundContactlistTimezonemappingpreview(createGetOutboundContactlistTimezonemappingpreviewRequest(contactListId).withHttpInfo());
+  }
+
+  private GetOutboundContactlistTimezonemappingpreviewRequest createGetOutboundContactlistTimezonemappingpreviewRequest(String contactListId) {
+    return GetOutboundContactlistTimezonemappingpreviewRequest.builder()
+            .withContactListId(contactListId)
+    
+            .build();
+  }
+
+  /**
+   * Preview the result of applying Automatic Time Zone Mapping to a contact list
+   * 
+   * @param request The request object
+   * @return TimeZoneMappingPreview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(GetOutboundContactlistTimezonemappingpreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeZoneMappingPreview> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeZoneMappingPreview>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Preview the result of applying Automatic Time Zone Mapping to a contact list
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeZoneMappingPreview> getOutboundContactlistTimezonemappingpreview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeZoneMappingPreview>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneMappingPreview> response = (ApiResponse<TimeZoneMappingPreview>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeZoneMappingPreview> response = (ApiResponse<TimeZoneMappingPreview>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

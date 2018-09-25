@@ -150,21 +150,10 @@ public class DncList  implements Serializable {
   }
 
   
-  /**
-   * The type of the DncList.
-   **/
-  public DncList dncSourceType(DncSourceTypeEnum dncSourceType) {
-    this.dncSourceType = dncSourceType;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", required = true, value = "The type of the DncList.")
   @JsonProperty("dncSourceType")
   public DncSourceTypeEnum getDncSourceType() {
     return dncSourceType;
-  }
-  public void setDncSourceType(DncSourceTypeEnum dncSourceType) {
-    this.dncSourceType = dncSourceType;
   }
 
   

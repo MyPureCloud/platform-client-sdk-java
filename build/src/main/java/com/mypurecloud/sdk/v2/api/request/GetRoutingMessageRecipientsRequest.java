@@ -60,6 +60,55 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class GetRoutingMessageRecipientsRequest {
     
+	private String messengerType;
+	public String getMessengerType() {
+		return this.messengerType;
+	}
+
+	public void setMessengerType(String messengerType) {
+		this.messengerType = messengerType;
+	}
+
+	public GetRoutingMessageRecipientsRequest withMessengerType(String messengerType) {
+	    this.setMessengerType(messengerType);
+	    return this;
+	} 
+
+	public enum messengerTypeValues { 
+		SMS("sms"), 
+		FACEBOOK("facebook"), 
+		TWITTER("twitter"), 
+		LINE("line"), 
+		WHATSAPP("whatsapp"), 
+		TELEGRAM("telegram"), 
+		KAKAO("kakao");
+
+		private String value;
+
+		messengerTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static messengerTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (messengerTypeValues value : messengerTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return messengerTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -111,6 +160,8 @@ public class GetRoutingMessageRecipientsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/message/recipients")
+                .withQueryParameters("messengerType", "", messengerType)
+        
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
@@ -135,6 +186,16 @@ public class GetRoutingMessageRecipientsRequest {
 			request = new GetRoutingMessageRecipientsRequest();
 		}
 
+		
+		public Builder withMessengerType(String messengerType) {
+			request.setMessengerType(messengerType);
+			return this;
+		}
+
+		public Builder withMessengerType(messengerTypeValues messengerType) {
+		    request.setMessengerType(messengerType.toString());
+		    return this;
+		}
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);

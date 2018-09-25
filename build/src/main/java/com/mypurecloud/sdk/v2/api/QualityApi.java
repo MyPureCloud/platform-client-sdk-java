@@ -2528,12 +2528,13 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestPerContext onlyLatestPerContext (optional, default to false)
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationFormEntityListing getQualityPublishedforms(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    return  getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name));
+  public EvaluationFormEntityListing getQualityPublishedforms(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException, ApiException {
+    return  getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name, onlyLatestPerContext));
   }
 
   /**
@@ -2542,20 +2543,23 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestPerContext onlyLatestPerContext (optional, default to false)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
-    return getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name).withHttpInfo());
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException {
+    return getQualityPublishedforms(createGetQualityPublishedformsRequest(pageSize, pageNumber, name, onlyLatestPerContext).withHttpInfo());
   }
 
-  private GetQualityPublishedformsRequest createGetQualityPublishedformsRequest(Integer pageSize, Integer pageNumber, String name) {
+  private GetQualityPublishedformsRequest createGetQualityPublishedformsRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) {
     return GetQualityPublishedformsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withName(name)
+    
+            .withOnlyLatestPerContext(onlyLatestPerContext)
     
             .build();
   }
@@ -2694,12 +2698,13 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestPerContext onlyLatestPerContext (optional, default to false)
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationFormEntityListing getQualityPublishedformsEvaluations(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    return  getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name));
+  public EvaluationFormEntityListing getQualityPublishedformsEvaluations(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException, ApiException {
+    return  getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name, onlyLatestPerContext));
   }
 
   /**
@@ -2708,20 +2713,23 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestPerContext onlyLatestPerContext (optional, default to false)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
-    return getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name).withHttpInfo());
+  public ApiResponse<EvaluationFormEntityListing> getQualityPublishedformsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) throws IOException {
+    return getQualityPublishedformsEvaluations(createGetQualityPublishedformsEvaluationsRequest(pageSize, pageNumber, name, onlyLatestPerContext).withHttpInfo());
   }
 
-  private GetQualityPublishedformsEvaluationsRequest createGetQualityPublishedformsEvaluationsRequest(Integer pageSize, Integer pageNumber, String name) {
+  private GetQualityPublishedformsEvaluationsRequest createGetQualityPublishedformsEvaluationsRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestPerContext) {
     return GetQualityPublishedformsEvaluationsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withName(name)
+    
+            .withOnlyLatestPerContext(onlyLatestPerContext)
     
             .build();
   }
@@ -2860,12 +2868,13 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestEnabledPerContext onlyLatestEnabledPerContext (optional, default to false)
    * @return SurveyFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SurveyFormEntityListing getQualityPublishedformsSurveys(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    return  getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name));
+  public SurveyFormEntityListing getQualityPublishedformsSurveys(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestEnabledPerContext) throws IOException, ApiException {
+    return  getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name, onlyLatestEnabledPerContext));
   }
 
   /**
@@ -2874,20 +2883,23 @@ public class QualityApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param onlyLatestEnabledPerContext onlyLatestEnabledPerContext (optional, default to false)
    * @return SurveyFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SurveyFormEntityListing> getQualityPublishedformsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
-    return getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name).withHttpInfo());
+  public ApiResponse<SurveyFormEntityListing> getQualityPublishedformsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestEnabledPerContext) throws IOException {
+    return getQualityPublishedformsSurveys(createGetQualityPublishedformsSurveysRequest(pageSize, pageNumber, name, onlyLatestEnabledPerContext).withHttpInfo());
   }
 
-  private GetQualityPublishedformsSurveysRequest createGetQualityPublishedformsSurveysRequest(Integer pageSize, Integer pageNumber, String name) {
+  private GetQualityPublishedformsSurveysRequest createGetQualityPublishedformsSurveysRequest(Integer pageSize, Integer pageNumber, String name, Boolean onlyLatestEnabledPerContext) {
     return GetQualityPublishedformsSurveysRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withName(name)
+    
+            .withOnlyLatestEnabledPerContext(onlyLatestEnabledPerContext)
     
             .build();
   }

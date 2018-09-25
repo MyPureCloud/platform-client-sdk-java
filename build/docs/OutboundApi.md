@@ -37,12 +37,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
 | [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | Query Campaign Rule list |
 | [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | Query a list of dialer campaigns. |
-| [**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | Get a basic Campaign information object |
 | [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
 | [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
 | [**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | Get a contact. |
 | [**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | Get the URI of a contact list export. |
 | [**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | Get dialer contactList import status. |
+| [**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list |
 | [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | Get Contact list filter |
 | [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | Query Contact list filters |
 | [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
@@ -1863,63 +1863,6 @@ try {
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
 
-<a name="getOutboundCampaignsDivisionview"></a>
-
-# **getOutboundCampaignsDivisionview**
-
-
-
-> [CampaignDivisionView](CampaignDivisionView.html) getOutboundCampaignsDivisionview(campaignId)
-
-Get a basic Campaign information object
-
-This returns a simplified version of a Campaign, consisting of name and division.
-
-Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId}  
-
-Requires ANY permissions: 
-
-* outbound:campaign:search
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-OutboundApi apiInstance = new OutboundApi();
-String campaignId = "campaignId_example"; // String | Campaign ID
-try {
-    CampaignDivisionView result = apiInstance.getOutboundCampaignsDivisionview(campaignId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OutboundApi#getOutboundCampaignsDivisionview");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **campaignId** | **String**| Campaign ID | |
-{: class="table table-striped"}
-
-### Return type
-
-[**CampaignDivisionView**](CampaignDivisionView.html)
-
 <a name="getOutboundCampaignsDivisionviews"></a>
 
 # **getOutboundCampaignsDivisionviews**
@@ -2225,6 +2168,63 @@ try {
 ### Return type
 
 [**ImportStatus**](ImportStatus.html)
+
+<a name="getOutboundContactlistTimezonemappingpreview"></a>
+
+# **getOutboundContactlistTimezonemappingpreview**
+
+
+
+> [TimeZoneMappingPreview](TimeZoneMappingPreview.html) getOutboundContactlistTimezonemappingpreview(contactListId)
+
+Preview the result of applying Automatic Time Zone Mapping to a contact list
+
+
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview  
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | ContactList ID
+try {
+    TimeZoneMappingPreview result = apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistTimezonemappingpreview");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| ContactList ID | |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeZoneMappingPreview**](TimeZoneMappingPreview.html)
 
 <a name="getOutboundContactlistfilter"></a>
 

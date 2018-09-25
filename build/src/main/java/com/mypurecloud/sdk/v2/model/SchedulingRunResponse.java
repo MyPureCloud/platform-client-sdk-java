@@ -5,10 +5,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ReschedulingOptionsResponse;
+import com.mypurecloud.sdk.v2.model.UnscheduledAgentWarning;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -19,6 +23,8 @@ import java.io.Serializable;
 public class SchedulingRunResponse  implements Serializable {
   
   private String runId = null;
+  private String schedulerRunId = null;
+  private Boolean intradayRescheduling = null;
 
   /**
    * Status of the schedule run
@@ -66,6 +72,10 @@ public class SchedulingRunResponse  implements Serializable {
   private UserReference schedulingStartedBy = null;
   private UserReference schedulingCanceledBy = null;
   private Date schedulingCompletedTime = null;
+  private ReschedulingOptionsResponse reschedulingOptions = null;
+  private Date reschedulingResultExpiration = null;
+  private Boolean applied = null;
+  private List<UnscheduledAgentWarning> unscheduledAgents = new ArrayList<UnscheduledAgentWarning>();
 
   
   /**
@@ -83,6 +93,42 @@ public class SchedulingRunResponse  implements Serializable {
   }
   public void setRunId(String runId) {
     this.runId = runId;
+  }
+
+  
+  /**
+   * The runId from scheduler service.  Useful for debugging schedule errors
+   **/
+  public SchedulingRunResponse schedulerRunId(String schedulerRunId) {
+    this.schedulerRunId = schedulerRunId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The runId from scheduler service.  Useful for debugging schedule errors")
+  @JsonProperty("schedulerRunId")
+  public String getSchedulerRunId() {
+    return schedulerRunId;
+  }
+  public void setSchedulerRunId(String schedulerRunId) {
+    this.schedulerRunId = schedulerRunId;
+  }
+
+  
+  /**
+   * Whether this is the result of a rescheduling request
+   **/
+  public SchedulingRunResponse intradayRescheduling(Boolean intradayRescheduling) {
+    this.intradayRescheduling = intradayRescheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this is the result of a rescheduling request")
+  @JsonProperty("intradayRescheduling")
+  public Boolean getIntradayRescheduling() {
+    return intradayRescheduling;
+  }
+  public void setIntradayRescheduling(Boolean intradayRescheduling) {
+    this.intradayRescheduling = intradayRescheduling;
   }
 
   
@@ -141,14 +187,14 @@ public class SchedulingRunResponse  implements Serializable {
 
   
   /**
-   * ID of the schedule
+   * ID of the schedule. Does not apply to reschedule, see reschedulingOptions.existingScheduleId
    **/
   public SchedulingRunResponse scheduleId(String scheduleId) {
     this.scheduleId = scheduleId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "ID of the schedule")
+  @ApiModelProperty(example = "null", value = "ID of the schedule. Does not apply to reschedule, see reschedulingOptions.existingScheduleId")
   @JsonProperty("scheduleId")
   public String getScheduleId() {
     return scheduleId;
@@ -159,14 +205,14 @@ public class SchedulingRunResponse  implements Serializable {
 
   
   /**
-   * Description of the schedule run
+   * Description of the schedule
    **/
   public SchedulingRunResponse scheduleDescription(String scheduleDescription) {
     this.scheduleDescription = scheduleDescription;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Description of the schedule run")
+  @ApiModelProperty(example = "null", value = "Description of the schedule")
   @JsonProperty("scheduleDescription")
   public String getScheduleDescription() {
     return scheduleDescription;
@@ -248,6 +294,78 @@ public class SchedulingRunResponse  implements Serializable {
   }
 
   
+  /**
+   * The selected options for the reschedule request. Will always be null if intradayRescheduling is false
+   **/
+  public SchedulingRunResponse reschedulingOptions(ReschedulingOptionsResponse reschedulingOptions) {
+    this.reschedulingOptions = reschedulingOptions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The selected options for the reschedule request. Will always be null if intradayRescheduling is false")
+  @JsonProperty("reschedulingOptions")
+  public ReschedulingOptionsResponse getReschedulingOptions() {
+    return reschedulingOptions;
+  }
+  public void setReschedulingOptions(ReschedulingOptionsResponse reschedulingOptions) {
+    this.reschedulingOptions = reschedulingOptions;
+  }
+
+  
+  /**
+   * When the rescheduling result data will expire. Results are kept temporarily as they should be applied as soon as possible after the run finishes.  Will always be null if intradayRescheduling is false. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public SchedulingRunResponse reschedulingResultExpiration(Date reschedulingResultExpiration) {
+    this.reschedulingResultExpiration = reschedulingResultExpiration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "When the rescheduling result data will expire. Results are kept temporarily as they should be applied as soon as possible after the run finishes.  Will always be null if intradayRescheduling is false. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("reschedulingResultExpiration")
+  public Date getReschedulingResultExpiration() {
+    return reschedulingResultExpiration;
+  }
+  public void setReschedulingResultExpiration(Date reschedulingResultExpiration) {
+    this.reschedulingResultExpiration = reschedulingResultExpiration;
+  }
+
+  
+  /**
+   * Whether the rescheduling run has been marked applied
+   **/
+  public SchedulingRunResponse applied(Boolean applied) {
+    this.applied = applied;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the rescheduling run has been marked applied")
+  @JsonProperty("applied")
+  public Boolean getApplied() {
+    return applied;
+  }
+  public void setApplied(Boolean applied) {
+    this.applied = applied;
+  }
+
+  
+  /**
+   * Agents that were not scheduled in the rescheduling operation. Will always be null if intradayRescheduling is false
+   **/
+  public SchedulingRunResponse unscheduledAgents(List<UnscheduledAgentWarning> unscheduledAgents) {
+    this.unscheduledAgents = unscheduledAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Agents that were not scheduled in the rescheduling operation. Will always be null if intradayRescheduling is false")
+  @JsonProperty("unscheduledAgents")
+  public List<UnscheduledAgentWarning> getUnscheduledAgents() {
+    return unscheduledAgents;
+  }
+  public void setUnscheduledAgents(List<UnscheduledAgentWarning> unscheduledAgents) {
+    this.unscheduledAgents = unscheduledAgents;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -259,6 +377,8 @@ public class SchedulingRunResponse  implements Serializable {
     }
     SchedulingRunResponse schedulingRunResponse = (SchedulingRunResponse) o;
     return Objects.equals(this.runId, schedulingRunResponse.runId) &&
+        Objects.equals(this.schedulerRunId, schedulingRunResponse.schedulerRunId) &&
+        Objects.equals(this.intradayRescheduling, schedulingRunResponse.intradayRescheduling) &&
         Objects.equals(this.state, schedulingRunResponse.state) &&
         Objects.equals(this.percentComplete, schedulingRunResponse.percentComplete) &&
         Objects.equals(this.targetWeek, schedulingRunResponse.targetWeek) &&
@@ -267,12 +387,16 @@ public class SchedulingRunResponse  implements Serializable {
         Objects.equals(this.schedulingStartTime, schedulingRunResponse.schedulingStartTime) &&
         Objects.equals(this.schedulingStartedBy, schedulingRunResponse.schedulingStartedBy) &&
         Objects.equals(this.schedulingCanceledBy, schedulingRunResponse.schedulingCanceledBy) &&
-        Objects.equals(this.schedulingCompletedTime, schedulingRunResponse.schedulingCompletedTime);
+        Objects.equals(this.schedulingCompletedTime, schedulingRunResponse.schedulingCompletedTime) &&
+        Objects.equals(this.reschedulingOptions, schedulingRunResponse.reschedulingOptions) &&
+        Objects.equals(this.reschedulingResultExpiration, schedulingRunResponse.reschedulingResultExpiration) &&
+        Objects.equals(this.applied, schedulingRunResponse.applied) &&
+        Objects.equals(this.unscheduledAgents, schedulingRunResponse.unscheduledAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(runId, state, percentComplete, targetWeek, scheduleId, scheduleDescription, schedulingStartTime, schedulingStartedBy, schedulingCanceledBy, schedulingCompletedTime);
+    return Objects.hash(runId, schedulerRunId, intradayRescheduling, state, percentComplete, targetWeek, scheduleId, scheduleDescription, schedulingStartTime, schedulingStartedBy, schedulingCanceledBy, schedulingCompletedTime, reschedulingOptions, reschedulingResultExpiration, applied, unscheduledAgents);
   }
 
   @Override
@@ -281,6 +405,8 @@ public class SchedulingRunResponse  implements Serializable {
     sb.append("class SchedulingRunResponse {\n");
     
     sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
+    sb.append("    schedulerRunId: ").append(toIndentedString(schedulerRunId)).append("\n");
+    sb.append("    intradayRescheduling: ").append(toIndentedString(intradayRescheduling)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    percentComplete: ").append(toIndentedString(percentComplete)).append("\n");
     sb.append("    targetWeek: ").append(toIndentedString(targetWeek)).append("\n");
@@ -290,6 +416,10 @@ public class SchedulingRunResponse  implements Serializable {
     sb.append("    schedulingStartedBy: ").append(toIndentedString(schedulingStartedBy)).append("\n");
     sb.append("    schedulingCanceledBy: ").append(toIndentedString(schedulingCanceledBy)).append("\n");
     sb.append("    schedulingCompletedTime: ").append(toIndentedString(schedulingCompletedTime)).append("\n");
+    sb.append("    reschedulingOptions: ").append(toIndentedString(reschedulingOptions)).append("\n");
+    sb.append("    reschedulingResultExpiration: ").append(toIndentedString(reschedulingResultExpiration)).append("\n");
+    sb.append("    applied: ").append(toIndentedString(applied)).append("\n");
+    sb.append("    unscheduledAgents: ").append(toIndentedString(unscheduledAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

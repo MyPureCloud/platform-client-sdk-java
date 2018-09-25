@@ -19,7 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getMessagingSticker**](MessagingApi.html#getMessagingSticker) | Get a list of Messaging Stickers |
 | [**postMessagingIntegrationsFacebook**](MessagingApi.html#postMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postMessagingIntegrationsLine**](MessagingApi.html#postMessagingIntegrationsLine) | Create a LINE messenger Integration |
-| [**postMessagingIntegrationsLineWebhookIntegrationId**](MessagingApi.html#postMessagingIntegrationsLineWebhookIntegrationId) | Webhook redirect for LINE messenger Integration |
 | [**postMessagingIntegrationsTwitter**](MessagingApi.html#postMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**putMessagingIntegrationsLineIntegrationId**](MessagingApi.html#putMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
 {: class="table table-striped"}
@@ -714,61 +713,6 @@ try {
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
-
-<a name="postMessagingIntegrationsLineWebhookIntegrationId"></a>
-
-# **postMessagingIntegrationsLineWebhookIntegrationId**
-
-
-
-> Void postMessagingIntegrationsLineWebhookIntegrationId(integrationId)
-
-Webhook redirect for LINE messenger Integration
-
-
-
-Wraps POST /api/v2/messaging/integrations/line/webhook/{integrationId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.MessagingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-MessagingApi apiInstance = new MessagingApi();
-String integrationId = "integrationId_example"; // String | Integration ID
-try {
-    apiInstance.postMessagingIntegrationsLineWebhookIntegrationId(integrationId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling MessagingApi#postMessagingIntegrationsLineWebhookIntegrationId");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
-
-### Return type
-
-null (empty response body)
 
 <a name="postMessagingIntegrationsTwitter"></a>
 

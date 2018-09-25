@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | Get activity codes |
 | [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | Get data for agent in the management unit |
 | [**getWorkforcemanagementManagementunitIntradayQueues**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitIntradayQueues) | Get intraday queues for the given date |
+| [**getWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRun) | Gets the status for a specific scheduling run |
+| [**getWorkforcemanagementManagementunitSchedulingRunResult**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRunResult) | Gets the result of a specific scheduling run |
 | [**getWorkforcemanagementManagementunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRuns) | Get the status of all the ongoing schedule runs |
 | [**getWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroup) | Get a service goal group |
 | [**getWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroups) | Get service goal groups |
@@ -39,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
 | [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | Update an activity code |
+| [**patchWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSchedulingRun) | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started |
 | [**patchWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitServicegoalgroup) | Update a service goal group |
 | [**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | Patch the settings for the requested management unit |
 | [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | Update a time off request |
@@ -55,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails) | Gets a list of time off requests from lookup ids |
 | [**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | Gets the lookup ids to fetch the specified set of requests |
 | [**postWorkforcemanagementManagementunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekScheduleCopy) | Copy a week schedule |
+| [**postWorkforcemanagementManagementunitWeekScheduleReschedule**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekScheduleReschedule) | Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied |
 | [**postWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedules) | Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500 |
 | [**postWorkforcemanagementManagementunitWeekSchedulesGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesGenerate) | Generate a week schedule |
 | [**postWorkforcemanagementManagementunitWeekSchedulesPartialupload**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekSchedulesPartialupload) | Partial upload of user schedules where activity count is greater than 17500 |
@@ -920,6 +924,124 @@ try {
 ### Return type
 
 [**WfmIntradayQueueListing**](WfmIntradayQueueListing.html)
+
+<a name="getWorkforcemanagementManagementunitSchedulingRun"></a>
+
+# **getWorkforcemanagementManagementunitSchedulingRun**
+
+
+
+> [SchedulingRunResponse](SchedulingRunResponse.html) getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
+
+Gets the status for a specific scheduling run
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}  
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+String runId = "runId_example"; // String | The ID of the schedule run
+try {
+    SchedulingRunResponse result = apiInstance.getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitSchedulingRun");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit. | |
+| **runId** | **String**| The ID of the schedule run | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SchedulingRunResponse**](SchedulingRunResponse.html)
+
+<a name="getWorkforcemanagementManagementunitSchedulingRunResult"></a>
+
+# **getWorkforcemanagementManagementunitSchedulingRunResult**
+
+
+
+> [RescheduleResult](RescheduleResult.html) getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
+
+Gets the result of a specific scheduling run
+
+
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result  
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+String runId = "runId_example"; // String | The ID of the schedule run
+try {
+    RescheduleResult result = apiInstance.getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitSchedulingRunResult");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit. | |
+| **runId** | **String**| The ID of the schedule run | |
+{: class="table table-striped"}
+
+### Return type
+
+[**RescheduleResult**](RescheduleResult.html)
 
 <a name="getWorkforcemanagementManagementunitSchedulingRuns"></a>
 
@@ -2089,6 +2211,67 @@ try {
 
 [**ActivityCode**](ActivityCode.html)
 
+<a name="patchWorkforcemanagementManagementunitSchedulingRun"></a>
+
+# **patchWorkforcemanagementManagementunitSchedulingRun**
+
+
+
+> [RescheduleResult](RescheduleResult.html) patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, body)
+
+Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}  
+
+Requires ANY permissions: 
+
+* wfm:schedule:generate
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
+String runId = "runId_example"; // String | The ID of the schedule run
+UpdateSchedulingRunRequest body = new UpdateSchedulingRunRequest(); // UpdateSchedulingRunRequest | body
+try {
+    RescheduleResult result = apiInstance.patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitSchedulingRun");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit. | |
+| **runId** | **String**| The ID of the schedule run | |
+| **body** | [**UpdateSchedulingRunRequest**](UpdateSchedulingRunRequest.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**RescheduleResult**](RescheduleResult.html)
+
 <a name="patchWorkforcemanagementManagementunitServicegoalgroup"></a>
 
 # **patchWorkforcemanagementManagementunitServicegoalgroup**
@@ -3062,6 +3245,70 @@ try {
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
 | **body** | [**CopyWeekScheduleRequest**](CopyWeekScheduleRequest.html)| body | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncWeekScheduleResponse**](AsyncWeekScheduleResponse.html)
+
+<a name="postWorkforcemanagementManagementunitWeekScheduleReschedule"></a>
+
+# **postWorkforcemanagementManagementunitWeekScheduleReschedule**
+
+
+
+> [AsyncWeekScheduleResponse](AsyncWeekScheduleResponse.html) postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, body)
+
+Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule  
+
+Requires ANY permissions: 
+
+* wfm:schedule:administer
+* wfm:schedule:edit
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+String scheduleId = "scheduleId_example"; // String | The ID of the schedule to re-optimize
+RescheduleRequest body = new RescheduleRequest(); // RescheduleRequest | body
+try {
+    AsyncWeekScheduleResponse result = apiInstance.postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWeekScheduleReschedule");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
+| **scheduleId** | **String**| The ID of the schedule to re-optimize | |
+| **body** | [**RescheduleRequest**](RescheduleRequest.html)| body | [optional] |
 {: class="table table-striped"}
 
 ### Return type

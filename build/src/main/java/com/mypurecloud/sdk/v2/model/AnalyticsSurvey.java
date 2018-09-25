@@ -6,7 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -18,14 +19,15 @@ public class AnalyticsSurvey  implements Serializable {
   private String surveyId = null;
   private String surveyFormId = null;
   private String surveyFormContextId = null;
-  private String participantId = null;
-  private String externalContactId = null;
-  private String customerAddress = null;
   private String userId = null;
   private String queueId = null;
   private String status = null;
-  private Date createdDate = null;
   private Long getoSurveyTotalScore = null;
+  private Integer surveyPromoterScore = null;
+  private Long surveyCompletedTime = null;
+  private List<String> mediaTypes = new ArrayList<String>();
+  private List<String> languageIds = new ArrayList<String>();
+  private List<String> skillIds = new ArrayList<String>();
 
   
   /**
@@ -79,60 +81,6 @@ public class AnalyticsSurvey  implements Serializable {
   }
   public void setSurveyFormContextId(String surveyFormContextId) {
     this.surveyFormContextId = surveyFormContextId;
-  }
-
-  
-  /**
-   * Unique identifier of participant
-   **/
-  public AnalyticsSurvey participantId(String participantId) {
-    this.participantId = participantId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Unique identifier of participant")
-  @JsonProperty("participantId")
-  public String getParticipantId() {
-    return participantId;
-  }
-  public void setParticipantId(String participantId) {
-    this.participantId = participantId;
-  }
-
-  
-  /**
-   * External contact id
-   **/
-  public AnalyticsSurvey externalContactId(String externalContactId) {
-    this.externalContactId = externalContactId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "External contact id")
-  @JsonProperty("externalContactId")
-  public String getExternalContactId() {
-    return externalContactId;
-  }
-  public void setExternalContactId(String externalContactId) {
-    this.externalContactId = externalContactId;
-  }
-
-  
-  /**
-   * Customer address
-   **/
-  public AnalyticsSurvey customerAddress(String customerAddress) {
-    this.customerAddress = customerAddress;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Customer address")
-  @JsonProperty("customerAddress")
-  public String getCustomerAddress() {
-    return customerAddress;
-  }
-  public void setCustomerAddress(String customerAddress) {
-    this.customerAddress = customerAddress;
   }
 
   
@@ -191,38 +139,110 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Creation date of survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-   **/
-  public AnalyticsSurvey createdDate(Date createdDate) {
-    this.createdDate = createdDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Creation date of survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
-  @JsonProperty("createdDate")
-  public Date getCreatedDate() {
-    return createdDate;
-  }
-  public void setCreatedDate(Date createdDate) {
-    this.createdDate = createdDate;
-  }
-
-  
-  /**
-   * The total score for the survey
+   * Creation date of survey
    **/
   public AnalyticsSurvey getoSurveyTotalScore(Long getoSurveyTotalScore) {
     this.getoSurveyTotalScore = getoSurveyTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The total score for the survey")
+  @ApiModelProperty(example = "null", value = "Creation date of survey")
   @JsonProperty("getoSurveyTotalScore")
   public Long getGetoSurveyTotalScore() {
     return getoSurveyTotalScore;
   }
   public void setGetoSurveyTotalScore(Long getoSurveyTotalScore) {
     this.getoSurveyTotalScore = getoSurveyTotalScore;
+  }
+
+  
+  /**
+   * NPS score of the survey
+   **/
+  public AnalyticsSurvey surveyPromoterScore(Integer surveyPromoterScore) {
+    this.surveyPromoterScore = surveyPromoterScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "NPS score of the survey")
+  @JsonProperty("surveyPromoterScore")
+  public Integer getSurveyPromoterScore() {
+    return surveyPromoterScore;
+  }
+  public void setSurveyPromoterScore(Integer surveyPromoterScore) {
+    this.surveyPromoterScore = surveyPromoterScore;
+  }
+
+  
+  /**
+   * Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+   **/
+  public AnalyticsSurvey surveyCompletedTime(Long surveyCompletedTime) {
+    this.surveyCompletedTime = surveyCompletedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z")
+  @JsonProperty("surveyCompletedTime")
+  public Long getSurveyCompletedTime() {
+    return surveyCompletedTime;
+  }
+  public void setSurveyCompletedTime(Long surveyCompletedTime) {
+    this.surveyCompletedTime = surveyCompletedTime;
+  }
+
+  
+  /**
+   * Media types associated with the conversation
+   **/
+  public AnalyticsSurvey mediaTypes(List<String> mediaTypes) {
+    this.mediaTypes = mediaTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media types associated with the conversation")
+  @JsonProperty("mediaTypes")
+  public List<String> getMediaTypes() {
+    return mediaTypes;
+  }
+  public void setMediaTypes(List<String> mediaTypes) {
+    this.mediaTypes = mediaTypes;
+  }
+
+  
+  /**
+   * Language IDs associated with the conversation
+   **/
+  public AnalyticsSurvey languageIds(List<String> languageIds) {
+    this.languageIds = languageIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Language IDs associated with the conversation")
+  @JsonProperty("languageIds")
+  public List<String> getLanguageIds() {
+    return languageIds;
+  }
+  public void setLanguageIds(List<String> languageIds) {
+    this.languageIds = languageIds;
+  }
+
+  
+  /**
+   * Skill IDs associated with the conversation
+   **/
+  public AnalyticsSurvey skillIds(List<String> skillIds) {
+    this.skillIds = skillIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Skill IDs associated with the conversation")
+  @JsonProperty("skillIds")
+  public List<String> getSkillIds() {
+    return skillIds;
+  }
+  public void setSkillIds(List<String> skillIds) {
+    this.skillIds = skillIds;
   }
 
   
@@ -239,19 +259,20 @@ public class AnalyticsSurvey  implements Serializable {
     return Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
         Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
         Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
-        Objects.equals(this.participantId, analyticsSurvey.participantId) &&
-        Objects.equals(this.externalContactId, analyticsSurvey.externalContactId) &&
-        Objects.equals(this.customerAddress, analyticsSurvey.customerAddress) &&
         Objects.equals(this.userId, analyticsSurvey.userId) &&
         Objects.equals(this.queueId, analyticsSurvey.queueId) &&
         Objects.equals(this.status, analyticsSurvey.status) &&
-        Objects.equals(this.createdDate, analyticsSurvey.createdDate) &&
-        Objects.equals(this.getoSurveyTotalScore, analyticsSurvey.getoSurveyTotalScore);
+        Objects.equals(this.getoSurveyTotalScore, analyticsSurvey.getoSurveyTotalScore) &&
+        Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
+        Objects.equals(this.surveyCompletedTime, analyticsSurvey.surveyCompletedTime) &&
+        Objects.equals(this.mediaTypes, analyticsSurvey.mediaTypes) &&
+        Objects.equals(this.languageIds, analyticsSurvey.languageIds) &&
+        Objects.equals(this.skillIds, analyticsSurvey.skillIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, participantId, externalContactId, customerAddress, userId, queueId, status, createdDate, getoSurveyTotalScore);
+    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, userId, queueId, status, getoSurveyTotalScore, surveyPromoterScore, surveyCompletedTime, mediaTypes, languageIds, skillIds);
   }
 
   @Override
@@ -262,14 +283,15 @@ public class AnalyticsSurvey  implements Serializable {
     sb.append("    surveyId: ").append(toIndentedString(surveyId)).append("\n");
     sb.append("    surveyFormId: ").append(toIndentedString(surveyFormId)).append("\n");
     sb.append("    surveyFormContextId: ").append(toIndentedString(surveyFormContextId)).append("\n");
-    sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
-    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
-    sb.append("    customerAddress: ").append(toIndentedString(customerAddress)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    getoSurveyTotalScore: ").append(toIndentedString(getoSurveyTotalScore)).append("\n");
+    sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
+    sb.append("    surveyCompletedTime: ").append(toIndentedString(surveyCompletedTime)).append("\n");
+    sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
+    sb.append("    languageIds: ").append(toIndentedString(languageIds)).append("\n");
+    sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

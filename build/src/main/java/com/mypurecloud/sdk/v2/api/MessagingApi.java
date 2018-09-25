@@ -35,7 +35,6 @@ import com.mypurecloud.sdk.v2.api.request.GetMessagingIntegrationsTwitterIntegra
 import com.mypurecloud.sdk.v2.api.request.GetMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.PostMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostMessagingIntegrationsLineRequest;
-import com.mypurecloud.sdk.v2.api.request.PostMessagingIntegrationsLineWebhookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutMessagingIntegrationsLineIntegrationIdRequest;
 
@@ -1012,82 +1011,6 @@ public class MessagingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Webhook redirect for LINE messenger Integration
-   * 
-   * @param integrationId Integration ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postMessagingIntegrationsLineWebhookIntegrationId(String integrationId) throws IOException, ApiException {
-     postMessagingIntegrationsLineWebhookIntegrationId(createPostMessagingIntegrationsLineWebhookIntegrationIdRequest(integrationId));
-  }
-
-  /**
-   * Webhook redirect for LINE messenger Integration
-   * 
-   * @param integrationId Integration ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postMessagingIntegrationsLineWebhookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return postMessagingIntegrationsLineWebhookIntegrationId(createPostMessagingIntegrationsLineWebhookIntegrationIdRequest(integrationId).withHttpInfo());
-  }
-
-  private PostMessagingIntegrationsLineWebhookIntegrationIdRequest createPostMessagingIntegrationsLineWebhookIntegrationIdRequest(String integrationId) {
-    return PostMessagingIntegrationsLineWebhookIntegrationIdRequest.builder()
-            .withIntegrationId(integrationId)
-    
-            .build();
-  }
-
-  /**
-   * Webhook redirect for LINE messenger Integration
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postMessagingIntegrationsLineWebhookIntegrationId(PostMessagingIntegrationsLineWebhookIntegrationIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Webhook redirect for LINE messenger Integration
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postMessagingIntegrationsLineWebhookIntegrationId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

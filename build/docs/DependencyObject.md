@@ -58,6 +58,8 @@ title: DependencyObject
 | SECURECALLFLOW | &quot;SECURECALLFLOW&quot; |
 | SURVEYINVITEFLOW | &quot;SURVEYINVITEFLOW&quot; |
 | SYSTEMPROMPT | &quot;SYSTEMPROMPT&quot; |
+| TTSENGINE | &quot;TTSENGINE&quot; |
+| TTSVOICE | &quot;TTSVOICE&quot; |
 | USER | &quot;USER&quot; |
 | USERPROMPT | &quot;USERPROMPT&quot; |
 | VOICEXML | &quot;VOICEXML&quot; |

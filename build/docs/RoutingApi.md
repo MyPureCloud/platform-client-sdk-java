@@ -1106,7 +1106,7 @@ try {
 
 
 
-> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(pageSize, pageNumber)
+> [RecipientListing](RecipientListing.html) getRoutingMessageRecipients(messengerType, pageSize, pageNumber)
 
 Get recipients
 
@@ -1135,10 +1135,11 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
+String messengerType = "messengerType_example"; // String | Messenger Type
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    RecipientListing result = apiInstance.getRoutingMessageRecipients(pageSize, pageNumber);
+    RecipientListing result = apiInstance.getRoutingMessageRecipients(messengerType, pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingMessageRecipients");
@@ -1151,6 +1152,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}

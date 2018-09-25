@@ -98,6 +98,8 @@ public class ViewFilter  implements Serializable {
   private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
   private List<String> wrapUpCodes = new ArrayList<String>();
   private List<String> dnisList = new ArrayList<String>();
+  private List<String> filterQueuesByUserIds = new ArrayList<String>();
+  private List<String> filterUsersByQueueIds = new ArrayList<String>();
   private List<String> userIds = new ArrayList<String>();
   private List<String> addressTos = new ArrayList<String>();
   private List<String> addressFroms = new ArrayList<String>();
@@ -314,6 +316,42 @@ public class ViewFilter  implements Serializable {
   }
   public void setDnisList(List<String> dnisList) {
     this.dnisList = dnisList;
+  }
+
+  
+  /**
+   * The user ids are used to fetch associated queues for the view
+   **/
+  public ViewFilter filterQueuesByUserIds(List<String> filterQueuesByUserIds) {
+    this.filterQueuesByUserIds = filterQueuesByUserIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user ids are used to fetch associated queues for the view")
+  @JsonProperty("filterQueuesByUserIds")
+  public List<String> getFilterQueuesByUserIds() {
+    return filterQueuesByUserIds;
+  }
+  public void setFilterQueuesByUserIds(List<String> filterQueuesByUserIds) {
+    this.filterQueuesByUserIds = filterQueuesByUserIds;
+  }
+
+  
+  /**
+   * The queue ids are used to fetch associated users for the view
+   **/
+  public ViewFilter filterUsersByQueueIds(List<String> filterUsersByQueueIds) {
+    this.filterUsersByQueueIds = filterUsersByQueueIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The queue ids are used to fetch associated users for the view")
+  @JsonProperty("filterUsersByQueueIds")
+  public List<String> getFilterUsersByQueueIds() {
+    return filterUsersByQueueIds;
+  }
+  public void setFilterUsersByQueueIds(List<String> filterUsersByQueueIds) {
+    this.filterUsersByQueueIds = filterUsersByQueueIds;
   }
 
   
@@ -696,6 +734,8 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.directions, viewFilter.directions) &&
         Objects.equals(this.wrapUpCodes, viewFilter.wrapUpCodes) &&
         Objects.equals(this.dnisList, viewFilter.dnisList) &&
+        Objects.equals(this.filterQueuesByUserIds, viewFilter.filterQueuesByUserIds) &&
+        Objects.equals(this.filterUsersByQueueIds, viewFilter.filterUsersByQueueIds) &&
         Objects.equals(this.userIds, viewFilter.userIds) &&
         Objects.equals(this.addressTos, viewFilter.addressTos) &&
         Objects.equals(this.addressFroms, viewFilter.addressFroms) &&
@@ -720,7 +760,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore);
   }
 
   @Override
@@ -737,6 +777,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    directions: ").append(toIndentedString(directions)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    dnisList: ").append(toIndentedString(dnisList)).append("\n");
+    sb.append("    filterQueuesByUserIds: ").append(toIndentedString(filterQueuesByUserIds)).append("\n");
+    sb.append("    filterUsersByQueueIds: ").append(toIndentedString(filterUsersByQueueIds)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    addressTos: ").append(toIndentedString(addressTos)).append("\n");
     sb.append("    addressFroms: ").append(toIndentedString(addressFroms)).append("\n");

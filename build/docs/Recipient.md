@@ -15,7 +15,25 @@ title: Recipient
 | **dateModified** | [**Date**](Date.html) | Date this recipient was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **createdBy** | [**User**](User.html) | User that created this recipient |  [optional] |
 | **modifiedBy** | [**User**](User.html) | User that modified this recipient |  [optional] |
+| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum) | The messenger type for this recipient |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="MessengerTypeEnum"></a>
+
+## Enum: MessengerTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SMS | &quot;sms&quot; |
+| FACEBOOK | &quot;facebook&quot; |
+| TWITTER | &quot;twitter&quot; |
+| LINE | &quot;line&quot; |
+| WHATSAPP | &quot;whatsapp&quot; |
+| TELEGRAM | &quot;telegram&quot; |
+| KAKAO | &quot;kakao&quot; |
 {: class="table table-striped"}
 
 

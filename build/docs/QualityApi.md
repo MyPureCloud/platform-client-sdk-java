@@ -1719,7 +1719,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name)
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
 
@@ -1751,8 +1751,9 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
+Boolean onlyLatestPerContext = false; // Boolean | onlyLatestPerContext
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityPublishedforms(pageSize, pageNumber, name);
+    EvaluationFormEntityListing result = apiInstance.getQualityPublishedforms(pageSize, pageNumber, name, onlyLatestPerContext);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedforms");
@@ -1768,6 +1769,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **name** | **String**| Name | [optional] |
+| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1837,7 +1839,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name)
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext)
 
 Get the published evaluation forms.
 
@@ -1869,8 +1871,9 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
+Boolean onlyLatestPerContext = false; // Boolean | onlyLatestPerContext
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name);
+    EvaluationFormEntityListing result = apiInstance.getQualityPublishedformsEvaluations(pageSize, pageNumber, name, onlyLatestPerContext);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedformsEvaluations");
@@ -1886,6 +1889,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **name** | **String**| Name | [optional] |
+| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1955,7 +1959,7 @@ try {
 
 
 
-> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityPublishedformsSurveys(pageSize, pageNumber, name)
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityPublishedformsSurveys(pageSize, pageNumber, name, onlyLatestEnabledPerContext)
 
 Get the published survey forms.
 
@@ -1987,8 +1991,9 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
+Boolean onlyLatestEnabledPerContext = false; // Boolean | onlyLatestEnabledPerContext
 try {
-    SurveyFormEntityListing result = apiInstance.getQualityPublishedformsSurveys(pageSize, pageNumber, name);
+    SurveyFormEntityListing result = apiInstance.getQualityPublishedformsSurveys(pageSize, pageNumber, name, onlyLatestEnabledPerContext);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityPublishedformsSurveys");
@@ -2004,6 +2009,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **name** | **String**| Name | [optional] |
+| **onlyLatestEnabledPerContext** | **Boolean**| onlyLatestEnabledPerContext | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

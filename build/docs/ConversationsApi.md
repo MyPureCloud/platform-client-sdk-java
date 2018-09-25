@@ -103,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 {: class="table table-striped"}
@@ -5692,6 +5693,63 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postConversationsMessages"></a>
+
+# **postConversationsMessages**
+
+
+
+> [MessageConversation](MessageConversation.html) postConversationsMessages(body)
+
+Create an outbound messaging conversation.
+
+If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
+
+Wraps POST /api/v2/conversations/messages  
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+ConversationsApi apiInstance = new ConversationsApi();
+CreateOutboundMessagingConversationRequest body = new CreateOutboundMessagingConversationRequest(); // CreateOutboundMessagingConversationRequest | Create outbound messaging conversation
+try {
+    MessageConversation result = apiInstance.postConversationsMessages(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessages");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest.html)| Create outbound messaging conversation | |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessageConversation**](MessageConversation.html)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

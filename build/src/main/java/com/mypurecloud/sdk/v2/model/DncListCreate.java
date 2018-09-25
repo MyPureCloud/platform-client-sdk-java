@@ -28,7 +28,7 @@ public class DncListCreate  implements Serializable {
   private Long size = null;
 
   /**
-   * the type of dnc list being created, rds (csv file), gryphon, or dnc.com
+   * The type of the DncList.
    */
   public enum DncSourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -76,14 +76,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * The name of the list.
+   * The name of the DncList.
    **/
   public DncListCreate name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the list.")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the DncList.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -126,14 +126,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * the status of the import process
+   * The status of the import process
    **/
   public DncListCreate importStatus(ImportStatus importStatus) {
     this.importStatus = importStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the status of the import process")
+  @ApiModelProperty(example = "null", value = "The status of the import process")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
@@ -143,7 +143,7 @@ public class DncListCreate  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "the number of phone numbers in the do not call list")
+  @ApiModelProperty(example = "null", value = "The total number of phone numbers in the DncList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;
@@ -151,14 +151,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * the type of dnc list being created, rds (csv file), gryphon, or dnc.com
+   * The type of the DncList.
    **/
   public DncListCreate dncSourceType(DncSourceTypeEnum dncSourceType) {
     this.dncSourceType = dncSourceType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the type of dnc list being created, rds (csv file), gryphon, or dnc.com")
+  @ApiModelProperty(example = "null", required = true, value = "The type of the DncList.")
   @JsonProperty("dncSourceType")
   public DncSourceTypeEnum getDncSourceType() {
     return dncSourceType;
@@ -169,14 +169,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * the loginId if the dncSourceType is dnc.com
+   * A dnc.com loginId. Required if the dncSourceType is dnc.com.
    **/
   public DncListCreate loginId(String loginId) {
     this.loginId = loginId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the loginId if the dncSourceType is dnc.com")
+  @ApiModelProperty(example = "null", value = "A dnc.com loginId. Required if the dncSourceType is dnc.com.")
   @JsonProperty("loginId")
   public String getLoginId() {
     return loginId;
@@ -187,14 +187,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * the list of dnc.com codes to be treated as DNC
+   * The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
    **/
   public DncListCreate dncCodes(List<String> dncCodes) {
     this.dncCodes = dncCodes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the list of dnc.com codes to be treated as DNC")
+  @ApiModelProperty(example = "null", value = "The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.")
   @JsonProperty("dncCodes")
   public List<String> getDncCodes() {
     return dncCodes;
@@ -205,14 +205,14 @@ public class DncListCreate  implements Serializable {
 
   
   /**
-   * the license number if the dncSourceType is gryphon
+   * A gryphon license number. Required if the dncSourceType is gryphon.
    **/
   public DncListCreate licenseId(String licenseId) {
     this.licenseId = licenseId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "the license number if the dncSourceType is gryphon")
+  @ApiModelProperty(example = "null", value = "A gryphon license number. Required if the dncSourceType is gryphon.")
   @JsonProperty("licenseId")
   public String getLicenseId() {
     return licenseId;

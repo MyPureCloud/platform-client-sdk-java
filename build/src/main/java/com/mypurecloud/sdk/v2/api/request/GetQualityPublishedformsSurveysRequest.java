@@ -86,6 +86,20 @@ public class GetQualityPublishedformsSurveysRequest {
 	    return this;
 	} 
 	
+	private Boolean onlyLatestEnabledPerContext;
+	public Boolean getOnlyLatestEnabledPerContext() {
+		return this.onlyLatestEnabledPerContext;
+	}
+
+	public void setOnlyLatestEnabledPerContext(Boolean onlyLatestEnabledPerContext) {
+		this.onlyLatestEnabledPerContext = onlyLatestEnabledPerContext;
+	}
+
+	public GetQualityPublishedformsSurveysRequest withOnlyLatestEnabledPerContext(Boolean onlyLatestEnabledPerContext) {
+	    this.setOnlyLatestEnabledPerContext(onlyLatestEnabledPerContext);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,6 +128,8 @@ public class GetQualityPublishedformsSurveysRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("onlyLatestEnabledPerContext", "", onlyLatestEnabledPerContext)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -148,6 +164,11 @@ public class GetQualityPublishedformsSurveysRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withOnlyLatestEnabledPerContext(Boolean onlyLatestEnabledPerContext) {
+			request.setOnlyLatestEnabledPerContext(onlyLatestEnabledPerContext);
 			return this;
 		}
 		

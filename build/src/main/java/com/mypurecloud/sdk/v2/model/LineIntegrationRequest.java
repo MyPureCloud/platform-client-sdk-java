@@ -19,7 +19,6 @@ public class LineIntegrationRequest  implements Serializable {
   private String channelId = null;
   private String channelSecret = null;
   private String switcherSecret = null;
-  private String channelAccessToken = null;
   private String selfUri = null;
 
   
@@ -102,24 +101,6 @@ public class LineIntegrationRequest  implements Serializable {
   }
 
   
-  /**
-   * The Channel Access Token from LINE messenger
-   **/
-  public LineIntegrationRequest channelAccessToken(String channelAccessToken) {
-    this.channelAccessToken = channelAccessToken;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The Channel Access Token from LINE messenger")
-  @JsonProperty("channelAccessToken")
-  public String getChannelAccessToken() {
-    return channelAccessToken;
-  }
-  public void setChannelAccessToken(String channelAccessToken) {
-    this.channelAccessToken = channelAccessToken;
-  }
-
-  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -142,13 +123,12 @@ public class LineIntegrationRequest  implements Serializable {
         Objects.equals(this.channelId, lineIntegrationRequest.channelId) &&
         Objects.equals(this.channelSecret, lineIntegrationRequest.channelSecret) &&
         Objects.equals(this.switcherSecret, lineIntegrationRequest.switcherSecret) &&
-        Objects.equals(this.channelAccessToken, lineIntegrationRequest.channelAccessToken) &&
         Objects.equals(this.selfUri, lineIntegrationRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, channelId, channelSecret, switcherSecret, channelAccessToken, selfUri);
+    return Objects.hash(id, name, channelId, channelSecret, switcherSecret, selfUri);
   }
 
   @Override
@@ -161,7 +141,6 @@ public class LineIntegrationRequest  implements Serializable {
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    channelSecret: ").append(toIndentedString(channelSecret)).append("\n");
     sb.append("    switcherSecret: ").append(toIndentedString(switcherSecret)).append("\n");
-    sb.append("    channelAccessToken: ").append(toIndentedString(channelAccessToken)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

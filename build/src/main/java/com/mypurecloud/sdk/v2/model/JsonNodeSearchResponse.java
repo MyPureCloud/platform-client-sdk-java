@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class JsonNodeSearchResponse  implements Serializable {
   private String currentPage = null;
   private String nextPage = null;
   private List<String> types = new ArrayList<String>();
-  private JsonNode results = null;
-  private JsonNode aggregations = null;
+  private ArrayNode results = null;
+  private ArrayNode aggregations = null;
 
   
   /**
@@ -176,34 +176,34 @@ public class JsonNodeSearchResponse  implements Serializable {
   /**
    * Search results
    **/
-  public JsonNodeSearchResponse results(JsonNode results) {
+  public JsonNodeSearchResponse results(ArrayNode results) {
     this.results = results;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Search results")
   @JsonProperty("results")
-  public JsonNode getResults() {
+  public ArrayNode getResults() {
     return results;
   }
-  public void setResults(JsonNode results) {
+  public void setResults(ArrayNode results) {
     this.results = results;
   }
 
   
   /**
    **/
-  public JsonNodeSearchResponse aggregations(JsonNode aggregations) {
+  public JsonNodeSearchResponse aggregations(ArrayNode aggregations) {
     this.aggregations = aggregations;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("aggregations")
-  public JsonNode getAggregations() {
+  public ArrayNode getAggregations() {
     return aggregations;
   }
-  public void setAggregations(JsonNode aggregations) {
+  public void setAggregations(ArrayNode aggregations) {
     this.aggregations = aggregations;
   }
 

@@ -86,6 +86,20 @@ public class GetQualityPublishedformsRequest {
 	    return this;
 	} 
 	
+	private Boolean onlyLatestPerContext;
+	public Boolean getOnlyLatestPerContext() {
+		return this.onlyLatestPerContext;
+	}
+
+	public void setOnlyLatestPerContext(Boolean onlyLatestPerContext) {
+		this.onlyLatestPerContext = onlyLatestPerContext;
+	}
+
+	public GetQualityPublishedformsRequest withOnlyLatestPerContext(Boolean onlyLatestPerContext) {
+	    this.setOnlyLatestPerContext(onlyLatestPerContext);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -114,6 +128,8 @@ public class GetQualityPublishedformsRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("onlyLatestPerContext", "", onlyLatestPerContext)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -148,6 +164,11 @@ public class GetQualityPublishedformsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withOnlyLatestPerContext(Boolean onlyLatestPerContext) {
+			request.setOnlyLatestPerContext(onlyLatestPerContext);
 			return this;
 		}
 		

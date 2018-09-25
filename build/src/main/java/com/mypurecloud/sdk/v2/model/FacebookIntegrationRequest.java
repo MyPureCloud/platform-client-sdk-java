@@ -50,14 +50,14 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   
   /**
-   * The Page Access Token of a facebook page
+   * The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.
    **/
   public FacebookIntegrationRequest pageAccessToken(String pageAccessToken) {
     this.pageAccessToken = pageAccessToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Page Access Token of a facebook page")
+  @ApiModelProperty(example = "null", value = "The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When a pageAccessToken is provided, pageId and userAccessToken are not required.")
   @JsonProperty("pageAccessToken")
   public String getPageAccessToken() {
     return pageAccessToken;
@@ -68,14 +68,14 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   
   /**
-   * The User Access Token of the facebook user logged into the facebook app
+   * The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.
    **/
   public FacebookIntegrationRequest userAccessToken(String userAccessToken) {
     this.userAccessToken = userAccessToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The User Access Token of the facebook user logged into the facebook app")
+  @ApiModelProperty(example = "null", value = "The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  When userAccessToken is provided, pageId is mandatory.  When userAccessToken/pageId combination is provided, pageAccessToken is not required.")
   @JsonProperty("userAccessToken")
   public String getUserAccessToken() {
     return userAccessToken;
@@ -86,14 +86,14 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   
   /**
-   * The page Id of a facebook page
+   * The page Id of a facebook page. The pageId is required when userAccessToken is provided.
    **/
   public FacebookIntegrationRequest pageId(String pageId) {
     this.pageId = pageId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The page Id of a facebook page")
+  @ApiModelProperty(example = "null", value = "The page Id of a facebook page. The pageId is required when userAccessToken is provided.")
   @JsonProperty("pageId")
   public String getPageId() {
     return pageId;
