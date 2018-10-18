@@ -72,7 +72,8 @@ public class DocumentAudit  implements Serializable {
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUCCESS("SUCCESS"),
-    FAILURE("FAILURE");
+    FAILURE("FAILURE"),
+    WARNING("WARNING");
 
     private String value;
 

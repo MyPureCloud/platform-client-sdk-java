@@ -44,6 +44,7 @@ import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
@@ -189,6 +190,65 @@ public class GetOutboundDnclistsRequest {
 	    return this;
 	} 
 	
+	private String dncSourceType;
+	public String getDncSourceType() {
+		return this.dncSourceType;
+	}
+
+	public void setDncSourceType(String dncSourceType) {
+		this.dncSourceType = dncSourceType;
+	}
+
+	public GetOutboundDnclistsRequest withDncSourceType(String dncSourceType) {
+	    this.setDncSourceType(dncSourceType);
+	    return this;
+	} 
+
+	public enum dncSourceTypeValues { 
+		RDS("rds"), 
+		DNC_COM("dnc.com"), 
+		GRYPHON("gryphon");
+
+		private String value;
+
+		dncSourceTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dncSourceTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dncSourceTypeValues value : dncSourceTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dncSourceTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetOutboundDnclistsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -282,6 +342,10 @@ public class GetOutboundDnclistsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("dncSourceType", "", dncSourceType)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
@@ -339,6 +403,21 @@ public class GetOutboundDnclistsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withDncSourceType(String dncSourceType) {
+			request.setDncSourceType(dncSourceType);
+			return this;
+		}
+
+		public Builder withDncSourceType(dncSourceTypeValues dncSourceType) {
+		    request.setDncSourceType(dncSourceType.toString());
+		    return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

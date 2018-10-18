@@ -50,6 +50,9 @@ title: AggregateMetricData
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
+| NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
+| NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |
+| NCONSULT | &quot;nConsult&quot; |
 | TALERT | &quot;tAlert&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | NOUTBOUND | &quot;nOutbound&quot; |

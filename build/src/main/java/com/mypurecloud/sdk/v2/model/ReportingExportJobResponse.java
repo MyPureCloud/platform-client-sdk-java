@@ -28,6 +28,8 @@ public class ReportingExportJobResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUBMITTED("SUBMITTED"),
     RUNNING("RUNNING"),
+    CANCELLING("CANCELLING"),
+    CANCELLED("CANCELLED"),
     COMPLETED("COMPLETED"),
     FAILED("FAILED");
 
@@ -209,6 +211,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private Date createdDateTime = null;
   private Date modifiedDateTime = null;
   private String locale = null;
+  private Double percentageComplete = null;
   private String selfUri = null;
 
   
@@ -470,6 +473,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * The percentage of the job that has completed processing
+   **/
+  public ReportingExportJobResponse percentageComplete(Double percentageComplete) {
+    this.percentageComplete = percentageComplete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The percentage of the job that has completed processing")
+  @JsonProperty("percentageComplete")
+  public Double getPercentageComplete() {
+    return percentageComplete;
+  }
+  public void setPercentageComplete(Double percentageComplete) {
+    this.percentageComplete = percentageComplete;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -502,12 +523,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.createdDateTime, reportingExportJobResponse.createdDateTime) &&
         Objects.equals(this.modifiedDateTime, reportingExportJobResponse.modifiedDateTime) &&
         Objects.equals(this.locale, reportingExportJobResponse.locale) &&
+        Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, selfUri);
   }
 
   @Override
@@ -530,6 +552,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

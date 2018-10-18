@@ -218,8 +218,7 @@ Wraps DELETE /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:delete
 
 ### Example
 
@@ -277,8 +276,7 @@ Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 ### Example
 
@@ -336,8 +334,7 @@ Wraps DELETE /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:delete
 
 ### Example
 
@@ -506,8 +503,7 @@ Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 ### Example
 
@@ -565,8 +561,7 @@ Wraps DELETE /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:delete
 
 ### Example
 
@@ -622,8 +617,7 @@ Wraps DELETE /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:delete
 
 ### Example
 
@@ -796,9 +790,7 @@ Wraps GET /api/v2/architect/dependencytracking
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -869,9 +861,7 @@ Wraps GET /api/v2/architect/dependencytracking/build
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -924,9 +914,7 @@ Wraps GET /api/v2/architect/dependencytracking/consumedresources
 
 Requires ANY permissions: 
 
-* admin
-* editor
-* readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -989,9 +977,7 @@ Wraps GET /api/v2/architect/dependencytracking/consumingresources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1052,9 +1038,7 @@ Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1123,9 +1107,7 @@ Wraps GET /api/v2/architect/dependencytracking/object
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1194,9 +1176,7 @@ Wraps GET /api/v2/architect/dependencytracking/types/{typeId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1253,9 +1233,7 @@ Wraps GET /api/v2/architect/dependencytracking/types
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1314,9 +1292,7 @@ Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:dependencyTracking:view
 
 ### Example
 
@@ -1627,9 +1603,7 @@ Wraps GET /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -1686,9 +1660,7 @@ Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -1757,9 +1729,7 @@ Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -1818,9 +1788,7 @@ Wraps GET /api/v2/architect/prompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -1881,9 +1849,7 @@ Wraps GET /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -2196,9 +2162,7 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 ### Example
 
@@ -2255,9 +2219,7 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 ### Example
 
@@ -2326,9 +2288,7 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 ### Example
 
@@ -2387,9 +2347,7 @@ Wraps GET /api/v2/architect/systemprompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 ### Example
 
@@ -2454,9 +2412,7 @@ Wraps GET /api/v2/architect/systemprompts
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:view
 
 ### Example
 
@@ -2525,9 +2481,7 @@ Wraps GET /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2586,9 +2540,7 @@ Wraps GET /api/v2/flows/{flowId}/history/{historyId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2657,9 +2609,7 @@ Wraps GET /api/v2/flows/{flowId}/latestconfiguration
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2718,9 +2668,7 @@ Wraps GET /api/v2/flows/{flowId}/versions/{versionId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2781,9 +2729,7 @@ Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2844,9 +2790,7 @@ Wraps GET /api/v2/flows/{flowId}/versions
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -2909,9 +2853,7 @@ Wraps GET /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:view
 
 ### Example
 
@@ -3327,7 +3269,7 @@ Wraps POST /api/v2/architect/dependencytracking/build
 
 Requires ANY permissions: 
 
-* architect:user:admin
+* architect:dependencyTracking:rebuild
 
 ### Example
 
@@ -3493,9 +3435,7 @@ Wraps POST /api/v2/architect/prompts/{promptId}/history
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:userPrompt:view
 
 ### Example
 
@@ -3552,8 +3492,7 @@ Wraps POST /api/v2/architect/prompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 ### Example
 
@@ -3612,8 +3551,7 @@ Wraps POST /api/v2/architect/prompts
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:add
 
 ### Example
 
@@ -3784,9 +3722,7 @@ Wraps POST /api/v2/architect/systemprompts/{promptId}/history
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:systemPrompt:edit
 
 ### Example
 
@@ -3843,8 +3779,7 @@ Wraps POST /api/v2/architect/systemprompts/{promptId}/resources
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 ### Example
 
@@ -3903,8 +3838,7 @@ Wraps POST /api/v2/flows/{flowId}/versions
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 ### Example
 
@@ -3963,9 +3897,7 @@ Wraps POST /api/v2/flows
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
-* architect:user:readonly
+* architect:flow:add
 
 ### Example
 
@@ -4022,8 +3954,8 @@ Wraps POST /api/v2/flows/actions/checkin
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
+* architect:flow:unlock
 
 ### Example
 
@@ -4080,8 +4012,7 @@ Wraps POST /api/v2/flows/actions/checkout
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 ### Example
 
@@ -4138,8 +4069,7 @@ Wraps POST /api/v2/flows/actions/deactivate
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:publish
 
 ### Example
 
@@ -4196,8 +4126,8 @@ Wraps POST /api/v2/flows/actions/publish
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:unlock
+* architect:flow:publish
 
 ### Example
 
@@ -4256,8 +4186,7 @@ Wraps POST /api/v2/flows/actions/revert
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 ### Example
 
@@ -4314,7 +4243,7 @@ Wraps POST /api/v2/flows/actions/unlock
 
 Requires ANY permissions: 
 
-* architect:user:admin
+* architect:flow:unlock
 
 ### Example
 
@@ -4605,8 +4534,7 @@ Wraps PUT /api/v2/architect/prompts/{promptId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 ### Example
 
@@ -4665,8 +4593,7 @@ Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:userPrompt:edit
 
 ### Example
 
@@ -4845,8 +4772,7 @@ Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:systemPrompt:edit
 
 ### Example
 
@@ -4907,8 +4833,7 @@ Wraps PUT /api/v2/flows/{flowId}
 
 Requires ANY permissions: 
 
-* architect:user:admin
-* architect:user:editor
+* architect:flow:edit
 
 ### Example
 

@@ -2481,7 +2481,7 @@ public class WorkforceManagementApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, String expand) throws IOException, ApiException {
+  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, List<String> expand) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand));
   }
 
@@ -2493,11 +2493,11 @@ public class WorkforceManagementApi {
    * @return WorkPlanListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, String expand) throws IOException {
+  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, List<String> expand) throws IOException {
     return getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, String expand) {
+  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand) {
     return GetWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
     

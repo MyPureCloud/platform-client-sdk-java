@@ -6,10 +6,9 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationWorkspace;
-import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationStartDate;
-import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceUpdateNotificationDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -103,8 +102,8 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
   }
   private AdherenceStateEnum adherenceState = null;
   private String impact = null;
-  private IntradayDataUpdateNotificationStartDate adherenceChangeTime = null;
-  private UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime = null;
+  private Date adherenceChangeTime = null;
+  private Date presenceUpdateTime = null;
 
   
   /**
@@ -262,34 +261,34 @@ public class UserScheduleAdherenceUpdateNotification  implements Serializable {
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotification adherenceChangeTime(IntradayDataUpdateNotificationStartDate adherenceChangeTime) {
+  public UserScheduleAdherenceUpdateNotification adherenceChangeTime(Date adherenceChangeTime) {
     this.adherenceChangeTime = adherenceChangeTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("adherenceChangeTime")
-  public IntradayDataUpdateNotificationStartDate getAdherenceChangeTime() {
+  public Date getAdherenceChangeTime() {
     return adherenceChangeTime;
   }
-  public void setAdherenceChangeTime(IntradayDataUpdateNotificationStartDate adherenceChangeTime) {
+  public void setAdherenceChangeTime(Date adherenceChangeTime) {
     this.adherenceChangeTime = adherenceChangeTime;
   }
 
   
   /**
    **/
-  public UserScheduleAdherenceUpdateNotification presenceUpdateTime(UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime) {
+  public UserScheduleAdherenceUpdateNotification presenceUpdateTime(Date presenceUpdateTime) {
     this.presenceUpdateTime = presenceUpdateTime;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("presenceUpdateTime")
-  public UserScheduleAdherenceUpdateNotificationDateTime getPresenceUpdateTime() {
+  public Date getPresenceUpdateTime() {
     return presenceUpdateTime;
   }
-  public void setPresenceUpdateTime(UserScheduleAdherenceUpdateNotificationDateTime presenceUpdateTime) {
+  public void setPresenceUpdateTime(Date presenceUpdateTime) {
     this.presenceUpdateTime = presenceUpdateTime;
   }
 

@@ -98,22 +98,23 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 	    return this;
 	} 
 	
-	private String expand;
-	public String getExpand() {
+	private List<String> expand;
+	public List<String> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(String expand) {
+	public void setExpand(List<String> expand) {
 		this.expand = expand;
 	}
 
-	public GetWorkforcemanagementManagementunitWorkplansRequest withExpand(String expand) {
+	public GetWorkforcemanagementManagementunitWorkplansRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
 
 	public enum expandValues { 
-		AGENTCOUNT("agentCount");
+		AGENTCOUNT("agentCount"), 
+		DETAILS("details");
 
 		private String value;
 
@@ -171,7 +172,7 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")
                 .withPathParameter("managementUnitId", managementUnitId)
         
-                .withQueryParameters("expand", "", expand)
+                .withQueryParameters("expand", "multi", expand)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -204,13 +205,17 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 			return this;
 		}
 		
-		public Builder withExpand(String expand) {
+		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
 		    return this;
 		}
 		

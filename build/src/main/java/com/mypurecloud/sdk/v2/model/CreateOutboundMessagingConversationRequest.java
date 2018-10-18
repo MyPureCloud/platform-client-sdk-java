@@ -81,14 +81,14 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
 
   
   /**
-   * The messaging address of the recipient of the message.
+   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
    **/
   public CreateOutboundMessagingConversationRequest toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message.")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;

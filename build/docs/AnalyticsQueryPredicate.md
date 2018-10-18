@@ -104,6 +104,8 @@ title: AnalyticsQueryPredicate
 | SURVEYANSWERID | &quot;surveyAnswerId&quot; |
 | SURVEYQUESTIONID | &quot;surveyQuestionId&quot; |
 | SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; |
+| SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; |
+| SURVEYCOMPLETEDDATE | &quot;surveyCompletedDate&quot; |
 | SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
 | ROUTINGSTATUS | &quot;routingStatus&quot; |
@@ -176,6 +178,9 @@ title: AnalyticsQueryPredicate
 | NOFFERED | &quot;nOffered&quot; |
 | NOVERSLA | &quot;nOverSla&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
+| NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
+| NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |
+| NCONSULT | &quot;nConsult&quot; |
 | TALERT | &quot;tAlert&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | NOUTBOUND | &quot;nOutbound&quot; |

@@ -4,13 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationDateTime;
 import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationIntradayDataGroupings;
 import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationMetrics;
-import com.mypurecloud.sdk.v2.model.IntradayDataUpdateNotificationStartDate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -20,8 +19,8 @@ import java.io.Serializable;
 
 public class IntradayDataUpdateNotification  implements Serializable {
   
-  private IntradayDataUpdateNotificationStartDate startDate = null;
-  private IntradayDataUpdateNotificationDateTime endDate = null;
+  private Date startDate = null;
+  private Date endDate = null;
   private Integer intervalLengthMinutes = null;
   private Integer numberOfIntervals = null;
   private List<IntradayDataUpdateNotificationMetrics> metrics = new ArrayList<IntradayDataUpdateNotificationMetrics>();
@@ -31,34 +30,34 @@ public class IntradayDataUpdateNotification  implements Serializable {
   
   /**
    **/
-  public IntradayDataUpdateNotification startDate(IntradayDataUpdateNotificationStartDate startDate) {
+  public IntradayDataUpdateNotification startDate(Date startDate) {
     this.startDate = startDate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("startDate")
-  public IntradayDataUpdateNotificationStartDate getStartDate() {
+  public Date getStartDate() {
     return startDate;
   }
-  public void setStartDate(IntradayDataUpdateNotificationStartDate startDate) {
+  public void setStartDate(Date startDate) {
     this.startDate = startDate;
   }
 
   
   /**
    **/
-  public IntradayDataUpdateNotification endDate(IntradayDataUpdateNotificationDateTime endDate) {
+  public IntradayDataUpdateNotification endDate(Date endDate) {
     this.endDate = endDate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("endDate")
-  public IntradayDataUpdateNotificationDateTime getEndDate() {
+  public Date getEndDate() {
     return endDate;
   }
-  public void setEndDate(IntradayDataUpdateNotificationDateTime endDate) {
+  public void setEndDate(Date endDate) {
     this.endDate = endDate;
   }
 

@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | Get a survey form |
 | [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
 | [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
+| [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | Retrieve a list of survey forms by their ids |
 | [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | Get a keywordSet by id. |
 | [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | Get the list of keyword sets |
 | [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
@@ -1520,6 +1521,63 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] |
 | **expand** | **String**| Expand | [optional] |
 | **name** | **String**| Name | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="getQualityFormsSurveysBulk"></a>
+
+# **getQualityFormsSurveysBulk**
+
+
+
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveysBulk(ids)
+
+Retrieve a list of survey forms by their ids
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/bulk  
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+List<String> ids = Arrays.asList("ids_example"); // List<String> | A comma-delimited list of valid survey form ids
+try {
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulk(ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsSurveysBulk");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form ids | |
 {: class="table table-striped"}
 
 ### Return type

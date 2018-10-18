@@ -48,6 +48,7 @@ title: DocumentAudit
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUCCESS | &quot;SUCCESS&quot; |
 | FAILURE | &quot;FAILURE&quot; |
+| WARNING | &quot;WARNING&quot; |
 {: class="table table-striped"}
 
 

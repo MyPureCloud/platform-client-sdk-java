@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import java.io.Serializable;
@@ -26,6 +27,8 @@ public class DataExportNotificationNotification  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUBMITTED("SUBMITTED"),
     RUNNING("RUNNING"),
+    CANCELLING("CANCELLING"),
+    CANCELLED("CANCELLED"),
     COMPLETED("COMPLETED"),
     FAILED("FAILED");
 
@@ -201,6 +204,7 @@ public class DataExportNotificationNotification  implements Serializable {
   private Boolean read = null;
   private Date createdDateTime = null;
   private Date modifiedDateTime = null;
+  private BigDecimal percentageComplete = null;
 
   
   /**
@@ -373,6 +377,23 @@ public class DataExportNotificationNotification  implements Serializable {
   }
 
   
+  /**
+   **/
+  public DataExportNotificationNotification percentageComplete(BigDecimal percentageComplete) {
+    this.percentageComplete = percentageComplete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("percentageComplete")
+  public BigDecimal getPercentageComplete() {
+    return percentageComplete;
+  }
+  public void setPercentageComplete(BigDecimal percentageComplete) {
+    this.percentageComplete = percentageComplete;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -392,12 +413,13 @@ public class DataExportNotificationNotification  implements Serializable {
         Objects.equals(this.exportErrorMessagesType, dataExportNotificationNotification.exportErrorMessagesType) &&
         Objects.equals(this.read, dataExportNotificationNotification.read) &&
         Objects.equals(this.createdDateTime, dataExportNotificationNotification.createdDateTime) &&
-        Objects.equals(this.modifiedDateTime, dataExportNotificationNotification.modifiedDateTime);
+        Objects.equals(this.modifiedDateTime, dataExportNotificationNotification.modifiedDateTime) &&
+        Objects.equals(this.percentageComplete, dataExportNotificationNotification.percentageComplete);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime);
+    return Objects.hash(id, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete);
   }
 
   @Override
@@ -415,6 +437,7 @@ public class DataExportNotificationNotification  implements Serializable {
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
+    sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("}");
     return sb.toString();
   }

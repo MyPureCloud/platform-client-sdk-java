@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
 | [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
+| [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
@@ -1607,6 +1608,70 @@ try {
 ### Return type
 
 [**QueueEntityListing**](QueueEntityListing.html)
+
+<a name="getRoutingQueuesMe"></a>
+
+# **getRoutingQueuesMe**
+
+
+
+> [UserQueueEntityListing](UserQueueEntityListing.html) getRoutingQueuesMe(joined, pageSize, pageNumber, sortBy, sortOrder)
+
+Get a paged listing of queues the user is a member of.
+
+
+
+Wraps GET /api/v2/routing/queues/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+Boolean joined = true; // Boolean | Joined
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+try {
+    UserQueueEntityListing result = apiInstance.getRoutingQueuesMe(joined, pageSize, pageNumber, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueuesMe");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **joined** | **Boolean**| Joined | [optional] |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="getRoutingSkill"></a>
 

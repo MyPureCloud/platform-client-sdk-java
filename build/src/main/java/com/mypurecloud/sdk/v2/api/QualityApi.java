@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
@@ -2227,6 +2228,85 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of survey forms by their ids
+   * 
+   * @param ids A comma-delimited list of valid survey form ids (required)
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveysBulk(List<String> ids) throws IOException, ApiException {
+    return  getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(ids));
+  }
+
+  /**
+   * Retrieve a list of survey forms by their ids
+   * 
+   * @param ids A comma-delimited list of valid survey form ids (required)
+   * @return SurveyFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkWithHttpInfo(List<String> ids) throws IOException {
+    return getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(ids).withHttpInfo());
+  }
+
+  private GetQualityFormsSurveysBulkRequest createGetQualityFormsSurveysBulkRequest(List<String> ids) {
+    return GetQualityFormsSurveysBulkRequest.builder()
+            .withIds(ids)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a list of survey forms by their ids
+   * 
+   * @param request The request object
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveysBulk(GetQualityFormsSurveysBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of survey forms by their ids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulk(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
     }

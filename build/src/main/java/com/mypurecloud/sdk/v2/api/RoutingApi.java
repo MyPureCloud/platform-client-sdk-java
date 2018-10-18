@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
@@ -75,6 +76,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
@@ -2290,6 +2292,101 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<QueueEntityListing> response = (ApiResponse<QueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a paged listing of queues the user is a member of.
+   * 
+   * @param joined Joined (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing getRoutingQueuesMe(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getRoutingQueuesMe(createGetRoutingQueuesMeRequest(joined, pageSize, pageNumber, sortBy, sortOrder));
+  }
+
+  /**
+   * Get a paged listing of queues the user is a member of.
+   * 
+   * @param joined Joined (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return UserQueueEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> getRoutingQueuesMeWithHttpInfo(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+    return getRoutingQueuesMe(createGetRoutingQueuesMeRequest(joined, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetRoutingQueuesMeRequest createGetRoutingQueuesMeRequest(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+    return GetRoutingQueuesMeRequest.builder()
+            .withJoined(joined)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get a paged listing of queues the user is a member of.
+   * 
+   * @param request The request object
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing getRoutingQueuesMe(GetRoutingQueuesMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserQueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a paged listing of queues the user is a member of.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> getRoutingQueuesMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

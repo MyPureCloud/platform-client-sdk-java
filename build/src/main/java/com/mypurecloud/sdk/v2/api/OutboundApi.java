@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
@@ -95,6 +96,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistTimezonemappingp
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
@@ -120,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRe
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
@@ -3436,6 +3439,117 @@ public class OutboundApi {
 
   
   /**
+   * Query a list of simplified contact list objects.
+   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return ContactListDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListDivisionViewListing getOutboundContactlistsDivisionviews(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlistsDivisionviews(createGetOutboundContactlistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
+  }
+
+  /**
+   * Query a list of simplified contact list objects.
+   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return ContactListDivisionViewListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListDivisionViewListing> getOutboundContactlistsDivisionviewsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlistsDivisionviews(createGetOutboundContactlistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundContactlistsDivisionviewsRequest createGetOutboundContactlistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
+    return GetOutboundContactlistsDivisionviewsRequest.builder()
+            .withIncludeImportStatus(includeImportStatus)
+    
+            .withIncludeSize(includeSize)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withFilterType(filterType)
+    
+            .withName(name)
+    
+            .withId(id)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Query a list of simplified contact list objects.
+   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * @param request The request object
+   * @return ContactListDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListDivisionViewListing getOutboundContactlistsDivisionviews(GetOutboundContactlistsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListDivisionViewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListDivisionViewListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of simplified contact list objects.
+   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListDivisionViewListing> getOutboundContactlistsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListDivisionViewListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListDivisionViewListing> response = (ApiResponse<ContactListDivisionViewListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListDivisionViewListing> response = (ApiResponse<ContactListDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get dialer DNC list
    * 
    * @param dncListId DncList ID (required)
@@ -3693,14 +3807,16 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param dncSourceType DncSourceType (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional)
    * @return DncListEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -3712,16 +3828,18 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param dncSourceType DncSourceType (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional)
    * @return DncListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundDnclistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -3734,6 +3852,10 @@ public class OutboundApi {
             .withFilterType(filterType)
     
             .withName(name)
+    
+            .withDncSourceType(dncSourceType)
+    
+            .withDivisionId(divisionId)
     
             .withSortBy(sortBy)
     
@@ -5514,6 +5636,82 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundContactlistClear(String contactListId) throws IOException, ApiException {
+     postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId));
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundContactlistClearWithHttpInfo(String contactListId) throws IOException {
+    return postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId).withHttpInfo());
+  }
+
+  private PostOutboundContactlistClearRequest createPostOutboundContactlistClearRequest(String contactListId) {
+    return PostOutboundContactlistClearRequest.builder()
+            .withContactListId(contactListId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundContactlistClear(PostOutboundContactlistClearRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundContactlistClear(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

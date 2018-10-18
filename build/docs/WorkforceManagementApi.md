@@ -1889,7 +1889,7 @@ PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-String expand = "expand_example"; // String | 
+List<String> expand = Arrays.asList("expand_example"); // List<String> | 
 try {
     WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand);
     System.out.println(result);
@@ -1905,7 +1905,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **expand** | **String**|  | [optional]<br />**Values**: agentCount |
+| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: agentCount, details |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CredentialSpecification;
+import com.mypurecloud.sdk.v2.model.HelpLink;
 import com.mypurecloud.sdk.v2.model.UserImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,6 +32,14 @@ public class IntegrationType  implements Serializable {
   private String configAdvancedSchemaUri = null;
   private String helpUri = null;
   private String termsOfServiceUri = null;
+  private String vendorName = null;
+  private String vendorWebsiteUri = null;
+  private String marketplaceUri = null;
+  private String faqUri = null;
+  private String privacyPolicyUri = null;
+  private String supportContactUri = null;
+  private String salesContactUri = null;
+  private List<HelpLink> helpLinks = new ArrayList<HelpLink>();
   private Map<String, CredentialSpecification> credentials = null;
   private Boolean nonInstallable = null;
   private Integer maxInstances = null;
@@ -140,6 +149,73 @@ public class IntegrationType  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Name of the vendor of this integration type")
+  @JsonProperty("vendorName")
+  public String getVendorName() {
+    return vendorName;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI of the vendor's website")
+  @JsonProperty("vendorWebsiteUri")
+  public String getVendorWebsiteUri() {
+    return vendorWebsiteUri;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI of the marketplace listing for this integration type")
+  @JsonProperty("marketplaceUri")
+  public String getMarketplaceUri() {
+    return marketplaceUri;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI of frequently asked questions about the integration type")
+  @JsonProperty("faqUri")
+  public String getFaqUri() {
+    return faqUri;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI of a privacy policy for users of the integration type")
+  @JsonProperty("privacyPolicyUri")
+  public String getPrivacyPolicyUri() {
+    return privacyPolicyUri;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI for vendor support")
+  @JsonProperty("supportContactUri")
+  public String getSupportContactUri() {
+    return supportContactUri;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "URI for vendor sales information")
+  @JsonProperty("salesContactUri")
+  public String getSalesContactUri() {
+    return salesContactUri;
+  }
+
+  
+  /**
+   * List of links to additional help resources
+   **/
+  public IntegrationType helpLinks(List<HelpLink> helpLinks) {
+    this.helpLinks = helpLinks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of links to additional help resources")
+  @JsonProperty("helpLinks")
+  public List<HelpLink> getHelpLinks() {
+    return helpLinks;
+  }
+  public void setHelpLinks(List<HelpLink> helpLinks) {
+    this.helpLinks = helpLinks;
+  }
+
+  
   /**
    * Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.
    **/
@@ -217,6 +293,14 @@ public class IntegrationType  implements Serializable {
         Objects.equals(this.configAdvancedSchemaUri, integrationType.configAdvancedSchemaUri) &&
         Objects.equals(this.helpUri, integrationType.helpUri) &&
         Objects.equals(this.termsOfServiceUri, integrationType.termsOfServiceUri) &&
+        Objects.equals(this.vendorName, integrationType.vendorName) &&
+        Objects.equals(this.vendorWebsiteUri, integrationType.vendorWebsiteUri) &&
+        Objects.equals(this.marketplaceUri, integrationType.marketplaceUri) &&
+        Objects.equals(this.faqUri, integrationType.faqUri) &&
+        Objects.equals(this.privacyPolicyUri, integrationType.privacyPolicyUri) &&
+        Objects.equals(this.supportContactUri, integrationType.supportContactUri) &&
+        Objects.equals(this.salesContactUri, integrationType.salesContactUri) &&
+        Objects.equals(this.helpLinks, integrationType.helpLinks) &&
         Objects.equals(this.credentials, integrationType.credentials) &&
         Objects.equals(this.nonInstallable, integrationType.nonInstallable) &&
         Objects.equals(this.maxInstances, integrationType.maxInstances) &&
@@ -226,7 +310,7 @@ public class IntegrationType  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, termsOfServiceUri, credentials, nonInstallable, maxInstances, userPermissions, selfUri);
+    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, termsOfServiceUri, vendorName, vendorWebsiteUri, marketplaceUri, faqUri, privacyPolicyUri, supportContactUri, salesContactUri, helpLinks, credentials, nonInstallable, maxInstances, userPermissions, selfUri);
   }
 
   @Override
@@ -244,6 +328,14 @@ public class IntegrationType  implements Serializable {
     sb.append("    configAdvancedSchemaUri: ").append(toIndentedString(configAdvancedSchemaUri)).append("\n");
     sb.append("    helpUri: ").append(toIndentedString(helpUri)).append("\n");
     sb.append("    termsOfServiceUri: ").append(toIndentedString(termsOfServiceUri)).append("\n");
+    sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
+    sb.append("    vendorWebsiteUri: ").append(toIndentedString(vendorWebsiteUri)).append("\n");
+    sb.append("    marketplaceUri: ").append(toIndentedString(marketplaceUri)).append("\n");
+    sb.append("    faqUri: ").append(toIndentedString(faqUri)).append("\n");
+    sb.append("    privacyPolicyUri: ").append(toIndentedString(privacyPolicyUri)).append("\n");
+    sb.append("    supportContactUri: ").append(toIndentedString(supportContactUri)).append("\n");
+    sb.append("    salesContactUri: ").append(toIndentedString(salesContactUri)).append("\n");
+    sb.append("    helpLinks: ").append(toIndentedString(helpLinks)).append("\n");
     sb.append("    credentials: ").append(toIndentedString(credentials)).append("\n");
     sb.append("    nonInstallable: ").append(toIndentedString(nonInstallable)).append("\n");
     sb.append("    maxInstances: ").append(toIndentedString(maxInstances)).append("\n");

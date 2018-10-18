@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactListNotificationImportStatus;
 import com.mypurecloud.sdk.v2.model.ContactListNotificationPhoneColumns;
+import com.mypurecloud.sdk.v2.model.ContactListNotificationUriReference;
 import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,6 +35,7 @@ public class ContactListNotification  implements Serializable {
   private DocumentDataV2NotificationCreatedBy attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
+  private ContactListNotificationUriReference division = null;
   private Object additionalProperties = null;
 
   
@@ -277,6 +279,23 @@ public class ContactListNotification  implements Serializable {
   
   /**
    **/
+  public ContactListNotification division(ContactListNotificationUriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("division")
+  public ContactListNotificationUriReference getDivision() {
+    return division;
+  }
+  public void setDivision(ContactListNotificationUriReference division) {
+    this.division = division;
+  }
+
+  
+  /**
+   **/
   public ContactListNotification additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -316,12 +335,13 @@ public class ContactListNotification  implements Serializable {
         Objects.equals(this.attemptLimits, contactListNotification.attemptLimits) &&
         Objects.equals(this.automaticTimeZoneMapping, contactListNotification.automaticTimeZoneMapping) &&
         Objects.equals(this.zipCodeColumnName, contactListNotification.zipCodeColumnName) &&
+        Objects.equals(this.division, contactListNotification.division) &&
         Objects.equals(this.additionalProperties, contactListNotification.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties);
   }
 
   @Override
@@ -343,6 +363,7 @@ public class ContactListNotification  implements Serializable {
     sb.append("    attemptLimits: ").append(toIndentedString(attemptLimits)).append("\n");
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

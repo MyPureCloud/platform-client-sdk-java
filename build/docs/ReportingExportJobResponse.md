@@ -23,6 +23,7 @@ title: ReportingExportJobResponse
 | **createdDateTime** | [**Date**](Date.html) | The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
 | **modifiedDateTime** | [**Date**](Date.html) | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
 | **locale** | **String** | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
+| **percentageComplete** | **Double** | The percentage of the job that has completed processing |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -36,6 +37,8 @@ title: ReportingExportJobResponse
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUBMITTED | &quot;SUBMITTED&quot; |
 | RUNNING | &quot;RUNNING&quot; |
+| CANCELLING | &quot;CANCELLING&quot; |
+| CANCELLED | &quot;CANCELLED&quot; |
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 {: class="table table-striped"}

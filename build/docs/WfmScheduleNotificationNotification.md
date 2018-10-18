@@ -11,6 +11,7 @@ title: WfmScheduleNotificationNotification
 | **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 | **operationId** | **String** |  |  [optional] |
 | **downloadUrl** | **String** |  |  [optional] |
+| **percentComplete** | **Integer** |  |  [optional] |
 | **eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional] |
 {: class="table table-striped"}
 
@@ -39,6 +40,7 @@ title: WfmScheduleNotificationNotification
 | IMPORT | &quot;Import&quot; |
 | COPY | &quot;Copy&quot; |
 | GENERATE | &quot;Generate&quot; |
+| RESCHEDULE | &quot;Reschedule&quot; |
 {: class="table table-striped"}
 
 

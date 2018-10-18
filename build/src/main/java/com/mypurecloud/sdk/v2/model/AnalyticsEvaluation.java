@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -17,7 +18,7 @@ public class AnalyticsEvaluation  implements Serializable {
   private String evaluationId = null;
   private String evaluatorId = null;
   private String userId = null;
-  private String eventTime = null;
+  private Date eventTime = null;
   private String queueId = null;
   private String formId = null;
   private String contextId = null;
@@ -81,19 +82,19 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
-   * Specifies when an evaluation occurred
+   * Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
-  public AnalyticsEvaluation eventTime(String eventTime) {
+  public AnalyticsEvaluation eventTime(Date eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies when an evaluation occurred")
+  @ApiModelProperty(example = "null", value = "Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("eventTime")
-  public String getEventTime() {
+  public Date getEventTime() {
     return eventTime;
   }
-  public void setEventTime(String eventTime) {
+  public void setEventTime(Date eventTime) {
     this.eventTime = eventTime;
   }
 

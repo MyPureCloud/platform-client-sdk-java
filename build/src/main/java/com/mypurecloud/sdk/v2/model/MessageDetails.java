@@ -31,7 +31,10 @@ public class MessageDetails  implements Serializable {
     QUEUED("queued"),
     SENT("sent"),
     FAILED("failed"),
-    RECEIVED("received");
+    RECEIVED("received"),
+    DELIVERY_SUCCESS("delivery-success"),
+    DELIVERY_FAILED("delivery-failed"),
+    READ("read");
 
     private String value;
 

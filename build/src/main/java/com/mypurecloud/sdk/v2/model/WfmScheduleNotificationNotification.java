@@ -53,6 +53,7 @@ public class WfmScheduleNotificationNotification  implements Serializable {
   private StatusEnum status = null;
   private String operationId = null;
   private String downloadUrl = null;
+  private Integer percentComplete = null;
 
   /**
    * Gets or Sets eventType
@@ -62,7 +63,8 @@ public class WfmScheduleNotificationNotification  implements Serializable {
     UPDATE("Update"),
     IMPORT("Import"),
     COPY("Copy"),
-    GENERATE("Generate");
+    GENERATE("Generate"),
+    RESCHEDULE("Reschedule");
 
     private String value;
 
@@ -145,6 +147,23 @@ public class WfmScheduleNotificationNotification  implements Serializable {
   
   /**
    **/
+  public WfmScheduleNotificationNotification percentComplete(Integer percentComplete) {
+    this.percentComplete = percentComplete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("percentComplete")
+  public Integer getPercentComplete() {
+    return percentComplete;
+  }
+  public void setPercentComplete(Integer percentComplete) {
+    this.percentComplete = percentComplete;
+  }
+
+  
+  /**
+   **/
   public WfmScheduleNotificationNotification eventType(EventTypeEnum eventType) {
     this.eventType = eventType;
     return this;
@@ -173,12 +192,13 @@ public class WfmScheduleNotificationNotification  implements Serializable {
     return Objects.equals(this.status, wfmScheduleNotificationNotification.status) &&
         Objects.equals(this.operationId, wfmScheduleNotificationNotification.operationId) &&
         Objects.equals(this.downloadUrl, wfmScheduleNotificationNotification.downloadUrl) &&
+        Objects.equals(this.percentComplete, wfmScheduleNotificationNotification.percentComplete) &&
         Objects.equals(this.eventType, wfmScheduleNotificationNotification.eventType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, operationId, downloadUrl, eventType);
+    return Objects.hash(status, operationId, downloadUrl, percentComplete, eventType);
   }
 
   @Override
@@ -189,6 +209,7 @@ public class WfmScheduleNotificationNotification  implements Serializable {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    percentComplete: ").append(toIndentedString(percentComplete)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("}");
     return sb.toString();

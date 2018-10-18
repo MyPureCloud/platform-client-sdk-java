@@ -30,6 +30,8 @@ public class WorkPlan  implements Serializable {
   private Integer weeklyExactPaidMinutes = null;
   private Integer weeklyMinimumPaidMinutes = null;
   private Integer weeklyMaximumPaidMinutes = null;
+  private Boolean constrainPaidTimeGranularity = null;
+  private Integer paidTimeGranularityMinutes = null;
   private Boolean constrainMinimumTimeBetweenShifts = null;
   private Integer minimumTimeBetweenShiftsMinutes = null;
   private Integer maximumDays = null;
@@ -170,6 +172,42 @@ public class WorkPlan  implements Serializable {
   }
   public void setWeeklyMaximumPaidMinutes(Integer weeklyMaximumPaidMinutes) {
     this.weeklyMaximumPaidMinutes = weeklyMaximumPaidMinutes;
+  }
+
+  
+  /**
+   * Whether paid time granularity is constrained for this workplan
+   **/
+  public WorkPlan constrainPaidTimeGranularity(Boolean constrainPaidTimeGranularity) {
+    this.constrainPaidTimeGranularity = constrainPaidTimeGranularity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether paid time granularity is constrained for this workplan")
+  @JsonProperty("constrainPaidTimeGranularity")
+  public Boolean getConstrainPaidTimeGranularity() {
+    return constrainPaidTimeGranularity;
+  }
+  public void setConstrainPaidTimeGranularity(Boolean constrainPaidTimeGranularity) {
+    this.constrainPaidTimeGranularity = constrainPaidTimeGranularity;
+  }
+
+  
+  /**
+   * Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true
+   **/
+  public WorkPlan paidTimeGranularityMinutes(Integer paidTimeGranularityMinutes) {
+    this.paidTimeGranularityMinutes = paidTimeGranularityMinutes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity == true")
+  @JsonProperty("paidTimeGranularityMinutes")
+  public Integer getPaidTimeGranularityMinutes() {
+    return paidTimeGranularityMinutes;
+  }
+  public void setPaidTimeGranularityMinutes(Integer paidTimeGranularityMinutes) {
+    this.paidTimeGranularityMinutes = paidTimeGranularityMinutes;
   }
 
   
@@ -342,6 +380,8 @@ public class WorkPlan  implements Serializable {
         Objects.equals(this.weeklyExactPaidMinutes, workPlan.weeklyExactPaidMinutes) &&
         Objects.equals(this.weeklyMinimumPaidMinutes, workPlan.weeklyMinimumPaidMinutes) &&
         Objects.equals(this.weeklyMaximumPaidMinutes, workPlan.weeklyMaximumPaidMinutes) &&
+        Objects.equals(this.constrainPaidTimeGranularity, workPlan.constrainPaidTimeGranularity) &&
+        Objects.equals(this.paidTimeGranularityMinutes, workPlan.paidTimeGranularityMinutes) &&
         Objects.equals(this.constrainMinimumTimeBetweenShifts, workPlan.constrainMinimumTimeBetweenShifts) &&
         Objects.equals(this.minimumTimeBetweenShiftsMinutes, workPlan.minimumTimeBetweenShiftsMinutes) &&
         Objects.equals(this.maximumDays, workPlan.maximumDays) &&
@@ -355,7 +395,7 @@ public class WorkPlan  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, optionalDays, shiftStartVariances, shifts, agents, metadata, selfUri);
+    return Objects.hash(id, name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, optionalDays, shiftStartVariances, shifts, agents, metadata, selfUri);
   }
 
   @Override
@@ -371,6 +411,8 @@ public class WorkPlan  implements Serializable {
     sb.append("    weeklyExactPaidMinutes: ").append(toIndentedString(weeklyExactPaidMinutes)).append("\n");
     sb.append("    weeklyMinimumPaidMinutes: ").append(toIndentedString(weeklyMinimumPaidMinutes)).append("\n");
     sb.append("    weeklyMaximumPaidMinutes: ").append(toIndentedString(weeklyMaximumPaidMinutes)).append("\n");
+    sb.append("    constrainPaidTimeGranularity: ").append(toIndentedString(constrainPaidTimeGranularity)).append("\n");
+    sb.append("    paidTimeGranularityMinutes: ").append(toIndentedString(paidTimeGranularityMinutes)).append("\n");
     sb.append("    constrainMinimumTimeBetweenShifts: ").append(toIndentedString(constrainMinimumTimeBetweenShifts)).append("\n");
     sb.append("    minimumTimeBetweenShiftsMinutes: ").append(toIndentedString(minimumTimeBetweenShiftsMinutes)).append("\n");
     sb.append("    maximumDays: ").append(toIndentedString(maximumDays)).append("\n");

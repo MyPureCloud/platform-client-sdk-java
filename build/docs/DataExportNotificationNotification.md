@@ -18,6 +18,7 @@ title: DataExportNotificationNotification
 | **read** | **Boolean** |  |  [optional] |
 | **createdDateTime** | [**Date**](Date.html) |  |  [optional] |
 | **modifiedDateTime** | [**Date**](Date.html) |  |  [optional] |
+| **percentageComplete** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -30,6 +31,8 @@ title: DataExportNotificationNotification
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | SUBMITTED | &quot;SUBMITTED&quot; |
 | RUNNING | &quot;RUNNING&quot; |
+| CANCELLING | &quot;CANCELLING&quot; |
+| CANCELLED | &quot;CANCELLED&quot; |
 | COMPLETED | &quot;COMPLETED&quot; |
 | FAILED | &quot;FAILED&quot; |
 {: class="table table-striped"}

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -19,12 +20,13 @@ public class AnalyticsSurvey  implements Serializable {
   private String surveyId = null;
   private String surveyFormId = null;
   private String surveyFormContextId = null;
+  private Date eventTime = null;
   private String userId = null;
   private String queueId = null;
   private String status = null;
   private Long getoSurveyTotalScore = null;
   private Integer surveyPromoterScore = null;
-  private Long surveyCompletedTime = null;
+  private Date getsurveyCompletedDate = null;
   private List<String> mediaTypes = new ArrayList<String>();
   private List<String> languageIds = new ArrayList<String>();
   private List<String> skillIds = new ArrayList<String>();
@@ -81,6 +83,24 @@ public class AnalyticsSurvey  implements Serializable {
   }
   public void setSurveyFormContextId(String surveyFormContextId) {
     this.surveyFormContextId = surveyFormContextId;
+  }
+
+  
+  /**
+   * Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public AnalyticsSurvey eventTime(Date eventTime) {
+    this.eventTime = eventTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specifies when an evaluation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("eventTime")
+  public Date getEventTime() {
+    return eventTime;
+  }
+  public void setEventTime(Date eventTime) {
+    this.eventTime = eventTime;
   }
 
   
@@ -175,20 +195,20 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z
+   * Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
-  public AnalyticsSurvey surveyCompletedTime(Long surveyCompletedTime) {
-    this.surveyCompletedTime = surveyCompletedTime;
+  public AnalyticsSurvey getsurveyCompletedDate(Date getsurveyCompletedDate) {
+    this.getsurveyCompletedDate = getsurveyCompletedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Completion time of the survey, in ms since the epoch, 1970-01-01T00:00:00.000Z")
-  @JsonProperty("surveyCompletedTime")
-  public Long getSurveyCompletedTime() {
-    return surveyCompletedTime;
+  @ApiModelProperty(example = "null", value = "Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("getsurveyCompletedDate")
+  public Date getGetsurveyCompletedDate() {
+    return getsurveyCompletedDate;
   }
-  public void setSurveyCompletedTime(Long surveyCompletedTime) {
-    this.surveyCompletedTime = surveyCompletedTime;
+  public void setGetsurveyCompletedDate(Date getsurveyCompletedDate) {
+    this.getsurveyCompletedDate = getsurveyCompletedDate;
   }
 
   
@@ -259,12 +279,13 @@ public class AnalyticsSurvey  implements Serializable {
     return Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
         Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
         Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
+        Objects.equals(this.eventTime, analyticsSurvey.eventTime) &&
         Objects.equals(this.userId, analyticsSurvey.userId) &&
         Objects.equals(this.queueId, analyticsSurvey.queueId) &&
         Objects.equals(this.status, analyticsSurvey.status) &&
         Objects.equals(this.getoSurveyTotalScore, analyticsSurvey.getoSurveyTotalScore) &&
         Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
-        Objects.equals(this.surveyCompletedTime, analyticsSurvey.surveyCompletedTime) &&
+        Objects.equals(this.getsurveyCompletedDate, analyticsSurvey.getsurveyCompletedDate) &&
         Objects.equals(this.mediaTypes, analyticsSurvey.mediaTypes) &&
         Objects.equals(this.languageIds, analyticsSurvey.languageIds) &&
         Objects.equals(this.skillIds, analyticsSurvey.skillIds);
@@ -272,7 +293,7 @@ public class AnalyticsSurvey  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, userId, queueId, status, getoSurveyTotalScore, surveyPromoterScore, surveyCompletedTime, mediaTypes, languageIds, skillIds);
+    return Objects.hash(surveyId, surveyFormId, surveyFormContextId, eventTime, userId, queueId, status, getoSurveyTotalScore, surveyPromoterScore, getsurveyCompletedDate, mediaTypes, languageIds, skillIds);
   }
 
   @Override
@@ -283,12 +304,13 @@ public class AnalyticsSurvey  implements Serializable {
     sb.append("    surveyId: ").append(toIndentedString(surveyId)).append("\n");
     sb.append("    surveyFormId: ").append(toIndentedString(surveyFormId)).append("\n");
     sb.append("    surveyFormContextId: ").append(toIndentedString(surveyFormContextId)).append("\n");
+    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    getoSurveyTotalScore: ").append(toIndentedString(getoSurveyTotalScore)).append("\n");
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
-    sb.append("    surveyCompletedTime: ").append(toIndentedString(surveyCompletedTime)).append("\n");
+    sb.append("    getsurveyCompletedDate: ").append(toIndentedString(getsurveyCompletedDate)).append("\n");
     sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
     sb.append("    languageIds: ").append(toIndentedString(languageIds)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");

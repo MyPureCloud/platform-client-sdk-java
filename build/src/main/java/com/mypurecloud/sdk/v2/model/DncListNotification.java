@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactListNotificationImportStatus;
+import com.mypurecloud.sdk.v2.model.DocumentDataV2NotificationCreatedBy;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -65,6 +66,7 @@ public class DncListNotification  implements Serializable {
   private String loginId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
+  private DocumentDataV2NotificationCreatedBy division = null;
   private Object additionalProperties = null;
 
   
@@ -257,6 +259,23 @@ public class DncListNotification  implements Serializable {
   
   /**
    **/
+  public DncListNotification division(DocumentDataV2NotificationCreatedBy division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("division")
+  public DocumentDataV2NotificationCreatedBy getDivision() {
+    return division;
+  }
+  public void setDivision(DocumentDataV2NotificationCreatedBy division) {
+    this.division = division;
+  }
+
+  
+  /**
+   **/
   public DncListNotification additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -293,12 +312,13 @@ public class DncListNotification  implements Serializable {
         Objects.equals(this.loginId, dncListNotification.loginId) &&
         Objects.equals(this.dncCodes, dncListNotification.dncCodes) &&
         Objects.equals(this.licenseId, dncListNotification.licenseId) &&
+        Objects.equals(this.division, dncListNotification.division) &&
         Objects.equals(this.additionalProperties, dncListNotification.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, division, additionalProperties);
   }
 
   @Override
@@ -317,6 +337,7 @@ public class DncListNotification  implements Serializable {
     sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
