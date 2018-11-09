@@ -28,6 +28,9 @@ title: ConversationNotificationMessages
 | SENT | &quot;SENT&quot; |
 | FAILED | &quot;FAILED&quot; |
 | RECEIVED | &quot;RECEIVED&quot; |
+| DELIVERY_SUCCESS | &quot;DELIVERY_SUCCESS&quot; |
+| DELIVERY_FAILED | &quot;DELIVERY_FAILED&quot; |
+| READ | &quot;READ&quot; |
 {: class="table table-striped"}
 
 

@@ -60,6 +60,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
@@ -1898,6 +1899,82 @@ public class QualityApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<SurveyFormEntityListing>> getQualityFormsSurveysBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyFormEntityListing> getQualityFormsSurveysBulkContextsAsync(GetQualityFormsSurveysBulkContextsRequest request, final AsyncApiCallback<SurveyFormEntityListing> callback) {
+    try {
+      final SettableFuture<SurveyFormEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyFormEntityListing>> getQualityFormsSurveysBulkContextsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

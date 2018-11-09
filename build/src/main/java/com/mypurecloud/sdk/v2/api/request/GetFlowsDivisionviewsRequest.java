@@ -58,16 +58,16 @@ import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsDivisionviewsRequest {
     
-	private String type;
-	public String getType() {
+	private List<String> type;
+	public List<String> getType() {
 		return this.type;
 	}
 
-	public void setType(String type) {
+	public void setType(List<String> type) {
 		this.type = type;
 	}
 
-	public GetFlowsDivisionviewsRequest withType(String type) {
+	public GetFlowsDivisionviewsRequest withType(List<String> type) {
 	    this.setType(type);
 	    return this;
 	} 
@@ -270,14 +270,9 @@ public class GetFlowsDivisionviewsRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'type' is set
-        if (this.type == null) {
-            throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFlowsDivisionviewsRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/flows/divisionviews")
-                .withQueryParameters("type", "", type)
+                .withQueryParameters("type", "multi", type)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
@@ -311,11 +306,6 @@ public class GetFlowsDivisionviewsRequest {
 	}
 
 	
-	public static Builder builder(String type) {
-	    return new Builder()
-	            .withRequiredParams(type);
-	}
-	
 
 	public static class Builder {
 		private final GetFlowsDivisionviewsRequest request;
@@ -325,13 +315,17 @@ public class GetFlowsDivisionviewsRequest {
 		}
 
 		
-		public Builder withType(String type) {
+		public Builder withType(List<String> type) {
 			request.setType(type);
 			return this;
 		}
 
-		public Builder withType(typeValues type) {
-		    request.setType(type.toString());
+		public Builder withTypeEnumValues(List<typeValues> type) {
+		    List<String> stringList = new ArrayList<>();
+	      for (typeValues e : type) {
+	        stringList.add(e.toString());
+	      }
+	      request.setType(stringList);
 		    return this;
 		}
 		
@@ -387,19 +381,8 @@ public class GetFlowsDivisionviewsRequest {
 		
 
 		
-		public Builder withRequiredParams(String type) {
-			request.setType(type);
-			
-			return this;
-		}
-		
 
 		public GetFlowsDivisionviewsRequest build() {
-            
-            // verify the required parameter 'type' is set
-            if (request.type == null) {
-                throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFlowsDivisionviewsRequest.");
-            }
             
 			return request;
 		}

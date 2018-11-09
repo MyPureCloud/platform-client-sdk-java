@@ -5,10 +5,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
+import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
+import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -24,6 +28,8 @@ public class RecordingMessagingMessage  implements Serializable {
   private Date timestamp = null;
   private String id = null;
   private String messageText = null;
+  private List<MessageMediaAttachment> messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
+  private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
 
   
   /**
@@ -146,6 +152,40 @@ public class RecordingMessagingMessage  implements Serializable {
   }
 
   
+  /**
+   **/
+  public RecordingMessagingMessage messageMediaAttachments(List<MessageMediaAttachment> messageMediaAttachments) {
+    this.messageMediaAttachments = messageMediaAttachments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messageMediaAttachments")
+  public List<MessageMediaAttachment> getMessageMediaAttachments() {
+    return messageMediaAttachments;
+  }
+  public void setMessageMediaAttachments(List<MessageMediaAttachment> messageMediaAttachments) {
+    this.messageMediaAttachments = messageMediaAttachments;
+  }
+
+  
+  /**
+   **/
+  public RecordingMessagingMessage messageStickerAttachments(List<MessageStickerAttachment> messageStickerAttachments) {
+    this.messageStickerAttachments = messageStickerAttachments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messageStickerAttachments")
+  public List<MessageStickerAttachment> getMessageStickerAttachments() {
+    return messageStickerAttachments;
+  }
+  public void setMessageStickerAttachments(List<MessageStickerAttachment> messageStickerAttachments) {
+    this.messageStickerAttachments = messageStickerAttachments;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +202,14 @@ public class RecordingMessagingMessage  implements Serializable {
         Objects.equals(this.to, recordingMessagingMessage.to) &&
         Objects.equals(this.timestamp, recordingMessagingMessage.timestamp) &&
         Objects.equals(this.id, recordingMessagingMessage.id) &&
-        Objects.equals(this.messageText, recordingMessagingMessage.messageText);
+        Objects.equals(this.messageText, recordingMessagingMessage.messageText) &&
+        Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
+        Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments);
   }
 
   @Override
@@ -182,6 +224,8 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    messageText: ").append(toIndentedString(messageText)).append("\n");
+    sb.append("    messageMediaAttachments: ").append(toIndentedString(messageMediaAttachments)).append("\n");
+    sb.append("    messageStickerAttachments: ").append(toIndentedString(messageStickerAttachments)).append("\n");
     sb.append("}");
     return sb.toString();
   }

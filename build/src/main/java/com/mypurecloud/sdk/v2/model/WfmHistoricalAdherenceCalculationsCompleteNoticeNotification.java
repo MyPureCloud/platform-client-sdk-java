@@ -25,6 +25,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteNoticeNotification  imple
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PROCESSING("Processing"),
     COMPLETE("Complete"),
+    CANCELED("Canceled"),
     ERROR("Error");
 
     private String value;

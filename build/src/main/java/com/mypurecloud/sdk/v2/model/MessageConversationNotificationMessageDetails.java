@@ -33,7 +33,10 @@ public class MessageConversationNotificationMessageDetails  implements Serializa
     QUEUED("QUEUED"),
     SENT("SENT"),
     FAILED("FAILED"),
-    RECEIVED("RECEIVED");
+    RECEIVED("RECEIVED"),
+    DELIVERY_SUCCESS("DELIVERY_SUCCESS"),
+    DELIVERY_FAILED("DELIVERY_FAILED"),
+    READ("READ");
 
     private String value;
 

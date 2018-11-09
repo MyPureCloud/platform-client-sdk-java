@@ -44,17 +44,17 @@ import com.mypurecloud.sdk.v2.model.PublishForm;
 
 public class GetQualityFormsSurveysBulkRequest {
     
-	private List<String> ids;
-	public List<String> getIds() {
-		return this.ids;
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
 	}
 
-	public void setIds(List<String> ids) {
-		this.ids = ids;
+	public void setId(List<String> id) {
+		this.id = id;
 	}
 
-	public GetQualityFormsSurveysBulkRequest withIds(List<String> ids) {
-	    this.setIds(ids);
+	public GetQualityFormsSurveysBulkRequest withId(List<String> id) {
+	    this.setId(id);
 	    return this;
 	} 
 	
@@ -79,14 +79,14 @@ public class GetQualityFormsSurveysBulkRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'ids' is set
-        if (this.ids == null) {
-            throw new IllegalStateException("Missing the required parameter 'ids' when building request for GetQualityFormsSurveysBulkRequest.");
+        // verify the required parameter 'id' is set
+        if (this.id == null) {
+            throw new IllegalStateException("Missing the required parameter 'id' when building request for GetQualityFormsSurveysBulkRequest.");
         }
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/forms/surveys/bulk")
-                .withQueryParameters("ids", "multi", ids)
+                .withQueryParameters("id", "multi", id)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -100,9 +100,9 @@ public class GetQualityFormsSurveysBulkRequest {
 	}
 
 	
-	public static Builder builder(List<String> ids) {
+	public static Builder builder(List<String> id) {
 	    return new Builder()
-	            .withRequiredParams(ids);
+	            .withRequiredParams(id);
 	}
 	
 
@@ -114,15 +114,15 @@ public class GetQualityFormsSurveysBulkRequest {
 		}
 
 		
-		public Builder withIds(List<String> ids) {
-			request.setIds(ids);
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(List<String> ids) {
-			request.setIds(ids);
+		public Builder withRequiredParams(List<String> id) {
+			request.setId(id);
 			
 			return this;
 		}
@@ -130,9 +130,9 @@ public class GetQualityFormsSurveysBulkRequest {
 
 		public GetQualityFormsSurveysBulkRequest build() {
             
-            // verify the required parameter 'ids' is set
-            if (request.ids == null) {
-                throw new IllegalStateException("Missing the required parameter 'ids' when building request for GetQualityFormsSurveysBulkRequest.");
+            // verify the required parameter 'id' is set
+            if (request.id == null) {
+                throw new IllegalStateException("Missing the required parameter 'id' when building request for GetQualityFormsSurveysBulkRequest.");
             }
             
 			return request;

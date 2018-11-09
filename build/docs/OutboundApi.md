@@ -46,11 +46,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | Get Contact list filter |
 | [**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | Query Contact list filters |
 | [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | Query a list of contact lists. |
+| [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | Get a basic ContactList information object |
 | [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | Query a list of simplified contact list objects. |
 | [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | Get dialer DNC list |
 | [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | Get the URI of a DNC list export. |
 | [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | Get dialer dncList import status. |
 | [**getOutboundDnclists**](OutboundApi.html#getOutboundDnclists) | Query dialer DNC lists |
+| [**getOutboundDnclistsDivisionview**](OutboundApi.html#getOutboundDnclistsDivisionview) | Get a basic DncList information object |
+| [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
 | [**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | Get a Rule Set by ID. |
@@ -72,7 +75,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | Create Campaign Rule |
 | [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | Create a campaign. |
 | [**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | Get progress for a list of campaigns |
-| [**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled. |
 | [**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | Add contacts to a contact list. |
 | [**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | Get contacts from a contact list. |
 | [**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | Initiate the export of a contact list. |
@@ -2427,6 +2429,67 @@ try {
 
 [**ContactListEntityListing**](ContactListEntityListing.html)
 
+<a name="getOutboundContactlistsDivisionview"></a>
+
+# **getOutboundContactlistsDivisionview**
+
+
+
+> [ContactListDivisionView](ContactListDivisionView.html) getOutboundContactlistsDivisionview(contactListId, includeImportStatus, includeSize)
+
+Get a basic ContactList information object
+
+This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+
+Wraps GET /api/v2/outbound/contactlists/divisionviews/{contactListId}  
+
+Requires ANY permissions: 
+
+* outbound:contactList:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String contactListId = "contactListId_example"; // String | Contactlist ID
+Boolean includeImportStatus = false; // Boolean | Include import status
+Boolean includeSize = false; // Boolean | Include size
+try {
+    ContactListDivisionView result = apiInstance.getOutboundContactlistsDivisionview(contactListId, includeImportStatus, includeSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundContactlistsDivisionview");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contactListId** | **String**| Contactlist ID | |
+| **includeImportStatus** | **Boolean**| Include import status | [optional] [default to false] |
+| **includeSize** | **Boolean**| Include size | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListDivisionView**](ContactListDivisionView.html)
+
 <a name="getOutboundContactlistsDivisionviews"></a>
 
 # **getOutboundContactlistsDivisionviews**
@@ -2437,7 +2500,7 @@ try {
 
 Query a list of simplified contact list objects.
 
-This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
 
 Wraps GET /api/v2/outbound/contactlists/divisionviews  
 
@@ -2752,6 +2815,140 @@ try {
 ### Return type
 
 [**DncListEntityListing**](DncListEntityListing.html)
+
+<a name="getOutboundDnclistsDivisionview"></a>
+
+# **getOutboundDnclistsDivisionview**
+
+
+
+> [DncListDivisionView](DncListDivisionView.html) getOutboundDnclistsDivisionview(dncListId, includeImportStatus, includeSize)
+
+Get a basic DncList information object
+
+This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+
+Wraps GET /api/v2/outbound/dnclists/divisionviews/{dncListId}  
+
+Requires ANY permissions: 
+
+* outbound:dncList:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+String dncListId = "dncListId_example"; // String | Dnclist ID
+Boolean includeImportStatus = false; // Boolean | Include import status
+Boolean includeSize = false; // Boolean | Include size
+try {
+    DncListDivisionView result = apiInstance.getOutboundDnclistsDivisionview(dncListId, includeImportStatus, includeSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundDnclistsDivisionview");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dncListId** | **String**| Dnclist ID | |
+| **includeImportStatus** | **Boolean**| Include import status | [optional] [default to false] |
+| **includeSize** | **Boolean**| Include size | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DncListDivisionView**](DncListDivisionView.html)
+
+<a name="getOutboundDnclistsDivisionviews"></a>
+
+# **getOutboundDnclistsDivisionviews**
+
+
+
+> [DncListDivisionViewListing](DncListDivisionViewListing.html) getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
+
+Query a list of simplified dnc list objects.
+
+This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+
+Wraps GET /api/v2/outbound/dnclists/divisionviews  
+
+Requires ANY permissions: 
+
+* outbound:dncList:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+OutboundApi apiInstance = new OutboundApi();
+Boolean includeImportStatus = false; // Boolean | Include import status
+Boolean includeSize = false; // Boolean | Include size
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+String filterType = "Prefix"; // String | Filter type
+String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
+String sortBy = "sortBy_example"; // String | Sort by
+String sortOrder = "a"; // String | Sort order
+try {
+    DncListDivisionViewListing result = apiInstance.getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundDnclistsDivisionviews");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **includeImportStatus** | **Boolean**| Include import status | [optional] [default to false] |
+| **includeSize** | **Boolean**| Include size | [optional] [default to false] |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
+| **sortBy** | **String**| Sort by | [optional] |
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**DncListDivisionViewListing**](DncListDivisionViewListing.html)
 
 <a name="getOutboundEvent"></a>
 
@@ -3975,62 +4172,6 @@ try {
 ### Return type
 
 [**List&lt;CampaignProgress&gt;**](CampaignProgress.html)
-
-<a name="postOutboundContactlistClear"></a>
-
-# **postOutboundContactlistClear**
-
-
-
-> Void postOutboundContactlistClear(contactListId)
-
-Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-
-
-
-Wraps POST /api/v2/outbound/contactlists/{contactListId}/clear  
-
-Requires ANY permissions: 
-
-* outbound:contact:delete
-
-### Example
-
-~~~java
-//Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
-
-OutboundApi apiInstance = new OutboundApi();
-String contactListId = "contactListId_example"; // String | Contact List ID
-try {
-    apiInstance.postOutboundContactlistClear(contactListId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OutboundApi#postOutboundContactlistClear");
-    e.printStackTrace();
-}
-~~~
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **contactListId** | **String**| Contact List ID | |
-{: class="table table-striped"}
-
-### Return type
-
-null (empty response body)
 
 <a name="postOutboundContactlistContacts"></a>
 

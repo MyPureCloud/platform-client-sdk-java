@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.api.NotificationsApi;
 import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.neovisionaries.ws.client.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,7 +62,7 @@ public class NotificationHandler extends Object {
 
         // Set channel
         if (builder.channel == null) {
-            this.channel = notificationsApi.postNotificationsChannels();
+            this.channel = notificationsApi.postNotificationsChannels(PostNotificationsChannelsRequest.builder().build());
         } else {
             this.channel = builder.channel;
         }

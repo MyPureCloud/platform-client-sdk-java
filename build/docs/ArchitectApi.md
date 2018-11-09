@@ -2872,7 +2872,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
-String type = "type_example"; // String | Type
+List<String> type = Arrays.asList("type_example"); // List<String> | Type
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
@@ -2904,7 +2904,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Type |<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **type** | [**List&lt;String&gt;**](String.html)| Type | [optional]<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to id] |
@@ -3211,7 +3211,7 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ArchitectApi apiInstance = new ArchitectApi();
-String type = "type_example"; // String | Type
+List<String> type = Arrays.asList("type_example"); // List<String> | Type
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
@@ -3236,7 +3236,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Type |<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+| **type** | [**List&lt;String&gt;**](String.html)| Type | [optional]<br />**Values**: inboundcall, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **sortBy** | **String**| Sort by | [optional] [default to id] |

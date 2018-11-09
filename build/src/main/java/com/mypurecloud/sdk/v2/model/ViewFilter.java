@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -155,6 +156,115 @@ public class ViewFilter  implements Serializable {
   private List<String> surveyFormIds = new ArrayList<String>();
   private NumericRange surveyTotalScore = null;
   private NumericRange surveyNpsScore = null;
+  private Boolean showSecondaryStatus = null;
+
+  /**
+   * Provides the agent duration sort order
+   */
+  public enum AgentDurationSortOrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASCENDING("ascending"),
+    DESCENDING("descending");
+
+    private String value;
+
+    AgentDurationSortOrderEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AgentDurationSortOrderEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AgentDurationSortOrderEnum value : AgentDurationSortOrderEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AgentDurationSortOrderEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AgentDurationSortOrderEnum agentDurationSortOrder = null;
+
+  /**
+   * Provides the waiting duration sort order
+   */
+  public enum WaitingDurationSortOrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASCENDING("ascending"),
+    DESCENDING("descending");
+
+    private String value;
+
+    WaitingDurationSortOrderEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static WaitingDurationSortOrderEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (WaitingDurationSortOrderEnum value : WaitingDurationSortOrderEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return WaitingDurationSortOrderEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private WaitingDurationSortOrderEnum waitingDurationSortOrder = null;
+
+  /**
+   * Provides the interacting duration sort order
+   */
+  public enum InteractingDurationSortOrderEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ASCENDING("ascending"),
+    DESCENDING("descending");
+
+    private String value;
+
+    InteractingDurationSortOrderEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InteractingDurationSortOrderEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InteractingDurationSortOrderEnum value : InteractingDurationSortOrderEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InteractingDurationSortOrderEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private InteractingDurationSortOrderEnum interactingDurationSortOrder = null;
+  private String agentName = null;
+  private List<String> skillsList = new ArrayList<String>();
+  private List<String> languageList = new ArrayList<String>();
 
   
   /**
@@ -715,6 +825,132 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * Indicates if the Secondary Status should be shown
+   **/
+  public ViewFilter showSecondaryStatus(Boolean showSecondaryStatus) {
+    this.showSecondaryStatus = showSecondaryStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if the Secondary Status should be shown")
+  @JsonProperty("showSecondaryStatus")
+  public Boolean getShowSecondaryStatus() {
+    return showSecondaryStatus;
+  }
+  public void setShowSecondaryStatus(Boolean showSecondaryStatus) {
+    this.showSecondaryStatus = showSecondaryStatus;
+  }
+
+  
+  /**
+   * Provides the agent duration sort order
+   **/
+  public ViewFilter agentDurationSortOrder(AgentDurationSortOrderEnum agentDurationSortOrder) {
+    this.agentDurationSortOrder = agentDurationSortOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provides the agent duration sort order")
+  @JsonProperty("agentDurationSortOrder")
+  public AgentDurationSortOrderEnum getAgentDurationSortOrder() {
+    return agentDurationSortOrder;
+  }
+  public void setAgentDurationSortOrder(AgentDurationSortOrderEnum agentDurationSortOrder) {
+    this.agentDurationSortOrder = agentDurationSortOrder;
+  }
+
+  
+  /**
+   * Provides the waiting duration sort order
+   **/
+  public ViewFilter waitingDurationSortOrder(WaitingDurationSortOrderEnum waitingDurationSortOrder) {
+    this.waitingDurationSortOrder = waitingDurationSortOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provides the waiting duration sort order")
+  @JsonProperty("waitingDurationSortOrder")
+  public WaitingDurationSortOrderEnum getWaitingDurationSortOrder() {
+    return waitingDurationSortOrder;
+  }
+  public void setWaitingDurationSortOrder(WaitingDurationSortOrderEnum waitingDurationSortOrder) {
+    this.waitingDurationSortOrder = waitingDurationSortOrder;
+  }
+
+  
+  /**
+   * Provides the interacting duration sort order
+   **/
+  public ViewFilter interactingDurationSortOrder(InteractingDurationSortOrderEnum interactingDurationSortOrder) {
+    this.interactingDurationSortOrder = interactingDurationSortOrder;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provides the interacting duration sort order")
+  @JsonProperty("interactingDurationSortOrder")
+  public InteractingDurationSortOrderEnum getInteractingDurationSortOrder() {
+    return interactingDurationSortOrder;
+  }
+  public void setInteractingDurationSortOrder(InteractingDurationSortOrderEnum interactingDurationSortOrder) {
+    this.interactingDurationSortOrder = interactingDurationSortOrder;
+  }
+
+  
+  /**
+   * Displays the Agent name as provided by the user
+   **/
+  public ViewFilter agentName(String agentName) {
+    this.agentName = agentName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Displays the Agent name as provided by the user")
+  @JsonProperty("agentName")
+  public String getAgentName() {
+    return agentName;
+  }
+  public void setAgentName(String agentName) {
+    this.agentName = agentName;
+  }
+
+  
+  /**
+   * The list of skill strings as free form text
+   **/
+  public ViewFilter skillsList(List<String> skillsList) {
+    this.skillsList = skillsList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of skill strings as free form text")
+  @JsonProperty("skillsList")
+  public List<String> getSkillsList() {
+    return skillsList;
+  }
+  public void setSkillsList(List<String> skillsList) {
+    this.skillsList = skillsList;
+  }
+
+  
+  /**
+   * The list of language strings as free form text
+   **/
+  public ViewFilter languageList(List<String> languageList) {
+    this.languageList = languageList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of language strings as free form text")
+  @JsonProperty("languageList")
+  public List<String> getLanguageList() {
+    return languageList;
+  }
+  public void setLanguageList(List<String> languageList) {
+    this.languageList = languageList;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -755,12 +991,19 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.divisionIds, viewFilter.divisionIds) &&
         Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
         Objects.equals(this.surveyTotalScore, viewFilter.surveyTotalScore) &&
-        Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore);
+        Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore) &&
+        Objects.equals(this.showSecondaryStatus, viewFilter.showSecondaryStatus) &&
+        Objects.equals(this.agentDurationSortOrder, viewFilter.agentDurationSortOrder) &&
+        Objects.equals(this.waitingDurationSortOrder, viewFilter.waitingDurationSortOrder) &&
+        Objects.equals(this.interactingDurationSortOrder, viewFilter.interactingDurationSortOrder) &&
+        Objects.equals(this.agentName, viewFilter.agentName) &&
+        Objects.equals(this.skillsList, viewFilter.skillsList) &&
+        Objects.equals(this.languageList, viewFilter.languageList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList);
   }
 
   @Override
@@ -799,6 +1042,13 @@ public class ViewFilter  implements Serializable {
     sb.append("    surveyFormIds: ").append(toIndentedString(surveyFormIds)).append("\n");
     sb.append("    surveyTotalScore: ").append(toIndentedString(surveyTotalScore)).append("\n");
     sb.append("    surveyNpsScore: ").append(toIndentedString(surveyNpsScore)).append("\n");
+    sb.append("    showSecondaryStatus: ").append(toIndentedString(showSecondaryStatus)).append("\n");
+    sb.append("    agentDurationSortOrder: ").append(toIndentedString(agentDurationSortOrder)).append("\n");
+    sb.append("    waitingDurationSortOrder: ").append(toIndentedString(waitingDurationSortOrder)).append("\n");
+    sb.append("    interactingDurationSortOrder: ").append(toIndentedString(interactingDurationSortOrder)).append("\n");
+    sb.append("    agentName: ").append(toIndentedString(agentName)).append("\n");
+    sb.append("    skillsList: ").append(toIndentedString(skillsList)).append("\n");
+    sb.append("    languageList: ").append(toIndentedString(languageList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -147,6 +147,20 @@ public class GetRoutingLanguagesRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetRoutingLanguagesRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -177,6 +191,8 @@ public class GetRoutingLanguagesRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("id", "multi", id)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -221,6 +237,11 @@ public class GetRoutingLanguagesRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

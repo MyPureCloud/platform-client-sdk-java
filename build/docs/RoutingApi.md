@@ -988,7 +988,7 @@ This endpoint does not require any parameters.
 
 
 
-> [LanguageEntityListing](LanguageEntityListing.html) getRoutingLanguages(pageSize, pageNumber, sortOrder, name)
+> [LanguageEntityListing](LanguageEntityListing.html) getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id)
 
 Get the list of supported languages.
 
@@ -1020,8 +1020,9 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 try {
-    LanguageEntityListing result = apiInstance.getRoutingLanguages(pageSize, pageNumber, sortOrder, name);
+    LanguageEntityListing result = apiInstance.getRoutingLanguages(pageSize, pageNumber, sortOrder, name, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingLanguages");
@@ -1038,6 +1039,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **name** | **String**| Name | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1735,7 +1737,7 @@ try {
 
 
 
-> [SkillEntityListing](SkillEntityListing.html) getRoutingSkills(pageSize, pageNumber, name)
+> [SkillEntityListing](SkillEntityListing.html) getRoutingSkills(pageSize, pageNumber, name, id)
 
 Get the list of routing skills.
 
@@ -1766,8 +1768,9 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Filter for results that start with this value
+List<String> id = Arrays.asList("id_example"); // List<String> | id
 try {
-    SkillEntityListing result = apiInstance.getRoutingSkills(pageSize, pageNumber, name);
+    SkillEntityListing result = apiInstance.getRoutingSkills(pageSize, pageNumber, name, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingSkills");
@@ -1783,6 +1786,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **name** | **String**| Filter for results that start with this value | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
 {: class="table table-striped"}
 
 ### Return type

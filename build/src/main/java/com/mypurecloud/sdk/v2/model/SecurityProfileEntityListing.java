@@ -22,8 +22,8 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
   
   /**
    **/
-  public SecurityProfileEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-  
-  /**
-   **/
   public SecurityProfileEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+  
+  /**
+   **/
+  public SecurityProfileEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -214,8 +214,8 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
         Objects.equals(this.pageSize, securityProfileEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, securityProfileEntityListing.pageNumber) &&
         Objects.equals(this.total, securityProfileEntityListing.total) &&
-        Objects.equals(this.selfUri, securityProfileEntityListing.selfUri) &&
         Objects.equals(this.firstUri, securityProfileEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, securityProfileEntityListing.selfUri) &&
         Objects.equals(this.previousUri, securityProfileEntityListing.previousUri) &&
         Objects.equals(this.nextUri, securityProfileEntityListing.nextUri) &&
         Objects.equals(this.lastUri, securityProfileEntityListing.lastUri) &&
@@ -224,7 +224,7 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class SecurityProfileEntityListing  implements Serializable, PagedResourc
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");

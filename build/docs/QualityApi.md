@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | Gets all the revisions for a specific survey. |
 | [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
 | [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | Retrieve a list of survey forms by their ids |
+| [**getQualityFormsSurveysBulkContexts**](QualityApi.html#getQualityFormsSurveysBulkContexts) | Retrieve a list of the latest form versions by context ids |
 | [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | Get a keywordSet by id. |
 | [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | Get the list of keyword sets |
 | [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
@@ -1090,7 +1091,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
 
@@ -1126,8 +1127,9 @@ String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String expand = "expand_example"; // String | Expand
 String name = "name_example"; // String | Name
+String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    EvaluationFormEntityListing result = apiInstance.getQualityForms(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityForms");
@@ -1147,6 +1149,7 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] |
 | **expand** | **String**| Expand | [optional] |
 | **name** | **String**| Name | [optional] |
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1277,7 +1280,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of evaluation forms
 
@@ -1313,8 +1316,9 @@ String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String expand = "expand_example"; // String | Expand
 String name = "name_example"; // String | Name
+String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluations(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluations");
@@ -1334,6 +1338,7 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] |
 | **expand** | **String**| Expand | [optional] |
 | **name** | **String**| Name | [optional] |
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1464,7 +1469,7 @@ try {
 
 
 
-> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name)
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder)
 
 Get the list of survey forms
 
@@ -1500,8 +1505,9 @@ String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String expand = "expand_example"; // String | Expand
 String name = "name_example"; // String | Name
+String sortOrder = "sortOrder_example"; // String | Order to sort results, either asc or desc
 try {
-    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name);
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveys(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsSurveys");
@@ -1521,6 +1527,7 @@ try {
 | **previousPage** | **String**| Previous page token | [optional] |
 | **expand** | **String**| Expand | [optional] |
 | **name** | **String**| Name | [optional] |
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1533,7 +1540,7 @@ try {
 
 
 
-> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveysBulk(ids)
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveysBulk(id)
 
 Retrieve a list of survey forms by their ids
 
@@ -1562,9 +1569,9 @@ OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth")
 PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
 
 QualityApi apiInstance = new QualityApi();
-List<String> ids = Arrays.asList("ids_example"); // List<String> | A comma-delimited list of valid survey form ids
+List<String> id = Arrays.asList("id_example"); // List<String> | A comma-delimited list of valid survey form ids
 try {
-    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulk(ids);
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulk(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsSurveysBulk");
@@ -1577,7 +1584,66 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ids** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form ids | |
+| **id** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form ids | |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+
+<a name="getQualityFormsSurveysBulkContexts"></a>
+
+# **getQualityFormsSurveysBulkContexts**
+
+
+
+> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveysBulkContexts(contextId, published)
+
+Retrieve a list of the latest form versions by context ids
+
+
+
+Wraps GET /api/v2/quality/forms/surveys/bulk/contexts  
+
+Requires ANY permissions: 
+
+* quality:surveyForm:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+QualityApi apiInstance = new QualityApi();
+List<String> contextId = Arrays.asList("contextId_example"); // List<String> | A comma-delimited list of valid survey form context ids
+Boolean published = true; // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
+try {
+    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityFormsSurveysBulkContexts");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form context ids | |
+| **published** | **Boolean**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

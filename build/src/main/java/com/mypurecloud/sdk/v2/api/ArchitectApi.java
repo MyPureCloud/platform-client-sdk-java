@@ -4064,7 +4064,7 @@ public class ArchitectApi {
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-   * @param type Type (required)
+   * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -4086,14 +4086,14 @@ public class ArchitectApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowEntityListing getFlows(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
+  public FlowEntityListing getFlows(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
     return  getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId));
   }
 
   /**
    * Get a pageable list of flows, filtered by query parameters
    * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
-   * @param type Type (required)
+   * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -4114,11 +4114,11 @@ public class ArchitectApi {
    * @return FlowEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
+  public ApiResponse<FlowEntityListing> getFlowsWithHttpInfo(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
     return getFlows(createGetFlowsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, publishVersionId, editableBy, lockedBy, secure, deleted, includeSchemas, publishedAfter, publishedBefore, divisionId).withHttpInfo());
   }
 
-  private GetFlowsRequest createGetFlowsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) {
+  private GetFlowsRequest createGetFlowsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, String publishVersionId, String editableBy, String lockedBy, String secure, Boolean deleted, Boolean includeSchemas, String publishedAfter, String publishedBefore, List<String> divisionId) {
     return GetFlowsRequest.builder()
             .withType(type)
     
@@ -4567,7 +4567,7 @@ public class ArchitectApi {
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
    * This returns a simplified version of /flow consisting of name and type.
-   * @param type Type (required)
+   * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -4582,14 +4582,14 @@ public class ArchitectApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowDivisionViewEntityListing getFlowsDivisionviews(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
+  public FlowDivisionViewEntityListing getFlowsDivisionviews(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
     return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId));
   }
 
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
    * This returns a simplified version of /flow consisting of name and type.
-   * @param type Type (required)
+   * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Sort by (optional, default to id)
@@ -4603,11 +4603,11 @@ public class ArchitectApi {
    * @return FlowDivisionViewEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
+  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
     return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId).withHttpInfo());
   }
 
-  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(String type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) {
+  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) {
     return GetFlowsDivisionviewsRequest.builder()
             .withType(type)
     

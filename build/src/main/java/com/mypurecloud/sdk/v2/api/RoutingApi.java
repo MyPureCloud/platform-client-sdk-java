@@ -1398,12 +1398,13 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param name Name (optional)
+   * @param id id (optional)
    * @return LanguageEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LanguageEntityListing getRoutingLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException, ApiException {
-    return  getRoutingLanguages(createGetRoutingLanguagesRequest(pageSize, pageNumber, sortOrder, name));
+  public LanguageEntityListing getRoutingLanguages(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id) throws IOException, ApiException {
+    return  getRoutingLanguages(createGetRoutingLanguagesRequest(pageSize, pageNumber, sortOrder, name, id));
   }
 
   /**
@@ -1413,14 +1414,15 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param name Name (optional)
+   * @param id id (optional)
    * @return LanguageEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LanguageEntityListing> getRoutingLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name) throws IOException {
-    return getRoutingLanguages(createGetRoutingLanguagesRequest(pageSize, pageNumber, sortOrder, name).withHttpInfo());
+  public ApiResponse<LanguageEntityListing> getRoutingLanguagesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id) throws IOException {
+    return getRoutingLanguages(createGetRoutingLanguagesRequest(pageSize, pageNumber, sortOrder, name, id).withHttpInfo());
   }
 
-  private GetRoutingLanguagesRequest createGetRoutingLanguagesRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name) {
+  private GetRoutingLanguagesRequest createGetRoutingLanguagesRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id) {
     return GetRoutingLanguagesRequest.builder()
             .withPageSize(pageSize)
     
@@ -1429,6 +1431,8 @@ public class RoutingApi {
             .withSortOrder(sortOrder)
     
             .withName(name)
+    
+            .withId(id)
     
             .build();
   }
@@ -2477,12 +2481,13 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Filter for results that start with this value (optional)
+   * @param id id (optional)
    * @return SkillEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SkillEntityListing getRoutingSkills(Integer pageSize, Integer pageNumber, String name) throws IOException, ApiException {
-    return  getRoutingSkills(createGetRoutingSkillsRequest(pageSize, pageNumber, name));
+  public SkillEntityListing getRoutingSkills(Integer pageSize, Integer pageNumber, String name, List<String> id) throws IOException, ApiException {
+    return  getRoutingSkills(createGetRoutingSkillsRequest(pageSize, pageNumber, name, id));
   }
 
   /**
@@ -2491,20 +2496,23 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Filter for results that start with this value (optional)
+   * @param id id (optional)
    * @return SkillEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SkillEntityListing> getRoutingSkillsWithHttpInfo(Integer pageSize, Integer pageNumber, String name) throws IOException {
-    return getRoutingSkills(createGetRoutingSkillsRequest(pageSize, pageNumber, name).withHttpInfo());
+  public ApiResponse<SkillEntityListing> getRoutingSkillsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, List<String> id) throws IOException {
+    return getRoutingSkills(createGetRoutingSkillsRequest(pageSize, pageNumber, name, id).withHttpInfo());
   }
 
-  private GetRoutingSkillsRequest createGetRoutingSkillsRequest(Integer pageSize, Integer pageNumber, String name) {
+  private GetRoutingSkillsRequest createGetRoutingSkillsRequest(Integer pageSize, Integer pageNumber, String name, List<String> id) {
     return GetRoutingSkillsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withName(name)
+    
+            .withId(id)
     
             .build();
   }

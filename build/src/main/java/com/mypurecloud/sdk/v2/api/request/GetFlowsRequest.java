@@ -58,16 +58,16 @@ import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetFlowsRequest {
     
-	private String type;
-	public String getType() {
+	private List<String> type;
+	public List<String> getType() {
 		return this.type;
 	}
 
-	public void setType(String type) {
+	public void setType(List<String> type) {
 		this.type = type;
 	}
 
-	public GetFlowsRequest withType(String type) {
+	public GetFlowsRequest withType(List<String> type) {
 	    this.setType(type);
 	    return this;
 	} 
@@ -399,14 +399,9 @@ public class GetFlowsRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'type' is set
-        if (this.type == null) {
-            throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFlowsRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/flows")
-                .withQueryParameters("type", "", type)
+                .withQueryParameters("type", "multi", type)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
@@ -454,11 +449,6 @@ public class GetFlowsRequest {
 	}
 
 	
-	public static Builder builder(String type) {
-	    return new Builder()
-	            .withRequiredParams(type);
-	}
-	
 
 	public static class Builder {
 		private final GetFlowsRequest request;
@@ -468,13 +458,17 @@ public class GetFlowsRequest {
 		}
 
 		
-		public Builder withType(String type) {
+		public Builder withType(List<String> type) {
 			request.setType(type);
 			return this;
 		}
 
-		public Builder withType(typeValues type) {
-		    request.setType(type.toString());
+		public Builder withTypeEnumValues(List<typeValues> type) {
+		    List<String> stringList = new ArrayList<>();
+	      for (typeValues e : type) {
+	        stringList.add(e.toString());
+	      }
+	      request.setType(stringList);
 		    return this;
 		}
 		
@@ -570,19 +564,8 @@ public class GetFlowsRequest {
 		
 
 		
-		public Builder withRequiredParams(String type) {
-			request.setType(type);
-			
-			return this;
-		}
-		
 
 		public GetFlowsRequest build() {
-            
-            // verify the required parameter 'type' is set
-            if (request.type == null) {
-                throw new IllegalStateException("Missing the required parameter 'type' when building request for GetFlowsRequest.");
-            }
             
 			return request;
 		}

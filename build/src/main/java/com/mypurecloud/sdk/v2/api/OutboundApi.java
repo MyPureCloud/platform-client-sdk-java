@@ -34,9 +34,12 @@ import com.mypurecloud.sdk.v2.model.TimeZoneMappingPreview;
 import com.mypurecloud.sdk.v2.model.ContactListFilter;
 import com.mypurecloud.sdk.v2.model.ContactListFilterEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactListDivisionView;
 import com.mypurecloud.sdk.v2.model.ContactListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.DncList;
 import com.mypurecloud.sdk.v2.model.DncListEntityListing;
+import com.mypurecloud.sdk.v2.model.DncListDivisionView;
+import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
@@ -96,11 +99,14 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistTimezonemappingp
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
@@ -122,7 +128,6 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRe
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
-import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
@@ -3439,8 +3444,95 @@ public class OutboundApi {
 
   
   /**
+   * Get a basic ContactList information object
+   * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+   * @param contactListId Contactlist ID (required)
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @return ContactListDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListDivisionView getOutboundContactlistsDivisionview(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
+    return  getOutboundContactlistsDivisionview(createGetOutboundContactlistsDivisionviewRequest(contactListId, includeImportStatus, includeSize));
+  }
+
+  /**
+   * Get a basic ContactList information object
+   * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+   * @param contactListId Contactlist ID (required)
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @return ContactListDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListDivisionView> getOutboundContactlistsDivisionviewWithHttpInfo(String contactListId, Boolean includeImportStatus, Boolean includeSize) throws IOException {
+    return getOutboundContactlistsDivisionview(createGetOutboundContactlistsDivisionviewRequest(contactListId, includeImportStatus, includeSize).withHttpInfo());
+  }
+
+  private GetOutboundContactlistsDivisionviewRequest createGetOutboundContactlistsDivisionviewRequest(String contactListId, Boolean includeImportStatus, Boolean includeSize) {
+    return GetOutboundContactlistsDivisionviewRequest.builder()
+            .withContactListId(contactListId)
+    
+            .withIncludeImportStatus(includeImportStatus)
+    
+            .withIncludeSize(includeSize)
+    
+            .build();
+  }
+
+  /**
+   * Get a basic ContactList information object
+   * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+   * @param request The request object
+   * @return ContactListDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListDivisionView getOutboundContactlistsDivisionview(GetOutboundContactlistsDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a basic ContactList information object
+   * This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListDivisionView> getOutboundContactlistsDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListDivisionView> response = (ApiResponse<ContactListDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListDivisionView> response = (ApiResponse<ContactListDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Query a list of simplified contact list objects.
-   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
@@ -3460,7 +3552,7 @@ public class OutboundApi {
 
   /**
    * Query a list of simplified contact list objects.
-   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
    * @param includeImportStatus Include import status (optional, default to false)
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
@@ -3502,7 +3594,7 @@ public class OutboundApi {
 
   /**
    * Query a list of simplified contact list objects.
-   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
    * @param request The request object
    * @return ContactListDivisionViewListing
    * @throws ApiException if the request fails on the server
@@ -3521,7 +3613,7 @@ public class OutboundApi {
 
   /**
    * Query a list of simplified contact list objects.
-   * This return a simplified version of contact lists, consisting of the name, divisions, columns, and phone columns.
+   * This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3908,6 +4000,204 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncListEntityListing> response = (ApiResponse<DncListEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a basic DncList information object
+   * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+   * @param dncListId Dnclist ID (required)
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @return DncListDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DncListDivisionView getOutboundDnclistsDivisionview(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException, ApiException {
+    return  getOutboundDnclistsDivisionview(createGetOutboundDnclistsDivisionviewRequest(dncListId, includeImportStatus, includeSize));
+  }
+
+  /**
+   * Get a basic DncList information object
+   * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+   * @param dncListId Dnclist ID (required)
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @return DncListDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DncListDivisionView> getOutboundDnclistsDivisionviewWithHttpInfo(String dncListId, Boolean includeImportStatus, Boolean includeSize) throws IOException {
+    return getOutboundDnclistsDivisionview(createGetOutboundDnclistsDivisionviewRequest(dncListId, includeImportStatus, includeSize).withHttpInfo());
+  }
+
+  private GetOutboundDnclistsDivisionviewRequest createGetOutboundDnclistsDivisionviewRequest(String dncListId, Boolean includeImportStatus, Boolean includeSize) {
+    return GetOutboundDnclistsDivisionviewRequest.builder()
+            .withDncListId(dncListId)
+    
+            .withIncludeImportStatus(includeImportStatus)
+    
+            .withIncludeSize(includeSize)
+    
+            .build();
+  }
+
+  /**
+   * Get a basic DncList information object
+   * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+   * @param request The request object
+   * @return DncListDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DncListDivisionView getOutboundDnclistsDivisionview(GetOutboundDnclistsDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DncListDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncListDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a basic DncList information object
+   * This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DncListDivisionView> getOutboundDnclistsDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncListDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListDivisionView> response = (ApiResponse<DncListDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListDivisionView> response = (ApiResponse<DncListDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query a list of simplified dnc list objects.
+   * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return DncListDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DncListDivisionViewListing getOutboundDnclistsDivisionviews(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
+  }
+
+  /**
+   * Query a list of simplified dnc list objects.
+   * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+   * @param includeImportStatus Include import status (optional, default to false)
+   * @param includeSize Include size (optional, default to false)
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param filterType Filter type (optional, default to Prefix)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param sortBy Sort by (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return DncListDivisionViewListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DncListDivisionViewListing> getOutboundDnclistsDivisionviewsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
+    return getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundDnclistsDivisionviewsRequest createGetOutboundDnclistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
+    return GetOutboundDnclistsDivisionviewsRequest.builder()
+            .withIncludeImportStatus(includeImportStatus)
+    
+            .withIncludeSize(includeSize)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withFilterType(filterType)
+    
+            .withName(name)
+    
+            .withId(id)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Query a list of simplified dnc list objects.
+   * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+   * @param request The request object
+   * @return DncListDivisionViewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DncListDivisionViewListing getOutboundDnclistsDivisionviews(GetOutboundDnclistsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DncListDivisionViewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DncListDivisionViewListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of simplified dnc list objects.
+   * This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DncListDivisionViewListing> getOutboundDnclistsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DncListDivisionViewListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListDivisionViewListing> response = (ApiResponse<DncListDivisionViewListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DncListDivisionViewListing> response = (ApiResponse<DncListDivisionViewListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5636,82 +5926,6 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-   * 
-   * @param contactListId Contact List ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postOutboundContactlistClear(String contactListId) throws IOException, ApiException {
-     postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId));
-  }
-
-  /**
-   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-   * 
-   * @param contactListId Contact List ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postOutboundContactlistClearWithHttpInfo(String contactListId) throws IOException {
-    return postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId).withHttpInfo());
-  }
-
-  private PostOutboundContactlistClearRequest createPostOutboundContactlistClearRequest(String contactListId) {
-    return PostOutboundContactlistClearRequest.builder()
-            .withContactListId(contactListId)
-    
-            .build();
-  }
-
-  /**
-   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void postOutboundContactlistClear(PostOutboundContactlistClearRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> postOutboundContactlistClear(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

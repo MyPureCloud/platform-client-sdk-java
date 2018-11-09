@@ -24,6 +24,7 @@ public class AsyncWeekScheduleResponse  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PROCESSING("Processing"),
     COMPLETE("Complete"),
+    CANCELED("Canceled"),
     ERROR("Error");
 
     private String value;

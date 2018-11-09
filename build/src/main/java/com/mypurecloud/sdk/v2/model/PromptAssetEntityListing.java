@@ -22,8 +22,8 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
@@ -100,23 +100,6 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
   
   /**
    **/
-  public PromptAssetEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-  
-  /**
-   **/
   public PromptAssetEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+  
+  /**
+   **/
+  public PromptAssetEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -214,8 +214,8 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
         Objects.equals(this.pageSize, promptAssetEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, promptAssetEntityListing.pageNumber) &&
         Objects.equals(this.total, promptAssetEntityListing.total) &&
-        Objects.equals(this.selfUri, promptAssetEntityListing.selfUri) &&
         Objects.equals(this.firstUri, promptAssetEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, promptAssetEntityListing.selfUri) &&
         Objects.equals(this.previousUri, promptAssetEntityListing.previousUri) &&
         Objects.equals(this.nextUri, promptAssetEntityListing.nextUri) &&
         Objects.equals(this.lastUri, promptAssetEntityListing.lastUri) &&
@@ -224,7 +224,7 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class PromptAssetEntityListing  implements Serializable, PagedResource<Pr
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");

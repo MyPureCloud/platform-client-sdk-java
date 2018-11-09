@@ -57,6 +57,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
@@ -1619,12 +1620,13 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationFormEntityListing getQualityForms(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
-    return  getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
+  public EvaluationFormEntityListing getQualityForms(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException, ApiException {
+    return  getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder));
   }
 
   /**
@@ -1637,14 +1639,15 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
-    return getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException {
+    return getQualityForms(createGetQualityFormsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder).withHttpInfo());
   }
 
-  private GetQualityFormsRequest createGetQualityFormsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+  private GetQualityFormsRequest createGetQualityFormsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1659,6 +1662,8 @@ public class QualityApi {
             .withExpand(expand)
     
             .withName(name)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }
@@ -1888,12 +1893,13 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationFormEntityListing getQualityFormsEvaluations(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
-    return  getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
+  public EvaluationFormEntityListing getQualityFormsEvaluations(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException, ApiException {
+    return  getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder));
   }
 
   /**
@@ -1906,14 +1912,15 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
-    return getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException {
+    return getQualityFormsEvaluations(createGetQualityFormsEvaluationsRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder).withHttpInfo());
   }
 
-  private GetQualityFormsEvaluationsRequest createGetQualityFormsEvaluationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+  private GetQualityFormsEvaluationsRequest createGetQualityFormsEvaluationsRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsEvaluationsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1928,6 +1935,8 @@ public class QualityApi {
             .withExpand(expand)
     
             .withName(name)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }
@@ -2157,12 +2166,13 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return SurveyFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SurveyFormEntityListing getQualityFormsSurveys(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException, ApiException {
-    return  getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name));
+  public SurveyFormEntityListing getQualityFormsSurveys(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException, ApiException {
+    return  getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder));
   }
 
   /**
@@ -2175,14 +2185,15 @@ public class QualityApi {
    * @param previousPage Previous page token (optional)
    * @param expand Expand (optional)
    * @param name Name (optional)
+   * @param sortOrder Order to sort results, either asc or desc (optional)
    * @return SurveyFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) throws IOException {
-    return getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name).withHttpInfo());
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) throws IOException {
+    return getQualityFormsSurveys(createGetQualityFormsSurveysRequest(pageSize, pageNumber, sortBy, nextPage, previousPage, expand, name, sortOrder).withHttpInfo());
   }
 
-  private GetQualityFormsSurveysRequest createGetQualityFormsSurveysRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name) {
+  private GetQualityFormsSurveysRequest createGetQualityFormsSurveysRequest(Integer pageSize, Integer pageNumber, String sortBy, String nextPage, String previousPage, String expand, String name, String sortOrder) {
     return GetQualityFormsSurveysRequest.builder()
             .withPageSize(pageSize)
     
@@ -2197,6 +2208,8 @@ public class QualityApi {
             .withExpand(expand)
     
             .withName(name)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }
@@ -2253,29 +2266,29 @@ public class QualityApi {
   /**
    * Retrieve a list of survey forms by their ids
    * 
-   * @param ids A comma-delimited list of valid survey form ids (required)
+   * @param id A comma-delimited list of valid survey form ids (required)
    * @return SurveyFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SurveyFormEntityListing getQualityFormsSurveysBulk(List<String> ids) throws IOException, ApiException {
-    return  getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(ids));
+  public SurveyFormEntityListing getQualityFormsSurveysBulk(List<String> id) throws IOException, ApiException {
+    return  getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(id));
   }
 
   /**
    * Retrieve a list of survey forms by their ids
    * 
-   * @param ids A comma-delimited list of valid survey form ids (required)
+   * @param id A comma-delimited list of valid survey form ids (required)
    * @return SurveyFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkWithHttpInfo(List<String> ids) throws IOException {
-    return getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(ids).withHttpInfo());
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkWithHttpInfo(List<String> id) throws IOException {
+    return getQualityFormsSurveysBulk(createGetQualityFormsSurveysBulkRequest(id).withHttpInfo());
   }
 
-  private GetQualityFormsSurveysBulkRequest createGetQualityFormsSurveysBulkRequest(List<String> ids) {
+  private GetQualityFormsSurveysBulkRequest createGetQualityFormsSurveysBulkRequest(List<String> id) {
     return GetQualityFormsSurveysBulkRequest.builder()
-            .withIds(ids)
+            .withId(id)
     
             .build();
   }
@@ -2307,6 +2320,89 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param contextId A comma-delimited list of valid survey form context ids (required)
+   * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveysBulkContexts(List<String> contextId, Boolean published) throws IOException, ApiException {
+    return  getQualityFormsSurveysBulkContexts(createGetQualityFormsSurveysBulkContextsRequest(contextId, published));
+  }
+
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param contextId A comma-delimited list of valid survey form context ids (required)
+   * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
+   * @return SurveyFormEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkContextsWithHttpInfo(List<String> contextId, Boolean published) throws IOException {
+    return getQualityFormsSurveysBulkContexts(createGetQualityFormsSurveysBulkContextsRequest(contextId, published).withHttpInfo());
+  }
+
+  private GetQualityFormsSurveysBulkContextsRequest createGetQualityFormsSurveysBulkContextsRequest(List<String> contextId, Boolean published) {
+    return GetQualityFormsSurveysBulkContextsRequest.builder()
+            .withContextId(contextId)
+    
+            .withPublished(published)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param request The request object
+   * @return SurveyFormEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyFormEntityListing getQualityFormsSurveysBulkContexts(GetQualityFormsSurveysBulkContextsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of the latest form versions by context ids
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkContexts(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
     }

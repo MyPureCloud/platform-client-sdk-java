@@ -39,6 +39,49 @@ title: ViewFilter
 | **surveyFormIds** | **List&lt;String&gt;** | The survey form ids used to filter the view |  [optional] |
 | **surveyTotalScore** | [**NumericRange**](NumericRange.html) | The survey total score used to filter the view |  [optional] |
 | **surveyNpsScore** | [**NumericRange**](NumericRange.html) | The survey NPS score used to filter the view |  [optional] |
+| **showSecondaryStatus** | **Boolean** | Indicates if the Secondary Status should be shown |  [optional] |
+| **agentDurationSortOrder** | [**AgentDurationSortOrderEnum**](#AgentDurationSortOrderEnum) | Provides the agent duration sort order |  [optional] |
+| **waitingDurationSortOrder** | [**WaitingDurationSortOrderEnum**](#WaitingDurationSortOrderEnum) | Provides the waiting duration sort order |  [optional] |
+| **interactingDurationSortOrder** | [**InteractingDurationSortOrderEnum**](#InteractingDurationSortOrderEnum) | Provides the interacting duration sort order |  [optional] |
+| **agentName** | **String** | Displays the Agent name as provided by the user |  [optional] |
+| **skillsList** | **List&lt;String&gt;** | The list of skill strings as free form text |  [optional] |
+| **languageList** | **List&lt;String&gt;** | The list of language strings as free form text |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="AgentDurationSortOrderEnum"></a>
+
+## Enum: AgentDurationSortOrderEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ASCENDING | &quot;ascending&quot; |
+| DESCENDING | &quot;descending&quot; |
+{: class="table table-striped"}
+
+
+<a name="WaitingDurationSortOrderEnum"></a>
+
+## Enum: WaitingDurationSortOrderEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ASCENDING | &quot;ascending&quot; |
+| DESCENDING | &quot;descending&quot; |
+{: class="table table-striped"}
+
+
+<a name="InteractingDurationSortOrderEnum"></a>
+
+## Enum: InteractingDurationSortOrderEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ASCENDING | &quot;ascending&quot; |
+| DESCENDING | &quot;descending&quot; |
 {: class="table table-striped"}
 
 

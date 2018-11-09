@@ -169,6 +169,7 @@ public class AnalyticsSession  implements Serializable {
   private List<AnalyticsConversationSegment> segments = new ArrayList<AnalyticsConversationSegment>();
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
   private AnalyticsFlow flow = null;
+  private Boolean recording = null;
 
   
   /**
@@ -848,6 +849,24 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * Flag determining if an audio recording was started or not
+   **/
+  public AnalyticsSession recording(Boolean recording) {
+    this.recording = recording;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag determining if an audio recording was started or not")
+  @JsonProperty("recording")
+  public Boolean getRecording() {
+    return recording;
+  }
+  public void setRecording(Boolean recording) {
+    this.recording = recording;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -895,12 +914,13 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
         Objects.equals(this.segments, analyticsSession.segments) &&
         Objects.equals(this.metrics, analyticsSession.metrics) &&
-        Objects.equals(this.flow, analyticsSession.flow);
+        Objects.equals(this.flow, analyticsSession.flow) &&
+        Objects.equals(this.recording, analyticsSession.recording);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, recording);
   }
 
   @Override
@@ -946,6 +966,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
+    sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("}");
     return sb.toString();
   }

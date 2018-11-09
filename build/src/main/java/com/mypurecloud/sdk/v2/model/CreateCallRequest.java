@@ -28,6 +28,7 @@ public class CreateCallRequest  implements Serializable {
   private List<String> routingSkillsIds = new ArrayList<String>();
   private List<String> conversationIds = new ArrayList<String>();
   private List<Destination> participants = new ArrayList<Destination>();
+  private String uuiData = null;
 
   
   /**
@@ -228,6 +229,24 @@ public class CreateCallRequest  implements Serializable {
   }
 
   
+  /**
+   * User to User Information (UUI) data managed by SIP session application.
+   **/
+  public CreateCallRequest uuiData(String uuiData) {
+    this.uuiData = uuiData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User to User Information (UUI) data managed by SIP session application.")
+  @JsonProperty("uuiData")
+  public String getUuiData() {
+    return uuiData;
+  }
+  public void setUuiData(String uuiData) {
+    this.uuiData = uuiData;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -248,12 +267,13 @@ public class CreateCallRequest  implements Serializable {
         Objects.equals(this.languageId, createCallRequest.languageId) &&
         Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
         Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
-        Objects.equals(this.participants, createCallRequest.participants);
+        Objects.equals(this.participants, createCallRequest.participants) &&
+        Objects.equals(this.uuiData, createCallRequest.uuiData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants);
+    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants, uuiData);
   }
 
   @Override
@@ -272,6 +292,7 @@ public class CreateCallRequest  implements Serializable {
     sb.append("    routingSkillsIds: ").append(toIndentedString(routingSkillsIds)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
+    sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
