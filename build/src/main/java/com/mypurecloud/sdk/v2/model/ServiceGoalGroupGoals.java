@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmAbandonRate;
 import com.mypurecloud.sdk.v2.model.WfmAverageSpeedOfAnswer;
 import com.mypurecloud.sdk.v2.model.WfmServiceLevel;
 import io.swagger.annotations.ApiModel;
@@ -19,6 +20,7 @@ public class ServiceGoalGroupGoals  implements Serializable {
   
   private WfmServiceLevel serviceLevel = null;
   private WfmAverageSpeedOfAnswer averageSpeedOfAnswer = null;
+  private WfmAbandonRate abandonRate = null;
 
   
   /**
@@ -57,6 +59,24 @@ public class ServiceGoalGroupGoals  implements Serializable {
   }
 
   
+  /**
+   * Abandon rate targets for this service goal group
+   **/
+  public ServiceGoalGroupGoals abandonRate(WfmAbandonRate abandonRate) {
+    this.abandonRate = abandonRate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Abandon rate targets for this service goal group")
+  @JsonProperty("abandonRate")
+  public WfmAbandonRate getAbandonRate() {
+    return abandonRate;
+  }
+  public void setAbandonRate(WfmAbandonRate abandonRate) {
+    this.abandonRate = abandonRate;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,12 +88,13 @@ public class ServiceGoalGroupGoals  implements Serializable {
     }
     ServiceGoalGroupGoals serviceGoalGroupGoals = (ServiceGoalGroupGoals) o;
     return Objects.equals(this.serviceLevel, serviceGoalGroupGoals.serviceLevel) &&
-        Objects.equals(this.averageSpeedOfAnswer, serviceGoalGroupGoals.averageSpeedOfAnswer);
+        Objects.equals(this.averageSpeedOfAnswer, serviceGoalGroupGoals.averageSpeedOfAnswer) &&
+        Objects.equals(this.abandonRate, serviceGoalGroupGoals.abandonRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceLevel, averageSpeedOfAnswer);
+    return Objects.hash(serviceLevel, averageSpeedOfAnswer, abandonRate);
   }
 
   @Override
@@ -83,6 +104,7 @@ public class ServiceGoalGroupGoals  implements Serializable {
     
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
     sb.append("    averageSpeedOfAnswer: ").append(toIndentedString(averageSpeedOfAnswer)).append("\n");
+    sb.append("    abandonRate: ").append(toIndentedString(abandonRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }
