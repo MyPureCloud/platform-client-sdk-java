@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**getBillingReportsBillableusage**](BillingApi.html#getBillingReportsBillableusage) | Get a report of the billable usages (e.g. licenses and devices utilized) for a given period. |
+| [**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi.html#getBillingTrusteebillingoverviewTrustorOrgId) | Get the billing overview for an organization that is managed by a partner. |
 {: class="table table-striped"}
 
 <a name="getBillingReportsBillableusage"></a>
@@ -71,4 +72,63 @@ try {
 ### Return type
 
 [**BillingUsageReport**](BillingUsageReport.html)
+
+<a name="getBillingTrusteebillingoverviewTrustorOrgId"></a>
+
+# **getBillingTrusteebillingoverviewTrustorOrgId**
+
+
+
+> [TrusteeBillingOverview](TrusteeBillingOverview.html) getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex)
+
+Get the billing overview for an organization that is managed by a partner.
+
+Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+
+Wraps GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}  
+
+Requires ANY permissions: 
+
+* affiliateOrganization:clientBilling:view
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.BillingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud Auth
+OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
+PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+
+BillingApi apiInstance = new BillingApi();
+String trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
+Integer billingPeriodIndex = 0; // Integer | Billing Period Index
+try {
+    TrusteeBillingOverview result = apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BillingApi#getBillingTrusteebillingoverviewTrustorOrgId");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trustorOrgId** | **String**| The organization ID of the trustor (customer) organization. | |
+| **billingPeriodIndex** | **Integer**| Billing Period Index | [optional] [default to 0] |
+{: class="table table-striped"}
+
+### Return type
+
+[**TrusteeBillingOverview**](TrusteeBillingOverview.html)
 

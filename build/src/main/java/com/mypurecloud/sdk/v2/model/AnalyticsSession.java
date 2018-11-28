@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationSegment;
 import com.mypurecloud.sdk.v2.model.AnalyticsFlow;
+import com.mypurecloud.sdk.v2.model.AnalyticsMediaEndpointStat;
 import com.mypurecloud.sdk.v2.model.AnalyticsSessionMetric;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -169,6 +170,7 @@ public class AnalyticsSession  implements Serializable {
   private List<AnalyticsConversationSegment> segments = new ArrayList<AnalyticsConversationSegment>();
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
   private AnalyticsFlow flow = null;
+  private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
   private Boolean recording = null;
 
   
@@ -850,6 +852,24 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Media endpoint stats associated with this session
+   **/
+  public AnalyticsSession mediaEndpointStats(List<AnalyticsMediaEndpointStat> mediaEndpointStats) {
+    this.mediaEndpointStats = mediaEndpointStats;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media endpoint stats associated with this session")
+  @JsonProperty("mediaEndpointStats")
+  public List<AnalyticsMediaEndpointStat> getMediaEndpointStats() {
+    return mediaEndpointStats;
+  }
+  public void setMediaEndpointStats(List<AnalyticsMediaEndpointStat> mediaEndpointStats) {
+    this.mediaEndpointStats = mediaEndpointStats;
+  }
+
+  
+  /**
    * Flag determining if an audio recording was started or not
    **/
   public AnalyticsSession recording(Boolean recording) {
@@ -915,12 +935,13 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.segments, analyticsSession.segments) &&
         Objects.equals(this.metrics, analyticsSession.metrics) &&
         Objects.equals(this.flow, analyticsSession.flow) &&
+        Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
         Objects.equals(this.recording, analyticsSession.recording);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, recording);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording);
   }
 
   @Override
@@ -966,6 +987,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
+    sb.append("    mediaEndpointStats: ").append(toIndentedString(mediaEndpointStats)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("}");
     return sb.toString();

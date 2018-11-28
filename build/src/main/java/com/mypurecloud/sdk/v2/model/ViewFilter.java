@@ -265,6 +265,9 @@ public class ViewFilter  implements Serializable {
   private String agentName = null;
   private List<String> skillsList = new ArrayList<String>();
   private List<String> languageList = new ArrayList<String>();
+  private NumericRange mos = null;
+  private NumericRange surveyQuestionGroupScore = null;
+  private NumericRange surveyPromoterScore = null;
 
   
   /**
@@ -951,6 +954,60 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The desired range for mos values
+   **/
+  public ViewFilter mos(NumericRange mos) {
+    this.mos = mos;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The desired range for mos values")
+  @JsonProperty("mos")
+  public NumericRange getMos() {
+    return mos;
+  }
+  public void setMos(NumericRange mos) {
+    this.mos = mos;
+  }
+
+  
+  /**
+   * The survey question group score used to filter the view
+   **/
+  public ViewFilter surveyQuestionGroupScore(NumericRange surveyQuestionGroupScore) {
+    this.surveyQuestionGroupScore = surveyQuestionGroupScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The survey question group score used to filter the view")
+  @JsonProperty("surveyQuestionGroupScore")
+  public NumericRange getSurveyQuestionGroupScore() {
+    return surveyQuestionGroupScore;
+  }
+  public void setSurveyQuestionGroupScore(NumericRange surveyQuestionGroupScore) {
+    this.surveyQuestionGroupScore = surveyQuestionGroupScore;
+  }
+
+  
+  /**
+   * The survey promoter score used to filter the view
+   **/
+  public ViewFilter surveyPromoterScore(NumericRange surveyPromoterScore) {
+    this.surveyPromoterScore = surveyPromoterScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The survey promoter score used to filter the view")
+  @JsonProperty("surveyPromoterScore")
+  public NumericRange getSurveyPromoterScore() {
+    return surveyPromoterScore;
+  }
+  public void setSurveyPromoterScore(NumericRange surveyPromoterScore) {
+    this.surveyPromoterScore = surveyPromoterScore;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -998,12 +1055,15 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.interactingDurationSortOrder, viewFilter.interactingDurationSortOrder) &&
         Objects.equals(this.agentName, viewFilter.agentName) &&
         Objects.equals(this.skillsList, viewFilter.skillsList) &&
-        Objects.equals(this.languageList, viewFilter.languageList);
+        Objects.equals(this.languageList, viewFilter.languageList) &&
+        Objects.equals(this.mos, viewFilter.mos) &&
+        Objects.equals(this.surveyQuestionGroupScore, viewFilter.surveyQuestionGroupScore) &&
+        Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore);
   }
 
   @Override
@@ -1049,6 +1109,9 @@ public class ViewFilter  implements Serializable {
     sb.append("    agentName: ").append(toIndentedString(agentName)).append("\n");
     sb.append("    skillsList: ").append(toIndentedString(skillsList)).append("\n");
     sb.append("    languageList: ").append(toIndentedString(languageList)).append("\n");
+    sb.append("    mos: ").append(toIndentedString(mos)).append("\n");
+    sb.append("    surveyQuestionGroupScore: ").append(toIndentedString(surveyQuestionGroupScore)).append("\n");
+    sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

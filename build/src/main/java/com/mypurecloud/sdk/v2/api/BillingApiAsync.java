@@ -16,9 +16,11 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetBillingReportsBillableusageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBillingTrusteebillingoverviewTrustorOrgIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -104,6 +106,82 @@ public class BillingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BillingUsageReport> response = (ApiResponse<BillingUsageReport>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrusteeBillingOverview> getBillingTrusteebillingoverviewTrustorOrgIdAsync(GetBillingTrusteebillingoverviewTrustorOrgIdRequest request, final AsyncApiCallback<TrusteeBillingOverview> callback) {
+    try {
+      final SettableFuture<TrusteeBillingOverview> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrusteeBillingOverview>() {}, new AsyncApiCallback<ApiResponse<TrusteeBillingOverview>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrusteeBillingOverview> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrusteeBillingOverview>> getBillingTrusteebillingoverviewTrustorOrgIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrusteeBillingOverview>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrusteeBillingOverview>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrusteeBillingOverview>() {}, new AsyncApiCallback<ApiResponse<TrusteeBillingOverview>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrusteeBillingOverview> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrusteeBillingOverview> response = (ApiResponse<TrusteeBillingOverview>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrusteeBillingOverview> response = (ApiResponse<TrusteeBillingOverview>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

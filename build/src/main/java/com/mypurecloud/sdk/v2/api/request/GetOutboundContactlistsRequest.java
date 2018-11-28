@@ -207,6 +207,20 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetOutboundContactlistsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -302,6 +316,8 @@ public class GetOutboundContactlistsRequest {
         
                 .withQueryParameters("id", "multi", id)
         
+                .withQueryParameters("divisionId", "multi", divisionId)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
@@ -364,6 +380,11 @@ public class GetOutboundContactlistsRequest {
 		
 		public Builder withId(List<String> id) {
 			request.setId(id);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

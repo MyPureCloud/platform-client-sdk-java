@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityListingEvaluationForm;
-import com.mypurecloud.sdk.v2.model.QuestionGroup;
+import com.mypurecloud.sdk.v2.model.EvaluationQuestionGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class EvaluationForm  implements Serializable {
   private Date modifiedDate = null;
   private Boolean published = null;
   private String contextId = null;
-  private List<QuestionGroup> questionGroups = new ArrayList<QuestionGroup>();
+  private List<EvaluationQuestionGroup> questionGroups = new ArrayList<EvaluationQuestionGroup>();
   private DomainEntityListingEvaluationForm publishedVersions = null;
   private String selfUri = null;
 
@@ -109,17 +109,17 @@ public class EvaluationForm  implements Serializable {
   /**
    * A list of question groups
    **/
-  public EvaluationForm questionGroups(List<QuestionGroup> questionGroups) {
+  public EvaluationForm questionGroups(List<EvaluationQuestionGroup> questionGroups) {
     this.questionGroups = questionGroups;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "A list of question groups")
   @JsonProperty("questionGroups")
-  public List<QuestionGroup> getQuestionGroups() {
+  public List<EvaluationQuestionGroup> getQuestionGroups() {
     return questionGroups;
   }
-  public void setQuestionGroups(List<QuestionGroup> questionGroups) {
+  public void setQuestionGroups(List<EvaluationQuestionGroup> questionGroups) {
     this.questionGroups = questionGroups;
   }
 

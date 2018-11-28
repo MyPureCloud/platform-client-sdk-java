@@ -78,7 +78,7 @@ title: AggregateMetricData
 | NSURVEYSSTARTED | &quot;nSurveysStarted&quot; |
 | NSURVEYSABANDONED | &quot;nSurveysAbandoned&quot; |
 | NSURVEYSEXPIRED | &quot;nSurveysExpired&quot; |
-| NSURVEYSBOUNCED | &quot;nSurveysBounced&quot; |
+| NSURVEYERRORS | &quot;nSurveyErrors&quot; |
 | NSURVEYRESPONSES | &quot;nSurveyResponses&quot; |
 | NSURVEYANSWERRESPONSES | &quot;nSurveyAnswerResponses&quot; |
 | OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; |
@@ -95,6 +95,7 @@ title: AggregateMetricData
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
+| NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
 {: class="table table-striped"}
 
 

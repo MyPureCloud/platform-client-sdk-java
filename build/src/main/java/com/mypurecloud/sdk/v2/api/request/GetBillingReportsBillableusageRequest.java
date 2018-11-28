@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 public class GetBillingReportsBillableusageRequest {
     

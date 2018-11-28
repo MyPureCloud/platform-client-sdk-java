@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AggregateMetricData;
+import com.mypurecloud.sdk.v2.model.ObservationMetricData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class ObservationDataContainer  implements Serializable {
   
   private Map<String, String> group = null;
-  private List<AggregateMetricData> data = new ArrayList<AggregateMetricData>();
+  private List<ObservationMetricData> data = new ArrayList<ObservationMetricData>();
 
   
   /**
@@ -43,17 +43,17 @@ public class ObservationDataContainer  implements Serializable {
   
   /**
    **/
-  public ObservationDataContainer data(List<AggregateMetricData> data) {
+  public ObservationDataContainer data(List<ObservationMetricData> data) {
     this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("data")
-  public List<AggregateMetricData> getData() {
+  public List<ObservationMetricData> getData() {
     return data;
   }
-  public void setData(List<AggregateMetricData> data) {
+  public void setData(List<ObservationMetricData> data) {
     this.data = data;
   }
 

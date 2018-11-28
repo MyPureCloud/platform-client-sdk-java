@@ -101,11 +101,15 @@ title: AnalyticsQueryPredicate
 | SURVEYID | &quot;surveyId&quot; |
 | SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; |
 | SURVEYFORMID | &quot;surveyFormId&quot; |
+| SURVEYFORMNAME | &quot;surveyFormName&quot; |
 | SURVEYANSWERID | &quot;surveyAnswerId&quot; |
 | SURVEYQUESTIONID | &quot;surveyQuestionId&quot; |
 | SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; |
 | SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; |
 | SURVEYCOMPLETEDDATE | &quot;surveyCompletedDate&quot; |
+| SURVEYERRORREASON | &quot;surveyErrorReason&quot; |
+| SURVEYPREVIOUSSTATUS | &quot;surveyPreviousStatus&quot; |
+| SURVEYSTATUS | &quot;surveyStatus&quot; |
 | SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
 | ROUTINGSTATUS | &quot;routingStatus&quot; |
@@ -123,6 +127,10 @@ title: AnalyticsQueryPredicate
 | FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
 | FLOWOUTCOMEVALUE | &quot;flowOutcomeValue&quot; |
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
+| MINMOS | &quot;minMos&quot; |
+| MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; |
+| MINRFACTOR | &quot;minRFactor&quot; |
+| MEDIASTATSMINCONVERSATIONRFACTOR | &quot;mediaStatsMinConversationRFactor&quot; |
 {: class="table table-striped"}
 
 
@@ -206,7 +214,7 @@ title: AnalyticsQueryPredicate
 | NSURVEYSSTARTED | &quot;nSurveysStarted&quot; |
 | NSURVEYSABANDONED | &quot;nSurveysAbandoned&quot; |
 | NSURVEYSEXPIRED | &quot;nSurveysExpired&quot; |
-| NSURVEYSBOUNCED | &quot;nSurveysBounced&quot; |
+| NSURVEYERRORS | &quot;nSurveyErrors&quot; |
 | NSURVEYRESPONSES | &quot;nSurveyResponses&quot; |
 | NSURVEYANSWERRESPONSES | &quot;nSurveyAnswerResponses&quot; |
 | OSURVEYTOTALSCORE | &quot;oSurveyTotalScore&quot; |
@@ -223,6 +231,7 @@ title: AnalyticsQueryPredicate
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
+| NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
 {: class="table table-striped"}
 
 

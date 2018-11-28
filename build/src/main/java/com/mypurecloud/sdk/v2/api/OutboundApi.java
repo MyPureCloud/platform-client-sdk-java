@@ -128,6 +128,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRe
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistClearRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistContactsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistExportRequest;
@@ -3342,14 +3343,15 @@ public class OutboundApi {
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param id id (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
+  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -3362,16 +3364,17 @@ public class OutboundApi {
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param id id (optional)
+   * @param divisionId Division ID(s) (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
-    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
+  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundContactlistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -3386,6 +3389,8 @@ public class OutboundApi {
             .withName(name)
     
             .withId(id)
+    
+            .withDivisionId(divisionId)
     
             .withSortBy(sortBy)
     
@@ -5926,6 +5931,82 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundContactlistClear(String contactListId) throws IOException, ApiException {
+     postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId));
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param contactListId Contact List ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundContactlistClearWithHttpInfo(String contactListId) throws IOException {
+    return postOutboundContactlistClear(createPostOutboundContactlistClearRequest(contactListId).withHttpInfo());
+  }
+
+  private PostOutboundContactlistClearRequest createPostOutboundContactlistClearRequest(String contactListId) {
+    return PostOutboundContactlistClearRequest.builder()
+            .withContactListId(contactListId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postOutboundContactlistClear(PostOutboundContactlistClearRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postOutboundContactlistClear(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

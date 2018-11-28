@@ -23,6 +23,8 @@ public class AnalyticsConversation  implements Serializable {
   private String conversationId = null;
   private Date conversationStart = null;
   private Date conversationEnd = null;
+  private Double mediaStatsMinConversationMos = null;
+  private Double mediaStatsMinConversationRFactor = null;
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
   private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
@@ -80,6 +82,42 @@ public class AnalyticsConversation  implements Serializable {
   }
   public void setConversationEnd(Date conversationEnd) {
     this.conversationEnd = conversationEnd;
+  }
+
+  
+  /**
+   * The lowest estimated average MOS among all the audio streams belonging to this conversation
+   **/
+  public AnalyticsConversation mediaStatsMinConversationMos(Double mediaStatsMinConversationMos) {
+    this.mediaStatsMinConversationMos = mediaStatsMinConversationMos;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The lowest estimated average MOS among all the audio streams belonging to this conversation")
+  @JsonProperty("mediaStatsMinConversationMos")
+  public Double getMediaStatsMinConversationMos() {
+    return mediaStatsMinConversationMos;
+  }
+  public void setMediaStatsMinConversationMos(Double mediaStatsMinConversationMos) {
+    this.mediaStatsMinConversationMos = mediaStatsMinConversationMos;
+  }
+
+  
+  /**
+   * The lowest R-factor value among all of the audio streams belonging to this conversation
+   **/
+  public AnalyticsConversation mediaStatsMinConversationRFactor(Double mediaStatsMinConversationRFactor) {
+    this.mediaStatsMinConversationRFactor = mediaStatsMinConversationRFactor;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The lowest R-factor value among all of the audio streams belonging to this conversation")
+  @JsonProperty("mediaStatsMinConversationRFactor")
+  public Double getMediaStatsMinConversationRFactor() {
+    return mediaStatsMinConversationRFactor;
+  }
+  public void setMediaStatsMinConversationRFactor(Double mediaStatsMinConversationRFactor) {
+    this.mediaStatsMinConversationRFactor = mediaStatsMinConversationRFactor;
   }
 
   
@@ -168,6 +206,8 @@ public class AnalyticsConversation  implements Serializable {
     return Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
         Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
         Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
+        Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
+        Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
         Objects.equals(this.participants, analyticsConversation.participants) &&
         Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
         Objects.equals(this.surveys, analyticsConversation.surveys) &&
@@ -176,7 +216,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, participants, evaluations, surveys, divisionIds);
+    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, participants, evaluations, surveys, divisionIds);
   }
 
   @Override
@@ -187,6 +227,8 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationStart: ").append(toIndentedString(conversationStart)).append("\n");
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
+    sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
+    sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");

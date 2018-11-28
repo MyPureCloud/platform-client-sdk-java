@@ -88,11 +88,15 @@ public class AggregationQuery  implements Serializable {
     SURVEYID("surveyId"),
     SURVEYFORMCONTEXTID("surveyFormContextId"),
     SURVEYFORMID("surveyFormId"),
+    SURVEYFORMNAME("surveyFormName"),
     SURVEYANSWERID("surveyAnswerId"),
     SURVEYQUESTIONID("surveyQuestionId"),
     SURVEYQUESTIONGROUPID("surveyQuestionGroupId"),
     SURVEYPROMOTERSCORE("surveyPromoterScore"),
     SURVEYCOMPLETEDDATE("surveyCompletedDate"),
+    SURVEYERRORREASON("surveyErrorReason"),
+    SURVEYPREVIOUSSTATUS("surveyPreviousStatus"),
+    SURVEYSTATUS("surveyStatus"),
     SYSTEMPRESENCE("systemPresence"),
     ORGANIZATIONPRESENCEID("organizationPresenceId"),
     ROUTINGSTATUS("routingStatus"),
@@ -109,7 +113,11 @@ public class AggregationQuery  implements Serializable {
     ENDINGLANGUAGE("endingLanguage"),
     FLOWOUTCOMEID("flowOutcomeId"),
     FLOWOUTCOMEVALUE("flowOutcomeValue"),
-    FLOWOUTCOME("flowOutcome");
+    FLOWOUTCOME("flowOutcome"),
+    MINMOS("minMos"),
+    MEDIASTATSMINCONVERSATIONMOS("mediaStatsMinConversationMos"),
+    MINRFACTOR("minRFactor"),
+    MEDIASTATSMINCONVERSATIONRFACTOR("mediaStatsMinConversationRFactor");
 
     private String value;
 
@@ -200,7 +208,7 @@ public class AggregationQuery  implements Serializable {
     NSURVEYSSTARTED("nSurveysStarted"),
     NSURVEYSABANDONED("nSurveysAbandoned"),
     NSURVEYSEXPIRED("nSurveysExpired"),
-    NSURVEYSBOUNCED("nSurveysBounced"),
+    NSURVEYERRORS("nSurveyErrors"),
     NSURVEYRESPONSES("nSurveyResponses"),
     NSURVEYANSWERRESPONSES("nSurveyAnswerResponses"),
     OSURVEYTOTALSCORE("oSurveyTotalScore"),
@@ -216,7 +224,8 @@ public class AggregationQuery  implements Serializable {
     TFLOWEXIT("tFlowExit"),
     TFLOW("tFlow"),
     TFLOWOUTCOME("tFlowOutcome"),
-    NFLOWOUTCOME("nFlowOutcome");
+    NFLOWOUTCOME("nFlowOutcome"),
+    NFLOWOUTCOMEFAILED("nFlowOutcomeFailed");
 
     private String value;
 

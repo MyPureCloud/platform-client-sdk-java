@@ -23,8 +23,8 @@ public class AnalyticsEvaluation  implements Serializable {
   private String formId = null;
   private String contextId = null;
   private String formName = null;
-  private Long getoTotalScore = null;
-  private Long getoTotalCriticalScore = null;
+  private Long oTotalScore = null;
+  private Long oTotalCriticalScore = null;
 
   
   /**
@@ -172,38 +172,36 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
-   * The total evaluation for interactions
    **/
-  public AnalyticsEvaluation getoTotalScore(Long getoTotalScore) {
-    this.getoTotalScore = getoTotalScore;
+  public AnalyticsEvaluation oTotalScore(Long oTotalScore) {
+    this.oTotalScore = oTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The total evaluation for interactions")
-  @JsonProperty("getoTotalScore")
-  public Long getGetoTotalScore() {
-    return getoTotalScore;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalScore")
+  public Long getOTotalScore() {
+    return oTotalScore;
   }
-  public void setGetoTotalScore(Long getoTotalScore) {
-    this.getoTotalScore = getoTotalScore;
+  public void setOTotalScore(Long oTotalScore) {
+    this.oTotalScore = oTotalScore;
   }
 
   
   /**
-   * The score for critical evaluation questions
    **/
-  public AnalyticsEvaluation getoTotalCriticalScore(Long getoTotalCriticalScore) {
-    this.getoTotalCriticalScore = getoTotalCriticalScore;
+  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The score for critical evaluation questions")
-  @JsonProperty("getoTotalCriticalScore")
-  public Long getGetoTotalCriticalScore() {
-    return getoTotalCriticalScore;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalCriticalScore")
+  public Long getOTotalCriticalScore() {
+    return oTotalCriticalScore;
   }
-  public void setGetoTotalCriticalScore(Long getoTotalCriticalScore) {
-    this.getoTotalCriticalScore = getoTotalCriticalScore;
+  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
   }
 
   
@@ -225,13 +223,13 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.formId, analyticsEvaluation.formId) &&
         Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
         Objects.equals(this.formName, analyticsEvaluation.formName) &&
-        Objects.equals(this.getoTotalScore, analyticsEvaluation.getoTotalScore) &&
-        Objects.equals(this.getoTotalCriticalScore, analyticsEvaluation.getoTotalCriticalScore);
+        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore) &&
+        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, getoTotalScore, getoTotalCriticalScore);
+    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, oTotalScore, oTotalCriticalScore);
   }
 
   @Override
@@ -247,8 +245,8 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    formId: ").append(toIndentedString(formId)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    formName: ").append(toIndentedString(formName)).append("\n");
-    sb.append("    getoTotalScore: ").append(toIndentedString(getoTotalScore)).append("\n");
-    sb.append("    getoTotalCriticalScore: ").append(toIndentedString(getoTotalCriticalScore)).append("\n");
+    sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");
+    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

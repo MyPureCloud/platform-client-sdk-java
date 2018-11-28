@@ -24,6 +24,7 @@ public class ConversationQuery  implements Serializable {
   private List<AnalyticsQueryFilter> conversationFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> evaluationFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> surveyFilters = new ArrayList<AnalyticsQueryFilter>();
+  private List<AnalyticsQueryFilter> mediaEndpointStatFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> segmentFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryAggregation> aggregations = new ArrayList<AnalyticsQueryAggregation>();
   private PagingSpec paging = null;
@@ -174,6 +175,24 @@ public class ConversationQuery  implements Serializable {
 
   
   /**
+   * Filters that target call quality of service data
+   **/
+  public ConversationQuery mediaEndpointStatFilters(List<AnalyticsQueryFilter> mediaEndpointStatFilters) {
+    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target call quality of service data")
+  @JsonProperty("mediaEndpointStatFilters")
+  public List<AnalyticsQueryFilter> getMediaEndpointStatFilters() {
+    return mediaEndpointStatFilters;
+  }
+  public void setMediaEndpointStatFilters(List<AnalyticsQueryFilter> mediaEndpointStatFilters) {
+    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
+  }
+
+  
+  /**
    * Filters that target individual segments within a conversation
    **/
   public ConversationQuery segmentFilters(List<AnalyticsQueryFilter> segmentFilters) {
@@ -277,6 +296,7 @@ public class ConversationQuery  implements Serializable {
         Objects.equals(this.conversationFilters, conversationQuery.conversationFilters) &&
         Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
         Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
+        Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
         Objects.equals(this.aggregations, conversationQuery.aggregations) &&
         Objects.equals(this.paging, conversationQuery.paging) &&
@@ -286,7 +306,7 @@ public class ConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, segmentFilters, aggregations, paging, order, orderBy);
+    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, mediaEndpointStatFilters, segmentFilters, aggregations, paging, order, orderBy);
   }
 
   @Override
@@ -298,6 +318,7 @@ public class ConversationQuery  implements Serializable {
     sb.append("    conversationFilters: ").append(toIndentedString(conversationFilters)).append("\n");
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
+    sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
     sb.append("    paging: ").append(toIndentedString(paging)).append("\n");

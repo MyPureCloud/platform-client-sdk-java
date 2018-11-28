@@ -19,7 +19,7 @@ title: SurveyForm
 | **headerImageUrl** | **String** | Temporary URL for accessing header image |  [optional] |
 | **header** | **String** | Markdown text for the top of the form. |  [optional] |
 | **footer** | **String** | Markdown text for the bottom of the form. |  [optional] |
-| **questionGroups** | [**List&lt;QuestionGroup&gt;**](QuestionGroup.html) | A list of question groups |  |
+| **questionGroups** | [**List&lt;SurveyQuestionGroup&gt;**](SurveyQuestionGroup.html) | A list of question groups |  |
 | **publishedVersions** | [**DomainEntityListingSurveyForm**](DomainEntityListingSurveyForm.html) | List of published version of this form |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

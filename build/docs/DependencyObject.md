@@ -8,7 +8,7 @@ title: DependencyObject
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The dependency identifier |  [optional] |
 | **name** | **String** |  |  [optional] |
 | **version** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |

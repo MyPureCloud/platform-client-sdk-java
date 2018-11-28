@@ -80,7 +80,7 @@ public class ObservationQuery  implements Serializable {
     NSURVEYSSTARTED("nSurveysStarted"),
     NSURVEYSABANDONED("nSurveysAbandoned"),
     NSURVEYSEXPIRED("nSurveysExpired"),
-    NSURVEYSBOUNCED("nSurveysBounced"),
+    NSURVEYERRORS("nSurveyErrors"),
     NSURVEYRESPONSES("nSurveyResponses"),
     NSURVEYANSWERRESPONSES("nSurveyAnswerResponses"),
     OSURVEYTOTALSCORE("oSurveyTotalScore"),
@@ -96,7 +96,8 @@ public class ObservationQuery  implements Serializable {
     TFLOWEXIT("tFlowExit"),
     TFLOW("tFlow"),
     TFLOWOUTCOME("tFlowOutcome"),
-    NFLOWOUTCOME("nFlowOutcome");
+    NFLOWOUTCOME("nFlowOutcome"),
+    NFLOWOUTCOMEFAILED("nFlowOutcomeFailed");
 
     private String value;
 

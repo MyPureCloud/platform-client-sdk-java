@@ -8,7 +8,7 @@ title: Flow
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
+| **id** | **String** | The flow identifier |  [optional] |
 | **name** | **String** | The flow name |  |
 | **division** | [**Division**](Division.html) | The division to which this entity belongs. |  [optional] |
 | **description** | **String** |  |  [optional] |

@@ -2,9 +2,9 @@ package com.mypurecloud.sdk.v2;
 
 import com.mypurecloud.sdk.v2.extensions.notifications.NotificationEvent;
 import com.mypurecloud.sdk.v2.extensions.notifications.NotificationListener;
-import com.mypurecloud.sdk.v2.model.UserPresenceNotification;
+import com.mypurecloud.sdk.v2.model.PresenceEventUserPresence;
 
-public class UserPresenceListener implements NotificationListener<UserPresenceNotification> {
+public class UserPresenceListener implements NotificationListener<PresenceEventUserPresence> {
     private String topic;
     private String systemPresence = "";
     private String presenceId = "";
@@ -23,17 +23,17 @@ public class UserPresenceListener implements NotificationListener<UserPresenceNo
 
 
 
-    public Class<UserPresenceNotification> getEventBodyClass() {
-        return UserPresenceNotification.class;
+    public Class<PresenceEventUserPresence> getEventBodyClass() {
+        return PresenceEventUserPresence.class;
     }
 
     @Override
     public void onEvent(NotificationEvent<?> event) {
-        UserPresenceNotification notification = (UserPresenceNotification)event.getEventBody();
+        PresenceEventUserPresence notification = (PresenceEventUserPresence)event.getEventBody();
         systemPresence = notification.getPresenceDefinition().getSystemPresence();
         presenceId = notification.getPresenceDefinition().getId();
 
-        System.out.println("system presence -> " + ((UserPresenceNotification)event.getEventBody()).getPresenceDefinition().getSystemPresence());
+        System.out.println("system presence -> " + ((PresenceEventUserPresence)event.getEventBody()).getPresenceDefinition().getSystemPresence());
     }
 
     public UserPresenceListener(String userId) {

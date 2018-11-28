@@ -13,9 +13,11 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.BillingUsageReport;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import java.util.Date;
+import com.mypurecloud.sdk.v2.model.TrusteeBillingOverview;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetBillingReportsBillableusageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetBillingTrusteebillingoverviewTrustorOrgIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -114,6 +116,89 @@ public class BillingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BillingUsageReport> response = (ApiResponse<BillingUsageReport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param trustorOrgId The organization ID of the trustor (customer) organization. (required)
+   * @param billingPeriodIndex Billing Period Index (optional, default to 0)
+   * @return TrusteeBillingOverview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrusteeBillingOverview getBillingTrusteebillingoverviewTrustorOrgId(String trustorOrgId, Integer billingPeriodIndex) throws IOException, ApiException {
+    return  getBillingTrusteebillingoverviewTrustorOrgId(createGetBillingTrusteebillingoverviewTrustorOrgIdRequest(trustorOrgId, billingPeriodIndex));
+  }
+
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param trustorOrgId The organization ID of the trustor (customer) organization. (required)
+   * @param billingPeriodIndex Billing Period Index (optional, default to 0)
+   * @return TrusteeBillingOverview
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrusteeBillingOverview> getBillingTrusteebillingoverviewTrustorOrgIdWithHttpInfo(String trustorOrgId, Integer billingPeriodIndex) throws IOException {
+    return getBillingTrusteebillingoverviewTrustorOrgId(createGetBillingTrusteebillingoverviewTrustorOrgIdRequest(trustorOrgId, billingPeriodIndex).withHttpInfo());
+  }
+
+  private GetBillingTrusteebillingoverviewTrustorOrgIdRequest createGetBillingTrusteebillingoverviewTrustorOrgIdRequest(String trustorOrgId, Integer billingPeriodIndex) {
+    return GetBillingTrusteebillingoverviewTrustorOrgIdRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+    
+            .withBillingPeriodIndex(billingPeriodIndex)
+    
+            .build();
+  }
+
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param request The request object
+   * @return TrusteeBillingOverview
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrusteeBillingOverview getBillingTrusteebillingoverviewTrustorOrgId(GetBillingTrusteebillingoverviewTrustorOrgIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrusteeBillingOverview> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrusteeBillingOverview>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the billing overview for an organization that is managed by a partner.
+   * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrusteeBillingOverview> getBillingTrusteebillingoverviewTrustorOrgId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrusteeBillingOverview>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrusteeBillingOverview> response = (ApiResponse<TrusteeBillingOverview>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrusteeBillingOverview> response = (ApiResponse<TrusteeBillingOverview>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

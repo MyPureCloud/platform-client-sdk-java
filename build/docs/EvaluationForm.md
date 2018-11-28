@@ -13,7 +13,7 @@ title: EvaluationForm
 | **modifiedDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **published** | **Boolean** |  |  [optional] |
 | **contextId** | **String** |  |  [optional] |
-| **questionGroups** | [**List&lt;QuestionGroup&gt;**](QuestionGroup.html) | A list of question groups |  |
+| **questionGroups** | [**List&lt;EvaluationQuestionGroup&gt;**](EvaluationQuestionGroup.html) | A list of question groups |  |
 | **publishedVersions** | [**DomainEntityListingEvaluationForm**](DomainEntityListingEvaluationForm.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
