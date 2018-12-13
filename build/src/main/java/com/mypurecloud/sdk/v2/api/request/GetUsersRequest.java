@@ -174,7 +174,8 @@ public class GetUsersRequest {
 		LOCATIONS("locations"), 
 		GROUPS("groups"), 
 		SKILLS("skills"), 
-		LANGUAGES("languages");
+		LANGUAGES("languages"), 
+		LANGUAGEPREFERENCE("languagePreference");
 
 		private String value;
 
@@ -285,7 +286,7 @@ public class GetUsersRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

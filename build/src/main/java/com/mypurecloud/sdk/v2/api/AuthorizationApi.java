@@ -1145,7 +1145,7 @@ public class AuthorizationApi {
 
   
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param leftRoleId Left Role ID (required)
    * @param rightRoleId Right Role id (required)
@@ -1158,7 +1158,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param leftRoleId Left Role ID (required)
    * @param rightRoleId Right Role id (required)
@@ -1179,7 +1179,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param request The request object
    * @return DomainOrgRoleDifference
@@ -1198,7 +1198,7 @@ public class AuthorizationApi {
   }
 
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param request The request object
    * @return the response
@@ -2020,11 +2020,12 @@ public class AuthorizationApi {
    * 
    * @param roleId Role ID (required)
    * @param body Subjects and Divisions (required)
+   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postAuthorizationRole(String roleId, SubjectDivisions body) throws IOException, ApiException {
-     postAuthorizationRole(createPostAuthorizationRoleRequest(roleId, body));
+  public void postAuthorizationRole(String roleId, SubjectDivisions body, String subjectType) throws IOException, ApiException {
+     postAuthorizationRole(createPostAuthorizationRoleRequest(roleId, body, subjectType));
   }
 
   /**
@@ -2032,17 +2033,20 @@ public class AuthorizationApi {
    * 
    * @param roleId Role ID (required)
    * @param body Subjects and Divisions (required)
+   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postAuthorizationRoleWithHttpInfo(String roleId, SubjectDivisions body) throws IOException {
-    return postAuthorizationRole(createPostAuthorizationRoleRequest(roleId, body).withHttpInfo());
+  public ApiResponse<Void> postAuthorizationRoleWithHttpInfo(String roleId, SubjectDivisions body, String subjectType) throws IOException {
+    return postAuthorizationRole(createPostAuthorizationRoleRequest(roleId, body, subjectType).withHttpInfo());
   }
 
-  private PostAuthorizationRoleRequest createPostAuthorizationRoleRequest(String roleId, SubjectDivisions body) {
+  private PostAuthorizationRoleRequest createPostAuthorizationRoleRequest(String roleId, SubjectDivisions body, String subjectType) {
     return PostAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
     
             .withBody(body)
+    
+            .withSubjectType(subjectType)
     
             .build();
   }

@@ -48,9 +48,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 String presenceId = "presenceId_example"; // String | Organization Presence ID
@@ -103,9 +103,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 String presenceId = "presenceId_example"; // String | Organization Presence ID
@@ -161,9 +161,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 Integer pageNumber = 1; // Integer | Page number
@@ -223,9 +223,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 try {
@@ -275,9 +275,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 String userId = "userId_example"; // String | user Id
@@ -333,9 +333,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 String userId = "userId_example"; // String | user Id
@@ -394,9 +394,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 OrganizationPresence body = new OrganizationPresence(); // OrganizationPresence | The Presence Definition to create
@@ -451,9 +451,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 String presenceId = "presenceId_example"; // String | Organization Presence ID
@@ -510,9 +510,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 PresenceApi apiInstance = new PresenceApi();
 List<UserPresence> body = Arrays.asList(new UserPresence()); // List<UserPresence> | List of User presences

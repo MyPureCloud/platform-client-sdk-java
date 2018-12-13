@@ -32,7 +32,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | Get the members of this queue |
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
-| [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
+| [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
+| [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization. |
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
@@ -44,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
-| [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | Update the ring number of joined status for a User in a Queue |
+| [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | Update the ring number or joined status for a User in a Queue |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | Join or unjoin a set of users for a queue |
 | [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
 | [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
@@ -101,9 +102,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainId = "domainId_example"; // String | domain ID
@@ -157,9 +158,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
@@ -215,9 +216,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -273,9 +274,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -331,9 +332,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -389,9 +390,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String skillId = "skillId_example"; // String | Skill ID
@@ -445,9 +446,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
@@ -501,9 +502,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 try {
@@ -553,9 +554,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String codeId = "codeId_example"; // String | Wrapup Code ID
@@ -610,9 +611,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -669,9 +670,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -727,9 +728,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainId = "domainId_example"; // String | domain ID
@@ -784,9 +785,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
@@ -843,9 +844,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
@@ -906,9 +907,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 try {
@@ -959,9 +960,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 try {
@@ -1011,9 +1012,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1076,9 +1077,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String recipientId = "recipientId_example"; // String | Recipient ID
@@ -1133,9 +1134,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String messengerType = "messengerType_example"; // String | Messenger Type
@@ -1194,9 +1195,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -1251,9 +1252,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | queueId
@@ -1310,9 +1311,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | queueId
@@ -1369,9 +1370,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -1404,7 +1405,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 | **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages |
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
 | **joined** | **Boolean**| Filter by joined status | [optional] |
 | **name** | **String**| Filter by queue member name | [optional] |
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] |
@@ -1448,9 +1449,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -1505,9 +1506,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1550,7 +1551,7 @@ try {
 
 > [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviews(pageSize, pageNumber, sortBy, sortOrder, name, id, divisionId)
 
-Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 
 
 
@@ -1572,13 +1573,13 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size [max value is 100]
+Integer pageNumber = 1; // Integer | Page number [max value is 5]
 String sortBy = "name"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
 String name = "name_example"; // String | Name
@@ -1598,13 +1599,76 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
+| **pageSize** | **Integer**| Page size [max value is 100] | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number [max value is 5] | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
 | **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
 | **name** | **String**| Name | [optional] |
 | **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] |
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**QueueEntityListing**](QueueEntityListing.html)
+
+<a name="getRoutingQueuesDivisionviewsAll"></a>
+
+# **getRoutingQueuesDivisionviewsAll**
+
+
+
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortBy, sortOrder)
+
+Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+
+
+
+Wraps GET /api/v2/routing/queues/divisionviews/all  
+
+Requires ANY permissions: 
+
+* routing:queue:search
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size [max value is 500]
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+try {
+    QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortBy, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueuesDivisionviewsAll");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size [max value is 500] | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
 {: class="table table-striped"}
 
 ### Return type
@@ -1640,9 +1704,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Boolean joined = true; // Boolean | Joined
@@ -1704,9 +1768,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String skillId = "skillId_example"; // String | Skill ID
@@ -1760,9 +1824,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1823,9 +1887,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String countryCode = "countryCode_example"; // String | The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned
@@ -1892,9 +1956,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
@@ -1949,9 +2013,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String phoneNumber = "phoneNumber_example"; // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
@@ -2015,9 +2079,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 try {
@@ -2068,9 +2132,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String codeId = "codeId_example"; // String | Wrapup Code ID
@@ -2125,9 +2189,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
@@ -2187,9 +2251,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -2249,9 +2313,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -2290,7 +2354,7 @@ try {
 
 > [QueueMember](QueueMember.html) patchRoutingQueueUser(queueId, memberId, body)
 
-Update the ring number of joined status for a User in a Queue
+Update the ring number or joined status for a User in a Queue
 
 
 
@@ -2312,9 +2376,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -2373,9 +2437,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -2433,9 +2497,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -2495,9 +2559,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -2555,9 +2619,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -2614,9 +2678,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
@@ -2671,9 +2735,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
@@ -2730,9 +2794,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 InboundDomain body = new InboundDomain(); // InboundDomain | Domain
@@ -2787,9 +2851,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Language body = new Language(); // Language | Language
@@ -2844,9 +2908,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -2905,9 +2969,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -2964,9 +3028,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 CreateQueueRequest body = new CreateQueueRequest(); // CreateQueueRequest | Queue
@@ -3021,9 +3085,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 RoutingSkill body = new RoutingSkill(); // RoutingSkill | Skill
@@ -3078,9 +3142,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 SmsAddressProvision body = new SmsAddressProvision(); // SmsAddressProvision | SmsAddress
@@ -3135,9 +3199,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 SmsPhoneNumberProvision body = new SmsPhoneNumberProvision(); // SmsPhoneNumberProvision | SmsPhoneNumber
@@ -3192,9 +3256,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 WrapupCode body = new WrapupCode(); // WrapupCode | WrapupCode
@@ -3250,9 +3314,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -3310,9 +3374,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
@@ -3369,9 +3433,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String domainName = "domainName_example"; // String | email domain
@@ -3430,9 +3494,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String recipientId = "recipientId_example"; // String | Recipient ID
@@ -3489,9 +3553,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
@@ -3548,9 +3612,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String addressId = "addressId_example"; // String | Address ID
@@ -3607,9 +3671,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 Utilization body = new Utilization(); // Utilization | utilization
@@ -3664,9 +3728,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String codeId = "codeId_example"; // String | Wrapup Code ID
@@ -3724,9 +3788,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID

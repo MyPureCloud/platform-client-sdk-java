@@ -104,9 +104,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -161,9 +161,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -219,9 +219,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
@@ -278,9 +278,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -337,9 +337,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -398,9 +398,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -459,9 +459,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -517,9 +517,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 List<String> userId = Arrays.asList("userId_example"); // List<String> | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request
@@ -617,9 +617,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -677,9 +677,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -779,9 +779,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -837,9 +837,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -896,9 +896,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit
@@ -955,9 +955,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
@@ -1014,9 +1014,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
@@ -1073,9 +1073,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
@@ -1131,9 +1131,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1193,9 +1193,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1251,9 +1251,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1309,9 +1309,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1371,9 +1371,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1442,9 +1442,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1501,9 +1501,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1568,9 +1568,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1631,9 +1631,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1691,9 +1691,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -1756,9 +1756,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -1818,9 +1818,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1883,9 +1883,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -1941,9 +1941,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 Integer pageSize = 56; // Integer | 
@@ -2006,9 +2006,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | The divisionIds to filter by. If omitted, will return all divisions
@@ -2064,9 +2064,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
@@ -2122,9 +2122,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
@@ -2180,9 +2180,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2241,9 +2241,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
@@ -2303,9 +2303,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2365,9 +2365,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2425,9 +2425,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2489,9 +2489,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2557,9 +2557,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2618,9 +2618,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
@@ -2677,9 +2677,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 WfmHistoricalAdherenceQueryForUsers body = new WfmHistoricalAdherenceQueryForUsers(); // WfmHistoricalAdherenceQueryForUsers | body
@@ -2735,9 +2735,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2794,9 +2794,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit
@@ -2853,9 +2853,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit
@@ -2914,9 +2914,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -2974,9 +2974,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3034,9 +3034,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3094,9 +3094,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3154,9 +3154,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3214,9 +3214,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3282,9 +3282,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3346,9 +3346,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3411,9 +3411,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3474,9 +3474,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3536,9 +3536,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -3602,9 +3602,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -3666,9 +3666,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -3730,9 +3730,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit to which the forecast belongs
@@ -3792,9 +3792,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3854,9 +3854,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
@@ -3914,9 +3914,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 CreateManagementUnitApiRequest body = new CreateManagementUnitApiRequest(); // CreateManagementUnitApiRequest | body
@@ -3973,9 +3973,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 CurrentUserScheduleRequestBody body = new CurrentUserScheduleRequestBody(); // CurrentUserScheduleRequestBody | body
@@ -4030,9 +4030,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 CreateAgentTimeOffRequest body = new CreateAgentTimeOffRequest(); // CreateAgentTimeOffRequest | body

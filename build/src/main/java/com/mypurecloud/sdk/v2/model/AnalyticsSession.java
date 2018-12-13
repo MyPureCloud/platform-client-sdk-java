@@ -583,14 +583,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * Scheduled callback date/time, Date time is represented as an ISO-8601 string. 
+   * A unique identifier for a script
    **/
   public AnalyticsSession scriptId(String scriptId) {
     this.scriptId = scriptId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Scheduled callback date/time, Date time is represented as an ISO-8601 string. ")
+  @ApiModelProperty(example = "null", value = "A unique identifier for a script")
   @JsonProperty("scriptId")
   public String getScriptId() {
     return scriptId;

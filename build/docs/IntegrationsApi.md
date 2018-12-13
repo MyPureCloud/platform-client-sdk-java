@@ -79,9 +79,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -136,9 +136,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -192,9 +192,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -247,9 +247,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID
@@ -302,9 +302,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -370,9 +370,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -426,9 +426,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -494,9 +494,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -556,9 +556,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -618,9 +618,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -678,9 +678,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -737,9 +737,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -795,9 +795,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -855,9 +855,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -915,9 +915,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
@@ -989,9 +989,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String secure = "secure_example"; // String | Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
@@ -1059,9 +1059,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
@@ -1131,9 +1131,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -1197,9 +1197,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID
@@ -1253,9 +1253,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageNumber = 1; // Integer | Page number
@@ -1311,9 +1311,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 try {
@@ -1365,9 +1365,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1431,9 +1431,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String eventId = "eventId_example"; // String | Event Id
@@ -1487,9 +1487,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String typeId = "typeId_example"; // String | Integration Type Id
@@ -1543,9 +1543,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String typeId = "typeId_example"; // String | Integration Type Id
@@ -1601,9 +1601,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -1667,9 +1667,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -1738,9 +1738,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1797,9 +1797,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1855,9 +1855,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 CreateIntegrationRequest body = new CreateIntegrationRequest(); // CreateIntegrationRequest | Integration
@@ -1912,9 +1912,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1969,9 +1969,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2028,9 +2028,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2088,9 +2088,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2148,9 +2148,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2207,9 +2207,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 PostActionInput body = new PostActionInput(); // PostActionInput | Input used to create Action.
@@ -2264,9 +2264,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 PostActionInput body = new PostActionInput(); // PostActionInput | Input used to create Action Draft.
@@ -2320,9 +2320,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Credential body = new Credential(); // Credential | Credential
@@ -2376,9 +2376,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 VendorConnectionRequest body = new VendorConnectionRequest(); // VendorConnectionRequest | 
@@ -2432,9 +2432,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -2490,9 +2490,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID

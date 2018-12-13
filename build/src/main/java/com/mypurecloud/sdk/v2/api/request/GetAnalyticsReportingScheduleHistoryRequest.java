@@ -125,7 +125,7 @@ public class GetAnalyticsReportingScheduleHistoryRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

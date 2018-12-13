@@ -42,9 +42,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 OrganizationApi apiInstance = new OrganizationApi();
 String type = "type_example"; // String | Field type
@@ -98,9 +98,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 OrganizationApi apiInstance = new OrganizationApi();
 try {
@@ -151,9 +151,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 OrganizationApi apiInstance = new OrganizationApi();
 String featureName = "featureName_example"; // String | Organization feature
@@ -210,9 +210,9 @@ Requires ANY permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 OrganizationApi apiInstance = new OrganizationApi();
 Organization body = new Organization(); // Organization | Organization

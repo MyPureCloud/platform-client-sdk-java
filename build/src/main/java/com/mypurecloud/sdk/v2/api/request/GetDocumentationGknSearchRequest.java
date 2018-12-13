@@ -86,7 +86,7 @@ public class GetDocumentationGknSearchRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames()
                 .build();
     }
 

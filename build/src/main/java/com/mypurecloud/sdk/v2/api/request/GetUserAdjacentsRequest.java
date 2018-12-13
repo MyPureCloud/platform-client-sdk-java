@@ -102,7 +102,8 @@ public class GetUserAdjacentsRequest {
 		LOCATIONS("locations"), 
 		GROUPS("groups"), 
 		SKILLS("skills"), 
-		LANGUAGES("languages");
+		LANGUAGES("languages"), 
+		LANGUAGEPREFERENCE("languagePreference");
 
 		private String value;
 
@@ -165,7 +166,7 @@ public class GetUserAdjacentsRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

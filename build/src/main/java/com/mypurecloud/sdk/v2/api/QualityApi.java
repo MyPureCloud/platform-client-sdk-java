@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.QualityAuditPage;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -25,12 +26,15 @@ import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
@@ -45,6 +49,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
@@ -66,8 +71,11 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequ
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualitySurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualitySurveysScorableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
@@ -79,12 +87,14 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1173,6 +1183,85 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return List<Survey>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Survey> getQualityConversationSurveys(String conversationId) throws IOException, ApiException {
+    return  getQualityConversationSurveys(createGetQualityConversationSurveysRequest(conversationId));
+  }
+
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param conversationId conversationId (required)
+   * @return List<Survey>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Survey>> getQualityConversationSurveysWithHttpInfo(String conversationId) throws IOException {
+    return getQualityConversationSurveys(createGetQualityConversationSurveysRequest(conversationId).withHttpInfo());
+  }
+
+  private GetQualityConversationSurveysRequest createGetQualityConversationSurveysRequest(String conversationId) {
+    return GetQualityConversationSurveysRequest.builder()
+            .withConversationId(conversationId)
+    
+            .build();
+  }
+
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param request The request object
+   * @return List<Survey>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Survey> getQualityConversationSurveys(GetQualityConversationSurveysRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Survey>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Survey>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Survey>> getQualityConversationSurveys(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Survey>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3130,6 +3219,164 @@ public class QualityApi {
 
   
   /**
+   * Get a survey for a conversation
+   * 
+   * @param surveyId surveyId (required)
+   * @return Survey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Survey getQualitySurvey(String surveyId) throws IOException, ApiException {
+    return  getQualitySurvey(createGetQualitySurveyRequest(surveyId));
+  }
+
+  /**
+   * Get a survey for a conversation
+   * 
+   * @param surveyId surveyId (required)
+   * @return Survey
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Survey> getQualitySurveyWithHttpInfo(String surveyId) throws IOException {
+    return getQualitySurvey(createGetQualitySurveyRequest(surveyId).withHttpInfo());
+  }
+
+  private GetQualitySurveyRequest createGetQualitySurveyRequest(String surveyId) {
+    return GetQualitySurveyRequest.builder()
+            .withSurveyId(surveyId)
+    
+            .build();
+  }
+
+  /**
+   * Get a survey for a conversation
+   * 
+   * @param request The request object
+   * @return Survey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Survey getQualitySurvey(GetQualitySurveyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Survey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Survey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a survey for a conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Survey> getQualitySurvey(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Survey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @return ScorableSurvey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScorableSurvey getQualitySurveysScorable(String customerSurveyUrl) throws IOException, ApiException {
+    return  getQualitySurveysScorable(createGetQualitySurveysScorableRequest(customerSurveyUrl));
+  }
+
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @return ScorableSurvey
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScorableSurvey> getQualitySurveysScorableWithHttpInfo(String customerSurveyUrl) throws IOException {
+    return getQualitySurveysScorable(createGetQualitySurveysScorableRequest(customerSurveyUrl).withHttpInfo());
+  }
+
+  private GetQualitySurveysScorableRequest createGetQualitySurveysScorableRequest(String customerSurveyUrl) {
+    return GetQualitySurveysScorableRequest.builder()
+            .withCustomerSurveyUrl(customerSurveyUrl)
+    
+            .build();
+  }
+
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request The request object
+   * @return ScorableSurvey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScorableSurvey getQualitySurveysScorable(GetQualitySurveysScorableRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScorableSurvey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScorableSurvey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScorableSurvey> getQualitySurveysScorable(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScorableSurvey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
    * 
    * @param formId Form ID (required)
@@ -3269,6 +3516,85 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for survey aggregates
+   * 
+   * @param body query (required)
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregateQueryResponse postAnalyticsSurveysAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsSurveysAggregatesQuery(createPostAnalyticsSurveysAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for survey aggregates
+   * 
+   * @param body query (required)
+   * @return AggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregateQueryResponse> postAnalyticsSurveysAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+    return postAnalyticsSurveysAggregatesQuery(createPostAnalyticsSurveysAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsSurveysAggregatesQueryRequest createPostAnalyticsSurveysAggregatesQueryRequest(AggregationQuery body) {
+    return PostAnalyticsSurveysAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for survey aggregates
+   * 
+   * @param request The request object
+   * @return AggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AggregateQueryResponse postAnalyticsSurveysAggregatesQuery(PostAnalyticsSurveysAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for survey aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AggregateQueryResponse> postAnalyticsSurveysAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
     }
@@ -4177,6 +4503,85 @@ public class QualityApi {
 
   
   /**
+   * Score survey
+   * 
+   * @param body surveyAndScoringSet (required)
+   * @return SurveyScoringSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyScoringSet postQualitySurveysScoring(SurveyFormAndScoringSet body) throws IOException, ApiException {
+    return  postQualitySurveysScoring(createPostQualitySurveysScoringRequest(body));
+  }
+
+  /**
+   * Score survey
+   * 
+   * @param body surveyAndScoringSet (required)
+   * @return SurveyScoringSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyScoringSet> postQualitySurveysScoringWithHttpInfo(SurveyFormAndScoringSet body) throws IOException {
+    return postQualitySurveysScoring(createPostQualitySurveysScoringRequest(body).withHttpInfo());
+  }
+
+  private PostQualitySurveysScoringRequest createPostQualitySurveysScoringRequest(SurveyFormAndScoringSet body) {
+    return PostQualitySurveysScoringRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Score survey
+   * 
+   * @param request The request object
+   * @return SurveyScoringSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SurveyScoringSet postQualitySurveysScoring(PostQualitySurveysScoringRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SurveyScoringSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyScoringSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Score survey
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SurveyScoringSet> postQualitySurveysScoring(ApiRequest<SurveyFormAndScoringSet> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SurveyScoringSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyScoringSet> response = (ApiResponse<SurveyScoringSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SurveyScoringSet> response = (ApiResponse<SurveyScoringSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
    * @param calibrationId Calibration ID (required)
@@ -4677,6 +5082,89 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param body survey (required)
+   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @return ScorableSurvey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScorableSurvey putQualitySurveysScorable(ScorableSurvey body, String customerSurveyUrl) throws IOException, ApiException {
+    return  putQualitySurveysScorable(createPutQualitySurveysScorableRequest(body, customerSurveyUrl));
+  }
+
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param body survey (required)
+   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @return ScorableSurvey
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScorableSurvey> putQualitySurveysScorableWithHttpInfo(ScorableSurvey body, String customerSurveyUrl) throws IOException {
+    return putQualitySurveysScorable(createPutQualitySurveysScorableRequest(body, customerSurveyUrl).withHttpInfo());
+  }
+
+  private PutQualitySurveysScorableRequest createPutQualitySurveysScorableRequest(ScorableSurvey body, String customerSurveyUrl) {
+    return PutQualitySurveysScorableRequest.builder()
+            .withBody(body)
+    
+            .withCustomerSurveyUrl(customerSurveyUrl)
+    
+            .build();
+  }
+
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request The request object
+   * @return ScorableSurvey
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScorableSurvey putQualitySurveysScorable(PutQualitySurveysScorableRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScorableSurvey> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScorableSurvey>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScorableSurvey> putQualitySurveysScorable(ApiRequest<ScorableSurvey> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScorableSurvey>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

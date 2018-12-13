@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -268,6 +269,19 @@ public class ViewFilter  implements Serializable {
   private NumericRange mos = null;
   private NumericRange surveyQuestionGroupScore = null;
   private NumericRange surveyPromoterScore = null;
+  private List<String> surveyFormContextIds = new ArrayList<String>();
+  private List<String> conversationIds = new ArrayList<String>();
+  private Boolean isEnded = null;
+  private Boolean isSurveyed = null;
+  private List<NumericRange> surveyScores = new ArrayList<NumericRange>();
+  private List<NumericRange> promoterScores = new ArrayList<NumericRange>();
+  private Boolean isCampaign = null;
+  private List<String> surveyStatuses = new ArrayList<String>();
+  private ConversationProperties conversationProperties = null;
+  private Boolean isBlindTransferred = null;
+  private Boolean isConsulted = null;
+  private Boolean isConsultTransferred = null;
+  private List<String> remoteParticipants = new ArrayList<String>();
 
   
   /**
@@ -1008,6 +1022,240 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of survey form context ids used to filter the view
+   **/
+  public ViewFilter surveyFormContextIds(List<String> surveyFormContextIds) {
+    this.surveyFormContextIds = surveyFormContextIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of survey form context ids used to filter the view")
+  @JsonProperty("surveyFormContextIds")
+  public List<String> getSurveyFormContextIds() {
+    return surveyFormContextIds;
+  }
+  public void setSurveyFormContextIds(List<String> surveyFormContextIds) {
+    this.surveyFormContextIds = surveyFormContextIds;
+  }
+
+  
+  /**
+   * The list of conversation ids used to filter the view
+   **/
+  public ViewFilter conversationIds(List<String> conversationIds) {
+    this.conversationIds = conversationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of conversation ids used to filter the view")
+  @JsonProperty("conversationIds")
+  public List<String> getConversationIds() {
+    return conversationIds;
+  }
+  public void setConversationIds(List<String> conversationIds) {
+    this.conversationIds = conversationIds;
+  }
+
+  
+  /**
+   * Indicates filtering for ended
+   **/
+  public ViewFilter isEnded(Boolean isEnded) {
+    this.isEnded = isEnded;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for ended")
+  @JsonProperty("isEnded")
+  public Boolean getIsEnded() {
+    return isEnded;
+  }
+  public void setIsEnded(Boolean isEnded) {
+    this.isEnded = isEnded;
+  }
+
+  
+  /**
+   * Indicates filtering for survey
+   **/
+  public ViewFilter isSurveyed(Boolean isSurveyed) {
+    this.isSurveyed = isSurveyed;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for survey")
+  @JsonProperty("isSurveyed")
+  public Boolean getIsSurveyed() {
+    return isSurveyed;
+  }
+  public void setIsSurveyed(Boolean isSurveyed) {
+    this.isSurveyed = isSurveyed;
+  }
+
+  
+  /**
+   * The list of survey score ranges used to filter the view
+   **/
+  public ViewFilter surveyScores(List<NumericRange> surveyScores) {
+    this.surveyScores = surveyScores;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of survey score ranges used to filter the view")
+  @JsonProperty("surveyScores")
+  public List<NumericRange> getSurveyScores() {
+    return surveyScores;
+  }
+  public void setSurveyScores(List<NumericRange> surveyScores) {
+    this.surveyScores = surveyScores;
+  }
+
+  
+  /**
+   * The list of promoter score ranges used to filter the view
+   **/
+  public ViewFilter promoterScores(List<NumericRange> promoterScores) {
+    this.promoterScores = promoterScores;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of promoter score ranges used to filter the view")
+  @JsonProperty("promoterScores")
+  public List<NumericRange> getPromoterScores() {
+    return promoterScores;
+  }
+  public void setPromoterScores(List<NumericRange> promoterScores) {
+    this.promoterScores = promoterScores;
+  }
+
+  
+  /**
+   * Indicates filtering for campaign
+   **/
+  public ViewFilter isCampaign(Boolean isCampaign) {
+    this.isCampaign = isCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for campaign")
+  @JsonProperty("isCampaign")
+  public Boolean getIsCampaign() {
+    return isCampaign;
+  }
+  public void setIsCampaign(Boolean isCampaign) {
+    this.isCampaign = isCampaign;
+  }
+
+  
+  /**
+   * The list of survey statuses used to filter the view
+   **/
+  public ViewFilter surveyStatuses(List<String> surveyStatuses) {
+    this.surveyStatuses = surveyStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of survey statuses used to filter the view")
+  @JsonProperty("surveyStatuses")
+  public List<String> getSurveyStatuses() {
+    return surveyStatuses;
+  }
+  public void setSurveyStatuses(List<String> surveyStatuses) {
+    this.surveyStatuses = surveyStatuses;
+  }
+
+  
+  /**
+   * A grouping of conversation level filters
+   **/
+  public ViewFilter conversationProperties(ConversationProperties conversationProperties) {
+    this.conversationProperties = conversationProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A grouping of conversation level filters")
+  @JsonProperty("conversationProperties")
+  public ConversationProperties getConversationProperties() {
+    return conversationProperties;
+  }
+  public void setConversationProperties(ConversationProperties conversationProperties) {
+    this.conversationProperties = conversationProperties;
+  }
+
+  
+  /**
+   * Indicates filtering for blind transferred
+   **/
+  public ViewFilter isBlindTransferred(Boolean isBlindTransferred) {
+    this.isBlindTransferred = isBlindTransferred;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for blind transferred")
+  @JsonProperty("isBlindTransferred")
+  public Boolean getIsBlindTransferred() {
+    return isBlindTransferred;
+  }
+  public void setIsBlindTransferred(Boolean isBlindTransferred) {
+    this.isBlindTransferred = isBlindTransferred;
+  }
+
+  
+  /**
+   * Indicates filtering for consulted
+   **/
+  public ViewFilter isConsulted(Boolean isConsulted) {
+    this.isConsulted = isConsulted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for consulted")
+  @JsonProperty("isConsulted")
+  public Boolean getIsConsulted() {
+    return isConsulted;
+  }
+  public void setIsConsulted(Boolean isConsulted) {
+    this.isConsulted = isConsulted;
+  }
+
+  
+  /**
+   * Indicates filtering for consult transferred
+   **/
+  public ViewFilter isConsultTransferred(Boolean isConsultTransferred) {
+    this.isConsultTransferred = isConsultTransferred;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for consult transferred")
+  @JsonProperty("isConsultTransferred")
+  public Boolean getIsConsultTransferred() {
+    return isConsultTransferred;
+  }
+  public void setIsConsultTransferred(Boolean isConsultTransferred) {
+    this.isConsultTransferred = isConsultTransferred;
+  }
+
+  
+  /**
+   * The list of remote participants used to filter the view
+   **/
+  public ViewFilter remoteParticipants(List<String> remoteParticipants) {
+    this.remoteParticipants = remoteParticipants;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of remote participants used to filter the view")
+  @JsonProperty("remoteParticipants")
+  public List<String> getRemoteParticipants() {
+    return remoteParticipants;
+  }
+  public void setRemoteParticipants(List<String> remoteParticipants) {
+    this.remoteParticipants = remoteParticipants;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1058,12 +1306,25 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.languageList, viewFilter.languageList) &&
         Objects.equals(this.mos, viewFilter.mos) &&
         Objects.equals(this.surveyQuestionGroupScore, viewFilter.surveyQuestionGroupScore) &&
-        Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore);
+        Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore) &&
+        Objects.equals(this.surveyFormContextIds, viewFilter.surveyFormContextIds) &&
+        Objects.equals(this.conversationIds, viewFilter.conversationIds) &&
+        Objects.equals(this.isEnded, viewFilter.isEnded) &&
+        Objects.equals(this.isSurveyed, viewFilter.isSurveyed) &&
+        Objects.equals(this.surveyScores, viewFilter.surveyScores) &&
+        Objects.equals(this.promoterScores, viewFilter.promoterScores) &&
+        Objects.equals(this.isCampaign, viewFilter.isCampaign) &&
+        Objects.equals(this.surveyStatuses, viewFilter.surveyStatuses) &&
+        Objects.equals(this.conversationProperties, viewFilter.conversationProperties) &&
+        Objects.equals(this.isBlindTransferred, viewFilter.isBlindTransferred) &&
+        Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
+        Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
+        Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants);
   }
 
   @Override
@@ -1112,6 +1373,19 @@ public class ViewFilter  implements Serializable {
     sb.append("    mos: ").append(toIndentedString(mos)).append("\n");
     sb.append("    surveyQuestionGroupScore: ").append(toIndentedString(surveyQuestionGroupScore)).append("\n");
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
+    sb.append("    surveyFormContextIds: ").append(toIndentedString(surveyFormContextIds)).append("\n");
+    sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
+    sb.append("    isEnded: ").append(toIndentedString(isEnded)).append("\n");
+    sb.append("    isSurveyed: ").append(toIndentedString(isSurveyed)).append("\n");
+    sb.append("    surveyScores: ").append(toIndentedString(surveyScores)).append("\n");
+    sb.append("    promoterScores: ").append(toIndentedString(promoterScores)).append("\n");
+    sb.append("    isCampaign: ").append(toIndentedString(isCampaign)).append("\n");
+    sb.append("    surveyStatuses: ").append(toIndentedString(surveyStatuses)).append("\n");
+    sb.append("    conversationProperties: ").append(toIndentedString(conversationProperties)).append("\n");
+    sb.append("    isBlindTransferred: ").append(toIndentedString(isBlindTransferred)).append("\n");
+    sb.append("    isConsulted: ").append(toIndentedString(isConsulted)).append("\n");
+    sb.append("    isConsultTransferred: ").append(toIndentedString(isConsultTransferred)).append("\n");
+    sb.append("    remoteParticipants: ").append(toIndentedString(remoteParticipants)).append("\n");
     sb.append("}");
     return sb.toString();
   }

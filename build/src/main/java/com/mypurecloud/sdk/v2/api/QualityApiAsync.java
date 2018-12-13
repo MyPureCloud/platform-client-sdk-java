@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.QualityAuditPage;
+import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -28,12 +29,15 @@ import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
+import com.mypurecloud.sdk.v2.model.ScorableSurvey;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
+import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
+import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityCalibrationRequest;
@@ -48,6 +52,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
@@ -69,8 +74,11 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequ
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualitySurveyRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualitySurveysScorableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
@@ -82,12 +90,14 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
+import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1009,6 +1019,82 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<Survey>> getQualityConversationSurveysAsync(GetQualityConversationSurveysRequest request, final AsyncApiCallback<List<Survey>> callback) {
+    try {
+      final SettableFuture<List<Survey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Survey>>() {}, new AsyncApiCallback<ApiResponse<List<Survey>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Survey>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the surveys for a conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<Survey>>> getQualityConversationSurveysAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Survey>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<Survey>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<Survey>>() {}, new AsyncApiCallback<ApiResponse<List<Survey>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<Survey>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2618,6 +2704,158 @@ public class QualityApiAsync {
 
   
   /**
+   * Get a survey for a conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Survey> getQualitySurveyAsync(GetQualitySurveyRequest request, final AsyncApiCallback<Survey> callback) {
+    try {
+      final SettableFuture<Survey> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Survey>() {}, new AsyncApiCallback<ApiResponse<Survey>>() {
+        @Override
+        public void onCompleted(ApiResponse<Survey> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a survey for a conversation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Survey>> getQualitySurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Survey>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Survey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Survey>() {}, new AsyncApiCallback<ApiResponse<Survey>>() {
+        @Override
+        public void onCompleted(ApiResponse<Survey> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Survey> response = (ApiResponse<Survey>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScorableSurvey> getQualitySurveysScorableAsync(GetQualitySurveysScorableRequest request, final AsyncApiCallback<ScorableSurvey> callback) {
+    try {
+      final SettableFuture<ScorableSurvey> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScorableSurvey>() {}, new AsyncApiCallback<ApiResponse<ScorableSurvey>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScorableSurvey> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScorableSurvey>> getQualitySurveysScorableAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScorableSurvey>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScorableSurvey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScorableSurvey>() {}, new AsyncApiCallback<ApiResponse<ScorableSurvey>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScorableSurvey> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
    * 
    * @param request the request object
@@ -2735,6 +2973,82 @@ public class QualityApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query for survey aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AggregateQueryResponse> postAnalyticsSurveysAggregatesQueryAsync(PostAnalyticsSurveysAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for survey aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsSurveysAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -3606,6 +3920,82 @@ public class QualityApiAsync {
 
   
   /**
+   * Score survey
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SurveyScoringSet> postQualitySurveysScoringAsync(PostQualitySurveysScoringRequest request, final AsyncApiCallback<SurveyScoringSet> callback) {
+    try {
+      final SettableFuture<SurveyScoringSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyScoringSet>() {}, new AsyncApiCallback<ApiResponse<SurveyScoringSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyScoringSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Score survey
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SurveyScoringSet>> postQualitySurveysScoringAsync(ApiRequest<SurveyFormAndScoringSet> request, final AsyncApiCallback<ApiResponse<SurveyScoringSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SurveyScoringSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyScoringSet>() {}, new AsyncApiCallback<ApiResponse<SurveyScoringSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<SurveyScoringSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyScoringSet> response = (ApiResponse<SurveyScoringSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SurveyScoringSet> response = (ApiResponse<SurveyScoringSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
    * 
    * @param request the request object
@@ -4049,6 +4439,82 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScorableSurvey> putQualitySurveysScorableAsync(PutQualitySurveysScorableRequest request, final AsyncApiCallback<ScorableSurvey> callback) {
+    try {
+      final SettableFuture<ScorableSurvey> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScorableSurvey>() {}, new AsyncApiCallback<ApiResponse<ScorableSurvey>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScorableSurvey> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a survey as an end-customer, for the purposes of scoring it.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScorableSurvey>> putQualitySurveysScorableAsync(ApiRequest<ScorableSurvey> request, final AsyncApiCallback<ApiResponse<ScorableSurvey>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScorableSurvey>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScorableSurvey>() {}, new AsyncApiCallback<ApiResponse<ScorableSurvey>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScorableSurvey> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScorableSurvey> response = (ApiResponse<ScorableSurvey>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

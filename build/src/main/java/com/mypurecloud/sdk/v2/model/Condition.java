@@ -28,7 +28,8 @@ public class Condition  implements Serializable {
     PHONENUMBERCONDITION("phoneNumberCondition"),
     PHONENUMBERTYPECONDITION("phoneNumberTypeCondition"),
     CALLANALYSISCONDITION("callAnalysisCondition"),
-    CONTACTPROPERTYCONDITION("contactPropertyCondition");
+    CONTACTPROPERTYCONDITION("contactPropertyCondition"),
+    DATAACTIONCONDITION("dataActionCondition");
 
     private String value;
 
@@ -61,7 +62,7 @@ public class Condition  implements Serializable {
   private String value = null;
 
   /**
-   * The type of the value associated with this Condition.
+   * The type of the value associated with this Condition. Not used for a DataActionCondition.
    */
   public enum ValueTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -98,7 +99,7 @@ public class Condition  implements Serializable {
   private ValueTypeEnum valueType = null;
 
   /**
-   * An operation with which to evaluate the Condition.
+   * An operation with which to evaluate the Condition. Not used for a DataActionCondition.
    */
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -144,7 +145,7 @@ public class Condition  implements Serializable {
   private String property = null;
 
   /**
-   * The type of the property associated with this Condition.
+   * The type of the property associated with this Condition. Required for a contactPropertyCondition.
    */
   public enum PropertyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -236,14 +237,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).
+   * A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.
    **/
   public Condition value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes).")
+  @ApiModelProperty(example = "null", value = "A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition.")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -254,14 +255,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * The type of the value associated with this Condition.
+   * The type of the value associated with this Condition. Not used for a DataActionCondition.
    **/
   public Condition valueType(ValueTypeEnum valueType) {
     this.valueType = valueType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of the value associated with this Condition.")
+  @ApiModelProperty(example = "null", value = "The type of the value associated with this Condition. Not used for a DataActionCondition.")
   @JsonProperty("valueType")
   public ValueTypeEnum getValueType() {
     return valueType;
@@ -272,14 +273,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * An operation with which to evaluate the Condition.
+   * An operation with which to evaluate the Condition. Not used for a DataActionCondition.
    **/
   public Condition operator(OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An operation with which to evaluate the Condition.")
+  @ApiModelProperty(example = "null", value = "An operation with which to evaluate the Condition. Not used for a DataActionCondition.")
   @JsonProperty("operator")
   public OperatorEnum getOperator() {
     return operator;
@@ -326,14 +327,14 @@ public class Condition  implements Serializable {
 
   
   /**
-   * The type of the property associated with this Condition.
+   * The type of the property associated with this Condition. Required for a contactPropertyCondition.
    **/
   public Condition propertyType(PropertyTypeEnum propertyType) {
     this.propertyType = propertyType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of the property associated with this Condition.")
+  @ApiModelProperty(example = "null", value = "The type of the property associated with this Condition. Required for a contactPropertyCondition.")
   @JsonProperty("propertyType")
   public PropertyTypeEnum getPropertyType() {
     return propertyType;

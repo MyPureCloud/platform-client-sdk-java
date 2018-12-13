@@ -68,6 +68,7 @@ public class GetSearchSuggestRequest {
 		GROUPS("groups"), 
 		SKILLS("skills"), 
 		LANGUAGES("languages"), 
+		LANGUAGEPREFERENCE("languagePreference"), 
 		CALLERUSER_ROUTINGSTATUS("callerUser.routingStatus"), 
 		CALLERUSER_PRIMARYPRESENCE("callerUser.primaryPresence"), 
 		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"), 
@@ -151,7 +152,7 @@ public class GetSearchSuggestRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

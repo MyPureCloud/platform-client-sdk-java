@@ -76,6 +76,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
@@ -2199,10 +2200,10 @@ public class RoutingApi {
 
   
   /**
-   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+   * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size [max value is 100] (optional, default to 25)
+   * @param pageNumber Page number [max value is 5] (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to asc)
    * @param name Name (optional)
@@ -2217,10 +2218,10 @@ public class RoutingApi {
   }
 
   /**
-   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+   * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size [max value is 100] (optional, default to 25)
+   * @param pageNumber Page number [max value is 5] (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to asc)
    * @param name Name (optional)
@@ -2253,7 +2254,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+   * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request The request object
    * @return QueueEntityListing
@@ -2272,13 +2273,104 @@ public class RoutingApi {
   }
 
   /**
-   * Get a page of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
+   * Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueEntityListing> response = (ApiResponse<QueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueEntityListing> response = (ApiResponse<QueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * 
+   * @param pageSize Page size [max value is 500] (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return QueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueEntityListing getRoutingQueuesDivisionviewsAll(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortBy, sortOrder));
+  }
+
+  /**
+   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * 
+   * @param pageSize Page size [max value is 500] (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @return QueueEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviewsAllWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
+    return getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  }
+
+  private GetRoutingQueuesDivisionviewsAllRequest createGetRoutingQueuesDivisionviewsAllRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+    return GetRoutingQueuesDivisionviewsAllRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * 
+   * @param request The request object
+   * @return QueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueEntityListing getRoutingQueuesDivisionviewsAll(GetRoutingQueuesDivisionviewsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviewsAll(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<QueueEntityListing>() {});
     }
@@ -3271,7 +3363,7 @@ public class RoutingApi {
 
   
   /**
-   * Update the ring number of joined status for a User in a Queue
+   * Update the ring number or joined status for a User in a Queue
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -3285,7 +3377,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number of joined status for a User in a Queue
+   * Update the ring number or joined status for a User in a Queue
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -3309,7 +3401,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number of joined status for a User in a Queue
+   * Update the ring number or joined status for a User in a Queue
    * 
    * @param request The request object
    * @return QueueMember
@@ -3328,7 +3420,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number of joined status for a User in a Queue
+   * Update the ring number or joined status for a User in a Queue
    * 
    * @param request The request object
    * @return the response

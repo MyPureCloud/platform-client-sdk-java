@@ -22,6 +22,7 @@ import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
 
+import com.mypurecloud.sdk.v2.auth.ApiKeyAuth;
 import com.mypurecloud.sdk.v2.auth.Authentication;
 import com.mypurecloud.sdk.v2.auth.OAuth;
 import com.mypurecloud.sdk.v2.connector.*;
@@ -35,7 +36,8 @@ public class ApiClient implements AutoCloseable {
 
     private static Map<String, Authentication> buildAuthentications() {
         Map<String, Authentication> authentications = new HashMap<>();
-        authentications.put("PureCloud Auth", new OAuth());
+        authentications.put("PureCloud OAuth", new OAuth());
+        authentications.put("Guest Chat JWT", new ApiKeyAuth("header", "Authorization"));
 
         return Collections.unmodifiableMap(authentications);
     }
@@ -675,7 +677,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "51.0.0");
+            withDefaultHeader("purecloud-sdk", "52.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

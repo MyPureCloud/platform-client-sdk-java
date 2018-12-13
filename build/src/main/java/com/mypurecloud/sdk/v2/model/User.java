@@ -95,6 +95,7 @@ public class User  implements Serializable {
   private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
+  private String languagePreference = null;
   private String selfUri = null;
 
   
@@ -554,6 +555,13 @@ public class User  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "preferred language by the user")
+  @JsonProperty("languagePreference")
+  public String getLanguagePreference() {
+    return languagePreference;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -598,12 +606,13 @@ public class User  implements Serializable {
         Objects.equals(this.skills, user.skills) &&
         Objects.equals(this.languages, user.languages) &&
         Objects.equals(this.acdAutoAnswer, user.acdAutoAnswer) &&
+        Objects.equals(this.languagePreference, user.languagePreference) &&
         Objects.equals(this.selfUri, user.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, selfUri);
   }
 
   @Override
@@ -638,6 +647,7 @@ public class User  implements Serializable {
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
+    sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

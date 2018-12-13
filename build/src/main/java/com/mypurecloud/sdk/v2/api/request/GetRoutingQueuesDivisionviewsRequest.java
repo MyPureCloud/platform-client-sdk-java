@@ -102,6 +102,37 @@ public class GetRoutingQueuesDivisionviewsRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
+
+	public enum sortByValues { 
+		NAME("name"), 
+		ID("id"), 
+		DIVISIONID("divisionId");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -230,7 +261,7 @@ public class GetRoutingQueuesDivisionviewsRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 
@@ -261,6 +292,11 @@ public class GetRoutingQueuesDivisionviewsRequest {
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
 		}
 		
 		public Builder withSortOrder(String sortOrder) {

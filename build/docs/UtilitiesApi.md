@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getDate**](UtilitiesApi.html#getDate) | Get the current system date/time |
 | [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
 | [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
+| [**postGmscTokens**](UtilitiesApi.html#postGmscTokens) | Generate a JWT for use with common cloud. |
 {: class="table table-striped"}
 
 <a name="getDate"></a>
@@ -41,9 +42,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 UtilitiesApi apiInstance = new UtilitiesApi();
 try {
@@ -93,9 +94,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 UtilitiesApi apiInstance = new UtilitiesApi();
 Integer pageSize = 25; // Integer | Page size
@@ -151,9 +152,9 @@ Requires NO permissions:
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud Auth
-OAuth PureCloud Auth = (OAuth) defaultClient.getAuthentication("PureCloud Auth");
-PureCloud Auth.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
 
 UtilitiesApi apiInstance = new UtilitiesApi();
 Certificate body = new Certificate(); // Certificate | Certificate
@@ -177,4 +178,56 @@ try {
 ### Return type
 
 [**ParsedCertificate**](ParsedCertificate.html)
+
+<a name="postGmscTokens"></a>
+
+# **postGmscTokens**
+
+
+
+> [Token](Token.html) postGmscTokens()
+
+Generate a JWT for use with common cloud.
+
+
+
+Wraps POST /api/v2/gmsc/tokens  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.UtilitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+
+UtilitiesApi apiInstance = new UtilitiesApi();
+try {
+    Token result = apiInstance.postGmscTokens();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UtilitiesApi#postGmscTokens");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**Token**](Token.html)
 

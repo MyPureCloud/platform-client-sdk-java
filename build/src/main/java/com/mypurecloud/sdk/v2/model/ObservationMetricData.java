@@ -91,7 +91,7 @@ public class ObservationMetricData  implements Serializable {
     NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
     NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
     NFLOW("nFlow"),
-    TFLOWHANGUP("tFlowHangUp"),
+    TFLOWDISCONNECT("tFlowDisconnect"),
     TFLOWEXIT("tFlowExit"),
     TFLOW("tFlow"),
     TFLOWOUTCOME("tFlowOutcome"),

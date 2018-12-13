@@ -96,6 +96,7 @@ public class TrustUser  implements Serializable {
   private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
+  private String languagePreference = null;
   private TrustUserDetails trustUserDetails = null;
 
   
@@ -555,6 +556,13 @@ public class TrustUser  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "preferred language by the user")
+  @JsonProperty("languagePreference")
+  public String getLanguagePreference() {
+    return languagePreference;
+  }
+
+  
   /**
    **/
   public TrustUser trustUserDetails(TrustUserDetails trustUserDetails) {
@@ -609,12 +617,13 @@ public class TrustUser  implements Serializable {
         Objects.equals(this.skills, trustUser.skills) &&
         Objects.equals(this.languages, trustUser.languages) &&
         Objects.equals(this.acdAutoAnswer, trustUser.acdAutoAnswer) &&
+        Objects.equals(this.languagePreference, trustUser.languagePreference) &&
         Objects.equals(this.trustUserDetails, trustUser.trustUserDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, trustUserDetails);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, trustUserDetails);
   }
 
   @Override
@@ -649,6 +658,7 @@ public class TrustUser  implements Serializable {
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
+    sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    trustUserDetails: ").append(toIndentedString(trustUserDetails)).append("\n");
     sb.append("}");
     return sb.toString();

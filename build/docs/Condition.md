@@ -11,12 +11,12 @@ title: Condition
 | **type** | [**TypeEnum**](#TypeEnum) | The type of the condition. |  [optional] |
 | **inverted** | **Boolean** | If true, inverts the result of evaluating this Condition. Default is false. |  [optional] |
 | **attributeName** | **String** | An attribute name associated with this Condition. Required for a contactAttributeCondition. |  [optional] |
-| **value** | **String** | A value associated with this Condition. This could be text, a number, or a relative time. A value for relative time should follow the format PxxDTyyHzzM, where xx, yy, and zz specify the days, hours and minutes. For example, a value of P01DT08H30M corresponds to 1 day, 8 hours, and 30 minutes from now. To specify a time in the past, include a negative sign before each numeric value. For example, a value of P-01DT-08H-30M corresponds to 1 day, 8 hours, and 30 minutes in the past. You can also do things like P01DT00H-30M, which would correspond to 23 hours and 30 minutes from now (1 day - 30 minutes). |  [optional] |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | The type of the value associated with this Condition. |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) | An operation with which to evaluate the Condition. |  [optional] |
+| **value** | **String** | A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition. |  [optional] |
+| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | The type of the value associated with this Condition. Not used for a DataActionCondition. |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum) | An operation with which to evaluate the Condition. Not used for a DataActionCondition. |  [optional] |
 | **codes** | **List&lt;String&gt;** | List of wrap-up code identifiers. Required for a wrapupCondition. |  [optional] |
 | **property** | **String** | A value associated with the property type of this Condition. Required for a contactPropertyCondition. |  [optional] |
-| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) | The type of the property associated with this Condition. |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) | The type of the property associated with this Condition. Required for a contactPropertyCondition. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -33,6 +33,7 @@ title: Condition
 | PHONENUMBERTYPECONDITION | &quot;phoneNumberTypeCondition&quot; |
 | CALLANALYSISCONDITION | &quot;callAnalysisCondition&quot; |
 | CONTACTPROPERTYCONDITION | &quot;contactPropertyCondition&quot; |
+| DATAACTIONCONDITION | &quot;dataActionCondition&quot; |
 {: class="table table-striped"}
 
 

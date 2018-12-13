@@ -226,7 +226,7 @@ title: AnalyticsQueryPredicate
 | NSURVEYNPSPROMOTERS | &quot;nSurveyNpsPromoters&quot; |
 | NSURVEYNPSDETRACTORS | &quot;nSurveyNpsDetractors&quot; |
 | NFLOW | &quot;nFlow&quot; |
-| TFLOWHANGUP | &quot;tFlowHangUp&quot; |
+| TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
 | TFLOWEXIT | &quot;tFlowExit&quot; |
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |

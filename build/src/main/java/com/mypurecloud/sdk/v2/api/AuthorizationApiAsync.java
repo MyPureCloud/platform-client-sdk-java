@@ -1074,7 +1074,7 @@ public class AuthorizationApiAsync {
 
   
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1108,7 +1108,7 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Get an org role to default role comparison comparison
+   * Get an org role to default role comparison
    * Compares any organization role to a default role id and show differences
    * @param request the request object
    * @param callback the action to perform when the request is completed

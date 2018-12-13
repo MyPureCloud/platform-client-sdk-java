@@ -96,6 +96,7 @@ public class OrgUser  implements Serializable {
   private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
+  private String languagePreference = null;
   private Organization organization = null;
 
   
@@ -555,6 +556,13 @@ public class OrgUser  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "preferred language by the user")
+  @JsonProperty("languagePreference")
+  public String getLanguagePreference() {
+    return languagePreference;
+  }
+
+  
   /**
    **/
   public OrgUser organization(Organization organization) {
@@ -609,12 +617,13 @@ public class OrgUser  implements Serializable {
         Objects.equals(this.skills, orgUser.skills) &&
         Objects.equals(this.languages, orgUser.languages) &&
         Objects.equals(this.acdAutoAnswer, orgUser.acdAutoAnswer) &&
+        Objects.equals(this.languagePreference, orgUser.languagePreference) &&
         Objects.equals(this.organization, orgUser.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, organization);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, organization);
   }
 
   @Override
@@ -649,6 +658,7 @@ public class OrgUser  implements Serializable {
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
+    sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -89,6 +89,7 @@ public class GetUsersMeRequest {
 		GROUPS("groups"), 
 		SKILLS("skills"), 
 		LANGUAGES("languages"), 
+		LANGUAGEPREFERENCE("languagePreference"), 
 		DATE("date"), 
 		GEOLOCATIONSETTINGS("geolocationsettings"), 
 		ORGANIZATION("organization"), 
@@ -160,7 +161,7 @@ public class GetUsersMeRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

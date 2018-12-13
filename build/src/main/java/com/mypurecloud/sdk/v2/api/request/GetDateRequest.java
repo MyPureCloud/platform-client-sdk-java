@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.Token;
 
 public class GetDateRequest {
     
@@ -54,7 +55,7 @@ public class GetDateRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

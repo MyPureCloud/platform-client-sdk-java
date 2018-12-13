@@ -18,11 +18,13 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
+import com.mypurecloud.sdk.v2.model.Token;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGmscTokensRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -260,6 +262,82 @@ public class UtilitiesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ParsedCertificate> response = (ApiResponse<ParsedCertificate>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Generate a JWT for use with common cloud.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Token> postGmscTokensAsync(PostGmscTokensRequest request, final AsyncApiCallback<Token> callback) {
+    try {
+      final SettableFuture<Token> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Token>() {}, new AsyncApiCallback<ApiResponse<Token>>() {
+        @Override
+        public void onCompleted(ApiResponse<Token> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Generate a JWT for use with common cloud.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Token>> postGmscTokensAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Token>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Token>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Token>() {}, new AsyncApiCallback<ApiResponse<Token>>() {
+        @Override
+        public void onCompleted(ApiResponse<Token> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Token> response = (ApiResponse<Token>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Token> response = (ApiResponse<Token>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

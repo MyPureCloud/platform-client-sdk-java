@@ -66,6 +66,20 @@ public class PostAuthorizationRoleRequest {
 	    return this;
 	} 
 	
+	private String subjectType;
+	public String getSubjectType() {
+		return this.subjectType;
+	}
+
+	public void setSubjectType(String subjectType) {
+		this.subjectType = subjectType;
+	}
+
+	public PostAuthorizationRoleRequest withSubjectType(String subjectType) {
+	    this.setSubjectType(subjectType);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,12 +115,14 @@ public class PostAuthorizationRoleRequest {
         return ApiRequestBuilder.create("POST", "/api/v2/authorization/roles/{roleId}")
                 .withPathParameter("roleId", roleId)
         
+                .withQueryParameters("subjectType", "", subjectType)
+        
                 .withBody(body)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
-                .withAuthNames("PureCloud Auth")
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 
@@ -136,6 +152,11 @@ public class PostAuthorizationRoleRequest {
 		
 		public Builder withBody(SubjectDivisions body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withSubjectType(String subjectType) {
+			request.setSubjectType(subjectType);
 			return this;
 		}
 		
