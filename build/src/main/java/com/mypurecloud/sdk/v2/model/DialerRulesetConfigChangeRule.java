@@ -57,8 +57,8 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     }
   }
   private CategoryEnum category = null;
-  private List<DialerRulesetConfigChangeCondition> conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
   private List<DialerRulesetConfigChangeAction> actions = new ArrayList<DialerRulesetConfigChangeAction>();
+  private List<DialerRulesetConfigChangeCondition> conditions = new ArrayList<DialerRulesetConfigChangeCondition>();
   private Object additionalProperties = null;
 
   
@@ -132,23 +132,6 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   
   /**
    **/
-  public DialerRulesetConfigChangeRule conditions(List<DialerRulesetConfigChangeCondition> conditions) {
-    this.conditions = conditions;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("conditions")
-  public List<DialerRulesetConfigChangeCondition> getConditions() {
-    return conditions;
-  }
-  public void setConditions(List<DialerRulesetConfigChangeCondition> conditions) {
-    this.conditions = conditions;
-  }
-
-  
-  /**
-   **/
   public DialerRulesetConfigChangeRule actions(List<DialerRulesetConfigChangeAction> actions) {
     this.actions = actions;
     return this;
@@ -161,6 +144,23 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
   }
   public void setActions(List<DialerRulesetConfigChangeAction> actions) {
     this.actions = actions;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeRule conditions(List<DialerRulesetConfigChangeCondition> conditions) {
+    this.conditions = conditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conditions")
+  public List<DialerRulesetConfigChangeCondition> getConditions() {
+    return conditions;
+  }
+  public void setConditions(List<DialerRulesetConfigChangeCondition> conditions) {
+    this.conditions = conditions;
   }
 
   
@@ -195,14 +195,14 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
         Objects.equals(this.name, dialerRulesetConfigChangeRule.name) &&
         Objects.equals(this.order, dialerRulesetConfigChangeRule.order) &&
         Objects.equals(this.category, dialerRulesetConfigChangeRule.category) &&
-        Objects.equals(this.conditions, dialerRulesetConfigChangeRule.conditions) &&
         Objects.equals(this.actions, dialerRulesetConfigChangeRule.actions) &&
+        Objects.equals(this.conditions, dialerRulesetConfigChangeRule.conditions) &&
         Objects.equals(this.additionalProperties, dialerRulesetConfigChangeRule.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, order, category, conditions, actions, additionalProperties);
+    return Objects.hash(id, name, order, category, actions, conditions, additionalProperties);
   }
 
   @Override
@@ -214,8 +214,8 @@ public class DialerRulesetConfigChangeRule  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -25,8 +25,8 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
   private String firstUri = null;
   private String selfUri = null;
   private String previousUri = null;
-  private String lastUri = null;
   private String nextUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -151,23 +151,6 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
   
   /**
    **/
-  public EvaluatorActivityEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
   public EvaluatorActivityEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -180,6 +163,23 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+  
+  /**
+   **/
+  public EvaluatorActivityEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -217,14 +217,14 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
         Objects.equals(this.firstUri, evaluatorActivityEntityListing.firstUri) &&
         Objects.equals(this.selfUri, evaluatorActivityEntityListing.selfUri) &&
         Objects.equals(this.previousUri, evaluatorActivityEntityListing.previousUri) &&
-        Objects.equals(this.lastUri, evaluatorActivityEntityListing.lastUri) &&
         Objects.equals(this.nextUri, evaluatorActivityEntityListing.nextUri) &&
+        Objects.equals(this.lastUri, evaluatorActivityEntityListing.lastUri) &&
         Objects.equals(this.pageCount, evaluatorActivityEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, lastUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -239,8 +239,8 @@ public class EvaluatorActivityEntityListing  implements Serializable, PagedResou
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -19,6 +19,7 @@ public class Attachment  implements Serializable {
   private String contentUri = null;
   private String contentType = null;
   private Integer contentLength = null;
+  private Boolean inlineImage = null;
 
   
   /**
@@ -111,6 +112,24 @@ public class Attachment  implements Serializable {
   }
 
   
+  /**
+   * Whether or not the attachment was attached inline.,
+   **/
+  public Attachment inlineImage(Boolean inlineImage) {
+    this.inlineImage = inlineImage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not the attachment was attached inline.,")
+  @JsonProperty("inlineImage")
+  public Boolean getInlineImage() {
+    return inlineImage;
+  }
+  public void setInlineImage(Boolean inlineImage) {
+    this.inlineImage = inlineImage;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,12 +144,13 @@ public class Attachment  implements Serializable {
         Objects.equals(this.name, attachment.name) &&
         Objects.equals(this.contentUri, attachment.contentUri) &&
         Objects.equals(this.contentType, attachment.contentType) &&
-        Objects.equals(this.contentLength, attachment.contentLength);
+        Objects.equals(this.contentLength, attachment.contentLength) &&
+        Objects.equals(this.inlineImage, attachment.inlineImage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength);
+    return Objects.hash(attachmentId, name, contentUri, contentType, contentLength, inlineImage);
   }
 
   @Override
@@ -143,6 +163,7 @@ public class Attachment  implements Serializable {
     sb.append("    contentUri: ").append(toIndentedString(contentUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
+    sb.append("    inlineImage: ").append(toIndentedString(inlineImage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

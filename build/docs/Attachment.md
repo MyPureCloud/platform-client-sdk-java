@@ -13,6 +13,7 @@ title: Attachment
 | **contentUri** | **String** | The content uri of the attachment. If set, this is commonly a public api download location. |  [optional] |
 | **contentType** | **String** | The type of file the attachment is. |  [optional] |
 | **contentLength** | **Integer** | The length of the attachment file. |  [optional] |
+| **inlineImage** | **Boolean** | Whether or not the attachment was attached inline., |  [optional] |
 {: class="table table-striped"}
 
 

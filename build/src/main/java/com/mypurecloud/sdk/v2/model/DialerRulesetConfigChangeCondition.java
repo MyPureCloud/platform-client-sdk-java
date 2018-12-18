@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeContactColumnToDataActionFieldMapping;
+import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeDataActionConditionPredicate;
+import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -140,6 +143,12 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   }
   private PropertyTypeEnum propertyType = null;
   private String property = null;
+  private String contactIdField = null;
+  private String callAnalysisResultField = null;
+  private String agentWrapupField = null;
+  private List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings = new ArrayList<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>();
+  private List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates = new ArrayList<DialerRulesetConfigChangeDataActionConditionPredicate>();
+  private DialerRulesetConfigChangeUriReference dataAction = null;
   private Object additionalProperties = null;
 
   
@@ -298,6 +307,108 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   
   /**
    **/
+  public DialerRulesetConfigChangeCondition contactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contactIdField")
+  public String getContactIdField() {
+    return contactIdField;
+  }
+  public void setContactIdField(String contactIdField) {
+    this.contactIdField = contactIdField;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition callAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callAnalysisResultField")
+  public String getCallAnalysisResultField() {
+    return callAnalysisResultField;
+  }
+  public void setCallAnalysisResultField(String callAnalysisResultField) {
+    this.callAnalysisResultField = callAnalysisResultField;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition agentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agentWrapupField")
+  public String getAgentWrapupField() {
+    return agentWrapupField;
+  }
+  public void setAgentWrapupField(String agentWrapupField) {
+    this.agentWrapupField = agentWrapupField;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition contactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contactColumnToDataActionFieldMappings")
+  public List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> getContactColumnToDataActionFieldMappings() {
+    return contactColumnToDataActionFieldMappings;
+  }
+  public void setContactColumnToDataActionFieldMappings(List<DialerRulesetConfigChangeContactColumnToDataActionFieldMapping> contactColumnToDataActionFieldMappings) {
+    this.contactColumnToDataActionFieldMappings = contactColumnToDataActionFieldMappings;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition predicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("predicates")
+  public List<DialerRulesetConfigChangeDataActionConditionPredicate> getPredicates() {
+    return predicates;
+  }
+  public void setPredicates(List<DialerRulesetConfigChangeDataActionConditionPredicate> predicates) {
+    this.predicates = predicates;
+  }
+
+  
+  /**
+   **/
+  public DialerRulesetConfigChangeCondition dataAction(DialerRulesetConfigChangeUriReference dataAction) {
+    this.dataAction = dataAction;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dataAction")
+  public DialerRulesetConfigChangeUriReference getDataAction() {
+    return dataAction;
+  }
+  public void setDataAction(DialerRulesetConfigChangeUriReference dataAction) {
+    this.dataAction = dataAction;
+  }
+
+  
+  /**
+   **/
   public DialerRulesetConfigChangeCondition additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -332,12 +443,18 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
         Objects.equals(this.codes, dialerRulesetConfigChangeCondition.codes) &&
         Objects.equals(this.propertyType, dialerRulesetConfigChangeCondition.propertyType) &&
         Objects.equals(this.property, dialerRulesetConfigChangeCondition.property) &&
+        Objects.equals(this.contactIdField, dialerRulesetConfigChangeCondition.contactIdField) &&
+        Objects.equals(this.callAnalysisResultField, dialerRulesetConfigChangeCondition.callAnalysisResultField) &&
+        Objects.equals(this.agentWrapupField, dialerRulesetConfigChangeCondition.agentWrapupField) &&
+        Objects.equals(this.contactColumnToDataActionFieldMappings, dialerRulesetConfigChangeCondition.contactColumnToDataActionFieldMappings) &&
+        Objects.equals(this.predicates, dialerRulesetConfigChangeCondition.predicates) &&
+        Objects.equals(this.dataAction, dialerRulesetConfigChangeCondition.dataAction) &&
         Objects.equals(this.additionalProperties, dialerRulesetConfigChangeCondition.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, additionalProperties);
+    return Objects.hash(type, inverted, attributeName, value, valueType, operator, codes, propertyType, property, contactIdField, callAnalysisResultField, agentWrapupField, contactColumnToDataActionFieldMappings, predicates, dataAction, additionalProperties);
   }
 
   @Override
@@ -354,6 +471,12 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
     sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
     sb.append("    propertyType: ").append(toIndentedString(propertyType)).append("\n");
     sb.append("    property: ").append(toIndentedString(property)).append("\n");
+    sb.append("    contactIdField: ").append(toIndentedString(contactIdField)).append("\n");
+    sb.append("    callAnalysisResultField: ").append(toIndentedString(callAnalysisResultField)).append("\n");
+    sb.append("    agentWrapupField: ").append(toIndentedString(agentWrapupField)).append("\n");
+    sb.append("    contactColumnToDataActionFieldMappings: ").append(toIndentedString(contactColumnToDataActionFieldMappings)).append("\n");
+    sb.append("    predicates: ").append(toIndentedString(predicates)).append("\n");
+    sb.append("    dataAction: ").append(toIndentedString(dataAction)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

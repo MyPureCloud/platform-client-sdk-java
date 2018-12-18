@@ -15,8 +15,8 @@ title: ConversationEntityListing
 | **firstUri** | **String** |  |  [optional] |
 | **selfUri** | **String** |  |  [optional] |
 | **previousUri** | **String** |  |  [optional] |
-| **lastUri** | **String** |  |  [optional] |
 | **nextUri** | **String** |  |  [optional] |
+| **lastUri** | **String** |  |  [optional] |
 | **pageCount** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
 
