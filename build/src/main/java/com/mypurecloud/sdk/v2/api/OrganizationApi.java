@@ -13,14 +13,17 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Organization;
+import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -196,6 +199,81 @@ public class OrganizationApi {
 
   
   /**
+   * Get organization whitelist settings
+   * 
+   * @return OrgWhitelistSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgWhitelistSettings getOrganizationsWhitelist() throws IOException, ApiException {
+    return  getOrganizationsWhitelist(createGetOrganizationsWhitelistRequest());
+  }
+
+  /**
+   * Get organization whitelist settings
+   * 
+   * @return OrgWhitelistSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgWhitelistSettings> getOrganizationsWhitelistWithHttpInfo() throws IOException {
+    return getOrganizationsWhitelist(createGetOrganizationsWhitelistRequest().withHttpInfo());
+  }
+
+  private GetOrganizationsWhitelistRequest createGetOrganizationsWhitelistRequest() {
+    return GetOrganizationsWhitelistRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get organization whitelist settings
+   * 
+   * @param request The request object
+   * @return OrgWhitelistSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgWhitelistSettings getOrganizationsWhitelist(GetOrganizationsWhitelistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgWhitelistSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgWhitelistSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organization whitelist settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgWhitelistSettings> getOrganizationsWhitelist(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgWhitelistSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update organization
    * 
    * @param featureName Organization feature (required)
@@ -352,6 +430,85 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param body Whitelist settings (required)
+   * @return OrgWhitelistSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgWhitelistSettings putOrganizationsWhitelist(OrgWhitelistSettings body) throws IOException, ApiException {
+    return  putOrganizationsWhitelist(createPutOrganizationsWhitelistRequest(body));
+  }
+
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param body Whitelist settings (required)
+   * @return OrgWhitelistSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgWhitelistSettings> putOrganizationsWhitelistWithHttpInfo(OrgWhitelistSettings body) throws IOException {
+    return putOrganizationsWhitelist(createPutOrganizationsWhitelistRequest(body).withHttpInfo());
+  }
+
+  private PutOrganizationsWhitelistRequest createPutOrganizationsWhitelistRequest(OrgWhitelistSettings body) {
+    return PutOrganizationsWhitelistRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param request The request object
+   * @return OrgWhitelistSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgWhitelistSettings putOrganizationsWhitelist(PutOrganizationsWhitelistRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgWhitelistSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgWhitelistSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgWhitelistSettings> putOrganizationsWhitelist(ApiRequest<OrgWhitelistSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgWhitelistSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

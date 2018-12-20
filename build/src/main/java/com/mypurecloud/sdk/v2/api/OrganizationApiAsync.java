@@ -16,14 +16,17 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.Organization;
+import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
 import com.mypurecloud.sdk.v2.model.FeatureState;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -198,6 +201,82 @@ public class OrganizationApiAsync {
 
   
   /**
+   * Get organization whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgWhitelistSettings> getOrganizationsWhitelistAsync(GetOrganizationsWhitelistRequest request, final AsyncApiCallback<OrgWhitelistSettings> callback) {
+    try {
+      final SettableFuture<OrgWhitelistSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgWhitelistSettings>() {}, new AsyncApiCallback<ApiResponse<OrgWhitelistSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgWhitelistSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get organization whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgWhitelistSettings>> getOrganizationsWhitelistAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrgWhitelistSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgWhitelistSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgWhitelistSettings>() {}, new AsyncApiCallback<ApiResponse<OrgWhitelistSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgWhitelistSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update organization
    * 
    * @param request the request object
@@ -337,6 +416,82 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Organization> response = (ApiResponse<Organization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgWhitelistSettings> putOrganizationsWhitelistAsync(PutOrganizationsWhitelistRequest request, final AsyncApiCallback<OrgWhitelistSettings> callback) {
+    try {
+      final SettableFuture<OrgWhitelistSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgWhitelistSettings>() {}, new AsyncApiCallback<ApiResponse<OrgWhitelistSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgWhitelistSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update organization whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgWhitelistSettings>> putOrganizationsWhitelistAsync(ApiRequest<OrgWhitelistSettings> request, final AsyncApiCallback<ApiResponse<OrgWhitelistSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgWhitelistSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgWhitelistSettings>() {}, new AsyncApiCallback<ApiResponse<OrgWhitelistSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgWhitelistSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgWhitelistSettings> response = (ApiResponse<OrgWhitelistSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -9,8 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | Get organization. |
+| [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Get organization whitelist settings |
 | [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | Update organization |
 | [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | Update organization. |
+| [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | Update organization whitelist settings |
 {: class="table table-striped"}
 
 <a name="getFieldconfig"></a>
@@ -120,6 +122,58 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**Organization**](Organization.html)
+
+<a name="getOrganizationsWhitelist"></a>
+
+# **getOrganizationsWhitelist**
+
+
+
+> [OrgWhitelistSettings](OrgWhitelistSettings.html) getOrganizationsWhitelist()
+
+Get organization whitelist settings
+
+
+
+Wraps GET /api/v2/organizations/whitelist  
+
+Requires NO permissions: 
+
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+
+OrganizationApi apiInstance = new OrganizationApi();
+try {
+    OrgWhitelistSettings result = apiInstance.getOrganizationsWhitelist();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsWhitelist");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+This endpoint does not require any parameters.
+{: class="table table-striped"}
+
+### Return type
+
+[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
 
 <a name="patchOrganizationsFeature"></a>
 
@@ -236,4 +290,61 @@ try {
 ### Return type
 
 [**Organization**](Organization.html)
+
+<a name="putOrganizationsWhitelist"></a>
+
+# **putOrganizationsWhitelist**
+
+
+
+> [OrgWhitelistSettings](OrgWhitelistSettings.html) putOrganizationsWhitelist(body)
+
+Update organization whitelist settings
+
+
+
+Wraps PUT /api/v2/organizations/whitelist  
+
+Requires ANY permissions: 
+
+* admin
+
+### Example
+
+~~~java
+//Import classes:
+//import com.mypurecloud.sdk.v2.ApiClient;
+//import com.mypurecloud.sdk.v2.ApiException;
+//import com.mypurecloud.sdk.v2.Configuration;
+//import com.mypurecloud.sdk.v2.auth.*;
+//import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: PureCloud OAuth
+OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
+PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+
+OrganizationApi apiInstance = new OrganizationApi();
+OrgWhitelistSettings body = new OrgWhitelistSettings(); // OrgWhitelistSettings | Whitelist settings
+try {
+    OrgWhitelistSettings result = apiInstance.putOrganizationsWhitelist(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#putOrganizationsWhitelist");
+    e.printStackTrace();
+}
+~~~
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings.html)| Whitelist settings | |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
 

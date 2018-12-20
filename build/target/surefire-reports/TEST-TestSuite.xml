@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="3.147" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="2.835" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire/surefirebooter8382440150019864227.jar /var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire 2018-12-18T10-54-25_441-jvmRun1 surefire4257955292701941716tmp surefire_01347287843548193000tmp"/>
+    <property name="sun.java.command" value="/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire/surefirebooter5793301180469367686.jar /var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire 2018-12-20T10-45-51_593-jvmRun1 surefire8347700806041510822tmp surefire_03433316911193881683tmp"/>
     <property name="surefire.test.class.path" value="/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/test-classes:/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/classes:/home/jenkins/.m2/repository/io/swagger/swagger-annotations/1.5.8/swagger-annotations-1.5.8.jar:/home/jenkins/.m2/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/home/jenkins/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/home/jenkins/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jenkins/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/home/jenkins/.m2/repository/com/squareup/okhttp/okhttp/2.7.0/okhttp-2.7.0.jar:/home/jenkins/.m2/repository/com/squareup/okio/okio/1.6.0/okio-1.6.0.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client/2.0.30/async-http-client-2.0.30.jar:/home/jenkins/.m2/repository/org/asynchttpclient/async-http-client-netty-utils/2.0.30/async-http-client-netty-utils-2.0.30.jar:/home/jenkins/.m2/repository/io/netty/netty-buffer/4.0.44.Final/netty-buffer-4.0.44.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec-http/4.0.44.Final/netty-codec-http-4.0.44.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-codec/4.0.44.Final/netty-codec-4.0.44.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-handler/4.0.44.Final/netty-handler-4.0.44.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport-native-epoll/4.0.44.Final/netty-transport-native-epoll-4.0.44.Final-linux-x86_64.jar:/home/jenkins/.m2/repository/io/netty/netty-common/4.0.44.Final/netty-common-4.0.44.Final.jar:/home/jenkins/.m2/repository/io/netty/netty-transport/4.0.44.Final/netty-transport-4.0.44.Final.jar:/home/jenkins/.m2/repository/org/asynchttpclient/netty-resolver-dns/2.0.30/netty-resolver-dns-2.0.30.jar:/home/jenkins/.m2/repository/org/asynchttpclient/netty-resolver/2.0.30/netty-resolver-2.0.30.jar:/home/jenkins/.m2/repository/org/asynchttpclient/netty-codec-dns/2.0.30/netty-codec-dns-2.0.30.jar:/home/jenkins/.m2/repository/org/reactivestreams/reactive-streams/1.0.0/reactive-streams-1.0.0.jar:/home/jenkins/.m2/repository/com/typesafe/netty/netty-reactive-streams/1.0.8/netty-reactive-streams-1.0.8.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.0/jackson-core-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.0/jackson-databind-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.7.0/jackson-jaxrs-json-provider-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.7.0/jackson-jaxrs-base-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.7.0/jackson-module-jaxb-annotations-2.7.0.jar:/home/jenkins/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.1.5/jackson-datatype-joda-2.1.5.jar:/home/jenkins/.m2/repository/joda-time/joda-time/2.9.3/joda-time-2.9.3.jar:/home/jenkins/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/home/jenkins/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/jenkins/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/jenkins/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/home/jenkins/.m2/repository/com/neovisionaries/nv-websocket-client/1.31/nv-websocket-client-1.31.jar:/home/jenkins/.m2/repository/com/google/guava/guava/21.0/guava-21.0.jar:/home/jenkins/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/home/jenkins/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/jenkins"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire/surefirebooter8382440150019864227.jar"/>
+    <property name="surefire.real.class.path" value="/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build/target/surefire/surefirebooter5793301180469367686.jar"/>
     <property name="sun.boot.class.path" value="/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/resources.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/rt.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/sunrsasign.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/jsse.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/jce.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/charsets.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/lib/jfr.jar:/var/build/tools/hudson.model.JDK/Oracle_JDK_8_latest_/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_192-b12"/>
@@ -58,12 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.004"/>
-  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.901"/>
-  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.683"/>
-  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.182"/>
-  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.238"/>
-  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.341"/>
-  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.064"/>
-  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.308"/>
+  <testcase name="traceBasicInformation" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.005"/>
+  <testcase name="authenticate" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.803"/>
+  <testcase name="createUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.666"/>
+  <testcase name="updateUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.139"/>
+  <testcase name="setProfileSkills" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.109"/>
+  <testcase name="testNotifications" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.352"/>
+  <testcase name="getUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.056"/>
+  <testcase name="deleteUser" classname="com.mypurecloud.sdk.v2.SdkTests" time="0.321"/>
 </testsuite>

@@ -282,6 +282,7 @@ public class ViewFilter  implements Serializable {
   private Boolean isConsulted = null;
   private Boolean isConsultTransferred = null;
   private List<String> remoteParticipants = new ArrayList<String>();
+  private List<String> statusList = new ArrayList<String>();
 
   
   /**
@@ -1256,6 +1257,24 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of status for the configuration view
+   **/
+  public ViewFilter statusList(List<String> statusList) {
+    this.statusList = statusList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of status for the configuration view")
+  @JsonProperty("statusList")
+  public List<String> getStatusList() {
+    return statusList;
+  }
+  public void setStatusList(List<String> statusList) {
+    this.statusList = statusList;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1319,12 +1338,13 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.isBlindTransferred, viewFilter.isBlindTransferred) &&
         Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
         Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
-        Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants);
+        Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants) &&
+        Objects.equals(this.statusList, viewFilter.statusList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList);
   }
 
   @Override
@@ -1386,6 +1406,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    isConsulted: ").append(toIndentedString(isConsulted)).append("\n");
     sb.append("    isConsultTransferred: ").append(toIndentedString(isConsultTransferred)).append("\n");
     sb.append("    remoteParticipants: ").append(toIndentedString(remoteParticipants)).append("\n");
+    sb.append("    statusList: ").append(toIndentedString(statusList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

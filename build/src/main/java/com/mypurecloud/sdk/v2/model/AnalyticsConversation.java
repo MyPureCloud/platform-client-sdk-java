@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsEvaluation;
 import com.mypurecloud.sdk.v2.model.AnalyticsParticipant;
 import com.mypurecloud.sdk.v2.model.AnalyticsSurvey;
@@ -25,6 +26,41 @@ public class AnalyticsConversation  implements Serializable {
   private Date conversationEnd = null;
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
+
+  /**
+   * The original direction of the conversation
+   */
+  public enum OriginatingDirectionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    OriginatingDirectionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OriginatingDirectionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OriginatingDirectionEnum value : OriginatingDirectionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OriginatingDirectionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OriginatingDirectionEnum originatingDirection = null;
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
   private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
@@ -122,6 +158,24 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
+   * The original direction of the conversation
+   **/
+  public AnalyticsConversation originatingDirection(OriginatingDirectionEnum originatingDirection) {
+    this.originatingDirection = originatingDirection;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The original direction of the conversation")
+  @JsonProperty("originatingDirection")
+  public OriginatingDirectionEnum getOriginatingDirection() {
+    return originatingDirection;
+  }
+  public void setOriginatingDirection(OriginatingDirectionEnum originatingDirection) {
+    this.originatingDirection = originatingDirection;
+  }
+
+  
+  /**
    * Participants in the conversation
    **/
   public AnalyticsConversation participants(List<AnalyticsParticipant> participants) {
@@ -208,6 +262,7 @@ public class AnalyticsConversation  implements Serializable {
         Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
         Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
         Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
+        Objects.equals(this.originatingDirection, analyticsConversation.originatingDirection) &&
         Objects.equals(this.participants, analyticsConversation.participants) &&
         Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
         Objects.equals(this.surveys, analyticsConversation.surveys) &&
@@ -216,7 +271,7 @@ public class AnalyticsConversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, participants, evaluations, surveys, divisionIds);
+    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, participants, evaluations, surveys, divisionIds);
   }
 
   @Override
@@ -229,6 +284,7 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
+    sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");

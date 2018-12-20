@@ -142,6 +142,7 @@ public class AnalyticsSession  implements Serializable {
   }
   private DirectionEnum direction = null;
   private String dnis = null;
+  private String sessionDnis = null;
   private String outboundCampaignId = null;
   private String outboundContactId = null;
   private String outboundContactListId = null;
@@ -333,20 +334,38 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * Automatic Number Identification (caller's number)
+   * Dialed number identification service (number dialed by the calling party)
    **/
   public AnalyticsSession dnis(String dnis) {
     this.dnis = dnis;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Automatic Number Identification (caller's number)")
+  @ApiModelProperty(example = "null", value = "Dialed number identification service (number dialed by the calling party)")
   @JsonProperty("dnis")
   public String getDnis() {
     return dnis;
   }
   public void setDnis(String dnis) {
     this.dnis = dnis;
+  }
+
+  
+  /**
+   * Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred
+   **/
+  public AnalyticsSession sessionDnis(String sessionDnis) {
+    this.sessionDnis = sessionDnis;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred")
+  @JsonProperty("sessionDnis")
+  public String getSessionDnis() {
+    return sessionDnis;
+  }
+  public void setSessionDnis(String sessionDnis) {
+    this.sessionDnis = sessionDnis;
   }
 
   
@@ -907,6 +926,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.ani, analyticsSession.ani) &&
         Objects.equals(this.direction, analyticsSession.direction) &&
         Objects.equals(this.dnis, analyticsSession.dnis) &&
+        Objects.equals(this.sessionDnis, analyticsSession.sessionDnis) &&
         Objects.equals(this.outboundCampaignId, analyticsSession.outboundCampaignId) &&
         Objects.equals(this.outboundContactId, analyticsSession.outboundContactId) &&
         Objects.equals(this.outboundContactListId, analyticsSession.outboundContactListId) &&
@@ -941,7 +961,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording);
   }
 
   @Override
@@ -959,6 +979,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
+    sb.append("    sessionDnis: ").append(toIndentedString(sessionDnis)).append("\n");
     sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
     sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");

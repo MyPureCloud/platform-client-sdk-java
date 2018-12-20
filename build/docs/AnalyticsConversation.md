@@ -13,10 +13,23 @@ title: AnalyticsConversation
 | **conversationEnd** | [**Date**](Date.html) | Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **mediaStatsMinConversationMos** | **Double** | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
 | **mediaStatsMinConversationRFactor** | **Double** | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
+| **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum) | The original direction of the conversation |  [optional] |
 | **participants** | [**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html) | Participants in the conversation |  [optional] |
 | **evaluations** | [**List&lt;AnalyticsEvaluation&gt;**](AnalyticsEvaluation.html) | Evaluations tied to this conversation |  [optional] |
 | **surveys** | [**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html) | Surveys tied to this conversation |  [optional] |
 | **divisionIds** | **List&lt;String&gt;** | Identifiers of divisions associated with this conversation |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="OriginatingDirectionEnum"></a>
+
+## Enum: OriginatingDirectionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| INBOUND | &quot;inbound&quot; |
+| OUTBOUND | &quot;outbound&quot; |
 {: class="table table-striped"}
 
 

@@ -47,6 +47,7 @@ title: AnalyticsQueryPredicate
 | PARTICIPANTID | &quot;participantId&quot; |
 | PARTICIPANTNAME | &quot;participantName&quot; |
 | DIRECTION | &quot;direction&quot; |
+| ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 | WRAPUPNOTE | &quot;wrapUpNote&quot; |
 | INTERACTIONTYPE | &quot;interactionType&quot; |
@@ -70,6 +71,7 @@ title: AnalyticsQueryPredicate
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |
 | ANI | &quot;ani&quot; |
+| SESSIONDNIS | &quot;sessionDnis&quot; |
 | OUTBOUNDCAMPAIGNID | &quot;outboundCampaignId&quot; |
 | OUTBOUNDCONTACTID | &quot;outboundContactId&quot; |
 | OUTBOUNDCONTACTLISTID | &quot;outboundContactListId&quot; |
