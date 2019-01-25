@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
+import com.mypurecloud.sdk.v2.model.RoleDivision;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -65,6 +66,7 @@ public class OrgOAuthClient  implements Serializable {
   }
   private AuthorizedGrantTypeEnum authorizedGrantType = null;
   private List<String> scope = new ArrayList<String>();
+  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
   private NamedEntity organization = null;
 
   
@@ -202,6 +204,24 @@ public class OrgOAuthClient  implements Serializable {
 
   
   /**
+   * Set of roles and their corresponding divisions associated with this client
+   **/
+  public OrgOAuthClient roleDivisions(List<RoleDivision> roleDivisions) {
+    this.roleDivisions = roleDivisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set of roles and their corresponding divisions associated with this client")
+  @JsonProperty("roleDivisions")
+  public List<RoleDivision> getRoleDivisions() {
+    return roleDivisions;
+  }
+  public void setRoleDivisions(List<RoleDivision> roleDivisions) {
+    this.roleDivisions = roleDivisions;
+  }
+
+  
+  /**
    * The  oauth client's organization.
    **/
   public OrgOAuthClient organization(NamedEntity organization) {
@@ -237,12 +257,13 @@ public class OrgOAuthClient  implements Serializable {
         Objects.equals(this.modifiedBy, orgOAuthClient.modifiedBy) &&
         Objects.equals(this.authorizedGrantType, orgOAuthClient.authorizedGrantType) &&
         Objects.equals(this.scope, orgOAuthClient.scope) &&
+        Objects.equals(this.roleDivisions, orgOAuthClient.roleDivisions) &&
         Objects.equals(this.organization, orgOAuthClient.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, organization);
+    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, roleDivisions, organization);
   }
 
   @Override
@@ -258,6 +279,7 @@ public class OrgOAuthClient  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();

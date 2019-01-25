@@ -15,6 +15,7 @@ title: WebChatDeployment
 | **authenticationUrl** | **String** | URL for third party service authenticating web chat clients. See https://github.com/MyPureCloud/authenticated-web-chat-server-examples |  [optional] |
 | **disabled** | **Boolean** |  |  [optional] |
 | **webChatConfig** | [**WebChatConfig**](WebChatConfig.html) |  |  [optional] |
+| **allowedDomains** | **List&lt;String&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

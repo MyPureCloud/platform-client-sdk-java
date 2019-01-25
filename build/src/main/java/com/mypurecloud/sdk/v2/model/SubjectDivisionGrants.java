@@ -29,6 +29,7 @@ public class SubjectDivisionGrants  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PC_USER("PC_USER"),
     PC_GROUP("PC_GROUP"),
+    PC_OAUTH_CLIENT("PC_OAUTH_CLIENT"),
     UNKNOWN("UNKNOWN");
 
     private String value;

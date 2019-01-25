@@ -20,6 +20,7 @@ title: OAuthClientListing
 | **createdBy** | [**UriReference**](UriReference.html) | User that created this client |  [optional] |
 | **modifiedBy** | [**UriReference**](UriReference.html) | User that last modified this client |  [optional] |
 | **scope** | **List&lt;String&gt;** | The scope requested by this client |  |
+| **roleDivisions** | [**List&lt;RoleDivision&gt;**](RoleDivision.html) | Set of roles and their corresponding divisions associated with this client |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

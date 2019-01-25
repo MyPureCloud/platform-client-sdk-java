@@ -14,12 +14,16 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteLocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLocationRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 
 import java.io.IOException;
@@ -38,6 +42,82 @@ public class LocationsApi {
 
   public LocationsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a location
+   * 
+   * @param locationId Location ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLocation(String locationId) throws IOException, ApiException {
+     deleteLocation(createDeleteLocationRequest(locationId));
+  }
+
+  /**
+   * Delete a location
+   * 
+   * @param locationId Location ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLocationWithHttpInfo(String locationId) throws IOException {
+    return deleteLocation(createDeleteLocationRequest(locationId).withHttpInfo());
+  }
+
+  private DeleteLocationRequest createDeleteLocationRequest(String locationId) {
+    return DeleteLocationRequest.builder()
+            .withLocationId(locationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a location
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLocation(DeleteLocationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a location
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLocation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -125,13 +205,14 @@ public class LocationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
    * @param sortOrder Sort order (optional)
    * @return LocationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LocationEntityListing getLocations(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
-    return  getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder));
+  public LocationEntityListing getLocations(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException, ApiException {
+    return  getLocations(createGetLocationsRequest(pageSize, pageNumber, id, sortOrder));
   }
 
   /**
@@ -139,19 +220,22 @@ public class LocationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param id id (optional)
    * @param sortOrder Sort order (optional)
    * @return LocationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationEntityListing> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
-    return getLocations(createGetLocationsRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
+  public ApiResponse<LocationEntityListing> getLocationsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException {
+    return getLocations(createGetLocationsRequest(pageSize, pageNumber, id, sortOrder).withHttpInfo());
   }
 
-  private GetLocationsRequest createGetLocationsRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
+  private GetLocationsRequest createGetLocationsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
     return GetLocationsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withId(id)
     
             .withSortOrder(sortOrder)
     
@@ -285,6 +369,168 @@ public class LocationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LocationsSearchResponse> response = (ApiResponse<LocationsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a location
+   * 
+   * @param locationId Location ID (required)
+   * @param body Location (required)
+   * @return LocationDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationDefinition patchLocation(String locationId, LocationUpdateDefinition body) throws IOException, ApiException {
+    return  patchLocation(createPatchLocationRequest(locationId, body));
+  }
+
+  /**
+   * Update a location
+   * 
+   * @param locationId Location ID (required)
+   * @param body Location (required)
+   * @return LocationDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationDefinition> patchLocationWithHttpInfo(String locationId, LocationUpdateDefinition body) throws IOException {
+    return patchLocation(createPatchLocationRequest(locationId, body).withHttpInfo());
+  }
+
+  private PatchLocationRequest createPatchLocationRequest(String locationId, LocationUpdateDefinition body) {
+    return PatchLocationRequest.builder()
+            .withLocationId(locationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a location
+   * 
+   * @param request The request object
+   * @return LocationDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationDefinition patchLocation(PatchLocationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LocationDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a location
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationDefinition> patchLocation(ApiRequest<LocationUpdateDefinition> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a location
+   * 
+   * @param body Location (required)
+   * @return LocationDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationDefinition postLocations(LocationDefinition body) throws IOException, ApiException {
+    return  postLocations(createPostLocationsRequest(body));
+  }
+
+  /**
+   * Create a location
+   * 
+   * @param body Location (required)
+   * @return LocationDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationDefinition> postLocationsWithHttpInfo(LocationDefinition body) throws IOException {
+    return postLocations(createPostLocationsRequest(body).withHttpInfo());
+  }
+
+  private PostLocationsRequest createPostLocationsRequest(LocationDefinition body) {
+    return PostLocationsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a location
+   * 
+   * @param request The request object
+   * @return LocationDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationDefinition postLocations(PostLocationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LocationDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a location
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationDefinition> postLocations(ApiRequest<LocationDefinition> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

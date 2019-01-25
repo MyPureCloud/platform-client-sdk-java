@@ -120,6 +120,8 @@ title: AnalyticsQueryPredicate
 | FLOWVERSION | &quot;flowVersion&quot; |
 | FLOWTYPE | &quot;flowType&quot; |
 | EXITREASON | &quot;exitReason&quot; |
+| ENTRYREASON | &quot;entryReason&quot; |
+| ENTRYTYPE | &quot;entryType&quot; |
 | TRANSFERTYPE | &quot;transferType&quot; |
 | TRANSFERTARGETNAME | &quot;transferTargetName&quot; |
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
@@ -129,6 +131,13 @@ title: AnalyticsQueryPredicate
 | FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
 | FLOWOUTCOMEVALUE | &quot;flowOutcomeValue&quot; |
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
+| JOURNEYCUSTOMERID | &quot;journeyCustomerId&quot; |
+| JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
+| JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
+| JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| JOURNEYACTIONID | &quot;journeyActionId&quot; |
+| JOURNEYACTIONMAPID | &quot;journeyActionMapId&quot; |
+| JOURNEYACTIONMAPVERSION | &quot;journeyActionMapVersion&quot; |
 | MINMOS | &quot;minMos&quot; |
 | MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; |
 | MINRFACTOR | &quot;minRFactor&quot; |

@@ -64,6 +64,45 @@ public class AnalyticsFlow  implements Serializable {
   }
   private FlowTypeEnum flowType = null;
   private String exitReason = null;
+  private String entryReason = null;
+
+  /**
+   * The entry type for this flow
+   */
+  public enum EntryTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DNIS("dnis"),
+    DIRECT("direct"),
+    FLOW("flow"),
+    AGENT("agent"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    EntryTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EntryTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EntryTypeEnum value : EntryTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EntryTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EntryTypeEnum entryType = null;
   private String transferType = null;
   private String transferTargetName = null;
   private String transferTargetAddress = null;
@@ -160,6 +199,42 @@ public class AnalyticsFlow  implements Serializable {
   }
   public void setExitReason(String exitReason) {
     this.exitReason = exitReason;
+  }
+
+  
+  /**
+   * The particular entry reason for this flow, e.g. an address, userId, or flowId
+   **/
+  public AnalyticsFlow entryReason(String entryReason) {
+    this.entryReason = entryReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The particular entry reason for this flow, e.g. an address, userId, or flowId")
+  @JsonProperty("entryReason")
+  public String getEntryReason() {
+    return entryReason;
+  }
+  public void setEntryReason(String entryReason) {
+    this.entryReason = entryReason;
+  }
+
+  
+  /**
+   * The entry type for this flow
+   **/
+  public AnalyticsFlow entryType(EntryTypeEnum entryType) {
+    this.entryType = entryType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The entry type for this flow")
+  @JsonProperty("entryType")
+  public EntryTypeEnum getEntryType() {
+    return entryType;
+  }
+  public void setEntryType(EntryTypeEnum entryType) {
+    this.entryType = entryType;
   }
 
   
@@ -304,6 +379,8 @@ public class AnalyticsFlow  implements Serializable {
         Objects.equals(this.flowVersion, analyticsFlow.flowVersion) &&
         Objects.equals(this.flowType, analyticsFlow.flowType) &&
         Objects.equals(this.exitReason, analyticsFlow.exitReason) &&
+        Objects.equals(this.entryReason, analyticsFlow.entryReason) &&
+        Objects.equals(this.entryType, analyticsFlow.entryType) &&
         Objects.equals(this.transferType, analyticsFlow.transferType) &&
         Objects.equals(this.transferTargetName, analyticsFlow.transferTargetName) &&
         Objects.equals(this.transferTargetAddress, analyticsFlow.transferTargetAddress) &&
@@ -315,7 +392,7 @@ public class AnalyticsFlow  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(flowId, flowName, flowVersion, flowType, exitReason, transferType, transferTargetName, transferTargetAddress, issuedCallback, startingLanguage, endingLanguage, outcomes);
+    return Objects.hash(flowId, flowName, flowVersion, flowType, exitReason, entryReason, entryType, transferType, transferTargetName, transferTargetAddress, issuedCallback, startingLanguage, endingLanguage, outcomes);
   }
 
   @Override
@@ -328,6 +405,8 @@ public class AnalyticsFlow  implements Serializable {
     sb.append("    flowVersion: ").append(toIndentedString(flowVersion)).append("\n");
     sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
     sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
+    sb.append("    entryReason: ").append(toIndentedString(entryReason)).append("\n");
+    sb.append("    entryType: ").append(toIndentedString(entryType)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("    transferTargetName: ").append(toIndentedString(transferTargetName)).append("\n");
     sb.append("    transferTargetAddress: ").append(toIndentedString(transferTargetAddress)).append("\n");

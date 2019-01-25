@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WebChatConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -22,6 +24,7 @@ public class WebChatDeployment  implements Serializable {
   private String authenticationUrl = null;
   private Boolean disabled = null;
   private WebChatConfig webChatConfig = null;
+  private List<String> allowedDomains = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -135,6 +138,23 @@ public class WebChatDeployment  implements Serializable {
   }
 
   
+  /**
+   **/
+  public WebChatDeployment allowedDomains(List<String> allowedDomains) {
+    this.allowedDomains = allowedDomains;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("allowedDomains")
+  public List<String> getAllowedDomains() {
+    return allowedDomains;
+  }
+  public void setAllowedDomains(List<String> allowedDomains) {
+    this.allowedDomains = allowedDomains;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -159,12 +179,13 @@ public class WebChatDeployment  implements Serializable {
         Objects.equals(this.authenticationUrl, webChatDeployment.authenticationUrl) &&
         Objects.equals(this.disabled, webChatDeployment.disabled) &&
         Objects.equals(this.webChatConfig, webChatDeployment.webChatConfig) &&
+        Objects.equals(this.allowedDomains, webChatDeployment.allowedDomains) &&
         Objects.equals(this.selfUri, webChatDeployment.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, webChatConfig, selfUri);
+    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, webChatConfig, allowedDomains, selfUri);
   }
 
   @Override
@@ -179,6 +200,7 @@ public class WebChatDeployment  implements Serializable {
     sb.append("    authenticationUrl: ").append(toIndentedString(authenticationUrl)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    webChatConfig: ").append(toIndentedString(webChatConfig)).append("\n");
+    sb.append("    allowedDomains: ").append(toIndentedString(allowedDomains)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

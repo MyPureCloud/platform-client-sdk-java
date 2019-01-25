@@ -21,6 +21,7 @@ title: OAuthClient
 | **modifiedBy** | [**UriReference**](UriReference.html) | User that last modified this client |  [optional] |
 | **authorizedGrantType** | [**AuthorizedGrantTypeEnum**](#AuthorizedGrantTypeEnum) | The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client.  |  |
 | **scope** | **List&lt;String&gt;** | The scope requested by this client |  |
+| **roleDivisions** | [**List&lt;RoleDivision&gt;**](RoleDivision.html) | Set of roles and their corresponding divisions associated with this client |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

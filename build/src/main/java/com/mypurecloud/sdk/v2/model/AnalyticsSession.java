@@ -173,6 +173,13 @@ public class AnalyticsSession  implements Serializable {
   private AnalyticsFlow flow = null;
   private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
   private Boolean recording = null;
+  private String journeyCustomerId = null;
+  private String journeyCustomerIdType = null;
+  private String journeyCustomerSessionId = null;
+  private String journeyCustomerSessionIdType = null;
+  private String journeyActionId = null;
+  private String journeyActionMapId = null;
+  private String journeyActionMapVersion = null;
 
   
   /**
@@ -906,6 +913,132 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * ID of the journey customer
+   **/
+  public AnalyticsSession journeyCustomerId(String journeyCustomerId) {
+    this.journeyCustomerId = journeyCustomerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the journey customer")
+  @JsonProperty("journeyCustomerId")
+  public String getJourneyCustomerId() {
+    return journeyCustomerId;
+  }
+  public void setJourneyCustomerId(String journeyCustomerId) {
+    this.journeyCustomerId = journeyCustomerId;
+  }
+
+  
+  /**
+   * Type of the journey customer ID
+   **/
+  public AnalyticsSession journeyCustomerIdType(String journeyCustomerIdType) {
+    this.journeyCustomerIdType = journeyCustomerIdType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the journey customer ID")
+  @JsonProperty("journeyCustomerIdType")
+  public String getJourneyCustomerIdType() {
+    return journeyCustomerIdType;
+  }
+  public void setJourneyCustomerIdType(String journeyCustomerIdType) {
+    this.journeyCustomerIdType = journeyCustomerIdType;
+  }
+
+  
+  /**
+   * ID of the journey customer session
+   **/
+  public AnalyticsSession journeyCustomerSessionId(String journeyCustomerSessionId) {
+    this.journeyCustomerSessionId = journeyCustomerSessionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the journey customer session")
+  @JsonProperty("journeyCustomerSessionId")
+  public String getJourneyCustomerSessionId() {
+    return journeyCustomerSessionId;
+  }
+  public void setJourneyCustomerSessionId(String journeyCustomerSessionId) {
+    this.journeyCustomerSessionId = journeyCustomerSessionId;
+  }
+
+  
+  /**
+   * Type of the journey customer session ID
+   **/
+  public AnalyticsSession journeyCustomerSessionIdType(String journeyCustomerSessionIdType) {
+    this.journeyCustomerSessionIdType = journeyCustomerSessionIdType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the journey customer session ID")
+  @JsonProperty("journeyCustomerSessionIdType")
+  public String getJourneyCustomerSessionIdType() {
+    return journeyCustomerSessionIdType;
+  }
+  public void setJourneyCustomerSessionIdType(String journeyCustomerSessionIdType) {
+    this.journeyCustomerSessionIdType = journeyCustomerSessionIdType;
+  }
+
+  
+  /**
+   * Journey action ID
+   **/
+  public AnalyticsSession journeyActionId(String journeyActionId) {
+    this.journeyActionId = journeyActionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey action ID")
+  @JsonProperty("journeyActionId")
+  public String getJourneyActionId() {
+    return journeyActionId;
+  }
+  public void setJourneyActionId(String journeyActionId) {
+    this.journeyActionId = journeyActionId;
+  }
+
+  
+  /**
+   * Journey action map ID
+   **/
+  public AnalyticsSession journeyActionMapId(String journeyActionMapId) {
+    this.journeyActionMapId = journeyActionMapId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey action map ID")
+  @JsonProperty("journeyActionMapId")
+  public String getJourneyActionMapId() {
+    return journeyActionMapId;
+  }
+  public void setJourneyActionMapId(String journeyActionMapId) {
+    this.journeyActionMapId = journeyActionMapId;
+  }
+
+  
+  /**
+   * Journey action map version
+   **/
+  public AnalyticsSession journeyActionMapVersion(String journeyActionMapVersion) {
+    this.journeyActionMapVersion = journeyActionMapVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey action map version")
+  @JsonProperty("journeyActionMapVersion")
+  public String getJourneyActionMapVersion() {
+    return journeyActionMapVersion;
+  }
+  public void setJourneyActionMapVersion(String journeyActionMapVersion) {
+    this.journeyActionMapVersion = journeyActionMapVersion;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -956,12 +1089,19 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.metrics, analyticsSession.metrics) &&
         Objects.equals(this.flow, analyticsSession.flow) &&
         Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
-        Objects.equals(this.recording, analyticsSession.recording);
+        Objects.equals(this.recording, analyticsSession.recording) &&
+        Objects.equals(this.journeyCustomerId, analyticsSession.journeyCustomerId) &&
+        Objects.equals(this.journeyCustomerIdType, analyticsSession.journeyCustomerIdType) &&
+        Objects.equals(this.journeyCustomerSessionId, analyticsSession.journeyCustomerSessionId) &&
+        Objects.equals(this.journeyCustomerSessionIdType, analyticsSession.journeyCustomerSessionIdType) &&
+        Objects.equals(this.journeyActionId, analyticsSession.journeyActionId) &&
+        Objects.equals(this.journeyActionMapId, analyticsSession.journeyActionMapId) &&
+        Objects.equals(this.journeyActionMapVersion, analyticsSession.journeyActionMapVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion);
   }
 
   @Override
@@ -1010,6 +1150,13 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    mediaEndpointStats: ").append(toIndentedString(mediaEndpointStats)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
+    sb.append("    journeyCustomerId: ").append(toIndentedString(journeyCustomerId)).append("\n");
+    sb.append("    journeyCustomerIdType: ").append(toIndentedString(journeyCustomerIdType)).append("\n");
+    sb.append("    journeyCustomerSessionId: ").append(toIndentedString(journeyCustomerSessionId)).append("\n");
+    sb.append("    journeyCustomerSessionIdType: ").append(toIndentedString(journeyCustomerSessionIdType)).append("\n");
+    sb.append("    journeyActionId: ").append(toIndentedString(journeyActionId)).append("\n");
+    sb.append("    journeyActionMapId: ").append(toIndentedString(journeyActionMapId)).append("\n");
+    sb.append("    journeyActionMapVersion: ").append(toIndentedString(journeyActionMapVersion)).append("\n");
     sb.append("}");
     return sb.toString();
   }

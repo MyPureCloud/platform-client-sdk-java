@@ -13,6 +13,8 @@ title: AnalyticsFlow
 | **flowVersion** | **String** | The version of this flow |  [optional] |
 | **flowType** | [**FlowTypeEnum**](#FlowTypeEnum) | The type of this flow |  [optional] |
 | **exitReason** | **String** | The exit reason for this flow, e.g. DISCONNECT |  [optional] |
+| **entryReason** | **String** | The particular entry reason for this flow, e.g. an address, userId, or flowId |  [optional] |
+| **entryType** | [**EntryTypeEnum**](#EntryTypeEnum) | The entry type for this flow |  [optional] |
 | **transferType** | **String** | The type of transfer for flows that ended with a transfer |  [optional] |
 | **transferTargetName** | **String** | The name of a transfer target |  [optional] |
 | **transferTargetAddress** | **String** | The address of a transfer target |  [optional] |
@@ -39,6 +41,21 @@ title: AnalyticsFlow
 | SPEECH | &quot;SPEECH&quot; |
 | SURVEYINVITE | &quot;SURVEYINVITE&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
+{: class="table table-striped"}
+
+
+<a name="EntryTypeEnum"></a>
+
+## Enum: EntryTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| DNIS | &quot;dnis&quot; |
+| DIRECT | &quot;direct&quot; |
+| FLOW | &quot;flow&quot; |
+| AGENT | &quot;agent&quot; |
+| OUTBOUND | &quot;outbound&quot; |
 {: class="table table-striped"}
 
 

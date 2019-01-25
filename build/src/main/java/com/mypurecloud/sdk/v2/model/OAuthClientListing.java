@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.RoleDivision;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,6 +31,7 @@ public class OAuthClientListing  implements Serializable {
   private UriReference createdBy = null;
   private UriReference modifiedBy = null;
   private List<String> scope = new ArrayList<String>();
+  private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
   private String selfUri = null;
 
   
@@ -237,6 +239,24 @@ public class OAuthClientListing  implements Serializable {
   }
 
   
+  /**
+   * Set of roles and their corresponding divisions associated with this client
+   **/
+  public OAuthClientListing roleDivisions(List<RoleDivision> roleDivisions) {
+    this.roleDivisions = roleDivisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set of roles and their corresponding divisions associated with this client")
+  @JsonProperty("roleDivisions")
+  public List<RoleDivision> getRoleDivisions() {
+    return roleDivisions;
+  }
+  public void setRoleDivisions(List<RoleDivision> roleDivisions) {
+    this.roleDivisions = roleDivisions;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -266,12 +286,13 @@ public class OAuthClientListing  implements Serializable {
         Objects.equals(this.createdBy, oAuthClientListing.createdBy) &&
         Objects.equals(this.modifiedBy, oAuthClientListing.modifiedBy) &&
         Objects.equals(this.scope, oAuthClientListing.scope) &&
+        Objects.equals(this.roleDivisions, oAuthClientListing.roleDivisions) &&
         Objects.equals(this.selfUri, oAuthClientListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, scope, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, scope, roleDivisions, selfUri);
   }
 
   @Override
@@ -291,6 +312,7 @@ public class OAuthClientListing  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

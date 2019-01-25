@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.FacebookId;
 import com.mypurecloud.sdk.v2.model.LineId;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.TwitterId;
+import com.mypurecloud.sdk.v2.model.WhatsAppId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class ExternalContact  implements Serializable {
   private ContactAddress address = null;
   private TwitterId twitterId = null;
   private LineId lineId = null;
+  private WhatsAppId whatsAppId = null;
   private FacebookId facebookId = null;
   private Date modifyDate = null;
   private Date createDate = null;
@@ -316,6 +318,23 @@ public class ExternalContact  implements Serializable {
   
   /**
    **/
+  public ExternalContact whatsAppId(WhatsAppId whatsAppId) {
+    this.whatsAppId = whatsAppId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("whatsAppId")
+  public WhatsAppId getWhatsAppId() {
+    return whatsAppId;
+  }
+  public void setWhatsAppId(WhatsAppId whatsAppId) {
+    this.whatsAppId = whatsAppId;
+  }
+
+  
+  /**
+   **/
   public ExternalContact facebookId(FacebookId facebookId) {
     this.facebookId = facebookId;
     return this;
@@ -470,6 +489,7 @@ public class ExternalContact  implements Serializable {
         Objects.equals(this.address, externalContact.address) &&
         Objects.equals(this.twitterId, externalContact.twitterId) &&
         Objects.equals(this.lineId, externalContact.lineId) &&
+        Objects.equals(this.whatsAppId, externalContact.whatsAppId) &&
         Objects.equals(this.facebookId, externalContact.facebookId) &&
         Objects.equals(this.modifyDate, externalContact.modifyDate) &&
         Objects.equals(this.createDate, externalContact.createDate) &&
@@ -482,7 +502,7 @@ public class ExternalContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
   }
 
   @Override
@@ -506,6 +526,7 @@ public class ExternalContact  implements Serializable {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    twitterId: ").append(toIndentedString(twitterId)).append("\n");
     sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
+    sb.append("    whatsAppId: ").append(toIndentedString(whatsAppId)).append("\n");
     sb.append("    facebookId: ").append(toIndentedString(facebookId)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");

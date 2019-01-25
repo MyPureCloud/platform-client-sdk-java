@@ -24,6 +24,7 @@ title: ExternalContact
 | **address** | [**ContactAddress**](ContactAddress.html) |  |  [optional] |
 | **twitterId** | [**TwitterId**](TwitterId.html) |  |  [optional] |
 | **lineId** | [**LineId**](LineId.html) |  |  [optional] |
+| **whatsAppId** | [**WhatsAppId**](WhatsAppId.html) |  |  [optional] |
 | **facebookId** | [**FacebookId**](FacebookId.html) |  |  [optional] |
 | **modifyDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **createDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |

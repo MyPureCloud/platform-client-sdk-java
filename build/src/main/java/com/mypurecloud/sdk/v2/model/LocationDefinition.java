@@ -72,13 +72,14 @@ public class LocationDefinition  implements Serializable {
 
   
   /**
+   * The name of the Location.
    **/
   public LocationDefinition name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the Location.")
   @JsonProperty("name")
   public String getName() {
     return name;

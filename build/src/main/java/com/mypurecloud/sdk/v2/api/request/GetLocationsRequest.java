@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 public class GetLocationsRequest {
@@ -53,6 +54,20 @@ public class GetLocationsRequest {
 
 	public GetLocationsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetLocationsRequest withId(List<String> id) {
+	    this.setId(id);
 	    return this;
 	} 
 	
@@ -127,6 +142,8 @@ public class GetLocationsRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
@@ -157,6 +174,11 @@ public class GetLocationsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

@@ -283,6 +283,197 @@ public class ViewFilter  implements Serializable {
   private Boolean isConsultTransferred = null;
   private List<String> remoteParticipants = new ArrayList<String>();
   private List<String> statusList = new ArrayList<String>();
+  private List<String> flowIds = new ArrayList<String>();
+  private List<String> flowOutcomeIds = new ArrayList<String>();
+
+  /**
+   * Gets or Sets flowOutcomeValues
+   */
+  public enum FlowOutcomeValuesEnum {
+    SUCCESS("SUCCESS"),
+    FAILURE("FAILURE");
+
+    private String value;
+
+    FlowOutcomeValuesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowOutcomeValuesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowOutcomeValuesEnum value : FlowOutcomeValuesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowOutcomeValuesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<FlowOutcomeValuesEnum> flowOutcomeValues = new ArrayList<FlowOutcomeValuesEnum>();
+
+  /**
+   * Gets or Sets flowDestinationTypes
+   */
+  public enum FlowDestinationTypesEnum {
+    ACD("ACD"),
+    USER("USER"),
+    GROUP("GROUP"),
+    NUMBER("NUMBER"),
+    FLOW("FLOW"),
+    SECURE_FLOW("SECURE_FLOW"),
+    ACD_VOICEMAIL("ACD_VOICEMAIL"),
+    USER_VOICEMAIL("USER_VOICEMAIL"),
+    GROUP_VOICEMAIL("GROUP_VOICEMAIL");
+
+    private String value;
+
+    FlowDestinationTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowDestinationTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowDestinationTypesEnum value : FlowDestinationTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowDestinationTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<FlowDestinationTypesEnum> flowDestinationTypes = new ArrayList<FlowDestinationTypesEnum>();
+
+  /**
+   * Gets or Sets flowDisconnectReasons
+   */
+  public enum FlowDisconnectReasonsEnum {
+    FLOW_DISCONNECT("FLOW_DISCONNECT"),
+    FLOW_ERROR_DISCONNECT("FLOW_ERROR_DISCONNECT"),
+    DISCONNECT("DISCONNECT");
+
+    private String value;
+
+    FlowDisconnectReasonsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowDisconnectReasonsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowDisconnectReasonsEnum value : FlowDisconnectReasonsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowDisconnectReasonsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<FlowDisconnectReasonsEnum> flowDisconnectReasons = new ArrayList<FlowDisconnectReasonsEnum>();
+
+  /**
+   * Gets or Sets flowTypes
+   */
+  public enum FlowTypesEnum {
+    INBOUNDCALL("inboundcall"),
+    INBOUNDEMAIL("inboundemail"),
+    INBOUNDSHORTMESSAGE("inboundshortmessage"),
+    INQUEUECALL("inqueuecall"),
+    OUTBOUNDCALL("outboundcall"),
+    SECURECALL("securecall"),
+    SURVEYINVITE("surveyinvite"),
+    WORKFLOW("workflow");
+
+    private String value;
+
+    FlowTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowTypesEnum value : FlowTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<FlowTypesEnum> flowTypes = new ArrayList<FlowTypesEnum>();
+
+  /**
+   * Gets or Sets flowEntryTypes
+   */
+  public enum FlowEntryTypesEnum {
+    DNIS("dnis"),
+    DIRECT("direct"),
+    FLOW("flow"),
+    AGENT("agent"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    FlowEntryTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static FlowEntryTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (FlowEntryTypesEnum value : FlowEntryTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return FlowEntryTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<FlowEntryTypesEnum> flowEntryTypes = new ArrayList<FlowEntryTypesEnum>();
+  private List<String> flowEntryReasons = new ArrayList<String>();
+  private List<String> groupIds = new ArrayList<String>();
 
   
   /**
@@ -1275,6 +1466,168 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of flow Ids
+   **/
+  public ViewFilter flowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of flow Ids")
+  @JsonProperty("flowIds")
+  public List<String> getFlowIds() {
+    return flowIds;
+  }
+  public void setFlowIds(List<String> flowIds) {
+    this.flowIds = flowIds;
+  }
+
+  
+  /**
+   * A list of outcome ids of the flow
+   **/
+  public ViewFilter flowOutcomeIds(List<String> flowOutcomeIds) {
+    this.flowOutcomeIds = flowOutcomeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of outcome ids of the flow")
+  @JsonProperty("flowOutcomeIds")
+  public List<String> getFlowOutcomeIds() {
+    return flowOutcomeIds;
+  }
+  public void setFlowOutcomeIds(List<String> flowOutcomeIds) {
+    this.flowOutcomeIds = flowOutcomeIds;
+  }
+
+  
+  /**
+   * A list of outcome values of the flow
+   **/
+  public ViewFilter flowOutcomeValues(List<FlowOutcomeValuesEnum> flowOutcomeValues) {
+    this.flowOutcomeValues = flowOutcomeValues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of outcome values of the flow")
+  @JsonProperty("flowOutcomeValues")
+  public List<FlowOutcomeValuesEnum> getFlowOutcomeValues() {
+    return flowOutcomeValues;
+  }
+  public void setFlowOutcomeValues(List<FlowOutcomeValuesEnum> flowOutcomeValues) {
+    this.flowOutcomeValues = flowOutcomeValues;
+  }
+
+  
+  /**
+   * The list of destination types of the flow
+   **/
+  public ViewFilter flowDestinationTypes(List<FlowDestinationTypesEnum> flowDestinationTypes) {
+    this.flowDestinationTypes = flowDestinationTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of destination types of the flow")
+  @JsonProperty("flowDestinationTypes")
+  public List<FlowDestinationTypesEnum> getFlowDestinationTypes() {
+    return flowDestinationTypes;
+  }
+  public void setFlowDestinationTypes(List<FlowDestinationTypesEnum> flowDestinationTypes) {
+    this.flowDestinationTypes = flowDestinationTypes;
+  }
+
+  
+  /**
+   * The list of reasons for the flow to disconnect
+   **/
+  public ViewFilter flowDisconnectReasons(List<FlowDisconnectReasonsEnum> flowDisconnectReasons) {
+    this.flowDisconnectReasons = flowDisconnectReasons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of reasons for the flow to disconnect")
+  @JsonProperty("flowDisconnectReasons")
+  public List<FlowDisconnectReasonsEnum> getFlowDisconnectReasons() {
+    return flowDisconnectReasons;
+  }
+  public void setFlowDisconnectReasons(List<FlowDisconnectReasonsEnum> flowDisconnectReasons) {
+    this.flowDisconnectReasons = flowDisconnectReasons;
+  }
+
+  
+  /**
+   * A list of types of the flow
+   **/
+  public ViewFilter flowTypes(List<FlowTypesEnum> flowTypes) {
+    this.flowTypes = flowTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of types of the flow")
+  @JsonProperty("flowTypes")
+  public List<FlowTypesEnum> getFlowTypes() {
+    return flowTypes;
+  }
+  public void setFlowTypes(List<FlowTypesEnum> flowTypes) {
+    this.flowTypes = flowTypes;
+  }
+
+  
+  /**
+   * A list of types of the flow entry
+   **/
+  public ViewFilter flowEntryTypes(List<FlowEntryTypesEnum> flowEntryTypes) {
+    this.flowEntryTypes = flowEntryTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of types of the flow entry")
+  @JsonProperty("flowEntryTypes")
+  public List<FlowEntryTypesEnum> getFlowEntryTypes() {
+    return flowEntryTypes;
+  }
+  public void setFlowEntryTypes(List<FlowEntryTypesEnum> flowEntryTypes) {
+    this.flowEntryTypes = flowEntryTypes;
+  }
+
+  
+  /**
+   * A list of reasons of flow entry
+   **/
+  public ViewFilter flowEntryReasons(List<String> flowEntryReasons) {
+    this.flowEntryReasons = flowEntryReasons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of reasons of flow entry")
+  @JsonProperty("flowEntryReasons")
+  public List<String> getFlowEntryReasons() {
+    return flowEntryReasons;
+  }
+  public void setFlowEntryReasons(List<String> flowEntryReasons) {
+    this.flowEntryReasons = flowEntryReasons;
+  }
+
+  
+  /**
+   * A list of directory group ids
+   **/
+  public ViewFilter groupIds(List<String> groupIds) {
+    this.groupIds = groupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of directory group ids")
+  @JsonProperty("groupIds")
+  public List<String> getGroupIds() {
+    return groupIds;
+  }
+  public void setGroupIds(List<String> groupIds) {
+    this.groupIds = groupIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1339,12 +1692,21 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
         Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
         Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants) &&
-        Objects.equals(this.statusList, viewFilter.statusList);
+        Objects.equals(this.statusList, viewFilter.statusList) &&
+        Objects.equals(this.flowIds, viewFilter.flowIds) &&
+        Objects.equals(this.flowOutcomeIds, viewFilter.flowOutcomeIds) &&
+        Objects.equals(this.flowOutcomeValues, viewFilter.flowOutcomeValues) &&
+        Objects.equals(this.flowDestinationTypes, viewFilter.flowDestinationTypes) &&
+        Objects.equals(this.flowDisconnectReasons, viewFilter.flowDisconnectReasons) &&
+        Objects.equals(this.flowTypes, viewFilter.flowTypes) &&
+        Objects.equals(this.flowEntryTypes, viewFilter.flowEntryTypes) &&
+        Objects.equals(this.flowEntryReasons, viewFilter.flowEntryReasons) &&
+        Objects.equals(this.groupIds, viewFilter.groupIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, groupIds);
   }
 
   @Override
@@ -1407,6 +1769,15 @@ public class ViewFilter  implements Serializable {
     sb.append("    isConsultTransferred: ").append(toIndentedString(isConsultTransferred)).append("\n");
     sb.append("    remoteParticipants: ").append(toIndentedString(remoteParticipants)).append("\n");
     sb.append("    statusList: ").append(toIndentedString(statusList)).append("\n");
+    sb.append("    flowIds: ").append(toIndentedString(flowIds)).append("\n");
+    sb.append("    flowOutcomeIds: ").append(toIndentedString(flowOutcomeIds)).append("\n");
+    sb.append("    flowOutcomeValues: ").append(toIndentedString(flowOutcomeValues)).append("\n");
+    sb.append("    flowDestinationTypes: ").append(toIndentedString(flowDestinationTypes)).append("\n");
+    sb.append("    flowDisconnectReasons: ").append(toIndentedString(flowDisconnectReasons)).append("\n");
+    sb.append("    flowTypes: ").append(toIndentedString(flowTypes)).append("\n");
+    sb.append("    flowEntryTypes: ").append(toIndentedString(flowEntryTypes)).append("\n");
+    sb.append("    flowEntryReasons: ").append(toIndentedString(flowEntryReasons)).append("\n");
+    sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
