@@ -66,19 +66,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -89,7 +94,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -123,19 +128,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String shareId = "shareId_example"; // String | Share ID
@@ -145,7 +155,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementShare");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -178,19 +188,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String statusId = "statusId_example"; // String | Status ID
@@ -200,7 +215,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementStatusStatusId");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -233,19 +248,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -256,7 +276,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementWorkspace");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -290,19 +310,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -313,7 +338,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementWorkspaceMember");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -347,19 +372,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -370,7 +400,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#deleteContentmanagementWorkspaceTagvalue");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -404,19 +434,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -428,7 +463,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -462,19 +497,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -491,7 +531,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementDocumentAudits");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -530,19 +570,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -555,7 +600,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementDocumentContent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -590,19 +635,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -619,7 +669,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementDocuments");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -658,19 +708,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String queryPhrase = "queryPhrase_example"; // String | Phrase tokens are ANDed together over all searchable fields
@@ -686,7 +741,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementQuery");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -724,19 +779,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String securityProfileId = "securityProfileId_example"; // String | Security Profile Id
@@ -747,7 +807,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementSecurityprofile");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -780,19 +840,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 try {
@@ -802,7 +867,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementSecurityprofiles");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -832,19 +897,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String shareId = "shareId_example"; // String | Share ID
@@ -856,7 +926,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementShare");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -890,19 +960,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String sharedId = "sharedId_example"; // String | Shared ID
@@ -917,7 +992,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementSharedSharedId");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -954,19 +1029,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String entityId = "entityId_example"; // String | Filters the shares returned to only the entity specified by the value of this parameter.
@@ -980,7 +1060,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementShares");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1016,19 +1096,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1040,7 +1125,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementStatus");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1074,19 +1159,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String statusId = "statusId_example"; // String | Status ID
@@ -1097,7 +1187,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementStatusStatusId");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1130,19 +1220,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 try {
@@ -1152,7 +1247,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementUsage");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1182,19 +1277,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1206,7 +1306,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspace");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1240,19 +1340,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1268,7 +1373,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaceDocuments");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1306,19 +1411,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1331,7 +1441,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaceMember");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1366,19 +1476,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1392,7 +1507,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaceMembers");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1428,19 +1543,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1453,7 +1573,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaceTagvalue");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1488,19 +1608,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1515,7 +1640,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaceTagvalues");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1552,19 +1677,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1578,7 +1708,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#getContentmanagementWorkspaces");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1614,19 +1744,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 ContentQueryRequest body = new ContentQueryRequest(); // ContentQueryRequest | Allows for a filtered query returning facet information
@@ -1637,7 +1772,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementAuditquery");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1670,19 +1805,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -1696,7 +1836,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1732,19 +1872,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -1757,7 +1902,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementDocumentContent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1792,19 +1937,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 DocumentUpload body = new DocumentUpload(); // DocumentUpload | Document
@@ -1818,7 +1968,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementDocuments");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1854,19 +2004,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 QueryRequest body = new QueryRequest(); // QueryRequest | Allows for a filtered query returning facet information
@@ -1878,7 +2033,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementQuery");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1912,19 +2067,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 CreateShareRequest body = new CreateShareRequest(); // CreateShareRequest | CreateShareRequest - entity id and type and a single member or list of members are required
@@ -1935,7 +2095,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementShares");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1968,19 +2128,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -1992,7 +2157,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementWorkspaceTagvalues");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2026,19 +2191,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -2051,7 +2221,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementWorkspaceTagvaluesQuery");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2086,19 +2256,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 WorkspaceCreate body = new WorkspaceCreate(); // WorkspaceCreate | Workspace
@@ -2109,7 +2284,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#postContentmanagementWorkspaces");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2142,19 +2317,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -2166,7 +2346,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#putContentmanagementWorkspace");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2200,19 +2380,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -2225,7 +2410,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#putContentmanagementWorkspaceMember");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2260,19 +2445,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.ContentManagementApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ContentManagementApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 ContentManagementApi apiInstance = new ContentManagementApi();
 String workspaceId = "workspaceId_example"; // String | Workspace ID
@@ -2285,7 +2475,7 @@ try {
     System.err.println("Exception when calling ContentManagementApi#putContentmanagementWorkspaceTagvalue");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 

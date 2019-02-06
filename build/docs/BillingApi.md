@@ -34,19 +34,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.BillingApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BillingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 BillingApi apiInstance = new BillingApi();
 Date startDate = new Date(); // Date | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
@@ -58,7 +63,7 @@ try {
     System.err.println("Exception when calling BillingApi#getBillingReportsBillableusage");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -93,19 +98,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.BillingApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.BillingApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 BillingApi apiInstance = new BillingApi();
 String trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
@@ -117,7 +127,7 @@ try {
     System.err.println("Exception when calling BillingApi#getBillingTrusteebillingoverviewTrustorOrgId");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 

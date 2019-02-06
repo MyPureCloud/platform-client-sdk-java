@@ -69,19 +69,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -92,7 +97,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#deleteIntegration");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -126,19 +131,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -148,7 +158,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#deleteIntegrationsAction");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -182,19 +192,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -204,7 +219,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#deleteIntegrationsActionDraft");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -237,19 +252,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID
@@ -259,7 +279,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#deleteIntegrationsCredential");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -292,19 +312,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -321,7 +346,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegration");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -360,19 +385,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -383,7 +413,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationConfigCurrent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -416,19 +446,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -444,7 +479,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrations");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -484,19 +519,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -509,7 +549,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsAction");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -546,19 +586,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -571,7 +616,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraft");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -608,19 +653,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -632,7 +682,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraftSchema");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -668,19 +718,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -692,7 +747,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraftTemplate");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -727,19 +782,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -750,7 +810,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionDraftValidation");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -785,19 +845,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -809,7 +874,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionSchema");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -845,19 +910,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -869,7 +939,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionTemplate");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -905,19 +975,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
@@ -936,7 +1011,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActions");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -979,19 +1054,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String secure = "secure_example"; // String | Filter to only include/exclude Action categories based on if they are considered secure. True will only include categories with Actions marked secured. False will only include categories of unsecured Actions.
@@ -1008,7 +1088,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsCategories");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1049,19 +1129,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String category = "category_example"; // String | Filter by category name
@@ -1080,7 +1165,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsActionsDrafts");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1121,19 +1206,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -1149,7 +1239,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsClientapps");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1187,19 +1277,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID
@@ -1210,7 +1305,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsCredential");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1243,19 +1338,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageNumber = 1; // Integer | Page number
@@ -1267,7 +1367,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsCredentials");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1301,19 +1401,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 try {
@@ -1323,7 +1428,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsCredentialsTypes");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1355,19 +1460,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | Page size
@@ -1382,7 +1492,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsEventlog");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1421,19 +1531,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String eventId = "eventId_example"; // String | Event Id
@@ -1444,7 +1559,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsEventlogEventId");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1477,19 +1592,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String typeId = "typeId_example"; // String | Integration Type Id
@@ -1500,7 +1620,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsType");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1533,19 +1653,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String typeId = "typeId_example"; // String | Integration Type Id
@@ -1557,7 +1682,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsTypeConfigschema");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1591,19 +1716,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integer pageSize = 25; // Integer | The total page size requested
@@ -1619,7 +1749,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#getIntegrationsTypes");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1657,19 +1787,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -1687,7 +1822,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#patchIntegration");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1728,19 +1863,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1752,7 +1892,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#patchIntegrationsAction");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1787,19 +1927,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1811,7 +1956,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#patchIntegrationsActionDraft");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1845,19 +1990,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 CreateIntegrationRequest body = new CreateIntegrationRequest(); // CreateIntegrationRequest | Integration
@@ -1868,7 +2018,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrations");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1902,19 +2052,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1925,7 +2080,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionDraft");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1959,19 +2114,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -1983,7 +2143,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionDraftPublish");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2018,19 +2178,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2042,7 +2207,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionDraftTest");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2078,19 +2243,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2102,7 +2272,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionExecute");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2138,19 +2308,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String actionId = "actionId_example"; // String | actionId
@@ -2162,7 +2337,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionTest");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2197,19 +2372,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 PostActionInput body = new PostActionInput(); // PostActionInput | Input used to create Action.
@@ -2220,7 +2400,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActions");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2254,19 +2434,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 PostActionInput body = new PostActionInput(); // PostActionInput | Input used to create Action Draft.
@@ -2277,7 +2462,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsActionsDrafts");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2310,19 +2495,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Credential body = new Credential(); // Credential | Credential
@@ -2333,7 +2523,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsCredentials");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2366,19 +2556,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 VendorConnectionRequest body = new VendorConnectionRequest(); // VendorConnectionRequest | 
@@ -2389,7 +2584,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#postIntegrationsWorkforcemanagementVendorconnection");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2422,19 +2617,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String integrationId = "integrationId_example"; // String | Integration Id
@@ -2446,7 +2646,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#putIntegrationConfigCurrent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2480,19 +2680,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String credentialId = "credentialId_example"; // String | Credential ID
@@ -2504,7 +2709,7 @@ try {
     System.err.println("Exception when calling IntegrationsApi#putIntegrationsCredential");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 

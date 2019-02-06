@@ -125,19 +125,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
@@ -147,7 +152,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundAttemptlimit");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -181,19 +186,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
@@ -203,7 +213,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCallabletimeset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -237,19 +247,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
@@ -259,7 +274,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCallanalysisresponseset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -293,19 +308,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -316,7 +336,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -350,19 +370,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -372,7 +397,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCampaignProgress");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -406,19 +431,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
@@ -428,7 +458,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundCampaignrule");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -462,19 +492,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -484,7 +519,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -518,19 +553,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -541,7 +581,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistContact");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -576,19 +616,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -599,7 +644,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistContacts");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -634,19 +679,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
@@ -656,7 +706,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlistfilter");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -690,19 +740,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 List<String> id = Arrays.asList("id_example"); // List<String> | contact list id(s) to delete
@@ -712,7 +767,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundContactlists");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -746,19 +801,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -768,7 +828,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundDnclist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -802,19 +862,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String ruleSetId = "ruleSetId_example"; // String | Rule Set ID
@@ -824,7 +889,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundRuleset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -858,19 +923,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -880,7 +950,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -914,19 +984,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Sequence ID
@@ -936,7 +1011,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSchedulesSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -970,19 +1045,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
@@ -992,7 +1072,7 @@ try {
     System.err.println("Exception when calling OutboundApi#deleteOutboundSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1026,19 +1106,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
@@ -1049,7 +1134,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundAttemptlimit");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1083,19 +1168,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1111,7 +1201,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundAttemptlimits");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1150,19 +1240,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
@@ -1173,7 +1268,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCallabletimeset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1207,19 +1302,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1235,7 +1335,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCallabletimesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1274,19 +1374,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
@@ -1297,7 +1402,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCallanalysisresponseset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1331,19 +1436,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1359,7 +1469,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCallanalysisresponsesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1398,19 +1508,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -1421,7 +1536,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1455,19 +1570,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -1478,7 +1598,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignDiagnostics");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1512,19 +1632,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -1535,7 +1660,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignInteractions");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1569,19 +1694,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -1592,7 +1722,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignProgress");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1626,19 +1756,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -1649,7 +1784,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignStats");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1683,19 +1818,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
@@ -1706,7 +1846,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignrule");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1740,19 +1880,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1768,7 +1913,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignrules");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1807,19 +1952,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1842,7 +1992,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaigns");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1888,19 +2038,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -1917,7 +2072,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignsDivisionviews");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -1957,19 +2112,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -1982,7 +2142,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2018,19 +2178,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -2042,7 +2207,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistContact");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2078,19 +2243,24 @@ Requires ALL permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -2102,7 +2272,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistExport");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2137,19 +2307,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -2160,7 +2335,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistImportstatus");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2194,19 +2369,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -2217,7 +2397,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistTimezonemappingpreview");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2251,19 +2431,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
@@ -2274,7 +2459,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistfilter");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2308,19 +2493,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -2337,7 +2527,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistfilters");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2377,19 +2567,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Include import status
@@ -2409,7 +2604,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlists");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2452,19 +2647,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contactlist ID
@@ -2477,7 +2677,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistsDivisionview");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2513,19 +2713,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Include import status
@@ -2544,7 +2749,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistsDivisionviews");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2586,19 +2791,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -2611,7 +2821,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2648,19 +2858,24 @@ Requires ALL permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -2672,7 +2887,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclistExport");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2707,19 +2922,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -2730,7 +2950,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclistImportstatus");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2764,19 +2984,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Import status
@@ -2796,7 +3021,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclists");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2839,19 +3064,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | Dnclist ID
@@ -2864,7 +3094,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclistsDivisionview");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2900,19 +3130,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Boolean includeImportStatus = false; // Boolean | Include import status
@@ -2931,7 +3166,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclistsDivisionviews");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -2973,19 +3208,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String eventId = "eventId_example"; // String | Event Log ID
@@ -2996,7 +3236,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundEvent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3030,19 +3270,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size
@@ -3059,7 +3304,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundEvents");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3099,19 +3344,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String ruleSetId = "ruleSetId_example"; // String | Rule Set ID
@@ -3122,7 +3372,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundRuleset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3156,19 +3406,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -3184,7 +3439,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundRulesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3223,19 +3478,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -3246,7 +3506,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSchedulesCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3280,19 +3540,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 try {
@@ -3302,7 +3567,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSchedulesCampaigns");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3333,19 +3598,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Sequence ID
@@ -3356,7 +3626,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSchedulesSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3390,19 +3660,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 try {
@@ -3412,7 +3687,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSchedulesSequences");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3443,19 +3718,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
@@ -3466,7 +3746,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3500,19 +3780,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
@@ -3528,7 +3813,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSequences");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3567,19 +3852,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 try {
@@ -3589,7 +3879,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundSettings");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3620,19 +3910,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 try {
@@ -3642,7 +3937,7 @@ try {
     System.err.println("Exception when calling OutboundApi#getOutboundWrapupcodemappings");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3673,19 +3968,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 OutboundSettings body = new OutboundSettings(); // OutboundSettings | outboundSettings
@@ -3695,7 +3995,7 @@ try {
     System.err.println("Exception when calling OutboundApi#patchOutboundSettings");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3729,19 +4029,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 AttemptLimits body = new AttemptLimits(); // AttemptLimits | AttemptLimits
@@ -3752,7 +4057,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundAttemptlimits");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3786,19 +4091,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 DialerAuditRequest body = new DialerAuditRequest(); // DialerAuditRequest | AuditSearch
@@ -3814,7 +4124,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundAudits");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3853,19 +4163,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 CallableTimeSet body = new CallableTimeSet(); // CallableTimeSet | DialerCallableTimeSet
@@ -3876,7 +4191,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCallabletimesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3910,19 +4225,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 ResponseSet body = new ResponseSet(); // ResponseSet | ResponseSet
@@ -3933,7 +4253,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCallanalysisresponsesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -3966,19 +4286,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -3990,7 +4315,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCampaignCallbackSchedule");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4025,19 +4350,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 CampaignRule body = new CampaignRule(); // CampaignRule | CampaignRule
@@ -4048,7 +4378,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCampaignrules");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4082,19 +4412,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 Campaign body = new Campaign(); // Campaign | Campaign
@@ -4105,7 +4440,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCampaigns");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4139,19 +4474,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 List<String> body = Arrays.asList(new List<String>()); // List<String> | Campaign IDs
@@ -4162,7 +4502,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundCampaignsProgress");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4196,19 +4536,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -4218,7 +4563,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistClear");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4252,19 +4597,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -4279,7 +4629,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistContacts");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4317,19 +4667,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -4341,7 +4696,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistContactsBulk");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4377,19 +4732,24 @@ Requires ALL permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -4400,7 +4760,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistExport");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4434,19 +4794,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 ContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter
@@ -4457,7 +4822,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistfilters");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4491,19 +4856,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 ContactListFilter body = new ContactListFilter(); // ContactListFilter | ContactListFilter
@@ -4514,7 +4884,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistfiltersPreview");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4548,19 +4918,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 ContactList body = new ContactList(); // ContactList | ContactList
@@ -4571,7 +4946,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlists");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4605,19 +4980,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
@@ -4627,7 +5007,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundConversationDnc");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4662,19 +5042,24 @@ Requires ALL permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -4685,7 +5070,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundDnclistExport");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4719,19 +5104,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -4742,7 +5132,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundDnclistPhonenumbers");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4777,19 +5167,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 DncListCreate body = new DncListCreate(); // DncListCreate | DncList
@@ -4800,7 +5195,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundDnclists");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4834,19 +5229,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 RuleSet body = new RuleSet(); // RuleSet | RuleSet
@@ -4857,7 +5257,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundRulesets");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4891,19 +5291,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 CampaignSequence body = new CampaignSequence(); // CampaignSequence | Organization
@@ -4914,7 +5319,7 @@ try {
     System.err.println("Exception when calling OutboundApi#postOutboundSequences");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -4948,19 +5353,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
@@ -4972,7 +5382,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundAttemptlimit");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5007,19 +5417,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
@@ -5031,7 +5446,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundCallabletimeset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5066,19 +5481,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
@@ -5090,7 +5510,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundCallanalysisresponseset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5125,19 +5545,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -5149,7 +5574,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5183,19 +5608,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -5208,7 +5638,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundCampaignAgent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5244,19 +5674,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
@@ -5268,7 +5703,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundCampaignrule");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5303,19 +5738,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
@@ -5327,7 +5767,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundContactlist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5362,19 +5802,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | Contact List ID
@@ -5387,7 +5832,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundContactlistContact");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5423,19 +5868,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
@@ -5447,7 +5897,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundContactlistfilter");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5482,19 +5932,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
@@ -5506,7 +5961,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundDnclist");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5541,19 +5996,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String ruleSetId = "ruleSetId_example"; // String | Rule Set ID
@@ -5565,7 +6025,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundRuleset");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5600,19 +6060,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String campaignId = "campaignId_example"; // String | Campaign ID
@@ -5624,7 +6089,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundSchedulesCampaign");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5659,19 +6124,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Sequence ID
@@ -5683,7 +6153,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundSchedulesSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5718,19 +6188,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 String sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
@@ -5742,7 +6217,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundSequence");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -5777,19 +6252,24 @@ Requires ANY permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.OutboundApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 OutboundApi apiInstance = new OutboundApi();
 WrapUpCodeMapping body = new WrapUpCodeMapping(); // WrapUpCodeMapping | wrapUpCodeMapping
@@ -5800,7 +6280,7 @@ try {
     System.err.println("Exception when calling OutboundApi#putOutboundWrapupcodemappings");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 

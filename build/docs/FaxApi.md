@@ -34,19 +34,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -56,7 +61,7 @@ try {
     System.err.println("Exception when calling FaxApi#deleteFaxDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -89,19 +94,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -112,7 +122,7 @@ try {
     System.err.println("Exception when calling FaxApi#getFaxDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -145,19 +155,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -168,7 +183,7 @@ try {
     System.err.println("Exception when calling FaxApi#getFaxDocumentContent");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -201,19 +216,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 Integer pageSize = 25; // Integer | Page size
@@ -225,7 +245,7 @@ try {
     System.err.println("Exception when calling FaxApi#getFaxDocuments");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -259,19 +279,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 try {
@@ -281,7 +306,7 @@ try {
     System.err.println("Exception when calling FaxApi#getFaxSummary");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 
@@ -311,19 +336,24 @@ Requires NO permissions:
 
 ### Example
 
-~~~java
+```{"language":"java"}
 //Import classes:
-//import com.mypurecloud.sdk.v2.ApiClient;
-//import com.mypurecloud.sdk.v2.ApiException;
-//import com.mypurecloud.sdk.v2.Configuration;
-//import com.mypurecloud.sdk.v2.auth.*;
-//import com.mypurecloud.sdk.v2.api.FaxApi;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.FaxApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: PureCloud OAuth
-OAuth PureCloud OAuth = (OAuth) defaultClient.getAuthentication("PureCloud OAuth");
-PureCloud OAuth.setAccessToken("YOUR ACCESS TOKEN");
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
 
 FaxApi apiInstance = new FaxApi();
 String documentId = "documentId_example"; // String | Document ID
@@ -335,7 +365,7 @@ try {
     System.err.println("Exception when calling FaxApi#putFaxDocument");
     e.printStackTrace();
 }
-~~~
+```
 
 ### Parameters
 

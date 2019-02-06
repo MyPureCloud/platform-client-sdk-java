@@ -25,7 +25,8 @@ public class ConversationCallbackEventTopicVoicemail  implements Serializable {
     PENDING("PENDING"),
     COMPLETE("COMPLETE"),
     FAILED("FAILED"),
-    TIMEOUT("TIMEOUT");
+    TIMEOUT("TIMEOUT"),
+    NONE("NONE");
 
     private String value;
 

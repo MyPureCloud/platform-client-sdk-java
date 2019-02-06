@@ -23,20 +23,20 @@ The SDK may be used in Android as of SDK version 5.0.1. This requires Java 8 sup
 
 Import the necessary packages:
 
-~~~ java
+```{"language":"java"}
 import com.mypurecloud.sdk.v2.ApiException;
 import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.api.UsersApi;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersEntityListing;
-~~~
+```
 
 ### Authenticating
 
 The Java SDK contains a helper method toe execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
 
-~~~ java
+```{"language":"java"}
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 
@@ -52,7 +52,7 @@ Configuration.setDefaultApiClient(apiClient);
 // Create API instances and make authenticated API requests
 UsersApi apiInstance = new UsersApi();
 UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
-~~~
+```
 
 For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
 
@@ -60,7 +60,7 @@ For user applications, the consuming application must complete an implicit, auth
 
 `ApiClient` implements a builder pattern to construct new instances:
 
-~~~ java
+```{"language":"java"}
 // Create ApiClient instance
 ApiClient apiClient = ApiClient.Builder.standard()
 		.withAccessToken(accessToken)
@@ -73,23 +73,23 @@ Configuration.setDefaultApiClient(apiClient);
 // Create API instances and make authenticated API requests
 UsersApi apiInstance = new UsersApi();
 UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
-~~~
+```
 
 #### Setting the access token
 
 If not authorizing using the `authorizeClientCredentials(...)` helper, provide the access token to use for API requests:
 
-~~~ java
+```{"language":"java"}
 .withAccessToken("aisuefh89734hfkhsaldkh348jf")
-~~~
+```
 
 #### Setting the environment
 
 Provide the full base url if not using `https://api.mypurecloud.com`:
 
-~~~ java
+```{"language":"java"}
 .withBasePath("https://api.mypurecloud.ie")
-~~~
+```
 
 #### Setting the HTTP connector
 
@@ -101,9 +101,9 @@ The SDK supports the following HTTP connectors:
 
 Specify the connector in the builder:
 
-~~~ java
+```{"language":"java"}
 .withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new OkHttpClientConnectorProvider())
-~~~
+```
 
 #### Other ApiClient.Builder methods
 
@@ -128,24 +128,24 @@ Example of getting the authenticated user's information:
 
 Request builders allow requests to be constructed by only providing values for the properties you want to set. This is useful for methods with long signatures when you only need to set some properties and will help future-proof your code if the method signature changes (i.e. new parameters added).
 
-~~~ java
+```{"language":"java"}
 UsersApi usersApi = new UsersApi();
 GetUsersMeRequest request = GetUsersMeRequest.builder()
         .withExpand(Collections.singletonList("presence"))
         .build();
 UserMe me = usersApi.getUsersMe(request);
 System.out.println("Hello " + me.getName());
-~~~
+```
 
 #### Using method parameters
 
 This request is identical to the request above, but uses the method with explicit parameters instead of a builder. These methods construct the request builder behind the scenes.
 
-~~~ java
+```{"language":"java"}
 UsersApi usersApi = new UsersApi();
 UserMe me = usersApi.getUsersMe(Collections.singletonList("presence"));
 System.out.println("Hello " + me.getName());
-~~~
+```
 
 
 #### Getting extended info
@@ -156,15 +156,15 @@ The extended responses will be of type [ApiResponse<T>](https://github.com/MyPur
 
 Examples:
 
-~~~ java
+```{"language":"java"}
 // Using the WithHttpInfo method
 ApiResponse<UserMe> meWithHttpInfo = usersApi.getUsersMeWithHttpInfo(new ArrayList<String>());
 System.out.println(meWithHttpInfo.getHeaders());
 System.out.println(meWithHttpInfo.getCorrelationId());
 System.out.println(meWithHttpInfo.getBody().getName());
-~~~
+```
 
-~~~ java
+```{"language":"java"}
 // Using the request builder
 ApiRequest<Void> getUsersMeRequestWithHttpInfo = GetUsersMeRequest.builder()
         .withExpand(new ArrayList<String>())
@@ -176,7 +176,7 @@ ApiResponse<UserMe> meWithHttpInfo = usersApi.getUsersMe(getUsersMeRequestWithHt
 System.out.println(meWithHttpInfo.getHeaders());
 System.out.println(meWithHttpInfo.getCorrelationId());
 System.out.println(meWithHttpInfo.getBody().getName());
-~~~
+```
 
 
 ## NotificationHandler Helper Class
@@ -189,7 +189,7 @@ The Java SDK includes a helper class, `NotificationHandler`, to assist in managi
 
 The preferred way to create a `NotificationHandler` instance is to use its builder to construct a new instance. This comes with the advantage of being able to set listeners and add subscriptions before the websocket is opened.
 
-~~~ java
+```{"language":"java"}
 NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         .withWebSocketListener(new MyWebSocketListener())
         // Individually
@@ -202,11 +202,11 @@ NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         }})
         .withAutoConnect(false)
         .build();
-~~~
+```
 
 Alternatively, the `NotificationHandler` instance can be constructed with the default constructor and will connect to the websocket automatically. Listeners and subscriptions can then be managed from the instance regardless of how it was constructed. The following example is equivalent to the builder except that the socket will be connected in the constructor and the listeners and subscriptions will be added after it is connected:
 
-~~~ java
+```{"language":"java"}
 NotificationHandler notificationHandler = new NotificationHandler();
 notificationHandler.setWebSocketListener(new MyWebSocketListener());
 // Individually
@@ -217,21 +217,21 @@ notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>()\{\
             add(new UserPresenceListener(me.getId());
             add(new ChannelMetadataListener());
         }});
-~~~
+```
 
 **Send a ping**
 
 To test the connection, you may send a ping. For more information about this ping, see [Use the notification service](https://developer.mypurecloud.com/api/rest/v2/notifications/notification_service.html) under the _WebSocket Health Check_ heading.
 
-~~~ java
+```{"language":"java"}
 notificationHandler.sendPing();
-~~~
+```
 
 **Handle incoming notification events**
 
 To handle incoming events, implement the `NotificationListener<T>` interface to handle registered topics and the `WebSocketListener` interface for information about the websocket itself. This is a basic example of how to handle user presence events:
 
-~~~ java
+```{"language":"java"}
 public class UserPresenceListener implements NotificationListener<UserPresenceNotification> {
     private String topic;
 
@@ -252,11 +252,11 @@ public class UserPresenceListener implements NotificationListener<UserPresenceNo
         this.topic = "v2.users." + userId + ".presence";
     }
 }
-~~~
+```
 
 And an example of listening to the channel metadata events (periodic heartbeat and ping/pong message):
 
-~~~ java
+```{"language":"java"}
 public class ChannelMetadataListener implements NotificationListener<ChannelMetadataNotification> {
     public String getTopic() {
         return "channel.metadata";
@@ -270,7 +270,7 @@ public class ChannelMetadataListener implements NotificationListener<ChannelMeta
         System.out.println("[channel.metadata] " + ((ChannelMetadataNotification)notificationEvent.getEventBody()).getMessage());
     }
 }
-~~~
+```
 
 ## SDK Source Code Generation
 

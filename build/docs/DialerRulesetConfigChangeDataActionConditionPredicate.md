@@ -11,6 +11,8 @@ title: DialerRulesetConfigChangeDataActionConditionPredicate
 | **outputField** | **String** |  |  [optional] |
 | **outputOperator** | [**OutputOperatorEnum**](#OutputOperatorEnum) |  |  [optional] |
 | **comparisonValue** | **String** |  |  [optional] |
+| **outputFieldMissingResolution** | **Boolean** |  |  [optional] |
+| **inverted** | **Boolean** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

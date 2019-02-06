@@ -25,7 +25,8 @@ public class QueueConversationSocialExpressionEventTopicVoicemail  implements Se
     PENDING("PENDING"),
     COMPLETE("COMPLETE"),
     FAILED("FAILED"),
-    TIMEOUT("TIMEOUT");
+    TIMEOUT("TIMEOUT"),
+    NONE("NONE");
 
     private String value;
 
