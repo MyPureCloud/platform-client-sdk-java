@@ -74,6 +74,7 @@ public class GetFlowsRequest {
 
 	public enum typeValues { 
 		INBOUNDCALL("inboundcall"), 
+		INBOUNDCHAT("inboundchat"), 
 		INBOUNDEMAIL("inboundemail"), 
 		INBOUNDSHORTMESSAGE("inboundshortmessage"), 
 		OUTBOUNDCALL("outboundcall"), 

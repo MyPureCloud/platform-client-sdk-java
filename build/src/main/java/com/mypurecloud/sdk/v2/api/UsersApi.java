@@ -2629,7 +2629,8 @@ public class UsersApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param id id (optional)
+   * @param id A list of user IDs to fetch by bulk (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @param state Only list users of this state (optional, default to active)
@@ -2637,8 +2638,8 @@ public class UsersApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
-    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand, state));
+  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
+    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, state));
   }
 
   /**
@@ -2646,24 +2647,27 @@ public class UsersApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param id id (optional)
+   * @param id A list of user IDs to fetch by bulk (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) throws IOException {
-    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, sortOrder, expand, state).withHttpInfo());
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) throws IOException {
+    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, state).withHttpInfo());
   }
 
-  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder, List<String> expand, String state) {
+  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) {
     return GetUsersRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withId(id)
+    
+            .withJabberId(jabberId)
     
             .withSortOrder(sortOrder)
     

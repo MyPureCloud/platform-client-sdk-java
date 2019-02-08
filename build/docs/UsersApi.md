@@ -1986,7 +1986,7 @@ try {
 
 
 
-> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, sortOrder, expand, state)
+> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, state)
 
 Get the list of available users.
 
@@ -2021,12 +2021,13 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> id = Arrays.asList("id_example"); // List<String> | A list of user IDs to fetch by bulk
+List<String> jabberId = Arrays.asList("jabberId_example"); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
 String state = "active"; // String | Only list users of this state
 try {
-    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, sortOrder, expand, state);
+    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -2041,7 +2042,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
+| **id** | [**List&lt;String&gt;**](String.html)| A list of user IDs to fetch by bulk | [optional] |
+| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] |
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, languagePreference |
 | **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |

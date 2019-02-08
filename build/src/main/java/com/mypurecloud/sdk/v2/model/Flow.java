@@ -30,6 +30,7 @@ public class Flow  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUNDCALL("INBOUNDCALL"),
+    INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),
     INBOUNDSHORTMESSAGE("INBOUNDSHORTMESSAGE"),
     INQUEUECALL("INQUEUECALL"),

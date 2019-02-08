@@ -119,6 +119,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     FORMID("formId"),
     FORMNAME("formName"),
     EVENTTIME("eventTime"),
+    CALIBRATIONID("calibrationId"),
     SURVEYID("surveyId"),
     SURVEYFORMCONTEXTID("surveyFormContextId"),
     SURVEYFORMID("surveyFormId"),

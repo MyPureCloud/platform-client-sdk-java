@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | Retrieve a list of all roles defined for the organization |
 | [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | Returns a listing of roles and permissions for a user. |
 | [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | Returns a listing of roles and permissions for the currently authenticated user. |
+| [**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | Get the count of roles granted to a list of subjects |
 | [**getUserRoles**](AuthorizationApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
 | [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
 | [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
@@ -1262,6 +1263,68 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**AuthzSubject**](AuthzSubject.html)
+
+<a name="getAuthorizationSubjectsRolecounts"></a>
+
+# **getAuthorizationSubjectsRolecounts**
+
+
+
+> [Map&lt;String, Object&gt;](Map.html) getAuthorizationSubjectsRolecounts(id)
+
+Get the count of roles granted to a list of subjects
+
+
+
+Wraps GET /api/v2/authorization/subjects/rolecounts  
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+List<String> id = Arrays.asList("id_example"); // List<String> | id
+try {
+    Map<String, Object> result = apiInstance.getAuthorizationSubjectsRolecounts(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationSubjectsRolecounts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
+{: class="table table-striped"}
+
+### Return type
+
+[**Map&lt;String, Object&gt;**](Map.html)
 
 <a name="getUserRoles"></a>
 

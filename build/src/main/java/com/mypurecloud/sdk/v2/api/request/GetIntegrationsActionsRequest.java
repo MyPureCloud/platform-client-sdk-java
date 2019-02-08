@@ -49,6 +49,120 @@ import com.mypurecloud.sdk.v2.model.VendorConnectionRequest;
 
 public class GetIntegrationsActionsRequest {
     
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetIntegrationsActionsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+	
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetIntegrationsActionsRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private String nextPage;
+	public String getNextPage() {
+		return this.nextPage;
+	}
+
+	public void setNextPage(String nextPage) {
+		this.nextPage = nextPage;
+	}
+
+	public GetIntegrationsActionsRequest withNextPage(String nextPage) {
+	    this.setNextPage(nextPage);
+	    return this;
+	} 
+	
+	private String previousPage;
+	public String getPreviousPage() {
+		return this.previousPage;
+	}
+
+	public void setPreviousPage(String previousPage) {
+		this.previousPage = previousPage;
+	}
+
+	public GetIntegrationsActionsRequest withPreviousPage(String previousPage) {
+	    this.setPreviousPage(previousPage);
+	    return this;
+	} 
+	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetIntegrationsActionsRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
+	    return this;
+	} 
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetIntegrationsActionsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASC("ASC"), 
+		DESC("DESC");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private String category;
 	public String getCategory() {
 		return this.category;
@@ -60,6 +174,20 @@ public class GetIntegrationsActionsRequest {
 
 	public GetIntegrationsActionsRequest withCategory(String category) {
 	    this.setCategory(category);
+	    return this;
+	} 
+	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetIntegrationsActionsRequest withName(String name) {
+	    this.setName(name);
 	    return this;
 	} 
 	
@@ -151,90 +279,6 @@ public class GetIntegrationsActionsRequest {
 		}
 	}
 	
-	private Integer pageSize;
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public GetIntegrationsActionsRequest withPageSize(Integer pageSize) {
-	    this.setPageSize(pageSize);
-	    return this;
-	} 
-	
-	private Integer pageNumber;
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public GetIntegrationsActionsRequest withPageNumber(Integer pageNumber) {
-	    this.setPageNumber(pageNumber);
-	    return this;
-	} 
-	
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-	}
-
-	public GetIntegrationsActionsRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
-	    return this;
-	} 
-	
-	private List<String> expand;
-	public List<String> getExpand() {
-		return this.expand;
-	}
-
-	public void setExpand(List<String> expand) {
-		this.expand = expand;
-	}
-
-	public GetIntegrationsActionsRequest withExpand(List<String> expand) {
-	    this.setExpand(expand);
-	    return this;
-	} 
-	
-	private String nextPage;
-	public String getNextPage() {
-		return this.nextPage;
-	}
-
-	public void setNextPage(String nextPage) {
-		this.nextPage = nextPage;
-	}
-
-	public GetIntegrationsActionsRequest withNextPage(String nextPage) {
-	    this.setNextPage(nextPage);
-	    return this;
-	} 
-	
-	private String previousPage;
-	public String getPreviousPage() {
-		return this.previousPage;
-	}
-
-	public void setPreviousPage(String previousPage) {
-		this.previousPage = previousPage;
-	}
-
-	public GetIntegrationsActionsRequest withPreviousPage(String previousPage) {
-	    this.setPreviousPage(previousPage);
-	    return this;
-	} 
-	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -258,23 +302,25 @@ public class GetIntegrationsActionsRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/integrations/actions")
-                .withQueryParameters("category", "", category)
-        
-                .withQueryParameters("secure", "", secure)
-        
-                .withQueryParameters("includeAuthActions", "", includeAuthActions)
-        
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withQueryParameters("sortBy", "", sortBy)
-        
-                .withQueryParameters("expand", "multi", expand)
-        
                 .withQueryParameters("nextPage", "", nextPage)
         
                 .withQueryParameters("previousPage", "", previousPage)
+        
+                .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("category", "", category)
+        
+                .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("secure", "", secure)
+        
+                .withQueryParameters("includeAuthActions", "", includeAuthActions)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -297,8 +343,48 @@ public class GetIntegrationsActionsRequest {
 		}
 
 		
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withNextPage(String nextPage) {
+			request.setNextPage(nextPage);
+			return this;
+		}
+		
+		public Builder withPreviousPage(String previousPage) {
+			request.setPreviousPage(previousPage);
+			return this;
+		}
+		
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
+			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
+		
 		public Builder withCategory(String category) {
 			request.setCategory(category);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		
@@ -320,36 +406,6 @@ public class GetIntegrationsActionsRequest {
 		public Builder withIncludeAuthActions(includeAuthActionsValues includeAuthActions) {
 		    request.setIncludeAuthActions(includeAuthActions.toString());
 		    return this;
-		}
-		
-		public Builder withPageSize(Integer pageSize) {
-			request.setPageSize(pageSize);
-			return this;
-		}
-		
-		public Builder withPageNumber(Integer pageNumber) {
-			request.setPageNumber(pageNumber);
-			return this;
-		}
-		
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
-			return this;
-		}
-		
-		public Builder withExpand(List<String> expand) {
-			request.setExpand(expand);
-			return this;
-		}
-		
-		public Builder withNextPage(String nextPage) {
-			request.setNextPage(nextPage);
-			return this;
-		}
-		
-		public Builder withPreviousPage(String previousPage) {
-			request.setPreviousPage(previousPage);
-			return this;
 		}
 		
 

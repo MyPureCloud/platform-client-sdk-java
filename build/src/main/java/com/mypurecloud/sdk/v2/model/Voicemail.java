@@ -25,7 +25,8 @@ public class Voicemail  implements Serializable {
     PENDING("pending"),
     COMPLETE("complete"),
     FAILED("failed"),
-    TIMEOUT("timeout");
+    TIMEOUT("timeout"),
+    NONE("none");
 
     private String value;
 

@@ -75,6 +75,34 @@ public class GetRoutingQueueWrapupcodesRequest {
 	    return this;
 	} 
 	
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetRoutingQueueWrapupcodesRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+	
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetRoutingQueueWrapupcodesRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -105,6 +133,10 @@ public class GetRoutingQueueWrapupcodesRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues/{queueId}/wrapupcodes")
                 .withPathParameter("queueId", queueId)
         
+                .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -133,6 +165,16 @@ public class GetRoutingQueueWrapupcodesRequest {
 		
 		public Builder withQueueId(String queueId) {
 			request.setQueueId(queueId);
+			return this;
+		}
+		
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
 			return this;
 		}
 		

@@ -16,6 +16,7 @@ title: AnalyticsEvaluation
 | **formId** | **String** | Unique identifier for the form used to evaluate the conversation/agent |  [optional] |
 | **contextId** | **String** | A unique identifier for an evaluation form, regardless of version |  [optional] |
 | **formName** | **String** | Name of the evaluation form |  [optional] |
+| **calibrationId** | **String** | The calibration id used for the purpose of training evaluators |  [optional] |
 | **oTotalScore** | **Long** |  |  [optional] |
 | **oTotalCriticalScore** | **Long** |  |  [optional] |
 {: class="table table-striped"}

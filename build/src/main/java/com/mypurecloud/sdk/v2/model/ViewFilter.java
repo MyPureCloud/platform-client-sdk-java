@@ -98,8 +98,43 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
+
+  /**
+   * Gets or Sets originatingDirections
+   */
+  public enum OriginatingDirectionsEnum {
+    INBOUND("inbound"),
+    OUTBOUND("outbound");
+
+    private String value;
+
+    OriginatingDirectionsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OriginatingDirectionsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OriginatingDirectionsEnum value : OriginatingDirectionsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OriginatingDirectionsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<OriginatingDirectionsEnum> originatingDirections = new ArrayList<OriginatingDirectionsEnum>();
   private List<String> wrapUpCodes = new ArrayList<String>();
   private List<String> dnisList = new ArrayList<String>();
+  private List<String> sessionDnisList = new ArrayList<String>();
   private List<String> filterQueuesByUserIds = new ArrayList<String>();
   private List<String> filterUsersByQueueIds = new ArrayList<String>();
   private List<String> userIds = new ArrayList<String>();
@@ -125,7 +160,8 @@ public class ViewFilter  implements Serializable {
     SMS("sms"),
     TWITTER("twitter"),
     LINE("line"),
-    FACEBOOK("facebook");
+    FACEBOOK("facebook"),
+    WHATSAPP("whatsapp");
 
     private String value;
 
@@ -401,6 +437,7 @@ public class ViewFilter  implements Serializable {
    */
   public enum FlowTypesEnum {
     INBOUNDCALL("inboundcall"),
+    INBOUNDCHAT("inboundchat"),
     INBOUNDEMAIL("inboundemail"),
     INBOUNDSHORTMESSAGE("inboundshortmessage"),
     INQUEUECALL("inqueuecall"),
@@ -473,7 +510,11 @@ public class ViewFilter  implements Serializable {
   }
   private List<FlowEntryTypesEnum> flowEntryTypes = new ArrayList<FlowEntryTypesEnum>();
   private List<String> flowEntryReasons = new ArrayList<String>();
+  private List<String> flowVersions = new ArrayList<String>();
   private List<String> groupIds = new ArrayList<String>();
+  private Boolean hasJourneyCustomerId = null;
+  private Boolean hasJourneyActionMapId = null;
+  private Boolean hasJourneyVisitId = null;
 
   
   /**
@@ -603,6 +644,24 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * The list of orginating directions used to filter the view
+   **/
+  public ViewFilter originatingDirections(List<OriginatingDirectionsEnum> originatingDirections) {
+    this.originatingDirections = originatingDirections;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of orginating directions used to filter the view")
+  @JsonProperty("originatingDirections")
+  public List<OriginatingDirectionsEnum> getOriginatingDirections() {
+    return originatingDirections;
+  }
+  public void setOriginatingDirections(List<OriginatingDirectionsEnum> originatingDirections) {
+    this.originatingDirections = originatingDirections;
+  }
+
+  
+  /**
    * The wrap up codes are used to filter the view
    **/
   public ViewFilter wrapUpCodes(List<String> wrapUpCodes) {
@@ -635,6 +694,24 @@ public class ViewFilter  implements Serializable {
   }
   public void setDnisList(List<String> dnisList) {
     this.dnisList = dnisList;
+  }
+
+  
+  /**
+   * The list of session dnis used to filter the view
+   **/
+  public ViewFilter sessionDnisList(List<String> sessionDnisList) {
+    this.sessionDnisList = sessionDnisList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of session dnis used to filter the view")
+  @JsonProperty("sessionDnisList")
+  public List<String> getSessionDnisList() {
+    return sessionDnisList;
+  }
+  public void setSessionDnisList(List<String> sessionDnisList) {
+    this.sessionDnisList = sessionDnisList;
   }
 
   
@@ -1611,6 +1688,24 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * A list of versions of a flow
+   **/
+  public ViewFilter flowVersions(List<String> flowVersions) {
+    this.flowVersions = flowVersions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of versions of a flow")
+  @JsonProperty("flowVersions")
+  public List<String> getFlowVersions() {
+    return flowVersions;
+  }
+  public void setFlowVersions(List<String> flowVersions) {
+    this.flowVersions = flowVersions;
+  }
+
+  
+  /**
    * A list of directory group ids
    **/
   public ViewFilter groupIds(List<String> groupIds) {
@@ -1625,6 +1720,60 @@ public class ViewFilter  implements Serializable {
   }
   public void setGroupIds(List<String> groupIds) {
     this.groupIds = groupIds;
+  }
+
+  
+  /**
+   * Indicates filtering for journey customer id
+   **/
+  public ViewFilter hasJourneyCustomerId(Boolean hasJourneyCustomerId) {
+    this.hasJourneyCustomerId = hasJourneyCustomerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for journey customer id")
+  @JsonProperty("hasJourneyCustomerId")
+  public Boolean getHasJourneyCustomerId() {
+    return hasJourneyCustomerId;
+  }
+  public void setHasJourneyCustomerId(Boolean hasJourneyCustomerId) {
+    this.hasJourneyCustomerId = hasJourneyCustomerId;
+  }
+
+  
+  /**
+   * Indicates filtering for Journey action map id
+   **/
+  public ViewFilter hasJourneyActionMapId(Boolean hasJourneyActionMapId) {
+    this.hasJourneyActionMapId = hasJourneyActionMapId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for Journey action map id")
+  @JsonProperty("hasJourneyActionMapId")
+  public Boolean getHasJourneyActionMapId() {
+    return hasJourneyActionMapId;
+  }
+  public void setHasJourneyActionMapId(Boolean hasJourneyActionMapId) {
+    this.hasJourneyActionMapId = hasJourneyActionMapId;
+  }
+
+  
+  /**
+   * Indicates filtering for Journey visit id
+   **/
+  public ViewFilter hasJourneyVisitId(Boolean hasJourneyVisitId) {
+    this.hasJourneyVisitId = hasJourneyVisitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for Journey visit id")
+  @JsonProperty("hasJourneyVisitId")
+  public Boolean getHasJourneyVisitId() {
+    return hasJourneyVisitId;
+  }
+  public void setHasJourneyVisitId(Boolean hasJourneyVisitId) {
+    this.hasJourneyVisitId = hasJourneyVisitId;
   }
 
   
@@ -1645,8 +1794,10 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.languageIds, viewFilter.languageIds) &&
         Objects.equals(this.languageGroups, viewFilter.languageGroups) &&
         Objects.equals(this.directions, viewFilter.directions) &&
+        Objects.equals(this.originatingDirections, viewFilter.originatingDirections) &&
         Objects.equals(this.wrapUpCodes, viewFilter.wrapUpCodes) &&
         Objects.equals(this.dnisList, viewFilter.dnisList) &&
+        Objects.equals(this.sessionDnisList, viewFilter.sessionDnisList) &&
         Objects.equals(this.filterQueuesByUserIds, viewFilter.filterQueuesByUserIds) &&
         Objects.equals(this.filterUsersByQueueIds, viewFilter.filterUsersByQueueIds) &&
         Objects.equals(this.userIds, viewFilter.userIds) &&
@@ -1701,12 +1852,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.flowTypes, viewFilter.flowTypes) &&
         Objects.equals(this.flowEntryTypes, viewFilter.flowEntryTypes) &&
         Objects.equals(this.flowEntryReasons, viewFilter.flowEntryReasons) &&
-        Objects.equals(this.groupIds, viewFilter.groupIds);
+        Objects.equals(this.flowVersions, viewFilter.flowVersions) &&
+        Objects.equals(this.groupIds, viewFilter.groupIds) &&
+        Objects.equals(this.hasJourneyCustomerId, viewFilter.hasJourneyCustomerId) &&
+        Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
+        Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, wrapUpCodes, dnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, groupIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId);
   }
 
   @Override
@@ -1721,8 +1876,10 @@ public class ViewFilter  implements Serializable {
     sb.append("    languageIds: ").append(toIndentedString(languageIds)).append("\n");
     sb.append("    languageGroups: ").append(toIndentedString(languageGroups)).append("\n");
     sb.append("    directions: ").append(toIndentedString(directions)).append("\n");
+    sb.append("    originatingDirections: ").append(toIndentedString(originatingDirections)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
     sb.append("    dnisList: ").append(toIndentedString(dnisList)).append("\n");
+    sb.append("    sessionDnisList: ").append(toIndentedString(sessionDnisList)).append("\n");
     sb.append("    filterQueuesByUserIds: ").append(toIndentedString(filterQueuesByUserIds)).append("\n");
     sb.append("    filterUsersByQueueIds: ").append(toIndentedString(filterUsersByQueueIds)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
@@ -1777,7 +1934,11 @@ public class ViewFilter  implements Serializable {
     sb.append("    flowTypes: ").append(toIndentedString(flowTypes)).append("\n");
     sb.append("    flowEntryTypes: ").append(toIndentedString(flowEntryTypes)).append("\n");
     sb.append("    flowEntryReasons: ").append(toIndentedString(flowEntryReasons)).append("\n");
+    sb.append("    flowVersions: ").append(toIndentedString(flowVersions)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    hasJourneyCustomerId: ").append(toIndentedString(hasJourneyCustomerId)).append("\n");
+    sb.append("    hasJourneyActionMapId: ").append(toIndentedString(hasJourneyActionMapId)).append("\n");
+    sb.append("    hasJourneyVisitId: ").append(toIndentedString(hasJourneyVisitId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

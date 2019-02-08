@@ -22,9 +22,9 @@ public class QualityAudit  implements Serializable {
   private String id = null;
   private String name = null;
   private User user = null;
-  private String timestamp = null;
   private String level = null;
   private AuditEntity entity = null;
+  private String timestamp = null;
   private String action = null;
   private String status = null;
   private List<Change> changes = new ArrayList<Change>();
@@ -75,23 +75,6 @@ public class QualityAudit  implements Serializable {
   
   /**
    **/
-  public QualityAudit timestamp(String timestamp) {
-    this.timestamp = timestamp;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("timestamp")
-  public String getTimestamp() {
-    return timestamp;
-  }
-  public void setTimestamp(String timestamp) {
-    this.timestamp = timestamp;
-  }
-
-  
-  /**
-   **/
   public QualityAudit level(String level) {
     this.level = level;
     return this;
@@ -121,6 +104,23 @@ public class QualityAudit  implements Serializable {
   }
   public void setEntity(AuditEntity entity) {
     this.entity = entity;
+  }
+
+  
+  /**
+   **/
+  public QualityAudit timestamp(String timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("timestamp")
+  public String getTimestamp() {
+    return timestamp;
+  }
+  public void setTimestamp(String timestamp) {
+    this.timestamp = timestamp;
   }
 
   
@@ -212,9 +212,9 @@ public class QualityAudit  implements Serializable {
     return Objects.equals(this.id, qualityAudit.id) &&
         Objects.equals(this.name, qualityAudit.name) &&
         Objects.equals(this.user, qualityAudit.user) &&
-        Objects.equals(this.timestamp, qualityAudit.timestamp) &&
         Objects.equals(this.level, qualityAudit.level) &&
         Objects.equals(this.entity, qualityAudit.entity) &&
+        Objects.equals(this.timestamp, qualityAudit.timestamp) &&
         Objects.equals(this.action, qualityAudit.action) &&
         Objects.equals(this.status, qualityAudit.status) &&
         Objects.equals(this.changes, qualityAudit.changes) &&
@@ -224,7 +224,7 @@ public class QualityAudit  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, timestamp, level, entity, action, status, changes, entityType, selfUri);
+    return Objects.hash(id, name, user, level, entity, timestamp, action, status, changes, entityType, selfUri);
   }
 
   @Override
@@ -235,9 +235,9 @@ public class QualityAudit  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    changes: ").append(toIndentedString(changes)).append("\n");

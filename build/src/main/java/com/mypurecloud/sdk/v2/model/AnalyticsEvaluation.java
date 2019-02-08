@@ -23,6 +23,7 @@ public class AnalyticsEvaluation  implements Serializable {
   private String formId = null;
   private String contextId = null;
   private String formName = null;
+  private String calibrationId = null;
   private Long oTotalScore = null;
   private Long oTotalCriticalScore = null;
 
@@ -172,6 +173,24 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * The calibration id used for the purpose of training evaluators
+   **/
+  public AnalyticsEvaluation calibrationId(String calibrationId) {
+    this.calibrationId = calibrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The calibration id used for the purpose of training evaluators")
+  @JsonProperty("calibrationId")
+  public String getCalibrationId() {
+    return calibrationId;
+  }
+  public void setCalibrationId(String calibrationId) {
+    this.calibrationId = calibrationId;
+  }
+
+  
+  /**
    **/
   public AnalyticsEvaluation oTotalScore(Long oTotalScore) {
     this.oTotalScore = oTotalScore;
@@ -223,13 +242,14 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.formId, analyticsEvaluation.formId) &&
         Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
         Objects.equals(this.formName, analyticsEvaluation.formName) &&
+        Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
         Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore) &&
         Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, oTotalScore, oTotalCriticalScore);
+    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, calibrationId, oTotalScore, oTotalCriticalScore);
   }
 
   @Override
@@ -245,6 +265,7 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    formId: ").append(toIndentedString(formId)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    formName: ").append(toIndentedString(formName)).append("\n");
+    sb.append("    calibrationId: ").append(toIndentedString(calibrationId)).append("\n");
     sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");
     sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("}");

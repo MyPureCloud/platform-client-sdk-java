@@ -1540,7 +1540,7 @@ try {
 
 
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingQueueWrapupcodes(queueId)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber)
 
 Get the wrap-up codes for a queue
 
@@ -1575,8 +1575,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingQueueWrapupcodes(queueId);
+    WrapupCodeEntityListing result = apiInstance.getRoutingQueueWrapupcodes(queueId, pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueWrapupcodes");
@@ -1590,6 +1592,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
 
 ### Return type

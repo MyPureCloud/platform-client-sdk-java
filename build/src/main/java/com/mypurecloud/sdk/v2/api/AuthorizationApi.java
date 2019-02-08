@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsRolecountsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
@@ -1685,6 +1686,85 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AuthzSubject> response = (ApiResponse<AuthzSubject>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the count of roles granted to a list of subjects
+   * 
+   * @param id id (optional)
+   * @return Map<String, Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Map<String, Object> getAuthorizationSubjectsRolecounts(List<String> id) throws IOException, ApiException {
+    return  getAuthorizationSubjectsRolecounts(createGetAuthorizationSubjectsRolecountsRequest(id));
+  }
+
+  /**
+   * Get the count of roles granted to a list of subjects
+   * 
+   * @param id id (optional)
+   * @return Map<String, Object>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Map<String, Object>> getAuthorizationSubjectsRolecountsWithHttpInfo(List<String> id) throws IOException {
+    return getAuthorizationSubjectsRolecounts(createGetAuthorizationSubjectsRolecountsRequest(id).withHttpInfo());
+  }
+
+  private GetAuthorizationSubjectsRolecountsRequest createGetAuthorizationSubjectsRolecountsRequest(List<String> id) {
+    return GetAuthorizationSubjectsRolecountsRequest.builder()
+            .withId(id)
+    
+            .build();
+  }
+
+  /**
+   * Get the count of roles granted to a list of subjects
+   * 
+   * @param request The request object
+   * @return Map<String, Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Map<String, Object> getAuthorizationSubjectsRolecounts(GetAuthorizationSubjectsRolecountsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Map<String, Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Map<String, Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the count of roles granted to a list of subjects
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Map<String, Object>> getAuthorizationSubjectsRolecounts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Map<String, Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
