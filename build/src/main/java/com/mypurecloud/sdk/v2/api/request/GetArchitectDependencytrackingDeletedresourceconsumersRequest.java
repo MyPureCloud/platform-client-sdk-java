@@ -122,7 +122,6 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;
@@ -259,7 +258,6 @@ public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;

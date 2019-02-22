@@ -10,11 +10,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * GenerateWeekScheduleResponse
+ * Response for query for week schedule for a given week in management unit
  */
+@ApiModel(description = "Response for query for week schedule for a given week in management unit")
 
 public class GenerateWeekScheduleResponse  implements Serializable {
   
+  private String downloadUrl = null;
 
   /**
    * The status of the request
@@ -53,7 +55,24 @@ public class GenerateWeekScheduleResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private String operationId = null;
-  private String downloadUrl = null;
+
+  
+  /**
+   * The url to fetch the result for large responses. The value is null if result contains the data
+   **/
+  public GenerateWeekScheduleResponse downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The url to fetch the result for large responses. The value is null if result contains the data")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
 
   
   /**
@@ -92,24 +111,6 @@ public class GenerateWeekScheduleResponse  implements Serializable {
   }
 
   
-  /**
-   * The url to fetch the result for large responses. The value will be null if result contains the data
-   **/
-  public GenerateWeekScheduleResponse downloadUrl(String downloadUrl) {
-    this.downloadUrl = downloadUrl;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The url to fetch the result for large responses. The value will be null if result contains the data")
-  @JsonProperty("downloadUrl")
-  public String getDownloadUrl() {
-    return downloadUrl;
-  }
-  public void setDownloadUrl(String downloadUrl) {
-    this.downloadUrl = downloadUrl;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -120,14 +121,14 @@ public class GenerateWeekScheduleResponse  implements Serializable {
       return false;
     }
     GenerateWeekScheduleResponse generateWeekScheduleResponse = (GenerateWeekScheduleResponse) o;
-    return Objects.equals(this.status, generateWeekScheduleResponse.status) &&
-        Objects.equals(this.operationId, generateWeekScheduleResponse.operationId) &&
-        Objects.equals(this.downloadUrl, generateWeekScheduleResponse.downloadUrl);
+    return Objects.equals(this.downloadUrl, generateWeekScheduleResponse.downloadUrl) &&
+        Objects.equals(this.status, generateWeekScheduleResponse.status) &&
+        Objects.equals(this.operationId, generateWeekScheduleResponse.operationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, operationId, downloadUrl);
+    return Objects.hash(downloadUrl, status, operationId);
   }
 
   @Override
@@ -135,9 +136,9 @@ public class GenerateWeekScheduleResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class GenerateWeekScheduleResponse {\n");
     
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
-    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

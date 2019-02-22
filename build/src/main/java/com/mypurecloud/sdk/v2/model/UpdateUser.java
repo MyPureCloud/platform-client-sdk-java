@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Biography;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
+import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
 import com.mypurecloud.sdk.v2.model.UserImage;
@@ -74,6 +76,9 @@ public class UpdateUser  implements Serializable {
   }
   private StateEnum state = null;
   private Boolean acdAutoAnswer = null;
+  private List<String> certifications = new ArrayList<String>();
+  private Biography biography = null;
+  private EmployerInfo employerInfo = null;
   private String selfUri = null;
 
   
@@ -364,6 +369,57 @@ public class UpdateUser  implements Serializable {
   }
 
   
+  /**
+   **/
+  public UpdateUser certifications(List<String> certifications) {
+    this.certifications = certifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("certifications")
+  public List<String> getCertifications() {
+    return certifications;
+  }
+  public void setCertifications(List<String> certifications) {
+    this.certifications = certifications;
+  }
+
+  
+  /**
+   **/
+  public UpdateUser biography(Biography biography) {
+    this.biography = biography;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("biography")
+  public Biography getBiography() {
+    return biography;
+  }
+  public void setBiography(Biography biography) {
+    this.biography = biography;
+  }
+
+  
+  /**
+   **/
+  public UpdateUser employerInfo(EmployerInfo employerInfo) {
+    this.employerInfo = employerInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("employerInfo")
+  public EmployerInfo getEmployerInfo() {
+    return employerInfo;
+  }
+  public void setEmployerInfo(EmployerInfo employerInfo) {
+    this.employerInfo = employerInfo;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -398,12 +454,15 @@ public class UpdateUser  implements Serializable {
         Objects.equals(this.groups, updateUser.groups) &&
         Objects.equals(this.state, updateUser.state) &&
         Objects.equals(this.acdAutoAnswer, updateUser.acdAutoAnswer) &&
+        Objects.equals(this.certifications, updateUser.certifications) &&
+        Objects.equals(this.biography, updateUser.biography) &&
+        Objects.equals(this.employerInfo, updateUser.employerInfo) &&
         Objects.equals(this.selfUri, updateUser.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, acdAutoAnswer, selfUri);
+    return Objects.hash(id, name, chat, department, email, primaryContactInfo, addresses, title, username, manager, images, version, profileSkills, locations, groups, state, acdAutoAnswer, certifications, biography, employerInfo, selfUri);
   }
 
   @Override
@@ -428,6 +487,9 @@ public class UpdateUser  implements Serializable {
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
+    sb.append("    certifications: ").append(toIndentedString(certifications)).append("\n");
+    sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
+    sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

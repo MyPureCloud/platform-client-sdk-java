@@ -125,7 +125,7 @@ public class BillingApi {
    * Get the billing overview for an organization that is managed by a partner.
    * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
    * @param trustorOrgId The organization ID of the trustor (customer) organization. (required)
-   * @param billingPeriodIndex Billing Period Index (optional, default to 0)
+   * @param billingPeriodIndex 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (optional, default to 0)
    * @return TrusteeBillingOverview
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -138,7 +138,7 @@ public class BillingApi {
    * Get the billing overview for an organization that is managed by a partner.
    * Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
    * @param trustorOrgId The organization ID of the trustor (customer) organization. (required)
-   * @param billingPeriodIndex Billing Period Index (optional, default to 0)
+   * @param billingPeriodIndex 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. (optional, default to 0)
    * @return TrusteeBillingOverview
    * @throws IOException if the request fails to be processed
    */

@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Biography;
 import com.mypurecloud.sdk.v2.model.Chat;
 import com.mypurecloud.sdk.v2.model.Contact;
 import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
@@ -82,6 +84,9 @@ public class User  implements Serializable {
   private User manager = null;
   private List<UserImage> images = new ArrayList<UserImage>();
   private Integer version = null;
+  private List<String> certifications = new ArrayList<String>();
+  private Biography biography = null;
+  private EmployerInfo employerInfo = null;
   private RoutingStatus routingStatus = null;
   private UserPresence presence = null;
   private UserConversationSummary conversationSummary = null;
@@ -318,6 +323,57 @@ public class User  implements Serializable {
   }
   public void setVersion(Integer version) {
     this.version = version;
+  }
+
+  
+  /**
+   **/
+  public User certifications(List<String> certifications) {
+    this.certifications = certifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("certifications")
+  public List<String> getCertifications() {
+    return certifications;
+  }
+  public void setCertifications(List<String> certifications) {
+    this.certifications = certifications;
+  }
+
+  
+  /**
+   **/
+  public User biography(Biography biography) {
+    this.biography = biography;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("biography")
+  public Biography getBiography() {
+    return biography;
+  }
+  public void setBiography(Biography biography) {
+    this.biography = biography;
+  }
+
+  
+  /**
+   **/
+  public User employerInfo(EmployerInfo employerInfo) {
+    this.employerInfo = employerInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("employerInfo")
+  public EmployerInfo getEmployerInfo() {
+    return employerInfo;
+  }
+  public void setEmployerInfo(EmployerInfo employerInfo) {
+    this.employerInfo = employerInfo;
   }
 
   
@@ -593,6 +649,9 @@ public class User  implements Serializable {
         Objects.equals(this.manager, user.manager) &&
         Objects.equals(this.images, user.images) &&
         Objects.equals(this.version, user.version) &&
+        Objects.equals(this.certifications, user.certifications) &&
+        Objects.equals(this.biography, user.biography) &&
+        Objects.equals(this.employerInfo, user.employerInfo) &&
         Objects.equals(this.routingStatus, user.routingStatus) &&
         Objects.equals(this.presence, user.presence) &&
         Objects.equals(this.conversationSummary, user.conversationSummary) &&
@@ -612,7 +671,7 @@ public class User  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, selfUri);
   }
 
   @Override
@@ -634,6 +693,9 @@ public class User  implements Serializable {
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    certifications: ").append(toIndentedString(certifications)).append("\n");
+    sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
+    sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    presence: ").append(toIndentedString(presence)).append("\n");
     sb.append("    conversationSummary: ").append(toIndentedString(conversationSummary)).append("\n");

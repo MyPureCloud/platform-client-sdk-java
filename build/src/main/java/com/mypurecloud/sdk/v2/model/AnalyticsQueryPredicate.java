@@ -267,6 +267,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     NBLINDTRANSFERRED("nBlindTransferred"),
     NCONSULTTRANSFERRED("nConsultTransferred"),
     NCONSULT("nConsult"),
+    NCONNECTED("nConnected"),
     TALERT("tAlert"),
     TNOTRESPONDING("tNotResponding"),
     NOUTBOUND("nOutbound"),

@@ -3026,7 +3026,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3060,7 +3060,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

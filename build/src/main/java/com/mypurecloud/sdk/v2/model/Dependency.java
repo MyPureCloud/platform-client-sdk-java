@@ -59,7 +59,6 @@ public class Dependency  implements Serializable {
     TTSVOICE("TTSVOICE"),
     USER("USER"),
     USERPROMPT("USERPROMPT"),
-    VOICEXML("VOICEXML"),
     WORKFLOW("WORKFLOW");
 
     private String value;

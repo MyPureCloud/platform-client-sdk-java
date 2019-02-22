@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteTokenRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
 
@@ -33,6 +34,82 @@ public class TokensApi {
 
   public TokensApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete all auth tokens for the specified user.
+   * 
+   * @param userId User ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteToken(String userId) throws IOException, ApiException {
+     deleteToken(createDeleteTokenRequest(userId));
+  }
+
+  /**
+   * Delete all auth tokens for the specified user.
+   * 
+   * @param userId User ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteTokenWithHttpInfo(String userId) throws IOException {
+    return deleteToken(createDeleteTokenRequest(userId).withHttpInfo());
+  }
+
+  private DeleteTokenRequest createDeleteTokenRequest(String userId) {
+    return DeleteTokenRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Delete all auth tokens for the specified user.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteToken(DeleteTokenRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete all auth tokens for the specified user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteToken(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

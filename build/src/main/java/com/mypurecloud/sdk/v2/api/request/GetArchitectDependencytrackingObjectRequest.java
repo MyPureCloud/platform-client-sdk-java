@@ -136,7 +136,6 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;
@@ -243,7 +242,6 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;
@@ -322,7 +320,6 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;

@@ -47,7 +47,7 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
         CloseableHttpClient client = HttpClients.custom()
                 .setDefaultRequestConfig(requestBuilder.build())
                 .addInterceptorFirst((HttpRequestInterceptor) interceptor)
-                .addInterceptorFirst((HttpResponseInterceptor) interceptor)
+                .addInterceptorLast((HttpResponseInterceptor) interceptor)
                 .build();
 
         ExecutorService executorService = properties.getProperty(ApiClientConnectorProperty.ASYNC_EXECUTOR_SERVICE, ExecutorService.class, null);

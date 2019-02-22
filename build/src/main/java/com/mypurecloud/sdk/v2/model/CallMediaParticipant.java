@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
+import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -207,6 +208,7 @@ public class CallMediaParticipant  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private JourneyContext journeyContext = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -761,6 +763,24 @@ public class CallMediaParticipant  implements Serializable {
 
   
   /**
+   * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+   **/
+  public CallMediaParticipant journeyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.")
+  @JsonProperty("journeyContext")
+  public JourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
    * Value is true when the call is muted.
    **/
   public CallMediaParticipant muted(Boolean muted) {
@@ -1014,6 +1034,7 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.wrapup, callMediaParticipant.wrapup) &&
         Objects.equals(this.peer, callMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, callMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, callMediaParticipant.journeyContext) &&
         Objects.equals(this.muted, callMediaParticipant.muted) &&
         Objects.equals(this.confined, callMediaParticipant.confined) &&
         Objects.equals(this.recording, callMediaParticipant.recording) &&
@@ -1030,7 +1051,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
   }
 
   @Override
@@ -1066,6 +1087,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

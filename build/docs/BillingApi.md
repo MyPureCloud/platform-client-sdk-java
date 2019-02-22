@@ -119,7 +119,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 BillingApi apiInstance = new BillingApi();
 String trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
-Integer billingPeriodIndex = 0; // Integer | Billing Period Index
+Integer billingPeriodIndex = 0; // Integer | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
 try {
     TrusteeBillingOverview result = apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, billingPeriodIndex);
     System.out.println(result);
@@ -135,7 +135,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **trustorOrgId** | **String**| The organization ID of the trustor (customer) organization. | |
-| **billingPeriodIndex** | **Integer**| Billing Period Index | [optional] [default to 0] |
+| **billingPeriodIndex** | **Integer**| 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on. | [optional] [default to 0] |
 {: class="table table-striped"}
 
 ### Return type

@@ -3371,7 +3371,7 @@ public class RoutingApi {
 
   
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -3385,7 +3385,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -3409,7 +3409,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param request The request object
    * @return QueueMember
@@ -3428,7 +3428,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number or joined status for a User in a Queue
+   * Update the ring number OR joined status for a User in a Queue
    * 
    * @param request The request object
    * @return the response

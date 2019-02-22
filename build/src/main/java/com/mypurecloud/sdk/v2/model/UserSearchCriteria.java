@@ -73,7 +73,8 @@ public class UserSearchCriteria  implements Serializable {
     TERM("TERM"),
     TERMS("TERMS"),
     REQUIRED_FIELDS("REQUIRED_FIELDS"),
-    MATCH_ALL("MATCH_ALL");
+    MATCH_ALL("MATCH_ALL"),
+    QUERY_STRING("QUERY_STRING");
 
     private String value;
 

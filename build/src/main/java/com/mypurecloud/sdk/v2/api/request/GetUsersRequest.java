@@ -185,11 +185,14 @@ public class GetUsersRequest {
 		STATION("station"), 
 		AUTHORIZATION("authorization"), 
 		PROFILESKILLS("profileSkills"), 
+		CERTIFICATIONS("certifications"), 
 		LOCATIONS("locations"), 
 		GROUPS("groups"), 
 		SKILLS("skills"), 
 		LANGUAGES("languages"), 
-		LANGUAGEPREFERENCE("languagePreference");
+		LANGUAGEPREFERENCE("languagePreference"), 
+		EMPLOYERINFO("employerInfo"), 
+		BIOGRAPHY("biography");
 
 		private String value;
 

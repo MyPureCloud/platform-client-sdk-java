@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.WebChatConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,6 +26,7 @@ public class WebChatDeployment  implements Serializable {
   private Boolean disabled = null;
   private WebChatConfig webChatConfig = null;
   private List<String> allowedDomains = new ArrayList<String>();
+  private UriReference flow = null;
   private String selfUri = null;
 
   
@@ -155,6 +157,24 @@ public class WebChatDeployment  implements Serializable {
   }
 
   
+  /**
+   * The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
+   **/
+  public WebChatDeployment flow(UriReference flow) {
+    this.flow = flow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.")
+  @JsonProperty("flow")
+  public UriReference getFlow() {
+    return flow;
+  }
+  public void setFlow(UriReference flow) {
+    this.flow = flow;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -180,12 +200,13 @@ public class WebChatDeployment  implements Serializable {
         Objects.equals(this.disabled, webChatDeployment.disabled) &&
         Objects.equals(this.webChatConfig, webChatDeployment.webChatConfig) &&
         Objects.equals(this.allowedDomains, webChatDeployment.allowedDomains) &&
+        Objects.equals(this.flow, webChatDeployment.flow) &&
         Objects.equals(this.selfUri, webChatDeployment.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, webChatConfig, allowedDomains, selfUri);
+    return Objects.hash(id, name, description, authenticationRequired, authenticationUrl, disabled, webChatConfig, allowedDomains, flow, selfUri);
   }
 
   @Override
@@ -201,6 +222,7 @@ public class WebChatDeployment  implements Serializable {
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    webChatConfig: ").append(toIndentedString(webChatConfig)).append("\n");
     sb.append("    allowedDomains: ").append(toIndentedString(allowedDomains)).append("\n");
+    sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

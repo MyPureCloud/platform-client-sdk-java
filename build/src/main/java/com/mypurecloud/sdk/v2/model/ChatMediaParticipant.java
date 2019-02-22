@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -206,6 +207,7 @@ public class ChatMediaParticipant  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private JourneyContext journeyContext = null;
   private String roomId = null;
 
   
@@ -714,6 +716,24 @@ public class ChatMediaParticipant  implements Serializable {
 
   
   /**
+   * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+   **/
+  public ChatMediaParticipant journeyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.")
+  @JsonProperty("journeyContext")
+  public JourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
    * The ID of the chat room.
    **/
   public ChatMediaParticipant roomId(String roomId) {
@@ -769,12 +789,13 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.wrapup, chatMediaParticipant.wrapup) &&
         Objects.equals(this.peer, chatMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, chatMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, chatMediaParticipant.journeyContext) &&
         Objects.equals(this.roomId, chatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, roomId);
   }
 
   @Override
@@ -810,6 +831,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

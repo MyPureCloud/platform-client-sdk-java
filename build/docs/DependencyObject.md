@@ -63,7 +63,6 @@ title: DependencyObject
 | TTSVOICE | &quot;TTSVOICE&quot; |
 | USER | &quot;USER&quot; |
 | USERPROMPT | &quot;USERPROMPT&quot; |
-| VOICEXML | &quot;VOICEXML&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 {: class="table table-striped"}
 

@@ -201,6 +201,7 @@ title: AnalyticsQueryPredicate
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |
 | NCONSULT | &quot;nConsult&quot; |
+| NCONNECTED | &quot;nConnected&quot; |
 | TALERT | &quot;tAlert&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | NOUTBOUND | &quot;nOutbound&quot; |

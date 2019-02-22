@@ -47,6 +47,7 @@ title: UserSearchCriteria
 | TERMS | &quot;TERMS&quot; |
 | REQUIRED_FIELDS | &quot;REQUIRED_FIELDS&quot; |
 | MATCH_ALL | &quot;MATCH_ALL&quot; |
+| QUERY_STRING | &quot;QUERY_STRING&quot; |
 {: class="table table-striped"}
 
 

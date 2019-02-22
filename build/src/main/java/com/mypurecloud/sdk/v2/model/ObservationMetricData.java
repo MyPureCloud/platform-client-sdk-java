@@ -54,6 +54,7 @@ public class ObservationMetricData  implements Serializable {
     NBLINDTRANSFERRED("nBlindTransferred"),
     NCONSULTTRANSFERRED("nConsultTransferred"),
     NCONSULT("nConsult"),
+    NCONNECTED("nConnected"),
     TALERT("tAlert"),
     TNOTRESPONDING("tNotResponding"),
     NOUTBOUND("nOutbound"),

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.Segment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -150,6 +151,7 @@ public class ConversationChat  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
+  private JourneyContext journeyContext = null;
 
   
   /**
@@ -404,6 +406,24 @@ public class ConversationChat  implements Serializable {
   }
 
   
+  /**
+   * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
+   **/
+  public ConversationChat journeyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).")
+  @JsonProperty("journeyContext")
+  public JourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -427,12 +447,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
         Objects.equals(this.provider, conversationChat.provider) &&
         Objects.equals(this.scriptId, conversationChat.scriptId) &&
-        Objects.equals(this.peerId, conversationChat.peerId);
+        Objects.equals(this.peerId, conversationChat.peerId) &&
+        Objects.equals(this.journeyContext, conversationChat.journeyContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId, journeyContext);
   }
 
   @Override
@@ -454,6 +475,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

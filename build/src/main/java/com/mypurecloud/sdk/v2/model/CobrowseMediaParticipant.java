@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -207,6 +208,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private JourneyContext journeyContext = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private List<String> controlling = new ArrayList<String>();
@@ -719,6 +721,24 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   
   /**
+   * Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.
+   **/
+  public CobrowseMediaParticipant journeyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context.")
+  @JsonProperty("journeyContext")
+  public JourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(JourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
    * The co-browse session ID.
    **/
   public CobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -846,6 +866,7 @@ public class CobrowseMediaParticipant  implements Serializable {
         Objects.equals(this.wrapup, cobrowseMediaParticipant.wrapup) &&
         Objects.equals(this.peer, cobrowseMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, cobrowseMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, cobrowseMediaParticipant.journeyContext) &&
         Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
@@ -855,7 +876,7 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
   }
 
   @Override
@@ -891,6 +912,7 @@ public class CobrowseMediaParticipant  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");

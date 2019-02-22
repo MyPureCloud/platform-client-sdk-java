@@ -136,7 +136,6 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;
@@ -215,7 +214,6 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		VOICEXML("VOICEXML"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;

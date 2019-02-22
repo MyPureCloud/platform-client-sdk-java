@@ -31,49 +31,11 @@ public class UserQueue  implements Serializable {
   private String name = null;
   private Division division = null;
   private String description = null;
-  private Integer version = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private String modifiedBy = null;
   private String createdBy = null;
-
-  /**
-   * Indicates if the queue is active, inactive, or deleted.
-   */
-  public enum StateEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ACTIVE("active"),
-    INACTIVE("inactive"),
-    DELETED("deleted");
-
-    private String value;
-
-    StateEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static StateEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (StateEnum value : StateEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return StateEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private StateEnum state = null;
-  private String modifiedByApp = null;
-  private String createdByApp = null;
+  private Integer memberCount = null;
   private Map<String, MediaSetting> mediaSettings = null;
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
@@ -121,7 +83,6 @@ public class UserQueue  implements Serializable {
   private QueueMessagingAddresses outboundMessagingAddresses = null;
   private QueueEmailAddress outboundEmailAddress = null;
   private Boolean joined = null;
-  private Integer memberCount = null;
   private String selfUri = null;
 
   
@@ -182,24 +143,6 @@ public class UserQueue  implements Serializable {
   }
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  
-  /**
-   * The current version of the queue.
-   **/
-  public UserQueue version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The current version of the queue.")
-  @JsonProperty("version")
-  public Integer getVersion() {
-    return version;
-  }
-  public void setVersion(Integer version) {
-    this.version = version;
   }
 
   
@@ -275,69 +218,22 @@ public class UserQueue  implements Serializable {
   }
 
   
-  /**
-   * Indicates if the queue is active, inactive, or deleted.
-   **/
-  public UserQueue state(StateEnum state) {
-    this.state = state;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Indicates if the queue is active, inactive, or deleted.")
-  @JsonProperty("state")
-  public StateEnum getState() {
-    return state;
-  }
-  public void setState(StateEnum state) {
-    this.state = state;
+  @ApiModelProperty(example = "null", value = "The number of users in the queue.")
+  @JsonProperty("memberCount")
+  public Integer getMemberCount() {
+    return memberCount;
   }
 
   
   /**
-   * The application that last modified the queue.
-   **/
-  public UserQueue modifiedByApp(String modifiedByApp) {
-    this.modifiedByApp = modifiedByApp;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The application that last modified the queue.")
-  @JsonProperty("modifiedByApp")
-  public String getModifiedByApp() {
-    return modifiedByApp;
-  }
-  public void setModifiedByApp(String modifiedByApp) {
-    this.modifiedByApp = modifiedByApp;
-  }
-
-  
-  /**
-   * The application that created the queue.
-   **/
-  public UserQueue createdByApp(String createdByApp) {
-    this.createdByApp = createdByApp;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The application that created the queue.")
-  @JsonProperty("createdByApp")
-  public String getCreatedByApp() {
-    return createdByApp;
-  }
-  public void setCreatedByApp(String createdByApp) {
-    this.createdByApp = createdByApp;
-  }
-
-  
-  /**
-   * The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION
+   * The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM
    **/
   public UserQueue mediaSettings(Map<String, MediaSetting> mediaSettings) {
     this.mediaSettings = mediaSettings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The media settings for the queue. Valid Key Values: CALL, CALLBACK, CHAT, EMAIL, SOCIAL_EXPRESSION")
+  @ApiModelProperty(example = "null", value = "The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM")
   @JsonProperty("mediaSettings")
   public Map<String, MediaSetting> getMediaSettings() {
     return mediaSettings;
@@ -373,7 +269,7 @@ public class UserQueue  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The ACW settings for the queue.")
+  @ApiModelProperty(example = "null", value = "The ACW settings for the queue.")
   @JsonProperty("acwSettings")
   public AcwSettings getAcwSettings() {
     return acwSettings;
@@ -391,7 +287,7 @@ public class UserQueue  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The skill evaluation method to use when routing conversations.")
+  @ApiModelProperty(example = "null", value = "The skill evaluation method to use when routing conversations.")
   @JsonProperty("skillEvaluationMethod")
   public SkillEvaluationMethodEnum getSkillEvaluationMethod() {
     return skillEvaluationMethod;
@@ -543,23 +439,6 @@ public class UserQueue  implements Serializable {
   }
 
   
-  /**
-   **/
-  public UserQueue memberCount(Integer memberCount) {
-    this.memberCount = memberCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("memberCount")
-  public Integer getMemberCount() {
-    return memberCount;
-  }
-  public void setMemberCount(Integer memberCount) {
-    this.memberCount = memberCount;
-  }
-
-  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -581,14 +460,11 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.name, userQueue.name) &&
         Objects.equals(this.division, userQueue.division) &&
         Objects.equals(this.description, userQueue.description) &&
-        Objects.equals(this.version, userQueue.version) &&
         Objects.equals(this.dateCreated, userQueue.dateCreated) &&
         Objects.equals(this.dateModified, userQueue.dateModified) &&
         Objects.equals(this.modifiedBy, userQueue.modifiedBy) &&
         Objects.equals(this.createdBy, userQueue.createdBy) &&
-        Objects.equals(this.state, userQueue.state) &&
-        Objects.equals(this.modifiedByApp, userQueue.modifiedByApp) &&
-        Objects.equals(this.createdByApp, userQueue.createdByApp) &&
+        Objects.equals(this.memberCount, userQueue.memberCount) &&
         Objects.equals(this.mediaSettings, userQueue.mediaSettings) &&
         Objects.equals(this.bullseye, userQueue.bullseye) &&
         Objects.equals(this.acwSettings, userQueue.acwSettings) &&
@@ -601,13 +477,12 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.outboundMessagingAddresses, userQueue.outboundMessagingAddresses) &&
         Objects.equals(this.outboundEmailAddress, userQueue.outboundEmailAddress) &&
         Objects.equals(this.joined, userQueue.joined) &&
-        Objects.equals(this.memberCount, userQueue.memberCount) &&
         Objects.equals(this.selfUri, userQueue.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
   }
 
   @Override
@@ -619,14 +494,11 @@ public class UserQueue  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    modifiedByApp: ").append(toIndentedString(modifiedByApp)).append("\n");
-    sb.append("    createdByApp: ").append(toIndentedString(createdByApp)).append("\n");
+    sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
@@ -639,7 +511,6 @@ public class UserQueue  implements Serializable {
     sb.append("    outboundMessagingAddresses: ").append(toIndentedString(outboundMessagingAddresses)).append("\n");
     sb.append("    outboundEmailAddress: ").append(toIndentedString(outboundEmailAddress)).append("\n");
     sb.append("    joined: ").append(toIndentedString(joined)).append("\n");
-    sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
