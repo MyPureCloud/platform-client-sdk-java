@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postNotificationsChannelSubscriptions**](NotificationsApi.html#postNotificationsChannelSubscriptions) | Add a list of subscriptions to the existing list of subscriptions |
 | [**postNotificationsChannels**](NotificationsApi.html#postNotificationsChannels) | Create a new channel |
 | [**putNotificationsChannelSubscriptions**](NotificationsApi.html#putNotificationsChannelSubscriptions) | Replace the current list of subscriptions with a new list. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteNotificationsChannelSubscriptions"></a>
 
@@ -69,8 +69,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **channelId** | **String**| Channel ID | |
-{: class="table table-striped"}
+| **channelId** | **String**| Channel ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -130,8 +131,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: description, requiresPermissions, schema |
-{: class="table table-striped"}
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: description, requiresPermissions, schema 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -191,8 +193,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **channelId** | **String**| Channel ID | |
-{: class="table table-striped"}
+| **channelId** | **String**| Channel ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -252,8 +255,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **includechannels** | **String**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
-{: class="table table-striped"}
+| **includechannels** | **String**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -314,9 +318,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **channelId** | **String**| Channel ID | |
-| **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | |
-{: class="table table-striped"}
+| **channelId** | **String**| Channel ID | 
+| **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -373,7 +378,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -434,9 +440,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **channelId** | **String**| Channel ID | |
-| **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | |
-{: class="table table-striped"}
+| **channelId** | **String**| Channel ID | 
+| **body** | [**List&lt;ChannelTopic&gt;**](ChannelTopic.html)| Body | 
+{: class="table-striped"}
+
 
 ### Return type
 

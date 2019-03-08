@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postResponsemanagementResponsesQuery**](ResponseManagementApi.html#postResponsemanagementResponsesQuery) | Query responses |
 | [**putResponsemanagementLibrary**](ResponseManagementApi.html#putResponsemanagementLibrary) | Update an existing response library. |
 | [**putResponsemanagementResponse**](ResponseManagementApi.html#putResponsemanagementResponse) | Update an existing response. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteResponsemanagementLibrary"></a>
 
@@ -73,8 +73,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **libraryId** | **String**| Library ID | |
-{: class="table table-striped"}
+| **libraryId** | **String**| Library ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -133,8 +134,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseId** | **String**| Response ID | |
-{: class="table table-striped"}
+| **responseId** | **String**| Response ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -195,9 +197,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -257,8 +260,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **libraryId** | **String**| Library ID | |
-{: class="table table-striped"}
+| **libraryId** | **String**| Library ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -319,9 +323,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseId** | **String**| Response ID | |
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
+| **responseId** | **String**| Response ID | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -384,11 +389,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **libraryId** | **String**| Library ID | |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
+| **libraryId** | **String**| Library ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -448,8 +454,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Library**](Library.html)| Library | |
-{: class="table table-striped"}
+| **body** | [**Library**](Library.html)| Library | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -510,9 +517,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Response**](Response.html)| Response | |
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
+| **body** | [**Response**](Response.html)| Response | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -572,8 +580,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response | |
-{: class="table table-striped"}
+| **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -634,9 +643,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **libraryId** | **String**| Library ID | |
-| **body** | [**Library**](Library.html)| Library | |
-{: class="table table-striped"}
+| **libraryId** | **String**| Library ID | 
+| **body** | [**Library**](Library.html)| Library | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -698,10 +708,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseId** | **String**| Response ID | |
-| **body** | [**Response**](Response.html)| Response | |
-| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
+| **responseId** | **String**| Response ID | 
+| **body** | [**Response**](Response.html)| Response | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: substitutionsSchema 
+{: class="table-striped"}
+
 
 ### Return type
 

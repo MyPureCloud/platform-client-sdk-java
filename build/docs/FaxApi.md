@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFaxDocuments**](FaxApi.html#getFaxDocuments) | Get a list of fax documents. |
 | [**getFaxSummary**](FaxApi.html#getFaxSummary) | Get fax summary |
 | [**putFaxDocument**](FaxApi.html#putFaxDocument) | Update a fax document. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteFaxDocument"></a>
 
@@ -68,8 +68,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **documentId** | **String**| Document ID | |
-{: class="table table-striped"}
+| **documentId** | **String**| Document ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -129,8 +130,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **documentId** | **String**| Document ID | |
-{: class="table table-striped"}
+| **documentId** | **String**| Document ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -190,8 +192,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **documentId** | **String**| Document ID | |
-{: class="table table-striped"}
+| **documentId** | **String**| Document ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -252,9 +255,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -311,7 +315,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -372,9 +377,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **documentId** | **String**| Document ID | |
-| **body** | [**FaxDocument**](FaxDocument.html)| Document | |
-{: class="table table-striped"}
+| **documentId** | **String**| Document ID | 
+| **body** | [**FaxDocument**](FaxDocument.html)| Document | 
+{: class="table-striped"}
+
 
 ### Return type
 

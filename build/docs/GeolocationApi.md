@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserGeolocation**](GeolocationApi.html#getUserGeolocation) | Get a user&#39;s Geolocation |
 | [**patchGeolocationsSettings**](GeolocationApi.html#patchGeolocationsSettings) | Patch a organization&#39;s GeolocationSettings |
 | [**patchUserGeolocation**](GeolocationApi.html#patchUserGeolocation) | Patch a user&#39;s Geolocation |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getGeolocationsSettings"></a>
 
@@ -64,7 +64,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -125,9 +126,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **clientId** | **String**| client Id | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **clientId** | **String**| client Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -188,8 +190,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings | |
-{: class="table table-striped"}
+| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -251,10 +254,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **clientId** | **String**| client Id | |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **clientId** | **String**| client Id | 
+| **body** | [**Geolocation**](Geolocation.html)| Geolocation | 
+{: class="table-striped"}
+
 
 ### Return type
 

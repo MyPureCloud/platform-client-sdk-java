@@ -10,7 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteToken**](TokensApi.html#deleteToken) | Delete all auth tokens for the specified user. |
 | [**deleteTokensMe**](TokensApi.html#deleteTokensMe) | Delete  auth token used to make the request. |
 | [**getTokensMe**](TokensApi.html#getTokensMe) | Fetch information about the current token |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteToken"></a>
 
@@ -65,8 +65,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -122,7 +123,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -179,7 +181,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
+import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -65,6 +66,7 @@ public class DncListCreate  implements Serializable {
   private String loginId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
+  private UriReference division = null;
   private String selfUri = null;
 
   
@@ -222,6 +224,24 @@ public class DncListCreate  implements Serializable {
   }
 
   
+  /**
+   * The division this DncList belongs to.
+   **/
+  public DncListCreate division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division this DncList belongs to.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -250,12 +270,13 @@ public class DncListCreate  implements Serializable {
         Objects.equals(this.loginId, dncListCreate.loginId) &&
         Objects.equals(this.dncCodes, dncListCreate.dncCodes) &&
         Objects.equals(this.licenseId, dncListCreate.licenseId) &&
+        Objects.equals(this.division, dncListCreate.division) &&
         Objects.equals(this.selfUri, dncListCreate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, division, selfUri);
   }
 
   @Override
@@ -274,6 +295,7 @@ public class DncListCreate  implements Serializable {
     sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class JourneyCustomer  implements Serializable {
   
   private String id = null;
-  private String type = null;
+  private String idType = null;
 
   
   /**
@@ -39,18 +39,18 @@ public class JourneyCustomer  implements Serializable {
   /**
    * The type of the customerId within the Journey System (e.g. cookie).
    **/
-  public JourneyCustomer type(String type) {
-    this.type = type;
+  public JourneyCustomer idType(String idType) {
+    this.idType = idType;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The type of the customerId within the Journey System (e.g. cookie).")
-  @JsonProperty("type")
-  public String getType() {
-    return type;
+  @JsonProperty("idType")
+  public String getIdType() {
+    return idType;
   }
-  public void setType(String type) {
-    this.type = type;
+  public void setIdType(String idType) {
+    this.idType = idType;
   }
 
   
@@ -65,12 +65,12 @@ public class JourneyCustomer  implements Serializable {
     }
     JourneyCustomer journeyCustomer = (JourneyCustomer) o;
     return Objects.equals(this.id, journeyCustomer.id) &&
-        Objects.equals(this.type, journeyCustomer.type);
+        Objects.equals(this.idType, journeyCustomer.idType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type);
+    return Objects.hash(id, idType);
   }
 
   @Override
@@ -79,7 +79,7 @@ public class JourneyCustomer  implements Serializable {
     sb.append("class JourneyCustomer {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    idType: ").append(toIndentedString(idType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

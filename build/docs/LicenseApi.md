@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization&#39;s license assignments in a batch. |
 | [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getLicenseDefinition"></a>
 
@@ -74,8 +74,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **licenseId** | **String**| ID | |
-{: class="table table-striped"}
+| **licenseId** | **String**| ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -135,7 +136,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -195,7 +197,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -258,8 +261,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **featureName** | **String**| featureName | |
-{: class="table table-striped"}
+| **featureName** | **String**| featureName | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -322,8 +326,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| ID | |
-{: class="table table-striped"}
+| **userId** | **String**| ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -386,8 +391,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional] |
-{: class="table table-striped"}
+| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -450,8 +456,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **featureName** | **String**| featureName | |
-{: class="table table-striped"}
+| **featureName** | **String**| featureName | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -511,8 +518,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **List&lt;String&gt;**| The user IDs to fetch. | [optional] |
-{: class="table table-striped"}
+| **body** | **List&lt;String&gt;**| The user IDs to fetch. | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

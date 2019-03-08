@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWebchatDeployments**](WebChatApi.html#postWebchatDeployments) | Create WebChat deployment |
 | [**putWebchatDeployment**](WebChatApi.html#putWebchatDeployment) | Update a WebChat deployment |
 | [**putWebchatSettings**](WebChatApi.html#putWebchatSettings) | Update WebChat deployment settings |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteWebchatDeployment"></a>
 
@@ -71,8 +71,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deploymentId** | **String**| Deployment Id | |
-{: class="table table-striped"}
+| **deploymentId** | **String**| Deployment Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -129,7 +130,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -190,8 +192,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deploymentId** | **String**| Deployment Id | |
-{: class="table table-striped"}
+| **deploymentId** | **String**| Deployment Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -249,7 +252,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -307,7 +311,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -368,8 +373,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment | |
-{: class="table table-striped"}
+| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -431,9 +437,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deploymentId** | **String**| Deployment Id | |
-| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment | |
-{: class="table table-striped"}
+| **deploymentId** | **String**| Deployment Id | 
+| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -494,8 +501,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WebChatSettings**](WebChatSettings.html)| webChatSettings | |
-{: class="table table-striped"}
+| **body** | [**WebChatSettings**](WebChatSettings.html)| webChatSettings | 
+{: class="table-striped"}
+
 
 ### Return type
 

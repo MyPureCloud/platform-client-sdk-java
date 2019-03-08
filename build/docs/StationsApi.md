@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getStations**](StationsApi.html#getStations) | Get the list of available stations. |
 | [**getStationsSettings**](StationsApi.html#getStationsSettings) | Get an organization&#39;s StationSettings |
 | [**patchStationsSettings**](StationsApi.html#patchStationsSettings) | Patch an organization&#39;s StationSettings |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteStationAssociateduser"></a>
 
@@ -67,8 +67,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **stationId** | **String**| Station ID | |
-{: class="table table-striped"}
+| **stationId** | **String**| Station ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -128,8 +129,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **stationId** | **String**| Station ID | |
-{: class="table table-striped"}
+| **stationId** | **String**| Station ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -196,15 +198,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **name** | **String**| Name | [optional] |
-| **userSelectable** | **String**| True for stations that the user can select otherwise false | [optional] |
-| **webRtcUserId** | **String**| Filter for the webRtc station of the webRtcUserId | [optional] |
-| **id** | **String**| Comma separated list of stationIds | [optional] |
-| **lineAppearanceId** | **String**| lineAppearanceId | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **name** | **String**| Name | [optional] 
+| **userSelectable** | **String**| True for stations that the user can select otherwise false | [optional] 
+| **webRtcUserId** | **String**| Filter for the webRtc station of the webRtcUserId | [optional] 
+| **id** | **String**| Comma separated list of stationIds | [optional] 
+| **lineAppearanceId** | **String**| lineAppearanceId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -262,7 +265,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -323,8 +327,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**StationSettings**](StationSettings.html)| Station settings | |
-{: class="table table-striped"}
+| **body** | [**StationSettings**](StationSettings.html)| Station settings | 
+{: class="table-striped"}
+
 
 ### Return type
 

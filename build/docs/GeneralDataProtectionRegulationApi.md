@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGdprRequests**](GeneralDataProtectionRegulationApi.html#getGdprRequests) | Get all GDPR requests |
 | [**getGdprSubjects**](GeneralDataProtectionRegulationApi.html#getGdprSubjects) | Get GDPR subjects |
 | [**postGdprRequests**](GeneralDataProtectionRegulationApi.html#postGdprRequests) | Submit a new GDPR request |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getGdprRequest"></a>
 
@@ -68,8 +68,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **requestId** | **String**| Request id | |
-{: class="table table-striped"}
+| **requestId** | **String**| Request id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -131,9 +132,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -195,9 +197,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **searchType** | **String**| Search Type |<br />**Values**: NAME, ADDRESS, PHONE, EMAIL |
-| **searchValue** | **String**| Search Value | |
-{: class="table table-striped"}
+| **searchType** | **String**| Search Type |<br />**Values**: NAME, ADDRESS, PHONE, EMAIL 
+| **searchValue** | **String**| Search Value | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -259,9 +262,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GDPRRequest**](GDPRRequest.html)| GDPR request | |
-| **deleteConfirmed** | **Boolean**| Confirm delete | [optional] [default to false] |
-{: class="table table-striped"}
+| **body** | [**GDPRRequest**](GDPRRequest.html)| GDPR request | 
+| **deleteConfirmed** | **Boolean**| Confirm delete | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 

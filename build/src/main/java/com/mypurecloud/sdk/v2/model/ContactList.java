@@ -25,6 +25,7 @@ public class ContactList  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
+  private UriReference division = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
   private ImportStatus importStatus = null;
@@ -90,6 +91,24 @@ public class ContactList  implements Serializable {
   }
   public void setVersion(Integer version) {
     this.version = version;
+  }
+
+  
+  /**
+   * The division this entity belongs to.
+   **/
+  public ContactList division(UriReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division this entity belongs to.")
+  @JsonProperty("division")
+  public UriReference getDivision() {
+    return division;
+  }
+  public void setDivision(UriReference division) {
+    this.division = division;
   }
 
   
@@ -266,6 +285,7 @@ public class ContactList  implements Serializable {
         Objects.equals(this.dateCreated, contactList.dateCreated) &&
         Objects.equals(this.dateModified, contactList.dateModified) &&
         Objects.equals(this.version, contactList.version) &&
+        Objects.equals(this.division, contactList.division) &&
         Objects.equals(this.columnNames, contactList.columnNames) &&
         Objects.equals(this.phoneColumns, contactList.phoneColumns) &&
         Objects.equals(this.importStatus, contactList.importStatus) &&
@@ -280,7 +300,7 @@ public class ContactList  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, division, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, selfUri);
   }
 
   @Override
@@ -293,6 +313,7 @@ public class ContactList  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");

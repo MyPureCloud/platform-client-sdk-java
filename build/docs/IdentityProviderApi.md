@@ -35,7 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putIdentityprovidersPing**](IdentityProviderApi.html#putIdentityprovidersPing) | Update/Create Ping Identity Provider |
 | [**putIdentityprovidersPurecloud**](IdentityProviderApi.html#putIdentityprovidersPurecloud) | Update/Create PureCloud Identity Provider |
 | [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | Update/Create Salesforce Identity Provider |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteIdentityprovidersAdfs"></a>
 
@@ -89,7 +89,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -147,7 +148,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -205,7 +207,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -263,7 +266,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -321,7 +325,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -379,7 +384,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -437,7 +443,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -495,7 +502,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -553,7 +561,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -611,7 +620,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -669,7 +679,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -727,7 +738,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -785,7 +797,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -843,7 +856,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -901,7 +915,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -959,7 +974,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1017,7 +1033,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1075,7 +1092,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1133,7 +1151,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1195,8 +1214,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ADFS**](ADFS.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**ADFS**](ADFS.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1258,8 +1278,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1321,8 +1342,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GSuite**](GSuite.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**GSuite**](GSuite.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1384,8 +1406,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**IdentityNow**](IdentityNow.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**IdentityNow**](IdentityNow.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1447,8 +1470,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Okta**](Okta.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**Okta**](Okta.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1510,8 +1534,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OneLogin**](OneLogin.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**OneLogin**](OneLogin.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1573,8 +1598,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PingIdentity**](PingIdentity.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**PingIdentity**](PingIdentity.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1636,8 +1662,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PureCloud**](PureCloud.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**PureCloud**](PureCloud.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1699,8 +1726,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Salesforce**](Salesforce.html)| Provider | |
-{: class="table table-striped"}
+| **body** | [**Salesforce**](Salesforce.html)| Provider | 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAlertingInteractionstatsRules**](AlertingApi.html#postAlertingInteractionstatsRules) | Create an interaction stats rule. |
 | [**putAlertingInteractionstatsAlert**](AlertingApi.html#putAlertingInteractionstatsAlert) | Update an interaction stats alert read status |
 | [**putAlertingInteractionstatsRule**](AlertingApi.html#putAlertingInteractionstatsRule) | Update an interaction stats rule |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteAlertingInteractionstatsAlert"></a>
 
@@ -74,8 +74,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **alertId** | **String**| Alert ID | |
-{: class="table table-striped"}
+| **alertId** | **String**| Alert ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -135,8 +136,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ruleId** | **String**| Rule ID | |
-{: class="table table-striped"}
+| **ruleId** | **String**| Rule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -193,7 +195,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -255,9 +258,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **alertId** | **String**| Alert ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **alertId** | **String**| Alert ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -318,8 +322,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -376,7 +381,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -438,9 +444,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ruleId** | **String**| Rule ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **ruleId** | **String**| Rule ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -501,8 +508,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -564,9 +572,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -629,10 +638,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **alertId** | **String**| Alert ID | |
-| **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **alertId** | **String**| Alert ID | 
+| **body** | [**UnreadStatus**](UnreadStatus.html)| InteractionStatsAlert | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -695,10 +705,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ruleId** | **String**| Rule ID | |
-| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers |
-{: class="table table-striped"}
+| **ruleId** | **String**| Rule ID | 
+| **body** | [**InteractionStatsRule**](InteractionStatsRule.html)| AlertingRule | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: notificationUsers 
+{: class="table-striped"}
+
 
 ### Return type
 

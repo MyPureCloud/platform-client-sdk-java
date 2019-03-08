@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**postAnalyticsFlowsAggregatesQuery**](FlowsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="postAnalyticsFlowsAggregatesQuery"></a>
 
@@ -65,8 +65,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 

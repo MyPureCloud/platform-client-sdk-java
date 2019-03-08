@@ -31,7 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | Search voicemails |
 | [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | Update a voicemail message |
 | [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | Update a policy |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteVoicemailMessage"></a>
 
@@ -86,8 +86,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messageId** | **String**| Message ID | |
-{: class="table table-striped"}
+| **messageId** | **String**| Message ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -143,7 +144,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -203,8 +205,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| groupId | |
-{: class="table table-striped"}
+| **groupId** | **String**| groupId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -266,10 +269,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -333,8 +337,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -391,7 +396,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -448,7 +454,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -509,9 +516,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -568,7 +576,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -629,9 +638,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messageId** | **String**| Message ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-{: class="table table-striped"}
+| **messageId** | **String**| Message ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -692,9 +702,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messageId** | **String**| Message ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
+| **messageId** | **String**| Message ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -755,9 +766,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ids** | **String**| An optional comma separated list of VoicemailMessage ids | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-{: class="table table-striped"}
+| **ids** | **String**| An optional comma separated list of VoicemailMessage ids | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| If the caller is a known user, which fields, if any, to expand | [optional]<br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -815,7 +827,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -878,10 +891,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -942,9 +956,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1004,8 +1019,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1070,9 +1086,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1132,8 +1149,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
-{: class="table table-striped"}
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1194,9 +1212,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messageId** | **String**| Message ID | |
-| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | |
-{: class="table table-striped"}
+| **messageId** | **String**| Message ID | 
+| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1257,9 +1276,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1319,8 +1339,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional] |
-{: class="table table-striped"}
+| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1380,8 +1401,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1442,9 +1464,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messageId** | **String**| Message ID | |
-| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | |
-{: class="table table-striped"}
+| **messageId** | **String**| Message ID | 
+| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1505,8 +1528,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy | |
-{: class="table table-striped"}
+| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy | 
+{: class="table-striped"}
+
 
 ### Return type
 

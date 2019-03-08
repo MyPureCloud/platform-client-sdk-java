@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | Regenerate Client Secret |
 | [**postOauthClients**](OAuthApi.html#postOauthClients) | Create OAuth client |
 | [**putOauthClient**](OAuthApi.html#putOauthClient) | Update OAuth Client |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteOauthClient"></a>
 
@@ -69,8 +69,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **clientId** | **String**| Client ID | |
-{: class="table table-striped"}
+| **clientId** | **String**| Client ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -131,8 +132,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **clientId** | **String**| Client ID | |
-{: class="table table-striped"}
+| **clientId** | **String**| Client ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -190,7 +192,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -251,8 +254,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **clientId** | **String**| Client ID | |
-{: class="table table-striped"}
+| **clientId** | **String**| Client ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -313,8 +317,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | |
-{: class="table table-striped"}
+| **body** | [**OAuthClient**](OAuthClient.html)| Client | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -376,9 +381,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **clientId** | **String**| Client ID | |
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | |
-{: class="table table-striped"}
+| **clientId** | **String**| Client ID | 
+| **body** | [**OAuthClient**](OAuthClient.html)| Client | 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -48,7 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | Add a vendor connection |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteIntegration"></a>
 
@@ -104,8 +104,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration Id | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -165,8 +166,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -226,8 +228,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -286,8 +289,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **credentialId** | **String**| Credential ID | |
-{: class="table table-striped"}
+| **credentialId** | **String**| Credential ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -353,14 +357,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration Id | |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration Id | 
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -420,8 +425,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration Id | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -486,13 +492,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -556,10 +563,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract |
-| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -623,10 +631,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract |
-| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **expand** | **String**| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: contract 
+| **includeConfig** | **Boolean**| Return config in response. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -689,9 +698,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **fileName** | **String**| Name of schema file to be retrieved for this draft. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **fileName** | **String**| Name of schema file to be retrieved for this draft. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -754,9 +764,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **fileName** | **String**| Name of template file to be retrieved for this action draft. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **fileName** | **String**| Name of template file to be retrieved for this action draft. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -817,8 +828,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -881,9 +893,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **fileName** | **String**| Name of schema file to be retrieved for this action. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **fileName** | **String**| Name of schema file to be retrieved for this action. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -946,9 +959,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **fileName** | **String**| Name of template file to be retrieved for this action. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **fileName** | **String**| Name of template file to be retrieved for this action. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1019,17 +1033,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **sortBy** | **String**| Root level field name to sort on. | [optional] |
-| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
-| **category** | **String**| Filter by category name | [optional] |
-| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] |
-| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false |
-| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **sortBy** | **String**| Root level field name to sort on. | [optional] 
+| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
+| **category** | **String**| Filter by category name | [optional] 
+| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] 
+| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
+| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1097,14 +1112,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **sortBy** | **String**| Root level field name to sort on. | [optional] |
-| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
-| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **sortBy** | **String**| Root level field name to sort on. | [optional] 
+| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
+| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1175,17 +1191,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **sortBy** | **String**| Root level field name to sort on. | [optional] |
-| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
-| **category** | **String**| Filter by category name | [optional] |
-| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] |
-| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false |
-| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **sortBy** | **String**| Root level field name to sort on. | [optional] 
+| **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
+| **category** | **String**| Filter by category name | [optional] 
+| **name** | **String**| Filter by action name. Provide full or just the first part of name. | [optional] 
+| **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
+| **includeAuthActions** | **String**| Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1250,13 +1267,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1316,8 +1334,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **credentialId** | **String**| Credential ID | |
-{: class="table table-striped"}
+| **credentialId** | **String**| Credential ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1378,9 +1397,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1437,7 +1457,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1503,12 +1524,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to timestamp] |
-| **sortOrder** | **String**| Order by | [optional] [default to descending] |
-| **entityId** | **String**| Include only events with this entity ID | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp] 
+| **sortOrder** | **String**| Order by | [optional] [default to descending] 
+| **entityId** | **String**| Include only events with this entity ID | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1570,8 +1592,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **eventId** | **String**| Event Id | |
-{: class="table table-striped"}
+| **eventId** | **String**| Event Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1631,8 +1654,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **typeId** | **String**| Integration Type Id | |
-{: class="table table-striped"}
+| **typeId** | **String**| Integration Type Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1693,9 +1717,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **typeId** | **String**| Integration Type Id | |
-| **configType** | **String**| Config schema type |<br />**Values**: properties, advanced |
-{: class="table table-striped"}
+| **typeId** | **String**| Integration Type Id | 
+| **configType** | **String**| Config schema type |<br />**Values**: properties, advanced 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1760,13 +1785,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1833,15 +1859,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration Id | |
-| **body** | [**Integration**](Integration.html)| Integration Update | [optional] |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration Id | 
+| **body** | [**Integration**](Integration.html)| Integration Update | [optional] 
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1903,9 +1930,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | [**UpdateActionInput**](UpdateActionInput.html)| Input used to patch the Action. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | [**UpdateActionInput**](UpdateActionInput.html)| Input used to patch the Action. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1967,9 +1995,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | [**UpdateDraftInput**](UpdateDraftInput.html)| Input used to patch the Action Draft. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | [**UpdateDraftInput**](UpdateDraftInput.html)| Input used to patch the Action Draft. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2029,8 +2058,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateIntegrationRequest**](CreateIntegrationRequest.html)| Integration | [optional] |
-{: class="table table-striped"}
+| **body** | [**CreateIntegrationRequest**](CreateIntegrationRequest.html)| Integration | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2091,8 +2121,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2154,9 +2185,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | [**PublishDraftInput**](PublishDraftInput.html)| Input used to patch the Action. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | [**PublishDraftInput**](PublishDraftInput.html)| Input used to patch the Action. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2218,9 +2250,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | **Object**| Map of parameters used for variable substitution. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | **Object**| Map of parameters used for variable substitution. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2283,9 +2316,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | **Object**| Map of parameters used for variable substitution. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | **Object**| Map of parameters used for variable substitution. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2348,9 +2382,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **actionId** | **String**| actionId | |
-| **body** | **Object**| Map of parameters used for variable substitution. | |
-{: class="table table-striped"}
+| **actionId** | **String**| actionId | 
+| **body** | **Object**| Map of parameters used for variable substitution. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2411,8 +2446,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action. | |
-{: class="table table-striped"}
+| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2473,8 +2509,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action Draft. | |
-{: class="table table-striped"}
+| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action Draft. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2534,8 +2571,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Credential**](Credential.html)| Credential | [optional] |
-{: class="table table-striped"}
+| **body** | [**Credential**](Credential.html)| Credential | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2595,8 +2633,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VendorConnectionRequest**](VendorConnectionRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **body** | [**VendorConnectionRequest**](VendorConnectionRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2657,9 +2696,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration Id | |
-| **body** | [**IntegrationConfiguration**](IntegrationConfiguration.html)| Integration Configuration | [optional] |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration Id | 
+| **body** | [**IntegrationConfiguration**](IntegrationConfiguration.html)| Integration Configuration | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2720,9 +2760,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **credentialId** | **String**| Credential ID | |
-| **body** | [**Credential**](Credential.html)| Credential | [optional] |
-{: class="table table-striped"}
+| **credentialId** | **String**| Credential ID | 
+| **body** | [**Credential**](Credential.html)| Credential | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

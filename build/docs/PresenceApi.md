@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deletePresencedefinition"></a>
 
@@ -72,8 +72,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **presenceId** | **String**| Organization Presence ID | |
-{: class="table table-striped"}
+| **presenceId** | **String**| Organization Presence ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -134,9 +135,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **presenceId** | **String**| Organization Presence ID | |
-| **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] |
-{: class="table table-striped"}
+| **presenceId** | **String**| Organization Presence ID | 
+| **localeCode** | **String**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -199,11 +201,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **deleted** | **String**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
-| **localeCode** | **String**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **deleted** | **String**| Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] 
+| **localeCode** | **String**| The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -260,7 +263,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -321,9 +325,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **sourceId** | **String**| Source | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **sourceId** | **String**| Source | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -385,10 +390,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **sourceId** | **String**| Source | |
-| **body** | [**UserPresence**](UserPresence.html)| User presence | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **sourceId** | **String**| Source | 
+| **body** | [**UserPresence**](UserPresence.html)| User presence | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -449,8 +455,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create | |
-{: class="table table-striped"}
+| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -512,9 +519,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **presenceId** | **String**| Organization Presence ID | |
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update | |
-{: class="table table-striped"}
+| **presenceId** | **String**| Organization Presence ID | 
+| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -575,8 +583,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;UserPresence&gt;**](UserPresence.html)| List of User presences | |
-{: class="table table-striped"}
+| **body** | [**List&lt;UserPresence&gt;**](UserPresence.html)| List of User presences | 
+{: class="table-striped"}
+
 
 ### Return type
 

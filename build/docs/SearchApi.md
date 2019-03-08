@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | Suggest resources. |
 | [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
 | [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getDocumentationGknSearch"></a>
 
@@ -66,8 +66,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -114,8 +115,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -176,9 +178,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -239,9 +242,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -303,10 +307,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -368,10 +373,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -432,9 +438,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -495,9 +502,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -544,8 +552,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -592,8 +601,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -653,8 +663,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -714,8 +725,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -776,9 +788,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -839,9 +852,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -901,8 +915,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -962,8 +977,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 

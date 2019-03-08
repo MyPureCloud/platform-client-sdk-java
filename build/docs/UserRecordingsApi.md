@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserrecordings**](UserRecordingsApi.html#getUserrecordings) | Get a list of user recordings. |
 | [**getUserrecordingsSummary**](UserRecordingsApi.html#getUserrecordingsSummary) | Get user recording summary |
 | [**putUserrecording**](UserRecordingsApi.html#putUserrecording) | Update a user recording. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteUserrecording"></a>
 
@@ -68,8 +68,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recordingId** | **String**| User Recording ID | |
-{: class="table table-striped"}
+| **recordingId** | **String**| User Recording ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -130,9 +131,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recordingId** | **String**| User Recording ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
-{: class="table table-striped"}
+| **recordingId** | **String**| User Recording ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -193,9 +195,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recordingId** | **String**| User Recording ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
+| **recordingId** | **String**| User Recording ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -257,10 +260,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -317,7 +321,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -379,10 +384,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recordingId** | **String**| User Recording ID | |
-| **body** | [**UserRecording**](UserRecording.html)| UserRecording | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation |
-{: class="table table-striped"}
+| **recordingId** | **String**| User Recording ID | 
+| **body** | [**UserRecording**](UserRecording.html)| UserRecording | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: conversation 
+{: class="table-striped"}
+
 
 ### Return type
 

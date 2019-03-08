@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
 | [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
 | [**postGmscTokens**](UtilitiesApi.html#postGmscTokens) | Generate a JWT for use with common cloud. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getDate"></a>
 
@@ -64,7 +64,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -125,9 +126,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -187,8 +189,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Certificate**](Certificate.html)| Certificate | |
-{: class="table table-striped"}
+| **body** | [**Certificate**](Certificate.html)| Certificate | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -245,7 +248,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 

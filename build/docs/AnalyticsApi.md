@@ -34,7 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
 | [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | Update a scheduled report job. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteAnalyticsReportingSchedule"></a>
 
@@ -89,8 +89,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -151,8 +152,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -213,8 +215,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| Comma-separated conversation ids | [optional] |
-{: class="table table-striped"}
+| **id** | [**List&lt;String&gt;**](String.html)| Comma-separated conversation ids | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -272,7 +275,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -334,10 +338,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **locale** | **String**| Locale | [optional] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **locale** | **String**| Locale | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -398,9 +403,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **reportId** | **String**| Report ID | |
-| **locale** | **String**| Locale | [optional] |
-{: class="table table-striped"}
+| **reportId** | **String**| Report ID | 
+| **locale** | **String**| Locale | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -457,7 +463,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -517,8 +524,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -580,10 +588,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-| **pageNumber** | **Integer**|  | [optional] [default to 1] |
-| **pageSize** | **Integer**|  | [optional] [default to 25] |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -643,8 +652,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -705,9 +715,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **runId** | **String**| Run ID | |
-| **scheduleId** | **String**| Schedule ID | |
-{: class="table table-striped"}
+| **runId** | **String**| Run ID | 
+| **scheduleId** | **String**| Schedule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -768,9 +779,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -827,7 +839,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -889,9 +902,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -952,8 +966,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1014,8 +1029,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ConversationQuery**](ConversationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1076,8 +1092,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1138,8 +1155,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1200,8 +1218,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1262,8 +1281,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ReportingExportJobRequest**](ReportingExportJobRequest.html)| ReportingExportJobRequest | |
-{: class="table table-striped"}
+| **body** | [**ReportingExportJobRequest**](ReportingExportJobRequest.html)| ReportingExportJobRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1323,8 +1343,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1384,8 +1405,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | |
-{: class="table table-striped"}
+| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1446,8 +1468,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1508,8 +1531,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1570,8 +1594,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1632,8 +1657,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1694,9 +1720,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scheduleId** | **String**| Schedule ID | |
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | |
-{: class="table table-striped"}
+| **scheduleId** | **String**| Schedule ID | 
+| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule | 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -94,6 +94,7 @@ title: AggregateMetricData
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
 | TFLOWEXIT | &quot;tFlowExit&quot; |
 | TFLOW | &quot;tFlow&quot; |
+| OFLOW | &quot;oFlow&quot; |
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |

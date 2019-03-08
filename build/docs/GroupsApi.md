@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGroups**](GroupsApi.html#postGroups) | Create a group |
 | [**postGroupsSearch**](GroupsApi.html#postGroupsSearch) | Search groups |
 | [**putGroup**](GroupsApi.html#putGroup) | Update group |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteGroup"></a>
 
@@ -79,8 +79,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -141,9 +142,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **ids** | **String**| Comma separated list of userIds to remove | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **ids** | **String**| Comma separated list of userIds to remove | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -203,8 +205,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact |
-{: class="table table-striped"}
+| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -264,8 +267,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -325,8 +329,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -390,12 +395,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -456,9 +462,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| groupId | |
-| **fields** | **String**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional] |
-{: class="table table-striped"}
+| **groupId** | **String**| groupId | 
+| **fields** | **String**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -470,7 +477,7 @@ try {
 
 
 
-> [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, sortOrder)
+> [GroupEntityListing](GroupEntityListing.html) getGroups(pageSize, pageNumber, id, jabberId, sortOrder)
 
 Get a group list
 
@@ -506,9 +513,10 @@ GroupsApi apiInstance = new GroupsApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 List<String> id = Arrays.asList("id_example"); // List<String> | id
+List<String> jabberId = Arrays.asList("jabberId_example"); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 try {
-    GroupEntityListing result = apiInstance.getGroups(pageSize, pageNumber, id, sortOrder);
+    GroupEntityListing result = apiInstance.getGroups(pageSize, pageNumber, id, jabberId, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#getGroups");
@@ -521,11 +529,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -586,9 +596,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -651,11 +662,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -716,9 +728,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -781,8 +794,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupCreate**](GroupCreate.html)| Group | |
-{: class="table table-striped"}
+| **body** | [**GroupCreate**](GroupCreate.html)| Group | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -842,8 +856,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -907,9 +922,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional] |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | Update organization |
 | [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | Update organization. |
 | [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | Update organization whitelist settings |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getFieldconfig"></a>
 
@@ -69,8 +69,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact |
-{: class="table table-striped"}
+| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -127,7 +128,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -184,7 +186,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -246,9 +249,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **featureName** | **String**| Organization feature |<br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
-| **enabled** | [**FeatureState**](FeatureState.html)| New state of feature | |
-{: class="table table-striped"}
+| **featureName** | **String**| Organization feature |<br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv 
+| **enabled** | [**FeatureState**](FeatureState.html)| New state of feature | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -309,8 +313,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Organization**](Organization.html)| Organization | [optional] |
-{: class="table table-striped"}
+| **body** | [**Organization**](Organization.html)| Organization | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -371,8 +376,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings.html)| Whitelist settings | |
-{: class="table table-striped"}
+| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings.html)| Whitelist settings | 
+{: class="table-striped"}
+
 
 ### Return type
 

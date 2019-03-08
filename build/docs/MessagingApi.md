@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postMessagingIntegrationsLine**](MessagingApi.html#postMessagingIntegrationsLine) | Create a LINE messenger Integration |
 | [**postMessagingIntegrationsTwitter**](MessagingApi.html#postMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**putMessagingIntegrationsLineIntegrationId**](MessagingApi.html#putMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteMessagingIntegrationsFacebookIntegrationId"></a>
 
@@ -77,8 +77,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -138,8 +139,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -199,8 +201,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -262,9 +265,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -325,8 +329,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -388,9 +393,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -451,8 +457,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -514,9 +521,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -577,8 +585,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -641,10 +650,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messengerType** | **String**| Messenger Type | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **messengerType** | **String**| Messenger Type | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -705,8 +715,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest | |
-{: class="table table-striped"}
+| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -767,8 +778,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | |
-{: class="table table-striped"}
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -829,8 +841,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | |
-{: class="table table-striped"}
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -892,9 +905,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **integrationId** | **String**| Integration ID | |
-| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | |
-{: class="table table-striped"}
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 

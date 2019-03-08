@@ -42,7 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | Removes the users from the role |
 | [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | Restore specified default roles |
 | [**putUserRoles**](AuthorizationApi.html#putUserRoles) | Sets the user&#39;s roles |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteAuthorizationDivision"></a>
 
@@ -98,8 +98,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -161,8 +162,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -224,10 +226,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **divisionId** | **String**| the id of the division of the grant | |
-| **roleId** | **String**| the id of the role of the grant | |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **divisionId** | **String**| the id of the division of the grant | 
+| **roleId** | **String**| the id of the role of the grant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -289,8 +292,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -351,9 +355,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -421,16 +426,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] |
-| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] 
+| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -487,7 +493,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -544,7 +551,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -605,9 +613,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -669,10 +678,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -733,9 +743,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -792,7 +803,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -853,8 +865,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -916,9 +929,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **leftRoleId** | **String**| Left Role ID | |
-| **rightRoleId** | **String**| Right Role id | |
-{: class="table table-striped"}
+| **leftRoleId** | **String**| Left Role ID | 
+| **rightRoleId** | **String**| Right Role id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -985,14 +999,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1054,10 +1069,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1128,18 +1144,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **name** | **String**|  | [optional] |
-| **permission** | [**List&lt;String&gt;**](String.html)|  | [optional] |
-| **defaultRoleId** | [**List&lt;String&gt;**](String.html)|  | [optional] |
-| **userCount** | **Boolean**|  | [optional] [default to true] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **name** | **String**|  | [optional] 
+| **permission** | [**List&lt;String&gt;**](String.html)|  | [optional] 
+| **defaultRoleId** | [**List&lt;String&gt;**](String.html)|  | [optional] 
+| **userCount** | **Boolean**|  | [optional] [default to true] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1200,8 +1217,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1258,7 +1276,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1319,8 +1338,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-{: class="table table-striped"}
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1381,8 +1401,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1446,9 +1467,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1509,10 +1531,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
-| **body** | **List&lt;String&gt;**| Object Id List | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER 
+| **body** | **List&lt;String&gt;**| Object Id List | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1574,8 +1597,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Division | |
-{: class="table table-striped"}
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Division | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1637,10 +1661,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions | |
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions | 
+| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1703,10 +1728,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **leftRoleId** | **String**| Left Role ID | |
-| **rightRoleId** | **String**| Right Role id | |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | |
-{: class="table table-striped"}
+| **leftRoleId** | **String**| Left Role ID | 
+| **rightRoleId** | **String**| Right Role id | 
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1767,8 +1793,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role | |
-{: class="table table-striped"}
+| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1829,8 +1856,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **force** | **Boolean**| Restore default roles | [optional] [default to false] |
-{: class="table table-striped"}
+| **force** | **Boolean**| Restore default roles | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1893,11 +1921,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **divisionId** | **String**| the id of the division to which to make the grant | |
-| **roleId** | **String**| the id of the role to grant | |
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **divisionId** | **String**| the id of the division to which to make the grant | 
+| **roleId** | **String**| the id of the role to grant | 
+| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1959,9 +1988,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2025,9 +2055,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2089,9 +2120,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **body** | **List&lt;String&gt;**| List of user IDs | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **body** | **List&lt;String&gt;**| List of user IDs | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2153,9 +2185,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **roleId** | **String**| Role ID | |
-| **body** | **List&lt;String&gt;**| List of user IDs | |
-{: class="table table-striped"}
+| **roleId** | **String**| Role ID | 
+| **body** | **List&lt;String&gt;**| List of user IDs | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2216,8 +2249,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole.html)| Organization roles list | |
-{: class="table table-striped"}
+| **body** | [**List&lt;DomainOrganizationRole&gt;**](DomainOrganizationRole.html)| Organization roles list | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2281,9 +2315,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | **List&lt;String&gt;**| List of roles | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | **List&lt;String&gt;**| List of roles | 
+{: class="table-striped"}
+
 
 ### Return type
 

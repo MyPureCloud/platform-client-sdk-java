@@ -95,6 +95,7 @@ public class AggregateMetricData  implements Serializable {
     TFLOWDISCONNECT("tFlowDisconnect"),
     TFLOWEXIT("tFlowExit"),
     TFLOW("tFlow"),
+    OFLOW("oFlow"),
     TFLOWOUTCOME("tFlowOutcome"),
     NFLOWOUTCOME("nFlowOutcome"),
     NFLOWOUTCOMEFAILED("nFlowOutcomeFailed");

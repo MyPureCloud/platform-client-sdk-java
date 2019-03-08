@@ -68,7 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | Update the routing status of a user |
 | [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | Set default station |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteAuthorizationSubjectDivisionRole"></a>
 
@@ -126,10 +126,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **divisionId** | **String**| the id of the division of the grant | |
-| **roleId** | **String**| the id of the role of the grant | |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **divisionId** | **String**| the id of the division of the grant | 
+| **roleId** | **String**| the id of the role of the grant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -192,8 +193,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -255,8 +257,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -318,9 +321,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **languageId** | **String**| languageId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **languageId** | **String**| languageId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -382,9 +386,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **skillId** | **String**| skillId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **skillId** | **String**| skillId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -443,8 +448,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -505,8 +511,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -567,9 +574,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -631,10 +639,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -695,8 +704,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -753,7 +763,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -813,8 +824,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact |
-{: class="table table-striped"}
+| **type** | **String**| Field type |<br />**Values**: person, group, org, externalContact 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -880,14 +892,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-| **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
-| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization 
+| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -949,10 +962,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1013,9 +1027,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1075,8 +1090,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1137,9 +1153,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1203,12 +1220,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1269,9 +1287,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **clientId** | **String**| client Id | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **clientId** | **String**| client Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1331,8 +1350,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1393,9 +1413,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| userId | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **userId** | **String**| userId | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1456,8 +1477,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1479,6 +1501,7 @@ Wraps GET /api/v2/users/{userId}/queues
 
 Requires ANY permissions: 
 
+* routing:queue:view
 * routing:queue:join
 
 ### Example
@@ -1522,12 +1545,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1588,8 +1612,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1652,11 +1677,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1719,11 +1745,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1783,8 +1810,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1844,8 +1872,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1906,9 +1935,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1971,10 +2001,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2040,14 +2071,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| A list of user IDs to fetch by bulk | [optional] |
-| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| A list of user IDs to fetch by bulk | [optional] 
+| **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2107,8 +2139,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
-{: class="table table-striped"}
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2169,9 +2202,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2235,9 +2269,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**UpdateUser**](UpdateUser.html)| User | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**UpdateUser**](UpdateUser.html)| User | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2298,9 +2333,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2362,10 +2398,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | |
-| **clientId** | **String**| client Id | |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation | |
-{: class="table table-striped"}
+| **userId** | **String**| user Id | 
+| **clientId** | **String**| client Id | 
+| **body** | [**Geolocation**](Geolocation.html)| Geolocation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2428,10 +2465,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **userId** | **String**| User ID | |
-| **body** | [**UserQueue**](UserQueue.html)| Queue Member | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **userId** | **String**| User ID | 
+| **body** | [**UserQueue**](UserQueue.html)| Queue Member | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2494,10 +2532,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**List&lt;UserQueue&gt;**](UserQueue.html)| User Queues | |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserQueue&gt;**](UserQueue.html)| User Queues | 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2561,10 +2600,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **languageId** | **String**| languageId | |
-| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **languageId** | **String**| languageId | 
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2627,9 +2667,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2692,9 +2733,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2758,8 +2800,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**List&lt;PatchUser&gt;**](PatchUser.html)| Users | |
-{: class="table table-striped"}
+| **body** | [**List&lt;PatchUser&gt;**](PatchUser.html)| Users | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2820,8 +2863,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2882,8 +2926,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2944,8 +2989,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3008,11 +3054,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | |
-| **divisionId** | **String**| the id of the division to which to make the grant | |
-| **roleId** | **String**| the id of the role to grant | |
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] |
-{: class="table table-striped"}
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **divisionId** | **String**| the id of the division to which to make the grant | 
+| **roleId** | **String**| the id of the role to grant | 
+| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3075,9 +3122,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **force** | **Boolean**| Resend the invitation even if one is already outstanding | [optional] [default to false] |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **force** | **Boolean**| Resend the invitation even if one is already outstanding | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3100,7 +3148,7 @@ Wraps POST /api/v2/users/{userId}/password
 Requires ANY permissions: 
 
 * user_administration
-* directory:userPassword:edit
+* directory:user:setPassword
 
 ### Example
 
@@ -3139,9 +3187,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**ChangePasswordRequest**](ChangePasswordRequest.html)| Password | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**ChangePasswordRequest**](ChangePasswordRequest.html)| Password | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3204,9 +3253,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3269,9 +3319,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3332,8 +3383,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateUser**](CreateUser.html)| User | |
-{: class="table table-striped"}
+| **body** | [**CreateUser**](CreateUser.html)| User | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3392,8 +3444,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest.html)| Password | |
-{: class="table table-striped"}
+| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest.html)| Password | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3453,8 +3506,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3515,9 +3569,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3578,9 +3633,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3645,9 +3701,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | **List&lt;String&gt;**| Skills | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | **List&lt;String&gt;**| Skills | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3711,9 +3768,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | **List&lt;String&gt;**| List of roles | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | **List&lt;String&gt;**| List of roles | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3777,10 +3835,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **skillId** | **String**| skillId | |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **skillId** | **String**| skillId | 
+| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3841,9 +3900,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3903,9 +3963,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **stationId** | **String**| stationId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **stationId** | **String**| stationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3967,9 +4028,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **stationId** | **String**| stationId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **stationId** | **String**| stationId | 
+{: class="table-striped"}
+
 
 ### Return type
 

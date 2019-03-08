@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | Get effective language translation for a user |
 | [**getRoutingLanguage**](LanguagesApi.html#getRoutingLanguage) | Get language |
 | [**postLanguages**](LanguagesApi.html#postLanguages) | Create Language (Deprecated) |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteLanguage"></a>
 
@@ -73,8 +73,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | |
-{: class="table table-striped"}
+| **languageId** | **String**| Language ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -134,8 +135,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | |
-{: class="table table-striped"}
+| **languageId** | **String**| Language ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -196,8 +198,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | |
-{: class="table table-striped"}
+| **languageId** | **String**| Language ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -261,11 +264,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **name** | **String**| Name | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+| **name** | **String**| Name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -322,7 +326,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -382,8 +387,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **language** | **String**| The language of the builtin translation to retrieve | |
-{: class="table table-striped"}
+| **language** | **String**| The language of the builtin translation to retrieve | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -443,8 +449,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **language** | **String**| The language of the translation to retrieve for the organization | |
-{: class="table table-striped"}
+| **language** | **String**| The language of the translation to retrieve for the organization | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -504,8 +511,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| The user id | |
-{: class="table table-striped"}
+| **userId** | **String**| The user id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -565,8 +573,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **languageId** | **String**| Language ID | |
-{: class="table table-striped"}
+| **languageId** | **String**| Language ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -627,8 +636,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Language**](Language.html)| Language | |
-{: class="table table-striped"}
+| **body** | [**Language**](Language.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 

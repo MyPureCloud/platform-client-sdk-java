@@ -11,7 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSearchSuggest**](SuggestApi.html#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
 | [**postSearch**](SuggestApi.html#postSearch) | Search resources. |
 | [**postSearchSuggest**](SuggestApi.html#postSearchSuggest) | Suggest resources. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getSearch"></a>
 
@@ -69,10 +69,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -134,10 +135,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -198,9 +200,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **body** | [**SearchRequest**](SearchRequest.html)| Search request options | 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -261,9 +264,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | |
-| **profile** | **Boolean**| profile | [optional] [default to true] |
-{: class="table table-striped"}
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options | 
+| **profile** | **Boolean**| profile | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 

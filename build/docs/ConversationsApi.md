@@ -107,7 +107,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteConversationParticipantCode"></a>
 
@@ -164,10 +164,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **addCommunicationCode** | **String**| addCommunicationCode | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **addCommunicationCode** | **String**| addCommunicationCode | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -227,9 +228,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -289,9 +291,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **attachmentId** | **String**| attachmentId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **attachmentId** | **String**| attachmentId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -352,8 +355,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -414,8 +418,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| Comma-separated conversation ids | [optional] |
-{: class="table table-striped"}
+| **id** | [**List&lt;String&gt;**](String.html)| Comma-separated conversation ids | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -476,8 +481,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -539,10 +545,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **secureSessionId** | **String**| secure IVR session ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **secureSessionId** | **String**| secure IVR session ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -603,9 +610,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -667,10 +675,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -731,9 +740,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -793,8 +803,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **communicationType** | **String**| Call or Chat communication filtering | [optional] |
-{: class="table table-striped"}
+| **communicationType** | **String**| Call or Chat communication filtering | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -854,8 +865,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -917,10 +929,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -981,9 +994,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1043,8 +1057,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1106,10 +1121,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1170,9 +1186,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1229,7 +1246,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1286,7 +1304,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1349,11 +1368,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size, maximum 50 | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: externalorganization, externalcontact, user, queue, group |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size, maximum 50 | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: externalorganization, externalcontact, user, queue, group 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1410,7 +1430,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1470,8 +1491,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1533,10 +1555,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1597,9 +1620,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1656,7 +1680,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1716,8 +1741,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1779,10 +1805,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1843,9 +1870,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1902,7 +1930,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1962,8 +1991,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2024,9 +2054,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **messageId** | **String**| messageId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2086,8 +2117,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2147,8 +2179,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2210,10 +2243,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2274,9 +2308,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2333,7 +2368,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2393,8 +2429,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2457,10 +2494,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **communicationId** | **String**| communicationId | |
-| **mediaId** | **String**| mediaId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **mediaId** | **String**| mediaId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2522,9 +2560,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **messageId** | **String**| messageId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2586,10 +2625,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **provisional** | **Boolean**| Indicates if the wrap-up code is provisional. | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2650,9 +2690,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**|  conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2709,7 +2750,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2770,10 +2812,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2834,10 +2877,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2899,9 +2943,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2962,10 +3007,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3026,10 +3072,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3092,11 +3139,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3158,10 +3206,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3223,9 +3272,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3286,10 +3336,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3350,10 +3401,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3416,11 +3468,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3482,9 +3535,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3545,10 +3599,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3609,10 +3664,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3675,11 +3731,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3741,9 +3798,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3804,10 +3862,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3868,10 +3927,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3934,11 +3994,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4000,9 +4061,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4063,10 +4125,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4127,10 +4190,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4193,11 +4257,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4259,9 +4324,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4322,10 +4388,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**|  conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4386,10 +4453,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**|  conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4452,11 +4520,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**|  conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | |
-{: class="table table-striped"}
+| **conversationId** | **String**|  conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4518,9 +4587,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4581,8 +4651,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4643,8 +4714,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ConversationQuery**](ConversationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4705,8 +4777,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4768,10 +4841,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4832,10 +4906,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**Digits**](Digits.html)| Digits | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**Digits**](Digits.html)| Digits | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4896,10 +4971,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4961,10 +5037,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversation ID | |
-| **participantId** | **String**| participant ID | |
-| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5025,9 +5102,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**CallCommand**](CallCommand.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**CallCommand**](CallCommand.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5089,10 +5167,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5153,9 +5232,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5216,10 +5296,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5280,9 +5361,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Conversation**](Conversation.html)| Conversation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Conversation**](Conversation.html)| Conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5343,10 +5425,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5407,8 +5490,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback | |
-{: class="table table-striped"}
+| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5469,8 +5553,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request | |
-{: class="table table-striped"}
+| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5531,10 +5616,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5595,8 +5681,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request | |
-{: class="table table-striped"}
+| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5657,10 +5744,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5721,9 +5809,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5784,9 +5873,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**EmailMessage**](EmailMessage.html)| Reply | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**EmailMessage**](EmailMessage.html)| Reply | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5847,10 +5937,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5911,8 +6002,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request | |
-{: class="table table-striped"}
+| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5972,8 +6064,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax | |
-{: class="table table-striped"}
+| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6036,10 +6129,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6101,9 +6195,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **communicationId** | **String**| communicationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6165,9 +6260,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | **List&lt;String&gt;**| messageIds | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | **List&lt;String&gt;**| messageIds | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6228,10 +6324,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6292,8 +6389,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest.html)| Create outbound messaging conversation | |
-{: class="table table-striped"}
+| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest.html)| Create outbound messaging conversation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6356,11 +6454,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **participantId** | **String**| participantId | |
-| **communicationId** | **String**| communicationId | |
-| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6421,9 +6520,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**EmailMessage**](EmailMessage.html)| Draft | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**EmailMessage**](EmailMessage.html)| Draft | 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -37,14 +37,14 @@ public class JourneyCustomerSession  implements Serializable {
 
   
   /**
-   * The type of the Customer/User's session ID within the Journey System (e.g. web, app)
+   * The type of the Customer/User's session within the Journey System (e.g. web, app)
    **/
   public JourneyCustomerSession type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The type of the Customer/User's session ID within the Journey System (e.g. web, app)")
+  @ApiModelProperty(example = "null", required = true, value = "The type of the Customer/User's session within the Journey System (e.g. web, app)")
   @JsonProperty("type")
   public String getType() {
     return type;

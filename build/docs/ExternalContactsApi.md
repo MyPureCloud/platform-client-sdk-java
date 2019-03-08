@@ -37,7 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
 | [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
 | [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | Update a relationship |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteExternalcontactsContact"></a>
 
@@ -93,8 +93,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact ID | |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -155,9 +156,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact Id | |
-| **noteId** | **String**| Note Id | |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact Id | 
+| **noteId** | **String**| Note Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -217,8 +219,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -279,9 +282,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization Id | |
-| **noteId** | **String**| Note Id | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **noteId** | **String**| Note Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -341,8 +345,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -402,8 +407,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **relationshipId** | **String**| Relationship Id | |
-{: class="table table-striped"}
+| **relationshipId** | **String**| Relationship Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -465,9 +471,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional]<br />**Values**: externalOrganization, externalDataSources |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional]<br />**Values**: externalOrganization, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -530,10 +537,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact Id | |
-| **noteId** | **String**| Note Id | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact Id | 
+| **noteId** | **String**| Note Id | 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -598,12 +606,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact Id | |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact Id | 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -668,12 +677,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
-| **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -736,10 +746,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-| **expand** | **String**| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources |
-| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **expand** | **String**| which fields, if any, to expand (externalDataSources) | [optional]<br />**Values**: externalDataSources 
+| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -805,13 +816,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] |
-| **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **q** | **String**| User supplied search keywords (no special syntax is currently supported) | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalOrganization, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -874,10 +886,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization Id | |
-| **noteId** | **String**| Note Id | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **noteId** | **String**| Note Id | 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -942,12 +955,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization Id | |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: author, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1012,12 +1026,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
-| **sortOrder** | **String**| Sort order | [optional] |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **sortOrder** | **String**| Sort order | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1084,14 +1099,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
-| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
-| **q** | **String**| Search query | [optional] |
-| **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] |
-| **sortOrder** | **String**| Sort order | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
-| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] 
+| **pageNumber** | **Integer**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] 
+| **q** | **String**| Search query | [optional] 
+| **trustorId** | [**List&lt;String&gt;**](String.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+| **includeTrustors** | **Boolean**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1153,9 +1169,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **relationshipId** | **String**| Relationship Id | |
-| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources |
-{: class="table table-striped"}
+| **relationshipId** | **String**| Relationship Id | 
+| **expand** | **String**| which fields, if any, to expand | [optional]<br />**Values**: externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1217,9 +1234,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | |
-| **expand** | [**List&lt;String&gt;**](String.html)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources |
-{: class="table table-striped"}
+| **lookupVal** | **String**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) | 
+| **expand** | [**List&lt;String&gt;**](String.html)| which field, if any, to expand | [optional]<br />**Values**: contacts.externalOrganization, externalDataSources 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1281,9 +1299,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact Id | 
+| **body** | [**Note**](Note.html)| ExternalContact | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1344,8 +1363,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | |
-{: class="table table-striped"}
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1407,9 +1427,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization Id | |
-| **body** | [**Note**](Note.html)| ExternalContact | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **body** | [**Note**](Note.html)| ExternalContact | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1470,8 +1491,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | |
-{: class="table table-striped"}
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1532,8 +1554,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Relationship**](Relationship.html)| Relationship | |
-{: class="table table-striped"}
+| **body** | [**Relationship**](Relationship.html)| Relationship | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1595,9 +1618,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact ID | |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact ID | 
+| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1660,10 +1684,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contactId** | **String**| ExternalContact Id | |
-| **noteId** | **String**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | |
-{: class="table table-striped"}
+| **contactId** | **String**| ExternalContact Id | 
+| **noteId** | **String**| Note Id | 
+| **body** | [**Note**](Note.html)| Note | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1724,9 +1749,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1788,9 +1814,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1853,10 +1880,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization Id | |
-| **noteId** | **String**| Note Id | |
-| **body** | [**Note**](Note.html)| Note | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization Id | 
+| **noteId** | **String**| Note Id | 
+| **body** | [**Note**](Note.html)| Note | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1918,9 +1946,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **externalOrganizationId** | **String**| External Organization ID | |
-| **trustorId** | **String**| Trustor ID | |
-{: class="table table-striped"}
+| **externalOrganizationId** | **String**| External Organization ID | 
+| **trustorId** | **String**| Trustor ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1982,9 +2011,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **relationshipId** | **String**| Relationship Id | |
-| **body** | [**Relationship**](Relationship.html)| Relationship | |
-{: class="table table-striped"}
+| **relationshipId** | **String**| Relationship Id | 
+| **body** | [**Relationship**](Relationship.html)| Relationship | 
+{: class="table-striped"}
+
 
 ### Return type
 

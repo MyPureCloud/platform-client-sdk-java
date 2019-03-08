@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | Update a survey form. |
 | [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | Update a keywordSet to the specified keywordSet via PUT. |
 | [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | Update a survey as an end-customer, for the purposes of scoring it. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteQualityCalibration"></a>
 
@@ -122,9 +122,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calibrationId** | **String**| Calibration ID | |
-| **calibratorId** | **String**| calibratorId | |
-{: class="table table-striped"}
+| **calibrationId** | **String**| Calibration ID | 
+| **calibratorId** | **String**| calibratorId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -186,10 +187,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **evaluationId** | **String**| evaluationId | |
-| **expand** | **String**| evaluatorId | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **evaluationId** | **String**| evaluationId | 
+| **expand** | **String**| evaluatorId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -249,8 +251,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -310,8 +313,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -371,8 +375,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -431,8 +436,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | |
-{: class="table table-striped"}
+| **keywordSetId** | **String**| KeywordSet ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -491,8 +497,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ids** | **String**| A comma-delimited list of valid KeywordSet ids | |
-{: class="table table-striped"}
+| **ids** | **String**| A comma-delimited list of valid KeywordSet ids | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -563,19 +570,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **startTime** | **Date**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **endTime** | **Date**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **agentUserId** | [**List&lt;String&gt;**](String.html)| user id of agent requested | [optional] |
-| **evaluatorUserId** | **String**| user id of the evaluator | [optional] |
-| **name** | **String**| name | [optional] |
-| **group** | **String**| group id | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **startTime** | **Date**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+| **endTime** | **Date**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+| **agentUserId** | [**List&lt;String&gt;**](String.html)| user id of agent requested | [optional] 
+| **evaluatorUserId** | **String**| user id of the evaluator | [optional] 
+| **name** | **String**| name | [optional] 
+| **group** | **String**| group id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -637,10 +645,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calibrationId** | **String**| Calibration ID | |
-| **calibratorId** | **String**| calibratorId | [optional] |
-| **conversationId** | **String**| conversationId | [optional] |
-{: class="table table-striped"}
+| **calibrationId** | **String**| Calibration ID | 
+| **calibratorId** | **String**| calibratorId | [optional] 
+| **conversationId** | **String**| conversationId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -709,17 +718,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calibratorId** | **String**| user id of calibrator | |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **conversationId** | **String**| conversation id | [optional] |
-| **startTime** | **Date**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **endTime** | **Date**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-{: class="table table-striped"}
+| **calibratorId** | **String**| user id of calibrator | 
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **conversationId** | **String**| conversation id | [optional] 
+| **startTime** | **Date**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+| **endTime** | **Date**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -787,16 +797,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **recordingId** | **String**| id of the recording | [optional] |
-| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **recordingId** | **String**| id of the recording | [optional] 
+| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -858,10 +869,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **evaluationId** | **String**| evaluationId | |
-| **expand** | **String**| agent, evaluator, evaluationForm | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **evaluationId** | **String**| evaluationId | 
+| **expand** | **String**| agent, evaluator, evaluationForm | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -921,8 +933,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -999,25 +1012,26 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **conversationId** | **String**| conversationId specified | [optional] |
-| **agentUserId** | **String**| user id of the agent | [optional] |
-| **evaluatorUserId** | **String**| evaluator user id | [optional] |
-| **queueId** | **String**| queue id | [optional] |
-| **startTime** | **String**| start time of the evaluation query | [optional] |
-| **endTime** | **String**| end time of the evaluation query | [optional] |
-| **evaluationState** | [**List&lt;String&gt;**](String.html)|  | [optional] |
-| **isReleased** | **Boolean**| the evaluation has been released | [optional] |
-| **agentHasRead** | **Boolean**| agent has the evaluation | [optional] |
-| **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] |
-| **maximum** | **Integer**| maximum | [optional] |
-| **sortOrder** | **String**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **conversationId** | **String**| conversationId specified | [optional] 
+| **agentUserId** | **String**| user id of the agent | [optional] 
+| **evaluatorUserId** | **String**| evaluator user id | [optional] 
+| **queueId** | **String**| queue id | [optional] 
+| **startTime** | **String**| start time of the evaluation query | [optional] 
+| **endTime** | **String**| end time of the evaluation query | [optional] 
+| **evaluationState** | [**List&lt;String&gt;**](String.html)|  | [optional] 
+| **isReleased** | **Boolean**| the evaluation has been released | [optional] 
+| **agentHasRead** | **Boolean**| agent has the evaluation | [optional] 
+| **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] 
+| **maximum** | **Integer**| maximum | [optional] 
+| **sortOrder** | **String**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1087,18 +1101,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **startTime** | **Date**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **endTime** | **Date**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] |
-| **name** | **String**| Evaluator name | [optional] |
-| **permission** | [**List&lt;String&gt;**](String.html)| permission strings | [optional] |
-| **group** | **String**| group id | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **startTime** | **Date**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+| **endTime** | **Date**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
+| **name** | **String**| Evaluator name | [optional] 
+| **permission** | [**List&lt;String&gt;**](String.html)| permission strings | [optional] 
+| **group** | **String**| group id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1159,8 +1174,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1223,10 +1239,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1294,15 +1311,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **expand** | **String**| Expand | [optional] |
-| **name** | **String**| Name | [optional] |
-| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name | [optional] 
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1363,8 +1381,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1427,10 +1446,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1498,15 +1518,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **expand** | **String**| Expand | [optional] |
-| **name** | **String**| Name | [optional] |
-| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name | [optional] 
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1567,8 +1588,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1631,10 +1653,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1702,15 +1725,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **expand** | **String**| Expand | [optional] |
-| **name** | **String**| Name | [optional] |
-| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name | [optional] 
+| **sortOrder** | **String**| Order to sort results, either asc or desc | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1771,8 +1795,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form ids | |
-{: class="table table-striped"}
+| **id** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form ids | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1834,9 +1859,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form context ids | |
-| **published** | **Boolean**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
-{: class="table table-striped"}
+| **contextId** | [**List&lt;String&gt;**](String.html)| A comma-delimited list of valid survey form context ids | 
+| **published** | **Boolean**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1896,8 +1922,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | |
-{: class="table table-striped"}
+| **keywordSetId** | **String**| KeywordSet ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1966,17 +1993,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] |
-| **queueId** | **String**| the queue id - used for filtering results in searches. | [optional] |
-| **agentId** | **String**| the agent id - used for filtering results in searches. | [optional] |
-| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional]<br />**Values**: AND, OR |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] 
+| **queueId** | **String**| the queue id - used for filtering results in searches. | [optional] 
+| **agentId** | **String**| the agent id - used for filtering results in searches. | [optional] 
+| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional]<br />**Values**: AND, OR 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2037,8 +2065,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2102,11 +2131,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2167,8 +2197,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2232,11 +2263,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **onlyLatestPerContext** | **Boolean**| onlyLatestPerContext | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2297,8 +2329,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2362,11 +2395,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **onlyLatestEnabledPerContext** | **Boolean**| onlyLatestEnabledPerContext | [optional] [default to false] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **onlyLatestEnabledPerContext** | **Boolean**| onlyLatestEnabledPerContext | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2426,8 +2460,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **surveyId** | **String**| surveyId | |
-{: class="table table-striped"}
+| **surveyId** | **String**| surveyId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2474,8 +2509,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customerSurveyUrl** | **String**| customerSurveyUrl | [optional] |
-{: class="table table-striped"}
+| **customerSurveyUrl** | **String**| customerSurveyUrl | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2537,9 +2573,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2600,8 +2637,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2662,8 +2700,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2724,9 +2763,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration | |
-| **expand** | **String**| calibratorId | [optional] |
-{: class="table table-striped"}
+| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration | 
+| **expand** | **String**| calibratorId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2788,10 +2828,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
-| **expand** | **String**| evaluatorId | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **body** | [**Evaluation**](Evaluation.html)| evaluation | 
+| **expand** | **String**| evaluatorId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2851,8 +2892,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet | |
-{: class="table table-striped"}
+| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2913,8 +2955,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2975,8 +3018,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3037,8 +3081,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
-{: class="table table-striped"}
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3099,9 +3144,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
-| **expand** | **String**| queueId | [optional] |
-{: class="table table-striped"}
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | 
+| **expand** | **String**| queueId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3162,8 +3208,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3224,8 +3271,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3286,8 +3334,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PublishForm**](PublishForm.html)| Survey form | |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm.html)| Survey form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3347,8 +3396,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional] |
-{: class="table table-striped"}
+| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3408,8 +3458,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SurveyFormAndScoringSet**](SurveyFormAndScoringSet.html)| surveyAndScoringSet | |
-{: class="table table-striped"}
+| **body** | [**SurveyFormAndScoringSet**](SurveyFormAndScoringSet.html)| surveyAndScoringSet | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3470,9 +3521,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calibrationId** | **String**| Calibration ID | |
-| **body** | [**Calibration**](Calibration.html)| Calibration | |
-{: class="table table-striped"}
+| **calibrationId** | **String**| Calibration ID | 
+| **body** | [**Calibration**](Calibration.html)| Calibration | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3535,11 +3587,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | |
-| **evaluationId** | **String**| evaluationId | |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation | |
-| **expand** | **String**| evaluatorId | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| conversationId | 
+| **evaluationId** | **String**| evaluationId | 
+| **body** | [**Evaluation**](Evaluation.html)| evaluation | 
+| **expand** | **String**| evaluatorId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3601,9 +3654,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3665,9 +3719,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3729,9 +3784,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **formId** | **String**| Form ID | |
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | |
-{: class="table table-striped"}
+| **formId** | **String**| Form ID | 
+| **body** | [**SurveyForm**](SurveyForm.html)| Survey form | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3792,9 +3848,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | |
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | |
-{: class="table table-striped"}
+| **keywordSetId** | **String**| KeywordSet ID | 
+| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3842,9 +3899,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey | |
-| **customerSurveyUrl** | **String**| customerSurveyUrl | [optional] |
-{: class="table table-striped"}
+| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey | 
+| **customerSurveyUrl** | **String**| customerSurveyUrl | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

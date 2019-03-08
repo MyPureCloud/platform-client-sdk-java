@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getMobiledevices**](MobileDevicesApi.html#getMobiledevices) | Get a list of all devices. |
 | [**postMobiledevices**](MobileDevicesApi.html#postMobiledevices) | Create User device |
 | [**putMobiledevice**](MobileDevicesApi.html#putMobiledevice) | Update device |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteMobiledevice"></a>
 
@@ -67,8 +67,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deviceId** | **String**| Device ID | |
-{: class="table table-striped"}
+| **deviceId** | **String**| Device ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -128,8 +129,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deviceId** | **String**| Device ID | |
-{: class="table table-striped"}
+| **deviceId** | **String**| Device ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -191,10 +193,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -254,8 +257,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**UserDevice**](UserDevice.html)| Device | |
-{: class="table table-striped"}
+| **body** | [**UserDevice**](UserDevice.html)| Device | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -316,9 +320,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deviceId** | **String**| Device ID | |
-| **body** | [**UserDevice**](UserDevice.html)| Device | [optional] |
-{: class="table table-striped"}
+| **deviceId** | **String**| Device ID | 
+| **body** | [**UserDevice**](UserDevice.html)| Device | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

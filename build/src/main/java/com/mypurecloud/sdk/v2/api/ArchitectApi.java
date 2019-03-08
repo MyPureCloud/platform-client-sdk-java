@@ -4063,7 +4063,7 @@ public class ArchitectApi {
   
   /**
    * Get a pageable list of flows, filtered by query parameters
-   * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+   * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4092,7 +4092,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of flows, filtered by query parameters
-   * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+   * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4161,7 +4161,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of flows, filtered by query parameters
-   * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+   * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return FlowEntityListing
    * @throws ApiException if the request fails on the server
@@ -4180,7 +4180,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of flows, filtered by query parameters
-   * Multiple IDs can be specified, in which case all matching flows will be returned, and no other parameters will be evaluated.
+   * If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4566,7 +4566,7 @@ public class ArchitectApi {
   
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
-   * This returns a simplified version of /flow consisting of name and type.
+   * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4588,7 +4588,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
-   * This returns a simplified version of /flow consisting of name and type.
+   * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param type Type (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4636,7 +4636,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
-   * This returns a simplified version of /flow consisting of name and type.
+   * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return FlowDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
@@ -4655,7 +4655,7 @@ public class ArchitectApi {
 
   /**
    * Get a pageable list of basic flow information objects filterable by query parameters.
-   * This returns a simplified version of /flow consisting of name and type.
+   * This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

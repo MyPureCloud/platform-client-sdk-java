@@ -39,8 +39,6 @@ import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
 import com.mypurecloud.sdk.v2.model.EdgeGroupEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeVersionReport;
-import com.mypurecloud.sdk.v2.model.Endpoint;
-import com.mypurecloud.sdk.v2.model.EndpointEntityListing;
 import com.mypurecloud.sdk.v2.model.Extension;
 import com.mypurecloud.sdk.v2.model.ExtensionPool;
 import com.mypurecloud.sdk.v2.model.ExtensionPoolEntityListing;
@@ -84,7 +82,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgeSoftwareup
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesCertificateauthorityRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesEdgegroupRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesEndpointRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesOutboundrouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTelephonyProvidersEdgesPhoneRequest;
@@ -122,8 +119,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupReq
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgeversionreportRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEndpointRequest;
-import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEndpointsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesExtensionpoolsRequest;
@@ -174,7 +169,6 @@ import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesAddressvali
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesCertificateauthoritiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesDidpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesEdgegroupsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesEndpointsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesExtensionpoolsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesOutboundroutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgesPhoneRebootRequest;
@@ -193,7 +187,6 @@ import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
-import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesEndpointRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesExtensionpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.PutTelephonyProvidersEdgesOutboundrouteRequest;
@@ -661,82 +654,6 @@ public class TelephonyProvidersEdgeApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteTelephonyProvidersEdgesEdgegroup(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Delete endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
-     deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId));
-  }
-
-  /**
-   * Delete endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
-    return deleteTelephonyProvidersEdgesEndpoint(createDeleteTelephonyProvidersEdgesEndpointRequest(endpointId).withHttpInfo());
-  }
-
-  private DeleteTelephonyProvidersEdgesEndpointRequest createDeleteTelephonyProvidersEdgesEndpointRequest(String endpointId) {
-    return DeleteTelephonyProvidersEdgesEndpointRequest.builder()
-            .withEndpointId(endpointId)
-    
-            .build();
-  }
-
-  /**
-   * Delete endpoint
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteTelephonyProvidersEdgesEndpoint(DeleteTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete endpoint
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3832,176 +3749,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeVersionReport> response = (ApiResponse<EdgeVersionReport>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint getTelephonyProvidersEdgesEndpoint(String endpointId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesEndpoint(createGetTelephonyProvidersEdgesEndpointRequest(endpointId));
-  }
-
-  /**
-   * Get endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @return Endpoint
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId) throws IOException {
-    return getTelephonyProvidersEdgesEndpoint(createGetTelephonyProvidersEdgesEndpointRequest(endpointId).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgesEndpointRequest createGetTelephonyProvidersEdgesEndpointRequest(String endpointId) {
-    return GetTelephonyProvidersEdgesEndpointRequest.builder()
-            .withEndpointId(endpointId)
-    
-            .build();
-  }
-
-  /**
-   * Get endpoint
-   * 
-   * @param request The request object
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint getTelephonyProvidersEdgesEndpoint(GetTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get endpoint
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> getTelephonyProvidersEdgesEndpoint(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get endpoints
-   * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param name Name (optional)
-   * @param sortBy Sort by (optional, default to name)
-   * @return EndpointEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesEndpoints(createGetTelephonyProvidersEdgesEndpointsRequest(pageSize, pageNumber, name, sortBy));
-  }
-
-  /**
-   * Get endpoints
-   * 
-   * @param pageSize Page size (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param name Name (optional)
-   * @param sortBy Sort by (optional, default to name)
-   * @return EndpointEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpointsWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException {
-    return getTelephonyProvidersEdgesEndpoints(createGetTelephonyProvidersEdgesEndpointsRequest(pageSize, pageNumber, name, sortBy).withHttpInfo());
-  }
-
-  private GetTelephonyProvidersEdgesEndpointsRequest createGetTelephonyProvidersEdgesEndpointsRequest(Integer pageSize, Integer pageNumber, String name, String sortBy) {
-    return GetTelephonyProvidersEdgesEndpointsRequest.builder()
-            .withPageSize(pageSize)
-    
-            .withPageNumber(pageNumber)
-    
-            .withName(name)
-    
-            .withSortBy(sortBy)
-    
-            .build();
-  }
-
-  /**
-   * Get endpoints
-   * 
-   * @param request The request object
-   * @return EndpointEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public EndpointEntityListing getTelephonyProvidersEdgesEndpoints(GetTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<EndpointEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EndpointEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get endpoints
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<EndpointEntityListing> getTelephonyProvidersEdgesEndpoints(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<EndpointEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<EndpointEntityListing> response = (ApiResponse<EndpointEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8259,85 +8006,6 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
-   * Create endpoint
-   * 
-   * @param body EndpointTemplate (required)
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint postTelephonyProvidersEdgesEndpoints(Endpoint body) throws IOException, ApiException {
-    return  postTelephonyProvidersEdgesEndpoints(createPostTelephonyProvidersEdgesEndpointsRequest(body));
-  }
-
-  /**
-   * Create endpoint
-   * 
-   * @param body EndpointTemplate (required)
-   * @return Endpoint
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpointsWithHttpInfo(Endpoint body) throws IOException {
-    return postTelephonyProvidersEdgesEndpoints(createPostTelephonyProvidersEdgesEndpointsRequest(body).withHttpInfo());
-  }
-
-  private PostTelephonyProvidersEdgesEndpointsRequest createPostTelephonyProvidersEdgesEndpointsRequest(Endpoint body) {
-    return PostTelephonyProvidersEdgesEndpointsRequest.builder()
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Create endpoint
-   * 
-   * @param request The request object
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint postTelephonyProvidersEdgesEndpoints(PostTelephonyProvidersEdgesEndpointsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create endpoint
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> postTelephonyProvidersEdgesEndpoints(ApiRequest<Endpoint> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Create a new extension pool
    * 
    * @param body ExtensionPool (required)
@@ -9793,89 +9461,6 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EdgeTrunkBase> response = (ApiResponse<EdgeTrunkBase>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Update endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @param body EndpointTemplate (required)
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint putTelephonyProvidersEdgesEndpoint(String endpointId, Endpoint body) throws IOException, ApiException {
-    return  putTelephonyProvidersEdgesEndpoint(createPutTelephonyProvidersEdgesEndpointRequest(endpointId, body));
-  }
-
-  /**
-   * Update endpoint
-   * 
-   * @param endpointId Endpoint ID (required)
-   * @param body EndpointTemplate (required)
-   * @return Endpoint
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpointWithHttpInfo(String endpointId, Endpoint body) throws IOException {
-    return putTelephonyProvidersEdgesEndpoint(createPutTelephonyProvidersEdgesEndpointRequest(endpointId, body).withHttpInfo());
-  }
-
-  private PutTelephonyProvidersEdgesEndpointRequest createPutTelephonyProvidersEdgesEndpointRequest(String endpointId, Endpoint body) {
-    return PutTelephonyProvidersEdgesEndpointRequest.builder()
-            .withEndpointId(endpointId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Update endpoint
-   * 
-   * @param request The request object
-   * @return Endpoint
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Endpoint putTelephonyProvidersEdgesEndpoint(PutTelephonyProvidersEdgesEndpointRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Endpoint> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Endpoint>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update endpoint
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Endpoint> putTelephonyProvidersEdgesEndpoint(ApiRequest<Endpoint> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Endpoint>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Endpoint> response = (ApiResponse<Endpoint>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

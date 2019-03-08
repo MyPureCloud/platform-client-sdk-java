@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | Update an Organization&#39;s DefaultGreetingList |
 | [**putGroupGreetingsDefaults**](GreetingsApi.html#putGroupGreetingsDefaults) | Updates the DefaultGreetingList of the specified Group |
 | [**putUserGreetingsDefaults**](GreetingsApi.html#putUserGreetingsDefaults) | Updates the DefaultGreetingList of the specified User |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteGreeting"></a>
 
@@ -78,8 +78,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **greetingId** | **String**| Greeting ID | |
-{: class="table table-striped"}
+| **greetingId** | **String**| Greeting ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -139,8 +140,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **greetingId** | **String**| Greeting ID | |
-{: class="table table-striped"}
+| **greetingId** | **String**| Greeting ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -201,9 +203,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **greetingId** | **String**| Greeting ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
+| **greetingId** | **String**| Greeting ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WAV]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -264,9 +267,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -323,7 +327,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -385,10 +390,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -448,8 +454,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -511,10 +518,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -574,8 +582,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -635,8 +644,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
-{: class="table table-striped"}
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -697,9 +707,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -760,9 +771,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**Greeting**](Greeting.html)| The Greeting to create | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -823,9 +835,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **greetingId** | **String**| Greeting ID | |
-| **body** | [**Greeting**](Greeting.html)| The updated Greeting | |
-{: class="table table-striped"}
+| **greetingId** | **String**| Greeting ID | 
+| **body** | [**Greeting**](Greeting.html)| The updated Greeting | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -885,8 +898,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
-{: class="table table-striped"}
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -947,9 +961,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**| Group ID | |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
-{: class="table table-striped"}
+| **groupId** | **String**| Group ID | 
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1010,9 +1025,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList | 
+{: class="table-striped"}
+
 
 ### Return type
 

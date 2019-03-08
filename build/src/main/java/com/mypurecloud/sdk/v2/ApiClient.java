@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 
 import java.io.ByteArrayInputStream;
@@ -14,6 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
@@ -100,6 +102,10 @@ public class ApiClient implements AutoCloseable {
         objectMapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
         objectMapper.registerModule(new JodaModule());
         objectMapper.setDateFormat(dateFormat);
+        SimpleModule localDateModule = new SimpleModule();
+        localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer());
+        localDateModule.addDeserializer(LocalDate.class, new LocalDateDeserializer());
+        objectMapper.registerModule(localDateModule);
         return objectMapper;
     }
 
@@ -677,7 +683,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "55.0.0");
+            withDefaultHeader("purecloud-sdk", "56.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {

@@ -70,7 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the utilization settings. |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteRoutingEmailDomain"></a>
 
@@ -126,8 +126,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainId** | **String**| domain ID | |
-{: class="table table-striped"}
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -188,9 +189,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainName** | **String**| email domain | |
-| **routeId** | **String**| route ID | |
-{: class="table table-striped"}
+| **domainName** | **String**| email domain | 
+| **routeId** | **String**| route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -251,9 +253,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **forceDelete** | **Boolean**| forceDelete | [optional] |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **forceDelete** | **Boolean**| forceDelete | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -314,9 +317,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **memberId** | **String**| Member ID | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **memberId** | **String**| Member ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -377,9 +381,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **codeId** | **String**| Code ID | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **codeId** | **String**| Code ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -439,8 +444,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **skillId** | **String**| Skill ID | |
-{: class="table table-striped"}
+| **skillId** | **String**| Skill ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -500,8 +506,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | |
-{: class="table table-striped"}
+| **addressId** | **String**| Address ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -558,7 +565,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -618,8 +626,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **codeId** | **String**| Wrapup Code ID | |
-{: class="table table-striped"}
+| **codeId** | **String**| Wrapup Code ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -681,9 +690,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **languageId** | **String**| languageId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **languageId** | **String**| languageId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -745,9 +755,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **skillId** | **String**| skillId | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **skillId** | **String**| skillId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -808,8 +819,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainId** | **String**| domain ID | |
-{: class="table table-striped"}
+| **domainId** | **String**| domain ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -871,9 +883,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainName** | **String**| email domain | |
-| **routeId** | **String**| route ID | |
-{: class="table table-striped"}
+| **domainName** | **String**| email domain | 
+| **routeId** | **String**| route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -937,11 +950,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainName** | **String**| email domain | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pattern** | **String**| Filter routes by the route&#39;s pattern property | [optional] |
-{: class="table table-striped"}
+| **domainName** | **String**| email domain | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pattern** | **String**| Filter routes by the route&#39;s pattern property | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -999,7 +1013,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1057,7 +1072,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1121,12 +1137,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-| **name** | **String**| Name | [optional] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+| **name** | **String**| Name | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1187,8 +1204,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recipientId** | **String**| Recipient ID | |
-{: class="table table-striped"}
+| **recipientId** | **String**| Recipient ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1251,10 +1269,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, telegram, kakao 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1315,8 +1334,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1378,9 +1398,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| queueId | |
-| **conversationId** | **String**| conversationId | [optional] |
-{: class="table table-striped"}
+| **queueId** | **String**| queueId | 
+| **conversationId** | **String**| conversationId | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1442,9 +1463,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| queueId | |
-| **mediaType** | **String**| mediaType | |
-{: class="table table-striped"}
+| **queueId** | **String**| queueId | 
+| **mediaType** | **String**| mediaType | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1516,19 +1538,20 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **joined** | **Boolean**| Filter by joined status | [optional] |
-| **name** | **String**| Filter by queue member name | [optional] |
-| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] |
-| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] |
-| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] |
-| **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] |
-| **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **joined** | **Boolean**| Filter by joined status | [optional] 
+| **name** | **String**| Filter by queue member name | [optional] 
+| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
+| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] 
+| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] 
+| **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
+| **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1591,10 +1614,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1660,13 +1684,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **name** | **String**| Name | [optional] |
-| **active** | **Boolean**| Active | [optional] |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **name** | **String**| Name | [optional] 
+| **active** | **Boolean**| Active | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1733,14 +1758,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size [max value is 100] | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number [max value is 5] | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
-| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
-| **name** | **String**| Name | [optional] |
-| **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size [max value is 100] | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number [max value is 5] | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score 
+| **name** | **String**| Name | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1804,11 +1830,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size [max value is 500] | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId |
-| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size [max value is 500] | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1872,12 +1899,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **joined** | **Boolean**| Joined | [optional] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to asc] |
-{: class="table table-striped"}
+| **joined** | **Boolean**| Joined | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1937,8 +1965,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **skillId** | **String**| Skill ID | |
-{: class="table table-striped"}
+| **skillId** | **String**| Skill ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2001,11 +2030,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Filter for results that start with this value | [optional] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Filter for results that start with this value | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2072,14 +2102,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **countryCode** | **String**| The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned | |
-| **phoneNumberType** | **String**| Type of available phone numbers searched |<br />**Values**: local, mobile, tollfree |
-| **region** | **String**| Region/province/state that can be used to restrict the numbers returned | [optional] |
-| **city** | **String**| City that can be used to restrict the numbers returned | [optional] |
-| **areaCode** | **String**| Area code that can be used to restrict the numbers returned | [optional] |
-| **pattern** | **String**| A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. | [optional] |
-| **addressRequirement** | **String**| This indicates whether the phone number requires to have an Address registered. | [optional]<br />**Values**: none, any, local, foreign |
-{: class="table table-striped"}
+| **countryCode** | **String**| The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned | 
+| **phoneNumberType** | **String**| Type of available phone numbers searched |<br />**Values**: local, mobile, tollfree 
+| **region** | **String**| Region/province/state that can be used to restrict the numbers returned | [optional] 
+| **city** | **String**| City that can be used to restrict the numbers returned | [optional] 
+| **areaCode** | **String**| Area code that can be used to restrict the numbers returned | [optional] 
+| **pattern** | **String**| A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. | [optional] 
+| **addressRequirement** | **String**| This indicates whether the phone number requires to have an Address registered. | [optional]<br />**Values**: none, any, local, foreign 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2140,8 +2171,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | |
-{: class="table table-striped"}
+| **addressId** | **String**| Address ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2206,12 +2238,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] |
-| **phoneNumberType** | **String**| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree |
-| **phoneNumberStatus** | **String**| Filter on phone number status | [optional]<br />**Values**: active, invalid, porting |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **phoneNumber** | **String**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional] 
+| **phoneNumberType** | **String**| Filter on phone number type | [optional]<br />**Values**: local, mobile, tollfree 
+| **phoneNumberStatus** | **String**| Filter on phone number status | [optional]<br />**Values**: active, invalid, porting 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2270,7 +2303,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2331,8 +2365,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **codeId** | **String**| Wrapup Code ID | |
-{: class="table table-striped"}
+| **codeId** | **String**| Wrapup Code ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2396,11 +2431,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id |
-| **name** | **String**| Name | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id 
+| **name** | **String**| Name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2463,11 +2499,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2530,11 +2567,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2597,10 +2635,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **memberId** | **String**| Member ID | |
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **memberId** | **String**| Member ID | 
+| **body** | [**QueueMember**](QueueMember.html)| Queue Member | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2662,9 +2701,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **body** | [**List&lt;QueueMember&gt;**](QueueMember.html)| Queue Members | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **body** | [**List&lt;QueueMember&gt;**](QueueMember.html)| Queue Members | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2728,10 +2768,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **languageId** | **String**| languageId | |
-| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **languageId** | **String**| languageId | 
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2794,9 +2835,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserRoutingLanguagePost&gt;**](UserRoutingLanguagePost.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2859,9 +2901,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2922,8 +2965,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | |
-{: class="table table-striped"}
+| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2985,9 +3029,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainName** | **String**| email domain | |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | |
-{: class="table table-striped"}
+| **domainName** | **String**| email domain | 
+| **body** | [**InboundRoute**](InboundRoute.html)| Route | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3048,8 +3093,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**InboundDomain**](InboundDomain.html)| Domain | |
-{: class="table table-striped"}
+| **body** | [**InboundDomain**](InboundDomain.html)| Domain | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3110,8 +3156,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Language**](Language.html)| Language | |
-{: class="table table-striped"}
+| **body** | [**Language**](Language.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3174,10 +3221,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | |
-| **delete** | **Boolean**| True to delete queue members | [optional] [default to false] |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | 
+| **delete** | **Boolean**| True to delete queue members | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3239,9 +3287,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **body** | [**List&lt;WrapUpCodeReference&gt;**](WrapUpCodeReference.html)| List of wrapup codes | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **body** | [**List&lt;WrapUpCodeReference&gt;**](WrapUpCodeReference.html)| List of wrapup codes | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3302,8 +3351,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue | |
-{: class="table table-striped"}
+| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3364,8 +3414,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill | |
-{: class="table table-striped"}
+| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3426,8 +3477,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsAddressProvision**](SmsAddressProvision.html)| SmsAddress | |
-{: class="table table-striped"}
+| **body** | [**SmsAddressProvision**](SmsAddressProvision.html)| SmsAddress | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3488,8 +3540,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | |
-{: class="table table-striped"}
+| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3550,8 +3603,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | |
-{: class="table table-striped"}
+| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3614,9 +3668,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3679,9 +3734,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3744,10 +3800,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domainName** | **String**| email domain | |
-| **routeId** | **String**| route ID | |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route | |
-{: class="table table-striped"}
+| **domainName** | **String**| email domain | 
+| **routeId** | **String**| route ID | 
+| **body** | [**InboundRoute**](InboundRoute.html)| Route | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3809,9 +3866,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recipientId** | **String**| Recipient ID | |
-| **body** | [**Recipient**](Recipient.html)| Recipient | |
-{: class="table table-striped"}
+| **recipientId** | **String**| Recipient ID | 
+| **body** | [**Recipient**](Recipient.html)| Recipient | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3873,9 +3931,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **queueId** | **String**| Queue ID | |
-| **body** | [**QueueRequest**](QueueRequest.html)| Queue | |
-{: class="table table-striped"}
+| **queueId** | **String**| Queue ID | 
+| **body** | [**QueueRequest**](QueueRequest.html)| Queue | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3937,9 +3996,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **addressId** | **String**| Address ID | |
-| **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber | |
-{: class="table table-striped"}
+| **addressId** | **String**| Address ID | 
+| **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4000,8 +4060,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Utilization**](Utilization.html)| utilization | |
-{: class="table table-striped"}
+| **body** | [**Utilization**](Utilization.html)| utilization | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4063,9 +4124,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **codeId** | **String**| Wrapup Code ID | |
-| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | |
-{: class="table table-striped"}
+| **codeId** | **String**| Wrapup Code ID | 
+| **body** | [**WrapupCode**](WrapupCode.html)| WrapupCode | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4129,10 +4191,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | |
-| **skillId** | **String**| skillId | |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | |
-{: class="table table-striped"}
+| **userId** | **String**| User ID | 
+| **skillId** | **String**| skillId | 
+| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill | 
+{: class="table-striped"}
+
 
 ### Return type
 

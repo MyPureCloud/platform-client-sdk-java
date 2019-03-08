@@ -639,13 +639,14 @@ public class GroupsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException, ApiException {
-    return  getGroups(createGetGroupsRequest(pageSize, pageNumber, id, sortOrder));
+  public GroupEntityListing getGroups(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException, ApiException {
+    return  getGroups(createGetGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder));
   }
 
   /**
@@ -654,21 +655,24 @@ public class GroupsApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
+   * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @return GroupEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) throws IOException {
-    return getGroups(createGetGroupsRequest(pageSize, pageNumber, id, sortOrder).withHttpInfo());
+  public ApiResponse<GroupEntityListing> getGroupsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) throws IOException {
+    return getGroups(createGetGroupsRequest(pageSize, pageNumber, id, jabberId, sortOrder).withHttpInfo());
   }
 
-  private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, String sortOrder) {
+  private GetGroupsRequest createGetGroupsRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder) {
     return GetGroupsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withId(id)
+    
+            .withJabberId(jabberId)
     
             .withSortOrder(sortOrder)
     

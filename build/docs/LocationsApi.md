@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchLocation**](LocationsApi.html#patchLocation) | Update a location |
 | [**postLocations**](LocationsApi.html#postLocations) | Create a location |
 | [**postLocationsSearch**](LocationsApi.html#postLocationsSearch) | Search locations |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteLocation"></a>
 
@@ -70,8 +70,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locationId** | **String**| Location ID | |
-{: class="table table-striped"}
+| **locationId** | **String**| Location ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -132,8 +133,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locationId** | **String**| Location ID | |
-{: class="table table-striped"}
+| **locationId** | **String**| Location ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -196,11 +198,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] |
-| **sortOrder** | **String**| Sort order | [optional]<br />**Values**: asc, desc |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **sortOrder** | **String**| Sort order | [optional]<br />**Values**: asc, desc 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -261,9 +264,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **q64** | **String**| q64 | |
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] |
-{: class="table table-striped"}
+| **q64** | **String**| q64 | 
+| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -325,9 +329,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locationId** | **String**| Location ID | |
-| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition.html)| Location | |
-{: class="table table-striped"}
+| **locationId** | **String**| Location ID | 
+| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition.html)| Location | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -388,8 +393,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocationDefinition**](LocationDefinition.html)| Location | |
-{: class="table table-striped"}
+| **body** | [**LocationDefinition**](LocationDefinition.html)| Location | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -449,8 +455,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | |
-{: class="table table-striped"}
+| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
 
 ### Return type
 

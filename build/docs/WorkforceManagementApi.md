@@ -71,7 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | Add a management unit |
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | Get published schedule for the current user |
 | [**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | Create a time off request for the current user |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteWorkforcemanagementManagementunit"></a>
 
@@ -128,8 +128,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -191,9 +192,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **acId** | **String**| The ID of the activity code to delete | |
-{: class="table table-striped"}
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **acId** | **String**| The ID of the activity code to delete | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -254,9 +256,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit. | |
-| **runId** | **String**| The ID of the schedule run | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **runId** | **String**| The ID of the schedule run | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -318,9 +321,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **serviceGoalGroupId** | **String**| The ID of the service goal group to delete | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **serviceGoalGroupId** | **String**| The ID of the service goal group to delete | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -383,10 +387,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of theschedule to delete | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of theschedule to delete | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -449,10 +454,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **forecastId** | **String**| The ID of the forecast | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **forecastId** | **String**| The ID of the forecast | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -514,9 +520,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **workPlanId** | **String**| The ID of the work plan to delete | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **workPlanId** | **String**| The ID of the work plan to delete | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -577,8 +584,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | [**List&lt;String&gt;**](String.html)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request | |
-{: class="table table-striped"}
+| **userId** | [**List&lt;String&gt;**](String.html)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -683,9 +691,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **expand** | **String**|  | [optional]<br />**Values**: settings |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **expand** | **String**|  | [optional]<br />**Values**: settings 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -748,9 +757,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **acId** | **String**| The ID of the activity code to fetch | |
-{: class="table table-striped"}
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **acId** | **String**| The ID of the activity code to fetch | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -854,8 +864,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-{: class="table table-striped"}
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -918,9 +929,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **agentId** | **String**| The agent id | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **agentId** | **String**| The agent id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -982,9 +994,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit | |
-| **date** | **String**| yyyy-MM-dd date string interpreted in the configured management unit time zone | |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit | 
+| **date** | **String**| yyyy-MM-dd date string interpreted in the configured management unit time zone | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1046,9 +1059,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit. | |
-| **runId** | **String**| The ID of the schedule run | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **runId** | **String**| The ID of the schedule run | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1110,9 +1124,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit. | |
-| **runId** | **String**| The ID of the schedule run | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **runId** | **String**| The ID of the schedule run | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1173,8 +1188,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit. | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1237,9 +1253,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **serviceGoalGroupId** | **String**| The ID of the service goal group to fetch | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **serviceGoalGroupId** | **String**| The ID of the service goal group to fetch | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1303,8 +1320,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1366,8 +1384,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1431,10 +1450,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **userId** | **String**| The userId to whom the Time Off Request applies. | |
-| **timeOffRequestId** | **String**| Time Off Request Id | |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **userId** | **String**| The userId to whom the Time Off Request applies. | 
+| **timeOffRequestId** | **String**| Time Off Request Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1498,10 +1518,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **userId** | **String**| The userId to whom the Time Off Request applies. | |
-| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **userId** | **String**| The userId to whom the Time Off Request applies. | 
+| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1572,8 +1593,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1640,12 +1662,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of the schedule to fetch | |
-| **expand** | **String**| Which fields, if any, to expand | [optional]<br />**Values**: generationResults, headcountForecast |
-| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of the schedule to fetch | 
+| **expand** | **String**| Which fields, if any, to expand | [optional]<br />**Values**: generationResults, headcountForecast 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1710,10 +1733,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of the schedule to fetch generation results | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of the schedule to fetch generation results | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1777,9 +1801,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1844,11 +1869,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **forecastId** | **String**| The ID of the forecast | |
-| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **forecastId** | **String**| The ID of the forecast | 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1912,9 +1938,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1979,9 +2006,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **workPlanId** | **String**| The ID of the work plan to fetch | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **workPlanId** | **String**| The ID of the work plan to fetch | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2049,9 +2077,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: agentCount, details |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: agentCount, details 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2115,12 +2144,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**|  | [optional] |
-| **pageNumber** | **Integer**|  | [optional] |
-| **expand** | **String**|  | [optional]<br />**Values**: details |
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans |
-| **divisionId** | **String**|  | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**|  | [optional] 
+| **pageNumber** | **Integer**|  | [optional] 
+| **expand** | **String**|  | [optional]<br />**Values**: details 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShortTermForecasts, TimeOffRequests, WorkPlans 
+| **divisionId** | **String**|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2181,8 +2211,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | [**List&lt;String&gt;**](String.html)| The divisionIds to filter by. If omitted, will return all divisions | [optional] |
-{: class="table table-striped"}
+| **divisionId** | [**List&lt;String&gt;**](String.html)| The divisionIds to filter by. If omitted, will return all divisions | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2244,8 +2275,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String**| Time Off Request Id | |
-{: class="table table-striped"}
+| **timeOffRequestId** | **String**| Time Off Request Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2307,8 +2339,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
-{: class="table table-striped"}
+| **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2372,10 +2405,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **acId** | **String**| The ID of the activity code to update | |
-| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **acId** | **String**| The ID of the activity code to update | 
+| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2438,10 +2472,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit. | |
-| **runId** | **String**| The ID of the schedule run | |
-| **body** | [**UpdateSchedulingRunRequest**](UpdateSchedulingRunRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit. | 
+| **runId** | **String**| The ID of the schedule run | 
+| **body** | [**UpdateSchedulingRunRequest**](UpdateSchedulingRunRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2505,10 +2540,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **serviceGoalGroupId** | **String**| The ID of the service goal group to update | |
-| **body** | [**ServiceGoalGroup**](ServiceGoalGroup.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **serviceGoalGroupId** | **String**| The ID of the service goal group to update | 
+| **body** | [**ServiceGoalGroup**](ServiceGoalGroup.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2571,9 +2607,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**ManagementUnitSettings**](ManagementUnitSettings.html)| config | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**ManagementUnitSettings**](ManagementUnitSettings.html)| config | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2638,11 +2675,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **userId** | **String**| The id of the user the requested time off request belongs to | |
-| **timeOffRequestId** | **String**| The id of the time off request to update | |
-| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **userId** | **String**| The id of the user the requested time off request belongs to | 
+| **timeOffRequestId** | **String**| The id of the time off request to update | 
+| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2709,13 +2747,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500 | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
-| **body** | [**UpdateWeekScheduleRequest**](UpdateWeekScheduleRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500 | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+| **body** | [**UpdateWeekScheduleRequest**](UpdateWeekScheduleRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2779,10 +2818,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **workPlanId** | **String**| The ID of the work plan to update | |
-| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **workPlanId** | **String**| The ID of the work plan to update | 
+| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2844,9 +2884,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String**| Time Off Request Id | |
-| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch.html)| body | [optional] |
-{: class="table table-striped"}
+| **timeOffRequestId** | **String**| Time Off Request Id | 
+| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2907,8 +2948,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**WfmHistoricalAdherenceQueryForUsers**](WfmHistoricalAdherenceQueryForUsers.html)| body | [optional] |
-{: class="table table-striped"}
+| **body** | [**WfmHistoricalAdherenceQueryForUsers**](WfmHistoricalAdherenceQueryForUsers.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2971,9 +3013,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3035,9 +3078,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit | |
-| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit | 
+| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3099,9 +3143,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit | |
-| **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit | 
+| **body** | [**IntradayQueryDataCommand**](IntradayQueryDataCommand.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3165,9 +3210,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3230,9 +3276,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**CreateServiceGoalGroupRequest**](CreateServiceGoalGroupRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**CreateServiceGoalGroupRequest**](CreateServiceGoalGroupRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3295,9 +3342,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3360,9 +3408,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**TimeOffRequestLookupList**](TimeOffRequestLookupList.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**TimeOffRequestLookupList**](TimeOffRequestLookupList.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3425,9 +3474,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional] |
-{: class="table table-striped"}
+| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3494,13 +3544,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of the schedule to copy from | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
-| **body** | [**CopyWeekScheduleRequest**](CopyWeekScheduleRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of the schedule to copy from | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+| **body** | [**CopyWeekScheduleRequest**](CopyWeekScheduleRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3565,11 +3616,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **scheduleId** | **String**| The ID of the schedule to re-optimize | |
-| **body** | [**RescheduleRequest**](RescheduleRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **scheduleId** | **String**| The ID of the schedule to re-optimize | 
+| **body** | [**RescheduleRequest**](RescheduleRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3635,12 +3687,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] |
-| **body** | [**ImportWeekScheduleRequest**](ImportWeekScheduleRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
+| **body** | [**ImportWeekScheduleRequest**](ImportWeekScheduleRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3703,10 +3756,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **body** | [**GenerateWeekScheduleRequest**](GenerateWeekScheduleRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **body** | [**GenerateWeekScheduleRequest**](GenerateWeekScheduleRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3771,10 +3825,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | |
-| **body** | [**UserSchedulesPartialUploadRequest**](UserSchedulesPartialUploadRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **body** | [**UserSchedulesPartialUploadRequest**](UserSchedulesPartialUploadRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3840,12 +3895,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **forecastId** | **String**| The ID of the forecast to copy | |
-| **body** | [**CopyShortTermForecastRequest**](CopyShortTermForecastRequest.html)| body | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **forecastId** | **String**| The ID of the forecast to copy | 
+| **body** | [**CopyShortTermForecastRequest**](CopyShortTermForecastRequest.html)| body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3910,11 +3966,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **body** | [**ImportShortTermForecastRequest**](ImportShortTermForecastRequest.html)| body | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **body** | [**ImportShortTermForecastRequest**](ImportShortTermForecastRequest.html)| body | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3979,11 +4036,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **body** | [**GenerateShortTermForecastRequest**](GenerateShortTermForecastRequest.html)|  | |
-| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **body** | [**GenerateShortTermForecastRequest**](GenerateShortTermForecastRequest.html)|  | 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4047,10 +4105,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | |
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | |
-| **body** | [**RouteGroupList**](RouteGroupList.html)| body | |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The management unit ID of the management unit to which the forecast belongs | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format | 
+| **body** | [**RouteGroupList**](RouteGroupList.html)| body | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4114,10 +4173,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **workPlanId** | **String**| The ID of the work plan to create a copy | |
-| **body** | [**CopyWorkPlan**](CopyWorkPlan.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **workPlanId** | **String**| The ID of the work plan to create a copy | 
+| **body** | [**CopyWorkPlan**](CopyWorkPlan.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4180,9 +4240,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | |
-| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional] |
-{: class="table table-striped"}
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4244,8 +4305,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4308,8 +4370,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody.html)| body | [optional] |
-{: class="table table-striped"}
+| **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4370,8 +4433,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest.html)| body | [optional] |
-{: class="table table-striped"}
+| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest.html)| body | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -44,7 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
 | [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | Update the Recording Settings for the Organization |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteConversationRecordingAnnotation"></a>
 
@@ -101,10 +101,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **annotationId** | **String**| Annotation ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **annotationId** | **String**| Annotation ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -165,8 +166,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orphanId** | **String**| Orphan ID | |
-{: class="table table-striped"}
+| **orphanId** | **String**| Orphan ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -226,8 +228,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ids** | **String**|  | |
-{: class="table table-striped"}
+| **ids** | **String**|  | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -287,8 +290,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **policyId** | **String**| Policy ID | |
-{: class="table table-striped"}
+| **policyId** | **String**| Policy ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -352,12 +356,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
-| **fileName** | **String**| the name of the downloaded fileName | [optional] |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
+| **fileName** | **String**| the name of the downloaded fileName | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -419,10 +424,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **annotationId** | **String**| Annotation ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **annotationId** | **String**| Annotation ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -483,9 +489,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -545,8 +552,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -607,9 +615,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -671,10 +680,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
-| **formatId** | **String**| The desired media format. Possible values: NONE, MP3, WAV, or WEBM | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] 
+| **formatId** | **String**| The desired media format. Possible values: NONE, MP3, WAV, or WEBM | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -735,8 +745,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orphanId** | **String**| Orphan ID | |
-{: class="table table-striped"}
+| **orphanId** | **String**| Orphan ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -799,11 +810,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orphanId** | **String**| Orphan ID | |
-| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] |
-| **fileName** | **String**| the name of the downloaded fileName | [optional] |
-{: class="table table-striped"}
+| **orphanId** | **String**| Orphan ID | 
+| **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
+| **fileName** | **String**| the name of the downloaded fileName | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -871,15 +883,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
-| **media** | **String**| Filter resulting orphans based on their media type | [optional]<br />**Values**: Call, Screen |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] 
+| **media** | **String**| Filter resulting orphans based on their media type | [optional]<br />**Values**: Call, Screen 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -939,8 +952,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **jobId** | **String**| jobId | |
-{: class="table table-striped"}
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1001,8 +1015,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **settingsId** | **String**| Settings Id | |
-{: class="table table-striped"}
+| **settingsId** | **String**| Settings Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1060,7 +1075,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1130,17 +1146,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **name** | **String**| the policy name - used for filtering results in searches. | [optional] |
-| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] |
-| **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] |
-| **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **name** | **String**| the policy name - used for filtering results in searches. | [optional] 
+| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
+| **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
+| **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1201,8 +1218,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **policyId** | **String**| Policy ID | |
-{: class="table table-striped"}
+| **policyId** | **String**| Policy ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1264,9 +1282,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1324,7 +1343,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -1384,8 +1404,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createDefault** | **Boolean**| If no settings are found, a new one is created with default values | [optional] [default to false] |
-{: class="table table-striped"}
+| **createDefault** | **Boolean**| If no settings are found, a new one is created with default values | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1446,9 +1467,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1510,9 +1532,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **policyId** | **String**| Policy ID | |
-| **body** | [**Policy**](Policy.html)| Policy | |
-{: class="table table-striped"}
+| **policyId** | **String**| Policy ID | 
+| **body** | [**Policy**](Policy.html)| Policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1572,9 +1595,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **recordingSessionId** | **String**| Screen recording session ID | |
-| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **recordingSessionId** | **String**| Screen recording session ID | 
+| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1636,10 +1660,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **body** | [**Annotation**](Annotation.html)| annotation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **body** | [**Annotation**](Annotation.html)| annotation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1699,8 +1724,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission.html)| Job submission criteria | |
-{: class="table table-striped"}
+| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission.html)| Job submission criteria | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1761,8 +1787,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body | |
-{: class="table table-striped"}
+| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1823,8 +1850,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration | |
-{: class="table table-striped"}
+| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption Configuration | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1885,8 +1913,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PolicyCreate**](PolicyCreate.html)| Policy | |
-{: class="table table-striped"}
+| **body** | [**PolicyCreate**](PolicyCreate.html)| Policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1944,7 +1973,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2006,10 +2036,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **body** | [**Recording**](Recording.html)| recording | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **body** | [**Recording**](Recording.html)| recording | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2072,11 +2103,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | |
-| **recordingId** | **String**| Recording ID | |
-| **annotationId** | **String**| Annotation ID | |
-| **body** | [**Annotation**](Annotation.html)| annotation | |
-{: class="table table-striped"}
+| **conversationId** | **String**| Conversation ID | 
+| **recordingId** | **String**| Recording ID | 
+| **annotationId** | **String**| Annotation ID | 
+| **body** | [**Annotation**](Annotation.html)| annotation | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2138,9 +2170,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **orphanId** | **String**| Orphan ID | |
-| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **orphanId** | **String**| Orphan ID | 
+| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2202,9 +2235,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **settingsId** | **String**| Settings Id | |
-| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata | |
-{: class="table table-striped"}
+| **settingsId** | **String**| Settings Id | 
+| **body** | [**LocalEncryptionConfiguration**](LocalEncryptionConfiguration.html)| Local Encryption metadata | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2266,9 +2300,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **policyId** | **String**| Policy ID | |
-| **body** | [**Policy**](Policy.html)| Policy | |
-{: class="table table-striped"}
+| **policyId** | **String**| Policy ID | 
+| **body** | [**Policy**](Policy.html)| Policy | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2329,8 +2364,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule | |
-{: class="table table-striped"}
+| **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2390,8 +2426,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings | |
-{: class="table table-striped"}
+| **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings | 
+{: class="table-striped"}
+
 
 ### Return type
 

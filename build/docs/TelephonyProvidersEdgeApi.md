@@ -13,7 +13,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteTelephonyProvidersEdgesCertificateauthority**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesCertificateauthority) | Delete a certificate authority. |
 | [**deleteTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesDidpool) | Delete a DID Pool by ID. |
 | [**deleteTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesEdgegroup) | Delete an edge group. |
-| [**deleteTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesEndpoint) | Delete endpoint |
 | [**deleteTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesExtensionpool) | Delete an extension pool by ID |
 | [**deleteTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesOutboundroute) | Delete Outbound Route |
 | [**deleteTelephonyProvidersEdgesPhone**](TelephonyProvidersEdgeApi.html#deleteTelephonyProvidersEdgesPhone) | Delete a Phone by ID |
@@ -51,8 +50,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Gets the edge trunk base associated with the edge group |
 | [**getTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroups) | Get the list of edge groups. |
 | [**getTelephonyProvidersEdgesEdgeversionreport**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgeversionreport) | Get the edge version report. |
-| [**getTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoint) | Get endpoint |
-| [**getTelephonyProvidersEdgesEndpoints**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEndpoints) | Get endpoints |
 | [**getTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtension) | Get an extension by ID. |
 | [**getTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpool) | Get an extension pool by ID |
 | [**getTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesExtensionpools) | Get a listing of extension pools |
@@ -103,7 +100,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postTelephonyProvidersEdgesCertificateauthorities**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesCertificateauthorities) | Create a certificate authority. |
 | [**postTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesDidpools) | Create a new DID pool |
 | [**postTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesEdgegroups) | Create an edge group. |
-| [**postTelephonyProvidersEdgesEndpoints**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesEndpoints) | Create endpoint |
 | [**postTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesExtensionpools) | Create a new extension pool |
 | [**postTelephonyProvidersEdgesOutboundroutes**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesOutboundroutes) | Create outbound rule |
 | [**postTelephonyProvidersEdgesPhoneReboot**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgesPhoneReboot) | Reboot a Phone |
@@ -122,7 +118,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesDidpool) | Update a DID Pool by ID. |
 | [**putTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroup) | Update an edge group. |
 | [**putTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Update the edge trunk base associated with the edge group |
-| [**putTelephonyProvidersEdgesEndpoint**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesEndpoint) | Update endpoint |
 | [**putTelephonyProvidersEdgesExtension**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtension) | Update an extension by ID. |
 | [**putTelephonyProvidersEdgesExtensionpool**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesExtensionpool) | Update an extension pool by ID |
 | [**putTelephonyProvidersEdgesOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesOutboundroute) | Update outbound route |
@@ -132,7 +127,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putTelephonyProvidersEdgesSiteNumberplans**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteNumberplans) | Update the list of Number Plans. |
 | [**putTelephonyProvidersEdgesSiteOutboundroute**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesSiteOutboundroute) | Update outbound route |
 | [**putTelephonyProvidersEdgesTrunkbasesetting**](TelephonyProvidersEdgeApi.html#putTelephonyProvidersEdgesTrunkbasesetting) | Update a Trunk Base Settings object by ID |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteTelephonyProvidersEdge"></a>
 
@@ -188,8 +183,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -250,9 +246,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **interfaceId** | **String**| Interface ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **interfaceId** | **String**| Interface ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -311,8 +308,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -372,8 +370,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **certificateId** | **String**| Certificate ID | |
-{: class="table table-striped"}
+| **certificateId** | **String**| Certificate ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -433,8 +432,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **didPoolId** | **String**| DID pool ID | |
-{: class="table table-striped"}
+| **didPoolId** | **String**| DID pool ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -494,69 +494,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeGroupId** | **String**| Edge group ID | |
-{: class="table table-striped"}
+| **edgeGroupId** | **String**| Edge group ID | 
+{: class="table-striped"}
 
-### Return type
-
-null (empty response body)
-
-<a name="deleteTelephonyProvidersEdgesEndpoint"></a>
-
-# **deleteTelephonyProvidersEdgesEndpoint**
-
-
-
-> Void deleteTelephonyProvidersEdgesEndpoint(endpointId)
-
-Delete endpoint
-
-
-
-Wraps DELETE /api/v2/telephony/providers/edges/endpoints/{endpointId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String endpointId = "endpointId_example"; // String | Endpoint ID
-try {
-    apiInstance.deleteTelephonyProvidersEdgesEndpoint(endpointId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#deleteTelephonyProvidersEdgesEndpoint");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **endpointId** | **String**| Endpoint ID | |
-{: class="table table-striped"}
 
 ### Return type
 
@@ -616,8 +556,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **extensionPoolId** | **String**| Extension pool ID | |
-{: class="table table-striped"}
+| **extensionPoolId** | **String**| Extension pool ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -677,8 +618,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **outboundRouteId** | **String**| Outbound route ID | |
-{: class="table table-striped"}
+| **outboundRouteId** | **String**| Outbound route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -738,8 +680,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneId** | **String**| Phone ID | |
-{: class="table table-striped"}
+| **phoneId** | **String**| Phone ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -799,8 +742,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneBaseId** | **String**| Phone base ID | |
-{: class="table table-striped"}
+| **phoneBaseId** | **String**| Phone base ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -860,8 +804,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -922,9 +867,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **outboundRouteId** | **String**| Outbound route ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **outboundRouteId** | **String**| Outbound route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -984,8 +930,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkBaseSettingsId** | **String**| Trunk Base ID | |
-{: class="table table-striped"}
+| **trunkBaseSettingsId** | **String**| Trunk Base ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1046,9 +993,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1110,10 +1058,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **schemaCategory** | **String**| Schema category | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **schemaCategory** | **String**| Schema category | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1176,11 +1125,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **schemaCategory** | **String**| Schema category | |
-| **schemaType** | **String**| Schema type | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **schemaCategory** | **String**| Schema category | 
+| **schemaType** | **String**| Schema type | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1242,10 +1192,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **schemaCategory** | **String**| Schema category | |
-| **schemaType** | **String**| Schema type | |
-| **schemaId** | **String**| Schema ID | |
-{: class="table table-striped"}
+| **schemaCategory** | **String**| Schema category | 
+| **schemaType** | **String**| Schema type | 
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1310,13 +1261,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **schemaCategory** | **String**| Schema category | |
-| **schemaType** | **String**| Schema type | |
-| **schemaId** | **String**| Schema ID | |
-| **extensionType** | **String**| extension | |
-| **metadataId** | **String**| Metadata ID | |
-| **type** | **String**| Type | [optional] |
-{: class="table table-striped"}
+| **schemaCategory** | **String**| Schema category | 
+| **schemaType** | **String**| Schema type | 
+| **schemaId** | **String**| Schema ID | 
+| **extensionType** | **String**| extension | 
+| **metadataId** | **String**| Metadata ID | 
+| **type** | **String**| Type | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1378,9 +1330,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: site |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: site 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1442,9 +1395,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **lineId** | **String**| Line ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **lineId** | **String**| Line ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1507,10 +1461,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1573,10 +1528,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **interfaceId** | **String**| Interface ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **interfaceId** | **String**| Interface ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1638,9 +1594,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1702,9 +1659,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **jobId** | **String**| Job ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **jobId** | **String**| Job ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1765,8 +1723,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge Id | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1828,9 +1787,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **interfaceId** | **String**| Interface ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **interfaceId** | **String**| Interface ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1891,8 +1851,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1953,8 +1914,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2014,8 +1976,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2075,8 +2038,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2143,14 +2107,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] |
-| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] 
+| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2217,14 +2182,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **siteId** | **String**| Filter by site.id | [optional] |
-| **edgeGroupId** | **String**| Filter by edgeGroup.id | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **managed** | **Boolean**| Filter by managed | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **siteId** | **String**| Filter by site.id | [optional] 
+| **edgeGroupId** | **String**| Filter by edgeGroup.id | [optional] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **managed** | **Boolean**| Filter by managed | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2281,7 +2247,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2339,7 +2306,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -2400,8 +2368,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **certificateId** | **String**| Certificate ID | |
-{: class="table table-striped"}
+| **certificateId** | **String**| Certificate ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2462,8 +2431,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **didId** | **String**| DID ID | |
-{: class="table table-striped"}
+| **didId** | **String**| DID ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2524,8 +2494,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **didPoolId** | **String**| DID pool ID | |
-{: class="table table-striped"}
+| **didPoolId** | **String**| DID pool ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2588,10 +2559,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to number] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to number] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2656,12 +2628,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to number] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **phoneNumber** | **String**| Filter by phoneNumber | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to number] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **phoneNumber** | **String**| Filter by phoneNumber | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2723,9 +2696,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeGroupId** | **String**| Edge group ID | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response | [optional]<br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
-{: class="table table-striped"}
+| **edgeGroupId** | **String**| Edge group ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response | [optional]<br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2787,9 +2761,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgegroupId** | **String**| Edge Group ID | |
-| **edgetrunkbaseId** | **String**| Edge Trunk Base ID | |
-{: class="table table-striped"}
+| **edgegroupId** | **String**| Edge Group ID | 
+| **edgetrunkbaseId** | **String**| Edge Trunk Base ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2854,12 +2829,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **managed** | **Boolean**| Filter by managed | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **managed** | **Boolean**| Filter by managed | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -2916,141 +2892,12 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
 [**EdgeVersionReport**](EdgeVersionReport.html)
-
-<a name="getTelephonyProvidersEdgesEndpoint"></a>
-
-# **getTelephonyProvidersEdgesEndpoint**
-
-
-
-> [Endpoint](Endpoint.html) getTelephonyProvidersEdgesEndpoint(endpointId)
-
-Get endpoint
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/endpoints/{endpointId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String endpointId = "endpointId_example"; // String | Endpoint ID
-try {
-    Endpoint result = apiInstance.getTelephonyProvidersEdgesEndpoint(endpointId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesEndpoint");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **endpointId** | **String**| Endpoint ID | |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
-
-<a name="getTelephonyProvidersEdgesEndpoints"></a>
-
-# **getTelephonyProvidersEdgesEndpoints**
-
-
-
-> [EndpointEntityListing](EndpointEntityListing.html) getTelephonyProvidersEdgesEndpoints(pageSize, pageNumber, name, sortBy)
-
-Get endpoints
-
-
-
-Wraps GET /api/v2/telephony/providers/edges/endpoints  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-Integer pageSize = 25; // Integer | Page size
-Integer pageNumber = 1; // Integer | Page number
-String name = "name_example"; // String | Name
-String sortBy = "name"; // String | Sort by
-try {
-    EndpointEntityListing result = apiInstance.getTelephonyProvidersEdgesEndpoints(pageSize, pageNumber, name, sortBy);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesEndpoints");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-{: class="table table-striped"}
-
-### Return type
-
-[**EndpointEntityListing**](EndpointEntityListing.html)
 
 <a name="getTelephonyProvidersEdgesExtension"></a>
 
@@ -3107,8 +2954,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **extensionId** | **String**| Extension ID | |
-{: class="table table-striped"}
+| **extensionId** | **String**| Extension ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3169,8 +3017,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **extensionPoolId** | **String**| Extension pool ID | |
-{: class="table table-striped"}
+| **extensionPoolId** | **String**| Extension pool ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3234,11 +3083,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to startNumber] |
-| **number** | **String**| Number | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to startNumber] 
+| **number** | **String**| Number | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3303,12 +3153,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to number] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **number** | **String**| Filter by number | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to number] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **number** | **String**| Filter by number | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3369,8 +3220,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lineId** | **String**| Line ID | |
-{: class="table table-striped"}
+| **lineId** | **String**| Line ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3431,8 +3283,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lineBaseId** | **String**| Line base ID | |
-{: class="table table-striped"}
+| **lineBaseId** | **String**| Line base ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3496,11 +3349,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3565,12 +3419,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3631,8 +3486,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **lineBaseSettingsId** | **String**| The id of a Line Base Settings object upon which to base this Line | |
-{: class="table table-striped"}
+| **lineBaseSettingsId** | **String**| The id of a Line Base Settings object upon which to base this Line | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3694,9 +3550,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
-| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
-{: class="table table-striped"}
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Field to expand in the response | [optional]<br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3757,8 +3614,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
-{: class="table table-striped"}
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3819,8 +3677,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **outboundRouteId** | **String**| Outbound route ID | |
-{: class="table table-striped"}
+| **outboundRouteId** | **String**| Outbound route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3885,12 +3744,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **siteId** | **String**| Filter by site.id | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **siteId** | **String**| Filter by site.id | [optional] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -3951,8 +3811,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneId** | **String**| Phone ID | |
-{: class="table table-striped"}
+| **phoneId** | **String**| Phone ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4013,8 +3874,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneBaseId** | **String**| Phone base ID | |
-{: class="table table-striped"}
+| **phoneBaseId** | **String**| Phone base ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4080,13 +3942,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, lines |
-| **name** | **String**| Name | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, lines 
+| **name** | **String**| Name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4148,9 +4011,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4211,8 +4075,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneMetabaseId** | **String**| The id of a metabase object upon which to base this Phone Base Settings | |
-{: class="table table-striped"}
+| **phoneMetabaseId** | **String**| The id of a metabase object upon which to base this Phone Base Settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4286,21 +4151,22 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **siteId** | **String**| Filter by site.id | [optional] |
-| **webRtcUserId** | **String**| Filter by webRtcUser.id | [optional] |
-| **phoneBaseSettingsId** | **String**| Filter by phoneBaseSettings.id | [optional] |
-| **linesLoggedInUserId** | **String**| Filter by lines.loggedInUser.id | [optional] |
-| **linesDefaultForUserId** | **String**| Filter by lines.defaultForUser.id | [optional] |
-| **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional] |
-| **linesId** | **String**| Filter by lines.id | [optional] |
-| **linesName** | **String**| Filter by lines.name | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
-| **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **siteId** | **String**| Filter by site.id | [optional] 
+| **webRtcUserId** | **String**| Filter by webRtcUser.id | [optional] 
+| **phoneBaseSettingsId** | **String**| Filter by phoneBaseSettings.id | [optional] 
+| **linesLoggedInUserId** | **String**| Filter by lines.loggedInUser.id | [optional] 
+| **linesDefaultForUserId** | **String**| Filter by lines.defaultForUser.id | [optional] 
+| **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional] 
+| **linesId** | **String**| Filter by lines.id | [optional] 
+| **linesName** | **String**| Filter by lines.name | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines 
+| **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4361,8 +4227,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneBaseSettingsId** | **String**| The id of a Phone Base Settings object upon which to base this Phone | |
-{: class="table table-striped"}
+| **phoneBaseSettingsId** | **String**| The id of a Phone Base Settings object upon which to base this Phone | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4423,8 +4290,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | |
-{: class="table table-striped"}
+| **edgeIds** | **String**| Comma separated list of Edge Id&#39;s | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4486,8 +4354,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4549,9 +4418,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **numberPlanId** | **String**| Number Plan ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **numberPlanId** | **String**| Number Plan ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4612,8 +4482,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4675,9 +4546,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **classification** | **String**| Classification | [optional] |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **classification** | **String**| Classification | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4739,9 +4611,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **outboundRouteId** | **String**| Outbound route ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **outboundRouteId** | **String**| Outbound route ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4806,12 +4679,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **name** | **String**| Name | [optional] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **name** | **String**| Name | [optional] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4877,14 +4751,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **name** | **String**| Name | [optional] |
-| **locationId** | **String**| Location Id | [optional] |
-| **managed** | **Boolean**| Filter by managed | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **name** | **String**| Name | [optional] 
+| **locationId** | **String**| Location Id | [optional] 
+| **managed** | **Boolean**| Filter by managed | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -4945,9 +4820,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 1000] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 1000] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5008,8 +4884,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkId** | **String**| Trunk ID | |
-{: class="table table-striped"}
+| **trunkId** | **String**| Trunk ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5070,8 +4947,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkId** | **String**| Trunk Id | |
-{: class="table table-striped"}
+| **trunkId** | **String**| Trunk Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5133,9 +5011,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkBaseSettingsId** | **String**| Trunk Base ID | |
-| **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
-{: class="table table-striped"}
+| **trunkBaseSettingsId** | **String**| Trunk Base ID | 
+| **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5204,16 +5083,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **recordingEnabled** | **Boolean**| Filter trunks by recording enabled | [optional] |
-| **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] |
-| **managed** | **Boolean**| Filter by managed | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties |
-| **name** | **String**| Name of the TrunkBase to filter by | [optional] |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **recordingEnabled** | **Boolean**| Filter trunks by recording enabled | [optional] 
+| **ignoreHidden** | **Boolean**| Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional] 
+| **managed** | **Boolean**| Filter by managed | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties 
+| **name** | **String**| Name of the TrunkBase to filter by | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5276,10 +5156,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **type** | **String**|  | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
-| **pageSize** | **Integer**|  | [optional] [default to 25] |
-| **pageNumber** | **Integer**|  | [optional] [default to 1] |
-{: class="table table-striped"}
+| **type** | **String**|  | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE 
+| **pageSize** | **Integer**|  | [optional] [default to 25] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5340,8 +5221,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkMetabaseId** | **String**| The id of a metabase object upon which to base this Trunk Base Settings | |
-{: class="table table-striped"}
+| **trunkMetabaseId** | **String**| The id of a metabase object upon which to base this Trunk Base Settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5408,14 +5290,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **sortBy** | **String**| Value by which to sort | [optional] [default to name] |
-| **sortOrder** | **String**| Sort order | [optional] [default to ASC] |
-| **edgeId** | **String**| Filter by Edge Ids | [optional] |
-| **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] |
-| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
-{: class="table table-striped"}
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **edgeId** | **String**| Filter by Edge Ids | [optional] 
+| **trunkBaseId** | **String**| Filter by Trunk Base Ids | [optional] 
+| **trunkType** | **String**| Filter by a Trunk type | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5476,8 +5359,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkIds** | **String**| Comma separated list of Trunk Id&#39;s | |
-{: class="table table-striped"}
+| **trunkIds** | **String**| Comma separated list of Trunk Id&#39;s | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5539,8 +5423,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkType** | **String**| The type of this trunk base. | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE |
-{: class="table table-striped"}
+| **trunkType** | **String**| The type of this trunk base. | [optional]<br />**Values**: EXTERNAL, PHONE, EDGE 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5602,9 +5487,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5666,10 +5552,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **jobId** | **String**| Job ID | |
-| **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **jobId** | **String**| Job ID | 
+| **body** | [**EdgeLogsJobUploadRequest**](EdgeLogsJobUploadRequest.html)| Log upload request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5731,9 +5618,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**EdgeLogsJobRequest**](EdgeLogsJobRequest.html)| EdgeLogsJobRequest | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5795,9 +5683,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional] |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**EdgeRebootParameters**](EdgeRebootParameters.html)| Parameters for the edge reboot | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5858,9 +5747,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**DomainEdgeSoftwareUpdateDto**](DomainEdgeSoftwareUpdateDto.html)| Software update request | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5922,9 +5812,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional] |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**EdgeServiceStateRequest**](EdgeServiceStateRequest.html)| Edge Service State | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -5985,8 +5876,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge Id | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6047,8 +5939,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Edge**](Edge.html)| Edge | |
-{: class="table table-striped"}
+| **body** | [**Edge**](Edge.html)| Edge | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6108,8 +6001,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address | |
-{: class="table table-striped"}
+| **body** | [**ValidateAddressRequest**](ValidateAddressRequest.html)| Address | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6170,8 +6064,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority | |
-{: class="table table-striped"}
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| CertificateAuthority | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6232,8 +6127,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
-{: class="table table-striped"}
+| **body** | [**DIDPool**](DIDPool.html)| DID pool | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6294,74 +6190,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
-{: class="table table-striped"}
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | 
+{: class="table-striped"}
+
 
 ### Return type
 
 [**EdgeGroup**](EdgeGroup.html)
-
-<a name="postTelephonyProvidersEdgesEndpoints"></a>
-
-# **postTelephonyProvidersEdgesEndpoints**
-
-
-
-> [Endpoint](Endpoint.html) postTelephonyProvidersEdgesEndpoints(body)
-
-Create endpoint
-
-
-
-Wraps POST /api/v2/telephony/providers/edges/endpoints  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-Endpoint body = new Endpoint(); // Endpoint | EndpointTemplate
-try {
-    Endpoint result = apiInstance.postTelephonyProvidersEdgesEndpoints(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesEndpoints");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
 
 <a name="postTelephonyProvidersEdgesExtensionpools"></a>
 
@@ -6418,8 +6253,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
-{: class="table table-striped"}
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6480,8 +6316,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
-{: class="table table-striped"}
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6541,8 +6378,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneId** | **String**| Phone Id | |
-{: class="table table-striped"}
+| **phoneId** | **String**| Phone Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6603,8 +6441,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
-{: class="table table-striped"}
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6665,8 +6504,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Phone**](Phone.html)| Phone | |
-{: class="table table-striped"}
+| **body** | [**Phone**](Phone.html)| Phone | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6726,8 +6566,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PhonesReboot**](PhonesReboot.html)| Phones | |
-{: class="table table-striped"}
+| **body** | [**PhonesReboot**](PhonesReboot.html)| Phones | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6789,9 +6630,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6851,8 +6693,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6913,8 +6756,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**Site**](Site.html)| Site | |
-{: class="table table-striped"}
+| **body** | [**Site**](Site.html)| Site | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -6975,8 +6819,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
-{: class="table table-striped"}
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7038,9 +6883,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **body** | [**Edge**](Edge.html)| Edge | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **body** | [**Edge**](Edge.html)| Edge | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7103,10 +6949,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **lineId** | **String**| Line ID | |
-| **body** | [**EdgeLine**](EdgeLine.html)| Line | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **lineId** | **String**| Line ID | 
+| **body** | [**EdgeLine**](EdgeLine.html)| Line | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7169,10 +7016,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeId** | **String**| Edge ID | |
-| **interfaceId** | **String**| Interface ID | |
-| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | |
-{: class="table table-striped"}
+| **edgeId** | **String**| Edge ID | 
+| **interfaceId** | **String**| Interface ID | 
+| **body** | [**DomainLogicalInterface**](DomainLogicalInterface.html)| Logical interface | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7234,9 +7082,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **certificateId** | **String**| Certificate ID | |
-| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority | |
-{: class="table table-striped"}
+| **certificateId** | **String**| Certificate ID | 
+| **body** | [**DomainCertificateAuthority**](DomainCertificateAuthority.html)| Certificate authority | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7298,9 +7147,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **didId** | **String**| DID ID | |
-| **body** | [**DID**](DID.html)| DID | |
-{: class="table table-striped"}
+| **didId** | **String**| DID ID | 
+| **body** | [**DID**](DID.html)| DID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7362,9 +7212,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **didPoolId** | **String**| DID pool ID | |
-| **body** | [**DIDPool**](DIDPool.html)| DID pool | |
-{: class="table table-striped"}
+| **didPoolId** | **String**| DID pool ID | 
+| **body** | [**DIDPool**](DIDPool.html)| DID pool | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7426,9 +7277,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgeGroupId** | **String**| Edge group ID | |
-| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | |
-{: class="table table-striped"}
+| **edgeGroupId** | **String**| Edge group ID | 
+| **body** | [**EdgeGroup**](EdgeGroup.html)| EdgeGroup | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7491,78 +7343,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **edgegroupId** | **String**| Edge Group ID | |
-| **edgetrunkbaseId** | **String**| Edge Trunk Base ID | |
-| **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase | |
-{: class="table table-striped"}
+| **edgegroupId** | **String**| Edge Group ID | 
+| **edgetrunkbaseId** | **String**| Edge Trunk Base ID | 
+| **body** | [**EdgeTrunkBase**](EdgeTrunkBase.html)| EdgeTrunkBase | 
+{: class="table-striped"}
+
 
 ### Return type
 
 [**EdgeTrunkBase**](EdgeTrunkBase.html)
-
-<a name="putTelephonyProvidersEdgesEndpoint"></a>
-
-# **putTelephonyProvidersEdgesEndpoint**
-
-
-
-> [Endpoint](Endpoint.html) putTelephonyProvidersEdgesEndpoint(endpointId, body)
-
-Update endpoint
-
-
-
-Wraps PUT /api/v2/telephony/providers/edges/endpoints/{endpointId}  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String endpointId = "endpointId_example"; // String | Endpoint ID
-Endpoint body = new Endpoint(); // Endpoint | EndpointTemplate
-try {
-    Endpoint result = apiInstance.putTelephonyProvidersEdgesEndpoint(endpointId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#putTelephonyProvidersEdgesEndpoint");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **endpointId** | **String**| Endpoint ID | |
-| **body** | [**Endpoint**](Endpoint.html)| EndpointTemplate | |
-{: class="table table-striped"}
-
-### Return type
-
-[**Endpoint**](Endpoint.html)
 
 <a name="putTelephonyProvidersEdgesExtension"></a>
 
@@ -7620,9 +7409,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **extensionId** | **String**| Extension ID | |
-| **body** | [**Extension**](Extension.html)| Extension | |
-{: class="table table-striped"}
+| **extensionId** | **String**| Extension ID | 
+| **body** | [**Extension**](Extension.html)| Extension | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7684,9 +7474,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **extensionPoolId** | **String**| Extension pool ID | |
-| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | |
-{: class="table table-striped"}
+| **extensionPoolId** | **String**| Extension pool ID | 
+| **body** | [**ExtensionPool**](ExtensionPool.html)| ExtensionPool | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7748,9 +7539,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **outboundRouteId** | **String**| Outbound route ID | |
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | |
-{: class="table table-striped"}
+| **outboundRouteId** | **String**| Outbound route ID | 
+| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7812,9 +7604,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneId** | **String**| Phone ID | |
-| **body** | [**Phone**](Phone.html)| Phone | |
-{: class="table table-striped"}
+| **phoneId** | **String**| Phone ID | 
+| **body** | [**Phone**](Phone.html)| Phone | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7876,9 +7669,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **phoneBaseId** | **String**| Phone base ID | |
-| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | |
-{: class="table table-striped"}
+| **phoneBaseId** | **String**| Phone base ID | 
+| **body** | [**PhoneBase**](PhoneBase.html)| Phone base settings | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -7940,9 +7734,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **body** | [**Site**](Site.html)| Site | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **body** | [**Site**](Site.html)| Site | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -8004,9 +7799,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **body** | [**List&lt;NumberPlan&gt;**](NumberPlan.html)| List of number plans | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **body** | [**List&lt;NumberPlan&gt;**](NumberPlan.html)| List of number plans | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -8069,10 +7865,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **siteId** | **String**| Site ID | |
-| **outboundRouteId** | **String**| Outbound route ID | |
-| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | |
-{: class="table table-striped"}
+| **siteId** | **String**| Site ID | 
+| **outboundRouteId** | **String**| Outbound route ID | 
+| **body** | [**OutboundRouteBase**](OutboundRouteBase.html)| OutboundRoute | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -8134,9 +7931,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trunkBaseSettingsId** | **String**| Trunk Base ID | |
-| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | |
-{: class="table table-striped"}
+| **trunkBaseSettingsId** | **String**| Trunk Base ID | 
+| **body** | [**TrunkBase**](TrunkBase.html)| Trunk base settings | 
+{: class="table-striped"}
+
 
 ### Return type
 

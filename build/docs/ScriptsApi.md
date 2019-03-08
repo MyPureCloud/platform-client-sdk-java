@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | Get the published variables |
 | [**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | Get the upload status of an imported script |
 | [**postScriptExport**](ScriptsApi.html#postScriptExport) | Export a script via download service. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="getScript"></a>
 
@@ -75,8 +75,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -139,10 +140,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **pageId** | **String**| Page ID | |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **pageId** | **String**| Page ID | 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -204,9 +206,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -275,16 +278,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | **String**| Expand | [optional] |
-| **name** | **String**| Name filter | [optional] |
-| **feature** | **String**| Feature filter | [optional] |
-| **flowId** | **String**| Secure flow id filter | [optional] |
-| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate |
-| **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name filter | [optional] 
+| **feature** | **String**| Feature filter | [optional] 
+| **flowId** | **String**| Secure flow id filter | [optional] 
+| **sortBy** | **String**| SortBy | [optional]<br />**Values**: modifiedDate, createdDate 
+| **sortOrder** | **String**| SortOrder | [optional]<br />**Values**: ascending, descending 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -352,15 +356,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **expand** | **String**| Expand | [optional] |
-| **name** | **String**| Name filter | [optional] |
-| **feature** | **String**| Feature filter | [optional] |
-| **flowId** | **String**| Secure flow id filter | [optional] |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand | [optional] 
+| **name** | **String**| Name filter | [optional] 
+| **feature** | **String**| Feature filter | [optional] 
+| **flowId** | **String**| Secure flow id filter | [optional] 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -422,9 +427,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -487,10 +493,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **pageId** | **String**| Page ID | |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **pageId** | **String**| Page ID | 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -552,9 +559,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -619,12 +627,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **input** | **String**| input | [optional] |
-| **output** | **String**| output | [optional] |
-| **type** | **String**| type | [optional] |
-| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **input** | **String**| input | [optional] 
+| **output** | **String**| output | [optional] 
+| **type** | **String**| type | [optional] 
+| **scriptDataVersion** | **String**| Advanced usage - controls the data version of the script | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -686,9 +695,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uploadId** | **String**| Upload ID | |
-| **longPoll** | **Boolean**| Enable longPolling endpoint | [optional] [default to false] |
-{: class="table table-striped"}
+| **uploadId** | **String**| Upload ID | 
+| **longPoll** | **Boolean**| Enable longPolling endpoint | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -750,9 +760,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | |
-| **body** | [**ExportScriptRequest**](ExportScriptRequest.html)|  | [optional] |
-{: class="table table-striped"}
+| **scriptId** | **String**| Script ID | 
+| **body** | [**ExportScriptRequest**](ExportScriptRequest.html)|  | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 

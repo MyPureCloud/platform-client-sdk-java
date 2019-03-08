@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationDivisionObject**](ObjectsApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
 | [**postAuthorizationDivisions**](ObjectsApi.html#postAuthorizationDivisions) | Create a division. |
 | [**putAuthorizationDivision**](ObjectsApi.html#putAuthorizationDivision) | Update a division. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteAuthorizationDivision"></a>
 
@@ -71,8 +71,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -133,9 +134,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **objectCount** | **Boolean**| Get count of objects in this division, grouped by type | [optional] [default to false] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -203,16 +205,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] |
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] |
-| **sortBy** | **String**| variable name requested to sort by | [optional] |
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] |
-| **nextPage** | **String**| next page token | [optional] |
-| **previousPage** | **String**| Previous page token | [optional] |
-| **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] |
-| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] |
-| **name** | **String**| Search term to filter by division name | [optional] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] 
+| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] 
+| **name** | **String**| Search term to filter by division name | [optional] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -269,7 +272,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -326,7 +330,8 @@ try {
 ### Parameters
 
 This endpoint does not require any parameters.
-{: class="table table-striped"}
+
+
 
 ### Return type
 
@@ -387,10 +392,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER |
-| **body** | **List&lt;String&gt;**| Object Id List | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER 
+| **body** | **List&lt;String&gt;**| Object Id List | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -452,8 +458,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Division | |
-{: class="table table-striped"}
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Division | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -515,9 +522,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **divisionId** | **String**| Division ID | |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data | |
-{: class="table table-striped"}
+| **divisionId** | **String**| Division ID | 
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data | 
+{: class="table-striped"}
+
 
 ### Return type
 

@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustee) | Update Org Trust |
 | [**putOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoles) | Update Trustee User Roles |
 | [**putOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorUser) | Add a Trustee user to the trust. |
-{: class="table table-striped"}
+{: class="table-striped"}
 
 <a name="deleteOrgauthorizationTrustee"></a>
 
@@ -86,8 +86,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -150,9 +151,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -215,9 +217,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -277,8 +280,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustor Organization Id | |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -339,9 +343,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustor Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -403,8 +408,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pairingId** | **String**| Pairing Id | |
-{: class="table table-striped"}
+| **pairingId** | **String**| Pairing Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -465,8 +471,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -528,9 +535,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -592,9 +600,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -657,10 +666,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -722,9 +732,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -785,8 +796,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustor Organization Id | |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -848,9 +860,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustor Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -913,10 +926,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustee Organization Id | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustee Organization Id | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -978,9 +992,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1041,8 +1056,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TrustRequestCreate**](TrustRequestCreate.html)| Pairing Info | |
-{: class="table table-striped"}
+| **body** | [**TrustRequestCreate**](TrustRequestCreate.html)| Pairing Info | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1106,9 +1122,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1170,8 +1187,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TrustCreate**](TrustCreate.html)| Trust | |
-{: class="table table-striped"}
+| **body** | [**TrustCreate**](TrustCreate.html)| Trust | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1236,12 +1254,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest.html)| Values to scope the request. | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to timestamp] |
-| **sortOrder** | **String**| Sort order | [optional] [default to descending] |
-{: class="table table-striped"}
+| **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest.html)| Values to scope the request. | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp] 
+| **sortOrder** | **String**| Sort order | [optional] [default to descending] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1306,12 +1325,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest.html)| Values to scope the request. | |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] |
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] |
-| **sortBy** | **String**| Sort by | [optional] [default to timestamp] |
-| **sortOrder** | **String**| Sort order | [optional] [default to descending] |
-{: class="table table-striped"}
+| **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest.html)| Values to scope the request. | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to timestamp] 
+| **sortOrder** | **String**| Sort order | [optional] [default to descending] 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1373,9 +1393,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **body** | [**Trustee**](Trustee.html)| Client | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **body** | [**Trustee**](Trustee.html)| Client | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1440,10 +1461,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trusteeOrgId** | **String**| Trustee Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-| **body** | **List&lt;String&gt;**| List of roles | |
-{: class="table table-striped"}
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+| **body** | **List&lt;String&gt;**| List of roles | 
+{: class="table-striped"}
+
 
 ### Return type
 
@@ -1505,9 +1527,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trustorOrgId** | **String**| Trustor Organization Id | |
-| **trusteeUserId** | **String**| Trustee User Id | |
-{: class="table table-striped"}
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
 
 ### Return type
 
