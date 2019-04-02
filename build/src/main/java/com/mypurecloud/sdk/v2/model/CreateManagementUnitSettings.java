@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AdherenceSettings;
 import com.mypurecloud.sdk.v2.model.SchedulingSettings;
+import com.mypurecloud.sdk.v2.model.ShiftTradeSettings;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastingSettings;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestSettings;
 import io.swagger.annotations.ApiModel;
@@ -23,6 +24,7 @@ public class CreateManagementUnitSettings  implements Serializable {
   private ShortTermForecastingSettings shortTermForecasting = null;
   private TimeOffRequestSettings timeOff = null;
   private SchedulingSettings scheduling = null;
+  private ShiftTradeSettings shiftTrading = null;
 
   
   /**
@@ -97,6 +99,24 @@ public class CreateManagementUnitSettings  implements Serializable {
   }
 
   
+  /**
+   * Shift trade settings for this management unit
+   **/
+  public CreateManagementUnitSettings shiftTrading(ShiftTradeSettings shiftTrading) {
+    this.shiftTrading = shiftTrading;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Shift trade settings for this management unit")
+  @JsonProperty("shiftTrading")
+  public ShiftTradeSettings getShiftTrading() {
+    return shiftTrading;
+  }
+  public void setShiftTrading(ShiftTradeSettings shiftTrading) {
+    this.shiftTrading = shiftTrading;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -110,12 +130,13 @@ public class CreateManagementUnitSettings  implements Serializable {
     return Objects.equals(this.adherence, createManagementUnitSettings.adherence) &&
         Objects.equals(this.shortTermForecasting, createManagementUnitSettings.shortTermForecasting) &&
         Objects.equals(this.timeOff, createManagementUnitSettings.timeOff) &&
-        Objects.equals(this.scheduling, createManagementUnitSettings.scheduling);
+        Objects.equals(this.scheduling, createManagementUnitSettings.scheduling) &&
+        Objects.equals(this.shiftTrading, createManagementUnitSettings.shiftTrading);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adherence, shortTermForecasting, timeOff, scheduling);
+    return Objects.hash(adherence, shortTermForecasting, timeOff, scheduling, shiftTrading);
   }
 
   @Override
@@ -127,6 +148,7 @@ public class CreateManagementUnitSettings  implements Serializable {
     sb.append("    shortTermForecasting: ").append(toIndentedString(shortTermForecasting)).append("\n");
     sb.append("    timeOff: ").append(toIndentedString(timeOff)).append("\n");
     sb.append("    scheduling: ").append(toIndentedString(scheduling)).append("\n");
+    sb.append("    shiftTrading: ").append(toIndentedString(shiftTrading)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
+import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
@@ -24,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLicenseUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseUsersRequest;
@@ -429,6 +431,89 @@ public class LicenseApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LicenseUser> response = (ApiResponse<LicenseUser>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return UserLicensesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLicensesEntityListing getLicenseUsers(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getLicenseUsers(createGetLicenseUsersRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return UserLicensesEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLicensesEntityListing> getLicenseUsersWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getLicenseUsers(createGetLicenseUsersRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetLicenseUsersRequest createGetLicenseUsersRequest(Integer pageSize, Integer pageNumber) {
+    return GetLicenseUsersRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param request The request object
+   * @return UserLicensesEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserLicensesEntityListing getLicenseUsers(GetLicenseUsersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserLicensesEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserLicensesEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserLicensesEntityListing> getLicenseUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserLicensesEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLicensesEntityListing> response = (ApiResponse<UserLicensesEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserLicensesEntityListing> response = (ApiResponse<UserLicensesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.EmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,8 @@ public class InboundRoute  implements Serializable {
   private String fromEmail = null;
   private UriReference flow = null;
   private QueueEmailAddress replyEmailAddress = null;
+  private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
+  private UriReference spamFlow = null;
   private String selfUri = null;
 
   
@@ -218,6 +221,42 @@ public class InboundRoute  implements Serializable {
   }
 
   
+  /**
+   * The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.
+   **/
+  public InboundRoute autoBcc(List<EmailAddress> autoBcc) {
+    this.autoBcc = autoBcc;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recipients that should be  automatically blind copied on outbound emails associated with this InboundRoute.")
+  @JsonProperty("autoBcc")
+  public List<EmailAddress> getAutoBcc() {
+    return autoBcc;
+  }
+  public void setAutoBcc(List<EmailAddress> autoBcc) {
+    this.autoBcc = autoBcc;
+  }
+
+  
+  /**
+   * The flow to use for processing inbound emails that have been marked as spam.
+   **/
+  public InboundRoute spamFlow(UriReference spamFlow) {
+    this.spamFlow = spamFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The flow to use for processing inbound emails that have been marked as spam.")
+  @JsonProperty("spamFlow")
+  public UriReference getSpamFlow() {
+    return spamFlow;
+  }
+  public void setSpamFlow(UriReference spamFlow) {
+    this.spamFlow = spamFlow;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -246,12 +285,14 @@ public class InboundRoute  implements Serializable {
         Objects.equals(this.fromEmail, inboundRoute.fromEmail) &&
         Objects.equals(this.flow, inboundRoute.flow) &&
         Objects.equals(this.replyEmailAddress, inboundRoute.replyEmailAddress) &&
+        Objects.equals(this.autoBcc, inboundRoute.autoBcc) &&
+        Objects.equals(this.spamFlow, inboundRoute.spamFlow) &&
         Objects.equals(this.selfUri, inboundRoute.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, selfUri);
+    return Objects.hash(id, name, pattern, queue, priority, skills, language, fromName, fromEmail, flow, replyEmailAddress, autoBcc, spamFlow, selfUri);
   }
 
   @Override
@@ -270,6 +311,8 @@ public class InboundRoute  implements Serializable {
     sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    replyEmailAddress: ").append(toIndentedString(replyEmailAddress)).append("\n");
+    sb.append("    autoBcc: ").append(toIndentedString(autoBcc)).append("\n");
+    sb.append("    spamFlow: ").append(toIndentedString(spamFlow)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -210,6 +211,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationSocialExpressionEventTopicJourneyContext journeyContext = null;
   private String socialMediaId = null;
   private String socialMediaHub = null;
   private String socialUserName = null;
@@ -711,6 +713,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant journeyContext(ConversationSocialExpressionEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationSocialExpressionEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationSocialExpressionEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant socialMediaId(String socialMediaId) {
     this.socialMediaId = socialMediaId;
     return this;
@@ -816,6 +835,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
         Objects.equals(this.peer, conversationSocialExpressionEventTopicSocialMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationSocialExpressionEventTopicSocialMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationSocialExpressionEventTopicSocialMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationSocialExpressionEventTopicSocialMediaParticipant.journeyContext) &&
         Objects.equals(this.socialMediaId, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaId) &&
         Objects.equals(this.socialMediaHub, conversationSocialExpressionEventTopicSocialMediaParticipant.socialMediaHub) &&
         Objects.equals(this.socialUserName, conversationSocialExpressionEventTopicSocialMediaParticipant.socialUserName) &&
@@ -824,7 +844,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -861,6 +881,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    socialMediaId: ").append(toIndentedString(socialMediaId)).append("\n");
     sb.append("    socialMediaHub: ").append(toIndentedString(socialMediaHub)).append("\n");
     sb.append("    socialUserName: ").append(toIndentedString(socialUserName)).append("\n");

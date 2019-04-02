@@ -118,6 +118,7 @@ public class SocialExpression  implements Serializable {
   }
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -324,6 +325,24 @@ public class SocialExpression  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public SocialExpression startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public SocialExpression connectedTime(Date connectedTime) {
@@ -434,6 +453,7 @@ public class SocialExpression  implements Serializable {
         Objects.equals(this.held, socialExpression.held) &&
         Objects.equals(this.disconnectType, socialExpression.disconnectType) &&
         Objects.equals(this.startHoldTime, socialExpression.startHoldTime) &&
+        Objects.equals(this.startAlertingTime, socialExpression.startAlertingTime) &&
         Objects.equals(this.connectedTime, socialExpression.connectedTime) &&
         Objects.equals(this.disconnectedTime, socialExpression.disconnectedTime) &&
         Objects.equals(this.provider, socialExpression.provider) &&
@@ -443,7 +463,7 @@ public class SocialExpression  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
   }
 
   @Override
@@ -462,6 +482,7 @@ public class SocialExpression  implements Serializable {
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

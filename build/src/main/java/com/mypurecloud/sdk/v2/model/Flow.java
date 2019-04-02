@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -21,7 +21,7 @@ public class Flow  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
+  private WritableDivision division = null;
   private String description = null;
 
   /**
@@ -119,17 +119,17 @@ public class Flow  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public Flow division(Division division) {
+  public Flow division(WritableDivision division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public Division getDivision() {
+  public WritableDivision getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
+  public void setDivision(WritableDivision division) {
     this.division = division;
   }
 

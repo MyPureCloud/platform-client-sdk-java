@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceAudioRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
@@ -438,6 +439,86 @@ public class ArchitectApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteArchitectPromptResource(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectPromptResourceAudio(String promptId, String languageCode) throws IOException, ApiException {
+     deleteArchitectPromptResourceAudio(createDeleteArchitectPromptResourceAudioRequest(promptId, languageCode));
+  }
+
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param promptId Prompt ID (required)
+   * @param languageCode Language (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectPromptResourceAudioWithHttpInfo(String promptId, String languageCode) throws IOException {
+    return deleteArchitectPromptResourceAudio(createDeleteArchitectPromptResourceAudioRequest(promptId, languageCode).withHttpInfo());
+  }
+
+  private DeleteArchitectPromptResourceAudioRequest createDeleteArchitectPromptResourceAudioRequest(String promptId, String languageCode) {
+    return DeleteArchitectPromptResourceAudioRequest.builder()
+            .withPromptId(promptId)
+    
+            .withLanguageCode(languageCode)
+    
+            .build();
+  }
+
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteArchitectPromptResourceAudio(DeleteArchitectPromptResourceAudioRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteArchitectPromptResourceAudio(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -928,7 +1009,7 @@ public class ArchitectApi {
   
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param datatableId id of datatable (required)
    * @param force force delete, even if in use (optional, default to false)
    * @throws ApiException if the request fails on the server
@@ -940,7 +1021,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param datatableId id of datatable (required)
    * @param force force delete, even if in use (optional, default to false)
    * @throws IOException if the request fails to be processed
@@ -960,7 +1041,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -978,7 +1059,7 @@ public class ArchitectApi {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1008,7 +1089,7 @@ public class ArchitectApi {
   
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @throws ApiException if the request fails on the server
@@ -1020,7 +1101,7 @@ public class ArchitectApi {
 
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @throws IOException if the request fails to be processed
@@ -1040,7 +1121,7 @@ public class ArchitectApi {
 
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1058,7 +1139,7 @@ public class ArchitectApi {
 
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2627,7 +2708,7 @@ public class ArchitectApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException, ApiException {
+  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException, ApiException {
     return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder));
   }
 
@@ -2644,11 +2725,11 @@ public class ArchitectApi {
    * @return PromptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException {
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) throws IOException {
     return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, String name, String description, String nameOrDescription, String sortBy, String sortOrder) {
+  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -4210,7 +4291,7 @@ public class ArchitectApi {
   
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param datatableId id of datatable (required)
    * @param expand Expand instructions for the result (optional)
    * @return DataTable
@@ -4223,7 +4304,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param datatableId id of datatable (required)
    * @param expand Expand instructions for the result (optional)
    * @return DataTable
@@ -4244,7 +4325,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param request The request object
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -4263,7 +4344,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4293,7 +4374,7 @@ public class ArchitectApi {
   
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param datatableId id of datatable (required)
    * @param rowId The key for the row (required)
    * @param showbrief if true returns just the key field for the row (optional, default to true)
@@ -4307,7 +4388,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param datatableId id of datatable (required)
    * @param rowId The key for the row (required)
    * @param showbrief if true returns just the key field for the row (optional, default to true)
@@ -4331,7 +4412,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param request The request object
    * @return Map<String, Object>
    * @throws ApiException if the request fails on the server
@@ -4350,7 +4431,7 @@ public class ArchitectApi {
 
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4379,8 +4460,8 @@ public class ArchitectApi {
 
   
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param datatableId id of datatable (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4394,8 +4475,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param datatableId id of datatable (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4421,8 +4502,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param request The request object
    * @return DataTableRowEntityListing
    * @throws ApiException if the request fails on the server
@@ -4440,8 +4521,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4471,7 +4552,7 @@ public class ArchitectApi {
   
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param expand Expand instructions for the result (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4487,7 +4568,7 @@ public class ArchitectApi {
 
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param expand Expand instructions for the result (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -4517,7 +4598,7 @@ public class ArchitectApi {
 
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param request The request object
    * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
@@ -4536,7 +4617,7 @@ public class ArchitectApi {
 
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5640,11 +5721,11 @@ public class ArchitectApi {
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
-   * @return Flow
+   * @return Operation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Flow postFlowsActionsCheckin(String flow) throws IOException, ApiException {
+  public Operation postFlowsActionsCheckin(String flow) throws IOException, ApiException {
     return  postFlowsActionsCheckin(createPostFlowsActionsCheckinRequest(flow));
   }
 
@@ -5652,10 +5733,10 @@ public class ArchitectApi {
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param flow Flow ID (required)
-   * @return Flow
+   * @return Operation
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckinWithHttpInfo(String flow) throws IOException {
+  public ApiResponse<Operation> postFlowsActionsCheckinWithHttpInfo(String flow) throws IOException {
     return postFlowsActionsCheckin(createPostFlowsActionsCheckinRequest(flow).withHttpInfo());
   }
 
@@ -5670,13 +5751,13 @@ public class ArchitectApi {
    * Check-in flow
    * Asynchronous.  Notification topic: v2.flows.{flowId}
    * @param request The request object
-   * @return Flow
+   * @return Operation
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Flow postFlowsActionsCheckin(PostFlowsActionsCheckinRequest request) throws IOException, ApiException {
+  public Operation postFlowsActionsCheckin(PostFlowsActionsCheckinRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Flow> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Flow>() {});
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5692,13 +5773,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsActionsCheckin(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Operation> postFlowsActionsCheckin(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Flow>() {});
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5709,7 +5790,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6115,8 +6196,8 @@ public class ArchitectApi {
 
   
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param datatableId id of datatable (required)
    * @param dataTableRow  (required)
    * @return Map<String, Object>
@@ -6128,8 +6209,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param datatableId id of datatable (required)
    * @param dataTableRow  (required)
    * @return Map<String, Object>
@@ -6149,8 +6230,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param request The request object
    * @return Map<String, Object>
    * @throws ApiException if the request fails on the server
@@ -6168,8 +6249,8 @@ public class ArchitectApi {
   }
 
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6199,7 +6280,7 @@ public class ArchitectApi {
   
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -6211,7 +6292,7 @@ public class ArchitectApi {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param body datatable json-schema (required)
    * @return DataTable
    * @throws IOException if the request fails to be processed
@@ -6229,7 +6310,7 @@ public class ArchitectApi {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request The request object
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -6248,7 +6329,7 @@ public class ArchitectApi {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6950,7 +7031,7 @@ public class ArchitectApi {
   
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
    * @param expand Expand instructions for the result (optional)
    * @param body datatable json-schema (optional)
@@ -6964,7 +7045,7 @@ public class ArchitectApi {
 
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
    * @param expand Expand instructions for the result (optional)
    * @param body datatable json-schema (optional)
@@ -6988,7 +7069,7 @@ public class ArchitectApi {
 
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param request The request object
    * @return DataTable
    * @throws ApiException if the request fails on the server
@@ -7007,7 +7088,7 @@ public class ArchitectApi {
 
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7037,7 +7118,7 @@ public class ArchitectApi {
   
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @param body datatable row (optional)
@@ -7051,7 +7132,7 @@ public class ArchitectApi {
 
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param datatableId id of datatable (required)
    * @param rowId the key for the row (required)
    * @param body datatable row (optional)
@@ -7075,7 +7156,7 @@ public class ArchitectApi {
 
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param request The request object
    * @return Map<String, Object>
    * @throws ApiException if the request fails on the server
@@ -7094,7 +7175,7 @@ public class ArchitectApi {
 
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

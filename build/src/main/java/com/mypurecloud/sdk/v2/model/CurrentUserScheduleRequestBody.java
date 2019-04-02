@@ -18,6 +18,7 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
   
   private Date startDate = null;
   private Date endDate = null;
+  private Boolean loadFullWeeks = null;
 
   
   /**
@@ -56,6 +57,24 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
   }
 
   
+  /**
+   * Whether to load the full week's schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false
+   **/
+  public CurrentUserScheduleRequestBody loadFullWeeks(Boolean loadFullWeeks) {
+    this.loadFullWeeks = loadFullWeeks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to load the full week's schedule (for the current user) of any week overlapping the start/end date query parameters, defaults to false")
+  @JsonProperty("loadFullWeeks")
+  public Boolean getLoadFullWeeks() {
+    return loadFullWeeks;
+  }
+  public void setLoadFullWeeks(Boolean loadFullWeeks) {
+    this.loadFullWeeks = loadFullWeeks;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,12 +86,13 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     }
     CurrentUserScheduleRequestBody currentUserScheduleRequestBody = (CurrentUserScheduleRequestBody) o;
     return Objects.equals(this.startDate, currentUserScheduleRequestBody.startDate) &&
-        Objects.equals(this.endDate, currentUserScheduleRequestBody.endDate);
+        Objects.equals(this.endDate, currentUserScheduleRequestBody.endDate) &&
+        Objects.equals(this.loadFullWeeks, currentUserScheduleRequestBody.loadFullWeeks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate);
+    return Objects.hash(startDate, endDate, loadFullWeeks);
   }
 
   @Override
@@ -82,6 +102,7 @@ public class CurrentUserScheduleRequestBody  implements Serializable {
     
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    loadFullWeeks: ").append(toIndentedString(loadFullWeeks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

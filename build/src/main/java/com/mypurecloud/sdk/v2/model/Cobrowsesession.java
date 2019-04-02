@@ -116,6 +116,7 @@ public class Cobrowsesession  implements Serializable {
   private List<String> controlling = new ArrayList<String>();
   private String viewerUrl = null;
   private Date providerEventTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -286,6 +287,24 @@ public class Cobrowsesession  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Cobrowsesession startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public Cobrowsesession connectedTime(Date connectedTime) {
@@ -394,6 +413,7 @@ public class Cobrowsesession  implements Serializable {
         Objects.equals(this.controlling, cobrowsesession.controlling) &&
         Objects.equals(this.viewerUrl, cobrowsesession.viewerUrl) &&
         Objects.equals(this.providerEventTime, cobrowsesession.providerEventTime) &&
+        Objects.equals(this.startAlertingTime, cobrowsesession.startAlertingTime) &&
         Objects.equals(this.connectedTime, cobrowsesession.connectedTime) &&
         Objects.equals(this.disconnectedTime, cobrowsesession.disconnectedTime) &&
         Objects.equals(this.provider, cobrowsesession.provider) &&
@@ -403,7 +423,7 @@ public class Cobrowsesession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, connectedTime, disconnectedTime, provider, peerId, segments);
+    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments);
   }
 
   @Override
@@ -420,6 +440,7 @@ public class Cobrowsesession  implements Serializable {
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");
     sb.append("    providerEventTime: ").append(toIndentedString(providerEventTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

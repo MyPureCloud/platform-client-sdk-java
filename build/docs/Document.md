@@ -36,8 +36,8 @@ title: Document
 | **lockInfo** | [**LockInfo**](LockInfo.html) |  |  [optional] |
 | **acl** | **List&lt;String&gt;** | A list of permitted action rights for the user making the request |  [optional] |
 | **sharingStatus** | [**SharingStatusEnum**](#SharingStatusEnum) |  |  [optional] |
-| **downloadSharingUri** | **String** |  |  [optional] |
 | **sharingUri** | **String** |  |  [optional] |
+| **downloadSharingUri** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

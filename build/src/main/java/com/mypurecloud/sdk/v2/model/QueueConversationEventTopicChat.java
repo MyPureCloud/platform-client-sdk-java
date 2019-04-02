@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicJourneyContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -115,6 +116,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
   private Date startHoldTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private QueueConversationEventTopicJourneyContext journeyContext = null;
   private Object additionalProperties = null;
 
   
@@ -307,6 +309,23 @@ public class QueueConversationEventTopicChat  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicChat journeyContext(QueueConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicChat additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -343,12 +362,13 @@ public class QueueConversationEventTopicChat  implements Serializable {
         Objects.equals(this.startHoldTime, queueConversationEventTopicChat.startHoldTime) &&
         Objects.equals(this.connectedTime, queueConversationEventTopicChat.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationEventTopicChat.disconnectedTime) &&
+        Objects.equals(this.journeyContext, queueConversationEventTopicChat.journeyContext) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicChat.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, peerId, roomId, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, additionalProperties);
   }
 
   @Override
@@ -367,6 +387,7 @@ public class QueueConversationEventTopicChat  implements Serializable {
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

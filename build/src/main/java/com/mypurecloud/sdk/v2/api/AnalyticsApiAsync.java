@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
@@ -245,13 +246,13 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversation> getAnalyticsConversationsDetailsAsync(GetAnalyticsConversationsDetailsRequest request, final AsyncApiCallback<AnalyticsConversation> callback) {
+  public Future<AnalyticsConversationMultiGetResponse> getAnalyticsConversationsDetailsAsync(GetAnalyticsConversationsDetailsRequest request, final AsyncApiCallback<AnalyticsConversationMultiGetResponse> callback) {
     try {
-      final SettableFuture<AnalyticsConversation> future = SettableFuture.create();
+      final SettableFuture<AnalyticsConversationMultiGetResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversation> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationMultiGetResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -279,13 +280,13 @@ public class AnalyticsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
+  public Future<ApiResponse<AnalyticsConversationMultiGetResponse>> getAnalyticsConversationsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AnalyticsConversationMultiGetResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversation> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationMultiGetResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -293,7 +294,7 @@ public class AnalyticsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)exception;
+            ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -301,7 +302,7 @@ public class AnalyticsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -22,6 +22,7 @@ title: MediaTranscription
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | VOCI | &quot;VOCI&quot; |
+| CALLJOURNEY | &quot;CALLJOURNEY&quot; |
 {: class="table table-striped"}
 
 

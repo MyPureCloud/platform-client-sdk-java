@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | Get license assignments for the organization. |
 | [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Get PureCloud license feature toggle value. |
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
+| [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | Get a page of users and their licenses |
 | [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization&#39;s license assignments in a batch. |
 | [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
@@ -333,6 +334,73 @@ try {
 ### Return type
 
 [**LicenseUser**](LicenseUser.html)
+
+<a name="getLicenseUsers"></a>
+
+# **getLicenseUsers**
+
+
+
+> [UserLicensesEntityListing](UserLicensesEntityListing.html) getLicenseUsers(pageSize, pageNumber)
+
+Get a page of users and their licenses
+
+Retrieve a page of users in an organization along with the licenses they possess.
+
+Wraps GET /api/v2/license/users  
+
+Requires ANY permissions: 
+
+* admin
+* role_manager
+* authorization:grant:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LicenseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LicenseApi apiInstance = new LicenseApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    UserLicensesEntityListing result = apiInstance.getLicenseUsers(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LicenseApi#getLicenseUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserLicensesEntityListing**](UserLicensesEntityListing.html)
 
 <a name="postLicenseOrganization"></a>
 

@@ -86,16 +86,16 @@ public class GetArchitectPromptsRequest {
 	    return this;
 	} 
 	
-	private String name;
-	public String getName() {
+	private List<String> name;
+	public List<String> getName() {
 		return this.name;
 	}
 
-	public void setName(String name) {
+	public void setName(List<String> name) {
 		this.name = name;
 	}
 
-	public GetArchitectPromptsRequest withName(String name) {
+	public GetArchitectPromptsRequest withName(List<String> name) {
 	    this.setName(name);
 	    return this;
 	} 
@@ -183,7 +183,7 @@ public class GetArchitectPromptsRequest {
         
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withQueryParameters("name", "", name)
+                .withQueryParameters("name", "multi", name)
         
                 .withQueryParameters("description", "", description)
         
@@ -224,7 +224,7 @@ public class GetArchitectPromptsRequest {
 			return this;
 		}
 		
-		public Builder withName(String name) {
+		public Builder withName(List<String> name) {
 			request.setName(name);
 			return this;
 		}

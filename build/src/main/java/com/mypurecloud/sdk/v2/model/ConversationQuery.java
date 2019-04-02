@@ -26,8 +26,6 @@ public class ConversationQuery  implements Serializable {
   private List<AnalyticsQueryFilter> surveyFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> mediaEndpointStatFilters = new ArrayList<AnalyticsQueryFilter>();
   private List<AnalyticsQueryFilter> segmentFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryAggregation> aggregations = new ArrayList<AnalyticsQueryAggregation>();
-  private PagingSpec paging = null;
 
   /**
    * Sort the result set in ascending/descending order. Default is ascending
@@ -100,6 +98,8 @@ public class ConversationQuery  implements Serializable {
     }
   }
   private OrderByEnum orderBy = null;
+  private List<AnalyticsQueryAggregation> aggregations = new ArrayList<AnalyticsQueryAggregation>();
+  private PagingSpec paging = null;
 
   
   /**
@@ -211,42 +211,6 @@ public class ConversationQuery  implements Serializable {
 
   
   /**
-   * Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
-   **/
-  public ConversationQuery aggregations(List<AnalyticsQueryAggregation> aggregations) {
-    this.aggregations = aggregations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters")
-  @JsonProperty("aggregations")
-  public List<AnalyticsQueryAggregation> getAggregations() {
-    return aggregations;
-  }
-  public void setAggregations(List<AnalyticsQueryAggregation> aggregations) {
-    this.aggregations = aggregations;
-  }
-
-  
-  /**
-   * Page size and number to control iterating through large result sets. Default page size is 25
-   **/
-  public ConversationQuery paging(PagingSpec paging) {
-    this.paging = paging;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Page size and number to control iterating through large result sets. Default page size is 25")
-  @JsonProperty("paging")
-  public PagingSpec getPaging() {
-    return paging;
-  }
-  public void setPaging(PagingSpec paging) {
-    this.paging = paging;
-  }
-
-  
-  /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
   public ConversationQuery order(OrderEnum order) {
@@ -282,6 +246,42 @@ public class ConversationQuery  implements Serializable {
   }
 
   
+  /**
+   * Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters
+   **/
+  public ConversationQuery aggregations(List<AnalyticsQueryAggregation> aggregations) {
+    this.aggregations = aggregations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Include faceted search and aggregate roll-ups describing your search results. This does not function as a filter, but rather, summary data about the data matching your filters")
+  @JsonProperty("aggregations")
+  public List<AnalyticsQueryAggregation> getAggregations() {
+    return aggregations;
+  }
+  public void setAggregations(List<AnalyticsQueryAggregation> aggregations) {
+    this.aggregations = aggregations;
+  }
+
+  
+  /**
+   * Page size and number to control iterating through large result sets. Default page size is 25
+   **/
+  public ConversationQuery paging(PagingSpec paging) {
+    this.paging = paging;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Page size and number to control iterating through large result sets. Default page size is 25")
+  @JsonProperty("paging")
+  public PagingSpec getPaging() {
+    return paging;
+  }
+  public void setPaging(PagingSpec paging) {
+    this.paging = paging;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -298,15 +298,15 @@ public class ConversationQuery  implements Serializable {
         Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
         Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
-        Objects.equals(this.aggregations, conversationQuery.aggregations) &&
-        Objects.equals(this.paging, conversationQuery.paging) &&
         Objects.equals(this.order, conversationQuery.order) &&
-        Objects.equals(this.orderBy, conversationQuery.orderBy);
+        Objects.equals(this.orderBy, conversationQuery.orderBy) &&
+        Objects.equals(this.aggregations, conversationQuery.aggregations) &&
+        Objects.equals(this.paging, conversationQuery.paging);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, mediaEndpointStatFilters, segmentFilters, aggregations, paging, order, orderBy);
+    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, mediaEndpointStatFilters, segmentFilters, order, orderBy, aggregations, paging);
   }
 
   @Override
@@ -320,10 +320,10 @@ public class ConversationQuery  implements Serializable {
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
     sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
-    sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
-    sb.append("    paging: ").append(toIndentedString(paging)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
+    sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
+    sb.append("    paging: ").append(toIndentedString(paging)).append("\n");
     sb.append("}");
     return sb.toString();
   }

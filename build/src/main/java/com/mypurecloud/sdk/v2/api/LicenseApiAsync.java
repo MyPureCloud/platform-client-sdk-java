@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.LicenseDefinition;
 import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
+import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
 import com.mypurecloud.sdk.v2.model.LicenseBatchAssignmentRequest;
 import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
@@ -27,6 +28,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLicenseUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseUsersRequest;
@@ -419,6 +421,82 @@ public class LicenseApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LicenseUser> response = (ApiResponse<LicenseUser>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserLicensesEntityListing> getLicenseUsersAsync(GetLicenseUsersRequest request, final AsyncApiCallback<UserLicensesEntityListing> callback) {
+    try {
+      final SettableFuture<UserLicensesEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserLicensesEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLicensesEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLicensesEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a page of users and their licenses
+   * Retrieve a page of users in an organization along with the licenses they possess.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserLicensesEntityListing>> getLicenseUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserLicensesEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserLicensesEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserLicensesEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserLicensesEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserLicensesEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLicensesEntityListing> response = (ApiResponse<UserLicensesEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserLicensesEntityListing> response = (ApiResponse<UserLicensesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

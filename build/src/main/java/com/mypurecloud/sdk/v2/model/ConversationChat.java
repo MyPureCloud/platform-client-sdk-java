@@ -146,6 +146,7 @@ public class ConversationChat  implements Serializable {
   }
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -317,6 +318,24 @@ public class ConversationChat  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ConversationChat startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public ConversationChat connectedTime(Date connectedTime) {
@@ -443,6 +462,7 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.direction, conversationChat.direction) &&
         Objects.equals(this.disconnectType, conversationChat.disconnectType) &&
         Objects.equals(this.startHoldTime, conversationChat.startHoldTime) &&
+        Objects.equals(this.startAlertingTime, conversationChat.startAlertingTime) &&
         Objects.equals(this.connectedTime, conversationChat.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationChat.disconnectedTime) &&
         Objects.equals(this.provider, conversationChat.provider) &&
@@ -453,7 +473,7 @@ public class ConversationChat  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, scriptId, peerId, journeyContext);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, journeyContext);
   }
 
   @Override
@@ -470,6 +490,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

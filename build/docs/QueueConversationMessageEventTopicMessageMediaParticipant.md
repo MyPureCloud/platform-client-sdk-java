@@ -37,6 +37,7 @@ title: QueueConversationMessageEventTopicMessageMediaParticipant
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
+| **journeyContext** | [**QueueConversationMessageEventTopicJourneyContext**](QueueConversationMessageEventTopicJourneyContext.html) |  |  [optional] |
 | **messages** | [**List&lt;QueueConversationMessageEventTopicMessageDetails&gt;**](QueueConversationMessageEventTopicMessageDetails.html) |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **recipientCountry** | **String** |  |  [optional] |

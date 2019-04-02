@@ -30,7 +30,7 @@ public class JourneyContext  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A subset of the Journey System's customer data at a point-in-time (for external linkage and internal usage/context)")
+  @ApiModelProperty(example = "null", required = true, value = "A subset of the Journey System's customer data at a point-in-time (for external linkage and internal usage/context)")
   @JsonProperty("customer")
   public JourneyCustomer getCustomer() {
     return customer;

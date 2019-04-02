@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ChatMessageUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,17 +24,58 @@ public class ChatMessage  implements Serializable {
   private String chat = null;
   private String message = null;
   private String type = null;
+
+  /**
+   * Type of the message body (v2 chats only)
+   */
+  public enum BodyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    STANDARD("STANDARD"),
+    ACTIVITY("ACTIVITY"),
+    TYPING("TYPING"),
+    NOTICE("NOTICE"),
+    MEMBERJOIN("MEMBERJOIN"),
+    MEMBERLEAVE("MEMBERLEAVE"),
+    MEDIAREQUEST("MEDIAREQUEST");
+
+    private String value;
+
+    BodyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BodyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BodyTypeEnum value : BodyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BodyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private BodyTypeEnum bodyType = null;
   private ChatMessageUser user = null;
 
   
   /**
+   * The message body
    **/
   public ChatMessage body(String body) {
     this.body = body;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message body")
   @JsonProperty("body")
   public String getBody() {
     return body;
@@ -61,13 +103,14 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * The message recipient
    **/
   public ChatMessage to(String to) {
     this.to = to;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message recipient")
   @JsonProperty("to")
   public String getTo() {
     return to;
@@ -78,13 +121,14 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * The message sender
    **/
   public ChatMessage from(String from) {
     this.from = from;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message sender")
   @JsonProperty("from")
   public String getFrom() {
     return from;
@@ -112,13 +156,14 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * The interaction id (if available)
    **/
   public ChatMessage chat(String chat) {
     this.chat = chat;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The interaction id (if available)")
   @JsonProperty("chat")
   public String getChat() {
     return chat;
@@ -129,13 +174,14 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * The message id
    **/
   public ChatMessage message(String message) {
     this.message = message;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message id")
   @JsonProperty("message")
   public String getMessage() {
     return message;
@@ -163,13 +209,32 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * Type of the message body (v2 chats only)
+   **/
+  public ChatMessage bodyType(BodyTypeEnum bodyType) {
+    this.bodyType = bodyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of the message body (v2 chats only)")
+  @JsonProperty("bodyType")
+  public BodyTypeEnum getBodyType() {
+    return bodyType;
+  }
+  public void setBodyType(BodyTypeEnum bodyType) {
+    this.bodyType = bodyType;
+  }
+
+  
+  /**
+   * The user information for the sender (if available)
    **/
   public ChatMessage user(ChatMessageUser user) {
     this.user = user;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The user information for the sender (if available)")
   @JsonProperty("user")
   public ChatMessageUser getUser() {
     return user;
@@ -197,12 +262,13 @@ public class ChatMessage  implements Serializable {
         Objects.equals(this.chat, chatMessage.chat) &&
         Objects.equals(this.message, chatMessage.message) &&
         Objects.equals(this.type, chatMessage.type) &&
+        Objects.equals(this.bodyType, chatMessage.bodyType) &&
         Objects.equals(this.user, chatMessage.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(body, id, to, from, utc, chat, message, type, user);
+    return Objects.hash(body, id, to, from, utc, chat, message, type, bodyType, user);
   }
 
   @Override
@@ -218,6 +284,7 @@ public class ChatMessage  implements Serializable {
     sb.append("    chat: ").append(toIndentedString(chat)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    bodyType: ").append(toIndentedString(bodyType)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();

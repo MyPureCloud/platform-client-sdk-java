@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **deleteWebchatDeployment**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWebchatDeployment(deploymentId)
 
@@ -141,7 +141,7 @@ null (empty response body)
 
 # **getWebchatDeployment**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatDeployment](WebChatDeployment.html) getWebchatDeployment(deploymentId)
 
@@ -204,7 +204,7 @@ try {
 
 # **getWebchatDeployments**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatDeploymentEntityListing](WebChatDeploymentEntityListing.html) getWebchatDeployments()
 
@@ -322,7 +322,7 @@ This endpoint does not require any parameters.
 
 # **postWebchatDeployments**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatDeployment](WebChatDeployment.html) postWebchatDeployments(body)
 
@@ -385,7 +385,7 @@ try {
 
 # **putWebchatDeployment**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WebChatDeployment](WebChatDeployment.html) putWebchatDeployment(deploymentId, body)
 

@@ -12,10 +12,12 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
+import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
 import com.mypurecloud.sdk.v2.model.RescheduleResult;
@@ -23,18 +25,24 @@ import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
 import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
+import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
-import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
+import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
+import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.ForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.NotificationsResponse;
+import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAgentRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
@@ -60,6 +68,13 @@ import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.UserSchedulesPartialUploadRequest;
 import com.mypurecloud.sdk.v2.model.PartialUploadResponse;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastResponse;
 import com.mypurecloud.sdk.v2.model.CopyShortTermForecastRequest;
 import com.mypurecloud.sdk.v2.model.ImportShortTermForecastRequest;
@@ -69,8 +84,11 @@ import com.mypurecloud.sdk.v2.model.RouteGroupList;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
+import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.UpdateShiftTradeStateRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
@@ -81,10 +99,12 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitIntradayQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunResultRequest;
@@ -92,21 +112,28 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSc
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitServicegoalgroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShorttermforecastFinalRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitServicegoalgroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSettingsRequest;
@@ -128,6 +155,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesPartialuploadRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsGenerateRequest;
@@ -135,8 +166,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitWeekShifttradeStateRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -801,6 +834,85 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get status of the modeling job
+   * 
+   * @param jobId The id of the modeling job (required)
+   * @return ModelingStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId));
+  }
+
+  /**
+   * Get status of the modeling job
+   * 
+   * @param jobId The id of the modeling job (required)
+   * @return ModelingStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementAdhocmodelingjob(createGetWorkforcemanagementAdhocmodelingjobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAdhocmodelingjobRequest createGetWorkforcemanagementAdhocmodelingjobRequest(String jobId) {
+    return GetWorkforcemanagementAdhocmodelingjobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get status of the modeling job
+   * 
+   * @param request The request object
+   * @return ModelingStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(GetWorkforcemanagementAdhocmodelingjobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ModelingStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ModelingStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of the modeling job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelingStatusResponse> getWorkforcemanagementAdhocmodelingjob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ModelingStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get management unit
    * 
    * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -1123,6 +1235,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmAgent> response = (ApiResponse<WfmAgent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(String managementUnitId, String agentId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId));
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @return ShiftTradeListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttradesWithHttpInfo(String managementUnitId, String agentId) throws IOException {
+    return getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitAgentShifttradesRequest createGetWorkforcemanagementManagementunitAgentShifttradesRequest(String managementUnitId, String agentId) {
+    return GetWorkforcemanagementManagementunitAgentShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withAgentId(agentId)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param request The request object
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(GetWorkforcemanagementManagementunitAgentShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1698,6 +1893,164 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Gets a summary of all shift trades in the matched state
+   * 
+   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @return ShiftTradeMatchesSummaryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(String muId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(muId));
+  }
+
+  /**
+   * Gets a summary of all shift trades in the matched state
+   * 
+   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @return ShiftTradeMatchesSummaryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatchedWithHttpInfo(String muId) throws IOException {
+    return getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(muId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitShifttradesMatchedRequest createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(String muId) {
+    return GetWorkforcemanagementManagementunitShifttradesMatchedRequest.builder()
+            .withMuId(muId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a summary of all shift trades in the matched state
+   * 
+   * @param request The request object
+   * @return ShiftTradeMatchesSummaryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(GetWorkforcemanagementManagementunitShifttradesMatchedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeMatchesSummaryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeMatchesSummaryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a summary of all shift trades in the matched state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatched(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeMatchesSummaryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchesSummaryResponse> response = (ApiResponse<ShiftTradeMatchesSummaryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeMatchesSummaryResponse> response = (ApiResponse<ShiftTradeMatchesSummaryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets list of users available for whom you can send direct shift trade requests
+   * 
+   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @return WfmUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(String muId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(muId));
+  }
+
+  /**
+   * Gets list of users available for whom you can send direct shift trade requests
+   * 
+   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @return WfmUserEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitShifttradesUsersWithHttpInfo(String muId) throws IOException {
+    return getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(muId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitShifttradesUsersRequest createGetWorkforcemanagementManagementunitShifttradesUsersRequest(String muId) {
+    return GetWorkforcemanagementManagementunitShifttradesUsersRequest.builder()
+            .withMuId(muId)
+    
+            .build();
+  }
+
+  /**
+   * Gets list of users available for whom you can send direct shift trade requests
+   * 
+   * @param request The request object
+   * @return WfmUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(GetWorkforcemanagementManagementunitShifttradesUsersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmUserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmUserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets list of users available for whom you can send direct shift trade requests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitShifttradesUsers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmUserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmUserEntityListing> response = (ApiResponse<WfmUserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmUserEntityListing> response = (ApiResponse<WfmUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a time off request
    * 
    * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -2210,6 +2563,93 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WeekScheduleListResponse> response = (ApiResponse<WeekScheduleListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @return WeekShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches));
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @return WeekShiftTradeListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException {
+    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) {
+    return GetWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withEvaluateMatches(evaluateMatches)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param request The request object
+   * @return WeekShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(GetWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WeekShiftTradeListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WeekShiftTradeListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WeekShiftTradeListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WeekShiftTradeListResponse> response = (ApiResponse<WeekShiftTradeListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WeekShiftTradeListResponse> response = (ApiResponse<WeekShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2730,6 +3170,235 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get a list of notifications for the current user
+   * 
+   * @return NotificationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotificationsResponse getWorkforcemanagementNotifications() throws IOException, ApiException {
+    return  getWorkforcemanagementNotifications(createGetWorkforcemanagementNotificationsRequest());
+  }
+
+  /**
+   * Get a list of notifications for the current user
+   * 
+   * @return NotificationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotificationsResponse> getWorkforcemanagementNotificationsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementNotifications(createGetWorkforcemanagementNotificationsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementNotificationsRequest createGetWorkforcemanagementNotificationsRequest() {
+    return GetWorkforcemanagementNotificationsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of notifications for the current user
+   * 
+   * @param request The request object
+   * @return NotificationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NotificationsResponse getWorkforcemanagementNotifications(GetWorkforcemanagementNotificationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NotificationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NotificationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of notifications for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NotificationsResponse> getWorkforcemanagementNotifications(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NotificationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotificationsResponse> response = (ApiResponse<NotificationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NotificationsResponse> response = (ApiResponse<NotificationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get status of the scheduling job
+   * 
+   * @param jobId The id of the scheduling job (required)
+   * @return SchedulingStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchedulingStatusResponse getWorkforcemanagementSchedulingjob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementSchedulingjob(createGetWorkforcemanagementSchedulingjobRequest(jobId));
+  }
+
+  /**
+   * Get status of the scheduling job
+   * 
+   * @param jobId The id of the scheduling job (required)
+   * @return SchedulingStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchedulingStatusResponse> getWorkforcemanagementSchedulingjobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementSchedulingjob(createGetWorkforcemanagementSchedulingjobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSchedulingjobRequest createGetWorkforcemanagementSchedulingjobRequest(String jobId) {
+    return GetWorkforcemanagementSchedulingjobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get status of the scheduling job
+   * 
+   * @param request The request object
+   * @return SchedulingStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SchedulingStatusResponse getWorkforcemanagementSchedulingjob(GetWorkforcemanagementSchedulingjobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SchedulingStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SchedulingStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of the scheduling job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SchedulingStatusResponse> getWorkforcemanagementSchedulingjob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SchedulingStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchedulingStatusResponse> response = (ApiResponse<SchedulingStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SchedulingStatusResponse> response = (ApiResponse<SchedulingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all of my shift trades
+   * 
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementShifttrades() throws IOException, ApiException {
+    return  getWorkforcemanagementShifttrades(createGetWorkforcemanagementShifttradesRequest());
+  }
+
+  /**
+   * Gets all of my shift trades
+   * 
+   * @return ShiftTradeListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementShifttradesWithHttpInfo() throws IOException {
+    return getWorkforcemanagementShifttrades(createGetWorkforcemanagementShifttradesRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementShifttradesRequest createGetWorkforcemanagementShifttradesRequest() {
+    return GetWorkforcemanagementShifttradesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Gets all of my shift trades
+   * 
+   * @param request The request object
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementShifttrades(GetWorkforcemanagementShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all of my shift trades
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementShifttrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a time off request for the current user
    * 
    * @param timeOffRequestId Time Off Request Id (required)
@@ -2969,6 +3638,90 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityCode> response = (ApiResponse<ActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update agent details
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @param body The request body (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementManagementunitAgent(String managementUnitId, String agentId, UpdateAgentRequest body) throws IOException, ApiException {
+     patchWorkforcemanagementManagementunitAgent(createPatchWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, body));
+  }
+
+  /**
+   * Update agent details
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @param body The request body (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementManagementunitAgentWithHttpInfo(String managementUnitId, String agentId, UpdateAgentRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitAgent(createPatchWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitAgentRequest createPatchWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId, UpdateAgentRequest body) {
+    return PatchWorkforcemanagementManagementunitAgentRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withAgentId(agentId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update agent details
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementManagementunitAgent(PatchWorkforcemanagementManagementunitAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update agent details
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementManagementunitAgent(ApiRequest<UpdateAgentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4794,6 +5547,362 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return MatchShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId));
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return MatchShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchWithHttpInfo(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) {
+    return PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withTradeId(tradeId)
+    
+            .build();
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param request The request object
+   * @return MatchShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MatchShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MatchShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatch(ApiRequest<MatchShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MatchShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MatchShiftTradeResponse> response = (ApiResponse<MatchShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MatchShiftTradeResponse> response = (ApiResponse<MatchShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeUpdate(String managementUnitId, LocalDate weekDateId, UpdateShiftTradeRequest body, String tradeId) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradeUpdate(createPostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest(managementUnitId, weekDateId, body, tradeId));
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return ShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeUpdateWithHttpInfo(String managementUnitId, LocalDate weekDateId, UpdateShiftTradeRequest body, String tradeId) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradeUpdate(createPostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest createPostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest(String managementUnitId, LocalDate weekDateId, UpdateShiftTradeRequest body, String tradeId) {
+    return PostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withTradeId(tradeId)
+    
+            .build();
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param request The request object
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeUpdate(PostWorkforcemanagementManagementunitWeekShifttradeUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeUpdate(ApiRequest<UpdateShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Adds a shift trade
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body));
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradesRequest createPostWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) {
+    return PostWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param request The request object
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(PostWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<AddShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return SearchShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body));
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return SearchShiftTradesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchWithHttpInfo(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) {
+    return PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param request The request object
+   * @return SearchShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SearchShiftTradesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SearchShiftTradesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearch(ApiRequest<SearchShiftTradesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SearchShiftTradesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SearchShiftTradesResponse> response = (ApiResponse<SearchShiftTradesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SearchShiftTradesResponse> response = (ApiResponse<SearchShiftTradesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Copy a short term forecast
    * 
    * @param managementUnitId The management unit ID of the management unit to which the forecast belongs (required)
@@ -5407,6 +6516,85 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Mark a list of notifications as read or unread
+   * 
+   * @param body body (optional)
+   * @return UpdateNotificationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(UpdateNotificationsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementNotificationsUpdate(createPostWorkforcemanagementNotificationsUpdateRequest(body));
+  }
+
+  /**
+   * Mark a list of notifications as read or unread
+   * 
+   * @param body body (optional)
+   * @return UpdateNotificationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateNotificationsResponse> postWorkforcemanagementNotificationsUpdateWithHttpInfo(UpdateNotificationsRequest body) throws IOException {
+    return postWorkforcemanagementNotificationsUpdate(createPostWorkforcemanagementNotificationsUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementNotificationsUpdateRequest createPostWorkforcemanagementNotificationsUpdateRequest(UpdateNotificationsRequest body) {
+    return PostWorkforcemanagementNotificationsUpdateRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Mark a list of notifications as read or unread
+   * 
+   * @param request The request object
+   * @return UpdateNotificationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(PostWorkforcemanagementNotificationsUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UpdateNotificationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UpdateNotificationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Mark a list of notifications as read or unread
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UpdateNotificationsResponse> postWorkforcemanagementNotificationsUpdate(ApiRequest<UpdateNotificationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UpdateNotificationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateNotificationsResponse> response = (ApiResponse<UpdateNotificationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UpdateNotificationsResponse> response = (ApiResponse<UpdateNotificationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get published schedule for the current user
    * 
    * @param body body (optional)
@@ -5559,6 +6747,97 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a shift trade state
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse putWorkforcemanagementManagementunitWeekShifttradeState(String managementUnitId, LocalDate weekDateId, String tradeId, UpdateShiftTradeStateRequest body) throws IOException, ApiException {
+    return  putWorkforcemanagementManagementunitWeekShifttradeState(createPutWorkforcemanagementManagementunitWeekShifttradeStateRequest(managementUnitId, weekDateId, tradeId, body));
+  }
+
+  /**
+   * Updates a shift trade state
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> putWorkforcemanagementManagementunitWeekShifttradeStateWithHttpInfo(String managementUnitId, LocalDate weekDateId, String tradeId, UpdateShiftTradeStateRequest body) throws IOException {
+    return putWorkforcemanagementManagementunitWeekShifttradeState(createPutWorkforcemanagementManagementunitWeekShifttradeStateRequest(managementUnitId, weekDateId, tradeId, body).withHttpInfo());
+  }
+
+  private PutWorkforcemanagementManagementunitWeekShifttradeStateRequest createPutWorkforcemanagementManagementunitWeekShifttradeStateRequest(String managementUnitId, LocalDate weekDateId, String tradeId, UpdateShiftTradeStateRequest body) {
+    return PutWorkforcemanagementManagementunitWeekShifttradeStateRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withTradeId(tradeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a shift trade state
+   * 
+   * @param request The request object
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse putWorkforcemanagementManagementunitWeekShifttradeState(PutWorkforcemanagementManagementunitWeekShifttradeStateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a shift trade state
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> putWorkforcemanagementManagementunitWeekShifttradeState(ApiRequest<UpdateShiftTradeStateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

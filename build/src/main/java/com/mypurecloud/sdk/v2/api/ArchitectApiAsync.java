@@ -54,6 +54,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptResourceAudioRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectPromptsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectSchedulegroupRequest;
@@ -422,6 +423,82 @@ public class ArchitectApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteArchitectPromptResourceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteArchitectPromptResourceAudioAsync(DeleteArchitectPromptResourceAudioRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete specified user prompt resource audio
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteArchitectPromptResourceAudioAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -914,7 +991,7 @@ public class ArchitectApiAsync {
   
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -948,7 +1025,7 @@ public class ArchitectApiAsync {
 
   /**
    * deletes a specific datatable by id
-   * deletes an entire datatable (including schema and data) with a given id)
+   * Deletes an entire datatable (including the schema and data) with a given datatableId
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -990,7 +1067,7 @@ public class ArchitectApiAsync {
   
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1024,7 +1101,7 @@ public class ArchitectApiAsync {
 
   /**
    * Delete a row entry
-   * Deletes a row with a given rowId.
+   * Deletes a row with a given rowId (the value of the key field).
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3650,7 +3727,7 @@ public class ArchitectApiAsync {
   
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3684,7 +3761,7 @@ public class ArchitectApiAsync {
 
   /**
    * Returns a specific datatable by id
-   * Given a datableid returns the schema associated with it.
+   * Given a datatableId returns the datatable object and schema associated with it.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3726,7 +3803,7 @@ public class ArchitectApiAsync {
   
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3760,7 +3837,7 @@ public class ArchitectApiAsync {
 
   /**
    * Returns a specific row for the datatable
-   * Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+   * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3801,8 +3878,8 @@ public class ArchitectApiAsync {
 
   
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3835,8 +3912,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Returns the rows for the datatable
-   * Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+   * Returns the rows for the datatable with the given id
+   * Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3878,7 +3955,7 @@ public class ArchitectApiAsync {
   
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3912,7 +3989,7 @@ public class ArchitectApiAsync {
 
   /**
    * Retrieve a list of datatables for the org
-   * Returns a metadata list of the datatables associated with this org, including ID, name and description.
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4947,13 +5024,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Flow> postFlowsActionsCheckinAsync(PostFlowsActionsCheckinRequest request, final AsyncApiCallback<Flow> callback) {
+  public Future<Operation> postFlowsActionsCheckinAsync(PostFlowsActionsCheckinRequest request, final AsyncApiCallback<Operation> callback) {
     try {
-      final SettableFuture<Flow> future = SettableFuture.create();
+      final SettableFuture<Operation> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
-        public void onCompleted(ApiResponse<Flow> response) {
+        public void onCompleted(ApiResponse<Operation> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4981,13 +5058,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Flow>> postFlowsActionsCheckinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Flow>> callback) {
+  public Future<ApiResponse<Operation>> postFlowsActionsCheckinAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
     try {
-      final SettableFuture<ApiResponse<Flow>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Flow>() {}, new AsyncApiCallback<ApiResponse<Flow>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
         @Override
-        public void onCompleted(ApiResponse<Flow> response) {
+        public void onCompleted(ApiResponse<Operation> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4995,7 +5072,7 @@ public class ArchitectApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)exception;
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5003,7 +5080,7 @@ public class ArchitectApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5397,8 +5474,8 @@ public class ArchitectApiAsync {
 
   
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5431,8 +5508,8 @@ public class ArchitectApiAsync {
   }
 
   /**
-   * Create a new row entry
-   * Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+   * Create a new row entry for the datatable.
+   * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5474,7 +5551,7 @@ public class ArchitectApiAsync {
   
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5508,7 +5585,7 @@ public class ArchitectApiAsync {
 
   /**
    * Create a new datatable with the specified json-schema definition
-   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+   * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6158,7 +6235,7 @@ public class ArchitectApiAsync {
   
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6192,7 +6269,7 @@ public class ArchitectApiAsync {
 
   /**
    * Updates a specific datatable by id
-   * Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+   * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6234,7 +6311,7 @@ public class ArchitectApiAsync {
   
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6268,7 +6345,7 @@ public class ArchitectApiAsync {
 
   /**
    * Update a row entry
-   * Updates a row with the given to the new values.
+   * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Address;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -114,11 +115,13 @@ public class Video  implements Serializable {
     }
   }
   private DisconnectTypeEnum disconnectType = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
   private String peerId = null;
   private List<String> msids = new ArrayList<String>();
+  private Address self = null;
 
   
   /**
@@ -266,6 +269,24 @@ public class Video  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Video startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public Video connectedTime(Date connectedTime) {
@@ -355,6 +376,24 @@ public class Video  implements Serializable {
   }
 
   
+  /**
+   * Address and name data for a call endpoint.
+   **/
+  public Video self(Address self) {
+    this.self = self;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Address and name data for a call endpoint.")
+  @JsonProperty("self")
+  public Address getSelf() {
+    return self;
+  }
+  public void setSelf(Address self) {
+    this.self = self;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -373,16 +412,18 @@ public class Video  implements Serializable {
         Objects.equals(this.sharingScreen, video.sharingScreen) &&
         Objects.equals(this.peerCount, video.peerCount) &&
         Objects.equals(this.disconnectType, video.disconnectType) &&
+        Objects.equals(this.startAlertingTime, video.startAlertingTime) &&
         Objects.equals(this.connectedTime, video.connectedTime) &&
         Objects.equals(this.disconnectedTime, video.disconnectedTime) &&
         Objects.equals(this.provider, video.provider) &&
         Objects.equals(this.peerId, video.peerId) &&
-        Objects.equals(this.msids, video.msids);
+        Objects.equals(this.msids, video.msids) &&
+        Objects.equals(this.self, video.self);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId, msids);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self);
   }
 
   @Override
@@ -398,11 +439,13 @@ public class Video  implements Serializable {
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }

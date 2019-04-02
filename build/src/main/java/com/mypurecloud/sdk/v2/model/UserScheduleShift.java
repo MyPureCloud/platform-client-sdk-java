@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserScheduleActivity;
+import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -19,12 +20,31 @@ import java.io.Serializable;
 
 public class UserScheduleShift  implements Serializable {
   
+  private WeekScheduleReference weekSchedule = null;
   private String id = null;
   private Date startDate = null;
   private Integer lengthInMinutes = null;
   private List<UserScheduleActivity> activities = new ArrayList<UserScheduleActivity>();
   private Boolean delete = null;
   private Boolean manuallyEdited = null;
+
+  
+  /**
+   * The schedule to which this shift belongs
+   **/
+  public UserScheduleShift weekSchedule(WeekScheduleReference weekSchedule) {
+    this.weekSchedule = weekSchedule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")
+  @JsonProperty("weekSchedule")
+  public WeekScheduleReference getWeekSchedule() {
+    return weekSchedule;
+  }
+  public void setWeekSchedule(WeekScheduleReference weekSchedule) {
+    this.weekSchedule = weekSchedule;
+  }
 
   
   /**
@@ -123,7 +143,8 @@ public class UserScheduleShift  implements Serializable {
       return false;
     }
     UserScheduleShift userScheduleShift = (UserScheduleShift) o;
-    return Objects.equals(this.id, userScheduleShift.id) &&
+    return Objects.equals(this.weekSchedule, userScheduleShift.weekSchedule) &&
+        Objects.equals(this.id, userScheduleShift.id) &&
         Objects.equals(this.startDate, userScheduleShift.startDate) &&
         Objects.equals(this.lengthInMinutes, userScheduleShift.lengthInMinutes) &&
         Objects.equals(this.activities, userScheduleShift.activities) &&
@@ -133,7 +154,7 @@ public class UserScheduleShift  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startDate, lengthInMinutes, activities, delete, manuallyEdited);
+    return Objects.hash(weekSchedule, id, startDate, lengthInMinutes, activities, delete, manuallyEdited);
   }
 
   @Override
@@ -141,6 +162,7 @@ public class UserScheduleShift  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserScheduleShift {\n");
     
+    sb.append("    weekSchedule: ").append(toIndentedString(weekSchedule)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");

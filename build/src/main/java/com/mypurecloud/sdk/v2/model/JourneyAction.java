@@ -45,7 +45,7 @@ public class JourneyAction  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Details about the action map from the Journey System which triggered this action")
+  @ApiModelProperty(example = "null", required = true, value = "Details about the action map from the Journey System which triggered this action")
   @JsonProperty("actionMap")
   public JourneyActionMap getActionMap() {
     return actionMap;

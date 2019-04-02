@@ -18,9 +18,63 @@ import java.io.Serializable;
 
 public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializable {
   
+  private String weekDate = null;
+  private String weekScheduleId = null;
+  private String id = null;
   private Date startDate = null;
   private Integer lengthInMinutes = null;
   private List<WfmAgentScheduleUpdateTopicWfmScheduleActivity> activities = new ArrayList<WfmAgentScheduleUpdateTopicWfmScheduleActivity>();
+
+  
+  /**
+   **/
+  public WfmAgentScheduleUpdateTopicWfmScheduleShift weekDate(String weekDate) {
+    this.weekDate = weekDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weekDate")
+  public String getWeekDate() {
+    return weekDate;
+  }
+  public void setWeekDate(String weekDate) {
+    this.weekDate = weekDate;
+  }
+
+  
+  /**
+   **/
+  public WfmAgentScheduleUpdateTopicWfmScheduleShift weekScheduleId(String weekScheduleId) {
+    this.weekScheduleId = weekScheduleId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weekScheduleId")
+  public String getWeekScheduleId() {
+    return weekScheduleId;
+  }
+  public void setWeekScheduleId(String weekScheduleId) {
+    this.weekScheduleId = weekScheduleId;
+  }
+
+  
+  /**
+   **/
+  public WfmAgentScheduleUpdateTopicWfmScheduleShift id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
 
   
   /**
@@ -84,14 +138,17 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
       return false;
     }
     WfmAgentScheduleUpdateTopicWfmScheduleShift wfmAgentScheduleUpdateTopicWfmScheduleShift = (WfmAgentScheduleUpdateTopicWfmScheduleShift) o;
-    return Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.startDate) &&
+    return Objects.equals(this.weekDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.weekDate) &&
+        Objects.equals(this.weekScheduleId, wfmAgentScheduleUpdateTopicWfmScheduleShift.weekScheduleId) &&
+        Objects.equals(this.id, wfmAgentScheduleUpdateTopicWfmScheduleShift.id) &&
+        Objects.equals(this.startDate, wfmAgentScheduleUpdateTopicWfmScheduleShift.startDate) &&
         Objects.equals(this.lengthInMinutes, wfmAgentScheduleUpdateTopicWfmScheduleShift.lengthInMinutes) &&
         Objects.equals(this.activities, wfmAgentScheduleUpdateTopicWfmScheduleShift.activities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, lengthInMinutes, activities);
+    return Objects.hash(weekDate, weekScheduleId, id, startDate, lengthInMinutes, activities);
   }
 
   @Override
@@ -99,6 +156,9 @@ public class WfmAgentScheduleUpdateTopicWfmScheduleShift  implements Serializabl
     StringBuilder sb = new StringBuilder();
     sb.append("class WfmAgentScheduleUpdateTopicWfmScheduleShift {\n");
     
+    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
+    sb.append("    weekScheduleId: ").append(toIndentedString(weekScheduleId)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");

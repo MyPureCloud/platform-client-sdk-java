@@ -158,6 +158,7 @@ public class CallbackBasic  implements Serializable {
   private String scriptId = null;
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private Date callbackScheduledTime = null;
@@ -419,6 +420,24 @@ public class CallbackBasic  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallbackBasic startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public CallbackBasic connectedTime(Date connectedTime) {
@@ -550,6 +569,7 @@ public class CallbackBasic  implements Serializable {
         Objects.equals(this.scriptId, callbackBasic.scriptId) &&
         Objects.equals(this.skipEnabled, callbackBasic.skipEnabled) &&
         Objects.equals(this.timeoutSeconds, callbackBasic.timeoutSeconds) &&
+        Objects.equals(this.startAlertingTime, callbackBasic.startAlertingTime) &&
         Objects.equals(this.connectedTime, callbackBasic.connectedTime) &&
         Objects.equals(this.disconnectedTime, callbackBasic.disconnectedTime) &&
         Objects.equals(this.callbackScheduledTime, callbackBasic.callbackScheduledTime) &&
@@ -560,7 +580,7 @@ public class CallbackBasic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
+    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
   }
 
   @Override
@@ -582,6 +602,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");

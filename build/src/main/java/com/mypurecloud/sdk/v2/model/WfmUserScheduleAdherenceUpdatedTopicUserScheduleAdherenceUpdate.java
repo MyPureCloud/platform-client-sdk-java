@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicQueueReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -21,6 +24,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   private String managementUnitId = null;
   private String scheduledActivityCategory = null;
   private String systemPresence = null;
+  private String organizationSecondaryPresenceId = null;
 
   /**
    * Gets or Sets routingStatus
@@ -104,6 +108,8 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   private String impact = null;
   private Date adherenceChangeTime = null;
   private Date presenceUpdateTime = null;
+  private List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTopicQueueReference>();
+  private Date activeQueuesModifiedTime = null;
 
   
   /**
@@ -171,6 +177,23 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   }
   public void setSystemPresence(String systemPresence) {
     this.systemPresence = systemPresence;
+  }
+
+  
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate organizationSecondaryPresenceId(String organizationSecondaryPresenceId) {
+    this.organizationSecondaryPresenceId = organizationSecondaryPresenceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("organizationSecondaryPresenceId")
+  public String getOrganizationSecondaryPresenceId() {
+    return organizationSecondaryPresenceId;
+  }
+  public void setOrganizationSecondaryPresenceId(String organizationSecondaryPresenceId) {
+    this.organizationSecondaryPresenceId = organizationSecondaryPresenceId;
   }
 
   
@@ -293,6 +316,40 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   }
 
   
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate activeQueues(List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> activeQueues) {
+    this.activeQueues = activeQueues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeQueues")
+  public List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> getActiveQueues() {
+    return activeQueues;
+  }
+  public void setActiveQueues(List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> activeQueues) {
+    this.activeQueues = activeQueues;
+  }
+
+  
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate activeQueuesModifiedTime(Date activeQueuesModifiedTime) {
+    this.activeQueuesModifiedTime = activeQueuesModifiedTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeQueuesModifiedTime")
+  public Date getActiveQueuesModifiedTime() {
+    return activeQueuesModifiedTime;
+  }
+  public void setActiveQueuesModifiedTime(Date activeQueuesModifiedTime) {
+    this.activeQueuesModifiedTime = activeQueuesModifiedTime;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -307,18 +364,21 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
         Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.managementUnitId) &&
         Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
         Objects.equals(this.systemPresence, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.systemPresence) &&
+        Objects.equals(this.organizationSecondaryPresenceId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.organizationSecondaryPresenceId) &&
         Objects.equals(this.routingStatus, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.routingStatus) &&
         Objects.equals(this.actualActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.actualActivityCategory) &&
         Objects.equals(this.isOutOfOffice, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.isOutOfOffice) &&
         Objects.equals(this.adherenceState, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceState) &&
         Objects.equals(this.impact, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.impact) &&
         Objects.equals(this.adherenceChangeTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceChangeTime) &&
-        Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.presenceUpdateTime);
+        Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
+        Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueues) &&
+        Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime);
+    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime);
   }
 
   @Override
@@ -330,6 +390,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
     sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
+    sb.append("    organizationSecondaryPresenceId: ").append(toIndentedString(organizationSecondaryPresenceId)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
     sb.append("    actualActivityCategory: ").append(toIndentedString(actualActivityCategory)).append("\n");
     sb.append("    isOutOfOffice: ").append(toIndentedString(isOutOfOffice)).append("\n");
@@ -337,6 +398,8 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    adherenceChangeTime: ").append(toIndentedString(adherenceChangeTime)).append("\n");
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
+    sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
+    sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

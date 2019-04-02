@@ -6,10 +6,13 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
+import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -266,6 +269,8 @@ public class UserScheduleAdherence  implements Serializable {
   private ImpactEnum impact = null;
   private Date timeOfAdherenceChange = null;
   private Date presenceUpdateTime = null;
+  private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
+  private Date activeQueuesModifiedTime = null;
   private String selfUri = null;
 
   
@@ -399,6 +404,31 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
+  /**
+   * The list of queues to which this user is joined
+   **/
+  public UserScheduleAdherence activeQueues(List<QueueReference> activeQueues) {
+    this.activeQueues = activeQueues;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of queues to which this user is joined")
+  @JsonProperty("activeQueues")
+  public List<QueueReference> getActiveQueues() {
+    return activeQueues;
+  }
+  public void setActiveQueues(List<QueueReference> activeQueues) {
+    this.activeQueues = activeQueues;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("activeQueuesModifiedTime")
+  public Date getActiveQueuesModifiedTime() {
+    return activeQueuesModifiedTime;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -430,12 +460,14 @@ public class UserScheduleAdherence  implements Serializable {
         Objects.equals(this.impact, userScheduleAdherence.impact) &&
         Objects.equals(this.timeOfAdherenceChange, userScheduleAdherence.timeOfAdherenceChange) &&
         Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
+        Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
+        Objects.equals(this.activeQueuesModifiedTime, userScheduleAdherence.activeQueuesModifiedTime) &&
         Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, selfUri);
+    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, selfUri);
   }
 
   @Override
@@ -457,6 +489,8 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    impact: ").append(toIndentedString(impact)).append("\n");
     sb.append("    timeOfAdherenceChange: ").append(toIndentedString(timeOfAdherenceChange)).append("\n");
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
+    sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
+    sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

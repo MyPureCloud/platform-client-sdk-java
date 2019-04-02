@@ -8,6 +8,7 @@ title: UserScheduleShift
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **weekSchedule** | [**WeekScheduleReference**](WeekScheduleReference.html) | The schedule to which this shift belongs |  [optional] |
 | **id** | **String** | ID of the schedule shift. This is only for the case of updating and deleting an existing shift |  [optional] |
 | **startDate** | [**Date**](Date.html) | Start time in UTC for this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **lengthInMinutes** | **Integer** | Length of this shift in minutes |  [optional] |

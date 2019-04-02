@@ -307,6 +307,7 @@ public class ViewFilter  implements Serializable {
   private NumericRange surveyPromoterScore = null;
   private List<String> surveyFormContextIds = new ArrayList<String>();
   private List<String> conversationIds = new ArrayList<String>();
+  private List<String> sipCallIds = new ArrayList<String>();
   private Boolean isEnded = null;
   private Boolean isSurveyed = null;
   private List<NumericRange> surveyScores = new ArrayList<NumericRange>();
@@ -1328,6 +1329,24 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * The list of SIP call ids used to filter the view
+   **/
+  public ViewFilter sipCallIds(List<String> sipCallIds) {
+    this.sipCallIds = sipCallIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of SIP call ids used to filter the view")
+  @JsonProperty("sipCallIds")
+  public List<String> getSipCallIds() {
+    return sipCallIds;
+  }
+  public void setSipCallIds(List<String> sipCallIds) {
+    this.sipCallIds = sipCallIds;
+  }
+
+  
+  /**
    * Indicates filtering for ended
    **/
   public ViewFilter isEnded(Boolean isEnded) {
@@ -1832,6 +1851,7 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore) &&
         Objects.equals(this.surveyFormContextIds, viewFilter.surveyFormContextIds) &&
         Objects.equals(this.conversationIds, viewFilter.conversationIds) &&
+        Objects.equals(this.sipCallIds, viewFilter.sipCallIds) &&
         Objects.equals(this.isEnded, viewFilter.isEnded) &&
         Objects.equals(this.isSurveyed, viewFilter.isSurveyed) &&
         Objects.equals(this.surveyScores, viewFilter.surveyScores) &&
@@ -1861,7 +1881,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId);
   }
 
   @Override
@@ -1914,6 +1934,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
     sb.append("    surveyFormContextIds: ").append(toIndentedString(surveyFormContextIds)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
+    sb.append("    sipCallIds: ").append(toIndentedString(sipCallIds)).append("\n");
     sb.append("    isEnded: ").append(toIndentedString(isEnded)).append("\n");
     sb.append("    isSurveyed: ").append(toIndentedString(isSurveyed)).append("\n");
     sb.append("    surveyScores: ").append(toIndentedString(surveyScores)).append("\n");

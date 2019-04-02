@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicFaxStatus;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -211,6 +212,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private QueueConversationCallEventTopicJourneyContext journeyContext = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -754,6 +756,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant journeyContext(QueueConversationCallEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationCallEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationCallEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -978,6 +997,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
         Objects.equals(this.peer, queueConversationCallEventTopicCallMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCallEventTopicCallMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, queueConversationCallEventTopicCallMediaParticipant.journeyContext) &&
         Objects.equals(this.muted, queueConversationCallEventTopicCallMediaParticipant.muted) &&
         Objects.equals(this.confined, queueConversationCallEventTopicCallMediaParticipant.confined) &&
         Objects.equals(this.recording, queueConversationCallEventTopicCallMediaParticipant.recording) &&
@@ -993,7 +1013,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1030,6 +1050,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

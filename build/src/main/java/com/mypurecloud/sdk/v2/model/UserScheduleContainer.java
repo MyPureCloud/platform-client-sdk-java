@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.UserSchedule;
+import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,7 @@ import java.io.Serializable;
 public class UserScheduleContainer  implements Serializable {
   
   private String managementUnitTimeZone = null;
+  private List<WeekScheduleReference> publishedSchedules = new ArrayList<WeekScheduleReference>();
   private Map<String, UserSchedule> userSchedules = null;
 
   
@@ -38,6 +41,24 @@ public class UserScheduleContainer  implements Serializable {
   }
   public void setManagementUnitTimeZone(String managementUnitTimeZone) {
     this.managementUnitTimeZone = managementUnitTimeZone;
+  }
+
+  
+  /**
+   * References to all published week schedules overlapping the start/end date query parameters
+   **/
+  public UserScheduleContainer publishedSchedules(List<WeekScheduleReference> publishedSchedules) {
+    this.publishedSchedules = publishedSchedules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "References to all published week schedules overlapping the start/end date query parameters")
+  @JsonProperty("publishedSchedules")
+  public List<WeekScheduleReference> getPublishedSchedules() {
+    return publishedSchedules;
+  }
+  public void setPublishedSchedules(List<WeekScheduleReference> publishedSchedules) {
+    this.publishedSchedules = publishedSchedules;
   }
 
   
@@ -70,12 +91,13 @@ public class UserScheduleContainer  implements Serializable {
     }
     UserScheduleContainer userScheduleContainer = (UserScheduleContainer) o;
     return Objects.equals(this.managementUnitTimeZone, userScheduleContainer.managementUnitTimeZone) &&
+        Objects.equals(this.publishedSchedules, userScheduleContainer.publishedSchedules) &&
         Objects.equals(this.userSchedules, userScheduleContainer.userSchedules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managementUnitTimeZone, userSchedules);
+    return Objects.hash(managementUnitTimeZone, publishedSchedules, userSchedules);
   }
 
   @Override
@@ -84,6 +106,7 @@ public class UserScheduleContainer  implements Serializable {
     sb.append("class UserScheduleContainer {\n");
     
     sb.append("    managementUnitTimeZone: ").append(toIndentedString(managementUnitTimeZone)).append("\n");
+    sb.append("    publishedSchedules: ").append(toIndentedString(publishedSchedules)).append("\n");
     sb.append("    userSchedules: ").append(toIndentedString(userSchedules)).append("\n");
     sb.append("}");
     return sb.toString();

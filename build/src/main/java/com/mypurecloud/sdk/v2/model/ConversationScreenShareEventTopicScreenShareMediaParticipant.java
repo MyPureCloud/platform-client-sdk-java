@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -210,6 +211,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationScreenShareEventTopicJourneyContext journeyContext = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -710,6 +712,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant journeyContext(ConversationScreenShareEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationScreenShareEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationScreenShareEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -798,6 +817,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
         Objects.equals(this.peer, conversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
         Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
         Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
         Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -805,7 +825,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
   }
 
   @Override
@@ -842,6 +862,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

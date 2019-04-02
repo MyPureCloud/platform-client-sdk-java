@@ -197,6 +197,7 @@ public class CallBasic  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
   private String documentId = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private List<DisconnectReason> disconnectReasons = new ArrayList<DisconnectReason>();
@@ -461,6 +462,24 @@ public class CallBasic  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallBasic startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public CallBasic connectedTime(Date connectedTime) {
@@ -664,6 +683,7 @@ public class CallBasic  implements Serializable {
         Objects.equals(this.disconnectType, callBasic.disconnectType) &&
         Objects.equals(this.startHoldTime, callBasic.startHoldTime) &&
         Objects.equals(this.documentId, callBasic.documentId) &&
+        Objects.equals(this.startAlertingTime, callBasic.startAlertingTime) &&
         Objects.equals(this.connectedTime, callBasic.connectedTime) &&
         Objects.equals(this.disconnectedTime, callBasic.disconnectedTime) &&
         Objects.equals(this.disconnectReasons, callBasic.disconnectReasons) &&
@@ -678,7 +698,7 @@ public class CallBasic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other);
   }
 
   @Override
@@ -700,6 +720,7 @@ public class CallBasic  implements Serializable {
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicWrapup;
@@ -212,6 +213,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private QueueConversationMessageEventTopicJourneyContext journeyContext = null;
   private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
 
   /**
@@ -754,6 +756,23 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant journeyContext(QueueConversationMessageEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationMessageEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationMessageEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant messages(List<QueueConversationMessageEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
@@ -859,6 +878,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
         Objects.equals(this.peer, queueConversationMessageEventTopicMessageMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationMessageEventTopicMessageMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationMessageEventTopicMessageMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, queueConversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
         Objects.equals(this.messages, queueConversationMessageEventTopicMessageMediaParticipant.messages) &&
         Objects.equals(this.type, queueConversationMessageEventTopicMessageMediaParticipant.type) &&
         Objects.equals(this.recipientCountry, queueConversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
@@ -867,7 +887,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -904,6 +924,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

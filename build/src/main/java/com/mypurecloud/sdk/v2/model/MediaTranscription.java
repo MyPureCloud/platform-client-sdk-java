@@ -22,7 +22,8 @@ public class MediaTranscription  implements Serializable {
    */
   public enum TranscriptionProviderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    VOCI("VOCI");
+    VOCI("VOCI"),
+    CALLJOURNEY("CALLJOURNEY");
 
     private String value;
 

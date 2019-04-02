@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -211,6 +212,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationVideoEventTopicJourneyContext journeyContext = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
@@ -714,6 +716,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant journeyContext(ConversationVideoEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationVideoEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationVideoEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -853,6 +872,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
         Objects.equals(this.peer, conversationVideoEventTopicVideoMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationVideoEventTopicVideoMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationVideoEventTopicVideoMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationVideoEventTopicVideoMediaParticipant.journeyContext) &&
         Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
         Objects.equals(this.videoMuted, conversationVideoEventTopicVideoMediaParticipant.videoMuted) &&
         Objects.equals(this.sharingScreen, conversationVideoEventTopicVideoMediaParticipant.sharingScreen) &&
@@ -863,7 +883,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -900,6 +920,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");

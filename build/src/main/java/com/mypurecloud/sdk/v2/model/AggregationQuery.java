@@ -72,6 +72,7 @@ public class AggregationQuery  implements Serializable {
     Q850RESPONSECODE("q850ResponseCode"),
     CONFERENCE("conference"),
     GROUPID("groupId"),
+    PROTOCOLCALLID("protocolCallId"),
     ROOMID("roomId"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),

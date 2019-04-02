@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -210,6 +211,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private QueueConversationScreenShareEventTopicJourneyContext journeyContext = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -710,6 +712,23 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   
   /**
    **/
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant journeyContext(QueueConversationScreenShareEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationScreenShareEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationScreenShareEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -798,6 +817,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
         Objects.equals(this.peer, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, queueConversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
         Objects.equals(this.context, queueConversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
         Objects.equals(this.peerCount, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
         Objects.equals(this.sharing, queueConversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -805,7 +825,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
   }
 
   @Override
@@ -842,6 +862,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

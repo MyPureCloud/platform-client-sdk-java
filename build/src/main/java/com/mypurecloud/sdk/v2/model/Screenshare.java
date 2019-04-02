@@ -113,6 +113,7 @@ public class Screenshare  implements Serializable {
     }
   }
   private DisconnectTypeEnum disconnectType = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -229,6 +230,24 @@ public class Screenshare  implements Serializable {
 
   
   /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Screenshare startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+  }
+
+  
+  /**
    * The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public Screenshare connectedTime(Date connectedTime) {
@@ -334,6 +353,7 @@ public class Screenshare  implements Serializable {
         Objects.equals(this.sharing, screenshare.sharing) &&
         Objects.equals(this.peerCount, screenshare.peerCount) &&
         Objects.equals(this.disconnectType, screenshare.disconnectType) &&
+        Objects.equals(this.startAlertingTime, screenshare.startAlertingTime) &&
         Objects.equals(this.connectedTime, screenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, screenshare.disconnectedTime) &&
         Objects.equals(this.provider, screenshare.provider) &&
@@ -343,7 +363,7 @@ public class Screenshare  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, connectedTime, disconnectedTime, provider, peerId, segments);
+    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments);
   }
 
   @Override
@@ -357,6 +377,7 @@ public class Screenshare  implements Serializable {
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

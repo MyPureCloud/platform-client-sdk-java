@@ -369,7 +369,7 @@ try {
 
 
 
-> [AnalyticsConversation](AnalyticsConversation.html) getAnalyticsConversationsDetails(id)
+> [AnalyticsConversationMultiGetResponse](AnalyticsConversationMultiGetResponse.html) getAnalyticsConversationsDetails(id)
 
 Gets multiple conversations by id
 
@@ -405,7 +405,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 List<String> id = Arrays.asList("id_example"); // List<String> | Comma-separated conversation ids
 try {
-    AnalyticsConversation result = apiInstance.getAnalyticsConversationsDetails(id);
+    AnalyticsConversationMultiGetResponse result = apiInstance.getAnalyticsConversationsDetails(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationsDetails");
@@ -424,7 +424,7 @@ try {
 
 ### Return type
 
-[**AnalyticsConversation**](AnalyticsConversation.html)
+[**AnalyticsConversationMultiGetResponse**](AnalyticsConversationMultiGetResponse.html)
 
 <a name="getConversation"></a>
 

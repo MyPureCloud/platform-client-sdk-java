@@ -44,14 +44,14 @@ public class WeekSchedule  implements Serializable {
 
   
   /**
-   * First day of this week schedule in week in yyyy-MM-dd format
+   * First day of this week schedule in yyyy-MM-dd format
    **/
   public WeekSchedule weekDate(String weekDate) {
     this.weekDate = weekDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "First day of this week schedule in week in yyyy-MM-dd format")
+  @ApiModelProperty(example = "null", value = "First day of this week schedule in yyyy-MM-dd format")
   @JsonProperty("weekDate")
   public String getWeekDate() {
     return weekDate;

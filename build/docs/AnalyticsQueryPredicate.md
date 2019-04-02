@@ -85,6 +85,7 @@ title: AnalyticsQueryPredicate
 | Q850RESPONSECODE | &quot;q850ResponseCode&quot; |
 | CONFERENCE | &quot;conference&quot; |
 | GROUPID | &quot;groupId&quot; |
+| PROTOCOLCALLID | &quot;protocolCallId&quot; |
 | ROOMID | &quot;roomId&quot; |
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |

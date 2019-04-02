@@ -19,6 +19,7 @@ public class LineIntegrationRequest  implements Serializable {
   private String channelId = null;
   private String channelSecret = null;
   private String switcherSecret = null;
+  private String serviceCode = null;
   private String selfUri = null;
 
   
@@ -48,14 +49,14 @@ public class LineIntegrationRequest  implements Serializable {
 
   
   /**
-   * The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory
+   * The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)
    **/
   public LineIntegrationRequest channelId(String channelId) {
     this.channelId = channelId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory")
+  @ApiModelProperty(example = "null", value = "The Channel Id from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Id is mandatory. (NOTE: ChannelId can only be updated if the integration is set to inactive)")
   @JsonProperty("channelId")
   public String getChannelId() {
     return channelId;
@@ -66,14 +67,14 @@ public class LineIntegrationRequest  implements Serializable {
 
   
   /**
-   * The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory
+   * The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory. (NOTE: ChannelSecret can only be updated if the integration is set to inactive)
    **/
   public LineIntegrationRequest channelSecret(String channelSecret) {
     this.channelSecret = channelSecret;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory")
+  @ApiModelProperty(example = "null", value = "The Channel Secret from LINE messenger. New Official LINE account: To create a new official account, LINE requires a Webhook URL. It can be created without specifying Channel Id & Channel Secret. Once the Official account is created by LINE, use the update LINE Integration API to update Channel Id and Channel Secret.  All other accounts: Channel Secret is mandatory. (NOTE: ChannelSecret can only be updated if the integration is set to inactive)")
   @JsonProperty("channelSecret")
   public String getChannelSecret() {
     return channelSecret;
@@ -101,6 +102,24 @@ public class LineIntegrationRequest  implements Serializable {
   }
 
   
+  /**
+   * The Service Code from LINE messenger. Only applicable to LINE Enterprise accounts. This service code can be found in your create documentation provided by LINE
+   **/
+  public LineIntegrationRequest serviceCode(String serviceCode) {
+    this.serviceCode = serviceCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Service Code from LINE messenger. Only applicable to LINE Enterprise accounts. This service code can be found in your create documentation provided by LINE")
+  @JsonProperty("serviceCode")
+  public String getServiceCode() {
+    return serviceCode;
+  }
+  public void setServiceCode(String serviceCode) {
+    this.serviceCode = serviceCode;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -123,12 +142,13 @@ public class LineIntegrationRequest  implements Serializable {
         Objects.equals(this.channelId, lineIntegrationRequest.channelId) &&
         Objects.equals(this.channelSecret, lineIntegrationRequest.channelSecret) &&
         Objects.equals(this.switcherSecret, lineIntegrationRequest.switcherSecret) &&
+        Objects.equals(this.serviceCode, lineIntegrationRequest.serviceCode) &&
         Objects.equals(this.selfUri, lineIntegrationRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, channelId, channelSecret, switcherSecret, selfUri);
+    return Objects.hash(id, name, channelId, channelSecret, switcherSecret, serviceCode, selfUri);
   }
 
   @Override
@@ -141,6 +161,7 @@ public class LineIntegrationRequest  implements Serializable {
     sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
     sb.append("    channelSecret: ").append(toIndentedString(channelSecret)).append("\n");
     sb.append("    switcherSecret: ").append(toIndentedString(switcherSecret)).append("\n");
+    sb.append("    serviceCode: ").append(toIndentedString(serviceCode)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

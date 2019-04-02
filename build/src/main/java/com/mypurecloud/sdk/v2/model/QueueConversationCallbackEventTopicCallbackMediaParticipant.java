@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicDialerPreview;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicVoicemail;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallbackEventTopicWrapup;
@@ -213,6 +214,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private QueueConversationCallbackEventTopicJourneyContext journeyContext = null;
   private QueueConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private QueueConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -718,6 +720,23 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   
   /**
    **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant journeyContext(QueueConversationCallbackEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationCallbackEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationCallbackEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(QueueConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -891,6 +910,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
         Objects.equals(this.peer, queueConversationCallbackEventTopicCallbackMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationCallbackEventTopicCallbackMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCallbackEventTopicCallbackMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, queueConversationCallbackEventTopicCallbackMediaParticipant.journeyContext) &&
         Objects.equals(this.outboundPreview, queueConversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, queueConversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, queueConversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -903,7 +923,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -940,6 +960,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

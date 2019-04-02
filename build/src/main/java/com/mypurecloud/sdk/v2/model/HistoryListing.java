@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Detail;
+import com.mypurecloud.sdk.v2.model.HistoryEntry;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -116,6 +117,11 @@ public class HistoryListing  implements Serializable {
   private Boolean system = null;
   private Date started = null;
   private Date completed = null;
+  private List<HistoryEntry> entities = new ArrayList<HistoryEntry>();
+  private Long total = null;
+  private Integer pageSize = null;
+  private Integer pageNumber = null;
+  private Integer pageCount = null;
 
   
   /**
@@ -360,6 +366,91 @@ public class HistoryListing  implements Serializable {
   }
 
   
+  /**
+   **/
+  public HistoryListing entities(List<HistoryEntry> entities) {
+    this.entities = entities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("entities")
+  public List<HistoryEntry> getEntities() {
+    return entities;
+  }
+  public void setEntities(List<HistoryEntry> entities) {
+    this.entities = entities;
+  }
+
+  
+  /**
+   **/
+  public HistoryListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
+
+  
+  /**
+   **/
+  public HistoryListing pageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageSize")
+  public Integer getPageSize() {
+    return pageSize;
+  }
+  public void setPageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+  }
+
+  
+  /**
+   **/
+  public HistoryListing pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageNumber")
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
+  
+  /**
+   **/
+  public HistoryListing pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -383,12 +474,17 @@ public class HistoryListing  implements Serializable {
         Objects.equals(this.description, historyListing.description) &&
         Objects.equals(this.system, historyListing.system) &&
         Objects.equals(this.started, historyListing.started) &&
-        Objects.equals(this.completed, historyListing.completed);
+        Objects.equals(this.completed, historyListing.completed) &&
+        Objects.equals(this.entities, historyListing.entities) &&
+        Objects.equals(this.total, historyListing.total) &&
+        Objects.equals(this.pageSize, historyListing.pageSize) &&
+        Objects.equals(this.pageNumber, historyListing.pageNumber) &&
+        Objects.equals(this.pageCount, historyListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed);
+    return Objects.hash(id, complete, user, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed, entities, total, pageSize, pageNumber, pageCount);
   }
 
   @Override
@@ -410,6 +506,11 @@ public class HistoryListing  implements Serializable {
     sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    started: ").append(toIndentedString(started)).append("\n");
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
+    sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -17,25 +17,25 @@ import java.io.Serializable;
 
 public class ActionConfig  implements Serializable {
   
-  private RequestConfig request = null;
+  private RequestConfig _request = null;
   private ResponseConfig response = null;
 
   
   /**
    * Configuration of outbound request.
    **/
-  public ActionConfig request(RequestConfig request) {
-    this.request = request;
+  public ActionConfig _request(RequestConfig _request) {
+    this._request = _request;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Configuration of outbound request.")
   @JsonProperty("request")
   public RequestConfig getRequest() {
-    return request;
+    return _request;
   }
-  public void setRequest(RequestConfig request) {
-    this.request = request;
+  public void setRequest(RequestConfig _request) {
+    this._request = _request;
   }
 
   
@@ -67,13 +67,13 @@ public class ActionConfig  implements Serializable {
       return false;
     }
     ActionConfig actionConfig = (ActionConfig) o;
-    return Objects.equals(this.request, actionConfig.request) &&
+    return Objects.equals(this._request, actionConfig._request) &&
         Objects.equals(this.response, actionConfig.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(request, response);
+    return Objects.hash(_request, response);
   }
 
   @Override
@@ -81,7 +81,7 @@ public class ActionConfig  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActionConfig {\n");
     
-    sb.append("    request: ").append(toIndentedString(request)).append("\n");
+    sb.append("    _request: ").append(toIndentedString(_request)).append("\n");
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
     return sb.toString();

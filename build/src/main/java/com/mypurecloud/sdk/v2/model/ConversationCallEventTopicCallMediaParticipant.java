@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicFaxStatus;
+import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCallEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -211,6 +212,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationCallEventTopicJourneyContext journeyContext = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -754,6 +756,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   
   /**
    **/
+  public ConversationCallEventTopicCallMediaParticipant journeyContext(ConversationCallEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationCallEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationCallEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -978,6 +997,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
         Objects.equals(this.peer, conversationCallEventTopicCallMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationCallEventTopicCallMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationCallEventTopicCallMediaParticipant.journeyContext) &&
         Objects.equals(this.muted, conversationCallEventTopicCallMediaParticipant.muted) &&
         Objects.equals(this.confined, conversationCallEventTopicCallMediaParticipant.confined) &&
         Objects.equals(this.recording, conversationCallEventTopicCallMediaParticipant.recording) &&
@@ -993,7 +1013,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1030,6 +1050,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

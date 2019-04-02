@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -210,6 +211,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationChatEventTopicJourneyContext journeyContext = null;
   private String roomId = null;
 
   
@@ -708,6 +710,23 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   
   /**
    **/
+  public ConversationChatEventTopicChatMediaParticipant journeyContext(ConversationChatEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationChatEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationChatEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationChatEventTopicChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -762,12 +781,13 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
         Objects.equals(this.peer, conversationChatEventTopicChatMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationChatEventTopicChatMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationChatEventTopicChatMediaParticipant.journeyContext) &&
         Objects.equals(this.roomId, conversationChatEventTopicChatMediaParticipant.roomId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, roomId);
   }
 
   @Override
@@ -804,6 +824,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("}");
     return sb.toString();

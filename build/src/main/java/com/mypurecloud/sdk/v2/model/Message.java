@@ -148,6 +148,7 @@ public class Message  implements Serializable {
   }
   private DisconnectTypeEnum disconnectType = null;
   private Date startHoldTime = null;
+  private Date startAlertingTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
@@ -358,6 +359,24 @@ public class Message  implements Serializable {
   }
   public void setStartHoldTime(Date startHoldTime) {
     this.startHoldTime = startHoldTime;
+  }
+
+  
+  /**
+   * The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Message startAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAlertingTime")
+  public Date getStartAlertingTime() {
+    return startAlertingTime;
+  }
+  public void setStartAlertingTime(Date startAlertingTime) {
+    this.startAlertingTime = startAlertingTime;
   }
 
   
@@ -578,6 +597,7 @@ public class Message  implements Serializable {
         Objects.equals(this.errorInfo, message.errorInfo) &&
         Objects.equals(this.disconnectType, message.disconnectType) &&
         Objects.equals(this.startHoldTime, message.startHoldTime) &&
+        Objects.equals(this.startAlertingTime, message.startAlertingTime) &&
         Objects.equals(this.connectedTime, message.connectedTime) &&
         Objects.equals(this.disconnectedTime, message.disconnectedTime) &&
         Objects.equals(this.provider, message.provider) &&
@@ -593,7 +613,7 @@ public class Message  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages);
   }
 
   @Override
@@ -610,6 +630,7 @@ public class Message  implements Serializable {
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
+    sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");

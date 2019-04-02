@@ -32,6 +32,7 @@ public class WfmAgent  implements Serializable {
   private WorkPlanReference workPlan = null;
   private Boolean schedulable = null;
   private WfmTimeZone timeZone = null;
+  private Boolean acceptDirectShiftTrades = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
@@ -170,6 +171,24 @@ public class WfmAgent  implements Serializable {
 
   
   /**
+   * Whether the agent accepts direct shift trade requests
+   **/
+  public WfmAgent acceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
+    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the agent accepts direct shift trade requests")
+  @JsonProperty("acceptDirectShiftTrades")
+  public Boolean getAcceptDirectShiftTrades() {
+    return acceptDirectShiftTrades;
+  }
+  public void setAcceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
+    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
+  }
+
+  
+  /**
    * Metadata for this agent
    **/
   public WfmAgent metadata(WfmVersionedEntityMetadata metadata) {
@@ -212,13 +231,14 @@ public class WfmAgent  implements Serializable {
         Objects.equals(this.workPlan, wfmAgent.workPlan) &&
         Objects.equals(this.schedulable, wfmAgent.schedulable) &&
         Objects.equals(this.timeZone, wfmAgent.timeZone) &&
+        Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
         Objects.equals(this.metadata, wfmAgent.metadata) &&
         Objects.equals(this.selfUri, wfmAgent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, queues, languages, skills, workPlan, schedulable, timeZone, metadata, selfUri);
+    return Objects.hash(id, user, queues, languages, skills, workPlan, schedulable, timeZone, acceptDirectShiftTrades, metadata, selfUri);
   }
 
   @Override
@@ -234,6 +254,7 @@ public class WfmAgent  implements Serializable {
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
     sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    acceptDirectShiftTrades: ").append(toIndentedString(acceptDirectShiftTrades)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

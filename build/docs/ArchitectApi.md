@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteArchitectIvr**](ArchitectApi.html#deleteArchitectIvr) | Delete an IVR Config. |
 | [**deleteArchitectPrompt**](ArchitectApi.html#deleteArchitectPrompt) | Delete specified user prompt |
 | [**deleteArchitectPromptResource**](ArchitectApi.html#deleteArchitectPromptResource) | Delete specified user prompt resource |
+| [**deleteArchitectPromptResourceAudio**](ArchitectApi.html#deleteArchitectPromptResourceAudio) | Delete specified user prompt resource audio |
 | [**deleteArchitectPrompts**](ArchitectApi.html#deleteArchitectPrompts) | Batch-delete a list of prompts |
 | [**deleteArchitectSchedule**](ArchitectApi.html#deleteArchitectSchedule) | Delete a schedule by id |
 | [**deleteArchitectSchedulegroup**](ArchitectApi.html#deleteArchitectSchedulegroup) | Deletes a schedule group by ID |
@@ -55,7 +56,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
-| [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable |
+| [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
@@ -76,7 +77,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
 | [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
 | [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
-| [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry |
+| [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
 | [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | Updates a emergency group by ID |
 | [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
@@ -324,6 +325,70 @@ try {
     apiInstance.deleteArchitectPromptResource(promptId, languageCode);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#deleteArchitectPromptResource");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **promptId** | **String**| Prompt ID | 
+| **languageCode** | **String**| Language | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteArchitectPromptResourceAudio"></a>
+
+# **deleteArchitectPromptResourceAudio**
+
+
+
+> Void deleteArchitectPromptResourceAudio(promptId, languageCode)
+
+Delete specified user prompt resource audio
+
+
+
+Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio  
+
+Requires ANY permissions: 
+
+* architect:userPrompt:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String promptId = "promptId_example"; // String | Prompt ID
+String languageCode = "languageCode_example"; // String | Language
+try {
+    apiInstance.deleteArchitectPromptResourceAudio(promptId, languageCode);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#deleteArchitectPromptResourceAudio");
     e.printStackTrace();
 }
 ```
@@ -728,7 +793,7 @@ try {
 
 deletes a specific datatable by id
 
-deletes an entire datatable (including schema and data) with a given id)
+Deletes an entire datatable (including the schema and data) with a given datatableId
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}  
 
@@ -792,7 +857,7 @@ null (empty response body)
 
 Delete a row entry
 
-Deletes a row with a given rowId.
+Deletes a row with a given rowId (the value of the key field).
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
 
@@ -2049,7 +2114,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-String name = "name_example"; // String | Name
+List<String> name = Arrays.asList("name_example"); // List<String> | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
 String sortBy = "id"; // String | Sort by
@@ -2070,7 +2135,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **name** | **String**| Name | [optional] 
+| **name** | [**List&lt;String&gt;**](String.html)| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to id] 
@@ -3214,7 +3279,7 @@ try {
 
 Returns a specific datatable by id
 
-Given a datableid returns the schema associated with it.
+Given a datatableId returns the datatable object and schema associated with it.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}  
 
@@ -3279,7 +3344,7 @@ try {
 
 Returns a specific row for the datatable
 
-Given a datatable id and a rowId (key)  will return the full row contents for that rowId.
+Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
 
@@ -3344,9 +3409,9 @@ try {
 
 > [DataTableRowEntityListing](DataTableRowEntityListing.html) getFlowsDatatableRows(datatableId, pageNumber, pageSize, showbrief)
 
-Returns the rows for the datatable
+Returns the rows for the datatable with the given id
 
-Returns all of the rows for the datatable with the given id.  By default this will just be a shortened list returning the key for each row.  Set expand to all to return all of the row contents.
+Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows  
 
@@ -3415,7 +3480,7 @@ try {
 
 Retrieve a list of datatables for the org
 
-Returns a metadata list of the datatables associated with this org, including ID, name and description.
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
 Wraps GET /api/v2/flows/datatables  
 
@@ -4322,7 +4387,7 @@ try {
 
 
 
-> [Flow](Flow.html) postFlowsActionsCheckin(flow)
+> [Operation](Operation.html) postFlowsActionsCheckin(flow)
 
 Check-in flow
 
@@ -4359,7 +4424,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String flow = "flow_example"; // String | Flow ID
 try {
-    Flow result = apiInstance.postFlowsActionsCheckin(flow);
+    Operation result = apiInstance.postFlowsActionsCheckin(flow);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#postFlowsActionsCheckin");
@@ -4378,7 +4443,7 @@ try {
 
 ### Return type
 
-[**Flow**](Flow.html)
+[**Operation**](Operation.html)
 
 <a name="postFlowsActionsCheckout"></a>
 
@@ -4706,9 +4771,9 @@ try {
 
 > [Map&lt;String, Object&gt;](Map.html) postFlowsDatatableRows(datatableId, dataTableRow)
 
-Create a new row entry
+Create a new row entry for the datatable.
 
-Will add the passed in row entry to the datatable with the given id after verifying it against the schema.
+Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows  
 
@@ -4773,7 +4838,7 @@ try {
 
 Create a new datatable with the specified json-schema definition
 
-This will create a new datatable with fields that match the property definitions in the JSON schema.  The name of the table from the title field of the json-schema.  See also http://json-schema.org/
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
 Wraps POST /api/v2/flows/datatables  
 
@@ -5360,7 +5425,7 @@ try {
 
 Updates a specific datatable by id
 
-Updates a schema for a datatable with the given id - updates are additive only, no changes or removals of existing fields.
+Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}  
 
@@ -5427,7 +5492,7 @@ try {
 
 Update a row entry
 
-Updates a row with the given to the new values.
+Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
 
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}  
 

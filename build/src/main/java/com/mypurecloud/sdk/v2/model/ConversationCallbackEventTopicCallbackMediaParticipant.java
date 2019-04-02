@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicDialerPreview;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicUriReference;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicVoicemail;
 import com.mypurecloud.sdk.v2.model.ConversationCallbackEventTopicWrapup;
@@ -213,6 +214,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private ConversationCallbackEventTopicJourneyContext journeyContext = null;
   private ConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private ConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -718,6 +720,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant journeyContext(ConversationCallbackEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationCallbackEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationCallbackEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(ConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -891,6 +910,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
         Objects.equals(this.peer, conversationCallbackEventTopicCallbackMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationCallbackEventTopicCallbackMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationCallbackEventTopicCallbackMediaParticipant.flaggedReason) &&
+        Objects.equals(this.journeyContext, conversationCallbackEventTopicCallbackMediaParticipant.journeyContext) &&
         Objects.equals(this.outboundPreview, conversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, conversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, conversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -903,7 +923,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -940,6 +960,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

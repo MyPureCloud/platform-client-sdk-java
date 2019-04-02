@@ -21,6 +21,7 @@ public class UserListScheduleRequestBody  implements Serializable {
   private List<String> userIds = new ArrayList<String>();
   private Date startDate = null;
   private Date endDate = null;
+  private Boolean loadFullWeeks = null;
 
   
   /**
@@ -77,6 +78,24 @@ public class UserListScheduleRequestBody  implements Serializable {
   }
 
   
+  /**
+   * Whether to load the full week's schedule (for the requested users) of any week overlapping the start/end date query parameters, defaults to false
+   **/
+  public UserListScheduleRequestBody loadFullWeeks(Boolean loadFullWeeks) {
+    this.loadFullWeeks = loadFullWeeks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to load the full week's schedule (for the requested users) of any week overlapping the start/end date query parameters, defaults to false")
+  @JsonProperty("loadFullWeeks")
+  public Boolean getLoadFullWeeks() {
+    return loadFullWeeks;
+  }
+  public void setLoadFullWeeks(Boolean loadFullWeeks) {
+    this.loadFullWeeks = loadFullWeeks;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,12 +108,13 @@ public class UserListScheduleRequestBody  implements Serializable {
     UserListScheduleRequestBody userListScheduleRequestBody = (UserListScheduleRequestBody) o;
     return Objects.equals(this.userIds, userListScheduleRequestBody.userIds) &&
         Objects.equals(this.startDate, userListScheduleRequestBody.startDate) &&
-        Objects.equals(this.endDate, userListScheduleRequestBody.endDate);
+        Objects.equals(this.endDate, userListScheduleRequestBody.endDate) &&
+        Objects.equals(this.loadFullWeeks, userListScheduleRequestBody.loadFullWeeks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userIds, startDate, endDate);
+    return Objects.hash(userIds, startDate, endDate, loadFullWeeks);
   }
 
   @Override
@@ -105,6 +125,7 @@ public class UserListScheduleRequestBody  implements Serializable {
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    loadFullWeeks: ").append(toIndentedString(loadFullWeeks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

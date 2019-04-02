@@ -12,6 +12,7 @@ title: WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 | **managementUnitId** | **String** |  |  [optional] |
 | **scheduledActivityCategory** | **String** |  |  [optional] |
 | **systemPresence** | **String** |  |  [optional] |
+| **organizationSecondaryPresenceId** | **String** |  |  [optional] |
 | **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum) |  |  [optional] |
 | **actualActivityCategory** | **String** |  |  [optional] |
 | **isOutOfOffice** | **Boolean** |  |  [optional] |
@@ -19,6 +20,8 @@ title: WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 | **impact** | **String** |  |  [optional] |
 | **adherenceChangeTime** | [**Date**](Date.html) |  |  [optional] |
 | **presenceUpdateTime** | [**Date**](Date.html) |  |  [optional] |
+| **activeQueues** | [**List&lt;WfmUserScheduleAdherenceUpdatedTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTopicQueueReference.html) |  |  [optional] |
+| **activeQueuesModifiedTime** | [**Date**](Date.html) |  |  [optional] |
 {: class="table table-striped"}
 
 
