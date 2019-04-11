@@ -26,14 +26,14 @@ public class WfmAgent  implements Serializable {
   
   private String id = null;
   private UserReference user = null;
-  private List<QueueReference> queues = new ArrayList<QueueReference>();
-  private List<LanguageReference> languages = new ArrayList<LanguageReference>();
-  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
   private WorkPlanReference workPlan = null;
-  private Boolean schedulable = null;
   private WfmTimeZone timeZone = null;
   private Boolean acceptDirectShiftTrades = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private List<QueueReference> queues = new ArrayList<QueueReference>();
+  private List<LanguageReference> languages = new ArrayList<LanguageReference>();
+  private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
+  private Boolean schedulable = null;
   private String selfUri = null;
 
   
@@ -59,6 +59,78 @@ public class WfmAgent  implements Serializable {
   }
   public void setUser(UserReference user) {
     this.user = user;
+  }
+
+  
+  /**
+   * The work plan associated with this agent
+   **/
+  public WfmAgent workPlan(WorkPlanReference workPlan) {
+    this.workPlan = workPlan;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The work plan associated with this agent")
+  @JsonProperty("workPlan")
+  public WorkPlanReference getWorkPlan() {
+    return workPlan;
+  }
+  public void setWorkPlan(WorkPlanReference workPlan) {
+    this.workPlan = workPlan;
+  }
+
+  
+  /**
+   * The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+   **/
+  public WfmAgent timeZone(WfmTimeZone timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs")
+  @JsonProperty("timeZone")
+  public WfmTimeZone getTimeZone() {
+    return timeZone;
+  }
+  public void setTimeZone(WfmTimeZone timeZone) {
+    this.timeZone = timeZone;
+  }
+
+  
+  /**
+   * Whether the agent accepts direct shift trade requests
+   **/
+  public WfmAgent acceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
+    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the agent accepts direct shift trade requests")
+  @JsonProperty("acceptDirectShiftTrades")
+  public Boolean getAcceptDirectShiftTrades() {
+    return acceptDirectShiftTrades;
+  }
+  public void setAcceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
+    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
+  }
+
+  
+  /**
+   * Metadata for this agent
+   **/
+  public WfmAgent metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metadata for this agent")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
   }
 
   
@@ -117,24 +189,6 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * The work plan associated with this agent
-   **/
-  public WfmAgent workPlan(WorkPlanReference workPlan) {
-    this.workPlan = workPlan;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The work plan associated with this agent")
-  @JsonProperty("workPlan")
-  public WorkPlanReference getWorkPlan() {
-    return workPlan;
-  }
-  public void setWorkPlan(WorkPlanReference workPlan) {
-    this.workPlan = workPlan;
-  }
-
-  
-  /**
    * Whether the agent has the permission to be included in schedule generation
    **/
   public WfmAgent schedulable(Boolean schedulable) {
@@ -149,60 +203,6 @@ public class WfmAgent  implements Serializable {
   }
   public void setSchedulable(Boolean schedulable) {
     this.schedulable = schedulable;
-  }
-
-  
-  /**
-   * The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
-   **/
-  public WfmAgent timeZone(WfmTimeZone timeZone) {
-    this.timeZone = timeZone;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs")
-  @JsonProperty("timeZone")
-  public WfmTimeZone getTimeZone() {
-    return timeZone;
-  }
-  public void setTimeZone(WfmTimeZone timeZone) {
-    this.timeZone = timeZone;
-  }
-
-  
-  /**
-   * Whether the agent accepts direct shift trade requests
-   **/
-  public WfmAgent acceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
-    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Whether the agent accepts direct shift trade requests")
-  @JsonProperty("acceptDirectShiftTrades")
-  public Boolean getAcceptDirectShiftTrades() {
-    return acceptDirectShiftTrades;
-  }
-  public void setAcceptDirectShiftTrades(Boolean acceptDirectShiftTrades) {
-    this.acceptDirectShiftTrades = acceptDirectShiftTrades;
-  }
-
-  
-  /**
-   * Metadata for this agent
-   **/
-  public WfmAgent metadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Metadata for this agent")
-  @JsonProperty("metadata")
-  public WfmVersionedEntityMetadata getMetadata() {
-    return metadata;
-  }
-  public void setMetadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
   }
 
   
@@ -225,20 +225,20 @@ public class WfmAgent  implements Serializable {
     WfmAgent wfmAgent = (WfmAgent) o;
     return Objects.equals(this.id, wfmAgent.id) &&
         Objects.equals(this.user, wfmAgent.user) &&
-        Objects.equals(this.queues, wfmAgent.queues) &&
-        Objects.equals(this.languages, wfmAgent.languages) &&
-        Objects.equals(this.skills, wfmAgent.skills) &&
         Objects.equals(this.workPlan, wfmAgent.workPlan) &&
-        Objects.equals(this.schedulable, wfmAgent.schedulable) &&
         Objects.equals(this.timeZone, wfmAgent.timeZone) &&
         Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
         Objects.equals(this.metadata, wfmAgent.metadata) &&
+        Objects.equals(this.queues, wfmAgent.queues) &&
+        Objects.equals(this.languages, wfmAgent.languages) &&
+        Objects.equals(this.skills, wfmAgent.skills) &&
+        Objects.equals(this.schedulable, wfmAgent.schedulable) &&
         Objects.equals(this.selfUri, wfmAgent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, queues, languages, skills, workPlan, schedulable, timeZone, acceptDirectShiftTrades, metadata, selfUri);
+    return Objects.hash(id, user, workPlan, timeZone, acceptDirectShiftTrades, metadata, queues, languages, skills, schedulable, selfUri);
   }
 
   @Override
@@ -248,14 +248,14 @@ public class WfmAgent  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
-    sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
-    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
-    sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    acceptDirectShiftTrades: ").append(toIndentedString(acceptDirectShiftTrades)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+    sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
+    sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -92,9 +92,8 @@ Get Location by ID.
 
 Wraps GET /api/v2/locations/{locationId}  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
 
 ### Example
 

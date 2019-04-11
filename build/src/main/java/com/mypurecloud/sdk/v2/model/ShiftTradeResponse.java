@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ShiftTradeResponseAcceptableIntervals;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -75,7 +74,7 @@ public class ShiftTradeResponse  implements Serializable {
   private Date receivingShiftEnd = null;
   private Date expiration = null;
   private Boolean oneSided = null;
-  private List<ShiftTradeResponseAcceptableIntervals> acceptableIntervals = new ArrayList<ShiftTradeResponseAcceptableIntervals>();
+  private List<String> acceptableIntervals = new ArrayList<String>();
   private UserReference reviewedBy = null;
   private Date reviewedDate = null;
   private WfmVersionedEntityMetadata metadata = null;
@@ -335,17 +334,17 @@ public class ShiftTradeResponse  implements Serializable {
   
   /**
    **/
-  public ShiftTradeResponse acceptableIntervals(List<ShiftTradeResponseAcceptableIntervals> acceptableIntervals) {
+  public ShiftTradeResponse acceptableIntervals(List<String> acceptableIntervals) {
     this.acceptableIntervals = acceptableIntervals;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("acceptableIntervals")
-  public List<ShiftTradeResponseAcceptableIntervals> getAcceptableIntervals() {
+  public List<String> getAcceptableIntervals() {
     return acceptableIntervals;
   }
-  public void setAcceptableIntervals(List<ShiftTradeResponseAcceptableIntervals> acceptableIntervals) {
+  public void setAcceptableIntervals(List<String> acceptableIntervals) {
     this.acceptableIntervals = acceptableIntervals;
   }
 
