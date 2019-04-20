@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteIdentityprovidersOnelogin**](IdentityProviderApi.html#deleteIdentityprovidersOnelogin) | Delete OneLogin Identity Provider |
 | [**deleteIdentityprovidersPing**](IdentityProviderApi.html#deleteIdentityprovidersPing) | Delete Ping Identity Provider |
 | [**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | Delete PureCloud Identity Provider |
+| [**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | Delete PureEngage Identity Provider |
 | [**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | Delete Salesforce Identity Provider |
 | [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | The list of identity providers |
 | [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | Get ADFS Identity Provider |
@@ -25,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIdentityprovidersOnelogin**](IdentityProviderApi.html#getIdentityprovidersOnelogin) | Get OneLogin Identity Provider |
 | [**getIdentityprovidersPing**](IdentityProviderApi.html#getIdentityprovidersPing) | Get Ping Identity Provider |
 | [**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | Get PureCloud Identity Provider |
+| [**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | Get PureEngage Identity Provider |
 | [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | Get Salesforce Identity Provider |
 | [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | Update/Create ADFS Identity Provider |
 | [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | Update/Create Customer Interaction Center (CIC) Identity Provider |
@@ -34,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putIdentityprovidersOnelogin**](IdentityProviderApi.html#putIdentityprovidersOnelogin) | Update/Create OneLogin Identity Provider |
 | [**putIdentityprovidersPing**](IdentityProviderApi.html#putIdentityprovidersPing) | Update/Create Ping Identity Provider |
 | [**putIdentityprovidersPurecloud**](IdentityProviderApi.html#putIdentityprovidersPurecloud) | Update/Create PureCloud Identity Provider |
+| [**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | Update/Create PureEngage Identity Provider |
 | [**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | Update/Create Salesforce Identity Provider |
 {: class="table-striped"}
 
@@ -495,6 +498,65 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#deleteIdentityprovidersPurecloud");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Empty**](Empty.html)
+
+<a name="deleteIdentityprovidersPureengage"></a>
+
+# **deleteIdentityprovidersPureengage**
+
+
+
+> [Empty](Empty.html) deleteIdentityprovidersPureengage()
+
+Delete PureEngage Identity Provider
+
+
+
+Wraps DELETE /api/v2/identityproviders/pureengage  
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+try {
+    Empty result = apiInstance.deleteIdentityprovidersPureengage();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#deleteIdentityprovidersPureengage");
     e.printStackTrace();
 }
 ```
@@ -1099,6 +1161,65 @@ This endpoint does not require any parameters.
 
 [**PureCloud**](PureCloud.html)
 
+<a name="getIdentityprovidersPureengage"></a>
+
+# **getIdentityprovidersPureengage**
+
+
+
+> [PureEnage](PureEnage.html) getIdentityprovidersPureengage()
+
+Get PureEngage Identity Provider
+
+
+
+Wraps GET /api/v2/identityproviders/pureengage  
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+try {
+    PureEnage result = apiInstance.getIdentityprovidersPureengage();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#getIdentityprovidersPureengage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**PureEnage**](PureEnage.html)
+
 <a name="getIdentityprovidersSalesforce"></a>
 
 # **getIdentityprovidersSalesforce**
@@ -1663,6 +1784,70 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**PureCloud**](PureCloud.html)| Provider | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OAuthProvider**](OAuthProvider.html)
+
+<a name="putIdentityprovidersPureengage"></a>
+
+# **putIdentityprovidersPureengage**
+
+
+
+> [OAuthProvider](OAuthProvider.html) putIdentityprovidersPureengage(body)
+
+Update/Create PureEngage Identity Provider
+
+
+
+Wraps PUT /api/v2/identityproviders/pureengage  
+
+Requires ANY permissions: 
+
+* sso:provider:add
+* sso:provider:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+PureEnage body = new PureEnage(); // PureEnage | Provider
+try {
+    OAuthProvider result = apiInstance.putIdentityprovidersPureengage(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersPureengage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**PureEnage**](PureEnage.html)| Provider | 
 {: class="table-striped"}
 
 

@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
@@ -358,7 +359,7 @@ public class OAuthApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthClient postOauthClients(OAuthClient body) throws IOException, ApiException {
+  public OAuthClient postOauthClients(OAuthClientRequest body) throws IOException, ApiException {
     return  postOauthClients(createPostOauthClientsRequest(body));
   }
 
@@ -369,11 +370,11 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClient body) throws IOException {
+  public ApiResponse<OAuthClient> postOauthClientsWithHttpInfo(OAuthClientRequest body) throws IOException {
     return postOauthClients(createPostOauthClientsRequest(body).withHttpInfo());
   }
 
-  private PostOauthClientsRequest createPostOauthClientsRequest(OAuthClient body) {
+  private PostOauthClientsRequest createPostOauthClientsRequest(OAuthClientRequest body) {
     return PostOauthClientsRequest.builder()
             .withBody(body)
     
@@ -406,7 +407,7 @@ public class OAuthApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClient> request) throws IOException {
+  public ApiResponse<OAuthClient> postOauthClients(ApiRequest<OAuthClientRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
     }
@@ -438,7 +439,7 @@ public class OAuthApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OAuthClient putOauthClient(String clientId, OAuthClient body) throws IOException, ApiException {
+  public OAuthClient putOauthClient(String clientId, OAuthClientRequest body) throws IOException, ApiException {
     return  putOauthClient(createPutOauthClientRequest(clientId, body));
   }
 
@@ -450,11 +451,11 @@ public class OAuthApi {
    * @return OAuthClient
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClient body) throws IOException {
+  public ApiResponse<OAuthClient> putOauthClientWithHttpInfo(String clientId, OAuthClientRequest body) throws IOException {
     return putOauthClient(createPutOauthClientRequest(clientId, body).withHttpInfo());
   }
 
-  private PutOauthClientRequest createPutOauthClientRequest(String clientId, OAuthClient body) {
+  private PutOauthClientRequest createPutOauthClientRequest(String clientId, OAuthClientRequest body) {
     return PutOauthClientRequest.builder()
             .withClientId(clientId)
     
@@ -489,7 +490,7 @@ public class OAuthApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClient> request) throws IOException {
+  public ApiResponse<OAuthClient> putOauthClient(ApiRequest<OAuthClientRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OAuthClient>() {});
     }

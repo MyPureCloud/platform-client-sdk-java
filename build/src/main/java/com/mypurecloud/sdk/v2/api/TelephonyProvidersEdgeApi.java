@@ -6413,7 +6413,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
    * @return TrunkBase
@@ -6426,7 +6426,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param trunkBaseSettingsId Trunk Base ID (required)
    * @param ignoreHidden Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. (optional)
    * @return TrunkBase
@@ -6447,7 +6447,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request The request object
    * @return TrunkBase
    * @throws ApiException if the request fails on the server
@@ -6466,7 +6466,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -6496,7 +6496,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Value by which to sort (optional, default to name)
@@ -6516,7 +6516,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Value by which to sort (optional, default to name)
@@ -6558,7 +6558,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request The request object
    * @return TrunkBaseEntityListing
    * @throws ApiException if the request fails on the server
@@ -6577,7 +6577,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

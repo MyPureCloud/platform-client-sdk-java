@@ -41,6 +41,7 @@ title: AnalyticsParticipant
 | EXTERNAL | &quot;external&quot; |
 | FAX | &quot;fax&quot; |
 | WORKFLOW | &quot;workflow&quot; |
+| CAMPAIGN | &quot;campaign&quot; |
 {: class="table table-striped"}
 
 

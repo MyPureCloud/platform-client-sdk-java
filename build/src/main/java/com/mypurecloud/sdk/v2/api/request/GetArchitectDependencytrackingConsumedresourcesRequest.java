@@ -242,6 +242,34 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 		}
 	}
 	
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public GetArchitectDependencytrackingConsumedresourcesRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetArchitectDependencytrackingConsumedresourcesRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -287,6 +315,10 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
                 .withQueryParameters("objectType", "", objectType)
         
                 .withQueryParameters("resourceType", "multi", resourceType)
+        
+                .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("pageSize", "", pageSize)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -346,6 +378,16 @@ public class GetArchitectDependencytrackingConsumedresourcesRequest {
 	      }
 	      request.setResourceType(stringList);
 		    return this;
+		}
+		
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
+			return this;
 		}
 		
 

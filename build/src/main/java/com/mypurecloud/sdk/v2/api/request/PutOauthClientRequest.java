@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 public class PutOauthClientRequest {
     
@@ -40,16 +41,16 @@ public class PutOauthClientRequest {
 	    return this;
 	} 
 	
-	private OAuthClient body;
-	public OAuthClient getBody() {
+	private OAuthClientRequest body;
+	public OAuthClientRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(OAuthClient body) {
+	public void setBody(OAuthClientRequest body) {
 		this.body = body;
 	}
 
-	public PutOauthClientRequest withBody(OAuthClient body) {
+	public PutOauthClientRequest withBody(OAuthClientRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -73,7 +74,7 @@ public class PutOauthClientRequest {
         return this;
     }
 
-    public ApiRequest<OAuthClient> withHttpInfo() {
+    public ApiRequest<OAuthClientRequest> withHttpInfo() {
         
         // verify the required parameter 'clientId' is set
         if (this.clientId == null) {
@@ -103,7 +104,7 @@ public class PutOauthClientRequest {
 	}
 
 	
-	public static Builder builder(String clientId, OAuthClient body) {
+	public static Builder builder(String clientId, OAuthClientRequest body) {
 	    return new Builder()
 	            .withRequiredParams(clientId, body);
 	}
@@ -122,14 +123,14 @@ public class PutOauthClientRequest {
 			return this;
 		}
 		
-		public Builder withBody(OAuthClient body) {
+		public Builder withBody(OAuthClientRequest body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String clientId, OAuthClient body) {
+		public Builder withRequiredParams(String clientId, OAuthClientRequest body) {
 			request.setClientId(clientId);
 						request.setBody(body);
 			

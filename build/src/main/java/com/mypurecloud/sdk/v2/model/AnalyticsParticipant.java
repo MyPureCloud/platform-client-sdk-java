@@ -41,7 +41,8 @@ public class AnalyticsParticipant  implements Serializable {
     CUSTOMER("customer"),
     EXTERNAL("external"),
     FAX("fax"),
-    WORKFLOW("workflow");
+    WORKFLOW("workflow"),
+    CAMPAIGN("campaign");
 
     private String value;
 

@@ -302,7 +302,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 OAuthApi apiInstance = new OAuthApi();
-OAuthClient body = new OAuthClient(); // OAuthClient | Client
+OAuthClientRequest body = new OAuthClientRequest(); // OAuthClientRequest | Client
 try {
     OAuthClient result = apiInstance.postOauthClients(body);
     System.out.println(result);
@@ -317,7 +317,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | 
+| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client | 
 {: class="table-striped"}
 
 
@@ -366,7 +366,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OAuthApi apiInstance = new OAuthApi();
 String clientId = "clientId_example"; // String | Client ID
-OAuthClient body = new OAuthClient(); // OAuthClient | Client
+OAuthClientRequest body = new OAuthClientRequest(); // OAuthClientRequest | Client
 try {
     OAuthClient result = apiInstance.putOauthClient(clientId, body);
     System.out.println(result);
@@ -382,7 +382,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **clientId** | **String**| Client ID | 
-| **body** | [**OAuthClient**](OAuthClient.html)| Client | 
+| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client | 
 {: class="table-striped"}
 
 

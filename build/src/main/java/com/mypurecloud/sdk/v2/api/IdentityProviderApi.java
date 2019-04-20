@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
+import com.mypurecloud.sdk.v2.model.PureEnage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
@@ -33,6 +34,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
@@ -43,6 +45,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
@@ -52,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersSalesforceRequest;
 
 import java.io.IOException;
@@ -651,6 +655,81 @@ public class IdentityProviderApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Empty> deleteIdentityprovidersPurecloud(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteIdentityprovidersPureengage() throws IOException, ApiException {
+    return  deleteIdentityprovidersPureengage(createDeleteIdentityprovidersPureengageRequest());
+  }
+
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteIdentityprovidersPureengageWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersPureengage(createDeleteIdentityprovidersPureengageRequest().withHttpInfo());
+  }
+
+  private DeleteIdentityprovidersPureengageRequest createDeleteIdentityprovidersPureengageRequest() {
+    return DeleteIdentityprovidersPureengageRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteIdentityprovidersPureengage(DeleteIdentityprovidersPureengageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteIdentityprovidersPureengage(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
@@ -1424,6 +1503,81 @@ public class IdentityProviderApi {
 
   
   /**
+   * Get PureEngage Identity Provider
+   * 
+   * @return PureEnage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PureEnage getIdentityprovidersPureengage() throws IOException, ApiException {
+    return  getIdentityprovidersPureengage(createGetIdentityprovidersPureengageRequest());
+  }
+
+  /**
+   * Get PureEngage Identity Provider
+   * 
+   * @return PureEnage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PureEnage> getIdentityprovidersPureengageWithHttpInfo() throws IOException {
+    return getIdentityprovidersPureengage(createGetIdentityprovidersPureengageRequest().withHttpInfo());
+  }
+
+  private GetIdentityprovidersPureengageRequest createGetIdentityprovidersPureengageRequest() {
+    return GetIdentityprovidersPureengageRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return PureEnage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PureEnage getIdentityprovidersPureengage(GetIdentityprovidersPureengageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PureEnage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PureEnage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PureEnage> getIdentityprovidersPureengage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PureEnage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Salesforce Identity Provider
    * 
    * @return Salesforce
@@ -2108,6 +2262,85 @@ public class IdentityProviderApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<OAuthProvider> putIdentityprovidersPurecloud(ApiRequest<PureCloud> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthProvider putIdentityprovidersPureengage(PureEnage body) throws IOException, ApiException {
+    return  putIdentityprovidersPureengage(createPutIdentityprovidersPureengageRequest(body));
+  }
+
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return OAuthProvider
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthProvider> putIdentityprovidersPureengageWithHttpInfo(PureEnage body) throws IOException {
+    return putIdentityprovidersPureengage(createPutIdentityprovidersPureengageRequest(body).withHttpInfo());
+  }
+
+  private PutIdentityprovidersPureengageRequest createPutIdentityprovidersPureengageRequest(PureEnage body) {
+    return PutIdentityprovidersPureengageRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthProvider putIdentityprovidersPureengage(PutIdentityprovidersPureengageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthProvider> putIdentityprovidersPureengage(ApiRequest<PureEnage> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
     }

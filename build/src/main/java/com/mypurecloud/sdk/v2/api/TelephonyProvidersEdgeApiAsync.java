@@ -5846,7 +5846,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5880,7 +5880,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Get a Trunk Base Settings object by ID
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5922,7 +5922,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5956,7 +5956,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Get Trunk Base Settings listing
-   * Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+   * Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

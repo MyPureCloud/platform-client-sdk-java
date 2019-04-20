@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
+import com.mypurecloud.sdk.v2.model.PureEnage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
@@ -36,6 +37,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
@@ -46,6 +48,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
@@ -55,6 +58,7 @@ import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOktaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOneloginRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersSalesforceRequest;
 
 import java.io.IOException;
@@ -651,6 +655,82 @@ public class IdentityProviderApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> deleteIdentityprovidersPurecloudAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteIdentityprovidersPureengageAsync(DeleteIdentityprovidersPureengageRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersPureengageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
       final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1446,6 +1526,82 @@ public class IdentityProviderApiAsync {
 
   
   /**
+   * Get PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PureEnage> getIdentityprovidersPureengageAsync(GetIdentityprovidersPureengageRequest request, final AsyncApiCallback<PureEnage> callback) {
+    try {
+      final SettableFuture<PureEnage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PureEnage>() {}, new AsyncApiCallback<ApiResponse<PureEnage>>() {
+        @Override
+        public void onCompleted(ApiResponse<PureEnage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PureEnage>> getIdentityprovidersPureengageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PureEnage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PureEnage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PureEnage>() {}, new AsyncApiCallback<ApiResponse<PureEnage>>() {
+        @Override
+        public void onCompleted(ApiResponse<PureEnage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get Salesforce Identity Provider
    * 
    * @param request the request object
@@ -2095,6 +2251,82 @@ public class IdentityProviderApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPurecloudAsync(ApiRequest<PureCloud> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthProvider> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthProvider> putIdentityprovidersPureengageAsync(PutIdentityprovidersPureengageRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+    try {
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthProvider> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update/Create PureEngage Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPureengageAsync(ApiRequest<PureEnage> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
       final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

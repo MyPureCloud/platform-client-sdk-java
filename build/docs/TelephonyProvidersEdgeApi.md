@@ -4965,7 +4965,7 @@ try {
 
 Get a Trunk Base Settings object by ID
 
-Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}  
 
@@ -5030,7 +5030,7 @@ try {
 
 Get Trunk Base Settings listing
 
-Managed properties will not be returned unless the user is assigned the managed:all:all permission.
+Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings  
 

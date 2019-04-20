@@ -132,14 +132,14 @@ public class OAuthClientListing  implements Serializable {
 
   
   /**
-   * Roles assigned to this client. Roles only apply to clients using the client_credential grant
+   * Deprecated. Use roleDivisions instead.
    **/
   public OAuthClientListing roleIds(List<String> roleIds) {
     this.roleIds = roleIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Roles assigned to this client. Roles only apply to clients using the client_credential grant")
+  @ApiModelProperty(example = "null", value = "Deprecated. Use roleDivisions instead.")
   @JsonProperty("roleIds")
   public List<String> getRoleIds() {
     return roleIds;
@@ -222,14 +222,14 @@ public class OAuthClientListing  implements Serializable {
 
   
   /**
-   * The scope requested by this client
+   * The scope requested by this client. Scopes only apply to clients not using the client_credential grant
    **/
   public OAuthClientListing scope(List<String> scope) {
     this.scope = scope;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The scope requested by this client")
+  @ApiModelProperty(example = "null", value = "The scope requested by this client. Scopes only apply to clients not using the client_credential grant")
   @JsonProperty("scope")
   public List<String> getScope() {
     return scope;
@@ -240,14 +240,14 @@ public class OAuthClientListing  implements Serializable {
 
   
   /**
-   * Set of roles and their corresponding divisions associated with this client
+   * Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant
    **/
   public OAuthClientListing roleDivisions(List<RoleDivision> roleDivisions) {
     this.roleDivisions = roleDivisions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Set of roles and their corresponding divisions associated with this client")
+  @ApiModelProperty(example = "null", value = "Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant")
   @JsonProperty("roleDivisions")
   public List<RoleDivision> getRoleDivisions() {
     return roleDivisions;

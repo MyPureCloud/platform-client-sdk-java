@@ -1356,12 +1356,14 @@ public class ArchitectApi {
    * @param version Consuming object version (required)
    * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
    * @param resourceType Types of consumed resources to show (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ConsumedResourcesEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(String id, String version, String objectType, List<String> resourceType) throws IOException, ApiException {
-    return  getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType));
+  public ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(String id, String version, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType, pageNumber, pageSize));
   }
 
   /**
@@ -1371,14 +1373,16 @@ public class ArchitectApi {
    * @param version Consuming object version (required)
    * @param objectType Consuming object type.  Only versioned types are allowed here. (required)
    * @param resourceType Types of consumed resources to show (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ConsumedResourcesEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesWithHttpInfo(String id, String version, String objectType, List<String> resourceType) throws IOException {
-    return getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType).withHttpInfo());
+  public ApiResponse<ConsumedResourcesEntityListing> getArchitectDependencytrackingConsumedresourcesWithHttpInfo(String id, String version, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectDependencytrackingConsumedresources(createGetArchitectDependencytrackingConsumedresourcesRequest(id, version, objectType, resourceType, pageNumber, pageSize).withHttpInfo());
   }
 
-  private GetArchitectDependencytrackingConsumedresourcesRequest createGetArchitectDependencytrackingConsumedresourcesRequest(String id, String version, String objectType, List<String> resourceType) {
+  private GetArchitectDependencytrackingConsumedresourcesRequest createGetArchitectDependencytrackingConsumedresourcesRequest(String id, String version, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingConsumedresourcesRequest.builder()
             .withId(id)
     
@@ -1387,6 +1391,10 @@ public class ArchitectApi {
             .withObjectType(objectType)
     
             .withResourceType(resourceType)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
     
             .build();
   }
@@ -1446,12 +1454,14 @@ public class ArchitectApi {
    * @param id Consumed object ID (required)
    * @param objectType Consumed object type (required)
    * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ConsumingResourcesEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(String id, String objectType, List<String> resourceType) throws IOException, ApiException {
-    return  getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType));
+  public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, pageNumber, pageSize));
   }
 
   /**
@@ -1460,20 +1470,26 @@ public class ArchitectApi {
    * @param id Consumed object ID (required)
    * @param objectType Consumed object type (required)
    * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ConsumingResourcesEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType) throws IOException {
-    return getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType).withHttpInfo());
+  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) throws IOException {
+    return getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, pageNumber, pageSize).withHttpInfo());
   }
 
-  private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType) {
+  private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize) {
     return GetArchitectDependencytrackingConsumingresourcesRequest.builder()
             .withId(id)
     
             .withObjectType(objectType)
     
             .withResourceType(resourceType)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
     
             .build();
   }

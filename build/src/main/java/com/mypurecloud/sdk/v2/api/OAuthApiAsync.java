@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
@@ -390,7 +391,7 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClient> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> postOauthClientsAsync(ApiRequest<OAuthClientRequest> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
       final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -466,7 +467,7 @@ public class OAuthApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClient> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
+  public Future<ApiResponse<OAuthClient>> putOauthClientAsync(ApiRequest<OAuthClientRequest> request, final AsyncApiCallback<ApiResponse<OAuthClient>> callback) {
     try {
       final SettableFuture<ApiResponse<OAuthClient>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
