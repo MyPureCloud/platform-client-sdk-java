@@ -237,7 +237,8 @@ public class GetUsersRequest {
 	public enum stateValues { 
 		ACTIVE("active"), 
 		INACTIVE("inactive"), 
-		DELETED("deleted");
+		DELETED("deleted"), 
+		ANY("any");
 
 		private String value;
 

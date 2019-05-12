@@ -31,22 +31,22 @@ import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
-import com.mypurecloud.sdk.v2.model.PureEnage;
+import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 public class PutIdentityprovidersPureengageRequest {
     
-	private PureEnage body;
-	public PureEnage getBody() {
+	private PureEngage body;
+	public PureEngage getBody() {
 		return this.body;
 	}
 
-	public void setBody(PureEnage body) {
+	public void setBody(PureEngage body) {
 		this.body = body;
 	}
 
-	public PutIdentityprovidersPureengageRequest withBody(PureEnage body) {
+	public PutIdentityprovidersPureengageRequest withBody(PureEngage body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -70,7 +70,7 @@ public class PutIdentityprovidersPureengageRequest {
         return this;
     }
 
-    public ApiRequest<PureEnage> withHttpInfo() {
+    public ApiRequest<PureEngage> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -93,7 +93,7 @@ public class PutIdentityprovidersPureengageRequest {
 	}
 
 	
-	public static Builder builder(PureEnage body) {
+	public static Builder builder(PureEngage body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -107,14 +107,14 @@ public class PutIdentityprovidersPureengageRequest {
 		}
 
 		
-		public Builder withBody(PureEnage body) {
+		public Builder withBody(PureEngage body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(PureEnage body) {
+		public Builder withRequiredParams(PureEngage body) {
 			request.setBody(body);
 			
 			return this;

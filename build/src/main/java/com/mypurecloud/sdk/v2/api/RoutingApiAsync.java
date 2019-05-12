@@ -116,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillsBulkRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -3330,7 +3331,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3364,7 +3365,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4913,6 +4914,82 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserSkillEntityListing> putUserRoutingskillsBulkAsync(PutUserRoutingskillsBulkRequest request, final AsyncApiCallback<UserSkillEntityListing> callback) {
+    try {
+      final SettableFuture<UserSkillEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserSkillEntityListing>> putUserRoutingskillsBulkAsync(ApiRequest<List<UserRoutingSkillPost>> request, final AsyncApiCallback<ApiResponse<UserSkillEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserSkillEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserSkillEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserSkillEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserSkillEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

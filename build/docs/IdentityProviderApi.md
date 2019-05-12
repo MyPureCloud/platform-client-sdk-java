@@ -1167,7 +1167,7 @@ This endpoint does not require any parameters.
 
 
 
-> [PureEnage](PureEnage.html) getIdentityprovidersPureengage()
+> [PureEngage](PureEngage.html) getIdentityprovidersPureengage()
 
 Get PureEngage Identity Provider
 
@@ -1202,7 +1202,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 IdentityProviderApi apiInstance = new IdentityProviderApi();
 try {
-    PureEnage result = apiInstance.getIdentityprovidersPureengage();
+    PureEngage result = apiInstance.getIdentityprovidersPureengage();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#getIdentityprovidersPureengage");
@@ -1218,7 +1218,7 @@ This endpoint does not require any parameters.
 
 ### Return type
 
-[**PureEnage**](PureEnage.html)
+[**PureEngage**](PureEngage.html)
 
 <a name="getIdentityprovidersSalesforce"></a>
 
@@ -1832,7 +1832,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 IdentityProviderApi apiInstance = new IdentityProviderApi();
-PureEnage body = new PureEnage(); // PureEnage | Provider
+PureEngage body = new PureEngage(); // PureEngage | Provider
 try {
     OAuthProvider result = apiInstance.putIdentityprovidersPureengage(body);
     System.out.println(result);
@@ -1847,7 +1847,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**PureEnage**](PureEnage.html)| Provider | 
+| **body** | [**PureEngage**](PureEngage.html)| Provider | 
 {: class="table-striped"}
 
 

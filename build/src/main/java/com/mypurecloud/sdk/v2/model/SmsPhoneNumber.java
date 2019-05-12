@@ -64,9 +64,11 @@ public class SmsPhoneNumber  implements Serializable {
    */
   public enum PhoneNumberStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    INVALID("invalid"),
-    ACTIVE("active"),
-    PORTING("porting");
+    INVALID("INVALID"),
+    ACTIVE("ACTIVE"),
+    PORTING("PORTING"),
+    PENDING("PENDING"),
+    PENDING_CANCELLATION("PENDING_CANCELLATION");
 
     private String value;
 
@@ -100,6 +102,43 @@ public class SmsPhoneNumber  implements Serializable {
   private User createdBy = null;
   private User modifiedBy = null;
   private Integer version = null;
+  private Date purchaseDate = null;
+  private Date cancellationDate = null;
+  private Date renewalDate = null;
+
+  /**
+   * Renewal time period of this phone number, if the phoneNumberType is shortcode.
+   */
+  public enum AutoRenewableEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    QUARTERLY("Quarterly");
+
+    private String value;
+
+    AutoRenewableEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AutoRenewableEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AutoRenewableEnum value : AutoRenewableEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AutoRenewableEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AutoRenewableEnum autoRenewable = null;
   private String selfUri = null;
 
   
@@ -307,6 +346,78 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
+  /**
+   * Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public SmsPhoneNumber purchaseDate(Date purchaseDate) {
+    this.purchaseDate = purchaseDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("purchaseDate")
+  public Date getPurchaseDate() {
+    return purchaseDate;
+  }
+  public void setPurchaseDate(Date purchaseDate) {
+    this.purchaseDate = purchaseDate;
+  }
+
+  
+  /**
+   * Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public SmsPhoneNumber cancellationDate(Date cancellationDate) {
+    this.cancellationDate = cancellationDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("cancellationDate")
+  public Date getCancellationDate() {
+    return cancellationDate;
+  }
+  public void setCancellationDate(Date cancellationDate) {
+    this.cancellationDate = cancellationDate;
+  }
+
+  
+  /**
+   * Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public SmsPhoneNumber renewalDate(Date renewalDate) {
+    this.renewalDate = renewalDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("renewalDate")
+  public Date getRenewalDate() {
+    return renewalDate;
+  }
+  public void setRenewalDate(Date renewalDate) {
+    this.renewalDate = renewalDate;
+  }
+
+  
+  /**
+   * Renewal time period of this phone number, if the phoneNumberType is shortcode.
+   **/
+  public SmsPhoneNumber autoRenewable(AutoRenewableEnum autoRenewable) {
+    this.autoRenewable = autoRenewable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Renewal time period of this phone number, if the phoneNumberType is shortcode.")
+  @JsonProperty("autoRenewable")
+  public AutoRenewableEnum getAutoRenewable() {
+    return autoRenewable;
+  }
+  public void setAutoRenewable(AutoRenewableEnum autoRenewable) {
+    this.autoRenewable = autoRenewable;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -336,12 +447,16 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.createdBy, smsPhoneNumber.createdBy) &&
         Objects.equals(this.modifiedBy, smsPhoneNumber.modifiedBy) &&
         Objects.equals(this.version, smsPhoneNumber.version) &&
+        Objects.equals(this.purchaseDate, smsPhoneNumber.purchaseDate) &&
+        Objects.equals(this.cancellationDate, smsPhoneNumber.cancellationDate) &&
+        Objects.equals(this.renewalDate, smsPhoneNumber.renewalDate) &&
+        Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
         Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, selfUri);
   }
 
   @Override
@@ -361,6 +476,10 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    purchaseDate: ").append(toIndentedString(purchaseDate)).append("\n");
+    sb.append("    cancellationDate: ").append(toIndentedString(cancellationDate)).append("\n");
+    sb.append("    renewalDate: ").append(toIndentedString(renewalDate)).append("\n");
+    sb.append("    autoRenewable: ").append(toIndentedString(autoRenewable)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

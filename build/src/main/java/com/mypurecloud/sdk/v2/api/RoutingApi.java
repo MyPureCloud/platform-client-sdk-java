@@ -113,6 +113,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillsBulkRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -3711,7 +3712,7 @@ public class RoutingApi {
 
   
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -3724,7 +3725,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param userId User ID (required)
    * @param body Skill (required)
@@ -3745,7 +3746,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param request The request object
    * @return UserSkillEntityListing
@@ -3764,7 +3765,7 @@ public class RoutingApi {
   }
 
   /**
-   * Add bulk routing skills to user
+   * Bulk add routing skills to user
    * 
    * @param request The request object
    * @return the response
@@ -5424,6 +5425,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserRoutingSkill> response = (ApiResponse<UserRoutingSkill>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param userId User ID (required)
+   * @param body Skill (required)
+   * @return UserSkillEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillEntityListing putUserRoutingskillsBulk(String userId, List<UserRoutingSkillPost> body) throws IOException, ApiException {
+    return  putUserRoutingskillsBulk(createPutUserRoutingskillsBulkRequest(userId, body));
+  }
+
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param userId User ID (required)
+   * @param body Skill (required)
+   * @return UserSkillEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillEntityListing> putUserRoutingskillsBulkWithHttpInfo(String userId, List<UserRoutingSkillPost> body) throws IOException {
+    return putUserRoutingskillsBulk(createPutUserRoutingskillsBulkRequest(userId, body).withHttpInfo());
+  }
+
+  private PutUserRoutingskillsBulkRequest createPutUserRoutingskillsBulkRequest(String userId, List<UserRoutingSkillPost> body) {
+    return PutUserRoutingskillsBulkRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param request The request object
+   * @return UserSkillEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserSkillEntityListing putUserRoutingskillsBulk(PutUserRoutingskillsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserSkillEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserSkillEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Replace all routing skills assigned to a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserSkillEntityListing> putUserRoutingskillsBulk(ApiRequest<List<UserRoutingSkillPost>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserSkillEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

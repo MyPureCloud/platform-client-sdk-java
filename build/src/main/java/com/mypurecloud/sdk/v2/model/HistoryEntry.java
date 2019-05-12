@@ -31,7 +31,10 @@ public class HistoryEntry  implements Serializable {
     DELETE("DELETE"),
     PUBLISH("PUBLISH"),
     REVERT("REVERT"),
-    SAVE("SAVE");
+    SAVE("SAVE"),
+    TRANSCODE("TRANSCODE"),
+    UPDATE("UPDATE"),
+    UPLOAD("UPLOAD");
 
     private String value;
 

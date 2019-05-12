@@ -33,6 +33,9 @@ title: HistoryEntry
 | PUBLISH | &quot;PUBLISH&quot; |
 | REVERT | &quot;REVERT&quot; |
 | SAVE | &quot;SAVE&quot; |
+| TRANSCODE | &quot;TRANSCODE&quot; |
+| UPDATE | &quot;UPDATE&quot; |
+| UPLOAD | &quot;UPLOAD&quot; |
 {: class="table table-striped"}
 
 

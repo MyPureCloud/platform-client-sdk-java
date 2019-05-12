@@ -47,7 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserQueues**](UsersApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
 | [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
-| [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | Add bulk routing skills to user |
+| [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
 | [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | Update bulk acd autoanswer on users |
 | [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
@@ -65,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserProfileskills**](UsersApi.html#putUserProfileskills) | Update profile skills for a user |
 | [**putUserRoles**](UsersApi.html#putUserRoles) | Sets the user&#39;s roles |
 | [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
+| [**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
 | [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | Update the routing status of a user |
 | [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | Set default station |
@@ -2077,7 +2078,7 @@ try {
 | **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
-| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted 
+| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any 
 {: class="table-striped"}
 
 
@@ -2684,7 +2685,7 @@ try {
 
 > [UserSkillEntityListing](UserSkillEntityListing.html) patchUserRoutingskillsBulk(userId, body)
 
-Add bulk routing skills to user
+Bulk add routing skills to user
 
 
 
@@ -3844,6 +3845,72 @@ try {
 ### Return type
 
 [**UserRoutingSkill**](UserRoutingSkill.html)
+
+<a name="putUserRoutingskillsBulk"></a>
+
+# **putUserRoutingskillsBulk**
+
+
+
+> [UserSkillEntityListing](UserSkillEntityListing.html) putUserRoutingskillsBulk(userId, body)
+
+Replace all routing skills assigned to a user
+
+
+
+Wraps PUT /api/v2/users/{userId}/routingskills/bulk  
+
+Requires ANY permissions: 
+
+* routing:skill:assign
+* admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+List<UserRoutingSkillPost> body = Arrays.asList(new UserRoutingSkillPost()); // List<UserRoutingSkillPost> | Skill
+try {
+    UserSkillEntityListing result = apiInstance.putUserRoutingskillsBulk(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUserRoutingskillsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserRoutingSkillPost&gt;**](UserRoutingSkillPost.html)| Skill | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserSkillEntityListing**](UserSkillEntityListing.html)
 
 <a name="putUserRoutingstatus"></a>
 

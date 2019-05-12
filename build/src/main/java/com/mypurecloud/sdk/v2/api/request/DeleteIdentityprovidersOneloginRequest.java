@@ -31,7 +31,7 @@ import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
-import com.mypurecloud.sdk.v2.model.PureEnage;
+import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 

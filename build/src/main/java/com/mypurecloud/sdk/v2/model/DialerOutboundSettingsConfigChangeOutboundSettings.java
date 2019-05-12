@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
@@ -60,6 +61,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     }
   }
   private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
+  private DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings automaticTimeZoneMapping = null;
 
   
   /**
@@ -215,6 +217,23 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
   }
 
   
+  /**
+   **/
+  public DialerOutboundSettingsConfigChangeOutboundSettings automaticTimeZoneMapping(DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("automaticTimeZoneMapping")
+  public DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings getAutomaticTimeZoneMapping() {
+    return automaticTimeZoneMapping;
+  }
+  public void setAutomaticTimeZoneMapping(DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,12 +252,13 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
         Objects.equals(this.maxCallsPerAgent, dialerOutboundSettingsConfigChangeOutboundSettings.maxCallsPerAgent) &&
         Objects.equals(this.maxLineUtilization, dialerOutboundSettingsConfigChangeOutboundSettings.maxLineUtilization) &&
         Objects.equals(this.abandonSeconds, dialerOutboundSettingsConfigChangeOutboundSettings.abandonSeconds) &&
-        Objects.equals(this.complianceAbandonRateDenominator, dialerOutboundSettingsConfigChangeOutboundSettings.complianceAbandonRateDenominator);
+        Objects.equals(this.complianceAbandonRateDenominator, dialerOutboundSettingsConfigChangeOutboundSettings.complianceAbandonRateDenominator) &&
+        Objects.equals(this.automaticTimeZoneMapping, dialerOutboundSettingsConfigChangeOutboundSettings.automaticTimeZoneMapping);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping);
   }
 
   @Override
@@ -255,6 +275,7 @@ public class DialerOutboundSettingsConfigChangeOutboundSettings  implements Seri
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
+    sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }

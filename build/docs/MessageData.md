@@ -49,8 +49,6 @@ title: MessageData
 | TWITTER | &quot;twitter&quot; |
 | LINE | &quot;line&quot; |
 | WHATSAPP | &quot;whatsapp&quot; |
-| TELEGRAM | &quot;telegram&quot; |
-| KAKAO | &quot;kakao&quot; |
 {: class="table table-striped"}
 
 

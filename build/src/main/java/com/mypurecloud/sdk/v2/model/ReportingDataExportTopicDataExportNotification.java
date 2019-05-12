@@ -30,6 +30,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     CANCELLING("CANCELLING"),
     CANCELLED("CANCELLED"),
     COMPLETED("COMPLETED"),
+    COMPLETED_WITH_PARTIAL_RESULTS("COMPLETED_WITH_PARTIAL_RESULTS"),
     FAILED("FAILED");
 
     private String value;

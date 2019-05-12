@@ -34,6 +34,7 @@ title: ReportingDataExportTopicDataExportNotification
 | CANCELLING | &quot;CANCELLING&quot; |
 | CANCELLED | &quot;CANCELLED&quot; |
 | COMPLETED | &quot;COMPLETED&quot; |
+| COMPLETED_WITH_PARTIAL_RESULTS | &quot;COMPLETED_WITH_PARTIAL_RESULTS&quot; |
 | FAILED | &quot;FAILED&quot; |
 {: class="table table-striped"}
 

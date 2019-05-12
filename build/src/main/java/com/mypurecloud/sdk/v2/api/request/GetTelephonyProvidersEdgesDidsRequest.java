@@ -157,6 +157,34 @@ public class GetTelephonyProvidersEdgesDidsRequest {
 	    return this;
 	} 
 	
+	private String ownerId;
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+	}
+
+	public GetTelephonyProvidersEdgesDidsRequest withOwnerId(String ownerId) {
+	    this.setOwnerId(ownerId);
+	    return this;
+	} 
+	
+	private String didPoolId;
+	public String getDidPoolId() {
+		return this.didPoolId;
+	}
+
+	public void setDidPoolId(String didPoolId) {
+		this.didPoolId = didPoolId;
+	}
+
+	public GetTelephonyProvidersEdgesDidsRequest withDidPoolId(String didPoolId) {
+	    this.setDidPoolId(didPoolId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -189,6 +217,10 @@ public class GetTelephonyProvidersEdgesDidsRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("phoneNumber", "", phoneNumber)
+        
+                .withQueryParameters("owner.id", "", ownerId)
+        
+                .withQueryParameters("didPool.id", "", didPoolId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -233,6 +265,16 @@ public class GetTelephonyProvidersEdgesDidsRequest {
 		
 		public Builder withPhoneNumber(String phoneNumber) {
 			request.setPhoneNumber(phoneNumber);
+			return this;
+		}
+		
+		public Builder withOwnerId(String ownerId) {
+			request.setOwnerId(ownerId);
+			return this;
+		}
+		
+		public Builder withDidPoolId(String didPoolId) {
+			request.setDidPoolId(didPoolId);
 			return this;
 		}
 		

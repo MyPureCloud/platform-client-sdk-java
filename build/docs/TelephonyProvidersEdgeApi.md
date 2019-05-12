@@ -2575,7 +2575,7 @@ try {
 
 
 
-> [DIDEntityListing](DIDEntityListing.html) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber)
+> [DIDEntityListing](DIDEntityListing.html) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId)
 
 Get a listing of DIDs
 
@@ -2614,8 +2614,10 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "number"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String phoneNumber = "phoneNumber_example"; // String | Filter by phoneNumber
+String ownerId = "ownerId_example"; // String | Filter by the owner of a phone number
+String didPoolId = "didPoolId_example"; // String | Filter by the DID Pool assignment
 try {
-    DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber);
+    DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDids");
@@ -2633,6 +2635,8 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to number] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **phoneNumber** | **String**| Filter by phoneNumber | [optional] 
+| **ownerId** | **String**| Filter by the owner of a phone number | [optional] 
+| **didPoolId** | **String**| Filter by the DID Pool assignment | [optional] 
 {: class="table-striped"}
 
 

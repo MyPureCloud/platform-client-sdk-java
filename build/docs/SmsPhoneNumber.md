@@ -20,6 +20,10 @@ title: SmsPhoneNumber
 | **createdBy** | [**User**](User.html) | User that provisioned this phone number |  [optional] |
 | **modifiedBy** | [**User**](User.html) | User that last modified this phone number |  [optional] |
 | **version** | **Integer** | Version number required for updates. |  [optional] |
+| **purchaseDate** | [**Date**](Date.html) | Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **cancellationDate** | [**Date**](Date.html) | Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **renewalDate** | [**Date**](Date.html) | Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **autoRenewable** | [**AutoRenewableEnum**](#AutoRenewableEnum) | Renewal time period of this phone number, if the phoneNumberType is shortcode. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -45,9 +49,22 @@ title: SmsPhoneNumber
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| INVALID | &quot;invalid&quot; |
-| ACTIVE | &quot;active&quot; |
-| PORTING | &quot;porting&quot; |
+| INVALID | &quot;INVALID&quot; |
+| ACTIVE | &quot;ACTIVE&quot; |
+| PORTING | &quot;PORTING&quot; |
+| PENDING | &quot;PENDING&quot; |
+| PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; |
+{: class="table table-striped"}
+
+
+<a name="AutoRenewableEnum"></a>
+
+## Enum: AutoRenewableEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| QUARTERLY | &quot;Quarterly&quot; |
 {: class="table table-striped"}
 
 

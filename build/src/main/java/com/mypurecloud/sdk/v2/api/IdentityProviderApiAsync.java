@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.Okta;
 import com.mypurecloud.sdk.v2.model.OneLogin;
 import com.mypurecloud.sdk.v2.model.PingIdentity;
 import com.mypurecloud.sdk.v2.model.PureCloud;
-import com.mypurecloud.sdk.v2.model.PureEnage;
+import com.mypurecloud.sdk.v2.model.PureEngage;
 import com.mypurecloud.sdk.v2.model.Salesforce;
 import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
@@ -1532,13 +1532,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<PureEnage> getIdentityprovidersPureengageAsync(GetIdentityprovidersPureengageRequest request, final AsyncApiCallback<PureEnage> callback) {
+  public Future<PureEngage> getIdentityprovidersPureengageAsync(GetIdentityprovidersPureengageRequest request, final AsyncApiCallback<PureEngage> callback) {
     try {
-      final SettableFuture<PureEnage> future = SettableFuture.create();
+      final SettableFuture<PureEngage> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PureEnage>() {}, new AsyncApiCallback<ApiResponse<PureEnage>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PureEngage>() {}, new AsyncApiCallback<ApiResponse<PureEngage>>() {
         @Override
-        public void onCompleted(ApiResponse<PureEnage> response) {
+        public void onCompleted(ApiResponse<PureEngage> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1566,13 +1566,13 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<PureEnage>> getIdentityprovidersPureengageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PureEnage>> callback) {
+  public Future<ApiResponse<PureEngage>> getIdentityprovidersPureengageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PureEngage>> callback) {
     try {
-      final SettableFuture<ApiResponse<PureEnage>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<PureEngage>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<PureEnage>() {}, new AsyncApiCallback<ApiResponse<PureEnage>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<PureEngage>() {}, new AsyncApiCallback<ApiResponse<PureEngage>>() {
         @Override
-        public void onCompleted(ApiResponse<PureEnage> response) {
+        public void onCompleted(ApiResponse<PureEngage> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1580,7 +1580,7 @@ public class IdentityProviderApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)exception;
+            ApiResponse<PureEngage> response = (ApiResponse<PureEngage>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1588,7 +1588,7 @@ public class IdentityProviderApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<PureEnage> response = (ApiResponse<PureEnage>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<PureEngage> response = (ApiResponse<PureEngage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2326,7 +2326,7 @@ public class IdentityProviderApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPureengageAsync(ApiRequest<PureEnage> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersPureengageAsync(ApiRequest<PureEngage> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
       final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

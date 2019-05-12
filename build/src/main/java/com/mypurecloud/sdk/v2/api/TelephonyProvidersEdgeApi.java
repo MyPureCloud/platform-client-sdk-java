@@ -3331,12 +3331,14 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to number)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param phoneNumber Filter by phoneNumber (optional)
+   * @param ownerId Filter by the owner of a phone number (optional)
+   * @param didPoolId Filter by the DID Pool assignment (optional)
    * @return DIDEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber));
+  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId));
   }
 
   /**
@@ -3347,14 +3349,16 @@ public class TelephonyProvidersEdgeApi {
    * @param sortBy Sort by (optional, default to number)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param phoneNumber Filter by phoneNumber (optional)
+   * @param ownerId Filter by the owner of a phone number (optional)
+   * @param didPoolId Filter by the DID Pool assignment (optional)
    * @return DIDEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) throws IOException {
-    return getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber).withHttpInfo());
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) throws IOException {
+    return getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber) {
+  private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) {
     return GetTelephonyProvidersEdgesDidsRequest.builder()
             .withPageSize(pageSize)
     
@@ -3365,6 +3369,10 @@ public class TelephonyProvidersEdgeApi {
             .withSortOrder(sortOrder)
     
             .withPhoneNumber(phoneNumber)
+    
+            .withOwnerId(ownerId)
+    
+            .withDidPoolId(didPoolId)
     
             .build();
   }

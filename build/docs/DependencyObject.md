@@ -36,6 +36,7 @@ title: DependencyObject
 | CONTACTLIST | &quot;CONTACTLIST&quot; |
 | DATAACTION | &quot;DATAACTION&quot; |
 | DATATABLE | &quot;DATATABLE&quot; |
+| DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; |
 | EMAILROUTE | &quot;EMAILROUTE&quot; |
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
 | FLOWOUTCOME | &quot;FLOWOUTCOME&quot; |
