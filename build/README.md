@@ -53,6 +53,7 @@ ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
         } catch (ApiException e) {
             e.printStackTrace();
         }
+        
 // Don't actually do this, this logs your auth token to the console!
 System.out.println(authResponse.getBody().toString());
 
