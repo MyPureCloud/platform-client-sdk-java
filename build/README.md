@@ -44,6 +44,15 @@ String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 PureCloudRegionHosts region = PureCloudRegionHosts.ap_northeast_1;
 ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
 
+
+  ApiResponse<AuthResponse> authResponse = null;
+        try {
+            authResponse = apiClient.authorizeClientCredentials(clientId,clientSecret);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ApiException e) {
+            e.printStackTrace();
+        }
 // Don't actually do this, this logs your auth token to the console!
 System.out.println(authResponse.getBody().toString());
 
@@ -65,7 +74,7 @@ For user applications, the consuming application must complete an implicit, auth
 // Create ApiClient instance
 ApiClient apiClient = ApiClient.Builder.standard()
 		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.ie")
+		.withBasePath(region)
 		.build();
 
 // Use the ApiClient instance
