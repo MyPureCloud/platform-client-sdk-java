@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.IOException;
@@ -19,7 +18,6 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
-
 import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
@@ -29,7 +27,7 @@ import com.mypurecloud.sdk.v2.auth.Authentication;
 import com.mypurecloud.sdk.v2.auth.OAuth;
 import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
-
+import com.mypurecloud.sdk.v2.extensions.PureCloudRegionHosts;
 
 public class ApiClient implements AutoCloseable {
     private static final String DEFAULT_BASE_PATH = "https://api.mypurecloud.com";
@@ -712,6 +710,10 @@ public class ApiClient implements AutoCloseable {
 
         public Builder withBasePath(String basePath) {
             this.basePath = basePath;
+            return this;
+        }
+        public Builder withBasePath(PureCloudRegionHosts region){
+            this.basePath = region.getApiHost();
             return this;
         }
 
