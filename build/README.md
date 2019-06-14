@@ -40,8 +40,9 @@ The Java SDK contains a helper method toe execute a Client Credentials OAuth flo
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 
-ApiClient apiClient = ApiClient.Builder.standard().build();
-ApiResponse<AuthResponse> authResponse = apiClient.authorizeClientCredentials(clientId, clientSecret);
+//Choose on of the 5 regions based off the values in the PureCloudRegionHosts file
+PureCloudRegionHosts region = PureCloudRegionHosts.ap_northeast_1;
+ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
 
 // Don't actually do this, this logs your auth token to the console!
 System.out.println(authResponse.getBody().toString());
