@@ -29,7 +29,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.api.UsersApi;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.UserMe;
-import com.mypurecloud.sdk.v2.model.UsersEntityListing;
+import com.mypurecloud.sdk.v2.model.UserEntityListing;
 ```
 
 ### Authenticating
@@ -53,7 +53,7 @@ ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
         } catch (ApiException e) {
             e.printStackTrace();
         }
-        
+
 // Don't actually do this, this logs your auth token to the console!
 System.out.println(authResponse.getBody().toString());
 
