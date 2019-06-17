@@ -18,7 +18,6 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
@@ -102,7 +101,7 @@ public class ApiClient implements AutoCloseable {
         objectMapper.registerModule(new JodaModule());
         objectMapper.setDateFormat(dateFormat);
         SimpleModule localDateModule = new SimpleModule();
-        localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer(){});
+        localDateModule.addSerializer(LocalDate.class, new LocalDateSerializer());
         localDateModule.addDeserializer(LocalDate.class, new LocalDateDeserializer());
         objectMapper.registerModule(localDateModule);
         return objectMapper;
