@@ -23,7 +23,17 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WebChatDeployment;
 import com.mypurecloud.sdk.v2.model.WebChatDeploymentEntityListing;
+import com.mypurecloud.sdk.v2.model.WebChatGuestMediaRequest;
+import com.mypurecloud.sdk.v2.model.WebChatGuestMediaRequestEntityList;
+import com.mypurecloud.sdk.v2.model.WebChatMemberInfo;
+import com.mypurecloud.sdk.v2.model.WebChatMemberInfoEntityList;
+import com.mypurecloud.sdk.v2.model.WebChatMessage;
+import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.WebChatSettings;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
+import com.mypurecloud.sdk.v2.model.WebChatTyping;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatConversationRequest;
 
 public class PutWebchatSettingsRequest {
     

@@ -23,6 +23,8 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.ObservationQuery;
 
 public class PostAnalyticsFlowsAggregatesQueryRequest {
     

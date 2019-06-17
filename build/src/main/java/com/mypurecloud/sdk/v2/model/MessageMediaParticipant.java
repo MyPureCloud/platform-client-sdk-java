@@ -224,7 +224,9 @@ public class MessageMediaParticipant  implements Serializable {
     TWITTER("twitter"),
     FACEBOOK("facebook"),
     LINE("line"),
-    WHATSAPP("whatsapp");
+    WHATSAPP("whatsapp"),
+    TELEGRAM("telegram"),
+    KAKAO("kakao");
 
     private String value;
 

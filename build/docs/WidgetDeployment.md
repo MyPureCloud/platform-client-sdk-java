@@ -30,6 +30,7 @@ title: WidgetDeployment
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | V1 | &quot;v1&quot; |
 | V2 | &quot;v2&quot; |
+| V1_HTTP | &quot;v1-http&quot; |
 | THIRD_PARTY | &quot;third-party&quot; |
 {: class="table table-striped"}
 

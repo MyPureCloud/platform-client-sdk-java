@@ -24,8 +24,8 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
   private String previousUri = null;
+  private String lastUri = null;
   private String nextUri = null;
   private Integer pageCount = null;
 
@@ -134,23 +134,6 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
   
   /**
    **/
-  public UserQueueEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
   public UserQueueEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -163,6 +146,23 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
+  public UserQueueEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -216,15 +216,15 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
         Objects.equals(this.total, userQueueEntityListing.total) &&
         Objects.equals(this.firstUri, userQueueEntityListing.firstUri) &&
         Objects.equals(this.selfUri, userQueueEntityListing.selfUri) &&
-        Objects.equals(this.lastUri, userQueueEntityListing.lastUri) &&
         Objects.equals(this.previousUri, userQueueEntityListing.previousUri) &&
+        Objects.equals(this.lastUri, userQueueEntityListing.lastUri) &&
         Objects.equals(this.nextUri, userQueueEntityListing.nextUri) &&
         Objects.equals(this.pageCount, userQueueEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, lastUri, nextUri, pageCount);
   }
 
   @Override
@@ -238,8 +238,8 @@ public class UserQueueEntityListing  implements Serializable, PagedResource<User
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

@@ -184,21 +184,10 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
-  /**
-   * Type of the phone number provisioned.
-   **/
-  public SmsPhoneNumber phoneNumberType(PhoneNumberTypeEnum phoneNumberType) {
-    this.phoneNumberType = phoneNumberType;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Type of the phone number provisioned.")
   @JsonProperty("phoneNumberType")
   public PhoneNumberTypeEnum getPhoneNumberType() {
     return phoneNumberType;
-  }
-  public void setPhoneNumberType(PhoneNumberTypeEnum phoneNumberType) {
-    this.phoneNumberType = phoneNumberType;
   }
 
   
@@ -336,7 +325,7 @@ public class SmsPhoneNumber  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Version number required for updates.")
+  @ApiModelProperty(example = "null", required = true, value = "Version number required for updates.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

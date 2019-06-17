@@ -209,6 +209,7 @@ public class ChatMediaParticipant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
   private String roomId = null;
+  private String avatarImageUrl = null;
 
   
   /**
@@ -751,6 +752,24 @@ public class ChatMediaParticipant  implements Serializable {
   }
 
   
+  /**
+   * If available, the URI to the avatar image of this communication.
+   **/
+  public ChatMediaParticipant avatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If available, the URI to the avatar image of this communication.")
+  @JsonProperty("avatarImageUrl")
+  public String getAvatarImageUrl() {
+    return avatarImageUrl;
+  }
+  public void setAvatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -790,12 +809,13 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.peer, chatMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, chatMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, chatMediaParticipant.journeyContext) &&
-        Objects.equals(this.roomId, chatMediaParticipant.roomId);
+        Objects.equals(this.roomId, chatMediaParticipant.roomId) &&
+        Objects.equals(this.avatarImageUrl, chatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, roomId, avatarImageUrl);
   }
 
   @Override
@@ -833,6 +853,7 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+    sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

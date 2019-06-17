@@ -5299,14 +5299,15 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneHardwareId Filter by phone_hardwareId (optional)
    * @param linesId Filter by lines.id (optional)
    * @param linesName Filter by lines.name (optional)
+   * @param name Name of the Phone to filter by (optional)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return PhoneEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PhoneEntityListing getTelephonyProvidersEdgesPhones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields));
+  public PhoneEntityListing getTelephonyProvidersEdgesPhones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, String name, List<String> expand, List<String> fields) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, expand, fields));
   }
 
   /**
@@ -5324,16 +5325,17 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneHardwareId Filter by phone_hardwareId (optional)
    * @param linesId Filter by lines.id (optional)
    * @param linesName Filter by lines.name (optional)
+   * @param name Name of the Phone to filter by (optional)
    * @param expand Fields to expand in the response, comma-separated (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return PhoneEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) throws IOException {
-    return getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields).withHttpInfo());
+  public ApiResponse<PhoneEntityListing> getTelephonyProvidersEdgesPhonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, String name, List<String> expand, List<String> fields) throws IOException {
+    return getTelephonyProvidersEdgesPhones(createGetTelephonyProvidersEdgesPhonesRequest(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, expand, fields).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesPhonesRequest createGetTelephonyProvidersEdgesPhonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, List<String> expand, List<String> fields) {
+  private GetTelephonyProvidersEdgesPhonesRequest createGetTelephonyProvidersEdgesPhonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String siteId, String webRtcUserId, String phoneBaseSettingsId, String linesLoggedInUserId, String linesDefaultForUserId, String phoneHardwareId, String linesId, String linesName, String name, List<String> expand, List<String> fields) {
     return GetTelephonyProvidersEdgesPhonesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -5358,6 +5360,8 @@ public class TelephonyProvidersEdgeApi {
             .withLinesId(linesId)
     
             .withLinesName(linesName)
+    
+            .withName(name)
     
             .withExpand(expand)
     

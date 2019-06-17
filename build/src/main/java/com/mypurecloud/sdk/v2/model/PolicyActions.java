@@ -8,6 +8,7 @@ import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.InitiateScreenRecording;
 import com.mypurecloud.sdk.v2.model.MediaTranscription;
+import com.mypurecloud.sdk.v2.model.MeteredAssignmentByAgent;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.RetentionDuration;
 import com.mypurecloud.sdk.v2.model.SurveyAssignment;
@@ -28,6 +29,7 @@ public class PolicyActions  implements Serializable {
   private Boolean alwaysDelete = null;
   private List<EvaluationAssignment> assignEvaluations = new ArrayList<EvaluationAssignment>();
   private List<MeteredEvaluationAssignment> assignMeteredEvaluations = new ArrayList<MeteredEvaluationAssignment>();
+  private List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent = new ArrayList<MeteredAssignmentByAgent>();
   private List<CalibrationAssignment> assignCalibrations = new ArrayList<CalibrationAssignment>();
   private List<SurveyAssignment> assignSurveys = new ArrayList<SurveyAssignment>();
   private RetentionDuration retentionDuration = null;
@@ -120,6 +122,23 @@ public class PolicyActions  implements Serializable {
   }
   public void setAssignMeteredEvaluations(List<MeteredEvaluationAssignment> assignMeteredEvaluations) {
     this.assignMeteredEvaluations = assignMeteredEvaluations;
+  }
+
+  
+  /**
+   **/
+  public PolicyActions assignMeteredAssignmentByAgent(List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent) {
+    this.assignMeteredAssignmentByAgent = assignMeteredAssignmentByAgent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("assignMeteredAssignmentByAgent")
+  public List<MeteredAssignmentByAgent> getAssignMeteredAssignmentByAgent() {
+    return assignMeteredAssignmentByAgent;
+  }
+  public void setAssignMeteredAssignmentByAgent(List<MeteredAssignmentByAgent> assignMeteredAssignmentByAgent) {
+    this.assignMeteredAssignmentByAgent = assignMeteredAssignmentByAgent;
   }
 
   
@@ -223,6 +242,7 @@ public class PolicyActions  implements Serializable {
         Objects.equals(this.alwaysDelete, policyActions.alwaysDelete) &&
         Objects.equals(this.assignEvaluations, policyActions.assignEvaluations) &&
         Objects.equals(this.assignMeteredEvaluations, policyActions.assignMeteredEvaluations) &&
+        Objects.equals(this.assignMeteredAssignmentByAgent, policyActions.assignMeteredAssignmentByAgent) &&
         Objects.equals(this.assignCalibrations, policyActions.assignCalibrations) &&
         Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
         Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
@@ -232,7 +252,7 @@ public class PolicyActions  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions);
   }
 
   @Override
@@ -245,6 +265,7 @@ public class PolicyActions  implements Serializable {
     sb.append("    alwaysDelete: ").append(toIndentedString(alwaysDelete)).append("\n");
     sb.append("    assignEvaluations: ").append(toIndentedString(assignEvaluations)).append("\n");
     sb.append("    assignMeteredEvaluations: ").append(toIndentedString(assignMeteredEvaluations)).append("\n");
+    sb.append("    assignMeteredAssignmentByAgent: ").append(toIndentedString(assignMeteredAssignmentByAgent)).append("\n");
     sb.append("    assignCalibrations: ").append(toIndentedString(assignCalibrations)).append("\n");
     sb.append("    assignSurveys: ").append(toIndentedString(assignSurveys)).append("\n");
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");

@@ -4093,7 +4093,7 @@ try {
 
 
 
-> [PhoneEntityListing](PhoneEntityListing.html) getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields)
+> [PhoneEntityListing](PhoneEntityListing.html) getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, expand, fields)
 
 Get a list of Phone Instances
 
@@ -4139,10 +4139,11 @@ String linesDefaultForUserId = "linesDefaultForUserId_example"; // String | Filt
 String phoneHardwareId = "phoneHardwareId_example"; // String | Filter by phone_hardwareId
 String linesId = "linesId_example"; // String | Filter by lines.id
 String linesName = "linesName_example"; // String | Filter by lines.name
+String name = "name_example"; // String | Name of the Phone to filter by
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
 List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields and properties to get, comma-separated
 try {
-    PhoneEntityListing result = apiInstance.getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, expand, fields);
+    PhoneEntityListing result = apiInstance.getTelephonyProvidersEdgesPhones(pageNumber, pageSize, sortBy, sortOrder, siteId, webRtcUserId, phoneBaseSettingsId, linesLoggedInUserId, linesDefaultForUserId, phoneHardwareId, linesId, linesName, name, expand, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesPhones");
@@ -4167,6 +4168,7 @@ try {
 | **phoneHardwareId** | **String**| Filter by phone_hardwareId | [optional] 
 | **linesId** | **String**| Filter by lines.id | [optional] 
 | **linesName** | **String**| Filter by lines.name | [optional] 
+| **name** | **String**| Name of the Phone to filter by | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines 
 | **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser 
 {: class="table-striped"}

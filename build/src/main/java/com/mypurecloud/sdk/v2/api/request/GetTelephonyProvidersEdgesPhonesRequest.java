@@ -255,6 +255,20 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    return this;
 	} 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetTelephonyProvidersEdgesPhonesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+	
 	private List<String> expand;
 	public List<String> getExpand() {
 		return this.expand;
@@ -397,6 +411,8 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
         
                 .withQueryParameters("lines.name", "", linesName)
         
+                .withQueryParameters("name", "", name)
+        
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("fields", "multi", fields)
@@ -479,6 +495,11 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		
 		public Builder withLinesName(String linesName) {
 			request.setLinesName(linesName);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

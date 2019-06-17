@@ -13,7 +13,9 @@ import com.mypurecloud.sdk.v2.model.Queue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -71,6 +73,49 @@ public class Evaluation  implements Serializable {
   private Date assignedDate = null;
   private Date changedDate = null;
   private Queue queue = null;
+
+  /**
+   * Gets or Sets mediaType
+   */
+  public enum MediaTypeEnum {
+    CALL("CALL"),
+    CALLBACK("CALLBACK"),
+    CHAT("CHAT"),
+    COBROWSE("COBROWSE"),
+    EMAIL("EMAIL"),
+    MESSAGE("MESSAGE"),
+    SOCIAL_EXPRESSION("SOCIAL_EXPRESSION"),
+    VIDEO("VIDEO"),
+    SCREENSHARE("SCREENSHARE");
+
+    private String value;
+
+    MediaTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaTypeEnum value : MediaTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<MediaTypeEnum> mediaType = new ArrayList<MediaTypeEnum>();
+  private Boolean rescore = null;
+  private Date conversationDate = null;
   private Boolean neverRelease = null;
   private String resourceId = null;
 
@@ -345,6 +390,60 @@ public class Evaluation  implements Serializable {
 
   
   /**
+   * List of different communication types used in conversation.
+   **/
+  public Evaluation mediaType(List<MediaTypeEnum> mediaType) {
+    this.mediaType = mediaType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of different communication types used in conversation.")
+  @JsonProperty("mediaType")
+  public List<MediaTypeEnum> getMediaType() {
+    return mediaType;
+  }
+  public void setMediaType(List<MediaTypeEnum> mediaType) {
+    this.mediaType = mediaType;
+  }
+
+  
+  /**
+   * Is only true when evaluation is re-scored.
+   **/
+  public Evaluation rescore(Boolean rescore) {
+    this.rescore = rescore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is only true when evaluation is re-scored.")
+  @JsonProperty("rescore")
+  public Boolean getRescore() {
+    return rescore;
+  }
+  public void setRescore(Boolean rescore) {
+    this.rescore = rescore;
+  }
+
+  
+  /**
+   * Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Evaluation conversationDate(Date conversationDate) {
+    this.conversationDate = conversationDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date of conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("conversationDate")
+  public Date getConversationDate() {
+    return conversationDate;
+  }
+  public void setConversationDate(Date conversationDate) {
+    this.conversationDate = conversationDate;
+  }
+
+  
+  /**
    * Signifies if the evaluation is never to be released. This cannot be set true if release date is also set.
    **/
   public Evaluation neverRelease(Boolean neverRelease) {
@@ -464,6 +563,9 @@ public class Evaluation  implements Serializable {
         Objects.equals(this.assignedDate, evaluation.assignedDate) &&
         Objects.equals(this.changedDate, evaluation.changedDate) &&
         Objects.equals(this.queue, evaluation.queue) &&
+        Objects.equals(this.mediaType, evaluation.mediaType) &&
+        Objects.equals(this.rescore, evaluation.rescore) &&
+        Objects.equals(this.conversationDate, evaluation.conversationDate) &&
         Objects.equals(this.neverRelease, evaluation.neverRelease) &&
         Objects.equals(this.resourceId, evaluation.resourceId) &&
         Objects.equals(this.resourceType, evaluation.resourceType) &&
@@ -474,7 +576,7 @@ public class Evaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, releaseDate, assignedDate, changedDate, queue, neverRelease, resourceId, resourceType, redacted, isScoringIndex, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, selfUri);
   }
 
   @Override
@@ -496,6 +598,9 @@ public class Evaluation  implements Serializable {
     sb.append("    assignedDate: ").append(toIndentedString(assignedDate)).append("\n");
     sb.append("    changedDate: ").append(toIndentedString(changedDate)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");
+    sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    neverRelease: ").append(toIndentedString(neverRelease)).append("\n");
     sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");

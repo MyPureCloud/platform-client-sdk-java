@@ -25,6 +25,7 @@ title: ConversationEventTopicEmail
 | **messageId** | **String** |  |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
 | **draftAttachments** | [**List&lt;ConversationEventTopicAttachment&gt;**](ConversationEventTopicAttachment.html) |  |  [optional] |
+| **spam** | **Boolean** |  |  [optional] |
 | **additionalProperties** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 

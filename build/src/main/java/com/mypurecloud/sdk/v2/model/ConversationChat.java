@@ -152,6 +152,7 @@ public class ConversationChat  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
+  private String avatarImageUrl = null;
   private JourneyContext journeyContext = null;
 
   
@@ -426,6 +427,24 @@ public class ConversationChat  implements Serializable {
 
   
   /**
+   * If available, the URI to the avatar image of this communication.
+   **/
+  public ConversationChat avatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If available, the URI to the avatar image of this communication.")
+  @JsonProperty("avatarImageUrl")
+  public String getAvatarImageUrl() {
+    return avatarImageUrl;
+  }
+  public void setAvatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+  }
+
+  
+  /**
    * A subset of the Journey System's data relevant to a part of a conversation (for external linkage and internal usage/context).
    **/
   public ConversationChat journeyContext(JourneyContext journeyContext) {
@@ -468,12 +487,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.provider, conversationChat.provider) &&
         Objects.equals(this.scriptId, conversationChat.scriptId) &&
         Objects.equals(this.peerId, conversationChat.peerId) &&
+        Objects.equals(this.avatarImageUrl, conversationChat.avatarImageUrl) &&
         Objects.equals(this.journeyContext, conversationChat.journeyContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, journeyContext);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext);
   }
 
   @Override
@@ -496,6 +516,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("}");
     return sb.toString();

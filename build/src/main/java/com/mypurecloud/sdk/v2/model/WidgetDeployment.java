@@ -34,6 +34,7 @@ public class WidgetDeployment  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     V1("v1"),
     V2("v2"),
+    V1_HTTP("v1-http"),
     THIRD_PARTY("third-party");
 
     private String value;

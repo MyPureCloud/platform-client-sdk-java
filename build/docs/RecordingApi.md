@@ -638,8 +638,9 @@ Get all of a Conversation&#39;s Recordings.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings  
 
-Requires NO permissions: 
+Requires ALL permissions: 
 
+* recording:recording:view
 
 ### Example
 

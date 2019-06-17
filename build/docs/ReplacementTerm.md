@@ -25,6 +25,7 @@ title: ReplacementTerm
 | ADDRESS | &quot;ADDRESS&quot; |
 | PHONE | &quot;PHONE&quot; |
 | EMAIL | &quot;EMAIL&quot; |
+| TWITTER | &quot;TWITTER&quot; |
 {: class="table table-striped"}
 
 

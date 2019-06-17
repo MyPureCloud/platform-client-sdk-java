@@ -41,6 +41,7 @@ public class AggregationQuery  implements Serializable {
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTINGUSERIDS("requestedRoutingUserIds"),
+    ROUTINGPRIORITY("routingPriority"),
     PURPOSE("purpose"),
     PARTICIPANTTYPE("participantType"),
     SEGMENTTYPE("segmentType"),

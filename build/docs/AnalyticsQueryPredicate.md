@@ -54,6 +54,7 @@ title: AnalyticsQueryPredicate
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTINGUSERIDS | &quot;requestedRoutingUserIds&quot; |
+| ROUTINGPRIORITY | &quot;routingPriority&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | PARTICIPANTTYPE | &quot;participantType&quot; |
 | SEGMENTTYPE | &quot;segmentType&quot; |

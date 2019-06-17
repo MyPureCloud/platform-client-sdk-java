@@ -24,7 +24,8 @@ public class ReplacementTerm  implements Serializable {
     NAME("NAME"),
     ADDRESS("ADDRESS"),
     PHONE("PHONE"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    TWITTER("TWITTER");
 
     private String value;
 

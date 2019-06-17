@@ -14,8 +14,44 @@ import java.io.Serializable;
 
 public class TimeInterval  implements Serializable {
   
+  private Integer months = null;
+  private Integer weeks = null;
   private Integer days = null;
   private Integer hours = null;
+
+  
+  /**
+   **/
+  public TimeInterval months(Integer months) {
+    this.months = months;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("months")
+  public Integer getMonths() {
+    return months;
+  }
+  public void setMonths(Integer months) {
+    this.months = months;
+  }
+
+  
+  /**
+   **/
+  public TimeInterval weeks(Integer weeks) {
+    this.weeks = weeks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("weeks")
+  public Integer getWeeks() {
+    return weeks;
+  }
+  public void setWeeks(Integer weeks) {
+    this.weeks = weeks;
+  }
 
   
   /**
@@ -62,13 +98,15 @@ public class TimeInterval  implements Serializable {
       return false;
     }
     TimeInterval timeInterval = (TimeInterval) o;
-    return Objects.equals(this.days, timeInterval.days) &&
+    return Objects.equals(this.months, timeInterval.months) &&
+        Objects.equals(this.weeks, timeInterval.weeks) &&
+        Objects.equals(this.days, timeInterval.days) &&
         Objects.equals(this.hours, timeInterval.hours);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(days, hours);
+    return Objects.hash(months, weeks, days, hours);
   }
 
   @Override
@@ -76,6 +114,8 @@ public class TimeInterval  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TimeInterval {\n");
     
+    sb.append("    months: ").append(toIndentedString(months)).append("\n");
+    sb.append("    weeks: ").append(toIndentedString(weeks)).append("\n");
     sb.append("    days: ").append(toIndentedString(days)).append("\n");
     sb.append("    hours: ").append(toIndentedString(hours)).append("\n");
     sb.append("}");

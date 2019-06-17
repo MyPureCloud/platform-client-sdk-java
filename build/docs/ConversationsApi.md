@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteConversationParticipantCode**](ConversationsApi.html#deleteConversationParticipantCode) | Delete a code used to add a communication to this participant |
+| [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | Cancel the transfer |
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
@@ -105,6 +106,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
+| [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 {: class="table-striped"}
@@ -167,6 +169,69 @@ try {
 | **conversationId** | **String**| conversation ID | 
 | **participantId** | **String**| participant ID | 
 | **addCommunicationCode** | **String**| addCommunicationCode | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationParticipantFlaggedreason"></a>
+
+# **deleteConversationParticipantFlaggedreason**
+
+
+
+> Void deleteConversationParticipantFlaggedreason(conversationId, participantId)
+
+Remove flagged reason from conversation participant.
+
+
+
+Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+try {
+    apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participantId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationParticipantFlaggedreason");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
 {: class="table-striped"}
 
 
@@ -6396,6 +6461,69 @@ try {
 ### Return type
 
 [**MessageConversation**](MessageConversation.html)
+
+<a name="putConversationParticipantFlaggedreason"></a>
+
+# **putConversationParticipantFlaggedreason**
+
+
+
+> Void putConversationParticipantFlaggedreason(conversationId, participantId)
+
+Set flagged reason on conversation participant to indicate bad conversation quality.
+
+
+
+Wraps PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversation ID
+String participantId = "participantId_example"; // String | participant ID
+try {
+    apiInstance.putConversationParticipantFlaggedreason(conversationId, participantId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationParticipantFlaggedreason");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversation ID | 
+| **participantId** | **String**| participant ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

@@ -69,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
@@ -166,6 +167,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationM
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 
@@ -250,6 +252,86 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationParticipantCode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Remove flagged reason from conversation participant.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationParticipantFlaggedreason(String conversationId, String participantId) throws IOException, ApiException {
+     deleteConversationParticipantFlaggedreason(createDeleteConversationParticipantFlaggedreasonRequest(conversationId, participantId));
+  }
+
+  /**
+   * Remove flagged reason from conversation participant.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationParticipantFlaggedreasonWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return deleteConversationParticipantFlaggedreason(createDeleteConversationParticipantFlaggedreasonRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private DeleteConversationParticipantFlaggedreasonRequest createDeleteConversationParticipantFlaggedreasonRequest(String conversationId, String participantId) {
+    return DeleteConversationParticipantFlaggedreasonRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .build();
+  }
+
+  /**
+   * Remove flagged reason from conversation participant.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationParticipantFlaggedreason(DeleteConversationParticipantFlaggedreasonRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Remove flagged reason from conversation participant.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationParticipantFlaggedreason(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -8300,6 +8382,86 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversation> response = (ApiResponse<MessageConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Set flagged reason on conversation participant to indicate bad conversation quality.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putConversationParticipantFlaggedreason(String conversationId, String participantId) throws IOException, ApiException {
+     putConversationParticipantFlaggedreason(createPutConversationParticipantFlaggedreasonRequest(conversationId, participantId));
+  }
+
+  /**
+   * Set flagged reason on conversation participant to indicate bad conversation quality.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param participantId participant ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putConversationParticipantFlaggedreasonWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return putConversationParticipantFlaggedreason(createPutConversationParticipantFlaggedreasonRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private PutConversationParticipantFlaggedreasonRequest createPutConversationParticipantFlaggedreasonRequest(String conversationId, String participantId) {
+    return PutConversationParticipantFlaggedreasonRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .build();
+  }
+
+  /**
+   * Set flagged reason on conversation participant to indicate bad conversation quality.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putConversationParticipantFlaggedreason(PutConversationParticipantFlaggedreasonRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Set flagged reason on conversation participant to indicate bad conversation quality.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putConversationParticipantFlaggedreason(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

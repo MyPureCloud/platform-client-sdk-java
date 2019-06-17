@@ -38,6 +38,7 @@ title: ChatMediaParticipant
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **journeyContext** | [**JourneyContext**](JourneyContext.html) | Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context. |  [optional] |
 | **roomId** | **String** | The ID of the chat room. |  [optional] |
+| **avatarImageUrl** | **String** | If available, the URI to the avatar image of this communication. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactId;
+import com.mypurecloud.sdk.v2.model.GDPRJourneyCustomer;
+import com.mypurecloud.sdk.v2.model.SocialHandle;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,6 +23,8 @@ public class GDPRSubject  implements Serializable {
   private String userId = null;
   private String externalContactId = null;
   private DialerContactId dialerContactId = null;
+  private GDPRJourneyCustomer journeyCustomer = null;
+  private SocialHandle socialHandle = null;
   private List<String> addresses = new ArrayList<String>();
   private List<String> phoneNumbers = new ArrayList<String>();
   private List<String> emailAddresses = new ArrayList<String>();
@@ -96,6 +100,40 @@ public class GDPRSubject  implements Serializable {
   
   /**
    **/
+  public GDPRSubject journeyCustomer(GDPRJourneyCustomer journeyCustomer) {
+    this.journeyCustomer = journeyCustomer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyCustomer")
+  public GDPRJourneyCustomer getJourneyCustomer() {
+    return journeyCustomer;
+  }
+  public void setJourneyCustomer(GDPRJourneyCustomer journeyCustomer) {
+    this.journeyCustomer = journeyCustomer;
+  }
+
+  
+  /**
+   **/
+  public GDPRSubject socialHandle(SocialHandle socialHandle) {
+    this.socialHandle = socialHandle;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("socialHandle")
+  public SocialHandle getSocialHandle() {
+    return socialHandle;
+  }
+  public void setSocialHandle(SocialHandle socialHandle) {
+    this.socialHandle = socialHandle;
+  }
+
+  
+  /**
+   **/
   public GDPRSubject addresses(List<String> addresses) {
     this.addresses = addresses;
     return this;
@@ -159,6 +197,8 @@ public class GDPRSubject  implements Serializable {
         Objects.equals(this.userId, gDPRSubject.userId) &&
         Objects.equals(this.externalContactId, gDPRSubject.externalContactId) &&
         Objects.equals(this.dialerContactId, gDPRSubject.dialerContactId) &&
+        Objects.equals(this.journeyCustomer, gDPRSubject.journeyCustomer) &&
+        Objects.equals(this.socialHandle, gDPRSubject.socialHandle) &&
         Objects.equals(this.addresses, gDPRSubject.addresses) &&
         Objects.equals(this.phoneNumbers, gDPRSubject.phoneNumbers) &&
         Objects.equals(this.emailAddresses, gDPRSubject.emailAddresses);
@@ -166,7 +206,7 @@ public class GDPRSubject  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, userId, externalContactId, dialerContactId, addresses, phoneNumbers, emailAddresses);
+    return Objects.hash(name, userId, externalContactId, dialerContactId, journeyCustomer, socialHandle, addresses, phoneNumbers, emailAddresses);
   }
 
   @Override
@@ -178,6 +218,8 @@ public class GDPRSubject  implements Serializable {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    dialerContactId: ").append(toIndentedString(dialerContactId)).append("\n");
+    sb.append("    journeyCustomer: ").append(toIndentedString(journeyCustomer)).append("\n");
+    sb.append("    socialHandle: ").append(toIndentedString(socialHandle)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    emailAddresses: ").append(toIndentedString(emailAddresses)).append("\n");

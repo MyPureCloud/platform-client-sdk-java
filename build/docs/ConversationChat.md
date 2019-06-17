@@ -23,6 +23,7 @@ title: ConversationChat
 | **provider** | **String** | The source provider for the email. |  [optional] |
 | **scriptId** | **String** | The UUID of the script to use. |  [optional] |
 | **peerId** | **String** | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **avatarImageUrl** | **String** | If available, the URI to the avatar image of this communication. |  [optional] |
 | **journeyContext** | [**JourneyContext**](JourneyContext.html) | A subset of the Journey System&#39;s data relevant to a part of a conversation (for external linkage and internal usage/context). |  [optional] |
 {: class="table table-striped"}
 

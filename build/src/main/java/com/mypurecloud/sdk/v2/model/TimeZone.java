@@ -16,8 +16,8 @@ public class TimeZone  implements Serializable {
   
   private String displayName = null;
   private String id = null;
-  private Integer dstsavings = null;
   private Integer rawOffset = null;
+  private Integer dstsavings = null;
 
   
   /**
@@ -56,23 +56,6 @@ public class TimeZone  implements Serializable {
   
   /**
    **/
-  public TimeZone dstsavings(Integer dstsavings) {
-    this.dstsavings = dstsavings;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dstsavings")
-  public Integer getDstsavings() {
-    return dstsavings;
-  }
-  public void setDstsavings(Integer dstsavings) {
-    this.dstsavings = dstsavings;
-  }
-
-  
-  /**
-   **/
   public TimeZone rawOffset(Integer rawOffset) {
     this.rawOffset = rawOffset;
     return this;
@@ -88,6 +71,23 @@ public class TimeZone  implements Serializable {
   }
 
   
+  /**
+   **/
+  public TimeZone dstsavings(Integer dstsavings) {
+    this.dstsavings = dstsavings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dstsavings")
+  public Integer getDstsavings() {
+    return dstsavings;
+  }
+  public void setDstsavings(Integer dstsavings) {
+    this.dstsavings = dstsavings;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -100,13 +100,13 @@ public class TimeZone  implements Serializable {
     TimeZone timeZone = (TimeZone) o;
     return Objects.equals(this.displayName, timeZone.displayName) &&
         Objects.equals(this.id, timeZone.id) &&
-        Objects.equals(this.dstsavings, timeZone.dstsavings) &&
-        Objects.equals(this.rawOffset, timeZone.rawOffset);
+        Objects.equals(this.rawOffset, timeZone.rawOffset) &&
+        Objects.equals(this.dstsavings, timeZone.dstsavings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, id, dstsavings, rawOffset);
+    return Objects.hash(displayName, id, rawOffset, dstsavings);
   }
 
   @Override
@@ -116,8 +116,8 @@ public class TimeZone  implements Serializable {
     
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    dstsavings: ").append(toIndentedString(dstsavings)).append("\n");
     sb.append("    rawOffset: ").append(toIndentedString(rawOffset)).append("\n");
+    sb.append("    dstsavings: ").append(toIndentedString(dstsavings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

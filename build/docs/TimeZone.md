@@ -10,8 +10,8 @@ title: TimeZone
 | ------------ | ------------- | ------------- | ------------- |
 | **displayName** | **String** |  |  [optional] |
 | **id** | **String** |  |  [optional] |
-| **dstsavings** | **Integer** |  |  [optional] |
 | **rawOffset** | **Integer** |  |  [optional] |
+| **dstsavings** | **Integer** |  |  [optional] |
 {: class="table table-striped"}
 
 

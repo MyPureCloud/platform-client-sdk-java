@@ -23,6 +23,7 @@ public class ObservationValue  implements Serializable {
   private String sessionId = null;
   private List<String> requestedRoutingSkillIds = new ArrayList<String>();
   private String requestedLanguageId = null;
+  private Long routingPriority = null;
   private String participantName = null;
   private String userId = null;
 
@@ -155,6 +156,24 @@ public class ObservationValue  implements Serializable {
   }
   public void setRequestedLanguageId(String requestedLanguageId) {
     this.requestedLanguageId = requestedLanguageId;
+  }
+
+  
+  /**
+   * Routing priority for the current interaction
+   **/
+  public ObservationValue routingPriority(Long routingPriority) {
+    this.routingPriority = routingPriority;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing priority for the current interaction")
+  @JsonProperty("routingPriority")
+  public Long getRoutingPriority() {
+    return routingPriority;
+  }
+  public void setRoutingPriority(Long routingPriority) {
+    this.routingPriority = routingPriority;
   }
 
   
@@ -335,6 +354,7 @@ public class ObservationValue  implements Serializable {
         Objects.equals(this.sessionId, observationValue.sessionId) &&
         Objects.equals(this.requestedRoutingSkillIds, observationValue.requestedRoutingSkillIds) &&
         Objects.equals(this.requestedLanguageId, observationValue.requestedLanguageId) &&
+        Objects.equals(this.routingPriority, observationValue.routingPriority) &&
         Objects.equals(this.participantName, observationValue.participantName) &&
         Objects.equals(this.userId, observationValue.userId) &&
         Objects.equals(this.direction, observationValue.direction) &&
@@ -348,7 +368,7 @@ public class ObservationValue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis);
+    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis);
   }
 
   @Override
@@ -361,6 +381,7 @@ public class ObservationValue  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
     sb.append("    requestedLanguageId: ").append(toIndentedString(requestedLanguageId)).append("\n");
+    sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");

@@ -19,7 +19,7 @@ title: SmsPhoneNumber
 | **dateModified** | [**Date**](Date.html) | Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **createdBy** | [**User**](User.html) | User that provisioned this phone number |  [optional] |
 | **modifiedBy** | [**User**](User.html) | User that last modified this phone number |  [optional] |
-| **version** | **Integer** | Version number required for updates. |  [optional] |
+| **version** | **Integer** | Version number required for updates. |  |
 | **purchaseDate** | [**Date**](Date.html) | Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **cancellationDate** | [**Date**](Date.html) | Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **renewalDate** | [**Date**](Date.html) | Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
