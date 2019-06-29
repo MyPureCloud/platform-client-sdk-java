@@ -122,8 +122,6 @@ Wraps DELETE /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:delete
 
 ### Example
@@ -252,8 +250,6 @@ Wraps DELETE /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:delete
 
 ### Example
@@ -1425,8 +1421,6 @@ Wraps PATCH /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:edit
 
 ### Example
@@ -1532,7 +1526,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, FLOW, USER 
+| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER 
 | **body** | **List&lt;String&gt;**| Object Id List | 
 {: class="table-striped"}
 
@@ -2013,8 +2007,6 @@ Wraps PUT /api/v2/authorization/roles/{roleId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:role:edit
 
 ### Example
@@ -2273,8 +2265,6 @@ Wraps PUT /api/v2/users/{userId}/roles
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example

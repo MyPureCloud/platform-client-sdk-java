@@ -7,9 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -25,7 +22,8 @@ public class SystemMessageSystemMessage  implements Serializable {
    */
   public enum SystemTopicTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NO_LONGER_SUBSCRIBED("no_longer_subscribed");
+    NO_LONGER_SUBSCRIBED("no_longer_subscribed"),
+    SUBSCRIPTION_CHANGED("subscription_changed");
 
     private String value;
 
@@ -92,7 +90,7 @@ public class SystemMessageSystemMessage  implements Serializable {
   }
   private ReasonEnum reason = null;
   private String message = null;
-  private Map<String, String> data = null;
+  private Object data = null;
 
   
   /**
@@ -233,17 +231,17 @@ public class SystemMessageSystemMessage  implements Serializable {
   
   /**
    **/
-  public SystemMessageSystemMessage data(Map<String, String> data) {
+  public SystemMessageSystemMessage data(Object data) {
     this.data = data;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("data")
-  public Map<String, String> getData() {
+  public Object getData() {
     return data;
   }
-  public void setData(Map<String, String> data) {
+  public void setData(Object data) {
     this.data = data;
   }
 

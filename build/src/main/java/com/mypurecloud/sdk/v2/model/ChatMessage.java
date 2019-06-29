@@ -64,6 +64,8 @@ public class ChatMessage  implements Serializable {
     }
   }
   private BodyTypeEnum bodyType = null;
+  private String senderCommunicationId = null;
+  private String participantPurpose = null;
   private ChatMessageUser user = null;
 
   
@@ -227,6 +229,42 @@ public class ChatMessage  implements Serializable {
 
   
   /**
+   * Communication of sender (v2 chats only)
+   **/
+  public ChatMessage senderCommunicationId(String senderCommunicationId) {
+    this.senderCommunicationId = senderCommunicationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Communication of sender (v2 chats only)")
+  @JsonProperty("senderCommunicationId")
+  public String getSenderCommunicationId() {
+    return senderCommunicationId;
+  }
+  public void setSenderCommunicationId(String senderCommunicationId) {
+    this.senderCommunicationId = senderCommunicationId;
+  }
+
+  
+  /**
+   * Participant purpose of sender (v2 chats only)
+   **/
+  public ChatMessage participantPurpose(String participantPurpose) {
+    this.participantPurpose = participantPurpose;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Participant purpose of sender (v2 chats only)")
+  @JsonProperty("participantPurpose")
+  public String getParticipantPurpose() {
+    return participantPurpose;
+  }
+  public void setParticipantPurpose(String participantPurpose) {
+    this.participantPurpose = participantPurpose;
+  }
+
+  
+  /**
    * The user information for the sender (if available)
    **/
   public ChatMessage user(ChatMessageUser user) {
@@ -263,12 +301,14 @@ public class ChatMessage  implements Serializable {
         Objects.equals(this.message, chatMessage.message) &&
         Objects.equals(this.type, chatMessage.type) &&
         Objects.equals(this.bodyType, chatMessage.bodyType) &&
+        Objects.equals(this.senderCommunicationId, chatMessage.senderCommunicationId) &&
+        Objects.equals(this.participantPurpose, chatMessage.participantPurpose) &&
         Objects.equals(this.user, chatMessage.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(body, id, to, from, utc, chat, message, type, bodyType, user);
+    return Objects.hash(body, id, to, from, utc, chat, message, type, bodyType, senderCommunicationId, participantPurpose, user);
   }
 
   @Override
@@ -285,6 +325,8 @@ public class ChatMessage  implements Serializable {
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    bodyType: ").append(toIndentedString(bodyType)).append("\n");
+    sb.append("    senderCommunicationId: ").append(toIndentedString(senderCommunicationId)).append("\n");
+    sb.append("    participantPurpose: ").append(toIndentedString(participantPurpose)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();

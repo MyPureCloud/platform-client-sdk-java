@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.QueueReference;
+import com.mypurecloud.sdk.v2.model.SurveyErrorDetails;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
 import com.mypurecloud.sdk.v2.model.UriReference;
@@ -69,6 +70,7 @@ public class Survey  implements Serializable {
   private QueueReference queue = null;
   private SurveyScoringSet answers = null;
   private Date completedDate = null;
+  private SurveyErrorDetails surveyErrorDetails = null;
   private String selfUri = null;
 
   
@@ -217,6 +219,24 @@ public class Survey  implements Serializable {
   }
 
   
+  /**
+   * Additional information about what happened when the survey is in Error status.
+   **/
+  public Survey surveyErrorDetails(SurveyErrorDetails surveyErrorDetails) {
+    this.surveyErrorDetails = surveyErrorDetails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Additional information about what happened when the survey is in Error status.")
+  @JsonProperty("surveyErrorDetails")
+  public SurveyErrorDetails getSurveyErrorDetails() {
+    return surveyErrorDetails;
+  }
+  public void setSurveyErrorDetails(SurveyErrorDetails surveyErrorDetails) {
+    this.surveyErrorDetails = surveyErrorDetails;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -243,12 +263,13 @@ public class Survey  implements Serializable {
         Objects.equals(this.queue, survey.queue) &&
         Objects.equals(this.answers, survey.answers) &&
         Objects.equals(this.completedDate, survey.completedDate) &&
+        Objects.equals(this.surveyErrorDetails, survey.surveyErrorDetails) &&
         Objects.equals(this.selfUri, survey.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, selfUri);
+    return Objects.hash(id, name, conversation, surveyForm, agent, status, queue, answers, completedDate, surveyErrorDetails, selfUri);
   }
 
   @Override
@@ -265,6 +286,7 @@ public class Survey  implements Serializable {
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
     sb.append("    completedDate: ").append(toIndentedString(completedDate)).append("\n");
+    sb.append("    surveyErrorDetails: ").append(toIndentedString(surveyErrorDetails)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

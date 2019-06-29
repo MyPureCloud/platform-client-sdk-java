@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
+import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
@@ -56,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteUserExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
@@ -71,6 +73,8 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserDirectreportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserExternalidRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserExternalidAuthorityNameRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserFavoritesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserGeolocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserOutofofficeRequest;
@@ -85,6 +89,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersExternalidAuthorityNameExternalKeyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
@@ -100,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryReque
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUserExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserInviteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
@@ -277,6 +283,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteUserExternalidAuthorityNameExternalKeyAsync(DeleteUserExternalidAuthorityNameExternalKeyRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the external identifier for user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteUserExternalidAuthorityNameExternalKeyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1430,6 +1512,158 @@ public class UsersApiAsync {
 
   
   /**
+   * Get the external identifiers for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UserExternalIdentifier>> getUserExternalidAsync(GetUserExternalidRequest request, final AsyncApiCallback<List<UserExternalIdentifier>> callback) {
+    try {
+      final SettableFuture<List<UserExternalIdentifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the external identifiers for a user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UserExternalIdentifier>>> getUserExternalidAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UserExternalIdentifier>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserExternalIdentifier> getUserExternalidAuthorityNameAsync(GetUserExternalidAuthorityNameRequest request, final AsyncApiCallback<UserExternalIdentifier> callback) {
+    try {
+      final SettableFuture<UserExternalIdentifier> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserExternalIdentifier>() {}, new AsyncApiCallback<ApiResponse<UserExternalIdentifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserExternalIdentifier> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the external identifier of user for an authority.
+   * Authority name and external key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserExternalIdentifier>> getUserExternalidAuthorityNameAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserExternalIdentifier>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserExternalIdentifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserExternalIdentifier>() {}, new AsyncApiCallback<ApiResponse<UserExternalIdentifier>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserExternalIdentifier> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserExternalIdentifier> response = (ApiResponse<UserExternalIdentifier>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserExternalIdentifier> response = (ApiResponse<UserExternalIdentifier>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get favorites
    * 
    * @param request the request object
@@ -2481,6 +2715,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<UserEntityListing> response = (ApiResponse<UserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<User> getUsersExternalidAuthorityNameExternalKeyAsync(GetUsersExternalidAuthorityNameExternalKeyRequest request, final AsyncApiCallback<User> callback) {
+    try {
+      final SettableFuture<User> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<User>() {}, new AsyncApiCallback<ApiResponse<User>>() {
+        @Override
+        public void onCompleted(ApiResponse<User> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the user associated with external identifier.
+   * Authority name and external key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<User>> getUsersExternalidAuthorityNameExternalKeyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<User>> callback) {
+    try {
+      final SettableFuture<ApiResponse<User>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<User>() {}, new AsyncApiCallback<ApiResponse<User>>() {
+        @Override
+        public void onCompleted(ApiResponse<User> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3621,6 +3931,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<UserExternalIdentifier>> postUserExternalidAsync(PostUserExternalidRequest request, final AsyncApiCallback<List<UserExternalIdentifier>> callback) {
+    try {
+      final SettableFuture<List<UserExternalIdentifier>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create mapping between external identifier and user. Limit 100 per entity.
+   * Authority Name and External key are case sensitive.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<UserExternalIdentifier>>> postUserExternalidAsync(ApiRequest<UserExternalIdentifier> request, final AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<UserExternalIdentifier>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<UserExternalIdentifier>>() {}, new AsyncApiCallback<ApiResponse<List<UserExternalIdentifier>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<UserExternalIdentifier>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<UserExternalIdentifier>> response = (ApiResponse<List<UserExternalIdentifier>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

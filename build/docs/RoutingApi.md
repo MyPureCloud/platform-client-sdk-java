@@ -652,7 +652,6 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -717,7 +716,6 @@ Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2728,7 +2726,6 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2796,7 +2793,6 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -2862,7 +2858,6 @@ Wraps PATCH /api/v2/users/{userId}/routingskills/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -3629,7 +3624,6 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -3695,7 +3689,6 @@ Wraps POST /api/v2/users/{userId}/routingskills
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -4151,7 +4144,6 @@ Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 
@@ -4219,7 +4211,6 @@ Wraps PUT /api/v2/users/{userId}/routingskills/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
-* admin
 
 ### Example
 

@@ -17,6 +17,7 @@ title: ScimV2CreateUser
 | **phoneNumbers** | [**List&lt;ScimPhoneNumber&gt;**](ScimPhoneNumber.html) | Phone numbers |  [optional] |
 | **emails** | [**List&lt;ScimEmail&gt;**](ScimEmail.html) | Emails |  [optional] |
 | **photos** | [**List&lt;Photo&gt;**](Photo.html) | Photos |  [optional] |
+| **externalId** | **String** | External ID |  [optional] |
 | **groups** | [**List&lt;ScimV2GroupReference&gt;**](ScimV2GroupReference.html) | Group References |  [optional] |
 | **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta |  [optional] |
 | **urnietfparamsscimschemasextensionenterprise20User** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) |  |  [optional] |

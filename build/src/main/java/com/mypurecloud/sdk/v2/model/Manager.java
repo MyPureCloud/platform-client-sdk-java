@@ -31,6 +31,7 @@ public class Manager  implements Serializable {
   private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
   private List<ScimEmail> emails = new ArrayList<ScimEmail>();
   private List<Photo> photos = new ArrayList<Photo>();
+  private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
@@ -183,6 +184,24 @@ public class Manager  implements Serializable {
 
   
   /**
+   * External ID
+   **/
+  public Manager externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External ID")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+  
+  /**
    * Group References
    **/
   public Manager groups(List<ScimV2GroupReference> groups) {
@@ -277,6 +296,7 @@ public class Manager  implements Serializable {
         Objects.equals(this.phoneNumbers, manager.phoneNumbers) &&
         Objects.equals(this.emails, manager.emails) &&
         Objects.equals(this.photos, manager.photos) &&
+        Objects.equals(this.externalId, manager.externalId) &&
         Objects.equals(this.groups, manager.groups) &&
         Objects.equals(this.meta, manager.meta) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, manager.urnietfparamsscimschemasextensionenterprise20User) &&
@@ -286,7 +306,7 @@ public class Manager  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, active, userName, password, title, phoneNumbers, emails, photos, groups, meta, urnietfparamsscimschemasextensionenterprise20User, value, ref);
+    return Objects.hash(displayName, active, userName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User, value, ref);
   }
 
   @Override
@@ -302,6 +322,7 @@ public class Manager  implements Serializable {
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    photos: ").append(toIndentedString(photos)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");

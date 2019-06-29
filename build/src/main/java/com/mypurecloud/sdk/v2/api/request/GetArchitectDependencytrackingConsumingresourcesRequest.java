@@ -258,6 +258,50 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 	    return this;
 	} 
 	
+	private String flowFilter;
+	public String getFlowFilter() {
+		return this.flowFilter;
+	}
+
+	public void setFlowFilter(String flowFilter) {
+		this.flowFilter = flowFilter;
+	}
+
+	public GetArchitectDependencytrackingConsumingresourcesRequest withFlowFilter(String flowFilter) {
+	    this.setFlowFilter(flowFilter);
+	    return this;
+	} 
+
+	public enum flowFilterValues { 
+		CHECKEDIN("checkedIn"), 
+		PUBLISHED("published");
+
+		private String value;
+
+		flowFilterValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static flowFilterValues fromString(String key) {
+			if (key == null) return null;
+
+			for (flowFilterValues value : flowFilterValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return flowFilterValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -300,6 +344,8 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("flowFilter", "", flowFilter)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -364,6 +410,16 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
+		}
+		
+		public Builder withFlowFilter(String flowFilter) {
+			request.setFlowFilter(flowFilter);
+			return this;
+		}
+
+		public Builder withFlowFilter(flowFilterValues flowFilter) {
+		    request.setFlowFilter(flowFilter.toString());
+		    return this;
 		}
 		
 

@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Call;
 import com.mypurecloud.sdk.v2.model.Callback;
 import com.mypurecloud.sdk.v2.model.Cobrowsesession;
 import com.mypurecloud.sdk.v2.model.ConversationChat;
+import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.Email;
 import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.Message;
@@ -92,6 +93,7 @@ public class Participant  implements Serializable {
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
   private Wrapup wrapup = null;
+  private ConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
   private Map<String, String> attributes = null;
@@ -631,6 +633,24 @@ public class Participant  implements Serializable {
 
   
   /**
+   * Information on how a communication should be routed to an agent.
+   **/
+  public Participant conversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information on how a communication should be routed to an agent.")
+  @JsonProperty("conversationRoutingData")
+  public ConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
    * Specifies how long the agent has to answer an interaction before being marked as not responding.
    **/
   public Participant alertingTimeoutMs(Integer alertingTimeoutMs) {
@@ -925,6 +945,7 @@ public class Participant  implements Serializable {
         Objects.equals(this.wrapupTimeoutMs, participant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapupSkipped, participant.wrapupSkipped) &&
         Objects.equals(this.wrapup, participant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, participant.conversationRoutingData) &&
         Objects.equals(this.alertingTimeoutMs, participant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, participant.monitoredParticipantId) &&
         Objects.equals(this.attributes, participant.attributes) &&
@@ -944,7 +965,7 @@ public class Participant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
   }
 
   @Override
@@ -977,6 +998,7 @@ public class Participant  implements Serializable {
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapupSkipped: ").append(toIndentedString(wrapupSkipped)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

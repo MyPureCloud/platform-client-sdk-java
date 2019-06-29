@@ -89,14 +89,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The schema's version. Required for updates.
+   * The schema's version, a positive integer. Required for updates.
    **/
   public DataSchema version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The schema's version. Required for updates.")
+  @ApiModelProperty(example = "null", required = true, value = "The schema's version, a positive integer. Required for updates.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;

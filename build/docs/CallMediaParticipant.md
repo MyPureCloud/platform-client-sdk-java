@@ -37,6 +37,7 @@ title: CallMediaParticipant
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |
 | **journeyContext** | [**JourneyContext**](JourneyContext.html) | Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context. |  [optional] |
+| **conversationRoutingData** | [**ConversationRoutingData**](ConversationRoutingData.html) | Information on how a communication should be routed to an agent. |  [optional] |
 | **muted** | **Boolean** | Value is true when the call is muted. |  [optional] |
 | **confined** | **Boolean** | Value is true when the call is confined. |  [optional] |
 | **recording** | **Boolean** | Value is true when the call is being recorded. |  [optional] |

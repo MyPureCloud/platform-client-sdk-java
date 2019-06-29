@@ -24,9 +24,9 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String nextUri = null;
   private String previousUri = null;
   private String lastUri = null;
-  private String nextUri = null;
   private Integer pageCount = null;
 
   
@@ -134,6 +134,23 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
   
   /**
    **/
+  public LocationEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
+  }
+
+  
+  /**
+   **/
   public LocationEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -163,23 +180,6 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
-  public LocationEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
   }
 
   
@@ -216,15 +216,15 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
         Objects.equals(this.total, locationEntityListing.total) &&
         Objects.equals(this.firstUri, locationEntityListing.firstUri) &&
         Objects.equals(this.selfUri, locationEntityListing.selfUri) &&
+        Objects.equals(this.nextUri, locationEntityListing.nextUri) &&
         Objects.equals(this.previousUri, locationEntityListing.previousUri) &&
         Objects.equals(this.lastUri, locationEntityListing.lastUri) &&
-        Objects.equals(this.nextUri, locationEntityListing.nextUri) &&
         Objects.equals(this.pageCount, locationEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, lastUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class LocationEntityListing  implements Serializable, PagedResource<Locat
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

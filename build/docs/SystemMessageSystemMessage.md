@@ -16,7 +16,7 @@ title: SystemMessageSystemMessage
 | **oauthClientId** | **String** |  |  [optional] |
 | **reason** | [**ReasonEnum**](#ReasonEnum) |  |  [optional] |
 | **message** | **String** |  |  [optional] |
-| **data** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **data** | **Object** |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -28,6 +28,7 @@ title: SystemMessageSystemMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NO_LONGER_SUBSCRIBED | &quot;no_longer_subscribed&quot; |
+| SUBSCRIPTION_CHANGED | &quot;subscription_changed&quot; |
 {: class="table table-striped"}
 
 

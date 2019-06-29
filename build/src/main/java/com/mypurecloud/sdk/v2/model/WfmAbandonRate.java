@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Abandon rate configuration for a service goal group
+ * Service goal abandon rate configuration
  */
-@ApiModel(description = "Abandon rate configuration for a service goal group")
+@ApiModel(description = "Service goal abandon rate configuration")
 
 public class WfmAbandonRate  implements Serializable {
   
@@ -20,14 +20,14 @@ public class WfmAbandonRate  implements Serializable {
 
   
   /**
-   * Whether to include abandon rate in the associated service goal group's configuration
+   * Whether to include abandon rate in the associated configuration
    **/
   public WfmAbandonRate include(Boolean include) {
     this.include = include;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether to include abandon rate in the associated service goal group's configuration")
+  @ApiModelProperty(example = "null", required = true, value = "Whether to include abandon rate in the associated configuration")
   @JsonProperty("include")
   public Boolean getInclude() {
     return include;
@@ -38,14 +38,14 @@ public class WfmAbandonRate  implements Serializable {
 
   
   /**
-   * Abandon rate percent goal for the associated service goal group. Required if include == true
+   * Abandon rate percent goal. Required if include == true
    **/
   public WfmAbandonRate percent(Integer percent) {
     this.percent = percent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Abandon rate percent goal for the associated service goal group. Required if include == true")
+  @ApiModelProperty(example = "null", value = "Abandon rate percent goal. Required if include == true")
   @JsonProperty("percent")
   public Integer getPercent() {
     return percent;

@@ -16,6 +16,7 @@ title: LocationDefinition
 | **state** | [**StateEnum**](#StateEnum) | Current activity status of the location. |  [optional] |
 | **version** | **Integer** |  |  [optional] |
 | **path** | **List&lt;String&gt;** |  |  [optional] |
+| **notes** | **String** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

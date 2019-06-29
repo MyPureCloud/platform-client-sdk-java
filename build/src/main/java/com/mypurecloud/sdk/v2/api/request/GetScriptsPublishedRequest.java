@@ -30,20 +30,6 @@ import com.mypurecloud.sdk.v2.model.ExportScriptResponse;
 
 public class GetScriptsPublishedRequest {
     
-	private String scriptId;
-	public String getScriptId() {
-		return this.scriptId;
-	}
-
-	public void setScriptId(String scriptId) {
-		this.scriptId = scriptId;
-	}
-
-	public GetScriptsPublishedRequest withScriptId(String scriptId) {
-	    this.setScriptId(scriptId);
-	    return this;
-	} 
-	
 	private Integer pageSize;
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -163,15 +149,8 @@ public class GetScriptsPublishedRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'scriptId' is set
-        if (this.scriptId == null) {
-            throw new IllegalStateException("Missing the required parameter 'scriptId' when building request for GetScriptsPublishedRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/scripts/published")
-                .withPathParameter("scriptId", scriptId)
-        
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
@@ -198,11 +177,6 @@ public class GetScriptsPublishedRequest {
 	}
 
 	
-	public static Builder builder(String scriptId) {
-	    return new Builder()
-	            .withRequiredParams(scriptId);
-	}
-	
 
 	public static class Builder {
 		private final GetScriptsPublishedRequest request;
@@ -211,11 +185,6 @@ public class GetScriptsPublishedRequest {
 			request = new GetScriptsPublishedRequest();
 		}
 
-		
-		public Builder withScriptId(String scriptId) {
-			request.setScriptId(scriptId);
-			return this;
-		}
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
@@ -254,19 +223,8 @@ public class GetScriptsPublishedRequest {
 		
 
 		
-		public Builder withRequiredParams(String scriptId) {
-			request.setScriptId(scriptId);
-			
-			return this;
-		}
-		
 
 		public GetScriptsPublishedRequest build() {
-            
-            // verify the required parameter 'scriptId' is set
-            if (request.scriptId == null) {
-                throw new IllegalStateException("Missing the required parameter 'scriptId' when building request for GetScriptsPublishedRequest.");
-            }
             
 			return request;
 		}

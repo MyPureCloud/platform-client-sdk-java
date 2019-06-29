@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AnalyticsScoredAgent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -67,6 +68,7 @@ public class ObservationValue  implements Serializable {
   private String addressTo = null;
   private String ani = null;
   private String dnis = null;
+  private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
 
   
   /**
@@ -339,6 +341,23 @@ public class ObservationValue  implements Serializable {
   }
 
   
+  /**
+   **/
+  public ObservationValue scoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scoredAgents")
+  public List<AnalyticsScoredAgent> getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -363,12 +382,13 @@ public class ObservationValue  implements Serializable {
         Objects.equals(this.addressFrom, observationValue.addressFrom) &&
         Objects.equals(this.addressTo, observationValue.addressTo) &&
         Objects.equals(this.ani, observationValue.ani) &&
-        Objects.equals(this.dnis, observationValue.dnis);
+        Objects.equals(this.dnis, observationValue.dnis) &&
+        Objects.equals(this.scoredAgents, observationValue.scoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis);
+    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis, scoredAgents);
   }
 
   @Override
@@ -391,6 +411,7 @@ public class ObservationValue  implements Serializable {
     sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -55,6 +55,8 @@ title: AnalyticsQueryPredicate
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTINGUSERIDS | &quot;requestedRoutingUserIds&quot; |
 | ROUTINGPRIORITY | &quot;routingPriority&quot; |
+| SCOREDAGENTID | &quot;scoredAgentId&quot; |
+| AGENTSCORE | &quot;agentScore&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | PARTICIPANTTYPE | &quot;participantType&quot; |
 | SEGMENTTYPE | &quot;segmentType&quot; |
@@ -68,6 +70,7 @@ title: AnalyticsQueryPredicate
 | CONVERTEDTO | &quot;convertedTo&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
+| PROVIDER | &quot;provider&quot; |
 | STATIONID | &quot;stationId&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |

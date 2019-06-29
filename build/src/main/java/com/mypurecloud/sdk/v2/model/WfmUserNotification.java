@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ShiftTradeNotification;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestNotification;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,7 +29,8 @@ public class WfmUserNotification  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SHIFTTRADE("ShiftTrade");
+    SHIFTTRADE("ShiftTrade"),
+    TIMEOFFREQUEST("TimeOffRequest");
 
     private String value;
 
@@ -57,6 +59,7 @@ public class WfmUserNotification  implements Serializable {
   }
   private TypeEnum type = null;
   private ShiftTradeNotification shiftTrade = null;
+  private TimeOffRequestNotification timeOffRequest = null;
   private Boolean markedAsRead = null;
   private Boolean agentNotification = null;
   private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
@@ -131,6 +134,24 @@ public class WfmUserNotification  implements Serializable {
 
   
   /**
+   * A time off request notification.  Only set if type == TimeOffRequest
+   **/
+  public WfmUserNotification timeOffRequest(TimeOffRequestNotification timeOffRequest) {
+    this.timeOffRequest = timeOffRequest;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A time off request notification.  Only set if type == TimeOffRequest")
+  @JsonProperty("timeOffRequest")
+  public TimeOffRequestNotification getTimeOffRequest() {
+    return timeOffRequest;
+  }
+  public void setTimeOffRequest(TimeOffRequestNotification timeOffRequest) {
+    this.timeOffRequest = timeOffRequest;
+  }
+
+  
+  /**
    * Whether this notification has been marked \"read\"
    **/
   public WfmUserNotification markedAsRead(Boolean markedAsRead) {
@@ -188,6 +209,7 @@ public class WfmUserNotification  implements Serializable {
         Objects.equals(this.timestamp, wfmUserNotification.timestamp) &&
         Objects.equals(this.type, wfmUserNotification.type) &&
         Objects.equals(this.shiftTrade, wfmUserNotification.shiftTrade) &&
+        Objects.equals(this.timeOffRequest, wfmUserNotification.timeOffRequest) &&
         Objects.equals(this.markedAsRead, wfmUserNotification.markedAsRead) &&
         Objects.equals(this.agentNotification, wfmUserNotification.agentNotification) &&
         Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotification.otherNotificationIdsInGroup);
@@ -195,7 +217,7 @@ public class WfmUserNotification  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, markedAsRead, agentNotification, otherNotificationIdsInGroup);
+    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, markedAsRead, agentNotification, otherNotificationIdsInGroup);
   }
 
   @Override
@@ -208,6 +230,7 @@ public class WfmUserNotification  implements Serializable {
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    shiftTrade: ").append(toIndentedString(shiftTrade)).append("\n");
+    sb.append("    timeOffRequest: ").append(toIndentedString(timeOffRequest)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");
     sb.append("    agentNotification: ").append(toIndentedString(agentNotification)).append("\n");
     sb.append("    otherNotificationIdsInGroup: ").append(toIndentedString(otherNotificationIdsInGroup)).append("\n");

@@ -20,6 +20,7 @@ title: AnalyticsConversationSegment
 | **requestedRoutingUserIds** | **List&lt;String&gt;** |  |  [optional] |
 | **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
 | **requestedLanguageId** | **String** | A unique identifier for the language requested for an interaction. |  [optional] |
+| **scoredAgents** | [**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent.html) |  |  [optional] |
 | **properties** | [**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty.html) |  |  [optional] |
 | **sourceConversationId** | **String** |  |  [optional] |
 | **destinationConversationId** | **String** |  |  [optional] |

@@ -680,6 +680,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -697,6 +701,9 @@ Requires ANY permissions:
 * wfm:serviceGoalGroup:delete
 * wfm:serviceGoalGroup:edit
 * wfm:serviceGoalGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
 * wfm:shortTermForecast:add
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
@@ -845,6 +852,10 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 * wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
 * wfm:historicalAdherence:view
 * wfm:intraday:view
 * wfm:managementUnit:add
@@ -1910,7 +1921,7 @@ try {
 
 
 
-> [WeekScheduleListResponse](WeekScheduleListResponse.html) getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId)
+> [WeekScheduleListResponse](WeekScheduleListResponse.html) getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)
 
 Get the list of schedules in a week in management unit
 
@@ -1947,8 +1958,11 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+Boolean includeOnlyPublished = true; // Boolean | Return only published schedules
+String earliestWeekDate = "earliestWeekDate_example"; // String | The start date of the earliest week to query in yyyy-MM-dd format
+String latestWeekDate = "latestWeekDate_example"; // String | The start date of the latest week to query in yyyy-MM-dd format
 try {
-    WeekScheduleListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId);
+    WeekScheduleListResponse result = apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWeekSchedules");
@@ -1963,6 +1977,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **weekId** | **String**| First day of schedule week in yyyy-MM-dd format. | 
+| **includeOnlyPublished** | **Boolean**| Return only published schedules | [optional] 
+| **earliestWeekDate** | **String**| The start date of the earliest week to query in yyyy-MM-dd format | [optional] 
+| **latestWeekDate** | **String**| The start date of the latest week to query in yyyy-MM-dd format | [optional] 
 {: class="table-striped"}
 
 
@@ -2300,7 +2317,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] 
 | **pageNumber** | **Integer**|  | [optional] 
 | **expand** | **String**|  | [optional]<br />**Values**: details 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 

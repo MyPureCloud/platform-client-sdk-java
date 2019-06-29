@@ -26,6 +26,15 @@ title: Trunk
 | **edgeGroup** | [**UriReference**](UriReference.html) | The edge group associated with this trunk. |  [optional] |
 | **inService** | **Boolean** | True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base. |  [optional] |
 | **enabled** | **Boolean** | True if the Edge used by this trunk is in-service |  [optional] |
+| **logicalInterface** | [**UriReference**](UriReference.html) | The Logical Interface on the Edge to which the trunk is assigned. |  [optional] |
+| **connectedStatus** | [**TrunkConnectedStatus**](TrunkConnectedStatus.html) | The connected status of the trunk |  [optional] |
+| **optionsStatus** | [**List&lt;TrunkMetricsOptions&gt;**](TrunkMetricsOptions.html) | The trunk optionsStatus |  [optional] |
+| **registersStatus** | [**List&lt;TrunkMetricsRegisters&gt;**](TrunkMetricsRegisters.html) | The trunk registersStatus |  [optional] |
+| **ipStatus** | [**TrunkMetricsNetworkTypeIp**](TrunkMetricsNetworkTypeIp.html) | The trunk ipStatus |  [optional] |
+| **optionsEnabledStatus** | [**OptionsEnabledStatusEnum**](#OptionsEnabledStatusEnum) | Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0. |  [optional] |
+| **registersEnabledStatus** | [**RegistersEnabledStatusEnum**](#RegistersEnabledStatusEnum) | Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0. |  [optional] |
+| **family** | **Integer** | The IP Network Family of the trunk |  [optional] |
+| **proxyAddressList** | **List&lt;String&gt;** | The list of proxy addresses (ports if provided) for the trunk |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -53,6 +62,32 @@ title: Trunk
 | EXTERNAL | &quot;EXTERNAL&quot; |
 | PHONE | &quot;PHONE&quot; |
 | EDGE | &quot;EDGE&quot; |
+{: class="table table-striped"}
+
+
+<a name="OptionsEnabledStatusEnum"></a>
+
+## Enum: OptionsEnabledStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ENABLED | &quot;ENABLED&quot; |
+| DISABLED | &quot;DISABLED&quot; |
+| NOT_SUPPORTED | &quot;NOT_SUPPORTED&quot; |
+{: class="table table-striped"}
+
+
+<a name="RegistersEnabledStatusEnum"></a>
+
+## Enum: RegistersEnabledStatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ENABLED | &quot;ENABLED&quot; |
+| DISABLED | &quot;DISABLED&quot; |
+| NOT_SUPPORTED | &quot;NOT_SUPPORTED&quot; |
 {: class="table table-striped"}
 
 

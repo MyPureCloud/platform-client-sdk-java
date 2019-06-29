@@ -5,11 +5,11 @@ import com.mypurecloud.sdk.v2.api.UsersApi;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
 import com.mypurecloud.sdk.v2.extensions.notifications.NotificationHandler;
 import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -26,7 +26,9 @@ public class SdkTests {
     private String userProfileSkill = "Testmaster";
     private String busyPresenceId = "31fe3bac-dea6-44b7-bed7-47f91660a1a0";
     private String availablePresenceId = "6a3af858-942f-489d-9700-5f9bcdcdae9b";
-
+    private String environment;
+    private PureCloudRegionHosts region;
+    private boolean useenum = true;
 
 
     @BeforeTest
@@ -38,24 +40,34 @@ public class SdkTests {
 
     @Test(priority = 1)
     public void traceBasicInformation() {
-        System.out.println("PURECLOUD_ENVIRONMENT=" + getEnvironment());
-        Assert.assertNotNull(getEnvironment());
+        region = getEnvironment();
+        if(region == null){
+            useenum = false;
+        }
+        System.out.println("PURECLOUD_ENVIRONMENT=" + environment);
+        Assert.assertNotNull(environment);
 
         System.out.println("PURECLOUD_CLIENT_ID=" + getClientId());
         Assert.assertNotNull(getClientId());
 
         Assert.assertNotNull(getClientSecret());
 
-        userEmail = UUID.randomUUID() + "@" + getEnvironment();
+        userEmail = UUID.randomUUID() + "@" + environment;
         System.out.println("userEmail=" + userEmail);
     }
 
     @Test(priority = 2)
     public void authenticate() {
         try {
-            apiClient = ApiClient.Builder.standard()
-                    .withBasePath("https://api." + getEnvironment())
-                    .build();
+            ApiClient.Builder builder = ApiClient.Builder.standard();
+            if(useenum){
+                builder = builder.withBasePath(region); 
+            }
+            else {
+                builder = builder.withBasePath("https://api." + environment);
+            }
+
+            apiClient = builder.build();
 
             ApiResponse<AuthResponse> authResponse = apiClient.authorizeClientCredentials(getClientId(), getClientSecret());
 
@@ -78,9 +90,7 @@ public class SdkTests {
         try {
             CreateUser newUser = new CreateUser();
             newUser.name(userName).email(userEmail).password(UUID.randomUUID() + "!@#$1234asdfASDF");
-
             User user = usersApi.postUsers(newUser);
-
             userId = user.getId();
             Assert.assertEquals(user.getName(), userName);
             Assert.assertEquals(user.getEmail(), userEmail);
@@ -219,8 +229,23 @@ public class SdkTests {
 
 
 
-    private String getEnvironment() {
-        return System.getenv("PURECLOUD_ENVIRONMENT");
+    private PureCloudRegionHosts getEnvironment() {
+        environment = System.getenv("PURECLOUD_ENVIRONMENT");
+        switch (environment){
+            case "mypurecloud.com":
+                return PureCloudRegionHosts.us_east_1;
+            case "mypurecloud.ie":
+                return PureCloudRegionHosts.eu_west_1;
+            case "mypurecloud.com.au":
+                return PureCloudRegionHosts.ap_southeast_2;
+            case "mypurecloud.jp":
+                return PureCloudRegionHosts.ap_northeast_1;
+            case "mypurecloud.de":
+                return PureCloudRegionHosts.eu_central_1;
+            default:
+                System.out.println("Not in PureCloudRegionHosts using string value");
+                return null;
+        }
     }
 
     private String getClientId() {

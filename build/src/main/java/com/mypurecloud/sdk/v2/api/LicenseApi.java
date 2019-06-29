@@ -12,7 +12,6 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
@@ -22,7 +21,6 @@ import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUsersRequest;
@@ -198,81 +196,6 @@ public class LicenseApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @return LicenseOrganization
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LicenseOrganization getLicenseOrganization() throws IOException, ApiException {
-    return  getLicenseOrganization(createGetLicenseOrganizationRequest());
-  }
-
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @return LicenseOrganization
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LicenseOrganization> getLicenseOrganizationWithHttpInfo() throws IOException {
-    return getLicenseOrganization(createGetLicenseOrganizationRequest().withHttpInfo());
-  }
-
-  private GetLicenseOrganizationRequest createGetLicenseOrganizationRequest() {
-    return GetLicenseOrganizationRequest.builder()
-            .build();
-  }
-
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @param request The request object
-   * @return LicenseOrganization
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public LicenseOrganization getLicenseOrganization(GetLicenseOrganizationRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<LicenseOrganization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LicenseOrganization>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<LicenseOrganization> getLicenseOrganization(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<LicenseOrganization>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

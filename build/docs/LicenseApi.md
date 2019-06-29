@@ -9,7 +9,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | Get PureCloud license definition. |
 | [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | Get all PureCloud license definitions available for the organization. |
-| [**getLicenseOrganization**](LicenseApi.html#getLicenseOrganization) | Get license assignments for the organization. |
 | [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Get PureCloud license feature toggle value. |
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
 | [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | Get a page of users and their licenses |
@@ -34,8 +33,6 @@ Wraps GET /api/v2/license/definitions/{licenseId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -99,8 +96,6 @@ Wraps GET /api/v2/license/definitions
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -144,67 +139,6 @@ This endpoint does not require any parameters.
 
 [**List&lt;LicenseDefinition&gt;**](LicenseDefinition.html)
 
-<a name="getLicenseOrganization"></a>
-
-# **getLicenseOrganization**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [LicenseOrganization](LicenseOrganization.html) getLicenseOrganization()
-
-Get license assignments for the organization.
-
-
-
-Wraps GET /api/v2/license/organization  
-
-Requires ANY permissions: 
-
-* admin
-* role_manager
-* authorization:grant:add
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.LicenseApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-LicenseApi apiInstance = new LicenseApi();
-try {
-    LicenseOrganization result = apiInstance.getLicenseOrganization();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling LicenseApi#getLicenseOrganization");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-[**LicenseOrganization**](LicenseOrganization.html)
-
 <a name="getLicenseToggle"></a>
 
 # **getLicenseToggle**
@@ -221,8 +155,6 @@ Wraps GET /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -286,8 +218,6 @@ Wraps GET /api/v2/license/users/{userId}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -349,11 +279,8 @@ Retrieve a page of users in an organization along with the licenses they possess
 
 Wraps GET /api/v2/license/users  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* admin
-* role_manager
-* authorization:grant:add
 
 ### Example
 
@@ -418,8 +345,6 @@ Wraps POST /api/v2/license/organization
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example
@@ -483,8 +408,6 @@ Wraps POST /api/v2/license/toggles/{featureName}
 
 Requires ANY permissions: 
 
-* admin
-* role_manager
 * authorization:grant:add
 
 ### Example

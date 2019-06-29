@@ -300,7 +300,7 @@ try {
 
 
 
-> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)
+> [ScriptEntityListing](ScriptEntityListing.html) getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion)
 
 Get the published scripts.
 
@@ -334,7 +334,6 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ScriptsApi apiInstance = new ScriptsApi();
-String scriptId = "scriptId_example"; // String | Script ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String expand = "expand_example"; // String | Expand
@@ -343,7 +342,7 @@ String feature = "feature_example"; // String | Feature filter
 String flowId = "flowId_example"; // String | Secure flow id filter
 String scriptDataVersion = "scriptDataVersion_example"; // String | Advanced usage - controls the data version of the script
 try {
-    ScriptEntityListing result = apiInstance.getScriptsPublished(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion);
+    ScriptEntityListing result = apiInstance.getScriptsPublished(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ScriptsApi#getScriptsPublished");
@@ -356,7 +355,6 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **scriptId** | **String**| Script ID | 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **expand** | **String**| Expand | [optional] 

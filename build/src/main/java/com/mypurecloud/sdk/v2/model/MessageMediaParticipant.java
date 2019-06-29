@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.MessageDetails;
@@ -211,6 +212,7 @@ public class MessageMediaParticipant  implements Serializable {
   }
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
+  private ConversationRoutingData conversationRoutingData = null;
   private Address toAddress = null;
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
@@ -781,6 +783,24 @@ public class MessageMediaParticipant  implements Serializable {
 
   
   /**
+   * Information on how a communication should be routed to an agent.
+   **/
+  public MessageMediaParticipant conversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information on how a communication should be routed to an agent.")
+  @JsonProperty("conversationRoutingData")
+  public ConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
   public MessageMediaParticipant toAddress(Address toAddress) {
@@ -927,6 +947,7 @@ public class MessageMediaParticipant  implements Serializable {
         Objects.equals(this.peer, messageMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, messageMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, messageMediaParticipant.journeyContext) &&
+        Objects.equals(this.conversationRoutingData, messageMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
         Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
         Objects.equals(this.messages, messageMediaParticipant.messages) &&
@@ -937,7 +958,7 @@ public class MessageMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -974,6 +995,7 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

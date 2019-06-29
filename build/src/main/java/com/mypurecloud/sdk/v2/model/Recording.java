@@ -117,6 +117,8 @@ public class Recording  implements Serializable {
   }
   private ArchiveMediumEnum archiveMedium = null;
   private Date deleteDate = null;
+  private Integer outputDurationMs = null;
+  private Integer outputSizeInBytes = null;
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
@@ -449,6 +451,42 @@ public class Recording  implements Serializable {
 
   
   /**
+   * Duration of transcoded media in milliseconds
+   **/
+  public Recording outputDurationMs(Integer outputDurationMs) {
+    this.outputDurationMs = outputDurationMs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Duration of transcoded media in milliseconds")
+  @JsonProperty("outputDurationMs")
+  public Integer getOutputDurationMs() {
+    return outputDurationMs;
+  }
+  public void setOutputDurationMs(Integer outputDurationMs) {
+    this.outputDurationMs = outputDurationMs;
+  }
+
+  
+  /**
+   * Size of transcoded media in bytes
+   **/
+  public Recording outputSizeInBytes(Integer outputSizeInBytes) {
+    this.outputSizeInBytes = outputSizeInBytes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Size of transcoded media in bytes")
+  @JsonProperty("outputSizeInBytes")
+  public Integer getOutputSizeInBytes() {
+    return outputSizeInBytes;
+  }
+  public void setOutputSizeInBytes(Integer outputSizeInBytes) {
+    this.outputSizeInBytes = outputSizeInBytes;
+  }
+
+  
+  /**
    * How many archive restorations the organization is allowed to have.
    **/
   public Recording maxAllowedRestorationsForOrg(Integer maxAllowedRestorationsForOrg) {
@@ -556,6 +594,8 @@ public class Recording  implements Serializable {
         Objects.equals(this.archiveDate, recording.archiveDate) &&
         Objects.equals(this.archiveMedium, recording.archiveMedium) &&
         Objects.equals(this.deleteDate, recording.deleteDate) &&
+        Objects.equals(this.outputDurationMs, recording.outputDurationMs) &&
+        Objects.equals(this.outputSizeInBytes, recording.outputSizeInBytes) &&
         Objects.equals(this.maxAllowedRestorationsForOrg, recording.maxAllowedRestorationsForOrg) &&
         Objects.equals(this.remainingRestorationsAllowedForOrg, recording.remainingRestorationsAllowedForOrg) &&
         Objects.equals(this.sessionId, recording.sessionId) &&
@@ -565,7 +605,7 @@ public class Recording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
   }
 
   @Override
@@ -592,6 +632,8 @@ public class Recording  implements Serializable {
     sb.append("    archiveDate: ").append(toIndentedString(archiveDate)).append("\n");
     sb.append("    archiveMedium: ").append(toIndentedString(archiveMedium)).append("\n");
     sb.append("    deleteDate: ").append(toIndentedString(deleteDate)).append("\n");
+    sb.append("    outputDurationMs: ").append(toIndentedString(outputDurationMs)).append("\n");
+    sb.append("    outputSizeInBytes: ").append(toIndentedString(outputSizeInBytes)).append("\n");
     sb.append("    maxAllowedRestorationsForOrg: ").append(toIndentedString(maxAllowedRestorationsForOrg)).append("\n");
     sb.append("    remainingRestorationsAllowedForOrg: ").append(toIndentedString(remainingRestorationsAllowedForOrg)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");

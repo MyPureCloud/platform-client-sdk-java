@@ -6,6 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -21,6 +23,42 @@ public class PhoneCapabilities  implements Serializable {
   private Boolean allowReboot = null;
   private Boolean noRebalance = null;
   private Boolean noCloudProvisioning = null;
+
+  /**
+   * Gets or Sets mediaCodecs
+   */
+  public enum MediaCodecsEnum {
+    AUDIO_OPUS("audio/opus"),
+    AUDIO_PCMU("audio/pcmu"),
+    AUDIO_PCMA("audio/pcma"),
+    AUDIO_G722("audio/g722");
+
+    private String value;
+
+    MediaCodecsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaCodecsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaCodecsEnum value : MediaCodecsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaCodecsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<MediaCodecsEnum> mediaCodecs = new ArrayList<MediaCodecsEnum>();
 
   
   /**
@@ -142,6 +180,23 @@ public class PhoneCapabilities  implements Serializable {
   }
 
   
+  /**
+   **/
+  public PhoneCapabilities mediaCodecs(List<MediaCodecsEnum> mediaCodecs) {
+    this.mediaCodecs = mediaCodecs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaCodecs")
+  public List<MediaCodecsEnum> getMediaCodecs() {
+    return mediaCodecs;
+  }
+  public void setMediaCodecs(List<MediaCodecsEnum> mediaCodecs) {
+    this.mediaCodecs = mediaCodecs;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,12 +213,13 @@ public class PhoneCapabilities  implements Serializable {
         Objects.equals(this.hardwareIdType, phoneCapabilities.hardwareIdType) &&
         Objects.equals(this.allowReboot, phoneCapabilities.allowReboot) &&
         Objects.equals(this.noRebalance, phoneCapabilities.noRebalance) &&
-        Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning);
+        Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning) &&
+        Objects.equals(this.mediaCodecs, phoneCapabilities.mediaCodecs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance, noCloudProvisioning);
+    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance, noCloudProvisioning, mediaCodecs);
   }
 
   @Override
@@ -178,6 +234,7 @@ public class PhoneCapabilities  implements Serializable {
     sb.append("    allowReboot: ").append(toIndentedString(allowReboot)).append("\n");
     sb.append("    noRebalance: ").append(toIndentedString(noRebalance)).append("\n");
     sb.append("    noCloudProvisioning: ").append(toIndentedString(noCloudProvisioning)).append("\n");
+    sb.append("    mediaCodecs: ").append(toIndentedString(mediaCodecs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

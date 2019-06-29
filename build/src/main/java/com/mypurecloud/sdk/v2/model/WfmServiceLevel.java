@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Service level target configuration for a service goal group
+ * Service goal service level configuration
  */
-@ApiModel(description = "Service level target configuration for a service goal group")
+@ApiModel(description = "Service goal service level configuration")
 
 public class WfmServiceLevel  implements Serializable {
   
@@ -21,14 +21,14 @@ public class WfmServiceLevel  implements Serializable {
 
   
   /**
-   * Whether to include service level targets in the associated service goal group's configuration
+   * Whether to include service level targets in the associated configuration
    **/
   public WfmServiceLevel include(Boolean include) {
     this.include = include;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether to include service level targets in the associated service goal group's configuration")
+  @ApiModelProperty(example = "null", required = true, value = "Whether to include service level targets in the associated configuration")
   @JsonProperty("include")
   public Boolean getInclude() {
     return include;
@@ -39,14 +39,14 @@ public class WfmServiceLevel  implements Serializable {
 
   
   /**
-   * Service level target percent answered for the associated service goal group. Required if include == true
+   * Service level target percent answered. Required if include == true
    **/
   public WfmServiceLevel percent(Integer percent) {
     this.percent = percent;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Service level target percent answered for the associated service goal group. Required if include == true")
+  @ApiModelProperty(example = "null", value = "Service level target percent answered. Required if include == true")
   @JsonProperty("percent")
   public Integer getPercent() {
     return percent;
@@ -57,14 +57,14 @@ public class WfmServiceLevel  implements Serializable {
 
   
   /**
-   * Service level target answer time for the associated service goal group. Required if include == true
+   * Service level target answer time. Required if include == true
    **/
   public WfmServiceLevel seconds(Integer seconds) {
     this.seconds = seconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Service level target answer time for the associated service goal group. Required if include == true")
+  @ApiModelProperty(example = "null", value = "Service level target answer time. Required if include == true")
   @JsonProperty("seconds")
   public Integer getSeconds() {
     return seconds;

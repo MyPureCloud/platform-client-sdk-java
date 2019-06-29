@@ -60,6 +60,7 @@ public class PostAuthorizationDivisionObjectRequest {
 		CONTACTLIST("CONTACTLIST"), 
 		DNCLIST("DNCLIST"), 
 		MANAGEMENTUNIT("MANAGEMENTUNIT"), 
+		BUSINESSUNIT("BUSINESSUNIT"), 
 		FLOW("FLOW"), 
 		USER("USER");
 

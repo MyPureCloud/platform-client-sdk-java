@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.DialerPreview;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
@@ -211,6 +212,7 @@ public class CallbackMediaParticipant  implements Serializable {
   }
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
+  private ConversationRoutingData conversationRoutingData = null;
   private DialerPreview outboundPreview = null;
   private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -744,6 +746,24 @@ public class CallbackMediaParticipant  implements Serializable {
 
   
   /**
+   * Information on how a communication should be routed to an agent.
+   **/
+  public CallbackMediaParticipant conversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information on how a communication should be routed to an agent.")
+  @JsonProperty("conversationRoutingData")
+  public ConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
    * The outbound preview associated with this callback.
    **/
   public CallbackMediaParticipant outboundPreview(DialerPreview outboundPreview) {
@@ -926,6 +946,7 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.peer, callbackMediaParticipant.peer) &&
         Objects.equals(this.flaggedReason, callbackMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, callbackMediaParticipant.journeyContext) &&
+        Objects.equals(this.conversationRoutingData, callbackMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
@@ -938,7 +959,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -975,6 +996,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

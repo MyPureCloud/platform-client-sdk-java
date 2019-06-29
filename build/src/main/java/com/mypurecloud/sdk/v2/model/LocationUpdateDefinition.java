@@ -60,6 +60,7 @@ public class LocationUpdateDefinition  implements Serializable {
   private StateEnum state = null;
   private Integer version = null;
   private List<String> path = new ArrayList<String>();
+  private String notes = null;
 
   
   /**
@@ -183,6 +184,23 @@ public class LocationUpdateDefinition  implements Serializable {
   }
 
   
+  /**
+   **/
+  public LocationUpdateDefinition notes(String notes) {
+    this.notes = notes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("notes")
+  public String getNotes() {
+    return notes;
+  }
+  public void setNotes(String notes) {
+    this.notes = notes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,12 +217,13 @@ public class LocationUpdateDefinition  implements Serializable {
         Objects.equals(this.emergencyNumber, locationUpdateDefinition.emergencyNumber) &&
         Objects.equals(this.state, locationUpdateDefinition.state) &&
         Objects.equals(this.version, locationUpdateDefinition.version) &&
-        Objects.equals(this.path, locationUpdateDefinition.path);
+        Objects.equals(this.path, locationUpdateDefinition.path) &&
+        Objects.equals(this.notes, locationUpdateDefinition.notes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address, addressVerified, emergencyNumber, state, version, path);
+    return Objects.hash(name, address, addressVerified, emergencyNumber, state, version, path, notes);
   }
 
   @Override
@@ -219,6 +238,7 @@ public class LocationUpdateDefinition  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,7 +35,8 @@ public class SystemPromptAsset  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATED("created"),
     UPLOADED("uploaded"),
-    TRANSCODED("transcoded");
+    TRANSCODED("transcoded"),
+    TRANSCODEFAILED("transcodeFailed");
 
     private String value;
 

@@ -5,10 +5,16 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.TrunkConnectedStatus;
+import com.mypurecloud.sdk.v2.model.TrunkMetricsNetworkTypeIp;
+import com.mypurecloud.sdk.v2.model.TrunkMetricsOptions;
+import com.mypurecloud.sdk.v2.model.TrunkMetricsRegisters;
 import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -105,6 +111,85 @@ public class Trunk  implements Serializable {
   private UriReference edgeGroup = null;
   private Boolean inService = null;
   private Boolean enabled = null;
+  private UriReference logicalInterface = null;
+  private TrunkConnectedStatus connectedStatus = null;
+  private List<TrunkMetricsOptions> optionsStatus = new ArrayList<TrunkMetricsOptions>();
+  private List<TrunkMetricsRegisters> registersStatus = new ArrayList<TrunkMetricsRegisters>();
+  private TrunkMetricsNetworkTypeIp ipStatus = null;
+
+  /**
+   * Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
+   */
+  public enum OptionsEnabledStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ENABLED("ENABLED"),
+    DISABLED("DISABLED"),
+    NOT_SUPPORTED("NOT_SUPPORTED");
+
+    private String value;
+
+    OptionsEnabledStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static OptionsEnabledStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (OptionsEnabledStatusEnum value : OptionsEnabledStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return OptionsEnabledStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private OptionsEnabledStatusEnum optionsEnabledStatus = null;
+
+  /**
+   * Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
+   */
+  public enum RegistersEnabledStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ENABLED("ENABLED"),
+    DISABLED("DISABLED"),
+    NOT_SUPPORTED("NOT_SUPPORTED");
+
+    private String value;
+
+    RegistersEnabledStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RegistersEnabledStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RegistersEnabledStatusEnum value : RegistersEnabledStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RegistersEnabledStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RegistersEnabledStatusEnum registersEnabledStatus = null;
+  private Integer family = null;
+  private List<String> proxyAddressList = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -399,6 +484,135 @@ public class Trunk  implements Serializable {
   }
 
   
+  /**
+   * The Logical Interface on the Edge to which the trunk is assigned.
+   **/
+  public Trunk logicalInterface(UriReference logicalInterface) {
+    this.logicalInterface = logicalInterface;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Logical Interface on the Edge to which the trunk is assigned.")
+  @JsonProperty("logicalInterface")
+  public UriReference getLogicalInterface() {
+    return logicalInterface;
+  }
+  public void setLogicalInterface(UriReference logicalInterface) {
+    this.logicalInterface = logicalInterface;
+  }
+
+  
+  /**
+   * The connected status of the trunk
+   **/
+  public Trunk connectedStatus(TrunkConnectedStatus connectedStatus) {
+    this.connectedStatus = connectedStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The connected status of the trunk")
+  @JsonProperty("connectedStatus")
+  public TrunkConnectedStatus getConnectedStatus() {
+    return connectedStatus;
+  }
+  public void setConnectedStatus(TrunkConnectedStatus connectedStatus) {
+    this.connectedStatus = connectedStatus;
+  }
+
+  
+  /**
+   * The trunk optionsStatus
+   **/
+  public Trunk optionsStatus(List<TrunkMetricsOptions> optionsStatus) {
+    this.optionsStatus = optionsStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The trunk optionsStatus")
+  @JsonProperty("optionsStatus")
+  public List<TrunkMetricsOptions> getOptionsStatus() {
+    return optionsStatus;
+  }
+  public void setOptionsStatus(List<TrunkMetricsOptions> optionsStatus) {
+    this.optionsStatus = optionsStatus;
+  }
+
+  
+  /**
+   * The trunk registersStatus
+   **/
+  public Trunk registersStatus(List<TrunkMetricsRegisters> registersStatus) {
+    this.registersStatus = registersStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The trunk registersStatus")
+  @JsonProperty("registersStatus")
+  public List<TrunkMetricsRegisters> getRegistersStatus() {
+    return registersStatus;
+  }
+  public void setRegistersStatus(List<TrunkMetricsRegisters> registersStatus) {
+    this.registersStatus = registersStatus;
+  }
+
+  
+  /**
+   * The trunk ipStatus
+   **/
+  public Trunk ipStatus(TrunkMetricsNetworkTypeIp ipStatus) {
+    this.ipStatus = ipStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The trunk ipStatus")
+  @JsonProperty("ipStatus")
+  public TrunkMetricsNetworkTypeIp getIpStatus() {
+    return ipStatus;
+  }
+  public void setIpStatus(TrunkMetricsNetworkTypeIp ipStatus) {
+    this.ipStatus = ipStatus;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.")
+  @JsonProperty("optionsEnabledStatus")
+  public OptionsEnabledStatusEnum getOptionsEnabledStatus() {
+    return optionsEnabledStatus;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.")
+  @JsonProperty("registersEnabledStatus")
+  public RegistersEnabledStatusEnum getRegistersEnabledStatus() {
+    return registersEnabledStatus;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The IP Network Family of the trunk")
+  @JsonProperty("family")
+  public Integer getFamily() {
+    return family;
+  }
+
+  
+  /**
+   * The list of proxy addresses (ports if provided) for the trunk
+   **/
+  public Trunk proxyAddressList(List<String> proxyAddressList) {
+    this.proxyAddressList = proxyAddressList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of proxy addresses (ports if provided) for the trunk")
+  @JsonProperty("proxyAddressList")
+  public List<String> getProxyAddressList() {
+    return proxyAddressList;
+  }
+  public void setProxyAddressList(List<String> proxyAddressList) {
+    this.proxyAddressList = proxyAddressList;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -434,12 +648,21 @@ public class Trunk  implements Serializable {
         Objects.equals(this.edgeGroup, trunk.edgeGroup) &&
         Objects.equals(this.inService, trunk.inService) &&
         Objects.equals(this.enabled, trunk.enabled) &&
+        Objects.equals(this.logicalInterface, trunk.logicalInterface) &&
+        Objects.equals(this.connectedStatus, trunk.connectedStatus) &&
+        Objects.equals(this.optionsStatus, trunk.optionsStatus) &&
+        Objects.equals(this.registersStatus, trunk.registersStatus) &&
+        Objects.equals(this.ipStatus, trunk.ipStatus) &&
+        Objects.equals(this.optionsEnabledStatus, trunk.optionsEnabledStatus) &&
+        Objects.equals(this.registersEnabledStatus, trunk.registersEnabledStatus) &&
+        Objects.equals(this.family, trunk.family) &&
+        Objects.equals(this.proxyAddressList, trunk.proxyAddressList) &&
         Objects.equals(this.selfUri, trunk.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkType, edge, trunkBase, trunkMetabase, edgeGroup, inService, enabled, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkType, edge, trunkBase, trunkMetabase, edgeGroup, inService, enabled, logicalInterface, connectedStatus, optionsStatus, registersStatus, ipStatus, optionsEnabledStatus, registersEnabledStatus, family, proxyAddressList, selfUri);
   }
 
   @Override
@@ -465,6 +688,15 @@ public class Trunk  implements Serializable {
     sb.append("    edgeGroup: ").append(toIndentedString(edgeGroup)).append("\n");
     sb.append("    inService: ").append(toIndentedString(inService)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    logicalInterface: ").append(toIndentedString(logicalInterface)).append("\n");
+    sb.append("    connectedStatus: ").append(toIndentedString(connectedStatus)).append("\n");
+    sb.append("    optionsStatus: ").append(toIndentedString(optionsStatus)).append("\n");
+    sb.append("    registersStatus: ").append(toIndentedString(registersStatus)).append("\n");
+    sb.append("    ipStatus: ").append(toIndentedString(ipStatus)).append("\n");
+    sb.append("    optionsEnabledStatus: ").append(toIndentedString(optionsEnabledStatus)).append("\n");
+    sb.append("    registersEnabledStatus: ").append(toIndentedString(registersEnabledStatus)).append("\n");
+    sb.append("    family: ").append(toIndentedString(family)).append("\n");
+    sb.append("    proxyAddressList: ").append(toIndentedString(proxyAddressList)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

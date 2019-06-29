@@ -181,6 +181,7 @@ public class AnalyticsSession  implements Serializable {
   private String journeyActionMapId = null;
   private String journeyActionMapVersion = null;
   private String protocolCallId = null;
+  private String provider = null;
 
   
   /**
@@ -1058,6 +1059,24 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * The source provider for the communication
+   **/
+  public AnalyticsSession provider(String provider) {
+    this.provider = provider;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The source provider for the communication")
+  @JsonProperty("provider")
+  public String getProvider() {
+    return provider;
+  }
+  public void setProvider(String provider) {
+    this.provider = provider;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1116,12 +1135,13 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.journeyActionId, analyticsSession.journeyActionId) &&
         Objects.equals(this.journeyActionMapId, analyticsSession.journeyActionMapId) &&
         Objects.equals(this.journeyActionMapVersion, analyticsSession.journeyActionMapVersion) &&
-        Objects.equals(this.protocolCallId, analyticsSession.protocolCallId);
+        Objects.equals(this.protocolCallId, analyticsSession.protocolCallId) &&
+        Objects.equals(this.provider, analyticsSession.provider);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider);
   }
 
   @Override
@@ -1178,6 +1198,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    journeyActionMapId: ").append(toIndentedString(journeyActionMapId)).append("\n");
     sb.append("    journeyActionMapVersion: ").append(toIndentedString(journeyActionMapVersion)).append("\n");
     sb.append("    protocolCallId: ").append(toIndentedString(protocolCallId)).append("\n");
+    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("}");
     return sb.toString();
   }

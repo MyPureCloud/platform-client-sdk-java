@@ -1126,7 +1126,7 @@ try {
 
 
 
-> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize)
+> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize, flowFilter)
 
 Get resources that consume a given Dependency Tracking object
 
@@ -1165,8 +1165,9 @@ String objectType = "objectType_example"; // String | Consumed object type
 List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show.  Only versioned types are allowed here.
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
+String flowFilter = "flowFilter_example"; // String | Show only checkedIn or published flows
 try {
-    ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize);
+    ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize, flowFilter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingConsumingresources");
@@ -1184,6 +1185,7 @@ try {
 | **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show.  Only versioned types are allowed here. | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BRIDGEACTION, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WORKFLOW 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **flowFilter** | **String**| Show only checkedIn or published flows | [optional]<br />**Values**: checkedIn, published 
 {: class="table-striped"}
 
 
@@ -4149,7 +4151,7 @@ Wraps POST /api/v2/architect/systemprompts/{promptId}/history
 
 Requires ANY permissions: 
 
-* architect:systemPrompt:edit
+* architect:systemPrompt:view
 
 ### Example
 

@@ -413,7 +413,6 @@ public class ScriptsApi {
   /**
    * Get the published scripts.
    * 
-   * @param scriptId Script ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand (optional)
@@ -425,14 +424,13 @@ public class ScriptsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScriptEntityListing getScriptsPublished(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException, ApiException {
-    return  getScriptsPublished(createGetScriptsPublishedRequest(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion));
+  public ScriptEntityListing getScriptsPublished(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException, ApiException {
+    return  getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion));
   }
 
   /**
    * Get the published scripts.
    * 
-   * @param scriptId Script ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param expand Expand (optional)
@@ -443,14 +441,12 @@ public class ScriptsApi {
    * @return ScriptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException {
-    return getScriptsPublished(createGetScriptsPublishedRequest(scriptId, pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion).withHttpInfo());
+  public ApiResponse<ScriptEntityListing> getScriptsPublishedWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) throws IOException {
+    return getScriptsPublished(createGetScriptsPublishedRequest(pageSize, pageNumber, expand, name, feature, flowId, scriptDataVersion).withHttpInfo());
   }
 
-  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(String scriptId, Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) {
+  private GetScriptsPublishedRequest createGetScriptsPublishedRequest(Integer pageSize, Integer pageNumber, String expand, String name, String feature, String flowId, String scriptDataVersion) {
     return GetScriptsPublishedRequest.builder()
-            .withScriptId(scriptId)
-    
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)

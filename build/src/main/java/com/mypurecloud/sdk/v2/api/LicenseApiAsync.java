@@ -15,7 +15,6 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LicenseDefinition;
-import com.mypurecloud.sdk.v2.model.LicenseOrganization;
 import com.mypurecloud.sdk.v2.model.LicenseOrgToggle;
 import com.mypurecloud.sdk.v2.model.LicenseUser;
 import com.mypurecloud.sdk.v2.model.UserLicensesEntityListing;
@@ -25,7 +24,6 @@ import com.mypurecloud.sdk.v2.model.LicenseUpdateStatus;
 
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUsersRequest;
@@ -193,82 +191,6 @@ public class LicenseApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<LicenseDefinition>> response = (ApiResponse<List<LicenseDefinition>>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<LicenseOrganization> getLicenseOrganizationAsync(GetLicenseOrganizationRequest request, final AsyncApiCallback<LicenseOrganization> callback) {
-    try {
-      final SettableFuture<LicenseOrganization> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LicenseOrganization>() {}, new AsyncApiCallback<ApiResponse<LicenseOrganization>>() {
-        @Override
-        public void onCompleted(ApiResponse<LicenseOrganization> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get license assignments for the organization.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<LicenseOrganization>> getLicenseOrganizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LicenseOrganization>> callback) {
-    try {
-      final SettableFuture<ApiResponse<LicenseOrganization>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<LicenseOrganization>() {}, new AsyncApiCallback<ApiResponse<LicenseOrganization>>() {
-        @Override
-        public void onCompleted(ApiResponse<LicenseOrganization> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<LicenseOrganization> response = (ApiResponse<LicenseOrganization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

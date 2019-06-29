@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsProperty;
+import com.mypurecloud.sdk.v2.model.AnalyticsScoredAgent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -127,6 +128,7 @@ public class AnalyticsConversationSegment  implements Serializable {
   private List<String> requestedRoutingUserIds = new ArrayList<String>();
   private List<String> requestedRoutingSkillIds = new ArrayList<String>();
   private String requestedLanguageId = null;
+  private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
   private List<AnalyticsProperty> properties = new ArrayList<AnalyticsProperty>();
   private String sourceConversationId = null;
   private String destinationConversationId = null;
@@ -350,6 +352,23 @@ public class AnalyticsConversationSegment  implements Serializable {
   }
   public void setRequestedLanguageId(String requestedLanguageId) {
     this.requestedLanguageId = requestedLanguageId;
+  }
+
+  
+  /**
+   **/
+  public AnalyticsConversationSegment scoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scoredAgents")
+  public List<AnalyticsScoredAgent> getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
   }
 
   
@@ -580,6 +599,7 @@ public class AnalyticsConversationSegment  implements Serializable {
         Objects.equals(this.requestedRoutingUserIds, analyticsConversationSegment.requestedRoutingUserIds) &&
         Objects.equals(this.requestedRoutingSkillIds, analyticsConversationSegment.requestedRoutingSkillIds) &&
         Objects.equals(this.requestedLanguageId, analyticsConversationSegment.requestedLanguageId) &&
+        Objects.equals(this.scoredAgents, analyticsConversationSegment.scoredAgents) &&
         Objects.equals(this.properties, analyticsConversationSegment.properties) &&
         Objects.equals(this.sourceConversationId, analyticsConversationSegment.sourceConversationId) &&
         Objects.equals(this.destinationConversationId, analyticsConversationSegment.destinationConversationId) &&
@@ -596,7 +616,7 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(segmentStart, segmentEnd, queueId, wrapUpCode, wrapUpNote, wrapUpTags, errorCode, disconnectType, segmentType, requestedRoutingUserIds, requestedRoutingSkillIds, requestedLanguageId, properties, sourceConversationId, destinationConversationId, sourceSessionId, destinationSessionId, sipResponseCodes, q850ResponseCodes, conference, groupId, subject, audioMuted, videoMuted);
+    return Objects.hash(segmentStart, segmentEnd, queueId, wrapUpCode, wrapUpNote, wrapUpTags, errorCode, disconnectType, segmentType, requestedRoutingUserIds, requestedRoutingSkillIds, requestedLanguageId, scoredAgents, properties, sourceConversationId, destinationConversationId, sourceSessionId, destinationSessionId, sipResponseCodes, q850ResponseCodes, conference, groupId, subject, audioMuted, videoMuted);
   }
 
   @Override
@@ -616,6 +636,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     sb.append("    requestedRoutingUserIds: ").append(toIndentedString(requestedRoutingUserIds)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
     sb.append("    requestedLanguageId: ").append(toIndentedString(requestedLanguageId)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    sourceConversationId: ").append(toIndentedString(sourceConversationId)).append("\n");
     sb.append("    destinationConversationId: ").append(toIndentedString(destinationConversationId)).append("\n");

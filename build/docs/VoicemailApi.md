@@ -297,8 +297,6 @@ Requires ANY permissions:
 
 * directory:group:add
 * directory:group:edit
-* group_administration
-* group_creation
 
 ### Example
 
@@ -1045,8 +1043,6 @@ Requires ANY permissions:
 
 * directory:group:add
 * directory:group:edit
-* group_administration
-* group_creation
 
 ### Example
 

@@ -119,6 +119,48 @@ public class GetWorkforcemanagementManagementunitWeekSchedulesRequest {
 	    return this;
 	} 
 	
+	private Boolean includeOnlyPublished;
+	public Boolean getIncludeOnlyPublished() {
+		return this.includeOnlyPublished;
+	}
+
+	public void setIncludeOnlyPublished(Boolean includeOnlyPublished) {
+		this.includeOnlyPublished = includeOnlyPublished;
+	}
+
+	public GetWorkforcemanagementManagementunitWeekSchedulesRequest withIncludeOnlyPublished(Boolean includeOnlyPublished) {
+	    this.setIncludeOnlyPublished(includeOnlyPublished);
+	    return this;
+	} 
+	
+	private String earliestWeekDate;
+	public String getEarliestWeekDate() {
+		return this.earliestWeekDate;
+	}
+
+	public void setEarliestWeekDate(String earliestWeekDate) {
+		this.earliestWeekDate = earliestWeekDate;
+	}
+
+	public GetWorkforcemanagementManagementunitWeekSchedulesRequest withEarliestWeekDate(String earliestWeekDate) {
+	    this.setEarliestWeekDate(earliestWeekDate);
+	    return this;
+	} 
+	
+	private String latestWeekDate;
+	public String getLatestWeekDate() {
+		return this.latestWeekDate;
+	}
+
+	public void setLatestWeekDate(String latestWeekDate) {
+		this.latestWeekDate = latestWeekDate;
+	}
+
+	public GetWorkforcemanagementManagementunitWeekSchedulesRequest withLatestWeekDate(String latestWeekDate) {
+	    this.setLatestWeekDate(latestWeekDate);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -156,6 +198,12 @@ public class GetWorkforcemanagementManagementunitWeekSchedulesRequest {
         
                 .withPathParameter("weekId", weekId)
         
+                .withQueryParameters("includeOnlyPublished", "", includeOnlyPublished)
+        
+                .withQueryParameters("earliestWeekDate", "", earliestWeekDate)
+        
+                .withQueryParameters("latestWeekDate", "", latestWeekDate)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -189,6 +237,21 @@ public class GetWorkforcemanagementManagementunitWeekSchedulesRequest {
 		
 		public Builder withWeekId(String weekId) {
 			request.setWeekId(weekId);
+			return this;
+		}
+		
+		public Builder withIncludeOnlyPublished(Boolean includeOnlyPublished) {
+			request.setIncludeOnlyPublished(includeOnlyPublished);
+			return this;
+		}
+		
+		public Builder withEarliestWeekDate(String earliestWeekDate) {
+			request.setEarliestWeekDate(earliestWeekDate);
+			return this;
+		}
+		
+		public Builder withLatestWeekDate(String latestWeekDate) {
+			request.setLatestWeekDate(latestWeekDate);
 			return this;
 		}
 		

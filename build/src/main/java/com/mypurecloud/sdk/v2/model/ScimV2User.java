@@ -33,6 +33,7 @@ public class ScimV2User  implements Serializable {
   private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
   private List<ScimEmail> emails = new ArrayList<ScimEmail>();
   private List<Photo> photos = new ArrayList<Photo>();
+  private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
@@ -208,6 +209,24 @@ public class ScimV2User  implements Serializable {
 
   
   /**
+   * External ID
+   **/
+  public ScimV2User externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External ID")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+  
+  /**
    * Group References
    **/
   public ScimV2User groups(List<ScimV2GroupReference> groups) {
@@ -279,6 +298,7 @@ public class ScimV2User  implements Serializable {
         Objects.equals(this.phoneNumbers, scimV2User.phoneNumbers) &&
         Objects.equals(this.emails, scimV2User.emails) &&
         Objects.equals(this.photos, scimV2User.photos) &&
+        Objects.equals(this.externalId, scimV2User.externalId) &&
         Objects.equals(this.groups, scimV2User.groups) &&
         Objects.equals(this.meta, scimV2User.meta) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User);
@@ -286,7 +306,7 @@ public class ScimV2User  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, displayName, schemas, active, userName, password, title, phoneNumbers, emails, photos, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(id, displayName, schemas, active, userName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
@@ -304,6 +324,7 @@ public class ScimV2User  implements Serializable {
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    photos: ").append(toIndentedString(photos)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");

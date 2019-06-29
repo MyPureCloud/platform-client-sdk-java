@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Average speed of answer settings
+ * Service goal average speed of answer configuration
  */
-@ApiModel(description = "Average speed of answer settings")
+@ApiModel(description = "Service goal average speed of answer configuration")
 
 public class WfmAverageSpeedOfAnswer  implements Serializable {
   
@@ -20,14 +20,14 @@ public class WfmAverageSpeedOfAnswer  implements Serializable {
 
   
   /**
-   * Whether to include average speed of answer (ASA) in this service goal group's configuration
+   * Whether to include average speed of answer (ASA) in the associated configuration
    **/
   public WfmAverageSpeedOfAnswer include(Boolean include) {
     this.include = include;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Whether to include average speed of answer (ASA) in this service goal group's configuration")
+  @ApiModelProperty(example = "null", required = true, value = "Whether to include average speed of answer (ASA) in the associated configuration")
   @JsonProperty("include")
   public Boolean getInclude() {
     return include;

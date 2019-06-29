@@ -2388,12 +2388,15 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
+   * @param includeOnlyPublished Return only published schedules (optional)
+   * @param earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format (optional)
+   * @param latestWeekDate The start date of the latest week to query in yyyy-MM-dd format (optional)
    * @return WeekScheduleListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(String managementUnitId, String weekId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId));
+  public WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate));
   }
 
   /**
@@ -2401,18 +2404,27 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. (required)
+   * @param includeOnlyPublished Return only published schedules (optional)
+   * @param earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format (optional)
+   * @param latestWeekDate The start date of the latest week to query in yyyy-MM-dd format (optional)
    * @return WeekScheduleListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WeekScheduleListResponse> getWorkforcemanagementManagementunitWeekSchedulesWithHttpInfo(String managementUnitId, String weekId) throws IOException {
-    return getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId).withHttpInfo());
+  public ApiResponse<WeekScheduleListResponse> getWorkforcemanagementManagementunitWeekSchedulesWithHttpInfo(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) throws IOException {
+    return getWorkforcemanagementManagementunitWeekSchedules(createGetWorkforcemanagementManagementunitWeekSchedulesRequest(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWeekSchedulesRequest createGetWorkforcemanagementManagementunitWeekSchedulesRequest(String managementUnitId, String weekId) {
+  private GetWorkforcemanagementManagementunitWeekSchedulesRequest createGetWorkforcemanagementManagementunitWeekSchedulesRequest(String managementUnitId, String weekId, Boolean includeOnlyPublished, String earliestWeekDate, String latestWeekDate) {
     return GetWorkforcemanagementManagementunitWeekSchedulesRequest.builder()
             .withManagementUnitId(managementUnitId)
     
             .withWeekId(weekId)
+    
+            .withIncludeOnlyPublished(includeOnlyPublished)
+    
+            .withEarliestWeekDate(earliestWeekDate)
+    
+            .withLatestWeekDate(latestWeekDate)
     
             .build();
   }

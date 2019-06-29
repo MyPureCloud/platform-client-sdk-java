@@ -14,24 +14,41 @@ import java.io.Serializable;
 
 public class Agent  implements Serializable {
   
-  private String stage = null;
+  private String id = null;
+  private String selfUri = null;
 
   
   /**
-   * The current stage for this agent
    **/
-  public Agent stage(String stage) {
-    this.stage = stage;
+  public Agent id(String id) {
+    this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The current stage for this agent")
-  @JsonProperty("stage")
-  public String getStage() {
-    return stage;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setStage(String stage) {
-    this.stage = stage;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  
+  /**
+   **/
+  public Agent selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -45,12 +62,13 @@ public class Agent  implements Serializable {
       return false;
     }
     Agent agent = (Agent) o;
-    return Objects.equals(this.stage, agent.stage);
+    return Objects.equals(this.id, agent.id) &&
+        Objects.equals(this.selfUri, agent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(stage);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -58,7 +76,8 @@ public class Agent  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class Agent {\n");
     
-    sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
