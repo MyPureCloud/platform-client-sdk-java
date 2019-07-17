@@ -62,7 +62,7 @@ For user applications, the consuming application must complete an implicit, auth
 
 ##Authentication with SAML2Bearer token
 
-```{"language:"java"}
+```{"language":"java"}
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
 String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
 String orgName = "YourOrg"; // Your org name 
