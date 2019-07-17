@@ -65,7 +65,7 @@ public class ApiException extends Exception implements ApiResponse<Object> {
 
     @Override
     public String getCorrelationId() {
-        return getHeader("ININ-Correlation-ID");
+        return getHeader("ININ-Correlation-Id");
     }
 
     @Override

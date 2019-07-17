@@ -34,6 +34,7 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 | **externalContact** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationVideoEventTopicWrapup**](ConversationVideoEventTopicWrapup.html) |  |  [optional] |
+| **conversationRoutingData** | [**ConversationVideoEventTopicConversationRoutingData**](ConversationVideoEventTopicConversationRoutingData.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |

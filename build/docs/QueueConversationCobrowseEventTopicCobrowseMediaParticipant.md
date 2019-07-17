@@ -34,6 +34,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | **externalContact** | [**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
 | **wrapup** | [**QueueConversationCobrowseEventTopicWrapup**](QueueConversationCobrowseEventTopicWrapup.html) |  |  [optional] |
+| **conversationRoutingData** | [**QueueConversationCobrowseEventTopicConversationRoutingData**](QueueConversationCobrowseEventTopicConversationRoutingData.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |

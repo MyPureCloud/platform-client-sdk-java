@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationSocialExpressionEventTopicUriReference;
@@ -175,6 +176,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private ConversationSocialExpressionEventTopicUriReference externalContact = null;
   private ConversationSocialExpressionEventTopicUriReference externalOrganization = null;
   private ConversationSocialExpressionEventTopicWrapup wrapup = null;
+  private ConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -662,6 +664,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   
   /**
    **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant conversationRoutingData(ConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public ConversationSocialExpressionEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public ConversationSocialExpressionEventTopicSocialMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -832,6 +851,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
         Objects.equals(this.externalContact, conversationSocialExpressionEventTopicSocialMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, conversationSocialExpressionEventTopicSocialMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, conversationSocialExpressionEventTopicSocialMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, conversationSocialExpressionEventTopicSocialMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationSocialExpressionEventTopicSocialMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationSocialExpressionEventTopicSocialMediaParticipant.flaggedReason) &&
@@ -844,7 +864,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -878,6 +898,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

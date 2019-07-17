@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationScreenShareEventTopicUriReference;
@@ -175,6 +176,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   private QueueConversationScreenShareEventTopicUriReference externalContact = null;
   private QueueConversationScreenShareEventTopicUriReference externalOrganization = null;
   private QueueConversationScreenShareEventTopicWrapup wrapup = null;
+  private QueueConversationScreenShareEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -661,6 +663,23 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
   
   /**
    **/
+  public QueueConversationScreenShareEventTopicScreenShareMediaParticipant conversationRoutingData(QueueConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public QueueConversationScreenShareEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(QueueConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public QueueConversationScreenShareEventTopicScreenShareMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -814,6 +833,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
         Objects.equals(this.externalContact, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, queueConversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, queueConversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, queueConversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, queueConversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
@@ -825,7 +845,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
   }
 
   @Override
@@ -859,6 +879,7 @@ public class QueueConversationScreenShareEventTopicScreenShareMediaParticipant  
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

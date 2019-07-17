@@ -25,6 +25,7 @@ title: QueueConversationSocialExpressionEventTopicParticipant
 | **wrapupPrompt** | **String** |  |  [optional] |
 | **wrapupTimeoutMs** | **Integer** |  |  [optional] |
 | **wrapup** | [**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html) |  |  [optional] |
+| **conversationRoutingData** | [**QueueConversationSocialExpressionEventTopicConversationRoutingData**](QueueConversationSocialExpressionEventTopicConversationRoutingData.html) |  |  [optional] |
 | **alertingTimeoutMs** | **Integer** |  |  [optional] |
 | **monitoredParticipantId** | **String** |  |  [optional] |
 | **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum) |  |  [optional] |

@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicCall;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicCallback;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicChat;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicCobrowse;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicEmail;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessage;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicScreenshare;
@@ -47,6 +48,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private String wrapupPrompt = null;
   private Integer wrapupTimeoutMs = null;
   private QueueConversationEventTopicWrapup wrapup = null;
+  private QueueConversationEventTopicConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
 
@@ -393,6 +395,23 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicParticipant conversationRoutingData(QueueConversationEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public QueueConversationEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(QueueConversationEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicParticipant alertingTimeoutMs(Integer alertingTimeoutMs) {
     this.alertingTimeoutMs = alertingTimeoutMs;
     return this;
@@ -673,6 +692,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
         Objects.equals(this.wrapupPrompt, queueConversationEventTopicParticipant.wrapupPrompt) &&
         Objects.equals(this.wrapupTimeoutMs, queueConversationEventTopicParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapup, queueConversationEventTopicParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, queueConversationEventTopicParticipant.conversationRoutingData) &&
         Objects.equals(this.alertingTimeoutMs, queueConversationEventTopicParticipant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, queueConversationEventTopicParticipant.monitoredParticipantId) &&
         Objects.equals(this.screenRecordingState, queueConversationEventTopicParticipant.screenRecordingState) &&
@@ -692,7 +712,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -717,6 +737,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");

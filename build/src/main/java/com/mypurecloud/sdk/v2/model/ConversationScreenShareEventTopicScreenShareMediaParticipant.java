@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationScreenShareEventTopicUriReference;
@@ -175,6 +176,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   private ConversationScreenShareEventTopicUriReference externalContact = null;
   private ConversationScreenShareEventTopicUriReference externalOrganization = null;
   private ConversationScreenShareEventTopicWrapup wrapup = null;
+  private ConversationScreenShareEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -661,6 +663,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant conversationRoutingData(ConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public ConversationScreenShareEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationScreenShareEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -814,6 +833,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
         Objects.equals(this.externalContact, conversationScreenShareEventTopicScreenShareMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, conversationScreenShareEventTopicScreenShareMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, conversationScreenShareEventTopicScreenShareMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, conversationScreenShareEventTopicScreenShareMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
@@ -825,7 +845,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
   }
 
   @Override
@@ -859,6 +879,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

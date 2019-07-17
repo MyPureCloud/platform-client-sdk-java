@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationCobrowseEventTopicUriReference;
@@ -176,6 +177,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private QueueConversationCobrowseEventTopicUriReference externalContact = null;
   private QueueConversationCobrowseEventTopicUriReference externalOrganization = null;
   private QueueConversationCobrowseEventTopicWrapup wrapup = null;
+  private QueueConversationCobrowseEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -664,6 +666,23 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   
   /**
    **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant conversationRoutingData(QueueConversationCobrowseEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public QueueConversationCobrowseEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(QueueConversationCobrowseEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCobrowseEventTopicCobrowseMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -851,6 +870,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
         Objects.equals(this.externalContact, queueConversationCobrowseEventTopicCobrowseMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, queueConversationCobrowseEventTopicCobrowseMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, queueConversationCobrowseEventTopicCobrowseMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, queueConversationCobrowseEventTopicCobrowseMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, queueConversationCobrowseEventTopicCobrowseMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationCobrowseEventTopicCobrowseMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCobrowseEventTopicCobrowseMediaParticipant.flaggedReason) &&
@@ -864,7 +884,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -898,6 +918,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

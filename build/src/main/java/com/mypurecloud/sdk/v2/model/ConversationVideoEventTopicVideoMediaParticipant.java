@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationVideoEventTopicUriReference;
@@ -176,6 +177,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private ConversationVideoEventTopicUriReference externalContact = null;
   private ConversationVideoEventTopicUriReference externalOrganization = null;
   private ConversationVideoEventTopicWrapup wrapup = null;
+  private ConversationVideoEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -665,6 +667,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant conversationRoutingData(ConversationVideoEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public ConversationVideoEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationVideoEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -869,6 +888,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
         Objects.equals(this.externalContact, conversationVideoEventTopicVideoMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, conversationVideoEventTopicVideoMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, conversationVideoEventTopicVideoMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, conversationVideoEventTopicVideoMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, conversationVideoEventTopicVideoMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationVideoEventTopicVideoMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationVideoEventTopicVideoMediaParticipant.flaggedReason) &&
@@ -883,7 +903,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -917,6 +937,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

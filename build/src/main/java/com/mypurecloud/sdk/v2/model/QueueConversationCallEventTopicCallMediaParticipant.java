@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicFaxStatus;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicJourneyContext;
@@ -176,6 +177,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private QueueConversationCallEventTopicUriReference externalContact = null;
   private QueueConversationCallEventTopicUriReference externalOrganization = null;
   private QueueConversationCallEventTopicWrapup wrapup = null;
+  private QueueConversationCallEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -705,6 +707,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant conversationRoutingData(QueueConversationCallEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public QueueConversationCallEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(QueueConversationCallEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -994,6 +1013,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
         Objects.equals(this.externalContact, queueConversationCallEventTopicCallMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, queueConversationCallEventTopicCallMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, queueConversationCallEventTopicCallMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, queueConversationCallEventTopicCallMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, queueConversationCallEventTopicCallMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCallEventTopicCallMediaParticipant.flaggedReason) &&
@@ -1013,7 +1033,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1047,6 +1067,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicMessageDetails;
@@ -177,6 +178,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private QueueConversationMessageEventTopicUriReference externalContact = null;
   private QueueConversationMessageEventTopicUriReference externalOrganization = null;
   private QueueConversationMessageEventTopicWrapup wrapup = null;
+  private QueueConversationMessageEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -705,6 +707,23 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant conversationRoutingData(QueueConversationMessageEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public QueueConversationMessageEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(QueueConversationMessageEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -875,6 +894,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
         Objects.equals(this.externalContact, queueConversationMessageEventTopicMessageMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, queueConversationMessageEventTopicMessageMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, queueConversationMessageEventTopicMessageMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, queueConversationMessageEventTopicMessageMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, queueConversationMessageEventTopicMessageMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, queueConversationMessageEventTopicMessageMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationMessageEventTopicMessageMediaParticipant.flaggedReason) &&
@@ -887,7 +907,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -921,6 +941,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

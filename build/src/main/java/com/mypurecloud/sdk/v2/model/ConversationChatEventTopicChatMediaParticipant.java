@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationChatEventTopicUriReference;
@@ -175,6 +176,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   private ConversationChatEventTopicUriReference externalContact = null;
   private ConversationChatEventTopicUriReference externalOrganization = null;
   private ConversationChatEventTopicWrapup wrapup = null;
+  private ConversationChatEventTopicConversationRoutingData conversationRoutingData = null;
   private String peer = null;
   private String screenRecordingState = null;
 
@@ -659,6 +661,23 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   
   /**
    **/
+  public ConversationChatEventTopicChatMediaParticipant conversationRoutingData(ConversationChatEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationRoutingData")
+  public ConversationChatEventTopicConversationRoutingData getConversationRoutingData() {
+    return conversationRoutingData;
+  }
+  public void setConversationRoutingData(ConversationChatEventTopicConversationRoutingData conversationRoutingData) {
+    this.conversationRoutingData = conversationRoutingData;
+  }
+
+  
+  /**
+   **/
   public ConversationChatEventTopicChatMediaParticipant peer(String peer) {
     this.peer = peer;
     return this;
@@ -778,6 +797,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
         Objects.equals(this.externalContact, conversationChatEventTopicChatMediaParticipant.externalContact) &&
         Objects.equals(this.externalOrganization, conversationChatEventTopicChatMediaParticipant.externalOrganization) &&
         Objects.equals(this.wrapup, conversationChatEventTopicChatMediaParticipant.wrapup) &&
+        Objects.equals(this.conversationRoutingData, conversationChatEventTopicChatMediaParticipant.conversationRoutingData) &&
         Objects.equals(this.peer, conversationChatEventTopicChatMediaParticipant.peer) &&
         Objects.equals(this.screenRecordingState, conversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationChatEventTopicChatMediaParticipant.flaggedReason) &&
@@ -787,7 +807,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, screenRecordingState, flaggedReason, journeyContext, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, roomId);
   }
 
   @Override
@@ -821,6 +841,7 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     sb.append("    externalContact: ").append(toIndentedString(externalContact)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    peer: ").append(toIndentedString(peer)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");

@@ -34,6 +34,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **externalContact** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
 | **externalOrganization** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
 | **wrapup** | [**ConversationMessageEventTopicWrapup**](ConversationMessageEventTopicWrapup.html) |  |  [optional] |
+| **conversationRoutingData** | [**ConversationMessageEventTopicConversationRoutingData**](ConversationMessageEventTopicConversationRoutingData.html) |  |  [optional] |
 | **peer** | **String** |  |  [optional] |
 | **screenRecordingState** | **String** |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |

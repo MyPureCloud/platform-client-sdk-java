@@ -55,10 +55,27 @@ Configuration.setDefaultApiClient(apiClient);
 
 // Create API instances and make authenticated API requests
 UsersApi apiInstance = new UsersApi();
-UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
+UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, null);
 ```
 
-For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html).
+For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html). For more information about SAML2 Bearer Oauth flow view the example below 
+
+##Authentication with SAML2Bearer token
+
+```{"language:"java"}
+String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
+String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+String orgName = "YourOrg"; // Your org name 
+String encodedSamlAssertion= ""; // Base64 encoded SAML assertion
+
+//Set Region
+PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
+
+ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
+ApiResponse<AuthResponse> authResponse = apiClient.authorizeSaml2Bearer(clientId,clientSecret,orgName,encodedSamlAssertion);
+System.out.println("Authentication sucesful. Access token expires in " + authResponse.getBody().getExpires_in(); + " seconds");
+
+```
 
 ### Building an ApiClient Instance
 
@@ -78,7 +95,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 // Create API instances and make authenticated API requests
 UsersApi apiInstance = new UsersApi();
-UserEntityListing response = usersApi.getUsers(null, null, null, null, null, null);
+UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, null);
 ```
 
 #### Setting the access token
@@ -238,20 +255,20 @@ notificationHandler.sendPing();
 To handle incoming events, implement the `NotificationListener<T>` interface to handle registered topics and the `WebSocketListener` interface for information about the websocket itself. This is a basic example of how to handle user presence events:
 
 ```{"language":"java"}
-public class UserPresenceListener implements NotificationListener<UserPresenceNotification> {
+public class UserPresenceListener implements NotificationListener<PresenceEventUserPresence> {
     private String topic;
 
     public String getTopic() {
         return topic;
     }
 
-    public Class<UserPresenceNotification> getEventBodyClass() {
-        return UserPresenceNotification.class;
+    public Class<PresenceEventUserPresence> getEventBodyClass() {
+        return PresenceEventUserPresence.class;
     }
 
     @Override
     public void onEvent(NotificationEvent<?> event) {
-        System.out.println("system presence -> " + ((UserPresenceNotification)event.getEventBody()).getPresenceDefinition().getSystemPresence());
+        System.out.println("system presence -> " + ((PresenceEventUserPresence)event.getEventBody()).getPresenceDefinition().getSystemPresence());
     }
 
     public UserPresenceListener(String userId) {

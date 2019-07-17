@@ -19,6 +19,31 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
+import com.mypurecloud.sdk.v2.extensions.AuthResponse;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.httpclient.UsernamePasswordCredentials;
+import org.apache.commons.httpclient.auth.BasicScheme;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.joda.time.DateTime;
+import org.opensaml.saml2.core.Response;
+import org.opensaml.saml2.core.impl.ResponseMarshaller;
+import org.opensaml.xml.io.MarshallingException;
+import org.opensaml.xml.util.XMLHelper;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import java.io.IOException;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -29,7 +54,7 @@ import com.mypurecloud.sdk.v2.auth.Authentication;
 import com.mypurecloud.sdk.v2.auth.OAuth;
 import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
-import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
+
 
 
 public class ApiClient implements AutoCloseable {
@@ -173,6 +198,22 @@ public class ApiClient implements AutoCloseable {
 
         return response;
     }
+ public ApiResponse<AuthResponse>  authorizeSaml2Bearer( String clientId, String clientSecret, String orgName, String assertion) throws IOException, ApiException {
+        String encodedAuth = DatatypeConverter.printBase64Binary((clientId + ":" + clientSecret).getBytes("UTF-8"));
+        ApiRequest<Void> request = ApiRequestBuilder.create("POST", "/oauth/token")
+                .withCustomHeader("Authorization", "Basic " + encodedAuth)
+                .withCustomHeader("Content-Type", "application/x-www-form-urlencoded")
+                .withFormParameter("grant_type", "urn:ietf:params:oauth:grant-type:saml2-bearer")
+                .withFormParameter("orgName", orgName)
+                .withFormParameter("assertion", assertion)
+                .build();
+        
+        ApiResponse<AuthResponse> response = this.getAPIResponse(request, new TypeReference<AuthResponse>() {}, true);
+        
+        setAccessToken(response.getBody().getAccess_token());
+
+        return response;
+}
 
     /**
      * Connect timeout (in milliseconds).
@@ -684,7 +725,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "62.0.0");
+            withDefaultHeader("purecloud-sdk", "62.0.1");
         }
 
         public Builder withDefaultHeader(String header, String value) {
